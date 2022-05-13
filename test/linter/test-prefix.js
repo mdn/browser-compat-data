@@ -11,11 +11,14 @@ const chalk = require('chalk');
  */
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @param {string[]} errors
- * @param {string} prefix
- * @param {string} [path]
+ * Check the prefix of a specific feature
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {string[]} errors The errors object to push the new errors to
+ * @param {string} prefix The browser-based prefix to test
+ * @param {string} [path] The path to the data
+ * @returns {string[]} Any errors found within the data
  */
 function checkPrefix(data, category, errors, prefix, path = '') {
   for (const key in data) {
@@ -41,9 +44,11 @@ function checkPrefix(data, category, errors, prefix, path = '') {
 }
 
 /**
- * @param {Identifier} data
- * @param {string} category
- * @return {string[]}
+ * Process the data for prefix errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @returns {string[]} Any errors found within the data
  */
 function processData(data, category) {
   let errors = [];
@@ -63,7 +68,10 @@ function processData(data, category) {
 }
 
 /**
- * @param {string} filename
+ * Test for issues with feature's prefix
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testPrefix(filename) {
   const relativePath = path.relative(
