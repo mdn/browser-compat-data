@@ -51,6 +51,11 @@ function isValidVersion(browserIdentifier, version) {
   }
 }
 
+function hasVersionAddedOnly(statement) {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+}
+
 /**
  * @param {SimpleSupportStatement} statement
  * @returns {boolean|null}
@@ -104,6 +109,8 @@ function checkVersions(supportData, relPath, logger) {
         browser
       ].join(', ')}`;
 
+      let sawVersionAddedOnly = false;
+
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
           logger.error(
@@ -144,6 +151,17 @@ function checkVersions(supportData, relPath, logger) {
             logger.error(
               chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
             );
+          }
+        }
+
+        if (hasVersionAddedOnly(statement)) {
+          if (sawVersionAddedOnly) {
+            logger.error(
+              chalk`{red → '{bold ${relPath}}' - {bold ${browser}} has multiple support statements with only {bold version_added}.}`,
+            );
+            break;
+          } else {
+            sawVersionAddedOnly = true;
           }
         }
       }
