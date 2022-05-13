@@ -5,10 +5,11 @@
 
 const path = require('path');
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {object.<string, string[]>} */
@@ -26,6 +27,11 @@ const browsers = {
   'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   'webextensions-mobile': ['firefox_android', 'safari_ios'],
 };
+
+function hasVersionAddedOnly(statement) {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+}
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
@@ -54,9 +60,9 @@ function processData(
     );
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
+        chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -65,9 +71,9 @@ function processData(
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
+        chalk`{bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
   }

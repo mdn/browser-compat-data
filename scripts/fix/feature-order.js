@@ -10,7 +10,7 @@
 const fs = require('fs');
 const { platform } = require('os');
 
-const compareFeatures = require('./compare-features');
+const compareFeatures = require('../compare-features');
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
