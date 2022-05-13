@@ -6,6 +6,8 @@
 const chalk = require('chalk');
 const { Logger } = require('../utils.js');
 
+const { browsers } = require('../../index.js');
+
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
