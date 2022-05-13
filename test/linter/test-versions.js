@@ -28,9 +28,9 @@ const VERSION_RANGE_BROWSERS = {
 /** @type {Object<string, string>} */
 const browserTips = {
   safari_ios:
-    'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number.  Maybe you are trying to use the desktop version number?',
+    'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
   opera_android:
-    'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions.  Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
+    'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
 };
 
 for (const browser of Object.keys(browsers)) {
