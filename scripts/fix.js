@@ -1,11 +1,18 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./fix-browser-order');
 const fixFeatureOrder = require('./fix-feature-order');
 
 /**
- * @param {string[]} files
+ * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
+ *
+ * @param {string[]} files The files to load and perform fix upon
+ * @returns {void}
  */
 function load(...files) {
   for (let file of files) {

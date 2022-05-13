@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('./utils.js');
@@ -7,7 +11,7 @@ const { Logger } = require('./utils.js');
  * @typedef {import('../../types').Identifier} Identifier
  */
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const browsers = {
   desktop: ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
   mobile: [
@@ -29,12 +33,15 @@ function hasVersionAddedOnly(statement) {
 }
 
 /**
- * @param {Identifier} data
- * @param {string[]} displayBrowsers
- * @param {string[]} requiredBrowsers
- * @param {string} category
- * @param {Logger} logger
- * @param {string} [path]
+ * Check the data for any disallowed browsers or if it's missing required browsers
+ *
+ * @param {Identifier} data The data to test
+ * @param {string[]} displayBrowsers All of the allowed browsers for this data.
+ * @param {string[]} requiredBrowsers All of the required browsers for this data.
+ * @param {string} category The category the data belongs to.
+ * @param {Logger} logger The logger to output errors to.
+ * @param {string} [path] The path of the data.
+ * @returns {void}
  */
 function processData(
   data,
@@ -68,25 +75,6 @@ function processData(
         )}}}`,
       );
     }
-
-    for (const [browser, supportStatement] of Object.entries(support)) {
-      const statementList = Array.isArray(supportStatement)
-        ? supportStatement
-        : [supportStatement];
-      let sawVersionAddedOnly = false;
-      for (const statement of statementList) {
-        if (hasVersionAddedOnly(statement)) {
-          if (sawVersionAddedOnly) {
-            logger.error(
-              chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`,
-            );
-            break;
-          } else {
-            sawVersionAddedOnly = true;
-          }
-        }
-      }
-    }
   }
   for (const key in data) {
     if (key === '__compat') continue;
@@ -103,7 +91,9 @@ function processData(
 }
 
 /**
- * @param {string} filename
+ * Test for issues within the browsers in the data within the specified file.
+ *
+ * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
 function testBrowsersPresence(filename) {
