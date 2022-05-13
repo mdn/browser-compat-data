@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: 16.x
         registry-url: "https://registry.npmjs.org/"
-    - run: npm install
+    - run: npm ci
     - run: npm test
     - run: npm run release-build
     - run: npm publish build/ --access public
