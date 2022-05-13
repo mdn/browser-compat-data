@@ -6,7 +6,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-const packageJson = require('../package.json');
+const packageJson = require('../../package.json');
 const stringify = require('fast-json-stable-stringify');
 
 const directory = './build/';
@@ -15,7 +15,7 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 function createDataBundle() {
-  const bcd = require('../index.js');
+  const bcd = require('../../index.js');
   bcd.__meta = { version: packageJson.version };
   const string = stringify(bcd);
   return string;
