@@ -70,35 +70,6 @@ function processData(
         )}}}`,
       );
     }
-
-    for (const [browser, supportStatement] of Object.entries(support)) {
-      const statementList = Array.isArray(supportStatement)
-        ? supportStatement
-        : [supportStatement];
-      /**
-       * Checks a support statement and identifies whether it only has 'version_added'
-       *
-       * @param {Identifier} statement The support statement to check
-       * @returns {boolean} If the statement only has 'version_added'
-       */
-      function hasVersionAddedOnly(statement) {
-        const keys = Object.keys(statement);
-        return keys.length === 1 && keys[0] === 'version_added';
-      }
-      let sawVersionAddedOnly = false;
-      for (const statement of statementList) {
-        if (hasVersionAddedOnly(statement)) {
-          if (sawVersionAddedOnly) {
-            logger.error(
-              chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`,
-            );
-            break;
-          } else {
-            sawVersionAddedOnly = true;
-          }
-        }
-      }
-    }
   }
   for (const key in data) {
     if (key === '__compat') continue;
