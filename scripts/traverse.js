@@ -1,4 +1,12 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
@@ -30,6 +38,14 @@ const { argv } = require('yargs').command(
   },
 );
 
+/**
+ * Traverse all of the features within a specified object and find all features that have one of the specified values
+ *
+ * @param {Identifier} obj The compat data to traverse through
+ * @param {number} depth The depth to traverse
+ * @param {string} identifier The identifier of the current object
+ * @returns {void}
+ */
 function traverseFeatures(obj, depth, identifier) {
   depth--;
   if (depth >= 0) {

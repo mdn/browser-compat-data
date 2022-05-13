@@ -1,5 +1,10 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const Ajv = require('ajv').default;
+const ajvErrors = require('ajv-errors');
 const addFormats = require('ajv-formats');
 const betterAjvErrors = require('better-ajv-errors').default;
 const chalk = require('chalk');
@@ -8,10 +13,15 @@ const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.
 addFormats(ajv, { mode: 'fast' });
+// Allow for custom error messages to provide better directions for contributors
+ajvErrors(ajv);
 
 /**
- * @param {string} dataFilename
- * @param {string} [schemaFilename]
+ * Test a file to make sure it follows the defined schema
+ *
+ * @param {string} dataFilename The file to test
+ * @param {string} [schemaFilename] A specific schema file to test with, if needed
+ * @returns {boolean} If the file contains errors
  */
 function testSchema(
   dataFilename,
