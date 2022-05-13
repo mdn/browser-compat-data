@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const fixBrowserOrder = require('./browser-order');
 const fixFeatureOrder = require('./feature-order');
+const fixLinks = require('./links');
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
@@ -29,6 +30,7 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
+        fixLinks(file);
       }
 
       continue;

@@ -251,7 +251,7 @@ function testLinks(filename) {
 
   for (const error of errors) {
     logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).\n{blue Tip: Run {bold npm run fix} to fix links automatically}`,
     );
   }
 
@@ -259,4 +259,4 @@ function testLinks(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testLinks;
+module.exports = { processData, testLinks };
