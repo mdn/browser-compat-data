@@ -166,7 +166,6 @@ const main = (files) => {
         'webdriver',
         'webextensions',
       );
-  hasErrors = testFormat() || hasErrors;
 
   if (hasErrors) {
     console.warn('');
