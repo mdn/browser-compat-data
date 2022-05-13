@@ -1,7 +1,12 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const http = require('https');
 const readline = require('readline');
-const { exec, releaseYargsBuilder } = require('./release-utils');
-const { walk } = require('../utils');
+const { exec, releaseYargsBuilder } = require('./utils');
+const { walk } = require('../../utils');
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',

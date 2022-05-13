@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const fs = require('fs');
 const path = require('path');
 const ora = require('ora');
@@ -17,7 +21,7 @@ const {
   testStyle,
   testVersions,
 } = require('./linter/index.js');
-const { IS_CI } = require('./utils.js');
+const { IS_CI, pluralize } = require('./utils.js');
 
 const argv = yargs
   .alias('version', 'v')
@@ -160,9 +164,7 @@ const main = (files) => {
   if (hasErrors) {
     console.error('');
     console.error(
-      chalk`{red Problems in {bold ${filesWithErrors}} ${
-        filesWithErrors === 1 ? 'file' : 'files'
-      }:}`,
+      chalk`{red Problems in {bold ${pluralize('file', filesWithErrors.size)}}:}`,
     );
     for (let error of errors) {
       console.error(error);

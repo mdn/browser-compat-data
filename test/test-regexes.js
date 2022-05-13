@@ -1,5 +1,7 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
-const assert = require('assert').strict;
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -9,6 +11,8 @@ const assert = require('assert').strict;
  * @property {string[]} matches
  * @property {string[]} misses
  */
+
+const assert = require('assert').strict;
 
 /** @type {Identifier} */
 const bcd = require('..');
