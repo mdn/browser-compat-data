@@ -3,10 +3,17 @@
 
 'use strict';
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const assert = require('assert').strict;
 
 const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
+/**
+ * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
+ */
 const tests = [
   {
     input: {

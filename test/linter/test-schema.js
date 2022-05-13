@@ -17,8 +17,11 @@ addFormats(ajv, { mode: 'fast' });
 ajvErrors(ajv);
 
 /**
- * @param {string} dataFilename
- * @param {string} [schemaFilename]
+ * Test a file to make sure it follows the defined schema
+ *
+ * @param {string} dataFilename The file to test
+ * @param {string} [schemaFilename] A specific schema file to test with, if needed
+ * @returns {boolean} If the file contains errors
  */
 function testSchema(
   dataFilename,
