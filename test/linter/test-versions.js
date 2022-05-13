@@ -6,20 +6,22 @@
 const path = require('path');
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../../types').Logger} Logger
  */
+
 const browsers = require('../..').browsers;
 
-/** @type {Object<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const validBrowserVersions = {};
 
-/** @type {Object<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const VERSION_RANGE_BROWSERS = {
   edge: ['≤18', '≤79'],
   ie: ['≤6', '≤11'],
@@ -28,6 +30,14 @@ const VERSION_RANGE_BROWSERS = {
   safari: ['≤4'],
   safari_ios: ['≤3'],
   webview_android: ['≤37'],
+};
+
+/** @type {Object<string, string>} */
+const browserTips = {
+  safari_ios:
+    'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
+  opera_android:
+    'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
 };
 
 for (const browser of Object.keys(browsers)) {
@@ -73,8 +83,11 @@ const blockList = {
 };
 
 /**
- * @param {string} browserIdentifier
- * @param {VersionValue} version
+ * Test to see if the browser allows for the specified version
+ *
+ * @param {string} browser The browser to check
+ * @param {VersionValue} version The version to test
+ * @returns {boolean} Whether the browser allows that version
  */
 function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
@@ -86,9 +99,18 @@ function isValidVersion(browser, category, version) {
   }
 }
 
+function hasVersionAddedOnly(statement) {
+  const keys = Object.keys(statement);
+  return keys.length === 1 && keys[0] === 'version_added';
+}
+
 /**
+ * Checks if the version number of version_removed is greater than or equal to
+ * that of version_added, assuming they are both version strings. If either one
+ * is not a valid version string, return null.
+ *
  * @param {SimpleSupportStatement} statement
- * @returns {boolean|null}
+ * @returns {(boolean|null)}
  */
 function addedBeforeRemoved(statement) {
   // In order to ensure that the versions could be displayed without the "≤"
@@ -116,9 +138,12 @@ function addedBeforeRemoved(statement) {
 }
 
 /**
- * @param {SupportBlock} supportData
- * @param {string} relPath
- * @param {Logger} logger
+ * Check the data for any errors in provided versions
+ *
+ * @param {SupportBlock} supportData The data to test
+ * @param {string} relPath The path to the data
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function checkVersions(supportData, category, relPath, logger) {
   const browsersToCheck = Object.keys(supportData);
@@ -129,6 +154,8 @@ function checkVersions(supportData, category, relPath, logger) {
         ? supportData[browser]
         : [supportData[browser]];
 
+      let sawVersionAddedOnly = false;
+
       for (const statement of supportStatements) {
         if (statement === undefined) {
           if (blockList[category].includes(browser)) {
@@ -137,19 +164,20 @@ function checkVersions(supportData, category, relPath, logger) {
             );
           }
         } else {
-          if (!isValidVersion(browser, category, statement.version_added)) {
-            logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_added: "${
-                statement.version_added
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${
-                blockList[category].includes(browser)
-                  ? `false, ${validBrowserVersions[browser].join(', ')}`
-                  : `true, false, null, ${validBrowserVersions[browser].join(
-                      ', ',
-                    )}`
-              }}`,
-            );
+          for (const property of ['version_added', 'version_removed']) {
+            if (!isValidVersion(browser, category, statement[property])) {
+              logger.error(
+                chalk`{red → {bold ${relPath}} - {bold ${property}: "${
+                  statement[property]
+                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
+                  browserTips[browser]
+                    ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
+                    : ''
+                }`,
+              );
+            }
           }
+
           if ('version_added' in statement && 'version_removed' in statement) {
             if (statement.version_added === statement.version_removed) {
               logger.error(
@@ -177,7 +205,7 @@ function checkVersions(supportData, category, relPath, logger) {
               addedBeforeRemoved(statement) === false
             ) {
               logger.error(
-                chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+                chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
               );
             }
           }
@@ -185,8 +213,19 @@ function checkVersions(supportData, category, relPath, logger) {
         if ('flags' in statement) {
           if (browsers[browser].accepts_flags === false) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
+              chalk`{bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
             );
+          }
+        }
+
+        if (hasVersionAddedOnly(statement)) {
+          if (sawVersionAddedOnly) {
+            logger.error(
+              chalk`{red → '{bold ${relPath}}' - {bold ${browser}} has multiple support statements with only {bold version_added}.}`,
+            );
+            break;
+          } else {
+            sawVersionAddedOnly = true;
           }
         }
       }
@@ -195,7 +234,30 @@ function checkVersions(supportData, category, relPath, logger) {
 }
 
 /**
- * @param {string} filename
+ * Process the data for version errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} relPath The path of the data
+ * @returns {void}
+ */
+function findSupport(data, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      checkVersions(data[prop].support, relPath, logger);
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+}
+
+/**
+ * Test for version errors
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testVersions(filename) {
   const relativePath = path.relative(
@@ -209,22 +271,7 @@ function testVersions(filename) {
 
   const logger = new Logger('Versions');
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, category, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, logger);
 
   logger.emit();
   return logger.hasErrors();
