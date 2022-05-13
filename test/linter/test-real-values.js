@@ -85,6 +85,38 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 }
 
 /**
+ * Process the data for nonreal values
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [relPath] The path to the data
+ * @returns {void}
+ */
+function findSupport(data, category, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      if (blockList[category] && blockList[category].length > 0)
+        checkRealValues(
+          data[prop].support,
+          blockList[category],
+          relPath,
+          logger,
+        );
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(
+        sub,
+        category,
+        logger,
+        relPath ? `${relPath}.${prop}` : `${prop}`,
+      );
+    }
+  }
+}
+
+/**
  * Test for real values within the data
  *
  * @param {string} filename The file to test
@@ -101,33 +133,7 @@ function testRealValues(filename) {
   const data = require(filename);
   const logger = new Logger('Real values');
 
-  /**
-   * Process the data for nonreal values
-   *
-   * @param {Identifier} data The data to test
-   * @param {string} category The category the data belongs to
-   * @param {Logger} logger The logger to output errors to
-   * @param {string} [relPath] The path to the data
-   * @returns {void}
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
-          checkRealValues(
-            data[prop].support,
-            blockList[category],
-            relPath,
-            logger,
-          );
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, category, logger);
 
   logger.emit();
   return logger.hasErrors();
