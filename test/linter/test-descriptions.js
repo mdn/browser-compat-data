@@ -11,100 +11,100 @@ const { Logger } = require('../utils.js');
  */
 
 /**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
+ * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
+ *
+ * @param {string} ruleName The name of the error
+ * @param {string} name The name of the API method
+ * @param {Identifier} feature - The feature's compat data.
+ * @param {string} expected Expected description
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
-function hasValidConstrutorDescription(apiData, apiName, logger) {
-  const constructor = apiData[apiName];
-  if (
-    constructor &&
-    constructor.__compat.description !== `<code>${apiName}()</code> constructor`
-  ) {
-    logger.error(chalk`Incorrect constructor description for {bold ${apiName}()}
-      {yellow Actual: {bold "${constructor.__compat.description || ''}"}}
-      {green Expected: {bold "<code>${apiName}()</code> constructor"}}`);
+function checkDescription(ruleName, name, method, expected, logger) {
+  const actual = method.__compat.description || '';
+  if (actual != expected) {
+    logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
+      Actual: {yellow "${actual}"}
+      Expected: {green "${expected}"}}`);
   }
 }
 
 /**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
+ * Process API data and check for any incorrect descriptions in said data, logging any errors
+ *
+ * @param {Identifier} apiData The data to test
+ * @param {string} apiName The name of the API
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
-function hasCorrectDOMEventsDescription(apiData, apiName, logger) {
-  for (const methodName in apiData) {
-    if (methodName.endsWith('_event')) {
-      const event = apiData[methodName];
-      const eventName = methodName.replace('_event', '');
-      if (event.__compat.description !== `<code>${eventName}</code> event`) {
-        logger.error(chalk`Incorrect event description for {bold ${apiName}#${methodName}}
-      {yellow Actual: {bold "${event.__compat.description || ''}"}}
-      {green Expected: {bold "<code>${eventName}</code> event"}}`);
-      }
+function processApiData(apiData, apiName, logger) {
+  for (const featureName in apiData) {
+    const feature = apiData[featureName];
+    if (featureName == apiName) {
+      checkDescription(
+        'constructor',
+        `${apiName}()`,
+        feature,
+        `<code>${apiName}()</code> constructor`,
+        logger,
+      );
+    } else if (featureName.endsWith('_event')) {
+      checkDescription(
+        'event',
+        `${apiName}.${featureName}`,
+        feature,
+        `<code>${featureName.replace('_event', '')}</code> event`,
+        logger,
+      );
+    } else if (featureName.endsWith('_permission')) {
+      checkDescription(
+        'permission',
+        `${apiName}.${featureName}`,
+        feature,
+        `<code>${featureName.replace('_permission', '')}</code> permission`,
+        logger,
+      );
+    } else if (featureName == 'secure_context_required') {
+      checkDescription(
+        'secure context required',
+        `${apiName}()`,
+        feature,
+        'Secure context required',
+        logger,
+      );
+    } else if (featureName == 'worker_support') {
+      checkDescription(
+        'worker',
+        `${apiName}()`,
+        feature,
+        'Available in workers',
+        logger,
+      );
     }
   }
 }
 
 /**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
+ * Process data and check for any incorrect descriptions in said data, logging any errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
-function hasCorrectSecureContextRequiredDescription(apiData, apiName, logger) {
-  const secureContext = apiData.secure_context_required;
-  if (
-    secureContext &&
-    secureContext.__compat.description !== `Secure context required`
-  ) {
-    logger.error(chalk`Incorrect secure context required description for {bold ${apiName}()}
-      {yellow Actual: {bold "${secureContext.__compat.description || ''}"}}
-      {green Expected: {bold "Secure context required"}}`);
+function processData(data, logger) {
+  if (data.api) {
+    for (const apiName in data.api) {
+      const apiData = data.api[apiName];
+      processApiData(apiData, apiName, logger);
+    }
   }
 }
 
 /**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
- */
-function hasCorrectWebWorkersDescription(apiData, apiName, logger) {
-  const workerSupport = apiData.worker_support;
-  if (
-    workerSupport &&
-    workerSupport.__compat.description !== `Available in workers`
-  ) {
-    logger.error(chalk`Incorrect worker support description for {bold ${apiName}()}
-      {yellow Actual: {bold "${workerSupport.__compat.description || ''}"}}
-      {green Expected: {bold "Available in workers"}}`);
-  }
-}
-
-/**
- * @param {Identifier} apiData
- * @param {String} apiName
- * @param {Logger} logger
- */
-function hasCorrectPermissionDescription(apiData, apiName, logger) {
-  const expectedDescrition = `<code>${apiName.replace(
-    '_permission',
-    '',
-  )}</code> permission`;
-  if (
-    apiName &&
-    apiName.match('_permission$') &&
-    apiData &&
-    apiData.__compat &&
-    apiData.__compat.description !== expectedDescrition
-  ) {
-    logger.error(chalk`Incorrect permission description for {bold ${apiName}}
-      {yellow Actual: {bold "${apiData.__compat.description || ''}"}}
-      {green Expected: {bold "${expectedDescrition}"}}`);
-  }
-}
-
-/**
- * @param {string} filename
+ * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} Whether the file has errors
  */
 function testDescriptions(filename) {
   /** @type {Identifier} */
@@ -112,22 +112,7 @@ function testDescriptions(filename) {
 
   const logger = new Logger('Descriptions');
 
-  if (data.api) {
-    for (const apiName in data.api) {
-      const apiData = data.api[apiName];
-      hasValidConstrutorDescription(apiData, apiName, logger);
-      hasCorrectDOMEventsDescription(apiData, apiName, logger);
-      hasCorrectSecureContextRequiredDescription(apiData, apiName, logger);
-      hasCorrectWebWorkersDescription(apiData, apiName, logger);
-    }
-  }
-
-  if (data.api && data.api.Permissions) {
-    for (const permissionKey in data.api.Permissions) {
-      const apiData = data.api.Permissions[permissionKey];
-      hasCorrectPermissionDescription(apiData, permissionKey, logger);
-    }
-  }
+  processData(data, logger);
 
   logger.emit();
   return logger.hasErrors();
