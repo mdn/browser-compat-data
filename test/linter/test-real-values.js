@@ -5,13 +5,14 @@
 
 const path = require('path');
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
  * @typedef {import('../../types').SupportBlock} SupportBlock
  * @typedef {import('../../types').VersionValue} VersionValue
+ * @typedef {import('../utils').Logger} Logger
  */
 
 /** @type {string[]} */
@@ -30,7 +31,7 @@ const blockMany = [
   'webview_android',
 ];
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const blockList = {
   api: blockMany,
   css: blockMany,
@@ -44,10 +45,13 @@ const blockList = {
 };
 
 /**
- * @param {SupportBlock} supportData
- * @param {string[]} blockList
- * @param {string} relPath
- * @param {Logger} logger
+ * Check if the feature has any browsers with nonreal data
+ *
+ * @param {SupportBlock} supportData The data to test
+ * @param {string[]} blockList The list of browsers required to have real values
+ * @param {string} relPath The path of the data
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function checkRealValues(supportData, blockList, relPath, logger) {
   for (const browser of blockList) {
@@ -62,17 +66,17 @@ function checkRealValues(supportData, blockList, relPath, logger) {
     for (const statement of supportStatements) {
       if (statement === undefined) {
         logger.error(
-          chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
+          chalk`{bold ${browser}} must be defined for {bold ${relPath}}`,
         );
       } else {
         if ([true, null].includes(statement.version_added)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value}`,
+            chalk`{bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_added}} as a value`,
           );
         }
         if ([true, null].includes(statement.version_removed)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_removed}} as a value}`,
+            chalk`{bold ${relPath}} - {bold ${browser}} no longer accepts {bold ${statement.version_removed}} as a value`,
           );
         }
       }
@@ -81,7 +85,42 @@ function checkRealValues(supportData, blockList, relPath, logger) {
 }
 
 /**
- * @param {string} filename
+ * Process the data for nonreal values
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} [relPath] The path to the data
+ * @returns {void}
+ */
+function findSupport(data, category, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      if (blockList[category] && blockList[category].length > 0)
+        checkRealValues(
+          data[prop].support,
+          blockList[category],
+          relPath,
+          logger,
+        );
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(
+        sub,
+        category,
+        logger,
+        relPath ? `${relPath}.${prop}` : `${prop}`,
+      );
+    }
+  }
+}
+
+/**
+ * Test for real values within the data
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 function testRealValues(filename) {
   const relativePath = path.relative(
@@ -94,28 +133,7 @@ function testRealValues(filename) {
   const data = require(filename);
   const logger = new Logger('Real values');
 
-  /**
-   * @param {Identifier} data
-   * @param {string} [relPath]
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        if (blockList[category] && blockList[category].length > 0)
-          checkRealValues(
-            data[prop].support,
-            blockList[category],
-            relPath,
-            logger,
-          );
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, category, logger);
 
   logger.emit();
   return logger.hasErrors();
