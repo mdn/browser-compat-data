@@ -5,7 +5,7 @@
 
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -126,12 +126,12 @@ function checkVersions(supportData, relPath, logger) {
       for (const statement of supportStatements) {
         if (!isValidVersion(browser, statement.version_added)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+            chalk`{bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}`,
           );
         }
         if (!isValidVersion(browser, statement.version_removed)) {
           logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+            chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}`,
           );
         }
         if ('version_added' in statement && 'version_removed' in statement) {
@@ -145,7 +145,7 @@ function checkVersions(supportData, relPath, logger) {
             statement.version_added !== true
           ) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}}`,
+              chalk`{bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}`,
             );
           } else if (
             typeof statement.version_added === 'string' &&
@@ -153,7 +153,7 @@ function checkVersions(supportData, relPath, logger) {
           ) {
             if (addedBeforeRemoved(statement) === false) {
               logger.error(
-                chalk`{red → {bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}}`,
+                chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
               );
             }
           }
@@ -161,7 +161,7 @@ function checkVersions(supportData, relPath, logger) {
         if ('flags' in statement) {
           if (browsers[browser].accepts_flags === false) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.}`,
+              chalk`{bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
             );
           }
         }

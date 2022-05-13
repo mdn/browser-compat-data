@@ -6,7 +6,12 @@
 const fs = require('fs');
 const url = require('url');
 const chalk = require('chalk');
-const { IS_WINDOWS, indexToPos, indexToPosRaw } = require('../utils.js');
+const {
+  IS_WINDOWS,
+  indexToPos,
+  indexToPosRaw,
+  Logger,
+} = require('../utils.js');
 
 /**
  * @typedef {object} LinkError
@@ -239,23 +244,19 @@ function processLink(errors, actual, regexp, matchHandler) {
  * @returns {boolean} If the file contains errors
  */
 function testLinks(filename) {
+  const logger = new Logger('Links');
+
   /** @type {Object[]} */
   let errors = processData(filename);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Links – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
+  for (const error of errors) {
+    logger.error(
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
     );
-    for (const error of errors) {
-      console.error(
-        chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
-      );
-    }
-    return true;
   }
-  return false;
+
+  logger.emit();
+  return logger.hasErrors();
 }
 
 module.exports = testLinks;
