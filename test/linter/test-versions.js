@@ -182,6 +182,26 @@ function checkVersions(supportData, relPath, logger) {
 }
 
 /**
+ * Process the data for version errors
+ *
+ * @param {Identifier} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} relPath The path of the data
+ * @returns {void}
+ */
+function findSupport(data, logger, relPath) {
+  for (const prop in data) {
+    if (prop === '__compat' && data[prop].support) {
+      checkVersions(data[prop].support, relPath, logger);
+    }
+    const sub = data[prop];
+    if (typeof sub === 'object') {
+      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
+    }
+  }
+}
+
+/**
  * Test for version errors
  *
  * @param {string} filename The file to test
@@ -193,25 +213,7 @@ function testVersions(filename) {
 
   const logger = new Logger('Versions');
 
-  /**
-   * Process the data for version errors
-   *
-   * @param {Identifier} data The data to test
-   * @param {string} relPath The path of the data
-   * @returns {void}
-   */
-  function findSupport(data, relPath) {
-    for (const prop in data) {
-      if (prop === '__compat' && data[prop].support) {
-        checkVersions(data[prop].support, relPath, logger);
-      }
-      const sub = data[prop];
-      if (typeof sub === 'object') {
-        findSupport(sub, relPath ? `${relPath}.${prop}` : `${prop}`);
-      }
-    }
-  }
-  findSupport(data);
+  findSupport(data, logger);
 
   logger.emit();
   return logger.hasErrors();
