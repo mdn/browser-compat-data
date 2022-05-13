@@ -1,5 +1,10 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
