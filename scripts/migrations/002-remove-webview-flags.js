@@ -3,6 +3,10 @@
 
 'use strict';
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
@@ -10,6 +14,14 @@ const { platform } = require('os');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
+/**
+ * Check to see if the key is __compat and modify the value to remove
+ * flags from WebView Android.
+ *
+ * @param {string} key The key in the object
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} The new value with WebView flags removed
+ */
 const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
@@ -37,7 +49,11 @@ const removeWebViewFlags = (key, value) => {
 };
 
 /**
- * @param {string} filename
+ * Perform removal of flags within WebView data within all the datain a
+ * specified file. The function will then automatically write any needed
+ * changes back into the file.
+ *
+ * @param {string} filename The filename to perform migration upon
  */
 const fixWebViewFlags = (filename) => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -60,7 +76,11 @@ const fixWebViewFlags = (filename) => {
 
 if (require.main === module) {
   /**
-   * @param {string[]} files
+   * Recursively load one or more files and/or directories passed as arguments
+   * and perform removal of flags from WebView support data.
+   *
+   * @param {string[]} files The files to load and perform migration upon
+   * @returns {void}
    */
   function load(...files) {
     for (let file of files) {

@@ -9,7 +9,10 @@ const fixBrowserOrder = require('./browser-order');
 const fixFeatureOrder = require('./feature-order');
 
 /**
- * @param {string[]} files
+ * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
+ *
+ * @param {string[]} files The files to load and perform fix upon
+ * @returns {void}
  */
 function load(...files) {
   for (let file of files) {
