@@ -132,28 +132,20 @@ function checkVersions(supportData, relPath, logger) {
       let sawVersionAddedOnly = false;
 
       for (const statement of supportStatements) {
-        if (!isValidVersion(browser, statement.version_added)) {
-          logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_added: "${
-              statement.version_added
-            }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
-              browserTips[browser]
-                ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                : ''
-            }`,
-          );
+        for (const property of ['version_added', 'version_removed']) {
+          if (!isValidVersion(browser, statement[property])) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
+                statement[property]
+              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
+                browserTips[browser]
+                  ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
+                  : ''
+              }`,
+            );
+          }
         }
-        if (!isValidVersion(browser, statement.version_removed)) {
-          logger.error(
-            chalk`{red → {bold ${relPath}} - {bold version_removed: "${
-              statement.version_removed
-            }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
-              browserTips[browser]
-                ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                : ''
-            }`,
-          );
-        }
+
         if ('version_added' in statement && 'version_removed' in statement) {
           if (statement.version_added === statement.version_removed) {
             logger.error(
