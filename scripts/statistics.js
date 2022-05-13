@@ -7,11 +7,11 @@
  * @typedef {import('../../types').Identifier} Identifier
  *
  * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
+ * @property {number} all - The total number of occurrences for the browser.
+ * @property {number} true - The total number of `true` values for the browser.
+ * @property {number} null - The total number of `null` values for the browser.
+ * @property {number} range - The total number of range values for the browser.
+ * @property {number} real - The total number of real values for the browser.
  */
 
 const chalk = require('chalk');

@@ -31,11 +31,11 @@ const browsers = {
  * Check the data for any disallowed browsers or if it's missing required browsers
  *
  * @param {Identifier} data The data to test
- * @param {string[]} displayBrowsers All of the allowed browsers for this data
- * @param {string[]} requiredBrowsers All of the required browsers for this data
- * @param {string} category The category the data belongs to
- * @param {Logger} logger The logger to output errors to
- * @param {string} [path] The path of the data
+ * @param {string[]} displayBrowsers All of the allowed browsers for this data.
+ * @param {string[]} requiredBrowsers All of the required browsers for this data.
+ * @param {string} category The category the data belongs to.
+ * @param {Logger} logger The logger to output errors to.
+ * @param {string} [path] The path of the data.
  * @returns {void}
  */
 function processData(

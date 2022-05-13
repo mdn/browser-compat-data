@@ -44,7 +44,6 @@ const { argv } = require('yargs').command(
  * @param {Identifier} obj The compat data to traverse through
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @param {string} values The values to test for in stringified format
  * @returns {void}
  */
 function traverseFeatures(obj, depth, identifier) {
