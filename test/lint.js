@@ -164,10 +164,7 @@ const main = (files) => {
   if (hasErrors) {
     console.error('');
     console.error(
-      chalk`{red Problems in {bold ${pluralize(
-        'file',
-        filesWithErrors.size,
-      )}}:}`,
+      chalk`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
     );
     for (let error of errors) {
       console.error(error);
