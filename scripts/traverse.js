@@ -3,6 +3,10 @@
 
 'use strict';
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
@@ -108,6 +112,16 @@ function* iterateFeatures(obj, browsers, values, depth, identifier) {
   }
 }
 
+/**
+ * Traverse all of the features within a specified object and find all features that have one of the specified values
+ *
+ * @param {Identifier} obj The compat data to traverse through
+ * @param {string[]} browsers The browsers to traverse for
+ * @param {string[]} values The version values to traverse for
+ * @param {number} depth The depth to traverse
+ * @param {string} identifier The identifier of the current object
+ * @returns {void}
+ */
 function traverseFeatures(obj, browsers, values, depth, identifier) {
   const features = Array.from(
     iterateFeatures(obj, browsers, values, depth, identifier),
