@@ -187,6 +187,7 @@ const getStat = (stats, type, counts) => {
  *
  * @param {object.<string, VersionStats>} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @param {boolean} counts Whether to display a count vs. a percentage
  * @returns {void}
  */
 const printStats = (stats, folder, counts) => {
