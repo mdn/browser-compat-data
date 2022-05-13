@@ -1,8 +1,9 @@
-const {
-  buildQuery,
-  getRefDate,
-  releaseYargsBuilder,
-} = require('./release-utils');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
+const { buildQuery, getRefDate, releaseYargsBuilder } = require('./utils');
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
