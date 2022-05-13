@@ -52,7 +52,7 @@
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "node scripts/diff.js",
-    "mocha": "mocha \"**/*.test.js\"",
+    "mocha": "mocha \"{,!(node_modules)/**}/*.test.js\"",
     "format": "npx eslint --fix '**/*.js' && npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx eslint --fix '**/*.js' && npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
