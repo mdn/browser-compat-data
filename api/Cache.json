@@ -54,6 +54,60 @@
           "deprecated": false
         }
       },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "40",
+              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
+            },
+            "chrome_android": {
+              "version_added": "40",
+              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "firefox": {
+              "version_added": "44",
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers."
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "27",
+              "notes": "Before version 30, only service workers are supported. From version 30, all worker types and the main thread are supported."
+            },
+            "opera_android": {
+              "version_added": "27",
+              "notes": "Before version 30, only service workers are supported. From version 30, all worker types and the main thread are supported."
+            },
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": {
+              "version_added": "11"
+            },
+            "samsunginternet_android": {
+              "version_added": "4.0"
+            },
+            "webview_android": {
+              "version_added": "40",
+              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "add": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Cache/add",
@@ -414,60 +468,6 @@
             "webview_android": {
               "version_added": "43",
               "notes": "Requires HTTPS from version 46."
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {
-            "chrome": {
-              "version_added": "40",
-              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
-            },
-            "chrome_android": {
-              "version_added": "40",
-              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
-            },
-            "edge": {
-              "version_added": "16"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "27",
-              "notes": "Before version 30, only service workers are supported. From version 30, all worker types and the main thread are supported."
-            },
-            "opera_android": {
-              "version_added": "27",
-              "notes": "Before version 30, only service workers are supported. From version 30, all worker types and the main thread are supported."
-            },
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40",
-              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
             }
           },
           "status": {
