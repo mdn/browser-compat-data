@@ -12,11 +12,11 @@ const { processData } = require('../../test/linter/test-links.js');
 const IS_WINDOWS = platform() === 'win32';
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
 const fixLinks = (filename) => {
-  let errors = processData(filename);
-  let original = fs.readFileSync(filename, 'utf-8').trim();
+  const errors = processData(filename);
+  const original = fs.readFileSync(filename, 'utf-8').trim();
   let data = original;
 
   if (IS_WINDOWS) {
@@ -24,7 +24,7 @@ const fixLinks = (filename) => {
     data = data.replace(/\r/g, '');
   }
 
-  for (let error of errors) {
+  for (const error of errors) {
     if (error.expected) {
       data = data.replace(error.actual, error.expected);
     }
