@@ -177,7 +177,7 @@ function checkVersions(supportData, relPath, logger) {
             );
           }
         }
-        
+
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
             logger.error(
@@ -188,7 +188,7 @@ function checkVersions(supportData, relPath, logger) {
             sawVersionAddedOnly = true;
           }
         }
-        
+
         if (statement.version_added === false) {
           if (
             Object.keys(statement).filter(
