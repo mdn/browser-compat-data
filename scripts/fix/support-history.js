@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 const fs = require('fs');
-const { hasSupportHistory } = require('../test/linter/test-support-history');
+const { hasSupportHistory } = require('../../test/linter/test-support-history');
 
 /**
  * @param {Identifier} data

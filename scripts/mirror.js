@@ -212,10 +212,9 @@ const copyStatement = (data) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpChromeAndroid = (originalData, sourceData, source) => {
+const bumpChromeAndroid = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -314,10 +313,9 @@ const bumpEdge = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpFirefoxAndroid = (originalData, sourceData, source) => {
+const bumpFirefoxAndroid = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -475,10 +473,9 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, sourceData, source) => {
+const bumpWebView = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   const createWebViewRange = (version) => {
@@ -516,10 +513,9 @@ const bumpWebView = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpGeneric = (originalData, sourceData, source) => {
+const bumpGeneric = (originalData, sourceData) => {
   // For browsers we're not tracking, simply mirror the source data
   return sourceData;
 };

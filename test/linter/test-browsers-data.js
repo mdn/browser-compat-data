@@ -3,9 +3,8 @@
 
 'use strict';
 
-const path = require('path');
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -14,8 +13,8 @@ const { Logger } = require('./utils.js');
 
 /**
  * @param {Identifier} data
- * @param {Logger} logger
- * @returns {boolean}
+ * @param {Logger} logger The logger to output errors to
+ * @returns {void}
  */
 function processData(data, logger) {
   // We only need to grab the first browser in the data
@@ -25,8 +24,8 @@ function processData(data, logger) {
 
   for (const status of ['current', 'beta', 'nightly']) {
     const releasesForStatus = Object.entries(releases)
-      .filter(([version, data]) => data.status == status)
-      .map(([version, data]) => version);
+      .filter(([, data]) => data.status == status)
+      .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(

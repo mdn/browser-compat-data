@@ -22,7 +22,7 @@ const {
   testSupportHistory,
   testVersions,
 } = require('./linter/index.js');
-const { IS_CI } = require('./utils.js');
+const { IS_CI, pluralize } = require('./utils.js');
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
@@ -173,9 +173,7 @@ var hasErrors = argv.files
 if (hasErrors) {
   console.warn('');
   console.warn(
-    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:}`,
+    chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
   );
   for (const [fileName, file] of filesWithErrors) {
     console.warn(chalk`{red.bold ✖ ${fileName}}`);
