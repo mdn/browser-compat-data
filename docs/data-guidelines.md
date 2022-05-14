@@ -251,6 +251,8 @@ A `version_removed` should be added to support statements containing flags under
 - The feature has been removed from the browser.
 - The flag has been removed from the browser.
 
+This guideline was proposed in [#16287](https://github.com/mdn/browser-compat-data/pull/16287).
+
 ## Initial versions for browsers
 
 The schema docs list [initial versions](../schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.
