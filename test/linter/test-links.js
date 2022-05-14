@@ -251,7 +251,8 @@ function testLinks(filename) {
 
   for (const error of errors) {
     logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).\n{blue Tip: Run {bold npm run fix} to fix links automatically}`,
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+      chalk`Run {bold npm run fix} to fix links automatically`,
     );
   }
 

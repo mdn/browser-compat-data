@@ -135,13 +135,8 @@ function checkVersions(supportData, relPath, logger) {
         for (const property of ['version_added', 'version_removed']) {
           if (!isValidVersion(browser, statement[property])) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
-                statement[property]
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
-                browserTips[browser]
-                  ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                  : ''
-              }`,
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${statement[property]}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+              browserTips[browser],
             );
           }
         }
