@@ -1,7 +1,6 @@
-/* This file is a part of @mdn/browser-compat-data
- * See LICENSE file for more information. */
-
-'use strict';
+#!/usr/bin/env node
+/* Any copyright is dedicated to the Public Domain.
+ * http://creativecommons.org/publicdomain/zero/1.0/ */
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -16,6 +15,7 @@
  * @returns {*} The new value
  */
 
+'use strict';
 const fs = require('fs');
 const path = require('path');
 const { platform } = require('os');
@@ -23,26 +23,20 @@ const { platform } = require('os');
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-const compareFeatures = require('./compare-features');
-
-function orderFeatures(key, value) {
-  if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value)
-      .sort(compareFeatures)
-      .reduce((result, key) => {
-        result[key] = value[key];
-        return result;
-      }, {});
+const fixStatus = (key, value) => {
+  const status = value?.__compat?.status;
+  if (status && status.experimental && status.deprecated) {
+    status.experimental = false;
   }
   return value;
-}
+};
 
 /**
- * @param {string} filename
+ * @param {Promise<void>} filename
  */
-const fixFeatureOrder = (filename) => {
+const fixStatusContradiction = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
+  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
@@ -71,7 +65,7 @@ if (require.main === module) {
 
       if (fs.statSync(file).isFile()) {
         if (path.extname(file) === '.json') {
-          fixFeatureOrder(file);
+          fixStatusContradiction(file);
         }
 
         continue;
@@ -103,4 +97,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = fixFeatureOrder;
+module.exports = fixStatusContradiction;
