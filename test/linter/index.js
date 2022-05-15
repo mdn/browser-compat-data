@@ -14,7 +14,7 @@ const testRealValues = require('./test-real-values.js');
 const testSchema = require('./test-schema.js');
 const testStyle = require('./test-style.js');
 const testVersions = require('./test-versions.js');
-const testSupportHistory = require('./test-support-history.js');
+const { testSupportHistory } = require('./test-support-history.js');
 
 module.exports = {
   testBrowsersData,
