@@ -7,7 +7,6 @@ const Ajv = require('ajv').default;
 const ajvErrors = require('ajv-errors');
 const addFormats = require('ajv-formats');
 const betterAjvErrors = require('better-ajv-errors').default;
-const chalk = require('chalk');
 const { Logger } = require('../utils.js');
 
 /**
