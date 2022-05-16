@@ -1,21 +1,8 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
-
-/**
- * Return a new feature object whose first-level properties have been
- * ordered according to Array.prototype.sort, and so will be
- * stringified in that order as well. This relies on guaranteed "own"
- * property ordering, which is insertion order for non-integer keys
- * (which is our case).
- *
- * @param {string} key The key in the object
- * @param {*} value The value of the key
- *
- * @returns {*} The new value
- */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
+
 const fs = require('fs');
 const { platform } = require('os');
 
