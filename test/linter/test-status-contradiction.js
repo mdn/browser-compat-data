@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -30,7 +30,7 @@ function checkStatus(data, logger, path = []) {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testStatus(filename) {
+function testStatusContradiction(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
@@ -42,4 +42,4 @@ function testStatus(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testStatus;
+module.exports = testStatusContradiction;
