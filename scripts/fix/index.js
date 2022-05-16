@@ -8,7 +8,7 @@ const path = require('path');
 const fixBrowserOrder = require('./browser-order');
 const fixFeatureOrder = require('./feature-order');
 const fixLinks = require('./links');
-const fixStatus = require('./fix-status-contradiction');
+const fixStatusContradiction = require('./status-contradiction');
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
@@ -32,7 +32,7 @@ function load(...files) {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
         fixLinks(file);
-        fixStatus(file);
+        fixStatusContradiction(file);
       }
 
       continue;
