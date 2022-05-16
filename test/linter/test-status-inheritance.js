@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+const { Logger } = require('../utils.js');
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
