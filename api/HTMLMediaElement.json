@@ -3768,7 +3768,13 @@
               "version_added": "3.1"
             },
             "safari_ios": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": [
+                "`volume` returns a value and is writeable; however, the value is always 1, and setting a value has no effect on the volume of the media object.",
+                "On iOS 12 and below, setting a value on `volume` has no effect on the value of `volume`.",
+                "On iOS 13 and up, setting a value on `volume` *will* update the value of `volume`, but it will be reset to 1 asynchronously."
+              ]
             },
             "samsunginternet_android": {
               "version_added": "1.0"
