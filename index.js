@@ -4,7 +4,6 @@
 'use strict';
 
 const fs = require('fs');
-const path = require('path');
 const { fdir } = require('fdir');
 
 class DuplicateCompatError extends Error {
