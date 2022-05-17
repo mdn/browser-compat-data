@@ -25,13 +25,7 @@ describe('mirror', function () {
     assert.equal(match('chrome', '26', 'chrome_android'), '26');
   });
 
-  it('edge', function () {
-    assert.equal(match('chrome', '1', 'edge'), false);
-    assert.equal(match('chrome', '27', 'edge'), false);
-    assert.equal(match('chrome', '28', 'edge'), '79');
-    assert.equal(match('chrome', '79', 'edge'), '79');
-    assert.equal(match('chrome', '80', 'edge'), '80');
-  });
+  // Edge is not tested because getMatchingBrowserVersion() isn't used for Edge.
 
   it('firefox_android', function () {
     assert.equal(match('firefox', '1', 'firefox_android'), '4');
