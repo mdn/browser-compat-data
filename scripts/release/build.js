@@ -27,8 +27,8 @@ async function writeData() {
 }
 
 async function writeIndexForESM1214() {
-  const dest = path.resolve(directory, 'nodejs12-14.js');
-  const content = `import fs from 'node:fs';\nconst bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));\n`;
+  const dest = path.resolve(directory, 'nodejs12-14.mjs');
+  const content = `import fs from 'node:fs';\nconst bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));\nexport default bcd;\n`;
   await fs.writeFile(dest, content);
 }
 
@@ -47,7 +47,7 @@ function createManifest() {
     main: 'data.json',
     exports: {
       '.': './data.json',
-      'Node12-14': './nodejs12-14.js',
+      './Node12-14': './nodejs12-14.mjs',
     },
   };
 
