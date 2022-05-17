@@ -29,9 +29,24 @@ yarn add @mdn/browser-compat-data
 You can then import BCD into your project.
 
 ```js
-import bcd from '@mdn/browser-compat-data' assert { type: 'json' }; // ESM (NodeJS 14+)
+import bcd from '@mdn/browser-compat-data' assert { type: 'json' }; // ESM w/ Import Assertions (NodeJS 16+)
 // ...or...
 const bcd = require('@mdn/browser-compat-data'); // CommonJS Module (Any NodeJS)
+```
+
+Note: **NodeJS v12 and v14** do not support ESM import assertions. To keep bundle sizes as small as possible, you will need to perform the following workaround:
+
+```js
+// ESM on NodeJS v12-v14
+import fs from 'node:fs';
+const bcd = JSON.parse(
+  fs.readFileSync(
+    new URL(
+      './node_modules/@mdn/browser-compat-data/data.json',
+      import.meta.url,
+    ),
+  ),
+);
 ```
 
 ### Deno/Browsers
