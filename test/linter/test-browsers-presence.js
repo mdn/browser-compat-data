@@ -30,15 +30,9 @@ function processData(data, category, logger, path = '') {
     const support = data.__compat.support;
     const definedBrowsers = Object.keys(support);
 
-    let displayBrowsers = [
-      ...Object.keys(browsers).filter((b) =>
-        ['desktop', 'mobile'].includes(browsers[b].type),
-      ),
-      ,
-    ];
-    let requiredBrowsers = [
-      ...Object.keys(browsers).filter((b) => browsers[b].type == 'desktop'),
-    ];
+    let displayBrowsers = Object.keys(browsers).filter((b) =>
+        ['desktop', 'mobile'].includes(browsers[b].type));
+    let requiredBrowsers = Object.keys(browsers).filter((b) => browsers[b].type == 'desktop');
 
     if (category === 'api' || category === 'javascript') {
       displayBrowsers.push(
