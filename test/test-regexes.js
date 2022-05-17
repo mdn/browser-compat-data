@@ -1,5 +1,7 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
-const assert = require('assert').strict;
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -10,8 +12,32 @@ const assert = require('assert').strict;
  * @property {string[]} misses
  */
 
+const assert = require('assert').strict;
+
 /** @type {Identifier} */
 const bcd = require('..');
+
+/** @type {TestCase[]} */
+const tests = [
+  {
+    features: ['css.properties.color.alpha_hexadecimal_notation'],
+    matches: ['#003399ff', '#0af9'],
+    misses: ['#00aaff', '#0af', 'green', '#greenish'],
+  },
+  {
+    features: ['css.properties.transform-origin.three_value_syntax'],
+    matches: [
+      '2px 30% 10px', // length, percentage, length
+      'right bottom -2cm', // two keywords and length
+      'calc(50px - 25%) 2px 1px', // lengths with calc
+    ],
+    misses: [
+      'center', // one value syntax
+      'left 5px', // two value syntax
+      'left calc(10px - 50%)', // two value syntax with calc
+    ],
+  },
+];
 
 /**
  * @param {string} dottedFeature
@@ -41,28 +67,10 @@ function testToken(feature, matches, misses) {
   );
 }
 
-/** @type {TestCase[]} */
-const tests = [
-  {
-    features: ['css.properties.color.alpha_hexadecimal_notation'],
-    matches: ['#003399ff', '#0af9'],
-    misses: ['#00aaff', '#0af', 'green', '#greenish'],
-  },
-  {
-    features: ['css.properties.transform-origin.three_value_syntax'],
-    matches: [
-      '2px 30% 10px', // length, percentage, length
-      'right bottom -2cm', // two keywords and length
-      'calc(50px - 25%) 2px 1px', // lengths with calc
-    ],
-    misses: [
-      'center', // one value syntax
-      'left 5px', // two value syntax
-      'left calc(10px - 50%)', // two value syntax with calc
-    ],
-  },
-];
+const testRegexes = () => {
+  tests.forEach(({ features, matches, misses }) => {
+    features.forEach((feature) => testToken(lookup(feature), matches, misses));
+  });
+};
 
-tests.forEach(({ features, matches, misses }) => {
-  features.forEach((feature) => testToken(lookup(feature), matches, misses));
-});
+module.exports = testRegexes;
