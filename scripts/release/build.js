@@ -50,7 +50,7 @@ function createManifest() {
     main: 'data.json',
     exports: {
       '.': './data.json',
-      './NodeWrapper': './nodewrapper.mjs',
+      './wrapper': './nodewrapper.mjs',
     },
   };
 
