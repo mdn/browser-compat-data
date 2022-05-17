@@ -33,7 +33,7 @@ Then, you can import BCD into your project with either `import` or `require()`:
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
-import bcd from '@mdn/browser-compat-data/Node12-14';
+import bcd from '@mdn/browser-compat-data/NodeWrapper';
 // ...or...
 // CommonJS Module (Any NodeJS)
 const bcd = require('@mdn/browser-compat-data');

@@ -26,8 +26,8 @@ async function writeData() {
   await fs.writeFile(dest, data);
 }
 
-async function writeIndexForESM1214() {
-  const dest = path.resolve(directory, 'nodejs12-14.mjs');
+async function writeWrapper() {
+  const dest = path.resolve(directory, 'nodewrapper.mjs');
   const content = `import fs from 'node:fs';\nconst bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));\nexport default bcd;\n`;
   await fs.writeFile(dest, content);
 }
@@ -47,7 +47,7 @@ function createManifest() {
     main: 'data.json',
     exports: {
       '.': './data.json',
-      './Node12-14': './nodejs12-14.mjs',
+      './NodeWrapper': './nodewrapper.mjs',
     },
   };
 
@@ -97,7 +97,7 @@ async function main() {
 
   await writeManifest();
   await writeData();
-  await writeIndexForESM1214();
+  await writeWrapper();
   await copyFiles();
 
   console.log('Data bundle is ready');
