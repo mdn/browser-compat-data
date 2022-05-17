@@ -20,21 +20,25 @@ Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)
 
 You can install `@mdn/browser-compat-data` as a node package.
 
-```
+```bash
 npm install @mdn/browser-compat-data
-...or...
+# ...or...
 yarn add @mdn/browser-compat-data
 ```
 
 Then, you can import BCD into your project with either `import` or `require()`:
 
 ```js
-// ESM w/ Import Assertions (NodeJS 16+)
+// ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+
 // ...or...
+
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
 import bcd from '@mdn/browser-compat-data/NodeWrapper';
+
 // ...or...
+
 // CommonJS Module (Any NodeJS)
 const bcd = require('@mdn/browser-compat-data');
 ```
