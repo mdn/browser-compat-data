@@ -197,7 +197,7 @@ function checkVersions(supportData, relPath, logger) {
             );
           }
         }
-        
+
         if (
           supportStatements.length > 1 &&
           statement.version_added === false &&
