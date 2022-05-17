@@ -60,8 +60,6 @@ class ConsistencyChecker {
 
     // Check this feature.
     if (this.isFeature(data)) {
-      const feature = path.length ? path[path.length - 1] : 'ROOT';
-
       const errors = this.checkFeature(data);
 
       if (errors.length) {

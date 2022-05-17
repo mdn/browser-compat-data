@@ -62,6 +62,16 @@ const { argv } = require('yargs').command(
   },
 );
 
+/**
+ * Traverse all of the features within a specified object and find all features that have one of the specified values
+ *
+ * @param {Identifier} obj The compat data to traverse through
+ * @param {string[]} browsers The browsers to test for
+ * @param {string[]} values The values to test for
+ * @param {number} depth The depth to traverse
+ * @param {string} identifier The identifier of the current object
+ * @returns {void}
+ */
 function* iterateFeatures(obj, browsers, values, depth, identifier) {
   depth--;
   if (depth >= 0) {
@@ -110,6 +120,8 @@ function* iterateFeatures(obj, browsers, values, depth, identifier) {
       }
     }
   }
+
+  return features;
 }
 
 /**
