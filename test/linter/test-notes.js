@@ -1,4 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
 const chalk = require('chalk');
 const HTMLParser = require('@desertnet/html-parser');
 const { Logger, VALID_ELEMENTS } = require('../utils.js');
@@ -81,6 +85,12 @@ const validateHTML = (string, browser, feature, logger) => {
   if (string.includes('  ')) {
     logger.error(
       chalk`Notes for {bold ${feature}} in {bold ${browser}} have double-spaces. Notes are required to have single spaces only.`,
+    );
+  }
+
+  if (string.includes('\n')) {
+    logger.error(
+      chalk`Notes for {bold ${feature}} in {bold ${browser}} may not contain newlines.`,
     );
   }
 };

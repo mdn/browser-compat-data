@@ -41,9 +41,17 @@ Underneath, there is a `releases` object which will hold the various releases of
 
 The `name` string is a required property which should use the browser brand name and avoid English words if possible, for example `"Firefox"`, `"Firefox Android"`, `"Safari"`, `"iOS Safari"`, etc.
 
+### `type`
+
+The `type` string is a required property which indicates the platform category the browser runs on. Valid options are `"desktop"`, `"mobile"` and `"server"`.
+
 ### `accepts_flags`
 
 An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
+
+### `accepts_webextensions`
+
+An optional boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
 
 ### `pref_url`
 
