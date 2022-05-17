@@ -1,4 +1,4 @@
-const { parse } = require('node-html-parser');
+const HTMLParser = require('@desertnet/html-parser');
 
 const bcd = require('.');
 const { walk } = require('./utils');
@@ -17,6 +17,31 @@ const entryPoints = [
   // Not web exposed in the typical way:
   // 'webdriver', 'webextensions',
 ];
+
+function* getLinks(notes) {
+  function* walk(node) {
+    if (node.tagName === 'a') {
+      for (const attr of node.attributes) {
+        if (attr._name === 'href') {
+          yield attr._value;
+        }
+      }
+    }
+    if (node.children) {
+      for (const child of node.children) {
+        yield* walk(child);
+      }
+    }
+  }
+
+  if (Array.isArray(notes)) {
+    // Join notes to parse once, assuming HTML is valid enough.
+    notes = notes.join('\n');
+  }
+
+  const parser = new HTMLParser();
+  yield* walk(parser.parse(notes));
+}
 
 function main() {
   console.log(`path,deprecated,experimental,${browsers.join(',')},comments`);
@@ -44,9 +69,8 @@ function main() {
       const firstRange = ranges[0];
       const notes = firstRange.notes;
       if (notes) {
-        const tree = parse(notes);
-        for (const link of tree.querySelectorAll('a')) {
-          links.push(link.getAttribute('href'));
+        for (const link of getLinks(notes)) {
+          links.push(link);
         }
       }
       if (firstRange.version_removed) {
