@@ -168,19 +168,6 @@ function checkVersions(supportData, relPath, logger) {
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
-          if (!isValidVersion(browser, statement[property])) {
-            logger.error(
-              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
-                statement[property]
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
-                browser
-              ].join(', ')}}`,
-              browserTips[browser],
-            );
-          }
-        }
-
-        for (const property of ['version_added', 'version_removed']) {
           if (
             property == 'version_removed' &&
             statement.version_removed === undefined
