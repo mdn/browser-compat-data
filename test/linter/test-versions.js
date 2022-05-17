@@ -179,11 +179,8 @@ function checkVersions(supportData, relPath, logger) {
                   statement[property]
                 }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
                   browser
-                ].join(', ')}}${
-                  browserTips[browser]
-                    ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                    : ''
-                }`,
+                ].join(', ')}}`,
+                browserTips[browser],
               );
             }
           }
