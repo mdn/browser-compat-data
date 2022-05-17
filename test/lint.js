@@ -152,8 +152,8 @@ function load(...files) {
 
 const main = (files) => {
   /** @type {boolean} */
-  var hasErrors = argv.files
-    ? load.apply(undefined, argv.files)
+  var hasErrors = files
+    ? load.apply(undefined, files)
     : load(
         'api',
         'browsers',
