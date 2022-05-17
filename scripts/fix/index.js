@@ -44,19 +44,25 @@ function load(...files) {
   }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
-} else {
-  load(
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'test',
-    'webdriver',
-    'webextensions',
-  );
+if (require.main === module) {
+  if (process.argv[2]) {
+    load(process.argv[2]);
+  } else {
+    load(
+      'api',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'test',
+      'webdriver',
+      'webextensions',
+    );
+
+    format();
+  }
 }
+
+module.exports = load;

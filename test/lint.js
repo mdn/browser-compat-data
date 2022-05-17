@@ -150,49 +150,59 @@ function load(...files) {
   }, false);
 }
 
-/** @type {boolean} */
-var hasErrors = argv.files
-  ? load.apply(undefined, argv.files)
-  : load(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    );
+const main = (files) => {
+  /** @type {boolean} */
+  var hasErrors = argv.files
+    ? load.apply(undefined, argv.files)
+    : load(
+        'api',
+        'browsers',
+        'css',
+        'html',
+        'http',
+        'svg',
+        'javascript',
+        'mathml',
+        'webdriver',
+        'webextensions',
+      );
 
-if (hasErrors) {
-  console.warn('');
-  console.warn(
-    chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
-  );
-  for (const [fileName, file] of filesWithErrors) {
-    console.warn(chalk`{red.bold ✖ ${fileName}}`);
-    try {
-      if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../../schemas/browsers.schema.json');
-        testBrowsersData(file);
-        testLinks(file);
-      } else {
-        testSchema(file);
-        testStyle(file);
-        testLinks(file);
-        testVersions(file);
-        testRealValues(file);
-        testBrowsersPresence(file);
-        testConsistency(file);
-        testPrefix(file);
-        testDescriptions(file);
-        testNotes(file);
+  if (hasErrors) {
+    console.warn('');
+    console.warn(
+      chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
+    );
+    for (const [fileName, file] of filesWithErrors) {
+      console.warn(chalk`{red.bold ✖ ${fileName}}`);
+      try {
+        if (file.indexOf('browsers' + path.sep) !== -1) {
+          testSchema(file, './../../schemas/browsers.schema.json');
+          testBrowsersData(file);
+          testLinks(file);
+        } else {
+          testSchema(file);
+          testStyle(file);
+          testLinks(file);
+          testVersions(file);
+          testRealValues(file);
+          testBrowsersPresence(file);
+          testConsistency(file);
+          testPrefix(file);
+          testDescriptions(file);
+          testNotes(file);
+        }
+      } catch (e) {
+        console.error(e);
       }
-    } catch (e) {
-      console.error(e);
     }
+    return true;
   }
-  process.exit(1);
+
+  return false;
+};
+
+if (require.main === module) {
+  process.exit(main(argv.files) ? 1 : 0);
 }
+
+module.exports = main;
