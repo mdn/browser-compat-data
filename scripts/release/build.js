@@ -28,7 +28,10 @@ async function writeData() {
 
 async function writeWrapper() {
   const dest = path.resolve(directory, 'nodewrapper.mjs');
-  const content = `import fs from 'node:fs';\nconst bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));\nexport default bcd;\n`;
+  const content = `import fs from 'node:fs';
+const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));
+export default bcd;
+`;
   await fs.writeFile(dest, content);
 }
 
