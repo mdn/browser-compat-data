@@ -242,6 +242,19 @@ These conditions represent minimum requirements for the removal of valid flag da
 
 This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
 
+## When to add `version_removed` to flagged support
+
+A `version_removed` should be added to support statements containing flags under one of the following conditions:
+
+- The browser has enabled the feature or flag by default in a stable release (not beta or nightly).
+- The feature can no longer be enabled or disabled by toggling the flag.
+- The feature has been removed from the browser.
+- The flag has been removed from the browser.
+
+Set `version_removed` to the earliest applicable version from these conditions. For example, if Chrome 90 enabled the flag by default, the feature could no longer be toggled off by disabling the flag in Chrome 96, and finally the flag was removed by Chrome 98, then set `version_removed` to `90` as it is the earliest applicable version.
+
+This guideline was proposed in [#16287](https://github.com/mdn/browser-compat-data/pull/16287).
+
 ## Initial versions for browsers
 
 The schema docs list [initial versions](../schemas/compat-data-schema.md#initial-versions) for BCD browsers. These are the earliest possible version numbers allowed to be used.

@@ -5,8 +5,8 @@
 
 const http = require('https');
 const readline = require('readline');
-const { exec, releaseYargsBuilder } = require('./release-utils');
-const { walk } = require('../utils');
+const { exec, releaseYargsBuilder } = require('./utils');
+const { walk } = require('../../utils');
 
 const { argv } = require('yargs').command(
   '$0 [start-version-tag [end-version-tag]]',
@@ -143,4 +143,6 @@ async function main() {
   );
 }
 
-main();
+if (require.main === module) {
+  main();
+}

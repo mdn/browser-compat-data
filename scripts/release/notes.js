@@ -8,8 +8,8 @@ const {
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} = require('./release-utils');
-const diffFeatures = require('./diff-features');
+} = require('./utils');
+const diffFeatures = require('../diff-features');
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
@@ -83,7 +83,7 @@ function pullsFromGitHub(start, end) {
 }
 
 function preamble() {
-  const upcomingVersion = require('../package.json').version;
+  const upcomingVersion = require('../../package.json').version;
 
   return [
     `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,
