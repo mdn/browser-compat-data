@@ -65,6 +65,19 @@ function processData(filename) {
   );
 
   processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crbug.com/${match[2]}/${match[3]}`,
+      };
+    },
+  );
+
+  processLink(
     // use https://webkit.org/b/100000 instead
     errors,
     actual,
@@ -251,7 +264,8 @@ function testLinks(filename) {
 
   for (const error of errors) {
     logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).\n{blue Tip: Run {bold npm run fix} to fix links automatically}`,
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+      chalk`Run {bold npm run fix} to fix links automatically`,
     );
   }
 

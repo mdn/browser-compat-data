@@ -83,7 +83,7 @@ function pullsFromGitHub(start, end) {
 }
 
 function preamble() {
-  const upcomingVersion = require('../package.json').version;
+  const upcomingVersion = require('../../package.json').version;
 
   return [
     `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,

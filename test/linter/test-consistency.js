@@ -5,6 +5,7 @@
 
 const compareVersions = require('compare-versions');
 const chalk = require('chalk');
+const { query } = require('../../utils/index.js');
 const { Logger } = require('../utils.js');
 
 /**
@@ -60,8 +61,6 @@ class ConsistencyChecker {
 
     // Check this feature.
     if (this.isFeature(data)) {
-      const feature = path.length ? path[path.length - 1] : 'ROOT';
-
       const errors = this.checkFeature(data);
 
       if (errors.length) {
@@ -73,15 +72,39 @@ class ConsistencyChecker {
     }
 
     // Check sub-features.
-    const keys = Object.keys(data).filter((key) => key != '__compat');
-    keys.forEach((key) => {
+    this.getSubfeatures(data).forEach((key) => {
       allErrors = [
         ...allErrors,
-        ...this.checkSubfeatures(data[key], [...path, key]),
+        ...this.checkSubfeatures(query(key, data), [
+          ...path,
+          ...key.split('.'),
+        ]),
       ];
     });
 
     return allErrors;
+  }
+
+  /**
+   * @param {PrimaryIdentifier & Required<IdentifierMeta>} data
+   * @return {Identifier[]}
+   */
+  getSubfeatures(data) {
+    const subfeatures = [];
+    const keys = Object.keys(data).filter((key) => key != '__compat');
+    for (const key of keys) {
+      if ('__compat' in data[key]) {
+        // If the subfeature has compat data
+        subfeatures.push(key);
+      } else {
+        // If no compat data, get the next level down
+        subfeatures.push(
+          ...this.getSubfeatures(data[key]).map((x) => `${key}.${x}`),
+        );
+      }
+    }
+
+    return subfeatures;
   }
 
   /**
@@ -94,9 +117,7 @@ class ConsistencyChecker {
     /** @type {FeatureError[]} */
     let errors = [];
 
-    const subfeatures = Object.keys(data).filter((key) =>
-      this.isFeature(data[key]),
-    );
+    const subfeatures = this.getSubfeatures(data);
 
     // Test whether sub-features are supported when basic support is not implemented
     // For all unsupported browsers (basic support == false), sub-features should be set to false
@@ -106,7 +127,7 @@ class ConsistencyChecker {
 
     subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
-        data[subfeature].__compat,
+        query(subfeature, data).__compat,
       );
 
       const browsers = unsupportedInParent.filter(
@@ -117,7 +138,7 @@ class ConsistencyChecker {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value = this.getVersionAdded(
-          data[subfeature].__compat.support[browser],
+          query(subfeature, data).__compat.support[browser],
         );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
@@ -149,7 +170,7 @@ class ConsistencyChecker {
 
     subfeatures.forEach((subfeature) => {
       const supportUnknownInChild = this.extractSupportNotTrueBrowsers(
-        data[subfeature].__compat,
+        query(subfeature, data).__compat,
       );
 
       const browsers = supportUnknownInParent.filter(
@@ -160,7 +181,7 @@ class ConsistencyChecker {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value = this.getVersionAdded(
-          data[subfeature].__compat.support[browser],
+          query(subfeature, data).__compat.support[browser],
         );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
@@ -192,16 +213,16 @@ class ConsistencyChecker {
     subfeatures.forEach((subfeature) => {
       supportInParent.forEach((browser) => {
         if (
-          data[subfeature].__compat.support[browser] != undefined &&
+          query(subfeature, data).__compat.support[browser] != undefined &&
           this.isVersionAddedGreater(
-            data[subfeature].__compat.support[browser],
+            query(subfeature, data).__compat.support[browser],
             data.__compat.support[browser],
           )
         ) {
           inconsistentSubfeaturesByBrowser[browser] =
             inconsistentSubfeaturesByBrowser[browser] || [];
           const subfeature_value = this.getVersionAdded(
-            data[subfeature].__compat.support[browser],
+            query(subfeature, data).__compat.support[browser],
           );
           inconsistentSubfeaturesByBrowser[browser].push([
             subfeature,
@@ -305,9 +326,9 @@ class ConsistencyChecker {
   getVersionAdded(supportStatement) {
     // A convenience function to squash non-real values and previews into null
     const resolveVersionAddedValue = (statement) =>
-      [true, false, 'preview', null].includes(statement.version_added)
+      [true, false, 'preview', null].includes(statement?.version_added)
         ? null
-        : statement.version_added;
+        : statement?.version_added;
 
     // Handle simple support statements
     if (!Array.isArray(supportStatement)) {

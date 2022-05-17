@@ -6,7 +6,7 @@
 const fs = require('fs');
 const chalk = require('chalk');
 const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
-const compareFeatures = require('../../scripts/compare-features');
+const compareFeatures = require('../../scripts/lib/compare-features');
 const { Logger } = require('../utils.js');
 
 /**
