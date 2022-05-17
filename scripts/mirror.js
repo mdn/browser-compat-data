@@ -1,6 +1,7 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -8,7 +9,6 @@
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
-'use strict';
 const fs = require('fs');
 const path = require('path');
 
@@ -112,6 +112,7 @@ const getSource = (browser, forced_source) => {
 
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
       source = 'chrome';
       break;
@@ -122,9 +123,6 @@ const getSource = (browser, forced_source) => {
       break;
     case 'firefox_android':
       source = 'firefox';
-      break;
-    case 'edge':
-      source = 'ie';
       break;
     case 'safari_ios':
       source = 'safari';
@@ -214,10 +212,9 @@ const copyStatement = (data) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpChromeAndroid = (originalData, sourceData, source) => {
+const bumpChromeAndroid = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -290,7 +287,7 @@ const bumpEdge = (originalData, sourceData, source) => {
               newData.version_added = '≤79';
             }
           } else {
-            newData.version_added == sourceData.version_added;
+            newData.version_added = sourceData.version_added;
           }
         }
       } else if (chromeFalse) {
@@ -316,10 +313,9 @@ const bumpEdge = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpFirefoxAndroid = (originalData, sourceData, source) => {
+const bumpFirefoxAndroid = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -477,10 +473,9 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, sourceData, source) => {
+const bumpWebView = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
   const createWebViewRange = (version) => {
@@ -518,10 +513,9 @@ const bumpWebView = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpGeneric = (originalData, sourceData, source) => {
+const bumpGeneric = (originalData, sourceData) => {
   // For browsers we're not tracking, simply mirror the source data
   return sourceData;
 };

@@ -27,70 +27,31 @@
             }
           }
         },
-        "content_scripts": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#content_scripts",
-            "support": {
-              "chrome": {
-                "version_added": false,
-                "notes": "See <code>isolated_world</code>."
-              },
-              "edge": {
-                "version_added": false,
-                "notes": "See <code>isolated_world</code>."
-              },
-              "firefox": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "extensions.content_script_csp.enabled",
-                    "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "extensions.content_script_csp.report_only",
-                    "value_to_set": "false"
-                  }
-                ]
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false,
-                "notes": "See <code>isolated_world</code>."
-              },
-              "safari": {
-                "version_added": false
-              }
-            }
-          }
-        },
         "extension_pages": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#extension_pages",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "Available in Canary builds."
+                "version_added": "88",
+                "notes": [
+                  "Available in Canary builds.",
+                  "Available to Manifest V3 only."
+                ]
               },
               "edge": {
-                "version_added": false,
-                "notes": "Available in Canary builds."
+                "version_added": "88",
+                "notes": [
+                  "Available in Canary builds.",
+                  "Available to Manifest V3 only."
+                ]
               },
               "firefox": {
                 "version_added": "72",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "extensions.content_script_csp.enabled",
+                    "name": "extensions.manifestV3.enabled",
                     "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "extensions.content_script_csp.report_only",
-                    "value_to_set": "false"
                   }
                 ]
               },
@@ -98,10 +59,62 @@
                 "version_added": false
               },
               "opera": {
-                "version_added": false
+                "version_added": "74",
+                "notes": "Available to Manifest V3 only."
               },
               "safari": {
+                "version_added": null,
+                "notes": "Available to Manifest V3 only."
+              }
+            }
+          }
+        },
+        "isolated_world": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#isolated_world",
+            "support": {
+              "chrome": {
+                "version_added": "88"
+              },
+              "edge": {
+                "version_added": "88"
+              },
+              "firefox": {
                 "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "74"
+              },
+              "safari": {
+                "version_added": null
+              }
+            }
+          }
+        },
+        "sandbox": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy#sandbox",
+            "support": {
+              "chrome": {
+                "version_added": "88"
+              },
+              "edge": {
+                "version_added": "88"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": {
+                "version_added": "74"
+              },
+              "safari": {
+                "version_added": null
               }
             }
           }

@@ -13,6 +13,7 @@
         "firefox_android": { "$ref": "#/definitions/browser_statement" },
         "ie": { "$ref": "#/definitions/browser_statement" },
         "nodejs": { "$ref": "#/definitions/browser_statement" },
+        "oculus": { "$ref": "#/definitions/browser_statement" },
         "opera": { "$ref": "#/definitions/browser_statement" },
         "opera_android": { "$ref": "#/definitions/browser_statement" },
         "safari": { "$ref": "#/definitions/browser_statement" },
@@ -32,9 +33,18 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "type": {
+          "type": "string",
+          "enum": ["desktop", "mobile", "xr", "server"],
+          "description": "What type of browser this is (desktop, mobile, XR, or server engine)."
+        },
         "accepts_flags": {
           "type": "boolean",
           "description": "Whether the browser supports flags."
+        },
+        "accepts_webextensions": {
+          "type": "boolean",
+          "description": "Whether the browser supports extensions."
         },
         "pref_url": {
           "type": "string",
@@ -66,10 +76,6 @@
           "format": "uri",
           "pattern": "^https://",
           "description": "A link to the release notes or changelog for a given release."
-        },
-        "accepts_flags": {
-          "type": "boolean",
-          "description": "Whether the release supports flags."
         },
         "engine": {
           "type": "string",

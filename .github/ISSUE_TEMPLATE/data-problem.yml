@@ -1,0 +1,83 @@
+name: "Data problem"
+title: "<NAME THE FEATURE> - <SUMMARIZE THE PROBLEM>"
+description: Report incorrect, incomplete, or missing data
+labels: ["needs triage 🔎"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Before you start
+
+        **Are you looking for development help?**
+        ↩ Please note that we cannot provide assistance on web development. We recommend asking around on a dedicated help forum like StackOverflow.
+
+        **Is your issue about content on an MDN page besides the compatibility table?**
+        ↩ Use the _Report a problem with this content on GitHub_ link at the bottom of the page.
+
+        **Need help with a browser?**
+        🙋 To get help with [Firefox](https://support.mozilla.org/en-US/kb/file-bug-report-or-feature-request-mozilla), [Chrome](https://support.google.com/chrome/answer/95315?hl=en-GB&ref_topic=7439544), [Safari](https://www.apple.com/feedback/safari.html), or another browser, check the browser's support site.
+
+        ---
+  - type: dropdown
+    id: type
+    attributes:
+      label: What type of issue is this?
+      options:
+        - Incorrect support data (ex. Chrome says "86" but support was added in "40")
+        - Browser bug (a bug with a feature that may impact site compatibility)
+        - Missing compatibility data
+        - Missing specification link (no spec_url property)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What information was incorrect, unhelpful, or incomplete?
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers does this problem apply to, if applicable?
+      multiple: true
+      options:
+        - Chromium (Chrome, Edge 79+, Opera, Samsung Internet)
+        - Firefox
+        - Internet Explorer/Legacy Edge (12-18)
+        - Safari
+        - Node.js
+        - Deno
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to see?
+  - type: textarea
+    id: tested
+    attributes:
+      label: Did you test this? If so, how?
+  - type: textarea
+    id: references
+    attributes:
+      label: Can you link to any release notes, bugs, pull requests, or MDN pages related to this?
+      description: Link to information that helps us confirm your issue.
+  - type: textarea
+    id: more-info
+    attributes:
+      label: Do you have anything more you want to share?
+      description: For example, screenshots, screen recordings, or sample code
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        You're finished! The following fields are prefilled and should not be modified. Please click **Submit new issue**.
+  - type: input
+    id: mdn-url
+    attributes:
+      label: MDN URL
+      description: Set automatically. Do not modify.
+  - type: textarea
+    id: metadata
+    attributes:
+      label: MDN metadata
+      description: Set automatically. Do not modify.

@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 const { execSync } = require('child_process');
 const fs = require('fs');
 
@@ -108,9 +113,16 @@ function enumerateFeatures(ref = 'HEAD') {
   const worktree = `__enumerating__${hash}`;
 
   console.error(`Enumerating features for ${ref} (${hash})`);
+
   try {
     execSync(`git worktree add ${worktree} ${hash}`);
-    execSync(`npm ci`, { cwd: worktree });
+
+    try {
+      execSync(`npm ci`, { cwd: worktree });
+    } catch (e) {
+      // If the clean install fails, proceed anyways
+    }
+
     execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
