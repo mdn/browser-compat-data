@@ -56,8 +56,8 @@ const removeWebViewFlags = (key, value) => {
  * @param {string} filename The filename to perform migration upon
  */
 const fixWebViewFlags = (filename) => {
-  const actual = fs.readFileSync(filename, 'utf-8').trim();
-  const expected = JSON.stringify(
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
     null,
     2,
@@ -74,40 +74,40 @@ const fixWebViewFlags = (filename) => {
   }
 };
 
-if (require.main === module) {
-  /**
-   * Recursively load one or more files and/or directories passed as arguments
-   * and perform removal of flags from WebView support data.
-   *
-   * @param {string[]} files The files to load and perform migration upon
-   * @returns {void}
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixWebViewFlags(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
+/**
+ * Recursively load one or more files and/or directories passed as arguments
+ * and perform removal of flags from WebView support data.
+ *
+ * @param {string[]} files The files to load and perform migration upon
+ * @returns {void}
+ */
+function load(...files) {
+  for (let file of files) {
+    if (file.indexOf(__dirname) !== 0) {
+      file = path.resolve(__dirname, '..', '..', file);
     }
-  }
 
+    if (!fs.existsSync(file)) {
+      continue; // Ignore non-existent files
+    }
+
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        fixWebViewFlags(file);
+      }
+
+      continue;
+    }
+
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    load(...subFiles);
+  }
+}
+
+if (require.main === module) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
@@ -126,4 +126,7 @@ if (require.main === module) {
   }
 }
 
-module.exports = { removeWebViewFlags, fixWebViewFlags };
+module.exports = {
+  removeWebViewFlags,
+  fixWebViewFlags,
+};
