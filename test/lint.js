@@ -41,19 +41,14 @@ const spinner = ora({
   stream: process.stdout,
 });
 
-/** @type {string[]} */
-let errors = [];
-
-/** @type {number} */
-let filesWithErrors = 0;
-
 /**
  * Recursively load one or more files and/or directories passed as arguments and check for any errors.
  *
  * @param {string[]} files The files to test
- * @returns {boolean} Whether any of the files passed have errors
+ * @returns {object} The error messages and count of how many files had errors
  */
 const checkFiles = (...files) => {
+  let errors = {};
   for (let file of files) {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -76,18 +71,19 @@ const checkFiles = (...files) => {
         spinner.start();
       }
 
-      let fileErrors = [];
-
+      // Catch console errors and report them as file errors
       const console_error = console.error;
       console.error = (...args) => {
-        if (fileErrors.length === 0) {
+        if (!(relativeFilePath in errors)) {
           // Set spinner to failure when first error is found
           // Setting on every error causes duplicate output
           spinner['stream'] = process.stderr;
           spinner.fail(chalk.red.bold(relativeFilePath));
+
+          errors[relativeFilePath] = [];
         }
         console_error(...args);
-        fileErrors.push(...args);
+        errors[relativeFilePath].push(...args);
       };
 
       try {
@@ -111,12 +107,10 @@ const checkFiles = (...files) => {
         console.error(e);
       }
 
-      if (fileErrors.length) {
-        errors.push(chalk`{red.bold ✖ ${relativeFilePath}}`);
-        errors.push(...fileErrors);
-        filesWithErrors++;
-      } else {
-        console.error = console_error;
+      // Reset console.error
+      console.error = console_error;
+
+      if (!(relativeFilePath in errors)) {
         spinner.succeed();
       }
     }
@@ -126,9 +120,11 @@ const checkFiles = (...files) => {
         return path.join(file, subfile);
       });
 
-      checkFiles(...subFiles);
+      errors = { ...errors, ...checkFiles(...subFiles) };
     }
   }
+
+  return errors;
 };
 
 /**
@@ -138,10 +134,12 @@ const checkFiles = (...files) => {
  * @returns {boolean} Whether there were any errors
  */
 const main = (files) => {
+  let errors;
+
   if (files) {
-    checkFiles(...files);
+    errors = checkFiles(...files);
   } else {
-    checkFiles(
+    errors = checkFiles(
       'api',
       'browsers',
       'css',
@@ -155,17 +153,23 @@ const main = (files) => {
     );
   }
 
-  if (errors.length) {
+  const filesWithErrors = Object.keys(errors).length;
+
+  if (filesWithErrors) {
     console.error('');
     console.error(
       chalk`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
     );
-    for (let error of errors) {
-      console.error(error);
+
+    for (const [fp, errorMsgs] of Object.entries(errors)) {
+      console.error(chalk`{red.bold ✖ ${fp}}`);
+      for (const error of errorMsgs) {
+        console.error(error);
+      }
     }
   }
 
-  return !!errors.length;
+  return !!errors.fileCount;
 };
 
 if (require.main === module) {
