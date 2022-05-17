@@ -87,6 +87,12 @@ const validateHTML = (string, browser, feature, logger) => {
       chalk`Notes for {bold ${feature}} in {bold ${browser}} have double-spaces. Notes are required to have single spaces only.`,
     );
   }
+
+  if (string.includes('\n')) {
+    logger.error(
+      chalk`Notes for {bold ${feature}} in {bold ${browser}} may not contain newlines.`,
+    );
+  }
 };
 
 /**

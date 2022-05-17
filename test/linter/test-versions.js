@@ -132,16 +132,13 @@ function checkVersions(supportData, relPath, logger) {
       let sawVersionAddedOnly = false;
 
       for (const statement of supportStatements) {
+        const statementKeys = Object.keys(statement);
+
         for (const property of ['version_added', 'version_removed']) {
           if (!isValidVersion(browser, statement[property])) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
-                statement[property]
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
-                browserTips[browser]
-                  ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                  : ''
-              }`,
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${statement[property]}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+              browserTips[browser],
             );
           }
         }
@@ -199,6 +196,17 @@ function checkVersions(supportData, relPath, logger) {
               chalk`{red → {bold ${relPath}} - The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.}`,
             );
           }
+        }
+        
+        if (
+          supportStatements.length > 1 &&
+          statement.version_added === false &&
+          statementKeys.length == 1 &&
+          statementKeys[0] == 'version_added'
+        ) {
+          logger.error(
+            chalk`{red → '{bold ${relPath}}' - {bold ${browser}} cannot have a {bold version_added: false} only in an array of statements.}`,
+          );
         }
       }
     }
