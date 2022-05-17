@@ -7,49 +7,53 @@ const path = require('path');
 const chalk = require('chalk');
 const { Logger } = require('../utils.js');
 
+const { browsers } = require('../../index.js');
+
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../utils').Logger} Logger
  */
 
-/** @type {object.<string, string[]>} */
-const browsers = {
-  desktop: ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
-  mobile: [
-    'chrome_android',
-    'firefox_android',
-    'opera_android',
-    'safari_ios',
-    'samsunginternet_android',
-    'webview_android',
-  ],
-  server: ['nodejs', 'deno'],
-  xr: ['oculus'],
-  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
-  'webextensions-mobile': ['firefox_android', 'safari_ios'],
-};
-
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
  *
  * @param {Identifier} data The data to test
- * @param {string[]} displayBrowsers All of the allowed browsers for this data.
- * @param {string[]} requiredBrowsers All of the required browsers for this data.
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
  * @param {string} [path] The path of the data.
  * @returns {void}
  */
-function processData(
-  data,
-  displayBrowsers,
-  requiredBrowsers,
-  category,
-  logger,
-  path = '',
-) {
+function processData(data, category, logger, path = '') {
   if (data.__compat && data.__compat.support) {
     const support = data.__compat.support;
+    const definedBrowsers = Object.keys(support);
+
+    let displayBrowsers = Object.keys(browsers).filter(
+      (b) =>
+        [
+          'desktop',
+          'mobile',
+          'xr',
+          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+        ].includes(browsers[b].type) &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+    );
+    let requiredBrowsers = Object.keys(browsers).filter(
+      (b) =>
+        browsers[b].type == 'desktop' &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+    );
+
+    const undefEntries = definedBrowsers.filter(
+      (value) => !(value in browsers),
+    );
+    if (undefEntries.length > 0) {
+      logger.error(
+        chalk`{red → {bold ${path}} has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
+          ', ',
+        )}}}`,
+      );
+    }
 
     const invalidEntries = Object.keys(support).filter(
       (value) => !displayBrowsers.includes(value),
@@ -78,8 +82,6 @@ function processData(
 
     processData(
       data[key],
-      displayBrowsers,
-      requiredBrowsers,
       category,
       logger,
       path && path.length > 0 ? `${path}.${key}` : key,
@@ -103,37 +105,9 @@ function testBrowsersPresence(filename) {
   /** @type {Identifier} */
   const data = require(filename);
 
-  if (!category) {
-    console.warn(chalk.blackBright('  Browsers – Unknown category'));
-    return false;
-  }
-
-  let displayBrowsers = [
-    ...browsers['desktop'],
-    ...browsers['mobile'],
-    ...browsers['xr'],
-  ];
-  let requiredBrowsers = browsers['desktop'];
-  if (category === 'api') {
-    displayBrowsers.push('nodejs');
-    displayBrowsers.push('deno');
-  }
-  if (category === 'javascript') {
-    displayBrowsers.push(...browsers['server']);
-  }
-  if (category === 'webextensions') {
-    displayBrowsers = [
-      ...browsers['webextensions-desktop'],
-      ...browsers['webextensions-mobile'],
-    ];
-    requiredBrowsers = browsers['webextensions-desktop'];
-  }
-  displayBrowsers.sort();
-  requiredBrowsers.sort();
-
   const logger = new Logger('Browsers');
 
-  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+  processData(data, category, logger);
 
   logger.emit();
   return logger.hasErrors();

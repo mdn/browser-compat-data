@@ -33,9 +33,18 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "type": {
+          "type": "string",
+          "enum": ["desktop", "mobile", "xr", "server"],
+          "description": "What type of browser this is (desktop, mobile, XR, or server engine)."
+        },
         "accepts_flags": {
           "type": "boolean",
           "description": "Whether the browser supports flags."
+        },
+        "accepts_webextensions": {
+          "type": "boolean",
+          "description": "Whether the browser supports extensions."
         },
         "pref_url": {
           "type": "string",
