@@ -162,54 +162,57 @@ function checkVersions(supportData, relPath, logger) {
               chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
             );
           }
-        } else {
-          const statementKeys = Object.keys(statement);
-          for (const property of ['version_added', 'version_removed']) {
-            if (!isValidVersion(browser, statement[property])) {
-              logger.error(
-                chalk`{red → {bold ${relPath}} - {bold ${property}: "${statement[property]}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
-                browserTips[browser],
-              );
-            }
-          }
 
-          for (const property of ['version_added', 'version_removed']) {
-            if (
-              property == 'version_removed' &&
-              statement.version_removed === undefined
-            ) {
-              // Undefined is allowed for version_removed
-              continue;
-            }
-            if (!isValidVersion(browser, category, statement[property])) {
-              logger.error(
-                chalk`{red → {bold ${relPath}} - {bold ${property}: "${
-                  statement[property]
-                }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
-                  browser
-                ].join(', ')}}`,
-                browserTips[browser],
-              );
-            }
-          }
+          continue;
+        }
+        const statementKeys = Object.keys(statement);
 
-          if ('version_added' in statement && 'version_removed' in statement) {
-            if (statement.version_added === statement.version_removed) {
-              logger.error(
-                chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
-              );
-            }
-            if (
-              typeof statement.version_added === 'string' &&
-              typeof statement.version_removed === 'string' &&
-              addedBeforeRemoved(statement) === false
-            ) {
-              logger.error(
-                chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
-              );
-            }
+        for (const property of ['version_added', 'version_removed']) {
+          if (!isValidVersion(browser, statement[property])) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${statement[property]}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
+              browserTips[browser],
+            );
           }
         }
+
+        for (const property of ['version_added', 'version_removed']) {
+          if (
+            property == 'version_removed' &&
+            statement.version_removed === undefined
+          ) {
+            // Undefined is allowed for version_removed
+            continue;
+          }
+          if (!isValidVersion(browser, category, statement[property])) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
+                statement[property]
+              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
+                browser
+              ].join(', ')}}`,
+              browserTips[browser],
+            );
+          }
+        }
+
+        if ('version_added' in statement && 'version_removed' in statement) {
+          if (statement.version_added === statement.version_removed) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+            );
+          }
+          if (
+            typeof statement.version_added === 'string' &&
+            typeof statement.version_removed === 'string' &&
+            addedBeforeRemoved(statement) === false
+          ) {
+            logger.error(
+              chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
+            );
+          }
+        }
+
         if ('flags' in statement) {
           if (browsers[browser].accepts_flags === false) {
             logger.error(
