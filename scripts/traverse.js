@@ -120,8 +120,6 @@ function* iterateFeatures(obj, browsers, values, depth, identifier) {
       }
     }
   }
-
-  return features;
 }
 
 /**
@@ -169,7 +167,7 @@ if (require.main === module) {
     values.push('true', 'null');
   }
 
-  const features = main(folders, argv.browser, values);
+  const features = main(folders, browsers, values);
 
   console.log(features.join('\n'));
   console.log(features.length);
