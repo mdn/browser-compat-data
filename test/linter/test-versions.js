@@ -65,9 +65,9 @@ const blockMany = [
   'webview_android',
 ];
 
-/** @type {Record<string, string[]>} */
+/** @type {object.<string, string[]>} */
 const blockList = {
-  api: [],
+  api: blockMany,
   css: blockMany,
   html: [],
   http: [],
