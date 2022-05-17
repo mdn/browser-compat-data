@@ -82,6 +82,7 @@ const blockList = {
  * Test to see if the browser allows for the specified version
  *
  * @param {string} browser The browser to check
+ * @param {string} category The category of the data
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
