@@ -28,26 +28,21 @@ function processData(data, category, logger, path = '') {
     const support = data.__compat.support;
     const definedBrowsers = Object.keys(support);
 
-    let displayBrowsers = Object.keys(browsers).filter((b) =>
-      [
-        'desktop',
-        'mobile',
-        'xr',
-        ...(['api', 'javascript'].includes(category) ? ['server'] : []),
-      ].includes(browsers[b].type),
+    let displayBrowsers = Object.keys(browsers).filter(
+      (b) =>
+        [
+          'desktop',
+          'mobile',
+          'xr',
+          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+        ].includes(browsers[b].type) &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
     let requiredBrowsers = Object.keys(browsers).filter(
-      (b) => browsers[b].type == 'desktop',
+      (b) =>
+        browsers[b].type == 'desktop' &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
-
-    if (category === 'webextensions') {
-      displayBrowsers = displayBrowsers.filter(
-        (b) => browsers[b].accepts_webextensions,
-      );
-      requiredBrowsers = requiredBrowsers.filter(
-        (b) => browsers[b].accepts_webextensions,
-      );
-    }
 
     const undefEntries = definedBrowsers.filter(
       (value) => !(value in browsers),
