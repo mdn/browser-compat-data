@@ -174,7 +174,7 @@ function checkVersions(supportData, relPath, logger) {
               );
             }
           }
-        
+
           for (const property of ['version_added', 'version_removed']) {
             if (
               property == 'version_removed' &&
