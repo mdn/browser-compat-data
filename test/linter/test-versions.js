@@ -188,9 +188,9 @@ function checkVersions(supportData, relPath, logger) {
 
         if (statement.version_added === false) {
           if (
-            Object.keys(statement).filter(
+            Object.keys(statement).some(
               (k) => !['version_added', 'notes'].includes(k),
-            ).length
+            )
           ) {
             logger.error(
               chalk`{red → {bold ${relPath}} - The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.}`,
