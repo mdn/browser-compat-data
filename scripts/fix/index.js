@@ -60,8 +60,6 @@ if (require.main === module) {
       'webdriver',
       'webextensions',
     );
-
-    format();
   }
 }
 

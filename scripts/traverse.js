@@ -43,10 +43,12 @@ const { argv } = require('yargs').command(
  *
  * @param {Identifier} obj The compat data to traverse through
  * @param {number} depth The depth to traverse
+ * @param {string[]} values The values to test for
  * @param {string} identifier The identifier of the current object
  * @returns {void}
  */
-function traverseFeatures(obj, depth, identifier) {
+function traverseFeatures(obj, depth, values, identifier) {
+  let features = [];
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -73,10 +75,14 @@ function traverseFeatures(obj, depth, identifier) {
             }
           }
         }
-        traverseFeatures(obj[i], depth, identifier + i + '.');
+        features.push(
+          ...traverseFeatures(obj[i], depth, values, identifier + i + '.'),
+        );
       }
     }
   }
+
+  return features;
 }
 
 const main = (folder = 'all', value = ['null', 'true'], depth = 100) => {
@@ -97,7 +103,12 @@ const main = (folder = 'all', value = ['null', 'true'], depth = 100) => {
   const values = Array.isArray(value) ? value : value.toString().split(',');
 
   for (const folder in folders)
-    traverseFeatures(bcd[folders[folder]], depth, `${folders[folder]}.`);
+    features = traverseFeatures(
+      bcd[folders[folder]],
+      depth,
+      values,
+      `${folders[folder]}.`,
+    );
 
   console.log(features.join('\n'));
   console.log(features.length);
