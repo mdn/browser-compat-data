@@ -53,7 +53,7 @@ let filesWithErrors = 0;
  * @param {string[]} files The files to test
  * @returns {boolean} Whether any of the files passed have errors
  */
-const load = (...files) => {
+const checkFiles = (...files) => {
   return files.reduce((prevHasErrors, file) => {
     if (file.indexOf(__dirname) !== 0) {
       file = path.resolve(__dirname, '..', file);
@@ -145,9 +145,9 @@ const main = (files) => {
   var hasErrors = false;
 
   if (files) {
-    hasErrors = load(...files);
+    hasErrors = checkFiles(...files);
   } else {
-    hasErrors = load(
+    hasErrors = checkFiles(
       'api',
       'browsers',
       'css',
