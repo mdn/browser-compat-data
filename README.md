@@ -29,7 +29,7 @@ yarn add @mdn/browser-compat-data
 You can then import BCD into your project.
 
 ```js
-import bcd from '@mdn/browser-compat-data'; // ESM Module (NodeJS 12+)
+import bcd from '@mdn/browser-compat-data' assert {type: 'json'}; // ESM (NodeJS 14+)
 // ...or...
 const bcd = require('@mdn/browser-compat-data'); // CommonJS Module (Any NodeJS)
 ```
@@ -39,7 +39,7 @@ const bcd = require('@mdn/browser-compat-data'); // CommonJS Module (Any NodeJS)
 You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
-import bcd from 'https://unpkg.com/@mdn/browser-compat-data';
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert {type: 'json'};
 ```
 
 ### Other Languages
