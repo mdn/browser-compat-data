@@ -49,9 +49,6 @@ for (const browser of Object.keys(browsers)) {
   }
 }
 
-/** @type string[] */
-const FLAGLESS_BROWSERS = ['samsunginternet_android', 'webview_android'];
-
 /** @type {string[]} */
 const blockMany = [
   'chrome',
