@@ -26,6 +26,12 @@ async function writeData() {
   await fs.writeFile(dest, data);
 }
 
+async function writeIndexForESM1214() {
+  const dest = path.resolve(directory, 'nodejs12-14.js');
+  const content = `import fs from 'node:fs';\nconst bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));\n`;
+  await fs.writeFile(dest, content);
+}
+
 // Returns an array of promises for copying of all files that don't need transformation
 async function copyFiles() {
   for (const file of verbatimFiles) {
@@ -37,7 +43,13 @@ async function copyFiles() {
 
 function createManifest() {
   const full = require('../../package.json');
-  const minimal = { main: 'data.json' };
+  const minimal = {
+    main: 'data.json',
+    exports: {
+      '.': './data.json',
+      'Node12-14': './nodejs12-14.js',
+    },
+  };
 
   const minimalKeys = [
     'name',
@@ -85,6 +97,7 @@ async function main() {
 
   await writeManifest();
   await writeData();
+  await writeIndexForESM1214();
   await copyFiles();
 
   console.log('Data bundle is ready');
