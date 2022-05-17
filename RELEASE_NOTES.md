@@ -1,5 +1,32 @@
 # Release notes
 
+## [v4.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.2.1)
+
+May 17, 2022
+
+### Notable changes
+
+The new properties added in v4.2.0 were not added to the TypeScript definition file. This release fixes the issue, allowing TypeScript users to take advantage of the new properties.
+
+### Removals
+
+- `css.properties.mask-position.three_value_syntax` ([#16304](https://github.com/mdn/browser-compat-data/pull/16304))
+- `css.properties.object-position.three_value_syntax` ([#16304](https://github.com/mdn/browser-compat-data/pull/16304))
+- `css.properties.perspective-origin.three_value_syntax` ([#16304](https://github.com/mdn/browser-compat-data/pull/16304))
+- `css.properties.shape-outside.three_value_syntax` ([#16304](https://github.com/mdn/browser-compat-data/pull/16304))
+- `css.types.position.three_value_syntax` ([#16304](https://github.com/mdn/browser-compat-data/pull/16304))
+
+### Additions
+
+- `api.Element.requestPointerLock.options_unadjustedMovement_parameter` ([#16060](https://github.com/mdn/browser-compat-data/pull/16060))
+
+### Statistics
+
+- 7 contributors have changed 65 files with 377 additions and 691 deletions in 24 commits ([`v4.2.0...v4.2.1`](https://github.com/mdn/browser-compat-data/compare/v4.2.0...v4.2.1))
+- 13,696 total features
+- 869 total contributors
+- 4,041 total stargazers
+
 ## [v4.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v4.2.0)
 
 May 16, 2022
