@@ -130,7 +130,7 @@ const checkFiles = (...files) => {
       return path.join(file, subfile);
     });
 
-    return load(...subFiles) || prevHasErrors;
+    return checkFiles(...subFiles) || prevHasErrors;
   }, false);
 };
 
