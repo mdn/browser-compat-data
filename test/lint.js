@@ -41,7 +41,7 @@ const spinner = ora({
 });
 
 /**
- * Recursively load one or more files and/or directories passed as arguments and check for any errors.
+ * Recursively checks files for any errors.
  *
  * @param {string[]} files The files to test
  * @returns {object} Errors by relative file path.
