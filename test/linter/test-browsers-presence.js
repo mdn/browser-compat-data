@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 
 import { Logger } from '../utils.js';
 

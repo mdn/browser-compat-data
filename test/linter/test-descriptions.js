@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import fs from 'node:fs';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import { Logger } from '../utils.js';
 
 /**
