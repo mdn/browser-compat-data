@@ -1,17 +1,20 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import {
-  buildQuery,
-  getRefDate,
-  releaseYargsBuilder,
-} from './release-utils.js';
+import { buildQuery, getRefDate, releaseYargsBuilder } from './utils.js';
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
 );
-const releaseNotesLabel = 'label:"needs-release-note :newspaper:"';
+const releaseNotesLabels = [
+  'needs-release-note :newspaper:',
+  'semver-major-bump 🚨',
+  'semver-minor-bump ➕',
+];
 
 const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',
@@ -24,7 +27,7 @@ const { argv } = yargs(hideBin(process.argv)).command(
       type: 'boolean',
     });
     yargs.option('labeled', {
-      describe: 'Filter to needs-release-note labeled PRs only',
+      describe: 'Filter to needs-release-note and semver-* labeled PRs only',
       type: 'boolean',
     });
     yargs.option('query-only', {
@@ -45,7 +48,7 @@ function queryToURL(query) {
 }
 
 function appendLabel(query) {
-  return `${query} ${releaseNotesLabel}`;
+  return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
 }
 
 function main() {

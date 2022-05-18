@@ -1,9 +1,26 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 import fs from 'node:fs';
 import chalk from 'chalk';
-import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
+import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
 
 /**
- * @param {string} filename
+ * @typedef {object} LinkError
+ * @property {string} issue The description of the error
+ * @property {[?number, ?number]} pos The cursor position of the issue in number-array form
+ * @property {string} posString The cursor position of the issue in string form
+ * @property {?string} expected The expected string if applicable
+ * @property {string} actualLink What the link currently is
+ */
+
+/**
+ * Process the data for any errors within the links
+ *
+ * @param {string} filename The file to test
+ * @returns {LinkError[]} A list of errors found in the links
  */
 function processData(filename) {
   let errors = [];
@@ -37,6 +54,19 @@ function processData(filename) {
       return {
         issue: 'Use shortenable URL',
         expected: `https://crbug.com/${match[2]}`,
+      };
+    },
+  );
+
+  processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crbug.com/${match[2]}/${match[3]}`,
       };
     },
   );
@@ -109,7 +139,7 @@ function processData(filename) {
 
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = /** @return {[string|null, number]} */ (() => {
+        const [zone, index] = /** @returns {[?string, number]} */ (() => {
           const match = expectedPath.match(
             /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
           );
@@ -184,10 +214,13 @@ function processData(filename) {
 }
 
 /**
- * @param {Object[]} errors
- * @param {string} actual
- * @param {string|RegExp} regexp
- * @param {(match: RegExpExecArray) => Object} matchHandler
+ * Given a RegEx expression, test the link for errors
+ *
+ * @param {LinkError[]} errors The errors object to push the new errors to
+ * @param {string} actual The link to test
+ * @param {string|RegExp} regexp The regex to test with
+ * @param {(match: Array.<?string>) => object} matchHandler The callback
+ * @returns {void}
  */
 function processLink(errors, actual, regexp, matchHandler) {
   const re = new RegExp(regexp, 'g');
@@ -212,24 +245,24 @@ function processLink(errors, actual, regexp, matchHandler) {
 }
 
 /**
- * @param {string} filename
+ * Test for any malformed links
+ *
+ * @param {string} filename The file to test
+ * @returns {boolean} If the file contains errors
  */
 export default function testLinks(filename) {
+  const logger = new Logger('Links');
+
   /** @type {Object[]} */
   let errors = processData(filename);
 
-  if (errors.length) {
-    console.error(
-      chalk`{red   Links – {bold ${errors.length}} ${
-        errors.length === 1 ? 'error' : 'errors'
-      }:}`,
+  for (const error of errors) {
+    logger.error(
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+      chalk`Run {bold npm run fix} to fix links automatically`,
     );
-    for (const error of errors) {
-      console.error(
-        chalk`  {red → ${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).}`,
-      );
-    }
-    return true;
   }
-  return false;
+
+  logger.emit();
+  return logger.hasErrors();
 }

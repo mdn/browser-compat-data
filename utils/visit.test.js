@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import { strict as assert } from 'node:assert';
 
 import visit from './visit.js';

@@ -1,19 +1,27 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
-import fixBrowserOrder from './fix-browser-order.js';
-import fixFeatureOrder from './fix-feature-order.js';
+
+import fixBrowserOrder from './browser-order.js';
+import fixFeatureOrder from './feature-order.js';
+import fixLinks from './links.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
- * @param {string[]} files
+ * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
+ *
+ * @param {string[]} files The files to load and perform fix upon
+ * @returns {void}
  */
 function load(...files) {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
-      file = path.resolve(dirname, '..', file);
+      file = path.resolve(dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -25,6 +33,7 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
+        fixLinks(file);
       }
 
       continue;
@@ -56,3 +65,5 @@ if (esMain(import.meta)) {
     );
   }
 }
+
+module.exports = load;

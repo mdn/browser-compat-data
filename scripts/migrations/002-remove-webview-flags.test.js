@@ -1,11 +1,17 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
 
 import assert from 'node:assert/strict';
 
 import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
+/**
+ * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
+ */
 const tests = [
   {
     input: {

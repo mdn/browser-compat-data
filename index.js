@@ -1,48 +1,46 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+'use strict';
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fdir } from 'fdir';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 class DuplicateCompatError extends Error {
-  constructor(message) {
+  constructor(feature) {
     super(`${feature} already exists! Remove duplicate entries.`);
     this.name = 'DuplicateCompatError';
   }
 }
 
-function load() {
-  // Recursively load one or more directories passed as arguments.
-  let dir,
-    result = {};
+/**
+ * Recursively load one or more directories passed as arguments.
+ *
+ * @param {string[]} dirs The directories to load
+ * @returns {object} All of the browser compatibility data
+ */
+function load(...dirs) {
+  let result = {};
 
-  function processFilename(fn) {
-    const fp = path.join(dir, fn);
-    let extra;
+  for (const dir of dirs) {
+    const paths = new fdir()
+      .withBasePath()
+      .filter((fp) => fp.endsWith('.json'))
+      .crawl(path.join(dirname, dir))
+      .sync();
 
-    if (fs.statSync(fp).isDirectory()) {
-      // If the given filename is a directory, recursively load it.
-      extra = load(fp);
-    } else if (path.extname(fp) === '.json') {
+    for (const fp of paths) {
       try {
-        extra = JSON.parse(fs.readFileSync(fp));
+        extend(result, JSON.parse(fs.readFileSync(fp)));
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
-        return;
+        continue;
       }
-    } else {
-      // Skip anything else, such as *~ backup files or similar.
-      return;
     }
-
-    // The JSON data is independent of the actual file
-    // hierarchy, so it is essential to extend "deeply".
-    extend(result, extra);
-  }
-
-  for (dir of arguments) {
-    dir = path.resolve(dirname, dir);
-    fs.readdirSync(dir).forEach(processFilename);
   }
 
   return result;

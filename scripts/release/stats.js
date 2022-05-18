@@ -1,11 +1,14 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import http from 'node:https';
 import readline from 'readline';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { exec, releaseYargsBuilder } from './release-utils.js';
-import { walk } from '../utils/index.js';
+import { exec, releaseYargsBuilder } from './utils.js';
+import { walk } from '../../utils/index.js';
 
 const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',

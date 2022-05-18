@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { walk } from '../utils/index.js';
@@ -55,6 +58,9 @@ describe('spec_url data', () => {
       // Not really a browser feature, thus not in browser-specs
       // Remove if it is in the main ECMA spec
       'https://tc39.es/proposal-hashbang/out.html',
+
+      // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
+      'https://w3c.github.io/webrtc-extensions/',
 
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved
       'https://w3c.github.io/mathml/',

@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -6,17 +9,18 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
 import {
-  testBrowsers,
+  testBrowsersData,
+  testBrowsersPresence,
   testConsistency,
   testDescriptions,
   testLinks,
+  testNotes,
   testPrefix,
-  testRealValues,
   testSchema,
   testStyle,
   testVersions,
 } from './linter/index.js';
-import { IS_CI } from './utils.js';
+import { IS_CI, pluralize } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -52,12 +56,13 @@ function load(...files) {
           hasSchemaErrors = false,
           hasStyleErrors = false,
           hasLinkErrors = false,
-          hasBrowserErrors = false,
+          hasBrowserDataErrors = false,
+          hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
-          hasRealValueErrors = false,
           hasPrefixErrors = false,
-          hasDescriptionsErrors = false;
+          hasDescriptionsErrors = false,
+          hasNotesErrors = false;
         const relativeFilePath = path.relative(process.cwd(), file);
 
         const spinner = ora({
@@ -86,17 +91,18 @@ function load(...files) {
               file,
               './../../schemas/browsers.schema.json',
             );
+            hasBrowserDataErrors = testBrowsersData(file);
             hasLinkErrors = testLinks(file);
           } else {
             hasSchemaErrors = testSchema(file);
             hasStyleErrors = testStyle(file);
             hasLinkErrors = testLinks(file);
-            hasBrowserErrors = testBrowsers(file);
+            hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
+            hasNotesErrors = testNotes(file);
           }
         } catch (e) {
           hasSyntaxErrors = true;
@@ -108,12 +114,13 @@ function load(...files) {
           hasSchemaErrors,
           hasStyleErrors,
           hasLinkErrors,
-          hasBrowserErrors,
+          hasBrowserDataErrors,
+          hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
-          hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
+          hasNotesErrors,
         ].some((x) => !!x);
 
         if (fileHasErrors) {
@@ -135,49 +142,58 @@ function load(...files) {
   }, false);
 }
 
-/** @type {boolean} */
-var hasErrors = argv.files
-  ? load.apply(undefined, argv.files)
-  : load(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    );
+const main = (files) => {
+  /** @type {boolean} */
+  var hasErrors = files
+    ? load.apply(undefined, files)
+    : load(
+        'api',
+        'browsers',
+        'css',
+        'html',
+        'http',
+        'svg',
+        'javascript',
+        'mathml',
+        'webdriver',
+        'webextensions',
+      );
 
-if (hasErrors) {
-  console.warn('');
-  console.warn(
-    chalk`{red Problems in {bold ${filesWithErrors.size}} ${
-      filesWithErrors.size === 1 ? 'file' : 'files'
-    }:}`,
-  );
-  for (const [fileName, file] of filesWithErrors) {
-    console.warn(chalk`{red.bold ✖ ${fileName}}`);
-    try {
-      if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../../schemas/browsers.schema.json');
-        testLinks(file);
-      } else {
-        testSchema(file);
-        testStyle(file);
-        testLinks(file);
-        testVersions(file);
-        testRealValues(file);
-        testBrowsers(file);
-        testConsistency(file);
-        testPrefix(file);
-        testDescriptions(file);
+  if (hasErrors) {
+    console.warn('');
+    console.warn(
+      chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
+    );
+    for (const [fileName, file] of filesWithErrors) {
+      console.warn(chalk`{red.bold ✖ ${fileName}}`);
+      try {
+        if (file.indexOf('browsers' + path.sep) !== -1) {
+          testSchema(file, './../../schemas/browsers.schema.json');
+          testBrowsersData(file);
+          testLinks(file);
+        } else {
+          testSchema(file);
+          testStyle(file);
+          testLinks(file);
+          testVersions(file);
+          testBrowsersPresence(file);
+          testConsistency(file);
+          testPrefix(file);
+          testDescriptions(file);
+          testNotes(file);
+        }
+      } catch (e) {
+        console.error(e);
       }
-    } catch (e) {
-      console.error(e);
     }
+    return true;
   }
-  process.exit(1);
+
+  return false;
+};
+
+if (require.main === module) {
+  process.exit(main(argv.files) ? 1 : 0);
 }
+
+module.exports = main;

@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
-
-import { fileURLToPath } from 'node:url';
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 import chalk from 'chalk';
 import esMain from 'es-main';
@@ -11,18 +8,7 @@ import { hideBin } from 'yargs/helpers';
 
 import bcd from '../index.js';
 
-import { getRefDate } from './release-utils.js';
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
- */
+import { getRefDate } from './release/utils.js';
 
 /**
  * Check whether a support statement is a specified type
@@ -149,13 +135,28 @@ const getStats = (folder, allBrowsers) => {
 };
 
 /**
+ * Get value as either percentage or number as requested
+ *
+ * @param {VersionStats} stats The stats object to get data from
+ * @param {string} type The type of statistic to obtain
+ * @param {boolean} counts Whether to return the integer itself
+ * @returns {string} The percentage or count
+ */
+const getStat = (stats, type, counts) => {
+  return counts
+    ? stats[type]
+    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
+};
+
+/**
  * Print statistics of BCD
  *
  * @param {object.<string, VersionStats>} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @param {boolean} counts Whether to display a count vs. a percentage
  * @returns {void}
  */
-const printStats = (stats, folder) => {
+const printStats = (stats, folder, counts) => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -180,12 +181,10 @@ const printStats = (stats, folder) => {
 
   Object.keys(stats).forEach((entry) => {
     table += `| ${entry.replace('_', ' ')} | `;
-    table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
-      2,
-    )}% | `;
-    table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
+    table += `${getStat(stats[entry], 'real', counts)} | `;
+    table += `${getStat(stats[entry], 'range', counts)} | `;
+    table += `${getStat(stats[entry], 'true', counts)} | `;
+    table += `${getStat(stats[entry], 'null', counts)} |
 `;
   });
 
@@ -206,6 +205,12 @@ if (esMain(import.meta)) {
         .option('all', {
           alias: 'a',
           describe: 'Show statistics for all browsers within BCD',
+          type: 'boolean',
+          nargs: 0,
+        })
+        .option('counts', {
+          alias: 'c',
+          describe: 'Show feature count rather than percentages',
           type: 'boolean',
           nargs: 0,
         });

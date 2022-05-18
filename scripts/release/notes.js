@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import fs from 'node:fs';
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -8,8 +11,8 @@ import {
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} from './release-utils.js';
-import diffFeatures from './diff-features.js';
+} from './utils.js';
+import diffFeatures from '../diff-features.js';
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
@@ -84,7 +87,7 @@ function pullsFromGitHub(start, end) {
 
 function preamble() {
   const upcomingVersion = JSON.parse(
-    fs.readFileSync(new URL('../package.json', import.meta.url)),
+    fs.readFileSync(new URL('../../package.json', import.meta.url)),
   ).version;
 
   return [

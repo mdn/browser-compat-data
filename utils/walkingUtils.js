@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 export function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }

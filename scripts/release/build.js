@@ -1,7 +1,11 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 
 import esMain from 'es-main';
+import stringify from 'fast-json-stable-stringify';
 
 const directory = './build/';
 
@@ -9,26 +13,25 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
-  const { default: bcd } = await import('../index.js');
-  const string = JSON.stringify(bcd);
+  const { default: bcd } = await import('../../index.js');
+  const string = stringify(bcd);
   return string;
 }
 
 // Returns a promise for writing the data to JSON file
-async function writeData(data) {
+async function writeData() {
   const dest = path.resolve(directory, 'data.json');
+  const data = createDataBundle();
   await fs.writeFile(dest, data);
 }
 
-async function writeIndexCJS() {
-  const dest = path.resolve(directory, 'index.cjs');
-  const content = `module.exports = require("./data.json");\n`;
-  await fs.writeFile(dest, content);
-}
-
-async function writeIndexJS(data) {
-  const dest = path.resolve(directory, 'index.js');
-  const content = `export default ${data};\n`;
+async function writeWrapper() {
+  const dest = path.resolve(directory, 'legacynode.mjs');
+  const content = `// A small wrapper to allow ESM imports on older NodeJS versions that don't support import assertions
+import fs from 'node:fs';
+const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));
+export default bcd;
+`;
   await fs.writeFile(dest, content);
 }
 
@@ -43,14 +46,16 @@ async function copyFiles() {
 
 async function createManifest() {
   const packageJSONRaw = await fs.readFile(
-    new URL('../package.json', import.meta.url),
+    new URL('../../package.json', import.meta.url),
     'utf-8',
   );
   const full = JSON.parse(packageJSONRaw);
   const minimal = {
-    main: 'index.cjs',
-    exports: { import: './index.js', require: './index.cjs' },
-    type: 'module',
+    main: 'data.json',
+    exports: {
+      '.': './data.json',
+      './forLegacyNode': './legacynode.mjs',
+    },
   };
 
   const minimalKeys = [
@@ -97,12 +102,9 @@ async function main() {
   // Crate a new directory
   await fs.mkdir(directory);
 
-  const data = await createDataBundle();
-
   await writeManifest();
-  await writeData(data);
-  await writeIndexCJS();
-  await writeIndexJS(data);
+  await writeData();
+  await writeWrapper();
   await copyFiles();
 
   console.log('Data bundle is ready');
