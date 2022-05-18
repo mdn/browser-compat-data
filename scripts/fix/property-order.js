@@ -3,12 +3,10 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
+import fs from 'node:fs';
 
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import compareFeatures from '../lib/compare-features.js';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 const compareFeatures = require('../compare-features');
 
@@ -72,4 +70,4 @@ const fixPropertyOrder = (filename) => {
   }
 };
 
-module.exports = fixPropertyOrder;
+export default fixPropertyOrder;
