@@ -16,7 +16,6 @@ const {
   testLinks,
   testNotes,
   testPrefix,
-  testRealValues,
   testSchema,
   testStyle,
   testVersions,
@@ -97,7 +96,6 @@ const checkFiles = (...files) => {
           testDescriptions(file);
           testLinks(file);
           testPrefix(file);
-          testRealValues(file);
           testSchema(file);
           testStyle(file);
           testVersions(file);
