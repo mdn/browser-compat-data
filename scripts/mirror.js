@@ -377,10 +377,13 @@ const bumpOpera = (originalData, sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOperaAndroid = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'opera_android', 'chrome_android', [
-    /Chrome/g,
-    'Opera',
-  ]);
+  return bumpGeneric(
+    originalData,
+    sourceData,
+    'opera_android',
+    'chrome_android',
+    [/Chrome/g, 'Opera'],
+  );
 };
 
 /**
