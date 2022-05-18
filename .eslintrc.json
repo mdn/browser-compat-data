@@ -1,6 +1,5 @@
 {
   "env": {
-    "commonjs": true,
     "es6": true,
     "jest": true,
     "node": true
@@ -10,7 +9,9 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 2020
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   }
 }

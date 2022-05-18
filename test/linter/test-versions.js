@@ -1,11 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import compareVersions from 'compare-versions';
+import chalk from 'chalk-template';
+import { Logger } from '../utils.js';
 
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -14,8 +16,6 @@ const { Logger } = require('../utils.js');
  * @typedef {import('../../types').VersionValue} VersionValue
  * @typedef {import('../../types').Logger} Logger
  */
-
-const browsers = require('../..').browsers;
 
 /** @type {object.<string, string[]>} */
 const validBrowserVersions = {};
@@ -272,9 +272,14 @@ function findSupport(data, logger, relPath) {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testVersions(filename) {
+export default function testVersions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(
+      new URL(new URL(filename, import.meta.url), import.meta.url),
+      'utf-8',
+    ),
+  );
 
   const logger = new Logger('Versions');
 
@@ -283,5 +288,3 @@ function testVersions(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testVersions;

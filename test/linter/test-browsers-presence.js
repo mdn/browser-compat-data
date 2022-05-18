@@ -1,13 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import chalk from 'chalk-template';
 
-const { browsers } = require('../../index.js');
+import { Logger } from '../utils.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -95,15 +100,18 @@ function processData(data, category, logger, path = '') {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testBrowsersPresence(filename) {
+export default function testBrowsersPresence(filename) {
   const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
+    path.resolve(dirname, '..', '..'),
     filename,
   );
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
+
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Browsers');
 
@@ -112,5 +120,3 @@ function testBrowsersPresence(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testBrowsersPresence;

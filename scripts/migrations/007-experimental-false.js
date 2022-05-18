@@ -1,17 +1,22 @@
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import esMain from 'es-main';
 
-const { browsers } = require('../..');
-const { walk } = require('../../utils');
+import { walk } from '../../utils/index.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {object} bcd Parsed BCD object to be updated in place.
  */
-const fixExperimental = (bcd) => {
+export const fixExperimental = (bcd) => {
   for (const { compat } of walk(undefined, bcd)) {
     if (!compat?.status?.experimental) {
       continue;
@@ -77,8 +82,8 @@ const fixExperimentalFile = (filename) => {
  */
 function load(...files) {
   for (let file of files) {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -101,7 +106,7 @@ function load(...files) {
   }
 }
 
-if (require.main === module) {
+if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
@@ -119,5 +124,3 @@ if (require.main === module) {
     );
   }
 }
-
-module.exports = { fixExperimental };

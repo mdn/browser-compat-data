@@ -1,12 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
-const { query } = require('../../utils/index.js');
-const { Logger } = require('../utils.js');
+import fs from 'node:fs';
+import compareVersions from 'compare-versions';
+import chalk from 'chalk-template';
+import { query } from '../../utils/index.js';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -37,7 +36,7 @@ const { Logger } = require('../utils.js');
  * This checker aims at improving data quality
  * by detecting inconsistent information.
  */
-class ConsistencyChecker {
+export class ConsistencyChecker {
   /**
    * Checks the data for any errors
    *
@@ -427,9 +426,11 @@ class ConsistencyChecker {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testConsistency(filename) {
+export default function testConsistency(filename) {
   /** @type {Identifier} */
-  let data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Consistency');
 
@@ -462,5 +463,3 @@ function testConsistency(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = { ConsistencyChecker, testConsistency };
