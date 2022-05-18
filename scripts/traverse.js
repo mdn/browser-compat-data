@@ -112,7 +112,7 @@ const main = (
         bcd[folders[folder]],
         browsers,
         values,
-        argv.depth,
+        depth,
         folders[folder] + '.',
       ),
     );
