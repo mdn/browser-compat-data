@@ -80,18 +80,18 @@ If the feature you're interested in is an API, CSS or JavaScript feature, you ca
 
 Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
 
-The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument. (Mirroring data for Edge ignores this argument.)
+The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
 
-| Destination      | Default Source             |
-| ---------------- | -------------------------- |
-| Chrome Android   | Chrome                     |
-| Edge             | Chrome + Internet Explorer |
-| Firefox Android  | Firefox                    |
-| Opera            | Chrome                     |
-| Opera Android    | Chrome Android             |
-| Safari iOS       | Safari                     |
-| Samsung Internet | Chrome Android             |
-| WebView          | Chrome Android             |
+| Destination      | Default Source |
+| ---------------- | -------------- |
+| Chrome Android   | Chrome         |
+| Edge             | Chrome         |
+| Firefox Android  | Firefox        |
+| Opera            | Chrome         |
+| Opera Android    | Chrome Android |
+| Safari iOS       | Safari         |
+| Samsung Internet | Chrome Android |
+| WebView          | Chrome Android |
 
 The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
 
