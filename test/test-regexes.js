@@ -1,7 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
+
+/** @type {Identifier} */
+import bcd from '../index.js';
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -11,11 +14,6 @@
  * @property {string[]} matches
  * @property {string[]} misses
  */
-
-const assert = require('assert').strict;
-
-/** @type {Identifier} */
-const bcd = require('..');
 
 /** @type {TestCase[]} */
 const tests = [
@@ -73,4 +71,4 @@ const testRegexes = () => {
   });
 };
 
-module.exports = testRegexes;
+export default testRegexes;

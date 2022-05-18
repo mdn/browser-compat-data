@@ -1,10 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const assert = require('assert').strict;
-const { escapeInvisibles } = require('./utils.js');
+import assert from 'node:assert/strict';
+import { escapeInvisibles } from './utils.js';
 
 describe('utils', () => {
   it('`escapeInvisibles()` works correctly', () => {

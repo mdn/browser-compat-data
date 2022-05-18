@@ -1,66 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import bcd from '../index.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
-
-const bcd = require('..');
-
-const { argv } = require('yargs').command(
-  '$0 [folder...]',
-  'Print feature names in the folder (and optionally filter features to specific browser or version values)',
-  (yargs) => {
-    yargs
-      .positional('folder', {
-        describe: 'The folder(s) to traverse',
-        type: 'array',
-        default: Object.keys(bcd).filter((k) => k !== 'browsers'),
-      })
-      .option('browser', {
-        alias: 'b',
-        describe: 'Filter by a browser. May repeat.',
-        type: 'array',
-        nargs: 1,
-        default: Object.keys(bcd.browsers),
-      })
-      .option('filter', {
-        alias: 'f',
-        describe: 'Filter by version value. May repeat.',
-        type: 'array',
-        nargs: 1,
-        default: [],
-      })
-      .option('non-real', {
-        describe:
-          'Filter to features with non-real values. Alias for "-f true -f null"',
-        type: 'boolean',
-        nargs: 0,
-      })
-      .option('depth', {
-        alias: 'd',
-        describe:
-          'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
-        type: 'number',
-        nargs: 1,
-        default: 10,
-      })
-      .example(
-        'npm run traverse -- --browser=safari --non-real',
-        'Find all features containing non-real Safari entries',
-      )
-      .example(
-        'npm run traverse -- -b webview_android -f true',
-        'Find all features marked as true for WebVeiw',
-      )
-      .example(
-        'npm run traverse -- -b firefox -f 10',
-        'Find all features marked as supported since Firefox 10',
-      );
-  },
-);
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
@@ -140,7 +89,21 @@ function traverseFeatures(obj, browsers, values, depth, identifier) {
   return features.filter((item, pos) => features.indexOf(item) == pos);
 }
 
-const main = (folders, browsers, values) => {
+const main = (
+  folders = [
+    'api',
+    'css',
+    'html',
+    'http',
+    'svg',
+    'javascript',
+    'mathml',
+    'webdriver',
+  ],
+  browsers = Object.keys(bcd.browsers),
+  values = ['null', 'true'],
+  depth = 100,
+) => {
   let features = [];
 
   for (const folder in folders) {
@@ -158,19 +121,63 @@ const main = (folders, browsers, values) => {
   return features;
 };
 
-if (require.main === module) {
-  let folders = argv.folder;
-  let browsers = Array.isArray(argv.browser) ? argv.browser : [argv.browser];
-  let values = Array.isArray(argv.filter) ? argv.filter : [argv.filter];
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [folder...]',
+    'Print feature names in the folder (and optionally filter features to specific browser or version values)',
+    (yargs) => {
+      yargs
+        .positional('folder', {
+          describe: 'The folder(s) to traverse',
+          type: 'array',
+          default: Object.keys(bcd).filter((k) => k !== 'browsers'),
+        })
+        .option('browser', {
+          alias: 'b',
+          describe: 'Filter by a browser. May repeat.',
+          type: 'array',
+          nargs: 1,
+          default: Object.keys(bcd.browsers),
+        })
+        .option('filter', {
+          alias: 'f',
+          describe: 'Filter by version value. May repeat.',
+          type: 'array',
+          nargs: 1,
+          default: [],
+        })
+        .option('non-real', {
+          describe:
+            'Filter to features with non-real values. Alias for "-f true -f null"',
+          type: 'boolean',
+          nargs: 0,
+        })
+        .option('depth', {
+          alias: 'd',
+          describe:
+            'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
+          type: 'number',
+          nargs: 1,
+          default: 10,
+        })
+        .example(
+          'npm run traverse -- --browser=safari --non-real',
+          'Find all features containing non-real Safari entries',
+        )
+        .example(
+          'npm run traverse -- -b webview_android -f true',
+          'Find all features marked as true for WebVeiw',
+        )
+        .example(
+          'npm run traverse -- -b firefox -f 10',
+          'Find all features marked as supported since Firefox 10',
+        );
+    },
+  );
 
-  if (argv.nonreal) {
-    values.push('true', 'null');
-  }
-
-  const features = main(folders, browsers, values);
-
+  const features = main(argv.folder, argv.value, argv.browser, argv.depth);
   console.log(features.join('\n'));
   console.log(features.length);
 }
 
-module.exports = traverseFeatures;
+export default main;
