@@ -1,14 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const path = require('path');
-const ora = require('ora');
-const yargs = require('yargs');
-const chalk = require('chalk');
-const {
+import esMain from 'es-main';
+import ora from 'ora';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import chalk from 'chalk';
+
+import {
   testBrowsersData,
   testBrowsersPresence,
   testConsistency,
@@ -19,21 +22,10 @@ const {
   testSchema,
   testStyle,
   testVersions,
-} = require('./linter/index.js');
-const { IS_CI, pluralize } = require('./utils.js');
+} from './linter/index.js';
+import { IS_CI, pluralize } from './utils.js';
 
-const argv = yargs
-  .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, (yargs) => {
-    return yargs.positional('files...', {
-      description: 'The files to lint (leave blank to test everything)',
-      type: 'string',
-    });
-  })
-  .help()
-  .alias('help', 'h')
-  .alias('help', '?')
-  .parse(process.argv.slice(2));
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /** @type {object} */
 const spinner = ora({
@@ -49,8 +41,8 @@ const spinner = ora({
 const checkFiles = (...files) => {
   let errors = {};
   for (let file of files) {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -166,8 +158,18 @@ const main = (
   return filesWithErrors > 0;
 };
 
-if (require.main === module) {
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [files..]',
+    false,
+    (yargs) =>
+      yargs.positional('files...', {
+        description: 'The files to lint (leave blank to test everything)',
+        type: 'string',
+      }),
+  );
+
   process.exit(main(argv.files) ? 1 : 0);
 }
 
-module.exports = main;
+export default main;

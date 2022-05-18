@@ -1,11 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-const specData = require('browser-specs');
-const { walk } = require('../utils');
+import specData from 'browser-specs' assert { type: 'json' };
+
+import { walk } from '../utils/index.js';
 
 describe('spec_url data', () => {
   it('spec_urls only use allow listed hosts by w3c/browser-specs (and our exception list)', () => {

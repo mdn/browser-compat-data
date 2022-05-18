@@ -1,11 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import chalk from 'chalk';
+import { Logger } from '../utils.js';
 
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -74,21 +76,21 @@ function processData(data, category, logger) {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testPrefix(filename) {
+export default function testPrefix(filename) {
   const logger = new Logger('Prefix');
 
   const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
+    path.resolve(dirname, '..', '..'),
     filename,
   );
   const category =
     relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   processData(data, category, logger);
 
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testPrefix;
