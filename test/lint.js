@@ -16,7 +16,6 @@ const {
   testLinks,
   testNotes,
   testPrefix,
-  testRealValues,
   testSchema,
   testStyle,
   testVersions,
@@ -65,7 +64,6 @@ function load(...files) {
           hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
-          hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false,
           hasNotesErrors = false;
@@ -106,7 +104,6 @@ function load(...files) {
             hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
             hasNotesErrors = testNotes(file);
@@ -125,7 +122,6 @@ function load(...files) {
           hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
-          hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
           hasNotesErrors,
@@ -184,7 +180,6 @@ const main = (files) => {
           testStyle(file);
           testLinks(file);
           testVersions(file);
-          testRealValues(file);
           testBrowsersPresence(file);
           testConsistency(file);
           testPrefix(file);
