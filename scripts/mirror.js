@@ -260,8 +260,8 @@ const copyStatement = (data) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} destination
- * @param {string} source
+ * @param {string} targetBrowser
+ * @param {string} sourceBrowser
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
