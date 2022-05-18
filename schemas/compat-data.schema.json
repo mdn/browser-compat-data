@@ -5,6 +5,31 @@
     "simple_support_statement": {
       "type": "object",
       "properties": {
+        "version_added": {
+          "description": "A string (indicating which browser version added this feature), the value true (indicating support added in an unknown version), the value false (indicating the feature is not supported), or the value null (indicating support is unknown).",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+            },
+            {
+              "type": "boolean",
+              "nullable": true
+            }
+          ]
+        },
+        "version_removed": {
+          "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+            },
+            {
+              "const": true
+            }
+          ]
+        },
         "prefix": {
           "type": "string",
           "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
@@ -39,22 +64,8 @@
           }
         },
         "partial_implementation": {
-          "type": "boolean",
+          "const": true,
           "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
-        },
-        "version_added": {
-          "description": "A string (indicating which browser version added this feature), the value true (indicating support added in an unknown version), the value false (indicating the feature is not supported), or the value null (indicating support is unknown).",
-          "allOf": [
-            { "type": ["string", "boolean", "null"] },
-            { "not": { "enum": ["true", "false", "null"] } }
-          ]
-        },
-        "version_removed": {
-          "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
-          "allOf": [
-            { "type": ["string", "boolean"] },
-            { "not": { "enum": ["true", false] } }
-          ]
         },
         "notes": {
           "description": "A string or array of strings containing additional information.",
@@ -157,6 +168,7 @@
           "firefox_android",
           "ie",
           "nodejs",
+          "oculus",
           "opera",
           "opera_android",
           "safari",
@@ -236,6 +248,7 @@
       "allOf": [
         { "$ref": "#/definitions/identifier" },
         {
+          "type": "object",
           "maxProperties": 1,
           "minProperties": 1
         }
@@ -246,6 +259,7 @@
       "allOf": [
         { "$ref": "#/definitions/webextensions_identifier" },
         {
+          "type": "object",
           "maxProperties": 1,
           "minProperties": 1
         }

@@ -18,6 +18,8 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   }),
 );
+
+/* eslint-disable-next-line no-control-regex */
 const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
@@ -25,6 +27,20 @@ const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
+
+/** @type {string[]} */
+const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
+/**
+ * Pluralizes a string
+ *
+ * @param {string} word Word in singular form
+ * @param {number} quantifier
+ * @return {string}
+ */
+const pluralize = (word, quantifier) => {
+  return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
+};
 
 /**
  * Escapes common invisible characters.
@@ -64,6 +80,7 @@ function indexToPosRaw(str, index) {
     switch (char) {
       case '\n':
         if (prevChar === '\r') break;
+      // fall through
       case '\r':
         line++;
         col = 1;
@@ -105,10 +122,45 @@ function jsonDiff(actual, expected) {
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return chalk`{bold line #${i + 1}}
-    {yellow Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
-    {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
+      return chalk`{bold line #${i + 1}}:
+      {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
+      {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
+  }
+}
+
+class Logger {
+  /** @param {string} title */
+  constructor(title) {
+    this.title = title;
+    this.errors = [];
+  }
+
+  /**
+   * @param {string} message
+   * @param {string} tip
+   */
+  error(message, tip) {
+    this.errors.push({ message: message, tip: tip });
+  }
+
+  emit() {
+    const errorCount = this.errors.length;
+
+    if (errorCount) {
+      console.error(
+        chalk`{red   → ${this.title} – ${pluralize('error', errorCount)}:}`,
+      );
+
+      for (const error of this.errors) {
+        console.error(chalk`    {red → ${error.message}}`);
+        if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
+      }
+    }
+  }
+
+  hasErrors() {
+    return !!this.errors.length;
   }
 }
 
@@ -116,8 +168,11 @@ module.exports = {
   INVISIBLES_MAP,
   IS_CI,
   IS_WINDOWS,
+  VALID_ELEMENTS,
+  pluralize,
   escapeInvisibles,
   indexToPosRaw,
   indexToPos,
   jsonDiff,
+  Logger,
 };
