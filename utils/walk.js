@@ -6,7 +6,7 @@ import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
 export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
-  if (path !== undefined) {
+  if (path !== undefined && path !== '__meta') {
     const next = {
       path,
       data,

@@ -14,8 +14,13 @@ export function isBrowser(obj) {
 }
 
 export function descendantKeys(data) {
+  if (typeof data !== 'object') {
+    // Return if the data isn't an object
+    return [];
+  }
+
   if (isFeature(data)) {
-    return Object.keys(data).filter((key) => key !== '__compat');
+    return Object.keys(data).filter((key) => !key.startsWith('__'));
   }
 
   if (isBrowser(data)) {
@@ -23,5 +28,5 @@ export function descendantKeys(data) {
     return [];
   }
 
-  return Object.keys(data);
+  return Object.keys(data).filter((key) => key !== '__meta');
 }

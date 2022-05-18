@@ -1,11 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { promises as fs } from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
+
+const packageJson = JSON.parse(
+  await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
+);
 
 const directory = './build/';
 
@@ -14,7 +18,10 @@ const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
   const { default: bcd } = await import('../../index.js');
-  const string = stringify(bcd);
+  const string = stringify({
+    ...bcd,
+    __meta: { version: packageJson.version },
+  });
   return string;
 }
 
@@ -45,11 +52,6 @@ async function copyFiles() {
 }
 
 async function createManifest() {
-  const packageJSONRaw = await fs.readFile(
-    new URL('../../package.json', import.meta.url),
-    'utf-8',
-  );
-  const full = JSON.parse(packageJSONRaw);
   const minimal = {
     main: 'data.json',
     exports: {
@@ -72,8 +74,8 @@ async function createManifest() {
   ];
 
   for (const key of minimalKeys) {
-    if (key in full) {
-      minimal[key] = full[key];
+    if (key in packageJson) {
+      minimal[key] = packageJson[key];
     } else {
       throw `Could not create a complete manifest! ${key} is missing!`;
     }

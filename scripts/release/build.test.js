@@ -5,7 +5,11 @@ import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 
-const prebuiltPath = '../../build/data.json';
+const packageJson = JSON.parse(
+  await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
+);
+
+const prebuiltPath = '../../build';
 
 describe('release-build', () => {
   it('pre-built bundles are identical to the source', async () => {
@@ -14,6 +18,9 @@ describe('release-build', () => {
     const bundled = JSON.parse(
       fs.readFileSync(new URL(prebuiltPath, import.meta.url)),
     );
-    assert.deepEqual(regular, bundled);
+    assert.deepEqual(
+      { ...regular, __meta: { version: packageJson.version } },
+      bundled,
+    );
   }).timeout(5000); // Timeout must be long enough for all the file I/O
 });
