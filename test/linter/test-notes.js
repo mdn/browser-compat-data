@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
 
 import { Logger, VALID_ELEMENTS } from '../utils.js';
