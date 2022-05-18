@@ -212,8 +212,10 @@ const bumpChromeAndroid = (originalData, sourceData) => {
  */
 const bumpEdge = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
-  let source = 'chrome';
 
+  const chromeFalse =
+    sourceData.version_removed || sourceData.version_added === false;
+  const chromeNull = sourceData.version_added === null;
 
   if (chromeFalse) {
     if (
