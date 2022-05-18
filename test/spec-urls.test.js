@@ -1,11 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-const specData = require('browser-specs');
-const { walk } = require('../utils');
+import specData from 'browser-specs' assert { type: 'json' };
+
+import { walk } from '../utils/index.js';
 
 describe('spec_url data', () => {
   it('spec_urls only use allow listed hosts by w3c/browser-specs (and our exception list)', () => {
@@ -54,7 +54,7 @@ describe('spec_url data', () => {
       // Remove if it is in the main ECMA spec
       'https://tc39.es/proposal-hashbang/out.html',
 
-      // Remove if https://github.com/w3c/browser-specs/pull/605 is merged
+      // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
       'https://w3c.github.io/webrtc-extensions/',
 
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved

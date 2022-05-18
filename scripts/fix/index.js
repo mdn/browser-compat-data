@@ -1,14 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import esMain from 'es-main';
 
-const fs = require('fs');
-const path = require('path');
-const fixBrowserOrder = require('./browser-order');
-const fixFeatureOrder = require('./feature-order');
-const fixPropertyOrder = require('./property-order');
-const fixLinks = require('./links');
+import fixBrowserOrder from './browser-order.js';
+import fixFeatureOrder from './feature-order.js';
+import fixPropertyOrder from './property-order.js';
+import fixLinks from './links.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
@@ -18,8 +21,8 @@ const fixLinks = require('./links');
  */
 function load(...files) {
   for (let file of files) {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -46,19 +49,23 @@ function load(...files) {
   }
 }
 
-if (process.argv[2]) {
-  load(process.argv[2]);
-} else {
-  load(
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'test',
-    'webdriver',
-    'webextensions',
-  );
+if (esMain(import.meta)) {
+  if (process.argv[2]) {
+    load(process.argv[2]);
+  } else {
+    load(
+      'api',
+      'css',
+      'html',
+      'http',
+      'svg',
+      'javascript',
+      'mathml',
+      'test',
+      'webdriver',
+      'webextensions',
+    );
+  }
 }
+
+module.exports = load;
