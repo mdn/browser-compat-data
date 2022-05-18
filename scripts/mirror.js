@@ -127,9 +127,6 @@ const getSource = (browser, forced_source) => {
     case 'safari_ios':
       source = 'safari';
       break;
-    case 'edge':
-      source = 'chrome-ie';
-      break;
     default:
       throw Error(
         `${browser} is a base browser and a "source" browser must be specified.`,
