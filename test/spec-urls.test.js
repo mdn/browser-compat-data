@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import assert from 'node:assert/strict';
 
 import specData from 'browser-specs' assert { type: 'json' };
