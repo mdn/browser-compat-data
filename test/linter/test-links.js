@@ -1,17 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const fs = require('fs');
-const url = require('url');
-const chalk = require('chalk');
-const {
-  IS_WINDOWS,
-  indexToPos,
-  indexToPosRaw,
-  Logger,
-} = require('../utils.js');
+import fs from 'node:fs';
+import chalk from 'chalk';
+import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
 
 /**
  * @typedef {object} LinkError
@@ -28,7 +20,7 @@ const {
  * @param {string} filename The file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-function processData(filename) {
+export function processData(filename) {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -60,6 +52,19 @@ function processData(filename) {
       return {
         issue: 'Use shortenable URL',
         expected: `https://crbug.com/${match[2]}`,
+      };
+    },
+  );
+
+  processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crbug.com/${match[2]}/${match[3]}`,
       };
     },
   );
@@ -193,7 +198,7 @@ function processData(filename) {
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
     (match) => {
-      if (url.parse(match[1]).hostname === null) {
+      if (new URL(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
           actualLink: match[1],
@@ -243,7 +248,7 @@ function processLink(errors, actual, regexp, matchHandler) {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testLinks(filename) {
+export default function testLinks(filename) {
   const logger = new Logger('Links');
 
   /** @type {Object[]} */
@@ -251,12 +256,11 @@ function testLinks(filename) {
 
   for (const error of errors) {
     logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).\n{blue Tip: Run {bold npm run fix} to fix links automatically}`,
+      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+      chalk`Run {bold npm run fix} to fix links automatically`,
     );
   }
 
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = { processData, testLinks };

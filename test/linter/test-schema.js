@@ -1,14 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const Ajv = require('ajv').default;
-const ajvErrors = require('ajv-errors');
-const addFormats = require('ajv-formats');
-const betterAjvErrors = require('better-ajv-errors').default;
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import fs from 'node:fs';
+import Ajv from 'ajv';
+import ajvErrors from 'ajv-errors';
+import ajvFormats from 'ajv-formats';
+import betterAjvErrors from 'better-ajv-errors';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../utils').Logger} Logger
@@ -17,7 +15,7 @@ const { Logger } = require('../utils.js');
 const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.
-addFormats(ajv, { mode: 'fast' });
+ajvFormats(ajv, { mode: 'fast' });
 // Allow for custom error messages to provide better directions for contributors
 ajvErrors(ajv);
 
@@ -28,12 +26,16 @@ ajvErrors(ajv);
  * @param {string} [schemaFilename] A specific schema file to test with, if needed
  * @returns {boolean} If the file contains errors
  */
-function testSchema(
+export default function testSchema(
   dataFilename,
   schemaFilename = './../../schemas/compat-data.schema.json',
 ) {
-  const schema = require(schemaFilename);
-  const data = require(dataFilename);
+  const schema = JSON.parse(
+    fs.readFileSync(new URL(schemaFilename, import.meta.url), 'utf-8'),
+  );
+  const data = JSON.parse(
+    fs.readFileSync(new URL(dataFilename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('JSON Schema');
 
@@ -48,5 +50,3 @@ function testSchema(
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testSchema;

@@ -1,15 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk';
+import deepDiff from 'deep-diff';
+import esMain from 'es-main';
 
-const chalk = require('chalk');
-const deepDiff = require('deep-diff');
-const {
-  getMergeBase,
-  getFileContent,
-  getGitDiffStatuses,
-} = require('./lib/git.js');
+import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 
 // Note: This does not detect renamed files
 /**
@@ -114,7 +110,7 @@ function getDiffs(base, head = '') {
   return mergeAsMap(namedDescriptions);
 }
 
-if (require.main === module) {
+if (esMain(import.meta)) {
   let [base = 'origin/HEAD', head] = process.argv.slice(2);
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);

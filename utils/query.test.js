@@ -1,11 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-
-const query = require('./query');
+import query from './query.js';
 
 describe('query()', function () {
   describe('should throw on non-existent features', function () {

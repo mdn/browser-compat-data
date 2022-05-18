@@ -1,14 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const path = require('path');
-const ora = require('ora');
-const yargs = require('yargs');
-const chalk = require('chalk');
-const {
+import esMain from 'es-main';
+import ora from 'ora';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import chalk from 'chalk';
+
+import {
   testBrowsersData,
   testBrowsersPresence,
   testConsistency,
@@ -16,28 +19,16 @@ const {
   testLinks,
   testNotes,
   testPrefix,
-  testRealValues,
   testSchema,
   testStyle,
   testVersions,
-} = require('./linter/index.js');
-const { IS_CI, pluralize } = require('./utils.js');
+} from './linter/index.js';
+import { IS_CI, pluralize } from './utils.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
-
-const argv = yargs
-  .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, (yargs) => {
-    return yargs.positional('files...', {
-      description: 'The files to lint',
-      type: 'string',
-    });
-  })
-  .help()
-  .alias('help', 'h')
-  .alias('help', '?')
-  .parse(process.argv.slice(2));
 
 /**
  * @param {string[]} files
@@ -45,8 +36,8 @@ const argv = yargs
  */
 function load(...files) {
   return files.reduce((prevHasErrors, file) => {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -65,7 +56,6 @@ function load(...files) {
           hasBrowserPresenceErrors = false,
           hasVersionErrors = false,
           hasConsistencyErrors = false,
-          hasRealValueErrors = false,
           hasPrefixErrors = false,
           hasDescriptionsErrors = false,
           hasNotesErrors = false;
@@ -106,7 +96,6 @@ function load(...files) {
             hasBrowserPresenceErrors = testBrowsersPresence(file);
             hasVersionErrors = testVersions(file);
             hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
             hasPrefixErrors = testPrefix(file);
             hasDescriptionsErrors = testDescriptions(file);
             hasNotesErrors = testNotes(file);
@@ -125,7 +114,6 @@ function load(...files) {
           hasBrowserPresenceErrors,
           hasVersionErrors,
           hasConsistencyErrors,
-          hasRealValueErrors,
           hasPrefixErrors,
           hasDescriptionsErrors,
           hasNotesErrors,
@@ -150,49 +138,68 @@ function load(...files) {
   }, false);
 }
 
-/** @type {boolean} */
-var hasErrors = argv.files
-  ? load.apply(undefined, argv.files)
-  : load(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    );
+const main = (files) => {
+  /** @type {boolean} */
+  var hasErrors = files
+    ? load.apply(undefined, files)
+    : load(
+        'api',
+        'browsers',
+        'css',
+        'html',
+        'http',
+        'svg',
+        'javascript',
+        'mathml',
+        'webdriver',
+        'webextensions',
+      );
 
-if (hasErrors) {
-  console.warn('');
-  console.warn(
-    chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
-  );
-  for (const [fileName, file] of filesWithErrors) {
-    console.warn(chalk`{red.bold ✖ ${fileName}}`);
-    try {
-      if (file.indexOf('browsers' + path.sep) !== -1) {
-        testSchema(file, './../../schemas/browsers.schema.json');
-        testBrowsersData(file);
-        testLinks(file);
-      } else {
-        testSchema(file);
-        testStyle(file);
-        testLinks(file);
-        testVersions(file);
-        testRealValues(file);
-        testBrowsersPresence(file);
-        testConsistency(file);
-        testPrefix(file);
-        testDescriptions(file);
-        testNotes(file);
+  if (hasErrors) {
+    console.warn('');
+    console.warn(
+      chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
+    );
+    for (const [fileName, file] of filesWithErrors) {
+      console.warn(chalk`{red.bold ✖ ${fileName}}`);
+      try {
+        if (file.indexOf('browsers' + path.sep) !== -1) {
+          testSchema(file, './../../schemas/browsers.schema.json');
+          testBrowsersData(file);
+          testLinks(file);
+        } else {
+          testSchema(file);
+          testStyle(file);
+          testLinks(file);
+          testVersions(file);
+          testBrowsersPresence(file);
+          testConsistency(file);
+          testPrefix(file);
+          testDescriptions(file);
+          testNotes(file);
+        }
+      } catch (e) {
+        console.error(e);
       }
-    } catch (e) {
-      console.error(e);
     }
+    return true;
   }
-  process.exit(1);
+
+  return false;
+};
+
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [files..]',
+    false,
+    (yargs) =>
+      yargs.positional('files...', {
+        description: 'The files to lint',
+        type: 'string',
+      }),
+  );
+
+  process.exit(main(argv.files) ? 1 : 0);
 }
+
+export default main;
