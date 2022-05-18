@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 import { execSync } from 'node:child_process';
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 
 const packageJson = JSON.parse(
   await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
@@ -16,7 +16,7 @@ describe('release-build', () => {
     execSync('npm run release-build');
     const { default: regular } = await import('../../index.js');
     const bundled = JSON.parse(
-      fs.readFileSync(new URL(prebuiltPath, import.meta.url)),
+      await fs.readFile(new URL(prebuiltPath, import.meta.url)),
     );
     assert.deepEqual(
       { ...regular, __meta: { version: packageJson.version } },
