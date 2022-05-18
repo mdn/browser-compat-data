@@ -1,18 +1,23 @@
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import esMain from 'es-main';
 
-const { browsers } = require('../..');
-const { walk } = require('../../utils');
+import { walk } from '../../utils/index.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {object} bcd Parsed BCD object to be updated in place.
  */
-const fixExperimental = (bcd) => {
-  for (const { path, compat } of walk(undefined, bcd)) {
+export const fixExperimental = (bcd) => {
+  for (const { compat } of walk(undefined, bcd)) {
     if (!compat?.status?.experimental) {
       continue;
     }
@@ -72,36 +77,36 @@ const fixExperimentalFile = (filename) => {
   }
 };
 
-if (require.main === module) {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixExperimentalFile(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
+/**
+ * @param {string[]} files
+ */
+function load(...files) {
+  for (let file of files) {
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', '..', file);
     }
-  }
 
+    if (!fs.existsSync(file)) {
+      continue; // Ignore non-existent files
+    }
+
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        fixExperimentalFile(file);
+      }
+
+      continue;
+    }
+
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    load(...subFiles);
+  }
+}
+
+if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
@@ -119,5 +124,3 @@ if (require.main === module) {
     );
   }
 }
-
-module.exports = { fixExperimental };

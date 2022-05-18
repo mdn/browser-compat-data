@@ -1,13 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const fs = require('fs');
-const chalk = require('chalk');
-const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
-const compareFeatures = require('../../scripts/compare-features');
-const { Logger } = require('../utils.js');
+import fs from 'node:fs';
+import chalk from 'chalk';
+import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
+import compareFeatures from '../../scripts/lib/compare-features.js';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../utils').Logger} Logger
@@ -124,7 +122,7 @@ function processData(filename, logger) {
  * @param {string} filename The file to test
  * @returns {boolean} If the file contains errors
  */
-function testStyle(filename) {
+export default function testStyle(filename) {
   const logger = new Logger('Style');
 
   processData(filename, logger);
@@ -132,5 +130,3 @@ function testStyle(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testStyle;
