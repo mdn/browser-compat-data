@@ -256,28 +256,7 @@ const bumpGeneric = (
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (originalData, sourceData) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    let value = Number(sourceData.version_added);
-    if (value < 18) value = 18;
-    if (value > 18 && value < 25) value = 25;
-
-    newData.version_added = value.toString();
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    let value = Number(sourceData.version_removed);
-    if (value < 18) value = 18;
-    if (value > 18 && value < 25) value = 25;
-
-    newData.version_removed = value.toString();
-  }
-
-  return newData;
+  return bumpGeneric(originalData, sourceData, 'chrome_android', source);
 };
 
 /**
@@ -357,26 +336,7 @@ const bumpEdge = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpFirefoxAndroid = (originalData, sourceData) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = Math.max(
-      4,
-      Number(sourceData.version_added),
-    ).toString();
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = Math.max(
-      4,
-      Number(sourceData.version_removed),
-    ).toString();
-  }
-
-  return newData;
+  return bumpGeneric(originalData, sourceData, 'firefox_android', source);
 };
 
 /**
