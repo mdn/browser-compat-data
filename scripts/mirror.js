@@ -653,7 +653,9 @@ const bumpVersion = (
     !(destination == 'edge' && source == 'chrome')
   ) {
     newData = combineStatements(
-      ...data.map((d) => bumpVersion(d, destination, source, originalData, targetVersion)),
+      ...data.map((d) =>
+        bumpVersion(d, destination, source, originalData, targetVersion),
+      ),
     );
   } else {
     let bumpFunction = null;
