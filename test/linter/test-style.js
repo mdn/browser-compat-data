@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
 import compareFeatures from '../../scripts/lib/compare-features.js';
@@ -62,11 +61,11 @@ function orderFeatures(key, value) {
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @param {Logger} logger The logger to output errors to
  */
-function processData(filename, logger) {
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+function processData(rawData, logger) {
+  let actual = rawData;
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
@@ -119,13 +118,13 @@ function processData(filename, logger) {
 /**
  * Test the data for any styling errors that cannot be caught by Prettier or the schema
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testStyle(filename) {
+export default function testStyle(rawData) {
   const logger = new Logger('Style');
 
-  processData(filename, logger);
+  processData(rawData, logger);
 
   logger.emit();
   return logger.hasErrors();

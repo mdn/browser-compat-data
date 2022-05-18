@@ -9,7 +9,8 @@ import esMain from 'es-main';
 import ora from 'ora';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk-template';
+import chalk from 'chalk';
+import chalkT from 'chalk-template';
 
 import {
   testBrowsersData,
@@ -46,14 +47,18 @@ const checkFiles = (...files) => {
     }
 
     if (!fs.existsSync(file)) {
-      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      console.warn(chalkT`{yellow File {bold ${file}} doesn't exist!}`);
       return;
     }
 
     if (fs.statSync(file).isFile() && path.extname(file) === '.json') {
-      const relativeFilePath = path.relative(process.cwd(), file);
+      const filePath = {
+        full: path.relative(process.cwd(), file),
+      };
+      filePath.category =
+        filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
 
-      spinner.text = relativeFilePath;
+      spinner.text = filePath.full;
 
       if (!IS_CI) {
         // Continuous integration environments don't allow overwriting
@@ -65,33 +70,37 @@ const checkFiles = (...files) => {
       // Catch console errors and report them as file errors
       const console_error = console.error;
       console.error = (...args) => {
-        if (!(relativeFilePath in errors)) {
+        if (!(filePath.full in errors)) {
           // Set spinner to failure when first error is found
           // Setting on every error causes duplicate output
           spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(relativeFilePath));
+          spinner.fail(chalk.red.bold(filePath.full));
 
-          errors[relativeFilePath] = [];
+          errors[filePath.full] = [];
         }
         console_error(...args);
-        errors[relativeFilePath].push(...args);
+        errors[filePath.full].push(...args);
       };
 
       try {
+        const rawFileData = fs
+          .readFileSync(new URL(file, import.meta.url), 'utf-8')
+          .trim();
+        const fileData = JSON.parse(rawFileData);
+
+        testSchema(fileData, filePath);
+        testLinks(rawFileData);
+
         if (file.indexOf('browsers' + path.sep) !== -1) {
-          testSchema(file, './../../schemas/browsers.schema.json');
-          testLinks(file);
-          testBrowsersData(file);
+          testBrowsersData(fileData);
         } else {
-          testBrowsersPresence(file);
-          testConsistency(file);
-          testDescriptions(file);
-          testLinks(file);
-          testPrefix(file);
-          testSchema(file);
-          testStyle(file);
-          testVersions(file);
-          testNotes(file);
+          testBrowsersPresence(fileData, filePath);
+          testConsistency(fileData);
+          testDescriptions(fileData);
+          testPrefix(fileData, filePath);
+          testStyle(rawFileData);
+          testVersions(fileData);
+          testNotes(fileData);
         }
       } catch (e) {
         console.error(e);
@@ -100,7 +109,7 @@ const checkFiles = (...files) => {
       // Reset console.error
       console.error = console_error;
 
-      if (!(relativeFilePath in errors)) {
+      if (!(filePath.full in errors)) {
         spinner.succeed();
       }
     }
@@ -144,11 +153,11 @@ const main = (
   if (filesWithErrors) {
     console.error('');
     console.error(
-      chalk`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
+      chalkT`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
     );
 
     for (const [fp, errorMsgs] of Object.entries(errors)) {
-      console.error(chalk`{red.bold ✖ ${fp}}`);
+      console.error(chalkT`{red.bold ✖ ${fp}}`);
       for (const error of errorMsgs) {
         console.error(error);
       }
