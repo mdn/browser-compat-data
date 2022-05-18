@@ -45,7 +45,7 @@ const spinner = ora({
  * Recursively load one or more files and/or directories passed as arguments and check for any errors.
  *
  * @param {string[]} files The files to test
- * @returns {object} The error messages and count of how many files had errors
+ * @returns {object} Errors by relative file path.
  */
 const checkFiles = (...files) => {
   let errors = {};
@@ -169,7 +169,7 @@ const main = (files) => {
     }
   }
 
-  return !!errors.fileCount;
+  return filesWithErrors > 0;
 };
 
 if (require.main === module) {
