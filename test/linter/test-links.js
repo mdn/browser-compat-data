@@ -65,6 +65,19 @@ function processData(filename) {
   );
 
   processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crbug.com/${match[2]}/${match[3]}`,
+      };
+    },
+  );
+
+  processLink(
     // use https://webkit.org/b/100000 instead
     errors,
     actual,
