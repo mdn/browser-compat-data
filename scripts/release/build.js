@@ -28,9 +28,13 @@ async function writeData() {
   await fs.writeFile(dest, data);
 }
 
-async function writeIndex() {
-  const dest = path.resolve(directory, 'index.js');
-  const content = `module.exports = require("./data.json");\n`;
+async function writeWrapper() {
+  const dest = path.resolve(directory, 'legacynode.mjs');
+  const content = `// A small wrapper to allow ESM imports on older NodeJS versions that don't support import assertions
+import fs from 'node:fs';
+const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));
+export default bcd;
+`;
   await fs.writeFile(dest, content);
 }
 
@@ -44,7 +48,14 @@ async function copyFiles() {
 }
 
 function createManifest() {
-  const minimal = { main: 'index.js' };
+  const full = require('../../package.json');
+  const minimal = {
+    main: 'data.json',
+    exports: {
+      '.': './data.json',
+      './forLegacyNode': './legacynode.mjs',
+    },
+  };
 
   const minimalKeys = [
     'name',
@@ -92,7 +103,7 @@ async function main() {
 
   await writeManifest();
   await writeData();
-  await writeIndex();
+  await writeWrapper();
   await copyFiles();
 
   console.log('Data bundle is ready');

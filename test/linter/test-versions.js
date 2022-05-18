@@ -49,16 +49,48 @@ for (const browser of Object.keys(browsers)) {
   }
 }
 
+/** @type {string[]} */
+const blockMany = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'firefox_android',
+  'ie',
+  'opera',
+  'opera_android',
+  'safari',
+  'safari_ios',
+  'samsunginternet_android',
+  'webview_android',
+];
+
+/** @type {object.<string, string[]>} */
+const blockList = {
+  api: blockMany,
+  css: blockMany,
+  html: [],
+  http: [],
+  svg: [],
+  javascript: [...blockMany, 'nodejs'],
+  mathml: blockMany,
+  webdriver: blockMany,
+  webextensions: [],
+};
+
 /**
  * Test to see if the browser allows for the specified version
  *
  * @param {string} browser The browser to check
+ * @param {string} category The category of the data
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(browserIdentifier, version) {
+function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
-    return validBrowserVersions[browserIdentifier].includes(version);
+    return validBrowserVersions[browser].includes(version);
+  } else if (blockList[category].includes(browser) && version !== false) {
+    return false;
   } else {
     return true;
   }
@@ -111,37 +143,42 @@ function addedBeforeRemoved(statement) {
  * @returns {void}
  */
 function checkVersions(supportData, relPath, logger) {
+  const category = relPath.split('.')[0];
   const browsersToCheck = Object.keys(supportData);
+
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       /** @type {SimpleSupportStatement[]} */
-      const supportStatements = [];
-      if (Array.isArray(supportData[browser])) {
-        Array.prototype.push.apply(supportStatements, supportData[browser]);
-      } else {
-        supportStatements.push(supportData[browser]);
-      }
-
-      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
+      const supportStatements = Array.isArray(supportData[browser])
+        ? supportData[browser]
+        : [supportData[browser]];
 
       let sawVersionAddedOnly = false;
 
       for (const statement of supportStatements) {
-        for (const property of ['version_added', 'version_removed']) {
-          if (!isValidVersion(browser, statement[property])) {
+        if (statement === undefined) {
+          if (blockList[category].includes(browser)) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold ${property}: "${
-                statement[property]
-              }"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}${
-                browserTips[browser]
-                  ? chalk`\n    {blue {bold Tip:} ${browserTips[browser]}}`
-                  : ''
-              }`,
+              chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
+            );
+          }
+
+          continue;
+        }
+        const statementKeys = Object.keys(statement);
+
+        for (const property of ['version_added', 'version_removed']) {
+          const version = statement[property];
+          if (property == 'version_removed' && version === undefined) {
+            // Undefined is allowed for version_removed
+            continue;
+          }
+          if (!isValidVersion(browser, category, version)) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - {bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
+                browser
+              ].join(', ')}}`,
+              browserTips[browser],
             );
           }
         }
@@ -153,23 +190,16 @@ function checkVersions(supportData, relPath, logger) {
             );
           }
           if (
-            typeof statement.version_added !== 'string' &&
-            statement.version_added !== true
+            typeof statement.version_added === 'string' &&
+            typeof statement.version_removed === 'string' &&
+            addedBeforeRemoved(statement) === false
           ) {
             logger.error(
-              chalk`{bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}`,
+              chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
             );
-          } else if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string'
-          ) {
-            if (addedBeforeRemoved(statement) === false) {
-              logger.error(
-                chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
-              );
-            }
           }
         }
+
         if ('flags' in statement) {
           if (browsers[browser].accepts_flags === false) {
             logger.error(
@@ -187,6 +217,29 @@ function checkVersions(supportData, relPath, logger) {
           } else {
             sawVersionAddedOnly = true;
           }
+        }
+
+        if (statement.version_added === false) {
+          if (
+            Object.keys(statement).some(
+              (k) => !['version_added', 'notes'].includes(k),
+            )
+          ) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} - The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.}`,
+            );
+          }
+        }
+
+        if (
+          supportStatements.length > 1 &&
+          statement.version_added === false &&
+          statementKeys.length == 1 &&
+          statementKeys[0] == 'version_added'
+        ) {
+          logger.error(
+            chalk`{red → '{bold ${relPath}}' - {bold ${browser}} cannot have a {bold version_added: false} only in an array of statements.}`,
+          );
         }
       }
     }
