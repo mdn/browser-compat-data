@@ -1,10 +1,18 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
 const bcd = require('..');
 
 const { argv } = require('yargs').command(
   '$0 <browser> [folder] [value]',
   'Test for specified values in any specified browser',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('browser', {
         describe: 'The browser to test for',
@@ -30,7 +38,17 @@ const { argv } = require('yargs').command(
   },
 );
 
-function traverseFeatures(obj, depth, identifier) {
+/**
+ * Traverse all of the features within a specified object and find all features that have one of the specified values
+ *
+ * @param {Identifier} obj The compat data to traverse through
+ * @param {number} depth The depth to traverse
+ * @param {string[]} values The values to test for
+ * @param {string} identifier The identifier of the current object
+ * @returns {void}
+ */
+function traverseFeatures(obj, depth, values, identifier) {
+  let features = [];
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -57,23 +75,47 @@ function traverseFeatures(obj, depth, identifier) {
             }
           }
         }
-        traverseFeatures(obj[i], depth, identifier + i + '.');
+        features.push(
+          ...traverseFeatures(obj[i], depth, values, identifier + i + '.'),
+        );
       }
     }
   }
+
+  return features;
 }
 
-let features = [];
-const folders =
-  argv.folder == 'all'
-    ? ['api', 'css', 'html', 'http', 'svg', 'javascript', 'mathml', 'webdriver']
-    : argv.folder.split(',');
-const values = Array.isArray(argv.value)
-  ? argv.value
-  : argv.value.toString().split(',');
+const main = (folder = 'all', value = ['null', 'true'], depth = 100) => {
+  let features = [];
+  const folders =
+    folder == 'all'
+      ? [
+          'api',
+          'css',
+          'html',
+          'http',
+          'svg',
+          'javascript',
+          'mathml',
+          'webdriver',
+        ]
+      : folder.split(',');
+  const values = Array.isArray(value) ? value : value.toString().split(',');
 
-for (const folder in folders)
-  traverseFeatures(bcd[folders[folder]], argv.depth, `${folders[folder]}.`);
+  for (const folder in folders)
+    features = traverseFeatures(
+      bcd[folders[folder]],
+      depth,
+      values,
+      `${folders[folder]}.`,
+    );
 
-console.log(features.join('\n'));
-console.log(features.length);
+  console.log(features.join('\n'));
+  console.log(features.length);
+};
+
+if (require.main === module) {
+  main(argv.folder, argv.value, argv.depth);
+}
+
+module.exports = main;

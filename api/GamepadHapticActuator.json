@@ -43,9 +43,85 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
+        }
+      },
+      "secure_context_required": {
+        "__compat": {
+          "description": "Secure context required",
+          "support": {
+            "chrome": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "edge": {
+              "version_added": "86",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "firefox": {
+              "version_added": "91"
+            },
+            "firefox_android": {
+              "version_added": "91"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "72",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#restrict-gamepad-access",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": "68"
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "playEffect": {
@@ -135,7 +211,7 @@
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "68"
             }
           },
           "status": {
@@ -192,89 +268,6 @@
           }
         }
       },
-      "secure_context_required": {
-        "__compat": {
-          "description": "Secure context required",
-          "support": {
-            "chrome": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "firefox": {
-              "version_added": "91"
-            },
-            "firefox_android": {
-              "version_added": "91"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "72",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "opera_android": {
-              "version_added": "61",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/type",
@@ -318,7 +311,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

@@ -1,17 +1,28 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 'use strict';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ *
+ * @typedef {object} VersionStats
+ * @property {number} all - The total number of occurrences for the browser.
+ * @property {number} true - The total number of `true` values for the browser.
+ * @property {number} null - The total number of `null` values for the browser.
+ * @property {number} range - The total number of range values for the browser.
+ * @property {number} real - The total number of real values for the browser.
+ */
+
 const chalk = require('chalk');
 
 const bcd = require('..');
-const { getRefDate } = require('./release-utils');
+const { getRefDate } = require('./release/utils');
 
 const { argv } = require('yargs').command(
   '$0 [folder]',
   'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
-  yargs => {
+  (yargs) => {
     yargs
       .positional('folder', {
         describe: 'Limit the statistics to a specific folder',
@@ -23,20 +34,15 @@ const { argv } = require('yargs').command(
         describe: 'Show statistics for all browsers within BCD',
         type: 'boolean',
         nargs: 0,
+      })
+      .option('counts', {
+        alias: 'c',
+        describe: 'Show feature count rather than percentages',
+        type: 'boolean',
+        nargs: 0,
       });
   },
 );
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
- */
 
 /**
  * Check whether a support statement is a specified type
@@ -51,7 +57,7 @@ const checkSupport = (supportData, type) => {
   }
   if (type == '≤') {
     return supportData.some(
-      item =>
+      (item) =>
         (typeof item.version_added == 'string' &&
           item.version_added.startsWith('≤')) ||
         (typeof item.version_removed == 'string' &&
@@ -59,7 +65,7 @@ const checkSupport = (supportData, type) => {
     );
   }
   return supportData.some(
-    item => item.version_added === type || item.version_removed === type,
+    (item) => item.version_added === type || item.version_removed === type,
   );
 };
 
@@ -73,7 +79,7 @@ const checkSupport = (supportData, type) => {
  */
 const processData = (data, browsers, stats) => {
   if (data.support) {
-    browsers.forEach(browser => {
+    browsers.forEach((browser) => {
       stats[browser].all++;
       stats.total.all++;
       if (!data.support[browser]) {
@@ -140,7 +146,7 @@ const getStats = (folder, allBrowsers) => {
 
   /** @type {object.<string, VersionStats>} */
   let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
-  browsers.forEach(browser => {
+  browsers.forEach((browser) => {
     stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
   });
 
@@ -163,13 +169,28 @@ const getStats = (folder, allBrowsers) => {
 };
 
 /**
+ * Get value as either percentage or number as requested
+ *
+ * @param {VersionStats} stats The stats object to get data from
+ * @param {string} type The type of statistic to obtain
+ * @param {boolean} counts Whether to return the integer itself
+ * @returns {string} The percentage or count
+ */
+const getStat = (stats, type, counts) => {
+  return counts
+    ? stats[type]
+    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
+};
+
+/**
  * Print statistics of BCD
  *
  * @param {object.<string, VersionStats>} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @param {boolean} counts Whether to display a count vs. a percentage
  * @returns {void}
  */
-const printStats = (stats, folder) => {
+const printStats = (stats, folder, counts) => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -192,14 +213,12 @@ const printStats = (stats, folder) => {
 | --- | --- | --- | --- | --- |
 `;
 
-  Object.keys(stats).forEach(entry => {
+  Object.keys(stats).forEach((entry) => {
     table += `| ${entry.replace('_', ' ')} | `;
-    table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
-      2,
-    )}% | `;
-    table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
+    table += `${getStat(stats[entry], 'real', counts)} | `;
+    table += `${getStat(stats[entry], 'range', counts)} | `;
+    table += `${getStat(stats[entry], 'true', counts)} | `;
+    table += `${getStat(stats[entry], 'null', counts)} |
 `;
   });
 
@@ -207,7 +226,7 @@ const printStats = (stats, folder) => {
 };
 
 if (require.main === module) {
-  printStats(getStats(argv.folder, argv.all), argv.folder);
+  printStats(getStats(argv.folder, argv.all), argv.folder, argv.counts);
 }
 
 module.exports = getStats;

@@ -1,5 +1,5 @@
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 /**
  * The names of the known browsers.
@@ -13,6 +13,7 @@ export type BrowserNames =
   | 'firefox_android'
   | 'ie'
   | 'nodejs'
+  | 'oculus'
   | 'opera'
   | 'opera_android'
   | 'safari'
@@ -28,6 +29,8 @@ export type BrowserEngines =
   | 'Trident'
   | 'WebKit'
   | 'V8';
+
+export type BrowserTypes = 'desktop' | 'mobile' | 'xr' | 'server';
 
 /**
  * The browser namespace.
@@ -47,6 +50,28 @@ export interface BrowserStatement {
   name: string;
 
   /**
+   * The platform the browser runs on, for example:
+   * `"desktop"`, `"mobile"`, `"server"`, etc.
+   */
+  type: BrowserTypes;
+
+  /**
+   * Whether the browser supports flags to enable or disable features.
+   */
+  accepts_flags?: boolean;
+
+  /**
+   * Whether the browser supports extensions.
+   */
+  accepts_webextensions?: boolean;
+
+  /**
+   * An optional string containing the URL of the page where feature flags can be changed
+   * (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+   */
+  pref_url?: string;
+
+  /**
    * The preview browser's name, for example:
    * `"Nightly"`, `"Canary"`, `"TP"`, etc.
    */
@@ -58,12 +83,6 @@ export interface BrowserStatement {
   releases: {
     [version: string]: ReleaseStatement;
   };
-
-  /**
-   * An optional string containing the URL of the page where feature flags can be changed
-   * (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
-   */
-  pref_url?: string;
 }
 
 /**
