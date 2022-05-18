@@ -1,18 +1,19 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import esMain from 'es-main';
+
+import { IS_WINDOWS } from '../../test/utils.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
-
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
 
 /**
  * Check to see if the key is __compat and modify the value to remove
@@ -22,7 +23,7 @@ const IS_WINDOWS = platform() === 'win32';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value with WebView flags removed
  */
-const removeWebViewFlags = (key, value) => {
+export const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
@@ -55,7 +56,7 @@ const removeWebViewFlags = (key, value) => {
  *
  * @param {string} filename The filename to perform migration upon
  */
-const fixWebViewFlags = (filename) => {
+export const fixWebViewFlags = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
@@ -83,8 +84,8 @@ const fixWebViewFlags = (filename) => {
  */
 function load(...files) {
   for (let file of files) {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', '..', file);
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', '..', file);
     }
 
     if (!fs.existsSync(file)) {
@@ -107,7 +108,7 @@ function load(...files) {
   }
 }
 
-if (require.main === module) {
+if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
@@ -125,8 +126,3 @@ if (require.main === module) {
     );
   }
 }
-
-module.exports = {
-  removeWebViewFlags,
-  fixWebViewFlags,
-};

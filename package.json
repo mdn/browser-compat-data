@@ -4,6 +4,7 @@
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "engines": {
     "node": ">=16.0.0"
   },
@@ -27,15 +28,20 @@
   },
   "homepage": "https://github.com/mdn/browser-compat-data#readme",
   "devDependencies": {
+    "@babel/eslint-parser": "~7.17.0",
+    "@babel/plugin-syntax-import-assertions": "~7.17.12",
     "@desertnet/html-parser": "~1.0.1",
     "ajv": "~8.11.0",
     "ajv-errors": "~3.0.0",
     "ajv-formats": "~2.1.1",
     "better-ajv-errors": "~1.2.0",
     "browser-specs": "~3.11.0",
-    "chalk": "~4.1.0",
+    "c8": "~7.11.2",
+    "chalk": "~5.0.1",
+    "chalk-template": "~0.4.0",
     "compare-versions": "~4.1.1",
     "deep-diff": "~1.0.2",
+    "es-main": "~1.0.2",
     "eslint": "~8.15.0",
     "eslint-config-standard": "~17.0.0",
     "eslint-plugin-import": "~2.26.0",
@@ -45,14 +51,16 @@
     "fdir": "~5.2.0",
     "mdn-confluence": "~2.2.2",
     "mocha": "~10.0.0",
-    "ora": "~5.4.0",
+    "open-cli": "~7.0.1",
+    "ora": "~6.1.0",
     "prettier": "~2.6.1",
     "yargs": "~17.5.0"
   },
   "scripts": {
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "node scripts/diff.js",
-    "mocha": "mocha \"{,!(node_modules)/**}/*.test.js\"",
+    "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.js\"",
+    "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "npx eslint --fix \"**/*.js\" && npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx eslint --fix \"**/*.js\" && npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
@@ -64,7 +72,7 @@
     "release-notes": "node scripts/release/notes",
     "release-stats": "node scripts/release/stats",
     "show-errors": "npm test 1> /dev/null",
-    "test": "npm run format && npm run lint && npm run mocha",
+    "test": "npm run format && npm run lint && npm run unittest",
     "traverse": "node scripts/traverse"
   }
 }

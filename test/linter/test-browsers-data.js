@@ -1,10 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
 
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import chalk from 'chalk-template';
+
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -41,9 +42,11 @@ function processData(data, logger) {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testBrowsersData(filename) {
+export default function testBrowsersData(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Browser Data');
 
@@ -52,5 +55,3 @@ function testBrowsersData(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testBrowsersData;
