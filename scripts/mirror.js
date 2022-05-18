@@ -46,6 +46,13 @@ const { argv } = require('yargs').command(
           'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
         type: 'string',
         default: 'nonreal',
+      })
+      .option('target-version', {
+        alias: 't',
+        describe:
+          "Only perform mirroring if it affects this destination browser's release",
+        type: 'string',
+        default: undefined,
       });
   },
 );
@@ -114,6 +121,39 @@ const getSource = (browser) => {
     default:
       throw Error(`${browser} cannot be used as a mirroring destination.`);
   }
+};
+
+/**
+ * @param {SupportStatement} compatData
+ * @param {string | null} versionToCheck
+ * @return {string | null}
+ */
+const isVersionAdded = (compatData, versionToCheck) => {
+  if (Array.isArray(compatData)) {
+    return compatData.some((s) => s.version_added == versionToCheck);
+  }
+
+  if (typeof compatData.version_added === 'string') {
+    return compatData.version_added == versionToCheck;
+  }
+
+  return false;
+};
+
+/**
+ * @param {SupportStatement} compatData
+ * @param {string | null} versionToCheck
+ * @return {string | null}
+ */
+const isVersionRemoved = (compatData, versionToCheck) => {
+  if (typeof compatData.version_removed === 'string')
+    return compatData.version_removed == versionToCheck;
+
+  if (compatData.constructor === Array) {
+    return compatData.some((s) => s.version_removed === versionToCheck);
+  }
+
+  return false;
 };
 
 /**
@@ -499,9 +539,9 @@ const bumpGeneric = (originalData, sourceData) => {
 /**
  * @param {SupportStatement} sourceData
  * @param {SupportStatement} originalData
- * @param {string} destination
+ * @param {string} targetVersion
  */
-const bumpVersion = (sourceData, originalData, destination) => {
+const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
   let newData = null;
 
   if (sourceData == null) {
@@ -511,7 +551,12 @@ const bumpVersion = (sourceData, originalData, destination) => {
   if (Array.isArray(sourceData)) {
     newData = [];
     for (let i = 0; i < sourceData.length; i++) {
-      newData[i] = bumpVersion(sourceData[i], originalData, destination);
+      newData[i] = bumpVersion(
+        sourceData[i],
+        originalData,
+        destination,
+        targetVersion,
+      );
     }
   } else {
     let bumpFunction = null;
@@ -549,6 +594,15 @@ const bumpVersion = (sourceData, originalData, destination) => {
     newData = bumpFunction(originalData, sourceData);
   }
 
+  if (targetVersion) {
+    if (
+      !isVersionAdded(newData, targetVersion) &&
+      !isVersionRemoved(newData, targetVersion)
+    ) {
+      newData = originalData;
+    }
+  }
+
   return newData;
 };
 
@@ -558,9 +612,17 @@ const bumpVersion = (sourceData, originalData, destination) => {
  * @param {string} rootPath
  * @param {string} browser
  * @param {string} modify
+ * @param {string} targetVersion
  @ @returns {Identifier}
  */
-const doSetFeature = (data, newData, rootPath, browser, modify) => {
+const doSetFeature = (
+  data,
+  newData,
+  rootPath,
+  browser,
+  modify,
+  targetVersion,
+) => {
   let comp = data[rootPath].__compat.support;
 
   let doBump = false;
@@ -587,7 +649,13 @@ const doSetFeature = (data, newData, rootPath, browser, modify) => {
 
   if (doBump) {
     let source = getSource(browser);
-    let newValue = bumpVersion(comp[source], comp[browser], browser, source);
+    let newValue = bumpVersion(
+      comp[source],
+      comp[browser],
+      browser,
+      source,
+      targetVersion,
+    );
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
@@ -601,9 +669,10 @@ const doSetFeature = (data, newData, rootPath, browser, modify) => {
  * @param {string} feature
  * @param {string} browser
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeature = (data, feature, browser, modify) => {
+const setFeature = (data, feature, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   const rootPath = feature.shift();
@@ -611,7 +680,14 @@ const setFeature = (data, feature, browser, modify) => {
     newData[rootPath] = setFeature(data[rootPath], feature, browser, modify);
   } else {
     if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
-      newData = doSetFeature(data, newData, rootPath, browser, modify);
+      newData = doSetFeature(
+        data,
+        newData,
+        rootPath,
+        browser,
+        modify,
+        targetVersion,
+      );
     }
   }
 
@@ -622,18 +698,19 @@ const setFeature = (data, feature, browser, modify) => {
  * @param {Identifier} data
  * @param {string} browser
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeatureRecursive = (data, browser, modify) => {
+const setFeatureRecursive = (data, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   for (let i in data) {
     if (!!data[i] && typeof data[i] == 'object' && i !== '__compat') {
       newData[i] = data[i];
       if (data[i].__compat) {
-        doSetFeature(data, newData, i, browser, modify);
+        doSetFeature(data, newData, i, browser, modify, targetVersion);
       }
-      setFeatureRecursive(data[i], browser, modify);
+      setFeatureRecursive(data[i], browser, modify), targetVersion;
     }
   }
 
@@ -644,9 +721,10 @@ const setFeatureRecursive = (data, browser, modify) => {
  * @param {string} browser
  * @param {string} filepath
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-function mirrorDataByFile(browser, filepath, modify) {
+function mirrorDataByFile(browser, filepath, modify, targetVersion) {
   let file = filepath;
   if (file.indexOf(__dirname) !== 0) {
     file = path.resolve(__dirname, '..', file);
@@ -659,7 +737,7 @@ function mirrorDataByFile(browser, filepath, modify) {
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
       let data = require(file);
-      let newData = setFeatureRecursive(data, browser, modify);
+      let newData = setFeatureRecursive(data, browser, modify, targetVersion);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
@@ -669,7 +747,7 @@ function mirrorDataByFile(browser, filepath, modify) {
     });
 
     for (let subfile of subFiles) {
-      mirrorDataByFile(browser, subfile, modify);
+      mirrorDataByFile(browser, subfile, modify, targetVersion);
     }
   }
 
@@ -688,9 +766,10 @@ function mirrorDataByFile(browser, filepath, modify) {
  * @param {string} browser
  * @param {string} featureIdent
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorDataByFeature = (browser, featureIdent, modify) => {
+const mirrorDataByFeature = (browser, featureIdent, modify, targetVersion) => {
   let filepath = path.resolve(__dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
@@ -711,7 +790,7 @@ const mirrorDataByFeature = (browser, featureIdent, modify) => {
   }
 
   let data = require(filepath);
-  let newData = setFeature(data, feature, browser, modify);
+  let newData = setFeature(data, feature, browser, modify, targetVersion);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
 
@@ -722,9 +801,10 @@ const mirrorDataByFeature = (browser, featureIdent, modify) => {
  * @param {string} browser
  * @param {string[]} feature_or_path_array
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorData = (browser, feature_or_path_array, modify) => {
+const mirrorData = (browser, feature_or_path_array, modify, targetVersion) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
@@ -741,7 +821,7 @@ const mirrorData = (browser, feature_or_path_array, modify) => {
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_path, modify);
+    doMirror(browser, feature_or_path, modify, targetVersion);
   }
 
   console.log(
@@ -752,7 +832,12 @@ const mirrorData = (browser, feature_or_path_array, modify) => {
 };
 
 if (require.main === module) {
-  mirrorData(argv.browser, argv.feature_or_path, argv.modify);
+  mirrorData(
+    argv.browser,
+    argv.feature_or_path,
+    argv.modify,
+    argv.target_version,
+  );
 }
 
 module.exports = mirrorData;
