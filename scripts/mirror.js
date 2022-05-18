@@ -212,6 +212,47 @@ const copyStatement = (data) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
+ * @param {string} destination
+ * @param {string} source
+ * @param {Array<regex, string>} notesRepl
+ * @returns {SupportStatement}
+ */
+const bumpGeneric = (
+  originalData,
+  sourceData,
+  destination,
+  source,
+  notesRepl,
+) => {
+  let newData = copyStatement(sourceData);
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      destination,
+      browsers[source].releases[sourceData.version_added],
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      destination,
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
+
+  if (notesRepl && typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(sourceData.notes, noteRepl[0], noteRepl[1]);
+  }
+
+  return newData;
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (originalData, sourceData) => {
@@ -345,30 +386,10 @@ const bumpFirefoxAndroid = (originalData, sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOpera = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'opera',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'opera',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
-  }
-
-  return newData;
+  return bumpGeneric(originalData, sourceData, 'opera', source, [
+    /Chrome/g,
+    'Opera',
+  ]);
 };
 
 /**
@@ -378,30 +399,10 @@ const bumpOpera = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpOperaAndroid = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'opera_android',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'opera_android',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
-  }
-
-  return newData;
+  return bumpGeneric(originalData, sourceData, 'opera_android', source, [
+    /Chrome/g,
+    'Opera',
+  ]);
 };
 
 /**
@@ -411,26 +412,7 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpSafariiOS = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'safari_ios',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'safari_ios',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  return newData;
+  return bumpGeneric(originalData, sourceData, 'safari_ios', source);
 };
 
 /**
@@ -440,34 +422,13 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpSamsungInternet = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'samsunginternet_android',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'samsunginternet_android',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(
-      sourceData.notes,
-      /Chrome/g,
-      'Samsung Internet',
-    );
-  }
-
-  return newData;
+  return bumpGeneric(
+    originalData,
+    sourceData,
+    'samsunginternet_android',
+    source,
+    [/Chrome/g, 'Samsung Internet'],
+  );
 };
 
 /**
@@ -508,16 +469,6 @@ const bumpWebView = (originalData, sourceData) => {
   }
 
   return newData;
-};
-
-/**
- * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpGeneric = (originalData, sourceData) => {
-  // For browsers we're not tracking, simply mirror the source data
-  return sourceData;
 };
 
 /**
@@ -567,8 +518,7 @@ const bumpVersion = (data, destination, source, originalData) => {
         bumpFunction = bumpWebView;
         break;
       default:
-        bumpFunction = bumpGeneric;
-        break;
+        throw new Error(`Unknown target browser ${destination}!`);
     }
 
     newData = bumpFunction(originalData, data, source);
