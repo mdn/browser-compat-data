@@ -500,7 +500,7 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
 
   if (Array.isArray(sourceData)) {
     newData = combineStatements(
-      ...data.map((d) =>
+      ...sourceData.map((d) =>
         bumpVersion(d, originalData, destination, targetVersion),
       ),
     );
