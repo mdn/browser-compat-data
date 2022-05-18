@@ -499,15 +499,11 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
   }
 
   if (Array.isArray(sourceData)) {
-    newData = [];
-    for (let i = 0; i < sourceData.length; i++) {
-      newData[i] = bumpVersion(
-        sourceData[i],
-        originalData,
-        destination,
-        targetVersion,
-      );
-    }
+    newData = combineStatements(
+      ...data.map((d) =>
+        bumpVersion(d, originalData, destination, targetVersion),
+      ),
+    );
   } else {
     let bumpFunction = null;
 
