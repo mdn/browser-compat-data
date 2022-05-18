@@ -52,7 +52,7 @@ const { argv } = require('yargs').command(
         type: 'string',
         default: 'nonreal',
       })
-      .option('target_version', {
+      .option('target-version', {
         alias: 't',
         describe:
           "Only perform mirroring if it affects this destination browser's release",
@@ -170,11 +170,7 @@ const isVersionRemoved = (compatData, versionToCheck) => {
     return compatData.version_removed == versionToCheck;
 
   if (compatData.constructor === Array) {
-    for (var i = compatData.length - 1; i >= 0; i--) {
-      if (compatData[i].version_removed == versionToCheck) {
-        return true;
-      }
-    }
+    return compatData.some(s => s.version_removed === versionToCheck);
   }
 
   return false;
@@ -633,10 +629,8 @@ const bumpVersion = (
 
   if (targetVersion) {
     if (
-      !(
-        isVersionAdded(newData, targetVersion) ||
-        isVersionRemoved(newData, targetVersion)
-      )
+        !isVersionAdded(newData, targetVersion) &&
+        !isVersionRemoved(newData, targetVersion)
     ) {
       newData = originalData;
     }
