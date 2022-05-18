@@ -569,7 +569,7 @@ const bumpGeneric = (originalData, sourceData) => {
  * @param {string} destination
  * @param {string} source
  * @param {SupportStatement} originalData
- * @param {string} target_version
+ * @param {string} targetVersion
  */
 const bumpVersion = (
   data,
@@ -592,7 +592,7 @@ const bumpVersion = (
         destination,
         source,
         originalData,
-        target_version,
+        targetVersion,
       );
     }
   } else {
@@ -631,11 +631,11 @@ const bumpVersion = (
     newData = bumpFunction(originalData, data, source);
   }
 
-  if (target_version) {
+  if (targetVersion) {
     if (
       !(
-        isVersionAdded(newData, target_version) ||
-        isVersionRemoved(newData, target_version)
+        isVersionAdded(newData, targetVersion) ||
+        isVersionRemoved(newData, targetVersion)
       )
     ) {
       newData = originalData;
@@ -652,7 +652,7 @@ const bumpVersion = (
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  @ @returns {Identifier}
  */
 const doSetFeature = (
@@ -662,7 +662,7 @@ const doSetFeature = (
   browser,
   source,
   modify,
-  target_version,
+  targetVersion,
 ) => {
   let comp = data[rootPath].__compat.support;
 
@@ -694,7 +694,7 @@ const doSetFeature = (
       browser,
       source,
       comp[browser],
-      target_version,
+      targetVersion,
     );
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
@@ -710,10 +710,10 @@ const doSetFeature = (
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeature = (data, feature, browser, source, modify, target_version) => {
+const setFeature = (data, feature, browser, source, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   const rootPath = feature.shift();
@@ -734,7 +734,7 @@ const setFeature = (data, feature, browser, source, modify, target_version) => {
         browser,
         source,
         modify,
-        target_version,
+        targetVersion,
       );
     }
   }
@@ -747,19 +747,19 @@ const setFeature = (data, feature, browser, source, modify, target_version) => {
  * @param {string} browser
  * @param {string} source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeatureRecursive = (data, browser, source, modify, target_version) => {
+const setFeatureRecursive = (data, browser, source, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   for (let i in data) {
     if (!!data[i] && typeof data[i] == 'object' && i !== '__compat') {
       newData[i] = data[i];
       if (data[i].__compat) {
-        doSetFeature(data, newData, i, browser, source, modify, target_version);
+        doSetFeature(data, newData, i, browser, source, modify, targetVersion);
       }
-      setFeatureRecursive(data[i], browser, source, modify, target_version);
+      setFeatureRecursive(data[i], browser, source, modify, targetVersion);
     }
   }
 
@@ -771,10 +771,10 @@ const setFeatureRecursive = (data, browser, source, modify, target_version) => {
  * @param {string} filepath
  * @param {string} source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-function mirrorDataByFile(browser, filepath, source, modify, target_version) {
+function mirrorDataByFile(browser, filepath, source, modify, targetVersion) {
   let file = filepath;
   if (file.indexOf(__dirname) !== 0) {
     file = path.resolve(__dirname, '..', file);
@@ -792,7 +792,7 @@ function mirrorDataByFile(browser, filepath, source, modify, target_version) {
         browser,
         source,
         modify,
-        target_version,
+        targetVersion,
       );
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -803,7 +803,7 @@ function mirrorDataByFile(browser, filepath, source, modify, target_version) {
     });
 
     for (let subfile of subFiles) {
-      mirrorDataByFile(browser, subfile, source, modify, target_version);
+      mirrorDataByFile(browser, subfile, source, modify, targetVersion);
     }
   }
 
@@ -823,7 +823,7 @@ function mirrorDataByFile(browser, filepath, source, modify, target_version) {
  * @param {string} featureIdent
  * @param {string} source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  * @returns {boolean}
  */
 const mirrorDataByFeature = (
@@ -831,7 +831,7 @@ const mirrorDataByFeature = (
   featureIdent,
   source,
   modify,
-  target_version,
+  targetVersion,
 ) => {
   let filepath = path.resolve(__dirname, '..');
   let feature = featureIdent.split('.');
@@ -859,7 +859,7 @@ const mirrorDataByFeature = (
     browser,
     source,
     modify,
-    target_version,
+    targetVersion,
   );
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -872,7 +872,7 @@ const mirrorDataByFeature = (
  * @param {string[]} feature_or_path_array
  * @param {string} forced_source
  * @param {string} modify
- * @param {string} target_version
+ * @param {string} targetVersion
  * @returns {boolean}
  */
 const mirrorData = (
@@ -880,7 +880,7 @@ const mirrorData = (
   feature_or_path_array,
   forced_source,
   modify,
-  target_version,
+  targetVersion,
 ) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
@@ -900,7 +900,7 @@ const mirrorData = (
     )
       doMirror = mirrorDataByFile;
 
-    doMirror(browser, feature_or_path, source, modify, target_version);
+    doMirror(browser, feature_or_path, source, modify, targetVersion);
   }
 
   console.log(
