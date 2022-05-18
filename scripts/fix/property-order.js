@@ -5,10 +5,7 @@
 
 import fs from 'node:fs';
 
-import compareFeatures from '../lib/compare-features.js';
 import { IS_WINDOWS } from '../../test/utils.js';
-
-const compareFeatures = require('../compare-features');
 
 const propOrder = {
   __compat: [
