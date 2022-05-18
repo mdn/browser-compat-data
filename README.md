@@ -35,7 +35,7 @@ import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
 
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
-import bcd from '@mdn/browser-compat-data/wrapper';
+import bcd from '@mdn/browser-compat-data/forLegacyNode';
 
 // ...or...
 

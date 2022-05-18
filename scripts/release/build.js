@@ -51,7 +51,7 @@ function createManifest() {
     main: 'data.json',
     exports: {
       '.': './data.json',
-      './legacyNode': './legacynode.mjs',
+      './forLegacyNode': './legacynode.mjs',
     },
   };
 
