@@ -66,40 +66,25 @@ const getMatchingBrowserVersion = (dest_browser, source_release) => {
 
 /**
  * @param {string} browser
- * @param {string} forced_source
  * @returns {string}
  */
-const getSource = (browser, forced_source) => {
-  if (forced_source) {
-    return forced_source;
-  }
-
-  let source = '';
-
+const getSource = (browser) => {
   switch (browser) {
     case 'chrome_android':
     case 'edge':
     case 'opera':
-      source = 'chrome';
-      break;
+      return 'chrome';
     case 'opera_android':
     case 'samsunginternet_android':
     case 'webview_android':
-      source = 'chrome_android';
-      break;
+      return 'chrome_android';
     case 'firefox_android':
-      source = 'firefox';
-      break;
+      return 'firefox';
     case 'safari_ios':
-      source = 'safari';
-      break;
+      return 'safari';
     default:
-      throw Error(
-        `${browser} is a base browser and a "source" browser must be specified.`,
-      );
+      throw Error(`${browser} cannot be used as a mirroring destination.`);
   }
-
-  return source;
 };
 
 /**
@@ -261,11 +246,11 @@ const bumpChromeAndroid = (originalData, sourceData) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpEdge = (originalData, sourceData, source) => {
+const bumpEdge = (originalData, sourceData) => {
   let newData = {};
+  let source = 'chrome';
 
   if (source == 'ie') {
     if (sourceData.version_removed && sourceData.version_removed !== null) {
@@ -341,11 +326,10 @@ const bumpFirefoxAndroid = (originalData, sourceData) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpOpera = (originalData, sourceData, source) => {
-  return bumpGeneric(originalData, sourceData, 'opera', source, [
+const bumpOpera = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'opera', 'chrome', [
     /Chrome/g,
     'Opera',
   ]);
@@ -354,38 +338,38 @@ const bumpOpera = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, sourceData, source) => {
-  return bumpGeneric(originalData, sourceData, 'opera_android', source, [
-    /Chrome/g,
-    'Opera',
-  ]);
+const bumpOperaAndroid = (originalData, sourceData) => {
+  return bumpGeneric(
+    originalData,
+    sourceData,
+    'opera_android',
+    'chrome_android',
+    [/Chrome/g, 'Opera'],
+  );
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpSafariiOS = (originalData, sourceData, source) => {
-  return bumpGeneric(originalData, sourceData, 'safari_ios', source);
+const bumpSafariiOS = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'safari_ios', 'safari');
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpSamsungInternet = (originalData, sourceData, source) => {
+const bumpSamsungInternet = (originalData, sourceData) => {
   return bumpGeneric(
     originalData,
     sourceData,
     'samsunginternet_android',
-    source,
+    'chrome_android',
     [/Chrome/g, 'Samsung Internet'],
   );
 };
@@ -432,32 +416,24 @@ const bumpWebView = (originalData, sourceData) => {
 
 /**
  * @param {SupportStatement} data
- * @param {string} destination
- * @param {string} source
  * @param {SupportStatement} originalData
+ * @param {string} destination
  * @param {string} targetVersion
  */
-const bumpVersion = (
-  data,
-  destination,
-  source,
-  originalData,
-  targetVersion,
-) => {
+const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
   let newData = null;
-  if (data == null) {
+
+  if (sourceData == null) {
     return null;
-  } else if (
-    Array.isArray(data) &&
-    !(destination == 'edge' && source == 'chrome')
-  ) {
+  }
+
+  if (Array.isArray(sourceData)) {
     newData = [];
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < sourceData.length; i++) {
       newData[i] = bumpVersion(
-        data[i],
-        destination,
-        source,
+        sourceData[i],
         originalData,
+        destination,
         targetVersion,
       );
     }
@@ -493,7 +469,7 @@ const bumpVersion = (
         throw new Error(`Unknown target browser ${destination}!`);
     }
 
-    newData = bumpFunction(originalData, data, source);
+    newData = bumpFunction(originalData, sourceData);
   }
 
   if (targetVersion) {
@@ -513,7 +489,6 @@ const bumpVersion = (
  * @param {Identifier} newData
  * @param {string} rootPath
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
  * @param {string} targetVersion
  @ @returns {Identifier}
@@ -523,7 +498,6 @@ const doSetFeature = (
   newData,
   rootPath,
   browser,
-  source,
   modify,
   targetVersion,
 ) => {
@@ -552,11 +526,12 @@ const doSetFeature = (
   }
 
   if (doBump) {
+    let source = getSource(browser);
     let newValue = bumpVersion(
       comp[source],
+      comp[browser],
       browser,
       source,
-      comp[browser],
       targetVersion,
     );
     if (newValue !== null) {
@@ -571,23 +546,16 @@ const doSetFeature = (
  * @param {Identifier} data
  * @param {string} feature
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
  * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeature = (data, feature, browser, source, modify, targetVersion) => {
+const setFeature = (data, feature, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   const rootPath = feature.shift();
   if (feature.length > 0 && data[rootPath].constructor == Object) {
-    newData[rootPath] = setFeature(
-      data[rootPath],
-      feature,
-      browser,
-      source,
-      modify,
-    );
+    newData[rootPath] = setFeature(data[rootPath], feature, browser, modify);
   } else {
     if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
       newData = doSetFeature(
@@ -595,7 +563,6 @@ const setFeature = (data, feature, browser, source, modify, targetVersion) => {
         newData,
         rootPath,
         browser,
-        source,
         modify,
         targetVersion,
       );
@@ -608,21 +575,20 @@ const setFeature = (data, feature, browser, source, modify, targetVersion) => {
 /**
  * @param {Identifier} data
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
  * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeatureRecursive = (data, browser, source, modify, targetVersion) => {
+const setFeatureRecursive = (data, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   for (let i in data) {
     if (!!data[i] && typeof data[i] == 'object' && i !== '__compat') {
       newData[i] = data[i];
       if (data[i].__compat) {
-        doSetFeature(data, newData, i, browser, source, modify, targetVersion);
+        doSetFeature(data, newData, i, browser, modify, targetVersion);
       }
-      setFeatureRecursive(data[i], browser, source, modify, targetVersion);
+      setFeatureRecursive(data[i], browser, modify), targetVersion;
     }
   }
 
@@ -632,12 +598,11 @@ const setFeatureRecursive = (data, browser, source, modify, targetVersion) => {
 /**
  * @param {string} browser
  * @param {string} filepath
- * @param {string} source
  * @param {string} modify
  * @param {string} targetVersion
  * @returns {boolean}
  */
-function mirrorDataByFile(browser, filepath, source, modify, targetVersion) {
+function mirrorDataByFile(browser, filepath, modify, targetVersion) {
   let file = filepath;
   if (file.indexOf(dirname) !== 0) {
     file = path.resolve(dirname, '..', file);
@@ -652,13 +617,7 @@ function mirrorDataByFile(browser, filepath, source, modify, targetVersion) {
       let data = JSON.parse(
         fs.readFileSync(new URL(file, import.meta.url), 'utf-8'),
       );
-      let newData = setFeatureRecursive(
-        data,
-        browser,
-        source,
-        modify,
-        targetVersion,
-      );
+      let newData = setFeatureRecursive(data, browser, modify, targetVersion);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
@@ -668,7 +627,7 @@ function mirrorDataByFile(browser, filepath, source, modify, targetVersion) {
     });
 
     for (let subfile of subFiles) {
-      mirrorDataByFile(browser, subfile, source, modify, targetVersion);
+      mirrorDataByFile(browser, subfile, modify, targetVersion);
     }
   }
 
@@ -686,18 +645,11 @@ function mirrorDataByFile(browser, filepath, source, modify, targetVersion) {
  *
  * @param {string} browser
  * @param {string} featureIdent
- * @param {string} source
  * @param {string} modify
  * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorDataByFeature = (
-  browser,
-  featureIdent,
-  source,
-  modify,
-  targetVersion,
-) => {
+const mirrorDataByFeature = (browser, featureIdent, modify, targetVersion) => {
   let filepath = path.resolve(dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
@@ -720,14 +672,7 @@ const mirrorDataByFeature = (
   let data = JSON.parse(
     fs.readFileSync(new URL(filepath, import.meta.url), 'utf-8'),
   );
-  let newData = setFeature(
-    data,
-    feature,
-    browser,
-    source,
-    modify,
-    targetVersion,
-  );
+  let newData = setFeature(data, feature, browser, modify, targetVersion);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
 
@@ -737,26 +682,17 @@ const mirrorDataByFeature = (
 /**
  * @param {string} browser
  * @param {string[]} feature_or_path_array
- * @param {string} forced_source
  * @param {string} modify
  * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorData = (
-  browser,
-  feature_or_path_array,
-  forced_source,
-  modify,
-  targetVersion,
-) => {
+const mirrorData = (browser, feature_or_path_array, modify, targetVersion) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
     );
     return false;
   }
-
-  let source = getSource(browser, forced_source);
 
   for (const feature_or_path of feature_or_path_array) {
     let doMirror = mirrorDataByFeature;
@@ -768,7 +704,7 @@ const mirrorData = (
       doMirror = mirrorDataByFile;
     }
 
-    doMirror(browser, feature_or_path, source, modify, targetVersion);
+    doMirror(browser, feature_or_path, modify, targetVersion);
   }
 
   console.log(
@@ -803,11 +739,6 @@ if (esMain(import.meta)) {
             'webextensions',
           ],
         })
-        .option('source', {
-          describe: 'Use a specified source browser rather than the default',
-          type: 'string',
-          default: undefined,
-        })
         .option('modify', {
           alias: 'm',
           describe:
@@ -828,7 +759,6 @@ if (esMain(import.meta)) {
   mirrorData(
     argv.browser,
     argv.feature_or_path,
-    argv.source,
     argv.modify,
     argv.target_version,
   );
