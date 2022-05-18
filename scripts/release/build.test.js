@@ -9,7 +9,7 @@ const packageJson = JSON.parse(
   await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
 );
 
-const prebuiltPath = '../../build';
+const prebuiltPath = '../../build/data.json';
 
 describe('release-build', () => {
   it('pre-built bundles are identical to the source', async () => {
