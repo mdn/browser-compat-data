@@ -244,7 +244,7 @@ const bumpGeneric = (
   }
 
   if (notesRepl && typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, noteRepl[0], noteRepl[1]);
+    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
   }
 
   return newData;
@@ -256,7 +256,7 @@ const bumpGeneric = (
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'chrome_android', source);
+  return bumpGeneric(originalData, sourceData, 'chrome_android', 'chrome');
 };
 
 /**
@@ -336,7 +336,7 @@ const bumpEdge = (originalData, sourceData, source) => {
  * @returns {SupportStatement}
  */
 const bumpFirefoxAndroid = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'firefox_android', source);
+  return bumpGeneric(originalData, sourceData, 'firefox_android', 'firefox');
 };
 
 /**
