@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 import chalk from 'chalk';
-import { Logger } from './utils.js';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier

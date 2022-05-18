@@ -37,7 +37,7 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  * @param {number} quantifier
  * @return {string}
  */
-const pluralize = (word, quantifier) => {
+export const pluralize = (word, quantifier) => {
   return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
 };
 

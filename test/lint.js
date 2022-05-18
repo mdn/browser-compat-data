@@ -4,10 +4,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import esMain from 'es-main';
 import ora from 'ora';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk';
+
 import {
   testBrowsersData,
   testBrowsersPresence,
@@ -26,13 +29,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /** @type {Map<string, string>} */
 const filesWithErrors = new Map();
-
-const { argv } = yargs(hideBin(process.argv)).command('$0 [files..]', (yargs) =>
-  yargs.positional('files...', {
-    description: 'The files to lint',
-    type: 'string',
-  }),
-);
 
 /**
  * @param {string[]} files
@@ -192,8 +188,18 @@ const main = (files) => {
   return false;
 };
 
-if (require.main === module) {
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [files..]',
+    false,
+    (yargs) =>
+      yargs.positional('files...', {
+        description: 'The files to lint',
+        type: 'string',
+      }),
+  );
+
   process.exit(main(argv.files) ? 1 : 0);
 }
 
-module.exports = main;
+export default main;

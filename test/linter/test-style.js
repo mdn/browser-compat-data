@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import chalk from 'chalk';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
-import compareFeatures from '../../scripts/compare-features.js';
+import compareFeatures from '../../scripts/lib/compare-features.js';
 import { Logger } from '../utils.js';
 
 /**
