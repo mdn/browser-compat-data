@@ -48,7 +48,6 @@ async function copyFiles() {
 }
 
 function createManifest() {
-  const full = require('../../package.json');
   const minimal = {
     main: 'data.json',
     exports: {
