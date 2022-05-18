@@ -63,13 +63,13 @@ const { argv } = require('yargs').command(
 );
 
 /**
- * @param {string} destBrowser
- * @param {ReleaseStatement} sourceRelease
+ * @param {string} targetBrowser
+ * @param {string} sourceBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
 const getMatchingBrowserVersion = (
-  destBrowser,
+  targetBrowser,
   sourceBrowser,
   sourceVersion,
 ) => {
@@ -77,14 +77,14 @@ const getMatchingBrowserVersion = (
   const sourceRelease =
     browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
 
-  const browserData = browsers[destBrowser];
+  const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
       ['opera', 'opera_android', 'samsunginternet_android'].includes(
-        destBrowser,
+        targetBrowser,
       ) &&
       release.engine == 'Blink' &&
       sourceRelease.engine == 'WebKit'
@@ -268,16 +268,16 @@ const copyStatement = (data) => {
 const bumpGeneric = (
   originalData,
   sourceData,
-  destination,
-  source,
+  targetBrowser,
+  sourceBrowser,
   notesRepl,
 ) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
-      destination,
-      source,
+      targetBrowser,
+      sourceBrowser,
       sourceData.version_added,
     );
   }
@@ -287,8 +287,8 @@ const bumpGeneric = (
     typeof sourceData.version_removed === 'string'
   ) {
     newData.version_removed = getMatchingBrowserVersion(
-      destination,
-      source,
+      targetBrowser,
+      sourceBrowser,
       sourceData.version_added,
     );
   }
