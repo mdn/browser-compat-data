@@ -1,10 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import fs from 'node:fs';
+import chalk from 'chalk';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -106,9 +105,11 @@ function processData(data, logger) {
  * @param {string} filename The file to test
  * @returns {boolean} Whether the file has errors
  */
-function testDescriptions(filename) {
+export default function testDescriptions(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Descriptions');
 
@@ -117,5 +118,3 @@ function testDescriptions(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testDescriptions;

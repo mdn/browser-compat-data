@@ -1,15 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
 
-const fs = require('fs');
-const { platform } = require('os');
-
-const { processData } = require('../../test/linter/test-links.js');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import { IS_WINDOWS } from '../../test/utils.js';
+import { processData } from '../../test/linter/test-links.js';
 
 /**
  * @param {string} filename
@@ -35,4 +30,4 @@ const fixLinks = (filename) => {
   }
 };
 
-module.exports = fixLinks;
+export default fixLinks;
