@@ -1,12 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-
-const visit = require('./visit');
-const { walk } = require('./walk');
+import visit from './visit.js';
+import walk from './walk.js';
 
 describe('visit()', function () {
   it('runs the function on all features if no other entry point is specified', function () {

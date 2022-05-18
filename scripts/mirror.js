@@ -1,61 +1,25 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import compareVersions from 'compare-versions';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import bcd from '../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../types').Identifier} Identifier
  * @typedef {import('../types').SupportStatement} SupportStatement
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
-
-const fs = require('fs');
-const path = require('path');
-
-const compareVersions = require('compare-versions');
-
-const browsers = require('..').browsers;
-
-const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_path..]',
-  'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent',
-  (yargs) => {
-    yargs
-      .positional('browser', {
-        describe: 'The destination browser',
-        type: 'string',
-      })
-      .positional('feature_or_path', {
-        describe: 'Features, files, or folders to perform mirroring for',
-        type: 'array',
-        default: [
-          'api',
-          'css',
-          'html',
-          'http',
-          'svg',
-          'javascript',
-          'mathml',
-          'webdriver',
-          'webextensions',
-        ],
-      })
-      .option('modify', {
-        alias: 'm',
-        describe:
-          'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
-        type: 'string',
-        default: 'nonreal',
-      })
-      .option('target-version', {
-        alias: 't',
-        describe:
-          "Only perform mirroring if it affects this destination browser's release",
-        type: 'string',
-        default: undefined,
-      });
-  },
-);
 
 /**
  * @param {string} dest_browser
@@ -640,8 +604,8 @@ const setFeatureRecursive = (data, browser, modify, targetVersion) => {
  */
 function mirrorDataByFile(browser, filepath, modify, targetVersion) {
   let file = filepath;
-  if (file.indexOf(__dirname) !== 0) {
-    file = path.resolve(__dirname, '..', file);
+  if (file.indexOf(dirname) !== 0) {
+    file = path.resolve(dirname, '..', file);
   }
 
   if (!fs.existsSync(file)) {
@@ -650,7 +614,9 @@ function mirrorDataByFile(browser, filepath, modify, targetVersion) {
 
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
-      let data = require(file);
+      let data = JSON.parse(
+        fs.readFileSync(new URL(file, import.meta.url), 'utf-8'),
+      );
       let newData = setFeatureRecursive(data, browser, modify, targetVersion);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -684,7 +650,7 @@ function mirrorDataByFile(browser, filepath, modify, targetVersion) {
  * @returns {boolean}
  */
 const mirrorDataByFeature = (browser, featureIdent, modify, targetVersion) => {
-  let filepath = path.resolve(__dirname, '..');
+  let filepath = path.resolve(dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
 
@@ -703,7 +669,9 @@ const mirrorDataByFeature = (browser, featureIdent, modify, targetVersion) => {
     return false;
   }
 
-  let data = require(filepath);
+  let data = JSON.parse(
+    fs.readFileSync(new URL(filepath, import.meta.url), 'utf-8'),
+  );
   let newData = setFeature(data, feature, browser, modify, targetVersion);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
@@ -732,8 +700,9 @@ const mirrorData = (browser, feature_or_path_array, modify, targetVersion) => {
       fs.existsSync(feature_or_path) &&
       (fs.statSync(feature_or_path).isFile() ||
         fs.statSync(feature_or_path).isDirectory())
-    )
+    ) {
       doMirror = mirrorDataByFile;
+    }
 
     doMirror(browser, feature_or_path, modify, targetVersion);
   }
@@ -745,7 +714,48 @@ const mirrorData = (browser, feature_or_path_array, modify, targetVersion) => {
   return true;
 };
 
-if (require.main === module) {
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 <browser> [feature_or_path..]',
+    'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
+    (yargs) => {
+      yargs
+        .positional('browser', {
+          describe: 'The destination browser',
+          type: 'string',
+        })
+        .positional('feature_or_path', {
+          describe: 'Features, files, or folders to perform mirroring for',
+          type: 'array',
+          default: [
+            'api',
+            'css',
+            'html',
+            'http',
+            'svg',
+            'javascript',
+            'mathml',
+            'webdriver',
+            'webextensions',
+          ],
+        })
+        .option('modify', {
+          alias: 'm',
+          describe:
+            'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
+          type: 'string',
+          default: 'nonreal',
+        })
+        .option('target-version', {
+          alias: 't',
+          describe:
+            "Only perform mirroring if it affects this destination browser's release",
+          type: 'string',
+          default: undefined,
+        });
+    },
+  );
+
   mirrorData(
     argv.browser,
     argv.feature_or_path,
@@ -754,4 +764,4 @@ if (require.main === module) {
   );
 }
 
-module.exports = mirrorData;
+export default mirrorData;
