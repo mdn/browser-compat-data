@@ -269,9 +269,9 @@ const bumpChromeAndroid = (originalData, sourceData) => {
 const bumpEdge = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
-  let chromeFalse =
+  const chromeFalse =
     sourceData.version_removed || sourceData.version_added === false;
-  let chromeNull = sourceData.version_added === null;
+  const chromeNull = sourceData.version_added === null;
 
   if (chromeFalse) {
     if (
@@ -311,7 +311,9 @@ const bumpEdge = (originalData, sourceData) => {
   }
 
   let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
-  if (newNotes) newData.notes = newNotes;
+  if (newNotes) {
+    newData.notes = newNotes;
+  }
 
   return newData;
 };
