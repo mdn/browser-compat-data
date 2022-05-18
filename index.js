@@ -27,7 +27,7 @@ function load(...dirs) {
     const paths = new fdir()
       .withBasePath()
       .filter((fp) => fp.endsWith('.json'))
-      .crawl(dir)
+      .crawl(path.join(__dirname, dir))
       .sync();
 
     for (const fp of paths) {
