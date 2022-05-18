@@ -56,37 +56,45 @@ const { argv } = require('yargs').command(
 );
 
 /**
- * @param {string} dest_browser
- * @param {ReleaseStatement} source_release
+ * @param {string} destBrowser
+ * @param {ReleaseStatement} sourceRelease
+ * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_release) => {
-  const browserData = browsers[dest_browser];
+const getMatchingBrowserVersion = (
+  destBrowser,
+  sourceBrowser,
+  sourceVersion,
+) => {
+  const range = sourceVersion.includes('≤');
+  const sourceRelease =
+    browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
+
+  const browserData = browsers[destBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
-
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
       ['opera', 'opera_android', 'samsunginternet_android'].includes(
-        dest_browser,
+        destBrowser,
       ) &&
       release.engine == 'Blink' &&
-      source_release.engine == 'WebKit'
+      sourceRelease.engine == 'WebKit'
     ) {
-      return r;
-    } else if (release.engine == source_release.engine) {
+      return range ? `≤${r}` : r;
+    } else if (release.engine == sourceRelease.engine) {
       if (
         ['beta', 'nightly'].includes(release.status) &&
-        release.status == source_release.status
+        release.status == sourceRelease.status
       ) {
         return r;
       } else if (
         release.engine_version &&
-        source_release.engine_version &&
+        sourceRelease.engine_version &&
         compareVersions.compare(
           release.engine_version,
-          source_release.engine_version,
+          sourceRelease.engine_version,
           '>=',
         )
       ) {
@@ -350,7 +358,8 @@ const bumpOpera = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'opera',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -360,7 +369,8 @@ const bumpOpera = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'opera',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
@@ -383,7 +393,8 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -393,7 +404,8 @@ const bumpOperaAndroid = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'opera_android',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
@@ -416,7 +428,8 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'safari_ios',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -426,7 +439,8 @@ const bumpSafariiOS = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'safari_ios',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
@@ -445,7 +459,8 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       'samsunginternet_android',
-      browsers[source].releases[sourceData.version_added],
+      source,
+      sourceData.version_added,
     );
   }
 
@@ -455,7 +470,8 @@ const bumpSamsungInternet = (originalData, sourceData, source) => {
   ) {
     newData.version_removed = getMatchingBrowserVersion(
       'samsunginternet_android',
-      browsers[source].releases[sourceData.version_removed],
+      source,
+      sourceData.version_removed,
     );
   }
 
