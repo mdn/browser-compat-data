@@ -1,10 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types').Identifier} Identifier
- */
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,6 +12,10 @@ import { IS_WINDOWS } from '../../test/utils.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
  * Check to see if the key is __compat and modify the value to remove
  * flags from WebView Android.
  *
@@ -23,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value with WebView flags removed
  */
-const removeWebViewFlags = (key, value) => {
+export const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
@@ -56,7 +56,7 @@ const removeWebViewFlags = (key, value) => {
  *
  * @param {string} filename The filename to perform migration upon
  */
-const fixWebViewFlags = (filename) => {
+export const fixWebViewFlags = (filename) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
@@ -126,5 +126,3 @@ if (esMain(import.meta)) {
     );
   }
 }
-
-export { removeWebViewFlags, fixWebViewFlags };

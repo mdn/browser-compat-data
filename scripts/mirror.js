@@ -1,14 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-/**
- * @typedef {import('../types').Identifier} Identifier
- * @typedef {import('../types').SupportStatement} SupportStatement
- * @typedef {import('../types').ReleaseStatement} ReleaseStatement
- */
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,6 +14,12 @@ import bcd from '../index.js';
 const { browsers } = bcd;
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
+
+/**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
 
 /**
  * @param {string} dest_browser

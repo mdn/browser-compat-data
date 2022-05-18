@@ -27,7 +27,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   }
 }
 
-export function* walk(entryPoints, data = bcd) {
+export default function* walk(entryPoints, data = bcd) {
   const walkers = [];
 
   if (entryPoints === undefined) {

@@ -88,12 +88,14 @@ const main = (
   const values = Array.isArray(value) ? value : value.toString().split(',');
 
   for (const folder in folders)
-    features = traverseFeatures(
-      bcd[folders[folder]],
-      depth,
-      values,
-      browser,
-      `${folders[folder]}.`,
+    features.push(
+      ...traverseFeatures(
+        bcd[folders[folder]],
+        depth,
+        values,
+        browser,
+        `${folders[folder]}.`,
+      ),
     );
 
   console.log(features.join('\n'));

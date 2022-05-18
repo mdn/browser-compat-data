@@ -8,6 +8,16 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+function main({ ref1, ref2, format, github }) {
+  const results = diff({ ref1, ref2, github });
+
+  if (format === 'markdown') {
+    printMarkdown(results);
+  } else {
+    console.log(JSON.stringify(results, undefined, 2));
+  }
+}
+
 export default function diff({ ref1, ref2, github }) {
   let refA, refB;
 
@@ -132,16 +142,6 @@ function printMarkdown({ added, removed }) {
     if (removed.length) console.log('');
     console.log('## Added\n');
     console.log(added.map(fmtFeature).join('\n'));
-  }
-}
-
-function main({ ref1, ref2, format, github }) {
-  const results = diff({ ref1, ref2, github });
-
-  if (format === 'markdown') {
-    printMarkdown(results);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
   }
 }
 

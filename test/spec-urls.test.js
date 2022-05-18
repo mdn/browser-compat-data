@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { walk } from '../utils/index.js';
 
+// XXX Replace with `import specData from 'browser-specs' assert { type: 'json' };`
+// when NodeJS v14 is no longer LTS
 const specData = JSON.parse(
   fs.readFileSync(
     new URL('../node_modules/browser-specs/index.json', import.meta.url),

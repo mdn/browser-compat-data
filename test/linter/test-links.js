@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
 import fs from 'node:fs';
 import chalk from 'chalk';
 import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
@@ -22,7 +20,7 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
  * @param {string} filename The file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-function processData(filename) {
+export function processData(filename) {
   let errors = [];
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();

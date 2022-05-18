@@ -21,7 +21,7 @@ async function createDataBundle() {
 // Returns a promise for writing the data to JSON file
 async function writeData() {
   const dest = path.resolve(directory, 'data.json');
-  const data = createDataBundle();
+  const data = await createDataBundle();
   await fs.writeFile(dest, data);
 }
 

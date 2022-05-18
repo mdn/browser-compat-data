@@ -6,15 +6,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 
-import { browsers } from '../../index.js';
 import { walk } from '../../utils/index.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {object} bcd Parsed BCD object to be updated in place.
  */
-const fixExperimental = (bcd) => {
+export const fixExperimental = (bcd) => {
   for (const { compat } of walk(undefined, bcd)) {
     if (!compat?.status?.experimental) {
       continue;

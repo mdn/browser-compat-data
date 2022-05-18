@@ -2,12 +2,9 @@
  * See LICENSE file for more information. */
 
 import fs from 'node:fs';
-import { platform } from 'node:os';
 
+import { IS_WINDOWS } from '../../test/utils.js';
 import { processData } from '../../test/linter/test-links.js';
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
 
 /**
  * @param {string} filename

@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
 import fs from 'node:fs';
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';

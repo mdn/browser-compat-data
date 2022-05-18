@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types').Identifier} Identifier
- */
-
 import assert from 'node:assert/strict';
 
 import { removeWebViewFlags } from './002-remove-webview-flags.js';
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
 
 /**
  * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
