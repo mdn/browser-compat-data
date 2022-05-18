@@ -3,11 +3,12 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
+import fs from 'node:fs';
 
-const { IS_WINDOWS } = require('../../test/utils.js');
+import { IS_WINDOWS } from '../../test/utils.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * Return a new feature object whose status properties have been adjusted according to a few predefined rules.
@@ -84,52 +85,4 @@ const fixStatusFromFile = (filename) => {
   }
 };
 
-if (require.main === module) {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixStatusFromFile(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
-    }
-  }
-
-  if (process.argv[2]) {
-    load(process.argv[2]);
-  } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webdriver',
-      'webextensions',
-    );
-  }
-}
-
-module.exports = fixStatusFromFile;
+export default fixStatusFromFile;

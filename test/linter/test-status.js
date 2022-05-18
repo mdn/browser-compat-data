@@ -4,7 +4,6 @@
 'use strict';
 
 import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
 
 import chalk from 'chalk';
 
@@ -12,8 +11,6 @@ import { Logger } from '../utils.js';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
-
-const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
