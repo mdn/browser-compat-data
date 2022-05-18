@@ -170,7 +170,7 @@ const isVersionRemoved = (compatData, versionToCheck) => {
     return compatData.version_removed == versionToCheck;
 
   if (compatData.constructor === Array) {
-    return compatData.some(s => s.version_removed === versionToCheck);
+    return compatData.some((s) => s.version_removed === versionToCheck);
   }
 
   return false;
@@ -629,8 +629,8 @@ const bumpVersion = (
 
   if (targetVersion) {
     if (
-        !isVersionAdded(newData, targetVersion) &&
-        !isVersionRemoved(newData, targetVersion)
+      !isVersionAdded(newData, targetVersion) &&
+      !isVersionRemoved(newData, targetVersion)
     ) {
       newData = originalData;
     }
