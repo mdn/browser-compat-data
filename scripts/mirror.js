@@ -149,15 +149,12 @@ const getSource = (browser, forced_source) => {
  * @return {string | null}
  */
 const isVersionAdded = (compatData, versionToCheck) => {
-  if (typeof compatData.version_added === 'string')
-    return compatData.version_added == versionToCheck;
-
   if (Array.isArray(compatData)) {
-    for (var i = compatData.length - 1; i >= 0; i--) {
-      if (compatData[i].version_added == versionToCheck) {
-        return true;
-      }
-    }
+    return compatData.some((s) => s.version_added == versionToCheck);
+  }
+
+  if (typeof compatData.version_added === 'string') {
+    return compatData.version_added == versionToCheck;
   }
 
   return false;
