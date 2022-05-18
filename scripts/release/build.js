@@ -1,30 +1,34 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
-const fs = require('fs').promises;
-const path = require('path');
+import esMain from 'es-main';
+import stringify from 'fast-json-stable-stringify';
 
-const packageJson = require('../../package.json');
-const stringify = require('fast-json-stable-stringify');
+const packageJson = JSON.parse(
+  await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
+);
 
 const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
-function createDataBundle() {
-  const bcd = require('../../index.js');
-  bcd.__meta = { version: packageJson.version };
-  const string = stringify(bcd);
+async function createDataBundle() {
+  const { default: bcd } = await import('../../index.js');
+  const string = stringify({
+    ...bcd,
+    __meta: { version: packageJson.version },
+  });
   return string;
 }
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
   const dest = path.resolve(directory, 'data.json');
-  const data = createDataBundle();
+  const data = await createDataBundle();
   await fs.writeFile(dest, data);
 }
 
@@ -47,7 +51,7 @@ async function copyFiles() {
   }
 }
 
-function createManifest() {
+async function createManifest() {
   const minimal = {
     main: 'data.json',
     exports: {
@@ -81,7 +85,7 @@ function createManifest() {
 
 async function writeManifest() {
   const dest = path.resolve(directory, 'package.json');
-  const manifest = createManifest();
+  const manifest = await createManifest();
   await fs.writeFile(dest, manifest);
 }
 
@@ -108,9 +112,6 @@ async function main() {
   console.log('Data bundle is ready');
 }
 
-// This is needed because NodeJS does not support top-level await.
-// Also, make sure to log all errors and exit with failure code.
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (esMain(import.meta)) {
+  await main();
+}

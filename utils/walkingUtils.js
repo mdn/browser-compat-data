@@ -1,20 +1,19 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-function joinPath() {
+export function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }
 
-function isFeature(obj) {
+export function isFeature(obj) {
   return '__compat' in obj;
 }
-function isBrowser(obj) {
+
+export function isBrowser(obj) {
   return 'name' in obj && 'releases' in obj;
 }
 
-function descendantKeys(data) {
+export function descendantKeys(data) {
   if (typeof data !== 'object') {
     // Return if the data isn't an object
     return [];
@@ -31,10 +30,3 @@ function descendantKeys(data) {
 
   return Object.keys(data).filter((key) => key !== '__meta');
 }
-
-module.exports = {
-  joinPath,
-  isFeature,
-  isBrowser,
-  descendantKeys,
-};
