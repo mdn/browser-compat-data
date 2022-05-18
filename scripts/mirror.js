@@ -214,7 +214,7 @@ const copyStatement = (data) => {
  * @param {SupportStatement} sourceData
  * @param {string} destination
  * @param {string} source
- * @param {Array<regex, string>} notesRepl
+ * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
 const bumpGeneric = (
