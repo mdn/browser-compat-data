@@ -4,6 +4,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const { fdir } = require('fdir');
 
 class DuplicateCompatError extends Error {
@@ -26,7 +27,7 @@ function load(...dirs) {
     const paths = new fdir()
       .withBasePath()
       .filter((fp) => fp.endsWith('.json'))
-      .crawl(dir)
+      .crawl(path.join(__dirname, dir))
       .sync();
 
     for (const fp of paths) {
