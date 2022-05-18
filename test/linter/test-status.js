@@ -3,10 +3,17 @@
 
 'use strict';
 
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
-const { browsers } = require('../../index.js');
+import chalk from 'chalk';
+
+import { Logger } from '../utils.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -91,9 +98,11 @@ function checkStatus(data, logger, path = '') {
  * @param {string} filename
  * @returns {boolean} If the file contains errors
  */
-function testStatus(filename) {
+export default function testStatus(filename) {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
 
   const logger = new Logger('Feature Status');
 
@@ -102,5 +111,3 @@ function testStatus(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testStatus;
