@@ -143,12 +143,12 @@ const getSource = (browser, forced_source) => {
   return source;
 };
 
+/*
  * @param {SupportStatement} compatData
  * @param {string | null} versionToCheck
  * @return {string | null}
  */
-const 
-= (compatData, versionToCheck) => {
+const isVersionAdded = (compatData, versionToCheck) => {
   if (Array.isArray(compatData)) {
     return compatData.some((s) => s.version_added == versionToCheck);
   }
