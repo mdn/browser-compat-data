@@ -133,25 +133,21 @@ const checkFiles = (...files) => {
  * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
-const main = (files) => {
-  let errors;
-
-  if (files) {
-    errors = checkFiles(...files);
-  } else {
-    errors = checkFiles(
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    );
-  }
+const main = (
+  files = [
+    'api',
+    'browsers',
+    'css',
+    'html',
+    'http',
+    'svg',
+    'javascript',
+    'mathml',
+    'webdriver',
+    'webextensions',
+  ],
+) => {
+  const errors = checkFiles(...files);
 
   const filesWithErrors = Object.keys(errors).length;
 
