@@ -1,5 +1,5 @@
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import chalk from 'chalk';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -33,7 +33,7 @@ function includesTrackingBug(statement) {
 /**
  * @param {Identifier} data
  */
-function hasSupportHistory(data) {
+export function hasSupportHistory(data) {
   return Object.values(data.__compat.support).some(
     (c) => Array.isArray(c) || !!c.version_added || includesTrackingBug(c),
   );
@@ -58,13 +58,10 @@ function check(data, logger, path = []) {
 }
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-function testSupportHistory(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
+export function testSupportHistory(data) {
   const logger = new Logger('Support history');
 
   check(data, logger);
@@ -72,8 +69,3 @@ function testSupportHistory(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = {
-  hasSupportHistory,
-  testSupportHistory,
-};
