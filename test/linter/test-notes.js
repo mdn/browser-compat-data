@@ -1,11 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
 
-const chalk = require('chalk');
-const HTMLParser = require('@desertnet/html-parser');
-const { Logger, VALID_ELEMENTS } = require('../utils.js');
+import chalk from 'chalk-template';
+import HTMLParser from '@desertnet/html-parser';
+
+import { Logger, VALID_ELEMENTS } from '../utils.js';
 
 const parser = new HTMLParser();
 
@@ -152,7 +153,10 @@ const processData = (data, logger, feature) => {
  */
 const testNotes = (filename) => {
   /** @type {Identifier} */
-  const data = require(filename);
+  const data = JSON.parse(
+    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
+  );
+
   const logger = new Logger('Notes');
 
   processData(data, logger);
@@ -161,4 +165,4 @@ const testNotes = (filename) => {
   return logger.hasErrors();
 };
 
-module.exports = testNotes;
+export default testNotes;

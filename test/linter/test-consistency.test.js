@@ -1,11 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-
-const { ConsistencyChecker } = require('./test-consistency');
+import { ConsistencyChecker } from './test-consistency.js';
 
 const check = new ConsistencyChecker();
 
