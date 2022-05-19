@@ -92,15 +92,10 @@ function checkStatus(data, logger, path = '') {
 }
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testStatus(filename) {
-  /** @type {Identifier} */
-  const data = JSON.parse(
-    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
-  );
-
+export default function testStatus(data) {
   const logger = new Logger('Feature Status');
 
   checkStatus(data, logger);

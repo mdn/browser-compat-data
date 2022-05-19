@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
@@ -421,17 +420,10 @@ export class ConsistencyChecker {
 }
 
 /**
- * Test the version consistency within the file
- *
- * @param {string} filename The file to test
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testConsistency(filename) {
-  /** @type {Identifier} */
-  const data = JSON.parse(
-    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
-  );
-
+export default function testConsistency(data) {
   const logger = new Logger('Consistency');
 
   const checker = new ConsistencyChecker();
