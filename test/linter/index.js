@@ -1,22 +1,19 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import testBrowsersData from './test-browsers-data.js';
+import testBrowsersPresence from './test-browsers-presence.js';
+import testConsistency from './test-consistency.js';
+import testDescriptions from './test-descriptions.js';
+import testLinks from './test-links.js';
+import testNotes from './test-notes.js';
+import testPrefix from './test-prefix.js';
+import testSchema from './test-schema.js';
+import testStatusContradiction from './test-status-contradiction.js';
+import testStyle from './test-style.js';
+import testVersions from './test-versions.js';
 
-const testBrowsersData = require('./test-browsers-data.js');
-const testBrowsersPresence = require('./test-browsers-presence.js');
-const { testConsistency } = require('./test-consistency.js');
-const testDescriptions = require('./test-descriptions.js');
-const { testLinks } = require('./test-links.js');
-const testNotes = require('./test-notes.js');
-const testPrefix = require('./test-prefix.js');
-const testRealValues = require('./test-real-values.js');
-const testSchema = require('./test-schema.js');
-const testStyle = require('./test-style.js');
-const testVersions = require('./test-versions.js');
-const testStatus = require('./test-status-contradiction.js');
-
-module.exports = {
+export {
   testBrowsersData,
   testBrowsersPresence,
   testConsistency,
@@ -24,9 +21,8 @@ module.exports = {
   testLinks,
   testNotes,
   testPrefix,
-  testRealValues,
   testSchema,
-  testStatus,
+  testStatusContradiction,
   testStyle,
   testVersions,
 };

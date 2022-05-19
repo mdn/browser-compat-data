@@ -3,8 +3,8 @@
 
 'use strict';
 
-const fs = require('fs');
-const { platform } = require('os');
+import { readFileSync, writeFileSync } from 'fs';
+import { platform } from 'os';
 
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
@@ -21,7 +21,7 @@ const fixStatus = (key, value) => {
  * @param {Promise<void>} filename
  */
 const fixStatusContradiction = (filename) => {
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let actual = readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
 
   if (IS_WINDOWS) {
@@ -31,8 +31,8 @@ const fixStatusContradiction = (filename) => {
   }
 
   if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
+    writeFileSync(filename, expected + '\n', 'utf-8');
   }
 };
 
-module.exports = fixStatusContradiction;
+export default fixStatusContradiction;

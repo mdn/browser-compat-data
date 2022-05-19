@@ -4,25 +4,15 @@
   "definitions": {
     "browsers": {
       "type": "object",
-      "properties": {
-        "chrome": { "$ref": "#/definitions/browser_statement" },
-        "chrome_android": { "$ref": "#/definitions/browser_statement" },
-        "deno": { "$ref": "#/definitions/browser_statement" },
-        "edge": { "$ref": "#/definitions/browser_statement" },
-        "firefox": { "$ref": "#/definitions/browser_statement" },
-        "firefox_android": { "$ref": "#/definitions/browser_statement" },
-        "ie": { "$ref": "#/definitions/browser_statement" },
-        "nodejs": { "$ref": "#/definitions/browser_statement" },
-        "opera": { "$ref": "#/definitions/browser_statement" },
-        "opera_android": { "$ref": "#/definitions/browser_statement" },
-        "safari": { "$ref": "#/definitions/browser_statement" },
-        "safari_ios": { "$ref": "#/definitions/browser_statement" },
-        "samsunginternet_android": {
-          "$ref": "#/definitions/browser_statement"
-        },
-        "webview_android": { "$ref": "#/definitions/browser_statement" }
+      "additionalProperties": {
+        "$ref": "#/definitions/browser_statement"
       },
-      "additionalProperties": false
+      "minProperties": 1,
+      "maxProperties": 1,
+      "errorMessage": {
+        "minProperties": "A browser must be described within the file.",
+        "maxProperties": "Each browser JSON file may only describe one browser."
+      }
     },
 
     "browser_statement": {
@@ -32,9 +22,18 @@
           "type": "string",
           "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
         },
+        "type": {
+          "type": "string",
+          "enum": ["desktop", "mobile", "xr", "server"],
+          "description": "What type of browser this is (desktop, mobile, XR, or server engine)."
+        },
         "accepts_flags": {
           "type": "boolean",
           "description": "Whether the browser supports flags."
+        },
+        "accepts_webextensions": {
+          "type": "boolean",
+          "description": "Whether the browser supports extensions."
         },
         "pref_url": {
           "type": "string",

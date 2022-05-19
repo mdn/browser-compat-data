@@ -1,5 +1,8 @@
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import chalk from 'chalk-template';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -27,13 +30,10 @@ function checkStatus(data, logger, path = []) {
 }
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-function testStatusContradiction(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
+function testStatusContradiction(data) {
   const logger = new Logger('Flag consistency');
 
   checkStatus(data, logger);
@@ -42,4 +42,4 @@ function testStatusContradiction(filename) {
   return logger.hasErrors();
 }
 
-module.exports = testStatusContradiction;
+export default testStatusContradiction;
