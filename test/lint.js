@@ -69,7 +69,7 @@ const checkFiles = (...files) => {
           // Set spinner to failure when first error is found
           // Setting on every error causes duplicate output
           spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(relativeFilePath));
+          spinner.fail(chalk`{red.bold ${relativeFilePath}}`);
 
           errors[relativeFilePath] = [];
         }
