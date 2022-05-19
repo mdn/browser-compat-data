@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import fs from 'node:fs';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
 import compareFeatures from '../../scripts/lib/compare-features.js';
 import { Logger } from '../utils.js';

@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 import compareVersions from 'compare-versions';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
 import { Logger } from '../utils.js';
 

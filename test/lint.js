@@ -9,7 +9,7 @@ import esMain from 'es-main';
 import ora from 'ora';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 
 import {
   testBrowsersData,
@@ -70,7 +70,7 @@ const checkFiles = (...files) => {
           // Set spinner to failure when first error is found
           // Setting on every error causes duplicate output
           spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(relativeFilePath));
+          spinner.fail(chalk`{red.bold ${relativeFilePath}}`);
 
           errors[relativeFilePath] = [];
         }
