@@ -28,10 +28,6 @@ JSON files containing the compatibility data.
 
 - [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [xpath/](../xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.
-
-- [xslt/](../xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.
-
 ### File and folder breakdown
 
 The JSON files contain [feature identifiers](#feature-identifiers),
@@ -107,7 +103,9 @@ The `__compat` object consists of the following:
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
+  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
+  Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 ### The `support` object
 
@@ -120,6 +118,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
+- `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
@@ -271,24 +270,25 @@ The following table indicates initial versions for browsers in BCD. These are th
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
 - Edge
-  - "≤18" (supported in some version of EdgeHTML-based Edge)
-  - "≤79" (supported in some version Chromium-based Edge and possibly in EdgeHTML-based Edge)
+  - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
+  - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
 - Internet Explorer
-  - "≤6" (earliest IE version supported in BrowserStack)
+  - "≤6" (the earliest IE version testable in BrowserStack and possibly earlier)
+  - "≤11" (the last IE version and possibly earlier)
 - Opera
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤15" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤15" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Opera Android
-  - "≤12.1" (supported in some version of Presto-based Opera)
-  - "≤14" (supported in some version of Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera and possibly earlier)
+  - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
 - Safari
-  - "≤4" (earliest Safari version supported in BrowserStack)
+  - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
 - Safari iOS
-  - "≤3" (earliest Safari iOS version supported in BrowserStack)
+  - "≤3" (the earliest Safari iOS version testable in BrowserStack and possibly earlier)
 - WebView Android
-  - "≤37" (supported in former Android versions prior to Chrome-based WebView)
+  - "≤37" (the first Chrome-based WebView and possibly previous Android versions)
 
-For example, the statement below means, "supported in at least version 37 and probably in earlier versions as well".
+For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
 ```json
 {
@@ -440,21 +440,26 @@ A `matches` object contains hints to help automatically detect whether source co
 
   Examples:
 
-  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform-origin.json) and corresponding tests.
 
 ### Status information
 
 The mandatory status property contains information about stability of the feature. It is
 an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value that indicates this functionality is
-  intended to be an addition to the Web platform. Some features are added to
-  conduct tests. Set to `false`, it means the functionality is mature, and no
-  significant incompatible changes are expected in the future.
-- `standard_track`: a `boolean` value indicating if the feature is part of an
-  active specification or specification process.
-- `deprecated`: a `boolean` value that indicates if the feature is no longer recommended.
-  It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+- `experimental`: a `boolean` value.
+
+  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+
+  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+
+- `standard_track`: a `boolean` value.
+
+  If `standard_track` is `true`, then the feature is part of an active specification or specification process.
+
+- `deprecated`: a `boolean` value.
+
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
 
 ```json
 "__compat": {

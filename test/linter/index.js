@@ -1,22 +1,26 @@
-'use strict';
-const testBrowsers = require('./test-browsers.js');
-const testLinks = require('./test-links.js');
-const testPrefix = require('./test-prefix.js');
-const testRealValues = require('./test-real-values.js');
-const testSchema = require('./test-schema.js');
-const testStyle = require('./test-style.js');
-const testVersions = require('./test-versions.js');
-const testConsistency = require('./test-consistency.js');
-const testDescriptions = require('./test-descriptions.js');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-module.exports = {
-  testBrowsers,
-  testLinks,
-  testPrefix,
-  testRealValues,
-  testStyle,
-  testSchema,
-  testVersions,
+import testBrowsersData from './test-browsers-data.js';
+import testBrowsersPresence from './test-browsers-presence.js';
+import testConsistency from './test-consistency.js';
+import testDescriptions from './test-descriptions.js';
+import testLinks from './test-links.js';
+import testNotes from './test-notes.js';
+import testPrefix from './test-prefix.js';
+import testSchema from './test-schema.js';
+import testStyle from './test-style.js';
+import testVersions from './test-versions.js';
+
+export {
+  testBrowsersData,
+  testBrowsersPresence,
   testConsistency,
   testDescriptions,
+  testLinks,
+  testNotes,
+  testPrefix,
+  testSchema,
+  testStyle,
+  testVersions,
 };

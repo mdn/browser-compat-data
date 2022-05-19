@@ -10,7 +10,8 @@ We're really happy to accept contributions to the mdn/browser-compat-data reposi
 4. [Updating compatibility tables on MDN](#updating-compatibility-tables-on-mdn)
 5. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
-   2. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
+   1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
+   1. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
 6. [Getting help](#getting-help)
 
 ## Before you begin
@@ -46,7 +47,7 @@ The process is:
 1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
    See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
-3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/kumascript), which includes the BCD release, to production.
+3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/yari/tree/main/kumascript), which includes the BCD release, to production.
    This typically happens within a day of the release of the npm package.
 4. Tables are generated on MDN:
 
@@ -71,22 +72,26 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
+### Optional: Generating data using the mdn-bcd-collector project
+
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+
 ### Optional: Generating data using the mirroring script
 
-Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> [--source=""] [--modify=""]` to automatically copy values.
+Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> -- [--source=""] [--modify="nonreal"] [--target_version=""]` to automatically copy values.
 
-The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below), but manual specification is possible through the `--source=""` argument.
+The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below).
 
-| Destination      | Default Source    |
-| ---------------- | ----------------- |
-| Chrome Android   | Chrome            |
-| Edge             | Internet Explorer |
-| Firefox Android  | Firefox           |
-| Opera            | Chrome            |
-| Opera Android    | Chrome Android    |
-| Safari iOS       | Safari            |
-| Samsung Internet | Chrome Android    |
-| WebView          | Chrome Android    |
+| Destination      | Default Source |
+| ---------------- | -------------- |
+| Chrome Android   | Chrome         |
+| Edge             | Chrome         |
+| Firefox Android  | Firefox        |
+| Opera            | Chrome         |
+| Opera Android    | Chrome Android |
+| Safari iOS       | Safari         |
+| Samsung Internet | Chrome Android |
+| WebView          | Chrome Android |
 
 The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
 
@@ -95,7 +100,9 @@ Note when using feature identifiers:
 - Updates aren't applied recursively; only the given data point is updated when using a feature ID. Use a filename or folder for mass mirroring.
 - The script assumes a predictable file structure when passing in a feature identifier, which BCD doesn't have right now. (See [issue 3617](https://github.com/mdn/browser-compat-data/issues/3617).) For example, even if "html.elements.input.input-button" is a valid query, it will fail because the file structure for input-button isn't consistent with the rest right now.
 
-By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify=""` argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
+By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify` (or `-m`) argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
+
+The script can also take a `--target_version` (or `-t`) argument to only perform mirroring if the data affects a specific browser release. This is used to update data when a new Opera or Opera Android version is released, and we wish to update data that only affects the new version.
 
 ## Getting help
 

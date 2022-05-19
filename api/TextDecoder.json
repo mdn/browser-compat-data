@@ -3,6 +3,7 @@
     "TextDecoder": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder",
+        "spec_url": "https://encoding.spec.whatwg.org/#interface-textdecoder",
         "support": {
           "chrome": {
             "version_added": "38"
@@ -10,8 +11,11 @@
           "chrome_android": {
             "version_added": "38"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
-            "version_added": "≤79"
+            "version_added": "79"
           },
           "firefox": [
             {
@@ -43,14 +47,14 @@
             {
               "version_added": "8.3.0",
               "partial_implementation": true,
-              "notes": "Exported from the <code>util</code> module but not globally available."
+              "notes": "Available as a part of the <code>util</code> module."
             }
           ],
           "opera": {
             "version_added": "25"
           },
           "opera_android": {
-            "version_added": true
+            "version_added": "25"
           },
           "safari": {
             "version_added": "10.1"
@@ -74,6 +78,7 @@
       "TextDecoder": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/TextDecoder",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textdecoder①",
           "description": "<code>TextDecoder()</code> constructor",
           "support": {
             "chrome": {
@@ -82,73 +87,11 @@
             "chrome_android": {
               "version_added": "38"
             },
-            "edge": {
-              "version_added": "≤79"
-            },
-            "firefox": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "19"
-              },
-              {
-                "version_added": "18",
-                "notes": "Implemented a slightly different version of the spec.",
-                "partial_implementation": true
-              }
-            ],
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": "25"
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "3.0"
-            },
-            "webview_android": {
-              "version_added": "38"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "decode": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/decode",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -179,14 +122,144 @@
               },
               {
                 "version_added": "8.3.0",
-                "notes": "Exported from the <code>util</code> module but not globally available."
+                "notes": "Available as a part of the <code>util</code> module."
               }
             ],
             "opera": {
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "10.3"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "38"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": {
+              "version_added": "20"
+            },
+            "firefox_android": {
+              "version_added": "20"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "10.5.0"
+            },
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
+            },
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": {
+              "version_added": "10.3"
+            },
+            "samsunginternet_android": {
+              "version_added": "3.0"
+            },
+            "webview_android": {
+              "version_added": "38"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "decode": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/decode",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textdecoder-decode①",
+          "support": {
+            "chrome": {
+              "version_added": "38"
+            },
+            "chrome_android": {
+              "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0",
+              "notes": "Before Deno 1.11, passing <code>option.stream</code> is not supported and results in an error being thrown."
+            },
+            "edge": {
+              "version_added": "79"
+            },
+            "firefox": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Implemented a slightly different version of the spec.",
+                "partial_implementation": true
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "18",
+                "notes": "Implemented a slightly different version of the spec.",
+                "partial_implementation": true
+              }
+            ],
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": [
+              {
+                "version_added": "11.0.0"
+              },
+              {
+                "version_added": "8.3.0",
+                "notes": "Available as a part of the <code>util</code> module."
+              }
+            ],
+            "opera": {
+              "version_added": "25"
+            },
+            "opera_android": {
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -211,6 +284,7 @@
       "encoding": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/encoding",
+          "spec_url": "https://encoding.spec.whatwg.org/#ref-for-dom-textdecoder-encoding①",
           "support": {
             "chrome": {
               "version_added": "38"
@@ -218,8 +292,11 @@
             "chrome_android": {
               "version_added": "38"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": [
               {
@@ -251,7 +328,7 @@
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -278,19 +355,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/fatal",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "38"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "36"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "36"
             },
             "ie": {
               "version_added": false
@@ -299,10 +379,10 @@
               "version_added": "8.3.0"
             },
             "opera": {
-              "version_added": true
+              "version_added": "25"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"
@@ -311,10 +391,10 @@
               "version_added": "10.3"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "3.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "38"
             }
           },
           "status": {
@@ -329,19 +409,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/TextDecoder/ignoreBOM",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "38"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "38"
+            },
+            "deno": {
+              "version_added": "1.0"
             },
             "edge": {
-              "version_added": "≤79"
+              "version_added": "79"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "63"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "63"
             },
             "ie": {
               "version_added": false
@@ -350,61 +433,10 @@
               "version_added": "8.3.0"
             },
             "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {
-            "chrome": {
-              "version_added": "38"
-            },
-            "chrome_android": {
-              "version_added": "38"
-            },
-            "edge": {
-              "version_added": "≤79"
-            },
-            "firefox": {
-              "version_added": "20"
-            },
-            "firefox_android": {
-              "version_added": "20"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "10.5.0"
-            },
-            "opera": {
               "version_added": "25"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "25"
             },
             "safari": {
               "version_added": "10.1"

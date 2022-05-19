@@ -1,6 +1,19 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import compareVersions from 'compare-versions';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import bcd from '../index.js';
+const { browsers } = bcd;
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -8,66 +21,43 @@
  * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
-'use strict';
-const fs = require('fs');
-const path = require('path');
-
-const compareVersions = require('compare-versions');
-
-const browsers = require('..').browsers;
-
-const { argv } = require('yargs').command(
-  '$0 <browser> [feature_or_file]',
-  'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
-  yargs => {
-    yargs
-      .positional('browser', {
-        describe: 'The destination browser',
-        type: 'string',
-      })
-      .positional('feature_or_file', {
-        describe: 'The feature, file, or folder to perform mirroring',
-        type: 'string',
-        default: '',
-      })
-      .option('source', {
-        describe: 'Use a specified source browser rather than the default',
-        type: 'string',
-        default: undefined,
-      })
-      .option('modify', {
-        alias: 'm',
-        describe:
-          'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
-        type: 'string',
-        default: 'nonreal',
-      });
-  },
-);
-
 /**
  * @param {string} dest_browser
- * @param {ReleaseStatement} source_browser_release
+ * @param {ReleaseStatement} source_release
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
+const getMatchingBrowserVersion = (dest_browser, source_release) => {
   const browserData = browsers[dest_browser];
-  for (const r in browserData.releases) {
+  const releaseKeys = Object.keys(browserData.releases);
+  releaseKeys.sort(compareVersions);
+
+  for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      (release.engine == source_browser_release.engine &&
-        compareVersions.compare(
-          release.engine_version,
-          source_browser_release.engine_version,
-          '>=',
-        )) ||
-      (['opera', 'opera_android', 'samsunginternet_android'].includes(
+      ['opera', 'opera_android', 'samsunginternet_android'].includes(
         dest_browser,
       ) &&
-        release.engine == 'Blink' &&
-        source_browser_release.engine == 'WebKit')
+      release.engine == 'Blink' &&
+      source_release.engine == 'WebKit'
     ) {
       return r;
+    } else if (release.engine == source_release.engine) {
+      if (
+        ['beta', 'nightly'].includes(release.status) &&
+        release.status == source_release.status
+      ) {
+        return r;
+      } else if (
+        release.engine_version &&
+        source_release.engine_version &&
+        compareVersions.compare(
+          release.engine_version,
+          source_release.engine_version,
+          '>=',
+        )
+      ) {
+        return r;
+      }
     }
   }
 
@@ -76,42 +66,58 @@ const getMatchingBrowserVersion = (dest_browser, source_browser_release) => {
 
 /**
  * @param {string} browser
- * @param {string} forced_source
  * @returns {string}
  */
-const getSource = (browser, forced_source) => {
-  if (forced_source) {
-    return forced_source;
-  }
-
-  let source = '';
-
+const getSource = (browser) => {
   switch (browser) {
     case 'chrome_android':
+    case 'edge':
     case 'opera':
-      source = 'chrome';
-      break;
+      return 'chrome';
     case 'opera_android':
     case 'samsunginternet_android':
     case 'webview_android':
-      source = 'chrome_android';
-      break;
+      return 'chrome_android';
     case 'firefox_android':
-      source = 'firefox';
-      break;
-    case 'edge':
-      source = 'ie';
-      break;
+      return 'firefox';
     case 'safari_ios':
-      source = 'safari';
-      break;
+      return 'safari';
     default:
-      throw Error(
-        `${browser} is a base browser and a "source" browser must be specified.`,
-      );
+      throw Error(`${browser} cannot be used as a mirroring destination.`);
+  }
+};
+
+/**
+ * @param {SupportStatement} compatData
+ * @param {string | null} versionToCheck
+ * @return {string | null}
+ */
+const isVersionAdded = (compatData, versionToCheck) => {
+  if (Array.isArray(compatData)) {
+    return compatData.some((s) => s.version_added == versionToCheck);
   }
 
-  return source;
+  if (typeof compatData.version_added === 'string') {
+    return compatData.version_added == versionToCheck;
+  }
+
+  return false;
+};
+
+/**
+ * @param {SupportStatement} compatData
+ * @param {string | null} versionToCheck
+ * @return {string | null}
+ */
+const isVersionRemoved = (compatData, versionToCheck) => {
+  if (typeof compatData.version_removed === 'string')
+    return compatData.version_removed == versionToCheck;
+
+  if (compatData.constructor === Array) {
+    return compatData.some((s) => s.version_removed === versionToCheck);
+  }
+
+  return false;
 };
 
 /**
@@ -178,7 +184,7 @@ const updateNotes = (notes, regex, replace) => {
  * @param {SupportStatement} data
  * @returns {SupportStatement}
  */
-const copyStatement = data => {
+const copyStatement = (data) => {
   let newData = {};
   for (let i in data) {
     newData[i] = data[i];
@@ -190,29 +196,39 @@ const copyStatement = data => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
+ * @param {string} destination
  * @param {string} source
+ * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpChromeAndroid = (originalData, sourceData, source) => {
+const bumpGeneric = (
+  originalData,
+  sourceData,
+  destination,
+  source,
+  notesRepl,
+) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    let value = Number(sourceData.version_added);
-    if (value < 18) value = 18;
-    if (value > 18 && value < 25) value = 25;
-
-    newData.version_added = value.toString();
+    newData.version_added = getMatchingBrowserVersion(
+      destination,
+      browsers[source].releases[sourceData.version_added],
+    );
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    let value = Number(sourceData.version_removed);
-    if (value < 18) value = 18;
-    if (value > 18 && value < 25) value = 25;
+    newData.version_removed = getMatchingBrowserVersion(
+      destination,
+      browsers[source].releases[sourceData.version_removed],
+    );
+  }
 
-    newData.version_removed = value.toString();
+  if (notesRepl && typeof sourceData.notes === 'string') {
+    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
   }
 
   return newData;
@@ -221,11 +237,20 @@ const bumpChromeAndroid = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpEdge = (originalData, sourceData, source) => {
+const bumpChromeAndroid = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'chrome_android', 'chrome');
+};
+
+/**
+ * @param {SupportStatement} originalData
+ * @param {SupportStatement} sourceData
+ * @returns {SupportStatement}
+ */
+const bumpEdge = (originalData, sourceData) => {
   let newData = {};
+  let source = 'chrome';
 
   if (source == 'ie') {
     if (sourceData.version_removed && sourceData.version_removed !== null) {
@@ -266,7 +291,7 @@ const bumpEdge = (originalData, sourceData, source) => {
               newData.version_added = '≤79';
             }
           } else {
-            newData.version_added == sourceData.version_added;
+            newData.version_added = sourceData.version_added;
           }
         }
       } else if (chromeFalse) {
@@ -292,174 +317,72 @@ const bumpEdge = (originalData, sourceData, source) => {
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpFirefoxAndroid = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = Math.max(
-      4,
-      Number(sourceData.version_added),
-    ).toString();
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = Math.max(
-      4,
-      Number(sourceData.version_removed),
-    ).toString();
-  }
-
-  return newData;
+const bumpFirefoxAndroid = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'firefox_android', 'firefox');
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpOpera = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'opera',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'opera',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
-  }
-
-  return newData;
+const bumpOpera = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'opera', 'chrome', [
+    /Chrome/g,
+    'Opera',
+  ]);
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'opera_android',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'opera_android',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'Opera');
-  }
-
-  return newData;
+const bumpOperaAndroid = (originalData, sourceData) => {
+  return bumpGeneric(
+    originalData,
+    sourceData,
+    'opera_android',
+    'chrome_android',
+    [/Chrome/g, 'Opera'],
+  );
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpSafariiOS = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'safari_ios',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'safari_ios',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  return newData;
+const bumpSafariiOS = (originalData, sourceData) => {
+  return bumpGeneric(originalData, sourceData, 'safari_ios', 'safari');
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpSamsungInternet = (originalData, sourceData, source) => {
-  let newData = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      'samsunginternet_android',
-      browsers[source].releases[sourceData.version_added],
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      'samsunginternet_android',
-      browsers[source].releases[sourceData.version_removed],
-    );
-  }
-
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(
-      sourceData.notes,
-      /Chrome/g,
-      'Samsung Internet',
-    );
-  }
-
-  return newData;
+const bumpSamsungInternet = (originalData, sourceData) => {
+  return bumpGeneric(
+    originalData,
+    sourceData,
+    'samsunginternet_android',
+    'chrome_android',
+    [/Chrome/g, 'Samsung Internet'],
+  );
 };
 
 /**
  * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
- * @param {string} source
  * @returns {SupportStatement}
  */
-const bumpWebView = (originalData, sourceData, source) => {
+const bumpWebView = (originalData, sourceData) => {
   let newData = copyStatement(sourceData);
 
-  const createWebViewRange = version => {
+  const createWebViewRange = (version) => {
     if (Number(version) <= 18) {
       return '1';
     } else if (Number(version) > 18 && Number(version) < 30) {
@@ -492,33 +415,27 @@ const bumpWebView = (originalData, sourceData, source) => {
 };
 
 /**
- * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @param {string} source
- * @returns {SupportStatement}
- */
-const bumpGeneric = (originalData, sourceData, source) => {
-  // For browsers we're not tracking, simply mirror the source data
-  return sourceData;
-};
-
-/**
  * @param {SupportStatement} data
- * @param {string} destination
- * @param {string} source
  * @param {SupportStatement} originalData
+ * @param {string} destination
+ * @param {string} targetVersion
  */
-const bumpVersion = (data, destination, source, originalData) => {
+const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
   let newData = null;
-  if (data == null) {
+
+  if (sourceData == null) {
     return null;
-  } else if (
-    Array.isArray(data) &&
-    !(destination == 'edge' && source == 'chrome')
-  ) {
+  }
+
+  if (Array.isArray(sourceData)) {
     newData = [];
-    for (let i = 0; i < data.length; i++) {
-      newData[i] = bumpVersion(data[i], destination, source, originalData);
+    for (let i = 0; i < sourceData.length; i++) {
+      newData[i] = bumpVersion(
+        sourceData[i],
+        originalData,
+        destination,
+        targetVersion,
+      );
     }
   } else {
     let bumpFunction = null;
@@ -549,11 +466,19 @@ const bumpVersion = (data, destination, source, originalData) => {
         bumpFunction = bumpWebView;
         break;
       default:
-        bumpFunction = bumpGeneric;
-        break;
+        throw new Error(`Unknown target browser ${destination}!`);
     }
 
-    newData = bumpFunction(originalData, data, source);
+    newData = bumpFunction(originalData, sourceData);
+  }
+
+  if (targetVersion) {
+    if (
+      !isVersionAdded(newData, targetVersion) &&
+      !isVersionRemoved(newData, targetVersion)
+    ) {
+      newData = originalData;
+    }
   }
 
   return newData;
@@ -564,11 +489,18 @@ const bumpVersion = (data, destination, source, originalData) => {
  * @param {Identifier} newData
  * @param {string} rootPath
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
+ * @param {string} targetVersion
  @ @returns {Identifier}
  */
-const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
+const doSetFeature = (
+  data,
+  newData,
+  rootPath,
+  browser,
+  modify,
+  targetVersion,
+) => {
   let comp = data[rootPath].__compat.support;
 
   let doBump = false;
@@ -594,7 +526,14 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
   }
 
   if (doBump) {
-    let newValue = bumpVersion(comp[source], browser, source, comp[browser]);
+    let source = getSource(browser);
+    let newValue = bumpVersion(
+      comp[source],
+      comp[browser],
+      browser,
+      source,
+      targetVersion,
+    );
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
@@ -607,25 +546,26 @@ const doSetFeature = (data, newData, rootPath, browser, source, modify) => {
  * @param {Identifier} data
  * @param {string} feature
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeature = (data, feature, browser, source, modify) => {
+const setFeature = (data, feature, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   const rootPath = feature.shift();
   if (feature.length > 0 && data[rootPath].constructor == Object) {
-    newData[rootPath] = setFeature(
-      data[rootPath],
-      feature,
-      browser,
-      source,
-      modify,
-    );
+    newData[rootPath] = setFeature(data[rootPath], feature, browser, modify);
   } else {
     if (data[rootPath].constructor == Object || Array.isArray(data[rootPath])) {
-      newData = doSetFeature(data, newData, rootPath, browser, source, modify);
+      newData = doSetFeature(
+        data,
+        newData,
+        rootPath,
+        browser,
+        modify,
+        targetVersion,
+      );
     }
   }
 
@@ -635,20 +575,20 @@ const setFeature = (data, feature, browser, source, modify) => {
 /**
  * @param {Identifier} data
  * @param {string} browser
- * @param {string} source
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {Identifier}
  */
-const setFeatureRecursive = (data, browser, source, modify) => {
+const setFeatureRecursive = (data, browser, modify, targetVersion) => {
   let newData = Object.assign({}, data);
 
   for (let i in data) {
     if (!!data[i] && typeof data[i] == 'object' && i !== '__compat') {
       newData[i] = data[i];
       if (data[i].__compat) {
-        doSetFeature(data, newData, i, browser, source, modify);
+        doSetFeature(data, newData, i, browser, modify, targetVersion);
       }
-      setFeatureRecursive(data[i], browser, source, modify);
+      setFeatureRecursive(data[i], browser, modify), targetVersion;
     }
   }
 
@@ -658,14 +598,14 @@ const setFeatureRecursive = (data, browser, source, modify) => {
 /**
  * @param {string} browser
  * @param {string} filepath
- * @param {string} source
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-function mirrorDataByFile(browser, filepath, source, modify) {
+function mirrorDataByFile(browser, filepath, modify, targetVersion) {
   let file = filepath;
-  if (file.indexOf(__dirname) !== 0) {
-    file = path.resolve(__dirname, '..', file);
+  if (file.indexOf(dirname) !== 0) {
+    file = path.resolve(dirname, '..', file);
   }
 
   if (!fs.existsSync(file)) {
@@ -674,18 +614,20 @@ function mirrorDataByFile(browser, filepath, source, modify) {
 
   if (fs.statSync(file).isFile()) {
     if (path.extname(file) === '.json') {
-      let data = require(file);
-      let newData = setFeatureRecursive(data, browser, source, modify);
+      let data = JSON.parse(
+        fs.readFileSync(new URL(file, import.meta.url), 'utf-8'),
+      );
+      let newData = setFeatureRecursive(data, browser, modify, targetVersion);
 
       fs.writeFileSync(file, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
     }
   } else if (fs.statSync(file).isDirectory()) {
-    const subFiles = fs.readdirSync(file).map(subfile => {
+    const subFiles = fs.readdirSync(file).map((subfile) => {
       return path.join(file, subfile);
     });
 
     for (let subfile of subFiles) {
-      mirrorDataByFile(browser, subfile, source, modify);
+      mirrorDataByFile(browser, subfile, modify, targetVersion);
     }
   }
 
@@ -703,12 +645,12 @@ function mirrorDataByFile(browser, filepath, source, modify) {
  *
  * @param {string} browser
  * @param {string} featureIdent
- * @param {string} source
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
-  let filepath = path.resolve(__dirname, '..');
+const mirrorDataByFeature = (browser, featureIdent, modify, targetVersion) => {
+  let filepath = path.resolve(dirname, '..');
   let feature = featureIdent.split('.');
   let found = false;
 
@@ -727,8 +669,10 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
     return false;
   }
 
-  let data = require(filepath);
-  let newData = setFeature(data, feature, browser, source, modify);
+  let data = JSON.parse(
+    fs.readFileSync(new URL(filepath, import.meta.url), 'utf-8'),
+  );
+  let newData = setFeature(data, feature, browser, modify, targetVersion);
 
   fs.writeFileSync(filepath, JSON.stringify(newData, null, 2) + '\n', 'utf-8');
 
@@ -737,12 +681,12 @@ const mirrorDataByFeature = (browser, featureIdent, source, modify) => {
 
 /**
  * @param {string} browser
- * @param {string} feature_or_file
- * @param {string} forced_source
+ * @param {string[]} feature_or_path_array
  * @param {string} modify
+ * @param {string} targetVersion
  * @returns {boolean}
  */
-const mirrorData = (browser, feature_or_file, forced_source, modify) => {
+const mirrorData = (browser, feature_or_path_array, modify, targetVersion) => {
   if (!['nonreal', 'bool', 'always'].includes(modify)) {
     console.error(
       `--modify (-m) paramter invalid!  Must be "nonreal", "bool", or "always"; got "${modify}".`,
@@ -750,32 +694,17 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
     return false;
   }
 
-  let source = getSource(browser, forced_source);
-
-  if (feature_or_file) {
+  for (const feature_or_path of feature_or_path_array) {
     let doMirror = mirrorDataByFeature;
     if (
-      fs.existsSync(feature_or_file) &&
-      (fs.statSync(feature_or_file).isFile() ||
-        fs.statSync(feature_or_file).isDirectory())
-    )
+      fs.existsSync(feature_or_path) &&
+      (fs.statSync(feature_or_path).isFile() ||
+        fs.statSync(feature_or_path).isDirectory())
+    ) {
       doMirror = mirrorDataByFile;
+    }
 
-    doMirror(browser, feature_or_file, source, modify);
-  } else {
-    [
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webdriver',
-      'webextensions',
-    ].forEach(folder => {
-      mirrorDataByFile(browser, folder, source, modify);
-    });
+    doMirror(browser, feature_or_path, modify, targetVersion);
   }
 
   console.log(
@@ -785,8 +714,54 @@ const mirrorData = (browser, feature_or_file, forced_source, modify) => {
   return true;
 };
 
-if (require.main === module) {
-  mirrorData(argv.browser, argv.feature_or_file, argv.source, argv.modify);
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 <browser> [feature_or_path..]',
+    'Mirror values onto a specified browser if "version_added" is true/null, based upon its parent or a specified source',
+    (yargs) => {
+      yargs
+        .positional('browser', {
+          describe: 'The destination browser',
+          type: 'string',
+        })
+        .positional('feature_or_path', {
+          describe: 'Features, files, or folders to perform mirroring for',
+          type: 'array',
+          default: [
+            'api',
+            'css',
+            'html',
+            'http',
+            'svg',
+            'javascript',
+            'mathml',
+            'webdriver',
+            'webextensions',
+          ],
+        })
+        .option('modify', {
+          alias: 'm',
+          describe:
+            'Specify when to perform mirroring, whether on true/null ("nonreal", default), true/null/false ("bool"), or always ("always")',
+          type: 'string',
+          default: 'nonreal',
+        })
+        .option('target-version', {
+          alias: 't',
+          describe:
+            "Only perform mirroring if it affects this destination browser's release",
+          type: 'string',
+          default: undefined,
+        });
+    },
+  );
+
+  mirrorData(
+    argv.browser,
+    argv.feature_or_path,
+    argv.modify,
+    argv.target_version,
+  );
 }
 
-module.exports = mirrorData;
+export default mirrorData;

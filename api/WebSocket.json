@@ -3,12 +3,16 @@
     "WebSocket": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket",
+        "spec_url": "https://websockets.spec.whatwg.org/#the-websocket-interface",
         "support": {
           "chrome": {
             "version_added": "4"
           },
           "chrome_android": {
             "version_added": "18"
+          },
+          "deno": {
+            "version_added": "1.4"
           },
           "edge": {
             "version_added": "12"
@@ -22,27 +26,16 @@
               "version_removed": "11",
               "prefix": "Moz",
               "notes": "Message size limited to 16 MB (see <a href='https://bugzil.la/711205'>bug 711205</a>)."
-            },
-            {
-              "version_added": "4",
-              "version_removed": "6",
-              "notes": "Message size limited to 16 MB (see <a href='https://bugzil.la/711205'>bug 711205</a>)."
             }
           ],
           "firefox_android": [
             {
-              "version_added": "14",
-              "notes": "See <a href='https://bugzil.la/695635'>bug 695635</a>."
+              "version_added": "14"
             },
             {
               "version_added": "7",
               "version_removed": "14",
               "prefix": "Moz",
-              "notes": "Message size limited to 16 MB (see <a href='https://bugzil.la/711205'>bug 711205</a>)."
-            },
-            {
-              "version_added": "4",
-              "version_removed": "6",
               "notes": "Message size limited to 16 MB (see <a href='https://bugzil.la/711205'>bug 711205</a>)."
             }
           ],
@@ -65,7 +58,7 @@
             "version_added": "1.0"
           },
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "4.4"
           }
         },
         "status": {
@@ -77,50 +70,112 @@
       "WebSocket": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-websocket①",
           "description": "<code>WebSocket()</code> constructor",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": [
               {
-                "version_added": "7"
+                "version_added": "11"
               },
               {
-                "version_added": "4",
-                "version_removed": "7",
-                "notes": "Parameter <code>protocols</code> not supported."
+                "version_added": "7",
+                "version_removed": "11",
+                "prefix": "Moz"
               }
             ],
+            "firefox_android": [
+              {
+                "version_added": "14"
+              },
+              {
+                "version_added": "7",
+                "version_removed": "14",
+                "prefix": "Moz"
+              }
+            ],
+            "ie": {
+              "version_added": "10"
+            },
+            "opera": {
+              "version_added": "12.1"
+            },
+            "opera_android": {
+              "version_added": "12.1"
+            },
+            "safari": {
+              "version_added": "5"
+            },
+            "safari_ios": {
+              "version_added": "4.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "4.4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "37"
+            },
             "firefox_android": {
-              "version_added": "7"
+              "version_added": "37"
             },
             "ie": {
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "5"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -133,42 +188,46 @@
       "binaryType": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/binaryType",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-binarytype①",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "15"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "11"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "14"
             },
             "ie": {
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -181,42 +240,46 @@
       "bufferedAmount": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/bufferedAmount",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-bufferedamount①",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -229,6 +292,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/close",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-close①",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -236,29 +300,71 @@
             "chrome_android": {
               "version_added": "18"
             },
+            "deno": {
+              "version_added": "1.4"
+            },
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "8"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "8",
-                "notes": "Parameters not supported, see <a href='https://bugzil.la/674716'>bug 674716</a>."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "8"
-              },
-              {
-                "version_added": "4",
-                "version_removed": "8",
-                "notes": "Parameters not supported, see <a href='https://bugzil.la/674716'>bug 674716</a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "7"
+            },
+            "firefox_android": {
+              "version_added": "7"
+            },
+            "ie": {
+              "version_added": "10"
+            },
+            "opera": {
+              "version_added": "12.1"
+            },
+            "opera_android": {
+              "version_added": "12.1"
+            },
+            "safari": {
+              "version_added": "5"
+            },
+            "safari_ios": {
+              "version_added": "4.2"
+            },
+            "samsunginternet_android": {
+              "version_added": "1.0"
+            },
+            "webview_android": {
+              "version_added": "4.4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "close_event": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/close_event",
+          "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onclose",
+          "description": "<code>close</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": {
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "7"
+            },
+            "firefox_android": {
+              "version_added": "7"
+            },
             "ie": {
               "version_added": "10"
             },
@@ -288,95 +394,50 @@
           }
         }
       },
-      "close_event": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/close_event",
-          "description": "<code>close</code> event",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "error_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/error_event",
+          "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onerror",
           "description": "<code>error</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "5"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -389,12 +450,16 @@
       "extensions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/extensions",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-extensions①",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "16"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
@@ -409,22 +474,22 @@
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -437,235 +502,47 @@
       "message_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/message_event",
+          "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onmessage",
           "description": "<code>message</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onclose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/onclose",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
               "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/onerror",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/onmessage",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onopen": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/onopen",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": true
-            },
-            "firefox_android": {
-              "version_added": true
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "opera": {
-              "version_added": true
-            },
-            "opera_android": {
-              "version_added": true
-            },
-            "safari": {
-              "version_added": true
-            },
-            "safari_ios": {
-              "version_added": true
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -678,43 +555,47 @@
       "open_event": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/open_event",
+          "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onopen",
           "description": "<code>open</code> event",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
-              "version_added": null
+              "version_added": "10"
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": null
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": null
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -727,42 +608,46 @@
       "protocol": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/protocol",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-protocol①",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "15"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -781,6 +666,9 @@
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
@@ -823,42 +711,46 @@
       "readyState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/readyState",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-readystate①",
           "support": {
             "chrome": {
-              "version_added": "43"
+              "version_added": "4"
             },
             "chrome_android": {
-              "version_added": "43"
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "19"
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": "19"
+              "version_added": "7"
             },
             "ie": {
               "version_added": "10"
             },
             "opera": {
-              "version_added": "30"
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": "30"
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": "10"
+              "version_added": "5"
             },
             "safari_ios": {
-              "version_added": "10"
+              "version_added": "4.2"
             },
             "samsunginternet_android": {
-              "version_added": "4.0"
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "43"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -871,12 +763,16 @@
       "send": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/send",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-send①",
           "support": {
             "chrome": {
               "version_added": "4"
             },
             "chrome_android": {
               "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
@@ -897,7 +793,7 @@
                 "notes": "Only parameter of type <code>String</code> supported."
               },
               {
-                "version_added": "4",
+                "version_added": "7",
                 "version_removed": "8",
                 "notes": "Only parameter of type <code>String</code> supported. Returns <code>boolean</code>."
               }
@@ -918,7 +814,7 @@
                 "notes": "Only parameter of type <code>String</code> supported."
               },
               {
-                "version_added": "4",
+                "version_added": "7",
                 "version_removed": "8",
                 "notes": "Only parameter of type <code>String</code> supported. Returns <code>boolean</code>."
               }
@@ -942,7 +838,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -955,90 +851,46 @@
       "url": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/url",
+          "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-url①",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "18"
             },
             "chrome_android": {
-              "version_added": true
+              "version_added": "18"
+            },
+            "deno": {
+              "version_added": "1.4"
             },
             "edge": {
               "version_added": "12"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "7"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "7"
             },
             "ie": {
-              "version_added": "10"
+              "version_added": false
             },
             "opera": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "opera_android": {
-              "version_added": true
+              "version_added": "12.1"
             },
             "safari": {
-              "version_added": true
+              "version_added": "6"
             },
             "safari_ios": {
-              "version_added": true
+              "version_added": "6"
             },
             "samsunginternet_android": {
-              "version_added": true
+              "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": true
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {
-            "chrome": {
-              "version_added": true
-            },
-            "chrome_android": {
-              "version_added": true
-            },
-            "edge": {
-              "version_added": "≤18"
-            },
-            "firefox": {
-              "version_added": "37"
-            },
-            "firefox_android": {
-              "version_added": "37"
-            },
-            "ie": {
-              "version_added": null
-            },
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
-            "safari": {
-              "version_added": null
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": true
-            },
-            "webview_android": {
-              "version_added": true
+              "version_added": "4.4"
             }
           },
           "status": {

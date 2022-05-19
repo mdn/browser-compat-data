@@ -16,9 +16,16 @@
               "version_added": "18",
               "notes": "From version 8, Chrome added support for gradient values. Initially, Chrome supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
             },
-            "edge": {
-              "version_added": "16"
-            },
+            "edge": [
+              {
+                "prefix": "-webkit-",
+                "version_added": "79"
+              },
+              {
+                "version_added": "16",
+                "version_removed": "79"
+              }
+            ],
             "firefox": {
               "version_added": "53"
             },
@@ -36,16 +43,26 @@
               "prefix": "-webkit-",
               "version_added": "14"
             },
-            "safari": {
-              "prefix": "-webkit-",
-              "version_added": "4",
-              "notes": "Initially, Safari supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
-            },
-            "safari_ios": {
-              "prefix": "-webkit-",
-              "version_added": "3.2",
-              "notes": "Initially, Safari supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
-            },
+            "safari": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4",
+                "notes": "Initially, Safari supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "3.2",
+                "notes": "Initially, Safari supported only <code>-webkit-</code> prefixed values for gradients (such as <code>-webkit-linear-gradient()</code>). Later, support for unprefixed values was added."
+              }
+            ],
             "samsunginternet_android": {
               "version_added": "1.0",
               "prefix": "-webkit-"

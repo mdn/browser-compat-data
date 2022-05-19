@@ -1,7 +1,7 @@
 {
   "env": {
-    "commonjs": true,
     "es6": true,
+    "jest": true,
     "node": true
   },
   "plugins": ["prettier", "jsdoc", "prefer-arrow"],
@@ -14,8 +14,10 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
   "rules": {
     "consistent-return": "error",

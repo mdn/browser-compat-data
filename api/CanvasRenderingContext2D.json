@@ -3,7 +3,7 @@
     "CanvasRenderingContext2D": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D",
-        "spec_url": "https://html.spec.whatwg.org/multipage/#2dcontext",
+        "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#2dcontext",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -51,7 +51,7 @@
       "arc": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arc",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-arc",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arc-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -100,7 +100,7 @@
       "arcTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/arcTo",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-arcto",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-arcto-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -149,7 +149,7 @@
       "beginPath": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/beginPath",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-beginpath",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-beginpath-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -198,7 +198,7 @@
       "bezierCurveTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/bezierCurveTo",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-beziercurveto",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-beziercurveto-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -247,7 +247,7 @@
       "canvas": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/canvas",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-canvas",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-canvas-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -296,7 +296,7 @@
       "clearRect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clearRect",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-clearrect",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-clearrect-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -345,7 +345,7 @@
       "clip": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/clip",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-clip",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-clip-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -392,7 +392,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -442,7 +442,7 @@
       "closePath": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/closePath",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-closepath",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-closepath-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -491,70 +491,81 @@
       "createConicGradient": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createConicGradient",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createconicgradient-dev",
           "support": {
-            "chrome": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#new-canvas-2d-api"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#new-canvas-2d-api"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "99"
+              },
+              {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#new-canvas-2d-api"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "99"
+              },
+              {
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#new-canvas-2d-api"
+                  }
+                ]
+              }
+            ],
             "edge": {
-              "version_added": false
+              "version_added": "99"
             },
-            "firefox": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "canvas.createConicGradient.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "90"
+              },
+              {
+                "version_added": "86",
+                "version_removed": "90",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "canvas.createConicGradient.enabled"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "canvas.createConicGradient.enabled"
-                }
-              ]
+              "version_added": "90"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "85"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "68"
             },
             "safari": {
-              "version_added": false
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15"
             },
             "samsunginternet_android": {
               "version_added": false
             },
             "webview_android": {
-              "version_added": false
+              "version_added": "99"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -563,7 +574,7 @@
       "createImageData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createImageData",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-createimagedata",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createimagedata-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -575,7 +586,7 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "2"
+              "version_added": "3.5"
             },
             "firefox_android": {
               "version_added": "4"
@@ -599,7 +610,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -612,7 +623,7 @@
       "createLinearGradient": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createLinearGradient",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-createlineargradient",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createlineargradient-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -661,7 +672,7 @@
       "createPattern": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createPattern",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-createpattern",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createpattern-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -710,7 +721,7 @@
       "createRadialGradient": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/createRadialGradient",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-createradialgradient",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-createradialgradient-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -756,158 +767,14 @@
           }
         }
       },
-      "currentTransform": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/currentTransform",
-          "support": {
-            "chrome": {
-              "version_added": "32",
-              "version_removed": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": "32",
-              "version_removed": "68",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
-            "edge": {
-              "version_added": "≤18",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/928150'>bug 928150</a>. Firefox also supports the experimental and prefixed properties mozCurrentTransform and mozCurrentTransformInverse which set or get the current (inverse) transformation matrix."
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "19",
-              "version_removed": "55",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
-            "opera_android": {
-              "version_added": "19",
-              "version_removed": "48",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "Experimental Web Platform Features"
-                }
-              ]
-            },
-            "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/174278'>webkitbug(174278)</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": true
-          }
-        },
-        "DOMMatrix_return_value": {
-          "__compat": {
-            "description": "Returns a <code>DOMMatrix</code>",
-            "support": {
-              "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
-              },
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/174278'>bug 174278</a>."
-              },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              },
-              "webview_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/637940'>bug 637940</a>."
-              }
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        }
-      },
       "direction": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/direction",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-direction",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-direction-dev",
           "support": {
-            "chrome": [
-              {
-                "version_added": "77"
-              },
-              {
-                "version_added": "39",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "77"
+            },
             "chrome_android": {
               "version_added": "77"
             },
@@ -923,20 +790,9 @@
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "26",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "Experimental Web Platform Features"
-                  }
-                ]
-              }
-            ],
+            "opera": {
+              "version_added": "64"
+            },
             "opera_android": {
               "version_added": "55"
             },
@@ -954,7 +810,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -963,7 +819,7 @@
       "drawFocusIfNeeded": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawFocusIfNeeded",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-drawfocusifneeded",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-drawfocusifneeded-dev",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -1022,7 +878,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -1031,7 +887,7 @@
                 "version_added": "37"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "14"
               },
               "firefox": {
                 "version_added": false
@@ -1072,7 +928,7 @@
       "drawImage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage",
-          "spec_url": "https://html.spec.whatwg.org/multipage/#dom-context-2d-drawimage",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-drawimage-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1137,7 +993,7 @@
                 "version_added": "42"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "opera": {
                 "version_added": "17"
@@ -1146,66 +1002,18 @@
                 "version_added": "18"
               },
               "safari": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/149990'>bug 149990</a>."
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/149990'>bug 149990</a>."
               },
               "samsunginternet_android": {
                 "version_added": "2.0"
               },
               "webview_android": {
                 "version_added": "≤37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "Smoothing_downscaling": {
-          "__compat": {
-            "description": "Smoothing when downscaling",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "chrome_android": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "≤79"
-              },
-              "firefox": {
-                "version_added": "56",
-                "notes": "See <a href='https://bugzil.la/1360415'>bug 1360415</a> for details."
-              },
-              "firefox_android": {
-                "version_added": "56",
-                "notes": "See <a href='https://bugzil.la/1360415'>bug 1360415</a> for details."
-              },
-              "ie": {
-                "version_added": null
-              },
-              "opera": {
-                "version_added": true
-              },
-              "opera_android": {
-                "version_added": true
-              },
-              "safari": {
-                "version_added": null
-              },
-              "safari_ios": {
-                "version_added": null
-              },
-              "samsunginternet_android": {
-                "version_added": true
-              },
-              "webview_android": {
-                "version_added": true
               }
             },
             "status": {
@@ -1226,7 +1034,7 @@
                 "version_added": "59"
               },
               "edge": {
-                "version_added": "≤79"
+                "version_added": "79"
               },
               "firefox": {
                 "version_added": "56"
@@ -1235,7 +1043,7 @@
                 "version_added": "56"
               },
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "opera": {
                 "version_added": "46"
@@ -1244,10 +1052,12 @@
                 "version_added": "43"
               },
               "safari": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/226964'>bug 226964</a>."
               },
               "safari_ios": {
-                "version_added": null
+                "version_added": false,
+                "notes": "See <a href='https://webkit.org/b/226964'>bug 226964</a>."
               },
               "samsunginternet_android": {
                 "version_added": "7.0"
@@ -1363,7 +1173,7 @@
       "ellipse": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/ellipse",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-ellipse",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-ellipse-dev",
           "support": {
             "chrome": {
               "version_added": "31"
@@ -1403,7 +1213,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1412,7 +1222,7 @@
       "fill": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fill",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-fill",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fill-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1459,7 +1269,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -1509,7 +1319,7 @@
       "fillRect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillRect",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-fillrect",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fillrect-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1558,7 +1368,7 @@
       "fillStyle": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillStyle",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-fillstyle",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fillstyle-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1607,7 +1417,7 @@
       "fillText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fillText",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-filltext",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-filltext-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1643,7 +1453,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1656,7 +1466,7 @@
       "filter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/filter",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#filters",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-filter-dev",
           "support": {
             "chrome": {
               "version_added": "52"
@@ -1683,10 +1493,12 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/198416'>bug 198416</a>."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/198416'>bug 198416</a>."
             },
             "samsunginternet_android": {
               "version_added": "6.0"
@@ -1696,7 +1508,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1705,7 +1517,7 @@
       "font": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/font",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-font",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-font-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1741,7 +1553,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1754,7 +1566,7 @@
       "getContextAttributes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getContextAttributes",
-          "spec_url": "https://html.spec.whatwg.org/multipage/#dom-context-2d-canvas-getcontextattributes",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#2dcontext:dom-context-2d-canvas-getcontextattributes-2",
           "support": {
             "chrome": [
               {
@@ -1805,10 +1617,10 @@
               }
             ],
             "safari": {
-              "version_added": false
+              "version_added": "15"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "15"
             },
             "samsunginternet_android": [
               {
@@ -1839,7 +1651,7 @@
       "getImageData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-getimagedata",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getimagedata-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1877,7 +1689,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -1890,7 +1702,7 @@
       "getLineDash": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getLineDash",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-getlinedash",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-getlinedash-dev",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -1917,7 +1729,7 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -1939,7 +1751,7 @@
       "getTransform": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getTransform",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-gettransform",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-gettransform-dev",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -1954,7 +1766,7 @@
               "version_added": "70"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "79"
             },
             "ie": {
               "version_added": false
@@ -1988,7 +1800,7 @@
       "globalAlpha": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalAlpha",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-globalalpha",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-globalalpha-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2037,7 +1849,7 @@
       "globalCompositeOperation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-globalcompositeoperation",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-globalcompositeoperation-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2086,7 +1898,7 @@
       "imageSmoothingEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-imagesmoothingenabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-imagesmoothingenabled-dev",
           "support": {
             "chrome": [
               {
@@ -2108,15 +1920,22 @@
                 "prefix": "webkit"
               }
             ],
-            "edge": {
-              "version_added": "15"
-            },
+            "edge": [
+              {
+                "version_added": "15"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "15",
+                "prefix": "ms"
+              }
+            ],
             "firefox": [
               {
                 "version_added": "51"
               },
               {
-                "version_added": true,
+                "version_added": "3.6",
                 "version_removed": "51",
                 "prefix": "moz"
               }
@@ -2126,13 +1945,13 @@
                 "version_added": "51"
               },
               {
-                "version_added": true,
+                "version_added": "4",
                 "version_removed": "51",
                 "prefix": "moz"
               }
             ],
             "ie": {
-              "version_added": true,
+              "version_added": "11",
               "prefix": "ms"
             },
             "opera": [
@@ -2176,7 +1995,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2185,7 +2004,7 @@
       "imageSmoothingQuality": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality",
-          "spec_url": "https://html.spec.whatwg.org/multipage/#imagesmoothingquality",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-imagesmoothingquality-dev",
           "support": {
             "chrome": {
               "version_added": "54"
@@ -2225,7 +2044,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2234,7 +2053,7 @@
       "isPointInPath": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInPath",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-ispointinpath",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-ispointinpath-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2281,7 +2100,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -2331,7 +2150,7 @@
       "isPointInStroke": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/isPointInStroke",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-ispointinstroke",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-ispointinstroke-dev",
           "support": {
             "chrome": {
               "version_added": "26"
@@ -2342,26 +2161,12 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "20"
-              },
-              {
-                "version_added": "19",
-                "version_removed": "20",
-                "prefix": "moz"
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "20"
-              },
-              {
-                "version_added": "19",
-                "version_removed": "20",
-                "prefix": "moz"
-              }
-            ],
+            "firefox": {
+              "version_added": "19"
+            },
+            "firefox_android": {
+              "version_added": "19"
+            },
             "ie": {
               "version_added": false
             },
@@ -2372,7 +2177,7 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -2392,7 +2197,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -2442,7 +2247,7 @@
       "lineCap": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineCap",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-linecap",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-linecap-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2491,7 +2296,7 @@
       "lineDashOffset": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineDashOffset",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-linedashoffset",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-linedashoffset-dev",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -2530,7 +2335,7 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -2552,7 +2357,7 @@
       "lineJoin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineJoin",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-linejoin",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-linejoin-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2601,7 +2406,7 @@
       "lineTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineTo",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-lineto",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-lineto-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2650,7 +2455,7 @@
       "lineWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/lineWidth",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-linewidth",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-linewidth-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2699,7 +2504,7 @@
       "measureText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/measureText",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-measuretext",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-measuretext-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2735,7 +2540,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2748,7 +2553,7 @@
       "miterLimit": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/miterLimit",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-miterlimit",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-miterlimit-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2797,7 +2602,7 @@
       "moveTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/moveTo",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-moveto",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-moveto-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2846,7 +2651,7 @@
       "putImageData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/putImageData",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-putimagedata",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-putimagedata-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2882,7 +2687,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -2895,7 +2700,7 @@
       "quadraticCurveTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/quadraticCurveTo",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-quadraticcurveto",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-quadraticcurveto-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2944,7 +2749,7 @@
       "rect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rect",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-rect",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-rect-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2993,7 +2798,7 @@
       "resetTransform": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/resetTransform",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-resettransform",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-resettransform-dev",
           "support": {
             "chrome": {
               "version_added": "31"
@@ -3033,7 +2838,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3042,7 +2847,7 @@
       "restore": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/restore",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-restore",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-restore-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3091,7 +2896,7 @@
       "rotate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/rotate",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-rotate",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-rotate-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3140,7 +2945,7 @@
       "save": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/save",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-save",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-save-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3189,7 +2994,7 @@
       "scale": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scale",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-scale",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-scale-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3238,14 +3043,14 @@
       "scrollPathIntoView": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/scrollPathIntoView",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-scrollpathintoview",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-scrollpathintoview-dev",
           "support": {
             "chrome": {
               "version_added": "36",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "Experimental Web Platform Features"
+                  "name": "#enable-experimental-web-platform-features"
                 }
               ]
             },
@@ -3254,16 +3059,16 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "Experimental Web Platform Features"
+                  "name": "#enable-experimental-web-platform-features"
                 }
               ]
             },
             "edge": {
-              "version_added": "≤79",
+              "version_added": "79",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "Experimental Web Platform Features"
+                  "name": "#enable-experimental-web-platform-features"
                 }
               ]
             },
@@ -3281,7 +3086,7 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "Experimental Web Platform Features"
+                  "name": "#enable-experimental-web-platform-features"
                 }
               ]
             },
@@ -3311,7 +3116,7 @@
       "setLineDash": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setLineDash",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-setlinedash",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-setlinedash-dev",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -3338,7 +3143,7 @@
               "version_added": "14"
             },
             "safari": {
-              "version_added": "6.1"
+              "version_added": "7"
             },
             "safari_ios": {
               "version_added": "7"
@@ -3360,7 +3165,7 @@
       "setTransform": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/setTransform",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-settransform",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-settransform-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3396,7 +3201,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -3457,7 +3262,7 @@
       "shadowBlur": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowBlur",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-shadowblur",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-shadowblur-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3506,7 +3311,7 @@
       "shadowColor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowColor",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-shadowcolor",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-shadowcolor-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3555,7 +3360,7 @@
       "shadowOffsetX": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetX",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-shadowoffsetx",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-shadowoffsetx-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3604,7 +3409,7 @@
       "shadowOffsetY": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/shadowOffsetY",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-shadowoffsety",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-shadowoffsety-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3653,7 +3458,7 @@
       "stroke": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/stroke",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-stroke",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-stroke-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3700,7 +3505,7 @@
         },
         "path_parameter": {
           "__compat": {
-            "description": "<code>Path2D</code> parameter",
+            "description": "<code>path</code> parameter",
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -3750,7 +3555,7 @@
       "strokeRect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeRect",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-strokerect",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-strokerect-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3799,7 +3604,7 @@
       "strokeStyle": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeStyle",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-strokestyle",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-strokestyle-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3848,7 +3653,7 @@
       "strokeText": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/strokeText",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-stroketext",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-stroketext-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3863,7 +3668,7 @@
               "version_added": "3.5"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "4"
             },
             "ie": {
               "version_added": "9"
@@ -3884,7 +3689,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -3897,7 +3702,7 @@
       "textAlign": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textAlign",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-textalign",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-textalign-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3933,7 +3738,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -3946,7 +3751,7 @@
       "textBaseline": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textBaseline",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-textbaseline",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-textbaseline-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3982,7 +3787,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -3995,7 +3800,7 @@
       "transform": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/transform",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-transform",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-transform-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4044,7 +3849,7 @@
       "translate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/translate",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-context-2d-translate",
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-translate-dev",
           "support": {
             "chrome": {
               "version_added": "1"

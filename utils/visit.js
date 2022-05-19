@@ -1,11 +1,14 @@
-const bcd = require('..');
-const query = require('./query');
-const { descendantKeys, joinPath, isFeature } = require('./walkingUtils');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import bcd from '../index.js';
+import query from './query.js';
+import { descendantKeys, joinPath, isFeature } from './walkingUtils.js';
 
 const BREAK = Symbol('break');
 const CONTINUE = Symbol('continue');
 
-function visit(visitor, options = {}) {
+export default function visit(visitor, options = {}) {
   const { entryPoint, data } = options;
   const test = options.test !== undefined ? options.test : () => true;
 
@@ -35,5 +38,3 @@ function visit(visitor, options = {}) {
 
 visit.BREAK = BREAK;
 visit.CONTINUE = CONTINUE;
-
-module.exports = visit;

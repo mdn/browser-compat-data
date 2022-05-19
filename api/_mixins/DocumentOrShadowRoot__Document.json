@@ -4,6 +4,7 @@
       "activeElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/activeElement",
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-documentorshadowroot-activeelement-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -39,7 +40,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "1"
+              "version_added": "≤37"
             }
           },
           "status": {
@@ -52,6 +53,7 @@
       "adoptedStyleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -100,6 +102,7 @@
       "elementFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementFromPoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementfrompoint",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -140,7 +143,7 @@
               "notes": "Before Samsung Internet 9.0, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
             },
             "webview_android": {
-              "version_added": "1",
+              "version_added": "≤37",
               "notes": "Before WebView 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
             }
           },
@@ -154,6 +157,7 @@
       "elementsFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementsFromPoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementsfrompoint",
           "support": {
             "chrome": {
               "version_added": "43",
@@ -170,7 +174,7 @@
               {
                 "version_added": "12",
                 "version_removed": "79",
-                "alternative_name": "msElementsFromPoint",
+                "prefix": "ms",
                 "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
               }
             ],
@@ -182,7 +186,7 @@
             },
             "ie": {
               "version_added": "10",
-              "alternative_name": "msElementsFromPoint",
+              "prefix": "ms",
               "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
             },
             "opera": {
@@ -216,13 +220,14 @@
       "fullscreenElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fullscreenElement",
+          "spec_url": "https://fullscreen.spec.whatwg.org/#ref-for-dom-document-fullscreenelement①",
           "support": {
             "chrome": [
               {
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "20",
                 "prefix": "webkit"
               }
             ],
@@ -231,21 +236,21 @@
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "25",
                 "prefix": "webkit"
               }
             ],
             "edge": [
               {
-                "version_added": "≤79"
+                "version_added": "79"
               },
               {
-                "version_added": "≤18",
+                "version_added": "12",
                 "prefix": "webkit"
               },
               {
                 "version_added": "12",
-                "prefix": "ms"
+                "version_removed": "14"
               }
             ],
             "firefox": [
@@ -267,16 +272,20 @@
               }
             ],
             "ie": {
-              "version_added": true,
-              "prefix": "ms"
+              "version_added": "11",
+              "alternative_name": "msFullscreenElement"
             },
             "opera": [
               {
                 "version_added": "58"
               },
               {
-                "version_added": "40",
+                "version_added": "15",
                 "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "15"
               }
             ],
             "opera_android": [
@@ -284,26 +293,30 @@
                 "version_added": "50"
               },
               {
-                "version_added": "41",
+                "version_added": "14",
                 "prefix": "webkit"
+              },
+              {
+                "version_added": "12.1",
+                "version_removed": "14"
               }
             ],
             "safari": {
-              "version_added": true,
+              "version_added": "6",
               "prefix": "webkit"
             },
             "safari_ios": {
               "version_added": "12",
-              "alternative_name": "webkitFullscreenElement",
+              "prefix": "webkit",
               "partial_implementation": true,
-              "notes": "Full-screen mode is only supported on the iPad."
+              "notes": "Only available on iPad, not on iPhone."
             },
             "samsunginternet_android": [
               {
                 "version_added": "10.0"
               },
               {
-                "version_added": "6.0",
+                "version_added": "1.5",
                 "prefix": "webkit"
               }
             ],
@@ -312,7 +325,7 @@
                 "version_added": "71"
               },
               {
-                "version_added": "53",
+                "version_added": "≤37",
                 "prefix": "webkit"
               }
             ]
@@ -327,6 +340,7 @@
       "getAnimations": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getAnimations",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
           "support": {
             "chrome": [
               {
@@ -376,21 +390,9 @@
                 ]
               }
             ],
-            "firefox": [
-              {
-                "version_added": "75"
-              },
-              {
-                "version_added": "63",
-                "version_removed": "75",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.animations-api.getAnimations.enabled"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "75"
+            },
             "firefox_android": {
               "version_added": "79"
             },
@@ -413,22 +415,9 @@
                 ]
               }
             ],
-            "opera_android": [
-              {
-                "version_added": "60"
-              },
-              {
-                "version_added": "45",
-                "partial_implementation": true,
-                "notes": "Implements an older version of the specification.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              }
-            ],
+            "opera_android": {
+              "version_added": "60"
+            },
             "safari": [
               {
                 "version_added": "14"
@@ -450,7 +439,7 @@
               }
             ],
             "samsunginternet_android": {
-              "version_added": false
+              "version_added": "14.0"
             },
             "webview_android": {
               "version_added": "84"
@@ -466,7 +455,7 @@
       "pictureInPictureElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement",
-          "spec_url": "https://w3c.github.io/picture-in-picture/#documentorshadowroot-extension",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-documentorshadowroot-pictureinpictureelement①⑤",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -515,6 +504,7 @@
       "pointerLockElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement",
+          "spec_url": "https://w3c.github.io/pointerlock/#dom-documentorshadowroot-pointerlockelement",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -525,12 +515,26 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "50"
-            },
-            "firefox_android": {
-              "version_added": "50"
-            },
+            "firefox": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "50",
+                "prefix": "moz"
+              }
+            ],
+            "firefox_android": [
+              {
+                "version_added": "50"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "50",
+                "prefix": "moz"
+              }
+            ],
             "ie": {
               "version_added": false
             },
@@ -563,6 +567,7 @@
       "styleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/styleSheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-stylesheets",
           "support": {
             "chrome": {
               "version_added": "1"

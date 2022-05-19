@@ -3,6 +3,7 @@
     "WritableStreamDefaultWriter": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter",
+        "spec_url": "https://streams.spec.whatwg.org/#default-writer-class",
         "support": {
           "chrome": {
             "version_added": "59"
@@ -10,17 +11,40 @@
           "chrome_android": {
             "version_added": "59"
           },
+          "deno": {
+            "version_added": "1.0"
+          },
           "edge": {
             "version_added": "16"
           },
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "100"
+            },
+            {
+              "version_added": "99",
+              "version_removed": "100",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.streams.writable_streams.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": {
-            "version_added": false
+            "version_added": "100"
           },
           "ie": {
             "version_added": false
+          },
+          "nodejs": {
+            "version_added": "16.5.0",
+            "notes": [
+              "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
+              "Experimental implementation."
+            ]
           },
           "opera": {
             "version_added": "46"
@@ -29,10 +53,10 @@
             "version_added": "43"
           },
           "safari": {
-            "version_added": false
+            "version_added": "14.1"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "14.5"
           },
           "samsunginternet_android": {
             "version_added": "7.0"
@@ -42,7 +66,7 @@
           }
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -51,6 +75,7 @@
         "__compat": {
           "description": "<code>WritableStreamDefaultWriter()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/WritableStreamDefaultWriter",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-constructor①",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -58,17 +83,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -90,7 +134,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -99,6 +143,7 @@
       "abort": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/abort",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-abort④",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -106,17 +151,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -125,10 +189,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -138,7 +202,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -147,6 +211,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/close",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-close⑦",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -154,17 +219,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -173,10 +257,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -186,7 +270,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -195,6 +279,7 @@
       "closed": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/closed",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-closed②",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -202,17 +287,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -221,10 +325,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -234,7 +338,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -243,6 +347,7 @@
       "desiredSize": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/desiredSize",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-desired-size⑥",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -250,17 +355,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -269,10 +393,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -282,7 +406,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -291,6 +415,7 @@
       "ready": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/ready",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-ready⑨",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -298,17 +423,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -317,10 +461,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -330,7 +474,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -339,6 +483,7 @@
       "releaseLock": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/releaseLock",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-release-lock②",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -346,17 +491,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -365,10 +529,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -378,7 +542,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -387,6 +551,7 @@
       "write": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WritableStreamDefaultWriter/write",
+          "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-writer-write①②",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -394,17 +559,36 @@
             "chrome_android": {
               "version_added": "59"
             },
+            "deno": {
+              "version_added": "1.0"
+            },
             "edge": {
               "version_added": "16"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "99",
+                "version_removed": "100",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.streams.writable_streams.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "100"
             },
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "16.5.0"
             },
             "opera": {
               "version_added": "46"
@@ -413,10 +597,10 @@
               "version_added": "43"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "7.0"
@@ -426,7 +610,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

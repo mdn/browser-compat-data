@@ -1,6 +1,9 @@
-const assert = require('assert').strict;
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const iterSupport = require('./iter-support');
+import assert from 'node:assert/strict';
+
+import iterSupport from './iter-support.js';
 
 describe('iterSupport()', function () {
   it('returns a `"version_added": null` support statement for non-existent browsers', function () {

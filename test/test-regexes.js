@@ -1,5 +1,10 @@
-'use strict';
-const assert = require('assert');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import assert from 'node:assert/strict';
+
+/** @type {Identifier} */
+import bcd from '../index.js';
 
 /**
  * @typedef {import('../types').Identifier} Identifier
@@ -9,37 +14,6 @@ const assert = require('assert');
  * @property {string[]} matches
  * @property {string[]} misses
  */
-
-/** @type {Identifier} */
-const bcd = require('..');
-
-/**
- * @param {string} dottedFeature
- */
-function lookup(dottedFeature) {
-  const x = dottedFeature.split('.');
-  const feature = x.reduce((prev, current) => prev[current], bcd);
-  return feature;
-}
-
-/**
- * @param {Identifier} feature
- * @param {string[]} matches
- * @param {string[]} misses
- */
-function testToken(feature, matches, misses) {
-  const str =
-    feature.__compat.matches.regex_token ||
-    feature.__compat.matches.regex_value;
-  const regexp = new RegExp(str);
-
-  matches.forEach(match =>
-    assert.ok(regexp.test(match), `${regexp} did not match ${match}`),
-  );
-  misses.forEach(miss =>
-    assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`),
-  );
-}
 
 /** @type {TestCase[]} */
 const tests = [
@@ -63,6 +37,38 @@ const tests = [
   },
 ];
 
-tests.forEach(({ features, matches, misses }) => {
-  features.forEach(feature => testToken(lookup(feature), matches, misses));
-});
+/**
+ * @param {string} dottedFeature
+ */
+function lookup(dottedFeature) {
+  const x = dottedFeature.split('.');
+  const feature = x.reduce((prev, current) => prev[current], bcd);
+  return feature;
+}
+
+/**
+ * @param {Identifier} feature
+ * @param {string[]} matches
+ * @param {string[]} misses
+ */
+function testToken(feature, matches, misses) {
+  const str =
+    feature.__compat.matches.regex_token ||
+    feature.__compat.matches.regex_value;
+  const regexp = new RegExp(str);
+
+  matches.forEach((match) =>
+    assert.ok(regexp.test(match), `${regexp} did not match ${match}`),
+  );
+  misses.forEach((miss) =>
+    assert.ok(!regexp.test(miss), `${regexp} erroneously matched ${miss}`),
+  );
+}
+
+const testRegexes = () => {
+  tests.forEach(({ features, matches, misses }) => {
+    features.forEach((feature) => testToken(lookup(feature), matches, misses));
+  });
+};
+
+export default testRegexes;

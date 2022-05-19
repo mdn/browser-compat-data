@@ -1,40 +1,75 @@
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const extend = require('extend');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-function load() {
-  // Recursively load one or more directories passed as arguments.
-  let dir,
-    result = {};
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-  function processFilename(fn) {
-    const fp = path.join(dir, fn);
-    let extra;
+import { fdir } from 'fdir';
 
-    // If the given filename is a directory, recursively load it.
-    if (fs.statSync(fp).isDirectory()) {
-      extra = load(fp);
-    } else if (path.extname(fp) === '.json') {
-      try {
-        extra = require(fp);
-      } catch (e) {}
-    }
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-    // The JSON data is independent of the actual file
-    // hierarchy, so it is essential to extend "deeply".
-    result = extend(true, result, extra);
+class DuplicateCompatError extends Error {
+  constructor(feature) {
+    super(`${feature} already exists! Remove duplicate entries.`);
+    this.name = 'DuplicateCompatError';
   }
+}
 
-  for (dir of arguments) {
-    dir = path.resolve(__dirname, dir);
-    fs.readdirSync(dir).forEach(processFilename);
+/**
+ * Recursively load one or more directories passed as arguments.
+ *
+ * @param {string[]} dirs The directories to load
+ * @returns {object} All of the browser compatibility data
+ */
+function load(...dirs) {
+  let result = {};
+
+  for (const dir of dirs) {
+    const paths = new fdir()
+      .withBasePath()
+      .filter((fp) => fp.endsWith('.json'))
+      .crawl(path.join(dirname, dir))
+      .sync();
+
+    for (const fp of paths) {
+      try {
+        extend(result, JSON.parse(fs.readFileSync(fp)));
+      } catch (e) {
+        // Skip invalid JSON. Tests will flag the problem separately.
+        continue;
+      }
+    }
   }
 
   return result;
 }
 
-module.exports = load(
+function isPlainObject(v) {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+function extend(target, source, feature = '') {
+  if (!isPlainObject(target) || !isPlainObject(source)) {
+    throw new Error('Both target and source must be plain objects');
+  }
+
+  // iterate over own enumerable properties
+  for (const [key, value] of Object.entries(source)) {
+    // recursively extend if target has the same key, otherwise just assign
+    if (Object.prototype.hasOwnProperty.call(target, key)) {
+      if (key == '__compat') {
+        // If attempting to merge __compat, we have a double-entry
+        throw new DuplicateCompatError(feature);
+      }
+      extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
+    } else {
+      target[key] = value;
+    }
+  }
+}
+
+export default load(
   'api',
   'browsers',
   'css',
@@ -45,6 +80,4 @@ module.exports = load(
   'svg',
   'webdriver',
   'webextensions',
-  'xpath',
-  'xslt',
 );

@@ -3,6 +3,7 @@
     "OfflineAudioContext": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext",
+        "spec_url": "https://webaudio.github.io/web-audio-api/#OfflineAudioContext",
         "support": {
           "chrome": [
             {
@@ -56,14 +57,26 @@
               "prefix": "webkit"
             }
           ],
-          "safari": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
-          "safari_ios": {
-            "version_added": "6",
-            "prefix": "webkit"
-          },
+          "safari": [
+            {
+              "version_added": "14.1"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.1",
+              "prefix": "webkit"
+            }
+          ],
+          "safari_ios": [
+            {
+              "version_added": "14.5"
+            },
+            {
+              "version_added": "6",
+              "version_removed": "14.5",
+              "prefix": "webkit"
+            }
+          ],
           "samsunginternet_android": [
             {
               "version_added": "3.0"
@@ -94,6 +107,7 @@
       "OfflineAudioContext": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/OfflineAudioContext",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-offlineaudiocontext",
           "description": "<code>OfflineAudioContext()</code> constructor",
           "support": {
             "chrome": [
@@ -117,13 +131,13 @@
               }
             ],
             "edge": {
-              "version_added": "≤79"
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "53"
+              "version_added": "25"
             },
             "firefox_android": {
-              "version_added": "53"
+              "version_added": "25"
             },
             "ie": {
               "version_added": false
@@ -148,14 +162,26 @@
                 "prefix": "webkit"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "webkit"
-            },
-            "safari_ios": {
-              "version_added": "6",
-              "prefix": "webkit"
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "version_removed": "14.1",
+                "prefix": "webkit"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "14.5"
+              },
+              {
+                "version_added": "6",
+                "version_removed": "14.5",
+                "prefix": "webkit"
+              }
+            ],
             "samsunginternet_android": [
               {
                 "version_added": "3.0"
@@ -183,7 +209,7 @@
             "deprecated": false
           }
         },
-        "Parameters_accepted_in_an_object": {
+        "parameters_accepted_in_an_object": {
           "__compat": {
             "description": "Parameters accepted as a single object, as well as being passed in individually",
             "support": {
@@ -212,10 +238,10 @@
                 "version_added": "46"
               },
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "14.5"
               },
               "samsunginternet_android": {
                 "version_added": "8.0"
@@ -236,6 +262,10 @@
         "__compat": {
           "description": "<code>complete</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event",
+          "spec_url": [
+            "https://webaudio.github.io/web-audio-api/#OfflineAudioCompletionEvent",
+            "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-oncomplete"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -265,7 +295,7 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.5"
@@ -284,6 +314,7 @@
       "length": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-length",
           "support": {
             "chrome": {
               "version_added": "51"
@@ -295,10 +326,10 @@
               "version_added": "14"
             },
             "firefox": {
-              "version_added": true
+              "version_added": "49"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": "49"
             },
             "ie": {
               "version_added": false
@@ -310,64 +341,16 @@
               "version_added": "41"
             },
             "safari": {
-              "version_added": false
+              "version_added": "14.1"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "14.5"
             },
             "samsunginternet_android": {
               "version_added": "5.0"
             },
             "webview_android": {
               "version_added": "51"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "oncomplete": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/oncomplete",
-          "support": {
-            "chrome": {
-              "version_added": "25"
-            },
-            "chrome_android": {
-              "version_added": "25"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "25"
-            },
-            "firefox_android": {
-              "version_added": "25"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
-            "safari": {
-              "version_added": "6"
-            },
-            "safari_ios": {
-              "version_added": null
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
             }
           },
           "status": {
@@ -380,42 +363,43 @@
       "resume": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-resume",
           "support": {
             "chrome": {
-              "version_added": "49"
+              "version_added": "41"
             },
             "chrome_android": {
-              "version_added": "49"
+              "version_added": "41"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "14"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "40"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "40"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "36"
+              "version_added": "28"
             },
             "opera_android": {
-              "version_added": "36"
+              "version_added": "28"
             },
             "safari": {
-              "version_added": false
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "49"
+              "version_added": "41"
             }
           },
           "status": {
@@ -428,6 +412,7 @@
       "startRendering": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-startrendering",
           "support": {
             "chrome": {
               "version_added": "25"
@@ -457,7 +442,7 @@
               "version_added": "6"
             },
             "safari_ios": {
-              "version_added": null
+              "version_added": "6"
             },
             "samsunginternet_android": {
               "version_added": "1.5"
@@ -472,9 +457,9 @@
             "deprecated": false
           }
         },
-        "Promise_based_startRendering": {
+        "returns_promise": {
           "__compat": {
-            "description": "Promise-based <code>startRendering()</code>",
+            "description": "Returns a <code>Promise</code>",
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -501,10 +486,10 @@
                 "version_added": "29"
               },
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "14.5"
               },
               "samsunginternet_android": {
                 "version_added": "4.0"
@@ -524,15 +509,16 @@
       "suspend": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-suspend",
           "support": {
             "chrome": {
-              "version_added": "49"
+              "version_added": "41"
             },
             "chrome_android": {
-              "version_added": "49"
+              "version_added": "41"
             },
             "edge": {
-              "version_added": "≤18"
+              "version_added": "14"
             },
             "firefox": {
               "version_added": false
@@ -544,22 +530,22 @@
               "version_added": false
             },
             "opera": {
-              "version_added": "36"
+              "version_added": "28"
             },
             "opera_android": {
-              "version_added": "36"
+              "version_added": "28"
             },
             "safari": {
-              "version_added": false
+              "version_added": "9"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "9"
             },
             "samsunginternet_android": {
-              "version_added": "5.0"
+              "version_added": "4.0"
             },
             "webview_android": {
-              "version_added": "49"
+              "version_added": "41"
             }
           },
           "status": {
