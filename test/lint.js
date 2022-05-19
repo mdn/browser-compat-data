@@ -83,7 +83,7 @@ const checkFiles = (...files) => {
 
       try {
         const rawFileData = fs
-          .readFileSync(new URL(file, import.meta.url), 'utf-8')
+          .readFileSync(file, 'utf-8')
           .trim();
         const fileData = JSON.parse(rawFileData);
 
