@@ -1,15 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-const {
+import {
   exec,
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} = require('./release-utils');
-const diffFeatures = require('./diff-features');
+} from './utils.js';
+import diffFeatures from '../diff-features.js';
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;
@@ -83,7 +86,9 @@ function pullsFromGitHub(start, end) {
 }
 
 function preamble() {
-  const upcomingVersion = require('../package.json').version;
+  const upcomingVersion = JSON.parse(
+    fs.readFileSync(new URL('../../package.json', import.meta.url)),
+  ).version;
 
   return [
     `## [v${upcomingVersion}](https://github.com/mdn/browser-compat-data/releases/tag/v${upcomingVersion})`,
@@ -122,8 +127,8 @@ function markdownifyChanges(removes, adds) {
   return notes.join('\n');
 }
 
-if (require.main === module) {
-  const { argv } = require('yargs').command(
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [start-version-tag [end-version-tag]]',
     'Generate release notes text',
     (yargs) => {
