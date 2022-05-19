@@ -27,11 +27,9 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (
-  targetBrowser,
-  sourceBrowser,
-  sourceVersion,
-) => {
+const getMatchingBrowserVersion = (targetBrowser, source) => {
+  const { browser: sourceBrowser, version: sourceVersion } = source;
+
   const range = sourceVersion.includes('≤');
   const sourceRelease =
     browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
@@ -219,22 +217,20 @@ const bumpGeneric = (
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      targetBrowser,
-      sourceBrowser,
-      sourceData.version_added,
-    );
+    newData.version_added = getMatchingBrowserVersion(targetBrowser, {
+      browser: sourceBrowser,
+      version: sourceData.version_added,
+    });
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      targetBrowser,
-      sourceBrowser,
-      sourceData.version_added,
-    );
+    newData.version_removed = getMatchingBrowserVersion(targetBrowser, {
+      browser: sourceBrowser,
+      version: sourceData.version_removed,
+    });
   }
 
   if (notesRepl && typeof sourceData.notes === 'string') {
