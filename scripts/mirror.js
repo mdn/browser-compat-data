@@ -200,11 +200,11 @@ const combineStatements = (...data) => {
 
   const flattenedData = data.flat(2);
   const sections = {};
-  const newData = [];
+  let newData = [];
 
   for (const d of flattenedData) {
     const key = Object.keys(d)
-      .filter((k) => !ignored_keys.includes(k))
+      .filter((k) => !ignoredKeys.includes(k))
       .join('');
     if (!(key in sections)) sections[key] = [];
     sections[key].push(d);
