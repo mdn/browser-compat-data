@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { Logger } from '../utils.js';
@@ -269,18 +268,10 @@ function findSupport(data, logger, relPath) {
 /**
  * Test for version errors
  *
- * @param {string} filename The file to test
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testVersions(filename) {
-  /** @type {Identifier} */
-  const data = JSON.parse(
-    fs.readFileSync(
-      new URL(new URL(filename, import.meta.url), import.meta.url),
-      'utf-8',
-    ),
-  );
-
+export default function testVersions(data) {
   const logger = new Logger('Versions');
 
   findSupport(data, logger);

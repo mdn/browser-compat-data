@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
 
@@ -148,15 +146,10 @@ const processData = (data, logger, feature) => {
 /**
  * Test the data for notes errors
  *
- * @param {string} filename The file to test
- * @returns {boolean} Whether the file had any errors
+ * @param {Identifier} data The contents of the file to test
+ * @returns {boolean} If the file contains errors
  */
-const testNotes = (filename) => {
-  /** @type {Identifier} */
-  const data = JSON.parse(
-    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
-  );
-
+const testNotes = (data) => {
   const logger = new Logger('Notes');
 
   processData(data, logger);
