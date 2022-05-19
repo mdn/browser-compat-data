@@ -9,8 +9,7 @@ import esMain from 'es-main';
 import ora from 'ora';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk';
-import chalkT from 'chalk-template';
+import chalk from 'chalk-template';
 
 import {
   testBrowsersData,
@@ -47,7 +46,7 @@ const checkFiles = (...files) => {
     }
 
     if (!fs.existsSync(file)) {
-      console.warn(chalkT`{yellow File {bold ${file}} doesn't exist!}`);
+      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       return;
     }
 
@@ -74,7 +73,7 @@ const checkFiles = (...files) => {
           // Set spinner to failure when first error is found
           // Setting on every error causes duplicate output
           spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(filePath.full));
+          spinner.fail(chalk`{red.bold ${relativeFilePath}}`);
 
           errors[filePath.full] = [];
         }
@@ -153,11 +152,11 @@ const main = (
   if (filesWithErrors) {
     console.error('');
     console.error(
-      chalkT`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
+      chalk`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
     );
 
     for (const [fp, errorMsgs] of Object.entries(errors)) {
-      console.error(chalkT`{red.bold ✖ ${fp}}`);
+      console.error(chalk`{red.bold ✖ ${fp}}`);
       for (const error of errorMsgs) {
         console.error(error);
       }
