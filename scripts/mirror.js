@@ -196,14 +196,14 @@ const copyStatement = (data) => {
  * @returns {SupportStatement}
  */
 const combineStatements = (...data) => {
-  const ignored_keys = ['version_added', 'notes'];
+  const ignoredKeys = ['version_added', 'notes'];
 
-  let flattenedData = data.flat(2);
-  let sections = {};
-  let newData = [];
+  const flattenedData = data.flat(2);
+  const sections = {};
+  const newData = [];
 
   for (const d of flattenedData) {
-    let key = Object.keys(d)
+    const key = Object.keys(d)
       .filter((k) => !ignored_keys.includes(k))
       .join('');
     if (!(key in sections)) sections[key] = [];
@@ -211,7 +211,7 @@ const combineStatements = (...data) => {
   }
 
   for (const k of Object.keys(sections)) {
-    let currentStatement = sections[k][0];
+    const currentStatement = sections[k][0];
 
     if (sections[k].length == 1) {
       newData.push(currentStatement);
@@ -220,10 +220,10 @@ const combineStatements = (...data) => {
 
     for (const i in sections[k]) {
       if (i === 0) continue;
-      let newStatement = sections[k][i];
+      const newStatement = sections[k][i];
 
-      let currentVA = currentStatement.version_added;
-      let newVA = newStatement.version_added;
+      const currentVA = currentStatement.version_added;
+      const newVA = newStatement.version_added;
 
       if (newVA === false) {
         // Ignore statements with version_added being false
@@ -241,27 +241,35 @@ const combineStatements = (...data) => {
         }
       }
 
-      let newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      const newNotes = combineNotes(currentStatement.notes, newStatement.notes);
       if (newNotes) currentStatement.notes = newNotes;
     }
 
-    if ('notes' in currentStatement && !currentStatement.notes)
+    if ('notes' in currentStatement && !currentStatement.notes) {
       delete currentStatement.notes;
+    }
     newData.push(currentStatement);
   }
 
-  if (newData.length === 1) return newData[0];
+  if (newData.length === 1) {
+    return newData[0];
+  }
 
   // Remove duplicate statements and statements that are only version_added = false
   newData = newData
     .filter((item, pos) => newData.indexOf(item) == pos)
     .filter((item) => item.version_added);
 
-  return newData.length === 0
-    ? { version_added: false }
-    : newData.length === 1
-    ? newData[0]
-    : newData;
+  switch (newData.length) {
+    case 0:
+      return { version_added: false };
+
+    case 1:
+      return newData[0];
+
+    default:
+      return newData;
+  }
 };
 
 /**
@@ -500,8 +508,8 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
 
   if (Array.isArray(sourceData)) {
     newData = combineStatements(
-      ...sourceData.map((d) =>
-        bumpVersion(d, originalData, destination, targetVersion),
+      ...sourceData.map((data) =>
+        bumpVersion(data, originalData, destination, targetVersion),
       ),
     );
   } else {
