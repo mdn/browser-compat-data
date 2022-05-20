@@ -121,44 +121,6 @@ const isVersionRemoved = (compatData, versionToCheck) => {
 };
 
 /**
- * @param {string|string[]|null} notes1
- * @param {string|string[]|null} notes2
- * @returns {string|string[]|null}
- */
-const combineNotes = (notes1, notes2) => {
-  let newNotes = [];
-
-  if (notes1) {
-    if (typeof notes1 === 'string') {
-      newNotes.push(notes1);
-    } else {
-      newNotes.push(...notes1);
-    }
-  }
-
-  if (notes2) {
-    if (typeof notes2 === 'string') {
-      newNotes.push(notes2);
-    } else {
-      newNotes.push(...notes2);
-    }
-  }
-
-  newNotes = newNotes.filter((item, pos) => {
-    newNotes.indexOf(item) == pos;
-  });
-
-  if (newNotes.length == 0) {
-    return null;
-  }
-  if (newNotes.length == 1) {
-    return newNotes[0];
-  }
-
-  return newNotes;
-};
-
-/**
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
@@ -249,66 +211,52 @@ const bumpChromeAndroid = (originalData, sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpEdge = (originalData, sourceData) => {
-  let newData = {};
-  let source = 'chrome';
+  let newData = copyStatement(sourceData);
 
-  if (source == 'ie') {
-    if (sourceData.version_removed && sourceData.version_removed !== null) {
-      newData.version_added = false;
-    } else if (sourceData.version_added !== null) {
-      newData.version_added = sourceData.version_added ? '12' : null;
+  const chromeFalse =
+    sourceData.version_removed || sourceData.version_added === false;
+  const chromeNull = sourceData.version_added === null;
+
+  if (chromeFalse) {
+    if (
+      typeof sourceData.version_removed === 'string' &&
+      compareVersions.compare(sourceData.version_removed, '79', '<=')
+    ) {
+      // If this feature was removed before Chrome 79, it's not present in Edge
+      return { version_added: false };
     }
 
-    if (sourceData.notes) {
-      newData.notes = updateNotes(
-        sourceData.notes,
-        /Internet Explorer/g,
-        'Edge',
-      );
-    }
-  } else if (source == 'chrome') {
-    newData = originalData == undefined ? sourceData : originalData;
-
-    let chromeFalse =
-      sourceData.version_added === false ||
-      sourceData.version_removed !== undefined;
-    let chromeNull = sourceData.version_added === null;
-
-    if (originalData === undefined) {
-      newData.version_added = chromeFalse ? false : chromeNull ? null : '≤79';
-    } else {
-      if (!chromeFalse && !chromeNull) {
-        if (originalData.version_added == true) {
-          newData.version_added = '≤18';
-        } else {
-          if (
-            sourceData.version_added == true ||
-            Number(sourceData.version_added) <= 79
-          ) {
-            if (originalData.version_added == false) {
-              newData.version_added = '79';
-            } else if (originalData.version_added == null) {
-              newData.version_added = '≤79';
-            }
-          } else {
-            newData.version_added = sourceData.version_added;
-          }
-        }
-      } else if (chromeFalse) {
-        if (originalData.version_added && !originalData.version_removed) {
-          newData.version_removed = '79';
-        }
+    if (
+      typeof sourceData.version_added === 'string' &&
+      compareVersions.compare(sourceData.version_added, '79', '<=')
+    ) {
+      // If the feature was added before Chrome 79 but removed afterwards
+      if (typeof originalData.version_added == 'string') {
+        newData.version_added = originalData.version_added;
+      } else {
+        newData.version_added = '79';
       }
     }
-
-    let newNotes = combineNotes(
-      updateNotes(sourceData.notes, /Chrome/g, 'Edge'),
-      originalData.notes,
-    );
-
-    if (newNotes) {
-      newData.notes = newNotes;
+    if (originalData.version_added && !originalData.version_removed) {
+      newData.version_removed = '79';
     }
+  } else if (chromeNull) {
+    newData.version_added = null;
+  } else {
+    if (sourceData.version_added === true) {
+      newData.version_added =
+        originalData.version_added === true ? '≤18' : true;
+    } else if (compareVersions.compare(sourceData.version_added, '79', '<=')) {
+      newData.version_added =
+        originalData.version_added === null ? '≤79' : '79';
+    } else {
+      newData.version_added = sourceData.version_added;
+    }
+  }
+
+  let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
+  if (newNotes) {
+    newData.notes = newNotes;
   }
 
   return newData;
