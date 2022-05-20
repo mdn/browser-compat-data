@@ -1,7 +1,8 @@
-const HTMLParser = require('@desertnet/html-parser');
+import esMain from 'es-main';
+import HTMLParser from '@desertnet/html-parser';
 
-const bcd = require('.');
-const { walk } = require('./utils');
+import bcd from './index.js';
+import walk from './utils/walk.js';
 
 const browsers = Object.keys(bcd.browsers);
 
@@ -112,6 +113,6 @@ function main() {
   }
 }
 
-if (require.main === module) {
+if (esMain(import.meta)) {
   main();
 }
