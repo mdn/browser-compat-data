@@ -432,7 +432,7 @@ A `matches` object contains hints to help automatically detect whether source co
 
   Examples:
 
-  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.properties.color.alpha_hexadecimal_notation`](../css/properties/color.json) and corresponding tests.
+  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.types.color.rgb_hexadecimal_notation.alpha_hexadecimal_notation`](../css/types/color.json) and corresponding tests.
 
 - `regex_value`: a string containing a regular expression that matches a complete value corresponding to the feature.
 
