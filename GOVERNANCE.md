@@ -32,7 +32,6 @@ Peers are community members who have shown that they are committed to the contin
 
 Peers:
 
-- Are expected to work on public branches of their forks and submit pull requests to the main branch.
 - Must submit pull requests for all their changes.
 - May label and close issues.
 - May merge other people's pull requests that relate to compat data updates.
