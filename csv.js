@@ -4,19 +4,10 @@ import HTMLParser from '@desertnet/html-parser';
 import bcd from './index.js';
 import walk from './utils/walk.js';
 
-const browsers = Object.keys(bcd.browsers);
-
 const entryPoints = [
   'api',
-  //'browsers',
   'css',
-  'html',
-  'http',
   'javascript',
-  'mathml',
-  'svg',
-  // Not web exposed in the typical way:
-  // 'webdriver', 'webextensions',
 ];
 
 function* getLinks(notes) {
@@ -44,8 +35,35 @@ function* getLinks(notes) {
   yield* walk(parser.parse(notes));
 }
 
+function getReleaseDateMap(browsers) {
+  const dateMap = new Map();
+  for (const browser of browsers) {
+    const releases = bcd.browsers[browser].releases;
+    const versions = new Map();
+    for (const [version, releaseData] of Object.entries(releases)) {
+      const date = releaseData.release_date;
+      if (date) {
+        versions.set(version, date);
+      }
+    }
+    dateMap.set(browser, versions);
+  }
+  return dateMap;
+}
+
 function main() {
-  console.log(`path,deprecated,experimental,${browsers.join(',')},comments`);
+  const browsers = [];
+  for (const [browser, browserData] of Object.entries(bcd.browsers)) {
+    if (browser === 'ie') {
+      continue;
+    }
+    if (['desktop', 'mobile'].includes(browserData.type)) {
+      browsers.push(browser);
+    }
+  }
+  const dateMap = getReleaseDateMap(browsers);
+  const columns = browsers.flatMap(b => [`${b}_version`, `${b}_date`]);
+  console.log(`path,deprecated,experimental,${columns.join(',')},comments`);
   for (const {path, compat} of walk(entryPoints, bcd)) {
     const url = compat.mdn_url;
     const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : `=${JSON.stringify(path)}`;
@@ -54,18 +72,18 @@ function main() {
       compat.status.experimental
     ].map((s) => `=${String(s).toUpperCase()}`);
     const links = [];
-    const flatSupport = browsers.map(b => {
+    const support = browsers.flatMap(browser => {
       // Flatten to string, true, false, or null using the first non-flag range.
-      let ranges = compat.support[b];
+      let ranges = compat.support[browser];
       if (!ranges) {
-        return null;
+        return ['', ''];
       }
       if (!Array.isArray(ranges)) {
         ranges = [ranges];
       }
       ranges = ranges.filter(r => !r.flags);
       if (!ranges.length) {
-        return false;
+        return ['', ''];
       }
       const firstRange = ranges[0];
       const notes = firstRange.notes;
@@ -75,12 +93,26 @@ function main() {
         }
       }
       if (firstRange.version_removed) {
-        return false;
+        return ['', ''];
       }
-      return firstRange.version_added;
-    }).map(version => {
-      // Flatten even further to just boolean support
-      return version ? '=TRUE' : '=FALSE';
+      let version = firstRange.version_added;
+      if (version === false) {
+        return ['', ''];
+      }
+      if (version.startsWith('≤')) {
+        version = version.substring(1);
+      }
+      const date = dateMap.get(browser).get(version);
+      if (!date) {
+        return ['', ''];
+      }
+      // Ensure the version can be interpreted as a number by keeping only major
+      // and minor version part.
+      const parts = version.split('.');
+      if (parts.length > 2) {
+        version = parts.slice(0, 2).join('.');
+      }
+      return [version, date];
     });
 
     // Extract bug links. Reverse links so that the first one wins.
@@ -109,7 +141,7 @@ function main() {
     } else {
       bug = '';
     }
-    console.log([linkedPath, ...statuses, ...flatSupport, bug].join(','));
+    console.log([linkedPath, ...statuses, ...support, bug].join(','));
   }
 }
 
