@@ -156,20 +156,13 @@ const copyStatement = (data) => {
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @param {string} destination
  * @param {string} source
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpGeneric = (
-  originalData,
-  sourceData,
-  destination,
-  source,
-  notesRepl,
-) => {
+const bumpGeneric = (sourceData, destination, source, notesRepl) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -197,137 +190,80 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpChromeAndroid = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'chrome_android', 'chrome');
+const bumpChromeAndroid = (sourceData) => {
+  return bumpGeneric(sourceData, 'chrome_android', 'chrome');
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpEdge = (originalData, sourceData) => {
-  let newData = copyStatement(sourceData);
-
-  const chromeFalse =
-    sourceData.version_removed || sourceData.version_added === false;
-  const chromeNull = sourceData.version_added === null;
-
-  if (chromeFalse) {
-    if (
-      typeof sourceData.version_removed === 'string' &&
-      compareVersions.compare(sourceData.version_removed, '79', '<=')
-    ) {
-      // If this feature was removed before Chrome 79, it's not present in Edge
-      return { version_added: false };
-    }
-
-    if (
-      typeof sourceData.version_added === 'string' &&
-      compareVersions.compare(sourceData.version_added, '79', '<=')
-    ) {
-      // If the feature was added before Chrome 79 but removed afterwards
-      if (typeof originalData.version_added == 'string') {
-        newData.version_added = originalData.version_added;
-      } else {
-        newData.version_added = '79';
-      }
-    }
-    if (originalData.version_added && !originalData.version_removed) {
-      newData.version_removed = '79';
-    }
-  } else if (chromeNull) {
-    newData.version_added = null;
-  } else {
-    if (sourceData.version_added === true) {
-      newData.version_added =
-        originalData.version_added === true ? '≤18' : true;
-    } else if (compareVersions.compare(sourceData.version_added, '79', '<=')) {
-      newData.version_added =
-        originalData.version_added === null ? '≤79' : '79';
-    } else {
-      newData.version_added = sourceData.version_added;
-    }
+const bumpEdge = (sourceData) => {
+  if (
+    typeof sourceData.version_removed === 'string' &&
+    compareVersions.compare(sourceData.version_removed, '79', '<=')
+  ) {
+    // If this feature was removed before Chrome 79, it's not present in Chromium Edge
+    return { version_added: false };
   }
 
-  let newNotes = updateNotes(sourceData.notes, /Chrome(?! ?OS)/g, 'Edge');
-  if (newNotes) {
-    newData.notes = newNotes;
-  }
-
-  return newData;
+  return bumpGeneric(sourceData, 'edge', 'chrome', [/Chrome/g, 'Edge']);
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpFirefoxAndroid = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'firefox_android', 'firefox');
+const bumpFirefoxAndroid = (sourceData) => {
+  return bumpGeneric(sourceData, 'firefox_android', 'firefox');
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpOpera = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'opera', 'chrome', [
+const bumpOpera = (sourceData) => {
+  return bumpGeneric(sourceData, 'opera', 'chrome', [/Chrome/g, 'Opera']);
+};
+
+/**
+ * @param {SupportStatement} sourceData
+ * @returns {SupportStatement}
+ */
+const bumpOperaAndroid = (sourceData) => {
+  return bumpGeneric(sourceData, 'opera_android', 'chrome_android', [
     /Chrome/g,
     'Opera',
   ]);
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpOperaAndroid = (originalData, sourceData) => {
-  return bumpGeneric(
-    originalData,
-    sourceData,
-    'opera_android',
-    'chrome_android',
-    [/Chrome/g, 'Opera'],
-  );
+const bumpSafariiOS = (sourceData) => {
+  return bumpGeneric(sourceData, 'safari_ios', 'safari');
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpSafariiOS = (originalData, sourceData) => {
-  return bumpGeneric(originalData, sourceData, 'safari_ios', 'safari');
+const bumpSamsungInternet = (sourceData) => {
+  return bumpGeneric(sourceData, 'samsunginternet_android', 'chrome_android', [
+    /Chrome/g,
+    'Samsung Internet',
+  ]);
 };
 
 /**
- * @param {SupportStatement} originalData
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpSamsungInternet = (originalData, sourceData) => {
-  return bumpGeneric(
-    originalData,
-    sourceData,
-    'samsunginternet_android',
-    'chrome_android',
-    [/Chrome/g, 'Samsung Internet'],
-  );
-};
-
-/**
- * @param {SupportStatement} originalData
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpWebView = (originalData, sourceData) => {
+const bumpWebView = (sourceData) => {
   let newData = copyStatement(sourceData);
 
   const createWebViewRange = (version) => {
@@ -364,11 +300,10 @@ const bumpWebView = (originalData, sourceData) => {
 
 /**
  * @param {SupportStatement} data
- * @param {SupportStatement} originalData
  * @param {string} destination
  * @param {string} targetVersion
  */
-const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
+const bumpVersion = (sourceData, destination, targetVersion) => {
   let newData = null;
 
   if (sourceData == null) {
@@ -378,12 +313,7 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
   if (Array.isArray(sourceData)) {
     newData = [];
     for (let i = 0; i < sourceData.length; i++) {
-      newData[i] = bumpVersion(
-        sourceData[i],
-        originalData,
-        destination,
-        targetVersion,
-      );
+      newData[i] = bumpVersion(sourceData[i], destination, targetVersion);
     }
   } else {
     let bumpFunction = null;
@@ -417,7 +347,7 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
         throw new Error(`Unknown target browser ${destination}!`);
     }
 
-    newData = bumpFunction(originalData, sourceData);
+    newData = bumpFunction(sourceData);
   }
 
   if (targetVersion) {
@@ -425,7 +355,8 @@ const bumpVersion = (sourceData, originalData, destination, targetVersion) => {
       !isVersionAdded(newData, targetVersion) &&
       !isVersionRemoved(newData, targetVersion)
     ) {
-      newData = originalData;
+      // If the target browser version isn't affected, don't update data
+      return null;
     }
   }
 
@@ -475,13 +406,7 @@ const doSetFeature = (
 
   if (doBump) {
     let source = getSource(browser);
-    let newValue = bumpVersion(
-      comp[source],
-      comp[browser],
-      browser,
-      source,
-      targetVersion,
-    );
+    let newValue = bumpVersion(comp[source], browser, source, targetVersion);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
