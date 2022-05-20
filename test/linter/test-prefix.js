@@ -1,13 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import chalk from 'chalk-template';
 import { Logger } from '../utils.js';
-
-const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -73,23 +68,14 @@ function processData(data, category, logger) {
 /**
  * Test for issues with feature's prefix
  *
- * @param {string} filename The file to test
+ * @param {Identifier} data The contents of the file to test
+ * @param {object} filePath The path info for the file being tested
  * @returns {boolean} If the file contains errors
  */
-export default function testPrefix(filename) {
+export default function testPrefix(data, filePath) {
   const logger = new Logger('Prefix');
 
-  const relativePath = path.relative(
-    path.resolve(dirname, '..', '..'),
-    filename,
-  );
-  const category =
-    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  const data = JSON.parse(
-    fs.readFileSync(new URL(filename, import.meta.url), 'utf-8'),
-  );
-
-  processData(data, category, logger);
+  processData(data, filePath.category, logger);
 
   logger.emit();
   return logger.hasErrors();
