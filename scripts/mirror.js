@@ -87,7 +87,7 @@ const getSource = (browser) => {
   }
 };
 
-/*
+/**
  * @param {SupportStatement} compatData
  * @param {string | null} versionToCheck
  * @return {string | null}
