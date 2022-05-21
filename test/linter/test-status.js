@@ -19,6 +19,7 @@ function checkStatus(data, logger, path = []) {
       chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
         '.',
       )}}`,
+      chalk`Run {bold npm run fix} to fix this issue automatically`,
     );
   }
   for (const member in data) {
@@ -34,7 +35,7 @@ function checkStatus(data, logger, path = []) {
  * @returns {boolean} If the file contains errors
  */
 function testStatusContradiction(data) {
-  const logger = new Logger('Flag consistency');
+  const logger = new Logger('Status');
 
   checkStatus(data, logger);
 

@@ -9,7 +9,7 @@ import { platform } from 'os';
 /** Determines if the OS is Windows */
 const IS_WINDOWS = platform() === 'win32';
 
-const fixStatus = (key, value) => {
+const fixStatusContradiction = (key, value) => {
   const status = value?.__compat?.status;
   if (status && status.experimental && status.deprecated) {
     status.experimental = false;
@@ -20,9 +20,9 @@ const fixStatus = (key, value) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixStatusContradiction = (filename) => {
+const fixStatus = (filename) => {
   let actual = readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
+  let expected = JSON.stringify(JSON.parse(actual, fixStatusContradiction), null, 2);
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
@@ -35,4 +35,4 @@ const fixStatusContradiction = (filename) => {
   }
 };
 
-export default fixStatusContradiction;
+export default fixStatus;

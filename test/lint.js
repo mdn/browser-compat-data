@@ -20,7 +20,7 @@ import {
   testNotes,
   testPrefix,
   testSchema,
-  testStatusContradiction,
+  testStatus,
   testStyle,
   testVersions,
 } from './linter/index.js';
@@ -96,7 +96,7 @@ const checkFiles = (...files) => {
           testConsistency(fileData);
           testDescriptions(fileData);
           testPrefix(fileData, filePath);
-          testStatusContradiction(fileData);
+          testStatus(fileData);
           testStyle(rawFileData);
           testVersions(fileData);
           testNotes(fileData);
