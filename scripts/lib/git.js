@@ -1,15 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const child_process = require('child_process');
+import child_process from 'node:child_process';
 
 /**
  * @param {string} x
  * @param {string} y
  */
-function getMergeBase(x, y = 'HEAD') {
+export function getMergeBase(x, y = 'HEAD') {
   return child_process
     .execSync(`git merge-base ${x} ${y}`, { encoding: 'utf-8' })
     .trim();
@@ -19,7 +17,7 @@ function getMergeBase(x, y = 'HEAD') {
  * @param {string} base
  * @param {string} head
  */
-function getGitDiffStatuses(base, head) {
+export function getGitDiffStatuses(base, head) {
   function parseFields(fields) {
     return {
       value: fields[0],
@@ -40,7 +38,7 @@ function getGitDiffStatuses(base, head) {
  * @param {string} commit
  * @param {string} path
  */
-function getFileContent(commit, path) {
+export function getFileContent(commit, path) {
   return child_process
     .execSync(`git show ${commit}:${path}`, {
       encoding: 'utf-8',
@@ -48,9 +46,3 @@ function getFileContent(commit, path) {
     })
     .trim();
 }
-
-module.exports = {
-  getMergeBase,
-  getGitDiffStatuses,
-  getFileContent,
-};

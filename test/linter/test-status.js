@@ -1,5 +1,8 @@
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import chalk from 'chalk-template';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -43,12 +46,9 @@ function checkStatusInheritance(data, logger, parentStatus = {}, path = []) {
 }
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The contents of the file to test
  */
-function testStatusInheritance(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
+export default function testStatusInheritance(data) {
   const logger = new Logger('Status inheritance');
 
   checkStatusInheritance(data, logger);
@@ -56,5 +56,3 @@ function testStatusInheritance(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testStatusInheritance;
