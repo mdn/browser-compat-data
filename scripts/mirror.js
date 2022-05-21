@@ -299,7 +299,7 @@ const bumpGeneric = (sourceData, destination, source, notesRepl) => {
     );
   }
 
-  if (notesRepl && typeof sourceData.notes === 'string') {
+  if (notesRepl && sourceData.notes) {
     newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
   }
 
@@ -408,7 +408,7 @@ const bumpWebView = (sourceData) => {
     newData.version_removed = createWebViewRange(sourceData.version_removed);
   }
 
-  if (typeof sourceData.notes === 'string') {
+  if (sourceData.notes) {
     newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
   }
 
