@@ -524,7 +524,7 @@ const doSetFeature = (
 
   if (doBump) {
     let source = getSource(browser);
-    let newValue = bumpVersion(comp[source], browser, source, targetVersion);
+    let newValue = bumpVersion(comp[source], browser, targetVersion);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
     }
