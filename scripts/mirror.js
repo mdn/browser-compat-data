@@ -160,22 +160,26 @@ const combineNotes = (notes1, notes2) => {
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
+ * @param {Function} versionBumpFunction
  * @returns {string|string[]|null}
  */
-const updateNotes = (notes, regex, replace) => {
-  if (notes === null || notes === undefined) {
+const updateNotes = (notes, regex, replace, versionBumpFunction) => {
+  if (!notes) {
     return null;
   }
 
-  if (typeof notes === 'string') {
-    return notes.replace(regex, replace);
+  if (Array.isArray(notes)) {
+    return notes.map((note) =>
+      updateNotes(note, regex, replace, versionBumpFunction),
+    );
   }
 
-  let newNotes = [];
-  for (let note of notes) {
-    newNotes.push(note.replace(regex, replace));
-  }
-  return newNotes;
+  return notes
+    .replace(regex, replace)
+    .replace(
+      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
+      (match, p1) => replace + ' ' + versionBumpFunction(p1),
+    );
 };
 
 /**
@@ -300,7 +304,13 @@ const bumpGeneric = (sourceData, destination, source, notesRepl) => {
   }
 
   if (notesRepl && sourceData.notes) {
-    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
+    newData.notes = updateNotes(
+      sourceData.notes,
+      notesRepl[0],
+      notesRepl[1],
+      (v) =>
+        getMatchingBrowserVersion(destination, browsers[source].releases[v]),
+    );
   }
 
   return newData;
@@ -409,7 +419,12 @@ const bumpWebView = (sourceData) => {
   }
 
   if (sourceData.notes) {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+    newData.notes = updateNotes(
+      sourceData.notes,
+      /Chrome/g,
+      'WebView',
+      createWebViewRange,
+    );
   }
 
   return newData;
