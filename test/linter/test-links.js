@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
 
@@ -17,13 +16,13 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
 /**
  * Process the data for any errors within the links
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-export function processData(filename) {
+export function processData(rawData) {
   let errors = [];
 
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let actual = rawData;
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -245,14 +244,16 @@ function processLink(errors, actual, regexp, matchHandler) {
 /**
  * Test for any malformed links
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testLinks(filename) {
+export default function testLinks(rawData) {
+  // XXX This should use the parsed JSON data
+
   const logger = new Logger('Links');
 
   /** @type {Object[]} */
-  let errors = processData(filename);
+  let errors = processData(rawData);
 
   for (const error of errors) {
     logger.error(
