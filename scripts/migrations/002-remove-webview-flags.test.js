@@ -1,15 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
+
+import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
-
-const assert = require('assert').strict;
-
-const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
 
 /**
  * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output

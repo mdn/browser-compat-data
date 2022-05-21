@@ -1,10 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const { fdir } = require('fdir');
+import { fdir } from 'fdir';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 class DuplicateCompatError extends Error {
   constructor(feature) {
@@ -26,7 +29,7 @@ function load(...dirs) {
     const paths = new fdir()
       .withBasePath()
       .filter((fp) => fp.endsWith('.json'))
-      .crawl(dir)
+      .crawl(path.join(dirname, dir))
       .sync();
 
     for (const fp of paths) {
@@ -66,7 +69,7 @@ function extend(target, source, feature = '') {
   }
 }
 
-module.exports = load(
+export default load(
   'api',
   'browsers',
   'css',
