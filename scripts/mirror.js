@@ -121,6 +121,42 @@ const isVersionRemoved = (compatData, versionToCheck) => {
 };
 
 /**
+ * @param {string|string[]|null} notes1
+ * @param {string|string[]|null} notes2
+ * @returns {string|string[]|null}
+ */
+const combineNotes = (notes1, notes2) => {
+  let newNotes = [];
+
+  if (notes1) {
+    if (typeof notes1 === 'string') {
+      newNotes.push(notes1);
+    } else {
+      newNotes.push(...notes1);
+    }
+  }
+
+  if (notes2) {
+    if (typeof notes2 === 'string') {
+      newNotes.push(notes2);
+    } else {
+      newNotes.push(...notes2);
+    }
+  }
+
+  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
+
+  if (newNotes.length == 0) {
+    return null;
+  }
+  if (newNotes.length == 1) {
+    return newNotes[0];
+  }
+
+  return newNotes;
+};
+
+/**
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
@@ -153,6 +189,87 @@ const copyStatement = (data) => {
   }
 
   return newData;
+};
+
+/**
+ * @param {...SupportStatement} data
+ * @returns {SupportStatement}
+ */
+const combineStatements = (...data) => {
+  const ignoredKeys = ['version_added', 'notes'];
+
+  const flattenedData = data.flat(2);
+  const sections = {};
+  let newData = [];
+
+  for (const d of flattenedData) {
+    const key = Object.keys(d)
+      .filter((k) => !ignoredKeys.includes(k))
+      .join('');
+    if (!(key in sections)) sections[key] = [];
+    sections[key].push(d);
+  }
+
+  for (const k of Object.keys(sections)) {
+    const currentStatement = sections[k][0];
+
+    if (sections[k].length == 1) {
+      newData.push(currentStatement);
+      continue;
+    }
+
+    for (const i in sections[k]) {
+      if (i === 0) continue;
+      const newStatement = sections[k][i];
+
+      const currentVA = currentStatement.version_added;
+      const newVA = newStatement.version_added;
+
+      if (newVA === false) {
+        // Ignore statements with version_added being false
+        continue;
+      } else if (typeof newVA === 'string') {
+        if (
+          typeof currentVA !== 'string' ||
+          compareVersions.compare(
+            currentVA.replace('≤', ''),
+            newVA.replace('≤', ''),
+            '>',
+          )
+        ) {
+          currentStatement.version_added = newVA;
+        }
+      }
+
+      const newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      if (newNotes) currentStatement.notes = newNotes;
+    }
+
+    if ('notes' in currentStatement && !currentStatement.notes) {
+      delete currentStatement.notes;
+    }
+    newData.push(currentStatement);
+  }
+
+  if (newData.length === 1) {
+    return newData[0];
+  }
+
+  // Remove duplicate statements and statements that are only version_added = false
+  newData = newData
+    .filter((item, pos) => newData.indexOf(item) == pos)
+    .filter((item) => item.version_added);
+
+  switch (newData.length) {
+    case 0:
+      return { version_added: false };
+
+    case 1:
+      return newData[0];
+
+    default:
+      return newData;
+  }
 };
 
 /**
@@ -311,10 +428,11 @@ const bumpVersion = (sourceData, destination, targetVersion) => {
   }
 
   if (Array.isArray(sourceData)) {
-    newData = [];
-    for (let i = 0; i < sourceData.length; i++) {
-      newData[i] = bumpVersion(sourceData[i], destination, targetVersion);
-    }
+    newData = combineStatements(
+      ...sourceData.map((data) =>
+        bumpVersion(data, destination, targetVersion),
+      ),
+    );
   } else {
     let bumpFunction = null;
 
