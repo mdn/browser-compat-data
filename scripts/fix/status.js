@@ -1,13 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import { readFileSync, writeFileSync } from 'node:fs';
 
-import { readFileSync, writeFileSync } from 'fs';
-import { platform } from 'os';
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 const fixStatusContradiction = (key, value) => {
   const status = value?.__compat?.status;
@@ -22,7 +18,11 @@ const fixStatusContradiction = (key, value) => {
  */
 const fixStatus = (filename) => {
   let actual = readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatusContradiction), null, 2);
+  let expected = JSON.stringify(
+    JSON.parse(actual, fixStatusContradiction),
+    null,
+    2,
+  );
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows

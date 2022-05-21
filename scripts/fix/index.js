@@ -9,7 +9,7 @@ import esMain from 'es-main';
 import fixBrowserOrder from './browser-order.js';
 import fixFeatureOrder from './feature-order.js';
 import fixLinks from './links.js';
-import fixStatusContradiction from './status-contradiction.js';
+import fixStatus from './status.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -35,7 +35,7 @@ function load(...files) {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
         fixLinks(file);
-        fixStatusContradiction(file);
+        fixStatus(file);
       }
 
       continue;
@@ -68,4 +68,4 @@ if (esMain(import.meta)) {
   }
 }
 
-module.exports = load;
+export default load;
