@@ -66,5 +66,4 @@ if (esMain(import.meta)) {
   }
 }
 
-module.exports = load;
 export default load;
