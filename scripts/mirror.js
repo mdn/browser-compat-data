@@ -523,7 +523,7 @@ const doSetFeature = (
   }
 
   if (doBump) {
-    let source = getSource(browser);
+    let source = browsers[browser].upstream;
     let newValue = bumpVersion(comp[source], browser, targetVersion);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
