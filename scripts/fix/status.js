@@ -23,7 +23,11 @@ const fixStatusInheritance = (parentKey, parentValue) => {
     if (!childStatus?.deprecated && parentStatus.deprecated) {
       childStatus.deprecated = true;
     }
-    if (!childStatus?.experimental && parentStatus.experimental) {
+    if (
+      !childStatus?.experimental &&
+      !childStatus.deprecated &&
+      parentStatus.experimental
+    ) {
       childStatus.experimental = true;
     }
     if (childStatus?.standard_track && !parentStatus.standard_track) {

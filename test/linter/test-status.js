@@ -27,9 +27,13 @@ function checkStatusInheritance(data, logger, parentStatus, path = []) {
         chalk`Run {bold npm run fix} to fix this issue automatically`,
       );
     }
-    if (!childStatus.experimental && parentStatus.experimental) {
+    if (
+      !childStatus.experimental &&
+      !childStatus.deprecated &&
+      parentStatus.experimental
+    ) {
       logger.error(
-        `Unexpected non-experimental status while the parent is experimental, in ${path.join(
+        `Unexpected non-experimental and non-deprecated status while the parent is experimental, in ${path.join(
           '.',
         )}`,
         chalk`Run {bold npm run fix} to fix this issue automatically`,
