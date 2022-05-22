@@ -755,4 +755,4 @@ if (esMain(import.meta)) {
   );
 }
 
-export default mirrorData;
+export default getMatchingBrowserVersion;
