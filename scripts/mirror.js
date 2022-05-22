@@ -714,6 +714,7 @@ if (esMain(import.meta)) {
         .positional('browser', {
           describe: 'The destination browser',
           type: 'string',
+          choices: Object.keys(browsers).filter((b) => browsers[b].upstream),
         })
         .positional('feature_or_path', {
           describe: 'Features, files, or folders to perform mirroring for',
