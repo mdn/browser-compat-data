@@ -1,14 +1,16 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-const fs = require('fs');
-const { platform } = require('os');
+import { readFileSync, writeFileSync } from 'node:fs';
 
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import { IS_WINDOWS } from '../../test/utils.js';
 
-const fixStatus = (parentKey, parentValue) => {
+/**
+ * @param {string} parentKey
+ * @param {import('../../types.js').Identifier} parentValue
+ * @returns
+ */
+const fixStatusInheritance = (parentKey, parentValue) => {
   const parentStatus = parentValue?.__compat?.status;
   if (!parentStatus) {
     return parentValue;
@@ -24,6 +26,9 @@ const fixStatus = (parentKey, parentValue) => {
     if (!childStatus?.experimental && parentStatus.experimental) {
       childStatus.experimental = true;
     }
+    if (childStatus?.standard_track && !parentStatus.standard_track) {
+      childStatus.standard_track = false;
+    }
   }
   return parentValue;
 };
@@ -31,9 +36,13 @@ const fixStatus = (parentKey, parentValue) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixStatusInheritance = (filename) => {
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
+const fixStatus = (filename) => {
+  let actual = readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(
+    JSON.parse(actual, fixStatusInheritance),
+    null,
+    2,
+  );
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
@@ -42,8 +51,8 @@ const fixStatusInheritance = (filename) => {
   }
 
   if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
+    writeFileSync(filename, expected + '\n', 'utf-8');
   }
 };
 
-module.exports = fixStatusInheritance;
+export default fixStatus;

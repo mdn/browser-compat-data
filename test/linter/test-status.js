@@ -15,22 +15,32 @@ import { Logger } from '../utils.js';
  * @param {StatusBlock?} parentStatus,
  * @param {string[]} path
  */
-function checkStatusInheritance(data, logger, parentStatus = {}, path = []) {
+function checkStatusInheritance(data, logger, parentStatus, path = []) {
   /** @type {StatusBlock} */
   const childStatus = data.__compat?.status;
-  if (childStatus) {
+  if (childStatus && parentStatus) {
     if (!childStatus.deprecated && parentStatus.deprecated) {
       logger.error(
-        chalk`{red → Unexpected non-deprecated status while the parent is deprecated, in ${path.join(
+        `Unexpected non-deprecated status while the parent is deprecated, in ${path.join(
           '.',
-        )}}`,
+        )}`,
+        chalk`Run {bold npm run fix} to fix this issue automatically`,
       );
     }
     if (!childStatus.experimental && parentStatus.experimental) {
       logger.error(
-        chalk`{red → Unexpected non-experimental status while the parent is experimental, in ${path.join(
+        `Unexpected non-experimental status while the parent is experimental, in ${path.join(
           '.',
-        )}}`,
+        )}`,
+        chalk`Run {bold npm run fix} to fix this issue automatically`,
+      );
+    }
+    if (childStatus?.standard_track && !parentStatus.standard_track) {
+      logger.error(
+        `Unexpected standard track status while the parent is nonstandard, in ${path.join(
+          '.',
+        )}`,
+        chalk`Run {bold npm run fix} to fix this issue automatically`,
       );
     }
   }
