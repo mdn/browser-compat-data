@@ -1,13 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const { platform } = require('os');
-const chalk = require('chalk');
+import { platform } from 'node:os';
+import chalk from 'chalk-template';
 
 /** @type {{readonly [char: string]: string}} */
-const INVISIBLES_MAP = Object.freeze(
+export const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
     '\b': '\\b', // ␈ (0x08)
@@ -18,20 +16,37 @@ const INVISIBLES_MAP = Object.freeze(
     '\r': '\\r', // ␍ (0x0D)
   }),
 );
-const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
+
+/* eslint-disable-next-line no-control-regex */
+export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+export const IS_CI =
+  process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+export const IS_WINDOWS = platform() === 'win32';
+
+/** @type {string[]} */
+export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
+/**
+ * Pluralizes a string
+ *
+ * @param {string} word Word in singular form
+ * @param {number} quantifier
+ * @return {string}
+ */
+export const pluralize = (word, quantifier) => {
+  return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
+};
 
 /**
  * Escapes common invisible characters.
  *
  * @param {string} str
  */
-function escapeInvisibles(str) {
+export function escapeInvisibles(str) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
@@ -46,7 +61,7 @@ function escapeInvisibles(str) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-function indexToPosRaw(str, index) {
+export function indexToPosRaw(str, index) {
   let line = 1,
     col = 1;
   let prevChar = null;
@@ -64,6 +79,7 @@ function indexToPosRaw(str, index) {
     switch (char) {
       case '\n':
         if (prevChar === '\r') break;
+      // fall through
       case '\r':
         line++;
         col = 1;
@@ -89,7 +105,7 @@ function indexToPosRaw(str, index) {
  * @param {number} index
  * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-function indexToPos(str, index) {
+export function indexToPos(str, index) {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
 }
@@ -99,25 +115,50 @@ function indexToPos(str, index) {
  * @param {string} expected
  * @return {string}
  */
-function jsonDiff(actual, expected) {
+export function jsonDiff(actual, expected) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return chalk`{bold line #${i + 1}}
-    {yellow Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
-    {green Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
+      return chalk`{bold line #${i + 1}}:
+      {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
+      {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
 }
 
-module.exports = {
-  INVISIBLES_MAP,
-  IS_CI,
-  IS_WINDOWS,
-  escapeInvisibles,
-  indexToPosRaw,
-  indexToPos,
-  jsonDiff,
-};
+export class Logger {
+  /** @param {string} title */
+  constructor(title) {
+    this.title = title;
+    this.errors = [];
+  }
+
+  /**
+   * @param {string} message
+   * @param {string} tip
+   */
+  error(message, tip) {
+    this.errors.push({ message: message, tip: tip });
+  }
+
+  emit() {
+    const errorCount = this.errors.length;
+
+    if (errorCount) {
+      console.error(
+        chalk`{red   → ${this.title} – ${pluralize('error', errorCount)}:}`,
+      );
+
+      for (const error of this.errors) {
+        console.error(chalk`    {red → ${error.message}}`);
+        if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
+      }
+    }
+  }
+
+  hasErrors() {
+    return !!this.errors.length;
+  }
+}
