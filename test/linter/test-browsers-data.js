@@ -5,6 +5,9 @@ import chalk from 'chalk-template';
 
 import { Logger } from '../utils.js';
 
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
 /**
  * @typedef {import('../../types').Identifier} Identifier
  * @typedef {import('../utils').Logger} Logger
@@ -19,18 +22,33 @@ function processData(data, logger) {
   // We only need to grab the first browser in the data
   // because each browser file only contains one browser
   const browser = Object.keys(data.browsers)[0];
-  const releases = data.browsers[browser].releases;
+  const browserData = data.browsers[browser];
 
   for (const status of ['current', 'beta', 'nightly']) {
-    const releasesForStatus = Object.entries(releases)
+    const releasesForStatus = Object.entries(browserData.releases)
       .filter(([, data]) => data.status == status)
       .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(
-        chalk`{red → {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
+        chalk`{red {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
           ', ',
         )}), which is {bold not} allowed.}`,
+      );
+    }
+  }
+
+  // Ensure the `upstream` property, if it exists, is valid
+  if (browserData.upstream) {
+    if (browserData.upstream === browser) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is set to itself.}`,
+      );
+    }
+
+    if (!Object.keys(browsers).includes(browserData.upstream)) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${browserData.upstream}).}`,
       );
     }
   }
