@@ -400,6 +400,11 @@ const bumpVersion = (sourceData, destination, targetVersion) => {
     }
   }
 
+  if (!browsers[destination].accepts_flags && newData.flags) {
+    // Remove flag data if the target browser doesn't accept flags
+    return null;
+  }
+
   return newData;
 };
 
