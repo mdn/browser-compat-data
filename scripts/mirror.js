@@ -167,22 +167,26 @@ const combineNotes = (notes1, notes2) => {
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
+ * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {string|string[]|null}
  */
-const updateNotes = (notes, regex, replace) => {
-  if (notes === null || notes === undefined) {
+const updateNotes = (notes, regex, replace, versionMapper) => {
+  if (!notes) {
     return null;
   }
 
-  if (typeof notes === 'string') {
-    return notes.replace(regex, replace);
+  if (Array.isArray(notes)) {
+    return notes.map((note) =>
+      updateNotes(note, regex, replace, versionMapper),
+    );
   }
 
-  let newNotes = [];
-  for (let note of notes) {
-    newNotes.push(note.replace(regex, replace));
-  }
-  return newNotes;
+  return notes
+    .replace(regex, replace)
+    .replace(
+      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
+      (match, p1) => replace + ' ' + versionMapper(p1),
+    );
 };
 
 /**
@@ -306,8 +310,17 @@ const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
     });
   }
 
-  if (notesRepl && typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
+  if (notesRepl && sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      notesRepl[0],
+      notesRepl[1],
+      (v) =>
+        getMatchingBrowserVersion(targetBrowser, {
+          browser: sourceBrowser,
+          version: v,
+        }),
+    );
   }
 
   return newData;
@@ -415,8 +428,13 @@ const bumpWebView = (sourceData) => {
     newData.version_removed = createWebViewRange(sourceData.version_removed);
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+  if (sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      /Chrome/g,
+      'WebView',
+      createWebViewRange,
+    );
   }
 
   return newData;
