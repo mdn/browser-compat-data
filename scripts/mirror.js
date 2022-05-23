@@ -291,7 +291,7 @@ const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'chrome_android', 'chrome');
+  return bumpGeneric(sourceData, 'chrome_android');
 };
 
 /**
