@@ -56,6 +56,11 @@ export interface BrowserStatement {
   type: BrowserTypes;
 
   /**
+   * The upstream browser
+   */
+  upstream?: string;
+
+  /**
    * Whether the browser supports flags to enable or disable features.
    */
   accepts_flags?: boolean;

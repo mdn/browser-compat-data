@@ -23,20 +23,17 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (targetBrowser, source) => {
-  const { browser: sourceBrowser, version: sourceVersion } = source;
-
-  const range = sourceVersion.includes('≤');
-  const sourceRelease =
-    browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
-
+const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
+
+  const range = sourceVersion.includes('≤');
+  const sourceRelease =
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
@@ -69,29 +66,6 @@ const getMatchingBrowserVersion = (targetBrowser, source) => {
   }
 
   return false;
-};
-
-/**
- * @param {string} browser
- * @returns {string}
- */
-const getSource = (browser) => {
-  switch (browser) {
-    case 'chrome_android':
-    case 'edge':
-    case 'opera':
-      return 'chrome';
-    case 'opera_android':
-    case 'samsunginternet_android':
-    case 'webview_android':
-      return 'chrome_android';
-    case 'firefox_android':
-      return 'firefox';
-    case 'safari_ios':
-      return 'safari';
-    default:
-      throw Error(`${browser} cannot be used as a mirroring destination.`);
-  }
 };
 
 /**
@@ -167,22 +141,26 @@ const combineNotes = (notes1, notes2) => {
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
+ * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {string|string[]|null}
  */
-const updateNotes = (notes, regex, replace) => {
-  if (notes === null || notes === undefined) {
+const updateNotes = (notes, regex, replace, versionMapper) => {
+  if (!notes) {
     return null;
   }
 
-  if (typeof notes === 'string') {
-    return notes.replace(regex, replace);
+  if (Array.isArray(notes)) {
+    return notes.map((note) =>
+      updateNotes(note, regex, replace, versionMapper),
+    );
   }
 
-  let newNotes = [];
-  for (let note of notes) {
-    newNotes.push(note.replace(regex, replace));
-  }
-  return newNotes;
+  return notes
+    .replace(regex, replace)
+    .replace(
+      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
+      (match, p1) => replace + ' ' + versionMapper(p1),
+    );
 };
 
 /**
@@ -282,32 +260,40 @@ const combineStatements = (...data) => {
 /**
  * @param {SupportStatement} sourceData
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
+const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_added,
-    });
+    newData.version_added = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_added,
+    );
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_removed,
-    });
+    newData.version_removed = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_removed,
+    );
   }
 
-  if (notesRepl && typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
+  if (notesRepl && sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      notesRepl[0],
+      notesRepl[1],
+      (v) =>
+        getMatchingBrowserVersion(targetBrowser, {
+          browser: sourceBrowser,
+          version: v,
+        }),
+    );
   }
 
   return newData;
@@ -326,7 +312,7 @@ const bumpEdge = (sourceData) => {
     return { version_added: false };
   }
 
-  return bumpGeneric(sourceData, 'edge', 'chrome', [/Chrome/g, 'Edge']);
+  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
 };
 
 /**
@@ -361,8 +347,13 @@ const bumpWebView = (sourceData) => {
     newData.version_removed = createWebViewRange(sourceData.version_removed);
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+  if (sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      /Chrome/g,
+      'WebView',
+      createWebViewRange,
+    );
   }
 
   return newData;
@@ -458,7 +449,7 @@ const doSetFeature = (
   }
 
   if (doBump) {
-    let source = getSource(browser);
+    let source = browsers[browser].upstream;
     let newValue = bumpVersion(comp[source], browser, targetVersion);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
@@ -649,6 +640,7 @@ if (esMain(import.meta)) {
         .positional('browser', {
           describe: 'The destination browser',
           type: 'string',
+          choices: Object.keys(browsers).filter((b) => browsers[b].upstream),
         })
         .positional('feature_or_path', {
           describe: 'Features, files, or folders to perform mirroring for',
