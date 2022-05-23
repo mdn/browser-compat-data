@@ -379,18 +379,18 @@ const bumpVersion = (sourceData, destination, targetVersion) => {
     );
   }
 
-  let notesRepl;
-  if (destination.includes('opera')) {
-    notesRepl = [/Chrome/g, 'Opera'];
-  } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/Chrome/g, 'Samsung Internet'];
-  }
-
   if (destination === 'edge') {
     newData = bumpEdge(sourceData);
   } else if (destination === 'webview_android') {
     newData = bumpWebView(sourceData);
   } else {
+    let notesRepl;
+    if (destination.includes('opera')) {
+      notesRepl = [/Chrome/g, 'Opera'];
+    } else if (destination === 'samsunginternet_android') {
+      notesRepl = [/Chrome/g, 'Samsung Internet'];
+    }
+
     newData = bumpGeneric(sourceData, destination, notesRepl);
   }
 
