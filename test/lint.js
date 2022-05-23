@@ -20,6 +20,7 @@ import {
   testNotes,
   testPrefix,
   testSchema,
+  testStatus,
   testStyle,
   testVersions,
 } from './linter/index.js';
@@ -82,9 +83,7 @@ const checkFiles = (...files) => {
       };
 
       try {
-        const rawFileData = fs
-          .readFileSync(new URL(file, import.meta.url), 'utf-8')
-          .trim();
+        const rawFileData = fs.readFileSync(file, 'utf-8').trim();
         const fileData = JSON.parse(rawFileData);
 
         testSchema(fileData, filePath);
@@ -97,6 +96,7 @@ const checkFiles = (...files) => {
           testConsistency(fileData);
           testDescriptions(fileData);
           testPrefix(fileData, filePath);
+          testStatus(fileData);
           testStyle(rawFileData);
           testVersions(fileData);
           testNotes(fileData);
