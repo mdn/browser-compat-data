@@ -6,11 +6,9 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
- * @param {string} parentKey
  * @param {import('../../types.js').Identifier} parentValue
- * @returns
  */
-const fixStatusInheritance = (parentKey, parentValue) => {
+const fixStatusInheritance = (parentValue) => {
   const parentStatus = parentValue?.__compat?.status;
   if (!parentStatus) {
     return parentValue;
@@ -38,15 +36,33 @@ const fixStatusInheritance = (parentKey, parentValue) => {
 };
 
 /**
+ * @param {import('../../types.js').Identifier} parentValue
+ */
+const fixStatusContradiction = (value) => {
+  const status = value?.__compat?.status;
+  if (status && status.experimental && status.deprecated) {
+    status.experimental = false;
+  }
+  return value;
+};
+
+/**
+ * @param {string} key
+ * @param {import('../../types.js').Identifier} value
+ * @returns
+ */
+const fixAll = (key, value) => {
+  value = fixStatusContradiction(value);
+  value = fixStatusInheritance(value);
+  return value;
+};
+
+/**
  * @param {Promise<void>} filename
  */
 const fixStatus = (filename) => {
   let actual = readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(
-    JSON.parse(actual, fixStatusInheritance),
-    null,
-    2,
-  );
+  let expected = JSON.stringify(JSON.parse(actual, fixAll), null, 2);
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows

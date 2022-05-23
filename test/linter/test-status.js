@@ -9,15 +9,24 @@ import { Logger } from '../utils.js';
  * @typedef {import('../../types.js').StatusBlock} StatusBlock
  */
 
+function checkStatusContradiction(status, logger, path = []) {
+  if (status && status.experimental && status.deprecated) {
+    logger.error(
+      chalk`Unexpected simultaneous experimental and deprecated status in ${path.join(
+        '.',
+      )}`,
+      chalk`Run {bold npm run fix} to fix this issue automatically`,
+    );
+  }
+}
+
 /**
- * @param {Identifier} data
+ * @param {StatusBlock} childStatus
+ * @param {StatusBlock?} parentStatus
  * @param {Logger} logger
- * @param {StatusBlock?} parentStatus,
  * @param {string[]} path
  */
-function checkStatusInheritance(data, logger, parentStatus, path = []) {
-  /** @type {StatusBlock} */
-  const childStatus = data.__compat?.status;
+ function checkStatusInheritance(childStatus, parentStatus, logger, path = []) {
   if (childStatus && parentStatus) {
     if (!childStatus.deprecated && parentStatus.deprecated) {
       logger.error(
@@ -48,24 +57,36 @@ function checkStatusInheritance(data, logger, parentStatus, path = []) {
       );
     }
   }
+}
+
+/**
+ * @param {Identifier} data
+ * @param {Logger} logger
+ * @param {StatusBlock?} parentStatus,
+ * @param {string[]} path
+ */
+function checkStatus(data, logger, parentStatus, path = []) {
+  const childStatus = data.__compat?.status;
+
+  checkStatusContradiction(childStatus, logger, path);
+  checkStatusInheritance(childStatus, parentStatus, logger, path);
+
   for (const member in data) {
     if (member === '__compat') {
       continue;
     }
-    checkStatusInheritance(data[member], logger, childStatus, [
-      ...path,
-      member,
-    ]);
+    checkStatus(data[member], logger, childStatus, [...path, member]);
   }
 }
 
 /**
  * @param {Identifier} data The contents of the file to test
+ * @returns {boolean} If the file contains errors
  */
-export default function testStatusInheritance(data) {
-  const logger = new Logger('Status inheritance');
+export default function testStatus(data) {
+  const logger = new Logger('Status');
 
-  checkStatusInheritance(data, logger);
+  checkStatus(data, logger);
 
   logger.emit();
   return logger.hasErrors();
