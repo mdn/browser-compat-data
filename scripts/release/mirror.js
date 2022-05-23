@@ -349,9 +349,8 @@ const bumpWebView = (sourceData) => {
 /**
  * @param {SupportStatement} data
  * @param {string} destination
- * @param {string} targetVersion
  */
-export const bumpVersion = (sourceData, destination, targetVersion) => {
+export const bumpVersion = (sourceData, destination) => {
   let newData = null;
 
   if (sourceData == null) {
@@ -360,9 +359,7 @@ export const bumpVersion = (sourceData, destination, targetVersion) => {
 
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map((data) =>
-        bumpVersion(data, destination, targetVersion),
-      ),
+      ...sourceData.map((data) => bumpVersion(data, destination)),
     );
   }
 
@@ -379,16 +376,6 @@ export const bumpVersion = (sourceData, destination, targetVersion) => {
     }
 
     newData = bumpGeneric(sourceData, destination, notesRepl);
-  }
-
-  if (targetVersion) {
-    if (
-      !isVersionAdded(newData, targetVersion) &&
-      !isVersionRemoved(newData, targetVersion)
-    ) {
-      // If the target browser version isn't affected, don't update data
-      return null;
-    }
   }
 
   return newData;
