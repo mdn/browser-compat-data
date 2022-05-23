@@ -23,20 +23,17 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (targetBrowser, source) => {
-  const { browser: sourceBrowser, version: sourceVersion } = source;
-
-  const range = sourceVersion.includes('≤');
-  const sourceRelease =
-    browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
-
+const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
+
+  const range = sourceVersion.includes('≤');
+  const sourceRelease =
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
@@ -69,29 +66,6 @@ const getMatchingBrowserVersion = (targetBrowser, source) => {
   }
 
   return false;
-};
-
-/**
- * @param {string} browser
- * @returns {string}
- */
-const getSource = (browser) => {
-  switch (browser) {
-    case 'chrome_android':
-    case 'edge':
-    case 'opera':
-      return 'chrome';
-    case 'opera_android':
-    case 'samsunginternet_android':
-    case 'webview_android':
-      return 'chrome_android';
-    case 'firefox_android':
-      return 'firefox';
-    case 'safari_ios':
-      return 'safari';
-    default:
-      throw Error(`${browser} cannot be used as a mirroring destination.`);
-  }
 };
 
 /**
@@ -286,28 +260,27 @@ const combineStatements = (...data) => {
 /**
  * @param {SupportStatement} sourceData
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
+const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_added,
-    });
+    newData.version_added = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_added,
+    );
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_removed,
-    });
+    newData.version_removed = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_removed,
+    );
   }
 
   if (notesRepl && sourceData.notes) {
@@ -331,7 +304,7 @@ const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'chrome_android', 'chrome');
+  return bumpGeneric(sourceData, 'chrome_android');
 };
 
 /**
@@ -347,7 +320,7 @@ const bumpEdge = (sourceData) => {
     return { version_added: false };
   }
 
-  return bumpGeneric(sourceData, 'edge', 'chrome', [/Chrome/g, 'Edge']);
+  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
 };
 
 /**
@@ -355,7 +328,7 @@ const bumpEdge = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpFirefoxAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'firefox_android', 'firefox');
+  return bumpGeneric(sourceData, 'firefox_android');
 };
 
 /**
@@ -363,7 +336,7 @@ const bumpFirefoxAndroid = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOpera = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera', 'chrome', [/Chrome/g, 'Opera']);
+  return bumpGeneric(sourceData, 'opera', [/Chrome/g, 'Opera']);
 };
 
 /**
@@ -371,10 +344,7 @@ const bumpOpera = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOperaAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera_android', 'chrome_android', [
-    /Chrome/g,
-    'Opera',
-  ]);
+  return bumpGeneric(sourceData, 'opera_android', [/Chrome/g, 'Opera']);
 };
 
 /**
@@ -382,7 +352,7 @@ const bumpOperaAndroid = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpSafariiOS = (sourceData) => {
-  return bumpGeneric(sourceData, 'safari_ios', 'safari');
+  return bumpGeneric(sourceData, 'safari_ios');
 };
 
 /**
@@ -390,7 +360,7 @@ const bumpSafariiOS = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpSamsungInternet = (sourceData) => {
-  return bumpGeneric(sourceData, 'samsunginternet_android', 'chrome_android', [
+  return bumpGeneric(sourceData, 'samsunginternet_android', [
     /Chrome/g,
     'Samsung Internet',
   ]);
@@ -548,7 +518,7 @@ const doSetFeature = (
   }
 
   if (doBump) {
-    let source = getSource(browser);
+    let source = browsers[browser].upstream;
     let newValue = bumpVersion(comp[source], browser, targetVersion);
     if (newValue !== null) {
       newData[rootPath].__compat.support[browser] = newValue;
@@ -739,6 +709,7 @@ if (esMain(import.meta)) {
         .positional('browser', {
           describe: 'The destination browser',
           type: 'string',
+          choices: Object.keys(browsers).filter((b) => browsers[b].upstream),
         })
         .positional('feature_or_path', {
           describe: 'Features, files, or folders to perform mirroring for',
