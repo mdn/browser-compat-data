@@ -60,39 +60,6 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
 };
 
 /**
- * @param {SupportStatement} compatData
- * @param {string | null} versionToCheck
- * @return {string | null}
- */
-const isVersionAdded = (compatData, versionToCheck) => {
-  if (Array.isArray(compatData)) {
-    return compatData.some((s) => s.version_added == versionToCheck);
-  }
-
-  if (typeof compatData.version_added === 'string') {
-    return compatData.version_added == versionToCheck;
-  }
-
-  return false;
-};
-
-/**
- * @param {SupportStatement} compatData
- * @param {string | null} versionToCheck
- * @return {string | null}
- */
-const isVersionRemoved = (compatData, versionToCheck) => {
-  if (typeof compatData.version_removed === 'string')
-    return compatData.version_removed == versionToCheck;
-
-  if (compatData.constructor === Array) {
-    return compatData.some((s) => s.version_removed === versionToCheck);
-  }
-
-  return false;
-};
-
-/**
  * @param {string|string[]|null} notes1
  * @param {string|string[]|null} notes2
  * @returns {string|string[]|null}
