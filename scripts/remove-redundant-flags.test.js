@@ -1,14 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
-const assert = require('assert');
-
-const { removeRedundantFlags } = require('./remove-redundant-flags.js');
+import { removeRedundantFlags } from './remove-redundant-flags.js';
 
 const cutoffDate = Date.parse('2019-01-01T00:00Z');
 

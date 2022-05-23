@@ -1,18 +1,19 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
+import compareVersions from 'compare-versions';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-const compareVersions = require('compare-versions');
+import bcd from '../index.js';
+import { IS_WINDOWS } from '../test/utils.js';
 
-const bcd = require('..');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const getEarliestVersion = (...args) => {
   const versions = args
@@ -33,7 +34,7 @@ const getEarliestVersion = (...args) => {
   return earliestVersion;
 };
 
-const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
+export const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
       if (limitBrowser && browser != limitBrowser) continue;
@@ -102,9 +103,9 @@ const removeRedundantFlags = (key, value, limitBrowser, cutoffDate) => {
 /**
  * @param {Promise<void>} filename
  */
-const fixRedundantFlags = (filename, limitBrowser, cutoffDate) => {
-  const actual = fs.readFileSync(filename, 'utf-8').trim();
-  const expected = JSON.stringify(
+export const fixRedundantFlags = (filename, limitBrowser, cutoffDate) => {
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(
     JSON.parse(actual, (k, v) =>
       removeRedundantFlags(k, v, limitBrowser, cutoffDate),
     ),
@@ -124,40 +125,33 @@ const fixRedundantFlags = (filename, limitBrowser, cutoffDate) => {
 };
 
 const main = (files_or_folders, browser, cutoffDate) => {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixRedundantFlags(file, browser, cutoffDate);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
+  for (let file of files_or_folders) {
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
-  }
 
-  load(...files_or_folders);
+    if (!fs.existsSync(file)) {
+      continue; // Ignore non-existent files
+    }
+
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        fixRedundantFlags(file, browser, cutoffDate);
+      }
+
+      continue;
+    }
+
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    main(subFiles, browser, cutoffDate);
+  }
 };
 
-if (require.main === module) {
-  const { argv } = require('yargs').command(
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [file]',
     'Remove data for flags that have been removed two years back or more',
     (yargs) => {
@@ -191,5 +185,3 @@ if (require.main === module) {
 
   main(argv.file, argv.browser, cutoffDate);
 }
-
-module.exports = { removeRedundantFlags, fixRedundantFlags };
