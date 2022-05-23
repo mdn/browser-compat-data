@@ -299,14 +299,6 @@ const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
  * @param {SupportStatement} sourceData
  * @returns {SupportStatement}
  */
-const bumpChromeAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'chrome_android');
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
 const bumpEdge = (sourceData) => {
   if (
     typeof sourceData.version_removed === 'string' &&
@@ -317,49 +309,6 @@ const bumpEdge = (sourceData) => {
   }
 
   return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpFirefoxAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'firefox_android');
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpOpera = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera', [/Chrome/g, 'Opera']);
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpOperaAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera_android', [/Chrome/g, 'Opera']);
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpSafariiOS = (sourceData) => {
-  return bumpGeneric(sourceData, 'safari_ios');
-};
-
-/**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpSamsungInternet = (sourceData) => {
-  return bumpGeneric(sourceData, 'samsunginternet_android', [
-    /Chrome/g,
-    'Samsung Internet',
-  ]);
 };
 
 /**
@@ -419,44 +368,26 @@ const bumpVersion = (sourceData, destination, targetVersion) => {
   }
 
   if (Array.isArray(sourceData)) {
-    newData = combineStatements(
+    return combineStatements(
       ...sourceData.map((data) =>
         bumpVersion(data, destination, targetVersion),
       ),
     );
-  } else {
-    let bumpFunction = null;
+  }
 
-    switch (destination) {
-      case 'chrome_android':
-        bumpFunction = bumpChromeAndroid;
-        break;
-      case 'edge':
-        bumpFunction = bumpEdge;
-        break;
-      case 'firefox_android':
-        bumpFunction = bumpFirefoxAndroid;
-        break;
-      case 'opera':
-        bumpFunction = bumpOpera;
-        break;
-      case 'opera_android':
-        bumpFunction = bumpOperaAndroid;
-        break;
-      case 'safari_ios':
-        bumpFunction = bumpSafariiOS;
-        break;
-      case 'samsunginternet_android':
-        bumpFunction = bumpSamsungInternet;
-        break;
-      case 'webview_android':
-        bumpFunction = bumpWebView;
-        break;
-      default:
-        throw new Error(`Unknown target browser ${destination}!`);
+  if (destination === 'edge') {
+    newData = bumpEdge(sourceData);
+  } else if (destination === 'webview_android') {
+    newData = bumpWebView(sourceData);
+  } else {
+    let notesRepl;
+    if (destination.includes('opera')) {
+      notesRepl = [/Chrome/g, 'Opera'];
+    } else if (destination === 'samsunginternet_android') {
+      notesRepl = [/Chrome/g, 'Samsung Internet'];
     }
 
-    newData = bumpFunction(sourceData);
+    newData = bumpGeneric(sourceData, destination, notesRepl);
   }
 
   if (targetVersion) {
