@@ -9,6 +9,7 @@ import testLinks from './test-links.js';
 import testNotes from './test-notes.js';
 import testPrefix from './test-prefix.js';
 import testSchema from './test-schema.js';
+import testStatus from './test-status.js';
 import testStyle from './test-style.js';
 import { testSupportHistory } from './test-support-history.js';
 import testVersions from './test-versions.js';
@@ -22,6 +23,7 @@ export {
   testNotes,
   testPrefix,
   testSchema,
+  testStatus,
   testStyle,
   testSupportHistory,
   testVersions,

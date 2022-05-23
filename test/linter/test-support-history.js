@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import { Logger } from '../utils.js';
 
 /**
@@ -45,9 +45,7 @@ export function hasSupportHistory(data) {
  */
 function check(data, logger, path = []) {
   if (data.__compat && !hasSupportHistory(data)) {
-    logger.error(
-      chalk`{red → No support and no tracking bug in ${path.join('.')}}`,
-    );
+    logger.error(chalk`No support and no tracking bug in ${path.join('.')}`);
   }
   for (const member in data) {
     if (member === '__compat') {

@@ -20,6 +20,7 @@ import {
   testNotes,
   testPrefix,
   testSchema,
+  testStatus,
   testStyle,
   testSupportHistory,
   testVersions,
@@ -96,6 +97,7 @@ const checkFiles = (...files) => {
           testConsistency(fileData);
           testDescriptions(fileData);
           testPrefix(fileData, filePath);
+          testStatus(fileData);
           testStyle(rawFileData);
           testSupportHistory(fileData);
           testVersions(fileData);
