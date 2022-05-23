@@ -18,9 +18,9 @@ const { browsers } = bcd;
  */
 const fixStatus = (key, value) => {
   const compat = value?.__compat;
-  if (compat) {
-    if (status && status.experimental && status.deprecated) {
-      status.experimental = false;
+  if (compat?.status) {
+    if (compat.status.experimental && compat.status.deprecated) {
+      compat.status.experimental = false;
     }
 
     if (compat.spec_url && compat.status.standard_track === false) {
