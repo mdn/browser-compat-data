@@ -170,7 +170,7 @@ const updateNotes = (notes, regex, replace, versionMapper) => {
 
   if (Array.isArray(notes)) {
     return notes.map((note) =>
-      updateNotes(note, regex, replace, versionBumpFunction),
+      updateNotes(note, regex, replace, versionMapper),
     );
   }
 
