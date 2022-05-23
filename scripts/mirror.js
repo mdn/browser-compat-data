@@ -22,37 +22,43 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  */
 
 /**
- * @param {string} dest_browser
- * @param {ReleaseStatement} source_release
+ * @param {string} targetBrowser
+ * @param {string} sourceBrowser
+ * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-const getMatchingBrowserVersion = (dest_browser, source_release) => {
-  const browserData = browsers[dest_browser];
+const getMatchingBrowserVersion = (targetBrowser, source) => {
+  const { browser: sourceBrowser, version: sourceVersion } = source;
+
+  const range = sourceVersion.includes('≤');
+  const sourceRelease =
+    browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
+
+  const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
-
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
       ['opera', 'opera_android', 'samsunginternet_android'].includes(
-        dest_browser,
+        targetBrowser,
       ) &&
       release.engine == 'Blink' &&
-      source_release.engine == 'WebKit'
+      sourceRelease.engine == 'WebKit'
     ) {
-      return r;
-    } else if (release.engine == source_release.engine) {
+      return range ? `≤${r}` : r;
+    } else if (release.engine == sourceRelease.engine) {
       if (
         ['beta', 'nightly'].includes(release.status) &&
-        release.status == source_release.status
+        release.status == sourceRelease.status
       ) {
         return r;
       } else if (
         release.engine_version &&
-        source_release.engine_version &&
+        sourceRelease.engine_version &&
         compareVersions.compare(
           release.engine_version,
-          source_release.engine_version,
+          sourceRelease.engine_version,
           '>=',
         )
       ) {
@@ -251,29 +257,29 @@ const combineStatements = (...data) => {
 
 /**
  * @param {SupportStatement} sourceData
- * @param {string} destination
- * @param {string} source
+ * @param {string} targetBrowser
+ * @param {string} sourceBrowser
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpGeneric = (sourceData, destination, source, notesRepl) => {
+const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      destination,
-      browsers[source].releases[sourceData.version_added],
-    );
+    newData.version_added = getMatchingBrowserVersion(targetBrowser, {
+      browser: sourceBrowser,
+      version: sourceData.version_added,
+    });
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      destination,
-      browsers[source].releases[sourceData.version_removed],
-    );
+    newData.version_removed = getMatchingBrowserVersion(targetBrowser, {
+      browser: sourceBrowser,
+      version: sourceData.version_removed,
+    });
   }
 
   if (notesRepl && typeof sourceData.notes === 'string') {
