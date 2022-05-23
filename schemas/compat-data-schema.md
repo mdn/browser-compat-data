@@ -139,7 +139,7 @@ Most of the browsers are derivatives of other browsers, such as mobile counterpa
 
 An example of this would be the following:
 
-```json
+```js
 "support": {
   "chrome": {
     "version_added": "66"
@@ -148,7 +148,7 @@ An example of this would be the following:
 }
 ```
 
-This also helps with maintaining derivatives with a different release schedule than its upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than set Samsung Internet to `{version_added: false}` and then follow up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
+This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
 
 #### The `support_statement` object
 
