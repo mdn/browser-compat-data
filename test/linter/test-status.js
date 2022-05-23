@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import chalk from 'chalk';
 
 import { Logger } from '../utils.js';
@@ -80,11 +78,16 @@ function checkStatus(data, logger, path = '') {
   }
 
   // Check children
-  checkStatus(
-    data[member],
-    logger,
-    path && path.length > 0 ? `${path}.${member}` : member,
-  );
+  for (const member in data) {
+    if (member === '__compat') {
+      continue;
+    }
+    checkStatus(
+      data[member],
+      logger,
+      path && path.length > 0 ? `${path}.${member}` : member,
+    );
+  }
 }
 
 /**
