@@ -11,9 +11,9 @@ const packageJson = JSON.parse(
 
 const prebuiltPath = '../../build/data.json';
 
-describe('release-build', () => {
+describe('build', () => {
   it('pre-built bundles are identical to the source', async () => {
-    execSync('npm run release-build');
+    execSync('npm run build');
     const { default: regular } = await import('../../index.js');
     const bundled = JSON.parse(
       await fs.readFile(new URL(prebuiltPath, import.meta.url)),
