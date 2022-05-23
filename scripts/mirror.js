@@ -160,7 +160,7 @@ const combineNotes = (notes1, notes2) => {
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
- * @param {Function} versionBumpFunction
+ * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {string|string[]|null}
  */
 const updateNotes = (notes, regex, replace, versionBumpFunction) => {
