@@ -48,7 +48,9 @@ function processData(data, logger) {
 
     if (!Object.keys(browsers).includes(browserData.upstream)) {
       logger.error(
-        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${browserData.upstream}).}`,
+        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${
+          browserData.upstream
+        }) Valid options are: ${Object.keys(browsers).join(', ')}.}`,
       );
     }
   }
