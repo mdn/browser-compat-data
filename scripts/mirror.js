@@ -316,7 +316,10 @@ const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
       notesRepl[0],
       notesRepl[1],
       (v) =>
-        getMatchingBrowserVersion(destination, browsers[source].releases[v]),
+        getMatchingBrowserVersion(targetBrowser, {
+          browser: sourceBrowser,
+          version: v,
+        }),
     );
   }
 
