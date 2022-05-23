@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
 import fs from 'node:fs';
 
 import { IS_WINDOWS } from '../../test/utils.js';
@@ -21,9 +19,14 @@ const { browsers } = bcd;
 const fixStatus = (key, value) => {
   const compat = value?.__compat;
   if (compat) {
+    if (status && status.experimental && status.deprecated) {
+      status.experimental = false;
+    }
+
     if (compat.spec_url && compat.status.standard_track === false) {
       compat.status.standard_track = true;
     }
+
     if (compat.status.experimental) {
       const browserSupport = new Set();
 

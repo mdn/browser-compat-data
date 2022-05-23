@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
 import fs from 'node:fs';
 
 import chalk from 'chalk';
@@ -24,6 +22,15 @@ const { browsers } = bcd;
 function checkStatus(data, logger, path = '') {
   const compat = data.__compat;
   if (compat?.status) {
+    if (compat.status.experimental && compat.status.deprecated) {
+      logger.error(
+        chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
+          '.',
+        )}}`,
+        chalk`Run {bold npm run fix} to fix this issue automatically`,
+      );
+    }
+
     if (compat.spec_url && compat.status.standard_track === false) {
       logger.error(
         chalk`{red → {bold ${path}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
@@ -79,16 +86,11 @@ function checkStatus(data, logger, path = '') {
   }
 
   // Check children
-  for (const member in data) {
-    if (member === '__compat') {
-      continue;
-    }
-    checkStatus(
-      data[member],
-      logger,
-      path && path.length > 0 ? `${path}.${member}` : member,
-    );
-  }
+  checkStatus(
+    data[member],
+    logger,
+    path && path.length > 0 ? `${path}.${member}` : member,
+  );
 }
 
 /**
