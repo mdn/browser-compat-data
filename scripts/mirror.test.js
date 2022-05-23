@@ -104,9 +104,11 @@ describe('mirror', () => {
     };
 
     for (const [browser, versionMap] of Object.entries(mappings)) {
-      it(browser, () => {
+      describe(browser, () => {
         for (const pair of versionMap) {
-          assert.equal(getMatchingBrowserVersion(browser, pair[0]), pair[1]);
+          it(`${pair[0]} => ${pair[1]}`, () => {
+            assert.equal(getMatchingBrowserVersion(browser, pair[0]), pair[1]);
+          });
         }
       });
     }
