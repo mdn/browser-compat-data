@@ -3,7 +3,6 @@
 
 import assert from 'node:assert/strict';
 
-import bcd from '../index.js';
 import getMatchingBrowserVersion from './mirror.js';
 
 describe('mirror', function () {
