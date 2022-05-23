@@ -166,7 +166,12 @@ function checkVersions(supportData, relPath, logger) {
         }
 
         if (statement === 'mirror') {
-          // Ignore data that will be mirrored
+          // If the data is to be mirrored, make sure it is mirrorable
+          if (!browsers[browser].upstream) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} sets {bold ${browser}} to mirror, however {bold ${browser}} does not have an upstream browser.}`,
+            );
+          }
           continue;
         }
 
