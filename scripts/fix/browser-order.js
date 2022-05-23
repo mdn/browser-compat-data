@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../test/utils.js';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier

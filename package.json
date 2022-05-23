@@ -64,7 +64,7 @@
     "format": "npx eslint \"**/*.js\" && npx prettier --check \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx eslint --fix \"**/*.js\" && npx prettier --write \"**/*.js\" \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "lint": "node test/lint",
-    "fix": "npm run format:fix && node scripts/fix",
+    "fix": "npm run format:fix && node scripts/fix/index.js",
     "mirror": "node scripts/mirror",
     "stats": "node scripts/statistics",
     "release-build": "node scripts/release/build",
