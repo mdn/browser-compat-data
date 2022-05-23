@@ -37,6 +37,7 @@ const getMatchingBrowserVersion = (targetBrowser, source) => {
   const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
+
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (

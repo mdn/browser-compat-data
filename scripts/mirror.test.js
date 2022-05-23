@@ -3,15 +3,15 @@
 
 import assert from 'node:assert/strict';
 
-import bcd from '../index.js';
 import getMatchingBrowserVersion from './mirror.js';
 
 describe('mirror', function () {
   describe('getMatchingBrowserVersion()', () => {
     const match = (source_browser, source_version, dest_browser) => {
-      const source_release =
-        bcd.browsers[source_browser].releases[source_version];
-      return getMatchingBrowserVersion(dest_browser, source_release);
+      return getMatchingBrowserVersion(dest_browser, {
+        browser: source_browser,
+        version: source_version,
+      });
     };
 
     it('chrome_android', function () {
