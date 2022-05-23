@@ -402,7 +402,7 @@ const bumpWebView = (sourceData) => {
  * @param {string} destination
  * @param {string} targetVersion
  */
-const bumpVersion = (sourceData, destination, targetVersion) => {
+export const bumpVersion = (sourceData, destination, targetVersion) => {
   let newData = null;
 
   if (sourceData == null) {
@@ -463,4 +463,9 @@ const bumpVersion = (sourceData, destination, targetVersion) => {
   return newData;
 };
 
-export default bumpVersion;
+const bumpData = (destination, data) => {
+  const upstream = browsers[destination].upstream;
+  return bumpVersion(data[upstream], destination);
+};
+
+export default bumpData;
