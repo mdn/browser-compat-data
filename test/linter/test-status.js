@@ -24,9 +24,7 @@ function checkStatus(data, logger, path = '') {
   if (compat?.status) {
     if (compat.status.experimental && compat.status.deprecated) {
       logger.error(
-        chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
-          '.',
-        )}}`,
+        chalk`{red Unexpected simultaneous experimental and deprecated status in ${path}}`,
         chalk`Run {bold npm run fix} to fix this issue automatically`,
       );
     }
@@ -36,11 +34,7 @@ function checkStatus(data, logger, path = '') {
         chalk`{red → {bold ${path}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
       );
     }
-    if (compat.status.experimental && compat.status.deprecated) {
-      logger.error(
-        chalk`{red → Unexpected simultaneous experimental and deprecated status in {bold ${path}}}`,
-      );
-    }
+
     if (compat.status.experimental) {
       // Check if experimental should be false (code copied from migration 007)
 
