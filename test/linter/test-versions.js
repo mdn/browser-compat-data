@@ -164,6 +164,17 @@ function checkVersions(supportData, relPath, logger) {
 
           continue;
         }
+
+        if (statement === 'mirror') {
+          // If the data is to be mirrored, make sure it is mirrorable
+          if (!browsers[browser].upstream) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} sets {bold ${browser}} to mirror, however {bold ${browser}} does not have an upstream browser.}`,
+            );
+          }
+          continue;
+        }
+
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
