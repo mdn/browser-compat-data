@@ -164,6 +164,12 @@ function checkVersions(supportData, relPath, logger) {
 
           continue;
         }
+
+        if (statement === 'mirror') {
+          // Ignore data that will be mirrored
+          continue;
+        }
+
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
