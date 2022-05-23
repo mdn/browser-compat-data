@@ -11,6 +11,7 @@ We're really happy to accept contributions to the mdn/browser-compat-data reposi
 5. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
+   1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 6. [Getting help](#getting-help)
 
 ## Before you begin
@@ -74,6 +75,12 @@ If the feature you're interested in is a JavaScript API, you can cross-reference
 ### Optional: Generating data using the mdn-bcd-collector project
 
 If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+
+### Optional: Generating data by mirroring
+
+Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, contributors may specify a value in the data to mirror the data for browsers from their upstream counterparts. See the [schema documentation](../schemas/compat-data.schema.md#mirroring-data) for more info.
+
+Note: originally, this functionality used to be provided as an executable script. However, because the script must be run manually, this meant that mirrored data would become stale rapidly. The proposal to move the mirroring into a build step was proposed in [#15083](https://github.com/mdn/browser-compat-data/issues/15083) to reduce maintenance time.
 
 ## Getting help
 
