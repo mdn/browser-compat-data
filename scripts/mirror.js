@@ -178,7 +178,7 @@ const updateNotes = (notes, regex, replace, versionMapper) => {
     .replace(regex, replace)
     .replace(
       new RegExp(`(?:${replace}|version)\\s(\\d+)`),
-      (match, p1) => replace + ' ' + versionBumpFunction(p1),
+      (match, p1) => replace + ' ' + versionMapper(p1),
     );
 };
 
