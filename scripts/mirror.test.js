@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 
 import getMatchingBrowserVersion from './mirror.js';
 
-describe('mirror', function () {
+describe('mirror', () => {
   describe('getMatchingBrowserVersion()', () => {
-    it('chrome_android', function () {
+    it('chrome_android', () => {
       assert.equal(getMatchingBrowserVersion('chrome', '1'), '18');
       assert.equal(getMatchingBrowserVersion('chrome', '2'), '18');
       assert.equal(getMatchingBrowserVersion('chrome', '17'), '18');
@@ -18,9 +18,15 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('chrome', '26'), '26');
     });
 
-    // Edge is not tested because getMatchingBrowserVersion() isn't used for Edge.
+    it('edge', () => {
+      assert.equal(match('edge', '50'), '79');
+      assert.equal(match('edge', '78'), '79');
+      assert.equal(match('edge', '79'), '79');
+      assert.equal(match('edge', '80'), '80');
+      assert.equal(match('edge', '90'), '90');
+    });
 
-    it('firefox_android', function () {
+    it('firefox_android', () => {
       assert.equal(getMatchingBrowserVersion('firefox', '1'), '4');
       assert.equal(getMatchingBrowserVersion('firefox', '2'), '4');
       assert.equal(getMatchingBrowserVersion('firefox', '3'), '4');
@@ -31,7 +37,7 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('firefox', '80'), '80');
     });
 
-    it('opera', function () {
+    it('opera', () => {
       assert.equal(getMatchingBrowserVersion('chrome', '1'), '15');
       assert.equal(getMatchingBrowserVersion('chrome', '27'), '15');
       assert.equal(getMatchingBrowserVersion('chrome', '28'), '15');
@@ -39,7 +45,7 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('chrome', '30'), '17');
     });
 
-    it('opera_android', function () {
+    it('opera_android', () => {
       assert.equal(getMatchingBrowserVersion('chrome_android', '18'), '14');
       assert.equal(getMatchingBrowserVersion('chrome_android', '26'), '14');
       assert.equal(getMatchingBrowserVersion('chrome_android', '27'), '14'); // wrong, should be 15
@@ -48,7 +54,7 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('chrome_android', '30'), '18');
     });
 
-    it('safari_ios', function () {
+    it('safari_ios', () => {
       assert.equal(getMatchingBrowserVersion('safari', '1'), '1');
       assert.equal(getMatchingBrowserVersion('safari', '1.1'), '1');
       assert.equal(getMatchingBrowserVersion('safari', '1.2'), '1');
@@ -81,7 +87,7 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('safari', '15.4'), '15.4');
     });
 
-    it('samsunginternet_android', function () {
+    it('samsunginternet_android', () => {
       assert.equal(getMatchingBrowserVersion('chrome_android', '18'), '1.0');
       assert.equal(getMatchingBrowserVersion('chrome_android', '25'), '1.5');
       assert.equal(getMatchingBrowserVersion('chrome_android', '28'), '1.5');
@@ -92,7 +98,7 @@ describe('mirror', function () {
       assert.equal(getMatchingBrowserVersion('chrome_android', '95'), '17.0');
     });
 
-    it('webview_android', function () {
+    it('webview_android', () => {
       assert.equal(getMatchingBrowserVersion('chrome_android', '18'), false);
       assert.equal(getMatchingBrowserVersion('chrome_android', '25'), false);
       assert.equal(getMatchingBrowserVersion('chrome_android', '26'), false);
