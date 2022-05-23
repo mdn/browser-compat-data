@@ -14,20 +14,17 @@ const { browsers } = bcd;
 
 /**
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-export const getMatchingBrowserVersion = (targetBrowser, source) => {
-  const { browser: sourceBrowser, version: sourceVersion } = source;
-
-  const range = sourceVersion.includes('≤');
-  const sourceRelease =
-    browsers[sourceBrowser].releases[sourceVersion.replace('≤', '')];
-
+export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   const browserData = browsers[targetBrowser];
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
+
+  const range = sourceVersion.includes('≤');
+  const sourceRelease =
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
@@ -135,22 +132,26 @@ const combineNotes = (notes1, notes2) => {
  * @param {string|string[]|null} notes
  * @param {RegExp} regex
  * @param {string} replace
+ * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {string|string[]|null}
  */
-const updateNotes = (notes, regex, replace) => {
-  if (notes === null || notes === undefined) {
+const updateNotes = (notes, regex, replace, versionMapper) => {
+  if (!notes) {
     return null;
   }
 
-  if (typeof notes === 'string') {
-    return notes.replace(regex, replace);
+  if (Array.isArray(notes)) {
+    return notes.map((note) =>
+      updateNotes(note, regex, replace, versionMapper),
+    );
   }
 
-  let newNotes = [];
-  for (let note of notes) {
-    newNotes.push(note.replace(regex, replace));
-  }
-  return newNotes;
+  return notes
+    .replace(regex, replace)
+    .replace(
+      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
+      (match, p1) => replace + ' ' + versionMapper(p1),
+    );
 };
 
 /**
@@ -250,32 +251,36 @@ const combineStatements = (...data) => {
 /**
  * @param {SupportStatement} sourceData
  * @param {string} targetBrowser
- * @param {string} sourceBrowser
  * @param {Array.<RegExp, string>} notesRepl
  * @returns {SupportStatement}
  */
-const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
+const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
   let newData = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_added,
-    });
+    newData.version_added = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_added,
+    );
   }
 
   if (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(targetBrowser, {
-      browser: sourceBrowser,
-      version: sourceData.version_removed,
-    });
+    newData.version_removed = getMatchingBrowserVersion(
+      targetBrowser,
+      sourceData.version_removed,
+    );
   }
 
-  if (notesRepl && typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, notesRepl[0], notesRepl[1]);
+  if (notesRepl && sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      notesRepl[0],
+      notesRepl[1],
+      (v) => getMatchingBrowserVersion(targetBrowser, v),
+    );
   }
 
   return newData;
@@ -286,7 +291,7 @@ const bumpGeneric = (sourceData, targetBrowser, sourceBrowser, notesRepl) => {
  * @returns {SupportStatement}
  */
 const bumpChromeAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'chrome_android', 'chrome');
+  return bumpGeneric(sourceData, 'chrome_android');
 };
 
 /**
@@ -302,7 +307,7 @@ const bumpEdge = (sourceData) => {
     return { version_added: false };
   }
 
-  return bumpGeneric(sourceData, 'edge', 'chrome', [/Chrome/g, 'Edge']);
+  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
 };
 
 /**
@@ -310,7 +315,7 @@ const bumpEdge = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpFirefoxAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'firefox_android', 'firefox');
+  return bumpGeneric(sourceData, 'firefox_android');
 };
 
 /**
@@ -318,7 +323,7 @@ const bumpFirefoxAndroid = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOpera = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera', 'chrome', [/Chrome/g, 'Opera']);
+  return bumpGeneric(sourceData, 'opera', [/Chrome/g, 'Opera']);
 };
 
 /**
@@ -326,10 +331,7 @@ const bumpOpera = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpOperaAndroid = (sourceData) => {
-  return bumpGeneric(sourceData, 'opera_android', 'chrome_android', [
-    /Chrome/g,
-    'Opera',
-  ]);
+  return bumpGeneric(sourceData, 'opera_android', [/Chrome/g, 'Opera']);
 };
 
 /**
@@ -337,7 +339,7 @@ const bumpOperaAndroid = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpSafariiOS = (sourceData) => {
-  return bumpGeneric(sourceData, 'safari_ios', 'safari');
+  return bumpGeneric(sourceData, 'safari_ios');
 };
 
 /**
@@ -345,7 +347,7 @@ const bumpSafariiOS = (sourceData) => {
  * @returns {SupportStatement}
  */
 const bumpSamsungInternet = (sourceData) => {
-  return bumpGeneric(sourceData, 'samsunginternet_android', 'chrome_android', [
+  return bumpGeneric(sourceData, 'samsunginternet_android', [
     /Chrome/g,
     'Samsung Internet',
   ]);
@@ -383,8 +385,13 @@ const bumpWebView = (sourceData) => {
     newData.version_removed = createWebViewRange(sourceData.version_removed);
   }
 
-  if (typeof sourceData.notes === 'string') {
-    newData.notes = updateNotes(sourceData.notes, /Chrome/g, 'WebView');
+  if (sourceData.notes) {
+    newData.notes = updateNotes(
+      sourceData.notes,
+      /Chrome/g,
+      'WebView',
+      createWebViewRange,
+    );
   }
 
   return newData;
