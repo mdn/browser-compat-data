@@ -440,7 +440,7 @@ A `matches` object contains hints to help automatically detect whether source co
 
   Examples:
 
-  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform-origin.json) and corresponding tests.
 
 ### Status information
 
