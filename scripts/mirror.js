@@ -65,29 +65,6 @@ const getMatchingBrowserVersion = (dest_browser, source_release) => {
 };
 
 /**
- * @param {string} browser
- * @returns {string}
- */
-const getSource = (browser) => {
-  switch (browser) {
-    case 'chrome_android':
-    case 'edge':
-    case 'opera':
-      return 'chrome';
-    case 'opera_android':
-    case 'samsunginternet_android':
-    case 'webview_android':
-      return 'chrome_android';
-    case 'firefox_android':
-      return 'firefox';
-    case 'safari_ios':
-      return 'safari';
-    default:
-      throw Error(`${browser} cannot be used as a mirroring destination.`);
-  }
-};
-
-/**
  * @param {SupportStatement} compatData
  * @param {string | null} versionToCheck
  * @return {string | null}
