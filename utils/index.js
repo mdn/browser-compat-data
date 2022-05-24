@@ -1,11 +1,9 @@
-const iterSupport = require('./iter-support');
-const query = require('./query');
-const { walk } = require('./walk');
-const visit = require('./visit');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-module.exports = {
-  iterSupport,
-  query,
-  walk,
-  visit,
-};
+import iterSupport from './iter-support.js';
+import query from './query.js';
+import walk from './walk.js';
+import visit from './visit.js';
+
+export { iterSupport, query, walk, visit };

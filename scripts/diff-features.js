@@ -1,7 +1,12 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const yargs = require('yargs');
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
+
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 function main({ ref1, ref2, format, github }) {
   const results = diff({ ref1, ref2, github });
@@ -13,7 +18,7 @@ function main({ ref1, ref2, format, github }) {
   }
 }
 
-function diff({ ref1, ref2, github }) {
+export default function diff({ ref1, ref2, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -34,8 +39,8 @@ function diff({ ref1, ref2, github }) {
   let bSide = enumerate(refB, github === false);
 
   const results = {
-    added: [...bSide].filter(feature => !aSide.has(feature)),
-    removed: [...aSide].filter(feature => !bSide.has(feature)),
+    added: [...bSide].filter((feature) => !aSide.has(feature)),
+    removed: [...aSide].filter((feature) => !bSide.has(feature)),
   };
 
   return results;
@@ -108,9 +113,16 @@ function enumerateFeatures(ref = 'HEAD') {
   const worktree = `__enumerating__${hash}`;
 
   console.error(`Enumerating features for ${ref} (${hash})`);
+
   try {
     execSync(`git worktree add ${worktree} ${hash}`);
-    execSync(`npm ci`, { cwd: worktree });
+
+    try {
+      execSync(`npm ci`, { cwd: worktree });
+    } catch (e) {
+      // If the clean install fails, proceed anyways
+    }
+
     execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
@@ -120,7 +132,7 @@ function enumerateFeatures(ref = 'HEAD') {
 }
 
 function printMarkdown({ added, removed }) {
-  const fmtFeature = feat => `- \`${feat}\``;
+  const fmtFeature = (feat) => `- \`${feat}\``;
 
   if (removed.length) {
     console.log('## Removed\n');
@@ -133,11 +145,11 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-if (require.main === module) {
-  const { argv } = yargs.command(
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [ref1] [ref2]',
     'Compare the set of features at refA and refB',
-    yargs => {
+    (yargs) => {
       yargs
         .positional('ref1', {
           description: 'A Git ref (branch, tag, or commit)',
@@ -166,5 +178,3 @@ if (require.main === module) {
 
   main(argv);
 }
-
-module.exports = diff;

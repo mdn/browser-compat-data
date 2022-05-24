@@ -32,7 +32,6 @@ Peers are community members who have shown that they are committed to the contin
 
 Peers:
 
-- Are expected to work on public branches of their forks and submit pull requests to the main branch.
 - Must submit pull requests for all their changes.
 - May label and close issues.
 - May merge other people's pull requests that relate to compat data updates.
@@ -101,7 +100,6 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 
 #### List of current Owners
 
-- Daniel Beck (@ddbeck)
 - Florian Scholz (@Elchi3), Open Web Docs
 - Philip Jägenstedt (@foolip), Google
 - Ruth John (@Rumyra), Mozilla
@@ -167,6 +165,7 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
 - Chris David Mills (@chrisdavidmills), Mozilla
+- Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Estelle Weyl (@estelle) (Peer for CSS compat data)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)

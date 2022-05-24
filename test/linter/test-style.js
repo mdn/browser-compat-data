@@ -1,9 +1,14 @@
-'use strict';
-const fs = require('fs');
-const chalk = require('chalk');
-const { IS_WINDOWS, indexToPos, jsonDiff } = require('../utils.js');
-const compareFeatures = require('../../scripts/compare-features');
-const { Logger } = require('./utils.js');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import chalk from 'chalk-template';
+import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
+import compareFeatures from '../../scripts/lib/compare-features.js';
+import { Logger } from '../utils.js';
+
+/**
+ * @typedef {import('../utils').Logger} Logger
+ */
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -54,11 +59,13 @@ function orderFeatures(key, value) {
 }
 
 /**
- * @param {string} filename
- * @param {Logger} logger
+ * Process the data for any styling errors that cannot be caught by Prettier or the schema
+ *
+ * @param {string} rawData The raw contents of the file to test
+ * @param {Logger} logger The logger to output errors to
  */
-function processData(filename, logger) {
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+function processData(rawData, logger) {
+  let actual = rawData;
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
@@ -79,40 +86,46 @@ function processData(filename, logger) {
 
   if (expected !== expectedBrowserSorting) {
     logger.error(
-      chalk`{red → Browser sorting error on ${jsonDiff(
+      chalk`Browser sorting error on ${jsonDiff(
         actual,
         expectedBrowserSorting,
-      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+      )}`,
+      chalk`Run {bold npm run fix} to fix sorting automatically`,
     );
   }
 
   if (expected !== expectedFeatureSorting) {
     logger.error(
-      chalk`{red → Feature sorting error on ${jsonDiff(
+      chalk`Feature sorting error on ${jsonDiff(
         actual,
         expectedFeatureSorting,
-      )}}\n{blue     Tip: Run {bold npm run fix} to fix sorting automatically}`,
+      )}`,
+      chalk`Run {bold npm run fix} to fix sorting automatically`,
     );
   }
 
   const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
   if (hrefDoubleQuoteIndex >= 0) {
     logger.error(
-      chalk`{red → ${indexToPos(
+      chalk`${indexToPos(
         actual,
         hrefDoubleQuoteIndex,
-      )} - Found {yellow \\"}, but expected {green \'} for <a href>.}`,
+      )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
     );
   }
 }
 
-function testStyle(filename) {
+/**
+ * Test the data for any styling errors that cannot be caught by Prettier or the schema
+ *
+ * @param {string} rawData The raw contents of the file to test
+ * @returns {boolean} If the file contains errors
+ */
+export default function testStyle(rawData) {
   const logger = new Logger('Style');
 
-  processData(filename, logger);
+  processData(rawData, logger);
 
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testStyle;
