@@ -55,6 +55,60 @@
           "deprecated": false
         }
       },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "31"
+            },
+            "chrome_android": {
+              "version_added": "31"
+            },
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "29"
+            },
+            "firefox_android": {
+              "version_added": "29"
+            },
+            "ie": {
+              "version_added": "10"
+            },
+            "nodejs": {
+              "version_added": "10.5.0"
+            },
+            "opera": {
+              "version_added": "≤12.1"
+            },
+            "opera_android": {
+              "version_added": "≤12.1"
+            },
+            "safari": {
+              "version_added": "7"
+            },
+            "safari_ios": {
+              "version_added": "7"
+            },
+            "samsunginternet_android": {
+              "version_added": "2.0"
+            },
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "assert": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/console/assert",
@@ -162,7 +216,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -358,7 +412,7 @@
                 "version_added": "1.0",
                 "notes": [
                   "Before Deno 1.4, <code>%c</code> is not supported.",
-                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                  "<code>%c</code> only supports CSS properties <code>color</code>, <code>background-color</code>, <code>font-weight</code>, <code>font-style</code>, <code>text-decoration-color</code>, and <code>text-decoration-line</code>."
                 ]
               },
               "edge": {
@@ -462,7 +516,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -524,7 +578,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -598,7 +652,7 @@
                 "version_added": "1.0",
                 "notes": [
                   "Before Deno 1.4, <code>%c</code> is not supported.",
-                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                  "<code>%c</code> only supports CSS properties <code>color</code>, <code>background-color</code>, <code>font-weight</code>, <code>font-style</code>, <code>text-decoration-color</code>, and <code>text-decoration-line</code>."
                 ]
               },
               "edge": {
@@ -683,6 +737,9 @@
             "opera": {
               "version_added": false
             },
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
               "version_added": false
             },
@@ -732,6 +789,9 @@
                 "version_added": false
               },
               "opera": {
+                "version_added": false
+              },
+              "opera_android": {
                 "version_added": false
               },
               "safari": {
@@ -856,7 +916,7 @@
               "version_added": "1.0"
             },
             "webview_android": {
-              "version_added": "37"
+              "version_added": "3"
             }
           },
           "status": {
@@ -990,7 +1050,7 @@
                 "version_added": "1.0",
                 "notes": [
                   "Before Deno 1.4, <code>%c</code> is not supported.",
-                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                  "<code>%c</code> only supports CSS properties <code>color</code>, <code>background-color</code>, <code>font-weight</code>, <code>font-style</code>, <code>text-decoration-color</code>, and <code>text-decoration-line</code>."
                 ]
               },
               "edge": {
@@ -1014,7 +1074,7 @@
                 ]
               },
               "nodejs": {
-                "version_added": true
+                "version_added": "0.10.0"
               },
               "opera": {
                 "version_added": "15"
@@ -1113,7 +1173,7 @@
                 "version_added": "1.0",
                 "notes": [
                   "Before Deno 1.4, <code>%c</code> is not supported.",
-                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                  "<code>%c</code> only supports CSS properties <code>color</code>, <code>background-color</code>, <code>font-weight</code>, <code>font-style</code>, <code>text-decoration-color</code>, and <code>text-decoration-line</code>."
                 ]
               },
               "edge": {
@@ -1222,7 +1282,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": false
           }
@@ -1282,7 +1342,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": false
           }
@@ -1333,7 +1393,7 @@
               "version_added": "1.5"
             },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": "4.4"
             }
           },
           "status": {
@@ -1562,7 +1622,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
             "deprecated": false
           }
@@ -1692,7 +1752,7 @@
                 "version_added": "1.0",
                 "notes": [
                   "Before Deno 1.4, <code>%c</code> is not supported.",
-                  "<code>%c</code> only supports CSS properties <code>color<code/>, <code>background-color<code/>, <code>font-weight<code/>, <code>font-style<code/>, <code>text-decoration-color<code/>, and <code>text-decoration-line<code/>."
+                  "<code>%c</code> only supports CSS properties <code>color</code>, <code>background-color</code>, <code>font-weight</code>, <code>font-style</code>, <code>text-decoration-color</code>, and <code>text-decoration-line</code>."
                 ]
               },
               "edge": {
@@ -1742,60 +1802,6 @@
               "standard_track": true,
               "deprecated": false
             }
-          }
-        }
-      },
-      "worker_support": {
-        "__compat": {
-          "description": "Available in workers",
-          "support": {
-            "chrome": {
-              "version_added": "31"
-            },
-            "chrome_android": {
-              "version_added": "31"
-            },
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "29"
-            },
-            "firefox_android": {
-              "version_added": "29"
-            },
-            "ie": {
-              "version_added": "10"
-            },
-            "nodejs": {
-              "version_added": "10.5.0"
-            },
-            "opera": {
-              "version_added": "≤12.1"
-            },
-            "opera_android": {
-              "version_added": "≤12.1"
-            },
-            "safari": {
-              "version_added": "7"
-            },
-            "safari_ios": {
-              "version_added": "7"
-            },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
           }
         }
       }

@@ -76,6 +76,54 @@
               "deprecated": false
             }
           },
+          "worker_support": {
+            "__compat": {
+              "description": "Worker support",
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "chrome_android": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "50"
+                },
+                "firefox_android": {
+                  "version_added": "50"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": null
+                },
+                "opera_android": {
+                  "version_added": null
+                },
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": {
+                  "version_added": "10"
+                },
+                "samsunginternet_android": {
+                  "version_added": true
+                },
+                "webview_android": {
+                  "version_added": true
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "base-uri": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/base-uri",
@@ -238,7 +286,7 @@
                 },
                 "firefox": {
                   "version_added": "23",
-                  "notes": "Prior to Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
+                  "notes": "Before Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
                 },
                 "firefox_android": {
                   "version_added": "23"
@@ -1007,10 +1055,10 @@
                   "version_added": "43"
                 },
                 "safari": {
-                  "version_added": null
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": null
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
                   "version_added": "7.0"
@@ -1020,7 +1068,7 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1182,9 +1230,58 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": false,
                 "deprecated": true
+              }
+            }
+          },
+          "require-trusted-types-for": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for",
+              "spec_url": "https://w3c.github.io/webappsec-trusted-types/dist/spec/#require-trusted-types-for-csp-directive",
+              "support": {
+                "chrome": {
+                  "version_added": "83"
+                },
+                "chrome_android": {
+                  "version_added": "83"
+                },
+                "edge": {
+                  "version_added": "83"
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": "69"
+                },
+                "opera_android": {
+                  "version_added": "59"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": {
+                  "version_added": false
+                },
+                "samsunginternet_android": {
+                  "version_added": "13.0"
+                },
+                "webview_android": {
+                  "version_added": "83"
+                }
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
               }
             }
           },
@@ -1366,7 +1463,7 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1379,7 +1476,7 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1417,7 +1514,7 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1430,7 +1527,7 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1465,10 +1562,10 @@
                   "version_added": "41"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
                   "version_added": "6.0"
@@ -1565,7 +1662,7 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1578,7 +1675,7 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1616,7 +1713,7 @@
                   "version_added": null
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1629,7 +1726,7 @@
                 }
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1740,10 +1837,10 @@
                   "version_added": "48"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "samsunginternet_android": {
                   "version_added": "10.0"
@@ -1808,54 +1905,6 @@
               }
             }
           },
-          "worker_support": {
-            "__compat": {
-              "description": "Worker support",
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "chrome_android": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": "≤79"
-                },
-                "firefox": {
-                  "version_added": "50"
-                },
-                "firefox_android": {
-                  "version_added": "50"
-                },
-                "ie": {
-                  "version_added": false
-                },
-                "opera": {
-                  "version_added": null
-                },
-                "opera_android": {
-                  "version_added": null
-                },
-                "safari": {
-                  "version_added": "10"
-                },
-                "safari_ios": {
-                  "version_added": "10"
-                },
-                "samsunginternet_android": {
-                  "version_added": true
-                },
-                "webview_android": {
-                  "version_added": true
-                }
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "worker-src": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/worker-src",
@@ -1888,10 +1937,10 @@
                   "version_added": "45"
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.5"
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "15.5"
                 },
                 "samsunginternet_android": {
                   "version_added": "7.0"

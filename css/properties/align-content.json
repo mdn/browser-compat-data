@@ -119,7 +119,7 @@
                   "version_added": "57"
                 },
                 "edge": {
-                  "version_added": "79"
+                  "version_added": "≤79"
                 },
                 "firefox": {
                   "version_added": "45"
@@ -156,18 +156,18 @@
               }
             }
           },
-          "first_last_baseline": {
+          "first_baseline": {
             "__compat": {
-              "description": "<code>first baseline</code> and <code>last baseline</code>",
+              "description": "<code>first baseline</code>",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "59"
                 },
                 "chrome_android": {
-                  "version_added": false
+                  "version_added": "59"
                 },
                 "edge": {
-                  "version_added": false
+                  "version_added": "≤79"
                 },
                 "firefox": {
                   "version_added": "52"
@@ -179,10 +179,10 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false
+                  "version_added": "46"
                 },
                 "opera_android": {
-                  "version_added": false
+                  "version_added": "43"
                 },
                 "safari": {
                   "version_added": "11"
@@ -191,10 +191,10 @@
                   "version_added": "11"
                 },
                 "samsunginternet_android": {
-                  "version_added": false
+                  "version_added": "7.0"
                 },
                 "webview_android": {
-                  "version_added": false
+                  "version_added": "59"
                 }
               },
               "status": {
@@ -204,52 +204,58 @@
               }
             }
           },
-          "left_right": {
+          "last_baseline": {
             "__compat": {
-              "description": "<code>left</code> and <code>right</code>",
+              "description": "<code>last baseline</code>",
               "support": {
                 "chrome": {
-                  "version_added": "93"
+                  "version_added": "59",
+                  "version_removed": "86",
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
                 },
                 "chrome_android": {
-                  "version_added": "93"
+                  "version_added": "59",
+                  "version_removed": "86",
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
                 },
                 "edge": {
-                  "version_added": "93"
+                  "version_added": "≤79",
+                  "version_removed": "86",
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
                 },
                 "firefox": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>align-content</code> no longer accepts the <code>left</code> and <code>right</code> values"
+                  "version_added": "52"
                 },
                 "firefox_android": {
-                  "version_added": "52",
-                  "version_removed": "60",
-                  "notes": "<code>align-content</code> no longer accepts the <code>left</code> and <code>right</code> values"
+                  "version_added": "52"
                 },
                 "ie": {
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": false
                 },
                 "opera_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "11",
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect. See <a href='https://webkit.org/b/235005'>bug 235005</a>."
                 },
                 "safari_ios": {
-                  "version_added": false
+                  "version_added": "11",
+                  "partial_implementation": true,
+                  "notes": "This value is recognized, but has no effect. See <a href='https://webkit.org/b/235005'>bug 235005</a>."
                 },
                 "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": false
                 },
                 "webview_android": {
-                  "version_added": "93"
+                  "version_added": false
                 }
               },
               "status": {
@@ -387,8 +393,8 @@
                   "version_added": false
                 },
                 "opera": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "79",
+                  "notes": "Before version 79, this value is recognized, but has no effect."
                 },
                 "opera_android": {
                   "version_added": false,
@@ -401,8 +407,7 @@
                   "version_added": false
                 },
                 "samsunginternet_android": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "17.0"
                 },
                 "webview_android": {
                   "version_added": "93"

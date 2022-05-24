@@ -18,18 +18,25 @@
             "version_added": "60",
             "notes": "Only supports USB U2F tokens."
           },
-          "firefox_android": {
-            "version_added": "60",
-            "notes": "Only supports USB U2F tokens."
-          },
+          "firefox_android": [
+            {
+              "version_added": "92"
+            },
+            {
+              "version_added": "60",
+              "version_removed": "92",
+              "partial_implementation": true,
+              "notes": "Only supports USB U2F tokens."
+            }
+          ],
           "ie": {
             "version_added": false
           },
           "opera": {
-            "version_added": false
+            "version_added": "54"
           },
           "opera_android": {
-            "version_added": false
+            "version_added": "48"
           },
           "safari": {
             "version_added": "13"
@@ -38,7 +45,7 @@
             "version_added": "13"
           },
           "samsunginternet_android": {
-            "version_added": "10.0"
+            "version_added": false
           },
           "webview_android": {
             "version_added": false
@@ -68,18 +75,25 @@
               "version_added": "60",
               "notes": "Only supports USB U2F tokens."
             },
-            "firefox_android": {
-              "version_added": "60",
-              "notes": "Only supports USB U2F tokens."
-            },
+            "firefox_android": [
+              {
+                "version_added": "92"
+              },
+              {
+                "version_added": "60",
+                "version_removed": "92",
+                "partial_implementation": true,
+                "notes": "Only supports USB U2F tokens."
+              }
+            ],
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "54"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "48"
             },
             "safari": {
               "version_added": "13"
@@ -88,7 +102,7 @@
               "version_added": "13"
             },
             "samsunginternet_android": {
-              "version_added": "10.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": false
@@ -103,6 +117,7 @@
       },
       "getAuthenticatorData": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/webauthn/#dom-authenticatorattestationresponse-getauthenticatordata",
           "support": {
             "chrome": {
               "version_added": "85"
@@ -123,10 +138,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "71"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": false
@@ -142,7 +157,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -150,6 +165,7 @@
       },
       "getPublicKey": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/webauthn/#dom-authenticatorattestationresponse-getpublickey",
           "support": {
             "chrome": {
               "version_added": "85"
@@ -170,10 +186,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "71"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": false
@@ -189,7 +205,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -197,6 +213,7 @@
       },
       "getPublicKeyAlgorithm": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/webauthn/#dom-authenticatorattestationresponse-getpublickeyalgorithm",
           "support": {
             "chrome": {
               "version_added": "85"
@@ -217,10 +234,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "71"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "60"
             },
             "safari": {
               "version_added": false
@@ -236,7 +253,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -266,10 +283,10 @@
               "version_added": false
             },
             "opera": {
-              "version_added": false
+              "version_added": "62"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "53"
             },
             "safari": {
               "version_added": false
@@ -278,7 +295,7 @@
               "version_added": false
             },
             "samsunginternet_android": {
-              "version_added": "11.0"
+              "version_added": false
             },
             "webview_android": {
               "version_added": false

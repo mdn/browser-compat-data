@@ -103,7 +103,9 @@ The `__compat` object consists of the following:
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
+  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
+  Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 ### The `support` object
 
@@ -130,6 +132,23 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `webview_android`, Webview, the built-in browser for Android
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
+
+#### Mirroring data
+
+Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Internet). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
+
+An example of this would be the following:
+
+```js
+"support": {
+  "chrome": {
+    "version_added": "66"
+  },
+  "chrome_android": "mirror", // will become { version_added: "66" }
+}
+```
+
+This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
 
 #### The `support_statement` object
 
@@ -438,7 +457,7 @@ A `matches` object contains hints to help automatically detect whether source co
 
   Examples:
 
-  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform-origin.json) and corresponding tests.
 
 ### Status information
 

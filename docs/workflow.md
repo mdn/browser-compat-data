@@ -44,11 +44,11 @@ Remove this label after a pull request, which makes the required content changes
 
 This label indicates that a pull request needs a corresponding entry in [`RELEASE_NOTES.md`](../RELEASE_NOTES.md).
 
-You must set this label on a pull request when it:
+Set this label on a pull request when it:
 
 - Breaks backward compatibility (see [_Semantic versioning policy_](../README.md#semantic-versioning-policy))
-- Removes or renames data (for example, removing an irrelevant feature)
-- Adds or changes a data guideline or schema document
+- Adds or changes a data guideline
+- Adds or changes schema documentation
 - Adds, removes, or changes linting and other non-schematic data restrictions
 - Does anything else that would trigger a SemVer minor release
 

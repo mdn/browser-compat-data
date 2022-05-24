@@ -1,9 +1,24 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const yargs = require('yargs');
+import { execSync } from 'node:child_process';
+import fs from 'node:fs';
 
-function main({ ref1, ref2, format }) {
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+function main({ ref1, ref2, format, github }) {
+  const results = diff({ ref1, ref2, github });
+
+  if (format === 'markdown') {
+    printMarkdown(results);
+  } else {
+    console.log(JSON.stringify(results, undefined, 2));
+  }
+}
+
+export default function diff({ ref1, ref2, github }) {
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -20,18 +35,68 @@ function main({ ref1, ref2, format }) {
     refB = `${ref1}`;
   }
 
-  const aSide = new Set(enumerateFeatures(refA));
-  const bSide = new Set(enumerateFeatures(refB));
+  let aSide = enumerate(refA, github === false);
+  let bSide = enumerate(refB, github === false);
 
   const results = {
-    added: [...bSide].filter(feature => !aSide.has(feature)),
-    removed: [...aSide].filter(feature => !bSide.has(feature)),
+    added: [...bSide].filter((feature) => !aSide.has(feature)),
+    removed: [...aSide].filter((feature) => !bSide.has(feature)),
   };
 
-  if (format === 'markdown') {
-    printMarkdown(results);
-  } else {
-    console.log(JSON.stringify(results, undefined, 2));
+  return results;
+}
+
+function enumerate(ref, skipGitHub) {
+  if (!skipGitHub) {
+    try {
+      return new Set(getEnumerationFromGithub(ref));
+    } catch {
+      console.error('Fetching artifact from GitHub failed. Using fallback.');
+    }
+  }
+
+  return new Set(enumerateFeatures(ref));
+}
+
+function getEnumerationFromGithub(ref) {
+  const ENUMERATE_WORKFLOW = '15595228';
+  const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
+  const ENUMERATE_WORKFLOW_FILE = 'features.json';
+
+  const unlinkFile = () => {
+    try {
+      fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
+    } catch (err) {
+      if (err.code == 'ENOENT') {
+        return;
+      } else {
+        throw err;
+      }
+    }
+  };
+
+  const hash = execSync(`git rev-parse ${ref}`, {
+    encoding: 'utf-8',
+  }).trim();
+  const workflowRun = execSync(
+    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?per_page=100 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
+    {
+      encoding: 'utf-8',
+    },
+  ).trim();
+
+  if (!workflowRun) throw Error('No workflow run found for commit.');
+
+  try {
+    unlinkFile();
+    execSync(
+      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT}`,
+    );
+    return JSON.parse(
+      fs.readFileSync(ENUMERATE_WORKFLOW_FILE, { encoding: 'utf-8' }),
+    );
+  } finally {
+    unlinkFile();
   }
 }
 
@@ -48,9 +113,16 @@ function enumerateFeatures(ref = 'HEAD') {
   const worktree = `__enumerating__${hash}`;
 
   console.error(`Enumerating features for ${ref} (${hash})`);
+
   try {
     execSync(`git worktree add ${worktree} ${hash}`);
-    execSync(`npm ci`, { cwd: worktree });
+
+    try {
+      execSync(`npm ci`, { cwd: worktree });
+    } catch (e) {
+      // If the clean install fails, proceed anyways
+    }
+
     execSync(`node ./scripts/enumerate-features.js --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
@@ -60,7 +132,7 @@ function enumerateFeatures(ref = 'HEAD') {
 }
 
 function printMarkdown({ added, removed }) {
-  const fmtFeature = feat => `- \`${feat}\``;
+  const fmtFeature = (feat) => `- \`${feat}\``;
 
   if (removed.length) {
     console.log('## Removed\n');
@@ -73,32 +145,36 @@ function printMarkdown({ added, removed }) {
   }
 }
 
-const { argv } = yargs.command(
-  '$0 [ref1] [ref2]',
-  'Compare the set of features at refA and refB',
-  yargs => {
-    yargs
-      .positional('ref1', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'ref1^',
-      })
-      .positional('ref2', {
-        description: 'A Git ref (branch, tag, or commit)',
-        defaultDescription: 'HEAD',
-      })
-      .option('format', {
-        type: 'string',
-        nargs: 1,
-        choices: ['json', 'markdown'],
-        demand: 'a named format is required',
-        default: 'markdown',
-      })
-      .example('$0', 'compare HEAD to parent commmit')
-      .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
-      .example('$0 topic-branch main', 'compare a branch to main');
-  },
-);
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [ref1] [ref2]',
+    'Compare the set of features at refA and refB',
+    (yargs) => {
+      yargs
+        .positional('ref1', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'ref1^',
+        })
+        .positional('ref2', {
+          description: 'A Git ref (branch, tag, or commit)',
+          defaultDescription: 'HEAD',
+        })
+        .option('format', {
+          type: 'string',
+          nargs: 1,
+          choices: ['json', 'markdown'],
+          demand: 'a named format is required',
+          default: 'markdown',
+        })
+        .option('no-github', {
+          type: 'boolean',
+          description: "Don't fetch artifacts from GitHub.",
+        })
+        .example('$0', 'compare HEAD to parent commmit')
+        .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
+        .example('$0 topic-branch main', 'compare a branch to main');
+    },
+  );
 
-if (require.main === module) {
   main(argv);
 }

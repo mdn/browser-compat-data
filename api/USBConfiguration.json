@@ -3,7 +3,7 @@
     "USBConfiguration": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBConfiguration",
-        "spec_url": "https://wicg.github.io/webusb/#configurations",
+        "spec_url": "https://wicg.github.io/webusb/#usbconfiguration-interface",
         "support": {
           "chrome": {
             "version_added": "61"
@@ -39,7 +39,8 @@
             "version_added": "8.0"
           },
           "webview_android": {
-            "version_added": false
+            "version_added": false,
+            "notes": "WebView exposes this interface, but does not support WebUSB. See <a href='https://crbug.com/933055'>Chromium bug 933055</a>."
           }
         },
         "status": {
