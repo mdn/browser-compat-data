@@ -1,4 +1,7 @@
-function iterSupport(compat, browser) {
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+export default function iterSupport(compat, browser) {
   if (browser in compat.support) {
     const data = compat.support[browser];
     return Array.isArray(data) ? data : [data];
@@ -6,5 +9,3 @@ function iterSupport(compat, browser) {
 
   return [{ version_added: null }];
 }
-
-module.exports = iterSupport;

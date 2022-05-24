@@ -1,6 +1,9 @@
-const assert = require('assert').strict;
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const { ConsistencyChecker } = require('./test-consistency');
+import assert from 'node:assert/strict';
+
+import { ConsistencyChecker } from './test-consistency.js';
 
 const check = new ConsistencyChecker();
 

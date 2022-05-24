@@ -1,12 +1,17 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-'use strict';
-const assert = require('assert').strict;
+import assert from 'node:assert/strict';
 
-const { removeWebViewFlags } = require('./002-remove-webview-flags.js');
+import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
+ * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
+ */
 const tests = [
   {
     input: {

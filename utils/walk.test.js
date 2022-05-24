@@ -1,8 +1,10 @@
-const assert = require('assert').strict;
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const bcd = require('..');
-const { walk } = require('./index');
-const { lowLevelWalk } = require('./walk');
+import assert from 'node:assert/strict';
+
+import bcd from '../index.js';
+import walk, { lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', function () {
   it('visits every top-level tree', function () {
