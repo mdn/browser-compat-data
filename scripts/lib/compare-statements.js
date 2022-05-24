@@ -1,10 +1,7 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-'use strict';
-
-const compareVersions = require('compare-versions');
+import compareVersions from 'compare-versions';
 
 /**
  *
@@ -48,4 +45,4 @@ const compareStatements = (a, b) => {
   return 1;
 };
 
-module.exports = compareStatements;
+export default compareStatements;

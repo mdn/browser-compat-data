@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-/* Any copyright is dedicated to the Public Domain.
- * http://creativecommons.org/publicdomain/zero/1.0/ */
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-
-const compareStatements = require('./compare-statements');
+import compareStatements from './compare-statements.js';
 
 const tests = [
   {
@@ -62,6 +59,8 @@ const tests = [
         },
       },
     },
+  },
+  {
     input: {
       __compat: {
         support: {
