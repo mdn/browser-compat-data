@@ -1,9 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import compareVersions from 'compare-versions';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import { Logger } from '../utils.js';
 
 import bcd from '../../index.js';
@@ -165,6 +164,17 @@ function checkVersions(supportData, relPath, logger) {
 
           continue;
         }
+
+        if (statement === 'mirror') {
+          // If the data is to be mirrored, make sure it is mirrorable
+          if (!browsers[browser].upstream) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} sets {bold ${browser}} to mirror, however {bold ${browser}} does not have an upstream browser.}`,
+            );
+          }
+          continue;
+        }
+
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
@@ -269,18 +279,10 @@ function findSupport(data, logger, relPath) {
 /**
  * Test for version errors
  *
- * @param {string} filename The file to test
+ * @param {Identifier} data The contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-export default function testVersions(filename) {
-  /** @type {Identifier} */
-  const data = JSON.parse(
-    fs.readFileSync(
-      new URL(new URL(filename, import.meta.url), import.meta.url),
-      'utf-8',
-    ),
-  );
-
+export default function testVersions(data) {
   const logger = new Logger('Versions');
 
   findSupport(data, logger);

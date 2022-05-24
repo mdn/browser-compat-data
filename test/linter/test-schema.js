@@ -1,12 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';
 import ajvFormats from 'ajv-formats';
 import betterAjvErrors from 'better-ajv-errors';
 import { Logger } from '../utils.js';
+
+import compatDataSchema from './../../schemas/compat-data.schema.json' assert { type: 'json' };
+import browserDataSchema from './../../schemas/browsers.schema.json' assert { type: 'json' };
 
 /**
  * @typedef {import('../utils').Logger} Logger
@@ -22,20 +24,13 @@ ajvErrors(ajv);
 /**
  * Test a file to make sure it follows the defined schema
  *
- * @param {string} dataFilename The file to test
- * @param {string} [schemaFilename] A specific schema file to test with, if needed
+ * @param {Identifier} data The contents of the file to test
+ * @param {object} filePath The path info for the file being tested
  * @returns {boolean} If the file contains errors
  */
-export default function testSchema(
-  dataFilename,
-  schemaFilename = './../../schemas/compat-data.schema.json',
-) {
-  const schema = JSON.parse(
-    fs.readFileSync(new URL(schemaFilename, import.meta.url), 'utf-8'),
-  );
-  const data = JSON.parse(
-    fs.readFileSync(new URL(dataFilename, import.meta.url), 'utf-8'),
-  );
+export default function testSchema(data, filePath) {
+  const schema =
+    filePath.category === 'browsers' ? browserDataSchema : compatDataSchema;
 
   const logger = new Logger('JSON Schema');
 
