@@ -1,19 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+
+import compareFeatures from '../lib/compare-features.js';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
-
-const fs = require('fs');
-const { platform } = require('os');
-
-const compareFeatures = require('../lib/compare-features');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -60,4 +55,4 @@ const fixFeatureOrder = (filename) => {
   }
 };
 
-module.exports = fixFeatureOrder;
+export default fixFeatureOrder;

@@ -1,17 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const fs = require('fs');
-const url = require('url');
-const chalk = require('chalk');
-const {
-  IS_WINDOWS,
-  indexToPos,
-  indexToPosRaw,
-  Logger,
-} = require('../utils.js');
+import chalk from 'chalk-template';
+import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
 
 /**
  * @typedef {object} LinkError
@@ -25,13 +16,13 @@ const {
 /**
  * Process the data for any errors within the links
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-function processData(filename) {
+export function processData(rawData) {
   let errors = [];
 
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let actual = rawData;
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -206,7 +197,7 @@ function processData(filename) {
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
     (match) => {
-      if (url.parse(match[1]).hostname === null) {
+      if (new URL(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
           actualLink: match[1],
@@ -253,14 +244,16 @@ function processLink(errors, actual, regexp, matchHandler) {
 /**
  * Test for any malformed links
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {boolean} If the file contains errors
  */
-function testLinks(filename) {
+export default function testLinks(rawData) {
+  // XXX This should use the parsed JSON data
+
   const logger = new Logger('Links');
 
   /** @type {Object[]} */
-  let errors = processData(filename);
+  let errors = processData(rawData);
 
   for (const error of errors) {
     logger.error(
@@ -272,5 +265,3 @@ function testLinks(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = { processData, testLinks };
