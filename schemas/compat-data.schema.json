@@ -95,6 +95,14 @@
           ]
         }
       ],
+      "dependencies": {
+        "partial_implementation": {
+          "if": {
+            "properties": { "partial_implementation": { "const": true } }
+          },
+          "then": { "required": ["notes"] }
+        }
+      },
       "additionalProperties": false
     },
 
