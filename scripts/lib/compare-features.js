@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
 /**
  * Sort a list of features based upon a specific order:
  *  1. '__compat'
@@ -45,4 +43,4 @@ const compareFeatures = (a, b) => {
   return a.localeCompare(b, 'en');
 };
 
-module.exports = compareFeatures;
+export default compareFeatures;
