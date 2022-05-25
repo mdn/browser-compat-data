@@ -69,6 +69,19 @@ export function processData(rawData) {
   );
 
   processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://chromium\.googlesource\.com/chromium/src/\+/([\w\d]+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crrev.com/${match[1]}`,
+      };
+    },
+  );
+
+  processLink(
     // use https://webkit.org/b/100000 instead
     errors,
     actual,
