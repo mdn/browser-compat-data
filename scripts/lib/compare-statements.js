@@ -15,16 +15,21 @@ import compareVersions from 'compare-versions';
 const compareStatements = (a, b) => {
   const has = {
     a: {
+      unsupported: a.version_removed != undefined,
       flags: a.flags != undefined,
       altname: a.prefix != undefined || a.alternative_name != undefined,
       partial: a.partial_implementation != undefined,
     },
     b: {
+      unsupported: b.version_removed != undefined,
       flags: b.flags != undefined,
       altname: b.prefix != undefined || b.alternative_name != undefined,
       partial: b.partial_implementation != undefined,
     },
   };
+
+  if (has.a.unsupported && !has.b.unsupported) return 1;
+  if (!has.a.unsupported && has.b.unsupported) return -1;
 
   if (has.a.flags && !has.b.flags) return 1;
   if (!has.a.flags && has.b.flags) return -1;
@@ -35,11 +40,15 @@ const compareStatements = (a, b) => {
   if (has.a.partial && !has.b.partial) return 1;
   if (!has.a.partial && has.b.partial) return -1;
 
-  if (typeof a.version_added == 'string' && typeof b.version_added == 'string')
+  if (
+    typeof a.version_added == 'string' &&
+    typeof b.version_added == 'string'
+  ) {
     return compareVersions(
       b.version_added.replace('≤', ''),
       a.version_added.replace('≤', ''),
     );
+  }
 
   return 0;
 };

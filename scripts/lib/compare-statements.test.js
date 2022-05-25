@@ -29,6 +29,11 @@ const tests = [
               ],
             },
             { version_added: '20' },
+            {
+              version_added: '11',
+              version_removed: '12',
+              prefix: 'moz',
+            },
           ],
         },
       },
@@ -38,12 +43,6 @@ const tests = [
         support: {
           chrome: [
             { version_added: '20' },
-            {
-              version_added: '10',
-              version_removed: '18',
-              partial_implementation: true,
-              notes: 'No fries with the burger',
-            },
             { version_added: '20', prefix: 'webkit' },
             {
               version_added: '12',
@@ -54,6 +53,17 @@ const tests = [
                   value_to_set: 'Extra Crispy',
                 },
               ],
+            },
+            {
+              version_added: '10',
+              version_removed: '18',
+              partial_implementation: true,
+              notes: 'No fries with the burger',
+            },
+            {
+              version_added: '11',
+              version_removed: '12',
+              prefix: 'moz',
             },
           ],
         },
