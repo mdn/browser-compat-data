@@ -1,10 +1,13 @@
-const { execSync } = require('child_process');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-function exec(command) {
+import { execSync } from 'node:child_process';
+
+export function exec(command) {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
 
-function requireGitHubCLI() {
+export function requireGitHubCLI() {
   const command = 'gh auth status';
   try {
     execSync(command, {
@@ -20,11 +23,11 @@ function requireGitHubCLI() {
   }
 }
 
-function getLatestTag() {
+export function getLatestTag() {
   return exec('git describe --abbrev=0 --tags');
 }
 
-function getRefDate(ref, querySafe = false) {
+export function getRefDate(ref, querySafe = false) {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
@@ -33,7 +36,7 @@ function getRefDate(ref, querySafe = false) {
   return rawDateString;
 }
 
-function buildQuery(endRef, startRef, urlSafe) {
+export function buildQuery(endRef, startRef, urlSafe) {
   let merged;
   if (!['HEAD', 'main'].includes(endRef)) {
     merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
@@ -47,7 +50,7 @@ function buildQuery(endRef, startRef, urlSafe) {
   return `is:pr ${merged}`;
 }
 
-function releaseYargsBuilder(yargs) {
+export function releaseYargsBuilder(yargs) {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',
@@ -58,12 +61,3 @@ function releaseYargsBuilder(yargs) {
     default: 'main',
   });
 }
-
-module.exports = {
-  buildQuery,
-  exec,
-  getLatestTag,
-  getRefDate,
-  releaseYargsBuilder,
-  requireGitHubCLI,
-};

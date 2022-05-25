@@ -1,9 +1,16 @@
-const http = require('https');
-const readline = require('readline');
-const { exec, releaseYargsBuilder } = require('./release-utils');
-const { walk } = require('../utils');
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const { argv } = require('yargs').command(
+import http from 'node:https';
+import readline from 'readline';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import { exec, releaseYargsBuilder } from './utils.js';
+import { walk } from '../../utils/index.js';
+
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',
   'Generate statistics for release notes',
   releaseYargsBuilder,
@@ -138,4 +145,6 @@ async function main() {
   );
 }
 
-main();
+if (esMain(import.meta)) {
+  await main();
+}

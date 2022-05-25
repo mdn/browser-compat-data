@@ -1,8 +1,11 @@
-const assert = require('assert').strict;
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
-const bcd = require('..');
-const query = require('./query');
-const { joinPath, isBrowser, isFeature } = require('./walkingUtils');
+import assert from 'node:assert/strict';
+
+import bcd from '../index.js';
+import query from './query.js';
+import { joinPath, isBrowser, isFeature } from './walkingUtils.js';
 
 describe('joinPath()', function () {
   it('joins dotted paths to features', function () {
