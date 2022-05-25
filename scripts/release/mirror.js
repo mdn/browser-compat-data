@@ -361,7 +361,9 @@ export const bumpSupport = (sourceData, destination) => {
 const mirrorSupport = (destination, data) => {
   const upstream = browsers[destination].upstream;
   if (!upstream) {
-    throw new Error(`Upstream is not defined for ${browser}, cannot mirror!`);
+    throw new Error(
+      `Upstream is not defined for ${destination}, cannot mirror!`,
+    );
   }
   return bumpSupport(data[upstream], destination);
 };
