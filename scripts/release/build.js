@@ -16,7 +16,7 @@ const packageJson = JSON.parse(
 
 const directory = './build/';
 
-const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
+const verbatimFiles = ['LICENSE', 'README.md', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
@@ -77,6 +77,7 @@ async function createManifest() {
       '.': './data.json',
       './forLegacyNode': './legacynode.mjs',
     },
+    types: 'types.d.ts',
   };
 
   const minimalKeys = [
@@ -89,7 +90,6 @@ async function createManifest() {
     'license',
     'bugs',
     'homepage',
-    'types',
   ];
 
   for (const key of minimalKeys) {
