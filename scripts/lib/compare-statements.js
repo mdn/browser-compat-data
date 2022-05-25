@@ -10,11 +10,10 @@ import compareVersions from 'compare-versions';
  2. Statements with alternative names or prefixes
  3. Statements with partial support
  4. Statements with flags
- *
  */
 
 const compareStatements = (a, b) => {
-  let has = {
+  const has = {
     a: {
       flags: a.flags != undefined,
       altname: a.prefix != undefined || a.alternative_name != undefined,
@@ -42,7 +41,7 @@ const compareStatements = (a, b) => {
       a.version_added.replace('≤', ''),
     );
 
-  return 1;
+  return 0;
 };
 
 export default compareStatements;
