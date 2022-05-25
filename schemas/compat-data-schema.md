@@ -403,9 +403,9 @@ Example for two flags required:
 }
 ```
 
-#### `implementation_url`
+#### `impl_url`
 
-An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `implementation_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
+An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
 
 For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/,
 https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with
