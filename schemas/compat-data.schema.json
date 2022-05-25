@@ -95,6 +95,14 @@
           ]
         }
       ],
+      "dependencies": {
+        "partial_implementation": {
+          "if": {
+            "properties": { "partial_implementation": { "const": true } }
+          },
+          "then": { "required": ["notes"] }
+        }
+      },
       "additionalProperties": false
     },
 
@@ -109,7 +117,8 @@
     "support_statement": {
       "anyOf": [
         { "$ref": "#/definitions/simple_support_statement" },
-        { "$ref": "#/definitions/array_support_statement" }
+        { "$ref": "#/definitions/array_support_statement" },
+        { "const": "mirror" }
       ]
     },
 
