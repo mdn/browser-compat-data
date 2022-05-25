@@ -21,20 +21,22 @@ function getBaseAndHeadContents(baseCommit, basePath, headCommit, headPath) {
   return { base, head };
 }
 
+function stringifyValue(value) {
+  return Array.isArray(value)
+    ? 'typeof array'
+    : value && typeof value === 'object'
+    ? 'typeof object'
+    : value;
+}
+
+function stringifyChange(lhs, rhs) {
+  return `${stringifyValue(lhs)} → ${stringifyValue(rhs)}`;
+}
+
 /**
  * @param {import("deep-diff").Diff<any, any>} diffItem
  */
 function describeByKind(diffItem) {
-  function stringifyValue(value) {
-    return Array.isArray(value)
-      ? 'typeof array'
-      : value && typeof value === 'object'
-      ? 'typeof object'
-      : value;
-  }
-  function stringifyChange(lhs, rhs) {
-    return `${stringifyValue(lhs)} → ${stringifyValue(rhs)}`;
-  }
   switch (diffItem.kind) {
     case 'N':
       return 'added';
