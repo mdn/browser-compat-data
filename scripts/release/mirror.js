@@ -365,6 +365,12 @@ const mirrorSupport = (destination, data) => {
       `Upstream is not defined for ${destination}, cannot mirror!`,
     );
   }
+
+  if (data[upstream] == 'mirror') {
+    // Perform mirroring upstream if needed
+    data[upstream] = bumpData(upstream, data);
+  }
+
   return bumpSupport(data[upstream], destination);
 };
 
