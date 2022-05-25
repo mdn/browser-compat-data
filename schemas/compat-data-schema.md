@@ -386,7 +386,9 @@ Example for two flags required:
 }
 ```
 
-#### `implementation_url`
+#### `implementation_url` (_experimental_)
+
+_Experimental_: This is under development and not subject to the [Semantic versioning policy](README.md#semantic-versioning-policy). Expect this to change in future releases.
 
 An optional changeset URL or commit URL for the revision that implemented the feature in the
 source code for the associated browser; e.g. a https://trac.webkit.org/changeset/,
