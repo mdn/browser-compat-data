@@ -139,7 +139,7 @@ const copyStatement = (data) => {
  * @returns {SupportStatement}
  */
 const combineStatements = (...data) => {
-  const ignoredKeys = ['version_added', 'notes'];
+  const ignoredKeys = ['version_added', 'notes', 'implementation_url'];
 
   const flattenedData = data.flat(2);
   const sections = {};
