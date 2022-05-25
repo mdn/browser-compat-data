@@ -403,12 +403,9 @@ Example for two flags required:
 }
 ```
 
-#### `implementation_url` (_experimental_)
+#### `implementation_url`
 
-_Experimental_: This is under development and not subject to the [Semantic versioning policy](README.md#semantic-versioning-policy). Expect this to change in future releases.
-
-An optional changeset URL or commit URL for the revision that implemented the feature in the
-source code for the associated browser; e.g. a https://trac.webkit.org/changeset/,
+An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser; e.g. a https://trac.webkit.org/changeset/,
 https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with
 a subject line that will typically be something of the form _"Implement [feature]"_,
 _"Support [feature]"_, or _"Enable [feature]"_. The presence of an `implementation_url`
