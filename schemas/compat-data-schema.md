@@ -405,15 +405,12 @@ Example for two flags required:
 
 #### `implementation_url`
 
-An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser; e.g. a https://trac.webkit.org/changeset/,
+An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `implementation_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
+
+For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/,
 https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with
 a subject line that will typically be something of the form _"Implement [feature]"_,
-_"Support [feature]"_, or _"Enable [feature]"_. The presence of an `implementation_url`
-value indicates that the associated browser has spec-conformant support for the feature in
-its source code. Therefore, an `implementation_url` value can be added even if the feature
-hasn't yet shipped in a stable release, but instead only in a Nightly, Canary, or Technology
-Preview release — or even if the feature hasn't yet shipped in any release at all, but has
-only landed in the source code for the associated browser.
+_"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
 
 #### `partial_implementation`
 
