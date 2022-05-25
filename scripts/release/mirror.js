@@ -368,7 +368,7 @@ const mirrorSupport = (destination, data) => {
 
   if (data[upstream] == 'mirror') {
     // Perform mirroring upstream if needed
-    data[upstream] = bumpData(upstream, data);
+    data[upstream] = mirrorSupport(upstream, data);
   }
 
   return bumpSupport(data[upstream], destination);
