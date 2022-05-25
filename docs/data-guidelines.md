@@ -142,8 +142,6 @@ This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-dat
 
 If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
 
-For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
-
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
 ## Non-functional defined names imply `"partial_implementation"`
@@ -241,6 +239,19 @@ Valid support statements containing flags can be removed from BCD if it is consi
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
 This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
+
+## When to add `version_removed` to flagged support
+
+A `version_removed` should be added to support statements containing flags under one of the following conditions:
+
+- The browser has enabled the feature or flag by default in a stable release (not beta or nightly).
+- The feature can no longer be enabled or disabled by toggling the flag.
+- The feature has been removed from the browser.
+- The flag has been removed from the browser.
+
+Set `version_removed` to the earliest applicable version from these conditions. For example, if Chrome 90 enabled the flag by default, the feature could no longer be toggled off by disabling the flag in Chrome 96, and finally the flag was removed by Chrome 98, then set `version_removed` to `90` as it is the earliest applicable version.
+
+This guideline was proposed in [#16287](https://github.com/mdn/browser-compat-data/pull/16287).
 
 ## Initial versions for browsers
 

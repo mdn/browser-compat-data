@@ -133,6 +133,23 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
+#### Mirroring data
+
+Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Internet). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
+
+An example of this would be the following:
+
+```js
+"support": {
+  "chrome": {
+    "version_added": "66"
+  },
+  "chrome_android": "mirror", // will become { version_added: "66" }
+}
+```
+
+This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
+
 #### The `support_statement` object
 
 The `support_statement` object describes the support provided by a single browser type for the given subfeature.
@@ -455,7 +472,7 @@ A `matches` object contains hints to help automatically detect whether source co
 
   Examples:
 
-  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform.json) and corresponding tests.
+  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform-origin.json) and corresponding tests.
 
 ### Status information
 
