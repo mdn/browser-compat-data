@@ -4,6 +4,8 @@
 import chalk from 'chalk-template';
 import deepDiff from 'deep-diff';
 import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 
@@ -111,7 +113,27 @@ function getDiffs(base, head = '') {
 }
 
 if (esMain(import.meta)) {
-  let [base = 'origin/HEAD', head] = process.argv.slice(2);
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [base] [head]',
+    'Print a formatted diff for changes between base and head commits',
+    (yargs) => {
+      yargs
+        .positional('base', {
+          describe:
+            'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
+          type: 'string',
+          default: 'origin/main',
+        })
+        .positional('head', {
+          describe:
+            'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
+          type: 'string',
+          default: 'HEAD',
+        });
+    },
+  );
+
+  const { base, head } = argv;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);
     for (const value of values) {
