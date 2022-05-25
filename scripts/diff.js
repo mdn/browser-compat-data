@@ -23,16 +23,8 @@ function getBaseAndHeadContents(baseCommit, basePath, headCommit, headPath) {
   return { base, head };
 }
 
-function stringifyValue(value) {
-  return Array.isArray(value)
-    ? 'typeof array'
-    : value && typeof value === 'object'
-    ? JSON.stringify(value)
-    : value;
-}
-
 function stringifyChange(lhs, rhs) {
-  return `${stringifyValue(lhs)} → ${stringifyValue(rhs)}`;
+  return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
 }
 
 /**
