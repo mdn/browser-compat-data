@@ -227,6 +227,13 @@ export interface SimpleSupportStatement {
      */
     value_to_set?: string;
   }[];
+
+  /**
+   * An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser; e.g. a https://trac.webkit.org/changeset/
+   * https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL.
+   */
+  impl_url?: string;
+
   /**
    * A `boolean` value indicating whether or not the implementation of the sub-feature follows
    * the current specification closely enough to not create major interoperability problems.

@@ -63,6 +63,24 @@
             "required": ["type", "name"]
           }
         },
+        "impl_url": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/impl_url_value"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "$ref": "#/definitions/impl_url_value"
+              }
+            }
+          ],
+          "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "errorMessage": {
+            "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
+          }
+        },
         "partial_implementation": {
           "const": true,
           "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
@@ -195,6 +213,12 @@
       "type": "string",
       "format": "uri",
       "pattern": "(^https://[^#]+#.+)|(^https://www.khronos.org/registry/webgl/extensions/[^/]+/)"
+    },
+
+    "impl_url_value": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://(trac.webkit.org/changeset/|hg.mozilla.org/mozilla-central/rev/|crrev.com/|bugzil.la/|crbug.com/|webkit.org/b/)"
     },
 
     "compat_statement": {
