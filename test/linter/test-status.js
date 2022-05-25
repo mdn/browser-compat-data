@@ -26,7 +26,7 @@ function checkStatusContradiction(status, logger, path = []) {
  * @param {Logger} logger
  * @param {string[]} path
  */
- function checkStatusInheritance(childStatus, parentStatus, logger, path = []) {
+function checkStatusInheritance(childStatus, parentStatus, logger, path = []) {
   if (childStatus && parentStatus) {
     if (!childStatus.deprecated && parentStatus.deprecated) {
       logger.error(
