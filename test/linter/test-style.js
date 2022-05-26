@@ -108,7 +108,7 @@ function processData(rawData, category, logger) {
       expected = expected.replace(/\r/g, '');
     }
 
-    if (expected !== expected) {
+    if (actual !== expected) {
       logger.error(
         chalk`Browser release sorting error on ${jsonDiff(actual, expected)}`,
         chalk`Run {bold npm run fix} to fix sorting automatically`,
