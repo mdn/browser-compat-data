@@ -118,7 +118,9 @@ export default {
   name: 'Style',
   description: 'Tests the style and formatting of the JSON file',
   scope: 'file',
-  check(logger, { rawdata }) {
-    processData(rawdata, logger);
+  check(logger, { rawdata, path: { category } }) {
+    if (category !== 'browsers') {
+      processData(rawdata, logger);
+    }
   },
 };
