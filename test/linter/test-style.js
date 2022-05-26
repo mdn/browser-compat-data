@@ -63,9 +63,7 @@ function orderFeatures(key, value) {
 /**
  * Return a new feature object whose first-level properties have been
  * ordered according to compareVersions, and so will be
- * stringified in that order as well. This relies on guaranteed "own"
- * property ordering, which is insertion order for non-integer keys
- * (which is our case).
+ * stringified in that order as well.
  *
  * @param {string} key The key in the object
  * @param {*} value The value of the key
