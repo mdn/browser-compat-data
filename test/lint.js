@@ -87,6 +87,7 @@ const checkFiles = (...files) => {
         const fileData = JSON.parse(rawFileData);
 
         testSchema(fileData, filePath);
+        testStyle(rawFileData, filePath);
         testLinks(rawFileData);
 
         if (file.indexOf('browsers' + path.sep) !== -1) {
@@ -97,7 +98,6 @@ const checkFiles = (...files) => {
           testDescriptions(fileData);
           testPrefix(fileData, filePath);
           testStatus(fileData);
-          testStyle(rawFileData);
           testVersions(fileData);
           testNotes(fileData);
         }
