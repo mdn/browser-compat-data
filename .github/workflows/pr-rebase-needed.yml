@@ -7,5 +7,7 @@ on:
 jobs:
   idle:
     uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
+    with:
+      target-repo: "mdn/browser-compat-data"
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
