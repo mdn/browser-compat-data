@@ -159,6 +159,10 @@ const main = (
     }
   }
 
+  if (!hasErrors) {
+    console.log(chalk`{green All data {bold passed} linting!}`);
+  }
+
   return hasErrors;
 };
 
