@@ -5,29 +5,38 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer",
         "spec_url": "https://wicg.github.io/sanitizer-api/#sanitizer-api",
         "support": {
-          "chrome": {
-            "version_added": "93",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "enable-experimental-web-platform-features",
-                "value_to_set": "enabled"
-              }
-            ]
-          },
-          "chrome_android": {
-            "version_added": false
-          },
-          "edge": {
-            "version_added": "93",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "enable-experimental-web-platform-features",
-                "value_to_set": "enabled"
-              }
-            ]
-          },
+          "chrome": [
+            {
+              "version_added": "102"
+            },
+            {
+              "version_added": "93",
+              "version_removed": "102",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
+          "chrome_android": [
+            {
+              "version_added": "102"
+            },
+            {
+              "version_added": "93",
+              "version_removed": "102",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "firefox": {
             "version_added": "83",
             "flags": [
@@ -82,29 +91,54 @@
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-sanitizer-sanitizer",
           "description": "<code>Sanitizer()</code> constructor",
           "support": {
-            "chrome": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "83",
               "flags": [
@@ -143,9 +177,22 @@
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -159,29 +206,54 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer/getConfiguration",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-sanitizer-getconfiguration",
           "support": {
-            "chrome": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "edge": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": false
             },
@@ -213,9 +285,22 @@
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -229,29 +314,41 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer/sanitize",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-sanitizer-sanitize",
           "support": {
-            "chrome": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": {
-              "version_added": false
+              "version_added": "102"
             },
-            "edge": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "edge": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": "83",
               "flags": [
@@ -290,9 +387,22 @@
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": true,
@@ -306,29 +416,38 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer/sanitizeFor",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-sanitizer-sanitizefor",
           "support": {
-            "chrome": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "firefox": {
               "version_added": false
             },
@@ -360,9 +479,22 @@
             "samsunginternet_android": {
               "version_added": false
             },
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ]
           },
           "status": {
             "experimental": true,
