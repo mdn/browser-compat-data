@@ -139,7 +139,7 @@ const copyStatement = (data) => {
  * @returns {SupportStatement}
  */
 const combineStatements = (...data) => {
-  const ignoredKeys = ['version_added', 'notes'];
+  const ignoredKeys = ['version_added', 'notes', 'impl_url'];
 
   const flattenedData = data.flat(2);
   const sections = {};
@@ -317,7 +317,7 @@ const bumpWebView = (sourceData) => {
  * @param {SupportStatement} data
  * @param {string} destination
  */
-export const bumpVersion = (sourceData, destination) => {
+export const bumpSupport = (sourceData, destination) => {
   let newData = null;
 
   if (sourceData == null) {
@@ -326,7 +326,7 @@ export const bumpVersion = (sourceData, destination) => {
 
   if (Array.isArray(sourceData)) {
     return combineStatements(
-      ...sourceData.map((data) => bumpVersion(data, destination)),
+      ...sourceData.map((data) => bumpSupport(data, destination)),
     );
   }
 
@@ -350,12 +350,28 @@ export const bumpVersion = (sourceData, destination) => {
     return { version_added: false };
   }
 
+  if (newData.version_added === newData.version_removed) {
+    // If version_added and version_removed are the same, feature is unsupported
+    return { ...newData, version_added: false, version_removed: undefined };
+  }
+
   return newData;
 };
 
-const bumpData = (destination, data) => {
+const mirrorSupport = (destination, data) => {
   const upstream = browsers[destination].upstream;
-  return bumpVersion(data[upstream], destination);
+  if (!upstream) {
+    throw new Error(
+      `Upstream is not defined for ${destination}, cannot mirror!`,
+    );
+  }
+
+  if (data[upstream] == 'mirror') {
+    // Perform mirroring upstream if needed
+    data[upstream] = mirrorSupport(upstream, data);
+  }
+
+  return bumpSupport(data[upstream], destination);
 };
 
-export default bumpData;
+export default mirrorSupport;
