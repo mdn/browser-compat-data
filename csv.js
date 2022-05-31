@@ -64,7 +64,7 @@ function main() {
   }
   const dateMap = getReleaseDateMap(browsers);
   const columns = browsers.flatMap(b => [`${b}_version`, `${b}_date`]);
-  console.log(`path,deprecated,experimental,${columns.join(',')},comments`);
+  console.log(`path,deprecated,experimental,count,first_date,last_date,${columns.join(',')},comments`);
   for (const {path, compat} of walk(entryPoints, bcd)) {
     const url = compat.mdn_url;
     const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : `=${JSON.stringify(path)}`;
@@ -72,6 +72,9 @@ function main() {
       compat.status.deprecated,
       compat.status.experimental
     ].map((s) => `=${String(s).toUpperCase()}`);
+    let count = 0;
+    let first_date = '';
+    let last_date = '';
     const links = [];
     const support = browsers.flatMap(browser => {
       // Flatten to string, true, false, or null using the first non-flag range.
@@ -116,6 +119,13 @@ function main() {
       if (parts.length > 2) {
         version = parts.slice(0, 2).join('.');
       }
+      count++;
+      if (!first_date || date < first_date) {
+        first_date = date;
+      }
+      if (!last_date || date > last_date) {
+        last_date = date;
+      }
       return [version, date];
     });
 
@@ -145,7 +155,7 @@ function main() {
     } else {
       bug = '';
     }
-    console.log([linkedPath, ...statuses, ...support, bug].join(','));
+    console.log([linkedPath, ...statuses, count, first_date, last_date, ...support, bug].join(','));
   }
 }
 
