@@ -3,6 +3,7 @@ import HTMLParser from '@desertnet/html-parser';
 
 import bcd from './index.js';
 import walk from './utils/walk.js';
+import mirrorSupport from './scripts/release/mirror.js';
 
 const entryPoints = [
   'api',
@@ -75,6 +76,9 @@ function main() {
     const support = browsers.flatMap(browser => {
       // Flatten to string, true, false, or null using the first non-flag range.
       let ranges = compat.support[browser];
+      if (ranges === 'mirror') {
+        ranges = mirrorSupport(browser, compat.support);
+      }
       if (!ranges) {
         return ['', ''];
       }
