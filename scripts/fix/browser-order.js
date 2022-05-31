@@ -3,7 +3,7 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../test/utils.js';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -20,7 +20,7 @@ import { IS_WINDOWS } from '../test/utils.js';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} Value with sorting applied
  */
-const orderSupportBlock = (key, value) => {
+export const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
       .sort()

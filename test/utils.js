@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import { platform } from 'node:os';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 
 /** @type {{readonly [char: string]: string}} */
 export const INVISIBLES_MAP = Object.freeze(

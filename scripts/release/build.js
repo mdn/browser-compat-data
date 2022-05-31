@@ -7,17 +7,36 @@ import path from 'node:path';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
+import bumpData from './mirror.js';
+import { walk } from '../../utils/index.js';
+
 const packageJson = JSON.parse(
   await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
 );
 
 const directory = './build/';
 
-const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
+const verbatimFiles = ['LICENSE', 'README.md', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
   const { default: bcd } = await import('../../index.js');
+
+  const walker = walk(undefined, bcd);
+
+  for (const feature of walker) {
+    for (const [browser, supportData] of Object.entries(
+      feature.compat.support,
+    )) {
+      if (supportData === 'mirror') {
+        feature.data.__compat.support[browser] = bumpData(
+          browser,
+          feature.compat.support,
+        );
+      }
+    }
+  }
+
   const string = stringify({
     ...bcd,
     __meta: { version: packageJson.version },
@@ -58,6 +77,7 @@ async function createManifest() {
       '.': './data.json',
       './forLegacyNode': './legacynode.mjs',
     },
+    types: 'types.d.ts',
   };
 
   const minimalKeys = [
@@ -70,7 +90,6 @@ async function createManifest() {
     'license',
     'bugs',
     'homepage',
-    'types',
   ];
 
   for (const key of minimalKeys) {

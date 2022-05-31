@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -9,6 +9,17 @@ import { hideBin } from 'yargs/helpers';
 import bcd from '../index.js';
 
 import { getRefDate } from './release/utils.js';
+
+/** @type {string[]} */
+const webextensionsBrowsers = [
+  'chrome',
+  'edge',
+  'firefox',
+  'opera',
+  'safari',
+  'firefox_android',
+  'safari_ios',
+];
 
 /**
  * Check whether a support statement is a specified type
@@ -94,11 +105,11 @@ const iterateData = (data, browsers, stats) => {
  * @returns {object.<string, VersionStats>?}
  */
 const getStats = (folder, allBrowsers) => {
-  /**
-   * @constant {string[]}
-   */
+  /** @constant {string[]} */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
+    : folder === 'webextensions'
+    ? webextensionsBrowsers
     : [
         'chrome',
         'chrome_android',
@@ -117,7 +128,9 @@ const getStats = (folder, allBrowsers) => {
   });
 
   if (folder) {
-    if (bcd[folder]) {
+    if (folder === 'webextensions') {
+      iterateData(bcd[folder], webextensionsBrowsers, stats);
+    } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
@@ -125,7 +138,13 @@ const getStats = (folder, allBrowsers) => {
     }
   } else {
     for (const data in bcd) {
-      if (!(data === 'browsers' || data === 'webextensions')) {
+      if (data === 'webextensions') {
+        iterateData(
+          bcd[data],
+          browsers.filter((b) => webextensionsBrowsers.includes(b)),
+          stats,
+        );
+      } else if (data !== 'browsers') {
         iterateData(bcd[data], browsers, stats);
       }
     }

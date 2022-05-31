@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { exec } from 'node:child_process';
+import { CompatData } from './types';
 
-exec('node scripts/fix/feature-order.js');
+import './external';
+
+export default CompatData;
