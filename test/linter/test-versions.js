@@ -48,7 +48,7 @@ for (const browser of Object.keys(browsers)) {
 }
 
 /** @type {string[]} */
-const blockMany = [
+const realValuesTargetBrowsers = [
   'chrome',
   'chrome_android',
   'edge',
@@ -64,15 +64,15 @@ const blockMany = [
 ];
 
 /** @type {object.<string, string[]>} */
-const blockList = {
-  api: blockMany,
-  css: blockMany,
+const realValuesRequired = {
+  api: realValuesTargetBrowsers,
+  css: realValuesTargetBrowsers,
   html: [],
   http: [],
   svg: [],
-  javascript: [...blockMany, 'nodejs'],
-  mathml: blockMany,
-  webdriver: blockMany,
+  javascript: [...realValuesTargetBrowsers, 'nodejs'],
+  mathml: realValuesTargetBrowsers,
+  webdriver: realValuesTargetBrowsers,
   webextensions: [],
 };
 
@@ -87,7 +87,10 @@ const blockList = {
 function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
     return validBrowserVersions[browser].includes(version);
-  } else if (blockList[category].includes(browser) && version !== false) {
+  } else if (
+    realValuesRequired[category].includes(browser) &&
+    version !== false
+  ) {
     return false;
   } else {
     return true;
@@ -154,7 +157,7 @@ function checkVersions(supportData, category, logger) {
 
       for (const statement of supportStatements) {
         if (statement === undefined) {
-          if (blockList[category].includes(browser)) {
+          if (realValuesRequired[category].includes(browser)) {
             logger.error(chalk`{red → {bold ${browser}} must be defined}`);
           }
 
