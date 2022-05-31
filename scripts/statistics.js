@@ -1,42 +1,25 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk-template';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-const chalk = require('chalk');
+import bcd from '../index.js';
 
-const bcd = require('..');
-const { getRefDate } = require('./release-utils');
+import { getRefDate } from './release/utils.js';
 
-const { argv } = require('yargs').command(
-  '$0 [folder]',
-  'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
-  (yargs) => {
-    yargs
-      .positional('folder', {
-        describe: 'Limit the statistics to a specific folder',
-        type: 'string',
-        default: '',
-      })
-      .option('all', {
-        alias: 'a',
-        describe: 'Show statistics for all browsers within BCD',
-        type: 'boolean',
-        nargs: 0,
-      });
-  },
-);
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all The total number of occurrences for the browser.
- * @property {number} true The total number of `true` values for the browser.
- * @property {number} null The total number of `null` values for the browser.
- * @property {number} range The total number of range values for the browser.
- * @property {number} real The total number of real values for the browser.
- */
+/** @type {string[]} */
+const webextensionsBrowsers = [
+  'chrome',
+  'edge',
+  'firefox',
+  'opera',
+  'safari',
+  'firefox_android',
+  'safari_ios',
+];
 
 /**
  * Check whether a support statement is a specified type
@@ -122,11 +105,11 @@ const iterateData = (data, browsers, stats) => {
  * @returns {object.<string, VersionStats>?}
  */
 const getStats = (folder, allBrowsers) => {
-  /**
-   * @constant {string[]}
-   */
+  /** @constant {string[]} */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
+    : folder === 'webextensions'
+    ? webextensionsBrowsers
     : [
         'chrome',
         'chrome_android',
@@ -145,7 +128,9 @@ const getStats = (folder, allBrowsers) => {
   });
 
   if (folder) {
-    if (bcd[folder]) {
+    if (folder === 'webextensions') {
+      iterateData(bcd[folder], webextensionsBrowsers, stats);
+    } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
@@ -153,7 +138,13 @@ const getStats = (folder, allBrowsers) => {
     }
   } else {
     for (const data in bcd) {
-      if (!(data === 'browsers' || data === 'webextensions')) {
+      if (data === 'webextensions') {
+        iterateData(
+          bcd[data],
+          browsers.filter((b) => webextensionsBrowsers.includes('b')),
+          stats,
+        );
+      } else if (data !== 'browsers') {
         iterateData(bcd[data], browsers, stats);
       }
     }
@@ -163,13 +154,28 @@ const getStats = (folder, allBrowsers) => {
 };
 
 /**
+ * Get value as either percentage or number as requested
+ *
+ * @param {VersionStats} stats The stats object to get data from
+ * @param {string} type The type of statistic to obtain
+ * @param {boolean} counts Whether to return the integer itself
+ * @returns {string} The percentage or count
+ */
+const getStat = (stats, type, counts) => {
+  return counts
+    ? stats[type]
+    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
+};
+
+/**
  * Print statistics of BCD
  *
  * @param {object.<string, VersionStats>} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
+ * @param {boolean} counts Whether to display a count vs. a percentage
  * @returns {void}
  */
-const printStats = (stats, folder) => {
+const printStats = (stats, folder, counts) => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -194,20 +200,43 @@ const printStats = (stats, folder) => {
 
   Object.keys(stats).forEach((entry) => {
     table += `| ${entry.replace('_', ' ')} | `;
-    table += `${((stats[entry].real / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].range / stats[entry].all) * 100).toFixed(
-      2,
-    )}% | `;
-    table += `${((stats[entry].true / stats[entry].all) * 100).toFixed(2)}% | `;
-    table += `${((stats[entry].null / stats[entry].all) * 100).toFixed(2)}% |
+    table += `${getStat(stats[entry], 'real', counts)} | `;
+    table += `${getStat(stats[entry], 'range', counts)} | `;
+    table += `${getStat(stats[entry], 'true', counts)} | `;
+    table += `${getStat(stats[entry], 'null', counts)} |
 `;
   });
 
   console.log(table);
 };
 
-if (require.main === module) {
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [folder]',
+    'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+    (yargs) => {
+      yargs
+        .positional('folder', {
+          describe: 'Limit the statistics to a specific folder',
+          type: 'string',
+          default: '',
+        })
+        .option('all', {
+          alias: 'a',
+          describe: 'Show statistics for all browsers within BCD',
+          type: 'boolean',
+          nargs: 0,
+        })
+        .option('counts', {
+          alias: 'c',
+          describe: 'Show feature count rather than percentages',
+          type: 'boolean',
+          nargs: 0,
+        });
+    },
+  );
+
   printStats(getStats(argv.folder, argv.all), argv.folder);
 }
 
-module.exports = getStats;
+export default getStats;

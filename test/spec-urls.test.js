@@ -1,11 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import assert from 'node:assert/strict';
 
-const assert = require('assert').strict;
-const specData = require('browser-specs');
-const { walk } = require('../utils');
+import specData from 'browser-specs' assert { type: 'json' };
+
+import { walk } from '../utils/index.js';
 
 describe('spec_url data', () => {
   it('spec_urls only use allow listed hosts by w3c/browser-specs (and our exception list)', () => {
@@ -39,6 +39,12 @@ describe('spec_url data', () => {
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
 
+      // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/618
+      'https://sourcemaps.info/spec.html',
+
+      // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/622
+      'https://www.w3.org/TR/WOFF/',
+
       // Exception for April Fools' joke for "418 I'm a teapot"
       'https://www.rfc-editor.org/rfc/rfc2324',
 
@@ -53,6 +59,9 @@ describe('spec_url data', () => {
       // Not really a browser feature, thus not in browser-specs
       // Remove if it is in the main ECMA spec
       'https://tc39.es/proposal-hashbang/out.html',
+
+      // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
+      'https://w3c.github.io/webrtc-extensions/',
 
       // Remove if https://github.com/w3c/mathml/issues/216 is resolved
       'https://w3c.github.io/mathml/',
