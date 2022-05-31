@@ -17,7 +17,7 @@ import compareStatements from '../lib/compare-statements.js';
  *
  * @returns {*} The new value
  */
-function orderStatements(key, value) {
+export function orderStatements(key, value) {
   if (key === '__compat') {
     for (let browser of Object.keys(value.support)) {
       let supportData = value.support[browser];
