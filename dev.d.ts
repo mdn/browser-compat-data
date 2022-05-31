@@ -3,4 +3,6 @@
 
 import { CompatData } from './types';
 
+import './external';
+
 export default CompatData;

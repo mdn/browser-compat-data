@@ -63,6 +63,24 @@
             "required": ["type", "name"]
           }
         },
+        "impl_url": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/impl_url_value"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "$ref": "#/definitions/impl_url_value"
+              }
+            }
+          ],
+          "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "errorMessage": {
+            "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
+          }
+        },
         "partial_implementation": {
           "const": true,
           "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
@@ -95,6 +113,14 @@
           ]
         }
       ],
+      "dependencies": {
+        "partial_implementation": {
+          "if": {
+            "properties": { "partial_implementation": { "const": true } }
+          },
+          "then": { "required": ["notes"] }
+        }
+      },
       "additionalProperties": false
     },
 
@@ -112,29 +138,6 @@
         { "$ref": "#/definitions/array_support_statement" },
         { "const": "mirror" }
       ]
-    },
-
-    "matches_block": {
-      "type": "object",
-      "maxProperties": 1,
-      "minProperties": 1,
-      "properties": {
-        "keywords": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "type": "string"
-          }
-        },
-        "regex_token": {
-          "type": "string"
-        },
-        "regex_value": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
     },
 
     "status_block": {
@@ -189,6 +192,12 @@
       "pattern": "(^https://[^#]+#.+)|(^https://www.khronos.org/registry/webgl/extensions/[^/]+/)"
     },
 
+    "impl_url_value": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://(trac.webkit.org/changeset/|hg.mozilla.org/mozilla-central/rev/|crrev.com/|bugzil.la/|crbug.com/|webkit.org/b/)"
+    },
+
     "compat_statement": {
       "type": "object",
       "properties": {
@@ -217,7 +226,6 @@
           ],
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
         },
-        "matches": { "$ref": "#/definitions/matches_block" },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
