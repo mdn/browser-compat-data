@@ -146,14 +146,11 @@ export interface ReleaseStatement {
  *
  * It is an array of `simple_support_statement` objects, but if there
  * is only one of them, the array must be omitted.
- *
- * Internally, "mirror" may also be used to represent that the data
- * should be mirrored from its upstream counterpart.
  */
 export type SupportStatement =
   | SimpleSupportStatement
-  | SimpleSupportStatement[]
-  | 'mirror';
+  | SimpleSupportStatement[];
+
 export type VersionValue = string | boolean | null;
 
 /**
