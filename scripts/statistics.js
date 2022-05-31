@@ -141,7 +141,7 @@ const getStats = (folder, allBrowsers) => {
       if (data === 'webextensions') {
         iterateData(
           bcd[data],
-          browsers.filter((b) => webextensionsBrowsers.includes('b')),
+          browsers.filter((b) => webextensionsBrowsers.includes(b)),
           stats,
         );
       } else if (data !== 'browsers') {
