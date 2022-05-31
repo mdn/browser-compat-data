@@ -1,48 +1,25 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk-template';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-/**
- * @typedef {import('../../types').Identifier} Identifier
- *
- * @typedef {object} VersionStats
- * @property {number} all - The total number of occurrences for the browser.
- * @property {number} true - The total number of `true` values for the browser.
- * @property {number} null - The total number of `null` values for the browser.
- * @property {number} range - The total number of range values for the browser.
- * @property {number} real - The total number of real values for the browser.
- */
+import bcd from '../index.js';
 
-const chalk = require('chalk');
+import { getRefDate } from './release/utils.js';
 
-const bcd = require('..');
-const { getRefDate } = require('./release/utils');
-
-const { argv } = require('yargs').command(
-  '$0 [folder]',
-  'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
-  (yargs) => {
-    yargs
-      .positional('folder', {
-        describe: 'Limit the statistics to a specific folder',
-        type: 'string',
-        default: '',
-      })
-      .option('all', {
-        alias: 'a',
-        describe: 'Show statistics for all browsers within BCD',
-        type: 'boolean',
-        nargs: 0,
-      })
-      .option('counts', {
-        alias: 'c',
-        describe: 'Show feature count rather than percentages',
-        type: 'boolean',
-        nargs: 0,
-      });
-  },
-);
+/** @type {string[]} */
+const webextensionsBrowsers = [
+  'chrome',
+  'edge',
+  'firefox',
+  'opera',
+  'safari',
+  'firefox_android',
+  'safari_ios',
+];
 
 /**
  * Check whether a support statement is a specified type
@@ -128,11 +105,11 @@ const iterateData = (data, browsers, stats) => {
  * @returns {object.<string, VersionStats>?}
  */
 const getStats = (folder, allBrowsers) => {
-  /**
-   * @constant {string[]}
-   */
+  /** @constant {string[]} */
   const browsers = allBrowsers
     ? Object.keys(bcd.browsers)
+    : folder === 'webextensions'
+    ? webextensionsBrowsers
     : [
         'chrome',
         'chrome_android',
@@ -151,7 +128,9 @@ const getStats = (folder, allBrowsers) => {
   });
 
   if (folder) {
-    if (bcd[folder]) {
+    if (folder === 'webextensions') {
+      iterateData(bcd[folder], webextensionsBrowsers, stats);
+    } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
@@ -159,7 +138,13 @@ const getStats = (folder, allBrowsers) => {
     }
   } else {
     for (const data in bcd) {
-      if (!(data === 'browsers' || data === 'webextensions')) {
+      if (data === 'webextensions') {
+        iterateData(
+          bcd[data],
+          browsers.filter((b) => webextensionsBrowsers.includes(b)),
+          stats,
+        );
+      } else if (data !== 'browsers') {
         iterateData(bcd[data], browsers, stats);
       }
     }
@@ -225,8 +210,33 @@ const printStats = (stats, folder, counts) => {
   console.log(table);
 };
 
-if (require.main === module) {
-  printStats(getStats(argv.folder, argv.all), argv.folder, argv.counts);
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [folder]',
+    'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+    (yargs) => {
+      yargs
+        .positional('folder', {
+          describe: 'Limit the statistics to a specific folder',
+          type: 'string',
+          default: '',
+        })
+        .option('all', {
+          alias: 'a',
+          describe: 'Show statistics for all browsers within BCD',
+          type: 'boolean',
+          nargs: 0,
+        })
+        .option('counts', {
+          alias: 'c',
+          describe: 'Show feature count rather than percentages',
+          type: 'boolean',
+          nargs: 0,
+        });
+    },
+  );
+
+  printStats(getStats(argv.folder, argv.all), argv.folder);
 }
 
-module.exports = getStats;
+export default getStats;

@@ -1,10 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import chalk from 'chalk-template';
+import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -103,13 +101,10 @@ function processData(data, logger) {
 /**
  * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
  *
- * @param {string} filename The file to test
- * @returns {boolean} Whether the file has errors
+ * @param {Identifier} data The contents of the file to test
+ * @returns {boolean} If the file contains errors
  */
-function testDescriptions(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
+export default function testDescriptions(data) {
   const logger = new Logger('Descriptions');
 
   processData(data, logger);
@@ -117,5 +112,3 @@ function testDescriptions(filename) {
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testDescriptions;

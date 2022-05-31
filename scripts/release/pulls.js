@@ -1,9 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
-const { buildQuery, getRefDate, releaseYargsBuilder } = require('./utils');
+import { buildQuery, getRefDate, releaseYargsBuilder } from './utils.js';
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',
@@ -14,7 +16,7 @@ const releaseNotesLabels = [
   'semver-minor-bump ➕',
 ];
 
-const { argv } = require('yargs').command(
+const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',
   'Get a link to PRs included between two tags (or other commits)',
   (yargs) => {
@@ -77,6 +79,6 @@ function main() {
   }
 }
 
-if (require.main === module) {
+if (esMain(import.meta)) {
   main();
 }
