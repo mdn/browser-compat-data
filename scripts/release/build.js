@@ -70,7 +70,7 @@ import { CompatData } from "./types";
 
 import bcd from "./data.json";
 
-export default (bcd as unknown) as CompatData;
+export default bcd as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);
 }
