@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
+import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
 /**
  * @typedef {object} LinkError
@@ -12,6 +12,37 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw, Logger } from '../utils.js';
  * @property {?string} expected The expected string if applicable
  * @property {string} actualLink What the link currently is
  */
+
+/**
+ * Given a RegEx expression, test the link for errors
+ *
+ * @param {LinkError[]} errors The errors object to push the new errors to
+ * @param {string} actual The link to test
+ * @param {string|RegExp} regexp The regex to test with
+ * @param {(match: Array.<?string>) => object} matchHandler The callback
+ * @returns {void}
+ */
+function processLink(errors, actual, regexp, matchHandler) {
+  const re = new RegExp(regexp, 'g');
+  /** @type {RegExpExecArray} */
+  let match;
+  while ((match = re.exec(actual)) !== null) {
+    let pos = indexToPosRaw(actual, match.index);
+    let posString = indexToPos(actual, match.index);
+    let result = matchHandler(match);
+
+    if (result) {
+      let { issue, expected, actualLink = match[0] } = result;
+      errors.push({
+        issue: issue,
+        pos: pos,
+        posString: posString,
+        actual: actualLink,
+        expected: expected,
+      });
+    }
+  }
+}
 
 /**
  * Process the data for any errors within the links
@@ -223,58 +254,19 @@ export function processData(rawData) {
   return errors;
 }
 
-/**
- * Given a RegEx expression, test the link for errors
- *
- * @param {LinkError[]} errors The errors object to push the new errors to
- * @param {string} actual The link to test
- * @param {string|RegExp} regexp The regex to test with
- * @param {(match: Array.<?string>) => object} matchHandler The callback
- * @returns {void}
- */
-function processLink(errors, actual, regexp, matchHandler) {
-  const re = new RegExp(regexp, 'g');
-  /** @type {RegExpExecArray} */
-  let match;
-  while ((match = re.exec(actual)) !== null) {
-    let pos = indexToPosRaw(actual, match.index);
-    let posString = indexToPos(actual, match.index);
-    let result = matchHandler(match);
+export default {
+  name: 'Links',
+  description:
+    'Test links in the file to ensure they conform to BCD guidelines',
+  scope: 'file',
+  check(logger, { rawdata }) {
+    let errors = processData(rawdata);
 
-    if (result) {
-      let { issue, expected, actualLink = match[0] } = result;
-      errors.push({
-        issue: issue,
-        pos: pos,
-        posString: posString,
-        actual: actualLink,
-        expected: expected,
-      });
+    for (const error of errors) {
+      logger.error(
+        chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+        chalk`Run {bold npm run fix} to fix links automatically`,
+      );
     }
-  }
-}
-
-/**
- * Test for any malformed links
- *
- * @param {string} rawData The raw contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-export default function testLinks(rawData) {
-  // XXX This should use the parsed JSON data
-
-  const logger = new Logger('Links');
-
-  /** @type {Object[]} */
-  let errors = processData(rawData);
-
-  for (const error of errors) {
-    logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
-      chalk`Run {bold npm run fix} to fix links automatically`,
-    );
-  }
-
-  logger.emit();
-  return logger.hasErrors();
-}
+  },
+};

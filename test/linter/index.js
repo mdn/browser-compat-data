@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linters } from '../utils.js';
+
 import testBrowsersData from './test-browsers-data.js';
 import testBrowsersPresence from './test-browsers-presence.js';
 import testConsistency from './test-consistency.js';
@@ -13,7 +15,7 @@ import testStatus from './test-status.js';
 import testStyle from './test-style.js';
 import testVersions from './test-versions.js';
 
-export {
+export default new Linters([
   testBrowsersData,
   testBrowsersPresence,
   testConsistency,
@@ -25,4 +27,4 @@ export {
   testStatus,
   testStyle,
   testVersions,
-};
+]);
