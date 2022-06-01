@@ -175,7 +175,9 @@ if (esMain(import.meta)) {
     },
   );
 
-  const features = main(argv.folder, argv.value, argv.browser, argv.depth);
+  const filter = [...argv.filter, ...(argv.nonReal ? ['true', 'null'] : [])];
+
+  const features = main(argv.folder, argv.browser, filter, argv.depth);
   console.log(features.join('\n'));
   console.log(features.length);
 }
