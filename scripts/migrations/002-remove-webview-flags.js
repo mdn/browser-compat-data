@@ -1,16 +1,29 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const path = require('path');
-const { platform } = require('os');
+import esMain from 'es-main';
 
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+import { IS_WINDOWS } from '../../test/utils.js';
 
-const removeWebViewFlags = (key, value) => {
+const dirname = fileURLToPath(new URL('.', import.meta.url));
+
+/**
+ * @typedef {import('../../types').Identifier} Identifier
+ */
+
+/**
+ * Check to see if the key is __compat and modify the value to remove
+ * flags from WebView Android.
+ *
+ * @param {string} key The key in the object
+ * @param {Identifier} value The value of the key
+ * @returns {Identifier} The new value with WebView flags removed
+ */
+export const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
@@ -37,11 +50,15 @@ const removeWebViewFlags = (key, value) => {
 };
 
 /**
- * @param {string} filename
+ * Perform removal of flags within WebView data within all the datain a
+ * specified file. The function will then automatically write any needed
+ * changes back into the file.
+ *
+ * @param {string} filename The filename to perform migration upon
  */
-const fixWebViewFlags = (filename) => {
-  const actual = fs.readFileSync(filename, 'utf-8').trim();
-  const expected = JSON.stringify(
+export const fixWebViewFlags = (filename) => {
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let expected = JSON.stringify(
     JSON.parse(actual, removeWebViewFlags),
     null,
     2,
@@ -58,36 +75,40 @@ const fixWebViewFlags = (filename) => {
   }
 };
 
-if (require.main === module) {
-  /**
-   * @param {string[]} files
-   */
-  function load(...files) {
-    for (let file of files) {
-      if (file.indexOf(__dirname) !== 0) {
-        file = path.resolve(__dirname, '..', '..', file);
-      }
-
-      if (!fs.existsSync(file)) {
-        continue; // Ignore non-existent files
-      }
-
-      if (fs.statSync(file).isFile()) {
-        if (path.extname(file) === '.json') {
-          fixWebViewFlags(file);
-        }
-
-        continue;
-      }
-
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
-
-      load(...subFiles);
+/**
+ * Recursively load one or more files and/or directories passed as arguments
+ * and perform removal of flags from WebView support data.
+ *
+ * @param {string[]} files The files to load and perform migration upon
+ * @returns {void}
+ */
+function load(...files) {
+  for (let file of files) {
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', '..', file);
     }
-  }
 
+    if (!fs.existsSync(file)) {
+      continue; // Ignore non-existent files
+    }
+
+    if (fs.statSync(file).isFile()) {
+      if (path.extname(file) === '.json') {
+        fixWebViewFlags(file);
+      }
+
+      continue;
+    }
+
+    const subFiles = fs.readdirSync(file).map((subfile) => {
+      return path.join(file, subfile);
+    });
+
+    load(...subFiles);
+  }
+}
+
+if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
@@ -105,5 +126,3 @@ if (require.main === module) {
     );
   }
 }
-
-module.exports = { removeWebViewFlags, fixWebViewFlags };

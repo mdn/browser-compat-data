@@ -13,6 +13,7 @@ export type BrowserNames =
   | 'firefox_android'
   | 'ie'
   | 'nodejs'
+  | 'oculus'
   | 'opera'
   | 'opera_android'
   | 'safari'
@@ -28,6 +29,8 @@ export type BrowserEngines =
   | 'Trident'
   | 'WebKit'
   | 'V8';
+
+export type BrowserTypes = 'desktop' | 'mobile' | 'xr' | 'server';
 
 /**
  * The browser namespace.
@@ -47,10 +50,37 @@ export interface BrowserStatement {
   name: string;
 
   /**
+   * The platform the browser runs on, for example:
+   * `"desktop"`, `"mobile"`, `"server"`, etc.
+   */
+  type: BrowserTypes;
+
+  /**
+   * The upstream browser
+   */
+  upstream?: string;
+
+  /**
+   * Whether the browser supports flags to enable or disable features.
+   */
+  accepts_flags?: boolean;
+
+  /**
+   * Whether the browser supports extensions.
+   */
+  accepts_webextensions?: boolean;
+
+  /**
+   * An optional string containing the URL of the page where feature flags can be changed
+   * (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+   */
+  pref_url?: string;
+
+  /**
    * The preview browser's name, for example:
    * `"Nightly"`, `"Canary"`, `"TP"`, etc.
    */
-  preview_name: string;
+  preview_name?: string;
 
   /**
    * The known versions of this browser.
@@ -58,12 +88,6 @@ export interface BrowserStatement {
   releases: {
     [version: string]: ReleaseStatement;
   };
-
-  /**
-   * An optional string containing the URL of the page where feature flags can be changed
-   * (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
-   */
-  pref_url?: string;
 }
 
 /**
@@ -126,6 +150,7 @@ export interface ReleaseStatement {
 export type SupportStatement =
   | SimpleSupportStatement
   | SimpleSupportStatement[];
+
 export type VersionValue = string | boolean | null;
 
 /**
@@ -199,6 +224,13 @@ export interface SimpleSupportStatement {
      */
     value_to_set?: string;
   }[];
+
+  /**
+   * An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser; e.g. a https://trac.webkit.org/changeset/
+   * https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL.
+   */
+  impl_url?: string;
+
   /**
    * A `boolean` value indicating whether or not the implementation of the sub-feature follows
    * the current specification closely enough to not create major interoperability problems.
@@ -223,7 +255,7 @@ export interface SimpleSupportStatement {
 export type Identifier = PrimaryIdentifier & IdentifierMeta;
 
 export interface PrimaryIdentifier
-  extends Record<Exclude<string, '__compat'>, Identifier> {}
+  extends Record<Omit<string, '__compat'>, Identifier> {}
 
 interface IdentifierMeta {
   /**
@@ -260,8 +292,6 @@ export interface CompatStatement {
    */
   mdn_url?: string;
 
-  matches?: MatchesBlock;
-
   /**
    * Each `__compat` object contains support information.
    *
@@ -282,12 +312,6 @@ export interface CompatStatement {
 export interface SupportBlock
   extends Partial<Record<BrowserNames, SupportStatement>>,
     Partial<Record<string, SupportStatement>> {}
-
-export interface MatchesBlock {
-  keywords?: string[];
-  regex_token?: string;
-  regex_value?: string;
-}
 
 /**
  * The status property contains information about stability of the feature.
@@ -328,7 +352,7 @@ interface CompatDataBrowsers {
 }
 
 interface CompatDataIdentifiers
-  extends Record<Exclude<string, 'browsers'>, PrimaryIdentifier> {
+  extends Record<Omit<string, 'browsers'>, PrimaryIdentifier> {
   /**
    * Contains data for each [Web API](https://developer.mozilla.org/docs/Web/API)
    * interface.

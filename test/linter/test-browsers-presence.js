@@ -1,59 +1,67 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk-template';
 
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('./utils.js');
+import { Logger } from '../utils.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
+ * @typedef {import('../utils').Logger} Logger
  */
-
-/** @type {Record<string, string[]>} */
-const browsers = {
-  desktop: ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
-  mobile: [
-    'chrome_android',
-    'firefox_android',
-    'opera_android',
-    'safari_ios',
-    'samsunginternet_android',
-    'webview_android',
-  ],
-  server: ['nodejs', 'deno'],
-  'webextensions-desktop': ['chrome', 'edge', 'firefox', 'opera', 'safari'],
-  'webextensions-mobile': ['firefox_android', 'safari_ios'],
-};
 
 /**
- * @param {Identifier} data
- * @param {string[]} displayBrowsers
- * @param {string[]} requiredBrowsers
- * @param {string} category
- * @param {Logger} logger
- * @param {string} [path]
+ * Check the data for any disallowed browsers or if it's missing required browsers
+ *
+ * @param {Identifier} data The data to test
+ * @param {string} category The category the data belongs to.
+ * @param {Logger} logger The logger to output errors to.
+ * @param {string} [path] The path of the data.
+ * @returns {void}
  */
-function processData(
-  data,
-  displayBrowsers,
-  requiredBrowsers,
-  category,
-  logger,
-  path = '',
-) {
+function processData(data, category, logger, path = '') {
   if (data.__compat && data.__compat.support) {
     const support = data.__compat.support;
+    const definedBrowsers = Object.keys(support);
+
+    let displayBrowsers = Object.keys(browsers).filter(
+      (b) =>
+        [
+          'desktop',
+          'mobile',
+          'xr',
+          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+        ].includes(browsers[b].type) &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+    );
+    let requiredBrowsers = Object.keys(browsers).filter(
+      (b) =>
+        browsers[b].type == 'desktop' &&
+        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+    );
+
+    const undefEntries = definedBrowsers.filter(
+      (value) => !(value in browsers),
+    );
+    if (undefEntries.length > 0) {
+      logger.error(
+        chalk`{red → {bold ${path}} has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
+          ', ',
+        )}}}`,
+      );
+    }
 
     const invalidEntries = Object.keys(support).filter(
       (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
+        chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -62,33 +70,10 @@ function processData(
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
+        chalk`{bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
-    }
-
-    for (const [browser, supportStatement] of Object.entries(support)) {
-      const statementList = Array.isArray(supportStatement)
-        ? supportStatement
-        : [supportStatement];
-      function hasVersionAddedOnly(statement) {
-        const keys = Object.keys(statement);
-        return keys.length === 1 && keys[0] === 'version_added';
-      }
-      let sawVersionAddedOnly = false;
-      for (const statement of statementList) {
-        if (hasVersionAddedOnly(statement)) {
-          if (sawVersionAddedOnly) {
-            logger.error(
-              chalk`{red → '{bold ${path}}' has multiple support statement with only \`{bold version_added}\` for {bold ${browser}}}`,
-            );
-            break;
-          } else {
-            sawVersionAddedOnly = true;
-          }
-        }
-      }
     }
   }
   for (const key in data) {
@@ -96,8 +81,6 @@ function processData(
 
     processData(
       data[key],
-      displayBrowsers,
-      requiredBrowsers,
       category,
       logger,
       path && path.length > 0 ? `${path}.${key}` : key,
@@ -106,49 +89,15 @@ function processData(
 }
 
 /**
- * @param {string} filename
+ * @param {Identifier} data The contents of the file to test
+ * @param {object} filePath The path info for the file being tested
  * @returns {boolean} If the file contains errors
  */
-function testBrowsersPresence(filename) {
-  const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
-    filename,
-  );
-  const category =
-    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  /** @type {Identifier} */
-  const data = require(filename);
-
-  if (!category) {
-    console.warn(chalk.blackBright('  Browsers – Unknown category'));
-    return false;
-  }
-
-  let displayBrowsers = [...browsers['desktop'], ...browsers['mobile']];
-  let requiredBrowsers = browsers['desktop'];
-  if (category === 'api') {
-    displayBrowsers.push('nodejs');
-    displayBrowsers.push('deno');
-  }
-  if (category === 'javascript') {
-    displayBrowsers.push(...browsers['server']);
-  }
-  if (category === 'webextensions') {
-    displayBrowsers = [
-      ...browsers['webextensions-desktop'],
-      ...browsers['webextensions-mobile'],
-    ];
-    requiredBrowsers = browsers['webextensions-desktop'];
-  }
-  displayBrowsers.sort();
-  requiredBrowsers.sort();
-
+export default function testBrowsersPresence(data, filePath) {
   const logger = new Logger('Browsers');
 
-  processData(data, displayBrowsers, requiredBrowsers, category, logger);
+  processData(data, filePath.category, logger);
 
   logger.emit();
   return logger.hasErrors();
 }
-
-module.exports = testBrowsersPresence;
