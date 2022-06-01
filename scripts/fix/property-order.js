@@ -28,10 +28,9 @@ function doOrder(value, order) {
 
 /**
  * Return a new feature object whose first-level properties have been
- * ordered according to Array.prototype.sort, and so will be
- * stringified in that order as well. This relies on guaranteed "own"
- * property ordering, which is insertion order for non-integer keys
- * (which is our case).
+ * ordered according to doOrder, and so will be stringified in that
+ * order as well. This relies on guaranteed "own" property ordering,
+ * which is insertion order for non-integer keys (which is our case).
  *
  * @param {string} key The key in the object
  * @param {*} value The value of the key
