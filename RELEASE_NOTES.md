@@ -1,5 +1,20 @@
 # Release notes
 
+## [v5.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.1)
+
+May 31, 2022
+
+### Notable changes
+
+This release a quick fix to correct the TypeScript declarations and imports.
+
+### Statistics
+
+- 4 contributors have changed 64 files with 412 additions and 11 deletions in 4 commits ([`v5.0.0...v5.0.1`](https://github.com/mdn/browser-compat-data/compare/v5.0.0...v5.0.1))
+- 13,700 total features
+- 872 total contributors
+- 4,055 total stargazers
+
 ## [v5.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.0)
 
 May 31, 2022
