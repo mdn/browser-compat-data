@@ -16,7 +16,7 @@ const packageJson = JSON.parse(
 
 const directory = './build/';
 
-const verbatimFiles = ['LICENSE', 'README.md', 'index.d.ts', 'types.d.ts'];
+const verbatimFiles = ['LICENSE', 'README.md', 'types.d.ts'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
@@ -61,6 +61,20 @@ export default bcd;
   await fs.writeFile(dest, content);
 }
 
+async function writeTypeScriptIndex() {
+  const dest = path.resolve(directory, 'index.ts');
+  const content = `/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import { CompatData } from "./types";
+
+import bcd from "./data.json";
+
+export default bcd as CompatData;
+export * from "./types";`;
+  await fs.writeFile(dest, content);
+}
+
 // Returns an array of promises for copying of all files that don't need transformation
 async function copyFiles() {
   for (const file of verbatimFiles) {
@@ -77,6 +91,7 @@ async function createManifest() {
       '.': './data.json',
       './forLegacyNode': './legacynode.mjs',
     },
+    types: 'index.ts',
   };
 
   const minimalKeys = [
@@ -89,7 +104,6 @@ async function createManifest() {
     'license',
     'bugs',
     'homepage',
-    'types',
   ];
 
   for (const key of minimalKeys) {
@@ -126,6 +140,7 @@ async function main() {
   await writeManifest();
   await writeData();
   await writeWrapper();
+  await writeTypeScriptIndex();
   await copyFiles();
 
   console.log('Data bundle is ready');

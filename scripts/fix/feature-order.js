@@ -21,7 +21,7 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
  */
-function orderFeatures(key, value) {
+export function orderFeatures(key, value) {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)

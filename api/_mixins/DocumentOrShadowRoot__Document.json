@@ -64,11 +64,25 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "101"
+              },
+              {
+                "version_added": "75",
+                "version_removed": "101",
+                "notes": "See <a href='https://bugzil.la/1613746'>bug 1613746</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.constructable-stylesheets.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": "101"
             },
             "ie": {
               "version_added": false
