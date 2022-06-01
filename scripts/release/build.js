@@ -66,11 +66,11 @@ async function writeTypeScriptIndex() {
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import "./types";
+import { CompatData } from "./types";
 
 import bcd from "./data.json";
 
-export default bcd as CompatData;
+export default (bcd as unknown) as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);
 }

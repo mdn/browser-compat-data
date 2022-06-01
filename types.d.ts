@@ -80,7 +80,7 @@ export interface BrowserStatement {
    * The preview browser's name, for example:
    * `"Nightly"`, `"Canary"`, `"TP"`, etc.
    */
-  preview_name: string;
+  preview_name?: string;
 
   /**
    * The known versions of this browser.
