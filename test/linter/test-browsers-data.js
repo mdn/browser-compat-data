@@ -3,7 +3,8 @@
 
 import chalk from 'chalk-template';
 
-import { Logger } from '../utils.js';
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -11,40 +12,49 @@ import { Logger } from '../utils.js';
  */
 
 /**
- * @param {Identifier} data
+ * @param {string} browser
+ * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processData(data, logger) {
-  // We only need to grab the first browser in the data
-  // because each browser file only contains one browser
-  const browser = Object.keys(data.browsers)[0];
-  const releases = data.browsers[browser].releases;
-
+function processData(browser, data, logger) {
   for (const status of ['current', 'beta', 'nightly']) {
-    const releasesForStatus = Object.entries(releases)
+    const releasesForStatus = Object.entries(data.releases)
       .filter(([, data]) => data.status == status)
       .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(
-        chalk`{red → {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
+        chalk`{red {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
           ', ',
         )}), which is {bold not} allowed.}`,
       );
     }
   }
+
+  // Ensure the `upstream` property, if it exists, is valid
+  if (data.upstream) {
+    if (data.upstream === browser) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is set to itself.}`,
+      );
+    }
+
+    if (!Object.keys(browsers).includes(data.upstream)) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${
+          data.upstream
+        }) Valid options are: ${Object.keys(browsers).join(', ')}.}`,
+      );
+    }
+  }
 }
 
-/**
- * @param {Identifier} data The contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-export default function testBrowsersData(data) {
-  const logger = new Logger('Browser Data');
-
-  processData(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
+export default {
+  name: 'Browser Data',
+  description: 'Test the browser data',
+  scope: 'browser',
+  check(logger, { data, path: { browser } }) {
+    processData(browser, data, logger);
+  },
+};

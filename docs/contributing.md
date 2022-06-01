@@ -11,7 +11,7 @@ We're really happy to accept contributions to the mdn/browser-compat-data reposi
 5. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
-   1. [Optional: Generating data using the mirroring script](#optional-generating-data-using-the-mirroring-script)
+   1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 6. [Getting help](#getting-help)
 
 ## Before you begin
@@ -76,33 +76,11 @@ If the feature you're interested in is a JavaScript API, you can cross-reference
 
 If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
 
-### Optional: Generating data using the mirroring script
+### Optional: Generating data by mirroring
 
-Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, a mirroring script is provided. You can run `npm run mirror <browser> <feature_or_file> -- [--source=""] [--modify="nonreal"] [--target_version=""]` to automatically copy values.
+Many browsers within BCD can be derived from other browsers given they share the same engine, for example Opera derives from Chrome, and Firefox Android derives from Firefox. To help cut down time working on copying values between browsers, contributors may specify a special value in the data to automatically mirror the data from their upstream counterparts. See the [schema documentation](../schemas/compat-data-schema.md#mirroring-data) for more info.
 
-The <browser> argument is the destination browser that values will be copied to. The script automatically determines what browser to copy from based upon the destination (see table below).
-
-| Destination      | Default Source |
-| ---------------- | -------------- |
-| Chrome Android   | Chrome         |
-| Edge             | Chrome         |
-| Firefox Android  | Firefox        |
-| Opera            | Chrome         |
-| Opera Android    | Chrome Android |
-| Safari iOS       | Safari         |
-| Samsung Internet | Chrome Android |
-| WebView          | Chrome Android |
-
-The <feature_or_filename> argument is either the identifier of the feature to update (i.e. `css.at-rules.namespace`), a filename (`javascript/operators/arithmetic.json`), or an entire folder (`api`).
-
-Note when using feature identifiers:
-
-- Updates aren't applied recursively; only the given data point is updated when using a feature ID. Use a filename or folder for mass mirroring.
-- The script assumes a predictable file structure when passing in a feature identifier, which BCD doesn't have right now. (See [issue 3617](https://github.com/mdn/browser-compat-data/issues/3617).) For example, even if "html.elements.input.input-button" is a valid query, it will fail because the file structure for input-button isn't consistent with the rest right now.
-
-By default, the mirroring script will only overwrite values in the destination that are `true` or `null`, but can take a `--modify` (or `-m`) argument to specify whether to overwrite values that are `false` as well (`--modify=bool`), or any values (`--modify=always`).
-
-The script can also take a `--target_version` (or `-t`) argument to only perform mirroring if the data affects a specific browser release. This is used to update data when a new Opera or Opera Android version is released, and we wish to update data that only affects the new version.
+Note: originally, this functionality used to be provided as an executable script. However, because the script had to be run manually, this meant that mirrored data would become stale rapidly. It was proposed in [#15083](https://github.com/mdn/browser-compat-data/issues/15083) to move the mirroring into a build step to reduce maintenance time.
 
 ## Getting help
 
