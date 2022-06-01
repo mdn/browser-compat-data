@@ -6,3 +6,5 @@ import { CompatData } from './types';
 import './external';
 
 export default CompatData;
+
+export type InternalSupportStatement = SupportStatement | 'mirror';
