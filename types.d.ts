@@ -252,12 +252,7 @@ export interface SimpleSupportStatement {
   notes?: string | string[];
 }
 
-export type Identifier = PrimaryIdentifier & IdentifierMeta;
-
-export interface PrimaryIdentifier
-  extends Record<Omit<string, '__compat'>, Identifier> {}
-
-interface IdentifierMeta {
+export interface Identifier {
   /**
    * A feature is described by an identifier containing the `__compat` property.
    *
@@ -271,6 +266,8 @@ interface IdentifierMeta {
    * both in terms of specifications and of browser support.
    */
   __compat?: CompatStatement;
+
+  [k: string]: Identifier;
 }
 
 export interface CompatStatement {
@@ -342,68 +339,63 @@ export interface StatusBlock {
   deprecated: boolean;
 }
 
-export type CompatData = CompatDataBrowsers & CompatDataIdentifiers;
-
-interface CompatDataBrowsers {
-  /**
-   * Contains data for each known browser.
-   */
-  browsers: Browsers;
-}
-
-interface CompatDataIdentifiers
-  extends Record<Omit<string, 'browsers'>, PrimaryIdentifier> {
+export interface CompatData {
   /**
    * Contains data for each [Web API](https://developer.mozilla.org/docs/Web/API)
    * interface.
    */
-  api: PrimaryIdentifier;
+  api: Identifier;
+
+  /**
+   * Contains data for each known and tracked browser/engine.
+   */
+  browsers: Browsers;
 
   /**
    * Contains data for [CSS](https://developer.mozilla.org/docs/Web/CSS)
    * properties, selectors, and at-rules.
    */
-  css: PrimaryIdentifier;
+  css: Identifier;
 
   /**
    * Contains data for [HTML](https://developer.mozilla.org/docs/Web/HTML)
    * elements, attributes, and global attributes.
    */
-  html: PrimaryIdentifier;
+  html: Identifier;
 
   /**
    * Contains data for [HTTP](https://developer.mozilla.org/docs/Web/HTTP)
    * headers, statuses, and methods.
    */
-  http: PrimaryIdentifier;
+  http: Identifier;
 
   /**
    * Contains data for [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript)
    * built-in Objects, statement, operators, and other ECMAScript language features.
    */
-  javascript: PrimaryIdentifier;
+  javascript: Identifier;
 
   /**
    * Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML)
    * elements, attributes, and global attributes.
    */
-  mathml: PrimaryIdentifier;
+  mathml: Identifier;
 
   /**
    * Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG)
    * elements, attributes, and global attributes.
    */
-  svg: PrimaryIdentifier;
+  svg: Identifier;
 
   /**
    * Contains data for [WebDriver](https://developer.mozilla.org/docs/Web/WebDriver)
    * commands.
    */
-  webdriver: PrimaryIdentifier;
+  webdriver: Identifier;
 
   /**
    * Contains data for [WebExtensions](https://developer.mozilla.org/Add-ons/WebExtensions)
    * JavaScript APIs and manifest keys.
    */
-  webextensions: PrimaryIdentifier;
+  webextensions: Identifier;
 }
