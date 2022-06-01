@@ -147,6 +147,7 @@ if (esMain(import.meta)) {
           default: [],
         })
         .option('non-real', {
+          alias: 'n',
           describe:
             'Filter to features with non-real values. Alias for "-f true -f null"',
           type: 'boolean',
@@ -161,7 +162,7 @@ if (esMain(import.meta)) {
           default: 10,
         })
         .example(
-          'npm run traverse -- --browser=safari --non-real',
+          'npm run traverse -- --browser=safari -n',
           'Find all features containing non-real Safari entries',
         )
         .example(
@@ -175,7 +176,9 @@ if (esMain(import.meta)) {
     },
   );
 
-  const features = main(argv.folder, argv.value, argv.browser, argv.depth);
+  const filter = [...argv.filter, ...(argv.nonReal ? ['true', 'null'] : [])];
+
+  const features = main(argv.folder, argv.browser, filter, argv.depth);
   console.log(features.join('\n'));
   console.log(features.length);
 }
