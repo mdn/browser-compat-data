@@ -36,6 +36,6 @@ Run `npm run traverse -- --help` for a complete list of options and examples.
 
 The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/). This argument may be repeated to traverse multiple browsers. By default, the script will traverse all browsers.
 
-The `-f` or `--filter` argument may be any value accepted by `version_added` or `version_removed`. This argument may be repeated to test multiple values. By default, the script will traverse all features regardless of their value. The `--nonreal` argument may be included as a convenience alias for `-f null -f true`.
+The `-f` or `--filter` argument may be any value accepted by `version_added` or `version_removed`. This argument may be repeated to test multiple values. By default, the script will traverse all features regardless of their value. The `-n` or `--non-real` argument may be included as a convenience alias for `-f null -f true`.
 
-Examples: to search for all Safari entries that are non-real, run `npm run traverse -- -b safari --noreal`. To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse api,javascript -- -b webview_android -f true`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse -- -b firefox -f 10`.
+Examples: to search for all Safari entries that are non-real, run `npm run traverse -- -b safari --non-real`. To search for all WebView entries that are marked as `true` in `api` and `javascript`, run `npm run traverse api,javascript -- -b webview_android -f true`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse -- -b firefox -f 10`.
