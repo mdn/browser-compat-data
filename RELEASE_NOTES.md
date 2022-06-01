@@ -1,5 +1,108 @@
 # Release notes
 
+## [v5.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.1)
+
+May 31, 2022
+
+### Notable changes
+
+This release a quick fix to correct the TypeScript declarations and imports.
+
+### Statistics
+
+- 4 contributors have changed 64 files with 412 additions and 11 deletions in 4 commits ([`v5.0.0...v5.0.1`](https://github.com/mdn/browser-compat-data/compare/v5.0.0...v5.0.1))
+- 13,700 total features
+- 872 total contributors
+- 4,055 total stargazers
+
+## [v5.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.0)
+
+May 31, 2022
+
+### Notable changes
+
+This release of browser-compat-data contains many new changes, including the following:
+
+#### ESM Imports
+
+This package may now be directly imported through ESM! On NodeJS v16.15+, Deno and in browsers, the data may now be imported via the following code:
+
+```js
+import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+```
+
+For older NodeJS versions, a separate import has been included called `forLegacyNode` (note this may be removed in a future update). Imports via CommonJS (`require()`) are still available, and there are no plans to deprecate it for the forseeable future.
+
+```js
+import bcd from '@mdn/browser-compat-data/forLegacyNode';
+// ...or...
+const bcd = require('@mdn/browser-compat-data');
+```
+
+For more details, please visit the ["Installation and Import" readme section](https://github.com/mdn/browser-compat-data#installation-and-import).
+
+This change was made in [#16232](https://github.com/mdn/browser-compat-data/pull/16232).
+
+#### TypeScript
+
+We are in the process of migrating our internal scripts to TypeScript, and in doing so, have focused on improving the experience for TypeScript consumers of the package. Now, TypeScript types may be imported directly from the main import.
+
+```ts
+import bcd, {
+  Identifier,
+  BrowserNames,
+  Browsers,
+} from '@mdn/browser-compat-data';
+```
+
+This change was made in [#16406](https://github.com/mdn/browser-compat-data/pull/16406).
+
+#### Removal of `matches`
+
+In some features, we included a `matches` object which contained matching keywords or regex. However, since its addition, the data has been poorly maintained and was only added to five features. We have decided to remove this data due to its poor maintenance.
+
+This change was proposed in [#8945](https://github.com/mdn/browser-compat-data/issues/8945) and made in [#15781](https://github.com/mdn/browser-compat-data/pull/15781).
+
+#### Addition of `__meta`
+
+A top-level `__meta` object has been added to the data, which contains metadata regarding the installed package. This object contains a `version` property, which is set to a string indicating the current version of the package. This allows Deno, browser and software in other languages to obtain the version number of the current BCD data.
+
+This change was made in [#14129](https://github.com/mdn/browser-compat-data/pull/14129).
+
+#### Build-time mirroring and upstream browsers
+
+We have implemented the ability to mirror data from upstream browsers during package builds, which allows contributors to maintain compatibility data easier. While this is something to make contributions and maintenance easier, this will offer better updates to derivative browsers such as Microsoft Edge and Samsung Internet whose release cycles vary from their upstream browsers.
+
+As an added benefit, the browser data now includes an `upstream` property that indicates the upstream browser (ex. Safari iOS' upstream is `safari`, and Microsoft Edge's upstream is `chrome`).
+
+This change was made in [#16393](https://github.com/mdn/browser-compat-data/pull/16393) and [#16401](https://github.com/mdn/browser-compat-data/pull/16401).
+
+#### `impl_url`
+
+Support statements may now include an `impl_url` property, which includes a link to a bug tracking the implementation of the feature, or a link to a commit for when the feature was implemented in a browser. This property is intended to replace certain notes, i.e. "See bug XXX."
+
+This change was made in [#16415](https://github.com/mdn/browser-compat-data/pull/16415).
+
+### Removals
+
+- `api.Window.mozPaintCount` ([#16443](https://github.com/mdn/browser-compat-data/pull/16443))
+
+### Additions
+
+- `api.scheduler` ([#16409](https://github.com/mdn/browser-compat-data/pull/16409))
+- `css.types.length.viewport_percentage_units_dynamic` ([#16449](https://github.com/mdn/browser-compat-data/pull/16449))
+- `css.types.length.viewport_percentage_units_large` ([#16449](https://github.com/mdn/browser-compat-data/pull/16449))
+- `css.types.length.viewport_percentage_units_small` ([#16449](https://github.com/mdn/browser-compat-data/pull/16449))
+- `webextensions.manifest.theme.properties.color_scheme` ([#16390](https://github.com/mdn/browser-compat-data/pull/16390))
+- `webextensions.manifest.theme.properties.content_color_scheme` ([#16390](https://github.com/mdn/browser-compat-data/pull/16390))
+
+### Statistics
+
+- 18 contributors have changed 240 files with 8,047 additions and 4,537 deletions in 116 commits ([`v4.2.1...v5.0.0`](https://github.com/mdn/browser-compat-data/compare/v4.2.1...v5.0.0))
+- 13,700 total features
+- 872 total contributors
+- 4,056 total stargazers
+
 ## [v4.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v4.2.1)
 
 May 17, 2022

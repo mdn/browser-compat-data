@@ -49,7 +49,7 @@ for (const browser of Object.keys(browsers)) {
 }
 
 /** @type {string[]} */
-const blockMany = [
+const realValuesTargetBrowsers = [
   'chrome',
   'chrome_android',
   'edge',
@@ -65,15 +65,15 @@ const blockMany = [
 ];
 
 /** @type {object.<string, string[]>} */
-const blockList = {
-  api: blockMany,
-  css: blockMany,
+const realValuesRequired = {
+  api: realValuesTargetBrowsers,
+  css: realValuesTargetBrowsers,
   html: [],
   http: [],
   svg: [],
-  javascript: [...blockMany, 'nodejs'],
-  mathml: blockMany,
-  webdriver: blockMany,
+  javascript: [...realValuesTargetBrowsers, 'nodejs'],
+  mathml: realValuesTargetBrowsers,
+  webdriver: realValuesTargetBrowsers,
   webextensions: [],
 };
 
@@ -88,7 +88,10 @@ const blockList = {
 function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
     return validBrowserVersions[browser].includes(version);
-  } else if (blockList[category].includes(browser) && version !== false) {
+  } else if (
+    realValuesRequired[category].includes(browser) &&
+    version !== false
+  ) {
     return false;
   } else {
     return true;
@@ -156,7 +159,7 @@ function checkVersions(supportData, relPath, logger) {
 
       for (const statement of supportStatements) {
         if (statement === undefined) {
-          if (blockList[category].includes(browser)) {
+          if (realValuesRequired[category].includes(browser)) {
             logger.error(
               chalk`{red → {bold ${browser}} must be defined for {bold ${relPath}}}`,
             );
@@ -164,6 +167,17 @@ function checkVersions(supportData, relPath, logger) {
 
           continue;
         }
+
+        if (statement === 'mirror') {
+          // If the data is to be mirrored, make sure it is mirrorable
+          if (!browsers[browser].upstream) {
+            logger.error(
+              chalk`{red → {bold ${relPath}} sets {bold ${browser}} to mirror, however {bold ${browser}} does not have an upstream browser.}`,
+            );
+          }
+          continue;
+        }
+
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
