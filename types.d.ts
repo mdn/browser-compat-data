@@ -255,7 +255,7 @@ export interface SimpleSupportStatement {
 export type Identifier = PrimaryIdentifier & IdentifierMeta;
 
 export interface PrimaryIdentifier
-  extends Record<Exclude<string, '__compat'>, Identifier> {}
+  extends Record<Omit<string, '__compat'>, Identifier> {}
 
 interface IdentifierMeta {
   /**
@@ -352,7 +352,7 @@ interface CompatDataBrowsers {
 }
 
 interface CompatDataIdentifiers
-  extends Record<Exclude<string, 'browsers'>, PrimaryIdentifier> {
+  extends Record<Omit<string, 'browsers'>, PrimaryIdentifier> {
   /**
    * Contains data for each [Web API](https://developer.mozilla.org/docs/Web/API)
    * interface.
