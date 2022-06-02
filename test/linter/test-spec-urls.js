@@ -21,9 +21,6 @@ const specsExceptions = [
   'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
   'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
 
-  // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/618
-  'https://sourcemaps.info/spec.html',
-
   // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/622
   'https://www.w3.org/TR/WOFF/',
 
