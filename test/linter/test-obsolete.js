@@ -33,23 +33,31 @@ function neverImplemented(support) {
   return true;
 }
 
+/**
+ * @param {*} browsers
+ * @param {*} support
+ * @returns 'warning' | 'error' | false
+ */
 function implementedAndRemoved(browsers, support) {
+  let result = 'error';
+  const warningTime = new Date().getTime() - 2 * 365 * 24 * 60 * 60 * 1000;
+  const errorTime = new Date().getTime() - 2.5 * 365 * 24 * 60 * 60 * 1000;
   for (const browser in support) {
     let data = support[browser];
     if (!Array.isArray(data)) data = [data];
     for (const d of data) {
+      // Feature is still supported
       if (!d.version_removed) return false;
-      if (
-        d.version_removed &&
-        new Date(
-          browsers[browser].releases[d.version_removed].release_date,
-        ).getTime() >
-          new Date().getTime() - 2 * 365 * 24 * 60 * 60 * 1000
-      )
-        return false;
+      const releaseDate = new Date(
+        browsers[browser].releases[d.version_removed].release_date,
+      ).getTime();
+      // Feature was recently supported, no need to show warning
+      if (warningTime < releaseDate) return false;
+      // Feature was supported sufficiently recently to not show an error
+      if (errorTime < releaseDate) result = 'warning';
     }
   }
-  return true;
+  return result;
 }
 
 /**
@@ -67,7 +75,6 @@ function processData(logger, data, browsers, path) {
     const abandoned = status && status.standard_track === false;
     const rule1Fail = abandoned && neverImplemented(support);
     if (rule1Fail && !shouldFail) {
-      console.error(path);
       logger.error(
         chalk`feature was never implemented in any browser and the specification has been abandoned.`,
       );
@@ -76,8 +83,7 @@ function processData(logger, data, browsers, path) {
 
     const rule2Fail = implementedAndRemoved(browsers, support);
     if (rule2Fail && !shouldFail) {
-      console.error(path);
-      logger.error(
+      logger[rule2Fail](
         chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
       );
       return;
