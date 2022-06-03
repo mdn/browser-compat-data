@@ -39,9 +39,6 @@ describe('spec_url data', () => {
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
       'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
 
-      // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/622
-      'https://www.w3.org/TR/WOFF/',
-
       // Exception for April Fools' joke for "418 I'm a teapot"
       'https://www.rfc-editor.org/rfc/rfc2324',
 
