@@ -4,7 +4,7 @@
 import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
 
-import { Logger, VALID_ELEMENTS } from '../utils.js';
+import { VALID_ELEMENTS } from '../utils.js';
 
 const parser = new HTMLParser();
 
@@ -116,46 +116,29 @@ const checkNotes = (notes, browser, feature, logger) => {
 /**
  * Process the data for notes errors
  *
- * @param {Identifier} data The data to test
+ * @param {CompatStatement} data The data to test
  * @param {logger} logger The logger to output errors to
  * @param {string} [feature] The identifier of the feature
  * @returns {void}
  */
 const processData = (data, logger, feature) => {
-  for (const prop in data) {
-    if (prop === '__compat' && data[prop].support) {
-      let statement = data[prop].support;
-      for (const browser in statement) {
-        if (Array.isArray(statement[browser])) {
-          for (let s of statement[browser]) {
-            if (s.notes) checkNotes(s.notes, browser, feature, logger);
-          }
-        } else {
-          if (statement[browser].notes)
-            checkNotes(statement[browser].notes, browser, feature, logger);
-        }
+  for (const browser in data.support) {
+    if (Array.isArray(data.support[browser])) {
+      for (let s of data.support[browser]) {
+        if (s.notes) checkNotes(s.notes, browser, feature, logger);
       }
-    }
-    const sub = data[prop];
-    if (typeof sub === 'object') {
-      processData(sub, logger, feature ? `${feature}.${prop}` : `${prop}`);
+    } else {
+      if (data.support[browser].notes)
+        checkNotes(data.support[browser].notes, browser, feature, logger);
     }
   }
 };
 
-/**
- * Test the data for notes errors
- *
- * @param {Identifier} data The contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-const testNotes = (data) => {
-  const logger = new Logger('Notes');
-
-  processData(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
+export default {
+  name: 'Notes',
+  description: 'Test the notes in each support statement',
+  scope: 'feature',
+  check(logger, { data }) {
+    processData(data, logger);
+  },
 };
-
-export default testNotes;

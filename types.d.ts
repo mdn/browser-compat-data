@@ -80,7 +80,7 @@ export interface BrowserStatement {
    * The preview browser's name, for example:
    * `"Nightly"`, `"Canary"`, `"TP"`, etc.
    */
-  preview_name: string;
+  preview_name?: string;
 
   /**
    * The known versions of this browser.
@@ -146,14 +146,11 @@ export interface ReleaseStatement {
  *
  * It is an array of `simple_support_statement` objects, but if there
  * is only one of them, the array must be omitted.
- *
- * Internally, "mirror" may also be used to represent that the data
- * should be mirrored from its upstream counterpart.
  */
 export type SupportStatement =
   | SimpleSupportStatement
-  | SimpleSupportStatement[]
-  | 'mirror';
+  | SimpleSupportStatement[];
+
 export type VersionValue = string | boolean | null;
 
 /**
@@ -255,12 +252,7 @@ export interface SimpleSupportStatement {
   notes?: string | string[];
 }
 
-export type Identifier = PrimaryIdentifier & IdentifierMeta;
-
-export interface PrimaryIdentifier
-  extends Record<Exclude<string, '__compat'>, Identifier> {}
-
-interface IdentifierMeta {
+export interface Identifier {
   /**
    * A feature is described by an identifier containing the `__compat` property.
    *
@@ -274,6 +266,8 @@ interface IdentifierMeta {
    * both in terms of specifications and of browser support.
    */
   __compat?: CompatStatement;
+
+  [k: string]: Identifier;
 }
 
 export interface CompatStatement {
@@ -345,68 +339,63 @@ export interface StatusBlock {
   deprecated: boolean;
 }
 
-export type CompatData = CompatDataBrowsers & CompatDataIdentifiers;
-
-interface CompatDataBrowsers {
-  /**
-   * Contains data for each known browser.
-   */
-  browsers: Browsers;
-}
-
-interface CompatDataIdentifiers
-  extends Record<Exclude<string, 'browsers'>, PrimaryIdentifier> {
+export interface CompatData {
   /**
    * Contains data for each [Web API](https://developer.mozilla.org/docs/Web/API)
    * interface.
    */
-  api: PrimaryIdentifier;
+  api: Identifier;
+
+  /**
+   * Contains data for each known and tracked browser/engine.
+   */
+  browsers: Browsers;
 
   /**
    * Contains data for [CSS](https://developer.mozilla.org/docs/Web/CSS)
    * properties, selectors, and at-rules.
    */
-  css: PrimaryIdentifier;
+  css: Identifier;
 
   /**
    * Contains data for [HTML](https://developer.mozilla.org/docs/Web/HTML)
    * elements, attributes, and global attributes.
    */
-  html: PrimaryIdentifier;
+  html: Identifier;
 
   /**
    * Contains data for [HTTP](https://developer.mozilla.org/docs/Web/HTTP)
    * headers, statuses, and methods.
    */
-  http: PrimaryIdentifier;
+  http: Identifier;
 
   /**
    * Contains data for [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript)
    * built-in Objects, statement, operators, and other ECMAScript language features.
    */
-  javascript: PrimaryIdentifier;
+  javascript: Identifier;
 
   /**
    * Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML)
    * elements, attributes, and global attributes.
    */
-  mathml: PrimaryIdentifier;
+  mathml: Identifier;
 
   /**
    * Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG)
    * elements, attributes, and global attributes.
    */
-  svg: PrimaryIdentifier;
+  svg: Identifier;
 
   /**
    * Contains data for [WebDriver](https://developer.mozilla.org/docs/Web/WebDriver)
    * commands.
    */
-  webdriver: PrimaryIdentifier;
+  webdriver: Identifier;
 
   /**
    * Contains data for [WebExtensions](https://developer.mozilla.org/Add-ons/WebExtensions)
    * JavaScript APIs and manifest keys.
    */
-  webextensions: PrimaryIdentifier;
+  webextensions: Identifier;
 }
