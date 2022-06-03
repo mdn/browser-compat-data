@@ -4,7 +4,6 @@
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
-import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -43,7 +42,7 @@ export class ConsistencyChecker {
    * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
-    return this.checkSubfeatures(data);
+    return this.checkSubfeatures({ ...data, browsers: undefined });
   }
 
   /**
@@ -91,6 +90,8 @@ export class ConsistencyChecker {
     const subfeatures = [];
     const keys = Object.keys(data).filter((key) => key != '__compat');
     for (const key of keys) {
+      if (data[key] === undefined) continue;
+
       if ('__compat' in data[key]) {
         // If the subfeature has compat data
         subfeatures.push(key);
@@ -419,39 +420,33 @@ export class ConsistencyChecker {
   }
 }
 
-/**
- * @param {Identifier} data The contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-export default function testConsistency(data) {
-  const logger = new Logger('Consistency');
+export default {
+  name: 'Consistency',
+  description: 'Test the version consistency between parent and child',
+  scope: 'tree',
+  check(logger, { data }) {
+    const checker = new ConsistencyChecker();
+    const allErrors = checker.check(data);
 
-  const checker = new ConsistencyChecker();
-  const allErrors = checker.check(data);
+    for (const { path, errors } of allErrors) {
+      for (const { errortype, browser, parent_value, subfeatures } of errors) {
+        let errorMessage = '';
+        if (errortype == 'unsupported') {
+          errorMessage += chalk`No support in {bold ${browser}}, but support is declared in the following sub-feature(s):`;
+        } else if (errortype == 'support_unknown') {
+          errorMessage += chalk`Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):`;
+        } else if (errortype == 'subfeature_earlier_implementation') {
+          errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):`;
+        }
 
-  for (const { path, errors } of allErrors) {
-    let errorMessage = chalk`{bold ${errors.length}} × ${path
-      .slice(0, 1)
-      .join('.')}.{bold ${path[path.length - 1]}}: `;
-    for (const { errortype, browser, parent_value, subfeatures } of errors) {
-      if (errortype == 'unsupported') {
-        errorMessage += chalk`\n{red       → No support in {bold ${browser}}, but support is declared in the following sub-feature(s):}`;
-      } else if (errortype == 'support_unknown') {
-        errorMessage += chalk`\n{red       → Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):}`;
-      } else if (errortype == 'subfeature_earlier_implementation') {
-        errorMessage += chalk`\n{red       → Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):}`;
+        for (const subfeature of subfeatures) {
+          errorMessage += chalk`\n{red         → {bold ${path.join('.')}.${
+            subfeature[0]
+          }}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}}`;
+        }
+
+        logger.error(errorMessage, { path: path.join('.') });
       }
-
-      for (const subfeature of subfeatures) {
-        errorMessage += chalk`\n{red         → {bold ${path.join('.')}.${
-          subfeature[0]
-        }}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}}`;
-      }
-
-      logger.error(errorMessage);
     }
-  }
-
-  logger.emit();
-  return logger.hasErrors();
-}
+  },
+};
