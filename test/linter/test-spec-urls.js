@@ -74,10 +74,10 @@ function processData(data, logger) {
     ? data.spec_url
     : [data.spec_url];
 
-  for (const specUrl of featureSpecURLs) {
-    if (!allowedSpecURLs.find((host) => specUrl.startsWith(host))) {
+  for (const specURL of featureSpecURLs) {
+    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
-        chalk`Invalid specification host(s) found: {bold ${specUrl}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+        chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
       );
     }
   }
