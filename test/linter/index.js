@@ -11,6 +11,7 @@ import testLinks from './test-links.js';
 import testNotes from './test-notes.js';
 import testPrefix from './test-prefix.js';
 import testSchema from './test-schema.js';
+import testSpecURLs from './test-spec-urls.js';
 import testStatus from './test-status.js';
 import testStyle from './test-style.js';
 import testVersions from './test-versions.js';
@@ -24,6 +25,7 @@ export default new Linters([
   testNotes,
   testPrefix,
   testSchema,
+  testSpecURLs,
   testStatus,
   testStyle,
   testVersions,
