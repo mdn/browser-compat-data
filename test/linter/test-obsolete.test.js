@@ -3,9 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import testObsolete from './test-obsolete.js';
-const { internals } = testObsolete;
-const { neverImplemented } = internals;
+import { neverImplemented } from './test-obsolete.js';
 
 describe('neverImplemented', function () {
   it('returns false for features which were implemented', () => {

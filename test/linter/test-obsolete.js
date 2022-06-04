@@ -5,6 +5,12 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+/**
+ * List of feature keys which are expected to fail this test.
+ * This list is needed for two reasons:
+ *  - some entries indeed should be removed (like api.VR*)
+ *  - some entries are currently just stubs and should be expanded and will pass test later
+ */
 const exceptions = [
   'api.VRDisplay.hardwareUnitId',
   'api.VREyeParameters.recommendedFieldOfView',
@@ -24,7 +30,7 @@ const exceptions = [
   'svg.elements.view.zoomAndPan',
 ];
 
-function neverImplemented(support) {
+export function neverImplemented(support) {
   for (const s in support) {
     let data = support[s];
     if (!Array.isArray(data)) data = [data];
@@ -33,6 +39,11 @@ function neverImplemented(support) {
   return true;
 }
 
+const errorTime = new Date(),
+  warningTime = new Date();
+errorTime.setFullYear(errorTime.getFullYear() - 2.5);
+warningTime.setFullYear(warningTime.getFullYear() - 2);
+
 /**
  * @param {*} browsers
  * @param {*} support
@@ -40,8 +51,6 @@ function neverImplemented(support) {
  */
 function implementedAndRemoved(browsers, support) {
   let result = 'error';
-  const warningTime = new Date().getTime() - 2 * 365 * 24 * 60 * 60 * 1000;
-  const errorTime = new Date().getTime() - 2.5 * 365 * 24 * 60 * 60 * 1000;
   for (const browser in support) {
     let data = support[browser];
     if (!Array.isArray(data)) data = [data];
@@ -50,7 +59,7 @@ function implementedAndRemoved(browsers, support) {
       if (!d.version_removed) return false;
       const releaseDate = new Date(
         browsers[browser].releases[d.version_removed].release_date,
-      ).getTime();
+      );
       // Feature was recently supported, no need to show warning
       if (warningTime < releaseDate) return false;
       // Feature was supported sufficiently recently to not show an error
@@ -99,12 +108,9 @@ function processData(logger, data, browsers, path) {
 
 export default {
   name: 'Obsolete',
-  description: 'Test for osolete data in each support statement',
+  description: 'Test for obsolete data in each support statement',
   scope: 'feature',
   check(logger, { data, path }) {
     processData(logger, data, browsers, path.full);
-  },
-  internals: {
-    neverImplemented,
   },
 };
