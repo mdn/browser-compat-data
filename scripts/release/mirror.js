@@ -29,9 +29,13 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      ['opera', 'opera_android', 'samsunginternet_android'].includes(
-        targetBrowser,
-      ) &&
+      [
+        'edge',
+        'opera',
+        'opera_android',
+        'samsunginternet_android',
+        'webview_android',
+      ].includes(targetBrowser) &&
       release.engine == 'Blink' &&
       sourceRelease.engine == 'WebKit'
     ) {
@@ -270,50 +274,6 @@ const bumpEdge = (sourceData) => {
 };
 
 /**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
- */
-const bumpWebView = (sourceData) => {
-  let newData = copyStatement(sourceData);
-
-  const createWebViewRange = (version) => {
-    if (Number(version) <= 18) {
-      return '1';
-    } else if (Number(version) > 18 && Number(version) < 30) {
-      return '≤37';
-    } else if (Number(version) >= 30 && Number(version) < 33) {
-      return '4.4';
-    } else if (Number(version) >= 33 && Number(version) < 37) {
-      return '4.4.3';
-    } else {
-      return version;
-    }
-  };
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = createWebViewRange(sourceData.version_added);
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = createWebViewRange(sourceData.version_removed);
-  }
-
-  if (sourceData.notes) {
-    newData.notes = updateNotes(
-      sourceData.notes,
-      /Chrome/g,
-      'WebView',
-      createWebViewRange,
-    );
-  }
-
-  return newData;
-};
-
-/**
  * @param {SupportStatement} data
  * @param {string} destination
  */
@@ -332,8 +292,6 @@ export const bumpSupport = (sourceData, destination) => {
 
   if (destination === 'edge') {
     newData = bumpEdge(sourceData);
-  } else if (destination === 'webview_android') {
-    newData = bumpWebView(sourceData);
   } else {
     let notesRepl;
     if (destination.includes('opera')) {
