@@ -17,10 +17,10 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const getEarliestVersion = (...args) => {
   const versions = args
-    .filter((version) => typeof version === 'string')
+    .filter((version) => typeof version === 'string' && version !== 'preview')
     .map((version) => version.replace('≤', ''));
 
-  let earliestVersion = versions[0];
+  let earliestVersion;
 
   for (const version of versions) {
     if (
