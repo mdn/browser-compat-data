@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import getMatchingBrowserVersion from './mirror.js';
+import { getMatchingBrowserVersion } from './mirror.js';
 
 describe('mirror', () => {
   describe('getMatchingBrowserVersion()', () => {
@@ -45,7 +45,7 @@ describe('mirror', () => {
       opera_android: [
         ['18', '14'],
         ['26', '14'],
-        ['27', '14'], // wrong, should be 15
+        ['27', '15'],
         ['28', '15'],
         ['29', '16'],
         ['30', '18'],

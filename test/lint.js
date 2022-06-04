@@ -6,41 +6,26 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
-import ora from 'ora';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
 
-import {
-  testBrowsersData,
-  testBrowsersPresence,
-  testConsistency,
-  testDescriptions,
-  testLinks,
-  testNotes,
-  testPrefix,
-  testSchema,
-  testStatus,
-  testStyle,
-  testVersions,
-} from './linter/index.js';
-import { IS_CI, pluralize } from './utils.js';
+import linters from './linter/index.js';
+import extend from '../scripts/lib/extend.js';
+import { walk } from '../utils/index.js';
+import { pluralize } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-/** @type {object} */
-const spinner = ora({
-  stream: process.stdout,
-});
-
 /**
- * Recursively checks files for any errors.
+ * Recursively load
  *
  * @param {string[]} files The files to test
- * @returns {object} Errors by relative file path.
+ * @returns {{messages: object, data: Identifier}}
  */
-const checkFiles = (...files) => {
-  let errors = {};
+const loadAndCheckFiles = (...files) => {
+  const data = {};
+
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', file);
@@ -58,71 +43,33 @@ const checkFiles = (...files) => {
       filePath.category =
         filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
 
-      spinner.text = filePath.full;
-
-      if (!IS_CI) {
-        // Continuous integration environments don't allow overwriting
-        // previous lines using VT escape sequences, which is how
-        // the spinner animation is implemented.
-        spinner.start();
-      }
-
-      // Catch console errors and report them as file errors
-      const console_error = console.error;
-      console.error = (...args) => {
-        if (!(filePath.full in errors)) {
-          // Set spinner to failure when first error is found
-          // Setting on every error causes duplicate output
-          spinner['stream'] = process.stderr;
-          spinner.fail(chalk`{red.bold ${filePath.full}}`);
-
-          errors[filePath.full] = [];
-        }
-        console_error(...args);
-        errors[filePath.full].push(...args);
-      };
-
       try {
         const rawFileData = fs.readFileSync(file, 'utf-8').trim();
         const fileData = JSON.parse(rawFileData);
 
-        testSchema(fileData, filePath);
-        testLinks(rawFileData);
+        linters.runScope('file', {
+          data: fileData,
+          rawdata: rawFileData,
+          path: filePath,
+        });
 
-        if (file.indexOf('browsers' + path.sep) !== -1) {
-          testBrowsersData(fileData);
-        } else {
-          testBrowsersPresence(fileData, filePath);
-          testConsistency(fileData);
-          testDescriptions(fileData);
-          testPrefix(fileData, filePath);
-          testStatus(fileData);
-          testStyle(rawFileData);
-          testVersions(fileData);
-          testNotes(fileData);
-        }
+        extend(data, fileData);
       } catch (e) {
+        console.error(`Couldn't load ${filePath.full}!`);
         console.error(e);
-      }
-
-      // Reset console.error
-      console.error = console_error;
-
-      if (!(filePath.full in errors)) {
-        spinner.succeed();
       }
     }
 
     if (fs.statSync(file).isDirectory()) {
-      const subFiles = fs.readdirSync(file).map((subfile) => {
-        return path.join(file, subfile);
-      });
+      const subFiles = fs
+        .readdirSync(file)
+        .map((subfile) => path.join(file, subfile));
 
-      errors = { ...errors, ...checkFiles(...subFiles) };
+      extend(data, loadAndCheckFiles(...subFiles));
     }
   }
 
-  return errors;
+  return data;
 };
 
 /**
@@ -145,25 +92,78 @@ const main = (
     'webextensions',
   ],
 ) => {
-  const errors = checkFiles(...files);
+  let hasErrors = false;
 
-  const filesWithErrors = Object.keys(errors).length;
+  const data = loadAndCheckFiles(...files);
 
-  if (filesWithErrors) {
-    console.error('');
+  for (const browser in data.browsers) {
+    linters.runScope('browser', {
+      data: data.browsers[browser],
+      path: {
+        full: `browsers.${browser}`,
+        category: 'browsers',
+      },
+    });
+  }
+
+  const walker = walk(undefined, data);
+  for (const feature of walker) {
+    linters.runScope('feature', {
+      data: feature.compat,
+      path: {
+        full: feature.path,
+        category: feature.path.split('.')[0],
+      },
+    });
+  }
+
+  linters.runScope('tree', {
+    data,
+    path: {
+      full: '',
+    },
+  });
+
+  for (const [linter, messages] of Object.entries(linters.messages)) {
+    if (!messages.length) continue;
+
+    const errors = messages.filter((m) => m.level === 'error');
+    const warnings = messages.filter((m) => m.level === 'warning');
+
     console.error(
-      chalk`{red Problems in {bold ${pluralize('file', filesWithErrors)}}:}`,
+      chalk`{${errors.length ? 'red' : 'yellow'} ${linter} - {bold ${pluralize(
+        'problem',
+        messages.length,
+      )}} (${pluralize('error', errors.length)}, ${pluralize(
+        'warning',
+        warnings.length,
+      )}):}`,
     );
 
-    for (const [fp, errorMsgs] of Object.entries(errors)) {
-      console.error(chalk`{red.bold ✖ ${fp}}`);
-      for (const error of errorMsgs) {
-        console.error(error);
+    for (const error of errors) {
+      hasErrors = true;
+
+      console.error(chalk`{red  ✖ ${error.path} - Error → ${error.message}}`);
+      if (error.tip) {
+        console.error(chalk`{blue    ◆ Tip: ${error.tip}}`);
+      }
+    }
+
+    for (const warning of warnings) {
+      console.warn(
+        chalk`{red  ✖ ${warning.path} - Warning → ${warning.message}}`,
+      );
+      if (warning.tip) {
+        console.warn(chalk`{blue    ◆ Tip: ${warning.tip}}`);
       }
     }
   }
 
-  return filesWithErrors > 0;
+  if (!hasErrors) {
+    console.log(chalk`{green All data {bold passed} linting!}`);
+  }
+
+  return hasErrors;
 };
 
 if (esMain(import.meta)) {
