@@ -45,7 +45,7 @@ function processData(rawData, logger) {
         actual,
         expectedBrowserSorting,
       )}`,
-      chalk`Run {bold npm run fix} to fix sorting automatically`,
+      { fixable: true },
     );
   }
 
@@ -55,7 +55,7 @@ function processData(rawData, logger) {
         actual,
         expectedFeatureSorting,
       )}`,
-      chalk`Run {bold npm run fix} to fix sorting automatically`,
+      { fixable: true },
     );
   }
 
@@ -65,7 +65,7 @@ function processData(rawData, logger) {
         actual,
         expectedFeatureSorting,
       )}`,
-      chalk`Run {bold npm run fix} to fix sorting automatically`,
+      { fixable: true },
     );
   }
 

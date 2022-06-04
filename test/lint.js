@@ -127,34 +127,47 @@ const main = (
   for (const [linter, messages] of Object.entries(linters.messages)) {
     if (!messages.length) continue;
 
-    const errors = messages.filter((m) => m.level === 'error');
-    const warnings = messages.filter((m) => m.level === 'warning');
+    const messagesByLevel = {
+      error: [],
+      warning: [],
+    };
 
-    console.error(
-      chalk`{${errors.length ? 'red' : 'yellow'} ${linter} - {bold ${pluralize(
-        'problem',
-        messages.length,
-      )}} (${pluralize('error', errors.length)}, ${pluralize(
-        'warning',
-        warnings.length,
-      )}):}`,
-    );
-
-    for (const error of errors) {
-      hasErrors = true;
-
-      console.error(chalk`{red  ✖ ${error.path} - Error → ${error.message}}`);
-      if (error.tip) {
-        console.error(chalk`{blue    ◆ Tip: ${error.tip}}`);
-      }
+    for (const message of messages) {
+      messagesByLevel[message.level].push(message);
     }
 
-    for (const warning of warnings) {
-      console.warn(
-        chalk`{red  ✖ ${warning.path} - Warning → ${warning.message}}`,
+    if (messagesByLevel.errors.length) {
+      hasErrors = true;
+    }
+
+    const errorCounts = Object.entries(messagesByLevel)
+      .map(([k, v]) => pluralize(k, v.length))
+      .join(', ');
+
+    console.error(
+      chalk`{${
+        messagesByLevel.errors.length ? 'red' : 'yellow'
+      } ${linter} - {bold ${pluralize(
+        'problem',
+        messages.length,
+      )}} (${errorCounts}):}`,
+    );
+
+    for (const message of messages) {
+      console.error(
+        chalk`{${message.level === 'error' ? 'red' : 'yellow'}  ✖ ${
+          message.path
+        } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
+          message.message
+        }}`,
       );
-      if (warning.tip) {
-        console.warn(chalk`{blue    ◆ Tip: ${warning.tip}}`);
+      if (message.fixable) {
+        console.message(
+          chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
+        );
+      }
+      if (message.tip) {
+        console.message(chalk`{blue    ◆ Tip: ${message.tip}}`);
       }
     }
   }
