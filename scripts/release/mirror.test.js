@@ -22,8 +22,8 @@ describe('mirror', () => {
       edge: [
         ['1', false], // wrong, invalid inference
         ['27', false], // wrong, invalid inference
-        ['28', '79'], // wrong, could be in Edge <79
-        ['78', '79'], // wrong, could be in Edge <79
+        ['28', '79'],
+        ['78', '79'],
         ['79', '79'],
         ['80', '80'],
         ['90', '90'],
