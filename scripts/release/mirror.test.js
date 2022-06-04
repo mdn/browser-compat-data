@@ -46,7 +46,7 @@ describe('mirror', () => {
         ['30', '17'],
       ],
       opera_android: [
-        ['18', '14'], // wrong, could be in Opera Android <14
+        ['18', '14'],
         ['26', '14'],
         ['27', '15'],
         ['28', '15'],
