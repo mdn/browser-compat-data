@@ -24,6 +24,7 @@ const getEarliestVersion = (...args) => {
 
   for (const version of versions) {
     if (
+      !earliestVersion ||
       earliestVersion === 'preview' ||
       (version !== 'preview' &&
         compareVersions.compare(earliestVersion, version, '>'))
