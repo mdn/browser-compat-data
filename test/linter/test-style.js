@@ -6,6 +6,7 @@ import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
 import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
 import { orderFeatures } from '../../scripts/fix/feature-order.js';
 import { orderStatements } from '../../scripts/fix/statement-order.js';
+import { orderProperties } from '../../scripts/fix/property-order.js';
 
 /**
  * @typedef {import('../utils').Logger} Logger
@@ -25,6 +26,7 @@ function processData(rawData, logger) {
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
   let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
   let expectedStatementSorting = JSON.stringify(dataObject, orderStatements, 2);
+  let expectedPropertySorting = JSON.stringify(dataObject, orderProperties, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -33,6 +35,7 @@ function processData(rawData, logger) {
     expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
     expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
     expectedStatementSorting = expectedStatementSorting.replace(/\r/g, '');
+    expectedPropertySorting = expectedPropertySorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -62,6 +65,16 @@ function processData(rawData, logger) {
   if (expected !== expectedStatementSorting) {
     logger.error(
       chalk`Statement sorting error on ${jsonDiff(
+        actual,
+        expectedFeatureSorting,
+      )}`,
+      chalk`Run {bold npm run fix} to fix sorting automatically`,
+    );
+  }
+
+  if (expected !== expectedPropertySorting) {
+    logger.error(
+      chalk`Property sorting error on ${jsonDiff(
         actual,
         expectedFeatureSorting,
       )}`,

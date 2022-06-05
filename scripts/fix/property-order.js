@@ -37,7 +37,7 @@ function doOrder(value, order) {
  *
  * @returns {*} The new value
  */
-function orderProperties(key, value) {
+export function orderProperties(key, value) {
   if (value instanceof Object && '__compat' in value) {
     value.__compat = doOrder(value.__compat, propOrder.__compat);
 
