@@ -12,12 +12,6 @@ const { browsers } = bcd;
  *  - some entries are currently just stubs and should be expanded and will pass test later
  */
 const exceptions = [
-  'api.VRDisplay.hardwareUnitId',
-  'api.VREyeParameters.recommendedFieldOfView',
-  'api.VREyeParameters.renderRect',
-  'api.VRFieldOfView.VRFieldOfView',
-  'api.VRPose.hasOrientation',
-  'api.VRPose.hasPosition',
   'css.types.length.lh',
   'css.types.length.rlh',
   'http.headers.Cache-Control.stale-if-error',
