@@ -10,4 +10,7 @@ export type InternalSupportStatement = SupportStatement | 'mirror';
 // External Module Declarations
 
 // XXX Remove once https://github.com/tschaub/es-main/pull/10 merged
-declare module 'es-main';
+declare module 'es-main' {
+  export default function (meta: ImportMeta): boolean;
+  export function stripExt(name: string): string;
+}
