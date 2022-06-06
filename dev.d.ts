@@ -3,8 +3,11 @@
 
 import { CompatData } from './types';
 
-import './external';
-
 export default CompatData;
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
+
+// External Module Declarations
+
+// XXX Remove once https://github.com/tschaub/es-main/pull/10 merged
+declare module 'es-main';
