@@ -217,8 +217,14 @@
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
           "tsType": "string | string[]"
         },
-        "support": { "$ref": "#/definitions/support_block" },
-        "status": { "$ref": "#/definitions/status_block" }
+        "support": {
+          "$ref": "#/definitions/support_block",
+          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
+        },
+        "status": {
+          "$ref": "#/definitions/status_block",
+          "description": "An object containing information about the stability of the feature."
+        }
       },
       "required": ["support"],
       "additionalProperties": false
@@ -231,6 +237,7 @@
           "type": "object",
           "$ref": "#/definitions/compat_statement",
           "required": ["status"],
+          "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
           "tsType": "CompatStatement"
         }
       },
