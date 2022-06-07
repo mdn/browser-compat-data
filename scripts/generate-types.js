@@ -50,6 +50,22 @@ const generateCompatDataTypes = () => {
   return `export interface CompatData {\n${props.join('\n\n')}\n}\n`;
 };
 
+const transformTS = (browserTS, compatTS) => {
+  // XXX Temporary until the following PR is merged and released:
+  // https://github.com/bcherny/json-schema-to-typescript/pull/456
+  let ts = browserTS + '\n\n' + compatTS;
+
+  ts = ts
+    .replace('export type Browsers1', 'export type Browsers')
+    .replace(
+      'export interface Browsers {\n  browsers?: Browsers1;\n}',
+      'export interface BrowserDataFile {\n  browsers?: Browsers;\n}',
+    )
+    .replace('export interface CompatData {}', '');
+
+  return ts;
+};
+
 const compile = async () => {
   const browserTS = await compileFromFile('schemas/browsers.schema.json', opts);
   const compatTS = await compileFromFile(
@@ -60,8 +76,7 @@ const compile = async () => {
   const ts = [
     header,
     generateBrowserNames(),
-    browserTS,
-    compatTS,
+    transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(new URL('../types-autogen.d.ts', import.meta.url), ts);
