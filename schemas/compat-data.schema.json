@@ -17,7 +17,7 @@
               "nullable": true
             }
           ],
-          "tsType": "string | boolean | null"
+          "tsType": "VersionValue"
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
@@ -30,7 +30,7 @@
               "const": true
             }
           ],
-          "tsType": "string | boolean | null"
+          "tsType": "VersionValue"
         },
         "prefix": {
           "type": "string",
@@ -45,25 +45,9 @@
           "description": "An optional array of objects describing flags that must be configured for this browser to support this feature.",
           "minItems": 1,
           "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "description": "An enum that indicates the flag type.",
-                "enum": ["preference", "runtime_flag"]
-              },
-              "name": {
-                "type": "string",
-                "description": "A string giving the name of the flag or preference that must be configured."
-              },
-              "value_to_set": {
-                "type": "string",
-                "description": "A string giving the value which the specified flag must be set to for this feature to work."
-              }
-            },
-            "additionalProperties": false,
-            "required": ["type", "name"]
-          }
+            "$ref": "#/definitions/flag_statement"
+          },
+          "tsType": "FlagStatement[]"
         },
         "impl_url": {
           "anyOf": [
@@ -79,6 +63,7 @@
             }
           ],
           "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "tsType": "string | string[]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
@@ -100,7 +85,8 @@
                 "type": "string"
               }
             }
-          ]
+          ],
+          "tsType": "string | string[]"
         }
       },
       "required": ["version_added"],
@@ -113,6 +99,27 @@
         }
       },
       "additionalProperties": false
+    },
+
+    "flag_statement": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "An enum that indicates the flag type.",
+          "enum": ["preference", "runtime_flag"]
+        },
+        "name": {
+          "type": "string",
+          "description": "A string giving the name of the flag or preference that must be configured."
+        },
+        "value_to_set": {
+          "type": "string",
+          "description": "A string giving the value which the specified flag must be set to for this feature to work."
+        }
+      },
+      "additionalProperties": false,
+      "required": ["type", "name"]
     },
 
     "support_statement": {
@@ -220,11 +227,13 @@
         },
         "support": {
           "$ref": "#/definitions/support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
+          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
+          "tsType": "SupportBlock"
         },
         "status": {
           "$ref": "#/definitions/status_block",
-          "description": "An object containing information about the stability of the feature."
+          "description": "An object containing information about the stability of the feature.",
+          "tsType": "StatusBlock"
         }
       },
       "required": ["support"],

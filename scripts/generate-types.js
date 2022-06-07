@@ -76,6 +76,7 @@ const compile = async () => {
   const ts = [
     header,
     generateBrowserNames(),
+    'export type VersionValue = string | boolean | null;',
     transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
   ].join('\n\n');
