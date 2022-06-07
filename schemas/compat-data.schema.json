@@ -229,26 +229,6 @@
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
       },
-      "required": ["support", "status"],
-      "additionalProperties": false
-    },
-
-    "webextensions_compat_statement": {
-      "type": "object",
-      "properties": {
-        "description": {
-          "type": "string",
-          "description": "A string containing a human-readable description of the feature."
-        },
-        "mdn_url": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^https://developer\\.mozilla\\.org/docs/",
-          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
-        },
-        "support": { "$ref": "#/definitions/support_block" },
-        "status": { "$ref": "#/definitions/status_block" }
-      },
       "required": ["support"],
       "additionalProperties": false
     },
@@ -256,7 +236,11 @@
     "identifier": {
       "type": "object",
       "properties": {
-        "__compat": { "$ref": "#/definitions/compat_statement" }
+        "__compat": {
+          "type": "object",
+          "$ref": "#/definitions/compat_statement",
+          "required": ["status"]
+        }
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
@@ -270,7 +254,7 @@
     "webextensions_identifier": {
       "type": "object",
       "properties": {
-        "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
+        "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
