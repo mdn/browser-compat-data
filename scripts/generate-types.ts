@@ -80,7 +80,7 @@ const transformTS = (browserTS, compatTS) => {
 };
 
 const compile = async (
-  destination = new URL('../types.d.ts', import.meta.url),
+  destination = new URL('../types/types.d.ts', import.meta.url),
 ) => {
   const browserTS = await compileFromFile('schemas/browsers.schema.json', opts);
   const compatTS = await compileFromFile(

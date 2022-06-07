@@ -2,5 +2,3 @@
  * See LICENSE file for more information. */
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
-
-export * from '../types';
