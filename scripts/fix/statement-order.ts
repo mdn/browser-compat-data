@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { CompatStatement } from '../../types/types.js';
+
 import fs from 'node:fs';
 
 import { IS_WINDOWS } from '../../test/utils.js';
@@ -13,11 +15,14 @@ import compareStatements from '../lib/compare-statements.js';
  * with flags, partial support, prefixes, or alternative names lower.
  *
  * @param {string} key The key in the object
- * @param {*} value The value of the key
+ * @param {CompatStatement} value The value of the key
  *
- * @returns {*} The new value
+ * @returns {CompatStatement} The new value
  */
-export function orderStatements(key, value) {
+export function orderStatements(
+  key: string,
+  value: CompatStatement,
+): CompatStatement {
   if (key === '__compat') {
     for (let browser of Object.keys(value.support)) {
       let supportData = value.support[browser];
@@ -30,9 +35,9 @@ export function orderStatements(key, value) {
 }
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
-const fixStatementOrder = (filename) => {
+const fixStatementOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderStatements), null, 2);
 

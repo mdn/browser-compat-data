@@ -1,11 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Identifier } from '../../types/types.js';
+
 import { readFileSync, writeFileSync } from 'node:fs';
 
 import { IS_WINDOWS } from '../../test/utils.js';
 
-const fixStatusContradiction = (key, value) => {
+const fixStatusContradiction = (key: string, value: Identifier): Identifier => {
   const status = value?.__compat?.status;
   if (status && status.experimental && status.deprecated) {
     status.experimental = false;
@@ -14,9 +16,9 @@ const fixStatusContradiction = (key, value) => {
 };
 
 /**
- * @param {Promise<void>} filename
+ * @param {string} filename
  */
-const fixStatus = (filename) => {
+const fixStatus = (filename: string): void => {
   let actual = readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
     JSON.parse(actual, fixStatusContradiction),

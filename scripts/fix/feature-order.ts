@@ -1,14 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Identifier } from '../../types/types.js';
+
 import fs from 'node:fs';
 
 import compareFeatures from '../lib/compare-features.js';
 import { IS_WINDOWS } from '../../test/utils.js';
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- */
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -21,12 +19,12 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
  */
-export function orderFeatures(key, value) {
+export function orderFeatures(key: string, value: Identifier): Identifier {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
       .reduce((result, key) => {
-        result[key] = value[key];
+        (result as any)[key] = (value as any)[key];
         return result;
       }, {});
   }
@@ -40,7 +38,7 @@ export function orderFeatures(key, value) {
  * @param {string} filename The filename to perform fix upon
  * @returns {void}
  */
-const fixFeatureOrder = (filename) => {
+const fixFeatureOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 

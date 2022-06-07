@@ -21,7 +21,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to load and perform fix upon
  * @returns {void}
  */
-function load(...files) {
+function load(...files: string[]): void {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);

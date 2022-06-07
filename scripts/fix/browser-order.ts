@@ -1,13 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { CompatStatement, SimpleSupportStatement } from '../../types/types.js';
+
 import fs from 'node:fs';
 
 import { IS_WINDOWS } from '../../test/utils.js';
-
-/**
- * @typedef {import('../../types').Identifier} Identifier
- */
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -17,19 +15,22 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * non-integer keys (which is our case).
  *
  * @param {string} key The key of the object
- * @param {Identifier} value The value of the key
- * @returns {Identifier} Value with sorting applied
+ * @param {CompatStatement} value The value of the key
+ * @returns {CompatStatement} Value with sorting applied
  */
-export const orderSupportBlock = (key, value) => {
+export const orderSupportBlock = (
+  key: string,
+  value: CompatStatement,
+): CompatStatement => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
       .sort()
-      .reduce((result, key) => {
-        result[key] = value.support[key];
+      .reduce((result: object, key: string) => {
+        (result as any)[key] = value.support[key];
         return result;
       }, {});
   }
-  return value;
+  return value as CompatStatement;
 };
 
 /**
@@ -40,7 +41,7 @@ export const orderSupportBlock = (key, value) => {
  * @param {string} filename The path to the file to fix in-place
  * @returns {void}
  */
-const fixBrowserOrder = (filename) => {
+const fixBrowserOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
 

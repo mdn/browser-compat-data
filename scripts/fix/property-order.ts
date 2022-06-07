@@ -51,7 +51,7 @@ export function orderProperties(key, value) {
 /**
  * @param {string} filename
  */
-const fixPropertyOrder = (filename) => {
+const fixPropertyOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderProperties), null, 2);
 
