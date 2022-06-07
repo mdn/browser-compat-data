@@ -187,7 +187,7 @@ function checkVersions(supportData, category, logger) {
               chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
                 browser
               ].join(', ')}`,
-              browserTips[browser],
+              { tip: browserTips[browser] },
             );
           }
         }
