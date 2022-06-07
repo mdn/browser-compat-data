@@ -23,9 +23,9 @@ export function orderFeatures(key: string, value: Identifier): Identifier {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
-      .reduce((result, key) => {
-        (result as any)[key] = (value as any)[key];
-        return result;
+      .reduce((result: { [index: string]: any }, key: string) => {
+        result[key] = (value as any)[key];
+        return result as Identifier;
       }, {});
   }
   return value;

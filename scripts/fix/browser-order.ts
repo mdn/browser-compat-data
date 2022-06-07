@@ -23,12 +23,13 @@ export const orderSupportBlock = (
   value: CompatStatement,
 ): CompatStatement => {
   if (key === '__compat') {
-    value.support = Object.keys(value.support)
+    const support = Object.keys(value.support)
       .sort()
-      .reduce((result: object, key: string) => {
-        (result as any)[key] = value.support[key];
+      .reduce((result: { [index: string]: any }, key: string) => {
+        result[key] = value.support[key];
         return result;
       }, {});
+    value.support = support;
   }
   return value as CompatStatement;
 };

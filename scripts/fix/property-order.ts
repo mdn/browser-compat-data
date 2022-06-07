@@ -25,8 +25,8 @@ function doOrder(
   value: CompatStatement | StatusBlock,
   order: string[],
 ): CompatStatement | StatusBlock {
-  return order.reduce((result, key) => {
-    if (key in value) (result as any)[key] = (value as any)[key];
+  return order.reduce((result: { [index: string]: any }, key: string) => {
+    if (key in value) result[key] = (value as any)[key];
     return result;
   }, {}) as CompatStatement | StatusBlock;
 }
