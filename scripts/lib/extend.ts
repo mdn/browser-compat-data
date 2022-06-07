@@ -8,7 +8,7 @@ class DuplicateCompatError extends Error {
   }
 }
 
-function isPlainObject(v: object): boolean {
+function isPlainObject(v: any): v is object {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 

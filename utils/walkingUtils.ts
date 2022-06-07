@@ -5,11 +5,11 @@ export function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }
 
-export function isFeature(obj) {
+export function isFeature(obj: any): obj is Identifier {
   return '__compat' in obj;
 }
 
-export function isBrowser(obj) {
+export function isBrowser(obj: any): obj is BrowserStatement {
   return 'name' in obj && 'releases' in obj;
 }
 
