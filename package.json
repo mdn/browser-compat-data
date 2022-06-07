@@ -2,7 +2,7 @@
   "name": "@mdn/browser-compat-data",
   "version": "5.0.2",
   "description": "Browser compatibility data provided by MDN Web Docs",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "engines": {
     "node": ">=16.15.0 <17.0.0 || >=17.5.0"
@@ -67,21 +67,21 @@
   "scripts": {
     "prepare": "npm run gentypes",
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
-    "diff": "node scripts/diff.js",
+    "diff": "ts-node scripts/diff.ts",
     "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
-    "format": "npx eslint \"**/*.js\" && npx prettier --check \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
-    "format:fix": "npx eslint --fix \"**/*.js\" && npx prettier --write \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
-    "lint": "node test/lint",
-    "fix": "npm run format:fix && node scripts/fix/index",
-    "stats": "node scripts/statistics",
-    "build": "node scripts/release/build",
-    "gentypes": "node scripts/generate-types",
-    "release-pulls": "node scripts/release/pulls",
-    "release-notes": "node scripts/release/notes",
-    "release-stats": "node scripts/release/stats",
+    "format": "npx eslint \"**/*.ts\" && npx prettier --check \"**/*.md\" \"**/*.json\"",
+    "format:fix": "npx eslint --fix \"**/*.ts\" && npx prettier --write \"**/*.md\" \"**/*.json\"",
+    "lint": "ts-node test/lint",
+    "fix": "npm run format:fix && ts-node scripts/fix/index",
+    "stats": "ts-node scripts/statistics",
+    "build": "ts-node scripts/release/build",
+    "gentypes": "ts-node scripts/generate-types",
+    "release-pulls": "ts-node scripts/release/pulls",
+    "release-notes": "ts-node scripts/release/notes",
+    "release-stats": "ts-node scripts/release/stats",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run format && npm run lint && npm run unittest",
-    "traverse": "node scripts/traverse"
+    "traverse": "ts-node scripts/traverse"
   }
 }
