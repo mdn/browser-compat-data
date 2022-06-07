@@ -68,7 +68,7 @@
     "prepare": "npm run gentypes",
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "node scripts/diff.js",
-    "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.js\"",
+    "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "npx eslint \"**/*.js\" && npx prettier --check \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx eslint --fix \"**/*.js\" && npx prettier --write \"**/*.ts\" \"**/*.md\" \"**/*.json\"",
