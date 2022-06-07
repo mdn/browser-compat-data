@@ -17,7 +17,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
-async function load(...dirs) {
+async function load(...dirs: string[]) {
   let result = {};
 
   for (const dir of dirs) {
@@ -25,12 +25,12 @@ async function load(...dirs) {
       .withBasePath()
       .filter((fp) => fp.endsWith('.json'))
       .crawl(path.join(dirname, dir))
-      .sync();
+      .sync() as string[];
 
     for (const fp of paths) {
       try {
         const contents = await fs.readFile(fp);
-        extend(result, JSON.parse(contents));
+        extend(result, JSON.parse(contents.toString('utf8')));
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
