@@ -8,6 +8,7 @@ import { compileFromFile } from 'json-schema-to-typescript';
 
 const opts = {
   bannerComment: '',
+  unreachableDefinitions: true,
 };
 
 const compile = async () => {
