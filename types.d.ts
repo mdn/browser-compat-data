@@ -290,6 +290,11 @@ export interface CompatStatement {
   mdn_url?: string;
 
   /**
+   * An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.
+   */
+  spec_url?: string | string[];
+
+  /**
    * Each `__compat` object contains support information.
    *
    * For each browser identifier, it contains a `support_statement` object with
