@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { CompatData } from './types/types.js';
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -41,7 +43,7 @@ async function load(...dirs: string[]) {
   return result;
 }
 
-export default await load(
+export default (await load(
   'api',
   'browsers',
   'css',
@@ -52,4 +54,4 @@ export default await load(
   'svg',
   'webdriver',
   'webextensions',
-);
+)) as CompatData;
