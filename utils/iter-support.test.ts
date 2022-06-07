@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import iterSupport from './iter-support';
+import iterSupport from './iter-support.js';
 
 describe('iterSupport()', function () {
   it('returns a `"version_added": null` support statement for non-existent browsers', function () {

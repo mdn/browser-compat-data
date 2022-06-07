@@ -7,9 +7,9 @@ import path from 'node:path';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
-import bumpData from './mirror';
-import compileTS from '../generate-types';
-import { walk } from '../../utils/index';
+import bumpData from './mirror.js';
+import compileTS from '../generate-types.js';
+import { walk } from '../../utils/index.js';
 
 const packageJson = JSON.parse(
   await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
@@ -21,7 +21,7 @@ const verbatimFiles = ['LICENSE', 'README.md'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
-  const { default: bcd } = await import('../../index');
+  const { default: bcd } = await import('../../index.js');
 
   const walker = walk(undefined, bcd);
 

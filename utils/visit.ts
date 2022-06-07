@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import bcd from '../index';
-import query from './query';
-import { descendantKeys, joinPath, isFeature } from './walkingUtils';
+import bcd from '../index.js';
+import query from './query.js';
+import { descendantKeys, joinPath, isFeature } from './walkingUtils.js';
 
 const BREAK = Symbol('break');
 const CONTINUE = Symbol('continue');

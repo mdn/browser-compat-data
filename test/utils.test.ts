@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import assert from 'node:assert/strict';
-import { escapeInvisibles } from './utils';
+import { escapeInvisibles } from './utils.js';
 
 describe('utils', () => {
   it('`escapeInvisibles()` works correctly', () => {

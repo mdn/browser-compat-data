@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { ConsistencyChecker } from './test-consistency';
+import { ConsistencyChecker } from './test-consistency.js';
 
 const check = new ConsistencyChecker();
 

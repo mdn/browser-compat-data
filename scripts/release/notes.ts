@@ -11,8 +11,8 @@ import {
   releaseYargsBuilder,
   requireGitHubCLI,
   buildQuery,
-} from './utils';
-import diffFeatures from '../diff-features';
+} from './utils.js';
+import diffFeatures from '../diff-features.js';
 
 function main(argv) {
   const { startVersionTag, endVersionTag } = argv;

@@ -3,7 +3,7 @@
 
 import compareVersions from 'compare-versions';
 
-import bcd from '../../index';
+import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**

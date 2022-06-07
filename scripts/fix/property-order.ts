@@ -5,7 +5,7 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 const propOrder = {
   __compat: [

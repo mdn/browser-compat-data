@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { fixExperimental } from './007-experimental-false';
+import { fixExperimental } from './007-experimental-false.js';
 
 describe('fixExperimental()', () => {
   it('chrome + firefox + safari', () => {

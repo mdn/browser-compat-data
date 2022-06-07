@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { removeWebViewFlags } from './002-remove-webview-flags';
+import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier

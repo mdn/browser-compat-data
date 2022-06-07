@@ -3,8 +3,8 @@
 
 import fs from 'node:fs';
 
-import compareFeatures from '../lib/compare-features';
-import { IS_WINDOWS } from '../../test/utils';
+import compareFeatures from '../lib/compare-features.js';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier

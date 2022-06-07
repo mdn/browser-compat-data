@@ -3,7 +3,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 const fixStatusContradiction = (key, value) => {
   const status = value?.__compat?.status;

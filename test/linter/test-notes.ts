@@ -4,7 +4,7 @@
 import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
 
-import { VALID_ELEMENTS } from '../utils';
+import { VALID_ELEMENTS } from '../utils.js';
 
 const parser = new HTMLParser();
 

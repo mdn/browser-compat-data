@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { neverImplemented } from './test-obsolete';
+import { neverImplemented } from './test-obsolete.js';
 
 describe('neverImplemented', function () {
   it('returns false for features which were implemented', () => {

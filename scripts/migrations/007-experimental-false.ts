@@ -6,9 +6,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 
-import { walk } from '../../utils/index';
+import { walk } from '../../utils/index.js';
 
-import bcd from '../../index';
+import bcd from '../../index.js';
 const { browsers } = bcd;
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));

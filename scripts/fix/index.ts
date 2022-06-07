@@ -6,12 +6,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 
-import fixBrowserOrder from './browser-order';
-import fixFeatureOrder from './feature-order';
-import fixPropertyOrder from './property-order';
-import fixStatementOrder from './statement-order';
-import fixLinks from './links';
-import fixStatus from './status';
+import fixBrowserOrder from './browser-order.js';
+import fixFeatureOrder from './feature-order.js';
+import fixPropertyOrder from './property-order.js';
+import fixStatementOrder from './statement-order.js';
+import fixLinks from './links.js';
+import fixStatus from './status.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

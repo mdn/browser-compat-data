@@ -3,8 +3,8 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils';
-import { processData } from '../../test/linter/test-links';
+import { IS_WINDOWS } from '../../test/utils.js';
+import { processData } from '../../test/linter/test-links.js';
 
 /**
  * @param {string} filename

@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import compareFeatures from './compare-features';
+import compareFeatures from './compare-features.js';
 
 describe('compare-features script', () => {
   it('`compareFeatures()` works correctly', () => {

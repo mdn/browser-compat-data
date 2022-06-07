@@ -6,9 +6,9 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import bcd from '../index';
+import bcd from '../index.js';
 
-import { getRefDate } from './release/utils';
+import { getRefDate } from './release/utils.js';
 
 /** @type {string[]} */
 const webextensionsBrowsers = [

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 
-import { IS_WINDOWS } from '../../test/utils';
+import { IS_WINDOWS } from '../../test/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

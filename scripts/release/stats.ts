@@ -7,8 +7,8 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { exec, releaseYargsBuilder } from './utils';
-import { walk } from '../../utils/index';
+import { exec, releaseYargsBuilder } from './utils.js';
+import { walk } from '../../utils/index.js';
 
 const { argv } = yargs(hideBin(process.argv)).command(
   '$0 [start-version-tag [end-version-tag]]',

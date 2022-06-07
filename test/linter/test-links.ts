@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils';
+import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
 /**
  * @typedef {object} LinkError

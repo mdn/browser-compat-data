@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { getMatchingBrowserVersion } from './mirror';
+import { getMatchingBrowserVersion } from './mirror.js';
 
 describe('mirror', () => {
   describe('getMatchingBrowserVersion()', () => {

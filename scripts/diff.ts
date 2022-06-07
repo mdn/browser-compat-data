@@ -5,7 +5,7 @@ import chalk from 'chalk-template';
 import deepDiff from 'deep-diff';
 import esMain from 'es-main';
 
-import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git';
+import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 
 // Note: This does not detect renamed files
 /**

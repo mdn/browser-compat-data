@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import bcd from '../index';
+import bcd from '../index.js';
 
 /**
  * Get a subtree of compat data.

@@ -3,9 +3,9 @@
 
 import assert from 'node:assert/strict';
 
-import bcd from '../index';
-import query from './query';
-import { joinPath, isBrowser, isFeature } from './walkingUtils';
+import bcd from '../index.js';
+import query from './query.js';
+import { joinPath, isBrowser, isFeature } from './walkingUtils.js';
 
 describe('joinPath()', function () {
   it('joins dotted paths to features', function () {

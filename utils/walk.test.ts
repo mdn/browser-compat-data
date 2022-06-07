@@ -3,8 +3,8 @@
 
 import assert from 'node:assert/strict';
 
-import bcd from '../index';
-import walk, { lowLevelWalk } from './walk';
+import bcd from '../index.js';
+import walk, { lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', function () {
   it('visits every top-level tree', function () {

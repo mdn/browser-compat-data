@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import bcd from '../index';
-import { isBrowser, descendantKeys, joinPath } from './walkingUtils';
-import query from './query';
+import bcd from '../index.js';
+import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
+import query from './query.js';
 
 export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined && path !== '__meta') {

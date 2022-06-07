@@ -10,10 +10,10 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
 
-import linters from './linter/index';
-import extend from '../scripts/lib/extend';
-import { walk } from '../utils/index';
-import { pluralize } from './utils';
+import linters from './linter/index.js';
+import extend from '../scripts/lib/extend.js';
+import { walk } from '../utils/index.js';
+import { pluralize } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import compareStatements from './compare-statements';
+import compareStatements from './compare-statements.js';
 
 const tests = [
   {

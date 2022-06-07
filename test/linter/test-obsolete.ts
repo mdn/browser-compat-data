@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import bcd from '../../index';
+import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**

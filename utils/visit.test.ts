@@ -3,8 +3,8 @@
 
 import assert from 'node:assert/strict';
 
-import visit from './visit';
-import walk from './walk';
+import visit from './visit.js';
+import walk from './walk.js';
 
 describe('visit()', function () {
   it('runs the function on all features if no other entry point is specified', function () {

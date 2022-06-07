@@ -3,9 +3,9 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils';
+import { IS_WINDOWS } from '../../test/utils.js';
 
-import compareStatements from '../lib/compare-statements';
+import compareStatements from '../lib/compare-statements.js';
 
 /**
  * Return a new "support_block" object whose support statements have

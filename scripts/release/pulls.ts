@@ -5,7 +5,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { buildQuery, getRefDate, releaseYargsBuilder } from './utils';
+import { buildQuery, getRefDate, releaseYargsBuilder } from './utils.js';
 
 const pullsBaseURL = new URL(
   'https://github.com/mdn/browser-compat-data/pulls',

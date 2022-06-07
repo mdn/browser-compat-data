@@ -6,7 +6,7 @@ import fs from 'node:fs/promises';
 import esMain from 'es-main';
 import { compileFromFile } from 'json-schema-to-typescript';
 
-import bcd from '../index';
+import bcd from '../index.js';
 
 const opts = {
   bannerComment: '',

@@ -6,4 +6,4 @@
 
 const { exec } = require('child_process');
 
-exec('node scripts/fix-statement-order');
+exec('node scripts/fix-statement-order.js');

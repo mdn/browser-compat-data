@@ -2,11 +2,11 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils';
-import { orderSupportBlock } from '../../scripts/fix/browser-order';
-import { orderFeatures } from '../../scripts/fix/feature-order';
-import { orderStatements } from '../../scripts/fix/statement-order';
-import { orderProperties } from '../../scripts/fix/property-order';
+import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
+import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
+import { orderFeatures } from '../../scripts/fix/feature-order.js';
+import { orderStatements } from '../../scripts/fix/statement-order.js';
+import { orderProperties } from '../../scripts/fix/property-order.js';
 
 /**
  * @typedef {import('../utils').Logger} Logger
