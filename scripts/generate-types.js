@@ -57,10 +57,7 @@ const transformTS = (browserTS, compatTS) => {
 
   ts = ts
     .replace('export type Browsers1', 'export type Browsers')
-    .replace(
-      'export interface Browsers {\n  browsers?: Browsers1;\n}',
-      'export interface BrowserDataFile {\n  browsers?: Browsers;\n}',
-    )
+    .replace('export interface Browsers {\n  browsers?: Browsers1;\n}', '')
     .replace('export interface CompatData {}', '');
 
   return ts;
