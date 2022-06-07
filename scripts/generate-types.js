@@ -69,7 +69,12 @@ const transformTS = (browserTS, compatTS) => {
   ts = ts
     .replace('export type Browsers1', 'export type Browsers')
     .replace('export interface Browsers {\n  browsers?: Browsers1;\n}', '')
-    .replace('export interface CompatData {}', '');
+    .replace('export interface CompatData {}', '')
+    .replace(
+      'export interface Identifier {',
+      "export interface Identifier extends Record<Omit<string, '__compat'>, Identifier> {",
+    )
+    .replace('[k: string]: Identifier;', '');
 
   return ts;
 };
