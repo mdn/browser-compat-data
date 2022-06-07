@@ -3,8 +3,6 @@
 
 import chalk from 'chalk-template';
 
-import { Logger } from '../utils.js';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
@@ -23,8 +21,8 @@ const { browsers } = bcd;
  * @returns {void}
  */
 function processData(data, category, logger, path = '') {
-  if (data.__compat && data.__compat.support) {
-    const support = data.__compat.support;
+  if (data.support) {
+    const support = data.support;
     const definedBrowsers = Object.keys(support);
 
     let displayBrowsers = Object.keys(browsers).filter(
@@ -76,28 +74,14 @@ function processData(data, category, logger, path = '') {
       );
     }
   }
-  for (const key in data) {
-    if (key === '__compat') continue;
-
-    processData(
-      data[key],
-      category,
-      logger,
-      path && path.length > 0 ? `${path}.${key}` : key,
-    );
-  }
 }
 
-/**
- * @param {Identifier} data The contents of the file to test
- * @param {object} filePath The path info for the file being tested
- * @returns {boolean} If the file contains errors
- */
-export default function testBrowsersPresence(data, filePath) {
-  const logger = new Logger('Browsers');
-
-  processData(data, filePath.category, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
+export default {
+  name: 'Browser Presence',
+  description:
+    'Test the presence of browser data within compatibility statements',
+  scope: 'feature',
+  check(logger, { data, path: { category } }) {
+    processData(data, category, logger);
+  },
+};

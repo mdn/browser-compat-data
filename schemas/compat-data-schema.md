@@ -97,9 +97,6 @@ The `__compat` object consists of the following:
   It is intended to be used as a caption or title and should be kept short.
   The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used.
 
-- An optional `matches` property to **help match the feature to source code** ([see below](#the-matches-object))
-  An object that contains a keyword list or regex that can match values or tokens which correspond to the feature.
-
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
@@ -403,6 +400,15 @@ Example for two flags required:
 }
 ```
 
+#### `impl_url`
+
+An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
+
+For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/,
+https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with
+a subject line that will typically be something of the form _"Implement [feature]"_,
+_"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
+
 #### `partial_implementation`
 
 A `boolean` value indicating whether or not the implementation of the sub-feature
@@ -431,33 +437,6 @@ Example:
 ```
 
 The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addition, `<a>` tags may be used, such as to link to a browser's bug report, or MDN documentation.
-
-### The `matches` object
-
-A `matches` object contains hints to help automatically detect whether source code corresponds to a feature, such as a list of keywords or a regular expression. A `matches` object may have one of the following properties (in order of preference):
-
-- `keywords`: an array of one or more literal strings that correspond to the feature.
-
-  Examples:
-
-  - In CSS selector features, they can be literal selectors. See [`css.selectors.backdrop`](../css/selectors/backdrop.json)).
-  - In CSS property subfeatures, they can be data type keywords or function keywords. See [`css.properties.transform.3d`](../css/properties/transform.json)).
-
-- `regex_token`: a string containing a regular expression that matches a single token (i.e., text delimited by characters that are excluded from the text to be matched) corresponding to the feature.
-
-  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
-
-  Examples:
-
-  - In CSS property subfeatures, they can be regular expressions that match component value types. See [`css.properties.color.alpha_hexadecimal_notation`](../css/properties/color.json) and corresponding tests.
-
-- `regex_value`: a string containing a regular expression that matches a complete value corresponding to the feature.
-
-  Tests are required for all regular expressions. See [`test-regexes.js`](../tests/test-regexes.js).
-
-  Examples:
-
-  - In CSS property subfeatures, these can be regular expressions that match whole declaration values. See [`css.properties.transform-origin.three_value_syntax`](../css/properties/transform-origin.json) and corresponding tests.
 
 ### Status information
 
