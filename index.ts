@@ -18,7 +18,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @returns {object} All of the browser compatibility data
  */
 async function load(...dirs: string[]) {
-  let result = {};
+  const result = {};
 
   for (const dir of dirs) {
     const paths = new fdir()

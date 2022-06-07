@@ -35,8 +35,8 @@ export default function diff({ ref1, ref2, github }) {
     refB = `${ref1}`;
   }
 
-  let aSide = enumerate(refA, github === false);
-  let bSide = enumerate(refB, github === false);
+  const aSide = enumerate(refA, github === false);
+  const bSide = enumerate(refB, github === false);
 
   const results = {
     added: [...bSide].filter((feature) => !aSide.has(feature)),

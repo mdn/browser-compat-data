@@ -111,7 +111,7 @@ function getDiffs(base, head = '') {
 }
 
 if (esMain(import.meta)) {
-  let [base = 'origin/HEAD', head] = process.argv.slice(2);
+  const [base = 'origin/HEAD', head] = process.argv.slice(2);
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);
     for (const value of values) {

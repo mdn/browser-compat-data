@@ -24,8 +24,8 @@ export function orderStatements(
   value: CompatStatement,
 ): CompatStatement {
   if (key === '__compat') {
-    for (let browser of Object.keys(value.support)) {
-      let supportData = value.support[browser];
+    for (const browser of Object.keys(value.support)) {
+      const supportData = value.support[browser];
       if (Array.isArray(supportData)) {
         value.support[browser] = supportData.sort(compareStatements);
       }

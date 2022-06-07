@@ -102,8 +102,8 @@ const tests: { input: Identifier; output: Identifier }[] = [
 
 function orderStatements(key: string, value: CompatStatement): CompatStatement {
   if (key === '__compat') {
-    for (let browser of Object.keys(value.support)) {
-      let supportData = value.support[browser];
+    for (const browser of Object.keys(value.support)) {
+      const supportData = value.support[browser];
       if (Array.isArray(supportData)) {
         value.support[browser] = supportData.sort(compareStatements);
       }
@@ -115,8 +115,8 @@ function orderStatements(key: string, value: CompatStatement): CompatStatement {
 describe('compare-statements script', () => {
   it('`compareStatements()` works correctly', () => {
     for (const test of tests) {
-      let expected = test.output;
-      let actual = JSON.parse(JSON.stringify(test.output), orderStatements);
+      const expected = test.output;
+      const actual = JSON.parse(JSON.stringify(test.output), orderStatements);
 
       assert.deepStrictEqual(actual, expected);
     }
