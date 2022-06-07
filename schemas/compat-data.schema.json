@@ -16,7 +16,8 @@
               "type": "boolean",
               "nullable": true
             }
-          ]
+          ],
+          "tsType": "string | boolean | null"
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
@@ -28,7 +29,8 @@
             {
               "const": true
             }
-          ]
+          ],
+          "tsType": "string | boolean | null"
         },
         "prefix": {
           "type": "string",
@@ -224,7 +226,8 @@
               }
             }
           ],
-          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
+          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
+          "tsType": "string | string[]"
         },
         "support": { "$ref": "#/definitions/support_block" },
         "status": { "$ref": "#/definitions/status_block" }
@@ -239,7 +242,8 @@
         "__compat": {
           "type": "object",
           "$ref": "#/definitions/compat_statement",
-          "required": ["status"]
+          "required": ["status"],
+          "tsType": "CompatStatement"
         }
       },
       "patternProperties": {
@@ -258,7 +262,8 @@
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
-          "$ref": "#/definitions/webextensions_identifier"
+          "$ref": "#/definitions/webextensions_identifier",
+          "tsType": "Identifier"
         }
       },
       "additionalProperties": false,
@@ -274,7 +279,8 @@
       "$ref": "#/definitions/identifier"
     },
     "^webextensions*$": {
-      "$ref": "#/definitions/webextensions_identifier"
+      "$ref": "#/definitions/webextensions_identifier",
+      "tsType": "Identifier"
     }
   },
   "additionalProperties": false,
