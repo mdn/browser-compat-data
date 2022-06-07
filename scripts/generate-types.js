@@ -80,7 +80,7 @@ const compile = async () => {
     transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
   ].join('\n\n');
-  await fs.writeFile(new URL('../types-autogen.d.ts', import.meta.url), ts);
+  await fs.writeFile(new URL('../types.d.ts', import.meta.url), ts);
 };
 
 if (esMain(import.meta)) {

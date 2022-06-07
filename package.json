@@ -64,6 +64,7 @@
     "yargs": "~17.5.0"
   },
   "scripts": {
+    "prepare": "npm run gentypes",
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "node scripts/diff.js",
     "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.js\"",
