@@ -137,7 +137,7 @@ const main = (
       messagesByLevel[message.level].push(message);
     }
 
-    if (messagesByLevel.errors.length) {
+    if (messagesByLevel.error.length) {
       hasErrors = true;
     }
 
@@ -147,7 +147,7 @@ const main = (
 
     console.error(
       chalk`{${
-        messagesByLevel.errors.length ? 'red' : 'yellow'
+        messagesByLevel.error.length ? 'red' : 'yellow'
       } ${linter} - {bold ${pluralize(
         'problem',
         messages.length,
