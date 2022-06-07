@@ -61,7 +61,7 @@ const generateCompatDataTypes = () => {
   )}\n}\n`;
 };
 
-const transformTS = (browserTS, compatTS) => {
+const transformTS = (browserTS: string, compatTS: string): string => {
   // XXX Temporary until the following PR is merged and released:
   // https://github.com/bcherny/json-schema-to-typescript/pull/456
   let ts = browserTS + '\n\n' + compatTS;
@@ -80,7 +80,7 @@ const transformTS = (browserTS, compatTS) => {
 };
 
 const compile = async (
-  destination = new URL('../types/types.d.ts', import.meta.url),
+  destination: URL | string = new URL('../types/types.d.ts', import.meta.url),
 ) => {
   const browserTS = await compileFromFile('schemas/browsers.schema.json', opts);
   const compatTS = await compileFromFile(
