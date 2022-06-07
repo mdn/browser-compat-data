@@ -37,7 +37,7 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  * @param {number} quantifier
  * @return {string}
  */
-export const pluralize = (word, quantifier) => {
+export const pluralize = (word: string, quantifier: number) => {
   return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
 };
 
@@ -46,7 +46,7 @@ export const pluralize = (word, quantifier) => {
  *
  * @param {string} str
  */
-export function escapeInvisibles(str) {
+export function escapeInvisibles(str: string) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
@@ -61,7 +61,7 @@ export function escapeInvisibles(str) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-export function indexToPosRaw(str, index) {
+export function indexToPosRaw(str: string, index: number) {
   let line = 1,
     col = 1;
   let prevChar = null;
@@ -105,7 +105,7 @@ export function indexToPosRaw(str, index) {
  * @param {number} index
  * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-export function indexToPos(str, index) {
+export function indexToPos(str: string, index: number) {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
 }
@@ -115,7 +115,7 @@ export function indexToPos(str, index) {
  * @param {string} expected
  * @return {string}
  */
-export function jsonDiff(actual, expected) {
+export function jsonDiff(actual: string, expected: string) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 

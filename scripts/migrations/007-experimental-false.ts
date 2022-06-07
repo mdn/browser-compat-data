@@ -1,6 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  CompatData,
+  BrowserName,
+  ReleaseStatement,
+} from '../../types/types.js';
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,9 +20,9 @@ const { browsers } = bcd;
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
- * @param {object} bcd Parsed BCD object to be updated in place.
+ * @param {CompatData} bcd Parsed BCD object to be updated in place.
  */
-export const fixExperimental = (bcd) => {
+export const fixExperimental = (bcd: CompatData): void => {
   for (const { compat } of walk(undefined, bcd)) {
     if (!compat?.status?.experimental) {
       continue;
@@ -24,7 +30,7 @@ export const fixExperimental = (bcd) => {
 
     // This entry is marked as experimental. Check which browsers support it.
 
-    const browserSupport = new Set();
+    const browserSupport = new Set<BrowserName>();
 
     for (const [browser, support] of Object.entries(compat.support)) {
       // Consider only the first part of an array statement.
@@ -34,7 +40,7 @@ export const fixExperimental = (bcd) => {
         continue;
       }
       if (statement.version_added && !statement.version_removed) {
-        browserSupport.add(browser);
+        browserSupport.add(browser as BrowserName);
       }
     }
 
@@ -44,7 +50,7 @@ export const fixExperimental = (bcd) => {
 
     for (const browser of browserSupport) {
       const currentRelease = Object.values(browsers[browser].releases).find(
-        (r) => r.status === 'current',
+        (r: ReleaseStatement) => r.status === 'current',
       );
       const engine = currentRelease.engine;
       engineSupport.add(engine);
@@ -66,7 +72,7 @@ export const fixExperimental = (bcd) => {
 /**
  * @param {string} filename Filename of BCD to be updated in place.
  */
-const fixExperimentalFile = (filename) => {
+const fixExperimentalFile = (filename: string): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
   fixExperimental(bcd);
@@ -80,7 +86,7 @@ const fixExperimentalFile = (filename) => {
 /**
  * @param {string[]} files
  */
-function load(...files) {
+function load(...files: string[]): void {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
