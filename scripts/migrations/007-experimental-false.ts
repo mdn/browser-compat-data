@@ -4,6 +4,7 @@
 import {
   CompatData,
   BrowserName,
+  Identifier,
   ReleaseStatement,
 } from '../../types/types.js';
 
@@ -22,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /**
  * @param {CompatData} bcd Parsed BCD object to be updated in place.
  */
-export const fixExperimental = (bcd: CompatData): void => {
+export const fixExperimental = (bcd: CompatData | Identifier): void => {
   for (const { compat } of walk(undefined, bcd)) {
     if (!compat?.status?.experimental) {
       continue;
@@ -52,6 +53,9 @@ export const fixExperimental = (bcd: CompatData): void => {
       const currentRelease = Object.values(browsers[browser].releases).find(
         (r: ReleaseStatement) => r.status === 'current',
       );
+      if (!currentRelease) {
+        continue;
+      }
       const engine = currentRelease.engine;
       engineSupport.add(engine);
     }
