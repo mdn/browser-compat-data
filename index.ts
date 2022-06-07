@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -17,7 +17,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
-function load(...dirs) {
+async function load(...dirs) {
   let result = {};
 
   for (const dir of dirs) {
@@ -29,7 +29,8 @@ function load(...dirs) {
 
     for (const fp of paths) {
       try {
-        extend(result, JSON.parse(fs.readFileSync(fp)));
+        const contents = await fs.readFile(fp);
+        extend(result, JSON.parse(contents));
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
@@ -40,7 +41,7 @@ function load(...dirs) {
   return result;
 }
 
-export default load(
+export default await load(
   'api',
   'browsers',
   'css',
