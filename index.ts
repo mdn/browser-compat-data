@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 
 import { fdir } from 'fdir';
 
-import extend from './scripts/lib/extend';
+import extend from './scripts/lib/extend.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
