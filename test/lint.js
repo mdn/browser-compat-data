@@ -102,6 +102,7 @@ const main = (
       path: {
         full: `browsers.${browser}`,
         category: 'browsers',
+        browser,
       },
     });
   }
