@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { SimpleSupportStatement } from '../../types/types.js';
+
 import compareVersions from 'compare-versions';
 
 /**
@@ -10,9 +12,15 @@ import compareVersions from 'compare-versions';
  2. Statements with alternative names or prefixes
  3. Statements with partial support
  4. Statements with flags
+ *
+ * @param {SupportStatement} a - The first support statement object to perform comparison with
+ * @param {SupportStatement} b - The second support statement object to perform comparison with
+ * @returns {number} Direction to sort
  */
-
-const compareStatements = (a, b) => {
+const compareStatements = (
+  a: SimpleSupportStatement,
+  b: SimpleSupportStatement,
+): number => {
   const has = {
     a: {
       unsupported: a.version_removed != undefined,

@@ -7,7 +7,7 @@ import child_process from 'node:child_process';
  * @param {string} x
  * @param {string} y
  */
-export function getMergeBase(x, y = 'HEAD') {
+export function getMergeBase(x: string, y = 'HEAD'): string {
   return child_process
     .execSync(`git merge-base ${x} ${y}`, { encoding: 'utf-8' })
     .trim();
@@ -17,8 +17,8 @@ export function getMergeBase(x, y = 'HEAD') {
  * @param {string} base
  * @param {string} head
  */
-export function getGitDiffStatuses(base, head) {
-  function parseFields(fields) {
+export function getGitDiffStatuses(base: string, head: string): object {
+  function parseFields(fields: string[]) {
     return {
       value: fields[0],
       headPath: fields[2] || fields[1],
@@ -38,7 +38,7 @@ export function getGitDiffStatuses(base, head) {
  * @param {string} commit
  * @param {string} path
  */
-export function getFileContent(commit, path) {
+export function getFileContent(commit: string, path: string): string {
   return child_process
     .execSync(`git show ${commit}:${path}`, {
       encoding: 'utf-8',

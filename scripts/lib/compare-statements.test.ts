@@ -1,11 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Identifier, CompatStatement } from '../../types/types.js';
+
 import assert from 'node:assert/strict';
 
 import compareStatements from './compare-statements.js';
 
-const tests = [
+const tests: { input: Identifier; output: Identifier }[] = [
   {
     input: {
       __compat: {
@@ -98,7 +100,7 @@ const tests = [
   },
 ];
 
-function orderStatements(key, value) {
+function orderStatements(key: string, value: CompatStatement): CompatStatement {
   if (key === '__compat') {
     for (let browser of Object.keys(value.support)) {
       let supportData = value.support[browser];

@@ -14,7 +14,7 @@
  * @param {string} b - The name of the second object to perform comparison with
  * @returns {number} Result of localeCompare
  */
-const compareFeatures = (a, b) => {
+const compareFeatures = (a: string, b: string): number => {
   if (a == '__compat') return -1;
   if (b == '__compat') return 1;
 
