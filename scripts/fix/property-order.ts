@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import { Identifier, CompatStatement, StatusBlock } from '../../types/types.js';
 
 import fs from 'node:fs';
 
@@ -19,11 +19,16 @@ const propOrder = {
   status: ['experimental', 'standard_track', 'deprecated'],
 };
 
-function doOrder(value, order) {
+function doOrder(value: CompatStatement, order: string[]): CompatStatement;
+function doOrder(value: StatusBlock, order: string[]): StatusBlock;
+function doOrder(
+  value: CompatStatement | StatusBlock,
+  order: string[],
+): CompatStatement | StatusBlock {
   return order.reduce((result, key) => {
-    if (key in value) result[key] = value[key];
+    if (key in value) (result as any)[key] = (value as any)[key];
     return result;
-  }, {});
+  }, {}) as CompatStatement | StatusBlock;
 }
 
 /**
@@ -33,16 +38,22 @@ function doOrder(value, order) {
  * which is insertion order for non-integer keys (which is our case).
  *
  * @param {string} key The key in the object
- * @param {*} value The value of the key
+ * @param {Identifier} value The value of the key
  *
- * @returns {*} The new value
+ * @returns {Identifier} The new value
  */
-export function orderProperties(key, value) {
+export function orderProperties(key: string, value: Identifier): Identifier {
   if (value instanceof Object && '__compat' in value) {
-    value.__compat = doOrder(value.__compat, propOrder.__compat);
+    value.__compat = doOrder(
+      value.__compat as CompatStatement,
+      propOrder.__compat,
+    );
 
     if ('status' in value.__compat) {
-      value.__compat.status = doOrder(value.__compat.status, propOrder.status);
+      value.__compat.status = doOrder(
+        value.__compat.status as StatusBlock,
+        propOrder.status,
+      );
     }
   }
   return value;
