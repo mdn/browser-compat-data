@@ -66,7 +66,9 @@ const transformTS = (browserTS, compatTS) => {
   return ts;
 };
 
-const compile = async () => {
+const compile = async (
+  destination = new URL('../types.d.ts', import.meta.url),
+) => {
   const browserTS = await compileFromFile('schemas/browsers.schema.json', opts);
   const compatTS = await compileFromFile(
     'schemas/compat-data.schema.json',
@@ -80,9 +82,11 @@ const compile = async () => {
     transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
   ].join('\n\n');
-  await fs.writeFile(new URL('../types.d.ts', import.meta.url), ts);
+  await fs.writeFile(destination, ts);
 };
 
 if (esMain(import.meta)) {
   await compile();
 }
+
+export default compile;
