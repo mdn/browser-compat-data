@@ -45,7 +45,7 @@ const generateBrowserNames = () => {
 const generateCompatDataTypes = () => {
   const props = Object.entries(compatDataTypes).map(
     (t) =>
-      `  /**\n   * ${t[1]}\n   */\n  ${t[0]}?: ${
+      `  /**\n   * ${t[1]}\n   */\n  ${t[0]}: ${
         t[0] === '__meta'
           ? 'MetaBlock'
           : t[0] === 'browsers'
