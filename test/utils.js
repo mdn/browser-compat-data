@@ -9,6 +9,16 @@ import chalk from 'chalk-template';
  * @type {('file'|'feature'|'browser'|'tree')}
  */
 
+/**
+ * @typedef LoggerLevel
+ * @type {('error'|'warning')}
+ */
+
+/**
+ * @typedef Linter
+ * @type {{name: string, description: string,  scope: string,  check: any}}
+ */
+
 /** @type {{readonly [char: string]: string}} */
 export const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
@@ -124,10 +134,6 @@ export function jsonDiff(actual, expected) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
-  if (actualLines.length !== expectedLines.length)
-    return chalk`{bold different number of lines:
-    {yellow → Actual:   {bold ${actualLines.length}}}
-    {green → Expected: {bold ${expectedLines.length}}`;
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return chalk`{bold line #${i + 1}}:
@@ -139,20 +145,20 @@ export function jsonDiff(actual, expected) {
 
 export class Logger {
   /**
-   * @type {object}
-   * @property {('error'|'warning')} level - Warning level
-   * @property {string} title - Message title
-   * @property {string} path - Path to the feature
-   * @property {string} message
-   */
-  messages = [];
-  /**
    * @param {string} title
    * @param {string} path
    */
   constructor(title, path) {
     this.title = title;
     this.path = path;
+    /**
+     * @type {object}
+     * @property {('error'|'warning')} level - Warning level
+     * @property {string} title - Message title
+     * @property {string} path - Path to the feature
+     * @property {string} message
+     */
+    this.messages = [];
   }
 
   /**
@@ -185,10 +191,10 @@ export class Logger {
 }
 
 export class Linters {
-  /** @param {Array.<{name: string, description: string,  scope: string,  check: any}>} linters */
+  /** @param {Array.<Linter>} linters */
   constructor(linters) {
     /**
-     * @type {Array.<{name: string, description: string,  scope: string,  check: any}>}
+     * @type {Array.<Linter>}
      */
     this.linters = linters;
     /**
