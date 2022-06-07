@@ -47,6 +47,11 @@ function processData(data, category, logger) {
     const supportStatements = Array.isArray(support) ? support : [support];
 
     for (const statement of supportStatements) {
+      if (statement.prefix && statement.alternative_name) {
+        logger.error(
+          chalk`Both prefix and alternative name are defined, which is not allowed.`,
+        );
+      }
       if (
         statement.prefix &&
         !prefixes.some((p) => statement.prefix.startsWith(p))
