@@ -4,13 +4,13 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
