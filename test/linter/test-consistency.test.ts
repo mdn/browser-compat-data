@@ -76,3 +76,150 @@ describe('ConsistencyChecker.getVersionAdded()', function () {
     );
   });
 });
+
+describe('ConsistencyChecker.isVersionAddedGreater()', function () {
+  it('foo', () => {
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '1' } },
+        { chrome: { version_added: '1' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '1' } },
+        { chrome: { version_added: '2' } },
+        'chrome',
+      ),
+      true,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '2' } },
+        { chrome: { version_added: '1' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤1' } },
+        { chrome: { version_added: '1' } },
+        'chrome',
+      ),
+      true,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤1' } },
+        { chrome: { version_added: '2' } },
+        'chrome',
+      ),
+      true,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤2' } },
+        { chrome: { version_added: '1' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '1' } },
+        { chrome: { version_added: '≤1' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '2' } },
+        { chrome: { version_added: '≤1' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '1' } },
+        { chrome: { version_added: '≤2' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤1' } },
+        { chrome: { version_added: '≤1' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤1' } },
+        { chrome: { version_added: '≤2' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤2' } },
+        { chrome: { version_added: '≤1' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '1' } },
+        { chrome: { version_added: 'preview' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: '≤1' } },
+        { chrome: { version_added: 'preview' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: 'preview' } },
+        { chrome: { version_added: '1' } },
+        'chrome',
+      ),
+      false,
+    );
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: 'preview' } },
+        { chrome: { version_added: '≤1' } },
+        'chrome',
+      ),
+      false,
+    );
+
+    assert.equal(
+      check.isVersionAddedGreater(
+        { chrome: { version_added: 'preview' } },
+        { chrome: { version_added: 'preview' } },
+        'chrome',
+      ),
+      false,
+    );
+  });
+});

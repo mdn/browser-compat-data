@@ -112,7 +112,9 @@ function hasVersionAddedOnly(statement: SimpleSupportStatement): boolean {
  * @param {SimpleSupportStatement} statement
  * @returns {(boolean|null)}
  */
-function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
+export function addedBeforeRemoved(
+  statement: SimpleSupportStatement,
+): boolean | null {
   if (
     typeof statement.version_added !== 'string' ||
     typeof statement.version_removed !== 'string'
