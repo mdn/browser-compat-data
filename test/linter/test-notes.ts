@@ -42,7 +42,7 @@ const testNode = (
     }
 
     // Ensure nodes only contain specific attributes
-    const attrs = node.attributes.map((x) => x._name);
+    const attrs = node.attributes.map((x: any) => x._name);
     if (tag === 'a') {
       if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
@@ -88,7 +88,7 @@ const validateHTML = (
   } else {
     logger.error(
       chalk`Notes for {bold ${feature}} in {bold ${browser}} have invalid HTML: ${htmlErrors
-        .map((x) => x._message)
+        .map((x: any) => x._message)
         .flat()}`,
     );
   }
