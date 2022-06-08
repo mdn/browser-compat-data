@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatStatement } from '../../types/types.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import fs from 'node:fs';
 
@@ -24,7 +24,7 @@ export function orderStatements(
   value: CompatStatement,
 ): CompatStatement {
   if (key === '__compat') {
-    for (const browser of Object.keys(value.support)) {
+    for (const browser of Object.keys(value.support) as BrowserName[]) {
       const supportData = value.support[browser];
       if (Array.isArray(supportData)) {
         value.support[browser] = supportData.sort(compareStatements);

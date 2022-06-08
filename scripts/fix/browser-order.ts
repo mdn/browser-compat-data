@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatStatement } from '../../types/types.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import fs from 'node:fs';
 
@@ -26,7 +26,7 @@ export const orderSupportBlock = (
     const support = Object.keys(value.support)
       .sort()
       .reduce((result: { [index: string]: any }, key: string) => {
-        result[key] = value.support[key];
+        result[key] = value.support[key as BrowserName];
         return result;
       }, {});
     value.support = support;
