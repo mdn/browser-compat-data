@@ -47,18 +47,18 @@ describe('addedBeforeRemoved', function () {
   it('values include preview', () => {
     assert.equal(
       addedBeforeRemoved({ version_added: '1', version_removed: 'preview' }),
-      null,
+      true,
     );
     assert.equal(
       addedBeforeRemoved({ version_added: 'preview', version_removed: '1' }),
-      null,
+      false,
     );
     assert.equal(
       addedBeforeRemoved({
         version_added: 'preview',
         version_removed: 'preview',
       }),
-      null,
+      false,
     );
   });
 });

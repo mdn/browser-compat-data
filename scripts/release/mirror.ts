@@ -10,7 +10,7 @@ import { InternalSupportBlock } from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
-import compareVersions from 'compare-versions';
+import compareVersions from '../lib/compare-versions.js';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -213,11 +213,7 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
       } else if (typeof newVA === 'string') {
         if (
           typeof currentVA !== 'string' ||
-          compareVersions.compare(
-            currentVA.replace('≤', ''),
-            newVA.replace('≤', ''),
-            '>',
-          )
+          compareVersions.compare(currentVA, newVA, '>')
         ) {
           currentStatement.version_added = newVA;
         }

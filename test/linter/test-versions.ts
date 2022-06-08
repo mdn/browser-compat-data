@@ -13,7 +13,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index';
 
-import compareVersions from 'compare-versions';
+import compareVersions from '../../scripts/lib/compare-versions.js';
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
@@ -122,28 +122,20 @@ export function addedBeforeRemoved(
     return false;
   }
 
-  // In order to ensure that the versions could be displayed without the "≤"
-  // markers and still make sense, compare the versions without them. This
-  // means that combinations like version_added: "≤37" + version_removed: "37"
-  // are not allowed, even though this can be technically correct.
-  const added = statement.version_added.replace('≤', '');
-  const removed = statement.version_removed.replace('≤', '');
+  const added = statement.version_added;
+  const removed = statement.version_removed;
 
   if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
     return null;
   }
 
-  if (added === 'preview' && removed === 'preview') {
-    return false;
-  }
-  if (added === 'preview' && removed !== 'preview') {
-    return false;
-  }
-  if (added !== 'preview' && removed === 'preview') {
-    return true;
-  }
-
-  return compareVersions.compare(added, removed, '<');
+  // Note that this disallows combinations like version_added: "≤37" +
+  // version_removed: "37", even though this can be technically correct.
+  return compareVersions.compare(
+    statement.version_added,
+    statement.version_removed,
+    '<',
+  );
 }
 
 /**

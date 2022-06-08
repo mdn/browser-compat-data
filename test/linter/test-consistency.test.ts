@@ -110,7 +110,7 @@ describe('ConsistencyChecker.isVersionAddedGreater()', function () {
         { chrome: { version_added: '1' } },
         'chrome',
       ),
-      true,
+      false,
     );
     assert.equal(
       check.isVersionAddedGreater(

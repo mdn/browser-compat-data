@@ -124,22 +124,22 @@ const tests: { input: Identifier; output: Identifier }[] = [
       },
     },
   },
-  // {
-  //   input: {
-  //     __compat: {
-  //       support: {
-  //         safari: [{ version_added: '10' }, { version_added: 'preview' }],
-  //       },
-  //     },
-  //   },
-  //   output: {
-  //     __compat: {
-  //       support: {
-  //         safari: [{ version_added: 'preview' }, { version_added: '10' }],
-  //       },
-  //     },
-  //   },
-  // },
+  {
+    input: {
+      __compat: {
+        support: {
+          safari: [{ version_added: '10' }, { version_added: 'preview' }],
+        },
+      },
+    },
+    output: {
+      __compat: {
+        support: {
+          safari: [{ version_added: 'preview' }, { version_added: '10' }],
+        },
+      },
+    },
+  },
 ] as any;
 
 function orderStatements(key: string, value: CompatStatement): CompatStatement {

@@ -16,7 +16,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index.js';
 
-import compareVersions from 'compare-versions';
+import compareVersions from '../../scripts/lib/compare-versions.js';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/release/mirror.js';
@@ -392,21 +392,13 @@ export class ConsistencyChecker {
       }
 
       if (selectedValue !== null) {
-        if (
-          typeof resolvedValue === 'string' &&
-          typeof selectedValue === 'string'
-        ) {
-          // Earlier value takes precedence
-          const resolvedIsEarlier = compareVersions.compare(
-            resolvedValue.replace('≤', ''),
-            selectedValue.replace('≤', ''),
-            '<',
-          );
-          if (resolvedIsEarlier) {
-            selectedValue = resolvedValue;
-          }
-        } else if (typeof resolvedValue === 'string') {
-          // If selectedValue is bool/null but resolvedValue is string
+        // Earlier value takes precedence
+        const resolvedIsEarlier = compareVersions.compare(
+          resolvedValue,
+          selectedValue,
+          '<',
+        );
+        if (resolvedIsEarlier) {
           selectedValue = resolvedValue;
         } else {
           // If neither are version numbers, assign to the truthiest value
@@ -442,20 +434,7 @@ export class ConsistencyChecker {
       if (b_version_added.startsWith('≤')) {
         return false;
       }
-      if (a_version_added === 'preview' && b_version_added === 'preview') {
-        return false;
-      }
-      if (b_version_added === 'preview') {
-        return true;
-      }
-      if (a_version_added === 'preview') {
-        return false;
-      }
-      return compareVersions.compare(
-        a_version_added.replace('≤', ''),
-        b_version_added,
-        a_version_added.startsWith('≤') ? '<=' : '<',
-      );
+      return compareVersions.compare(a_version_added, b_version_added, '<');
     }
 
     return false;

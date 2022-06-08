@@ -3,7 +3,7 @@
 
 import { SimpleSupportStatement } from '../../types/types.js';
 
-import compareVersions from 'compare-versions';
+import compareVersions from './compare-versions.js';
 
 /**
  *
@@ -52,10 +52,7 @@ const compareStatements = (
     typeof a.version_added == 'string' &&
     typeof b.version_added == 'string'
   ) {
-    return compareVersions(
-      b.version_added.replace('≤', ''),
-      a.version_added.replace('≤', ''),
-    );
+    return compareVersions(b.version_added, a.version_added);
   }
 
   return 0;
