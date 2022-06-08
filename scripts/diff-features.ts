@@ -8,17 +8,22 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-function main({ ref1, ref2, format, github }) {
+function main(opts: any): void {
+  const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
   if (format === 'markdown') {
-    printMarkdown(results);
+    printMarkdown(results.added, results.removed);
   } else {
     console.log(JSON.stringify(results, undefined, 2));
   }
 }
 
-export default function diff({ ref1, ref2, github }) {
+export default function diff(opts: any): {
+  added: string[];
+  removed: string[];
+} {
+  const { ref1, ref2, github } = opts;
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -46,7 +51,7 @@ export default function diff({ ref1, ref2, github }) {
   return results;
 }
 
-function enumerate(ref, skipGitHub) {
+function enumerate(ref: string, skipGitHub: boolean): Set<string> {
   if (!skipGitHub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
@@ -58,7 +63,7 @@ function enumerate(ref, skipGitHub) {
   return new Set(enumerateFeatures(ref));
 }
 
-function getEnumerationFromGithub(ref) {
+function getEnumerationFromGithub(ref: string): any {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
@@ -67,7 +72,7 @@ function getEnumerationFromGithub(ref) {
     try {
       fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
     } catch (err) {
-      if (err.code == 'ENOENT') {
+      if ((err as any).code == 'ENOENT') {
         return;
       } else {
         throw err;
@@ -100,7 +105,7 @@ function getEnumerationFromGithub(ref) {
   }
 }
 
-function enumerateFeatures(ref = 'HEAD') {
+function enumerateFeatures(ref = 'HEAD'): any {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -131,8 +136,8 @@ function enumerateFeatures(ref = 'HEAD') {
   }
 }
 
-function printMarkdown({ added, removed }) {
-  const fmtFeature = (feat) => `- \`${feat}\``;
+function printMarkdown(added: string[], removed: string[]): void {
+  const fmtFeature = (feat: string) => `- \`${feat}\``;
 
   if (removed.length) {
     console.log('## Removed\n');

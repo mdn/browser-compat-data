@@ -10,15 +10,19 @@ import { hideBin } from 'yargs/helpers';
 
 import { walk } from '../utils/index.js';
 
-function main({ dest, dataFrom }) {
-  fs.writeFileSync(dest, JSON.stringify(enumerateFeatures(dataFrom)));
+async function main(argv: any) {
+  const { dest, dataFrom } = argv;
+  fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
 }
 
-function enumerateFeatures(dataFrom) {
+async function enumerateFeatures(dataFrom: string) {
   const feats = [];
 
   const walker = dataFrom
-    ? walk(undefined, import(path.join(process.cwd(), dataFrom, 'index.js')))
+    ? walk(
+        undefined,
+        await import(path.join(process.cwd(), dataFrom, 'index.js')),
+      )
     : walk();
 
   for (const { path, compat } of walker) {
@@ -47,7 +51,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  main(argv);
+  await main(argv);
 }
 
 export default enumerateFeatures;

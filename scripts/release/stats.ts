@@ -1,22 +1,29 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+type Question = {
+  name: string;
+  type: any;
+  message: string;
+};
+
+type Stats = {
+  commits: string;
+  changed: string;
+  insertions: string;
+  deletions: string;
+};
+
 import http from 'node:https';
 import readline from 'readline';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { exec, releaseYargsBuilder } from './utils.js';
+import { exec, releaseYargsBuilder, ReleaseYargs } from './utils.js';
 import { walk } from '../../utils/index.js';
 
-const { argv } = yargs(hideBin(process.argv)).command(
-  '$0 [start-version-tag [end-version-tag]]',
-  'Generate statistics for release notes',
-  releaseYargsBuilder,
-);
-
-const getJSON = (url) =>
+const getJSON = (url: string): Promise<any> =>
   new Promise((resolve, reject) =>
     http.get(
       url,
@@ -34,7 +41,7 @@ const getJSON = (url) =>
     ),
   );
 
-const question = async (query) => {
+const question = async (query: string): Promise<any> => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -45,20 +52,24 @@ const question = async (query) => {
   return response;
 };
 
-const prompt = async (questions) => {
-  const results = {};
+const prompt = async (
+  questions: Array<Question>,
+): Promise<Record<string, string>> => {
+  const results: { [index: string]: any } = {};
   for (const q of questions) {
     results[q.name] = await question(`${q.message} `).then(q.type);
   }
   return results;
 };
 
-const stargazers = () =>
-  getJSON('https://api.github.com/repos/mdn/browser-compat-data').then(
-    (json) => json.stargazers_count,
+const stargazers = async () => {
+  const json = await getJSON(
+    'https://api.github.com/repos/mdn/browser-compat-data',
   );
+  return json.stargazers_count;
+};
 
-function stats(start, end) {
+function stats(start: string, end: string): Stats {
   // Get just the diff stats summary
   const diff = exec(`git diff --shortstat ${start}...${end}`);
   if (diff === '') {
@@ -68,9 +79,10 @@ function stats(start, end) {
 
   // Extract the numbers from a line like this:
   // 50 files changed, 1988 insertions(+), 2056 deletions(-)
-  const [, changed, insertions, deletions] = diff.match(
+  const match = diff.match(
     /(\d+) files* changed, (\d+) insertions*\(\+\), (\d+) deletions*/,
   );
+  const [, changed, insertions, deletions] = match as string[];
 
   // Get the number of commits
   const commits = exec(`git rev-list --count ${start}...${end}`);
@@ -83,7 +95,10 @@ function stats(start, end) {
   };
 }
 
-const contributors = (start, end) =>
+const contributors = (
+  start: string,
+  end: string,
+): Promise<Record<string, string>> =>
   prompt([
     {
       name: 'releaseContributors',
@@ -104,11 +119,11 @@ function countFeatures() {
 
 const formatter = new Intl.NumberFormat('en-US');
 
-function formatNumber(n) {
+function formatNumber(n: number): string {
   return formatter.format(n);
 }
 
-function formatStats(details) {
+function formatStats(details: any): string {
   const releaseContributors = formatNumber(details.releaseContributors);
   const totalContributors = formatNumber(details.totalContributors);
   const changed = formatNumber(details.changed);
@@ -130,7 +145,7 @@ function formatStats(details) {
 - ${stars} total stargazers`;
 }
 
-async function main() {
+async function main(argv: ReleaseYargs): Promise<void> {
   const { startVersionTag: start, endVersionTag: end } = argv;
 
   console.log(
@@ -146,5 +161,11 @@ async function main() {
 }
 
 if (esMain(import.meta)) {
-  await main();
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [start-version-tag [end-version-tag]]',
+    'Generate statistics for release notes',
+    releaseYargsBuilder,
+  );
+
+  await main(argv as unknown as ReleaseYargs);
 }

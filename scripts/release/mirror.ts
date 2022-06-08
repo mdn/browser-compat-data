@@ -1,30 +1,45 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  BrowserName,
+  Identifier,
+  SimpleSupportStatement,
+  SupportStatement,
+  SupportBlock,
+  ReleaseStatement,
+} from '../../types/types.js';
+import { InternalSupportStatement } from '../../types/index.js';
+
+type Notes = string | string[] | null;
+
 import compareVersions from 'compare-versions';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * @typedef {import('../types').Identifier} Identifier
- * @typedef {import('../types').SupportStatement} SupportStatement
- * @typedef {import('../types').ReleaseStatement} ReleaseStatement
- */
-
-/**
  * @param {string} targetBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
  */
-export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
+export const getMatchingBrowserVersion = (
+  targetBrowser: BrowserName,
+  sourceVersion: string,
+) => {
   const browserData = browsers[targetBrowser];
+  if (!browserData.upstream) {
+    throw new Error('Browser does not have an upstream browser set.');
+  }
+
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
 
   const range = sourceVersion.includes('≤');
   const sourceRelease =
-    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
+    browsers[browserData.upstream as BrowserName].releases[
+      sourceVersion.replace('≤', '')
+    ];
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
@@ -60,12 +75,15 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
 };
 
 /**
- * @param {string|string[]|null} notes1
- * @param {string|string[]|null} notes2
- * @returns {string|string[]|null}
+ * @param {Notes?} notes1
+ * @param {Notes?} notes2
+ * @returns {Notes?}
  */
-const combineNotes = (notes1, notes2) => {
-  let newNotes = [];
+const combineNotes = (
+  notes1: Notes | null,
+  notes2: Notes | null,
+): Notes | null => {
+  let newNotes: string[] = [];
 
   if (notes1) {
     if (typeof notes1 === 'string') {
@@ -96,13 +114,18 @@ const combineNotes = (notes1, notes2) => {
 };
 
 /**
- * @param {string|string[]|null} notes
+ * @param {Notes?} notes
  * @param {RegExp} regex
  * @param {string} replace
  * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
- * @returns {string|string[]|null}
+ * @returns {Notes?}
  */
-const updateNotes = (notes, regex, replace, versionMapper) => {
+const updateNotes = (
+  notes: Notes | null,
+  regex: RegExp,
+  replace: string,
+  versionMapper: Function,
+): Notes | null => {
   if (!notes) {
     return null;
   }
@@ -110,7 +133,7 @@ const updateNotes = (notes, regex, replace, versionMapper) => {
   if (Array.isArray(notes)) {
     return notes.map((note) =>
       updateNotes(note, regex, replace, versionMapper),
-    );
+    ) as Notes;
   }
 
   return notes
@@ -122,28 +145,30 @@ const updateNotes = (notes, regex, replace, versionMapper) => {
 };
 
 /**
- * @param {SupportStatement} data
- * @returns {SupportStatement}
+ * @param {SimpleSupportStatement} data
+ * @returns {SimpleSupportStatement}
  */
-const copyStatement = (data) => {
-  let newData = {};
+const copyStatement = (
+  data: SimpleSupportStatement,
+): SimpleSupportStatement => {
+  let newData: { [index: string]: any } = {};
   for (let i in data) {
-    newData[i] = data[i];
+    newData[i] = (data as any)[i];
   }
 
-  return newData;
+  return newData as SimpleSupportStatement;
 };
 
 /**
- * @param {...SupportStatement} data
+ * @param {SupportStatement[]} data
  * @returns {SupportStatement}
  */
-const combineStatements = (...data) => {
+const combineStatements = (...data: SupportStatement[]): SupportStatement => {
   const ignoredKeys = ['version_added', 'notes', 'impl_url'];
 
   const flattenedData = data.flat(2);
-  const sections = {};
-  let newData = [];
+  const sections: { [index: string]: any } = {};
+  let newData: SimpleSupportStatement[] = [];
 
   for (const d of flattenedData) {
     const key = Object.keys(d)
@@ -162,7 +187,7 @@ const combineStatements = (...data) => {
     }
 
     for (const i in sections[k]) {
-      if (i === 0) continue;
+      if (i === sections[k][0]) continue;
       const newStatement = sections[k][i];
 
       const currentVA = currentStatement.version_added;
@@ -216,13 +241,17 @@ const combineStatements = (...data) => {
 };
 
 /**
- * @param {SupportStatement} sourceData
- * @param {string} targetBrowser
- * @param {Array.<RegExp, string>} notesRepl
- * @returns {SupportStatement}
+ * @param {SimpleSupportStatement} sourceData
+ * @param {BrowserName} targetBrowser
+ * @param {[RegExp, string]} notesRepl
+ * @returns {SimpleSupportStatement}
  */
-const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
-  let newData = copyStatement(sourceData);
+const bumpGeneric = (
+  sourceData: SimpleSupportStatement,
+  targetBrowser: BrowserName,
+  notesRepl: [RegExp, string] | undefined,
+): SimpleSupportStatement => {
+  let newData: SimpleSupportStatement = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -242,22 +271,27 @@ const bumpGeneric = (sourceData, targetBrowser, notesRepl) => {
   }
 
   if (notesRepl && sourceData.notes) {
-    newData.notes = updateNotes(
+    const newNotes = updateNotes(
       sourceData.notes,
       notesRepl[0],
       notesRepl[1],
-      (v) => getMatchingBrowserVersion(targetBrowser, v),
+      (v: string) => getMatchingBrowserVersion(targetBrowser, v),
     );
+    if (newNotes) {
+      newData.notes = newNotes;
+    }
   }
 
   return newData;
 };
 
 /**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
+ * @param {SimpleSupportStatement} sourceData
+ * @returns {SimpleSupportStatement}
  */
-const bumpEdge = (sourceData) => {
+const bumpEdge = (
+  sourceData: SimpleSupportStatement,
+): SimpleSupportStatement => {
   if (
     typeof sourceData.version_removed === 'string' &&
     compareVersions.compare(sourceData.version_removed, '79', '<=')
@@ -270,13 +304,15 @@ const bumpEdge = (sourceData) => {
 };
 
 /**
- * @param {SupportStatement} sourceData
- * @returns {SupportStatement}
+ * @param {SimpleSupportStatement} sourceData
+ * @returns {SimpleSupportStatement}
  */
-const bumpWebView = (sourceData) => {
+const bumpWebView = (
+  sourceData: SimpleSupportStatement,
+): SimpleSupportStatement => {
   let newData = copyStatement(sourceData);
 
-  const createWebViewRange = (version) => {
+  const createWebViewRange = (version: string) => {
     if (Number(version) <= 18) {
       return '1';
     } else if (Number(version) > 18 && Number(version) < 30) {
@@ -302,12 +338,15 @@ const bumpWebView = (sourceData) => {
   }
 
   if (sourceData.notes) {
-    newData.notes = updateNotes(
+    const newNotes = updateNotes(
       sourceData.notes,
       /Chrome/g,
       'WebView',
       createWebViewRange,
     );
+    if (newNotes) {
+      newData.notes = newNotes;
+    }
   }
 
   return newData;
@@ -315,9 +354,12 @@ const bumpWebView = (sourceData) => {
 
 /**
  * @param {SupportStatement} data
- * @param {string} destination
+ * @param {BrowserName} destination
  */
-export const bumpSupport = (sourceData, destination) => {
+export const bumpSupport = (
+  sourceData: SupportStatement | null,
+  destination: BrowserName,
+): SupportStatement | null => {
   let newData = null;
 
   if (sourceData == null) {
@@ -325,9 +367,11 @@ export const bumpSupport = (sourceData, destination) => {
   }
 
   if (Array.isArray(sourceData)) {
-    return combineStatements(
-      ...sourceData.map((data) => bumpSupport(data, destination)),
-    );
+    const newStatements = sourceData
+      .map((data) => bumpSupport(data, destination))
+      .filter((data) => data !== null);
+
+    return combineStatements(...(newStatements as SupportStatement[]));
   }
 
   if (destination === 'edge') {
@@ -335,7 +379,7 @@ export const bumpSupport = (sourceData, destination) => {
   } else if (destination === 'webview_android') {
     newData = bumpWebView(sourceData);
   } else {
-    let notesRepl;
+    let notesRepl: [RegExp, string] | undefined;
     if (destination.includes('opera')) {
       notesRepl = [/Chrome/g, 'Opera'];
     } else if (destination === 'samsunginternet_android') {
@@ -358,15 +402,18 @@ export const bumpSupport = (sourceData, destination) => {
   return newData;
 };
 
-const mirrorSupport = (destination, data) => {
-  const upstream = browsers[destination].upstream;
+const mirrorSupport = (
+  destination: BrowserName,
+  data: SupportBlock,
+): SupportStatement | null => {
+  const upstream: BrowserName | undefined = browsers[destination].upstream;
   if (!upstream) {
     throw new Error(
       `Upstream is not defined for ${destination}, cannot mirror!`,
     );
   }
 
-  let upstreamData = data[upstream];
+  let upstreamData: InternalSupportStatement = data[upstream];
 
   if (!upstreamData) {
     throw new Error(

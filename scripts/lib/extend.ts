@@ -25,9 +25,13 @@ export default function extend(target: any, source: any, feature = ''): void {
         // If attempting to merge __compat, we have a double-entry
         throw new DuplicateCompatError(feature);
       }
-      extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
+      extend(
+        (target as any)[key],
+        value,
+        feature + `${feature ? '.' : ''}${key}`,
+      );
     } else {
-      target[key] = value;
+      (target as any)[key] = value;
     }
   }
 }

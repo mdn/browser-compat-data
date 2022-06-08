@@ -16,19 +16,27 @@ const releaseNotesLabels = [
   'semver-minor-bump ➕',
 ];
 
-function queryToURL(query) {
+function queryToURL(query: string): string {
   const searchUrl = new URL(pullsBaseURL);
   searchUrl.search = `q=${query}`;
   return searchUrl.href;
 }
 
-function appendLabel(query) {
+function appendLabel(query: string): string {
   return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
 }
 
-function main({ start, end, quiet, allPRs, queryOnly }) {
+function main(args: any): void {
+  const {
+    startVersionTag: start,
+    endVersionTag: end,
+    quiet,
+    allPrs,
+    queryOnly,
+  } = args;
+
   let query = buildQuery(end, start, !queryOnly);
-  if (!allPRs) {
+  if (!allPrs) {
     query = appendLabel(query);
   }
 
@@ -72,11 +80,5 @@ if (esMain(import.meta)) {
       );
     },
   );
-  main({
-    start: argv.startVersionTag,
-    end: argv.endVersionTag,
-    quiet: argv.quiet,
-    allPRs: argv.allPrs,
-    queryOnly: argv.queryOnly,
-  });
+  main(argv);
 }

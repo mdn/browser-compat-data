@@ -1,6 +1,23 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+type VersionStatsEntry = {
+  all: number;
+  true: number;
+  null: number;
+  range: number;
+  real: number;
+};
+
+type VersionStats = { [k: string]: VersionStatsEntry };
+
+import {
+  BrowserName,
+  CompatStatement,
+  SupportStatement,
+  SimpleSupportStatement,
+} from '../types/types.js';
+
 import chalk from 'chalk-template';
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -10,8 +27,7 @@ import bcd from '../index.js';
 
 import { getRefDate } from './release/utils.js';
 
-/** @type {string[]} */
-const webextensionsBrowsers = [
+const webextensionsBrowsers: BrowserName[] = [
   'chrome',
   'edge',
   'firefox',
@@ -24,37 +40,46 @@ const webextensionsBrowsers = [
 /**
  * Check whether a support statement is a specified type
  *
- * @param {Identifier} supportData The support statement to check
+ * @param {SupportStatement} supportData The support statement to check
  * @param {string|boolean|null} type What type of support (true, null, ranged)
  * @returns {boolean} If the support statement has the type
  */
-const checkSupport = (supportData, type) => {
-  if (!Array.isArray(supportData)) {
-    supportData = [supportData];
+const checkSupport = (
+  supportData: SupportStatement | undefined,
+  type: string | boolean | null,
+): boolean => {
+  if (!supportData) {
+    return type === null;
+  }
+  if (Array.isArray(supportData)) {
+    return supportData.some((s) => checkSupport(s, type));
   }
   if (type == '≤') {
-    return supportData.some(
-      (item) =>
-        (typeof item.version_added == 'string' &&
-          item.version_added.startsWith('≤')) ||
-        (typeof item.version_removed == 'string' &&
-          item.version_removed.startsWith('≤')),
+    return (
+      (typeof supportData.version_added == 'string' &&
+        supportData.version_added.startsWith('≤')) ||
+      (typeof supportData.version_removed == 'string' &&
+        supportData.version_removed.startsWith('≤'))
     );
   }
-  return supportData.some(
-    (item) => item.version_added === type || item.version_removed === type,
+  return (
+    supportData.version_added === type || supportData.version_removed === type
   );
 };
 
 /**
  * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
  *
- * @param {Identifier} data The data to process and count stats for
- * @param {string[]} browsers The browsers to test
+ * @param {CompatStatement} data The data to process and count stats for
+ * @param {BrowserName[]} browsers The browsers to test
  * @param {object.<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
-const processData = (data, browsers, stats) => {
+const processData = (
+  data: CompatStatement,
+  browsers: BrowserName[],
+  stats: VersionStats,
+): void => {
   if (data.support) {
     browsers.forEach((browser) => {
       stats[browser].all++;
@@ -83,11 +108,15 @@ const processData = (data, browsers, stats) => {
  * Iterate through all of the data and process statistics
  *
  * @param {Identifier} data The compat data to iterate
- * @param {string[]} browsers The browsers to test
+ * @param {BrowserName[]} browsers The browsers to test
  * @param {object.<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
-const iterateData = (data, browsers, stats) => {
+const iterateData = (
+  data: any,
+  browsers: BrowserName[],
+  stats: VersionStats,
+) => {
   for (const key in data) {
     if (key === '__compat') {
       processData(data[key], browsers, stats);
@@ -104,13 +133,16 @@ const iterateData = (data, browsers, stats) => {
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
  * @returns {object.<string, VersionStats>?}
  */
-const getStats = (folder, allBrowsers) => {
+const getStats = (
+  folder: string,
+  allBrowsers: boolean,
+): VersionStats | null => {
   /** @constant {string[]} */
-  const browsers = allBrowsers
-    ? Object.keys(bcd.browsers)
+  const browsers: BrowserName[] = allBrowsers
+    ? (Object.keys(bcd.browsers) as BrowserName[])
     : folder === 'webextensions'
     ? webextensionsBrowsers
-    : [
+    : ([
         'chrome',
         'chrome_android',
         'edge',
@@ -119,10 +151,11 @@ const getStats = (folder, allBrowsers) => {
         'safari',
         'safari_ios',
         'webview_android',
-      ];
+      ] as BrowserName[]);
 
-  /** @type {object.<string, VersionStats>} */
-  let stats = { total: { all: 0, true: 0, null: 0, range: 0, real: 0 } };
+  let stats: VersionStats = {
+    total: { all: 0, true: 0, null: 0, range: 0, real: 0 },
+  };
   browsers.forEach((browser) => {
     stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
   });
@@ -130,8 +163,8 @@ const getStats = (folder, allBrowsers) => {
   if (folder) {
     if (folder === 'webextensions') {
       iterateData(bcd[folder], webextensionsBrowsers, stats);
-    } else if (bcd[folder]) {
-      iterateData(bcd[folder], browsers, stats);
+    } else if ((bcd as any)[folder]) {
+      iterateData((bcd as any)[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
       return null;
@@ -145,7 +178,7 @@ const getStats = (folder, allBrowsers) => {
           stats,
         );
       } else if (data !== 'browsers') {
-        iterateData(bcd[data], browsers, stats);
+        iterateData((bcd as any)[data], browsers, stats);
       }
     }
   }
@@ -156,12 +189,16 @@ const getStats = (folder, allBrowsers) => {
 /**
  * Get value as either percentage or number as requested
  *
- * @param {VersionStats} stats The stats object to get data from
+ * @param {VersionStatsEntry} stats The stats object to get data from
  * @param {string} type The type of statistic to obtain
  * @param {boolean} counts Whether to return the integer itself
  * @returns {string} The percentage or count
  */
-const getStat = (stats, type, counts) => {
+const getStat = (
+  stats: VersionStatsEntry,
+  type: keyof VersionStatsEntry,
+  counts: boolean,
+): string | number => {
   return counts
     ? stats[type]
     : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
@@ -170,12 +207,16 @@ const getStat = (stats, type, counts) => {
 /**
  * Print statistics of BCD
  *
- * @param {object.<string, VersionStats>} stats The stats object to print from
+ * @param {VersionStats} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} counts Whether to display a count vs. a percentage
  * @returns {void}
  */
-const printStats = (stats, folder, counts) => {
+const printStats = (
+  stats: VersionStats | null,
+  folder: string,
+  counts: boolean,
+): void => {
   if (!stats) {
     console.error(`No stats${folder ? ` for folder ${folder}` : ''}!`);
     return;
@@ -236,7 +277,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  printStats(getStats(argv.folder, argv.all), argv.folder);
+  printStats(getStats(argv.folder, argv.all), argv.folder, argv.counts);
 }
 
 export default getStats;

@@ -1,13 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { BrowserName } from '../../types/types.js';
+
 import assert from 'node:assert/strict';
 
 import { getMatchingBrowserVersion } from './mirror.js';
 
 describe('mirror', () => {
   describe('getMatchingBrowserVersion()', () => {
-    const mappings = {
+    const mappings: {
+      [index in BrowserName]?: Array<[string, string | boolean]>;
+    } = {
       chrome_android: [
         ['1', '18'],
         ['2', '18'],
@@ -107,7 +111,10 @@ describe('mirror', () => {
       describe(browser, () => {
         for (const pair of versionMap) {
           it(`${pair[0]} => ${pair[1]}`, () => {
-            assert.equal(getMatchingBrowserVersion(browser, pair[0]), pair[1]);
+            assert.equal(
+              getMatchingBrowserVersion(browser as BrowserName, pair[0]),
+              pair[1],
+            );
           });
         }
       });

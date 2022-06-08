@@ -1,6 +1,21 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  CompatData,
+  CompatStatement,
+  BrowserName,
+  Identifier,
+  BrowserStatement,
+  SimpleSupportStatement,
+} from '../types/types.js';
+
+export type DataType =
+  | CompatData
+  | BrowserStatement
+  | CompatStatement
+  | Identifier;
+
 export function joinPath() {
   return Array.from(arguments).filter(Boolean).join('.');
 }

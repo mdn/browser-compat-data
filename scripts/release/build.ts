@@ -88,7 +88,7 @@ async function copyFiles() {
 }
 
 async function createManifest() {
-  const minimal = {
+  const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {
       '.': './data.json',

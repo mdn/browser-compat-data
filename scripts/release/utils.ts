@@ -3,11 +3,13 @@
 
 import { execSync } from 'node:child_process';
 
-export function exec(command) {
+import type yargs from 'yargs';
+
+export function exec(command: string): string {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
 
-export function requireGitHubCLI() {
+export function requireGitHubCLI(): void {
   const command = 'gh auth status';
   try {
     execSync(command, {
@@ -23,11 +25,11 @@ export function requireGitHubCLI() {
   }
 }
 
-export function getLatestTag() {
+export function getLatestTag(): string {
   return exec('git describe --abbrev=0 --tags');
 }
 
-export function getRefDate(ref, querySafe = false) {
+export function getRefDate(ref: string, querySafe: boolean = false): string {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
@@ -36,7 +38,11 @@ export function getRefDate(ref, querySafe = false) {
   return rawDateString;
 }
 
-export function buildQuery(endRef, startRef, urlSafe) {
+export function buildQuery(
+  endRef: string,
+  startRef: string,
+  urlSafe: boolean,
+): string {
   let merged;
   if (!['HEAD', 'main'].includes(endRef)) {
     merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
@@ -50,7 +56,12 @@ export function buildQuery(endRef, startRef, urlSafe) {
   return `is:pr ${merged}`;
 }
 
-export function releaseYargsBuilder(yargs) {
+export type ReleaseYargs = {
+  startVersionTag: string;
+  endVersionTag: string;
+};
+
+export function releaseYargsBuilder(yargs: yargs.Argv<{}>): void {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',

@@ -1,6 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  BrowserName,
+  CompatData,
+  BrowserStatement,
+  CompatStatement,
+  Identifier,
+} from '../types/types.js';
+
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -15,13 +23,19 @@ import bcd from '../index.js';
  * Traverse all of the features within a specified object and find all features that have one of the specified values
  *
  * @param {Identifier} obj The compat data to traverse through
- * @param {string[]} browsers The browsers to test for
+ * @param {BrowserName[]} browsers The browsers to test for
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
  * @returns {void}
  */
-function* iterateFeatures(obj, browsers, values, depth, identifier) {
+function* iterateFeatures(
+  obj: any,
+  browsers: BrowserName[],
+  values: string[],
+  depth: number,
+  identifier: string,
+): IterableIterator<string> {
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
@@ -81,7 +95,13 @@ function* iterateFeatures(obj, browsers, values, depth, identifier) {
  * @param {string} identifier The identifier of the current object
  * @returns {void}
  */
-function traverseFeatures(obj, browsers, values, depth, identifier) {
+function traverseFeatures(
+  obj: any,
+  browsers: BrowserName[],
+  values: string[],
+  depth: number,
+  identifier: string,
+): string[] {
   const features = Array.from(
     iterateFeatures(obj, browsers, values, depth, identifier),
   );
@@ -100,7 +120,7 @@ const main = (
     'mathml',
     'webdriver',
   ],
-  browsers = Object.keys(bcd.browsers),
+  browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
 ) => {
@@ -109,7 +129,7 @@ const main = (
   for (const folder in folders) {
     features.push(
       ...traverseFeatures(
-        bcd[folders[folder]],
+        (bcd as any)[folders[folder]],
         browsers,
         values,
         depth,

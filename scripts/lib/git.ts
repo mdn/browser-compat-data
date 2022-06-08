@@ -3,6 +3,12 @@
 
 import child_process from 'node:child_process';
 
+type Fields = {
+  value: string;
+  headPath: string;
+  basePath: string;
+};
+
 /**
  * @param {string} x
  * @param {string} y
@@ -17,8 +23,8 @@ export function getMergeBase(x: string, y = 'HEAD'): string {
  * @param {string} base
  * @param {string} head
  */
-export function getGitDiffStatuses(base: string, head: string): object {
-  function parseFields(fields: string[]) {
+export function getGitDiffStatuses(base: string, head: string): Array<Fields> {
+  function parseFields(fields: string[]): Fields {
     return {
       value: fields[0],
       headPath: fields[2] || fields[1],

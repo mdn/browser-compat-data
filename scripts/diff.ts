@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import deepDiff from 'deep-diff';
+import deepDiff, { Diff } from 'deep-diff';
 import esMain from 'es-main';
 
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
@@ -10,27 +10,33 @@ import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 // Note: This does not detect renamed files
 /**
  * @param {string} baseCommit
- * @param {string} headCommit
  * @param {string} basePath
+ * @param {string} headCommit
+ * @param {string} headPath
  */
-function getBaseAndHeadContents(baseCommit, basePath, headCommit, headPath) {
+function getBaseAndHeadContents(
+  baseCommit: string,
+  basePath: string,
+  headCommit: string,
+  headPath: string,
+): { base: string; head: string } {
   const base = JSON.parse(getFileContent(baseCommit, basePath));
   const head = JSON.parse(getFileContent(headCommit, headPath));
   return { base, head };
 }
 
 /**
- * @param {import("deep-diff").Diff<any, any>} diffItem
+ * @param {Diff<string, string>} diffItem
  */
-function describeByKind(diffItem) {
-  function stringifyValue(value) {
+function describeByKind(diffItem: Diff<string, string>): string {
+  function stringifyValue(value: any) {
     return Array.isArray(value)
       ? 'typeof array'
       : value && typeof value === 'object'
       ? 'typeof object'
       : value;
   }
-  function stringifyChange(lhs, rhs) {
+  function stringifyChange(lhs: any, rhs: any) {
     return `${stringifyValue(lhs)} → ${stringifyValue(rhs)}`;
   }
   switch (diffItem.kind) {
@@ -46,9 +52,9 @@ function describeByKind(diffItem) {
 }
 
 /**
- * @param {import("deep-diff").Diff<any, any>} diffItem
+ * @param {Diff<string, string>} diffItem
  */
-function describeDiffItem(diffItem) {
+function describeDiffItem(diffItem: Diff<string, string>) {
   const path = diffItem.path.join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
@@ -68,7 +74,7 @@ function describeDiffItem(diffItem) {
 /**
  * @param {ReturnType<typeof describeDiffItem>[]} items
  */
-function mergeAsMap(items) {
+function mergeAsMap(items): Map<string, string> {
   const map = new Map();
   for (const item of items) {
     const descriptions = map.get(item.name) || [];
@@ -82,7 +88,7 @@ function mergeAsMap(items) {
  * @param {string} base
  * @param {string} head
  */
-function getDiffs(base, head = '') {
+function getDiffs(base: string, head: string = ''): Map<string, string> {
   const namedDescriptions = [];
   for (const status of getGitDiffStatuses(base, head)) {
     if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
@@ -102,9 +108,10 @@ function getDiffs(base, head = '') {
         head,
         status.headPath,
       );
-      namedDescriptions.push(
-        ...deepDiff.diff(contents.base, contents.head).map(describeDiffItem),
-      );
+      const diff = deepDiff.diff(contents.base, contents.head);
+      if (diff) {
+        namedDescriptions.push(...diff.map(describeDiffItem));
+      }
     }
   }
   return mergeAsMap(namedDescriptions);

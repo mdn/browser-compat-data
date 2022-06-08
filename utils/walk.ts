@@ -1,20 +1,44 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  CompatData,
+  CompatStatement,
+  BrowserName,
+  Identifier,
+  BrowserStatement,
+} from '../types/types.js';
+
 import bcd from '../index.js';
-import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
+import {
+  isBrowser,
+  isFeature,
+  descendantKeys,
+  joinPath,
+} from './walkingUtils.js';
 import query from './query.js';
 
-export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
+type WalkOutput = {
+  path: string;
+  data: object;
+  browser?: BrowserStatement;
+  compat?: CompatStatement;
+};
+
+export function* lowLevelWalk(
+  data: CompatData | BrowserStatement | CompatStatement | Identifier = bcd,
+  path?: string,
+  depth: number = Infinity,
+): IterableIterator<WalkOutput> {
   if (path !== undefined && path !== '__meta') {
-    const next = {
+    const next: WalkOutput = {
       path,
       data,
     };
 
     if (isBrowser(data)) {
-      next.browser = data;
-    } else if (data.__compat !== undefined) {
+      next.browser = data as BrowserStatement;
+    } else if (isFeature(data)) {
       next.compat = data.__compat;
     }
     yield next;
@@ -27,7 +51,10 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   }
 }
 
-export default function* walk(entryPoints, data = bcd) {
+export default function* walk(
+  entryPoints?: string | string[] | undefined,
+  data: CompatData | CompatStatement | Identifier = bcd,
+): IterableIterator<WalkOutput> {
   const walkers = [];
 
   if (entryPoints === undefined) {
