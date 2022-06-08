@@ -8,3 +8,5 @@ declare module 'es-main' {
   export default function (meta: ImportMeta): boolean;
   export function stripExt(name: string): string;
 }
+
+declare module '@desertnet/html-parser';
