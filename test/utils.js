@@ -119,6 +119,11 @@ export function jsonDiff(actual, expected) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
+  if (actualLines.length !== expectedLines.length)
+    return chalk`{bold different number of lines:
+    {yellow → Actual:   {bold ${actualLines.length}}}
+    {green → Expected: {bold ${expectedLines.length}}}}`;
+
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return chalk`{bold line #${i + 1}}:
@@ -129,36 +134,79 @@ export function jsonDiff(actual, expected) {
 }
 
 export class Logger {
-  /** @param {string} title */
-  constructor(title) {
+  constructor(title, path) {
     this.title = title;
-    this.errors = [];
+    this.path = path;
+    this.messages = [];
   }
 
   /**
    * @param {string} message
-   * @param {string} tip
+   * @param {object} options
    */
-  error(message, tip) {
-    this.errors.push({ message: message, tip: tip });
+  error(message, options) {
+    this.messages.push({
+      level: 'error',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
   }
 
-  emit() {
-    const errorCount = this.errors.length;
+  /**
+   * @param {string} message
+   * @param {object} options
+   */
+  warning(message, options) {
+    this.messages.push({
+      level: 'warning',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
+  }
+}
 
-    if (errorCount) {
-      console.error(
-        chalk`{red   → ${this.title} – ${pluralize('error', errorCount)}:}`,
-      );
+export class Linters {
+  /** @param {Array.<Linter>} linters */
+  constructor(linters) {
+    this.linters = linters;
+    this.messages = {};
 
-      for (const error of this.errors) {
-        console.error(chalk`    {red → ${error.message}}`);
-        if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
+    for (const linter of this.linters) {
+      if (!this.validateScope(linter.scope)) {
+        throw new Error(
+          `Tried to initialize "${linter.name}" linter, but found invalid scope (${linter.scope}.`,
+        );
       }
+      this.messages[linter.name] = [];
     }
   }
 
-  hasErrors() {
-    return !!this.errors.length;
+  /** @param {string} scope */
+  validateScope(scope) {
+    return ['file', 'feature', 'browser', 'tree'].includes(scope);
+  }
+
+  /**
+   * @param {string} scope
+   * @param {any} data
+   */
+  runScope(scope, data) {
+    if (!this.validateScope(scope)) {
+      throw new Error(
+        `Tried to run tests for "${scope}" which is not a valid scope.`,
+      );
+    }
+
+    for (const linter of this.linters.filter(
+      (linter) => linter.scope === scope,
+    )) {
+      const logger = new Logger(linter.title, data.path.full);
+      linter.check(logger, data);
+      this.messages[linter.name].push(...logger.messages);
+    }
   }
 }

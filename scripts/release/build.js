@@ -8,6 +8,7 @@ import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
 import mirrorSupport from './mirror.js';
+import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 
 const packageJson = JSON.parse(
@@ -16,7 +17,7 @@ const packageJson = JSON.parse(
 
 const directory = './build/';
 
-const verbatimFiles = ['LICENSE', 'README.md', 'types.d.ts'];
+const verbatimFiles = ['LICENSE', 'README.md'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
@@ -61,6 +62,22 @@ export default bcd;
   await fs.writeFile(dest, content);
 }
 
+async function writeTypeScript() {
+  const dest = path.resolve(directory, 'index.ts');
+  const content = `/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import { CompatData } from "./types";
+
+import bcd from "./data.json";
+
+export default bcd as CompatData;
+export * from "./types";`;
+  await fs.writeFile(dest, content);
+
+  await compileTS(path.resolve(directory, 'types.d.ts'));
+}
+
 // Returns an array of promises for copying of all files that don't need transformation
 async function copyFiles() {
   for (const file of verbatimFiles) {
@@ -77,7 +94,7 @@ async function createManifest() {
       '.': './data.json',
       './forLegacyNode': './legacynode.mjs',
     },
-    types: 'types.d.ts',
+    types: 'index.ts',
   };
 
   const minimalKeys = [
@@ -126,6 +143,7 @@ async function main() {
   await writeManifest();
   await writeData();
   await writeWrapper();
+  await writeTypeScript();
   await copyFiles();
 
   console.log('Data bundle is ready');
