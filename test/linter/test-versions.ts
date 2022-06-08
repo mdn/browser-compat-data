@@ -9,6 +9,7 @@ import {
   SupportBlock,
   VersionValue,
 } from '../../types/types.js';
+import { InternalSupportStatement } from '../../types/index.js';
 
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
@@ -28,7 +29,7 @@ const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
   webview_android: ['≤37'],
 };
 
-const browserTips = {
+const browserTips: { [browser: string]: string } = {
   safari_ios:
     'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
   opera_android:
@@ -155,21 +156,21 @@ function checkVersions(
   category: string,
   logger: Logger,
 ): void {
-  const browsersToCheck = Object.keys(supportData);
+  const browsersToCheck = Object.keys(supportData) as BrowserName[];
 
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
-      if (!supportData[browser]) {
+      const supportStatement: InternalSupportStatement | undefined =
+        supportData[browser];
+      if (!supportStatement) {
         continue;
       }
 
-      const supportStatements = Array.isArray(supportData[browser])
-        ? supportData[browser]
-        : [supportData[browser]];
-
       let sawVersionAddedOnly = false;
 
-      for (const statement of supportStatements) {
+      for (const statement of Array.isArray(supportStatement)
+        ? supportStatement
+        : [supportStatement]) {
         if (statement === undefined) {
           if (realValuesRequired[category].includes(browser)) {
             logger.error(chalk`{red → {bold ${browser}} must be defined}`);
@@ -255,7 +256,7 @@ function checkVersions(
         }
 
         if (
-          supportStatements.length > 1 &&
+          Array.isArray(supportStatement) &&
           statement.version_added === false &&
           statementKeys.length == 1 &&
           statementKeys[0] == 'version_added'
