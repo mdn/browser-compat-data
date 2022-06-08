@@ -31,7 +31,7 @@ type FeatureError = {
   type: ErrorType;
   browser: BrowserName;
   parentValue: VersionValue;
-  subfeatures: [string, VersionValue][];
+  subfeatures?: [string, VersionValue][];
 };
 
 /**
@@ -144,7 +144,7 @@ export class ConsistencyChecker {
         const subfeature_value = this.getVersionAdded(
           query(subfeature, data).__compat.support[browser],
         );
-        inconsistentSubfeaturesByBrowser[browser].push([
+        inconsistentSubfeaturesByBrowser[browser]?.push([
           subfeature,
           subfeature_value,
         ]);
@@ -156,8 +156,10 @@ export class ConsistencyChecker {
       errors.push({
         type: 'unsupported',
         browser: browser as BrowserName,
-        parentValue: this.getVersionAdded(data?.__compat?.support[browser]),
-        subfeatures: inconsistentSubfeaturesByBrowser[browser],
+        parentValue: this.getVersionAdded(
+          data?.__compat?.support[browser as BrowserName],
+        ),
+        subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
       });
     });
 
@@ -168,39 +170,37 @@ export class ConsistencyChecker {
     );
     inconsistentSubfeaturesByBrowser = {};
 
-    subfeatures.forEach((subfeature) => {
+    for (const subfeature of subfeatures) {
       const supportUnknownInChild = this.extractSupportNotTrueBrowsers(
         query(subfeature, data).__compat,
       );
 
       const browsers = supportUnknownInParent.filter(
         (x) => !supportUnknownInChild.includes(x),
-      );
+      ) as BrowserName[];
 
-      browsers.forEach((browser) => {
+      for (const browser of browsers) {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value = this.getVersionAdded(
           query(subfeature, data).__compat.support[browser],
         );
-        inconsistentSubfeaturesByBrowser[browser].push([
+        inconsistentSubfeaturesByBrowser[browser]?.push([
           subfeature,
           subfeature_value,
         ]);
-      });
-    });
+      }
+    }
 
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const type = 'support_unknown';
-      const parentValue = this.getVersionAdded(data.__compat.support[browser]);
-
       errors.push({
-        type,
-        browser,
-        parentValue,
-        subfeatures,
+        type: 'support_unknown',
+        browser: browser as BrowserName,
+        parentValue: this.getVersionAdded(
+          data?.__compat?.support[browser as BrowserName],
+        ),
+        subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
       });
     });
 
@@ -210,13 +210,13 @@ export class ConsistencyChecker {
     );
     inconsistentSubfeaturesByBrowser = {};
 
-    subfeatures.forEach((subfeature) => {
-      supportInParent.forEach((browser) => {
+    for (const subfeature of subfeatures) {
+      for (const browser of supportInParent) {
         if (
           query(subfeature, data).__compat.support[browser] != undefined &&
           this.isVersionAddedGreater(
             query(subfeature, data).__compat.support[browser],
-            data.__compat.support[browser],
+            data.__compat?.support[browser],
           )
         ) {
           inconsistentSubfeaturesByBrowser[browser] =
@@ -224,27 +224,27 @@ export class ConsistencyChecker {
           const subfeature_value = this.getVersionAdded(
             query(subfeature, data).__compat.support[browser],
           );
-          inconsistentSubfeaturesByBrowser[browser].push([
+          inconsistentSubfeaturesByBrowser[browser]?.push([
             subfeature,
             subfeature_value,
           ]);
         }
-      });
-    });
+      }
+    }
 
     // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const type = 'subfeature_earlier_implementation';
-      const parentValue = this.getVersionAdded(data.__compat.support[browser]);
-
-      errors.push({
-        type,
-        browser,
-        parentValue,
-        subfeatures,
-      });
-    });
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach(
+      (browser: BrowserName) => {
+        errors.push({
+          type: 'subfeature_earlier_implementation',
+          browser: browser as BrowserName,
+          parentValue: this.getVersionAdded(
+            data?.__compat?.support[browser as BrowserName],
+          ),
+          subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
+        });
+      },
+    );
 
     return errors;
   }
@@ -308,12 +308,14 @@ export class ConsistencyChecker {
    * Get all of the browsers with a version number in a feature.
    *
    * @param {CompatStatement} compatData The compat data to process
-   * @returns {string[]} The list of browsers with an exact version number
+   * @returns {BrowserName[]} The list of browsers with an exact version number
    */
-  extractSupportedBrowsersWithVersion(compatData) {
+  extractSupportedBrowsersWithVersion(
+    compatData?: CompatStatement,
+  ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
-      (data) => typeof data.version_added === 'string',
+      (data: SimpleSupportStatement) => typeof data.version_added === 'string',
     );
   }
 
@@ -404,9 +406,15 @@ export class ConsistencyChecker {
    *
    * @param {CompatStatement} compatData The compat data to process
    * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to pass the data to
-   * @returns {boolean} The result of the invoked callback, or "false"
+   * @returns {BrowserName[]} The list of browsers using the callback as a filter
    */
-  extractBrowsers(compatData, callback) {
+  extractBrowsers(
+    compatData: CompatStatement | undefined,
+    callback: (browserData: SimpleSupportStatement) => boolean,
+  ): BrowserName[] {
+    if (!compatData) {
+      return [];
+    }
     return Object.keys(compatData.support).filter((browser) => {
       const browserData = compatData.support[browser];
 
