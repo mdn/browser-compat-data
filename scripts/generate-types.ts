@@ -2,11 +2,16 @@
  * See LICENSE file for more information. */
 
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
+import { fdir } from 'fdir';
 import { compileFromFile } from 'json-schema-to-typescript';
 
-import bcd from '../index.js';
+import extend from './lib/extend.js';
+
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const opts = {
   bannerComment: '',
@@ -35,8 +40,29 @@ const compatDataTypes = {
     'Contains data for [WebExtensions](https://developer.mozilla.org/Add-ons/WebExtensions) JavaScript APIs and manifest keys.',
 };
 
-const generateBrowserNames = () => {
-  const browsers = Object.keys(bcd.browsers);
+const generateBrowserNames = async () => {
+  // Load browser data independently of index.ts, since index.ts depends
+  // on the output of this script
+  const browserData = { browsers: {} };
+
+  const paths = new fdir()
+    .withBasePath()
+    .filter((fp) => fp.endsWith('.json'))
+    .crawl(path.join(dirname, '..', 'browsers'))
+    .sync() as string[];
+
+  for (const fp of paths) {
+    try {
+      const contents = await fs.readFile(fp);
+      extend(browserData, JSON.parse(contents.toString('utf8')));
+    } catch (e) {
+      // Skip invalid JSON. Tests will flag the problem separately.
+      continue;
+    }
+  }
+
+  // Generate BrowserName type
+  const browsers = Object.keys(browserData.browsers);
   return `/**\n * The names of the known browsers.\n */\nexport type BrowserName = ${browsers
     .map((b) => `"${b}"`)
     .join(' | ')};`;
@@ -90,7 +116,7 @@ const compile = async (
 
   const ts = [
     header,
-    generateBrowserNames(),
+    await generateBrowserNames(),
     'export type VersionValue = string | boolean | null;',
     transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
