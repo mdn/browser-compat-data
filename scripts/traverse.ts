@@ -132,7 +132,7 @@ const main = (
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
+  const { argv }: { argv: any } = yargs(hideBin(process.argv)).command(
     '$0 [folder...]',
     'Print feature names in the folder (and optionally filter features to specific browser or version values)',
     (yargs) => {

@@ -23,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * Recursively load
  *
  * @param {string[]} files The files to test
- * @returns {{messages: object, data: Identifier}}
+ * @returns {DataType?}
  */
 const loadAndCheckFiles = (...files: string[]): DataType | undefined => {
   const data = {};
@@ -77,7 +77,7 @@ const loadAndCheckFiles = (...files: string[]): DataType | undefined => {
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  *
- * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
+ * @param {string[]?} files The file(s) and/or folder(s) to test. Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
 const main = (
@@ -130,9 +130,7 @@ const main = (
   for (const [linter, messages] of Object.entries(linters.messages)) {
     if (!messages.length) continue;
 
-    const messagesByLevel: {
-      [k: LinterMessageLevel]: LinterMessage;
-    } = {
+    const messagesByLevel: Record<LinterMessageLevel, LinterMessage[]> = {
       error: [],
       warning: [],
     };
@@ -167,12 +165,12 @@ const main = (
         }}`,
       );
       if (message.fixable) {
-        console[message.level](
+        console.error(
           chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
         );
       }
       if (message.tip) {
-        console[message.level](chalk`{blue    ◆ Tip: ${message.tip}}`);
+        console.error(chalk`{blue    ◆ Tip: ${message.tip}}`);
       }
     }
   }
@@ -195,7 +193,7 @@ if (esMain(import.meta)) {
       }),
   );
 
-  process.exit(main(argv.files) ? 1 : 0);
+  process.exit(main((argv as any).files) ? 1 : 0);
 }
 
 export default main;

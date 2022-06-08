@@ -46,16 +46,19 @@ function describeByKind(diffItem: Diff<string, string>): string {
       return 'deleted';
     case 'A':
     case 'E':
-      return `edited (${stringifyChange(diffItem.lhs, diffItem.rhs)})`;
+      return `edited (${stringifyChange(
+        (diffItem as any).lhs,
+        (diffItem as any).rhs,
+      )})`;
   }
-  throw new Error(`Unexpected kind ${diffItem.kind}.`);
+  throw new Error(`Unexpected kind ${(diffItem as any).kind}.`);
 }
 
 /**
  * @param {Diff<string, string>} diffItem
  */
 function describeDiffItem(diffItem: Diff<string, string>) {
-  const path = diffItem.path.join('.');
+  const path = (diffItem as any).path.join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
     if (path.endsWith('.notes') && diffItem.kind === 'E') {
@@ -65,7 +68,7 @@ function describeDiffItem(diffItem: Diff<string, string>) {
     }
   } else {
     return {
-      name: diffItem.path.slice(0, -1).join('.'),
+      name: (diffItem as any).path.slice(0, -1).join('.'),
       description: `${path} is ${describeByKind(diffItem)}`,
     };
   }
@@ -74,7 +77,9 @@ function describeDiffItem(diffItem: Diff<string, string>) {
 /**
  * @param {ReturnType<typeof describeDiffItem>[]} items
  */
-function mergeAsMap(items): Map<string, string> {
+function mergeAsMap(
+  items: { name: string; description: string }[],
+): Map<string, string> {
   const map = new Map();
   for (const item of items) {
     const descriptions = map.get(item.name) || [];

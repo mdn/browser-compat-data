@@ -2,34 +2,37 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { CompatData } from '../../types/types.js';
+import {
+  BrowserName,
+  CompatData,
+  CompatStatement,
+  Identifier,
+  SimpleSupportStatement,
+  SupportStatement,
+  VersionValue,
+} from '../../types/types.js';
+import { DataType } from '../../types/index.js';
 
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
 
-/**
- * @typedef {import('../../types').CompatStatement} CompatStatement
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../../types').IdentifierMeta} IdentifierMeta
- * @typedef {import('../../types').PrimaryIdentifier} PrimaryIdentifier
- * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types').SupportStatement} SupportStatement
- * @typedef {import('../../types').VersionValue} VersionValue
- *
- * @typedef {'unsupported' | 'support_unknown' | 'subfeature_earlier_implementation'} ErrorType
- *
- * @typedef {object} ConsistencyError
- * @property {string} feature The identifier of the feature
- * @property {string[]} path The path of the feature
- * @property {FeatureError[]} errors Any errors found
- *
- * @typedef {object} FeatureError
- * @property {ErrorType} errortype The type of the error
- * @property {string} browser The browser the error was found
- * @property {VersionValue} parent_value The value of the parent feature
- * @property {[string, VersionValue][]} subfeatures The versions of the subfeatures
- */
+type ErrorType =
+  | 'unsupported'
+  | 'support_unknown'
+  | 'subfeature_earlier_implementation';
+
+type ConsistencyError = {
+  path: string[];
+  errors: FeatureError[];
+};
+
+type FeatureError = {
+  type: ErrorType;
+  browser: BrowserName;
+  parentValue: VersionValue;
+  subfeatures: [string, VersionValue][];
+};
 
 /**
  * Consistency check.
@@ -44,7 +47,7 @@ export class ConsistencyChecker {
    * @param {Identifier} data The data to test
    * @returns {ConsistencyError[]} Any errors found within the data
    */
-  check(data) {
+  check(data: CompatData): ConsistencyError[] {
     return this.checkSubfeatures({ ...data, browsers: undefined });
   }
 
@@ -55,9 +58,8 @@ export class ConsistencyChecker {
    * @param {string[]} [path] The path of the data
    * @returns {ConsistencyError[]} Any errors found within the data
    */
-  checkSubfeatures(data, path = []) {
-    /** @type {ConsistencyError[]} */
-    let allErrors = [];
+  checkSubfeatures(data: DataType, path: string[] = []): ConsistencyError[] {
+    let allErrors: ConsistencyError[] = [];
 
     // Check this feature.
     if (this.isFeature(data)) {
@@ -86,22 +88,22 @@ export class ConsistencyChecker {
   }
 
   /**
-   * @param {PrimaryIdentifier & Required<IdentifierMeta>} data
-   * @return {Identifier[]}
+   * @param {Identifier} data
+   * @return {string[]}
    */
-  getSubfeatures(data) {
+  getSubfeatures(data: Identifier): string[] {
     const subfeatures = [];
     const keys = Object.keys(data).filter((key) => key != '__compat');
     for (const key of keys) {
-      if (data[key] === undefined) continue;
+      if ((data as any)[key] === undefined) continue;
 
-      if ('__compat' in data[key]) {
+      if ('__compat' in (data as any)[key]) {
         // If the subfeature has compat data
         subfeatures.push(key);
       } else {
         // If no compat data, get the next level down
         subfeatures.push(
-          ...this.getSubfeatures(data[key]).map((x) => `${key}.${x}`),
+          ...this.getSubfeatures((data as any)[key]).map((x) => `${key}.${x}`),
         );
       }
     }
@@ -115,17 +117,17 @@ export class ConsistencyChecker {
    * @param {Identifier} data The data to test
    * @returns {FeatureError[]} Any errors found within the data
    */
-  checkFeature(data) {
-    /** @type {FeatureError[]} */
-    const errors = [];
+  checkFeature(data: Identifier): FeatureError[] {
+    const errors: FeatureError[] = [];
 
     const subfeatures = this.getSubfeatures(data);
 
     // Test whether sub-features are supported when basic support is not implemented
     // For all unsupported browsers (basic support == false), sub-features should be set to false
     const unsupportedInParent = this.extractUnsupportedBrowsers(data.__compat);
-    /** @type {Partial<Record<string, [string, VersionValue][]>>} */
-    const inconsistentSubfeaturesByBrowser = {};
+    let inconsistentSubfeaturesByBrowser: Partial<
+      Record<BrowserName, [string, VersionValue][]>
+    > = {};
 
     subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
@@ -134,7 +136,7 @@ export class ConsistencyChecker {
 
       const browsers = unsupportedInParent.filter(
         (x) => !unsupportedInChild.includes(x),
-      );
+      ) as BrowserName[];
 
       browsers.forEach((browser) => {
         inconsistentSubfeaturesByBrowser[browser] =
@@ -151,15 +153,11 @@ export class ConsistencyChecker {
 
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const errortype = 'unsupported';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
-
       errors.push({
-        errortype,
-        browser,
-        parent_value,
-        subfeatures,
+        type: 'unsupported',
+        browser: browser as BrowserName,
+        parentValue: this.getVersionAdded(data?.__compat?.support[browser]),
+        subfeatures: inconsistentSubfeaturesByBrowser[browser],
       });
     });
 
@@ -195,13 +193,13 @@ export class ConsistencyChecker {
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const errortype = 'support_unknown';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
+      const type = 'support_unknown';
+      const parentValue = this.getVersionAdded(data.__compat.support[browser]);
 
       errors.push({
-        errortype,
+        type,
         browser,
-        parent_value,
+        parentValue,
         subfeatures,
       });
     });
@@ -237,13 +235,13 @@ export class ConsistencyChecker {
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-      const errortype = 'subfeature_earlier_implementation';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
+      const type = 'subfeature_earlier_implementation';
+      const parentValue = this.getVersionAdded(data.__compat.support[browser]);
 
       errors.push({
-        errortype,
+        type,
         browser,
-        parent_value,
+        parentValue,
         subfeatures,
       });
     });
@@ -432,14 +430,14 @@ export default {
     const allErrors = checker.check(data);
 
     for (const { path, errors } of allErrors) {
-      for (const { errortype, browser, parent_value, subfeatures } of errors) {
+      for (const { type, browser, parentValue, subfeatures } of errors) {
         let errorMessage = '';
-        if (errortype == 'unsupported') {
+        if (type == 'unsupported') {
           errorMessage += chalk`No support in {bold ${browser}}, but support is declared in the following sub-feature(s):`;
-        } else if (errortype == 'support_unknown') {
+        } else if (type == 'support_unknown') {
           errorMessage += chalk`Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):`;
-        } else if (errortype == 'subfeature_earlier_implementation') {
-          errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parent_value}}) than the following sub-feature(s):`;
+        } else if (type == 'subfeature_earlier_implementation') {
+          errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parentValue}}) than the following sub-feature(s):`;
         }
 
         for (const subfeature of subfeatures) {

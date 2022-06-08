@@ -6,6 +6,7 @@ import {
   BrowserName,
   Identifier,
   ReleaseStatement,
+  SimpleSupportStatement,
 } from '../../types/types.js';
 
 import fs from 'node:fs';
@@ -34,8 +35,15 @@ export const fixExperimental = (bcd: CompatData | Identifier): void => {
     const browserSupport = new Set<BrowserName>();
 
     for (const [browser, support] of Object.entries(compat.support)) {
+      if (!support) {
+        continue;
+      }
+
       // Consider only the first part of an array statement.
-      const statement = Array.isArray(support) ? support[0] : support;
+      const statement: SimpleSupportStatement = Array.isArray(support)
+        ? support[0]
+        : support;
+
       // Ignore anything behind flag, prefix or alternative name
       if (statement.flags || statement.prefix || statement.alternative_name) {
         continue;

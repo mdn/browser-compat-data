@@ -7,6 +7,7 @@ import {
   Identifier,
   BrowserStatement,
 } from '../types/types.js';
+import { DataType } from '../types/index.js';
 
 import bcd from '../index.js';
 import {
@@ -19,13 +20,17 @@ import query from './query.js';
 
 type WalkOutput = {
   path: string;
-  data: object;
+  data: {
+    browswer?: BrowserStatement;
+    compat?: CompatStatement;
+    data: DataType;
+  };
   browser?: BrowserStatement;
   compat?: CompatStatement;
 };
 
 export function* lowLevelWalk(
-  data: CompatData | BrowserStatement | CompatStatement | Identifier = bcd,
+  data: DataType = bcd,
   path?: string,
   depth = Infinity,
 ): IterableIterator<WalkOutput> {

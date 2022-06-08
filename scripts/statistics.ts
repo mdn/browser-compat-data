@@ -251,7 +251,7 @@ const printStats = (
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
+  const { argv }: { argv: any } = yargs(hideBin(process.argv)).command(
     '$0 [folder]',
     'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
     (yargs) => {

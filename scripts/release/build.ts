@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { BrowserName } from '../../types/types.js';
+import { InternalSupportStatement } from '../../types/index.js';
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -26,12 +29,15 @@ async function createDataBundle() {
   const walker = walk(undefined, bcd);
 
   for (const feature of walker) {
+    if (!feature.compat) {
+      continue;
+    }
     for (const [browser, supportData] of Object.entries(
-      feature.compat.support,
+      feature.compat.support as InternalSupportStatement,
     )) {
       if (supportData === 'mirror') {
-        feature.data.__compat.support[browser] = bumpData(
-          browser,
+        (feature.data as any).__compat.support[browser] = bumpData(
+          browser as BrowserName,
           feature.compat.support,
         );
       }

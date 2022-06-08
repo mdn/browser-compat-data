@@ -3,8 +3,6 @@
 
 import { execSync } from 'node:child_process';
 
-import type yargs from 'yargs';
-
 export function exec(command: string): string {
   return execSync(command, { encoding: 'utf8' }).trim();
 }
@@ -61,7 +59,7 @@ export type ReleaseYargs = {
   endVersionTag: string;
 };
 
-export function releaseYargsBuilder(yargs: yargs.Argv<object>): void {
+export function releaseYargsBuilder(yargs: any): void {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',

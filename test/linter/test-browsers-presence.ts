@@ -10,20 +10,20 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * Check the data for any disallowed browsers or if it's missing required browsers
  *
- * @param {Identifier} data The data to test
+ * @param {CompatStatement} data The data to test
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
  * @param {string} [path] The path of the data.
  * @returns {void}
  */
-function processData(data, category, logger, path = '') {
+function processData(
+  data: CompatStatement,
+  category: string,
+  logger: Logger,
+  path = '',
+): void {
   if (data.support) {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
@@ -55,7 +55,7 @@ function processData(data, category, logger, path = '') {
       );
     }
 
-    const invalidEntries = Object.keys(support).filter(
+    const invalidEntries = (Object.keys(support) as BrowserName[]).filter(
       (value) => !displayBrowsers.includes(value),
     );
     if (invalidEntries.length > 0) {

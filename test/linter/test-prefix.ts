@@ -7,11 +7,6 @@ import { CompatStatement } from '../../types/types.js';
 import chalk from 'chalk-template';
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * Process the data for prefix errors
  *
  * @param {Identifier} data The data to test

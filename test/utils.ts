@@ -118,7 +118,7 @@ export function indexToPos(str: string, index: number): string {
  * @param {string} expected
  * @return {string}
  */
-export function jsonDiff(actual: string, expected: string): string {
+export function jsonDiff(actual: string, expected: string): string | undefined {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -155,7 +155,7 @@ export class Logger {
   path: string;
   messages: LinterMessage[];
 
-  constructor(title, path) {
+  constructor(title: string, path: string) {
     this.title = title;
     this.path = path;
     this.messages = [];
