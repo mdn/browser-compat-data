@@ -16,7 +16,7 @@ export function isBrowser(obj: any): obj is BrowserStatement {
 }
 
 export function descendantKeys(data: any) {
-  if (typeof data !== 'object') {
+  if (!data || typeof data !== 'object') {
     // Return if the data isn't an object
     return [];
   }
