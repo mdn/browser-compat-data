@@ -29,7 +29,7 @@ export function getLatestTag(): string {
   return exec('git describe --abbrev=0 --tags');
 }
 
-export function getRefDate(ref: string, querySafe: boolean = false): string {
+export function getRefDate(ref: string, querySafe = false): string {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
@@ -61,7 +61,7 @@ export type ReleaseYargs = {
   endVersionTag: string;
 };
 
-export function releaseYargsBuilder(yargs: yargs.Argv<{}>): void {
+export function releaseYargsBuilder(yargs: yargs.Argv<object>): void {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',

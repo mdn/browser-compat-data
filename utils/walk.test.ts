@@ -34,19 +34,19 @@ describe('lowLevelWalk()', function () {
 
 describe('walk()', function () {
   it('should visit deeply nested features', function () {
-    let results = Array.from(walk('html')).map((feature) => feature.path);
+    const results = Array.from(walk('html')).map((feature) => feature.path);
     assert.ok(results.includes('html.elements.a.href.href_top'));
   });
 
   it('should walk a single tree', function () {
-    let results = Array.from(walk('api.Notification'));
+    const results = Array.from(walk('api.Notification'));
     assert.equal(results.length, 27);
     assert.equal(results[0].path, 'api.Notification');
     assert.equal(results[1].path, 'api.Notification.Notification');
   });
 
   it('should walk multiple trees', function () {
-    let results = Array.from(
+    const results = Array.from(
       walk(['api.Notification', 'css.properties.color']),
     );
     assert.equal(results.length, 28);

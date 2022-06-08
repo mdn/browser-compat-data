@@ -117,7 +117,7 @@ export class ConsistencyChecker {
    */
   checkFeature(data) {
     /** @type {FeatureError[]} */
-    let errors = [];
+    const errors = [];
 
     const subfeatures = this.getSubfeatures(data);
 
@@ -125,7 +125,7 @@ export class ConsistencyChecker {
     // For all unsupported browsers (basic support == false), sub-features should be set to false
     const unsupportedInParent = this.extractUnsupportedBrowsers(data.__compat);
     /** @type {Partial<Record<string, [string, VersionValue][]>>} */
-    var inconsistentSubfeaturesByBrowser = {};
+    const inconsistentSubfeaturesByBrowser = {};
 
     subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
@@ -372,8 +372,8 @@ export class ConsistencyChecker {
    * @returns {boolean} If a's version is greater (later) than b's version
    */
   isVersionAddedGreater(a, b) {
-    var a_version_added = this.getVersionAdded(a);
-    var b_version_added = this.getVersionAdded(b);
+    const a_version_added = this.getVersionAdded(a);
+    const b_version_added = this.getVersionAdded(b);
 
     if (
       typeof a_version_added === 'string' &&

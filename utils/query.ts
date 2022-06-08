@@ -1,13 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import {
-  CompatData,
-  CompatStatement,
-  BrowserName,
-  Identifier,
-  BrowserStatement,
-} from '../types/types.js';
 import { DataType } from '../types/index.js';
 
 import bcd from '../index.js';

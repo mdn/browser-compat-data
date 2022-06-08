@@ -28,7 +28,7 @@ function processData(data, category, logger, path = '') {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
 
-    let displayBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
+    const displayBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
       (b) =>
         [
           'desktop',
@@ -38,7 +38,7 @@ function processData(data, category, logger, path = '') {
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
-    let requiredBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
+    const requiredBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),

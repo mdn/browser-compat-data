@@ -15,7 +15,7 @@ import chalk from 'chalk-template';
 import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
 import { walk } from '../utils/index.js';
-import { pluralize, LinterMessage } from './utils.js';
+import { pluralize, LinterMessage, LinterMessageLevel } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -130,13 +130,15 @@ const main = (
   for (const [linter, messages] of Object.entries(linters.messages)) {
     if (!messages.length) continue;
 
-    const messagesByLevel = {
+    const messagesByLevel: {
+      [k: LinterMessageLevel]: LinterMessage;
+    } = {
       error: [],
       warning: [],
     };
 
     for (const message of messages) {
-      messagesByLevel[message.level].push(message);
+      (messagesByLevel as any)[message.level].push(message);
     }
 
     if (messagesByLevel.error.length) {

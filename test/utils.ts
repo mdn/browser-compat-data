@@ -135,13 +135,15 @@ export type Linter = {
   name: string;
   description: string;
   scope: LinterScope;
-  check: Function;
+  check: (logger: Logger, options: object) => void;
 };
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
+export type LinterMessageLevel = 'error' | 'warning';
+
 export type LinterMessage = {
-  level: 'error' | 'warning';
+  level: LinterMessageLevel;
   title: string;
   path: string;
   message: string;

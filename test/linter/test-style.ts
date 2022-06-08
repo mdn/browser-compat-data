@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
@@ -10,10 +9,6 @@ import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
 import { orderFeatures } from '../../scripts/fix/feature-order.js';
 import { orderStatements } from '../../scripts/fix/statement-order.js';
 import { orderProperties } from '../../scripts/fix/property-order.js';
-
-/**
- * @typedef {import('../utils').Logger} Logger
- */
 
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema

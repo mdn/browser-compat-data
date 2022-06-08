@@ -1,13 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import {
-  BrowserName,
-  CompatData,
-  BrowserStatement,
-  CompatStatement,
-  Identifier,
-} from '../types/types.js';
+import { BrowserName } from '../types/types.js';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -120,7 +114,7 @@ const main = (
   values = ['null', 'true'],
   depth = 100,
 ) => {
-  let features = [];
+  const features = [];
 
   for (const folder in folders) {
     features.push(

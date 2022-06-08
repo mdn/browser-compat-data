@@ -29,12 +29,12 @@ function processLink(errors, actual, regexp, matchHandler) {
   /** @type {RegExpExecArray} */
   let match;
   while ((match = re.exec(actual)) !== null) {
-    let pos = indexToPosRaw(actual, match.index);
-    let posString = indexToPos(actual, match.index);
-    let result = matchHandler(match);
+    const pos = indexToPosRaw(actual, match.index);
+    const posString = indexToPos(actual, match.index);
+    const result = matchHandler(match);
 
     if (result) {
-      let { issue, expected, actualLink = match[0] } = result;
+      const { issue, expected, actualLink = match[0] } = result;
       errors.push({
         issue: issue,
         pos: pos,
@@ -53,7 +53,7 @@ function processLink(errors, actual, regexp, matchHandler) {
  * @returns {LinkError[]} A list of errors found in the links
  */
 export function processData(rawData) {
-  let errors = [];
+  const errors = [];
 
   let actual = rawData;
 
@@ -262,7 +262,7 @@ export default {
     'Test links in the file to ensure they conform to BCD guidelines',
   scope: 'file',
   check(logger: Logger, { rawdata }: { rawdata: string }) {
-    let errors = processData(rawdata);
+    const errors = processData(rawdata);
 
     for (const error of errors) {
       logger.error(

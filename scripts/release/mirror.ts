@@ -3,11 +3,9 @@
 
 import {
   BrowserName,
-  Identifier,
   SimpleSupportStatement,
   SupportStatement,
   SupportBlock,
-  ReleaseStatement,
 } from '../../types/types.js';
 import { InternalSupportStatement } from '../../types/index.js';
 
@@ -124,7 +122,7 @@ const updateNotes = (
   notes: Notes | null,
   regex: RegExp,
   replace: string,
-  versionMapper: Function,
+  versionMapper: (v: string) => string | false,
 ): Notes | null => {
   if (!notes) {
     return null;
@@ -151,8 +149,8 @@ const updateNotes = (
 const copyStatement = (
   data: SimpleSupportStatement,
 ): SimpleSupportStatement => {
-  let newData: { [index: string]: any } = {};
-  for (let i in data) {
+  const newData: { [index: string]: any } = {};
+  for (const i in data) {
     newData[i] = (data as any)[i];
   }
 
@@ -251,7 +249,7 @@ const bumpGeneric = (
   targetBrowser: BrowserName,
   notesRepl: [RegExp, string] | undefined,
 ): SimpleSupportStatement => {
-  let newData: SimpleSupportStatement = copyStatement(sourceData);
+  const newData: SimpleSupportStatement = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
@@ -310,7 +308,7 @@ const bumpEdge = (
 const bumpWebView = (
   sourceData: SimpleSupportStatement,
 ): SimpleSupportStatement => {
-  let newData = copyStatement(sourceData);
+  const newData = copyStatement(sourceData);
 
   const createWebViewRange = (version: string) => {
     if (Number(version) <= 18) {

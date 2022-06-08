@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import {
-  CompatData,
   CompatStatement,
   BrowserName,
   SimpleSupportStatement,

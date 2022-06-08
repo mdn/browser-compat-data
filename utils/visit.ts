@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { CompatStatement } from '../types/types.js';
+
 import bcd from '../index.js';
 import query from './query.js';
 import { descendantKeys, joinPath, isFeature } from './walkingUtils.js';
@@ -8,13 +10,16 @@ import { descendantKeys, joinPath, isFeature } from './walkingUtils.js';
 const BREAK = Symbol('break');
 const CONTINUE = Symbol('continue');
 
-export default function visit(visitor: Function, options: any = {}): any {
+export default function visit(
+  visitor: (visitorPath: string, compat?: CompatStatement) => string,
+  options: any = {},
+): any {
   const { entryPoint, data } = options;
   const test = options.test !== undefined ? options.test : () => true;
 
   const tree = entryPoint === undefined ? bcd : query(entryPoint, data);
 
-  let outcome;
+  let outcome: string | symbol | undefined;
   if (isFeature(tree) && test(entryPoint, tree.__compat)) {
     outcome = visitor(entryPoint, tree.__compat);
   }

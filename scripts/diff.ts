@@ -88,7 +88,7 @@ function mergeAsMap(items): Map<string, string> {
  * @param {string} base
  * @param {string} head
  */
-function getDiffs(base: string, head: string = ''): Map<string, string> {
+function getDiffs(base: string, head = ''): Map<string, string> {
   const namedDescriptions = [];
   for (const status of getGitDiffStatuses(base, head)) {
     if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {

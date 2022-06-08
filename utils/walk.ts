@@ -4,7 +4,6 @@
 import {
   CompatData,
   CompatStatement,
-  BrowserName,
   Identifier,
   BrowserStatement,
 } from '../types/types.js';
@@ -28,7 +27,7 @@ type WalkOutput = {
 export function* lowLevelWalk(
   data: CompatData | BrowserStatement | CompatStatement | Identifier = bcd,
   path?: string,
-  depth: number = Infinity,
+  depth = Infinity,
 ): IterableIterator<WalkOutput> {
   if (path !== undefined && path !== '__meta') {
     const next: WalkOutput = {

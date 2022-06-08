@@ -56,7 +56,7 @@ const testNode = (node, browser, feature, logger) => {
     }
   }
 
-  for (let childNode of node.children || []) {
+  for (const childNode of node.children || []) {
     testNode(childNode, browser, feature, logger);
   }
 };
@@ -108,7 +108,7 @@ const validateHTML = (string, browser, feature, logger) => {
  */
 const checkNotes = (notes, browser, feature, logger) => {
   if (Array.isArray(notes)) {
-    for (let note of notes) {
+    for (const note of notes) {
       validateHTML(note, browser, feature, logger);
     }
   } else {
@@ -127,7 +127,7 @@ const checkNotes = (notes, browser, feature, logger) => {
 const processData = (data, logger, feature) => {
   for (const browser in data.support) {
     if (Array.isArray(data.support[browser])) {
-      for (let s of data.support[browser]) {
+      for (const s of data.support[browser]) {
         if (s.notes) checkNotes(s.notes, browser, feature, logger);
       }
     } else {

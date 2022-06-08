@@ -1,14 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import {
-  CompatData,
-  CompatStatement,
-  BrowserName,
-  Identifier,
-  BrowserStatement,
-  SimpleSupportStatement,
-} from '../types/types.js';
+import { Identifier, BrowserStatement } from '../types/types.js';
 
 export function joinPath(...args: (string | undefined)[]): string {
   return Array.from(args).filter(Boolean).join('.');

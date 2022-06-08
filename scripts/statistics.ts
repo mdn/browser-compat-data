@@ -15,7 +15,6 @@ import {
   BrowserName,
   CompatStatement,
   SupportStatement,
-  SimpleSupportStatement,
 } from '../types/types.js';
 
 import chalk from 'chalk-template';
@@ -153,7 +152,7 @@ const getStats = (
         'webview_android',
       ] as BrowserName[]);
 
-  let stats: VersionStats = {
+  const stats: VersionStats = {
     total: { all: 0, true: 0, null: 0, range: 0, real: 0 },
   };
   browsers.forEach((browser) => {
@@ -222,7 +221,7 @@ const printStats = (
     return;
   }
 
-  let releaseDate = getRefDate('v' + process.env.npm_package_version).slice(
+  const releaseDate = getRefDate('v' + process.env.npm_package_version).slice(
     0,
     'YYYY-MM-DD'.length,
   );
