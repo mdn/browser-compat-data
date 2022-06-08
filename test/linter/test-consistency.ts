@@ -31,7 +31,7 @@ type FeatureError = {
   type: ErrorType;
   browser: BrowserName;
   parentValue: VersionValue;
-  subfeatures?: [string, VersionValue][];
+  subfeatures: [string, VersionValue][];
 };
 
 /**
@@ -153,14 +153,18 @@ export class ConsistencyChecker {
 
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      errors.push({
-        type: 'unsupported',
-        browser: browser as BrowserName,
-        parentValue: this.getVersionAdded(
-          data?.__compat?.support[browser as BrowserName],
-        ),
-        subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
-      });
+      const subfeatures =
+        inconsistentSubfeaturesByBrowser[browser as BrowserName];
+      if (subfeatures) {
+        errors.push({
+          type: 'unsupported',
+          browser: browser as BrowserName,
+          parentValue: this.getVersionAdded(
+            data?.__compat?.support[browser as BrowserName],
+          ),
+          subfeatures,
+        });
+      }
     });
 
     // Test whether sub-features are supported when basic support is not implemented
@@ -194,14 +198,18 @@ export class ConsistencyChecker {
 
     // Add errors
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      errors.push({
-        type: 'support_unknown',
-        browser: browser as BrowserName,
-        parentValue: this.getVersionAdded(
-          data?.__compat?.support[browser as BrowserName],
-        ),
-        subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
-      });
+      const subfeatures =
+        inconsistentSubfeaturesByBrowser[browser as BrowserName];
+      if (subfeatures) {
+        errors.push({
+          type: 'support_unknown',
+          browser: browser as BrowserName,
+          parentValue: this.getVersionAdded(
+            data?.__compat?.support[browser as BrowserName],
+          ),
+          subfeatures,
+        });
+      }
     });
 
     // Test whether sub-features are supported at an earlier version than basic support
@@ -233,18 +241,20 @@ export class ConsistencyChecker {
     }
 
     // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach(
-      (browser: BrowserName) => {
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
+      const subfeatures =
+        inconsistentSubfeaturesByBrowser[browser as BrowserName];
+      if (subfeatures) {
         errors.push({
           type: 'subfeature_earlier_implementation',
           browser: browser as BrowserName,
           parentValue: this.getVersionAdded(
             data?.__compat?.support[browser as BrowserName],
           ),
-          subfeatures: inconsistentSubfeaturesByBrowser[browser as BrowserName],
+          subfeatures,
         });
-      },
-    );
+      }
+    });
 
     return errors;
   }
@@ -255,17 +265,19 @@ export class ConsistencyChecker {
    * @param {Identifier} data The data to test
    * @returns {boolean} If the data is a feature statement
    */
-  isFeature(data) {
+  isFeature(data: Identifier): boolean {
     return '__compat' in data;
   }
 
   /**
    * Get all of the unsupported browsers in a feature
    *
-   * @param {CompatStatement} compatData The compat data to process
-   * @returns {string[]} The list of browsers marked as unsupported
+   * @param {CompatStatement?} compatData The compat data to process
+   * @returns {BrowserName[]} The list of browsers marked as unsupported
    */
-  extractUnsupportedBrowsers(compatData) {
+  extractUnsupportedBrowsers(
+    compatData: CompatStatement | undefined,
+  ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) =>
@@ -278,10 +290,12 @@ export class ConsistencyChecker {
   /**
    * Get all of the browsers with unknown support in a feature
    *
-   * @param {CompatStatement} compatData The compat data to process
-   * @returns {string[]} The list of browsers with unknown support
+   * @param {CompatStatement?} compatData The compat data to process
+   * @returns {BrowserName[]} The list of browsers with unknown support
    */
-  extractSupportUnknownBrowsers(compatData) {
+  extractSupportUnknownBrowsers(
+    compatData: CompatStatement | undefined,
+  ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) => data.version_added === null,
@@ -291,10 +305,12 @@ export class ConsistencyChecker {
   /**
    * Get all of the browsers with either unknown or no support in a feature
    *
-   * @param {CompatStatement} compatData The compat data to process
-   * @returns {string[]} The list of browsers with non-truthy (false or null) support
+   * @param {CompatStatement?} compatData The compat data to process
+   * @returns {Browsername[]} The list of browsers with non-truthy (false or null) support
    */
-  extractSupportNotTrueBrowsers(compatData) {
+  extractSupportNotTrueBrowsers(
+    compatData: CompatStatement | undefined,
+  ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) =>
@@ -307,11 +323,11 @@ export class ConsistencyChecker {
   /**
    * Get all of the browsers with a version number in a feature.
    *
-   * @param {CompatStatement} compatData The compat data to process
+   * @param {CompatStatement?} compatData The compat data to process
    * @returns {BrowserName[]} The list of browsers with an exact version number
    */
   extractSupportedBrowsersWithVersion(
-    compatData?: CompatStatement,
+    compatData: CompatStatement | undefined,
   ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
@@ -322,12 +338,20 @@ export class ConsistencyChecker {
   /**
    * Return the earliest recorded version number from a support statement or null.
    *
-   * @param {SupportStatement} supportstatement The compat data to process
-   * @returns {?string} The earliest version added in the data
+   * @param {SupportStatement} supportStatement The compat data to process
+   * @returns {VersionValue} The earliest version added in the data
    */
-  getVersionAdded(supportStatement) {
+  getVersionAdded(
+    supportStatement: SupportStatement | undefined,
+  ): VersionValue {
+    if (!supportStatement) {
+      return null;
+    }
+
     // A convenience function to squash non-real values and previews into null
-    const resolveVersionAddedValue = (statement) =>
+    const resolveVersionAddedValue = (
+      statement: SimpleSupportStatement,
+    ): VersionValue =>
       [true, false, 'preview', null].includes(statement?.version_added)
         ? null
         : statement?.version_added;
@@ -344,18 +368,29 @@ export class ConsistencyChecker {
 
       if (resolvedValue === null) {
         // We're not going to get a more specific version, so bail out now
-        return null;
+        continue;
       }
 
       if (selectedValue !== null) {
-        // Earlier value takes precedence
-        const resolvedIsEarlier = compareVersions.compare(
-          resolvedValue.replace('≤', ''),
-          selectedValue.replace('≤', ''),
-          '<',
-        );
-        if (resolvedIsEarlier) {
+        if (
+          typeof resolvedValue === 'string' &&
+          typeof selectedValue === 'string'
+        ) {
+          // Earlier value takes precedence
+          const resolvedIsEarlier = compareVersions.compare(
+            resolvedValue.replace('≤', ''),
+            selectedValue.replace('≤', ''),
+            '<',
+          );
+          if (resolvedIsEarlier) {
+            selectedValue = resolvedValue;
+          }
+        } else if (typeof resolvedValue === 'string') {
+          // If selectedValue is bool/null but resolvedValue is string
           selectedValue = resolvedValue;
+        } else {
+          // If neither are version numbers, assign to the truthiest value
+          selectedValue = selectedValue || resolvedValue;
         }
       } else {
         selectedValue = resolvedValue;
@@ -371,7 +406,10 @@ export class ConsistencyChecker {
    * @param {SupportStatement} b The second support statement to compare
    * @returns {boolean} If a's version is greater (later) than b's version
    */
-  isVersionAddedGreater(a, b) {
+  isVersionAddedGreater(
+    a: SupportStatement | undefined,
+    b: SupportStatement | undefined,
+  ): boolean {
     const a_version_added = this.getVersionAdded(a);
     const b_version_added = this.getVersionAdded(b);
 
@@ -415,17 +453,19 @@ export class ConsistencyChecker {
     if (!compatData) {
       return [];
     }
-    return Object.keys(compatData.support).filter((browser) => {
-      const browserData = compatData.support[browser];
+    return (Object.keys(compatData.support) as BrowserName[]).filter(
+      (browser) => {
+        const browserData = compatData.support[browser];
 
-      if (Array.isArray(browserData)) {
-        return browserData.every(callback);
-      } else if (typeof browserData === 'object') {
-        return callback(browserData);
-      } else {
-        return false;
-      }
-    });
+        if (Array.isArray(browserData)) {
+          return browserData.every(callback);
+        } else if (typeof browserData === 'object') {
+          return callback(browserData);
+        } else {
+          return false;
+        }
+      },
+    );
   }
 }
 
