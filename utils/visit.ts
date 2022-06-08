@@ -8,7 +8,7 @@ import { descendantKeys, joinPath, isFeature } from './walkingUtils.js';
 const BREAK = Symbol('break');
 const CONTINUE = Symbol('continue');
 
-export default function visit(visitor, options = {}) {
+export default function visit(visitor: Function, options: any = {}): any {
   const { entryPoint, data } = options;
   const test = options.test !== undefined ? options.test : () => true;
 

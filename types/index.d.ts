@@ -4,3 +4,9 @@
 import { SupportStatement } from '../types';
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
+
+export type DataType =
+  | CompatData
+  | BrowserStatement
+  | CompatStatement
+  | Identifier;

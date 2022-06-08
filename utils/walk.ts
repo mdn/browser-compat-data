@@ -46,7 +46,7 @@ export function* lowLevelWalk(
 
   if (depth > 0) {
     for (const key of descendantKeys(data)) {
-      yield* lowLevelWalk(data[key], joinPath(path, key), depth - 1);
+      yield* lowLevelWalk((data as any)[key], joinPath(path, key), depth - 1);
     }
   }
 }

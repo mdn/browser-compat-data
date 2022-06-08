@@ -4,18 +4,18 @@
 import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
-/** @type {{readonly [char: string]: string}} */
-export const INVISIBLES_MAP = Object.freeze(
-  Object.assign(Object.create(null), {
-    '\0': '\\0', // ␀ (0x00)
-    '\b': '\\b', // ␈ (0x08)
-    '\t': '\\t', // ␉ (0x09)
-    '\n': '\\n', // ␊ (0x0A)
-    '\v': '\\v', // ␋ (0x0B)
-    '\f': '\\f', // ␌ (0x0C)
-    '\r': '\\r', // ␍ (0x0D)
-  }),
-);
+export const INVISIBLES_MAP: { readonly [char: string]: string } =
+  Object.freeze(
+    Object.assign(Object.create(null), {
+      '\0': '\\0', // ␀ (0x00)
+      '\b': '\\b', // ␈ (0x08)
+      '\t': '\\t', // ␉ (0x09)
+      '\n': '\\n', // ␊ (0x0A)
+      '\v': '\\v', // ␋ (0x0B)
+      '\f': '\\f', // ␌ (0x0C)
+      '\r': '\\r', // ␍ (0x0D)
+    }),
+  );
 
 /* eslint-disable-next-line no-control-regex */
 export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
@@ -37,7 +37,7 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  * @param {number} quantifier
  * @return {string}
  */
-export const pluralize = (word: string, quantifier: number) => {
+export const pluralize = (word: string, quantifier: number): string => {
   return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
 };
 
@@ -46,7 +46,7 @@ export const pluralize = (word: string, quantifier: number) => {
  *
  * @param {string} str
  */
-export function escapeInvisibles(str: string) {
+export function escapeInvisibles(str: string): string {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
@@ -61,7 +61,10 @@ export function escapeInvisibles(str: string) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-export function indexToPosRaw(str: string, index: number) {
+export function indexToPosRaw(
+  str: string,
+  index: number,
+): [number, number] | [null, null] {
   let line = 1,
     col = 1;
   let prevChar = null;
@@ -105,7 +108,7 @@ export function indexToPosRaw(str: string, index: number) {
  * @param {number} index
  * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-export function indexToPos(str: string, index: number) {
+export function indexToPos(str: string, index: number): string {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
 }
@@ -115,7 +118,7 @@ export function indexToPos(str: string, index: number) {
  * @param {string} expected
  * @return {string}
  */
-export function jsonDiff(actual: string, expected: string) {
+export function jsonDiff(actual: string, expected: string): string {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -128,7 +131,28 @@ export function jsonDiff(actual: string, expected: string) {
   }
 }
 
+export type Linter = {
+  name: string;
+  description: string;
+  scope: LinterScope;
+  check: Function;
+};
+
+export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
+
+export type LinterMessage = {
+  level: 'error' | 'warning';
+  title: string;
+  path: string;
+  message: string;
+  [k: string]: any;
+};
+
 export class Logger {
+  title: string;
+  path: string;
+  messages: LinterMessage[];
+
   constructor(title, path) {
     this.title = title;
     this.path = path;
@@ -139,7 +163,7 @@ export class Logger {
    * @param {string} message
    * @param {object} options
    */
-  error(message, options) {
+  error(message: string, options?: object): void {
     this.messages.push({
       level: 'error',
       title: this.title,
@@ -153,7 +177,7 @@ export class Logger {
    * @param {string} message
    * @param {object} options
    */
-  warning(message, options) {
+  warning(message: string, options?: object): void {
     this.messages.push({
       level: 'warning',
       title: this.title,
@@ -165,41 +189,27 @@ export class Logger {
 }
 
 export class Linters {
-  /** @param {Array.<Linter>} linters */
-  constructor(linters) {
+  linters: Array<Linter>;
+  messages: Record<string, LinterMessage[]>;
+
+  constructor(linters: Array<Linter>) {
     this.linters = linters;
     this.messages = {};
 
     for (const linter of this.linters) {
-      if (!this.validateScope(linter.scope)) {
-        throw new Error(
-          `Tried to initialize "${linter.name}" linter, but found invalid scope (${linter.scope}.`,
-        );
-      }
       this.messages[linter.name] = [];
     }
-  }
-
-  /** @param {string} scope */
-  validateScope(scope) {
-    return ['file', 'feature', 'browser', 'tree'].includes(scope);
   }
 
   /**
    * @param {string} scope
    * @param {any} data
    */
-  runScope(scope, data) {
-    if (!this.validateScope(scope)) {
-      throw new Error(
-        `Tried to run tests for "${scope}" which is not a valid scope.`,
-      );
-    }
-
+  runScope(scope: LinterScope, data: any): void {
     for (const linter of this.linters.filter(
       (linter) => linter.scope === scope,
     )) {
-      const logger = new Logger(linter.title, data.path.full);
+      const logger = new Logger(linter.name, data.path.full);
       linter.check(logger, data);
       this.messages[linter.name].push(...logger.messages);
     }

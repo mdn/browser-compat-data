@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 
 /**
@@ -91,9 +94,15 @@ export default {
   name: 'Descriptions',
   description: 'Test the descriptions of compatibility data',
   scope: 'feature',
-  check(logger, { data, path: { full, category } }) {
+  check(
+    logger: Logger,
+    {
+      data,
+      path: { full, category },
+    }: { data: CompatStatement; path: { full: string; category: string } },
+  ) {
     if (category === 'api') {
       processApiData(data, full, logger);
     }
   },
-};
+} as Linter;

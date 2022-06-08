@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -110,7 +113,10 @@ export default {
   name: 'Obsolete',
   description: 'Test for obsolete data in each support statement',
   scope: 'feature',
-  check(logger, { data, path }) {
-    processData(logger, data, browsers, path.full);
+  check(
+    logger: Logger,
+    { data, path: { full } }: { data: CompatStatement; path: { full: string } },
+  ) {
+    processData(logger, data, browsers, full);
   },
-};
+} as Linter;

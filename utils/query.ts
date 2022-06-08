@@ -8,7 +8,7 @@ import {
   Identifier,
   BrowserStatement,
 } from '../types/types.js';
-import { DataType } from './walkingUtils.js';
+import { DataType } from '../types/index.js';
 
 import bcd from '../index.js';
 
@@ -16,7 +16,7 @@ import bcd from '../index.js';
  * Get a subtree of compat data.
  *
  * @param {string} path Dotted path to a given feature (e.g., `css.properties.background`)
- * @param {DataType} [data=bcd] A tree to query. All of BCD, by default.
+ * @param {DataType} data A tree to query. All of BCD, by default.
  * @returns {DataType} A BCD subtree
  * @throws {ReferenceError} For invalid identifiers
  */
@@ -30,7 +30,7 @@ export default function query(path: string, data: DataType = bcd): DataType {
         `${path} is not a valid tree identifier (failed at '${next}')`,
       );
     }
-    lookup = lookup as DataType)[next];
+    lookup = (lookup as any)[next];
     if (lookup === undefined) {
       throw new ReferenceError(
         `${path} is not a valid tree identifier (failed at '${next}')`,

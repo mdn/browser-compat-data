@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
@@ -259,7 +261,7 @@ export default {
   description:
     'Test links in the file to ensure they conform to BCD guidelines',
   scope: 'file',
-  check(logger, { rawdata }) {
+  check(logger: Logger, { rawdata }: { rawdata: string }) {
     let errors = processData(rawdata);
 
     for (const error of errors) {
@@ -269,4 +271,4 @@ export default {
       );
     }
   },
-};
+} as Linter;

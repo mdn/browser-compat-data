@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 
 import specData from 'browser-specs' assert { type: 'json' };
@@ -85,7 +88,7 @@ export default {
   description:
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
-  check(logger, { data }) {
+  check(logger: Logger, { data }: { data: CompatStatement }) {
     processData(data, logger);
   },
-};
+} as Linter;

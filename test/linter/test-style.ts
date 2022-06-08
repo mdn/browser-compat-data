@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
 import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
@@ -97,9 +100,15 @@ export default {
   name: 'Style',
   description: 'Tests the style and formatting of the JSON file',
   scope: 'file',
-  check(logger, { rawdata, path: { category } }) {
+  check(
+    logger: Logger,
+    {
+      rawdata,
+      path: { category },
+    }: { rawdata: string; path: { category: string } },
+  ) {
     if (category !== 'browsers') {
       processData(rawdata, logger);
     }
   },
-};
+} as Linter;

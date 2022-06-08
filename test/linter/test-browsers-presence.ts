@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
@@ -25,7 +28,7 @@ function processData(data, category, logger, path = '') {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
 
-    let displayBrowsers = Object.keys(browsers).filter(
+    let displayBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
       (b) =>
         [
           'desktop',
@@ -35,7 +38,7 @@ function processData(data, category, logger, path = '') {
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
-    let requiredBrowsers = Object.keys(browsers).filter(
+    let requiredBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
@@ -81,7 +84,13 @@ export default {
   description:
     'Test the presence of browser data within compatibility statements',
   scope: 'feature',
-  check(logger, { data, path: { category } }) {
+  check(
+    logger: Logger,
+    {
+      data,
+      path: { category },
+    }: { data: CompatStatement; path: { category: string } },
+  ) {
     processData(data, category, logger);
   },
-};
+} as Linter;

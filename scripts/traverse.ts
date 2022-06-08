@@ -16,10 +16,6 @@ import { hideBin } from 'yargs/helpers';
 import bcd from '../index.js';
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- */
-
-/**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
  *
  * @param {Identifier} obj The compat data to traverse through

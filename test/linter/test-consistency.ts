@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatData } from '../../types/types.js';
+
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
@@ -424,7 +427,7 @@ export default {
   name: 'Consistency',
   description: 'Test the version consistency between parent and child',
   scope: 'tree',
-  check(logger, { data }) {
+  check(logger: Logger, { data }: { data: CompatData }) {
     const checker = new ConsistencyChecker();
     const allErrors = checker.check(data);
 
@@ -449,4 +452,4 @@ export default {
       }
     }
   },
-};
+} as Linter;

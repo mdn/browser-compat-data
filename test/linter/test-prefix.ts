@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 
 /**
@@ -68,7 +71,13 @@ export default {
   name: 'Prefix',
   description: 'Ensure that prefixes in support statements are valid',
   scope: 'feature',
-  check(logger, { data, path: { category } }) {
+  check(
+    logger: Logger,
+    {
+      data,
+      path: { category },
+    }: { data: CompatStatement; path: { category: string } },
+  ) {
     processData(data, category, logger);
   },
-};
+} as Linter;

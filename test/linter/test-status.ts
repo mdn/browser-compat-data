@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Linter, Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
+
 import chalk from 'chalk-template';
 
 /**
@@ -27,7 +30,7 @@ export default {
   name: 'Status',
   description: 'Test the status of support statements',
   scope: 'feature',
-  check(logger, { data }) {
+  check(logger: Logger, { data }: { data: CompatStatement }) {
     checkStatus(data, logger);
   },
-};
+} as Linter;

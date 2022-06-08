@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { DataType } from '../types/index.js';
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,7 +15,7 @@ import chalk from 'chalk-template';
 import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
 import { walk } from '../utils/index.js';
-import { pluralize } from './utils.js';
+import { pluralize, LinterMessage } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -23,7 +25,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {{messages: object, data: Identifier}}
  */
-const loadAndCheckFiles = (...files) => {
+const loadAndCheckFiles = (...files: string[]): DataType | undefined => {
   const data = {};
 
   for (let file of files) {
@@ -37,7 +39,7 @@ const loadAndCheckFiles = (...files) => {
     }
 
     if (fs.statSync(file).isFile() && path.extname(file) === '.json') {
-      const filePath = {
+      const filePath: { full: string; category?: string | false } = {
         full: path.relative(process.cwd(), file),
       };
       filePath.category =
