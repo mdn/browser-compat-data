@@ -10,3 +10,5 @@ declare module 'es-main' {
 }
 
 declare module '@desertnet/html-parser';
+
+declare module 'better-ajv-errors';
