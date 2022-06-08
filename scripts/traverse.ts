@@ -139,7 +139,8 @@ if (esMain(import.meta)) {
       yargs
         .positional('folder', {
           describe: 'The folder(s) to traverse',
-          type: 'array',
+          type: 'string',
+          array: true,
           default: Object.keys(bcd).filter((k) => k !== 'browsers'),
         })
         .option('browser', {
