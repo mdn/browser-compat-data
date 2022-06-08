@@ -25,7 +25,7 @@ function processData(
   data: BrowserStatement,
   logger: Logger,
 ): void {
-  for (const status of ['current', 'beta', 'nightly']) {
+  for (const status of ['current', 'nightly']) {
     const releasesForStatus = Object.entries(data.releases)
       .filter(([, data]) => data.status == status)
       .map(([version]) => version);
