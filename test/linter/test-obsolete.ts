@@ -4,9 +4,7 @@
 import { Linter, Logger, LinterMessageLevel } from '../utils.js';
 import {
   BrowserName,
-  BrowserStatement,
   CompatStatement,
-  SupportStatement,
   SimpleSupportStatement,
 } from '../../types/types.js';
 
