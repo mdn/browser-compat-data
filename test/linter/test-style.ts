@@ -16,7 +16,7 @@ import { orderProperties } from '../../scripts/fix/property-order.js';
  * @param {string} rawData The raw contents of the file to test
  * @param {Logger} logger The logger to output errors to
  */
-function processData(rawData, logger) {
+function processData(rawData: string, logger: Logger): void {
   let actual = rawData;
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -76,7 +76,7 @@ function processData(rawData, logger) {
         actual,
         expectedFeatureSorting,
       )}`,
-      chalk`Run {bold npm run fix} to fix sorting automatically`,
+      { tip: chalk`Run {bold npm run fix} to fix sorting automatically` },
     );
   }
 

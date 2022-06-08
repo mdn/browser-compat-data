@@ -2,7 +2,13 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import {
+  BrowserName,
+  CompatStatement,
+  SimpleSupportStatement,
+  SupportBlock,
+  VersionValue,
+} from '../../types/types.js';
 
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
@@ -10,19 +16,9 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../../types').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types').SupportBlock} SupportBlock
- * @typedef {import('../../types').VersionValue} VersionValue
- * @typedef {import('../../types').Logger} Logger
- */
+const validBrowserVersions: { [browser: string]: string[] } = {};
 
-/** @type {object.<string, string[]>} */
-const validBrowserVersions = {};
-
-/** @type {object.<string, string[]>} */
-const VERSION_RANGE_BROWSERS = {
+const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
   edge: ['≤18', '≤79'],
   ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],
@@ -32,7 +28,6 @@ const VERSION_RANGE_BROWSERS = {
   webview_android: ['≤37'],
 };
 
-/** @type {Object<string, string>} */
 const browserTips = {
   safari_ios:
     'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
@@ -40,7 +35,7 @@ const browserTips = {
     'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
 };
 
-for (const browser of Object.keys(browsers)) {
+for (const browser of Object.keys(browsers) as BrowserName[]) {
   validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
   if (VERSION_RANGE_BROWSERS[browser]) {
     validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
@@ -50,7 +45,6 @@ for (const browser of Object.keys(browsers)) {
   }
 }
 
-/** @type {string[]} */
 const realValuesTargetBrowsers = [
   'chrome',
   'chrome_android',
@@ -66,8 +60,7 @@ const realValuesTargetBrowsers = [
   'webview_android',
 ];
 
-/** @type {object.<string, string[]>} */
-const realValuesRequired = {
+const realValuesRequired: { [category: string]: string[] } = {
   api: realValuesTargetBrowsers,
   css: realValuesTargetBrowsers,
   html: [],
@@ -82,12 +75,16 @@ const realValuesRequired = {
 /**
  * Test to see if the browser allows for the specified version
  *
- * @param {string} browser The browser to check
+ * @param {BrowserName} browser The browser to check
  * @param {string} category The category of the data
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(browser, category, version) {
+function isValidVersion(
+  browser: BrowserName,
+  category: string,
+  version: VersionValue,
+): boolean {
   if (typeof version === 'string') {
     return validBrowserVersions[browser].includes(version);
   } else if (
@@ -100,7 +97,7 @@ function isValidVersion(browser, category, version) {
   }
 }
 
-function hasVersionAddedOnly(statement) {
+function hasVersionAddedOnly(statement: SimpleSupportStatement): boolean {
   const keys = Object.keys(statement);
   return keys.length === 1 && keys[0] === 'version_added';
 }
@@ -113,7 +110,14 @@ function hasVersionAddedOnly(statement) {
  * @param {SimpleSupportStatement} statement
  * @returns {(boolean|null)}
  */
-function addedBeforeRemoved(statement) {
+function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
+  if (
+    typeof statement.version_added !== 'string' ||
+    typeof statement.version_removed !== 'string'
+  ) {
+    return false;
+  }
+
   // In order to ensure that the versions could be displayed without the "≤"
   // markers and still make sense, compare the versions without them. This
   // means that combinations like version_added: "≤37" + version_removed: "37"
@@ -146,12 +150,19 @@ function addedBeforeRemoved(statement) {
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkVersions(supportData, category, logger) {
+function checkVersions(
+  supportData: SupportBlock,
+  category: string,
+  logger: Logger,
+): void {
   const browsersToCheck = Object.keys(supportData);
 
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
-      /** @type {SimpleSupportStatement[]} */
+      if (!supportData[browser]) {
+        continue;
+      }
+
       const supportStatements = Array.isArray(supportData[browser])
         ? supportData[browser]
         : [supportData[browser]];

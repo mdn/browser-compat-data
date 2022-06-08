@@ -7,14 +7,14 @@ import { CompatStatement } from '../../types/types.js';
 import chalk from 'chalk-template';
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- */
-
-/**
- * @param {Identifier} data
+ * @param {CompatStatement} data
  * @param {Logger} logger
  */
-function checkStatus(data, logger, path = []) {
+function checkStatus(
+  data: CompatStatement,
+  logger: Logger,
+  path: string[] = [],
+): void {
   const status = data.status;
   if (status && status.experimental && status.deprecated) {
     logger.error(

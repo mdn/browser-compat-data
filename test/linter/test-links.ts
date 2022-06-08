@@ -6,14 +6,13 @@ import { Linter, Logger } from '../utils.js';
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
-/**
- * @typedef {object} LinkError
- * @property {string} issue The description of the error
- * @property {[?number, ?number]} pos The cursor position of the issue in number-array form
- * @property {string} posString The cursor position of the issue in string form
- * @property {?string} expected The expected string if applicable
- * @property {string} actualLink What the link currently is
- */
+type LinkError = {
+  issue: string;
+  pos: [number, number] | [null, null];
+  posString: string;
+  actual: string;
+  expected?: string;
+};
 
 /**
  * Given a RegEx expression, test the link for errors
@@ -24,7 +23,16 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
  * @param {(match: Array.<?string>) => object} matchHandler The callback
  * @returns {void}
  */
-function processLink(errors, actual, regexp, matchHandler) {
+function processLink(
+  errors: LinkError[],
+  actual: string,
+  regexp: string | RegExp,
+  matchHandler: (match: RegExpMatchArray) => {
+    issue: string;
+    expected?: string;
+    actualLink?: string;
+  } | void,
+): void {
   const re = new RegExp(regexp, 'g');
   /** @type {RegExpExecArray} */
   let match;
@@ -52,8 +60,8 @@ function processLink(errors, actual, regexp, matchHandler) {
  * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-export function processData(rawData) {
-  const errors = [];
+export function processData(rawData: string): LinkError[] {
+  const errors: LinkError[] = [];
 
   let actual = rawData;
 
@@ -175,20 +183,24 @@ export function processData(rawData) {
     String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
     (match) => {
       const [, protocol, subdomain, path] = match;
-      const [, locale, expectedPath_] = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(
-        path,
-      );
-      let expectedPath = expectedPath_;
+      const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
+
+      if (!pathMatch) {
+        return;
+      }
+
+      const locale = pathMatch[1];
+      let expectedPath = pathMatch[2];
 
       if (!expectedPath.startsWith('docs/')) {
         // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = /** @returns {[?string, number]} */ (() => {
+        const [zone, index] = ((): [string | null, number | undefined] => {
           const match = expectedPath.match(
             /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
           );
           return match ? [match[1], match.index] : [null, -1];
         })();
-        if (index >= 0) {
+        if (index && index >= 0) {
           expectedPath = expectedPath.substring(index);
           switch (zone) {
             case 'Add-ons':

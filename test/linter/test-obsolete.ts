@@ -1,8 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import { Linter, Logger, LinterMessageLevel } from '../utils.js';
+import {
+  BrowserName,
+  BrowserStatement,
+  CompatStatement,
+  SupportStatement,
+  SimpleSupportStatement,
+} from '../../types/types.js';
 
 import chalk from 'chalk-template';
 import bcd from '../../index.js';
@@ -33,11 +39,10 @@ const exceptions = [
   'svg.elements.view.zoomAndPan',
 ];
 
-export function neverImplemented(support) {
-  for (const s in support) {
-    let data = support[s];
-    if (!Array.isArray(data)) data = [data];
-    for (const d of data) if (d.version_added) return false;
+export function neverImplemented(support: SimpleSupportStatement) {
+  for (const data of Object.values(support)) {
+    for (const d of Array.isArray(data) ? data : [data])
+      if (d.version_added) return false;
   }
   return true;
 }
@@ -48,20 +53,21 @@ errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
- * @param {*} browsers
- * @param {*} support
- * @returns 'warning' | 'error' | false
+ * @param {SimpleSupportStatement} support
+ * @returns LinterMessageLevel | false
  */
-function implementedAndRemoved(browsers, support) {
-  let result = 'error';
-  for (const browser in support) {
-    let data = support[browser];
-    if (!Array.isArray(data)) data = [data];
-    for (const d of data) {
+function implementedAndRemoved(
+  support: SimpleSupportStatement,
+): LinterMessageLevel | false {
+  let result: LinterMessageLevel = 'error';
+  for (const [browser, data] of Object.entries(support) as [BrowserName, any]) {
+    for (const d of Array.isArray(data) ? data : [data]) {
       // Feature is still supported
       if (!d.version_removed) return false;
       const releaseDate = new Date(
-        browsers[browser].releases[d.version_removed].release_date,
+        (browsers[browser as BrowserName] as any).releases[
+          d.version_removed
+        ].release_date,
       );
       // Feature was recently supported, no need to show warning
       if (warningTime < releaseDate) return false;
@@ -73,38 +79,43 @@ function implementedAndRemoved(browsers, support) {
 }
 
 /**
- * @param {string} name
- * @param {CompatStatement} data The data to test
  * @param {Logger} logger
- * @param {boolean} shouldFail
+ * @param {CompatStatement} data The data to test
+ * @param {string} path
  * @returns {void}
  */
-function processData(logger, data, browsers, path) {
+function processData(
+  logger: Logger,
+  data: CompatStatement,
+  path: string,
+): void {
   if (data && data.support) {
     const { support, status } = data;
     const shouldFail = exceptions.includes(path);
 
-    const abandoned = status && status.standard_track === false;
-    const rule1Fail = abandoned && neverImplemented(support);
-    if (rule1Fail && !shouldFail) {
-      logger.error(
-        chalk`feature was never implemented in any browser and the specification has been abandoned.`,
-      );
-      return;
-    }
+    for (const statement of Array.isArray(support) ? support : [support]) {
+      const abandoned = status && status.standard_track === false;
+      const rule1Fail = abandoned && neverImplemented(statement);
+      if (rule1Fail && !shouldFail) {
+        logger.error(
+          chalk`feature was never implemented in any browser and the specification has been abandoned.`,
+        );
+        return;
+      }
 
-    const rule2Fail = implementedAndRemoved(browsers, support);
-    if (rule2Fail && !shouldFail) {
-      logger[rule2Fail](
-        chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
-      );
-      return;
-    }
+      const rule2Fail = implementedAndRemoved(statement);
+      if (rule2Fail && !shouldFail) {
+        logger[rule2Fail](
+          chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
+        );
+        return;
+      }
 
-    if (!rule1Fail && !rule2Fail && shouldFail) {
-      logger.error(
-        chalk`Please remove this file from list of exceptions: ${path}`,
-      );
+      if (!rule1Fail && !rule2Fail && shouldFail) {
+        logger.error(
+          chalk`Please remove this file from list of exceptions: ${path}`,
+        );
+      }
     }
   }
 }
@@ -117,6 +128,6 @@ export default {
     logger: Logger,
     { data, path: { full } }: { data: CompatStatement; path: { full: string } },
   ) {
-    processData(logger, data, browsers, full);
+    processData(logger, data, full);
   },
 } as Linter;

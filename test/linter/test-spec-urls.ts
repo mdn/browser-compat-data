@@ -47,25 +47,20 @@ const specsExceptions = [
 ];
 
 const allowedSpecURLs = [
-  ...specData.map((spec) => spec.url),
-  ...specData.map((spec) => spec.nightly.url),
-  ...specData.map((spec) => spec.series.nightlyUrl),
+  ...specData.map((spec: any) => spec.url),
+  ...specData.map((spec: any) => spec.nightly.url),
+  ...specData.map((spec: any) => spec.series.nightlyUrl),
   ...specsExceptions,
 ];
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * Process the data for spec URL errors
  *
- * @param {Identifier} data The data to test
+ * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processData(data, logger) {
+function processData(data: CompatStatement, logger: Logger): void {
   if (!data.spec_url) {
     return;
   }

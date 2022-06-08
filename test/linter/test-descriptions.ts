@@ -7,10 +7,6 @@ import { CompatStatement } from '../../types/types.js';
 import chalk from 'chalk-template';
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- */
-
-/**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
  *
  * @param {string} ruleName The name of the error
@@ -20,7 +16,13 @@ import chalk from 'chalk-template';
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkDescription(ruleName, name, compat, expected, logger) {
+function checkDescription(
+  ruleName: string,
+  name: string,
+  compat: CompatStatement,
+  expected: string,
+  logger: Logger,
+): void {
   const actual = compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
@@ -33,11 +35,15 @@ function checkDescription(ruleName, name, compat, expected, logger) {
  * Process API data and check for any incorrect descriptions in said data, logging any errors
  *
  * @param {CompatStatement} data The data to test
- * @param {object} path The path of the feature
+ * @param {string} path The path of the feature
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processApiData(data, path, logger) {
+function processApiData(
+  data: CompatStatement,
+  path: string,
+  logger: Logger,
+): void {
   const pathParts = path.split('.');
   const apiName = pathParts[1];
   const featureName = pathParts[2];

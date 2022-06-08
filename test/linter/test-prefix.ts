@@ -14,8 +14,12 @@ import chalk from 'chalk-template';
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processData(data, category, logger) {
-  let prefixes = [];
+function processData(
+  data: CompatStatement,
+  category: string,
+  logger: Logger,
+): void {
+  let prefixes: string[] = [];
 
   if (category === 'api') {
     prefixes = [
@@ -45,6 +49,9 @@ function processData(data, category, logger) {
     const supportStatements = Array.isArray(support) ? support : [support];
 
     for (const statement of supportStatements) {
+      if (!statement) {
+        continue;
+      }
       if (statement.prefix && statement.alternative_name) {
         logger.error(
           chalk`Both prefix and alternative name are defined, which is not allowed.`,
@@ -52,7 +59,7 @@ function processData(data, category, logger) {
       }
       if (
         statement.prefix &&
-        !prefixes.some((p) => statement.prefix.startsWith(p))
+        !prefixes.some((p) => statement.prefix?.startsWith(p))
       ) {
         logger.error(
           chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,

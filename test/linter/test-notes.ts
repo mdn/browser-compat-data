@@ -2,7 +2,11 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import {
+  BrowserName,
+  CompatStatement,
+  SupportStatement,
+} from '../../types/types.js';
 
 import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
@@ -12,20 +16,20 @@ import { VALID_ELEMENTS } from '../utils.js';
 const parser = new HTMLParser();
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * Recursively test a DOM node for valid elements
  *
- * @param {object} node The DOM node to test
- * @param {string} browser The browser the notes belong to
+ * @param {any} node The DOM node to test
+ * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const testNode = (node, browser, feature, logger) => {
+const testNode = (
+  node: any,
+  browser: BrowserName,
+  feature: string,
+  logger: Logger,
+): void => {
   if (node.type == 'TAG') {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag)) {
@@ -65,12 +69,17 @@ const testNode = (node, browser, feature, logger) => {
  * Test a string for valid HTML
  *
  * @param {string} string The string to test
- * @param {string} browser The browser the notes belong to
+ * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const validateHTML = (string, browser, feature, logger) => {
+const validateHTML = (
+  string: string,
+  browser: BrowserName,
+  feature: string,
+  logger: Logger,
+): void => {
   const htmlErrors = HTMLParser.validate(string);
 
   if (htmlErrors.length === 0) {
@@ -101,12 +110,17 @@ const validateHTML = (string, browser, feature, logger) => {
  * Check the notes in the data
  *
  * @param {string|string[]} notes The notes to test
- * @param {string} browser The browser the notes belong to
+ * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  * @returns {void}
  */
-const checkNotes = (notes, browser, feature, logger) => {
+const checkNotes = (
+  notes: string | string[],
+  browser: BrowserName,
+  feature: string,
+  logger: Logger,
+): void => {
   if (Array.isArray(notes)) {
     for (const note of notes) {
       validateHTML(note, browser, feature, logger);
@@ -120,19 +134,25 @@ const checkNotes = (notes, browser, feature, logger) => {
  * Process the data for notes errors
  *
  * @param {CompatStatement} data The data to test
- * @param {logger} logger The logger to output errors to
- * @param {string} [feature] The identifier of the feature
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} feature The identifier of the feature
  * @returns {void}
  */
-const processData = (data, logger, feature) => {
-  for (const browser in data.support) {
-    if (Array.isArray(data.support[browser])) {
-      for (const s of data.support[browser]) {
+const processData = (
+  data: CompatStatement,
+  logger: Logger,
+  feature: string,
+): void => {
+  for (const [browser, support] of Object.entries(data.support) as [
+    BrowserName,
+    SupportStatement,
+  ][]) {
+    if (Array.isArray(support)) {
+      for (const s of support) {
         if (s.notes) checkNotes(s.notes, browser, feature, logger);
       }
     } else {
-      if (data.support[browser].notes)
-        checkNotes(data.support[browser].notes, browser, feature, logger);
+      if (support.notes) checkNotes(support.notes, browser, feature, logger);
     }
   }
 };
@@ -141,7 +161,10 @@ export default {
   name: 'Notes',
   description: 'Test the notes in each support statement',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
-    processData(data, logger);
+  check(
+    logger: Logger,
+    { data, path: { full } }: { data: CompatStatement; path: { full: string } },
+  ) {
+    processData(data, logger, full);
   },
 } as Linter;

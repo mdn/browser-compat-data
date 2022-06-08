@@ -10,11 +10,6 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * @typedef {import('../../types').Identifier} Identifier
- * @typedef {import('../utils').Logger} Logger
- */
-
-/**
  * @param {BrowserName} browser
  * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
