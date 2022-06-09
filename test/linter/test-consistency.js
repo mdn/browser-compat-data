@@ -325,7 +325,8 @@ export class ConsistencyChecker {
   getVersionAdded(supportStatement) {
     // A convenience function to squash non-real values and previews into null
     const resolveVersionAddedValue = (statement) =>
-      [true, false, 'preview', null].includes(statement?.version_added)
+      [true, false, 'preview', null].includes(statement?.version_added) ||
+      statement.flags
         ? null
         : statement?.version_added;
 
@@ -341,7 +342,7 @@ export class ConsistencyChecker {
 
       if (resolvedValue === null) {
         // We're not going to get a more specific version, so bail out now
-        return null;
+        continue;
       }
 
       if (selectedValue !== null) {
