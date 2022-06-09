@@ -24,8 +24,10 @@ function enumerateFeatures(dataFrom) {
       )
     : lowLevelWalk();
 
-  for (const { path } of walker) {
-    feats.push(path);
+  for (const feat of walker) {
+    if (feat.compat || feat.browser) {
+      feats.push(feat.path);
+    }
   }
 
   return feats;
