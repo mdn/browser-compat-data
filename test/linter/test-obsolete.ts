@@ -5,7 +5,7 @@ import { Linter, Logger, LinterMessageLevel } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
-  SimpleSupportStatement,
+  SupportBlock,
 } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -37,7 +37,7 @@ const exceptions = [
   'svg.elements.view.zoomAndPan',
 ];
 
-export function neverImplemented(support: SimpleSupportStatement) {
+export function neverImplemented(support: SupportBlock) {
   for (const data of Object.values(support)) {
     for (const d of Array.isArray(data) ? data : [data])
       if (d.version_added) return false;
@@ -51,11 +51,11 @@ errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
- * @param {SimpleSupportStatement} support
+ * @param {SupportBlock} support
  * @returns LinterMessageLevel | false
  */
 function implementedAndRemoved(
-  support: SimpleSupportStatement,
+  support: SupportBlock,
 ): LinterMessageLevel | false {
   let result: LinterMessageLevel = 'error';
   for (const [browser, data] of Object.entries(support) as [BrowserName, any]) {
@@ -91,29 +91,27 @@ function processData(
     const { support, status } = data;
     const shouldFail = exceptions.includes(path);
 
-    for (const statement of Array.isArray(support) ? support : [support]) {
-      const abandoned = status && status.standard_track === false;
-      const rule1Fail = abandoned && neverImplemented(statement);
-      if (rule1Fail && !shouldFail) {
-        logger.error(
-          chalk`feature was never implemented in any browser and the specification has been abandoned.`,
-        );
-        return;
-      }
+    const abandoned = status && status.standard_track === false;
+    const rule1Fail = abandoned && neverImplemented(support);
+    if (rule1Fail && !shouldFail) {
+      logger.error(
+        chalk`feature was never implemented in any browser and the specification has been abandoned.`,
+      );
+      return;
+    }
 
-      const rule2Fail = implementedAndRemoved(statement);
-      if (rule2Fail && !shouldFail) {
-        logger[rule2Fail](
-          chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
-        );
-        return;
-      }
+    const rule2Fail = implementedAndRemoved(support);
+    if (rule2Fail && !shouldFail) {
+      logger[rule2Fail](
+        chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
+      );
+      return;
+    }
 
-      if (!rule1Fail && !rule2Fail && shouldFail) {
-        logger.error(
-          chalk`Please remove this file from list of exceptions: ${path}`,
-        );
-      }
+    if (!rule1Fail && !rule2Fail && shouldFail) {
+      logger.error(
+        chalk`Please remove this file from list of exceptions: ${path}`,
+      );
     }
   }
 }

@@ -120,7 +120,7 @@ const tests: { input: Identifier; output: Identifier }[] = [
       },
     },
   },
-];
+] as any;
 
 describe('migration scripts', () => {
   it('`removeWebViewFlags()` works correctly', () => {

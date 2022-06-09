@@ -98,7 +98,7 @@ const tests: { input: Identifier; output: Identifier }[] = [
       },
     },
   },
-];
+] as any;
 
 function orderStatements(key: string, value: CompatStatement): CompatStatement {
   if (key === '__compat') {

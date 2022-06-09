@@ -92,7 +92,7 @@ export class ConsistencyChecker {
    * @return {string[]}
    */
   getSubfeatures(data: Identifier): string[] {
-    const subfeatures = [];
+    const subfeatures: string[] = [];
     const keys = Object.keys(data).filter((key) => key != '__compat');
     for (const key of keys) {
       if ((data as any)[key] === undefined) continue;
@@ -362,13 +362,13 @@ export class ConsistencyChecker {
     }
 
     // Handle array support statements
-    let selectedValue = null;
+    let selectedValue: string | boolean | null = null;
     for (const statement of supportStatement) {
       const resolvedValue = resolveVersionAddedValue(statement);
 
       if (resolvedValue === null) {
         // We're not going to get a more specific version, so bail out now
-        continue;
+        return null;
       }
 
       if (selectedValue !== null) {

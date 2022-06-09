@@ -11,7 +11,10 @@ const BREAK = Symbol('break');
 const CONTINUE = Symbol('continue');
 
 export default function visit(
-  visitor: (visitorPath: string, compat?: CompatStatement) => string,
+  visitor: (
+    visitorPath: string,
+    compat?: CompatStatement,
+  ) => string | symbol | undefined,
   options: any = {},
 ): any {
   const { entryPoint, data } = options;

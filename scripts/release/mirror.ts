@@ -358,7 +358,7 @@ export const bumpSupport = (
   sourceData: SupportStatement | null,
   destination: BrowserName,
 ): SupportStatement | null => {
-  let newData = null;
+  let newData: SupportStatement | null = null;
 
   if (sourceData == null) {
     return null;

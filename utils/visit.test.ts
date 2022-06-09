@@ -11,6 +11,7 @@ describe('visit()', function () {
     const walker = walk();
     visit((visitorPath) => {
       assert.equal(visitorPath, walker.next().value.path);
+      return undefined;
     });
   });
 
@@ -20,6 +21,7 @@ describe('visit()', function () {
     visit(
       (path) => {
         hits.add(path);
+        return undefined;
       },
       {
         entryPoint: 'css',

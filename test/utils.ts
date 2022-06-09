@@ -67,7 +67,6 @@ export function indexToPosRaw(
 ): [number, number] | [null, null] {
   let line = 1,
     col = 1;
-  let prevChar = null;
 
   if (
     typeof str !== 'string' ||
@@ -77,6 +76,7 @@ export function indexToPosRaw(
     return [null, null];
   }
 
+  let prevChar = '';
   for (let i = 0; i < index; i++) {
     const char = str[i];
     switch (char) {

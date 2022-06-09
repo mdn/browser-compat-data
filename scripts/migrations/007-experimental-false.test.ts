@@ -30,7 +30,7 @@ describe('fixExperimental()', () => {
           },
         },
       },
-    };
+    } as any;
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, false);
@@ -60,7 +60,7 @@ describe('fixExperimental()', () => {
           },
         },
       },
-    };
+    } as any;
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, false);
@@ -90,7 +90,7 @@ describe('fixExperimental()', () => {
           },
         },
       },
-    };
+    } as any;
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
@@ -126,7 +126,7 @@ describe('fixExperimental()', () => {
           },
         },
       },
-    };
+    } as any;
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, false);

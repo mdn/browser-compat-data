@@ -59,7 +59,7 @@ export default function* walk(
   entryPoints?: string | string[] | undefined,
   data: CompatData | CompatStatement | Identifier = bcd,
 ): IterableIterator<WalkOutput> {
-  const walkers = [];
+  const walkers: IterableIterator<WalkOutput>[] = [];
 
   if (entryPoints === undefined) {
     walkers.push(lowLevelWalk(data));

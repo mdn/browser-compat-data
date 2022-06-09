@@ -9,7 +9,7 @@ describe('neverImplemented', function () {
   it('returns false for features which were implemented', () => {
     assert.equal(
       neverImplemented({
-        browser: { version_added: '1' },
+        chrome: { version_added: '1' },
       }),
       false,
     );
@@ -33,7 +33,7 @@ describe('neverImplemented', function () {
   it('returns true for features which were not implemented', () => {
     assert.equal(
       neverImplemented({
-        browser: { version_added: null },
+        chrome: { version_added: null },
       }),
       true,
     );

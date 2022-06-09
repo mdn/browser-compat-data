@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatStatement } from '../../types/types.js';
+import { CompatStatement, SimpleSupportStatement } from '../../types/types.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,7 +28,7 @@ export const removeWebViewFlags = (
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
-        const result = [];
+        const result: SimpleSupportStatement[] = [];
         for (let i = 0; i < value.support.webview_android.length; i++) {
           if (value.support.webview_android[i].flags === undefined) {
             result.push(value.support.webview_android[i]);
