@@ -265,7 +265,7 @@ export default {
     for (const error of errors) {
       logger.error(
         chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
-        chalk`Run {bold npm run fix} to fix links automatically`,
+        { fixable: true },
       );
     }
   },

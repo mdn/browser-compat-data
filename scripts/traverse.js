@@ -143,6 +143,7 @@ if (esMain(import.meta)) {
           alias: 'f',
           describe: 'Filter by version value. May repeat.',
           type: 'array',
+          string: true,
           nargs: 1,
           default: [],
         })
@@ -167,7 +168,7 @@ if (esMain(import.meta)) {
         )
         .example(
           'npm run traverse -- -b webview_android -f true',
-          'Find all features marked as true for WebVeiw',
+          'Find all features marked as true for WebView',
         )
         .example(
           'npm run traverse -- -b firefox -f 10',

@@ -18,7 +18,7 @@ function checkStatus(data, logger, path = []) {
       chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
         '.',
       )}}`,
-      chalk`Run {bold npm run fix} to fix this issue automatically`,
+      { fixable: true },
     );
   }
 }
