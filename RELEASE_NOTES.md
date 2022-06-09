@@ -1,5 +1,50 @@
 # Release notes
 
+## [v5.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.3)
+
+June 9, 2022
+
+### Notable changes
+
+- This release fixes some bugs in the TypeScript definitions that prevented TypeScript users from properly obtaining compatibility data using `bcd[key]` syntax.
+- The RTCConfiguration dictionary has been removed and merged into `RTCPeerConnection`.
+- Browser release additions and removals are now included in release notes.
+
+### Removals
+
+- `api.RTCConfiguration` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.bundlePolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.certificates` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceCandidatePoolSize` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceServers` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceTransportPolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.peerIdentity` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.rtcpMuxPolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `browsers.oculus.releases.17.0` ([#16357](https://github.com/mdn/browser-compat-data/pull/16357))
+
+### Additions
+
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_bundlePolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_certificates_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceCandidatePoolSize_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceTransportPolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_peerIdentity_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_rtcpMuxPolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `browsers.deno.releases.1.22` ([#16549](https://github.com/mdn/browser-compat-data/pull/16549))
+- `browsers.oculus.releases.16.2` ([#16357](https://github.com/mdn/browser-compat-data/pull/16357))
+- `browsers.opera.releases.89` ([#16550](https://github.com/mdn/browser-compat-data/pull/16550))
+- `browsers.opera_android.releases.69` ([#16554](https://github.com/mdn/browser-compat-data/pull/16554))
+- `browsers.safari.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
+- `browsers.safari_ios.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
+
+### Statistics
+
+- 6 contributors have changed 72 files with 929 additions and 716 deletions in 28 commits ([`v5.0.2...v5.0.3`](https://github.com/mdn/browser-compat-data/compare/v5.0.2...v5.0.3))
+- 13,726 total features
+- 873 total contributors
+- 4,076 total stargazers
+
 ## [v5.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.2)
 
 June 7, 2022
