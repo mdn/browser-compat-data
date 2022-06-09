@@ -95,7 +95,11 @@ const transformTS = (browserTS, compatTS) => {
   ts = ts
     .replace('export type Browsers1', 'export type Browsers')
     .replace('export interface Browsers {\n  browsers?: Browsers1;\n}', '')
-    .replace('export interface CompatData {}', '');
+    .replace('export interface CompatData {}', '')
+    .replace(
+      ' */\nexport type WebextensionsIdentifier',
+      ' * THIS INTERFACE SHOULD NOT BE USED AND MAY BE REMOVED AT ANY TIME; USE THE "Identifier" INTERFACE INSTEAD.\n */\nexport type WebextensionsIdentifier',
+    );
 
   return ts;
 };
