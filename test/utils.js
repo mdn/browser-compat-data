@@ -134,6 +134,11 @@ export function jsonDiff(actual, expected) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
+  if (actualLines.length !== expectedLines.length)
+    return chalk`{bold different number of lines:
+    {yellow → Actual:   {bold ${actualLines.length}}}
+    {green → Expected: {bold ${expectedLines.length}}}}`;
+
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
       return chalk`{bold line #${i + 1}}:

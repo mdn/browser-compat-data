@@ -163,12 +163,12 @@ const main = (
         }}`,
       );
       if (message.fixable) {
-        console.message(
+        console[message.level](
           chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
         );
       }
       if (message.tip) {
-        console.message(chalk`{blue    ◆ Tip: ${message.tip}}`);
+        console[message.level](chalk`{blue    ◆ Tip: ${message.tip}}`);
       }
     }
   }
