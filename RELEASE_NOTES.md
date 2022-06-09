@@ -38,7 +38,12 @@ June 9, 2022
 - `browsers.safari.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
 - `browsers.safari_ios.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
 
-<!-- TODO: replace with `npm run release-stats` -->
+### Statistics
+
+- 6 contributors have changed 72 files with 929 additions and 716 deletions in 28 commits ([`v5.0.2...v5.0.3`](https://github.com/mdn/browser-compat-data/compare/v5.0.2...v5.0.3))
+- 13,726 total features
+- 873 total contributors
+- 4,076 total stargazers
 
 ## [v5.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.2)
 
