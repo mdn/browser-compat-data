@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {{messages: object, data: Identifier}}
  */
-const loadAndCheckFiles = (...files) => {
+const loadAndCheckFiles = async (...files) => {
   const data = {};
 
   for (let file of files) {
@@ -31,12 +31,16 @@ const loadAndCheckFiles = (...files) => {
       file = path.resolve(dirname, '..', file);
     }
 
-    if (!fs.existsSync(file)) {
+    let fsStats;
+
+    try {
+      fsStats = await fs.stat(file);
+    } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       return;
     }
 
-    if (fs.statSync(file).isFile() && path.extname(file) === '.json') {
+    if (fsStats.isFile() && path.extname(file) === '.json') {
       const filePath = {
         full: path.relative(process.cwd(), file),
       };
@@ -44,7 +48,7 @@ const loadAndCheckFiles = (...files) => {
         filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
 
       try {
-        const rawFileData = fs.readFileSync(file, 'utf-8').trim();
+        const rawFileData = (await fs.readFile(file, 'utf-8')).trim();
         const fileData = JSON.parse(rawFileData);
 
         linters.runScope('file', {
@@ -60,12 +64,11 @@ const loadAndCheckFiles = (...files) => {
       }
     }
 
-    if (fs.statSync(file).isDirectory()) {
-      const subFiles = fs
-        .readdirSync(file)
-        .map((subfile) => path.join(file, subfile));
+    if (fsStats.isDirectory()) {
+      const dircontents = await fs.readdir(file);
+      const subFiles = dircontents.map((subfile) => path.join(file, subfile));
 
-      extend(data, loadAndCheckFiles(...subFiles));
+      extend(data, await loadAndCheckFiles(...subFiles));
     }
   }
 
@@ -78,7 +81,7 @@ const loadAndCheckFiles = (...files) => {
  * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
  * @returns {boolean} Whether there were any errors
  */
-const main = (
+const main = async (
   files = [
     'api',
     'browsers',
@@ -94,9 +97,11 @@ const main = (
 ) => {
   let hasErrors = false;
 
-  const data = loadAndCheckFiles(...files);
+  console.log(chalk`{cyan Loading and checking files...}`);
+  const data = await loadAndCheckFiles(...files);
 
-  for (const browser in data.browsers) {
+  console.log(chalk`{cyan Testing browser data...}`);
+  for (const browser in data?.browsers) {
     linters.runScope('browser', {
       data: data.browsers[browser],
       path: {
@@ -107,6 +112,7 @@ const main = (
     });
   }
 
+  console.log(chalk`{cyan Testing feature data...}`);
   const walker = walk(undefined, data);
   for (const feature of walker) {
     linters.runScope('feature', {
@@ -118,6 +124,7 @@ const main = (
     });
   }
 
+  console.log(chalk`{cyan Testing all features together...}`);
   linters.runScope('tree', {
     data,
     path: {
@@ -191,7 +198,7 @@ if (esMain(import.meta)) {
       }),
   );
 
-  process.exit(main(argv.files) ? 1 : 0);
+  process.exit((await main(argv.files)) ? 1 : 0);
 }
 
 export default main;
