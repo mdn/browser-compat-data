@@ -11,12 +11,7 @@ import {
 import { DataType } from '../types/index.js';
 
 import bcd from '../index.js';
-import {
-  isBrowser,
-  isFeature,
-  descendantKeys,
-  joinPath,
-} from './walkingUtils.js';
+import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
 type WalkOutput = {

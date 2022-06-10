@@ -25,7 +25,9 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {DataType?}
  */
-const loadAndCheckFiles = async (...files: string[]): DataType | undefined => {
+const loadAndCheckFiles = async (
+  ...files: string[]
+): Promise<DataType | undefined> => {
   const data = {};
 
   for (let file of files) {

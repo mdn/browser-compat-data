@@ -5,9 +5,11 @@ import {
   BrowserName,
   SimpleSupportStatement,
   SupportStatement,
-  SupportBlock,
 } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
+import {
+  InternalSupportBlock,
+  InternalSupportStatement,
+} from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
@@ -402,7 +404,7 @@ export const bumpSupport = (
 
 const mirrorSupport = (
   destination: BrowserName,
-  data: SupportBlock,
+  data: InternalSupportBlock,
 ): SupportStatement | null => {
   const upstream: BrowserName | undefined = browsers[destination].upstream;
   if (!upstream) {
@@ -411,7 +413,7 @@ const mirrorSupport = (
     );
   }
 
-  let upstreamData: InternalSupportStatement = data[upstream];
+  let upstreamData: InternalSupportStatement | null = data[upstream] || null;
 
   if (!upstreamData) {
     throw new Error(

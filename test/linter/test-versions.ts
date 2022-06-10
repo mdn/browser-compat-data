@@ -6,10 +6,12 @@ import {
   BrowserName,
   CompatStatement,
   SimpleSupportStatement,
-  SupportBlock,
   VersionValue,
 } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
+import {
+  InternalSupportBlock,
+  InternalSupportStatement,
+} from '../../types/index';
 
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
@@ -152,7 +154,7 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
  * @returns {void}
  */
 function checkVersions(
-  supportData: SupportBlock,
+  supportData: InternalSupportBlock,
   category: string,
   logger: Logger,
 ): void {
