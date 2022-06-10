@@ -8,7 +8,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { walk } from '../utils/index.js';
+import { lowLevelWalk } from '../utils/walk.js';
 
 async function main(argv: any) {
   const { dest, dataFrom } = argv;
@@ -19,15 +19,15 @@ async function enumerateFeatures(dataFrom: string) {
   const feats = [];
 
   const walker = dataFrom
-    ? walk(
+    ? lowLevelWalk(
         undefined,
         await import(path.join(process.cwd(), dataFrom, 'index.js')),
       )
-    : walk();
+    : lowLevelWalk();
 
-  for (const { path, compat } of walker) {
-    if (compat) {
-      feats.push(path);
+  for (const feat of walker) {
+    if (feat.compat || feat.browser) {
+      feats.push(feat.path);
     }
   }
 

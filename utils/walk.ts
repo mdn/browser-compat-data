@@ -6,6 +6,7 @@ import {
   CompatStatement,
   Identifier,
   BrowserStatement,
+  ReleaseStatement,
 } from '../types/types.js';
 import { DataType } from '../types/index.js';
 
@@ -20,14 +21,25 @@ import query from './query.js';
 
 type WalkOutput = {
   path: string;
-  data: {
-    browswer?: BrowserStatement;
-    compat?: CompatStatement;
-    data: DataType;
-  };
+  data: DataType;
   browser?: BrowserStatement;
   compat?: CompatStatement;
+  browserRelease?: ReleaseStatement;
 };
+
+export function* browserReleaseWalk(
+  data: DataType,
+  path?: string,
+): IterableIterator<WalkOutput> {
+  for (const [release, releaseData] of Object.entries(data.releases)) {
+    yield {
+      path: joinPath(path, 'releases', release),
+      data,
+      browser: data,
+      browserRelease: releaseData as ReleaseStatement,
+    };
+  }
+}
 
 export function* lowLevelWalk(
   data: DataType = bcd,
@@ -41,16 +53,20 @@ export function* lowLevelWalk(
     };
 
     if (isBrowser(data)) {
-      next.browser = data as BrowserStatement;
-    } else if (isFeature(data)) {
-      next.compat = data.__compat;
+      next.browser = data;
+      yield next;
+      yield* browserReleaseWalk(data, path);
+    } else {
+      if (data.__compat !== undefined) {
+        next.compat = data.__compat;
+      }
+      yield next;
     }
-    yield next;
   }
 
   if (depth > 0) {
     for (const key of descendantKeys(data)) {
-      yield* lowLevelWalk((data as any)[key], joinPath(path, key), depth - 1);
+      yield* lowLevelWalk(data[key], joinPath(path, key), depth - 1);
     }
   }
 }

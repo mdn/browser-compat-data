@@ -37,10 +37,15 @@ const exceptions = [
   'svg.elements.view.zoomAndPan',
 ];
 
-export function neverImplemented(support: SupportBlock) {
-  for (const data of Object.values(support)) {
-    for (const d of Array.isArray(data) ? data : [data])
-      if (d.version_added) return false;
+/**
+ * @param {SupportBlock} support
+ * @returns boolean
+ */
+export function neverImplemented(support: SupportBlock): boolean {
+  for (const s in support) {
+    let data = support[s];
+    if (!Array.isArray(data)) data = [data];
+    for (const d of data) if (d.version_added) return false;
   }
   return true;
 }
@@ -59,19 +64,17 @@ function implementedAndRemoved(
 ): LinterMessageLevel | false {
   let result: LinterMessageLevel = 'error';
   for (const [browser, data] of Object.entries(support) as [BrowserName, any]) {
-    for (const d of Array.isArray(data) ? data : [data]) {
-      // Feature is still supported
-      if (!d.version_removed) return false;
-      const releaseDate = new Date(
-        (browsers[browser as BrowserName] as any).releases[
-          d.version_removed
-        ].release_date,
-      );
-      // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) return false;
-      // Feature was supported sufficiently recently to not show an error
-      if (errorTime < releaseDate) result = 'warning';
-    }
+    // Feature is still supported
+    if (!data.version_removed) return false;
+    const releaseDate = new Date(
+      (browsers[browser as BrowserName] as any).releases[
+        data.version_removed
+      ].release_date,
+    );
+    // Feature was recently supported, no need to show warning
+    if (warningTime < releaseDate) return false;
+    // Feature was supported sufficiently recently to not show an error
+    if (errorTime < releaseDate) result = 'warning';
   }
   return result;
 }
