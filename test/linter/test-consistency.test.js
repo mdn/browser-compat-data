@@ -48,7 +48,7 @@ describe('ConsistencyChecker.getVersionAdded()', function () {
         { version_added: '87' },
         { version_added: true, flags: [] },
       ]),
-      null,
+      '87',
     );
   });
 });

@@ -61,7 +61,8 @@
         },
         "upstream": {
           "type": "string",
-          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome)."
+          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome).",
+          "tsType": "BrowserName"
         },
         "accepts_flags": {
           "type": "boolean",
@@ -119,6 +120,7 @@
           "tsType": "BrowserStatus"
         }
       },
+      "required": ["status"],
       "additionalProperties": false
     }
   },

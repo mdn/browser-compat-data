@@ -5,6 +5,10 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+/**
+ * @param {SupportBlock} support
+ * @returns boolean
+ */
 export function neverImplemented(support) {
   for (const s in support) {
     let data = support[s];
@@ -21,8 +25,8 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
  * @param {*} browsers
- * @param {*} support
- * @returns false | 'warning' | 'error'
+ * @param {SupportBlock} support
+ * @returns 'warning' | 'error' | false
  */
 function implementedAndRemoved(browsers, support) {
   /**
@@ -31,18 +35,15 @@ function implementedAndRemoved(browsers, support) {
   let result = 'error';
   for (const browser in support) {
     let data = support[browser];
-    if (!Array.isArray(data)) data = [data];
-    for (const d of data) {
-      // Feature is still supported
-      if (!d.version_removed) return false;
-      const releaseDate = new Date(
-        browsers[browser].releases[d.version_removed].release_date,
-      );
-      // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) return false;
-      // Feature was supported sufficiently recently to not show an error
-      if (errorTime < releaseDate) result = 'warning';
-    }
+    // Feature is still supported
+    if (!data.version_removed) return false;
+    const releaseDate = new Date(
+      browsers[browser].releases[data.version_removed].release_date,
+    );
+    // Feature was recently supported, no need to show warning
+    if (warningTime < releaseDate) return false;
+    // Feature was supported sufficiently recently to not show an error
+    if (errorTime < releaseDate) result = 'warning';
   }
   return result;
 }

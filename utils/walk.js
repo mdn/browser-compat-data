@@ -5,6 +5,16 @@ import bcd from '../index.js';
 import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
+export function* browserReleaseWalk(data, path) {
+  for (const [release, releaseData] of Object.entries(data.releases)) {
+    yield {
+      path: joinPath(path, 'releases', release),
+      browser: data,
+      browserRelease: releaseData,
+    };
+  }
+}
+
 export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined && path !== '__meta') {
     const next = {
@@ -14,10 +24,14 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
 
     if (isBrowser(data)) {
       next.browser = data;
-    } else if (data.__compat !== undefined) {
-      next.compat = data.__compat;
+      yield next;
+      yield* browserReleaseWalk(data, path);
+    } else {
+      if (data.__compat !== undefined) {
+        next.compat = data.__compat;
+      }
+      yield next;
     }
-    yield next;
   }
 
   if (depth > 0) {
