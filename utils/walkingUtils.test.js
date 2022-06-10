@@ -48,6 +48,6 @@ describe('descendantKeys()', function () {
     assert.strictEqual(descendantKeys(123).length, 0);
     assert.strictEqual(descendantKeys('Hello World!').length, 0);
     assert.strictEqual(descendantKeys(null).length, 0);
-    assert.strictEqual(descendantKeys().length, 0);
+    assert.strictEqual(descendantKeys(undefined).length, 0);
   });
 });
