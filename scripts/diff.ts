@@ -4,8 +4,17 @@
 import chalk from 'chalk-template';
 import deepDiff, { Diff } from 'deep-diff';
 import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
+import { query } from '../utils/index.js';
+import mirror from './release/mirror.js';
+
+type Contents = {
+  base: string;
+  head: string;
+};
 
 // Note: This does not detect renamed files
 /**
@@ -19,26 +28,50 @@ function getBaseAndHeadContents(
   basePath: string,
   headCommit: string,
   headPath: string,
-): { base: string; head: string } {
+): Contents {
   const base = JSON.parse(getFileContent(baseCommit, basePath));
   const head = JSON.parse(getFileContent(headCommit, headPath));
   return { base, head };
 }
 
+function stringifyChange(lhs: any, rhs: any): string {
+  return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
+}
+
+/**
+ * @param {{base: SupportStatement, head: SupportStatement}} diffItem
+ * @param {{base: Identifier, head: Identifier}} contents
+ * @param {Array.<string>} path
+ * @param {string} direction
+ */
+function doMirror(diff, contents, path, direction) {
+  const browser = path[path.length - 1];
+  const dataPath = path.slice(0, path.length - 3).join('.');
+  const data = contents[direction];
+
+  diff[direction] = mirror(browser, query(dataPath, data).__compat.support);
+}
+
 /**
  * @param {Diff<string, string>} diffItem
+ * @param {Contents<any>} contents
  */
-function describeByKind(diffItem: Diff<string, string>): string {
-  function stringifyValue(value: any) {
-    return Array.isArray(value)
-      ? 'typeof array'
-      : value && typeof value === 'object'
-      ? 'typeof object'
-      : value;
+function describeByKind(
+  diffItem: Diff<string, string>,
+  contents: Contents,
+): string {
+  const diff = { base: (diffItem as any).lhs, head: (diffItem as any).rhs };
+
+  // Handle mirroring
+  let doesMirror = '';
+  if (diff.base === 'mirror') {
+    doesMirror = 'No longer mirrors';
+    doMirror(diff, contents, diffItem.path, 'base');
+  } else if (diff.head === 'mirror') {
+    doesMirror = 'Now mirrors';
+    doMirror(diff, contents, diffItem.path, 'head');
   }
-  function stringifyChange(lhs: any, rhs: any) {
-    return `${stringifyValue(lhs)} → ${stringifyValue(rhs)}`;
-  }
+
   switch (diffItem.kind) {
     case 'N':
       return 'added';
@@ -46,30 +79,33 @@ function describeByKind(diffItem: Diff<string, string>): string {
       return 'deleted';
     case 'A':
     case 'E':
-      return `edited (${stringifyChange(
-        (diffItem as any).lhs,
-        (diffItem as any).rhs,
-      )})`;
+      return `edited (${stringifyChange(diff.base, diff.head)})${
+        doesMirror && ` - ${doesMirror}`
+      }`;
   }
   throw new Error(`Unexpected kind ${(diffItem as any).kind}.`);
 }
 
 /**
  * @param {Diff<string, string>} diffItem
+ * @param {Contents} contents
  */
-function describeDiffItem(diffItem: Diff<string, string>) {
+function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
   const path = (diffItem as any).path.join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
     if (path.endsWith('.notes') && diffItem.kind === 'E') {
       return { name, description: `${member} is edited (prose change)` };
     } else {
-      return { name, description: `${member} is ${describeByKind(diffItem)}` };
+      return {
+        name,
+        description: `${member} is ${describeByKind(diffItem, contents)}`,
+      };
     }
   } else {
     return {
       name: (diffItem as any).path.slice(0, -1).join('.'),
-      description: `${path} is ${describeByKind(diffItem)}`,
+      description: `${path} is ${describeByKind(diffItem, contents)}`,
     };
   }
 }
@@ -94,7 +130,7 @@ function mergeAsMap(
  * @param {string} head
  */
 function getDiffs(base: string, head = ''): Map<string, string> {
-  const namedDescriptions = [];
+  const namedDescriptions: any = [];
   for (const status of getGitDiffStatuses(base, head)) {
     if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
       continue;
@@ -115,7 +151,9 @@ function getDiffs(base: string, head = ''): Map<string, string> {
       );
       const diff = deepDiff.diff(contents.base, contents.head);
       if (diff) {
-        namedDescriptions.push(...diff.map(describeDiffItem));
+        namedDescriptions.push(
+          ...diff.map((item) => describeDiffItem(item, contents)),
+        );
       }
     }
   }
@@ -123,7 +161,27 @@ function getDiffs(base: string, head = ''): Map<string, string> {
 }
 
 if (esMain(import.meta)) {
-  const [base = 'origin/HEAD', head] = process.argv.slice(2);
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [base] [head]',
+    'Print a formatted diff for changes between base and head commits',
+    (yargs) => {
+      yargs
+        .positional('base', {
+          describe:
+            'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
+          type: 'string',
+          default: 'origin/main',
+        })
+        .positional('head', {
+          describe:
+            'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
+          type: 'string',
+          default: 'HEAD',
+        });
+    },
+  );
+
+  const { base, head } = argv;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);
     for (const value of values) {
