@@ -20,6 +20,11 @@ ajvFormats(ajv, { mode: 'fast' });
 // Allow for custom error messages to provide better directions for contributors
 ajvErrors(ajv);
 
+// Define keywords for schema->TS converter
+ajv.addKeyword('tsEnumNames');
+ajv.addKeyword('tsName');
+ajv.addKeyword('tsType');
+
 export default {
   name: 'JSON Schema',
   description: 'Test a file to ensure that it follows the defined schema',

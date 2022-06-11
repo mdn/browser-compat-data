@@ -14,7 +14,7 @@ export function isBrowser(obj) {
 }
 
 export function descendantKeys(data) {
-  if (typeof data !== 'object') {
+  if (!data || typeof data !== 'object') {
     // Return if the data isn't an object
     return [];
   }

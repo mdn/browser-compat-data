@@ -88,9 +88,9 @@
       },
       "Worker": {
         "__compat": {
+          "description": "<code>Worker()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/Worker",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-dev",
-          "description": "<code>Worker()</code> constructor",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -113,11 +113,29 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": "Takes an entirely different options object."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -453,11 +471,29 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -599,9 +635,29 @@
               "version_added": "10",
               "notes": "Internet Explorer does not support <code>Transferable</code> objects."
             },
-            "nodejs": {
-              "version_added": "10.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "11.7.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "10.5.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -654,10 +710,29 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "notes": "Also takes an optional callback to be executed when the worker has terminated."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
