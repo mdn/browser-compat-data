@@ -59,7 +59,7 @@ export type ReleaseYargs = {
   endVersionTag: string;
 };
 
-export function releaseYargsBuilder(yargs: any): void {
+export function releaseYargsBuilder(yargs): void {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',

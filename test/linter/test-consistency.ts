@@ -95,15 +95,15 @@ export class ConsistencyChecker {
     const subfeatures: string[] = [];
     const keys = Object.keys(data).filter((key) => key != '__compat');
     for (const key of keys) {
-      if ((data as any)[key] === undefined) continue;
+      if (data[key] === undefined) continue;
 
-      if ('__compat' in (data as any)[key]) {
+      if ('__compat' in data[key]) {
         // If the subfeature has compat data
         subfeatures.push(key);
       } else {
         // If no compat data, get the next level down
         subfeatures.push(
-          ...this.getSubfeatures((data as any)[key]).map((x) => `${key}.${x}`),
+          ...this.getSubfeatures(data[key]).map((x) => `${key}.${x}`),
         );
       }
     }

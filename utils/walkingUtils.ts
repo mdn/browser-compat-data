@@ -7,15 +7,15 @@ export function joinPath(...args: (string | undefined)[]): string {
   return Array.from(args).filter(Boolean).join('.');
 }
 
-export function isFeature(obj: any): obj is Identifier {
+export function isFeature(obj): obj is Identifier {
   return '__compat' in obj;
 }
 
-export function isBrowser(obj: any): obj is BrowserStatement {
+export function isBrowser(obj): obj is BrowserStatement {
   return 'name' in obj && 'releases' in obj;
 }
 
-export function descendantKeys(data: any) {
+export function descendantKeys(data) {
   if (!data || typeof data !== 'object') {
     // Return if the data isn't an object
     return [];

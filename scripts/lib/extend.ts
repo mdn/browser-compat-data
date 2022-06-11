@@ -8,11 +8,11 @@ class DuplicateCompatError extends Error {
   }
 }
 
-function isPlainObject(v: any): v is object {
+function isPlainObject(v): v is object {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 
-export default function extend(target: any, source: any, feature = ''): void {
+export default function extend(target, source, feature = ''): void {
   if (!isPlainObject(target) || !isPlainObject(source)) {
     throw new Error('Both target and source must be plain objects');
   }
@@ -25,13 +25,9 @@ export default function extend(target: any, source: any, feature = ''): void {
         // If attempting to merge __compat, we have a double-entry
         throw new DuplicateCompatError(feature);
       }
-      extend(
-        (target as any)[key],
-        value,
-        feature + `${feature ? '.' : ''}${key}`,
-      );
+      extend(target[key], value, feature + `${feature ? '.' : ''}${key}`);
     } else {
-      (target as any)[key] = value;
+      target[key] = value;
     }
   }
 }

@@ -26,7 +26,7 @@ function appendLabel(query: string): string {
   return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
 }
 
-function main(args: any): void {
+function main(args): void {
   const {
     startVersionTag: start,
     endVersionTag: end,

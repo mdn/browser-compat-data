@@ -2,12 +2,13 @@
  * See LICENSE file for more information. */
 
 import assert from 'node:assert/strict';
+import { CompatStatement } from '../../types/types.js';
 
 import { fixExperimental } from './007-experimental-false.js';
 
 describe('fixExperimental()', () => {
   it('chrome + firefox + safari', () => {
-    const bcd = {
+    const bcd: any = {
       api: {
         fetch: {
           __compat: {
@@ -30,14 +31,14 @@ describe('fixExperimental()', () => {
           },
         },
       },
-    } as any;
+    };
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, false);
   });
 
   it('just chrome + firefox', () => {
-    const bcd = {
+    const bcd: any = {
       api: {
         fetch: {
           __compat: {
@@ -57,10 +58,10 @@ describe('fixExperimental()', () => {
               standard_track: true,
               deprecated: false,
             },
-          },
+          } as CompatStatement,
         },
       },
-    } as any;
+    };
     assert.equal(bcd.api.fetch.__compat.status.experimental, true);
     fixExperimental(bcd);
     assert.equal(bcd.api.fetch.__compat.status.experimental, false);

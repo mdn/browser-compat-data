@@ -153,7 +153,7 @@ const copyStatement = (
 ): SimpleSupportStatement => {
   const newData: { [index: string]: any } = {};
   for (const i in data) {
-    newData[i] = (data as any)[i];
+    newData[i] = data[i];
   }
 
   return newData as SimpleSupportStatement;

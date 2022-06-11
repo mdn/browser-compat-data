@@ -111,11 +111,7 @@ const processData = (
  * @param {object.<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
-const iterateData = (
-  data: any,
-  browsers: BrowserName[],
-  stats: VersionStats,
-) => {
+const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
   for (const key in data) {
     if (key === '__compat') {
       processData(data[key], browsers, stats);
@@ -162,8 +158,8 @@ const getStats = (
   if (folder) {
     if (folder === 'webextensions') {
       iterateData(bcd[folder], webextensionsBrowsers, stats);
-    } else if ((bcd as any)[folder]) {
-      iterateData((bcd as any)[folder], browsers, stats);
+    } else if (bcd[folder]) {
+      iterateData(bcd[folder], browsers, stats);
     } else {
       console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
       return null;
@@ -177,7 +173,7 @@ const getStats = (
           stats,
         );
       } else if (data !== 'browsers') {
-        iterateData((bcd as any)[data], browsers, stats);
+        iterateData(bcd[data], browsers, stats);
       }
     }
   }
@@ -251,7 +247,7 @@ const printStats = (
 };
 
 if (esMain(import.meta)) {
-  const { argv }: { argv: any } = yargs(hideBin(process.argv)).command(
+  const { argv }: { argv } = yargs(hideBin(process.argv)).command(
     '$0 [folder]',
     'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
     (yargs) => {

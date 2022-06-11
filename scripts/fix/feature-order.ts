@@ -24,7 +24,7 @@ export function orderFeatures(key: string, value: Identifier): Identifier {
     value = Object.keys(value)
       .sort(compareFeatures)
       .reduce((result: { [index: string]: any }, key: string) => {
-        result[key] = (value as any)[key];
+        result[key] = value[key];
         return result as Identifier;
       }, {});
   }

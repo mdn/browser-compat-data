@@ -23,7 +23,7 @@ export default function query(path: string, data: DataType = bcd): DataType {
         `${path} is not a valid tree identifier (failed at '${next}')`,
       );
     }
-    lookup = (lookup as any)[next];
+    lookup = lookup[next];
     if (lookup === undefined) {
       throw new ReferenceError(
         `${path} is not a valid tree identifier (failed at '${next}')`,

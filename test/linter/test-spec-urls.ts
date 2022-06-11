@@ -47,9 +47,9 @@ const specsExceptions = [
 ];
 
 const allowedSpecURLs = [
-  ...specData.map((spec: any) => spec.url),
-  ...specData.map((spec: any) => spec.nightly.url),
-  ...specData.map((spec: any) => spec.series.nightlyUrl),
+  ...specData.map((spec) => spec.url),
+  ...specData.map((spec) => spec.nightly.url),
+  ...specData.map((spec) => spec.series.nightlyUrl),
   ...specsExceptions,
 ];
 

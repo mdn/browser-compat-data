@@ -212,7 +212,7 @@ export class Linters {
    * @param {string} scope
    * @param {any} data
    */
-  runScope(scope: LinterScope, data: any): void {
+  runScope(scope: LinterScope, data): void {
     for (const linter of this.linters.filter(
       (linter) => linter.scope === scope,
     )) {

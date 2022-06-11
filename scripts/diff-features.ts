@@ -8,7 +8,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-function main(opts: any): void {
+function main(opts): void {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
@@ -19,7 +19,7 @@ function main(opts: any): void {
   }
 }
 
-export default function diff(opts: any): {
+export default function diff(opts): {
   added: string[];
   removed: string[];
 } {
@@ -63,7 +63,7 @@ function enumerate(ref: string, skipGitHub: boolean): Set<string> {
   return new Set(enumerateFeatures(ref));
 }
 
-function getEnumerationFromGithub(ref: string): any {
+function getEnumerationFromGithub(ref: string) {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
@@ -71,8 +71,8 @@ function getEnumerationFromGithub(ref: string): any {
   const unlinkFile = () => {
     try {
       fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
-    } catch (err) {
-      if ((err as any).code == 'ENOENT') {
+    } catch (err: any) {
+      if (err.code == 'ENOENT') {
         return;
       } else {
         throw err;
@@ -105,7 +105,7 @@ function getEnumerationFromGithub(ref: string): any {
   }
 }
 
-function enumerateFeatures(ref = 'HEAD'): any {
+function enumerateFeatures(ref = 'HEAD') {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As

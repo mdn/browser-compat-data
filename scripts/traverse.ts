@@ -20,7 +20,7 @@ import bcd from '../index.js';
  * @returns {void}
  */
 function* iterateFeatures(
-  obj: any,
+  obj,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -86,7 +86,7 @@ function* iterateFeatures(
  * @returns {void}
  */
 function traverseFeatures(
-  obj: any,
+  obj,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -114,12 +114,12 @@ const main = (
   values = ['null', 'true'],
   depth = 100,
 ) => {
-  const features = [];
+  const features: string[] = [];
 
   for (const folder in folders) {
     features.push(
       ...traverseFeatures(
-        (bcd as any)[folders[folder]],
+        bcd[folders[folder]],
         browsers,
         values,
         depth,
@@ -132,7 +132,7 @@ const main = (
 };
 
 if (esMain(import.meta)) {
-  const { argv }: { argv: any } = yargs(hideBin(process.argv)).command(
+  const { argv }: { argv } = yargs(hideBin(process.argv)).command(
     '$0 [folder...]',
     'Print feature names in the folder (and optionally filter features to specific browser or version values)',
     (yargs) => {

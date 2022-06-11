@@ -54,7 +54,7 @@ function doMirror(diff, contents, path, direction) {
 
 /**
  * @param {Diff<string, string>} diffItem
- * @param {Contents<any>} contents
+ * @param {Contents} contents
  */
 function describeByKind(
   diffItem: Diff<string, string>,
@@ -130,7 +130,7 @@ function mergeAsMap(
  * @param {string} head
  */
 function getDiffs(base: string, head = ''): Map<string, string> {
-  const namedDescriptions: any = [];
+  const namedDescriptions: { name: string; description: string }[] = [];
   for (const status of getGitDiffStatuses(base, head)) {
     if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
       continue;

@@ -15,16 +15,21 @@ export default function visit(
     visitorPath: string,
     compat?: CompatStatement,
   ) => string | symbol | undefined,
-  options: any = {},
-): any {
+  options: {
+    entryPoint?: string;
+    data?;
+    test?: (entryPoint: string, data?) => boolean;
+  } = {},
+): string | symbol | undefined {
   const { entryPoint, data } = options;
   const test = options.test !== undefined ? options.test : () => true;
+  const entryPointReal = entryPoint || '';
 
   const tree = entryPoint === undefined ? bcd : query(entryPoint, data);
 
   let outcome: string | symbol | undefined;
-  if (isFeature(tree) && test(entryPoint, tree.__compat)) {
-    outcome = visitor(entryPoint, tree.__compat);
+  if (isFeature(tree) && test(entryPointReal, tree.__compat)) {
+    outcome = visitor(entryPointReal, tree.__compat);
   }
   if (outcome === BREAK) {
     return outcome;
@@ -32,7 +37,7 @@ export default function visit(
   if (outcome !== CONTINUE) {
     for (const key of descendantKeys(tree)) {
       const suboutcome = visit(visitor, {
-        entryPoint: joinPath(entryPoint, key),
+        entryPoint: joinPath(entryPointReal, key),
         test,
         data,
       });

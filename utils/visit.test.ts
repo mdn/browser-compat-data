@@ -16,8 +16,8 @@ describe('visit()', function () {
   });
 
   it('skips features not selected by testFn', function () {
-    const hits = new Set();
-    const misses = new Set();
+    const hits = new Set<string>();
+    const misses = new Set<string>();
     visit(
       (path) => {
         hits.add(path);

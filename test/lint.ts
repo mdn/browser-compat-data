@@ -145,7 +145,7 @@ const main = async (
     };
 
     for (const message of messages) {
-      (messagesByLevel as any)[message.level].push(message);
+      messagesByLevel[message.level].push(message);
     }
 
     if (messagesByLevel.error.length) {
