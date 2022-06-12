@@ -4,6 +4,7 @@
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
+import mirrorSupport from '../../scripts/release/mirror.js';
 
 /**
  * @typedef {import('../../types').CompatStatement} CompatStatement
@@ -137,7 +138,8 @@ export class ConsistencyChecker {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value = this.getVersionAdded(
-          query(subfeature, data).__compat.support[browser],
+          query(subfeature, data).__compat.support,
+          browser,
         );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
@@ -150,7 +152,7 @@ export class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'unsupported';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
+      const parent_value = this.getVersionAdded(data.__compat.support, browser);
 
       errors.push({
         errortype,
@@ -180,7 +182,8 @@ export class ConsistencyChecker {
         inconsistentSubfeaturesByBrowser[browser] =
           inconsistentSubfeaturesByBrowser[browser] || [];
         const subfeature_value = this.getVersionAdded(
-          query(subfeature, data).__compat.support[browser],
+          query(subfeature, data).__compat.support,
+          browser,
         );
         inconsistentSubfeaturesByBrowser[browser].push([
           subfeature,
@@ -193,7 +196,7 @@ export class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'support_unknown';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
+      const parent_value = this.getVersionAdded(data.__compat.support, browser);
 
       errors.push({
         errortype,
@@ -214,14 +217,16 @@ export class ConsistencyChecker {
         if (
           query(subfeature, data).__compat.support[browser] != undefined &&
           this.isVersionAddedGreater(
-            query(subfeature, data).__compat.support[browser],
-            data.__compat.support[browser],
+            query(subfeature, data).__compat.support,
+            data.__compat.support,
+            browser,
           )
         ) {
           inconsistentSubfeaturesByBrowser[browser] =
             inconsistentSubfeaturesByBrowser[browser] || [];
           const subfeature_value = this.getVersionAdded(
-            query(subfeature, data).__compat.support[browser],
+            query(subfeature, data).__compat.support,
+            browser,
           );
           inconsistentSubfeaturesByBrowser[browser].push([
             subfeature,
@@ -235,7 +240,7 @@ export class ConsistencyChecker {
     Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
       const subfeatures = inconsistentSubfeaturesByBrowser[browser];
       const errortype = 'subfeature_earlier_implementation';
-      const parent_value = this.getVersionAdded(data.__compat.support[browser]);
+      const parent_value = this.getVersionAdded(data.__compat.support, browser);
 
       errors.push({
         errortype,
@@ -319,10 +324,20 @@ export class ConsistencyChecker {
   /**
    * Return the earliest recorded version number from a support statement or null.
    *
-   * @param {SupportStatement} supportstatement The compat data to process
+   * @param {SupportBlock} supportBlock The compat data to process
+   * @param {BrowserName} browser The browser to get data for
    * @returns {?string} The earliest version added in the data
    */
-  getVersionAdded(supportStatement) {
+  getVersionAdded(supportBlock, browser) {
+    const supportStatement = supportBlock[browser];
+
+    if (supportStatement === 'mirror') {
+      return this.getVersionAdded(
+        { [browser]: mirrorSupport(browser, supportBlock) },
+        browser,
+      );
+    }
+
     // A convenience function to squash non-real values and previews into null
     const resolveVersionAddedValue = (statement) =>
       [true, false, 'preview', null].includes(statement?.version_added) ||
@@ -365,13 +380,14 @@ export class ConsistencyChecker {
   /**
    * Compare two versions and determine if a's version is greater (later) than b's version
    *
-   * @param {SupportStatement} a The first support statement to compare
-   * @param {SupportStatement} b The second support statement to compare
+   * @param {SupportBlock} a The first support block to compare
+   * @param {SupportBlock} b The second support block to compare
+   * @param {BrowserName} browser The browser to compare
    * @returns {boolean} If a's version is greater (later) than b's version
    */
-  isVersionAddedGreater(a, b) {
-    var a_version_added = this.getVersionAdded(a);
-    var b_version_added = this.getVersionAdded(b);
+  isVersionAddedGreater(a, b, browser) {
+    var a_version_added = this.getVersionAdded(a, browser);
+    var b_version_added = this.getVersionAdded(b, browser);
 
     if (
       typeof a_version_added === 'string' &&
