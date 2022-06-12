@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../../types/types.js';
+import { BrowserName, SimpleSupportStatement } from '../../types/types.js';
 
 import assert from 'node:assert/strict';
 
@@ -127,8 +127,8 @@ describe('mirror', () => {
                 version_added: pair[0],
               },
             };
-            const mirrored = mirrorSupport(browser, support);
-            assert.equal(mirrored.version_added, pair[1]);
+            const mirrored = mirrorSupport(browser as BrowserName, support);
+            assert.deepEqual(mirrored, { version_added: pair[1] });
           });
         }
       });
