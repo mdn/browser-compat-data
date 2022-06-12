@@ -17,33 +17,31 @@ import mirrorSupport from '../release/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-export const isMirrorEquivalent = (support, browsers) => {
-  for (const browser of browsers) {
-    const original = support[browser];
-    if (!original) {
-      continue; // No data for browser.
-    }
-    if (original === 'mirror') {
-      continue; // Already mirrored.
-    }
-    let mirrored;
-    try {
-      mirrored = mirrorSupport(browser, support);
-    } catch {
-      // This can happen with missing engine_version. Don't mirror anything.
-      return false;
-    }
-    if (stringify(mirrored) !== stringify(original)) {
-      return false;
-    }
+export const isMirrorEquivalent = (support, browser) => {
+  const original = support[browser];
+  if (!original) {
+    return false; // No data for browser.
+  }
+  if (original === 'mirror') {
+    return false; // Already mirrored.
+  }
+  let mirrored;
+  try {
+    mirrored = mirrorSupport(browser, support);
+  } catch (e) {
+    // This can happen with missing engine_version. Don't mirror anything.
+    return false;
+  }
+  if (stringify(mirrored) !== stringify(original)) {
+    return false;
   }
   return true;
 };
 
 export const mirrorIfEquivalent = (bcd, browsers) => {
   for (const { compat } of walk(undefined, bcd)) {
-    if (isMirrorEquivalent(compat.support, browsers)) {
-      for (const browser of browsers) {
+    for (const browser of browsers) {
+      if (isMirrorEquivalent(compat.support, browser)) {
         compat.support[browser] = 'mirror';
       }
     }
