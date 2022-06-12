@@ -78,7 +78,7 @@ const loadAndCheckFiles = async (...files) => {
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  *
- * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
+ * @param {?string[]} files The file(s) and/or folder(s) to test. Leave undefined for everything.
  * @returns {boolean} Whether there were any errors
  */
 const main = async (
