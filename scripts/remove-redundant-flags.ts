@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserStatement, BrowserName } from '../../types/types.js';
+import { BrowserName } from '../../types/types.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -194,7 +194,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  let cutoffDate = new Date();
+  const cutoffDate = new Date();
   cutoffDate.setFullYear(cutoffDate.getFullYear() - 2);
 
   main((argv as any).file, (argv as any).browser, cutoffDate);

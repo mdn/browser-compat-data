@@ -19,18 +19,17 @@ import chalk from 'chalk-template';
  * @type {{name: string, description: string,  scope: string,  check: any}}
  */
 
-const INVISIBLES_MAP: { readonly [char: string]: string } =
-  Object.freeze(
-    Object.assign(Object.create(null), {
-      '\0': '\\0', // ␀ (0x00)
-      '\b': '\\b', // ␈ (0x08)
-      '\t': '\\t', // ␉ (0x09)
-      '\n': '\\n', // ␊ (0x0A)
-      '\v': '\\v', // ␋ (0x0B)
-      '\f': '\\f', // ␌ (0x0C)
-      '\r': '\\r', // ␍ (0x0D)
-    }),
-  );
+const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
+  Object.assign(Object.create(null), {
+    '\0': '\\0', // ␀ (0x00)
+    '\b': '\\b', // ␈ (0x08)
+    '\t': '\\t', // ␉ (0x09)
+    '\n': '\\n', // ␊ (0x0A)
+    '\v': '\\v', // ␋ (0x0B)
+    '\f': '\\f', // ␌ (0x0C)
+    '\r': '\\r', // ␍ (0x0D)
+  }),
+);
 
 /* eslint-disable-next-line no-control-regex */
 export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
