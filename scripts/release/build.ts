@@ -10,7 +10,7 @@ import path from 'node:path';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
-import bumpData from './mirror.js';
+import mirrorSupport from './mirror.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 
@@ -36,7 +36,7 @@ async function createDataBundle() {
       feature.compat.support as InternalSupportStatement,
     )) {
       if (supportData === 'mirror') {
-        (feature.data as any).__compat.support[browser] = bumpData(
+        (feature.data as any).__compat.support[browser] = mirrorSupport(
           browser as BrowserName,
           feature.compat.support,
         );

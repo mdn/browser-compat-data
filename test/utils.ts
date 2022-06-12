@@ -4,7 +4,22 @@
 import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
-export const INVISIBLES_MAP: { readonly [char: string]: string } =
+/**
+ * @typedef LinterScope
+ * @type {('file'|'feature'|'browser'|'tree')}
+ */
+
+/**
+ * @typedef LoggerLevel
+ * @type {('error'|'warning')}
+ */
+
+/**
+ * @typedef Linter
+ * @type {{name: string, description: string,  scope: string,  check: any}}
+ */
+
+const INVISIBLES_MAP: { readonly [char: string]: string } =
   Object.freeze(
     Object.assign(Object.create(null), {
       '\0': '\\0', // ␀ (0x00)
@@ -116,7 +131,7 @@ export function indexToPos(str: string, index: number): string {
 /**
  * @param {string} actual
  * @param {string} expected
- * @return {string}
+ * @return {string} Statement explaining the difference in provided JSON strings
  */
 export function jsonDiff(actual: string, expected: string): string | undefined {
   const actualLines = actual.split(/\n/);
@@ -209,8 +224,8 @@ export class Linters {
   }
 
   /**
-   * @param {string} scope
-   * @param {any} data
+   * @param {LinterScope} scope
+   * @param {{data: object, rawdata: string, path: {full: string}}} data
    */
   runScope(scope: LinterScope, data): void {
     for (const linter of this.linters.filter(
