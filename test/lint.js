@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,7 +23,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {{messages: object, data: Identifier}}
  */
-const loadAndCheckFiles = (...files) => {
+const loadAndCheckFiles = async (...files) => {
   const data = {};
 
   for (let file of files) {
@@ -31,12 +31,16 @@ const loadAndCheckFiles = (...files) => {
       file = path.resolve(dirname, '..', file);
     }
 
-    if (!fs.existsSync(file)) {
+    let fsStats;
+
+    try {
+      fsStats = await fs.stat(file);
+    } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       return;
     }
 
-    if (fs.statSync(file).isFile() && path.extname(file) === '.json') {
+    if (fsStats.isFile() && path.extname(file) === '.json') {
       const filePath = {
         full: path.relative(process.cwd(), file),
       };
@@ -44,7 +48,7 @@ const loadAndCheckFiles = (...files) => {
         filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
 
       try {
-        const rawFileData = fs.readFileSync(file, 'utf-8').trim();
+        const rawFileData = (await fs.readFile(file, 'utf-8')).trim();
         const fileData = JSON.parse(rawFileData);
 
         linters.runScope('file', {
@@ -60,12 +64,11 @@ const loadAndCheckFiles = (...files) => {
       }
     }
 
-    if (fs.statSync(file).isDirectory()) {
-      const subFiles = fs
-        .readdirSync(file)
-        .map((subfile) => path.join(file, subfile));
+    if (fsStats.isDirectory()) {
+      const dircontents = await fs.readdir(file);
+      const subFiles = dircontents.map((subfile) => path.join(file, subfile));
 
-      extend(data, loadAndCheckFiles(...subFiles));
+      extend(data, await loadAndCheckFiles(...subFiles));
     }
   }
 
@@ -75,10 +78,10 @@ const loadAndCheckFiles = (...files) => {
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  *
- * @param {?string} files The file(s) and/or folder(s) to test. Leave null for everything.
+ * @param {?string[]} files The file(s) and/or folder(s) to test. Leave undefined for everything.
  * @returns {boolean} Whether there were any errors
  */
-const main = (
+const main = async (
   files = [
     'api',
     'browsers',
@@ -94,18 +97,22 @@ const main = (
 ) => {
   let hasErrors = false;
 
-  const data = loadAndCheckFiles(...files);
+  console.log(chalk`{cyan Loading and checking files...}`);
+  const data = await loadAndCheckFiles(...files);
 
-  for (const browser in data.browsers) {
+  console.log(chalk`{cyan Testing browser data...}`);
+  for (const browser in data?.browsers) {
     linters.runScope('browser', {
       data: data.browsers[browser],
       path: {
         full: `browsers.${browser}`,
         category: 'browsers',
+        browser,
       },
     });
   }
 
+  console.log(chalk`{cyan Testing feature data...}`);
   const walker = walk(undefined, data);
   for (const feature of walker) {
     linters.runScope('feature', {
@@ -117,6 +124,7 @@ const main = (
     });
   }
 
+  console.log(chalk`{cyan Testing all features together...}`);
   linters.runScope('tree', {
     data,
     path: {
@@ -127,34 +135,47 @@ const main = (
   for (const [linter, messages] of Object.entries(linters.messages)) {
     if (!messages.length) continue;
 
-    const errors = messages.filter((m) => m.level === 'error');
-    const warnings = messages.filter((m) => m.level === 'warning');
+    const messagesByLevel = {
+      error: [],
+      warning: [],
+    };
 
-    console.error(
-      chalk`{${errors.length ? 'red' : 'yellow'} ${linter} - {bold ${pluralize(
-        'problem',
-        messages.length,
-      )}} (${pluralize('error', errors.length)}, ${pluralize(
-        'warning',
-        warnings.length,
-      )}):}`,
-    );
-
-    for (const error of errors) {
-      hasErrors = true;
-
-      console.error(chalk`{red  ✖ ${error.path} - Error → ${error.message}}`);
-      if (error.tip) {
-        console.error(chalk`{blue    ◆ Tip: ${error.tip}}`);
-      }
+    for (const message of messages) {
+      messagesByLevel[message.level].push(message);
     }
 
-    for (const warning of warnings) {
-      console.warn(
-        chalk`{red  ✖ ${warning.path} - Warning → ${warning.message}}`,
+    if (messagesByLevel.error.length) {
+      hasErrors = true;
+    }
+
+    const errorCounts = Object.entries(messagesByLevel)
+      .map(([k, v]) => pluralize(k, v.length))
+      .join(', ');
+
+    console.error(
+      chalk`{${
+        messagesByLevel.error.length ? 'red' : 'yellow'
+      } ${linter} - {bold ${pluralize(
+        'problem',
+        messages.length,
+      )}} (${errorCounts}):}`,
+    );
+
+    for (const message of messages) {
+      console.error(
+        chalk`{${message.level === 'error' ? 'red' : 'yellow'}  ✖ ${
+          message.path
+        } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
+          message.message
+        }}`,
       );
-      if (warning.tip) {
-        console.warn(chalk`{blue    ◆ Tip: ${warning.tip}}`);
+      if (message.fixable) {
+        console[message.level](
+          chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
+        );
+      }
+      if (message.tip) {
+        console[message.level](chalk`{blue    ◆ Tip: ${message.tip}}`);
       }
     }
   }
@@ -177,7 +198,7 @@ if (esMain(import.meta)) {
       }),
   );
 
-  process.exit(main(argv.files) ? 1 : 0);
+  process.exit((await main(argv.files)) ? 1 : 0);
 }
 
 export default main;

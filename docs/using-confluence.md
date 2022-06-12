@@ -1,6 +1,6 @@
 # Using Confluence
 
-[Web API Confluence Dashboard](http://web-confluence.appspot.com/#!/) provides metrics and support data about web platform features across multiple browsers. The `npm run confluence` command uses Web API Confluence to generate new or improved browser compatibility data ready for submission in pull requests. This page explains how to do this.
+[Web API Confluence Dashboard](https://web-confluence.appspot.com/#!/) provides metrics and support data about web platform features across multiple browsers. The `npm run confluence` command uses Web API Confluence to generate new or improved browser compatibility data ready for submission in pull requests. This page explains how to do this.
 
 ## Prerequisites
 

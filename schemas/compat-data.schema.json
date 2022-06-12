@@ -16,7 +16,8 @@
               "type": "boolean",
               "nullable": true
             }
-          ]
+          ],
+          "tsType": "VersionValue"
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
@@ -28,7 +29,8 @@
             {
               "const": true
             }
-          ]
+          ],
+          "tsType": "VersionValue"
         },
         "prefix": {
           "type": "string",
@@ -43,25 +45,9 @@
           "description": "An optional array of objects describing flags that must be configured for this browser to support this feature.",
           "minItems": 1,
           "items": {
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "description": "An enum that indicates the flag type.",
-                "enum": ["preference", "runtime_flag"]
-              },
-              "name": {
-                "type": "string",
-                "description": "A string giving the name of the flag or preference that must be configured."
-              },
-              "value_to_set": {
-                "type": "string",
-                "description": "A string giving the value which the specified flag must be set to for this feature to work."
-              }
-            },
-            "additionalProperties": false,
-            "required": ["type", "name"]
-          }
+            "$ref": "#/definitions/flag_statement"
+          },
+          "tsType": "FlagStatement[]"
         },
         "impl_url": {
           "anyOf": [
@@ -77,6 +63,7 @@
             }
           ],
           "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "tsType": "string | string[]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
@@ -98,21 +85,11 @@
                 "type": "string"
               }
             }
-          ]
+          ],
+          "tsType": "string | string[]"
         }
       },
       "required": ["version_added"],
-      "anyOf": [
-        {
-          "not": { "required": ["prefix", "alternative_name"] }
-        },
-        {
-          "oneOf": [
-            { "required": ["prefix"] },
-            { "required": ["alternative_name"] }
-          ]
-        }
-      ],
       "dependencies": {
         "partial_implementation": {
           "if": {
@@ -124,20 +101,40 @@
       "additionalProperties": false
     },
 
-    "array_support_statement": {
-      "type": "array",
-      "minItems": 2,
-      "items": {
-        "$ref": "#/definitions/simple_support_statement"
-      }
+    "flag_statement": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "An enum that indicates the flag type.",
+          "enum": ["preference", "runtime_flag"]
+        },
+        "name": {
+          "type": "string",
+          "description": "A string giving the name of the flag or preference that must be configured."
+        },
+        "value_to_set": {
+          "type": "string",
+          "description": "A string giving the value which the specified flag must be set to for this feature to work."
+        }
+      },
+      "additionalProperties": false,
+      "required": ["type", "name"]
     },
 
     "support_statement": {
       "anyOf": [
         { "$ref": "#/definitions/simple_support_statement" },
-        { "$ref": "#/definitions/array_support_statement" },
+        {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/simple_support_statement"
+          }
+        },
         { "const": "mirror" }
-      ]
+      ],
+      "tsType": "SimpleSupportStatement | SimpleSupportStatement[]"
     },
 
     "status_block": {
@@ -183,7 +180,8 @@
       },
       "additionalProperties": {
         "$ref": "#/definitions/support_statement"
-      }
+      },
+      "tsType": "Partial<Record<BrowserName, SupportStatement>>"
     },
 
     "spec_url_value": {
@@ -224,61 +222,34 @@
               }
             }
           ],
-          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
+          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
+          "tsType": "string | string[]"
         },
-        "support": { "$ref": "#/definitions/support_block" },
-        "status": { "$ref": "#/definitions/status_block" }
-      },
-      "required": ["support", "status"],
-      "additionalProperties": false
-    },
-
-    "webextensions_compat_statement": {
-      "type": "object",
-      "properties": {
-        "description": {
-          "type": "string",
-          "description": "A string containing a human-readable description of the feature."
+        "support": {
+          "$ref": "#/definitions/support_block",
+          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
+          "tsType": "SupportBlock"
         },
-        "mdn_url": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^https://developer\\.mozilla\\.org/docs/",
-          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
-        },
-        "support": { "$ref": "#/definitions/support_block" },
-        "status": { "$ref": "#/definitions/status_block" }
+        "status": {
+          "$ref": "#/definitions/status_block",
+          "description": "An object containing information about the stability of the feature.",
+          "tsType": "StatusBlock"
+        }
       },
       "required": ["support"],
       "additionalProperties": false
     },
 
-    "primary_identifier": {
-      "allOf": [
-        { "$ref": "#/definitions/identifier" },
-        {
-          "type": "object",
-          "maxProperties": 1,
-          "minProperties": 1
-        }
-      ]
-    },
-
-    "primary_webextensions_identifier": {
-      "allOf": [
-        { "$ref": "#/definitions/webextensions_identifier" },
-        {
-          "type": "object",
-          "maxProperties": 1,
-          "minProperties": 1
-        }
-      ]
-    },
-
     "identifier": {
       "type": "object",
       "properties": {
-        "__compat": { "$ref": "#/definitions/compat_statement" }
+        "__compat": {
+          "type": "object",
+          "$ref": "#/definitions/compat_statement",
+          "required": ["status"],
+          "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
+          "tsType": "CompatStatement"
+        }
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
@@ -286,33 +257,41 @@
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      }
+      },
+      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
     },
 
     "webextensions_identifier": {
       "type": "object",
       "properties": {
-        "__compat": { "$ref": "#/definitions/webextensions_compat_statement" }
+        "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
-          "$ref": "#/definitions/webextensions_identifier"
+          "$ref": "#/definitions/webextensions_identifier",
+          "tsType": "Identifier"
         }
       },
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      }
+      },
+      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
     }
   },
 
+  "title": "CompatDataFile",
   "type": "object",
   "patternProperties": {
     "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": {
-      "$ref": "#/definitions/primary_identifier"
+      "$ref": "#/definitions/identifier"
     },
     "^webextensions*$": {
-      "$ref": "#/definitions/primary_webextensions_identifier"
+      "$ref": "#/definitions/webextensions_identifier",
+      "tsType": "Identifier"
+    },
+    "^__compat$": {
+      "$ref": "#/definitions/compat_statement"
     }
   },
   "additionalProperties": false,
