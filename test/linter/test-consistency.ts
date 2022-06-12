@@ -12,7 +12,11 @@ import {
   SupportBlock,
   VersionValue,
 } from '../../types/types.js';
-import { DataType } from '../../types/index.js';
+import {
+  DataType,
+  InternalSupportBlock,
+  InternalSupportStatement,
+} from '../../types/index.js';
 
 import compareVersions from 'compare-versions';
 import chalk from 'chalk-template';
@@ -347,14 +351,18 @@ export class ConsistencyChecker {
   /**
    * Return the earliest recorded version number from a support statement or null.
    *
-   * @param {SupportBlock} supportBlock The compat data to process
+   * @param {InternalSupportBlock} supportBlock The compat data to process
    * @param {BrowserName} browser The browser to get data for
    * @returns {?string} The earliest version added in the data
    */
   getVersionAdded(
-    supportBlock: SupportBlock | undefined,
+    supportBlock: InternalSupportBlock | undefined,
     browser: BrowserName,
   ): VersionValue {
+    if (!supportBlock) {
+      return null;
+    }
+
     const supportStatement = supportBlock[browser];
     if (!supportStatement) {
       return null;
@@ -422,14 +430,14 @@ export class ConsistencyChecker {
   /**
    * Compare two versions and determine if a's version is greater (later) than b's version
    *
-   * @param {SupportBlock} a The first support block to compare
-   * @param {SupportBlock} b The second support block to compare
+   * @param {InternalSupportBlock} a The first support block to compare
+   * @param {InternalSupportBlock} b The second support block to compare
    * @param {BrowserName} browser The browser to compare
    * @returns {boolean} If a's version is greater (later) than b's version
    */
   isVersionAddedGreater(
-    a: SupportStatement | undefined,
-    b: SupportStatement | undefined,
+    a: InternalSupportBlock | undefined,
+    b: InternalSupportBlock | undefined,
     browser: BrowserName,
   ): boolean {
     const a_version_added = this.getVersionAdded(a, browser);
@@ -477,8 +485,8 @@ export class ConsistencyChecker {
     }
     return (Object.keys(compatData.support) as BrowserName[]).filter(
       (browser) => {
-        let browserData = compatData.support[browser];
-        if (browserData === 'mirror') {
+        let browserData: InternalSupportStatement = compatData.support[browser];
+        if ((browserData as InternalSupportStatement) === 'mirror') {
           browserData = mirrorSupport(browser, compatData.support);
         }
 

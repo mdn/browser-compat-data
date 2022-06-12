@@ -181,7 +181,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  const { base, head } = argv;
+  const { base, head } = argv as any;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);
     for (const value of values) {

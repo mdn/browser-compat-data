@@ -115,7 +115,7 @@ function markdownifyChanges(
   removed: FeatureChange[],
   added: FeatureChange[],
 ): string {
-  const notes = [];
+  const notes: string[] = [];
 
   const featureBullet = (obj: FeatureChange) =>
     `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;

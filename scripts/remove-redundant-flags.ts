@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../../types/types.js';
+import { BrowserName, SimpleSupportStatement } from '../types/types.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -50,7 +50,7 @@ export const removeRedundantFlags = (
       const supportData = Array.isArray(rawSupportData)
         ? rawSupportData
         : [rawSupportData];
-      const result = [];
+      const result: SimpleSupportStatement[] = [];
 
       const simpleStatement = supportData.find((statement) => {
         const ignoreKeys = new Set([
@@ -75,18 +75,19 @@ export const removeRedundantFlags = (
           );
 
           if (typeof versionToCheck === 'string') {
-            const releaseDate = new Date(
-              bcd.browsers[browser].releases[versionToCheck].release_date,
-            );
+            const releaseDate =
+              bcd.browsers[browser as BrowserName]?.releases[versionToCheck]
+                ?.release_date;
 
             if (
+              releaseDate &&
               (!(simpleStatement && simpleStatement.version_removed) ||
                 compareVersions.compare(
                   supportData[i].version_added.replace('≤', ''),
                   simpleStatement.version_removed.replace('≤', ''),
                   '<',
                 )) &&
-              releaseDate <= cutoffDate
+              new Date(releaseDate) <= cutoffDate
             ) {
               addData = false;
             }
