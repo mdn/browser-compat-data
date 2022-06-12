@@ -156,6 +156,7 @@ For the purposes of [semantic versioning](https://semver.org/) (SemVer), the pub
 
 - The high-level namespace objects documented in [_Package contents_](#Package-contents)
 - The schema definitions for browser and support data structures
+- The TypeScript definitions
 
 The details of browser compatibility change frequently, as browsers ship new features, standards organizations revise specifications, and Web developers discover new bugs. We routinely publish updates to the package to reflect these changes.
 

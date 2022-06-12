@@ -1,5 +1,121 @@
 # Release notes
 
+## [v5.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.3)
+
+June 9, 2022
+
+### Notable changes
+
+- This release fixes some bugs in the TypeScript definitions that prevented TypeScript users from properly obtaining compatibility data using `bcd[key]` syntax.
+- The RTCConfiguration dictionary has been removed and merged into `RTCPeerConnection`.
+- Browser release additions and removals are now included in release notes.
+
+### Removals
+
+- `api.RTCConfiguration` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.bundlePolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.certificates` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceCandidatePoolSize` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceServers` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.iceTransportPolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.peerIdentity` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCConfiguration.rtcpMuxPolicy` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `browsers.oculus.releases.17.0` ([#16357](https://github.com/mdn/browser-compat-data/pull/16357))
+
+### Additions
+
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_bundlePolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_certificates_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceCandidatePoolSize_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceTransportPolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_peerIdentity_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_rtcpMuxPolicy_parameter` ([#12830](https://github.com/mdn/browser-compat-data/pull/12830))
+- `browsers.deno.releases.1.22` ([#16549](https://github.com/mdn/browser-compat-data/pull/16549))
+- `browsers.oculus.releases.16.2` ([#16357](https://github.com/mdn/browser-compat-data/pull/16357))
+- `browsers.opera.releases.89` ([#16550](https://github.com/mdn/browser-compat-data/pull/16550))
+- `browsers.opera_android.releases.69` ([#16554](https://github.com/mdn/browser-compat-data/pull/16554))
+- `browsers.safari.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
+- `browsers.safari_ios.releases.16` ([#16586](https://github.com/mdn/browser-compat-data/pull/16586))
+
+### Statistics
+
+- 6 contributors have changed 72 files with 929 additions and 716 deletions in 28 commits ([`v5.0.2...v5.0.3`](https://github.com/mdn/browser-compat-data/compare/v5.0.2...v5.0.3))
+- 13,726 total features
+- 873 total contributors
+- 4,076 total stargazers
+
+## [v5.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.2)
+
+June 7, 2022
+
+### Notable changes
+
+#### TypeScript types
+
+This release includes a fundamental change to the TypeScript definitions. To ensure that TypeScript users will always be able to utilize new schema additions, the TypeScript types are now automatically generated from the schema file used for internal validation. The following changes have been made to the TypeScript types:
+
+- Renamed:
+  - BrowserNames -> BrowserName
+  - BrowserEngines -> BrowserEngine
+  - BrowserTypes -> BrowserType
+- Added:
+  - BrowserStatus
+  - CompatStatement.spec_url
+  - FlagStatement
+
+As a side effect of the auto-generation of TypeScript types, changes to the TypeScript will involve changes to the schema, which is covered by the [project's semantic versioning policy](https://github.com/mdn/browser-compat-data#semantic-versioning-policy). Going forward, TypeScript definitions will also be explicitly covered by the semantic versioning policy. New types will only be introduced in minor releases, and breaking changes to existing types will only be introduced in major releases. Expect descriptions and patches to fix existing types to be included in patch releases.
+
+### Removals
+
+- `api.GlobalEventHandlers.onabort` ([#16514](https://github.com/mdn/browser-compat-data/pull/16514))
+- `css.properties.text-align.justify-all` ([#6952](https://github.com/mdn/browser-compat-data/pull/6952))
+- `css.properties.text-align.string` ([#6952](https://github.com/mdn/browser-compat-data/pull/6952))
+- `css.properties.text-overflow.fade_function` ([#6952](https://github.com/mdn/browser-compat-data/pull/6952))
+- `css.properties.text-overflow.fade_value` ([#6952](https://github.com/mdn/browser-compat-data/pull/6952))
+
+### Additions
+
+- `api.ReadableStream.transferable` ([#16525](https://github.com/mdn/browser-compat-data/pull/16525))
+- `api.TransformStream.transferable` ([#16525](https://github.com/mdn/browser-compat-data/pull/16525))
+- `api.WritableStream.transferable` ([#16525](https://github.com/mdn/browser-compat-data/pull/16525))
+- `css.at-rules.media.update` ([#16472](https://github.com/mdn/browser-compat-data/pull/16472))
+- `html.elements.input.attributes.accept` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.align` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.alt` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.capture` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.checked` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.dirname` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.disabled` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.form` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.formaction` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.formenctype` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.formmethod` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.formnovalidate` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.formtarget` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.list` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.max` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.maxlength` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.min` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.minlength` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.multiple` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.name` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.pattern` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.placeholder` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.readonly` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.src` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.step` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `html.elements.input.attributes.usemap` ([#16493](https://github.com/mdn/browser-compat-data/pull/16493))
+- `webextensions.api.storage.session` ([#16450](https://github.com/mdn/browser-compat-data/pull/16450))
+- `webextensions.api.storage.StorageArea.onChanged` ([#16450](https://github.com/mdn/browser-compat-data/pull/16450))
+
+### Statistics
+
+- 14 contributors have changed 456 files with 4,606 additions and 3,037 deletions in 54 commits ([`v5.0.1...v5.0.2`](https://github.com/mdn/browser-compat-data/compare/v5.0.1...v5.0.2))
+- 13,727 total features
+- 873 total contributors
+- 4,071 total stargazers
+
 ## [v5.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.1)
 
 May 31, 2022

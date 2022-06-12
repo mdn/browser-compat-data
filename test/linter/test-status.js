@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import { Logger } from '../utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -13,34 +12,22 @@ import { Logger } from '../utils.js';
  * @param {Logger} logger
  */
 function checkStatus(data, logger, path = []) {
-  const status = data.__compat?.status;
+  const status = data.status;
   if (status && status.experimental && status.deprecated) {
     logger.error(
       chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
         '.',
       )}}`,
-      chalk`Run {bold npm run fix} to fix this issue automatically`,
+      { fixable: true },
     );
   }
-  for (const member in data) {
-    if (member === '__compat') {
-      continue;
-    }
-    checkStatus(data[member], logger, [...path, member]);
-  }
 }
 
-/**
- * @param {Identifier} data The contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-function testStatusContradiction(data) {
-  const logger = new Logger('Status');
-
-  checkStatus(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-export default testStatusContradiction;
+export default {
+  name: 'Status',
+  description: 'Test the status of support statements',
+  scope: 'feature',
+  check(logger, { data }) {
+    checkStatus(data, logger);
+  },
+};
