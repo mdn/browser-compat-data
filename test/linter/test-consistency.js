@@ -424,7 +424,10 @@ export class ConsistencyChecker {
    */
   extractBrowsers(compatData, callback) {
     return Object.keys(compatData.support).filter((browser) => {
-      const browserData = compatData.support[browser];
+      let browserData = compatData.support[browser];
+      if (browserData === 'mirror') {
+        browserData = mirrorSupport(browser, compatData.support);
+      }
 
       if (Array.isArray(browserData)) {
         return browserData.every(callback);
