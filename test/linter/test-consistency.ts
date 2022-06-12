@@ -8,8 +8,6 @@ import {
   CompatStatement,
   Identifier,
   SimpleSupportStatement,
-  SupportStatement,
-  SupportBlock,
   VersionValue,
 } from '../../types/types.js';
 import {
