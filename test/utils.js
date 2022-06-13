@@ -1,13 +1,26 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import { platform } from 'node:os';
+import chalk from 'chalk-template';
 
-const { platform } = require('os');
-const chalk = require('chalk');
+/**
+ * @typedef LinterScope
+ * @type {('file'|'feature'|'browser'|'tree')}
+ */
+
+/**
+ * @typedef LoggerLevel
+ * @type {('error'|'warning')}
+ */
+
+/**
+ * @typedef Linter
+ * @type {{name: string, description: string,  scope: string,  check: any}}
+ */
 
 /** @type {{readonly [char: string]: string}} */
-const INVISIBLES_MAP = Object.freeze(
+export const INVISIBLES_MAP = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
     '\b': '\\b', // ␈ (0x08)
@@ -20,16 +33,17 @@ const INVISIBLES_MAP = Object.freeze(
 );
 
 /* eslint-disable-next-line no-control-regex */
-const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
+export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
-const IS_CI = process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+export const IS_CI =
+  process.env.CI && String(process.env.CI).toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
+export const IS_WINDOWS = platform() === 'win32';
 
 /** @type {string[]} */
-const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
  * Pluralizes a string
@@ -38,7 +52,7 @@ const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  * @param {number} quantifier
  * @return {string}
  */
-const pluralize = (word, quantifier) => {
+export const pluralize = (word, quantifier) => {
   return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
 };
 
@@ -47,7 +61,7 @@ const pluralize = (word, quantifier) => {
  *
  * @param {string} str
  */
-function escapeInvisibles(str) {
+export function escapeInvisibles(str) {
   // This should now be O(n) instead of O(n*m),
   // where n = string length; m = invisible characters
   return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
@@ -62,7 +76,7 @@ function escapeInvisibles(str) {
  * @param {number} index
  * @return {[number, number] | [null, null]}
  */
-function indexToPosRaw(str, index) {
+export function indexToPosRaw(str, index) {
   let line = 1,
     col = 1;
   let prevChar = null;
@@ -106,7 +120,7 @@ function indexToPosRaw(str, index) {
  * @param {number} index
  * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-function indexToPos(str, index) {
+export function indexToPos(str, index) {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
 }
@@ -114,11 +128,16 @@ function indexToPos(str, index) {
 /**
  * @param {string} actual
  * @param {string} expected
- * @return {string}
+ * @return {string} Statement explaining the difference in provided JSON strings
  */
-function jsonDiff(actual, expected) {
+export function jsonDiff(actual, expected) {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
+
+  if (actualLines.length !== expectedLines.length)
+    return chalk`{bold different number of lines:
+    {yellow → Actual:   {bold ${actualLines.length}}}
+    {green → Expected: {bold ${expectedLines.length}}}}`;
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
@@ -129,50 +148,98 @@ function jsonDiff(actual, expected) {
   }
 }
 
-class Logger {
-  /** @param {string} title */
-  constructor(title) {
+export class Logger {
+  /**
+   * @param {string} title
+   * @param {string} path
+   */
+  constructor(title, path) {
     this.title = title;
-    this.errors = [];
+    this.path = path;
+    /**
+     * @type {object}
+     * @property {('error'|'warning')} level - Warning level
+     * @property {string} title - Message title
+     * @property {string} path - Path to the feature
+     * @property {string} message
+     */
+    this.messages = [];
   }
 
   /**
    * @param {string} message
-   * @param {string} tip
+   * @param {object} options
    */
-  error(message, tip) {
-    this.errors.push({ message: message, tip: tip });
+  error(message, options) {
+    this.messages.push({
+      level: 'error',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
   }
 
-  emit() {
-    const errorCount = this.errors.length;
-
-    if (errorCount) {
-      console.error(
-        chalk`{red   → ${this.title} – ${pluralize('error', errorCount)}:}`,
-      );
-
-      for (const error of this.errors) {
-        console.error(chalk`    {red → ${error.message}}`);
-        if (error.tip) console.error(chalk`      {blue → Tip: ${error.tip}}`);
-      }
-    }
-  }
-
-  hasErrors() {
-    return !!this.errors.length;
+  /**
+   * @param {string} message
+   * @param {object} options
+   */
+  warning(message, options) {
+    this.messages.push({
+      level: 'warning',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
   }
 }
 
-module.exports = {
-  INVISIBLES_MAP,
-  IS_CI,
-  IS_WINDOWS,
-  VALID_ELEMENTS,
-  pluralize,
-  escapeInvisibles,
-  indexToPosRaw,
-  indexToPos,
-  jsonDiff,
-  Logger,
-};
+export class Linters {
+  /** @param {Array.<Linter>} linters */
+  constructor(linters) {
+    /**
+     * @type {Array.<Linter>}
+     */
+    this.linters = linters;
+    /**
+     * @type {object}
+     */
+    this.messages = {};
+
+    for (const linter of this.linters) {
+      if (!this.#validateScope(linter.scope)) {
+        throw new Error(
+          `Tried to initialize "${linter.name}" linter, but found invalid scope (${linter.scope}.`,
+        );
+      }
+      this.messages[linter.name] = [];
+    }
+  }
+
+  // TODO: remove this function after migration to TypeScript
+  /** @param {LinterScope} scope */
+  #validateScope(scope) {
+    return ['file', 'feature', 'browser', 'tree'].includes(scope);
+  }
+
+  /**
+   * @param {LinterScope} scope
+   * @param {{data: object, rawdata: string, path: {full: string}}} data
+   */
+  runScope(scope, data) {
+    if (!this.#validateScope(scope)) {
+      throw new Error(
+        `Tried to run tests for "${scope}" which is not a valid scope.`,
+      );
+    }
+
+    for (const linter of this.linters.filter(
+      (linter) => linter.scope === scope,
+    )) {
+      const logger = new Logger(linter.title, data.path.full);
+      linter.check(logger, data);
+      this.messages[linter.name].push(...logger.messages);
+    }
+  }
+}

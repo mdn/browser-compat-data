@@ -1,10 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import chalk from 'chalk-template';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -15,13 +12,13 @@ const { Logger } = require('../utils.js');
  *
  * @param {string} ruleName The name of the error
  * @param {string} name The name of the API method
- * @param {Identifier} feature - The feature's compat data.
+ * @param {CompatStatement} compat The compat data to test
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkDescription(ruleName, name, method, expected, logger) {
-  const actual = method.__compat.description || '';
+function checkDescription(ruleName, name, compat, expected, logger) {
+  const actual = compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
       Actual: {yellow "${actual}"}
@@ -32,90 +29,71 @@ function checkDescription(ruleName, name, method, expected, logger) {
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
  *
- * @param {Identifier} apiData The data to test
- * @param {string} apiName The name of the API
+ * @param {CompatStatement} data The data to test
+ * @param {object} path The path of the feature
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processApiData(apiData, apiName, logger) {
-  for (const featureName in apiData) {
-    const feature = apiData[featureName];
-    if (featureName == apiName) {
-      checkDescription(
-        'constructor',
-        `${apiName}()`,
-        feature,
-        `<code>${apiName}()</code> constructor`,
-        logger,
-      );
-    } else if (featureName.endsWith('_event')) {
-      checkDescription(
-        'event',
-        `${apiName}.${featureName}`,
-        feature,
-        `<code>${featureName.replace('_event', '')}</code> event`,
-        logger,
-      );
-    } else if (featureName.endsWith('_permission')) {
-      checkDescription(
-        'permission',
-        `${apiName}.${featureName}`,
-        feature,
-        `<code>${featureName.replace('_permission', '')}</code> permission`,
-        logger,
-      );
-    } else if (featureName == 'secure_context_required') {
-      checkDescription(
-        'secure context required',
-        `${apiName}()`,
-        feature,
-        'Secure context required',
-        logger,
-      );
-    } else if (featureName == 'worker_support') {
-      checkDescription(
-        'worker',
-        `${apiName}()`,
-        feature,
-        'Available in workers',
-        logger,
-      );
-    }
+function processApiData(data, path, logger) {
+  const pathParts = path.split('.');
+  const apiName = pathParts[1];
+  const featureName = pathParts[2];
+
+  if (pathParts.length !== 3) {
+    // Ignore anything that isn't an interface subfeature
+    return;
+  }
+
+  if (featureName == apiName) {
+    checkDescription(
+      'constructor',
+      `${apiName}()`,
+      data,
+      `<code>${apiName}()</code> constructor`,
+      logger,
+    );
+  } else if (featureName.endsWith('_event')) {
+    checkDescription(
+      'event',
+      `${apiName}.${featureName}`,
+      data,
+      `<code>${featureName.replace('_event', '')}</code> event`,
+      logger,
+    );
+  } else if (featureName.endsWith('_permission')) {
+    checkDescription(
+      'permission',
+      `${apiName}.${featureName}`,
+      data,
+      `<code>${featureName.replace('_permission', '')}</code> permission`,
+      logger,
+    );
+  } else if (featureName == 'secure_context_required') {
+    checkDescription(
+      'secure context required',
+      `${apiName}()`,
+      data,
+      'Secure context required',
+      logger,
+    );
+  } else if (featureName == 'worker_support') {
+    checkDescription(
+      'worker',
+      `${apiName}()`,
+      data,
+      'Available in workers',
+      logger,
+    );
   }
 }
 
-/**
- * Process data and check for any incorrect descriptions in said data, logging any errors
- *
- * @param {Identifier} data The data to test
- * @param {Logger} logger The logger to output errors to
- * @returns {void}
- */
-function processData(data, logger) {
-  if (data.api) {
-    for (const apiName in data.api) {
-      const apiData = data.api[apiName];
-      processApiData(apiData, apiName, logger);
+export default {
+  name: 'Descriptions',
+  description: 'Test the descriptions of compatibility data',
+  scope: 'feature',
+  check(logger, { data, path: { full, category } }) {
+    if (category === 'api') {
+      processApiData(data, full, logger);
     }
-  }
-}
-
-/**
- * Test all of the descriptions through the data in a given filename.  This test only functions with files with API data; all other files are silently ignored
- *
- * @param {string} filename The file to test
- * @returns {boolean} Whether the file has errors
- */
-function testDescriptions(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
-  const logger = new Logger('Descriptions');
-
-  processData(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = testDescriptions;
+  },
+};

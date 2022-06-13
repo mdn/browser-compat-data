@@ -1,11 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import compareVersions from 'compare-versions';
+import chalk from 'chalk-template';
 
-const compareVersions = require('compare-versions');
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -14,8 +14,6 @@ const { Logger } = require('../utils.js');
  * @typedef {import('../../types').VersionValue} VersionValue
  * @typedef {import('../../types').Logger} Logger
  */
-
-const browsers = require('../..').browsers;
 
 /** @type {object.<string, string[]>} */
 const validBrowserVersions = {};
@@ -49,16 +47,51 @@ for (const browser of Object.keys(browsers)) {
   }
 }
 
+/** @type {string[]} */
+const realValuesTargetBrowsers = [
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'firefox_android',
+  'ie',
+  'opera',
+  'opera_android',
+  'safari',
+  'safari_ios',
+  'samsunginternet_android',
+  'webview_android',
+];
+
+/** @type {object.<string, string[]>} */
+const realValuesRequired = {
+  api: realValuesTargetBrowsers,
+  css: realValuesTargetBrowsers,
+  html: [],
+  http: [],
+  svg: [],
+  javascript: [...realValuesTargetBrowsers, 'nodejs'],
+  mathml: realValuesTargetBrowsers,
+  webdriver: realValuesTargetBrowsers,
+  webextensions: [],
+};
+
 /**
  * Test to see if the browser allows for the specified version
  *
  * @param {string} browser The browser to check
+ * @param {string} category The category of the data
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(browserIdentifier, version) {
+function isValidVersion(browser, category, version) {
   if (typeof version === 'string') {
-    return validBrowserVersions[browserIdentifier].includes(version);
+    return validBrowserVersions[browser].includes(version);
+  } else if (
+    realValuesRequired[category].includes(browser) &&
+    version !== false
+  ) {
+    return false;
   } else {
     return true;
   }
@@ -106,39 +139,55 @@ function addedBeforeRemoved(statement) {
  * Check the data for any errors in provided versions
  *
  * @param {SupportBlock} supportData The data to test
- * @param {string} relPath The path to the data
+ * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function checkVersions(supportData, relPath, logger) {
+function checkVersions(supportData, category, logger) {
   const browsersToCheck = Object.keys(supportData);
+
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       /** @type {SimpleSupportStatement[]} */
-      const supportStatements = [];
-      if (Array.isArray(supportData[browser])) {
-        Array.prototype.push.apply(supportStatements, supportData[browser]);
-      } else {
-        supportStatements.push(supportData[browser]);
-      }
-
-      const validBrowserVersionsString = `true, false, null, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
-      const validBrowserVersionsTruthy = `true, ${validBrowserVersions[
-        browser
-      ].join(', ')}`;
+      const supportStatements = Array.isArray(supportData[browser])
+        ? supportData[browser]
+        : [supportData[browser]];
 
       let sawVersionAddedOnly = false;
 
       for (const statement of supportStatements) {
+        if (statement === undefined) {
+          if (realValuesRequired[category].includes(browser)) {
+            logger.error(chalk`{red → {bold ${browser}} must be defined}`);
+          }
+
+          continue;
+        }
+
+        if (statement === 'mirror') {
+          // If the data is to be mirrored, make sure it is mirrorable
+          if (!browsers[browser].upstream) {
+            logger.error(
+              chalk`{bold ${browser}} is set to mirror, however {bold ${browser}} does not have an upstream browser.`,
+            );
+          }
+          continue;
+        }
+
         const statementKeys = Object.keys(statement);
 
         for (const property of ['version_added', 'version_removed']) {
-          if (!isValidVersion(browser, statement[property])) {
+          const version = statement[property];
+          if (property == 'version_removed' && version === undefined) {
+            // Undefined is allowed for version_removed
+            continue;
+          }
+          if (!isValidVersion(browser, category, version)) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold ${property}: "${statement[property]}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsString}}`,
-              browserTips[browser],
+              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
+                browser
+              ].join(', ')}`,
+              { tip: browserTips[browser] },
             );
           }
         }
@@ -146,31 +195,24 @@ function checkVersions(supportData, relPath, logger) {
         if ('version_added' in statement && 'version_removed' in statement) {
           if (statement.version_added === statement.version_removed) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - {bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}}`,
+              chalk`{bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}`,
             );
           }
           if (
-            typeof statement.version_added !== 'string' &&
-            statement.version_added !== true
+            typeof statement.version_added === 'string' &&
+            typeof statement.version_removed === 'string' &&
+            addedBeforeRemoved(statement) === false
           ) {
             logger.error(
-              chalk`{bold ${relPath}} - {bold version_added: "${statement.version_added}"} is {bold NOT} a valid version number for {bold ${browser}} when {bold version_removed} is present\n    Valid {bold ${browser}} versions are: ${validBrowserVersionsTruthy}`,
+              chalk`{bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
             );
-          } else if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string'
-          ) {
-            if (addedBeforeRemoved(statement) === false) {
-              logger.error(
-                chalk`{bold ${relPath}} - {bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
-              );
-            }
           }
         }
+
         if ('flags' in statement) {
           if (browsers[browser].accepts_flags === false) {
             logger.error(
-              chalk`{bold ${relPath}} - This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+              chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
             );
           }
         }
@@ -178,7 +220,7 @@ function checkVersions(supportData, relPath, logger) {
         if (hasVersionAddedOnly(statement)) {
           if (sawVersionAddedOnly) {
             logger.error(
-              chalk`{red → '{bold ${relPath}}' - {bold ${browser}} has multiple support statements with only {bold version_added}.}`,
+              chalk`{bold ${browser}} has multiple support statements with only {bold version_added}.`,
             );
             break;
           } else {
@@ -193,7 +235,7 @@ function checkVersions(supportData, relPath, logger) {
             )
           ) {
             logger.error(
-              chalk`{red → {bold ${relPath}} - The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.}`,
+              chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
             );
           }
         }
@@ -205,7 +247,7 @@ function checkVersions(supportData, relPath, logger) {
           statementKeys[0] == 'version_added'
         ) {
           logger.error(
-            chalk`{red → '{bold ${relPath}}' - {bold ${browser}} cannot have a {bold version_added: false} only in an array of statements.}`,
+            chalk`{bold ${browser}} cannot have a {bold version_added: false} only in an array of statements.`,
           );
         }
       }
@@ -213,42 +255,11 @@ function checkVersions(supportData, relPath, logger) {
   }
 }
 
-/**
- * Process the data for version errors
- *
- * @param {Identifier} data The data to test
- * @param {Logger} logger The logger to output errors to
- * @param {string} relPath The path of the data
- * @returns {void}
- */
-function findSupport(data, logger, relPath) {
-  for (const prop in data) {
-    if (prop === '__compat' && data[prop].support) {
-      checkVersions(data[prop].support, relPath, logger);
-    }
-    const sub = data[prop];
-    if (typeof sub === 'object') {
-      findSupport(sub, logger, relPath ? `${relPath}.${prop}` : `${prop}`);
-    }
-  }
-}
-
-/**
- * Test for version errors
- *
- * @param {string} filename The file to test
- * @returns {boolean} If the file contains errors
- */
-function testVersions(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
-  const logger = new Logger('Versions');
-
-  findSupport(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = testVersions;
+export default {
+  name: 'Versions',
+  description: 'Test the version numbers of support statements',
+  scope: 'feature',
+  check(logger, { data, path: { category } }) {
+    checkVersions(data.support, category, logger);
+  },
+};

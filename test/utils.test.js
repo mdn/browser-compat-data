@@ -1,10 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const assert = require('assert').strict;
-const { escapeInvisibles } = require('./utils.js');
+import assert from 'node:assert/strict';
+import { escapeInvisibles, jsonDiff } from './utils.js';
 
 describe('utils', () => {
   it('`escapeInvisibles()` works correctly', () => {
@@ -55,5 +53,22 @@ describe('utils', () => {
       }
       assert.equal(escapeInvisibles(char), expected);
     }
+  });
+
+  it('jsonDiff() works correctly', () => {
+    assert.notEqual(
+      jsonDiff(
+        JSON.stringify({ a: 1, b: 2 }, null, 2),
+        JSON.stringify({ a: 1 }, null, 2),
+      ),
+      undefined,
+    );
+    assert.notEqual(
+      jsonDiff(
+        JSON.stringify({ a: 1 }, null, 2),
+        JSON.stringify({ a: 2 }, null, 2),
+      ),
+      undefined,
+    );
   });
 });

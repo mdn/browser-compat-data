@@ -1,14 +1,22 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import bcd from '../index.js';
+import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
+import query from './query.js';
 
-const bcd = require('..');
-const { isBrowser, descendantKeys, joinPath } = require('./walkingUtils');
-const query = require('./query');
+export function* browserReleaseWalk(data, path) {
+  for (const [release, releaseData] of Object.entries(data.releases)) {
+    yield {
+      path: joinPath(path, 'releases', release),
+      browser: data,
+      browserRelease: releaseData,
+    };
+  }
+}
 
-function* lowLevelWalk(data = bcd, path, depth = Infinity) {
-  if (path !== undefined) {
+export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
+  if (path !== undefined && path !== '__meta') {
     const next = {
       path,
       data,
@@ -16,10 +24,14 @@ function* lowLevelWalk(data = bcd, path, depth = Infinity) {
 
     if (isBrowser(data)) {
       next.browser = data;
-    } else if (data.__compat !== undefined) {
-      next.compat = data.__compat;
+      yield next;
+      yield* browserReleaseWalk(data, path);
+    } else {
+      if (data.__compat !== undefined) {
+        next.compat = data.__compat;
+      }
+      yield next;
     }
-    yield next;
   }
 
   if (depth > 0) {
@@ -29,7 +41,7 @@ function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   }
 }
 
-function* walk(entryPoints, data = bcd) {
+export default function* walk(entryPoints, data = bcd) {
   const walkers = [];
 
   if (entryPoints === undefined) {
@@ -51,5 +63,3 @@ function* walk(entryPoints, data = bcd) {
     }
   }
 }
-
-module.exports = { walk, lowLevelWalk };

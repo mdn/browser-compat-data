@@ -20,7 +20,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
       - run: npm ci
       - run: npm test
-      - run: npm run release-build
+      - run: npm run build
       - run: npm publish build/ --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

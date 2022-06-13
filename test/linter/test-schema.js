@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import Ajv from 'ajv';
+import ajvErrors from 'ajv-errors';
+import ajvFormats from 'ajv-formats';
+import betterAjvErrors from 'better-ajv-errors';
 
-const Ajv = require('ajv').default;
-const ajvErrors = require('ajv-errors');
-const addFormats = require('ajv-formats');
-const betterAjvErrors = require('better-ajv-errors').default;
-const { Logger } = require('../utils.js');
+import compatDataSchema from './../../schemas/compat-data.schema.json' assert { type: 'json' };
+import browserDataSchema from './../../schemas/browsers.schema.json' assert { type: 'json' };
 
 /**
  * @typedef {import('../utils').Logger} Logger
@@ -16,36 +16,28 @@ const { Logger } = require('../utils.js');
 const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.
-addFormats(ajv, { mode: 'fast' });
+ajvFormats(ajv, { mode: 'fast' });
 // Allow for custom error messages to provide better directions for contributors
 ajvErrors(ajv);
 
-/**
- * Test a file to make sure it follows the defined schema
- *
- * @param {string} dataFilename The file to test
- * @param {string} [schemaFilename] A specific schema file to test with, if needed
- * @returns {boolean} If the file contains errors
- */
-function testSchema(
-  dataFilename,
-  schemaFilename = './../../schemas/compat-data.schema.json',
-) {
-  const schema = require(schemaFilename);
-  const data = require(dataFilename);
+// Define keywords for schema->TS converter
+ajv.addKeyword('tsEnumNames');
+ajv.addKeyword('tsName');
+ajv.addKeyword('tsType');
 
-  const logger = new Logger('JSON Schema');
-
-  if (!ajv.validate(schema, data)) {
-    // Output messages by one since better-ajv-errors wrongly joins messages
-    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
-    ajv.errors.forEach((e) => {
-      logger.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
-    });
-  }
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = testSchema;
+export default {
+  name: 'JSON Schema',
+  description: 'Test a file to ensure that it follows the defined schema',
+  scope: 'file',
+  check(logger, { data, path: { category } }) {
+    const schema =
+      category === 'browsers' ? browserDataSchema : compatDataSchema;
+    if (!ajv.validate(schema, data)) {
+      // Output messages by one since better-ajv-errors wrongly joins messages
+      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+      ajv.errors.forEach((e) => {
+        logger.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+      });
+    }
+  },
+};

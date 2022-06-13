@@ -1,208 +1,204 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs = require('fs');
-const path = require('path');
-const ora = require('ora');
-const yargs = require('yargs');
-const chalk = require('chalk');
-const {
-  testBrowsersData,
-  testBrowsersPresence,
-  testConsistency,
-  testDescriptions,
-  testLinks,
-  testNotes,
-  testPrefix,
-  testRealValues,
-  testSchema,
-  testStyle,
-  testVersions,
-} = require('./linter/index.js');
-const { IS_CI, pluralize } = require('./utils.js');
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import chalk from 'chalk-template';
 
-/** @type {Map<string, string>} */
-const filesWithErrors = new Map();
+import linters from './linter/index.js';
+import extend from '../scripts/lib/extend.js';
+import { walk } from '../utils/index.js';
+import { pluralize } from './utils.js';
 
-const argv = yargs
-  .alias('version', 'v')
-  .usage('$0 [[--] files...]', false, (yargs) => {
-    return yargs.positional('files...', {
-      description: 'The files to lint',
-      type: 'string',
-    });
-  })
-  .help()
-  .alias('help', 'h')
-  .alias('help', '?')
-  .parse(process.argv.slice(2));
+const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
- * @param {string[]} files
- * @return {boolean}
+ * Recursively load
+ *
+ * @param {string[]} files The files to test
+ * @returns {{messages: object, data: Identifier}}
  */
-function load(...files) {
-  return files.reduce((prevHasErrors, file) => {
-    if (file.indexOf(__dirname) !== 0) {
-      file = path.resolve(__dirname, '..', file);
+const loadAndCheckFiles = async (...files) => {
+  const data = {};
+
+  for (let file of files) {
+    if (file.indexOf(dirname) !== 0) {
+      file = path.resolve(dirname, '..', file);
     }
 
-    if (!fs.existsSync(file)) {
-      return prevHasErrors; // Ignore non-existent files
+    let fsStats;
+
+    try {
+      fsStats = await fs.stat(file);
+    } catch (e) {
+      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      return;
     }
 
-    if (fs.statSync(file).isFile()) {
-      let fileHasErrors = false;
+    if (fsStats.isFile() && path.extname(file) === '.json') {
+      const filePath = {
+        full: path.relative(process.cwd(), file),
+      };
+      filePath.category =
+        filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
 
-      if (path.extname(file) === '.json') {
-        let hasSyntaxErrors = false,
-          hasSchemaErrors = false,
-          hasStyleErrors = false,
-          hasLinkErrors = false,
-          hasBrowserDataErrors = false,
-          hasBrowserPresenceErrors = false,
-          hasVersionErrors = false,
-          hasConsistencyErrors = false,
-          hasRealValueErrors = false,
-          hasPrefixErrors = false,
-          hasDescriptionsErrors = false,
-          hasNotesErrors = false;
-        const relativeFilePath = path.relative(process.cwd(), file);
+      try {
+        const rawFileData = (await fs.readFile(file, 'utf-8')).trim();
+        const fileData = JSON.parse(rawFileData);
 
-        const spinner = ora({
-          stream: process.stdout,
-          text: relativeFilePath,
+        linters.runScope('file', {
+          data: fileData,
+          rawdata: rawFileData,
+          path: filePath,
         });
 
-        if (!IS_CI) {
-          // Continuous integration environments don't allow overwriting
-          // previous lines using VT escape sequences, which is how
-          // the spinner animation is implemented.
-          spinner.start();
-        }
-
-        const console_error = console.error;
-        console.error = (...args) => {
-          spinner['stream'] = process.stderr;
-          spinner.fail(chalk.red.bold(relativeFilePath));
-          console.error = console_error;
-          console.error(...args);
-        };
-
-        try {
-          if (file.indexOf('browsers' + path.sep) !== -1) {
-            hasSchemaErrors = testSchema(
-              file,
-              './../../schemas/browsers.schema.json',
-            );
-            hasBrowserDataErrors = testBrowsersData(file);
-            hasLinkErrors = testLinks(file);
-          } else {
-            hasSchemaErrors = testSchema(file);
-            hasStyleErrors = testStyle(file);
-            hasLinkErrors = testLinks(file);
-            hasBrowserPresenceErrors = testBrowsersPresence(file);
-            hasVersionErrors = testVersions(file);
-            hasConsistencyErrors = testConsistency(file);
-            hasRealValueErrors = testRealValues(file);
-            hasPrefixErrors = testPrefix(file);
-            hasDescriptionsErrors = testDescriptions(file);
-            hasNotesErrors = testNotes(file);
-          }
-        } catch (e) {
-          hasSyntaxErrors = true;
-          console.error(e);
-        }
-
-        fileHasErrors = [
-          hasSyntaxErrors,
-          hasSchemaErrors,
-          hasStyleErrors,
-          hasLinkErrors,
-          hasBrowserDataErrors,
-          hasBrowserPresenceErrors,
-          hasVersionErrors,
-          hasConsistencyErrors,
-          hasRealValueErrors,
-          hasPrefixErrors,
-          hasDescriptionsErrors,
-          hasNotesErrors,
-        ].some((x) => !!x);
-
-        if (fileHasErrors) {
-          filesWithErrors.set(relativeFilePath, file);
-        } else {
-          console.error = console_error;
-          spinner.succeed();
-        }
-      }
-
-      return prevHasErrors || fileHasErrors;
-    }
-
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
-
-    return load(...subFiles) || prevHasErrors;
-  }, false);
-}
-
-const main = (files) => {
-  /** @type {boolean} */
-  var hasErrors = files
-    ? load.apply(undefined, files)
-    : load(
-        'api',
-        'browsers',
-        'css',
-        'html',
-        'http',
-        'svg',
-        'javascript',
-        'mathml',
-        'webdriver',
-        'webextensions',
-      );
-
-  if (hasErrors) {
-    console.warn('');
-    console.warn(
-      chalk`{red Problems in ${pluralize('file', filesWithErrors.size)}:}`,
-    );
-    for (const [fileName, file] of filesWithErrors) {
-      console.warn(chalk`{red.bold ✖ ${fileName}}`);
-      try {
-        if (file.indexOf('browsers' + path.sep) !== -1) {
-          testSchema(file, './../../schemas/browsers.schema.json');
-          testBrowsersData(file);
-          testLinks(file);
-        } else {
-          testSchema(file);
-          testStyle(file);
-          testLinks(file);
-          testVersions(file);
-          testRealValues(file);
-          testBrowsersPresence(file);
-          testConsistency(file);
-          testPrefix(file);
-          testDescriptions(file);
-          testNotes(file);
-        }
+        extend(data, fileData);
       } catch (e) {
+        console.error(`Couldn't load ${filePath.full}!`);
         console.error(e);
       }
     }
-    return true;
+
+    if (fsStats.isDirectory()) {
+      const dircontents = await fs.readdir(file);
+      const subFiles = dircontents.map((subfile) => path.join(file, subfile));
+
+      extend(data, await loadAndCheckFiles(...subFiles));
+    }
   }
 
-  return false;
+  return data;
 };
 
-if (require.main === module) {
-  process.exit(main(argv.files) ? 1 : 0);
+/**
+ * Test for any errors in specified file(s) and/or folder(s), or all of BCD
+ *
+ * @param {?string[]} files The file(s) and/or folder(s) to test. Leave undefined for everything.
+ * @returns {boolean} Whether there were any errors
+ */
+const main = async (
+  files = [
+    'api',
+    'browsers',
+    'css',
+    'html',
+    'http',
+    'svg',
+    'javascript',
+    'mathml',
+    'webdriver',
+    'webextensions',
+  ],
+) => {
+  let hasErrors = false;
+
+  console.log(chalk`{cyan Loading and checking files...}`);
+  const data = await loadAndCheckFiles(...files);
+
+  console.log(chalk`{cyan Testing browser data...}`);
+  for (const browser in data?.browsers) {
+    linters.runScope('browser', {
+      data: data.browsers[browser],
+      path: {
+        full: `browsers.${browser}`,
+        category: 'browsers',
+        browser,
+      },
+    });
+  }
+
+  console.log(chalk`{cyan Testing feature data...}`);
+  const walker = walk(undefined, data);
+  for (const feature of walker) {
+    linters.runScope('feature', {
+      data: feature.compat,
+      path: {
+        full: feature.path,
+        category: feature.path.split('.')[0],
+      },
+    });
+  }
+
+  console.log(chalk`{cyan Testing all features together...}`);
+  linters.runScope('tree', {
+    data,
+    path: {
+      full: '',
+    },
+  });
+
+  for (const [linter, messages] of Object.entries(linters.messages)) {
+    if (!messages.length) continue;
+
+    const messagesByLevel = {
+      error: [],
+      warning: [],
+    };
+
+    for (const message of messages) {
+      messagesByLevel[message.level].push(message);
+    }
+
+    if (messagesByLevel.error.length) {
+      hasErrors = true;
+    }
+
+    const errorCounts = Object.entries(messagesByLevel)
+      .map(([k, v]) => pluralize(k, v.length))
+      .join(', ');
+
+    console.error(
+      chalk`{${
+        messagesByLevel.error.length ? 'red' : 'yellow'
+      } ${linter} - {bold ${pluralize(
+        'problem',
+        messages.length,
+      )}} (${errorCounts}):}`,
+    );
+
+    for (const message of messages) {
+      console.error(
+        chalk`{${message.level === 'error' ? 'red' : 'yellow'}  ✖ ${
+          message.path
+        } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
+          message.message
+        }}`,
+      );
+      if (message.fixable) {
+        console[message.level](
+          chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
+        );
+      }
+      if (message.tip) {
+        console[message.level](chalk`{blue    ◆ Tip: ${message.tip}}`);
+      }
+    }
+  }
+
+  if (!hasErrors) {
+    console.log(chalk`{green All data {bold passed} linting!}`);
+  }
+
+  return hasErrors;
+};
+
+if (esMain(import.meta)) {
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [files..]',
+    false,
+    (yargs) =>
+      yargs.positional('files...', {
+        description: 'The files to lint (leave blank to test everything)',
+        type: 'string',
+      }),
+  );
+
+  process.exit((await main(argv.files)) ? 1 : 0);
 }
 
-module.exports = main;
+export default main;

@@ -1,17 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import fs from 'node:fs';
+
+import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
  */
-
-const fs = require('fs');
-const { platform } = require('os');
-
-/** Determines if the OS is Windows */
-const IS_WINDOWS = platform() === 'win32';
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -24,7 +20,7 @@ const IS_WINDOWS = platform() === 'win32';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} Value with sorting applied
  */
-const orderSupportBlock = (key, value) => {
+export const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
     value.support = Object.keys(value.support)
       .sort()
@@ -59,4 +55,4 @@ const fixBrowserOrder = (filename) => {
   }
 };
 
-module.exports = fixBrowserOrder;
+export default fixBrowserOrder;

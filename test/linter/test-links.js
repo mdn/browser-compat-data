@@ -1,17 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
-
-const fs = require('fs');
-const url = require('url');
-const chalk = require('chalk');
-const {
-  IS_WINDOWS,
-  indexToPos,
-  indexToPosRaw,
-  Logger,
-} = require('../utils.js');
+import chalk from 'chalk-template';
+import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
 /**
  * @typedef {object} LinkError
@@ -23,15 +14,46 @@ const {
  */
 
 /**
+ * Given a RegEx expression, test the link for errors
+ *
+ * @param {LinkError[]} errors The errors object to push the new errors to
+ * @param {string} actual The link to test
+ * @param {string|RegExp} regexp The regex to test with
+ * @param {(match: Array.<?string>) => object} matchHandler The callback
+ * @returns {void}
+ */
+function processLink(errors, actual, regexp, matchHandler) {
+  const re = new RegExp(regexp, 'g');
+  /** @type {RegExpExecArray} */
+  let match;
+  while ((match = re.exec(actual)) !== null) {
+    let pos = indexToPosRaw(actual, match.index);
+    let posString = indexToPos(actual, match.index);
+    let result = matchHandler(match);
+
+    if (result) {
+      let { issue, expected, actualLink = match[0] } = result;
+      errors.push({
+        issue: issue,
+        pos: pos,
+        posString: posString,
+        actual: actualLink,
+        expected: expected,
+      });
+    }
+  }
+}
+
+/**
  * Process the data for any errors within the links
  *
- * @param {string} filename The file to test
+ * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-function processData(filename) {
+export function processData(rawData) {
   let errors = [];
 
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
+  let actual = rawData;
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -73,6 +95,19 @@ function processData(filename) {
       return {
         issue: 'Use shortenable URL',
         expected: `https://crbug.com/${match[2]}/${match[3]}`,
+      };
+    },
+  );
+
+  processLink(
+    // use https://crbug.com/category/100000 instead
+    errors,
+    actual,
+    String.raw`https?://chromium\.googlesource\.com/chromium/src/\+/([\w\d]+)`,
+    (match) => {
+      return {
+        issue: 'Use shortenable URL',
+        expected: `https://crrev.com/${match[1]}`,
       };
     },
   );
@@ -206,7 +241,7 @@ function processData(filename) {
     actual,
     String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
     (match) => {
-      if (url.parse(match[1]).hostname === null) {
+      if (new URL(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
           actualLink: match[1],
@@ -219,58 +254,19 @@ function processData(filename) {
   return errors;
 }
 
-/**
- * Given a RegEx expression, test the link for errors
- *
- * @param {LinkError[]} errors The errors object to push the new errors to
- * @param {string} actual The link to test
- * @param {string|RegExp} regexp The regex to test with
- * @param {(match: Array.<?string>) => object} matchHandler The callback
- * @returns {void}
- */
-function processLink(errors, actual, regexp, matchHandler) {
-  const re = new RegExp(regexp, 'g');
-  /** @type {RegExpExecArray} */
-  let match;
-  while ((match = re.exec(actual)) !== null) {
-    let pos = indexToPosRaw(actual, match.index);
-    let posString = indexToPos(actual, match.index);
-    let result = matchHandler(match);
+export default {
+  name: 'Links',
+  description:
+    'Test links in the file to ensure they conform to BCD guidelines',
+  scope: 'file',
+  check(logger, { rawdata }) {
+    let errors = processData(rawdata);
 
-    if (result) {
-      let { issue, expected, actualLink = match[0] } = result;
-      errors.push({
-        issue: issue,
-        pos: pos,
-        posString: posString,
-        actual: actualLink,
-        expected: expected,
-      });
+    for (const error of errors) {
+      logger.error(
+        chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+        { fixable: true },
+      );
     }
-  }
-}
-
-/**
- * Test for any malformed links
- *
- * @param {string} filename The file to test
- * @returns {boolean} If the file contains errors
- */
-function testLinks(filename) {
-  const logger = new Logger('Links');
-
-  /** @type {Object[]} */
-  let errors = processData(filename);
-
-  for (const error of errors) {
-    logger.error(
-      chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
-      chalk`Run {bold npm run fix} to fix links automatically`,
-    );
-  }
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = { processData, testLinks };
+  },
+};

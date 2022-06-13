@@ -1,13 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk-template';
 
-const path = require('path');
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
-
-const { browsers } = require('../../index.js');
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -24,8 +21,8 @@ const { browsers } = require('../../index.js');
  * @returns {void}
  */
 function processData(data, category, logger, path = '') {
-  if (data.__compat && data.__compat.support) {
-    const support = data.__compat.support;
+  if (data.support) {
+    const support = data.support;
     const definedBrowsers = Object.keys(support);
 
     let displayBrowsers = Object.keys(browsers).filter(
@@ -77,40 +74,14 @@ function processData(data, category, logger, path = '') {
       );
     }
   }
-  for (const key in data) {
-    if (key === '__compat') continue;
-
-    processData(
-      data[key],
-      category,
-      logger,
-      path && path.length > 0 ? `${path}.${key}` : key,
-    );
-  }
 }
 
-/**
- * Test for issues within the browsers in the data within the specified file.
- *
- * @param {string} filename The file to test
- * @returns {boolean} If the file contains errors
- */
-function testBrowsersPresence(filename) {
-  const relativePath = path.relative(
-    path.resolve(__dirname, '..', '..'),
-    filename,
-  );
-  const category =
-    relativePath.includes(path.sep) && relativePath.split(path.sep)[0];
-  /** @type {Identifier} */
-  const data = require(filename);
-
-  const logger = new Logger('Browsers');
-
-  processData(data, category, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = testBrowsersPresence;
+export default {
+  name: 'Browser Presence',
+  description:
+    'Test the presence of browser data within compatibility statements',
+  scope: 'feature',
+  check(logger, { data, path: { category } }) {
+    processData(data, category, logger);
+  },
+};

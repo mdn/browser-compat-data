@@ -1,10 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-'use strict';
+import chalk from 'chalk-template';
 
-const chalk = require('chalk');
-const { Logger } = require('../utils.js');
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 /**
  * @typedef {import('../../types').Identifier} Identifier
@@ -12,45 +12,49 @@ const { Logger } = require('../utils.js');
  */
 
 /**
- * @param {Identifier} data
+ * @param {string} browser
+ * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
-function processData(data, logger) {
-  // We only need to grab the first browser in the data
-  // because each browser file only contains one browser
-  const browser = Object.keys(data.browsers)[0];
-  const releases = data.browsers[browser].releases;
-
-  for (const status of ['current', 'beta', 'nightly']) {
-    const releasesForStatus = Object.entries(releases)
+function processData(browser, data, logger) {
+  for (const status of ['current', 'nightly']) {
+    const releasesForStatus = Object.entries(data.releases)
       .filter(([, data]) => data.status == status)
       .map(([version]) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(
-        chalk`{red → {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
+        chalk`{red {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
           ', ',
         )}), which is {bold not} allowed.}`,
       );
     }
   }
+
+  // Ensure the `upstream` property, if it exists, is valid
+  if (data.upstream) {
+    if (data.upstream === browser) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is set to itself.}`,
+      );
+    }
+
+    if (!Object.keys(browsers).includes(data.upstream)) {
+      logger.error(
+        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${
+          data.upstream
+        }) Valid options are: ${Object.keys(browsers).join(', ')}.}`,
+      );
+    }
+  }
 }
 
-/**
- * @param {string} filename
- * @returns {boolean} If the file contains errors
- */
-function testBrowsersData(filename) {
-  /** @type {Identifier} */
-  const data = require(filename);
-
-  const logger = new Logger('Browser Data');
-
-  processData(data, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
-
-module.exports = testBrowsersData;
+export default {
+  name: 'Browser Data',
+  description: 'Test the browser data',
+  scope: 'browser',
+  check(logger, { data, path: { browser } }) {
+    processData(browser, data, logger);
+  },
+};
