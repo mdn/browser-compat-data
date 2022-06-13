@@ -44,6 +44,10 @@ function* iterateFeatures(obj, browsers, values, depth, identifier) {
               if (browserData[range] === undefined) {
                 if (values.length == 0 || values.includes('null'))
                   yield `${identifier}${i}`;
+              } else if (browserData[range] === 'mirror') {
+                if (values.includes('mirror')) {
+                  yield `${identifier}${i}`;
+                }
               } else if (
                 values.length == 0 ||
                 values.includes(String(browserData[range].version_added)) ||
@@ -143,6 +147,7 @@ if (esMain(import.meta)) {
           alias: 'f',
           describe: 'Filter by version value. May repeat.',
           type: 'array',
+          string: true,
           nargs: 1,
           default: [],
         })
@@ -167,11 +172,15 @@ if (esMain(import.meta)) {
         )
         .example(
           'npm run traverse -- -b webview_android -f true',
-          'Find all features marked as true for WebVeiw',
+          'Find all features marked as true for WebView',
         )
         .example(
           'npm run traverse -- -b firefox -f 10',
           'Find all features marked as supported since Firefox 10',
+        )
+        .example(
+          'npm run traverse -- -b samsunginternet_android -f mirror',
+          'Find all features in Samsung Internet that mirror data from Chrome Android',
         );
     },
   );

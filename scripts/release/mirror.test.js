@@ -3,10 +3,11 @@
 
 import assert from 'node:assert/strict';
 
-import { getMatchingBrowserVersion } from './mirror.js';
+import bcd from '../../index.js';
+import mirrorSupport from './mirror.js';
 
 describe('mirror', () => {
-  describe('getMatchingBrowserVersion()', () => {
+  describe('default export', () => {
     const mappings = {
       chrome_android: [
         ['1', '18'],
@@ -19,7 +20,9 @@ describe('mirror', () => {
         ['26', '26'],
       ],
       edge: [
-        ['50', '79'],
+        ['1', false], // wrong, invalid inference
+        ['27', false], // wrong, invalid inference
+        ['28', '79'],
         ['78', '79'],
         ['79', '79'],
         ['80', '80'],
@@ -62,7 +65,7 @@ describe('mirror', () => {
         ['5', '4.2'],
         ['5.1', '6'],
         ['6', '6'],
-        ['7', '8'],
+        ['7', '8'], // wrong, should be 7
         ['8', '8'],
         ['9', '9'],
         ['9.1', '9.3'],
@@ -76,7 +79,7 @@ describe('mirror', () => {
         ['13.1', '13.4'],
         ['14', '14'],
         ['14.1', '14.5'],
-        ['15', '15.1'],
+        ['15', '15.1'], // wrong, should be 15
         ['15.1', '15.1'],
         ['15.2', '15.2'],
         ['15.3', '15.3'],
@@ -93,21 +96,35 @@ describe('mirror', () => {
         ['95', '17.0'],
       ],
       webview_android: [
-        ['18', false],
-        ['25', false],
-        ['26', false],
-        ['27', false],
-        ['28', '4.4'],
-        ['36', '37'],
+        ['18', '1'], // wrong, invalid inference
+        ['25', '≤37'], // wrong, should be 4.4
+        ['26', '≤37'], // wrong, should be 4.4
+        ['27', '≤37'], // wrong, should be 4.4
+        ['28', '≤37'], // wrong, should be 4.4
+        ['29', '≤37'], // wrong, should be 4.4
+        ['30', '4.4'],
+        ['31', '4.4'],
+        ['32', '4.4'],
+        ['33', '4.4.3'],
+        ['34', '4.4.3'],
+        ['35', '4.4.3'],
+        ['36', '4.4.3'],
         ['37', '37'],
       ],
     };
 
     for (const [browser, versionMap] of Object.entries(mappings)) {
       describe(browser, () => {
+        const upstream = bcd.browsers[browser].upstream;
         for (const pair of versionMap) {
           it(`${pair[0]} => ${pair[1]}`, () => {
-            assert.equal(getMatchingBrowserVersion(browser, pair[0]), pair[1]);
+            const support = {
+              [upstream]: {
+                version_added: pair[0],
+              },
+            };
+            const mirrored = mirrorSupport(browser, support);
+            assert.equal(mirrored.version_added, pair[1]);
           });
         }
       });
