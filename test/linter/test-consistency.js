@@ -408,7 +408,7 @@ export class ConsistencyChecker {
       return compareVersions.compare(
         a_version_added.replace('≤', ''),
         b_version_added,
-        '<',
+        a_version_added.startsWith('≤') ? '<=' : '<',
       );
     }
 

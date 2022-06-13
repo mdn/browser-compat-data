@@ -206,6 +206,7 @@ export class Linters {
      * @type {object}
      */
     this.messages = {};
+    this.expectedFailures = {};
 
     for (const linter of this.linters) {
       if (!this.#validateScope(linter.scope)) {
@@ -214,6 +215,7 @@ export class Linters {
         );
       }
       this.messages[linter.name] = [];
+      this.expectedFailures[linter.name] = [];
     }
   }
 
@@ -234,12 +236,16 @@ export class Linters {
       );
     }
 
-    for (const linter of this.linters.filter(
-      (linter) => linter.scope === scope,
-    )) {
+    const linters = this.linters.filter((linter) => linter.scope === scope);
+    for (const linter of linters) {
       const logger = new Logger(linter.title, data.path.full);
+      const shouldFail = linter.exceptions?.includes(data.path.full);
       linter.check(logger, data);
-      this.messages[linter.name].push(...logger.messages);
+      if (!shouldFail) {
+        this.messages[linter.name].push(...logger.messages);
+      } else {
+        this.expectedFailures[linter.name].push(data.path.full);
+      }
     }
   }
 }
