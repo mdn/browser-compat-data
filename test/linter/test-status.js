@@ -17,7 +17,11 @@ const { browsers } = bcd;
  */
 function checkStatus(data, logger, path = []) {
   const status = data.status;
-  if (status && status.experimental && status.deprecated) {
+  if (!status) {
+    return;
+  }
+
+  if (status.experimental && status.deprecated) {
     logger.error(
       chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
         '.',
@@ -59,8 +63,10 @@ function checkStatus(data, logger, path = []) {
       const currentRelease = Object.values(browsers[browser].releases).find(
         (r) => r.status === 'current',
       );
-      const engine = currentRelease.engine;
-      engineSupport.add(engine);
+      const engine = currentRelease?.engine;
+      if (engine) {
+        engineSupport.add(engine);
+      }
     }
 
     let engineCount = 0;
