@@ -1029,9 +1029,9 @@
         },
         "until-found_value": {
           "__compat": {
+            "description": "<code>until-found</code> value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/hidden",
             "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#the-hidden-attribute",
-            "description": "<code>until-found</code> value",
             "support": {
               "chrome": {
                 "version_added": "102"
@@ -1218,6 +1218,10 @@
                 "version_added": "95"
               },
               {
+                "version_added": "17",
+                "version_removed": "23"
+              },
+              {
                 "version_added": "23",
                 "version_removed": "95",
                 "flags": [
@@ -1231,28 +1235,11 @@
                   "Before version 77, Firefox does not support <code>inputmode</code> when <code>contenteditable</code> is <code>true</code>.",
                   "Before version 75, Firefox accepts values from an earlier specification. From version 75, it accepts values from the WHATWG Living Standard. See <a href='https://bugzil.la/1509527'>bug 1509527</a>."
                 ]
-              },
-              {
-                "version_added": "17",
-                "version_removed": "23"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "68",
-                "version_removed": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.forms.inputmode",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox_android": {
+              "version_added": "79"
+            },
             "ie": {
               "version_added": false
             },

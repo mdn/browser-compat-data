@@ -8,6 +8,8 @@ import esMain from 'es-main';
 
 import fixBrowserOrder from './browser-order.js';
 import fixFeatureOrder from './feature-order.js';
+import fixPropertyOrder from './property-order.js';
+import fixStatementOrder from './statement-order.js';
 import fixLinks from './links.js';
 import fixStatus from './status.js';
 
@@ -34,6 +36,8 @@ function load(...files) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
+        fixPropertyOrder(file);
+        fixStatementOrder(file);
         fixLinks(file);
         fixStatus(file);
       }

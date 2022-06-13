@@ -9,46 +9,70 @@ const check = new ConsistencyChecker();
 
 describe('ConsistencyChecker.getVersionAdded()', function () {
   it('returns null for non-real values', () => {
-    assert.equal(check.getVersionAdded({ version_added: null }), null);
+    assert.equal(
+      check.getVersionAdded({ chrome: { version_added: null } }, 'chrome'),
+      null,
+    );
   });
 
   it('returns null for "preview" values', () => {
-    assert.equal(check.getVersionAdded({ version_added: 'preview' }), null);
+    assert.equal(
+      check.getVersionAdded({ chrome: { version_added: 'preview' } }, 'chrome'),
+      null,
+    );
   });
 
   it('returns the value for real and ranged values', () => {
-    assert.equal(check.getVersionAdded({ version_added: '12' }), '12');
-    assert.equal(check.getVersionAdded({ version_added: '≤11' }), '≤11');
+    assert.equal(
+      check.getVersionAdded({ chrome: { version_added: '12' } }, 'chrome'),
+      '12',
+    );
+    assert.equal(
+      check.getVersionAdded({ chrome: { version_added: '≤11' } }, 'chrome'),
+      '≤11',
+    );
   });
 
   it('returns the earliest real value for an array support statement', () => {
     assert.equal(
-      check.getVersionAdded([
-        { version_added: '≤11' },
-        { version_added: '101' },
-      ]),
+      check.getVersionAdded(
+        { chrome: [{ version_added: '≤11' }, { version_added: '101' }] },
+        'chrome',
+      ),
       '≤11',
     );
     assert.equal(
-      check.getVersionAdded([
-        { version_added: 'preview' },
-        { version_added: '≤11', flags: [] },
-      ]),
+      check.getVersionAdded(
+        {
+          chrome: [
+            { version_added: 'preview' },
+            { version_added: '≤11', flags: [] },
+          ],
+        },
+        'chrome',
+      ),
       null,
     );
     assert.equal(
-      check.getVersionAdded([
-        { version_added: true },
-        { version_added: '≤11', flags: [] },
-      ]),
+      check.getVersionAdded(
+        {
+          chrome: [
+            { version_added: true },
+            { version_added: '≤11', flags: [] },
+          ],
+        },
+        'chrome',
+      ),
       null,
     );
     assert.equal(
-      check.getVersionAdded([
-        { version_added: '87' },
-        { version_added: true, flags: [] },
-      ]),
-      null,
+      check.getVersionAdded(
+        {
+          chrome: [{ version_added: '87' }, { version_added: true, flags: [] }],
+        },
+        'chrome',
+      ),
+      '87',
     );
   });
 });

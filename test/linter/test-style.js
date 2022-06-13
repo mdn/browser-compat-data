@@ -3,60 +3,14 @@
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
-import compareFeatures from '../../scripts/lib/compare-features.js';
-import { Logger } from '../utils.js';
+import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
+import { orderFeatures } from '../../scripts/fix/feature-order.js';
+import { orderStatements } from '../../scripts/fix/statement-order.js';
+import { orderProperties } from '../../scripts/fix/property-order.js';
 
 /**
  * @typedef {import('../utils').Logger} Logger
  */
-
-/**
- * Return a new "support_block" object whose first-level properties
- * (browser names) have been ordered according to Array.prototype.sort,
- * and so will be stringified in that order as well. This relies on
- * guaranteed "own" property ordering, which is insertion order for
- * non-integer keys (which is our case).
- *
- * @param {string} key The key in the object
- * @param {*} value The value of the key
- *
- * @returns {*} The new value
- */
-function orderSupportBlock(key, value) {
-  if (key === '__compat') {
-    value.support = Object.keys(value.support)
-      .sort()
-      .reduce((result, key) => {
-        result[key] = value.support[key];
-        return result;
-      }, {});
-  }
-  return value;
-}
-
-/**
- * Return a new feature object whose first-level properties have been
- * ordered according to Array.prototype.sort, and so will be
- * stringified in that order as well. This relies on guaranteed "own"
- * property ordering, which is insertion order for non-integer keys
- * (which is our case).
- *
- * @param {string} key The key in the object
- * @param {*} value The value of the key
- *
- * @returns {*} The new value
- */
-function orderFeatures(key, value) {
-  if (value instanceof Object && '__compat' in value) {
-    value = Object.keys(value)
-      .sort(compareFeatures)
-      .reduce((result, key) => {
-        result[key] = value[key];
-        return result;
-      }, {});
-  }
-  return value;
-}
 
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema
@@ -71,6 +25,8 @@ function processData(rawData, logger) {
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
   let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
+  let expectedStatementSorting = JSON.stringify(dataObject, orderStatements, 2);
+  let expectedPropertySorting = JSON.stringify(dataObject, orderProperties, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
@@ -78,6 +34,8 @@ function processData(rawData, logger) {
     expected = expected.replace(/\r/g, '');
     expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
     expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
+    expectedStatementSorting = expectedStatementSorting.replace(/\r/g, '');
+    expectedPropertySorting = expectedPropertySorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
@@ -90,13 +48,33 @@ function processData(rawData, logger) {
         actual,
         expectedBrowserSorting,
       )}`,
-      chalk`Run {bold npm run fix} to fix sorting automatically`,
+      { fixable: true },
     );
   }
 
   if (expected !== expectedFeatureSorting) {
     logger.error(
       chalk`Feature sorting error on ${jsonDiff(
+        actual,
+        expectedFeatureSorting,
+      )}`,
+      { fixable: true },
+    );
+  }
+
+  if (expected !== expectedStatementSorting) {
+    logger.error(
+      chalk`Statement sorting error on ${jsonDiff(
+        actual,
+        expectedFeatureSorting,
+      )}`,
+      { fixable: true },
+    );
+  }
+
+  if (expected !== expectedPropertySorting) {
+    logger.error(
+      chalk`Property sorting error on ${jsonDiff(
         actual,
         expectedFeatureSorting,
       )}`,
@@ -115,17 +93,13 @@ function processData(rawData, logger) {
   }
 }
 
-/**
- * Test the data for any styling errors that cannot be caught by Prettier or the schema
- *
- * @param {string} rawData The raw contents of the file to test
- * @returns {boolean} If the file contains errors
- */
-export default function testStyle(rawData) {
-  const logger = new Logger('Style');
-
-  processData(rawData, logger);
-
-  logger.emit();
-  return logger.hasErrors();
-}
+export default {
+  name: 'Style',
+  description: 'Tests the style and formatting of the JSON file',
+  scope: 'file',
+  check(logger, { rawdata, path: { category } }) {
+    if (category !== 'browsers') {
+      processData(rawdata, logger);
+    }
+  },
+};
