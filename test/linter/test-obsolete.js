@@ -85,12 +85,6 @@ export default {
     processData(logger, data, browsers);
   },
   exceptions: [
-    'api.VRDisplay.hardwareUnitId',
-    'api.VREyeParameters.recommendedFieldOfView',
-    'api.VREyeParameters.renderRect',
-    'api.VRFieldOfView.VRFieldOfView',
-    'api.VRPose.hasOrientation',
-    'api.VRPose.hasPosition',
     'css.types.length.lh',
     'css.types.length.rlh',
     'http.headers.Cache-Control.stale-if-error',
