@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "5.0.1",
+  "version": "5.0.3",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.js",
   "types": "dev.d.ts",
@@ -43,7 +43,7 @@
     "compare-versions": "~4.1.1",
     "deep-diff": "~1.0.2",
     "es-main": "~1.0.2",
-    "eslint": "~8.16.0",
+    "eslint": "~8.17.0",
     "eslint-config-prettier": "~8.5.0",
     "eslint-config-standard": "~17.0.0",
     "eslint-plugin-import": "~2.26.0",
@@ -52,6 +52,7 @@
     "eslint-plugin-promise": "~6.0.0",
     "fast-json-stable-stringify": "~2.1.0",
     "fdir": "~5.2.0",
+    "json-schema-to-typescript": "~10.1.5",
     "mdn-confluence": "~2.2.2",
     "mocha": "~10.0.0",
     "open-cli": "~7.0.1",
@@ -63,6 +64,7 @@
     "yargs": "~17.5.0"
   },
   "scripts": {
+    "prepare": "npm run gentypes",
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "node scripts/diff.js",
     "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.js\"",
@@ -73,9 +75,11 @@
     "fix": "npm run format:fix && node scripts/fix/index.js",
     "stats": "node scripts/statistics",
     "build": "node scripts/release/build",
+    "gentypes": "node scripts/generate-types",
     "release-pulls": "node scripts/release/pulls",
     "release-notes": "node scripts/release/notes",
     "release-stats": "node scripts/release/stats",
+    "remove-redundant-flags": "node scripts/remove-redundant-flags",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run format && npm run lint && npm run unittest",
     "traverse": "node scripts/traverse"

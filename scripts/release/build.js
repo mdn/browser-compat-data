@@ -7,7 +7,8 @@ import path from 'node:path';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
-import bumpData from './mirror.js';
+import mirrorSupport from './mirror.js';
+import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 
 const packageJson = JSON.parse(
@@ -16,7 +17,7 @@ const packageJson = JSON.parse(
 
 const directory = './build/';
 
-const verbatimFiles = ['LICENSE', 'README.md', 'types.d.ts'];
+const verbatimFiles = ['LICENSE', 'README.md'];
 
 // Returns a string representing data ready for writing to JSON file
 async function createDataBundle() {
@@ -29,7 +30,7 @@ async function createDataBundle() {
       feature.compat.support,
     )) {
       if (supportData === 'mirror') {
-        feature.data.__compat.support[browser] = bumpData(
+        feature.data.__compat.support[browser] = mirrorSupport(
           browser,
           feature.compat.support,
         );
@@ -61,7 +62,7 @@ export default bcd;
   await fs.writeFile(dest, content);
 }
 
-async function writeTypeScriptIndex() {
+async function writeTypeScript() {
   const dest = path.resolve(directory, 'index.ts');
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
@@ -73,6 +74,8 @@ import bcd from "./data.json";
 export default bcd as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);
+
+  await compileTS(path.resolve(directory, 'types.d.ts'));
 }
 
 // Returns an array of promises for copying of all files that don't need transformation
@@ -140,7 +143,7 @@ async function main() {
   await writeManifest();
   await writeData();
   await writeWrapper();
-  await writeTypeScriptIndex();
+  await writeTypeScript();
   await copyFiles();
 
   console.log('Data bundle is ready');
