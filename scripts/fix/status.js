@@ -50,8 +50,10 @@ const fixStatus = (key, value) => {
         const currentRelease = Object.values(browsers[browser].releases).find(
           (r) => r.status === 'current',
         );
-        const engine = currentRelease.engine;
-        engineSupport.add(engine);
+        const engine = currentRelease?.engine;
+        if (engine) {
+          engineSupport.add(engine);
+        }
       }
 
       let engineCount = 0;
