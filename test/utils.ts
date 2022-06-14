@@ -216,9 +216,11 @@ export class Linters {
   constructor(linters: Array<Linter>) {
     this.linters = linters;
     this.messages = {};
+    this.expectedFailures = {};
 
     for (const linter of this.linters) {
       this.messages[linter.name] = [];
+      this.expectedFailures[linter.name] = [];
     }
   }
 
@@ -227,12 +229,16 @@ export class Linters {
    * @param {{data: object, rawdata: string, path: {full: string}}} data
    */
   runScope(scope: LinterScope, data): void {
-    for (const linter of this.linters.filter(
-      (linter) => linter.scope === scope,
-    )) {
-      const logger = new Logger(linter.name, data.path.full);
+    const linters = this.linters.filter((linter) => linter.scope === scope);
+    for (const linter of linters) {
+      const logger = new Logger(linter.title, data.path.full);
+      const shouldFail = linter.exceptions?.includes(data.path.full);
       linter.check(logger, data);
-      this.messages[linter.name].push(...logger.messages);
+      if (!shouldFail) {
+        this.messages[linter.name].push(...logger.messages);
+      } else {
+        this.expectedFailures[linter.name].push(data.path.full);
+      }
     }
   }
 }

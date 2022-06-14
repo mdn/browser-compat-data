@@ -13,31 +13,6 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * List of feature keys which are expected to fail this test.
- * This list is needed for two reasons:
- *  - some entries indeed should be removed (like api.VR*)
- *  - some entries are currently just stubs and should be expanded and will pass test later
- */
-const exceptions = [
-  'api.VRDisplay.hardwareUnitId',
-  'api.VREyeParameters.recommendedFieldOfView',
-  'api.VREyeParameters.renderRect',
-  'api.VRFieldOfView.VRFieldOfView',
-  'api.VRPose.hasOrientation',
-  'api.VRPose.hasPosition',
-  'css.types.length.lh',
-  'css.types.length.rlh',
-  'http.headers.Cache-Control.stale-if-error',
-  'http.headers.Feature-Policy.layout-animations',
-  'http.headers.Feature-Policy.legacy-image-formats',
-  'http.headers.Feature-Policy.oversized-images',
-  'http.headers.Feature-Policy.unoptimized-images',
-  'http.headers.Feature-Policy.unsized-media',
-  'svg.attributes.presentation.color-rendering',
-  'svg.elements.view.zoomAndPan',
-];
-
-/**
  * @param {SupportBlock} support
  * @returns boolean
  */
@@ -82,38 +57,29 @@ function implementedAndRemoved(
 /**
  * @param {Logger} logger
  * @param {CompatStatement} data The data to test
- * @param {string} path
  * @returns {void}
  */
 function processData(
   logger: Logger,
   data: CompatStatement,
-  path: string,
 ): void {
   if (data && data.support) {
     const { support, status } = data;
-    const shouldFail = exceptions.includes(path);
 
     const abandoned = status && status.standard_track === false;
     const rule1Fail = abandoned && neverImplemented(support);
-    if (rule1Fail && !shouldFail) {
+    if (rule1Fail) {
       logger.error(
         chalk`feature was never implemented in any browser and the specification has been abandoned.`,
       );
       return;
     }
 
+    // Note: This check is time-based
     const rule2Fail = implementedAndRemoved(support);
-    if (rule2Fail && !shouldFail) {
+    if (rule2Fail) {
       logger[rule2Fail](
         chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
-      );
-      return;
-    }
-
-    if (!rule1Fail && !rule2Fail && shouldFail) {
-      logger.error(
-        chalk`Please remove this file from list of exceptions: ${path}`,
       );
     }
   }
@@ -125,8 +91,20 @@ export default {
   scope: 'feature',
   check(
     logger: Logger,
-    { data, path: { full } }: { data: CompatStatement; path: { full: string } },
+    { data }: { data: CompatStatement; },
   ) {
-    processData(logger, data, full);
+    processData(logger, data);
   },
+  exceptions: [
+    'css.types.length.lh',
+    'css.types.length.rlh',
+    'http.headers.Cache-Control.stale-if-error',
+    'http.headers.Feature-Policy.layout-animations',
+    'http.headers.Feature-Policy.legacy-image-formats',
+    'http.headers.Feature-Policy.oversized-images',
+    'http.headers.Feature-Policy.unoptimized-images',
+    'http.headers.Feature-Policy.unsized-media',
+    'svg.attributes.presentation.color-rendering',
+    'svg.elements.view.zoomAndPan',
+  ],
 } as Linter;
