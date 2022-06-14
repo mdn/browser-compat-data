@@ -1,11 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier } from '../../types/types.js';
+import { BrowserName, Identifier } from '../../types/types.js';
 
 import fs from 'node:fs';
 
 import { IS_WINDOWS } from '../../test/utils.js';
+
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 const fixStatus = (key: string, value: Identifier): Identifier => {
   const compat = value?.__compat;
@@ -19,7 +22,7 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
     }
 
     if (compat.status.experimental) {
-      const browserSupport = new Set();
+      const browserSupport: Set<BrowserName> = new Set();
 
       for (const [browser, support] of Object.entries(compat.support)) {
         // Consider only the first part of an array statement.
@@ -29,7 +32,7 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
           continue;
         }
         if (statement.version_added && !statement.version_removed) {
-          browserSupport.add(browser);
+          browserSupport.add(browser as BrowserName);
         }
       }
 

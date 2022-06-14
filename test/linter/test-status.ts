@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 
@@ -44,7 +44,7 @@ function checkStatus(
   if (status.experimental) {
     // Check if experimental should be false (code copied from migration 007)
 
-    const browserSupport = new Set();
+    const browserSupport: Set<BrowserName> = new Set();
 
     for (const [browser, support] of Object.entries(data.support)) {
       // Consider only the first part of an array statement.
@@ -54,7 +54,7 @@ function checkStatus(
         continue;
       }
       if (statement.version_added && !statement.version_removed) {
-        browserSupport.add(browser);
+        browserSupport.add(browser as BrowserName);
       }
     }
 

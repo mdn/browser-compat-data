@@ -45,11 +45,12 @@ const loadAndCheckFiles = async (
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
-      const filePath: { full: string; category?: string | false } = {
+      const filePath: { full: string; category?: string } = {
         full: path.relative(process.cwd(), file),
       };
-      filePath.category =
-        filePath.full.includes(path.sep) && filePath.full.split(path.sep)[0];
+      if (filePath.full.includes(path.sep)) {
+        filePath.category = filePath.full.split(path.sep)[0];
+      }
 
       try {
         const rawFileData = (await fs.readFile(file, 'utf-8')).trim();

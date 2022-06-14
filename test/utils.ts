@@ -155,6 +155,7 @@ export type Linter = {
   description: string;
   scope: LinterScope;
   check: (logger: Logger, options: object) => void;
+  exceptions?: string[];
 };
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
@@ -212,6 +213,7 @@ export class Logger {
 export class Linters {
   linters: Array<Linter>;
   messages: Record<string, LinterMessage[]>;
+  expectedFailures: Record<string, string[]>;
 
   constructor(linters: Array<Linter>) {
     this.linters = linters;
@@ -226,12 +228,19 @@ export class Linters {
 
   /**
    * @param {LinterScope} scope
-   * @param {{data: object, rawdata: string, path: {full: string}}} data
+   * @param {object} data
    */
-  runScope(scope: LinterScope, data): void {
+  runScope(
+    scope: LinterScope,
+    data: {
+      data: any;
+      rawdata?: string;
+      path: { full: string; category?: string; browser?: string };
+    },
+  ): void {
     const linters = this.linters.filter((linter) => linter.scope === scope);
     for (const linter of linters) {
-      const logger = new Logger(linter.title, data.path.full);
+      const logger = new Logger(linter.name, data.path.full);
       const shouldFail = linter.exceptions?.includes(data.path.full);
       linter.check(logger, data);
       if (!shouldFail) {
