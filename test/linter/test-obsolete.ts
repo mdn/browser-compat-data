@@ -59,10 +59,7 @@ function implementedAndRemoved(
  * @param {CompatStatement} data The data to test
  * @returns {void}
  */
-function processData(
-  logger: Logger,
-  data: CompatStatement,
-): void {
+function processData(logger: Logger, data: CompatStatement): void {
   if (data && data.support) {
     const { support, status } = data;
 
@@ -89,10 +86,7 @@ export default {
   name: 'Obsolete',
   description: 'Test for obsolete data in each support statement',
   scope: 'feature',
-  check(
-    logger: Logger,
-    { data }: { data: CompatStatement; },
-  ) {
+  check(logger: Logger, { data }: { data: CompatStatement }) {
     processData(logger, data);
   },
   exceptions: [
