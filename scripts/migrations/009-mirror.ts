@@ -1,6 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import {
+  CompatData,
+  BrowserName,
+  Identifier,
+  ReleaseStatement,
+  SimpleSupportStatement,
+} from '../../types/types.js';
+import {
+  InternalSupportStatement,
+  InternalSupportBlock,
+} from '../../types/index.js';
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,7 +29,10 @@ import mirrorSupport from '../release/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-export const isMirrorEquivalent = (support, browser) => {
+export const isMirrorEquivalent = (
+  support: InternalSupportBlock,
+  browser: BrowserName,
+): boolean => {
   const original = support[browser];
   if (!original) {
     return false; // No data for browser.
@@ -38,17 +53,22 @@ export const isMirrorEquivalent = (support, browser) => {
   return true;
 };
 
-export const mirrorIfEquivalent = (bcd, browsers) => {
+export const mirrorIfEquivalent = (
+  bcd: CompatData,
+  browsers: BrowserName[],
+): void => {
   for (const { compat } of walk(undefined, bcd)) {
     for (const browser of browsers) {
-      if (isMirrorEquivalent(compat.support, browser)) {
-        compat.support[browser] = 'mirror';
+      if (compat) {
+        if (isMirrorEquivalent(compat.support, browser)) {
+          (compat.support[browser] as InternalSupportStatement) = 'mirror';
+        }
       }
     }
   }
 };
 
-const updateInPlace = (filename, browsers) => {
+const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
   mirrorIfEquivalent(bcd, browsers);
@@ -60,9 +80,11 @@ const updateInPlace = (filename, browsers) => {
 };
 
 if (esMain(import.meta)) {
-  const defaultBrowsers = Object.keys(bcd.browsers).filter((browser) => {
-    return bcd.browsers[browser].upstream;
-  });
+  const defaultBrowsers = (Object.keys(bcd.browsers) as BrowserName[]).filter(
+    (browser) => {
+      return bcd.browsers[browser].upstream;
+    },
+  );
 
   const defaultFolders = [
     'api',
@@ -95,14 +117,14 @@ if (esMain(import.meta)) {
     },
   );
 
-  for (const dir of argv.folders) {
+  for (const dir of (argv as any).folders) {
     const files = new fdir()
       .withBasePath()
       .filter((fp) => fp.endsWith('.json'))
       .crawl(path.join(dirname, '..', '..', dir))
       .sync();
-    for (const file of files) {
-      updateInPlace(file, argv.browsers);
+    for (const file of files as string[]) {
+      updateInPlace(file, (argv as any).browsers);
     }
   }
 }
