@@ -10,7 +10,7 @@ import { hideBin } from 'yargs/helpers';
 
 import { lowLevelWalk } from '../utils/walk.js';
 
-async function main(argv) {
+async function main(argv: any) {
   const { dest, dataFrom } = argv;
   fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
 }
@@ -18,12 +18,11 @@ async function main(argv) {
 async function enumerateFeatures(dataFrom: string) {
   const feats: string[] = [];
 
-  const walker = dataFrom
-    ? lowLevelWalk(
-        undefined,
-        await import(path.join(process.cwd(), dataFrom, 'index.js')),
-      )
-    : lowLevelWalk();
+  const walker = lowLevelWalk(
+    dataFrom
+      ? await import(path.join(process.cwd(), dataFrom, 'index.js'))
+      : undefined,
+  );
 
   for (const feat of walker) {
     if (feat.compat || feat.browser) {
