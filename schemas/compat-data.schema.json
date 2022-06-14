@@ -181,7 +181,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/support_statement"
       },
-      "tsType": "Partial<Record<BrowserNames, SupportStatement>>"
+      "tsType": "Partial<Record<BrowserName, SupportStatement>>"
     },
 
     "spec_url_value": {
@@ -257,7 +257,8 @@
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      }
+      },
+      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
     },
 
     "webextensions_identifier": {
@@ -274,10 +275,12 @@
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      }
+      },
+      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
     }
   },
 
+  "title": "CompatDataFile",
   "type": "object",
   "patternProperties": {
     "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": {
@@ -296,6 +299,5 @@
     "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
   },
   "maxProperties": 1,
-  "minProperties": 1,
-  "tsName": "CompatDataFile"
+  "minProperties": 1
 }
