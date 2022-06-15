@@ -1,5 +1,42 @@
 # Release notes
 
+## [v5.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.0)
+
+June 14, 2022
+
+### Notable changes
+
+A new `source_file` property has been added to `__compat` statements. This property indicates which file in the [browser-compat-data](https://github.com/mdn/browser-compat-data) repository the feature comes from, which can be useful for linking potential contributors to the correct file to suggest changes.
+
+### Removals
+
+- `api.VRDisplay.hardwareUnitId` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VREyeParameters.recommendedFieldOfView` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VREyeParameters.renderRect` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRFieldOfView.VRFieldOfView` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRPose.hasOrientation` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRPose.hasPosition` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `javascript.builtins.Array.groupBy` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `javascript.builtins.Array.groupByToMap` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+
+### Additions
+
+- `css.types.color.oklab` ([#16526](https://github.com/mdn/browser-compat-data/pull/16526))
+- `css.types.color.oklch` ([#16526](https://github.com/mdn/browser-compat-data/pull/16526))
+- `http.status.103` ([#16335](https://github.com/mdn/browser-compat-data/pull/16335))
+- `javascript.builtins.Array.group` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `javascript.builtins.Array.groupToMap` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `webextensions.api.privacy.websites.cookieConfig.behavior` ([#16642](https://github.com/mdn/browser-compat-data/pull/16642))
+- `webextensions.api.privacy.websites.cookieConfig.nonPersistentCookies` ([#16642](https://github.com/mdn/browser-compat-data/pull/16642))
+- `webextensions.api.tabs.create.createProperties.muted` ([#16655](https://github.com/mdn/browser-compat-data/pull/16655))
+
+### Statistics
+
+- 14 contributors have changed 187 files with 4,079 additions and 1,944 deletions in 41 commits ([`v5.0.3...v5.1.0`](https://github.com/mdn/browser-compat-data/compare/v5.0.3...v5.1.0))
+- 13,726 total features
+- 877 total contributors
+- 4,096 total stargazers
+
 ## [v5.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.3)
 
 June 9, 2022
