@@ -1,4 +1,4 @@
-name: "PR Needs Rebase"
+name: 'PR Needs Rebase'
 on:
   push:
   pull_request_target:
@@ -7,5 +7,7 @@ on:
 jobs:
   idle:
     uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
+    with:
+      target-repo: "mdn/browser-compat-data"
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
