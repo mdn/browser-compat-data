@@ -405,7 +405,7 @@ export const bumpSupport = (
 const mirrorSupport = (
   destination: BrowserName,
   data: InternalSupportBlock,
-): SupportStatement | null => {
+): SupportStatement => {
   const upstream: BrowserName | undefined = browsers[destination].upstream;
   if (!upstream) {
     throw new Error(
@@ -426,7 +426,12 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  return bumpSupport(upstreamData, destination);
+  const result = bumpSupport(upstreamData, destination);
+  if (!result) {
+    throw new Error(`Could not mirror support!`);
+  }
+
+  return result;
 };
 
 export default mirrorSupport;
