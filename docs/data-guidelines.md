@@ -142,8 +142,6 @@ This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-dat
 
 If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
 
-For historical reasons, some support statements have the flag set to `true` without a note. Avoid this in new data or revised data. We intend to require this in the schema, after the features which do not conform to this guideline have been removed. Read [#4162](https://github.com/mdn/browser-compat-data/issues/4162) for details.
-
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
 ## Non-functional defined names imply `"partial_implementation"`
@@ -233,14 +231,28 @@ This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-dat
 
 ## Removal of irrelevant flag data
 
-Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet these conditions:
 
-- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
-- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+- The browser has supported the feature by default.
+- The feature can no longer be enabled by toggling the flag.
+- The flag has been removed from the browser.
 
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
-This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670) and revised in [#16637](https://github.com/mdn/browser-compat-data/pull/16637).
+
+## When to add `version_removed` to flagged support
+
+A `version_removed` should be added to support statements containing flags under one of the following conditions:
+
+- The browser has enabled the feature or flag by default in a stable release (not beta or nightly).
+- The feature can no longer be enabled or disabled by toggling the flag.
+- The feature has been removed from the browser.
+- The flag has been removed from the browser.
+
+Set `version_removed` to the earliest applicable version from these conditions. For example, if Chrome 90 enabled the flag by default, the feature could no longer be toggled off by disabling the flag in Chrome 96, and finally the flag was removed by Chrome 98, then set `version_removed` to `90` as it is the earliest applicable version.
+
+This guideline was proposed in [#16287](https://github.com/mdn/browser-compat-data/pull/16287).
 
 ## Initial versions for browsers
 
@@ -426,3 +438,31 @@ Note that APIs available on only _some_ types of workers are not considered glob
 - The `requestAnimationFrame()` function, available in `Window` and `DedicatedWorkerGlobalScope`.
 
 This guideline is based on a discussion in [#11518](https://github.com/mdn/browser-compat-data/pull/11518).
+
+## Callback interfaces and functions
+
+Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
+
+Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback inferface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
+
+For example, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) is specified as taking an `EventListener` callback. Since `EventListener` is specified as an unexposed `callback interface EventListener`, it would be represented as a subfeature of `api.EventTarget.addEventListener`.
+
+This guideline is based on a discussion in [#3068](https://github.com/mdn/browser-compat-data/issues/3068) and was proposed in [#14302](https://github.com/mdn/browser-compat-data/pull/14302).
+
+## Setting `deprecated`
+
+Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
+
+The `deprecated` status captures the many ways standards organizations (and, for non-standard features, vendors) mark features as disfavored. This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+
+Evidence for setting `deprecated` to `true` includes:
+
+- _Obsolete_, _legacy_, _deprecated_, _end-of-life_, or similar terminology in a specification
+- Removal of a feature from a specification
+- Specification text that cautions developers against new use of the feature
+- Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
+- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
+
+Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
+
+This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."

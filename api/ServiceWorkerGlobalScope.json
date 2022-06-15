@@ -8,9 +8,7 @@
           "chrome": {
             "version_added": "40"
           },
-          "chrome_android": {
-            "version_added": "40"
-          },
+          "chrome_android": "mirror",
           "edge": {
             "version_added": "17"
           },
@@ -33,15 +31,9 @@
           "safari": {
             "version_added": "11.1"
           },
-          "safari_ios": {
-            "version_added": "11.3"
-          },
-          "samsunginternet_android": {
-            "version_added": "4.0"
-          },
-          "webview_android": {
-            "version_added": "40"
-          }
+          "safari_ios": "mirror",
+          "samsunginternet_android": "mirror",
+          "webview_android": "mirror"
         },
         "status": {
           "experimental": false,
@@ -49,18 +41,53 @@
           "deprecated": false
         }
       },
+      "abortpayment_event": {
+        "__compat": {
+          "description": "<code>abortpayment</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "70"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "activate_event": {
         "__compat": {
           "description": "<code>activate</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/activate_event",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-activate-event",
+          "spec_url": [
+            "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-activate-event",
+            "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onactivate"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -83,14 +110,178 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "backgroundfetchabort_event": {
+        "__compat": {
+          "description": "<code>backgroundfetchabort</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "74"
             },
-            "samsunginternet_android": {
-              "version_added": "4.0"
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
             },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": "40"
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "backgroundfetchclick_event": {
+        "__compat": {
+          "description": "<code>backgroundfetchclick</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "backgroundfetchfail_event": {
+        "__compat": {
+          "description": "<code>backgroundfetchfail</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "backgroundfetchsuccess_event": {
+        "__compat": {
+          "description": "<code>backgroundfetchsuccess</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "74"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "canmakepayment_event": {
+        "__compat": {
+          "description": "<code>canmakepayment</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "70"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
             }
           },
           "status": {
@@ -108,9 +299,7 @@
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -133,19 +322,81 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "contentdelete_event": {
+        "__compat": {
+          "description": "<code>contentdelete</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/contentdelete_event",
+          "spec_url": "https://wicg.github.io/content-index/spec/#dom-serviceworkerglobalscope-oncontentdelete",
+          "support": {
+            "chrome": {
+              "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "4.0"
+            "chrome_android": {
+              "version_added": "84"
             },
-            "webview_android": {
-              "version_added": "40"
-            }
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "cookiechange_event": {
+        "__compat": {
+          "description": "<code>cookiechange</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "87"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -157,42 +408,69 @@
             "chrome": {
               "version_added": "87"
             },
-            "chrome_android": {
-              "version_added": "87"
-            },
-            "edge": {
-              "version_added": "87"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
+            "firefox_android": "mirror",
+            "ie": {
               "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "fetch_event": {
+        "__compat": {
+          "description": "<code>fetch</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/fetch_event",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onfetch",
+          "support": {
+            "chrome": {
+              "version_added": "40"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
+              "version_added": "44",
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
+            },
+            "firefox_android": {
+              "version_added": "44"
             },
             "ie": {
               "version_added": false
             },
             "opera": {
-              "version_added": "73"
+              "version_added": "24"
             },
             "opera_android": {
-              "version_added": false
+              "version_added": "24"
             },
             "safari": {
-              "version_added": false
+              "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "14.0"
-            },
-            "webview_android": {
-              "version_added": "87"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -202,14 +480,12 @@
         "__compat": {
           "description": "<code>install</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/install_event",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-global-scope-install-event",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-oninstall",
           "support": {
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -232,18 +508,12 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -253,14 +523,15 @@
         "__compat": {
           "description": "<code>message</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/message_event",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#eventdef-serviceworkerglobalscope-message",
+          "spec_url": [
+            "https://w3c.github.io/ServiceWorker/#eventdef-serviceworkerglobalscope-message",
+            "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -283,18 +554,51 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "messageerror_event": {
+        "__compat": {
+          "description": "<code>messageerror</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/messageerror_event",
+          "spec_url": [
+            "https://w3c.github.io/ServiceWorker/#eventdef-serviceworkerglobalscope-messageerror",
+            "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onmessageerror"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "81"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "65"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "11.1",
+              "partial_implementation": true,
+              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -304,14 +608,15 @@
         "__compat": {
           "description": "<code>notificationclick</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclick_event",
-          "spec_url": "https://notifications.spec.whatwg.org/#activating-a-notification",
+          "spec_url": [
+            "https://notifications.spec.whatwg.org/#activating-a-notification",
+            "https://notifications.spec.whatwg.org/#dom-serviceworkerglobalscope-onnotificationclick"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -328,21 +633,17 @@
             "opera": {
               "version_added": "24"
             },
-            "opera_android": {
-              "version_added": "27"
-            },
+            "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16",
+              "partial_implementation": true,
+              "notes": "Supported on macOS 13 and later"
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -351,704 +652,16 @@
           }
         }
       },
-      "onabortpayment": {
+      "notificationclose_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onabortpayment",
-          "support": {
-            "chrome": {
-              "version_added": "70"
-            },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onactivate": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onactivate",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onactivate",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbackgroundfetchabort": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onbackgroundfetchabort",
-          "support": {
-            "chrome": {
-              "version_added": "74"
-            },
-            "chrome_android": {
-              "version_added": "74"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "62"
-            },
-            "opera_android": {
-              "version_added": "53"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbackgroundfetchclick": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onbackgroundfetchclick",
-          "support": {
-            "chrome": {
-              "version_added": "74"
-            },
-            "chrome_android": {
-              "version_added": "74"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "62"
-            },
-            "opera_android": {
-              "version_added": "53"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbackgroundfetchfail": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onbackgroundfetchfail",
-          "support": {
-            "chrome": {
-              "version_added": "74"
-            },
-            "chrome_android": {
-              "version_added": "74"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "62"
-            },
-            "opera_android": {
-              "version_added": "53"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onbackgroundfetchsuccess": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onbackgroundfetchsuccess",
-          "support": {
-            "chrome": {
-              "version_added": "74"
-            },
-            "chrome_android": {
-              "version_added": "74"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "62"
-            },
-            "opera_android": {
-              "version_added": "53"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "oncanmakepayment": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/oncanmakepayment",
-          "support": {
-            "chrome": {
-              "version_added": "70"
-            },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "oncontentdelete": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/oncontentdelete",
-          "spec_url": "https://wicg.github.io/content-index/spec/#dom-serviceworkerglobalscope-oncontentdelete",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": "84"
-            },
-            "edge": {
-              "version_added": false
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": "60"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "14.0"
-            },
-            "webview_android": {
-              "version_added": "84"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "oncookiechange": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "87"
-            },
-            "chrome_android": {
-              "version_added": "87"
-            },
-            "edge": {
-              "version_added": "87"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "73"
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "14.0"
-            },
-            "webview_android": {
-              "version_added": "87"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onfetch": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onfetch",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onfetch",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "oninstall": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/oninstall",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-oninstall",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onmessage",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onmessage",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": "11.1"
-            },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onmessageerror": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onmessageerror",
-          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-onmessageerror",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": {
-              "version_added": "81"
-            },
-            "edge": {
-              "version_added": "81"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": {
-              "version_added": "65"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "68"
-            },
-            "opera_android": {
-              "version_added": "58"
-            },
-            "safari": {
-              "version_added": "11.1",
-              "partial_implementation": true,
-              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
-            },
-            "safari_ios": {
-              "version_added": "11.3",
-              "partial_implementation": true,
-              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
-            },
-            "samsunginternet_android": {
-              "version_added": "13.0"
-            },
-            "webview_android": {
-              "version_added": "81"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onnotificationclick": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onnotificationclick",
-          "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerglobalscope-onnotificationclick",
-          "support": {
-            "chrome": {
-              "version_added": "40"
-            },
-            "chrome_android": {
-              "version_added": "40"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onnotificationclose": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onnotificationclose",
+          "description": "<code>notificationclose</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/notificationclose_event",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-serviceworkerglobalscope-onnotificationclose",
           "support": {
             "chrome": {
               "version_added": "50"
             },
-            "chrome_android": {
-              "version_added": "50"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -1069,264 +682,48 @@
               "version_added": "34"
             },
             "safari": {
-              "version_added": false
+              "version_added": "16",
+              "partial_implementation": true,
+              "notes": "Supported on macOS 13 and later"
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "50"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "onpaymentrequest": {
+      "paymentrequest_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onpaymentrequest",
+          "description": "<code>paymentrequest</code> event",
           "support": {
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onperiodicsync": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onperiodicsync",
-          "spec_url": "https://wicg.github.io/periodic-background-sync/#dom-serviceworkerglobalscope-onperiodicsync",
-          "support": {
-            "chrome": {
-              "version_added": "80"
-            },
-            "chrome_android": {
-              "version_added": "80"
-            },
-            "edge": {
-              "version_added": "80"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "67"
-            },
-            "opera_android": {
-              "version_added": "57"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "13.0"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "onpush": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onpush",
-          "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpush",
-          "support": {
-            "chrome": {
-              "version_added": "42"
-            },
-            "chrome_android": {
-              "version_added": "42"
-            },
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "26"
-            },
-            "opera_android": {
-              "version_added": "26"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "42"
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onpushsubscriptionchange": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onpushsubscriptionchange",
-          "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpushsubscriptionchange",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "17",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "onsync": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/onsync",
-          "spec_url": "https://wicg.github.io/background-sync/spec/#dom-serviceworkerglobalscope-onsync",
-          "support": {
-            "chrome": {
-              "version_added": "49"
-            },
-            "chrome_android": {
-              "version_added": "49"
-            },
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "opera": {
-              "version_added": "24"
-            },
-            "opera_android": {
-              "version_added": "24"
-            },
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "5.0"
-            },
-            "webview_android": {
-              "version_added": "49"
             }
           },
           "status": {
@@ -1338,66 +735,56 @@
       },
       "periodicsync_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/periodicsync_event",
-          "spec_url": "https://wicg.github.io/periodic-background-sync/#periodicsync-event",
           "description": "<code>periodicsync</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/periodicsync_event",
+          "spec_url": [
+            "https://wicg.github.io/periodic-background-sync/#periodicsync-event",
+            "https://wicg.github.io/periodic-background-sync/#dom-serviceworkerglobalscope-onperiodicsync"
+          ],
           "support": {
             "chrome": {
               "version_added": "80"
             },
-            "chrome_android": {
-              "version_added": "80"
-            },
-            "edge": {
-              "version_added": "80"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "67"
-            },
-            "opera_android": {
-              "version_added": "57"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "13.0"
-            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "push_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event",
-          "spec_url": "https://w3c.github.io/push-api/#extensions-to-the-serviceworkerglobalscope-interface",
           "description": "<code>push</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/push_event",
+          "spec_url": [
+            "https://w3c.github.io/push-api/#extensions-to-the-serviceworkerglobalscope-interface",
+            "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpush"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
             },
-            "chrome_android": {
-              "version_added": "40"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -1406,7 +793,7 @@
               "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "48"
             },
             "ie": {
               "version_added": false
@@ -1418,17 +805,15 @@
               "version_added": "24"
             },
             "safari": {
-              "version_added": false
+              "version_added": "16",
+              "partial_implementation": true,
+              "notes": "Supported on macOS 13 and later"
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "40"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1439,16 +824,17 @@
       },
       "pushsubscriptionchange_event": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/pushsubscriptionchange_event",
-          "spec_url": "https://w3c.github.io/push-api/#the-pushsubscriptionchange-event",
           "description": "<code>pushsubscriptionchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/pushsubscriptionchange_event",
+          "spec_url": [
+            "https://w3c.github.io/push-api/#the-pushsubscriptionchange-event",
+            "https://w3c.github.io/push-api/#dom-serviceworkerglobalscope-onpushsubscriptionchange"
+          ],
           "support": {
             "chrome": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17",
               "version_removed": "79"
@@ -1458,29 +844,23 @@
               "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
             },
             "firefox_android": {
-              "version_added": "44"
+              "version_added": "48"
             },
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16",
+              "partial_implementation": true,
+              "notes": "Supported on macOS 13 and later"
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1497,9 +877,7 @@
             "chrome": {
               "version_added": "42"
             },
-            "chrome_android": {
-              "version_added": "42"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -1522,18 +900,12 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "42"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1541,43 +913,28 @@
       },
       "serviceWorker": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-serviceworker",
           "support": {
             "chrome": {
               "version_added": "79"
             },
-            "chrome_android": {
-              "version_added": "79"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "66"
-            },
-            "opera_android": {
-              "version_added": "57"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "15.4"
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": "79"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1594,9 +951,7 @@
             "chrome": {
               "version_added": "41"
             },
-            "chrome_android": {
-              "version_added": "41"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
@@ -1619,18 +974,53 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": "11.3"
-            },
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
-            "webview_android": {
-              "version_added": "41"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sync_event": {
+        "__compat": {
+          "description": "<code>sync</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/sync_event",
+          "spec_url": "https://wicg.github.io/background-sync/spec/#dom-serviceworkerglobalscope-onsync",
+          "support": {
+            "chrome": {
+              "version_added": "49"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "44",
+              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
+            },
+            "firefox_android": {
+              "version_added": "44"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "opera": {
+              "version_added": "24"
+            },
+            "opera_android": {
+              "version_added": "24"
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
