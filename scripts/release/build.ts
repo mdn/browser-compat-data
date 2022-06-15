@@ -22,11 +22,9 @@ const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md'];
 
-// Returns a string representing data ready for writing to JSON file
-async function createDataBundle() {
-  const { default: bcd } = await import('../../index.js');
-
-  const walker = walk(undefined, bcd);
+export function applyMirroring(data) {
+  const response = Object.assign({}, data);
+  const walker = walk(undefined, response);
 
   for (const feature of walker) {
     if (!feature.compat) {
@@ -44,18 +42,24 @@ async function createDataBundle() {
     }
   }
 
-  const string = stringify({
-    ...bcd,
+  return response;
+}
+
+// Returns an object containing the prepared BCD data
+export async function createDataBundle() {
+  const { default: bcd } = await import('../../index.js');
+
+  return {
+    ...applyMirroring(bcd),
     __meta: { version: packageJson.version },
-  });
-  return string;
+  };
 }
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
   const dest = path.resolve(directory, 'data.json');
   const data = await createDataBundle();
-  await fs.writeFile(dest, data);
+  await fs.writeFile(dest, stringify(data));
 }
 
 async function writeWrapper() {
