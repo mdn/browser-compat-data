@@ -2,6 +2,37 @@
   "$schema": "http://json-schema.org/schema#",
 
   "definitions": {
+    "browser_type": {
+      "type": "string",
+      "enum": ["desktop", "mobile", "xr", "server"]
+    },
+
+    "browser_engine": {
+      "type": "string",
+      "enum": [
+        "Blink",
+        "EdgeHTML",
+        "Gecko",
+        "Presto",
+        "Trident",
+        "WebKit",
+        "V8"
+      ]
+    },
+
+    "browser_status": {
+      "type": "string",
+      "enum": [
+        "retired",
+        "current",
+        "exclusive",
+        "beta",
+        "nightly",
+        "esr",
+        "planned"
+      ]
+    },
+
     "browsers": {
       "type": "object",
       "additionalProperties": {
@@ -12,7 +43,8 @@
       "errorMessage": {
         "minProperties": "A browser must be described within the file.",
         "maxProperties": "Each browser JSON file may only describe one browser."
-      }
+      },
+      "tsType": "Record<BrowserName, BrowserStatement>"
     },
 
     "browser_statement": {
@@ -20,20 +52,21 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "Browser name, avoid using unnecessary English (e.g. prefer 'Chrome Android' over 'Chrome for Android')."
+          "description": "The browser brand name (e.g. Firefox, Firefox Android, Chrome, etc.)."
         },
         "type": {
-          "type": "string",
-          "enum": ["desktop", "mobile", "xr", "server"],
-          "description": "What type of browser this is (desktop, mobile, XR, or server engine)."
+          "$ref": "#/definitions/browser_type",
+          "description": "The platform the browser runs on (e.g. desktop, mobile, XR, or server engine).",
+          "tsType": "BrowserType"
         },
         "upstream": {
           "type": "string",
-          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome)."
+          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome).",
+          "tsType": "BrowserName"
         },
         "accepts_flags": {
           "type": "boolean",
-          "description": "Whether the browser supports flags."
+          "description": "Whether the browser supports flags to enable or disablle features."
         },
         "accepts_webextensions": {
           "type": "boolean",
@@ -41,18 +74,20 @@
         },
         "pref_url": {
           "type": "string",
-          "description": "URL of the page where feature flags can be changed (e.g. 'about:config' or 'chrome://flags')."
+          "description": "URL of the page where feature flags can be changed (e.g. 'about:config' for Firefox or 'chrome://flags' for Chrome)."
         },
         "preview_name": {
           "type": "string",
-          "description": "Preview name, avoid long-form names (use 'Nightly' instead of 'Firefox Nightly')."
+          "description": "The name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
         },
         "releases": {
           "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/release_statement" }
+          "additionalProperties": { "$ref": "#/definitions/release_statement" },
+          "description": "The known versions of this browser.",
+          "tsType": "{ [version: string]: ReleaseStatement };"
         }
       },
-      "required": ["name", "releases"],
+      "required": ["name", "type", "releases"],
       "additionalProperties": false
     },
 
@@ -62,7 +97,7 @@
         "release_date": {
           "type": "string",
           "format": "date",
-          "description": "Release date"
+          "description": "The date on which this version was released, formatted as `YYYY-MM-DD`."
         },
         "release_notes": {
           "type": "string",
@@ -71,40 +106,26 @@
           "description": "A link to the release notes or changelog for a given release."
         },
         "engine": {
-          "type": "string",
-          "enum": [
-            "Blink",
-            "EdgeHTML",
-            "Gecko",
-            "Presto",
-            "Trident",
-            "WebKit",
-            "V8"
-          ],
-          "description": "Name of the browser's underlying engine."
+          "$ref": "#/definitions/browser_engine",
+          "description": "Name of the browser's underlying engine.",
+          "tsType": "BrowserEngine"
         },
         "engine_version": {
           "type": "string",
           "description": "Version of the engine corresponding to the browser version."
         },
         "status": {
-          "type": "string",
-          "enum": [
-            "retired",
-            "current",
-            "exclusive",
-            "beta",
-            "nightly",
-            "esr",
-            "planned"
-          ],
-          "description": "The status of the given browser release (e.g. current, retired, beta, nightly)."
+          "$ref": "#/definitions/browser_status",
+          "description": "A property indicating where in the lifetime cycle this release is in (e.g. current, retired, beta, nightly).",
+          "tsType": "BrowserStatus"
         }
       },
+      "required": ["status"],
       "additionalProperties": false
     }
   },
 
+  "title": "BrowserDataFile",
   "type": "object",
   "properties": {
     "browsers": { "$ref": "#/definitions/browsers" }
