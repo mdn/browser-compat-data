@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { fdir } from 'fdir';
 
 import extend from './scripts/lib/extend.js';
+import { normalizePath, walk } from './utils/index.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -31,8 +32,18 @@ async function load(...dirs: string[]) {
 
     for (const fp of paths) {
       try {
-        const contents = await fs.readFile(fp);
-        extend(result, JSON.parse(contents.toString('utf8')));
+        const rawcontents = await fs.readFile(fp);
+        const contents: CompatData = JSON.parse(rawcontents.toString('utf8'));
+
+        // Add source_file props
+        const walker = walk(undefined, contents);
+        for (const { compat } of walker) {
+          if (!compat) continue;
+
+          compat.source_file = normalizePath(path.relative(dirname, fp));
+        }
+
+        extend(result, contents);
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
