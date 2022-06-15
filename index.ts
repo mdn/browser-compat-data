@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { fdir } from 'fdir';
 
 import extend from './scripts/lib/extend.js';
-import { walk } from './utils/index.js';
+import { normalizePath, walk } from './utils/index.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -40,7 +40,7 @@ async function load(...dirs: string[]) {
         for (const { compat } of walker) {
           if (!compat) continue;
 
-          compat.source_file = path.relative(dirname, fp);
+          compat.source_file = normalizePath(path.relative(dirname, fp));
         }
 
         extend(result, contents);
