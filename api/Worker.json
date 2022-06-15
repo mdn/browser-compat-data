@@ -8,9 +8,7 @@
           "chrome": {
             "version_added": "4"
           },
-          "chrome_android": {
-            "version_added": "18"
-          },
+          "chrome_android": "mirror",
           "deno": {
             "version_added": "1.0"
           },
@@ -20,9 +18,7 @@
           "firefox": {
             "version_added": "3.5"
           },
-          "firefox_android": {
-            "version_added": "4"
-          },
+          "firefox_android": "mirror",
           "ie": {
             "version_added": "10"
           },
@@ -73,9 +69,7 @@
           "safari_ios": {
             "version_added": "5"
           },
-          "samsunginternet_android": {
-            "version_added": "1.0"
-          },
+          "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": "4.4"
           }
@@ -95,9 +89,7 @@
             "chrome": {
               "version_added": "4"
             },
-            "chrome_android": {
-              "version_added": "18"
-            },
+            "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"
             },
@@ -107,17 +99,33 @@
             "firefox": {
               "version_added": "3.5"
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": "Takes an entirely different options object."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Takes entirely different options.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -130,9 +138,7 @@
             "safari_ios": {
               "version_added": "5"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4"
             }
@@ -150,15 +156,11 @@
               "chrome": {
                 "version_added": "80"
               },
-              "chrome_android": {
-                "version_added": "80"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": "1.0"
               },
-              "edge": {
-                "version_added": "80"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false,
                 "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>"
@@ -174,24 +176,16 @@
                 "partial_implementation": true,
                 "notes": "ECMAScript modules are enabled for files ending with <code>.mjs</code> and for files ending with <code>.js</code> when the nearest parent <code>package.json</code> file contains a top-level field <code>\"type\"</code> with a value of <code>\"module\"</code>."
               },
-              "opera": {
-                "version_added": "67"
-              },
-              "opera_android": {
-                "version_added": "57"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "15"
               },
               "safari_ios": {
                 "version_added": "15"
               },
-              "samsunginternet_android": {
-                "version_added": "13.0"
-              },
-              "webview_android": {
-                "version_added": "80"
-              }
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -208,53 +202,30 @@
                 "version_added": false,
                 "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
               },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "81"
               },
-              "firefox_android": {
-                "version_added": "81"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "nodejs": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              },
-              "opera_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": false,
                 "notes": "See <a href='https://webkit.org/b/192749'>WebKit bug 192749</a>."
               },
-              "safari_ios": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/192749'>WebKit bug 192749</a>."
-              },
-              "samsunginternet_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              },
-              "webview_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -270,9 +241,7 @@
               "chrome": {
                 "version_added": "70"
               },
-              "chrome_android": {
-                "version_added": "70"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": "1.0"
               },
@@ -282,30 +251,20 @@
               "firefox": {
                 "version_added": "55"
               },
-              "firefox_android": {
-                "version_added": "55"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "nodejs": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "57"
-              },
-              "opera_android": {
-                "version_added": "49"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "12.1"
               },
-              "safari_ios": {
-                "version_added": "12.2"
-              },
-              "samsunginternet_android": {
-                "version_added": "10.0"
-              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
               }
@@ -324,46 +283,30 @@
               "chrome": {
                 "version_added": "80"
               },
-              "chrome_android": {
-                "version_added": "80"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": "1.0",
                 "notes": "Only supports <code>module</code>"
               },
-              "edge": {
-                "version_added": "80"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "nodejs": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "67"
-              },
-              "opera_android": {
-                "version_added": "57"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": false
               },
-              "safari_ios": {
-                "version_added": false
-              },
-              "samsunginternet_android": {
-                "version_added": "13.0"
-              },
-              "webview_android": {
-                "version_added": "80"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -382,18 +325,14 @@
             "chrome": {
               "version_added": "4"
             },
-            "chrome_android": {
-              "version_added": "18"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
             "firefox": {
               "version_added": "3.5"
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "10"
             },
@@ -412,9 +351,7 @@
             "safari_ios": {
               "version_added": "5"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4"
             }
@@ -435,9 +372,7 @@
             "chrome": {
               "version_added": "4"
             },
-            "chrome_android": {
-              "version_added": "18"
-            },
+            "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"
             },
@@ -447,17 +382,33 @@
             "firefox": {
               "version_added": "3.5"
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -470,9 +421,7 @@
             "safari_ios": {
               "version_added": "5"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4"
             }
@@ -493,9 +442,7 @@
             "chrome": {
               "version_added": "60"
             },
-            "chrome_android": {
-              "version_added": "60"
-            },
+            "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"
             },
@@ -505,18 +452,14 @@
             "firefox": {
               "version_added": "57"
             },
-            "firefox_android": {
-              "version_added": "57"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
             "nodejs": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "47"
-            },
+            "opera": "mirror",
             "opera_android": {
               "version_added": "47"
             },
@@ -524,16 +467,9 @@
               "version_added": false,
               "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
             },
-            "safari_ios": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
-            },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "60"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -550,9 +486,7 @@
             "chrome": {
               "version_added": "4"
             },
-            "chrome_android": {
-              "version_added": "18"
-            },
+            "chrome_android": "mirror",
             "deno": [
               {
                 "version_added": "1.14",
@@ -592,16 +526,34 @@
             "firefox": {
               "version_added": "3.5"
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
               "notes": "Internet Explorer does not support <code>Transferable</code> objects."
             },
-            "nodejs": {
-              "version_added": "10.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "11.7.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "10.5.0",
+                "notes": "Supports <code>transferList</code> argument for transfering <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
+                "partial_implementation": true,
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -614,9 +566,7 @@
             "safari_ios": {
               "version_added": "5"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4"
             }
@@ -636,9 +586,7 @@
             "chrome": {
               "version_added": "4"
             },
-            "chrome_android": {
-              "version_added": "18"
-            },
+            "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"
             },
@@ -648,16 +596,33 @@
             "firefox": {
               "version_added": "3.5"
             },
-            "firefox_android": {
-              "version_added": "4"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "10.5.0",
-              "notes": "Also takes an optional callback to be executed when the worker has terminated."
-            },
+            "nodejs": [
+              {
+                "version_added": "12.17.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+              },
+              {
+                "version_added": "11.7.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+              },
+              {
+                "version_added": "10.5.0",
+                "partial_implementation": true,
+                "notes": "Also takes an optional callback to be executed when the worker has terminated.",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--experimental-worker"
+                  }
+                ]
+              }
+            ],
             "opera": {
               "version_added": "10.6"
             },
@@ -670,9 +635,7 @@
             "safari_ios": {
               "version_added": "5"
             },
-            "samsunginternet_android": {
-              "version_added": "1.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4"
             }
