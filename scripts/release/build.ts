@@ -22,11 +22,13 @@ const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md'];
 
-// Returns a string representing data ready for writing to JSON file
-async function createDataBundle() {
-  const { default: bcd } = await import('../../index.js');
+export function generateMeta() {
+  return { version: packageJson.version };
+}
 
-  const walker = walk(undefined, bcd);
+export function applyMirroring(data) {
+  const response = Object.assign({}, data);
+  const walker = walk(undefined, response);
 
   for (const feature of walker) {
     if (!feature.compat) {
@@ -44,18 +46,26 @@ async function createDataBundle() {
     }
   }
 
-  const string = stringify({
-    ...bcd,
-    __meta: { version: packageJson.version },
-  });
-  return string;
+  return response;
 }
+
+// Returns an object containing the prepared BCD data
+export async function createDataBundle() {
+  const { default: bcd } = await import('../../index.js');
+
+  return {
+    ...applyMirroring(bcd),
+    __meta: generateMeta(),
+  };
+}
+
+/* c8 ignore start */
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
   const dest = path.resolve(directory, 'data.json');
   const data = await createDataBundle();
-  await fs.writeFile(dest, data);
+  await fs.writeFile(dest, stringify(data));
 }
 
 async function writeWrapper() {
@@ -93,7 +103,9 @@ async function copyFiles() {
   }
 }
 
-async function createManifest() {
+/* c8 ignore stop */
+
+export function createManifest() {
   const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {
@@ -122,13 +134,15 @@ async function createManifest() {
       throw `Could not create a complete manifest! ${key} is missing!`;
     }
   }
-  return JSON.stringify(minimal);
+  return minimal;
 }
+
+/* c8 ignore start */
 
 async function writeManifest() {
   const dest = path.resolve(directory, 'package.json');
-  const manifest = await createManifest();
-  await fs.writeFile(dest, manifest);
+  const manifest = createManifest();
+  await fs.writeFile(dest, JSON.stringify(manifest));
 }
 
 async function main() {
@@ -158,3 +172,5 @@ async function main() {
 if (esMain(import.meta)) {
   await main();
 }
+
+/* c8 ignore stop */

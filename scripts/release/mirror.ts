@@ -28,9 +28,13 @@ export const getMatchingBrowserVersion = (
   sourceVersion: string,
 ) => {
   const browserData = browsers[targetBrowser];
+
+  /* c8 ignore start */
   if (!browserData.upstream) {
+    // This should never be reached
     throw new Error('Browser does not have an upstream browser set.');
   }
+  /* c8 ignore stop */
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
@@ -139,8 +143,8 @@ const updateNotes = (
   return notes
     .replace(regex, replace)
     .replace(
-      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
-      (match, p1) => replace + ' ' + versionMapper(p1),
+      new RegExp(`(${replace}|version)\\s(\\d+)`, 'g'),
+      (match, p1, p2) => p1 + ' ' + versionMapper(p2),
     );
 };
 
@@ -357,14 +361,10 @@ const bumpWebView = (
  * @param {BrowserName} destination
  */
 export const bumpSupport = (
-  sourceData: SupportStatement | null,
+  sourceData: SupportStatement,
   destination: BrowserName,
 ): SupportStatement | null => {
   let newData: SupportStatement | null = null;
-
-  if (sourceData == null) {
-    return null;
-  }
 
   if (Array.isArray(sourceData)) {
     const newStatements = sourceData
@@ -396,7 +396,8 @@ export const bumpSupport = (
 
   if (newData.version_added === newData.version_removed) {
     // If version_added and version_removed are the same, feature is unsupported
-    return { ...newData, version_added: false, version_removed: undefined };
+    newData.version_added = false;
+    delete newData.version_removed;
   }
 
   return newData;
@@ -405,7 +406,7 @@ export const bumpSupport = (
 const mirrorSupport = (
   destination: BrowserName,
   data: InternalSupportBlock,
-): SupportStatement | null => {
+): SupportStatement => {
   const upstream: BrowserName | undefined = browsers[destination].upstream;
   if (!upstream) {
     throw new Error(
@@ -426,7 +427,16 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  return bumpSupport(upstreamData, destination);
+  const result = bumpSupport(upstreamData, destination);
+
+  /* c8 ignore start */
+  if (!result) {
+    // This should never be reached
+    throw new Error(`Result is null, cannot mirror!`);
+  }
+  /* c8 ignore stop */
+
+  return result;
 };
 
 export default mirrorSupport;
