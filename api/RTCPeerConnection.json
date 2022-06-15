@@ -14,15 +14,7 @@
               "version_added": "23"
             }
           ],
-          "chrome_android": [
-            {
-              "version_added": "56"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "25"
-            }
-          ],
+          "chrome_android": "mirror",
           "edge": [
             {
               "version_added": "15"
@@ -41,60 +33,18 @@
               "version_added": "22"
             }
           ],
-          "firefox_android": [
-            {
-              "version_added": "44"
-            },
-            {
-              "prefix": "moz",
-              "version_added": "22"
-            }
-          ],
+          "firefox_android": "mirror",
           "ie": {
             "version_added": false
           },
-          "opera": [
-            {
-              "version_added": "43"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "15"
-            }
-          ],
-          "opera_android": [
-            {
-              "version_added": "43"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "14"
-            }
-          ],
+          "opera": "mirror",
+          "opera_android": "mirror",
           "safari": {
             "version_added": "11"
           },
-          "safari_ios": {
-            "version_added": "11"
-          },
-          "samsunginternet_android": [
-            {
-              "version_added": "6.0"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "1.5"
-            }
-          ],
-          "webview_android": [
-            {
-              "version_added": "56"
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "≤37"
-            }
-          ]
+          "safari_ios": "mirror",
+          "samsunginternet_android": "mirror",
+          "webview_android": "mirror"
         },
         "status": {
           "experimental": false,
@@ -118,16 +68,7 @@
                 "version_added": "23"
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "56",
-                "notes": "Before Chrome 63, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "25"
-              }
-            ],
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "15"
@@ -146,28 +87,11 @@
                 "version_added": "22"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "44"
-              },
-              {
-                "prefix": "moz",
-                "version_added": "22"
-              }
-            ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "43",
-                "notes": "Before Opera 50, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "15"
-              }
-            ],
+            "opera": "mirror",
             "opera_android": [
               {
                 "version_added": "43",
@@ -181,34 +105,292 @@
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0",
-                "notes": "Before Samsung Internet 8.0, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "1.5"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "56",
-                "notes": "Before WebView 63, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ]
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "configuration_bundlePolicy_parameter": {
+          "__compat": {
+            "description": "<code>configuration.bundlePolicy</code> parameter",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-bundlepolicy",
+            "support": {
+              "chrome": {
+                "version_added": "42"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "42"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": {
+                "version_added": "7.0"
+              },
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_certificates_parameter": {
+          "__compat": {
+            "description": "<code>configuration.certificates</code> parameter",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-certificates",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "42"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": {
+                "version_added": "7.0"
+              },
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_iceCandidatePoolSize_parameter": {
+          "__compat": {
+            "description": "<code>configuration.iceCandidatePoolSize</code> parameter",
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_iceServers_parameter": {
+          "__compat": {
+            "description": "<code>configuration.iceServers</code> parameter",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-iceservers",
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "22"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_iceTransportPolicy_parameter": {
+          "__compat": {
+            "description": "<code>configuration.iceTransportPolicy</code> parameter",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-icetransportpolicy",
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "42"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_peerIdentity_parameter": {
+          "__compat": {
+            "description": "<code>configuration.peerIdentity</code> parameter",
+            "support": {
+              "chrome": {
+                "version_added": "23"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "32"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "≤37"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_rtcpMuxPolicy_parameter": {
+          "__compat": {
+            "description": "<code>configuration.rtcpMuxPolicy</code> parameter",
+            "support": {
+              "chrome": {
+                "version_added": "57",
+                "notes": "Default for <code>rtcpMuxPolicy</code> is <code>require</code>"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": {
+                "version_added": "≤79",
+                "notes": "Default for <code>rtcpMuxPolicy</code> is <code>require</code>"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "44"
+              },
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -220,9 +402,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -237,24 +417,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -269,39 +439,23 @@
               "chrome": {
                 "version_added": "50"
               },
-              "chrome_android": {
-                "version_added": "50"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "37"
-              },
-              "opera_android": {
-                "version_added": "37"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "50"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -319,10 +473,7 @@
               "version_added": "24",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "25",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -345,10 +496,7 @@
               "version_added": "11",
               "version_removed": "12"
             },
-            "safari_ios": {
-              "version_added": "11",
-              "version_removed": "12"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -372,10 +520,7 @@
               "version_added": "24",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "25",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -397,9 +542,7 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -422,12 +565,8 @@
             "chrome": {
               "version_added": "64"
             },
-            "chrome_android": {
-              "version_added": "64"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -437,24 +576,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "51"
-            },
-            "opera_android": {
-              "version_added": "47"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "9.0"
-            },
-            "webview_android": {
-              "version_added": "64"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -471,18 +600,12 @@
             "chrome": {
               "version_added": "69"
             },
-            "chrome_android": {
-              "version_added": "69"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "59"
             },
-            "firefox_android": {
-              "version_added": "59"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -495,15 +618,9 @@
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "69"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -518,18 +635,12 @@
               "chrome": {
                 "version_added": "69"
               },
-              "chrome_android": {
-                "version_added": "69"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "59"
               },
-              "firefox_android": {
-                "version_added": "59"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -542,15 +653,9 @@
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "10.0"
-              },
-              "webview_android": {
-                "version_added": "69"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -566,20 +671,13 @@
               "chrome": {
                 "version_added": "69"
               },
-              "chrome_android": {
-                "version_added": "69"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": false,
                 "notes": "<code>sendEncodings</code> is not yet implemented in Firefox. See <a href='https://bugzil.la/1396918'>bug 1396918</a>."
               },
-              "firefox_android": {
-                "version_added": false,
-                "notes": "<code>sendEncodings</code> is not yet implemented in Firefox. See <a href='https://bugzil.la/1396918'>bug 1396918</a>."
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -592,15 +690,9 @@
               "safari": {
                 "version_added": "14.1"
               },
-              "safari_ios": {
-                "version_added": "14.5"
-              },
-              "samsunginternet_android": {
-                "version_added": "10.0"
-              },
-              "webview_android": {
-                "version_added": "69"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -616,18 +708,12 @@
               "chrome": {
                 "version_added": "69"
               },
-              "chrome_android": {
-                "version_added": "69"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "59"
               },
-              "firefox_android": {
-                "version_added": "59"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -640,15 +726,9 @@
               "safari": {
                 "version_added": "12.1"
               },
-              "safari_ios": {
-                "version_added": "12.2"
-              },
-              "samsunginternet_android": {
-                "version_added": "10.0"
-              },
-              "webview_android": {
-                "version_added": "69"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -666,9 +746,7 @@
             "chrome": {
               "version_added": "83"
             },
-            "chrome_android": {
-              "version_added": "83"
-            },
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "83"
@@ -687,24 +765,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "69"
-            },
-            "opera_android": {
-              "version_added": "59"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "15.4"
             },
-            "safari_ios": {
-              "version_added": "15.4"
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": "83"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -721,39 +789,25 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
             "firefox": {
               "version_added": "22"
             },
-            "firefox_android": {
-              "version_added": "22"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -770,39 +824,23 @@
             "chrome": {
               "version_added": "72"
             },
-            "chrome_android": {
-              "version_added": "72"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "60"
-            },
-            "opera_android": {
-              "version_added": "51"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": "72"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -820,39 +858,23 @@
             "chrome": {
               "version_added": "72"
             },
-            "chrome_android": {
-              "version_added": "72"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
-            "firefox_android": {
-              "version_added": false
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "60"
-            },
-            "opera_android": {
-              "version_added": "51"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "11.0"
-            },
-            "webview_android": {
-              "version_added": "72"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -869,9 +891,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -884,24 +904,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -916,18 +926,12 @@
               "chrome": {
                 "version_added": "51"
               },
-              "chrome_android": {
-                "version_added": "51"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -940,15 +944,11 @@
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
-              "webview_android": {
-                "version_added": "51"
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -966,9 +966,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "79"
             },
@@ -981,24 +979,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1014,9 +1002,7 @@
             "chrome": {
               "version_added": "27"
             },
-            "chrome_android": {
-              "version_added": "27"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "79"
             },
@@ -1029,24 +1015,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "15"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1063,9 +1039,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -1078,24 +1052,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1110,18 +1074,12 @@
               "chrome": {
                 "version_added": "51"
               },
-              "chrome_android": {
-                "version_added": "51"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -1134,15 +1092,11 @@
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
-              "webview_android": {
-                "version_added": "51"
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1160,12 +1114,8 @@
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -1175,24 +1125,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "70"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1209,39 +1149,23 @@
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "57"
             },
-            "firefox_android": {
-              "version_added": "57"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "70"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1259,9 +1183,7 @@
             "chrome": {
               "version_added": "25"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "79"
             },
@@ -1274,24 +1196,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1308,12 +1220,8 @@
             "chrome": {
               "version_added": "48"
             },
-            "chrome_android": {
-              "version_added": "48"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -1323,24 +1231,16 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "35"
-            },
-            "opera_android": {
-              "version_added": "35"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "12.1"
             },
-            "safari_ios": {
-              "version_added": "12.2"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "48"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1357,9 +1257,7 @@
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -1372,24 +1270,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "70"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1406,9 +1294,7 @@
             "chrome": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "≤18",
               "version_removed": "79"
@@ -1416,30 +1302,18 @@
             "firefox": {
               "version_added": "40"
             },
-            "firefox_android": {
-              "version_added": "40"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1456,10 +1330,7 @@
               "version_added": "27",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "27",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -1482,10 +1353,7 @@
               "version_added": "11",
               "version_removed": "12"
             },
-            "safari_ios": {
-              "version_added": "11",
-              "version_removed": "12"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -1508,39 +1376,25 @@
             "chrome": {
               "version_added": "59"
             },
-            "chrome_android": {
-              "version_added": "59"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "34"
             },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "46"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "59"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1557,10 +1411,7 @@
               "version_added": "27",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "27",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -1583,10 +1434,7 @@
               "version_added": "11",
               "version_removed": "12"
             },
-            "safari_ios": {
-              "version_added": "11",
-              "version_removed": "12"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -1609,39 +1457,25 @@
             "chrome": {
               "version_added": "64"
             },
-            "chrome_android": {
-              "version_added": "64"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "34"
             },
-            "firefox_android": {
-              "version_added": "34"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "51"
-            },
-            "opera_android": {
-              "version_added": "47"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "64"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1658,39 +1492,25 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
             "firefox": {
               "version_added": "27"
             },
-            "firefox_android": {
-              "version_added": "27"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1705,39 +1525,23 @@
               "chrome": {
                 "version_added": "58"
               },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "45"
-              },
-              "opera_android": {
-                "version_added": "43"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "7.0"
-              },
-              "webview_android": {
-                "version_added": "58"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1753,39 +1557,25 @@
               "chrome": {
                 "version_added": "67"
               },
-              "chrome_android": {
-                "version_added": "67"
-              },
+              "chrome_android": "mirror",
               "edge": {
                 "version_added": "≤79"
               },
               "firefox": {
                 "version_added": "27"
               },
-              "firefox_android": {
-                "version_added": "27"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "54"
-              },
-              "opera_android": {
-                "version_added": "48"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "9.0"
-              },
-              "webview_android": {
-                "version_added": "67"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1803,10 +1593,7 @@
               "version_added": "56",
               "version_removed": "62"
             },
-            "chrome_android": {
-              "version_added": "56",
-              "version_removed": "62"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15",
               "version_removed": "79"
@@ -1821,14 +1608,8 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "43",
-              "version_removed": "49"
-            },
-            "opera_android": {
-              "version_added": "43",
-              "version_removed": "46"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11",
               "version_removed": "12"
@@ -1837,14 +1618,8 @@
               "version_added": "11",
               "version_removed": "12.2"
             },
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "version_removed": "8.0"
-            },
-            "webview_android": {
-              "version_added": "56",
-              "version_removed": "62"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1861,36 +1636,22 @@
             "chrome": {
               "version_added": "69"
             },
-            "chrome_android": {
-              "version_added": "69"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "59"
             },
-            "firefox_android": {
-              "version_added": "59"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "56"
-            },
-            "opera_android": {
-              "version_added": "48"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "79"
             }
@@ -1911,9 +1672,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -1926,24 +1685,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1961,41 +1710,24 @@
             "chrome": {
               "version_added": "77"
             },
-            "chrome_android": {
-              "version_added": "77"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false,
               "notes": "See <a href='https://bugzil.la/1561441'>bug 1561441</a>."
             },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1561441'>bug 1561441</a>."
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "64"
-            },
-            "opera_android": {
-              "version_added": "55"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "14.1"
             },
-            "safari_ios": {
-              "version_added": "14.5"
-            },
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": "77"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2012,39 +1744,25 @@
             "chrome": {
               "version_added": "26"
             },
-            "chrome_android": {
-              "version_added": "26"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
             "firefox": {
               "version_added": "52"
             },
-            "firefox_android": {
-              "version_added": "52"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2062,9 +1780,7 @@
             "chrome": {
               "version_added": "28"
             },
-            "chrome_android": {
-              "version_added": "28"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2077,24 +1793,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "15"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2111,9 +1817,7 @@
             "chrome": {
               "version_added": "25"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2126,24 +1830,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2161,9 +1855,7 @@
             "chrome": {
               "version_added": "59"
             },
-            "chrome_android": {
-              "version_added": "59"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2176,24 +1868,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "46"
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "7.0"
-            },
-            "webview_android": {
-              "version_added": "59"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2209,39 +1891,23 @@
             "chrome": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "40"
             },
-            "firefox_android": {
-              "version_added": "40"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2258,9 +1924,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2273,24 +1937,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2308,9 +1962,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2323,24 +1975,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2357,9 +1999,7 @@
             "chrome": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "≤18",
               "version_removed": "79"
@@ -2367,30 +2007,18 @@
             "firefox": {
               "version_added": "40"
             },
-            "firefox_android": {
-              "version_added": "40"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2407,12 +2035,8 @@
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -2422,24 +2046,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "70"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2456,12 +2070,8 @@
             "chrome": {
               "version_added": "70"
             },
-            "chrome_android": {
-              "version_added": "70"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -2471,24 +2081,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "57"
-            },
-            "opera_android": {
-              "version_added": "49"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "10.0"
-            },
-            "webview_android": {
-              "version_added": "70"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2505,9 +2105,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2520,24 +2118,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2554,10 +2142,7 @@
               "version_added": "24",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "25",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2581,10 +2166,7 @@
               "version_added": "11",
               "version_removed": "12"
             },
-            "safari_ios": {
-              "version_added": "11",
-              "version_removed": "12"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -2608,10 +2190,7 @@
               "version_added": "24",
               "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
             },
-            "chrome_android": {
-              "version_added": "25",
-              "notes": "See <a href='https://crbug.com/697059'>bug 697059</a>."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2635,9 +2214,7 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.5"
             },
@@ -2660,12 +2237,8 @@
             "chrome": {
               "version_added": "64"
             },
-            "chrome_android": {
-              "version_added": "64"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -2675,24 +2248,16 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "51"
-            },
-            "opera_android": {
-              "version_added": "47"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "64"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2710,12 +2275,8 @@
             "chrome": {
               "version_added": "77"
             },
-            "chrome_android": {
-              "version_added": "77"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "70"
             },
@@ -2728,21 +2289,13 @@
             "opera": {
               "version_added": false
             },
-            "opera_android": {
-              "version_added": "55"
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": "14.1"
             },
-            "safari_ios": {
-              "version_added": "14.5"
-            },
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": "77"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2759,41 +2312,26 @@
             "chrome": {
               "version_added": "76"
             },
-            "chrome_android": {
-              "version_added": "76"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": false,
               "notes": "See <a href='https://bugzil.la/1278299'>bug 1278299</a>."
             },
-            "firefox_android": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1278299'>bug 1278299</a>."
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
             "opera": {
               "version_added": false
             },
-            "opera_android": {
-              "version_added": "54"
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": "15.4"
             },
-            "safari_ios": {
-              "version_added": "15.4"
-            },
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": {
-              "version_added": "76"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2810,39 +2348,25 @@
             "chrome": {
               "version_added": "48"
             },
-            "chrome_android": {
-              "version_added": "48"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "99"
             },
-            "firefox_android": {
-              "version_added": "99"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "35"
-            },
-            "opera_android": {
-              "version_added": "35"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "48"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2859,9 +2383,7 @@
             "chrome": {
               "version_added": false
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "≤18",
               "version_removed": "79"
@@ -2869,30 +2391,18 @@
             "firefox": {
               "version_added": "40"
             },
-            "firefox_android": {
-              "version_added": "40"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": {
-              "version_added": false
-            },
-            "webview_android": {
-              "version_added": false
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2910,9 +2420,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -2926,24 +2434,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2958,18 +2456,12 @@
               "chrome": {
                 "version_added": "80"
               },
-              "chrome_android": {
-                "version_added": "80"
-              },
-              "edge": {
-                "version_added": "80"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "75"
               },
-              "firefox_android": {
-                "version_added": "79"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -2982,15 +2474,9 @@
               "safari": {
                 "version_added": "14.1"
               },
-              "safari_ios": {
-                "version_added": "14.5"
-              },
-              "samsunginternet_android": {
-                "version_added": "13.0"
-              },
-              "webview_android": {
-                "version_added": "80"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -3006,39 +2492,23 @@
               "chrome": {
                 "version_added": "50"
               },
-              "chrome_android": {
-                "version_added": "50"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "37"
-              },
-              "opera_android": {
-                "version_added": "37"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "50"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -3057,9 +2527,7 @@
             "chrome": {
               "version_added": "24"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -3072,24 +2540,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3104,24 +2562,16 @@
               "chrome": {
                 "version_added": "80"
               },
-              "chrome_android": {
-                "version_added": "80"
-              },
-              "edge": {
-                "version_added": "80"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "70"
               },
-              "firefox_android": {
-                "version_added": "79"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "67"
-              },
+              "opera": "mirror",
               "opera_android": {
                 "version_added": "66"
               },
@@ -3131,12 +2581,8 @@
               "safari_ios": {
                 "version_added": false
               },
-              "samsunginternet_android": {
-                "version_added": "13.0"
-              },
-              "webview_android": {
-                "version_added": "80"
-              }
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -3152,39 +2598,23 @@
               "chrome": {
                 "version_added": "50"
               },
-              "chrome_android": {
-                "version_added": "50"
-              },
-              "edge": {
-                "version_added": "79"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "66"
               },
-              "firefox_android": {
-                "version_added": "66"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "37"
-              },
-              "opera_android": {
-                "version_added": "37"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "11"
               },
-              "safari_ios": {
-                "version_added": "11"
-              },
-              "samsunginternet_android": {
-                "version_added": "5.0"
-              },
-              "webview_android": {
-                "version_added": "50"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -3202,9 +2632,7 @@
             "chrome": {
               "version_added": "26"
             },
-            "chrome_android": {
-              "version_added": "26"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -3217,24 +2645,14 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3252,9 +2670,7 @@
             "chrome": {
               "version_added": "28"
             },
-            "chrome_android": {
-              "version_added": "28"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "15"
             },
@@ -3267,24 +2683,16 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "15"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
             "safari_ios": {
               "version_added": false
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3302,12 +2710,8 @@
             "chrome": {
               "version_added": "64"
             },
-            "chrome_android": {
-              "version_added": "64"
-            },
-            "edge": {
-              "version_added": "79"
-            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "22"
             },
@@ -3326,15 +2730,11 @@
             "safari": {
               "version_added": "11"
             },
-            "safari_ios": {
-              "version_added": "11"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": {
-              "version_added": "64"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,

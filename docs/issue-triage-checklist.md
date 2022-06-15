@@ -65,7 +65,7 @@ These details can be helpful if an issue is specific to the Chromium-based brows
 
 ### Firefox and Firefox for Android
 
-- If applicable, **request or link to a relevant bug on [Bugzilla](http://bugzilla.mozilla.org/).**
+- If applicable, **request or link to a relevant bug on [Bugzilla](https://bugzilla.mozilla.org).**
 - If the issue affects Firefox for Android only, **check whether the feature was introduced before or after Firefox 68 and make a note of it in a comment or the issue description**.
 
 ### Safari
