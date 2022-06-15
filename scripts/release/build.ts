@@ -22,6 +22,10 @@ const directory = './build/';
 
 const verbatimFiles = ['LICENSE', 'README.md'];
 
+export function generateMeta() {
+  return { version: packageJson.version };
+}
+
 export function applyMirroring(data) {
   const response = Object.assign({}, data);
   const walker = walk(undefined, response);
@@ -51,9 +55,11 @@ export async function createDataBundle() {
 
   return {
     ...applyMirroring(bcd),
-    __meta: { version: packageJson.version },
+    __meta: generateMeta(),
   };
 }
+
+/* c8 ignore start */
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
@@ -97,7 +103,9 @@ async function copyFiles() {
   }
 }
 
-async function createManifest() {
+/* c8 ignore stop */
+
+export function createManifest() {
   const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {
@@ -126,13 +134,15 @@ async function createManifest() {
       throw `Could not create a complete manifest! ${key} is missing!`;
     }
   }
-  return JSON.stringify(minimal);
+  return minimal;
 }
+
+/* c8 ignore start */
 
 async function writeManifest() {
   const dest = path.resolve(directory, 'package.json');
-  const manifest = await createManifest();
-  await fs.writeFile(dest, manifest);
+  const manifest = createManifest();
+  await fs.writeFile(dest, JSON.stringify(manifest));
 }
 
 async function main() {
@@ -162,3 +172,5 @@ async function main() {
 if (esMain(import.meta)) {
   await main();
 }
+
+/* c8 ignore stop */

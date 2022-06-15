@@ -28,9 +28,13 @@ export const getMatchingBrowserVersion = (
   sourceVersion: string,
 ) => {
   const browserData = browsers[targetBrowser];
+
+  /* c8 ignore start */
   if (!browserData.upstream) {
+    // This should never be reached
     throw new Error('Browser does not have an upstream browser set.');
   }
+  /* c8 ignore stop */
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
@@ -139,8 +143,8 @@ const updateNotes = (
   return notes
     .replace(regex, replace)
     .replace(
-      new RegExp(`(?:${replace}|version)\\s(\\d+)`),
-      (match, p1) => replace + ' ' + versionMapper(p1),
+      new RegExp(`(${replace}|version)\\s(\\d+)`, 'g'),
+      (match, p1, p2) => p1 + ' ' + versionMapper(p2),
     );
 };
 
@@ -392,7 +396,8 @@ export const bumpSupport = (
 
   if (newData.version_added === newData.version_removed) {
     // If version_added and version_removed are the same, feature is unsupported
-    return { ...newData, version_added: false, version_removed: undefined };
+    newData.version_added = false;
+    delete newData.version_removed;
   }
 
   return newData;
@@ -423,9 +428,13 @@ const mirrorSupport = (
   }
 
   const result = bumpSupport(upstreamData, destination);
+
+  /* c8 ignore start */
   if (!result) {
+    // This should never be reached
     throw new Error(`Result is null, cannot mirror!`);
   }
+  /* c8 ignore stop */
 
   return result;
 };

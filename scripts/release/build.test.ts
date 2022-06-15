@@ -7,19 +7,27 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 
 import bcd from '../../index.js';
-import { applyMirroring, createDataBundle } from './build.js';
-
-const packageJson = JSON.parse(
-  await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
-);
+import {
+  applyMirroring,
+  createDataBundle,
+  generateMeta,
+  createManifest,
+} from './build.js';
 
 describe('build', () => {
   it('build data matches', async () => {
     const devBcd = {
       ...applyMirroring(bcd),
-      __meta: { version: packageJson.version },
+      __meta: generateMeta(),
     };
 
     assert.deepEqual(await createDataBundle(), devBcd);
+  });
+
+  it('package.json', () => {
+    const manifest = createManifest();
+
+    assert.equal(manifest.main, 'data.json');
+    assert.ok(!('devDependencies' in manifest));
   });
 });
