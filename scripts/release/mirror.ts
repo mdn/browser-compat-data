@@ -357,14 +357,10 @@ const bumpWebView = (
  * @param {BrowserName} destination
  */
 export const bumpSupport = (
-  sourceData: SupportStatement | null,
+  sourceData: SupportStatement,
   destination: BrowserName,
 ): SupportStatement | null => {
   let newData: SupportStatement | null = null;
-
-  if (sourceData == null) {
-    return null;
-  }
 
   if (Array.isArray(sourceData)) {
     const newStatements = sourceData
@@ -428,7 +424,7 @@ const mirrorSupport = (
 
   const result = bumpSupport(upstreamData, destination);
   if (!result) {
-    throw new Error(`Could not mirror support!`);
+    throw new Error(`Result is null, cannot mirror!`);
   }
 
   return result;
