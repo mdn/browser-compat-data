@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "5.0.3",
+  "version": "5.1.0",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.ts",
   "type": "module",
@@ -70,7 +70,7 @@
     "prepare": "npm run gentypes",
     "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "ts-node scripts/diff.ts",
-    "unittest": "c8 mocha --recursive \"{,!(node_modules)/**}/*.test.ts\"",
+    "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "npx eslint \"**/*.ts\" && npx prettier --check \"**/*.md\" \"**/*.json\"",
     "format:fix": "npx eslint --fix \"**/*.ts\" && npx prettier --write \"**/*.md\" \"**/*.json\"",
