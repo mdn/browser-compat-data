@@ -23,15 +23,17 @@ export const orderSupportBlock = (
   value: CompatStatement,
 ): CompatStatement => {
   if (key === '__compat') {
-    const support = Object.keys(value.support)
+    const support: CompatStatement['support'] = (
+      Object.keys(value.support) as BrowserName[]
+    )
       .sort()
-      .reduce((result: { [index: string]: any }, key: string) => {
-        result[key] = value.support[key as BrowserName];
+      .reduce((result: CompatStatement['support'], key: BrowserName) => {
+        result[key] = value.support[key];
         return result;
       }, {});
     value.support = support;
   }
-  return value as CompatStatement;
+  return value;
 };
 
 /**

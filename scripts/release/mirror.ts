@@ -6,10 +6,7 @@ import {
   SimpleSupportStatement,
   SupportStatement,
 } from '../../types/types.js';
-import {
-  InternalSupportBlock,
-  InternalSupportStatement,
-} from '../../types/index.js';
+import { InternalSupportBlock } from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
@@ -155,7 +152,7 @@ const updateNotes = (
 const copyStatement = (
   data: SimpleSupportStatement,
 ): SimpleSupportStatement => {
-  const newData: { [index: string]: any } = {};
+  const newData: Partial<SimpleSupportStatement> = {};
   for (const i in data) {
     newData[i] = data[i];
   }
@@ -168,14 +165,18 @@ const copyStatement = (
  * @returns {SupportStatement}
  */
 const combineStatements = (...data: SupportStatement[]): SupportStatement => {
-  const ignoredKeys = ['version_added', 'notes', 'impl_url'];
+  const ignoredKeys: (keyof SimpleSupportStatement)[] = [
+    'version_added',
+    'notes',
+    'impl_url',
+  ];
 
   const flattenedData = data.flat(2);
-  const sections: { [index: string]: any } = {};
+  const sections: { [index: string]: SimpleSupportStatement[] } = {};
   let newData: SimpleSupportStatement[] = [];
 
   for (const d of flattenedData) {
-    const key = Object.keys(d)
+    const key = (Object.keys(d) as (keyof typeof d)[])
       .filter((k) => !ignoredKeys.includes(k))
       .join('');
     if (!(key in sections)) sections[key] = [];
@@ -191,7 +192,8 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
     }
 
     for (const i in sections[k]) {
-      if (i === sections[k][0]) continue;
+      // TODO: fix me
+      // if (i === sections[k][0]) continue;
       const newStatement = sections[k][i];
 
       const currentVA = currentStatement.version_added;
@@ -213,7 +215,10 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
         }
       }
 
-      const newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      const newNotes = combineNotes(
+        currentStatement.notes || null,
+        newStatement.notes || null,
+      );
       if (newNotes) currentStatement.notes = newNotes;
     }
 
@@ -414,7 +419,7 @@ const mirrorSupport = (
     );
   }
 
-  let upstreamData: InternalSupportStatement | null = data[upstream] || null;
+  let upstreamData = data[upstream] || null;
 
   if (!upstreamData) {
     throw new Error(

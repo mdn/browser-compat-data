@@ -23,7 +23,7 @@ type WalkOutput = {
 };
 
 export function* browserReleaseWalk(
-  data: DataType,
+  data: BrowserStatement,
   path?: string,
 ): IterableIterator<WalkOutput> {
   for (const [release, releaseData] of Object.entries(data.releases)) {
@@ -31,7 +31,7 @@ export function* browserReleaseWalk(
       path: joinPath(path, 'releases', release),
       data,
       browser: data,
-      browserRelease: releaseData as ReleaseStatement,
+      browserRelease: releaseData,
     };
   }
 }
