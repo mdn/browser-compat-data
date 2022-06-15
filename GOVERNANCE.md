@@ -34,9 +34,13 @@ Peers:
 
 - Must submit pull requests for all their changes.
 - May label and close issues.
-- May merge other people's pull requests that relate to compat data updates.
-- May merge other people's pull requests that relate to browser data updates (excluding the addition or removal of browsers).
-- Have their non-data update work reviewed and merged by [Owners](#Owners). Non-data pull requests are PRs that change the schema, update project meta-docs, the linter, or other infrastructure changes.
+- May merge pull requests that relate to compat data and browser data updates.
+  - Other contributor's pull requests may be merged by peers.
+  - A peer's own pull requests may be merged after approval from a fellow peer or owner.
+- Have their non-data update work reviewed and merged by [Owners](#Owners).
+  - Non-data pull requests are PRs that change the schema, add or remove browsers, update project meta-docs, the linter, or other infrastructure changes.
+- May merge a pull request that immediately fixes a failing test, regardless of the author.
+  - Owner review should still be requested on "critical fix" PRs.
 - Should ask for additional review from other Peers or Owners on other people's PRs that are disruptive or controversial.
 
 To become a Peer one must:
@@ -86,8 +90,8 @@ Owners fulfill all requirements of Peers, and also:
 - Review code contributions, approve changes to this document, manage the copyrights within the project outputs.
 - Participate in the project discussions and meetings.
 - Manage and merge non-data pull requests such as schema, linter, or infrastructure changes.
-- May merge their own pull requests once they have collected the feedback they deem necessary. (No pull request should be merged without at least one peer or owner comment stating they’ve looked at the PR.)
-- May merge pull requests that result in a semver major or semver minor version bump only after seeking approval within the group of owners.
+- May merge pull requests that result in a semver minor version bump, excluding browser additions.
+- May merge pull requests that add or remove a browser, modify a major part of internal infrastructure, or result in a semver major version bump only after seeking approval within the group of owners.
 - Release a new npm version of the project on a regular (weekly) basis.
 
 To become an Owner one must fulfill at least the following conditions and commit to being a part of the community for the long-term.
