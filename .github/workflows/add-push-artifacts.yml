@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 16.x
       - run: npm ci
-      - run: node ./scripts/enumerate-features.js features.json
-      - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
+      - run: npx ts-node ./scripts/enumerate-features.ts features.json
+      - run: npx ts-node ./scripts/diff-features.ts --no-github --format=json > features.diff.json
       - uses: actions/upload-artifact@v2
         with:
           name: enumerate-features
