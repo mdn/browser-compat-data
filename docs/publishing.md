@@ -24,7 +24,7 @@ When a release is immenent:
 
 1. Start a new branch for the upcoming release. For example, run `git switch -c release-YYYY-MM-DD`, where `YYYY-MM-DD` is the target release date.
 
-2. Run `npm run release-pulls -- --labeled` to get a link to all of the labeled pull requests since the previous release to determine what type of version increment is needed (`major`, `minor` or `patch`). Most releases will increment `patch` only, but double-check these pull requests to determine if this release must be a `minor` or `major` increment for newly-introduced features or breaking changes (see [_Semantic versioning policy_](../README.md#semantic-versioning-policy)). (You will also need this information in step 4, so don't close the linked page yet!)
+2. Run `npm run release-pulls` to get a link to all of the labeled pull requests since the previous release to determine what type of version increment is needed (`major`, `minor` or `patch`). Most releases will increment `patch` only, but double-check these pull requests to determine if this release must be a `minor` or `major` increment for newly-introduced features or breaking changes (see [_Semantic versioning policy_](../README.md#semantic-versioning-policy)). (You will also need this information in step 4, so don't close the linked page yet!)
 
    A new `major` release (in other words, a release containing a breaking change) should only be released after extensive discussion. If a pull request containing a breaking change was seemingly merged without sufficient discussion and consensus, please confirm if the merge was intentional and has the majority of owner consensus before proceeding.
 
