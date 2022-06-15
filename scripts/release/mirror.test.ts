@@ -133,5 +133,21 @@ describe('mirror', () => {
         }
       });
     }
+
+    it('mirror target must have upstream browser', () => {
+      assert.throws(
+        () => mirrorSupport('chrome' as BrowserName, {}),
+        Error,
+        'Upstream is not defined for chrome, cannot mirror!',
+      );
+    });
+
+    it('throw error if upstream data is not defined', () => {
+      assert.throws(
+        () => mirrorSupport('chrome_android' as BrowserName, {}),
+        Error,
+        'The data for chrome is not defined for mirroring to chrome_android, cannot mirror!',
+      );
+    });
   });
 });
