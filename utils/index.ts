@@ -4,5 +4,6 @@
 import iterSupport from './iter-support.js';
 import query from './query.js';
 import walk from './walk.js';
+import normalizePath from './normalize-path.js';
 
-export { iterSupport, query, walk };
+export { iterSupport, normalizePath, query, walk };

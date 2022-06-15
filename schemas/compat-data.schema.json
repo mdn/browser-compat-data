@@ -225,6 +225,10 @@
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
           "tsType": "string | string[]"
         },
+        "source_file": {
+          "type": "string",
+          "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
+        },
         "support": {
           "$ref": "#/definitions/support_block",
           "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
@@ -258,7 +262,7 @@
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
       },
-      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
+      "tsType": "Record<string, Identifier> & {__compat?: CompatStatement};"
     },
 
     "webextensions_identifier": {
