@@ -156,19 +156,21 @@ export class ConsistencyChecker {
     });
 
     // Add errors
-    (Object.keys(inconsistentSubfeaturesByBrowser) as BrowserName[]).forEach(
-      (browser) => {
-        const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-        if (subfeatures) {
-          errors.push({
-            type: 'unsupported',
-            browser: browser,
-            parentValue: this.getVersionAdded(data?.__compat?.support, browser),
-            subfeatures,
-          });
-        }
-      },
-    );
+    (
+      Object.keys(
+        inconsistentSubfeaturesByBrowser,
+      ) as (keyof typeof inconsistentSubfeaturesByBrowser)[]
+    ).forEach((browser) => {
+      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
+      if (subfeatures) {
+        errors.push({
+          type: 'unsupported',
+          browser: browser,
+          parentValue: this.getVersionAdded(data?.__compat?.support, browser),
+          subfeatures,
+        });
+      }
+    });
 
     // Test whether sub-features are supported when basic support is not implemented
     // For all unsupported browsers (basic support == false), sub-features should be set to false
@@ -201,19 +203,21 @@ export class ConsistencyChecker {
     }
 
     // Add errors
-    (Object.keys(inconsistentSubfeaturesByBrowser) as BrowserName[]).forEach(
-      (browser) => {
-        const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-        if (subfeatures) {
-          errors.push({
-            type: 'support_unknown',
-            browser: browser,
-            parentValue: this.getVersionAdded(data?.__compat?.support, browser),
-            subfeatures,
-          });
-        }
-      },
-    );
+    (
+      Object.keys(
+        inconsistentSubfeaturesByBrowser,
+      ) as (keyof typeof inconsistentSubfeaturesByBrowser)[]
+    ).forEach((browser) => {
+      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
+      if (subfeatures) {
+        errors.push({
+          type: 'support_unknown',
+          browser: browser,
+          parentValue: this.getVersionAdded(data?.__compat?.support, browser),
+          subfeatures,
+        });
+      }
+    });
 
     // Test whether sub-features are supported at an earlier version than basic support
     const supportInParent = this.extractSupportedBrowsersWithVersion(
@@ -246,19 +250,21 @@ export class ConsistencyChecker {
     }
 
     // Add errors
-    (Object.keys(inconsistentSubfeaturesByBrowser) as BrowserName[]).forEach(
-      (browser) => {
-        const subfeatures = inconsistentSubfeaturesByBrowser[browser];
-        if (subfeatures) {
-          errors.push({
-            type: 'subfeature_earlier_implementation',
-            browser: browser,
-            parentValue: this.getVersionAdded(data?.__compat?.support, browser),
-            subfeatures,
-          });
-        }
-      },
-    );
+    (
+      Object.keys(
+        inconsistentSubfeaturesByBrowser,
+      ) as (keyof typeof inconsistentSubfeaturesByBrowser)[]
+    ).forEach((browser) => {
+      const subfeatures = inconsistentSubfeaturesByBrowser[browser];
+      if (subfeatures) {
+        errors.push({
+          type: 'subfeature_earlier_implementation',
+          browser: browser,
+          parentValue: this.getVersionAdded(data?.__compat?.support, browser),
+          subfeatures,
+        });
+      }
+    });
 
     return errors;
   }
@@ -474,22 +480,22 @@ export class ConsistencyChecker {
     if (!compatData) {
       return [];
     }
-    return (Object.keys(compatData.support) as BrowserName[]).filter(
-      (browser) => {
-        let browserData = compatData.support[browser]!;
-        if (browserData === 'mirror') {
-          browserData = mirrorSupport(browser, compatData.support);
-        }
+    return (
+      Object.keys(compatData.support) as (keyof typeof compatData.support)[]
+    ).filter((browser) => {
+      let browserData = compatData.support[browser]!;
+      if (browserData === 'mirror') {
+        browserData = mirrorSupport(browser, compatData.support);
+      }
 
-        if (Array.isArray(browserData)) {
-          return browserData.every(callback);
-        } else if (typeof browserData === 'object') {
-          return callback(browserData);
-        } else {
-          return false;
-        }
-      },
-    );
+      if (Array.isArray(browserData)) {
+        return browserData.every(callback);
+      } else if (typeof browserData === 'object') {
+        return callback(browserData);
+      } else {
+        return false;
+      }
+    });
   }
 }
 

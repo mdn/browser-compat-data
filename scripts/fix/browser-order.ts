@@ -24,7 +24,7 @@ export const orderSupportBlock = (
 ): CompatStatement => {
   if (key === '__compat') {
     const support: CompatStatement['support'] = (
-      Object.keys(value.support) as BrowserName[]
+      Object.keys(value.support) as (keyof typeof value.support)[]
     )
       .sort()
       .reduce((result: CompatStatement['support'], key: BrowserName) => {
