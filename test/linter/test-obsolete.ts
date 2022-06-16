@@ -35,7 +35,7 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
  * @param {SupportBlock} support
  * @returns LinterMessageLevel | false
  */
-function implementedAndRemoved(
+export function implementedAndRemoved(
   support: SupportBlock,
 ): LinterMessageLevel | false {
   let result: LinterMessageLevel = 'error';
@@ -69,7 +69,7 @@ function implementedAndRemoved(
  * @param {CompatStatement} data The data to test
  * @returns {void}
  */
-function processData(logger: Logger, data: CompatStatement): void {
+export function processData(logger: Logger, data: CompatStatement): void {
   if (data && data.support) {
     const { support, status } = data;
 
