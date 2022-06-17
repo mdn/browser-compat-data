@@ -27,9 +27,6 @@ const specsExceptions = [
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 
-  // Exception for "103 Early Hints" HTTP status code
-  'https://httpwg.org/specs/rfc8297.html',
-
   // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
