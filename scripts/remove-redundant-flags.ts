@@ -40,7 +40,7 @@ const getEarliestVersion = (...args: string[]) => {
 export const removeRedundantFlags = (
   key: string,
   value: any,
-  limitBrowser?: BrowserName,
+  limitBrowser: BrowserName | null,
 ) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
@@ -109,7 +109,7 @@ export const removeRedundantFlags = (
 
 export const fixRedundantFlags = (
   filename: string,
-  limitBrowser?: BrowserName,
+  limitBrowser: BrowserName | null,
 ) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
@@ -129,7 +129,7 @@ export const fixRedundantFlags = (
   }
 };
 
-const main = (files_or_folders: string[], browser?: BrowserName) => {
+const main = (files_or_folders: string[], browser: BrowserName | null) => {
   for (let file of files_or_folders) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', file);
@@ -182,7 +182,7 @@ if (esMain(import.meta)) {
           alias: 'b',
           describe: 'The browser to test for',
           type: 'string',
-          default: undefined,
+          default: null,
         });
     },
   );
