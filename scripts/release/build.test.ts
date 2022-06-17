@@ -19,7 +19,7 @@ describe('build', () => {
     };
 
     assert.deepEqual(await createDataBundle(), devBcd);
-  }).timeout(10000);
+  }).timeout(30000);
 
   it('package.json', () => {
     const manifest = createManifest();

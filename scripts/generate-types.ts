@@ -3,6 +3,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
@@ -123,6 +124,7 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
+  execSync('tsc ../types/types.d.ts', { cwd: dirname, stdio: 'inherit' });
 };
 
 if (esMain(import.meta)) {
