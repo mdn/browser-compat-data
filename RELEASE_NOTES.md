@@ -1,5 +1,20 @@
 # Release notes
 
+## [v5.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.1)
+
+June 17, 2022
+
+### Notable changes
+
+The TypeScript default export is cast to `any` and then to `CompatData` to mitigate an issue with the type definitions `Identifier` interface, where it attempts to assign the `__compat` property as an `Identifier` type, even though it should be a `CompatStatement` type.
+
+### Statistics
+
+- 4 contributors have changed 2,347 files with 75,765 additions and 237,875 deletions in 19 commits ([`v5.1.0...v5.1.1`](https://github.com/mdn/browser-compat-data/compare/v5.1.0...v5.1.1))
+- 13,726 total features
+- 877 total contributors
+- 4,095 total stargazers
+
 ## [v5.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.0)
 
 June 14, 2022

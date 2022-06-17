@@ -5,7 +5,6 @@ import { BrowserName } from '../../types/types.js';
 import { InternalSupportStatement } from '../../types/index.js';
 
 import fs from 'node:fs/promises';
-import path from 'node:path';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
@@ -14,11 +13,14 @@ import mirrorSupport from './mirror.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 
+const dirname = new URL('.', import.meta.url);
+const rootdir = new URL('../../', dirname);
+
 const packageJson = JSON.parse(
-  await fs.readFile(new URL('../../package.json', import.meta.url), 'utf-8'),
+  await fs.readFile(new URL('./package.json', rootdir), 'utf-8'),
 );
 
-const directory = './build/';
+const targetdir = new URL('./build/', rootdir);
 
 const verbatimFiles = ['LICENSE', 'README.md'];
 
@@ -63,13 +65,13 @@ export async function createDataBundle() {
 
 // Returns a promise for writing the data to JSON file
 async function writeData() {
-  const dest = path.resolve(directory, 'data.json');
+  const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
   await fs.writeFile(dest, stringify(data));
 }
 
 async function writeWrapper() {
-  const dest = path.resolve(directory, 'legacynode.mjs');
+  const dest = new URL('legacynode.mjs', targetdir);
   const content = `// A small wrapper to allow ESM imports on older NodeJS versions that don't support import assertions
 import fs from 'node:fs';
 const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)));
@@ -79,7 +81,7 @@ export default bcd;
 }
 
 async function writeTypeScript() {
-  const dest = path.resolve(directory, 'index.ts');
+  const dest = new URL('index.ts', targetdir);
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
@@ -87,18 +89,20 @@ import { CompatData } from "./types";
 
 import bcd from "./data.json";
 
-export default bcd as CompatData;
+// XXX The cast to "any" mitigates a TS definition issue. This is very bad practice and
+// should be fixed as soon as possible.
+export default bcd as any as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);
 
-  await compileTS(path.resolve(directory, 'types.d.ts'));
+  await compileTS(new URL('types.d.ts', targetdir));
 }
 
 // Returns an array of promises for copying of all files that don't need transformation
 async function copyFiles() {
   for (const file of verbatimFiles) {
-    const src = path.join('./', file);
-    const dest = path.join(directory, file);
+    const src = new URL(file, rootdir);
+    const dest = new URL(file, targetdir);
     await fs.copyFile(src, dest);
   }
 }
@@ -140,7 +144,7 @@ export function createManifest() {
 /* c8 ignore start */
 
 async function writeManifest() {
-  const dest = path.resolve(directory, 'package.json');
+  const dest = new URL('package.json', targetdir);
   const manifest = createManifest();
   await fs.writeFile(dest, JSON.stringify(manifest));
 }
@@ -148,7 +152,7 @@ async function writeManifest() {
 async function main() {
   // Remove existing files, if there are any
   await fs
-    .rm(directory, {
+    .rm(targetdir, {
       force: true,
       recursive: true,
     })
@@ -158,7 +162,7 @@ async function main() {
     });
 
   // Crate a new directory
-  await fs.mkdir(directory);
+  await fs.mkdir(targetdir);
 
   await writeManifest();
   await writeData();

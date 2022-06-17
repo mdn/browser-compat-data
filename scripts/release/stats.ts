@@ -3,15 +3,21 @@
 
 type Question = {
   name: string;
-  type: any;
   message: string;
 };
 
 type Stats = {
-  commits: string;
-  changed: string;
-  insertions: string;
-  deletions: string;
+  commits: number;
+  changed: number;
+  insertions: number;
+  deletions: number;
+
+  releaseContributors: number;
+  totalContributors: number;
+  features: number;
+  stars: number;
+  start: string;
+  end: string;
 };
 
 import http from 'node:https';
@@ -41,12 +47,14 @@ const getJSON = (url: string): Promise<any> =>
     ),
   );
 
-const question = async (query: string): Promise<any> => {
+const question = async (query: string): Promise<string> => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
-  const response = await new Promise((resolve) => rl.question(query, resolve));
+  const response = await new Promise<string>((resolve) =>
+    rl.question(query, resolve),
+  );
   rl.close();
   console.log();
   return response;
@@ -54,22 +62,25 @@ const question = async (query: string): Promise<any> => {
 
 const prompt = async (
   questions: Array<Question>,
-): Promise<Record<string, string>> => {
-  const results: { [index: string]: any } = {};
+): Promise<Record<Question['name'], number>> => {
+  const results: Record<Question['name'], number> = {};
   for (const q of questions) {
-    results[q.name] = await question(`${q.message} `).then(q.type);
+    results[q.name] = await question(`${q.message} `).then(Number);
   }
   return results;
 };
 
-const stargazers = async () => {
+const stargazers = async (): Promise<number> => {
   const json = await getJSON(
     'https://api.github.com/repos/mdn/browser-compat-data',
   );
   return json.stargazers_count;
 };
 
-function stats(start: string, end: string): Stats {
+function stats(
+  start: string,
+  end: string,
+): Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'> {
   // Get just the diff stats summary
   const diff = exec(`git diff --shortstat ${start}...${end}`);
   if (diff === '') {
@@ -88,30 +99,30 @@ function stats(start: string, end: string): Stats {
   const commits = exec(`git rev-list --count ${start}...${end}`);
 
   return {
-    commits,
-    changed,
-    insertions,
-    deletions,
+    commits: Number(commits),
+    changed: Number(changed),
+    insertions: Number(insertions),
+    deletions: Number(deletions),
   };
 }
 
 const contributors = (
   start: string,
   end: string,
-): Promise<Record<string, string>> =>
+): Promise<Pick<Stats, 'releaseContributors' | 'totalContributors'>> =>
   prompt([
     {
       name: 'releaseContributors',
-      type: Number,
       message: `Find "contributors" at https://github.com/mdn/browser-compat-data/compare/${start}...${end}\nHow many people have contributed to this release?`,
     },
     {
       name: 'totalContributors',
-      type: Number,
       message:
         'Find "contributors" at https://github.com/mdn/browser-compat-data/\nHow many people have contributed to browser-compat-data overall?',
     },
-  ]);
+  ]) as unknown as Promise<
+    Pick<Stats, 'releaseContributors' | 'totalContributors'>
+  >;
 
 function countFeatures() {
   return [...walk()].length;
@@ -123,7 +134,7 @@ function formatNumber(n: number): string {
   return formatter.format(n);
 }
 
-function formatStats(details: any): string {
+function formatStats(details: Stats): string {
   const releaseContributors = formatNumber(details.releaseContributors);
   const totalContributors = formatNumber(details.totalContributors);
   const changed = formatNumber(details.changed);

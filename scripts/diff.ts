@@ -91,7 +91,7 @@ function describeByKind(
  * @param {Contents} contents
  */
 function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
-  const path = (diffItem as any).path.join('.');
+  const path = (diffItem.path as string[]).join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
     if (path.endsWith('.notes') && diffItem.kind === 'E') {
@@ -104,7 +104,7 @@ function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
     }
   } else {
     return {
-      name: (diffItem as any).path.slice(0, -1).join('.'),
+      name: (diffItem.path as string[]).slice(0, -1).join('.'),
       description: `${path} is ${describeByKind(diffItem, contents)}`,
     };
   }

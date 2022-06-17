@@ -15,17 +15,17 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * property ordering, which is insertion order for non-integer keys
  * (which is our case).
  *
- * @param {string} key The key in the object
+ * @param {string} _ The key in the object
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
  */
-export function orderFeatures(key: string, value: Identifier): Identifier {
+export function orderFeatures(_: string, value: Identifier): Identifier {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
-      .reduce((result: { [index: string]: any }, key: string) => {
+      .reduce((result: Identifier, key: string) => {
         result[key] = value[key];
-        return result as Identifier;
+        return result;
       }, {});
   }
   return value;
