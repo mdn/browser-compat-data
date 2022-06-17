@@ -22,7 +22,7 @@ describe('build', () => {
     };
 
     assert.deepEqual(await createDataBundle(), devBcd);
-  });
+  }).timeout(30000);
 
   it('package.json', () => {
     const manifest = createManifest();
