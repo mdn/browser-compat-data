@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
+import { InternalSupportBlock } from '../../types/index.js';
 
 describe('mirror', () => {
   describe('default export', () => {
@@ -175,7 +176,7 @@ describe('mirror', () => {
 
     describe('Edge Cases', () => {
       it('mirror from a mirrored value', () => {
-        const support = {
+        const support: InternalSupportBlock = {
           chrome: {
             version_added: '40',
           },
@@ -200,12 +201,15 @@ describe('mirror', () => {
 
       describe('destination browser does not support flags', () => {
         it('only flag statement', () => {
-          const support = {
+          const support: InternalSupportBlock = {
             chrome_android: {
               version_added: '50',
-              flags: {
-                name: '#enable-experimental-web-platform-features',
-              },
+              flags: [
+                {
+                  name: '#enable-experimental-web-platform-features',
+                  type: 'preference',
+                },
+              ],
               notes: 'This feature is only available on Google Pixel devices.',
             },
           };
@@ -215,16 +219,19 @@ describe('mirror', () => {
         });
 
         it('flag and non-flag statement', () => {
-          const support = {
+          const support: InternalSupportBlock = {
             chrome_android: [
               {
                 version_added: '90',
               },
               {
                 version_added: '50',
-                flags: {
-                  name: '#enable-experimental-web-platform-features',
-                },
+                flags: [
+                  {
+                    name: '#enable-experimental-web-platform-features',
+                    type: 'preference',
+                  },
+                ],
               },
             ],
           };
