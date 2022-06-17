@@ -87,7 +87,9 @@ import { CompatData } from "./types";
 
 import bcd from "./data.json";
 
-export default bcd as CompatData;
+// XXX The cast to "any" mitigates a TS definition issue. This is very bad practice and
+// should be fixed as soon as possible.
+export default bcd as any as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);
 
