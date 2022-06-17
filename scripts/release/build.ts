@@ -5,8 +5,6 @@ import { BrowserName } from '../../types/types.js';
 import { InternalSupportStatement } from '../../types/index.js';
 
 import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
