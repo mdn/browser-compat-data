@@ -40,7 +40,7 @@ const getEarliestVersion = (...args: string[]) => {
 export const removeRedundantFlags = (
   key: string,
   value: any,
-  limitBrowser?: BrowserName | null,
+  limitBrowser: BrowserName | null,
 ) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
@@ -182,6 +182,7 @@ if (esMain(import.meta)) {
           alias: 'b',
           describe: 'The browser to test for',
           type: 'string',
+          default: null,
         });
     },
   );
