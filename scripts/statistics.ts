@@ -134,7 +134,7 @@ const getStats = (
 ): VersionStats | null => {
   /** @constant {string[]} */
   const browsers: BrowserName[] = allBrowsers
-    ? (Object.keys(bcd.browsers) as BrowserName[])
+    ? (Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[])
     : folder === 'webextensions'
     ? webextensionsBrowsers
     : ([
