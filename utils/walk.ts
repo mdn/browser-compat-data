@@ -67,12 +67,12 @@ export function* lowLevelWalk(
 }
 
 export default function* walk(
-  entryPoints?: string | string[] | undefined,
+  entryPoints: string | string[] | null,
   data: CompatData | CompatStatement | Identifier = bcd,
 ): IterableIterator<WalkOutput> {
   const walkers: IterableIterator<WalkOutput>[] = [];
 
-  if (entryPoints === undefined) {
+  if (entryPoints === null) {
     walkers.push(lowLevelWalk(data));
   } else {
     entryPoints = Array.isArray(entryPoints) ? entryPoints : [entryPoints];

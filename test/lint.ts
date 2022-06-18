@@ -16,6 +16,7 @@ import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
 import { walk } from '../utils/index.js';
 import { pluralize, LinterMessage, LinterMessageLevel } from './utils.js';
+import { Stats } from 'node:fs';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -25,9 +26,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {DataType?}
  */
-const loadAndCheckFiles = async (
-  ...files: string[]
-): Promise<DataType | undefined> => {
+const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
   const data = {};
 
   for (let file of files) {
@@ -35,7 +34,7 @@ const loadAndCheckFiles = async (
       file = path.resolve(dirname, '..', file);
     }
 
-    let fsStats;
+    let fsStats: Stats;
 
     try {
       fsStats = await fs.stat(file);
@@ -118,7 +117,7 @@ const main = async (
   }
 
   console.log(chalk`{cyan Testing feature data...}`);
-  const walker = walk(undefined, data);
+  const walker = walk(null, data);
   for (const feature of walker) {
     linters.runScope('feature', {
       data: feature.compat,

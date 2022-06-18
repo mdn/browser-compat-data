@@ -25,7 +25,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {CompatData} bcd Parsed BCD object to be updated in place.
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
-  for (const { compat } of walk(undefined, bcd)) {
+  for (const { compat } of walk(null, bcd)) {
     if (!compat?.status?.experimental) {
       continue;
     }
