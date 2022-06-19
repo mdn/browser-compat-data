@@ -90,16 +90,13 @@ export function indexToPosRaw(
     return [null, null];
   }
 
-  let prevChar = '';
   for (let i = 0; i < index; i++) {
     const char = str[i];
     switch (char) {
-      case '\n':
-        if (prevChar === '\r') break;
-      // fall through
       case '\r':
         line++;
         col = 1;
+        if (i + 1 < index && str[i + 1] === '\r') i++;
         break;
       case '\t':
         // Use JSON `tab_size` value from `.editorconfig`
@@ -109,7 +106,6 @@ export function indexToPosRaw(
         col++;
         break;
     }
-    prevChar = char;
   }
 
   return [line, col];
