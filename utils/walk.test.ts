@@ -58,7 +58,7 @@ describe('walk()', function () {
     const featureCountFromString = JSON.stringify(bcd, undefined, 2)
       .split('\n')
       .filter((line) => line.includes('__compat')).length;
-    const featureCountFromWalk = Array.from(walk(undefined)).length;
+    const featureCountFromWalk = Array.from(walk()).length;
 
     assert.equal(featureCountFromString, featureCountFromWalk);
   });
