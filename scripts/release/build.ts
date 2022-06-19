@@ -30,7 +30,7 @@ export function generateMeta() {
 
 export function applyMirroring(data) {
   const response = Object.assign({}, data);
-  const walker = walk(null, response);
+  const walker = walk(undefined, response);
 
   for (const feature of walker) {
     if (!feature.compat) {

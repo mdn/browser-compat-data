@@ -117,7 +117,7 @@ const main = async (
   }
 
   console.log(chalk`{cyan Testing feature data...}`);
-  const walker = walk(null, data);
+  const walker = walk(undefined, data);
   for (const feature of walker) {
     linters.runScope('feature', {
       data: feature.compat,

@@ -36,7 +36,7 @@ async function load(...dirs: string[]) {
         const contents: CompatData = JSON.parse(rawcontents.toString('utf8'));
 
         // Add source_file props
-        const walker = walk(null, contents);
+        const walker = walk(undefined, contents);
         for (const { compat } of walker) {
           if (!compat) continue;
 
