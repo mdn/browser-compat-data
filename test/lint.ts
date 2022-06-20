@@ -206,11 +206,10 @@ const main = async (
       for (const linter of linters.linters)
         if (linter.exceptions) {
           console.log(
-            chalk`{yellow  ${linter.name} has ${
-              linter.exceptions.length === 1
-                ? '1 excepton:'
-                : `${linter.exceptions.length} exceptions:`
-            }}`,
+            chalk`{yellow  ${linter.name} has ${pluralize(
+              'exception',
+              linter.exceptions.length,
+            )}`,
           );
           for (const exception of linter.exceptions)
             console.log(chalk`{yellow   - ${exception}}`);
