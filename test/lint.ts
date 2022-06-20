@@ -4,6 +4,7 @@
 import { DataType } from '../types/index.js';
 
 import fs from 'node:fs/promises';
+import { Stats } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -16,7 +17,6 @@ import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
 import { walk } from '../utils/index.js';
 import { pluralize, LinterMessage, LinterMessageLevel } from './utils.js';
-import { Stats } from 'node:fs';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -40,7 +40,7 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
       fsStats = await fs.stat(file);
     } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
-      return;
+      continue;
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
