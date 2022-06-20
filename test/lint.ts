@@ -198,6 +198,22 @@ const main = async (
 
   if (!hasErrors) {
     console.log(chalk`{green All data {bold passed} linting!}`);
+    if (linters.linters.some((linter) => linter.exceptions)) {
+      console.log(
+        chalk`{yellow Linters have some exceptions, please help us remove them!}`,
+      );
+      for (const linter of linters.linters)
+        if (linter.exceptions) {
+          console.log(
+            chalk`{yellow  ${linter.name} has ${pluralize(
+              'exception',
+              linter.exceptions.length,
+            )}}`,
+          );
+          for (const exception of linter.exceptions)
+            console.log(chalk`{yellow   - ${exception}}`);
+        }
+    }
   }
 
   return hasErrors;
