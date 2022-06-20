@@ -208,8 +208,8 @@ const main = async (
           console.log(
             chalk`{yellow  ${linter.name} has ${
               linter.exceptions.length === 1
-                ? '1 excepton'
-                : `${linter.exceptions.length} exceptions.`
+                ? '1 excepton:'
+                : `${linter.exceptions.length} exceptions:`
             }}`,
           );
           for (const exception of linter.exceptions)
