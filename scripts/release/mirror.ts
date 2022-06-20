@@ -266,7 +266,7 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
 const bumpGeneric = (
   sourceData: SimpleSupportStatement,
   targetBrowser: BrowserName,
-  notesRepl: [RegExp, string] | undefined,
+  notesRepl?: [RegExp, string],
 ): SimpleSupportStatement => {
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
