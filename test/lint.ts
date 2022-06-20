@@ -209,7 +209,7 @@ const main = async (
             chalk`{yellow  ${linter.name} has ${pluralize(
               'exception',
               linter.exceptions.length,
-            )}`,
+            )}}`,
           );
           for (const exception of linter.exceptions)
             console.log(chalk`{yellow   - ${exception}}`);
