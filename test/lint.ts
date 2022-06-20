@@ -4,6 +4,7 @@
 import { DataType } from '../types/index.js';
 
 import fs from 'node:fs/promises';
+import { Stats } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -25,9 +26,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to test
  * @returns {DataType?}
  */
-const loadAndCheckFiles = async (
-  ...files: string[]
-): Promise<DataType | undefined> => {
+const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
   const data = {};
 
   for (let file of files) {
@@ -35,13 +34,13 @@ const loadAndCheckFiles = async (
       file = path.resolve(dirname, '..', file);
     }
 
-    let fsStats;
+    let fsStats: Stats;
 
     try {
       fsStats = await fs.stat(file);
     } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
-      return;
+      continue;
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
