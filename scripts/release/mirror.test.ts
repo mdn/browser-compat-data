@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
+import { InternalSupportBlock } from '../../types/index.js';
 
 describe('mirror', () => {
   describe('default export', () => {
@@ -25,8 +26,8 @@ describe('mirror', () => {
           ['26', '26'],
         ],
         edge: [
-          ['1', false], // wrong, invalid inference
-          ['27', false], // wrong, invalid inference
+          ['1', '79'],
+          ['27', '79'],
           ['28', '79'],
           ['78', '79'],
           ['79', '79'],
@@ -101,19 +102,19 @@ describe('mirror', () => {
           ['95', '17.0'],
         ],
         webview_android: [
-          ['18', '1'], // wrong, invalid inference
-          ['25', '≤37'], // wrong, should be 4.4
-          ['26', '≤37'], // wrong, should be 4.4
-          ['27', '≤37'], // wrong, should be 4.4
-          ['28', '≤37'], // wrong, should be 4.4
-          ['29', '≤37'], // wrong, should be 4.4
+          ['18', '4.4'],
+          ['25', '4.4'],
+          ['26', '4.4'],
+          ['27', '4.4'],
+          ['28', '4.4'],
+          ['29', '4.4'],
           ['30', '4.4'],
-          ['31', '4.4'],
-          ['32', '4.4'],
+          ['31', '4.4.3'],
+          ['32', '4.4.3'],
           ['33', '4.4.3'],
-          ['34', '4.4.3'],
-          ['35', '4.4.3'],
-          ['36', '4.4.3'],
+          ['34', '37'],
+          ['35', '37'],
+          ['36', '37'],
           ['37', '37'],
         ],
       };
@@ -175,7 +176,7 @@ describe('mirror', () => {
 
     describe('Edge Cases', () => {
       it('mirror from a mirrored value', () => {
-        const support = {
+        const support: InternalSupportBlock = {
           chrome: {
             version_added: '40',
           },
@@ -200,12 +201,15 @@ describe('mirror', () => {
 
       describe('destination browser does not support flags', () => {
         it('only flag statement', () => {
-          const support = {
+          const support: InternalSupportBlock = {
             chrome_android: {
               version_added: '50',
-              flags: {
-                name: '#enable-experimental-web-platform-features',
-              },
+              flags: [
+                {
+                  name: '#enable-experimental-web-platform-features',
+                  type: 'preference',
+                },
+              ],
               notes: 'This feature is only available on Google Pixel devices.',
             },
           };
@@ -215,16 +219,19 @@ describe('mirror', () => {
         });
 
         it('flag and non-flag statement', () => {
-          const support = {
+          const support: InternalSupportBlock = {
             chrome_android: [
               {
                 version_added: '90',
               },
               {
                 version_added: '50',
-                flags: {
-                  name: '#enable-experimental-web-platform-features',
-                },
+                flags: [
+                  {
+                    name: '#enable-experimental-web-platform-features',
+                    type: 'preference',
+                  },
+                ],
               },
             ],
           };

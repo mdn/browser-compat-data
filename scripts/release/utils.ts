@@ -41,7 +41,7 @@ export function buildQuery(
   startRef: string,
   urlSafe: boolean,
 ): string {
-  let merged;
+  let merged: string;
   if (!['HEAD', 'main'].includes(endRef)) {
     merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
       endRef,

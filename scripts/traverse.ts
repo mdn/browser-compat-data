@@ -45,13 +45,16 @@ function* iterateFeatures(
             }
 
             for (const range in browserData) {
-              if (browserData[range] === undefined) {
-                if (values.length == 0 || values.includes('null'))
-                  yield `${identifier}${i}`;
-              } else if (browserData[range] === 'mirror') {
+              if (browserData[range] === 'mirror') {
                 if (values.includes('mirror')) {
                   yield `${identifier}${i}`;
                 }
+              } else if (values.includes('nonmirror')) {
+                // If checking for non-mirrored data and it's not mirrored
+                yield `${identifier}${i}`;
+              } else if (browserData[range] === undefined) {
+                if (values.length == 0 || values.includes('null'))
+                  yield `${identifier}${i}`;
               } else if (
                 values.length == 0 ||
                 values.includes(String(browserData[range].version_added)) ||
@@ -156,7 +159,8 @@ if (esMain(import.meta)) {
         })
         .option('filter', {
           alias: 'f',
-          describe: 'Filter by version value. May repeat.',
+          describe:
+            'Filter by version value. May repeat. Set to "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
           type: 'array',
           string: true,
           nargs: 1,
