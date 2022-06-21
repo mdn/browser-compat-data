@@ -89,8 +89,8 @@ import { CompatData } from "./types";
 
 import bcd from "./data.json";
 
-// XXX The cast to "any" mitigates a TS definition issue. This is very bad practice and
-// should be fixed as soon as possible.
+// XXX The cast to "any" mitigates a TS definition issue.
+// This is a longstanding TypeScript issue; see https://github.com/microsoft/TypeScript/issues/17867.
 export default bcd as any as CompatData;
 export * from "./types";`;
   await fs.writeFile(dest, content);

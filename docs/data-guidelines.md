@@ -241,6 +241,18 @@ These conditions represent minimum requirements for the removal of valid flag da
 
 This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670) and revised in [#16637](https://github.com/mdn/browser-compat-data/pull/16637).
 
+## Features with no browser support
+
+Browser features that have not been implemented in any browser, or are planned to be implemented, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+
+- The feature has not been included in a stable browser release.
+- The feature is not implemented behind a current flag (or Chrome origin trial).
+- There is no tracking bug for the browser to indicate intent to implement.
+
+Some features may already be added to BCD that do not have any browser support. These features will be removed over time.
+
+This guideline was proposed in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
+
 ## When to add `version_removed` to flagged support
 
 A `version_removed` should be added to support statements containing flags under one of the following conditions:
