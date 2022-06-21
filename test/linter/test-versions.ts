@@ -276,6 +276,7 @@ export default {
   name: 'Versions',
   description: 'Test the version numbers of support statements',
   scope: 'feature',
+  exceptions: ['api.SharedWorkerGlobalScope.applicationCache'],
   check(
     logger: Logger,
     {
