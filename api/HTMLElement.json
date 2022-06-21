@@ -2367,11 +2367,21 @@
         "__compat": {
           "description": "<code>transitioncancel</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/transitioncancel_event",
-          "spec_url": "https://drafts.csswg.org/css-transitions/#transitioncancel",
+          "spec_url": [
+            "https://drafts.csswg.org/css-transitions/#transitioncancel",
+            "https://drafts.csswg.org/css-transitions/#ref-for-dom-globaleventhandlers-ontransitioncancel"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "74"
-            },
+            "chrome": [
+              {
+                "version_added": "87"
+              },
+              {
+                "version_added": "74",
+                "partial_implementation": true,
+                "notes": "The <code>ontransitioncancel</code> attribute is not supported in IE. To listen to this event, use <code>document.addEventListener('transitioncancel', function() {});</code>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -2383,9 +2393,16 @@
             },
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -2408,17 +2425,22 @@
                 "version_added": "26"
               },
               {
-                "alternative_name": "webkitTransitionEnd",
+                "alternative_name": "webkittransitionend",
                 "version_added": "1"
               }
             ],
             "chrome_android": "mirror",
             "edge": [
               {
-                "version_added": "12"
+                "version_added": "18"
               },
               {
-                "alternative_name": "webkitTransitionEnd",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The <code>ontransitionend</code> attribute is not supported. To listen to this event, use <code>document.addEventListener('transitionend', function() {});</code>."
+              },
+              {
+                "alternative_name": "webkittransitionend",
                 "version_added": "79"
               }
             ],
@@ -2427,18 +2449,20 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The <code>ontransitionend</code> attribute is not supported. To listen to this event, use <code>document.addEventListener('transitionend', function() {});</code>."
             },
             "opera": [
               {
                 "version_added": "12.1"
               },
               {
-                "alternative_name": "webkitTransitionEnd",
+                "alternative_name": "webkittransitionend",
                 "version_added": "15"
               },
               {
-                "alternative_name": "oTransitionEnd",
+                "alternative_name": "otransitionend",
                 "version_added": "11.6",
                 "version_removed": "15"
               }
@@ -2448,11 +2472,11 @@
                 "version_added": "12.1"
               },
               {
-                "alternative_name": "webkitTransitionEnd",
+                "alternative_name": "webkittransitionend",
                 "version_added": "14"
               },
               {
-                "alternative_name": "oTransitionEnd",
+                "alternative_name": "otransitionend",
                 "version_added": "12",
                 "version_removed": "14"
               }
@@ -2462,29 +2486,13 @@
                 "version_added": "7"
               },
               {
-                "alternative_name": "webkitTransitionEnd",
+                "alternative_name": "webkittransitionend",
                 "version_added": "4"
               }
             ],
-            "safari_ios": [
-              {
-                "version_added": "7"
-              },
-              {
-                "alternative_name": "webkitTransitionEnd",
-                "version_added": "3.2"
-              }
-            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "≤37"
-              },
-              {
-                "alternative_name": "webkitTransitionEnd",
-                "version_added": "≤37"
-              }
-            ]
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2503,19 +2511,30 @@
               "version_added": "74"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
             "firefox": {
               "version_added": "53"
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": false
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The <code>ontransitionrun</code> attribute is not supported. To listen to this event, use <code>document.addEventListener('transitionrun', function() {});</code>."
             },
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -2545,13 +2564,22 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "10"
+              "version_added": "10",
+              "partial_implementation": true,
+              "notes": "The <code>ontransitionstart</code> attribute is not supported. To listen to this event, use <code>document.addEventListener('transitionstart', function() {});</code>."
             },
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "The event handler is exposed but will not actually be called unless both the \"Web Animations\" and \"CSS Animations via Web Animations\" preferences are enabled."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
