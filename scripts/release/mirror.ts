@@ -38,9 +38,13 @@ export const getMatchingBrowserVersion = (
 
   const range = sourceVersion.includes('≤');
   const sourceRelease =
-    browsers[browserData.upstream as BrowserName].releases[
-      sourceVersion.replace('≤', '')
-    ];
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
+
+  if (!sourceRelease) {
+    throw new Error(
+      `Could not find source release "${browserData.upstream} ${sourceVersion}"!`,
+    );
+  }
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
@@ -262,7 +266,7 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
 const bumpGeneric = (
   sourceData: SimpleSupportStatement,
   targetBrowser: BrowserName,
-  notesRepl: [RegExp, string] | undefined,
+  notesRepl?: [RegExp, string],
 ): SimpleSupportStatement => {
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
