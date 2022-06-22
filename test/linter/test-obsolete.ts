@@ -108,7 +108,6 @@ export default {
     'http.headers.Feature-Policy.oversized-images',
     'http.headers.Feature-Policy.unoptimized-images',
     'http.headers.Feature-Policy.unsized-media',
-    'svg.attributes.presentation.color-rendering',
     'svg.elements.view.zoomAndPan',
   ],
 } as Linter;
