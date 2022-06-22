@@ -14,20 +14,62 @@ Read how this project is [governed](GOVERNANCE.md).
 
 Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
 
-## Installation
+## Installation and Import
+
+### NodeJS
 
 You can install `@mdn/browser-compat-data` as a node package.
 
-```
+```bash
 npm install @mdn/browser-compat-data
+# ...or...
+yarn add @mdn/browser-compat-data
+```
+
+Then, you can import BCD into your project with either `import` or `require()`:
+
+```js
+// ESM with Import Assertions (NodeJS 16+)
+import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+
+// ...or...
+
+// ESM Wrapper for older NodeJS versions (NodeJS v12+)
+import bcd from '@mdn/browser-compat-data/forLegacyNode';
+
+// ...or...
+
+// CommonJS Module (Any NodeJS)
+const bcd = require('@mdn/browser-compat-data');
+```
+
+### Deno/Browsers
+
+You can import `@mdn/browser-compat-data` using a CDN.
+
+```js
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
+```
+
+### Other Languages
+
+You can obtain the raw compatibility data for `@mdn/browser-compat-data` using a CDN and loading the `data.json` file included in releases.
+
+```py
+https://unpkg.com/@mdn/browser-compat-data/data.json
 ```
 
 ## Usage
 
+Once you have imported BCD, you can access the compatibility data for any feature by accessing the properties of the dictionary.
+
 ```js
-const bcd = require('@mdn/browser-compat-data');
-bcd.css.properties.background;
+// Grab the desired support statement
+const support = bcd.css.properties.background.__compat;
 // returns a compat data object (see schema)
+
+// You may use any syntax to obtain dictionary items
+const support = bcd['api']['Document']['body']['__compat'];
 ```
 
 ## Package contents
@@ -114,6 +156,7 @@ For the purposes of [semantic versioning](https://semver.org/) (SemVer), the pub
 
 - The high-level namespace objects documented in [_Package contents_](#Package-contents)
 - The schema definitions for browser and support data structures
+- The TypeScript definitions
 
 The details of browser compatibility change frequently, as browsers ship new features, standards organizations revise specifications, and Web developers discover new bugs. We routinely publish updates to the package to reflect these changes.
 
