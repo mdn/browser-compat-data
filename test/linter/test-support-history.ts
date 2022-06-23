@@ -35,7 +35,7 @@ export function hasSupportHistory(compat: CompatStatement) {
 
 export default {
   name: 'Support history',
-  description: 'Ensure that prefixes in support statements are valid',
+  description: 'Ensure that there are no features where there is no browser support',
   scope: 'feature',
   check(logger: Logger, { data }: { data: CompatStatement }) {
     if (!hasSupportHistory(data)) {
