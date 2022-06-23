@@ -286,9 +286,7 @@ export class ConsistencyChecker {
    * @param {CompatStatement?} compatData The compat data to process
    * @returns {BrowserName[]} The list of browsers marked as unsupported
    */
-  extractUnsupportedBrowsers(
-    compatData: CompatStatement | undefined,
-  ): BrowserName[] {
+  extractUnsupportedBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) =>
@@ -304,9 +302,7 @@ export class ConsistencyChecker {
    * @param {CompatStatement?} compatData The compat data to process
    * @returns {BrowserName[]} The list of browsers with unknown support
    */
-  extractSupportUnknownBrowsers(
-    compatData: CompatStatement | undefined,
-  ): BrowserName[] {
+  extractSupportUnknownBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) => data.version_added === null,
@@ -319,9 +315,7 @@ export class ConsistencyChecker {
    * @param {CompatStatement?} compatData The compat data to process
    * @returns {Browsername[]} The list of browsers with non-truthy (false or null) support
    */
-  extractSupportNotTrueBrowsers(
-    compatData: CompatStatement | undefined,
-  ): BrowserName[] {
+  extractSupportNotTrueBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
       compatData,
       (data) =>
@@ -338,7 +332,7 @@ export class ConsistencyChecker {
    * @returns {BrowserName[]} The list of browsers with an exact version number
    */
   extractSupportedBrowsersWithVersion(
-    compatData: CompatStatement | undefined,
+    compatData?: CompatStatement,
   ): BrowserName[] {
     return this.extractBrowsers(
       compatData,
