@@ -90,16 +90,13 @@ export function indexToPosRaw(
     return [null, null];
   }
 
-  let prevChar = '';
   for (let i = 0; i < index; i++) {
     const char = str[i];
     switch (char) {
-      case '\n':
-        if (prevChar === '\r') break;
-      // fall through
       case '\r':
         line++;
         col = 1;
+        if (i + 1 < index && str[i + 1] === '\r') i++;
         break;
       case '\t':
         // Use JSON `tab_size` value from `.editorconfig`
@@ -109,7 +106,6 @@ export function indexToPosRaw(
         col++;
         break;
     }
-    prevChar = char;
   }
 
   return [line, col];
@@ -241,12 +237,21 @@ export class Linters {
     const linters = this.linters.filter((linter) => linter.scope === scope);
     for (const linter of linters) {
       const logger = new Logger(linter.name, data.path.full);
-      const shouldFail = linter.exceptions?.includes(data.path.full);
-      linter.check(logger, data);
-      if (!shouldFail) {
-        this.messages[linter.name].push(...logger.messages);
-      } else {
-        this.expectedFailures[linter.name].push(data.path.full);
+      try {
+        const shouldFail = linter.exceptions?.includes(data.path.full);
+        linter.check(logger, data);
+        if (!shouldFail) {
+          this.messages[linter.name].push(...logger.messages);
+        } else {
+          this.expectedFailures[linter.name].push(data.path.full);
+        }
+      } catch (e: any) {
+        this.messages[linter.name].push({
+          level: 'error',
+          title: linter.name,
+          path: e.traceback,
+          message: 'Linter failure! ' + e,
+        });
       }
     }
   }
