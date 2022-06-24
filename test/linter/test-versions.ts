@@ -54,7 +54,6 @@ const realValuesTargetBrowsers = [
   'edge',
   'firefox',
   'firefox_android',
-  'ie',
   'opera',
   'opera_android',
   'safari',

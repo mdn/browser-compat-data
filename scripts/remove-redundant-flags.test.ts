@@ -410,7 +410,9 @@ describe('remove-redundant-flags', () => {
     it(`Test #${i}`, () => {
       const expected = JSON.stringify(test['output'], null, 2);
       const output = JSON.stringify(
-        JSON.parse(JSON.stringify(test['input']), removeRedundantFlags),
+        JSON.parse(JSON.stringify(test['input']), (key, value) =>
+          removeRedundantFlags(key, value, null),
+        ),
         null,
         2,
       );

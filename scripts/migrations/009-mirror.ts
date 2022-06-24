@@ -74,11 +74,11 @@ const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
 };
 
 if (esMain(import.meta)) {
-  const defaultBrowsers = (Object.keys(bcd.browsers) as BrowserName[]).filter(
-    (browser) => {
-      return bcd.browsers[browser].upstream;
-    },
-  );
+  const defaultBrowsers = (
+    Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
+  ).filter((browser) => {
+    return bcd.browsers[browser].upstream;
+  });
 
   const defaultFolders = [
     'api',
