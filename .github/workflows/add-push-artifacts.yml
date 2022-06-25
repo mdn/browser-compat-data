@@ -3,6 +3,9 @@ name: Add artifacts on push
 on:
   push: []
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: Enumerate and diff features

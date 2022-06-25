@@ -4,8 +4,13 @@ on:
   pull_request_target:
     types: [synchronize]
 
+permissions:
+  contents: read
+
 jobs:
   idle:
+    permissions:
+      contents: none
     uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
     with:
       target-repo: "mdn/browser-compat-data"
