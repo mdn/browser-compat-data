@@ -41,7 +41,6 @@ export const removeRedundantFlags = (
   key: string,
   value: any,
   limitBrowser: BrowserName | null,
-  cutoffDate: Date,
 ) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
@@ -86,8 +85,7 @@ export const removeRedundantFlags = (
                   supportData[i].version_added.replace('≤', ''),
                   simpleStatement.version_removed.replace('≤', ''),
                   '<',
-                )) &&
-              new Date(releaseDate) <= cutoffDate
+                ))
             ) {
               addData = false;
             }
@@ -112,13 +110,10 @@ export const removeRedundantFlags = (
 export const fixRedundantFlags = (
   filename: string,
   limitBrowser: BrowserName | null,
-  cutoffDate: Date,
 ) => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
-    JSON.parse(actual, (k, v) =>
-      removeRedundantFlags(k, v, limitBrowser, cutoffDate),
-    ),
+    JSON.parse(actual, (k, v) => removeRedundantFlags(k, v, limitBrowser)),
     null,
     2,
   );
@@ -134,11 +129,7 @@ export const fixRedundantFlags = (
   }
 };
 
-const main = (
-  files_or_folders: string[],
-  browser: BrowserName | null,
-  cutoffDate: Date,
-) => {
+const main = (files_or_folders: string[], browser: BrowserName | null) => {
   for (let file of files_or_folders) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', file);
@@ -150,7 +141,7 @@ const main = (
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        fixRedundantFlags(file, browser, cutoffDate);
+        fixRedundantFlags(file, browser);
       }
 
       continue;
@@ -160,7 +151,7 @@ const main = (
       return path.join(file, subfile);
     });
 
-    main(subFiles, browser, cutoffDate);
+    main(subFiles, browser);
   }
 };
 
@@ -191,12 +182,10 @@ if (esMain(import.meta)) {
           alias: 'b',
           describe: 'The browser to test for',
           type: 'string',
+          default: null,
         });
     },
   );
 
-  const cutoffDate = new Date();
-  cutoffDate.setFullYear(cutoffDate.getFullYear() - 2);
-
-  main((argv as any).file, (argv as any).browser, cutoffDate);
+  main((argv as any).file, (argv as any).browser);
 }

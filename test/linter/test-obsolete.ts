@@ -6,6 +6,7 @@ import {
   BrowserName,
   CompatStatement,
   SupportBlock,
+  SupportStatement,
 } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -34,22 +35,31 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
  * @param {SupportBlock} support
  * @returns LinterMessageLevel | false
  */
-function implementedAndRemoved(
+export function implementedAndRemoved(
   support: SupportBlock,
 ): LinterMessageLevel | false {
   let result: LinterMessageLevel = 'error';
-  for (const [browser, data] of Object.entries(support) as [BrowserName, any]) {
-    // Feature is still supported
-    if (!data.version_removed) return false;
-    const releaseDate = new Date(
-      (browsers[browser as BrowserName] as any).releases[
-        data.version_removed
-      ].release_date,
-    );
-    // Feature was recently supported, no need to show warning
-    if (warningTime < releaseDate) return false;
-    // Feature was supported sufficiently recently to not show an error
-    if (errorTime < releaseDate) result = 'warning';
+  for (const [browser, data] of Object.entries(support) as [
+    BrowserName,
+    SupportStatement,
+  ][]) {
+    for (const d of Array.isArray(data) ? data : [data]) {
+      // Feature is still supported or it is not known when feature was dropped
+      if (!d.version_removed || typeof d.version_removed === 'boolean')
+        return false;
+
+      const releaseDateData =
+        browsers[browser].releases[d.version_removed].release_date;
+
+      // No browser release date
+      if (!releaseDateData) return false;
+
+      const releaseDate = new Date(releaseDateData);
+      // Feature was recently supported, no need to show warning
+      if (warningTime < releaseDate) return false;
+      // Feature was supported sufficiently recently to not show an error
+      if (errorTime < releaseDate) result = 'warning';
+    }
   }
   return result;
 }
@@ -59,7 +69,7 @@ function implementedAndRemoved(
  * @param {CompatStatement} data The data to test
  * @returns {void}
  */
-function processData(logger: Logger, data: CompatStatement): void {
+export function processData(logger: Logger, data: CompatStatement): void {
   if (data && data.support) {
     const { support, status } = data;
 
@@ -98,7 +108,6 @@ export default {
     'http.headers.Feature-Policy.oversized-images',
     'http.headers.Feature-Policy.unoptimized-images',
     'http.headers.Feature-Policy.unsized-media',
-    'svg.attributes.presentation.color-rendering',
     'svg.elements.view.zoomAndPan',
   ],
 } as Linter;

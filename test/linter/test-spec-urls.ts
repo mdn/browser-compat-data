@@ -27,9 +27,6 @@ const specsExceptions = [
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 
-  // Exception for "103 Early Hints" HTTP status code
-  'https://httpwg.org/specs/rfc8297.html',
-
   // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
@@ -47,6 +44,11 @@ const specsExceptions = [
 
   // Remove if https://github.com/w3c/mathml/issues/216 is resolved
   'https://w3c.github.io/mathml/',
+
+  // Remove once https://www.w3.org/TR/largest-contentful-paint/ updates,
+  // and browser-specs picks up the update; see discussion at
+  // https://github.com/mdn/browser-compat-data/pull/16527#issuecomment-1145773922
+  'https://w3c.github.io/largest-contentful-paint/',
 ];
 
 const allowedSpecURLs = [

@@ -1,5 +1,132 @@
 # Release notes
 
+## [v5.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.3)
+
+June 27, 2022
+
+### Removals
+
+- `api.GlobalEventHandlers.onblur` ([#16530](https://github.com/mdn/browser-compat-data/pull/16530))
+- `api.GlobalEventHandlers.onfocus` ([#16530](https://github.com/mdn/browser-compat-data/pull/16530))
+- `api.GlobalEventHandlers.onpause` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onplay` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onplaying` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onprogress` ([#16718](https://github.com/mdn/browser-compat-data/pull/16718))
+- `api.GlobalEventHandlers.onratechange` ([#16721](https://github.com/mdn/browser-compat-data/pull/16721))
+- `api.GlobalEventHandlers.onseeked` ([#16730](https://github.com/mdn/browser-compat-data/pull/16730))
+- `api.GlobalEventHandlers.onseeking` ([#16730](https://github.com/mdn/browser-compat-data/pull/16730))
+- `api.GlobalEventHandlers.onstalled` ([#16734](https://github.com/mdn/browser-compat-data/pull/16734))
+- `api.GlobalEventHandlers.onsuspend` ([#16736](https://github.com/mdn/browser-compat-data/pull/16736))
+- `api.GlobalEventHandlers.ontimeupdate` ([#16737](https://github.com/mdn/browser-compat-data/pull/16737))
+- `api.GlobalEventHandlers.onvolumechange` ([#16760](https://github.com/mdn/browser-compat-data/pull/16760))
+- `api.GlobalEventHandlers.onwaiting` ([#16761](https://github.com/mdn/browser-compat-data/pull/16761))
+- `javascript.builtins.null` ([#16764](https://github.com/mdn/browser-compat-data/pull/16764))
+- `javascript.statements.import_meta` ([#16766](https://github.com/mdn/browser-compat-data/pull/16766))
+
+### Additions
+
+- `api.SharedWorkerGlobalScope.applicationCache.secure_context_required` ([#16753](https://github.com/mdn/browser-compat-data/pull/16753))
+- `browsers.chrome_android.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `browsers.chrome.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `browsers.deno.releases.1.23` ([#16799](https://github.com/mdn/browser-compat-data/pull/16799))
+- `browsers.edge.releases.105` ([#16775](https://github.com/mdn/browser-compat-data/pull/16775))
+- `browsers.webview_android.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `javascript.operators.import_meta` ([#16766](https://github.com/mdn/browser-compat-data/pull/16766))
+- `javascript.operators.null` ([#16764](https://github.com/mdn/browser-compat-data/pull/16764))
+
+### Statistics
+
+- 11 contributors have changed 27 files with 263 additions and 866 deletions in 27 commits ([`v5.1.2...v5.1.3`](https://github.com/mdn/browser-compat-data/compare/v5.1.2...v5.1.3))
+- 13,704 total features
+- 880 total contributors
+- 4,113 total stargazers
+
+## [v5.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.2)
+
+June 21, 2022
+
+### Removals
+
+- `api.GlobalEventHandlers.oncanplay` ([#16541](https://github.com/mdn/browser-compat-data/pull/16541))
+- `api.GlobalEventHandlers.oncanplaythrough` ([#16541](https://github.com/mdn/browser-compat-data/pull/16541))
+- `api.GlobalEventHandlers.ondurationchange` ([#16558](https://github.com/mdn/browser-compat-data/pull/16558))
+- `api.RTCIceCandidatePairStats.circuitBreakerTriggerCount` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.consentExpiredTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.firstRequestTimeStamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.lastRequestTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.lastResponseTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.retransmissionsReceived` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.retransmissionsSent` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCRtpStreamStats.sliCount` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `javascript.statements.import.dynamic_import` ([#16720](https://github.com/mdn/browser-compat-data/pull/16720))
+- `svg.attributes.presentation.color-rendering` ([#16743](https://github.com/mdn/browser-compat-data/pull/16743))
+
+### Additions
+
+- `css.properties.break-after.multicol_context.avoid` ([#16628](https://github.com/mdn/browser-compat-data/pull/16628))
+- `css.properties.break-before.multicol_context.avoid` ([#16628](https://github.com/mdn/browser-compat-data/pull/16628))
+- `javascript.operators.import` ([#16720](https://github.com/mdn/browser-compat-data/pull/16720))
+- `webextensions.api.history.onTitleChanged.id` ([#16715](https://github.com/mdn/browser-compat-data/pull/16715))
+
+### Statistics
+
+- 9 contributors have changed 393 files with 1,644 additions and 4,634 deletions in 33 commits ([`v5.1.1...v5.1.2`](https://github.com/mdn/browser-compat-data/compare/v5.1.1...v5.1.2))
+- 13,717 total features
+- 879 total contributors
+- 4,105 total stargazers
+
+## [v5.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.1)
+
+June 17, 2022
+
+### Notable changes
+
+The TypeScript default export is cast to `any` and then to `CompatData` to mitigate an issue with the type definitions `Identifier` interface, where it attempts to assign the `__compat` property as an `Identifier` type, even though it should be a `CompatStatement` type.
+
+### Statistics
+
+- 4 contributors have changed 2,347 files with 75,765 additions and 237,875 deletions in 19 commits ([`v5.1.0...v5.1.1`](https://github.com/mdn/browser-compat-data/compare/v5.1.0...v5.1.1))
+- 13,726 total features
+- 877 total contributors
+- 4,095 total stargazers
+
+## [v5.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.0)
+
+June 14, 2022
+
+### Notable changes
+
+A new `source_file` property has been added to `__compat` statements. This property indicates which file in the [browser-compat-data](https://github.com/mdn/browser-compat-data) repository the feature comes from, which can be useful for linking potential contributors to the correct file to suggest changes.
+
+### Removals
+
+- `api.VRDisplay.hardwareUnitId` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VREyeParameters.recommendedFieldOfView` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VREyeParameters.renderRect` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRFieldOfView.VRFieldOfView` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRPose.hasOrientation` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `api.VRPose.hasPosition` ([#16557](https://github.com/mdn/browser-compat-data/pull/16557))
+- `javascript.builtins.Array.groupBy` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `javascript.builtins.Array.groupByToMap` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+
+### Additions
+
+- `css.types.color.oklab` ([#16526](https://github.com/mdn/browser-compat-data/pull/16526))
+- `css.types.color.oklch` ([#16526](https://github.com/mdn/browser-compat-data/pull/16526))
+- `http.status.103` ([#16335](https://github.com/mdn/browser-compat-data/pull/16335))
+- `javascript.builtins.Array.group` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `javascript.builtins.Array.groupToMap` ([#16647](https://github.com/mdn/browser-compat-data/pull/16647))
+- `webextensions.api.privacy.websites.cookieConfig.behavior` ([#16642](https://github.com/mdn/browser-compat-data/pull/16642))
+- `webextensions.api.privacy.websites.cookieConfig.nonPersistentCookies` ([#16642](https://github.com/mdn/browser-compat-data/pull/16642))
+- `webextensions.api.tabs.create.createProperties.muted` ([#16655](https://github.com/mdn/browser-compat-data/pull/16655))
+
+### Statistics
+
+- 14 contributors have changed 187 files with 4,079 additions and 1,944 deletions in 41 commits ([`v5.0.3...v5.1.0`](https://github.com/mdn/browser-compat-data/compare/v5.0.3...v5.1.0))
+- 13,726 total features
+- 877 total contributors
+- 4,096 total stargazers
+
 ## [v5.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.0.3)
 
 June 9, 2022

@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger } from '../utils.js';
-import { BrowserName, CompatStatement } from '../../types/types.js';
+import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 
@@ -28,7 +28,9 @@ function processData(
     const support = data.support;
     const definedBrowsers = Object.keys(support);
 
-    const displayBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
+    const displayBrowsers = (
+      Object.keys(browsers) as (keyof typeof browsers)[]
+    ).filter(
       (b) =>
         [
           'desktop',
@@ -38,7 +40,9 @@ function processData(
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
-    const requiredBrowsers = (Object.keys(browsers) as BrowserName[]).filter(
+    const requiredBrowsers = (
+      Object.keys(browsers) as (keyof typeof browsers)[]
+    ).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
@@ -55,9 +59,9 @@ function processData(
       );
     }
 
-    const invalidEntries = (Object.keys(support) as BrowserName[]).filter(
-      (value) => !displayBrowsers.includes(value),
-    );
+    const invalidEntries = (
+      Object.keys(support) as (keyof typeof support)[]
+    ).filter((value) => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(
         chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(

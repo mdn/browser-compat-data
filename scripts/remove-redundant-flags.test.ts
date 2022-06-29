@@ -5,8 +5,6 @@ import assert from 'node:assert/strict';
 
 import { removeRedundantFlags } from './remove-redundant-flags.js';
 
-const cutoffDate = new Date('2019-01-01T00:00Z');
-
 const tests = [
   {
     input: {
@@ -285,22 +283,9 @@ const tests = [
       test6: {
         __compat: {
           support: {
-            chrome: [
-              {
-                version_added: '80',
-              },
-              {
-                version_added: '21',
-                version_removed: '80',
-                flags: [
-                  {
-                    type: 'preference',
-                    name: '#service-worker-payment-apps',
-                    value_to_set: 'Enabled',
-                  },
-                ],
-              },
-            ],
+            chrome: {
+              version_added: '80',
+            },
           },
           status: {
             experimental: true,
@@ -404,21 +389,9 @@ const tests = [
       test8: {
         __compat: {
           support: {
-            chrome: [
-              {
-                version_added: '86',
-              },
-              {
-                version_added: '21',
-                flags: [
-                  {
-                    type: 'preference',
-                    name: '#service-worker-payment-apps',
-                    value_to_set: 'Enabled',
-                  },
-                ],
-              },
-            ],
+            chrome: {
+              version_added: '86',
+            },
           },
           status: {
             experimental: true,
@@ -437,8 +410,8 @@ describe('remove-redundant-flags', () => {
     it(`Test #${i}`, () => {
       const expected = JSON.stringify(test['output'], null, 2);
       const output = JSON.stringify(
-        JSON.parse(JSON.stringify(test['input']), (k, v) =>
-          removeRedundantFlags(k, v, null, cutoffDate),
+        JSON.parse(JSON.stringify(test['input']), (key, value) =>
+          removeRedundantFlags(key, value, null),
         ),
         null,
         2,
