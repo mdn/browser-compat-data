@@ -187,12 +187,15 @@ const main = async (
   // Find all unnecessary linting exceptions
   for (const linter of linters.linters) {
     if (linter.exceptions) {
-      const actual = new Set(linters.expectedFailures[linter.name]);
-      for (const exception of linter.exceptions)
-        if (!actual.has(exception))
+      const missingExceptions = linters.missingExpectedFailures[linter.name];
+      for (const exception in missingExceptions) {
+        if (missingExceptions[exception]) {
+          hasErrors = true;
           console.error(
             chalk`{red  ✖ ${linter.name} - Unnecessary exception → ${exception}}`,
           );
+        }
+      }
     }
   }
 
