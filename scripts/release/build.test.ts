@@ -13,16 +13,14 @@ import {
 
 describe('build', () => {
   // Disabled due to long build times
-  // it('build data matches', async () => {
-  //   this.skip();
+  it.skip('build data matches', async () => {
+    const devBcd = {
+      ...applyMirroring(bcd),
+      __meta: generateMeta(),
+    };
 
-  //   const devBcd = {
-  //     ...applyMirroring(bcd),
-  //     __meta: generateMeta(),
-  //   };
-
-  //   assert.deepEqual(await createDataBundle(), devBcd);
-  // }).timeout(30000);
+    assert.deepEqual(await createDataBundle(), devBcd);
+  }).timeout(30000);
 
   it('package.json', () => {
     const manifest = createManifest();
