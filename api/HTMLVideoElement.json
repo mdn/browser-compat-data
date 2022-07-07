@@ -681,15 +681,25 @@
               "version_added": "1"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "The <code>onresize</code> event handler property is not supported."
+              }
+            ],
             "firefox": {
               "version_added": "3.5"
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "9"
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": "The <code>onresize</code> event handler property is not supported."
             },
             "opera": {
               "version_added": "10.5"
