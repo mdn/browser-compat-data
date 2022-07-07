@@ -209,16 +209,19 @@ export class Logger {
 export class Linters {
   linters: Array<Linter>;
   messages: Record<string, LinterMessage[]>;
-  expectedFailures: Record<string, string[]>;
+  // Contains all seen tested objects, boolean means:
+  // false - failure occured (good)
+  // true - failure did not occur (bad)
+  missingExpectedFailures: Record<string, Record<string, boolean>>;
 
   constructor(linters: Array<Linter>) {
     this.linters = linters;
     this.messages = {};
-    this.expectedFailures = {};
+    this.missingExpectedFailures = {};
 
     for (const linter of this.linters) {
       this.messages[linter.name] = [];
-      this.expectedFailures[linter.name] = [];
+      this.missingExpectedFailures[linter.name] = {};
     }
   }
 
@@ -237,12 +240,22 @@ export class Linters {
     const linters = this.linters.filter((linter) => linter.scope === scope);
     for (const linter of linters) {
       const logger = new Logger(linter.name, data.path.full);
-      const shouldFail = linter.exceptions?.includes(data.path.full);
-      linter.check(logger, data);
-      if (!shouldFail) {
-        this.messages[linter.name].push(...logger.messages);
-      } else {
-        this.expectedFailures[linter.name].push(data.path.full);
+      try {
+        const shouldFail = linter.exceptions?.includes(data.path.full);
+        linter.check(logger, data);
+        if (shouldFail) {
+          this.missingExpectedFailures[linter.name][data.path.full] =
+            logger.messages.length === 0;
+        } else {
+          this.messages[linter.name].push(...logger.messages);
+        }
+      } catch (e: any) {
+        this.messages[linter.name].push({
+          level: 'error',
+          title: linter.name,
+          path: e.traceback,
+          message: 'Linter failure! ' + e,
+        });
       }
     }
   }
