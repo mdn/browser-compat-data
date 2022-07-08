@@ -355,7 +355,7 @@ export const bumpSupport = (
     newData = bumpGeneric(sourceData, destination, notesRepl);
   }
 
-  if (!browsers[destination].accepts_flags && newData.flags) {
+  if (browsers[destination].accepts_flags === false && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
     return { version_added: false };
   }
