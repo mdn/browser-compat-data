@@ -45,6 +45,10 @@ The `name` string is a required property which should use the browser brand name
 
 The `type` string is a required property which indicates the platform category the browser runs on. Valid options are `"desktop"`, `"mobile"` and `"server"`.
 
+### `upstream`
+
+The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are any browser defined in the data.
+
 ### `accepts_flags`
 
 An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
@@ -88,7 +92,12 @@ The release objects consist of the following properties:
 This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
-> const compat = require('@mdn/browser-compat-data');
-> compat.browsers.firefox.releases['1.5'].status;
+import bcd from '@mdn/browser-compat-data';
+bcd.browsers.firefox.releases['1.5'].status; // "retired"
+```
+
+```js
+> const bcd = require('@mdn/browser-compat-data');
+> bcd.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```
