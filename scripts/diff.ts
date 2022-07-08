@@ -11,6 +11,9 @@ import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import { query } from '../utils/index.js';
 import mirror from './release/mirror.js';
 
+import old from '../old.json' assert { type: 'json' };
+import nevv from '../new.json' assert { type: 'json' };
+
 type Contents = {
   base: string;
   head: string;
@@ -83,7 +86,6 @@ function describeByKind(
         doesMirror && ` - ${doesMirror}`
       }`;
   }
-  throw new Error(`Unexpected kind ${(diffItem as any).kind}.`);
 }
 
 /**
@@ -131,31 +133,16 @@ function mergeAsMap(
  */
 function getDiffs(base: string, head = ''): Map<string, string> {
   const namedDescriptions: { name: string; description: string }[] = [];
-  for (const status of getGitDiffStatuses(base, head)) {
-    if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
-      continue;
-    }
+  const contents = {
+    base: 'old.json',
+    head: 'new.json',
+  };
 
-    // Note that A means Added for git while it means Array for deep-diff
-    if (status.value === 'A' || status.value === 'D') {
-      namedDescriptions.push({
-        name: status.basePath.replace(/\//g, '.').slice(0, -5), // trim file extension
-        description: status.value === 'A' ? 'Newly added' : 'Entirely removed',
-      });
-    } else {
-      const contents = getBaseAndHeadContents(
-        base,
-        status.basePath,
-        head,
-        status.headPath,
-      );
-      const diff = deepDiff.diff(contents.base, contents.head);
-      if (diff) {
-        namedDescriptions.push(
-          ...diff.map((item) => describeDiffItem(item, contents)),
-        );
-      }
-    }
+  const diff = deepDiff.diff(old, nevv);
+  if (diff) {
+    namedDescriptions.push(
+      ...diff.map((item: any) => describeDiffItem(item, contents)),
+    );
   }
   return mergeAsMap(namedDescriptions);
 }
