@@ -54,7 +54,6 @@ const realValuesTargetBrowsers = [
   'edge',
   'firefox',
   'firefox_android',
-  'ie',
   'opera',
   'opera_android',
   'safari',
@@ -226,12 +225,10 @@ function checkVersions(
           }
         }
 
-        if ('flags' in statement) {
-          if (browsers[browser].accepts_flags === false) {
-            logger.error(
-              chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
-            );
-          }
+        if ('flags' in statement && !browsers[browser].accepts_flags) {
+          logger.error(
+            chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+          );
         }
 
         if (hasVersionAddedOnly(statement)) {
