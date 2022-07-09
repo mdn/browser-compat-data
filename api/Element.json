@@ -552,24 +552,8 @@
                   }
                 ]
               },
-              "chrome_android": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
-              "edge": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "80"
@@ -589,15 +573,7 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "66",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": false
@@ -707,28 +683,8 @@
                   }
                 ]
               },
-              "chrome_android": {
-                "version_added": "81",
-                "partial_implementation": true,
-                "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
-              "edge": {
-                "version_added": "81",
-                "partial_implementation": true,
-                "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "75"
               },
@@ -738,17 +694,7 @@
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "68",
-                "partial_implementation": true,
-                "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": false
@@ -3538,7 +3484,10 @@
         "__compat": {
           "description": "<code>mousedown</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mousedown_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mousedown",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mousedown",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -3580,7 +3529,10 @@
         "__compat": {
           "description": "<code>mouseenter</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseenter_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseenter",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mouseenter",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -3620,7 +3572,10 @@
         "__compat": {
           "description": "<code>mouseleave</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseleave_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseleave",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mouseleave",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -3660,7 +3615,10 @@
         "__compat": {
           "description": "<code>mousemove</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mousemove_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mousemove",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mousemove",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -3702,7 +3660,10 @@
         "__compat": {
           "description": "<code>mouseout</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseout_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseout",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mouseout",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseout"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3744,7 +3705,10 @@
         "__compat": {
           "description": "<code>mouseover</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseover_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseover",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mouseover",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseover"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -3786,7 +3750,10 @@
         "__compat": {
           "description": "<code>mouseup</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/mouseup_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-mouseup",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-mouseup",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -5827,16 +5794,7 @@
               ]
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "93",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": "94",
               "flags": [
@@ -5851,16 +5809,7 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -6111,7 +6060,10 @@
         "__compat": {
           "description": "<code>touchcancel</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchcancel_event",
-          "spec_url": "https://w3c.github.io/touch-events/#event-touchcancel",
+          "spec_url": [
+            "https://w3c.github.io/touch-events/#event-touchcancel",
+            "https://w3c.github.io/touch-events/#dom-globaleventhandlers-ontouchcancel"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
@@ -6153,7 +6105,10 @@
         "__compat": {
           "description": "<code>touchend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchend_event",
-          "spec_url": "https://w3c.github.io/touch-events/#event-touchend",
+          "spec_url": [
+            "https://w3c.github.io/touch-events/#event-touchend",
+            "https://w3c.github.io/touch-events/#dom-globaleventhandlers-ontouchend"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
@@ -6195,7 +6150,10 @@
         "__compat": {
           "description": "<code>touchmove</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchmove_event",
-          "spec_url": "https://w3c.github.io/touch-events/#event-touchmove",
+          "spec_url": [
+            "https://w3c.github.io/touch-events/#event-touchmove",
+            "https://w3c.github.io/touch-events/#dom-globaleventhandlers-ontouchmove"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
@@ -6237,7 +6195,10 @@
         "__compat": {
           "description": "<code>touchstart</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/touchstart_event",
-          "spec_url": "https://w3c.github.io/touch-events/#event-touchstart",
+          "spec_url": [
+            "https://w3c.github.io/touch-events/#event-touchstart",
+            "https://w3c.github.io/touch-events/#dom-globaleventhandlers-ontouchstart"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
