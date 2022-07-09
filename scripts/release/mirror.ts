@@ -6,10 +6,7 @@ import {
   SimpleSupportStatement,
   SupportStatement,
 } from '../../types/types.js';
-import {
-  InternalSupportBlock,
-  InternalSupportStatement,
-} from '../../types/index.js';
+import { InternalSupportBlock } from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
@@ -39,18 +36,30 @@ export const getMatchingBrowserVersion = (
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
 
+  if (sourceVersion == 'preview') {
+    return 'preview';
+  }
+
   const range = sourceVersion.includes('≤');
   const sourceRelease =
-    browsers[browserData.upstream as BrowserName].releases[
-      sourceVersion.replace('≤', '')
-    ];
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
+
+  if (!sourceRelease) {
+    throw new Error(
+      `Could not find source release "${browserData.upstream} ${sourceVersion}"!`,
+    );
+  }
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      ['opera', 'opera_android', 'samsunginternet_android'].includes(
-        targetBrowser,
-      ) &&
+      [
+        'edge',
+        'opera',
+        'opera_android',
+        'samsunginternet_android',
+        'webview_android',
+      ].includes(targetBrowser) &&
       release.engine == 'Blink' &&
       sourceRelease.engine == 'WebKit'
     ) {
@@ -155,7 +164,7 @@ const updateNotes = (
 const copyStatement = (
   data: SimpleSupportStatement,
 ): SimpleSupportStatement => {
-  const newData: { [index: string]: any } = {};
+  const newData: Partial<SimpleSupportStatement> = {};
   for (const i in data) {
     newData[i] = data[i];
   }
@@ -168,14 +177,18 @@ const copyStatement = (
  * @returns {SupportStatement}
  */
 const combineStatements = (...data: SupportStatement[]): SupportStatement => {
-  const ignoredKeys = ['version_added', 'notes', 'impl_url'];
+  const ignoredKeys: (keyof SimpleSupportStatement)[] = [
+    'version_added',
+    'notes',
+    'impl_url',
+  ];
 
   const flattenedData = data.flat(2);
-  const sections: { [index: string]: any } = {};
+  const sections: { [index: string]: SimpleSupportStatement[] } = {};
   let newData: SimpleSupportStatement[] = [];
 
   for (const d of flattenedData) {
-    const key = Object.keys(d)
+    const key = (Object.keys(d) as (keyof typeof d)[])
       .filter((k) => !ignoredKeys.includes(k))
       .join('');
     if (!(key in sections)) sections[key] = [];
@@ -191,7 +204,8 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
     }
 
     for (const i in sections[k]) {
-      if (i === sections[k][0]) continue;
+      // TODO: fix me
+      // if (i === sections[k][0]) continue;
       const newStatement = sections[k][i];
 
       const currentVA = currentStatement.version_added;
@@ -213,7 +227,10 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
         }
       }
 
-      const newNotes = combineNotes(currentStatement.notes, newStatement.notes);
+      const newNotes = combineNotes(
+        currentStatement.notes || null,
+        newStatement.notes || null,
+      );
       if (newNotes) currentStatement.notes = newNotes;
     }
 
@@ -253,7 +270,7 @@ const combineStatements = (...data: SupportStatement[]): SupportStatement => {
 const bumpGeneric = (
   sourceData: SimpleSupportStatement,
   targetBrowser: BrowserName,
-  notesRepl: [RegExp, string] | undefined,
+  notesRepl?: [RegExp, string],
 ): SimpleSupportStatement => {
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
@@ -308,55 +325,6 @@ const bumpEdge = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @returns {SimpleSupportStatement}
- */
-const bumpWebView = (
-  sourceData: SimpleSupportStatement,
-): SimpleSupportStatement => {
-  const newData = copyStatement(sourceData);
-
-  const createWebViewRange = (version: string) => {
-    if (Number(version) <= 18) {
-      return '1';
-    } else if (Number(version) > 18 && Number(version) < 30) {
-      return '≤37';
-    } else if (Number(version) >= 30 && Number(version) < 33) {
-      return '4.4';
-    } else if (Number(version) >= 33 && Number(version) < 37) {
-      return '4.4.3';
-    } else {
-      return version;
-    }
-  };
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = createWebViewRange(sourceData.version_added);
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = createWebViewRange(sourceData.version_removed);
-  }
-
-  if (sourceData.notes) {
-    const newNotes = updateNotes(
-      sourceData.notes,
-      /Chrome/g,
-      'WebView',
-      createWebViewRange,
-    );
-    if (newNotes) {
-      newData.notes = newNotes;
-    }
-  }
-
-  return newData;
-};
-
-/**
  * @param {SupportStatement} data
  * @param {BrowserName} destination
  */
@@ -376,8 +344,6 @@ export const bumpSupport = (
 
   if (destination === 'edge') {
     newData = bumpEdge(sourceData);
-  } else if (destination === 'webview_android') {
-    newData = bumpWebView(sourceData);
   } else {
     let notesRepl: [RegExp, string] | undefined;
     if (destination.includes('opera')) {
@@ -414,7 +380,7 @@ const mirrorSupport = (
     );
   }
 
-  let upstreamData: InternalSupportStatement | null = data[upstream] || null;
+  let upstreamData = data[upstream] || null;
 
   if (!upstreamData) {
     throw new Error(
