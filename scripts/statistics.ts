@@ -142,7 +142,6 @@ const getStats = (
         'chrome_android',
         'edge',
         'firefox',
-        'ie',
         'safari',
         'safari_ios',
         'webview_android',
