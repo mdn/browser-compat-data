@@ -51,11 +51,13 @@
               "spec_url": "https://webassembly.github.io/spec/js-api/#dom-global-global",
               "support": {
                 "chrome": {
-                  "version_added": "69"
+                  "version_added": "69",
+                  "notes": "Constructing a Global with a value of \"v128\" produces a TypeError."
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": "1.0"
+                  "version_added": "1.0",
+                  "notes": "Constructing a Global with a value of \"v128\" produces a TypeError."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -66,7 +68,8 @@
                   "version_added": false
                 },
                 "nodejs": {
-                  "version_added": "11.0.0"
+                  "version_added": "11.0.0",
+                  "notes": "Constructing a Global with a value of \"v128\" produces a TypeError."
                 },
                 "opera": {
                   "version_added": false
