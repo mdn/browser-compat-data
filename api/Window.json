@@ -33,7 +33,9 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": {
+            "version_added": "≤37"
+          }
         },
         "status": {
           "experimental": false,
@@ -499,7 +501,10 @@
         "__compat": {
           "description": "<code>blur</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/blur_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-blur",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-blur",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -592,9 +597,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "4.4"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1354,7 +1357,10 @@
         "__compat": {
           "description": "<code>error</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/error_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-error",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-error",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror"
+          ],
           "support": {
             "chrome": {
               "version_added": "10"
@@ -1504,9 +1510,7 @@
               "version_added": "1"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "79"
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": "1"
             },
@@ -1578,7 +1582,10 @@
         "__compat": {
           "description": "<code>focus</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/focus_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-focus",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-focus",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -3755,7 +3762,7 @@
             },
             "firefox": {
               "version_added": "4",
-              "notes": "Firefox emits a <code>popstate</code> event on page load."
+              "notes": "Firefox fires a <code>popstate</code> event on page load."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4167,10 +4174,7 @@
               "prefix": "webkit"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "79",
-              "prefix": "webkit"
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -4242,16 +4246,16 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "Chrome does not emit a <code>resize</code> event on page load."
+              "notes": "Chrome does not fire a <code>resize</code> event on page load."
             },
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
-              "notes": "Before Edge 79, Edge emitted a <code>resize</code> event on page load. This is no longer the case."
+              "notes": "Before Edge 79, Edge fired a <code>resize</code> event on page load. This is no longer the case."
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 68, Firefox emitted a <code>resize</code> event on page load. This is no longer the case."
+              "notes": "Before Firefox 68, Firefox fired a <code>resize</code> event on page load. This is no longer the case."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4259,11 +4263,11 @@
             },
             "opera": {
               "version_added": "7",
-              "notes": "Opera does not emit a <code>resize</code> event on page load."
+              "notes": "Opera does not fire a <code>resize</code> event on page load."
             },
             "opera_android": {
               "version_added": "10.1",
-              "notes": "Opera does not emit a <code>resize</code> event on page load."
+              "notes": "Opera does not fire a <code>resize</code> event on page load."
             },
             "safari": {
               "version_added": "1.1"
@@ -4272,7 +4276,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "1",
-              "notes": "Webview does not emit a <code>resize</code> event on page load."
+              "notes": "WebView does not fire a <code>resize</code> event on page load."
             }
           },
           "status": {
@@ -4375,10 +4379,7 @@
               "prefix": "webkit"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "79",
-              "prefix": "webkit"
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -5975,8 +5976,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -6931,7 +6932,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -6969,7 +6970,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },

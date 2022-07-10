@@ -32,7 +32,9 @@
             "version_added": "3"
           },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": {
+            "version_added": "≤37"
+          }
         },
         "status": {
           "experimental": false,
@@ -150,16 +152,7 @@
                 }
               ]
             },
-            "chrome_android": {
-              "version_added": "37",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "79",
@@ -190,19 +183,10 @@
             "ie": {
               "version_added": "10"
             },
-            "opera": {
-              "version_added": "24",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -761,9 +745,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "4.4"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1067,7 +1049,10 @@
         "__compat": {
           "description": "<code>ended</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/media.html#event-media-ended",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/media.html#event-media-ended",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended"
+          ],
           "support": {
             "chrome": {
               "version_added": "3"
@@ -2936,9 +2921,7 @@
             "samsunginternet_android": {
               "version_added": "1.0"
             },
-            "webview_android": {
-              "version_added": "4.4"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3006,16 +2989,7 @@
                 }
               ]
             },
-            "chrome_android": {
-              "version_added": "37",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "79",
@@ -3046,19 +3020,10 @@
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "24",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "8"
+              "version_added": "7"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

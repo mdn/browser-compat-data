@@ -107,7 +107,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Florian Scholz (@Elchi3), Open Web Docs
 - Philip Jägenstedt (@foolip), Google
 - Ruth John (@Rumyra), Mozilla
-- Vinyl Da.i'gyu (@queengooborg)
+- Vinyl Da.i'gyu (@queengooborg), Gooborg Studios
 
 ## Additional paths to becoming a Peer or Owner
 
