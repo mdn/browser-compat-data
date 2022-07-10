@@ -55,6 +55,7 @@ export const getMatchingBrowserVersion = (
     if (
       [
         'edge',
+        'oculus',
         'opera',
         'opera_android',
         'samsunginternet_android',
