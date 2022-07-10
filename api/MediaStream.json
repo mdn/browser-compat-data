@@ -561,9 +561,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "72"
+              },
+              {
+                "version_added": "59",
+                "version_removed": "72",
+                "partial_implementation": true,
+                "notes": "Before Firefox 72, the event handler was exposed but had no effect."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
