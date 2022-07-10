@@ -36,6 +36,10 @@ export const getMatchingBrowserVersion = (
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
 
+  if (sourceVersion == 'preview') {
+    return 'preview';
+  }
+
   const range = sourceVersion.includes('≤');
   const sourceRelease =
     browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
@@ -51,6 +55,7 @@ export const getMatchingBrowserVersion = (
     if (
       [
         'edge',
+        'oculus',
         'opera',
         'opera_android',
         'samsunginternet_android',
