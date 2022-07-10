@@ -584,6 +584,49 @@
           }
         }
       },
+      "change_event": {
+        "__compat": {
+          "description": "<code>change</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/change_event",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-change",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "9"
+            },
+            "opera": {
+              "version_added": "9"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "3"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "click": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/click",
@@ -1128,14 +1171,20 @@
               "chrome": {
                 "version_added": "64"
               },
-              "chrome_android": "mirror",
+              "chrome_android": {
+                "version_added": false,
+                "notes": "See <a href='https://crbug.com/953169'>bug 953169</a>."
+              },
               "edge": {
                 "version_added": "17"
               },
               "firefox": {
                 "version_added": "68"
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1544660'>bug 1544660</a>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -1260,38 +1309,8 @@
                 ]
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "60",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "79",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
               "version_added": "preview"
             },
