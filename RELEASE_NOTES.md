@@ -2142,7 +2142,7 @@ December 7, 2021
   - Internet Explorer
   - Safari
   - Safari for iOS
-  - Webview Android
+  - WebView Android
 
 - All entries using Safari 6.1, a backport release of Safari 7, have been changed to avoid unexplained discontinuities in support. Since it's no longer used in any support statements, the data for the Safari 6.1 release has been removed. See [the guideline for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) for more information on this change. ([#11156](https://github.com/mdn/browser-compat-data/pull/11156))
 
