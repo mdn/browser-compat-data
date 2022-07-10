@@ -44,6 +44,11 @@ const specsExceptions = [
 
   // Remove if https://github.com/w3c/mathml/issues/216 is resolved
   'https://w3c.github.io/mathml/',
+
+  // Remove once https://www.w3.org/TR/largest-contentful-paint/ updates,
+  // and browser-specs picks up the update; see discussion at
+  // https://github.com/mdn/browser-compat-data/pull/16527#issuecomment-1145773922
+  'https://w3c.github.io/largest-contentful-paint/',
 ];
 
 const allowedSpecURLs = [
