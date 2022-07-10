@@ -1,5 +1,80 @@
 # Release notes
 
+## [v5.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.3)
+
+June 27, 2022
+
+### Removals
+
+- `api.GlobalEventHandlers.onblur` ([#16530](https://github.com/mdn/browser-compat-data/pull/16530))
+- `api.GlobalEventHandlers.onfocus` ([#16530](https://github.com/mdn/browser-compat-data/pull/16530))
+- `api.GlobalEventHandlers.onpause` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onplay` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onplaying` ([#16673](https://github.com/mdn/browser-compat-data/pull/16673))
+- `api.GlobalEventHandlers.onprogress` ([#16718](https://github.com/mdn/browser-compat-data/pull/16718))
+- `api.GlobalEventHandlers.onratechange` ([#16721](https://github.com/mdn/browser-compat-data/pull/16721))
+- `api.GlobalEventHandlers.onseeked` ([#16730](https://github.com/mdn/browser-compat-data/pull/16730))
+- `api.GlobalEventHandlers.onseeking` ([#16730](https://github.com/mdn/browser-compat-data/pull/16730))
+- `api.GlobalEventHandlers.onstalled` ([#16734](https://github.com/mdn/browser-compat-data/pull/16734))
+- `api.GlobalEventHandlers.onsuspend` ([#16736](https://github.com/mdn/browser-compat-data/pull/16736))
+- `api.GlobalEventHandlers.ontimeupdate` ([#16737](https://github.com/mdn/browser-compat-data/pull/16737))
+- `api.GlobalEventHandlers.onvolumechange` ([#16760](https://github.com/mdn/browser-compat-data/pull/16760))
+- `api.GlobalEventHandlers.onwaiting` ([#16761](https://github.com/mdn/browser-compat-data/pull/16761))
+- `javascript.builtins.null` ([#16764](https://github.com/mdn/browser-compat-data/pull/16764))
+- `javascript.statements.import_meta` ([#16766](https://github.com/mdn/browser-compat-data/pull/16766))
+
+### Additions
+
+- `api.SharedWorkerGlobalScope.applicationCache.secure_context_required` ([#16753](https://github.com/mdn/browser-compat-data/pull/16753))
+- `browsers.chrome_android.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `browsers.chrome.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `browsers.deno.releases.1.23` ([#16799](https://github.com/mdn/browser-compat-data/pull/16799))
+- `browsers.edge.releases.105` ([#16775](https://github.com/mdn/browser-compat-data/pull/16775))
+- `browsers.webview_android.releases.106` ([#16765](https://github.com/mdn/browser-compat-data/pull/16765))
+- `javascript.operators.import_meta` ([#16766](https://github.com/mdn/browser-compat-data/pull/16766))
+- `javascript.operators.null` ([#16764](https://github.com/mdn/browser-compat-data/pull/16764))
+
+### Statistics
+
+- 11 contributors have changed 27 files with 263 additions and 866 deletions in 27 commits ([`v5.1.2...v5.1.3`](https://github.com/mdn/browser-compat-data/compare/v5.1.2...v5.1.3))
+- 13,704 total features
+- 880 total contributors
+- 4,113 total stargazers
+
+## [v5.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.2)
+
+June 21, 2022
+
+### Removals
+
+- `api.GlobalEventHandlers.oncanplay` ([#16541](https://github.com/mdn/browser-compat-data/pull/16541))
+- `api.GlobalEventHandlers.oncanplaythrough` ([#16541](https://github.com/mdn/browser-compat-data/pull/16541))
+- `api.GlobalEventHandlers.ondurationchange` ([#16558](https://github.com/mdn/browser-compat-data/pull/16558))
+- `api.RTCIceCandidatePairStats.circuitBreakerTriggerCount` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.consentExpiredTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.firstRequestTimeStamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.lastRequestTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.lastResponseTimestamp` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.retransmissionsReceived` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCIceCandidatePairStats.retransmissionsSent` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `api.RTCRtpStreamStats.sliCount` ([#16748](https://github.com/mdn/browser-compat-data/pull/16748))
+- `javascript.statements.import.dynamic_import` ([#16720](https://github.com/mdn/browser-compat-data/pull/16720))
+- `svg.attributes.presentation.color-rendering` ([#16743](https://github.com/mdn/browser-compat-data/pull/16743))
+
+### Additions
+
+- `css.properties.break-after.multicol_context.avoid` ([#16628](https://github.com/mdn/browser-compat-data/pull/16628))
+- `css.properties.break-before.multicol_context.avoid` ([#16628](https://github.com/mdn/browser-compat-data/pull/16628))
+- `javascript.operators.import` ([#16720](https://github.com/mdn/browser-compat-data/pull/16720))
+- `webextensions.api.history.onTitleChanged.id` ([#16715](https://github.com/mdn/browser-compat-data/pull/16715))
+
+### Statistics
+
+- 9 contributors have changed 393 files with 1,644 additions and 4,634 deletions in 33 commits ([`v5.1.1...v5.1.2`](https://github.com/mdn/browser-compat-data/compare/v5.1.1...v5.1.2))
+- 13,717 total features
+- 879 total contributors
+- 4,105 total stargazers
+
 ## [v5.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.1)
 
 June 17, 2022
@@ -2067,7 +2142,7 @@ December 7, 2021
   - Internet Explorer
   - Safari
   - Safari for iOS
-  - Webview Android
+  - WebView Android
 
 - All entries using Safari 6.1, a backport release of Safari 7, have been changed to avoid unexplained discontinuities in support. Since it's no longer used in any support statements, the data for the Safari 6.1 release has been removed. See [the guideline for historic Safari backport releases](https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines.md#backported-releases) for more information on this change. ([#11156](https://github.com/mdn/browser-compat-data/pull/11156))
 
