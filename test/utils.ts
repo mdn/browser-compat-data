@@ -216,7 +216,9 @@ export class Linters {
 
   constructor(linters: Array<Linter>) {
     this.linters = linters;
-    this.messages = {};
+    this.messages = {
+      File: [],
+    };
     this.missingExpectedFailures = {};
 
     for (const linter of this.linters) {
