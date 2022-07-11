@@ -2,14 +2,14 @@
  * See LICENSE file for more information. */
 
 import { readFileSync, writeFileSync, unlinkSync } from 'node:fs';
-import { hasSupportHistory } from '../../test/linter/test-support-history';
+import { hasSupportHistory } from '../../test/linter/test-support-history.js';
 
 /**
  * @param {Identifier} data
  */
 function check(data) {
   let hasIssue = false;
-  if (data.__compat && !hasSupportHistory(data)) {
+  if (data.__compat && !hasSupportHistory(data.__compat)) {
     hasIssue = true;
   }
   for (const member in data) {

@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import chalk from 'chalk-template';
 import { Linter, Logger } from '../utils.js';
 
@@ -35,7 +38,8 @@ export function hasSupportHistory(compat: CompatStatement) {
 
 export default {
   name: 'Support history',
-  description: 'Ensure that there are no features where there is no browser support',
+  description:
+    'Ensure that there are no features where there is no browser support',
   scope: 'feature',
   check(logger: Logger, { data }: { data: CompatStatement }) {
     if (!hasSupportHistory(data)) {
