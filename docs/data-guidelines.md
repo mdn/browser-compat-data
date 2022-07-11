@@ -231,14 +231,27 @@ This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-dat
 
 ## Removal of irrelevant flag data
 
-Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet these conditions:
 
-- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
-- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+- The browser has supported the feature by default.
+- The feature can no longer be enabled by toggling the flag.
+- The flag has been removed from the browser.
 
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
-This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670) and revised in [#16637](https://github.com/mdn/browser-compat-data/pull/16637).
+
+## Features with no browser support
+
+Browser features that have not been implemented in any browser, or are planned to be implemented, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+
+- The feature has not been included in a stable browser release.
+- The feature is not implemented behind a current flag (or Chrome origin trial).
+- There is no tracking bug for the browser to indicate intent to implement.
+
+Some features may already be added to BCD that do not have any browser support. These features will be removed over time.
+
+This guideline was proposed in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
 
 ## When to add `version_removed` to flagged support
 
