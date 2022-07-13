@@ -223,11 +223,11 @@ This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data
 
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
-- a feature was never implemented in any browser and the specification has been abandoned.
+- a feature was never implemented in any browser.
 - a feature was implemented and has since been removed from all browsers dating back two or more years ago.
 - a feature is unsupported in all releases in the past five years.
 
-This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
 
 ## Removal of irrelevant flag data
 
