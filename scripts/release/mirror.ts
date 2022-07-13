@@ -125,6 +125,45 @@ export const getMatchingBrowserVersion = (
 };
 
 /**
+ * @param {Notes?} notes1
+ * @param {Notes?} notes2
+ * @returns {Notes?}
+ */
+const combineNotes = (
+  notes1: Notes | null,
+  notes2: Notes | null,
+): Notes | null => {
+  let newNotes: string[] = [];
+
+  if (notes1) {
+    if (typeof notes1 === 'string') {
+      newNotes.push(notes1);
+    } else {
+      newNotes.push(...notes1);
+    }
+  }
+
+  if (notes2) {
+    if (typeof notes2 === 'string') {
+      newNotes.push(notes2);
+    } else {
+      newNotes.push(...notes2);
+    }
+  }
+
+  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
+
+  if (newNotes.length == 0) {
+    return null;
+  }
+  if (newNotes.length == 1) {
+    return newNotes[0];
+  }
+
+  return newNotes;
+};
+
+/**
  * @param {Notes?} notes
  * @param {RegExp} regex
  * @param {string} replace
@@ -216,8 +255,43 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SupportStatement} data
- * @param {BrowserName} destination
+ * Returns true if two simple support statements are the same ignoring notes.
+ *
+ * Statements with flags are never considered equal because the arrays aren't
+ * compared recursively. No data depends on this, it seems.
+ */
+const equalIgnoringNotes = (
+  a: SimpleSupportStatement,
+  b: SimpleSupportStatement,
+): boolean => {
+  for (const key in a) {
+    if (key !== 'notes' && a[key] !== b[key]) {
+      return false;
+    }
+  }
+  for (const key in b) {
+    if (key !== 'notes' && !(key in a)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/**
+ * Return a new support statement based on mapping versions from the source
+ * browser to the destination browser, and dropping or combining statements
+ * that don't apply to the destination browser.
+ *
+ * This works by mapping each simple support statement, dropping ones that don't
+ * apply, for example if support was added and removed before the destination
+ * browser's first release. The mapping can result in multiple statements with
+ * the same versions, prefix information, etc. In that case, statements are
+ * combined, including their notes.
+ *
+ * @param {SupportStatement} sourceData The original support statement
+ * @param {BrowserName} destination The browser to derive support for
+ *
+ * @returns {SupportStatement} The derived (mirrored) support statement
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
@@ -239,8 +313,23 @@ export const bumpSupport = (
       case 1:
         return newData[0];
 
-      default:
-        return newData;
+      default: {
+        const newerData: SimpleSupportStatement[] = [];
+        let prevData: SimpleSupportStatement | null = null;
+        for (const data of newData) {
+          if (prevData && equalIgnoringNotes(prevData, data)) {
+            const newNotes = combineNotes(
+              prevData.notes || null,
+              data.notes || null,
+            );
+            if (newNotes) prevData.notes = newNotes;
+          } else {
+            newerData.push(data);
+            prevData = data;
+          }
+        }
+        return newerData;
+      }
     }
   }
 
@@ -253,15 +342,22 @@ export const bumpSupport = (
     notesRepl = [/Chrome/g, 'Samsung Internet'];
   }
 
+  if (sourceData.flags && !browsers[destination].accepts_flags) {
+    // Remove flag data if the target browser doesn't accept flags.
+    return { version_added: false };
+  }
+
   const newData = bumpGeneric(sourceData, destination, notesRepl);
 
-  if (!browsers[destination].accepts_flags && newData.flags) {
-    // Remove flag data if the target browser doesn't accept flags
+  if (newData.version_added === false && sourceData.version_added !== false) {
+    // If version_added mapped to false because there's no destination release
+    // yet, no notes or other details apply.
     return { version_added: false };
   }
 
   if (newData.version_added === newData.version_removed) {
-    // If version_added and version_removed are the same, feature is unsupported
+    // If version_added and version_removed are the same, the feature is
+    // unsupported.
     return { version_added: false };
   }
 
