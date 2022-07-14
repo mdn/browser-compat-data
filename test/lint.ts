@@ -63,8 +63,12 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
 
         extend(data, fileData);
       } catch (e) {
-        console.error(`Couldn't load ${filePath.full}!`);
-        console.error(e);
+        linters.messages['File'].push({
+          level: 'error',
+          title: 'File Read Error',
+          path: filePath.full,
+          message: e as string,
+        });
       }
     }
 

@@ -5,14 +5,18 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/CacheStorage",
         "spec_url": "https://w3c.github.io/ServiceWorker/#cachestorage-interface",
         "support": {
-          "chrome": {
-            "version_added": "40",
-            "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
-          },
-          "chrome_android": {
-            "version_added": "40",
-            "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported"
-          },
+          "chrome": [
+            {
+              "version_added": "43"
+            },
+            {
+              "version_added": "40",
+              "version_removed": "43",
+              "partial_implementation": true,
+              "notes": "Only available in service workers."
+            }
+          ],
+          "chrome_android": "mirror",
           "edge": {
             "version_added": "16"
           },
@@ -26,22 +30,15 @@
           "ie": {
             "version_added": false
           },
+          "oculus": "mirror",
           "opera": "mirror",
-          "opera_android": {
-            "version_added": "27",
-            "notes": "Before version 30, only service workers are supported. From version 30, all worker types and the main thread are supported."
-          },
+          "opera_android": "mirror",
           "safari": {
             "version_added": "11.1"
           },
           "safari_ios": "mirror",
-          "samsunginternet_android": {
-            "version_added": "4.0"
-          },
-          "webview_android": {
-            "version_added": "40",
-            "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
-          }
+          "samsunginternet_android": "mirror",
+          "webview_android": "mirror"
         },
         "status": {
           "experimental": false,
@@ -65,6 +62,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -85,10 +83,17 @@
         "__compat": {
           "description": "Available in workers",
           "support": {
-            "chrome": {
-              "version_added": "40",
-              "notes": "Before version 43, only service workers are supported. From version 43, all worker types and the main thread are supported."
-            },
+            "chrome": [
+              {
+                "version_added": "43"
+              },
+              {
+                "version_added": "40",
+                "version_removed": "43",
+                "partial_implementation": true,
+                "notes": "Only available in service workers."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "16"
@@ -103,15 +108,14 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -143,6 +147,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -181,6 +186,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -219,6 +225,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -264,6 +271,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -302,6 +310,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
