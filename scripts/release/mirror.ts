@@ -16,6 +16,32 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
+
+const matchingSafariVersions = new Map([
+  ['≤4', '≤3'],
+  ['1', '1'],
+  ['1.1', '1'],
+  ['1.2', '1'],
+  ['1.3', '1'],
+  ['2', '1'],
+  ['3', '2'],
+  ['3.1', '2'],
+  ['4', '3.2'],
+  ['5', '4.2'],
+  ['5.1', '6'],
+  ['9.1', '9.3'],
+  ['10.1', '10.3'],
+  ['11.1', '11.3'],
+  ['12.1', '12.2'],
+  ['13.1', '13.4'],
+  ['14.1', '14.5'],
+]);
+
+/**
  * @param {string} targetBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
@@ -32,6 +58,21 @@ export const getMatchingBrowserVersion = (
     throw new Error('Browser does not have an upstream browser set.');
   }
   /* c8 ignore stop */
+
+  if (targetBrowser === 'safari_ios') {
+    // The mapping between Safari macOS and iOS releases is complicated and
+    // cannot be entirely derived from the WebKit versions. After Safari 15
+    // the versions have been the same, so map earlier versions manually
+    // and then assume if the versions are identical it's also a match.
+    const v = matchingSafariVersions.get(sourceVersion);
+    if (v) {
+      return v;
+    }
+    if (sourceVersion in browserData.releases) {
+      return sourceVersion;
+    }
+    throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
+  }
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
