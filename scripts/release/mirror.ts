@@ -16,6 +16,32 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
+
+const matchingSafariVersions = new Map([
+  ['≤4', '≤3'],
+  ['1', '1'],
+  ['1.1', '1'],
+  ['1.2', '1'],
+  ['1.3', '1'],
+  ['2', '1'],
+  ['3', '2'],
+  ['3.1', '2'],
+  ['4', '3.2'],
+  ['5', '4.2'],
+  ['5.1', '6'],
+  ['9.1', '9.3'],
+  ['10.1', '10.3'],
+  ['11.1', '11.3'],
+  ['12.1', '12.2'],
+  ['13.1', '13.4'],
+  ['14.1', '14.5'],
+]);
+
+/**
  * @param {string} targetBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
@@ -32,6 +58,21 @@ export const getMatchingBrowserVersion = (
     throw new Error('Browser does not have an upstream browser set.');
   }
   /* c8 ignore stop */
+
+  if (targetBrowser === 'safari_ios') {
+    // The mapping between Safari macOS and iOS releases is complicated and
+    // cannot be entirely derived from the WebKit versions. After Safari 15
+    // the versions have been the same, so map earlier versions manually
+    // and then assume if the versions are identical it's also a match.
+    const v = matchingSafariVersions.get(sourceVersion);
+    if (v) {
+      return v;
+    }
+    if (sourceVersion in browserData.releases) {
+      return sourceVersion;
+    }
+    throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
+  }
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
@@ -172,69 +213,8 @@ const copyStatement = (
  * @param {SupportStatement[]} data
  * @returns {SupportStatement}
  */
-const combineStatements = (...data: SupportStatement[]): SupportStatement => {
-  const ignoredKeys: (keyof SimpleSupportStatement)[] = [
-    'version_added',
-    'notes',
-    'impl_url',
-  ];
-
-  const flattenedData = data.flat(2);
-  const sections: { [index: string]: SimpleSupportStatement[] } = {};
-  let newData: SimpleSupportStatement[] = [];
-
-  for (const d of flattenedData) {
-    const key = (Object.keys(d) as (keyof typeof d)[])
-      .filter((k) => !ignoredKeys.includes(k))
-      .join('');
-    if (!(key in sections)) sections[key] = [];
-    sections[key].push(d);
-  }
-
-  for (const k of Object.keys(sections)) {
-    const currentStatement = sections[k][0];
-
-    if (sections[k].length == 1) {
-      newData.push(currentStatement);
-      continue;
-    }
-
-    for (const i in sections[k]) {
-      // TODO: fix me
-      // if (i === sections[k][0]) continue;
-      const newStatement = sections[k][i];
-
-      const currentVA = currentStatement.version_added;
-      const newVA = newStatement.version_added;
-
-      if (newVA === false) {
-        // Ignore statements with version_added being false
-        continue;
-      } else if (typeof newVA === 'string') {
-        if (
-          typeof currentVA !== 'string' ||
-          compareVersions.compare(
-            currentVA.replace('≤', ''),
-            newVA.replace('≤', ''),
-            '>',
-          )
-        ) {
-          currentStatement.version_added = newVA;
-        }
-      }
-
-      const newNotes = combineNotes(
-        currentStatement.notes || null,
-        newStatement.notes || null,
-      );
-      if (newNotes) currentStatement.notes = newNotes;
-    }
-
-    if ('notes' in currentStatement && !currentStatement.notes) {
-      delete currentStatement.notes;
-    }
-    newData.push(currentStatement);
-  }
+const flattenStatements = (...data: SupportStatement[]): SupportStatement => {
+  let newData: SimpleSupportStatement[] = data.flat(2).filter((data) => !!data);
 
   if (newData.length === 1) {
     return newData[0];
@@ -331,11 +311,11 @@ export const bumpSupport = (
   let newData: SupportStatement | null = null;
 
   if (Array.isArray(sourceData)) {
-    const newStatements = sourceData
+    const newStatements: SupportStatement[] = sourceData
       .map((data) => bumpSupport(data, destination))
-      .filter((data) => data !== null);
+      .filter((data) => data !== null) as SupportStatement[];
 
-    return combineStatements(...(newStatements as SupportStatement[]));
+    return flattenStatements(...newStatements);
   }
 
   if (destination === 'edge') {
