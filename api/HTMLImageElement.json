@@ -399,10 +399,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority",
           "spec_url": "https://wicg.github.io/priority-hints/#img",
           "support": {
-            "chrome": {
-              "version_added": "101",
-              "alternative_name": "fetchpriority"
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "101",
+                "version_removed": "102",
+                "alternative_name": "fetchpriority"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -413,19 +419,13 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -808,9 +808,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/referrerPolicy",
           "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-referrerpolicy",
           "support": {
-            "chrome": {
-              "version_added": "53"
-            },
+            "chrome": [
+              {
+                "version_added": "52"
+              },
+              {
+                "alternative_name": "referrerpolicy",
+                "version_added": "51",
+                "version_removed": "52"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
