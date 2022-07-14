@@ -66,7 +66,7 @@
         },
         "accepts_flags": {
           "type": "boolean",
-          "description": "Whether the browser supports flags to enable or disablle features."
+          "description": "Whether the browser supports user-toggleable flags that enable or disable features."
         },
         "accepts_webextensions": {
           "type": "boolean",
@@ -87,7 +87,13 @@
           "tsType": "{ [version: string]: ReleaseStatement };"
         }
       },
-      "required": ["name", "type", "releases"],
+      "required": [
+        "name",
+        "type",
+        "releases",
+        "accepts_flags",
+        "accepts_webextensions"
+      ],
       "additionalProperties": false
     },
 

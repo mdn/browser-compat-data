@@ -36,6 +36,10 @@ export const getMatchingBrowserVersion = (
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
 
+  if (sourceVersion == 'preview') {
+    return 'preview';
+  }
+
   const range = sourceVersion.includes('≤');
   const sourceRelease =
     browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
@@ -49,16 +53,12 @@ export const getMatchingBrowserVersion = (
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      [
-        'edge',
-        'opera',
-        'opera_android',
-        'samsunginternet_android',
-        'webview_android',
-      ].includes(targetBrowser) &&
+      ['chrome', 'chrome_android'].includes(browserData.upstream) &&
+      targetBrowser !== 'chrome_android' &&
       release.engine == 'Blink' &&
       sourceRelease.engine == 'WebKit'
     ) {
+      // Handle mirroring for Chromium forks when upstream version is pre-Blink
       return range ? `≤${r}` : r;
     } else if (release.engine == sourceRelease.engine) {
       if (
