@@ -338,8 +338,7 @@ export const bumpSupport = (
 
   if (newData.version_added === newData.version_removed) {
     // If version_added and version_removed are the same, feature is unsupported
-    newData.version_added = false;
-    delete newData.version_removed;
+    return { version_added: false };
   }
 
   return newData;
