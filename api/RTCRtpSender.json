@@ -291,10 +291,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "46",
-              "notes": "Changes to parameters that should update live now do so starting in Firefox 64."
-            },
+            "firefox": [
+              {
+                "version_added": "64"
+              },
+              {
+                "version_added": "46",
+                "version_removed": "64",
+                "partial_implementation": true,
+                "notes": "Before Firefox 64, changes to parameters that should update live would not do so."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
