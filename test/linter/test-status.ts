@@ -9,6 +9,55 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+export const checkExperimental = (data: CompatStatement) => {
+  if (data.status?.experimental) {
+    // Check if experimental should be false (code copied from migration 007)
+
+    const browserSupport: Set<BrowserName> = new Set();
+
+    for (const [browser, support] of Object.entries(data.support)) {
+      // Consider only the first part of an array statement.
+      const statement = Array.isArray(support) ? support[0] : support;
+      // Ignore anything behind flag, prefix or alternative name
+      if (statement.flags || statement.prefix || statement.alternative_name) {
+        continue;
+      }
+      if (statement.version_added && !statement.version_removed) {
+        if (statement.version_added !== 'preview') {
+          browserSupport.add(browser as BrowserName);
+        }
+      }
+    }
+
+    // Now check which of Blink, Gecko and WebKit support it.
+
+    const engineSupport = new Set();
+
+    for (const browser of browserSupport) {
+      const currentRelease = Object.values(browsers[browser].releases).find(
+        (r) => r.status === 'current',
+      );
+      const engine = currentRelease?.engine;
+      if (engine) {
+        engineSupport.add(engine);
+      }
+    }
+
+    let engineCount = 0;
+    for (const engine of ['Blink', 'Gecko', 'WebKit']) {
+      if (engineSupport.has(engine)) {
+        engineCount++;
+      }
+    }
+
+    if (engineCount > 1) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 /**
  * @param {CompatStatement} data
  * @param {Logger} logger
@@ -41,51 +90,12 @@ function checkStatus(
     );
   }
 
-  if (status.experimental) {
-    // Check if experimental should be false (code copied from migration 007)
-
-    const browserSupport: Set<BrowserName> = new Set();
-
-    for (const [browser, support] of Object.entries(data.support)) {
-      // Consider only the first part of an array statement.
-      const statement = Array.isArray(support) ? support[0] : support;
-      // Ignore anything behind flag, prefix or alternative name
-      if (statement.flags || statement.prefix || statement.alternative_name) {
-        continue;
-      }
-      if (statement.version_added && !statement.version_removed) {
-        browserSupport.add(browser as BrowserName);
-      }
-    }
-
-    // Now check which of Blink, Gecko and WebKit support it.
-
-    const engineSupport = new Set();
-
-    for (const browser of browserSupport) {
-      const currentRelease = Object.values(browsers[browser].releases).find(
-        (r) => r.status === 'current',
-      );
-      const engine = currentRelease?.engine;
-      if (engine) {
-        engineSupport.add(engine);
-      }
-    }
-
-    let engineCount = 0;
-    for (const engine of ['Blink', 'Gecko', 'WebKit']) {
-      if (engineSupport.has(engine)) {
-        engineCount++;
-      }
-    }
-
-    if (engineCount > 1) {
-      logger.error(
-        chalk`{red Experimental should be set to {bold false} for {bold ${path.join(
-          '.',
-        )}} as the feature is supported in multiple browser engines.}`,
-      );
-    }
+  if (!checkExperimental(data)) {
+    logger.error(
+      chalk`{red Experimental should be set to {bold false} for {bold ${path.join(
+        '.',
+      )}} as the feature is supported in multiple browser engines.}`,
+    );
   }
 }
 

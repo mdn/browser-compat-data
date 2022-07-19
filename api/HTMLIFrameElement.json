@@ -386,8 +386,8 @@
           "spec_url": "https://wicg.github.io/priority-hints/#iframe",
           "support": {
             "chrome": {
-              "version_added": "101",
-              "alternative_name": "fetchpriority"
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/1345601'>bug 1345601</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -399,19 +399,13 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -755,9 +749,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-referrerpolicy",
           "support": {
-            "chrome": {
-              "version_added": "53"
-            },
+            "chrome": [
+              {
+                "version_added": "52"
+              },
+              {
+                "alternative_name": "referrerpolicy",
+                "version_added": "51",
+                "version_removed": "52"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -768,9 +769,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "38"
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "14"

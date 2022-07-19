@@ -16,6 +16,32 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
+
+const matchingSafariVersions = new Map([
+  ['≤4', '≤3'],
+  ['1', '1'],
+  ['1.1', '1'],
+  ['1.2', '1'],
+  ['1.3', '1'],
+  ['2', '1'],
+  ['3', '2'],
+  ['3.1', '2'],
+  ['4', '3.2'],
+  ['5', '4.2'],
+  ['5.1', '6'],
+  ['9.1', '9.3'],
+  ['10.1', '10.3'],
+  ['11.1', '11.3'],
+  ['12.1', '12.2'],
+  ['13.1', '13.4'],
+  ['14.1', '14.5'],
+]);
+
+/**
  * @param {string} targetBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
@@ -32,6 +58,21 @@ export const getMatchingBrowserVersion = (
     throw new Error('Browser does not have an upstream browser set.');
   }
   /* c8 ignore stop */
+
+  if (targetBrowser === 'safari_ios') {
+    // The mapping between Safari macOS and iOS releases is complicated and
+    // cannot be entirely derived from the WebKit versions. After Safari 15
+    // the versions have been the same, so map earlier versions manually
+    // and then assume if the versions are identical it's also a match.
+    const v = matchingSafariVersions.get(sourceVersion);
+    if (v) {
+      return v;
+    }
+    if (sourceVersion in browserData.releases) {
+      return sourceVersion;
+    }
+    throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
+  }
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
@@ -53,17 +94,12 @@ export const getMatchingBrowserVersion = (
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
-      [
-        'edge',
-        'oculus',
-        'opera',
-        'opera_android',
-        'samsunginternet_android',
-        'webview_android',
-      ].includes(targetBrowser) &&
+      ['chrome', 'chrome_android'].includes(browserData.upstream) &&
+      targetBrowser !== 'chrome_android' &&
       release.engine == 'Blink' &&
       sourceRelease.engine == 'WebKit'
     ) {
+      // Handle mirroring for Chromium forks when upstream version is pre-Blink
       return range ? `≤${r}` : r;
     } else if (release.engine == sourceRelease.engine) {
       if (
@@ -177,69 +213,8 @@ const copyStatement = (
  * @param {SupportStatement[]} data
  * @returns {SupportStatement}
  */
-const combineStatements = (...data: SupportStatement[]): SupportStatement => {
-  const ignoredKeys: (keyof SimpleSupportStatement)[] = [
-    'version_added',
-    'notes',
-    'impl_url',
-  ];
-
-  const flattenedData = data.flat(2);
-  const sections: { [index: string]: SimpleSupportStatement[] } = {};
-  let newData: SimpleSupportStatement[] = [];
-
-  for (const d of flattenedData) {
-    const key = (Object.keys(d) as (keyof typeof d)[])
-      .filter((k) => !ignoredKeys.includes(k))
-      .join('');
-    if (!(key in sections)) sections[key] = [];
-    sections[key].push(d);
-  }
-
-  for (const k of Object.keys(sections)) {
-    const currentStatement = sections[k][0];
-
-    if (sections[k].length == 1) {
-      newData.push(currentStatement);
-      continue;
-    }
-
-    for (const i in sections[k]) {
-      // TODO: fix me
-      // if (i === sections[k][0]) continue;
-      const newStatement = sections[k][i];
-
-      const currentVA = currentStatement.version_added;
-      const newVA = newStatement.version_added;
-
-      if (newVA === false) {
-        // Ignore statements with version_added being false
-        continue;
-      } else if (typeof newVA === 'string') {
-        if (
-          typeof currentVA !== 'string' ||
-          compareVersions.compare(
-            currentVA.replace('≤', ''),
-            newVA.replace('≤', ''),
-            '>',
-          )
-        ) {
-          currentStatement.version_added = newVA;
-        }
-      }
-
-      const newNotes = combineNotes(
-        currentStatement.notes || null,
-        newStatement.notes || null,
-      );
-      if (newNotes) currentStatement.notes = newNotes;
-    }
-
-    if ('notes' in currentStatement && !currentStatement.notes) {
-      delete currentStatement.notes;
-    }
-    newData.push(currentStatement);
-  }
+const flattenStatements = (...data: SupportStatement[]): SupportStatement => {
+  let newData: SimpleSupportStatement[] = data.flat(2).filter((data) => !!data);
 
   if (newData.length === 1) {
     return newData[0];
@@ -308,24 +283,6 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @returns {SimpleSupportStatement}
- */
-const bumpEdge = (
-  sourceData: SimpleSupportStatement,
-): SimpleSupportStatement => {
-  if (
-    typeof sourceData.version_removed === 'string' &&
-    compareVersions.compare(sourceData.version_removed, '79', '<=')
-  ) {
-    // If this feature was removed before Chrome 79, it's not present in Chromium Edge
-    return { version_added: false };
-  }
-
-  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
-};
-
-/**
  * @param {SupportStatement} data
  * @param {BrowserName} destination
  */
@@ -333,28 +290,24 @@ export const bumpSupport = (
   sourceData: SupportStatement,
   destination: BrowserName,
 ): SupportStatement | null => {
-  let newData: SupportStatement | null = null;
-
   if (Array.isArray(sourceData)) {
-    const newStatements = sourceData
+    const newStatements: SupportStatement[] = sourceData
       .map((data) => bumpSupport(data, destination))
-      .filter((data) => data !== null);
+      .filter((data) => data !== null) as SupportStatement[];
 
-    return combineStatements(...(newStatements as SupportStatement[]));
+    return flattenStatements(...newStatements);
   }
 
+  let notesRepl: [RegExp, string] | undefined;
   if (destination === 'edge') {
-    newData = bumpEdge(sourceData);
-  } else {
-    let notesRepl: [RegExp, string] | undefined;
-    if (destination.includes('opera')) {
-      notesRepl = [/Chrome/g, 'Opera'];
-    } else if (destination === 'samsunginternet_android') {
-      notesRepl = [/Chrome/g, 'Samsung Internet'];
-    }
-
-    newData = bumpGeneric(sourceData, destination, notesRepl);
+    notesRepl = [/Chrome/g, 'Edge'];
+  } else if (destination.includes('opera')) {
+    notesRepl = [/Chrome/g, 'Opera'];
+  } else if (destination === 'samsunginternet_android') {
+    notesRepl = [/Chrome/g, 'Samsung Internet'];
   }
+
+  const newData = bumpGeneric(sourceData, destination, notesRepl);
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
@@ -363,8 +316,7 @@ export const bumpSupport = (
 
   if (newData.version_added === newData.version_removed) {
     // If version_added and version_removed are the same, feature is unsupported
-    newData.version_added = false;
-    delete newData.version_removed;
+    return { version_added: false };
   }
 
   return newData;
