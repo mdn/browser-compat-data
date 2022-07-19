@@ -36,13 +36,19 @@ To contribute to this project, you must have all of the following:
 - A basic understanding of the GitHub UI or Git version control
 - Experience with web development (preferably 3+ years)
 
+Most simple changes can be done within the GitHub website. For more substantial changes, you will need to clone the repository locally, and as such will need the following:
+
+- A familiarity with your terminal and Git (for example, you know how to switch directories, clone a repository, and run scripts)
+- A text editor, preferably one that supports [EditorConfig](https://editorconfig.org/)
+- Node.js, with [an Active LTS or more recent release](https://nodejs.org/en/download/)
+
 ### Helpful resources
 
 While contributing to BCD, there are a number of tools and other resources we regularly use. Some of them are the following:
 
 - [MDN Web Docs](https://developer.mozilla.org): yes, we use our own documentation regularly to obtain code examples and determine what a feature is meant to do!
 - [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
-- [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with a free plan.
+- [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with open source plans.
 
 ## Ways to contribute
 
