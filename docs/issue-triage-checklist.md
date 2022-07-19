@@ -2,13 +2,14 @@
 
 Helping process and understand new issues is a great way to help the project. To review a new issue, follow these steps. It looks lengthy, but with practice, many issues can be processed in a few minutes.
 
-## Close fast
+## Close irrelevant issues fast
 
 Avoid wasting time on issues which are not relevant to the repository by closing them quickly.
 
 - **Is it obvious spam?** Close it without comment and label it [_spam :wastebasket:_](https://github.com/mdn/browser-compat-data/labels/spam%20%3Awastebasket%3A).
 - **Is the issue template wholly incomplete?** Close it and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
 - **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
+- **Is the issue a duplicate of another issue?** Close it with a comment stating it is a duplicate, mentioning the original issue number, and label it [_duplicate :dancing_women:_](https://github.com/mdn/browser-compat-data/labels/duplicate%20%3Adancing_women%3A).
 - **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
 
 ## Confirm the title, description, and metadata
