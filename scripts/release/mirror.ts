@@ -283,24 +283,6 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @returns {SimpleSupportStatement}
- */
-const bumpEdge = (
-  sourceData: SimpleSupportStatement,
-): SimpleSupportStatement => {
-  if (
-    typeof sourceData.version_removed === 'string' &&
-    compareVersions.compare(sourceData.version_removed, '79', '<=')
-  ) {
-    // If this feature was removed before Chrome 79, it's not present in Chromium Edge
-    return { version_added: false };
-  }
-
-  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
-};
-
-/**
  * @param {SupportStatement} data
  * @param {BrowserName} destination
  */
@@ -308,8 +290,6 @@ export const bumpSupport = (
   sourceData: SupportStatement,
   destination: BrowserName,
 ): SupportStatement | null => {
-  let newData: SupportStatement | null = null;
-
   if (Array.isArray(sourceData)) {
     const newStatements: SupportStatement[] = sourceData
       .map((data) => bumpSupport(data, destination))
@@ -318,18 +298,16 @@ export const bumpSupport = (
     return flattenStatements(...newStatements);
   }
 
+  let notesRepl: [RegExp, string] | undefined;
   if (destination === 'edge') {
-    newData = bumpEdge(sourceData);
-  } else {
-    let notesRepl: [RegExp, string] | undefined;
-    if (destination.includes('opera')) {
-      notesRepl = [/Chrome/g, 'Opera'];
-    } else if (destination === 'samsunginternet_android') {
-      notesRepl = [/Chrome/g, 'Samsung Internet'];
-    }
-
-    newData = bumpGeneric(sourceData, destination, notesRepl);
+    notesRepl = [/Chrome/g, 'Edge'];
+  } else if (destination.includes('opera')) {
+    notesRepl = [/Chrome/g, 'Opera'];
+  } else if (destination === 'samsunginternet_android') {
+    notesRepl = [/Chrome/g, 'Samsung Internet'];
   }
+
+  const newData = bumpGeneric(sourceData, destination, notesRepl);
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
