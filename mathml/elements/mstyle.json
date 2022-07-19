@@ -7,13 +7,30 @@
           "spec_url": "https://w3c.github.io/mathml-core/#style-change-mstyle",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
+              "version_added": "80",
+              "impl_url": "https://crrev.com/c/1908533",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": [
+                "In Chrome 83, the <code>displaystyle</code> attribute has been implemented.",
+                "In Chrome 84, the <code>mathvariant</code> attribute has been implemented.",
+                "In Chrome 88, the <code>scriptlevel</code> attribute has been implemented."
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": [
+                "Before Firefox 6, attributes <code>bevelled</code>, <code>notation</code>, <code>open</code>, <code>close</code>, <code>separators</code>, <code>accent</code>, <code>accentunder</code>, <code>selection</code>, <code>mathvariant</code> were not supported.",
+                "In Firefox 29, accepted attributes have been restricted to those actually used in practice: <code>id</code>, <code>class</code>, <code>style</code>, <code>href</code>, <code>mathcolor</code>, <code>mathbackground</code>, <code>scriptlevel</code>, <code>displaystyle</code>, <code>scriptsizemultiplier</code>, <code>scriptminsize</code>, <code>dir</code>, <code>mathsize</code>, <code>mathvariant</code>, <code>fontfamily</code>, <code>fontweight</code>, <code>fontstyle</code>, <code>fontsize</code>, <code>color</code>, <code>background</code>.",
+                "In Firefox 103, attributes <code>scriptsizemultiplier</code> and <code>scriptminsize</code> have been removed."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -37,105 +54,6 @@
             "deprecated": false
           }
         },
-        "dir": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/mstyle#attr-dir",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "12"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "displaystyle": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/mstyle#attr-displaystyle",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "scriptlevel": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/mstyle#attr-scriptlevel",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "scriptminsize": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/mstyle#attr-scriptminsize",
@@ -146,7 +64,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "103",
+                "impl_url": "https://bugzil.la/1772697"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -165,7 +85,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -179,7 +99,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "103",
+                "impl_url": "https://bugzil.la/1772697"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -198,7 +120,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         }
