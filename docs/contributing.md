@@ -9,7 +9,6 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
    1. [Prerequisites](#prerequisites)
 1. [Ways to contribute](#ways-to-contribute)
 1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
-1. [Updating compatibility tables on MDN](#updating-compatibility-tables-on-mdn)
 1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
@@ -58,24 +57,6 @@ There are many ways you can help improve this repository! For example:
 
 When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
 
-## Updating compatibility tables on MDN
-
-Once a pull request is merged to update BCD, it takes a week or two for a new version of the repository to be released, and then a few days for it to launch on MDN. The process is:
-
-1. A pull request is reviewed and merged to `main`.
-2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
-   See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
-3. MDN staff build and deploy a new image of [Kumascript](https://github.com/mdn/yari/tree/main/kumascript), which includes the BCD release, to production.
-   This typically happens within a day of the release of the npm package.
-4. Tables are generated on MDN:
-
-   - Existing tables automatically regenerate monthly.
-     Alternatively, logged-in MDN users can [force-refresh a page](https://en.wikipedia.org/wiki/Wikipedia:Bypass_your_cache#Bypassing_cache) to regenerate it.
-   - For new pages, you must add the [`{{Compat}}`](https://github.com/mdn/kumascript/blob/master/macros/Compat.ejs) macro to the page.
-     For instructions, see [Inserting the data into MDN pages](https://developer.mozilla.org/en-US/docs/MDN/Contribute/Structures/Compatibility_tables#Inserting_the_data_into_MDN_pages).
-
-Large-scale changes follow a different process. See [Migrations](migrations.md) for details.
-
 ## Opening issues and pull requests
 
 Before submitting your pull request, [validate your new data against the schema](testing.md).
@@ -102,4 +83,4 @@ Note: originally, this functionality used to be provided as an executable script
 
 ## Getting help
 
-If you need help with this repository or have any questions, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
+If you need help with this repository or have any questions, first check the [FAQ](./faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
