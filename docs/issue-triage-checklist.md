@@ -55,24 +55,7 @@ Most reporters won't do these things on their own, but these are important steps
 - **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
 - **Ask the reporter if they have a minimal test case** (e.g., on CodePen).
 - If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.
-
-### Chrome (and Chromium-based browsers)
-
-These details can be helpful if an issue is specific to the Chromium-based browsers: Chrome, Chrome for Android, Android WebView, Edge (versions ≥79), Opera, Opera for Android, and Samsung Internet.
-
-- **Link to a Chrome Platform Status entry, if it exists.**
-- If applicable, **request or link to a relevant issue on [the Chromium issue tracker](https://bugs.chromium.org/p/chromium/issues/list)**.
-- If applicable, **comment if the interface is listed in [`not-webview-exposed.txt`](https://source.chromium.org/chromium/chromium/src/+/master:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt).**
-
-### Firefox and Firefox for Android
-
-- If applicable, **request or link to a relevant bug on [Bugzilla](https://bugzilla.mozilla.org).**
-- If the issue affects Firefox for Android only, **check whether the feature was introduced before or after Firefox 68 and make a note of it in a comment or the issue description**.
-
-### Safari
-
-- If applicable, **request or link to a relevant bug on [WebKit Bugzilla](https://bugs.webkit.org/).**
-- If a version has been identified for addition or removal, **check the release notes linked from [`safari.json`](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)**.
+- **If there is a bug or commit, link to it.** Bugs can be found using the links provided in the [helpful resources section of the contributing document](./contributing.md#helpful-resources).
 
 ## Propose next steps
 

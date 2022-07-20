@@ -67,9 +67,13 @@ While contributing to BCD, there are a number of tools and other resources we re
 
 #### Chromium
 
+These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Samsung Internet, WebView and more.
+
+- [Chrome Platform Status](https://chromestatus.com/features): A list of features that have been added or are planned to be added in Chrome.
 - [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
 - [Chromium Code Search](https://source.chromium.org/chromium): Source code search for Chromium source code. Useful to find specific behavior changes that are hard to test in the browser.
 - [Chromium Dash](https://chromiumdash.appspot.com/): A dashboard for Chromium data. Useful to determine which Chromium version a commit was released in, and for release data.
+- [`not-webview-exposed.txt`](https://source.chromium.org/chromium/chromium/src/+/master:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt): A list of interfaces and interface members that are not exposed on WebView Android.
 
 #### Firefox
 
@@ -80,6 +84,7 @@ While contributing to BCD, there are a number of tools and other resources we re
 
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
+- [Backported Releases List](./issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
 
 ## Ways to contribute
 
