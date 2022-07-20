@@ -125,45 +125,6 @@ export const getMatchingBrowserVersion = (
 };
 
 /**
- * @param {Notes?} notes1
- * @param {Notes?} notes2
- * @returns {Notes?}
- */
-const combineNotes = (
-  notes1: Notes | null,
-  notes2: Notes | null,
-): Notes | null => {
-  let newNotes: string[] = [];
-
-  if (notes1) {
-    if (typeof notes1 === 'string') {
-      newNotes.push(notes1);
-    } else {
-      newNotes.push(...notes1);
-    }
-  }
-
-  if (notes2) {
-    if (typeof notes2 === 'string') {
-      newNotes.push(notes2);
-    } else {
-      newNotes.push(...notes2);
-    }
-  }
-
-  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
-
-  if (newNotes.length == 0) {
-    return null;
-  }
-  if (newNotes.length == 1) {
-    return newNotes[0];
-  }
-
-  return newNotes;
-};
-
-/**
  * @param {Notes?} notes
  * @param {RegExp} regex
  * @param {string} replace
