@@ -8,6 +8,7 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
    1. [Guidelines](#guidelines)
    1. [Prerequisites](#prerequisites)
 1. [Ways to contribute](#ways-to-contribute)
+1. [Helpful resources](#helpful-resources)
 1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
 1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
@@ -29,12 +30,17 @@ The repository is licensed under the [Creative Commons CC0 Public Domain Dedicat
 
 ### Prerequisites
 
+#### Required (Basic Changes)
+
 To contribute to this project, you must have all of the following:
 
 - A GitHub account
 - A basic understanding of [JSON](https://www.json.org/json-en.html)
 - A basic understanding of the GitHub UI or Git version control
 - Experience with web development (preferably 3+ years)
+- A willingness to search deep through articles, documentation, forums and social media posts to find answers to questions
+
+#### Required (Substantial Changes)
 
 Most simple changes can be done within the GitHub website. For more substantial changes, you will need to clone the repository locally, and as such will need the following:
 
@@ -42,13 +48,38 @@ Most simple changes can be done within the GitHub website. For more substantial 
 - A text editor, preferably one that supports [EditorConfig](https://editorconfig.org/)
 - Node.js, with [an Active LTS or more recent release](https://nodejs.org/en/download/)
 
+#### Optional
+
+At times, you may need to search through browser source code. To do so, you should have the following:
+
+- A basic understanding of C++ (or other C-based language)
+- A basic understanding of WebIDL (easy to pick up)
+
 ### Helpful resources
 
 While contributing to BCD, there are a number of tools and other resources we regularly use. Some of them are the following:
 
+#### General
+
 - [MDN Web Docs](https://developer.mozilla.org): yes, we use our own documentation regularly to obtain code examples and determine what a feature is meant to do!
 - [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
 - [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with open source plans.
+
+#### Chromium
+
+- [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
+- [Chromium Code Search](https://source.chromium.org/chromium): Source code search for Chromium source code. Useful to find specific behavior changes that are hard to test in the browser.
+- [Chromium Dash](https://chromiumdash.appspot.com/): A dashboard for Chromium data. Useful to determine which Chromium version a commit was released in, and for release data.
+
+#### Firefox
+
+- [Bugzilla](https://bugzil.la): The bug tracker for Firefox.
+- [Searchfox](https://searchfox.org/): Source code search for Firefox source code. Useful to find specific behavior changes that are hard to test in the browser, and to determine which Firefox version the change was included in.
+
+#### Safari
+
+- [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
+- [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
 
 ## Ways to contribute
 
