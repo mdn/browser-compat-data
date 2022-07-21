@@ -6,9 +6,7 @@ This document helps you to understand how compatibility data is organized and st
 
 ### The folder structure
 
-Compatibility data is organized in top-level directories for each broad area covered: for example, `http`,
-`javascript`, and `webextensions`. Inside each of these directories is one or more
-JSON files containing the compatibility data.
+Compatibility data is organized in top-level directories for each broad area covered: for example, `http`, `javascript`, and `webextensions`. Inside each of these directories is one or more JSON files containing the compatibility data.
 
 - [api/](../api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.
 
@@ -30,18 +28,13 @@ JSON files containing the compatibility data.
 
 ### File and folder breakdown
 
-The JSON files contain [feature identifiers](#feature-identifiers),
-which are relevant for accessing the data. Except for the top-level directories,
-the file and sub-folder hierarchies aren't of any meaning for the exports.
-Compatibility data can be stored in a single large file or might be divided in
-smaller files and put into sub folders.
+The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and put into sub folders.
 
 ## Understanding the schema
 
 #### Feature hierarchies
 
-Each feature is identified by a unique hierarchy of strings.
-E.g the `text-align` property is identified by `css.properties.text-align`.
+Each feature is identified by a unique hierarchy of strings, e.g the `text-align` property is identified by `css.properties.text-align`.
 
 In the JSON file it looks like this:
 
@@ -65,15 +58,13 @@ In the JSON file it looks like this:
 
 Each feature is uniquely accessible, independently of the file it is defined in.
 
-The hierarchy of identifiers is not defined by the schema and is a convention of
-the project using the schema.
+The hierarchy of identifiers is not defined by the schema and is a convention of the project using the schema.
 
 #### Features
 
 A feature is described by an identifier containing the `__compat` property. In other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.
 
-When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.
-What it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.
+When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.
 
 #### Sub-features
 
@@ -149,13 +140,9 @@ This also helps with maintaining derivatives with a different release schedule t
 
 #### The `support_statement` object
 
-The `support_statement` object describes the support provided by a single browser type for the given subfeature.
-It is an array of `simple_support_statement` objects, but if there
-is only one of them, the array must be omitted.
+The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is an array of `simple_support_statement` objects, but if there is only one of them, the array must be omitted.
 
-If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first.
-In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without.
-If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
+If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first. In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without. If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
 
 Example of a `support` compat object (with an `array_support_statement` containing 2 entries):
 
@@ -184,17 +171,11 @@ Example of a `support` compat object (with 1 entry, array omitted):
 
 ### Compat data in support statements
 
-The `simple_support_statement` object is the core object containing the compatibility information for a browser.
-It consist of the following properties:
+The `simple_support_statement` object is the core object containing the compatibility information for a browser. It consist of the following properties:
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version
-number indicating when a sub-feature has been added (and is therefore supported).
-The Boolean values indicate that a sub-feature is supported (`true`, with the
-additional meaning that it is unknown in which version support was added) or
-not supported (`false`). A value of `null` indicates that support information is
-entirely unknown. Examples:
+This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported). The Boolean values indicate that a sub-feature is supported (`true`, with the additional meaning that it is unknown in which version support was added) or not supported (`false`). A value of `null` indicates that support information is entirely unknown. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -230,9 +211,7 @@ entirely unknown. Examples:
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in.
-It may also be `true`, meaning that it is unknown in which version support
-was removed.
+Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed.
 
 Default values:
 
@@ -353,17 +332,13 @@ Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
 
-An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this
-array will have one item, but there are cases where two or more flags can be required to activate a feature.
-An object in the `flags` array consists of three properties:
+An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
 
 - `type` (mandatory): an enum that indicates the flag type:
   - `preference` a flag the user can set (like in `about:config` in Firefox).
   - `runtime_flag` a flag to be set before starting the browser.
 - `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
-- `value_to_set` (optional): representing the actual value to set the flag to.
-  It is a string, that may be converted to the right type
-  (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
+- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
 
 Example for one flag required:
 
@@ -404,23 +379,15 @@ Example for two flags required:
 
 An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
 
-For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/,
-https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with
-a subject line that will typically be something of the form _"Implement [feature]"_,
-_"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
+For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature
-deviates from the specification in a way that may cause significant compatibility problems.
-It defaults to `false` (no interoperability problems expected). If set to `true`, it is
-recommended that you add a note explaining how it diverges from the standard (such as
-that it implements an old version of the standard, for example).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example).
 
 #### `notes`
 
-A string or `array` of strings containing additional information. If there is only one
-entry, the value of `notes` must simply be a string instead of an array.
+A string or `array` of strings containing additional information. If there is only one entry, the value of `notes` must simply be a string instead of an array.
 
 Example:
 
@@ -440,8 +407,7 @@ The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addi
 
 ### Status information
 
-The mandatory status property contains information about stability of the feature. It is
-an object named `status` and has three mandatory properties:
+The mandatory status property contains information about stability of the feature. It is an object named `status` and has three mandatory properties:
 
 - `experimental`: a `boolean` value.
 
@@ -469,6 +435,4 @@ an object named `status` and has three mandatory properties:
 
 ### Localization
 
-We are planning to localize some of this data (e.g. notes, descriptions).
-At this point we haven't decided how or when we are going to do that.
-See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
+We are planning to localize some of this data (e.g. notes, descriptions). At this point we haven't decided how or when we are going to do that. See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
