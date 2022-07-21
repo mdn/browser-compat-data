@@ -1,15 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, Identifier } from '../../types/types.js';
+import { Identifier } from '../../types/types.js';
 
 import fs from 'node:fs';
 
 import { checkExperimental } from '../../test/linter/test-status.js';
 import { IS_WINDOWS } from '../../test/utils.js';
-
-import bcd from '../../index.js';
-const { browsers } = bcd;
 
 const fixStatus = (key: string, value: Identifier): Identifier => {
   const compat = value?.__compat;
