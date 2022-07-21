@@ -125,45 +125,6 @@ export const getMatchingBrowserVersion = (
 };
 
 /**
- * @param {Notes?} notes1
- * @param {Notes?} notes2
- * @returns {Notes?}
- */
-const combineNotes = (
-  notes1: Notes | null,
-  notes2: Notes | null,
-): Notes | null => {
-  let newNotes: string[] = [];
-
-  if (notes1) {
-    if (typeof notes1 === 'string') {
-      newNotes.push(notes1);
-    } else {
-      newNotes.push(...notes1);
-    }
-  }
-
-  if (notes2) {
-    if (typeof notes2 === 'string') {
-      newNotes.push(notes2);
-    } else {
-      newNotes.push(...notes2);
-    }
-  }
-
-  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
-
-  if (newNotes.length == 0) {
-    return null;
-  }
-  if (newNotes.length == 1) {
-    return newNotes[0];
-  }
-
-  return newNotes;
-};
-
-/**
  * @param {Notes?} notes
  * @param {RegExp} regex
  * @param {string} replace
@@ -207,34 +168,6 @@ const copyStatement = (
   }
 
   return newData as SimpleSupportStatement;
-};
-
-/**
- * @param {SupportStatement[]} data
- * @returns {SupportStatement}
- */
-const flattenStatements = (...data: SupportStatement[]): SupportStatement => {
-  let newData: SimpleSupportStatement[] = data.flat(2).filter((data) => !!data);
-
-  if (newData.length === 1) {
-    return newData[0];
-  }
-
-  // Remove duplicate statements and statements that are only version_added = false
-  newData = newData
-    .filter((item, pos) => newData.indexOf(item) == pos)
-    .filter((item) => item.version_added);
-
-  switch (newData.length) {
-    case 0:
-      return { version_added: false };
-
-    case 1:
-      return newData[0];
-
-    default:
-      return newData;
-  }
 };
 
 /**
@@ -283,53 +216,44 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @returns {SimpleSupportStatement}
- */
-const bumpEdge = (
-  sourceData: SimpleSupportStatement,
-): SimpleSupportStatement => {
-  if (
-    typeof sourceData.version_removed === 'string' &&
-    compareVersions.compare(sourceData.version_removed, '79', '<=')
-  ) {
-    // If this feature was removed before Chrome 79, it's not present in Chromium Edge
-    return { version_added: false };
-  }
-
-  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
-};
-
-/**
  * @param {SupportStatement} data
  * @param {BrowserName} destination
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
   destination: BrowserName,
-): SupportStatement | null => {
-  let newData: SupportStatement | null = null;
-
+): SupportStatement => {
   if (Array.isArray(sourceData)) {
-    const newStatements: SupportStatement[] = sourceData
-      .map((data) => bumpSupport(data, destination))
-      .filter((data) => data !== null) as SupportStatement[];
+    // Bump the individual support statements and filter out results with a
+    // falsy version_added. It's not possible for sourceData to have a falsy
+    // version_added (enforced by the lint) so there can be no notes or similar
+    // to preserve from such statements.
+    const newData = sourceData
+      .map((data) => bumpSupport(data, destination) as SimpleSupportStatement)
+      .filter((item) => item.version_added);
 
-    return flattenStatements(...newStatements);
-  }
+    switch (newData.length) {
+      case 0:
+        return { version_added: false };
 
-  if (destination === 'edge') {
-    newData = bumpEdge(sourceData);
-  } else {
-    let notesRepl: [RegExp, string] | undefined;
-    if (destination.includes('opera')) {
-      notesRepl = [/Chrome/g, 'Opera'];
-    } else if (destination === 'samsunginternet_android') {
-      notesRepl = [/Chrome/g, 'Samsung Internet'];
+      case 1:
+        return newData[0];
+
+      default:
+        return newData;
     }
-
-    newData = bumpGeneric(sourceData, destination, notesRepl);
   }
+
+  let notesRepl: [RegExp, string] | undefined;
+  if (destination === 'edge') {
+    notesRepl = [/Chrome/g, 'Edge'];
+  } else if (destination.includes('opera')) {
+    notesRepl = [/Chrome/g, 'Opera'];
+  } else if (destination === 'samsunginternet_android') {
+    notesRepl = [/Chrome/g, 'Samsung Internet'];
+  }
+
+  const newData = bumpGeneric(sourceData, destination, notesRepl);
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
@@ -368,16 +292,7 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  const result = bumpSupport(upstreamData, destination);
-
-  /* c8 ignore start */
-  if (!result) {
-    // This should never be reached
-    throw new Error(`Result is null, cannot mirror!`);
-  }
-  /* c8 ignore stop */
-
-  return result;
+  return bumpSupport(upstreamData, destination);
 };
 
 export default mirrorSupport;
