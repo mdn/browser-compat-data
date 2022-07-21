@@ -6,32 +6,48 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/mstyle",
           "spec_url": "https://w3c.github.io/mathml-core/#style-change-mstyle",
           "support": {
-            "chrome": {
-              "version_added": "80",
-              "impl_url": "https://crrev.com/c/1908533",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": [
-                "In Chrome 83, the <code>displaystyle</code> attribute has been implemented.",
-                "In Chrome 84, the <code>mathvariant</code> attribute has been implemented.",
-                "In Chrome 88, the <code>scriptlevel</code> attribute has been implemented."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "88",
+                "impl_url": "https://crrev.com/c/1908533",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "80",
+                "partial_implementation": true,
+                "impl_url": "https://crrev.com/c/1908533",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Only basic support with attributes <code>dir</code>, <code>mathbackground</code>, <code>mathcolor</code> and <code>mathsize</code>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "notes": [
-                "Before Firefox 6, attributes <code>bevelled</code>, <code>notation</code>, <code>open</code>, <code>close</code>, <code>separators</code>, <code>accent</code>, <code>accentunder</code>, <code>selection</code>, <code>mathvariant</code> were not supported.",
-                "In Firefox 29, accepted attributes have been restricted to those actually used in practice: <code>id</code>, <code>class</code>, <code>style</code>, <code>href</code>, <code>mathcolor</code>, <code>mathbackground</code>, <code>scriptlevel</code>, <code>displaystyle</code>, <code>scriptsizemultiplier</code>, <code>scriptminsize</code>, <code>dir</code>, <code>mathsize</code>, <code>mathvariant</code>, <code>fontfamily</code>, <code>fontweight</code>, <code>fontstyle</code>, <code>fontsize</code>, <code>color</code>, <code>background</code>.",
-                "In Firefox 103, attributes <code>scriptsizemultiplier</code> and <code>scriptminsize</code> have been removed."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "6",
+                "notes": [
+                  "In Firefox 29, accepted attributes have been restricted to those actually used in practice: <code>id</code>, <code>class</code>, <code>style</code>, <code>href</code>, <code>mathcolor</code>, <code>mathbackground</code>, <code>scriptlevel</code>, <code>displaystyle</code>, <code>scriptsizemultiplier</code>, <code>scriptminsize</code>, <code>dir</code>, <code>mathsize</code>, <code>mathvariant</code>, <code>fontfamily</code>, <code>fontweight</code>, <code>fontstyle</code>, <code>fontsize</code>, <code>color</code>, <code>background</code>.",
+                  "In Firefox 103, attributes <code>scriptsizemultiplier</code> and <code>scriptminsize</code> have been removed."
+                ]
+              },
+              {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Attributes <code>bevelled</code>, <code>notation</code>, <code>open</code>, <code>close</code>, <code>separators</code>, <code>accent</code>, <code>accentunder</code>, <code>selection</code>, <code>mathvariant</code> are not supported."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
