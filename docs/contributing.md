@@ -7,9 +7,10 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
 1. [Before you begin](#before-you-begin)
    1. [Guidelines](#guidelines)
    1. [Prerequisites](#prerequisites)
-1. [Ways to contribute](#ways-to-contribute)
 1. [Helpful resources](#helpful-resources)
-1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
+1. [Ways to contribute](#ways-to-contribute)
+   1. [Updating the compat data](#updating-the-compat-data)
+   1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
 1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
    1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
@@ -84,7 +85,7 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
-- [Backported Releases List](./issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+- [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
 
 ## Ways to contribute
 
@@ -95,7 +96,11 @@ There are many ways you can help improve this repository! For example:
 - **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new features.
 - **Review a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls). Let us know if these look good to you.
 
-## Finding browser version numbers for features
+### Updating the compat data
+
+If you're going to submit a pull request modifying the compat data, we highly recommend reading the [getting started](getting-started.md) document for a basic rundown of the compatibility data structure.
+
+### Finding browser version numbers for features
 
 When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
 
@@ -125,4 +130,4 @@ Note: originally, this functionality used to be provided as an executable script
 
 ## Getting help
 
-If you need help with this repository or have any questions, first check the [FAQ](./faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
+If you need help with this repository or have any questions, first check the [FAQ](faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
