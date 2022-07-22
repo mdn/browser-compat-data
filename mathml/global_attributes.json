@@ -69,7 +69,7 @@
             "firefox": {
               "version_added": "83",
               "impl_url": "https://hg.mozilla.org/mozilla-central/rev/60a72a6c7c1d",
-              "notes": "Prior to Firefox 83, the attribute was only accepted on a few elements, as specified in MathML 3."
+              "notes": "Prior to Firefox 83, the attribute was only accepted on a few elements, as specified in MathML 3, and was not implemented via <code>math-style</code>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -82,7 +82,8 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "14",
-              "impl_url": "https://trac.webkit.org/changeset/267578"
+              "impl_url": "https://trac.webkit.org/changeset/267578",
+              "notes": "Since Safari 14.1, this attribute is implemented via <code>math-style</code>."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -306,7 +307,10 @@
             "firefox": {
               "version_added": "70",
               "impl_url": "https://hg.mozilla.org/mozilla-central/rev/3b30c8db537c",
-              "notes": "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3."
+              "notes": [
+                "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3.",
+                "Implementation does not rely on the CSS approach described in MathML Core (via <code>text-transform</code>."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -321,7 +325,10 @@
               "version_added": "10",
               "impl_url": "https://trac.webkit.org/changeset/203679",
               "partial_implementation": true,
-              "notes": "Safari only accepts the attribute on a few elements, as specified in MathML 3."
+              "notes": [
+                "Safari only accepts the attribute on a few elements, as specified in MathML 3.",
+                "Implementation does not rely on the CSS approach described in MathML Core (via <code>text-transform</code>."
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -355,7 +362,10 @@
             "firefox": {
               "version_added": "70",
               "impl_url": "https://hg.mozilla.org/mozilla-central/rev/3b30c8db537c",
-              "notes": "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3."
+              "notes": [
+                "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3.",
+                "Implementation does not rely on the CSS approach described in MathML Core (via <code>math-depth</code> and <code>font-size: math</code>)."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
