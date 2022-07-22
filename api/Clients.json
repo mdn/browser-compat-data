@@ -13,12 +13,9 @@
             "version_added": "17"
           },
           "firefox": {
-            "version_added": "44",
-            "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-          },
-          "firefox_android": {
             "version_added": "44"
           },
+          "firefox_android": "mirror",
           "ie": {
             "version_added": false
           },
@@ -51,12 +48,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
               "version_added": "44"
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -90,12 +84,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "45",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
               "version_added": "45"
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -136,19 +127,10 @@
                 "notes": "<code>Client</code> objects returned in most recent focus order."
               },
               {
-                "version_added": "44",
-                "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "54",
-                "notes": "<code>Client</code> objects returned in most recent focus order."
-              },
-              {
                 "version_added": "44"
               }
             ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -221,56 +203,21 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clients/openWindow",
           "spec_url": "https://w3c.github.io/ServiceWorker/#clients-openwindow",
           "support": {
-            "chrome": [
-              {
-                "version_added": "51",
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
-              },
-              {
-                "version_added": "43",
-                "notes": "Can open any URL. "
-              },
-              {
-                "version_added": "42",
-                "notes": "Can only open URLs on the same origin."
-              },
-              {
-                "version_added": "40"
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "51",
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
-              },
-              {
-                "version_added": "43",
-                "notes": "Can open any URL. "
-              },
-              {
-                "version_added": "42",
-                "notes": "Can only open URLs on the same origin."
-              },
-              {
-                "version_added": "40"
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "79",
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
-              },
-              {
-                "version_added": "17"
-              }
-            ],
-            "firefox": {
-              "version_added": "45",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
+            "chrome": {
+              "version_added": "40",
+              "notes": [
+                "Before Chrome 43, this method could only open URLs on the same origin.",
+                "Since Chrome 51, URLs may open inside an existing browsing context provided by a standalone web app."
+              ]
             },
-            "firefox_android": {
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "17"
+            },
+            "firefox": {
               "version_added": "45"
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -285,32 +232,8 @@
               "version_added": "11.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": [
-              {
-                "version_added": "5.0",
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
-              },
-              {
-                "version_added": "4.0"
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "51",
-                "notes": "URLs may open inside an existing browsing context provided by a standalone web app"
-              },
-              {
-                "version_added": "43",
-                "notes": "Can open any URL. "
-              },
-              {
-                "version_added": "42",
-                "notes": "Can only open URLs on the same origin."
-              },
-              {
-                "version_added": "40"
-              }
-            ]
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
