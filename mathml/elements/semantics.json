@@ -7,8 +7,16 @@
           "spec_url": "https://w3c.github.io/mathml-core/#semantics-and-presentation",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
+              "version_added": "88",
+              "impl_url": "https://crrev.com/c/2467903",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "Only the basic implementation specified in MathML Core."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
