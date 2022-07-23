@@ -58,14 +58,23 @@
                   "version_added": false
                 },
                 "edge": "mirror",
-                "firefox": {
-                  "version_added": "53",
-                  "notes": [
-                    "Since Firefox 86, the <code>redirect_url</code> parameter now supports a loopback address, see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity#getting_the_redirect_url'>Getting the redirect URL</a> for details.",
-                    "Between Firefox 75 and Firefox 86, the <code>redirect_uri</code> URL parameter must be set to the URL returned by <code>identity.getRedirectURL()</code>.",
-                    "Between Firefox 63 and Firefox 75, the <code>redirect_uri</code> URL parameter was optional."
-                  ]
-                },
+                "firefox": [
+                  {
+                    "version_added": "86",
+                    "notes": "The <code>redirect_url</code> parameter now supports a loopback address, see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/identity#getting_the_redirect_url'>Getting the redirect URL</a> for details."
+                  },
+                  {
+                    "version_added": "75",
+                    "notes": "The <code>redirect_uri</code> URL parameter must be set to the URL returned by <code>identity.getRedirectURL()</code>."
+                  },
+                  {
+                    "version_added": "63",
+                    "notes": "The <code>redirect_uri</code> URL parameter is now optional."
+                  },
+                  {
+                    "version_added": "53"
+                  }
+                ],
                 "firefox_android": {
                   "version_added": false
                 },
