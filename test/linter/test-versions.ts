@@ -188,8 +188,6 @@ function checkVersions(
           continue;
         }
 
-        const statementKeys = Object.keys(statement);
-
         for (const property of ['version_added', 'version_removed']) {
           const version = statement[property];
           if (property == 'version_removed' && version === undefined) {
@@ -243,12 +241,10 @@ function checkVersions(
 
         if (
           Array.isArray(supportStatement) &&
-          statement.version_added === false &&
-          statementKeys.length == 1 &&
-          statementKeys[0] == 'version_added'
+          statement.version_added === false
         ) {
           logger.error(
-            chalk`{bold ${browser}} cannot have a {bold version_added: false} only in an array of statements.`,
+            chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
           );
         }
       }

@@ -1,20 +1,26 @@
 {
   "css": {
     "properties": {
-      "mask-border-slice": {
+      "math-depth": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask-border-slice",
-          "spec_url": "https://drafts.fxtf.org/css-masking/#the-mask-border-slice",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/math-depth",
+          "spec_url": "https://w3c.github.io/mathml-core/#the-math-script-level-property",
           "support": {
             "chrome": {
-              "alternative_name": "-webkit-mask-box-image-slice",
-              "version_added": "1"
+              "version_added": "87",
+              "impl_url": "https://crrev.com/c/2423843",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": false,
-              "notes": "See <a href='https://bugzil.la/877294'>bug 877294</a>."
+              "notes": "See <a href='https://bugzil.la/1667090'>bug 1667090</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -24,18 +30,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "alternative_name": "-webkit-mask-box-image-slice",
-              "version_added": "3.1"
+              "version_added": false,
+              "notes": "See <a href='https://webkit.org/b/202303'>bug 202303</a>."
             },
-            "safari_ios": {
-              "alternative_name": "-webkit-mask-box-image-slice",
-              "version_added": "3"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
