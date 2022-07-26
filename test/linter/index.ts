@@ -7,6 +7,7 @@ import testBrowsersData from './test-browsers-data.js';
 import testBrowsersPresence from './test-browsers-presence.js';
 import testConsistency from './test-consistency.js';
 import testDescriptions from './test-descriptions.js';
+import testFilename from './test-filename.js';
 import testLinks from './test-links.js';
 import testNotes from './test-notes.js';
 import testObsolete from './test-obsolete.js';
@@ -22,6 +23,7 @@ export default new Linters([
   testBrowsersPresence,
   testConsistency,
   testDescriptions,
+  testFilename,
   testLinks,
   testNotes,
   testObsolete,
