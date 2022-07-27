@@ -47,7 +47,6 @@ function processData(data: Identifier, filepath: string, logger: Logger): void {
     .replace('.json', '')
     .replace('api/_globals', 'api')
     .replace('api/Console', 'api/console')
-    .replace(/api\/_mixins\/(\w+)__(\w+)/g, 'api/$2')
     .replace('html/elements/input/', 'html/elements/input/type_')
     .replace('javascript/builtins/globals', 'javascript/builtins');
 
