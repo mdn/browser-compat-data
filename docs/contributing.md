@@ -98,7 +98,7 @@ There are many ways you can help improve this repository! For example:
 
 ### Updating the compat data
 
-If you're going to submit a pull request modifying the compat data, we highly recommend reading the [getting started](getting-started.md) document for a basic rundown of the compatibility data structure.
+If you're going to submit a pull request modifying the compat data, we highly recommend reading the [compat data schema](../schemas/compat-data-schema.md) document for a rundown of the compatibility data structure.
 
 ### Finding browser version numbers for features
 
