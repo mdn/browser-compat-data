@@ -223,22 +223,35 @@ This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data
 
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
-- a feature was never implemented in any browser and the specification has been abandoned.
+- a feature was never implemented in any browser.
 - a feature was implemented and has since been removed from all browsers dating back two or more years ago.
 - a feature is unsupported in all releases in the past five years.
 
-This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018).
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
 
 ## Removal of irrelevant flag data
 
-Valid support statements containing flags can be removed from BCD if it is considered irrelevant. To be considered irrelevant, the support statement must meet these conditions:
+Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet these conditions:
 
-- As of at least two years ago, the browser has supported the feature by default or removed the flagged feature.
-- The removal of the support statement must not create an ambiguous gap or void in the data for that browser (for example, leaving behind only a `"version_added": true` or `null` value).
+- The browser has supported the feature by default.
+- The feature can no longer be enabled by toggling the flag.
+- The flag has been removed from the browser.
 
 These conditions represent minimum requirements for the removal of valid flag data; other considerations may result in flag data continuing to be relevant, even after the guideline conditions are met.
 
-This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670).
+This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-data/pull/6670) and revised in [#16637](https://github.com/mdn/browser-compat-data/pull/16637).
+
+## Features with no browser support
+
+Browser features that have not been implemented in any browser, or are planned to be implemented, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+
+- The feature has not been included in a stable browser release.
+- The feature is not implemented behind a current flag (or Chrome origin trial).
+- There is no tracking bug for the browser to indicate intent to implement.
+
+Some features may already be added to BCD that do not have any browser support. These features will be removed over time.
+
+This guideline was proposed in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
 
 ## When to add `version_removed` to flagged support
 
@@ -269,20 +282,7 @@ This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-dat
 
 For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
 
-Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members to BCD in one of these ways:
-
-1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
-
-2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.
-   In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
-
-   ```
-   {
-     "api": {
-       "HTMLAnchorElement": {
-         "myFeatureName": {
-           "__compat": {
-   ```
+Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members directly to the corresponding interface they're exposed on. For example, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
 
