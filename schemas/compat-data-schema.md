@@ -183,6 +183,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
 - `ie`, Microsoft Internet Explorer (discontinued)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
+- `oculus`, Meta Quest Browser (formerly Oculus Quest), based on Google Chrome (on Android)
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
 - `safari`, Safari on macOS
