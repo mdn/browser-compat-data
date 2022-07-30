@@ -68,7 +68,7 @@ export const getMatchingBrowserVersion = (
         ['beta', 'nightly'].includes(release.status) &&
         release.status == sourceRelease.status
       ) {
-        return r;
+        return range ? `≤${r}` : r;
       } else if (
         release.engine_version &&
         sourceRelease.engine_version &&
@@ -78,7 +78,7 @@ export const getMatchingBrowserVersion = (
           '>=',
         )
       ) {
-        return r;
+        return range ? `≤${r}` : r;
       }
     }
   }
