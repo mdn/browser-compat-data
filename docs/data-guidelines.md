@@ -282,20 +282,7 @@ This guideline was proposed in [#6861](https://github.com/mdn/browser-compat-dat
 
 For example, [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/multipage/links.html#htmlhyperlinkelementutils) is a mixin defined in the HTML specification.
 
-Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members to BCD in one of these ways:
-
-1. For smaller mixins, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
-
-2. For larger mixins, create a file in the `api/_mixins/` folder and indicate for which interface they are using file names like: `HTMLHyperlinkElementUtils__HTMLAnchorElement.json` and `HTMLHyperlinkElementUtils__HTMLAreaElement.json`.
-   In these files, expose the data under the correct tree. For `HTMLHyperlinkElementUtils__HTMLAnchorElement.json`, the file needs to start like this:
-
-   ```
-   {
-     "api": {
-       "HTMLAnchorElement": {
-         "myFeatureName": {
-           "__compat": {
-   ```
+Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`, that's where BCD exposes them. Add mixin members directly to the corresponding interface they're exposed on. For example, add members of `HTMLHyperlinkElementUtils` directly to the `api/HTMLAnchorElement.json` and `api/HTMLAreaElement.json` files as if they were regular members of these interfaces.
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
 

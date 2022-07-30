@@ -2,17 +2,11 @@
 
 [https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)
 
-This repository contains compatibility data for Web technologies.
-Browser compatibility data describes which platforms (where "platforms" are
-usually, but not always, web browsers) support particular Web APIs.
-
-This data can be used in documentation, to build compatibility tables listing
-browser support for APIs. For example:
-[Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
+The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#Projects-using-the-data).
 
 Read how this project is [governed](GOVERNANCE.md).
 
-Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
+Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
 ## Installation and Import
 
@@ -88,16 +82,16 @@ Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.
 
 ### [`browsers`](browsers)
 
-Data for browser and engine releases. See the [browser schema](schemas/browsers-schema.md) for details.
+Data for browsers and JavaScript runtimes. See the [browser schema](schemas/browsers-schema.md) for details.
 
 ### [`css`](css)
 
 Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, including:
 
-- `at-rules` - at-rules
-- `properties` - properties
-- `selectors` - selectors (such as basic selectors, combinators, or pseudo elements)
-- `types` - types for rule values
+- `at-rules` - at-rules (e.g. `@media`)
+- `properties` - Properties (e.g. `background`, `color`, `font-variant`)
+- `selectors` - Selectors (such as basic selectors, combinators, or pseudo elements)
+- `types` - Value types for rule values
 
 ### [`html`](html)
 
@@ -164,11 +158,11 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 ## Issues?
 
-If you find a problem, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
+If you find a problem with the compatibility data (such as incorrect version numbers) or there is a new web feature you think we should document, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
 
 ## Contributing
 
-We're very happy to accept contributions to this data. See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
+Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
 
 ## Projects using the data
 
