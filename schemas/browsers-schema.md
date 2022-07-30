@@ -1,24 +1,23 @@
 # The browser JSON schema
 
-This document helps you to understand the structure of the [browser JSON](../browsers) files.
+This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (e.g. `firefox` or `chrome_android`).
 
-#### Browser identifiers
+Note: while NodeJS and Deno are JavaScript runtimes and not browsers, data for them is placed in `browsers`, and are included whenever we use the term "browsers".
 
-The currently accepted browser identifiers are [defined in the compat-data schema](compat-data-schema.md#browser-identifiers). They are re-used for the browser data scheme. No other identifiers are allowed and the file names should also use the browser identifiers.
+## JSON structure
 
-For example, for the browser identifier `firefox`, the file name is `firefox.json`.
-
-#### File structure
-
-The file `firefox.json` is structured like this:
+Below is an example of the browser data:
 
 ```json
 {
   "browsers": {
     "firefox": {
       "name": "Firefox",
+      "type": "desktop",
       "preview_name": "Nightly",
       "pref_url": "about:config",
+      "accepts_flags": true,
+      "accepts_webextensions": true,
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
@@ -33,9 +32,7 @@ The file `firefox.json` is structured like this:
 }
 ```
 
-It contains an object with the property `browsers` which then contains an object with the browser identifier as the property name (`firefox`).
-
-Underneath, there is a `releases` object which will hold the various releases of a given browser by their release version number (`"1.5"`).
+## Properties
 
 ### `name`
 
@@ -43,7 +40,7 @@ The `name` string is a required property which should use the browser brand name
 
 ### `type`
 
-The `type` string is a required property which indicates the platform category the browser runs on. Valid options are `"desktop"`, `"mobile"` and `"server"`.
+The `type` string is a required property which indicates the platform category the browser runs on. Valid options are `"desktop"`, `"mobile"`, `"server"` and `"xr"`.
 
 ### `upstream`
 
@@ -65,9 +62,9 @@ An optional string containing the URL of the page where feature flags can be cha
 
 An optional string containing the name of the preview browser. For example, "Nightly" for Firefox, "Canary" for Chrome, and "TP" for Safari.
 
-### Release objects
+### `releases`
 
-The release objects consist of the following properties:
+The `releases` object contains data regarding the browsers' releases, using the version number as the index for each entry within. A release object contains the following properties:
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
@@ -83,13 +80,13 @@ The release objects consist of the following properties:
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-- An optional `engine` property which is the name of the browser's engine.
+- An optional `engine` property which is the name of the browser's engine. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine).
 
-- An optional `engine_version` property which is the version of the browser's engine. This may or may not differ from the browser version.
+- An optional `engine_version` property which is the version of the browser's engine. Depending on the browser, this may or may not differ from the browser version.
 
 - An optional `upstream_version` which is the upstream browser's version that will map to this release. Used in mirroring when the engine version does not match.
 
-### Exports
+## Exports
 
 This structure is exported for consumers of `@mdn/browser-compat-data`:
 

@@ -59,15 +59,10 @@
               "edge": {
                 "version_added": "79"
               },
-              "firefox": [
-                {
-                  "notes": "A user may disable the browser's \"Top Sites\" feature by toggling the \"browser.newtabpage.activity-stream.feeds.system.topsites\" preference. In this case, <code>topSites.get()</code> will always return a list of the most-visited sites, regardless of the value of the <code>newtab</code> parameter.",
-                  "version_added": "78"
-                },
-                {
-                  "version_added": "52"
-                }
-              ],
+              "firefox": {
+                "version_added": "52",
+                "notes": "Since Firefox 78, a user may disable the browser's \"Top Sites\" feature by toggling the \"browser.newtabpage.activity-stream.feeds.system.topsites\" preference. In this case, <code>topSites.get()</code> will always return a list of the most-visited sites, regardless of the value of the <code>newtab</code> parameter."
+              },
               "firefox_android": {
                 "version_added": "52",
                 "version_removed": "79"
