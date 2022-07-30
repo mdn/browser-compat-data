@@ -7,8 +7,16 @@
           "spec_url": "https://w3c.github.io/mathml-core/#dfn-maction",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
+              "version_added": "105",
+              "impl_url": "https://crrev.com/c/3720717",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "By default, only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
