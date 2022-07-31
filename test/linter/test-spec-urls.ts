@@ -45,8 +45,11 @@ const specsExceptions = [
   // Remove if https://github.com/w3c/mathml/issues/216 is resolved
   'https://w3c.github.io/mathml/',
 
-  // Remove when we get a browser-specs update
+  // Remove when added to browser-specs
   'https://drafts.csswg.org/css-color-6/',
+
+  // Remove if https://github.com/w3c/browser-specs/pull/667#issuecomment-1200089758 is resolved
+  'https://w3c.github.io/device-memory',
 ];
 
 const allowedSpecURLs = [

@@ -167,8 +167,6 @@ function checkVersions(
         continue;
       }
 
-      let sawVersionAddedOnly = false;
-
       for (const statement of Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement]) {
@@ -227,17 +225,6 @@ function checkVersions(
           logger.error(
             chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
           );
-        }
-
-        if (hasVersionAddedOnly(statement)) {
-          if (sawVersionAddedOnly) {
-            logger.error(
-              chalk`{bold ${browser}} has multiple support statements with only {bold version_added}.`,
-            );
-            break;
-          } else {
-            sawVersionAddedOnly = true;
-          }
         }
 
         if (statement.version_added === false) {
