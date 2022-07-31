@@ -5,10 +5,20 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/EXT_texture_compression_bptc",
         "spec_url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_bptc/",
         "support": {
-          "chrome": {
+          "chrome": [
+            {
+              "version_added": "93"
+            },
+            {
+              "version_added": "92",
+              "version_removed": "93",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
+            }
+          ],
+          "chrome_android": {
             "version_added": "92"
           },
-          "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
             "version_added": "68"
