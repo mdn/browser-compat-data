@@ -83,7 +83,6 @@ function describeByKind(
         doesMirror && ` - ${doesMirror}`
       }`;
   }
-  throw new Error(`Unexpected kind ${(diffItem as any).kind}.`);
 }
 
 /**
