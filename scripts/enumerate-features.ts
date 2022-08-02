@@ -20,7 +20,7 @@ async function enumerateFeatures(dataFrom: string) {
 
   const walker = lowLevelWalk(
     dataFrom
-      ? await import(path.join(process.cwd(), dataFrom, 'index.js'))
+      ? (await import(path.join(process.cwd(), dataFrom, 'index.js'))).default
       : undefined,
   );
 
