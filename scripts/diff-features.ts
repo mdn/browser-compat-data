@@ -55,8 +55,10 @@ function enumerate(ref: string, skipGitHub: boolean): Set<string> {
   if (!skipGitHub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
-    } catch {
-      console.error('Fetching artifact from GitHub failed. Using fallback.');
+    } catch (e) {
+      console.error(
+        `Fetching artifact from GitHub failed: ${e.message} Using fallback.`,
+      );
     }
   }
 
