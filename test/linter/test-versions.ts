@@ -99,11 +99,6 @@ function isValidVersion(
   }
 }
 
-function hasVersionAddedOnly(statement: SimpleSupportStatement): boolean {
-  const keys = Object.keys(statement);
-  return keys.length === 1 && keys[0] === 'version_added';
-}
-
 /**
  * Checks if the version number of version_removed is greater than or equal to
  * that of version_added, assuming they are both version strings. If either one
