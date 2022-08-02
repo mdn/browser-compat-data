@@ -5,12 +5,6 @@ import { Identifier } from '../../types/types.js';
 import { Linter, Logger } from '../utils.js';
 
 import path from 'node:path';
-import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
-import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
-import { orderFeatures } from '../../scripts/fix/feature-order.js';
-import { orderStatements } from '../../scripts/fix/statement-order.js';
-import { orderProperties } from '../../scripts/fix/property-order.js';
 
 function testFeaturePresence(
   data: Identifier,
