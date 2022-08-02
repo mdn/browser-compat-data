@@ -139,6 +139,7 @@
 
     "status_block": {
       "type": "object",
+      "description": "An object containing information about the stability of the feature.",
       "properties": {
         "experimental": {
           "type": "boolean",
@@ -159,6 +160,7 @@
 
     "support_block": {
       "type": "object",
+      "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
       "propertyNames": {
         "enum": [
           "chrome",
@@ -230,14 +232,10 @@
           "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
         },
         "support": {
-          "$ref": "#/definitions/support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
-          "tsType": "SupportBlock"
+          "$ref": "#/definitions/support_block"
         },
         "status": {
-          "$ref": "#/definitions/status_block",
-          "description": "An object containing information about the stability of the feature.",
-          "tsType": "StatusBlock"
+          "$ref": "#/definitions/status_block"
         }
       },
       "required": ["support"],
