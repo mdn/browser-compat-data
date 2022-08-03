@@ -1353,11 +1353,9 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "24"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -1436,11 +1434,9 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "24"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -1999,12 +1995,18 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox": [
+              {
+                "version_added": "38"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "38",
+                "partial_implementation": true,
+                "notes": "Although the <code>onnegotiationneeded</code> property is supported, the <code>negotiationneeded</code> event is never fired."
+              }
+            ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -2688,11 +2690,9 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": "24"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -2726,12 +2726,18 @@
             "edge": {
               "version_added": "15"
             },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "36",
+                "partial_implementation": true,
+                "notes": "Although the <code>onsignalingstatechange</code> property is supported, the <code>signalingstatechange</code> event is not fired as an <code>Event</code> object. See <a href='https://bugzil.la/1075133'>bug 1075133</a>."
+              }
+            ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
