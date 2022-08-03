@@ -50,7 +50,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "94"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -84,7 +84,8 @@
             "description": "<code>fit-content()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "≤15",
+                "version_removed": "28"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -105,7 +106,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "≤6",
+                "version_removed": "8> ≤9.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -208,10 +210,16 @@
           "__compat": {
             "description": "<code>stretch</code>",
             "support": {
-              "chrome": {
-                "alternative_name": "-webkit-fill-available",
-                "version_added": "28"
-              },
+              "chrome": [
+                {
+                  "version_added": "≤15",
+                  "version_removed": "28"
+                },
+                {
+                  "alternative_name": "-webkit-fill-available",
+                  "version_added": "28"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -224,10 +232,16 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "alternative_name": "-webkit-fill-available",
-                "version_added": "9"
-              },
+              "safari": [
+                {
+                  "version_added": "≤6",
+                  "version_removed": "8> ≤9.1"
+                },
+                {
+                  "alternative_name": "-webkit-fill-available",
+                  "version_added": "9"
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "5.0",
