@@ -16,13 +16,12 @@ import compareStatements from '../lib/compare-statements.js';
  *
  * @param {string} key The key in the object
  * @param {CompatStatement} value The value of the key
- *
  * @returns {CompatStatement} The new value
  */
-export function orderStatements(
+export const orderStatements = (
   key: string,
   value: CompatStatement,
-): CompatStatement {
+): CompatStatement => {
   if (key === '__compat') {
     for (const browser of Object.keys(value.support) as BrowserName[]) {
       const supportData = value.support[browser];
@@ -32,7 +31,7 @@ export function orderStatements(
     }
   }
   return value;
-}
+};
 
 /**
  * @param {string} filename

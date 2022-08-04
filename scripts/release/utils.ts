@@ -3,11 +3,18 @@
 
 import { execSync } from 'node:child_process';
 
-export function exec(command: string): string {
-  return execSync(command, { encoding: 'utf8' }).trim();
-}
+/**
+ *
+ * @param {string} command
+ * @returns {string}
+ */
+export const exec = (command: string): string =>
+  execSync(command, { encoding: 'utf8' }).trim();
 
-export function requireGitHubCLI(): void {
+/**
+ *
+ */
+export const requireGitHubCLI = (): void => {
   const command = 'gh auth status';
   try {
     execSync(command, {
@@ -21,26 +28,41 @@ export function requireGitHubCLI(): void {
     console.error('See https://cli.github.com/ for installation instructions.');
     process.exit(1);
   }
-}
+};
 
-export function getLatestTag(): string {
-  return exec('git describe --abbrev=0 --tags');
-}
+/**
+ * @returns {string}
+ */
+export const getLatestTag = (): string =>
+  exec('git describe --abbrev=0 --tags');
 
-export function getRefDate(ref: string, querySafe = false): string {
+/**
+ *
+ * @param {string} ref
+ * @param {boolean} querySafe
+ * @returns {string}
+ */
+export const getRefDate = (ref: string, querySafe = false): string => {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
     return rawDateString.replace('+', '%2B');
   }
   return rawDateString;
-}
+};
 
-export function buildQuery(
+/**
+ *
+ * @param {string} endRef
+ * @param {string} startRef
+ * @param {boolean} urlSafe
+ * @returns {string}
+ */
+export const buildQuery = (
   endRef: string,
   startRef: string,
   urlSafe: boolean,
-): string {
+): string => {
   let merged: string;
   if (!['HEAD', 'main'].includes(endRef)) {
     merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
@@ -52,14 +74,18 @@ export function buildQuery(
   }
 
   return `is:pr ${merged}`;
-}
+};
 
 export type ReleaseYargs = {
   startVersionTag: string;
   endVersionTag: string;
 };
 
-export function releaseYargsBuilder(yargs): void {
+/**
+ *
+ * @param {yargs} yargs
+ */
+export const releaseYargsBuilder = (yargs): void => {
   yargs.positional('start-version-tag', {
     type: 'string',
     defaultDescription: 'most recent tag',
@@ -69,4 +95,4 @@ export function releaseYargsBuilder(yargs): void {
     type: 'string',
     default: 'main',
   });
-}
+};

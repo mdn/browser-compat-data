@@ -100,7 +100,16 @@ const tests: { input: Identifier; output: Identifier }[] = [
   },
 ] as any;
 
-function orderStatements(key: string, value: CompatStatement): CompatStatement {
+/**
+ *
+ * @param {string} key
+ * @param {CompatStatement} value
+ * @returns {CompatStatement}
+ */
+const orderStatements = (
+  key: string,
+  value: CompatStatement,
+): CompatStatement => {
   if (key === '__compat') {
     for (const browser of Object.keys(value.support)) {
       const supportData = value.support[browser];
@@ -110,7 +119,7 @@ function orderStatements(key: string, value: CompatStatement): CompatStatement {
     }
   }
   return value;
-}
+};
 
 describe('compare-statements script', () => {
   it('`compareStatements()` works correctly', () => {

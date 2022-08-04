@@ -3,11 +3,25 @@
 
 import path from 'node:path';
 
-export function normalizePathInternal(p: string, testPath: any = path): string {
-  if (testPath.sep === '/') return p;
+/**
+ *
+ * @param {string} p
+ * @param {any} testPath
+ * @returns {string}
+ */
+export const normalizePathInternal = (
+  p: string,
+  testPath: any = path,
+): string => {
+  if (testPath.sep === '/') {
+    return p;
+  }
   return p.replace(/\\/gi, '/');
-}
+};
 
-export default function normalizePath(p: string): string {
-  return normalizePathInternal(p, path);
-}
+/**
+ *
+ * @param {string} p
+ * @returns {string}
+ */
+export default (p: string): string => normalizePathInternal(p, path);

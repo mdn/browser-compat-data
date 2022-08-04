@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -16,14 +16,13 @@ const { browsers } = bcd;
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
  * @param {string} [path] The path of the data.
- * @returns {void}
  */
-function processData(
+const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
   path = '',
-): void {
+): void => {
   if (data.support) {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
@@ -81,20 +80,19 @@ function processData(
       );
     }
   }
-}
+};
 
 export default {
   name: 'Browser Presence',
   description:
     'Test the presence of browser data within compatibility statements',
   scope: 'feature',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) {
-    processData(data, category, logger);
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
+    processData(data, category || '', logger);
   },
 } as Linter;

@@ -216,8 +216,9 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SupportStatement} data
+ * @param {SupportStatement} sourceData
  * @param {BrowserName} destination
+ * @returns {SupportStatement}
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
@@ -268,6 +269,12 @@ export const bumpSupport = (
   return newData;
 };
 
+/**
+ *
+ * @param {BrowserName} destination
+ * @param {InternalSupportBlock} data
+ * @returns {SupportStatement}
+ */
 const mirrorSupport = (
   destination: BrowserName,
   data: InternalSupportBlock,

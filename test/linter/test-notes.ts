@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
@@ -19,10 +19,9 @@ const parser = new HTMLParser();
  * Recursively test a DOM node for valid elements
  *
  * @param {any} node The DOM node to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const testNode = (
   node,
@@ -69,10 +68,9 @@ const testNode = (
  * Test a string for valid HTML
  *
  * @param {string} string The string to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const validateHTML = (
   string: string,
@@ -110,10 +108,9 @@ const validateHTML = (
  * Check the notes in the data
  *
  * @param {string|string[]} notes The notes to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const checkNotes = (
   notes: string | string[],
@@ -136,7 +133,6 @@ const checkNotes = (
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} feature The identifier of the feature
- * @returns {void}
  */
 const processData = (
   data: CompatStatement,
@@ -149,10 +145,14 @@ const processData = (
   ][]) {
     if (Array.isArray(support)) {
       for (const s of support) {
-        if (s.notes) checkNotes(s.notes, browser, feature, logger);
+        if (s.notes) {
+          checkNotes(s.notes, browser, feature, logger);
+        }
       }
     } else {
-      if (support.notes) checkNotes(support.notes, browser, feature, logger);
+      if (support.notes) {
+        checkNotes(support.notes, browser, feature, logger);
+      }
     }
   }
 };
@@ -161,10 +161,12 @@ export default {
   name: 'Notes',
   description: 'Test the notes in each support statement',
   scope: 'feature',
-  check(
-    logger: Logger,
-    { data, path: { full } }: { data: CompatStatement; path: { full: string } },
-  ) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, logger, full);
   },
 } as Linter;

@@ -46,7 +46,6 @@ export const orderSupportBlock = (
  * write any needed changes back into the file.
  *
  * @param {string} filename The path to the file to fix in-place
- * @returns {void}
  */
 const fixBrowserOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

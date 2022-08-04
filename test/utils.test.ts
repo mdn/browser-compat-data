@@ -61,14 +61,14 @@ describe('utils', () => {
         JSON.stringify({ a: 1, b: 2 }, null, 2),
         JSON.stringify({ a: 1 }, null, 2),
       ),
-      undefined,
+      null,
     );
     assert.notEqual(
       jsonDiff(
         JSON.stringify({ a: 1 }, null, 2),
         JSON.stringify({ a: 2 }, null, 2),
       ),
-      undefined,
+      null,
     );
   });
 });

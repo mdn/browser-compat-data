@@ -22,6 +22,12 @@ type WalkOutput = {
   browserRelease?: ReleaseStatement;
 };
 
+/**
+ *
+ * @param {DataType} data
+ * @param {string?} path
+ * @yields {WalkOutput}
+ */
 export function* browserReleaseWalk(
   data: DataType,
   path?: string,
@@ -36,6 +42,13 @@ export function* browserReleaseWalk(
   }
 }
 
+/**
+ *
+ * @param {DataType} data
+ * @param {string?} path
+ * @param {number} depth
+ * @yields {WalkOutput}
+ */
 export function* lowLevelWalk(
   data: DataType = bcd,
   path?: string,
@@ -66,6 +79,12 @@ export function* lowLevelWalk(
   }
 }
 
+/**
+ *
+ * @param {string|string[]} entryPoints
+ * @param {DataType} data
+ * @yields {WalkOutput}
+ */
 export default function* walk(
   entryPoints?: string | string[],
   data: CompatData | CompatStatement | Identifier = bcd,

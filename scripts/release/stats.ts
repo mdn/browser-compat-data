@@ -6,6 +6,8 @@ type Question = {
   message: string;
 };
 
+type Answers = Record<Question['name'], number>;
+
 type Stats = {
   commits: number;
   changed: number;
@@ -20,6 +22,15 @@ type Stats = {
   end: string;
 };
 
+type ChangeStats = Pick<
+  Stats,
+  'commits' | 'changed' | 'insertions' | 'deletions'
+>;
+type ContributorStats = Pick<
+  Stats,
+  'releaseContributors' | 'totalContributors'
+>;
+
 import http from 'node:https';
 import readline from 'readline';
 import esMain from 'es-main';
@@ -29,6 +40,11 @@ import { hideBin } from 'yargs/helpers';
 import { exec, releaseYargsBuilder, ReleaseYargs } from './utils.js';
 import { walk } from '../../utils/index.js';
 
+/**
+ *
+ * @param {string} url
+ * @returns {any}
+ */
 const getJSON = (url: string): Promise<any> =>
   new Promise((resolve, reject) =>
     http.get(
@@ -47,6 +63,11 @@ const getJSON = (url: string): Promise<any> =>
     ),
   );
 
+/**
+ *
+ * @param {string} query
+ * @returns {string}
+ */
 const question = async (query: string): Promise<string> => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -60,16 +81,22 @@ const question = async (query: string): Promise<string> => {
   return response;
 };
 
-const prompt = async (
-  questions: Array<Question>,
-): Promise<Record<Question['name'], number>> => {
-  const results: Record<Question['name'], number> = {};
+/**
+ *
+ * @param {Question[]} questions
+ * @returns {Answers}
+ */
+const prompt = async (questions: Question[]): Promise<Answers> => {
+  const results: Answers = {};
   for (const q of questions) {
     results[q.name] = await question(`${q.message} `).then(Number);
   }
   return results;
 };
 
+/**
+ * @returns {number}
+ */
 const stargazers = async (): Promise<number> => {
   const json = await getJSON(
     'https://api.github.com/repos/mdn/browser-compat-data',
@@ -77,10 +104,13 @@ const stargazers = async (): Promise<number> => {
   return json.stargazers_count;
 };
 
-function stats(
-  start: string,
-  end: string,
-): Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'> {
+/**
+ *
+ * @param {string} start
+ * @param {string} end
+ * @returns {ChangeStats}
+ */
+const stats = (start: string, end: string): ChangeStats => {
   // Get just the diff stats summary
   const diff = exec(`git diff --shortstat ${start}...${end}`);
   if (diff === '') {
@@ -104,12 +134,15 @@ function stats(
     insertions: Number(insertions),
     deletions: Number(deletions),
   };
-}
+};
 
-const contributors = (
-  start: string,
-  end: string,
-): Promise<Pick<Stats, 'releaseContributors' | 'totalContributors'>> =>
+/**
+ *
+ * @param {string} start
+ * @param {string} end
+ * @returns {ContributorStats}
+ */
+const contributors = (start: string, end: string): Promise<ContributorStats> =>
   prompt([
     {
       name: 'releaseContributors',
@@ -124,17 +157,26 @@ const contributors = (
     Pick<Stats, 'releaseContributors' | 'totalContributors'>
   >;
 
-function countFeatures() {
-  return [...walk()].length;
-}
+/**
+ * @returns {number}
+ */
+const countFeatures = (): number => [...walk()].length;
 
 const formatter = new Intl.NumberFormat('en-US');
 
-function formatNumber(n: number): string {
-  return formatter.format(n);
-}
+/**
+ *
+ * @param {number} n
+ * @returns {string}
+ */
+const formatNumber = (n: number): string => formatter.format(n);
 
-function formatStats(details: Stats): string {
+/**
+ *
+ * @param {Stats} details
+ * @returns {string}
+ */
+const formatStats = (details: Stats): string => {
   const releaseContributors = formatNumber(details.releaseContributors);
   const totalContributors = formatNumber(details.totalContributors);
   const changed = formatNumber(details.changed);
@@ -154,22 +196,27 @@ function formatStats(details: Stats): string {
 - ${features} total features
 - ${totalContributors} total contributors
 - ${stars} total stargazers`;
-}
+};
 
-async function main(argv: ReleaseYargs): Promise<void> {
+/**
+ *
+ * @param {ReleaseYargs} argv
+ */
+const main = async (argv: ReleaseYargs): Promise<void> => {
   const { startVersionTag: start, endVersionTag: end } = argv;
+  const contributorStats = await contributors(start, end);
 
   console.log(
     formatStats({
       start,
       end,
       ...stats(start, end),
-      ...(await contributors(start, end)),
+      ...contributorStats,
       stars: await stargazers(),
       features: countFeatures(),
     }),
   );
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(

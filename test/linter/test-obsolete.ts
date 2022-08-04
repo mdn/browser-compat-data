@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterMessageLevel } from '../utils.js';
+import { Linter, Logger, LinterData, LinterMessageLevel } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
@@ -15,16 +15,22 @@ const { browsers } = bcd;
 
 /**
  * @param {SupportBlock} support
- * @returns boolean
+ * @returns {boolean}
  */
-export function neverImplemented(support: SupportBlock): boolean {
+export const neverImplemented = (support: SupportBlock): boolean => {
   for (const s in support) {
     let data = support[s];
-    if (!Array.isArray(data)) data = [data];
-    for (const d of data) if (d.version_added) return false;
+    if (!Array.isArray(data)) {
+      data = [data];
+    }
+    for (const d of data) {
+      if (d.version_added) {
+        return false;
+      }
+    }
   }
   return true;
-}
+};
 
 const errorTime = new Date(),
   warningTime = new Date();
@@ -33,11 +39,11 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
  * @param {SupportBlock} support
- * @returns LinterMessageLevel | false
+ * @returns {LinterMessageLevel | false}
  */
-export function implementedAndRemoved(
+export const implementedAndRemoved = (
   support: SupportBlock,
-): LinterMessageLevel | false {
+): LinterMessageLevel | false => {
   let result: LinterMessageLevel = 'error';
   for (const [browser, data] of Object.entries(support) as [
     BrowserName,
@@ -45,31 +51,37 @@ export function implementedAndRemoved(
   ][]) {
     for (const d of Array.isArray(data) ? data : [data]) {
       // Feature is still supported or it is not known when feature was dropped
-      if (!d.version_removed || typeof d.version_removed === 'boolean')
+      if (!d.version_removed || typeof d.version_removed === 'boolean') {
         return false;
+      }
 
       const releaseDateData =
         browsers[browser].releases[d.version_removed].release_date;
 
       // No browser release date
-      if (!releaseDateData) return false;
+      if (!releaseDateData) {
+        return false;
+      }
 
       const releaseDate = new Date(releaseDateData);
       // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) return false;
+      if (warningTime < releaseDate) {
+        return false;
+      }
       // Feature was supported sufficiently recently to not show an error
-      if (errorTime < releaseDate) result = 'warning';
+      if (errorTime < releaseDate) {
+        result = 'warning';
+      }
     }
   }
   return result;
-}
+};
 
 /**
  * @param {Logger} logger
  * @param {CompatStatement} data The data to test
- * @returns {void}
  */
-export function processData(logger: Logger, data: CompatStatement): void {
+export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
     const { support, status } = data;
 
@@ -90,13 +102,18 @@ export function processData(logger: Logger, data: CompatStatement): void {
       );
     }
   }
-}
+};
 
 export default {
   name: 'Obsolete',
   description: 'Test for obsolete data in each support statement',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     processData(logger, data);
   },
   exceptions: [

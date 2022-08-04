@@ -8,6 +8,12 @@ import fs from 'node:fs';
 import { checkExperimental } from '../../test/linter/test-status.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
+/**
+ *
+ * @param {value} key
+ * @param {Identifier} value
+ * @returns {Identifier}
+ */
 const fixStatus = (key: string, value: Identifier): Identifier => {
   const compat = value?.__compat;
   if (compat?.status) {

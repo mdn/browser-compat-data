@@ -8,7 +8,20 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-function main(opts): void {
+/**
+ *
+ * @param {{ref1: string, ref2: string, format: string, github: boolean}} opts
+ * @param {string} opts.ref1
+ * @param {string} opts.ref2
+ * @param {string} opts.format
+ * @param {boolean} opts.github
+ */
+const main = (opts: {
+  ref1: string;
+  ref2: string;
+  format: string;
+  github: boolean;
+}): void => {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
@@ -17,12 +30,21 @@ function main(opts): void {
   } else {
     console.log(JSON.stringify(results, undefined, 2));
   }
-}
+};
 
-export default function diff(opts): {
-  added: string[];
-  removed: string[];
-} {
+/**
+ *
+ * @param {{ref1: string, ref2: string, github: boolean}} opts
+ * @param {string} opts.ref1
+ * @param {string} opts.ref2
+ * @param {boolean} opts.github
+ * @returns {{added: string[], removed: string[]}}
+ */
+const diff = (opts: {
+  ref1: string;
+  ref2: string;
+  github: boolean;
+}): { added: string[]; removed: string[] } => {
   const { ref1, ref2, github } = opts;
   let refA, refB;
 
@@ -49,9 +71,15 @@ export default function diff(opts): {
   };
 
   return results;
-}
+};
 
-function enumerate(ref: string, skipGitHub: boolean): Set<string> {
+/**
+ *
+ * @param {string} ref
+ * @param {boolean} skipGitHub
+ * @returns {Set<string>}
+ */
+const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   if (!skipGitHub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
@@ -63,22 +91,29 @@ function enumerate(ref: string, skipGitHub: boolean): Set<string> {
   }
 
   return new Set(enumerateFeatures(ref));
-}
+};
 
-function getEnumerationFromGithub(ref: string) {
+/**
+ *
+ * @param {string} ref
+ * @returns {string[]}
+ */
+const getEnumerationFromGithub = (ref: string): string[] => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
+  /**
+   *
+   */
   const unlinkFile = () => {
     try {
       fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
     } catch (err: any) {
       if (err.code == 'ENOENT') {
         return;
-      } else {
-        throw err;
       }
+      throw err;
     }
   };
 
@@ -92,7 +127,9 @@ function getEnumerationFromGithub(ref: string) {
     },
   ).trim();
 
-  if (!workflowRun) throw Error('No workflow run found for commit.');
+  if (!workflowRun) {
+    throw Error('No workflow run found for commit.');
+  }
 
   try {
     unlinkFile();
@@ -105,9 +142,14 @@ function getEnumerationFromGithub(ref: string) {
   } finally {
     unlinkFile();
   }
-}
+};
 
-function enumerateFeatures(ref = 'HEAD') {
+/**
+ *
+ * @param {string} ref
+ * @returns {string[]}
+ */
+const enumerateFeatures = (ref = 'HEAD'): string[] => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -125,7 +167,7 @@ function enumerateFeatures(ref = 'HEAD') {
     execSync(`git worktree add ${worktree} ${hash}`);
 
     try {
-      execSync(`npm ci`, { cwd: worktree });
+      execSync('npm ci', { cwd: worktree });
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
@@ -136,21 +178,33 @@ function enumerateFeatures(ref = 'HEAD') {
   } finally {
     execSync(`git worktree remove ${worktree}`);
   }
-}
+};
 
-function printMarkdown(added: string[], removed: string[]): void {
-  const fmtFeature = (feat: string) => `- \`${feat}\``;
+/**
+ *
+ * @param {string} feat
+ * @returns {string}
+ */
+const fmtFeature = (feat: string) => `- \`${feat}\``;
 
+/**
+ *
+ * @param {Array.<string>} added
+ * @param {Array.<string>} removed
+ */
+const printMarkdown = (added: string[], removed: string[]): void => {
   if (removed.length) {
     console.log('## Removed\n');
     console.log(removed.map(fmtFeature).join('\n'));
   }
   if (added.length) {
-    if (removed.length) console.log('');
+    if (removed.length) {
+      console.log('');
+    }
     console.log('## Added\n');
     console.log(added.map(fmtFeature).join('\n'));
   }
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
@@ -183,5 +237,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  main(argv);
+  main(argv as any);
 }
+
+export default diff;

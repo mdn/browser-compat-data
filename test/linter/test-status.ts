@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -9,7 +9,12 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-export const checkExperimental = (data: CompatStatement) => {
+/**
+ *
+ * @param {CompatStatement} data
+ * @returns {boolean}
+ */
+export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
     // Check if experimental should be false (code copied from migration 007)
 
@@ -63,11 +68,11 @@ export const checkExperimental = (data: CompatStatement) => {
  * @param {Logger} logger
  * @param {string} path
  */
-function checkStatus(
+const checkStatus = (
   data: CompatStatement,
   logger: Logger,
   path: string[] = [],
-): void {
+): void => {
   const status = data.status;
   if (!status) {
     return;
@@ -97,13 +102,18 @@ function checkStatus(
       )}} as the feature is supported in multiple browser engines.}`,
     );
   }
-}
+};
 
 export default {
   name: 'Status',
   description: 'Test the status of support statements',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     checkStatus(data, logger);
   },
 } as Linter;

@@ -19,17 +19,19 @@ const propOrder = {
   status: ['experimental', 'standard_track', 'deprecated'],
 };
 
-function doOrder(value: CompatStatement, order: string[]): CompatStatement;
-function doOrder(value: StatusBlock, order: string[]): StatusBlock;
-function doOrder(
-  value: CompatStatement | StatusBlock,
-  order: string[],
-): CompatStatement | StatusBlock {
-  return order.reduce((result: { [index: string]: any }, key: string) => {
-    if (key in value) result[key] = value[key];
+/**
+ *
+ * @param {CompatStatement|StatusBlock} value
+ * @param {string[]} order
+ * @returns {CompatStatement|StatusBlock}
+ */
+const doOrder = <T>(value: T, order: string[]): T =>
+  order.reduce((result: { [index: string]: any }, key: string) => {
+    if (key in value) {
+      result[key] = value[key];
+    }
     return result;
-  }, {}) as CompatStatement | StatusBlock;
-}
+  }, {}) as T;
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -39,10 +41,9 @@ function doOrder(
  *
  * @param {string} key The key in the object
  * @param {Identifier} value The value of the key
- *
  * @returns {Identifier} The new value
  */
-export function orderProperties(key: string, value: Identifier): Identifier {
+export const orderProperties = (key: string, value: Identifier): Identifier => {
   if (value instanceof Object && '__compat' in value) {
     value.__compat = doOrder(
       value.__compat as CompatStatement,
@@ -57,7 +58,7 @@ export function orderProperties(key: string, value: Identifier): Identifier {
     }
   }
   return value;
-}
+};
 
 /**
  * @param {string} filename

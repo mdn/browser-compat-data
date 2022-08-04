@@ -22,7 +22,11 @@ import {
 } from './utils.js';
 import diffFeatures from '../diff-features.js';
 
-async function main(argv: ReleaseYargs): Promise<void> {
+/**
+ *
+ * @param {ReleaseYargs} argv
+ */
+const main = async (argv: ReleaseYargs): Promise<void> => {
   const { startVersionTag, endVersionTag } = argv;
 
   requireGitHubCLI();
@@ -76,13 +80,19 @@ async function main(argv: ReleaseYargs): Promise<void> {
   console.log(await preamble());
   console.log(markdownifyChanges(allRemoves, allAdds));
   console.log('<!-- TODO: replace with `npm run release-stats` -->');
-}
+};
 
-function pullsFromGitHub(start: string, end: string): Array<FeatureChange> {
+/**
+ *
+ * @param {string} start
+ * @param {string} end
+ * @returns {FeatureChange[]}
+ */
+const pullsFromGitHub = (start: string, end: string): FeatureChange[] => {
   const searchDetails = {
     limit: 1000, // As many PRs as GitHub will allow
     search: `${buildQuery(end, start, false)}`,
-    json: `number,url,mergeCommit`,
+    json: 'number,url,mergeCommit',
     jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
   };
   const args = Object.entries(searchDetails)
@@ -91,9 +101,12 @@ function pullsFromGitHub(start: string, end: string): Array<FeatureChange> {
   const command = `gh pr list ${args}`;
 
   return JSON.parse(exec(command));
-}
+};
 
-async function preamble(): Promise<string> {
+/**
+ * @returns {string}
+ */
+const preamble = async (): Promise<string> => {
   const packageJson = await fs.readFile(
     new URL('../../package.json', import.meta.url),
   );
@@ -109,16 +122,27 @@ async function preamble(): Promise<string> {
     })} <!-- TODO: replace with final release date-->`,
     '',
   ].join('\n');
-}
+};
 
-function markdownifyChanges(
+/**
+ *
+ * @param {FeatureChange} obj
+ * @returns {string}
+ */
+const featureBullet = (obj: FeatureChange) =>
+  `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
+
+/**
+ *
+ * @param {FeatureChange[]} removed
+ * @param {FeatureChange[]} added
+ * @returns {string}
+ */
+const markdownifyChanges = (
   removed: FeatureChange[],
   added: FeatureChange[],
-): string {
+): string => {
   const notes: string[] = [];
-
-  const featureBullet = (obj: FeatureChange) =>
-    `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
   if (removed.length) {
     notes.push('### Removals', '');
@@ -137,7 +161,7 @@ function markdownifyChanges(
   }
 
   return notes.join('\n');
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
