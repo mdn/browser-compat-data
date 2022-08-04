@@ -58,7 +58,6 @@
     "fast-json-stable-stringify": "~2.1.0",
     "fdir": "~5.2.0",
     "json-schema-to-typescript": "~10.1.5",
-    "mdn-confluence": "~2.2.2",
     "mocha": "~10.0.0",
     "open-cli": "~7.0.1",
     "ora": "~6.1.0",
@@ -70,7 +69,6 @@
   },
   "scripts": {
     "prepare": "npm run gentypes",
-    "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
     "diff": "ts-node scripts/diff.ts",
     "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
