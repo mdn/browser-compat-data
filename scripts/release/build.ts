@@ -27,9 +27,7 @@ const verbatimFiles = ['LICENSE', 'README.md'];
 /**
  * @returns {any}
  */
-export const generateMeta = (): any => {
-  return { version: packageJson.version };
-};
+export const generateMeta = (): any => ({ version: packageJson.version });
 
 /**
  *

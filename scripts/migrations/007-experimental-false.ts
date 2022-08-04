@@ -116,9 +116,9 @@ const load = (...files: string[]): void => {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
+    const subFiles = fs
+      .readdirSync(file)
+      .map((subfile) => path.join(file, subfile));
 
     load(...subFiles);
   }

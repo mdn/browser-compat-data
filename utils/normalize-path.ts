@@ -8,17 +8,18 @@ import path from 'node:path';
  * @param p
  * @param testPath
  */
-export function normalizePathInternal(p: string, testPath: any = path): string {
+export const normalizePathInternal = (
+  p: string,
+  testPath: any = path,
+): string => {
   if (testPath.sep === '/') {
     return p;
   }
   return p.replace(/\\/gi, '/');
-}
+};
 
 /**
  *
  * @param p
  */
-export default function normalizePath(p: string): string {
-  return normalizePathInternal(p, path);
-}
+export default (p: string): string => normalizePathInternal(p, path);

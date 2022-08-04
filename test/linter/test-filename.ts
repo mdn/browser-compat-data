@@ -12,11 +12,11 @@ import path from 'node:path';
  * @param pathParts
  * @param currentPath
  */
-function testFeaturePresence(
+const testFeaturePresence = (
   data: Identifier,
   pathParts: string[],
   currentPath: string,
-) {
+) => {
   const feature = pathParts[0];
   if (Object.keys(data).length > 1 || !(feature in data)) {
     return `Expected only "${currentPath}${feature}" but found "${currentPath}${Object.keys(
@@ -33,7 +33,7 @@ function testFeaturePresence(
   }
 
   return false;
-}
+};
 
 /**
  * Process the data to make sure it defines the features appropriate to the file's name
@@ -42,7 +42,11 @@ function testFeaturePresence(
  * @param {string} filepath The file path
  * @param {Logger} logger The logger to output errors to
  */
-function processData(data: Identifier, filepath: string, logger: Logger): void {
+const processData = (
+  data: Identifier,
+  filepath: string,
+  logger: Logger,
+): void => {
   const p = filepath
     .replace('.json', '')
     .replace('api/_globals', 'api')
@@ -54,7 +58,7 @@ function processData(data: Identifier, filepath: string, logger: Logger): void {
   if (failed) {
     logger.error(failed);
   }
-}
+};
 
 export default {
   name: 'Filename',
@@ -69,10 +73,10 @@ export default {
    * @param root0.path
    * @param root0.path.full
    */
-  check(
+  check: (
     logger: Logger,
     { data, path: { full } }: { data: Identifier; path: { full: string } },
-  ) {
+  ) => {
     processData(data, full, logger);
   },
 } as Linter;

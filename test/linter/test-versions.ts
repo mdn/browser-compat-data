@@ -82,11 +82,11 @@ const realValuesRequired: { [category: string]: string[] } = {
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(
+const isValidVersion = (
   browser: BrowserName,
   category: string,
   version: VersionValue,
-): boolean {
+): boolean => {
   if (typeof version === 'string') {
     return validBrowserVersions[browser].includes(version);
   } else if (
@@ -96,7 +96,7 @@ function isValidVersion(
     return false;
   }
   return true;
-}
+};
 
 /**
  * Checks if the version number of version_removed is greater than or equal to
@@ -106,7 +106,9 @@ function isValidVersion(
  * @param {SimpleSupportStatement} statement
  * @returns {(boolean|null)}
  */
-function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
+const addedBeforeRemoved = (
+  statement: SimpleSupportStatement,
+): boolean | null => {
   if (
     typeof statement.version_added !== 'string' ||
     typeof statement.version_removed !== 'string'
@@ -136,7 +138,7 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
   }
 
   return compareVersions.compare(added, removed, '<');
-}
+};
 
 /**
  * Check the data for any errors in provided versions
@@ -145,11 +147,11 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
  * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
  */
-function checkVersions(
+const checkVersions = (
   supportData: InternalSupportBlock,
   category: string,
   logger: Logger,
-): void {
+): void => {
   const browsersToCheck = Object.keys(supportData) as BrowserName[];
 
   for (const browser of browsersToCheck) {
@@ -243,7 +245,7 @@ function checkVersions(
       }
     }
   }
-}
+};
 
 export default {
   name: 'Versions',
@@ -257,13 +259,13 @@ export default {
    * @param root0.path
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { category },
     }: { data: CompatStatement; path: { category: string } },
-  ) {
+  ) => {
     checkVersions(data.support, category, logger);
   },
 } as Linter;

@@ -25,14 +25,13 @@ const propOrder = {
  * @param {string[]} order
  * @returns {CompatStatement|StatusBlock}
  */
-const doOrder = <T>(value: T, order: string[]): T => {
-  return order.reduce((result: { [index: string]: any }, key: string) => {
+const doOrder = <T>(value: T, order: string[]): T =>
+  order.reduce((result: { [index: string]: any }, key: string) => {
     if (key in value) {
       result[key] = value[key];
     }
     return result;
   }, {}) as T;
-};
 
 /**
  * Return a new feature object whose first-level properties have been

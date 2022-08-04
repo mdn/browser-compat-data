@@ -17,12 +17,12 @@ const { browsers } = bcd;
  * @param {Logger} logger The logger to output errors to.
  * @param {string} [path] The path of the data.
  */
-function processData(
+const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
   path = '',
-): void {
+): void => {
   if (data.support) {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
@@ -35,7 +35,7 @@ function processData(
           'desktop',
           'mobile',
           'xr',
-          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+          ...['api', 'javascript'].includes(category) ? ['server'] : [],
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
@@ -80,7 +80,7 @@ function processData(
       );
     }
   }
-}
+};
 
 export default {
   name: 'Browser Presence',
@@ -95,13 +95,13 @@ export default {
    * @param root0.path
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { category },
     }: { data: CompatStatement; path: { category: string } },
-  ) {
+  ) => {
     processData(data, category, logger);
   },
 } as Linter;

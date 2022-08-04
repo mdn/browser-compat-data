@@ -17,6 +17,7 @@ import bcd from '../index.js';
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
+ * @yields {string}
  */
 function* iterateFeatures(
   obj,
@@ -94,19 +95,19 @@ function* iterateFeatures(
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
  */
-function traverseFeatures(
+const traverseFeatures = (
   obj,
   browsers: BrowserName[],
   values: string[],
   depth: number,
   identifier: string,
-): string[] {
+): string[] => {
   const features = Array.from(
     iterateFeatures(obj, browsers, values, depth, identifier),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
-}
+};
 
 /**
  *

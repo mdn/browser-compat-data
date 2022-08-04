@@ -36,13 +36,13 @@ export default {
    * @param root0.path
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { category },
     }: { data: CompatStatement; path: { category: string } },
-  ) {
+  ) => {
     const schema =
       category === 'browsers' ? browserDataSchema : compatDataSchema;
     if (!ajv.validate(schema, data)) {

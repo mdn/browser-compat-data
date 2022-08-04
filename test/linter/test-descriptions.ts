@@ -15,20 +15,20 @@ import chalk from 'chalk-template';
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
  */
-function checkDescription(
+const checkDescription = (
   ruleName: string,
   name: string,
   compat: CompatStatement,
   expected: string,
   logger: Logger,
-): void {
+): void => {
   const actual = compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
   }
-}
+};
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
@@ -37,11 +37,11 @@ function checkDescription(
  * @param {string} path The path of the feature
  * @param {Logger} logger The logger to output errors to
  */
-function processApiData(
+const processApiData = (
   data: CompatStatement,
   path: string,
   logger: Logger,
-): void {
+): void => {
   const pathParts = path.split('.');
   const apiName = pathParts[1];
   const featureName = pathParts[2];
@@ -92,7 +92,7 @@ function processApiData(
       logger,
     );
   }
-}
+};
 
 export default {
   name: 'Descriptions',
@@ -107,13 +107,13 @@ export default {
    * @param root0.path.full
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { full, category },
     }: { data: CompatStatement; path: { full: string; category: string } },
-  ) {
+  ) => {
     if (category === 'api') {
       processApiData(data, full, logger);
     }

@@ -16,7 +16,7 @@ import { orderProperties } from '../../scripts/fix/property-order.js';
  * @param {string} rawData The raw contents of the file to test
  * @param {Logger} logger The logger to output errors to
  */
-function processData(rawData: string, logger: Logger): void {
+const processData = (rawData: string, logger: Logger): void => {
   let actual = rawData;
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -89,7 +89,7 @@ function processData(rawData: string, logger: Logger): void {
       )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
     );
   }
-}
+};
 
 export default {
   name: 'Style',
@@ -103,13 +103,13 @@ export default {
    * @param root0.path
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       rawdata,
       path: { category },
     }: { rawdata: string; path: { category: string } },
-  ) {
+  ) => {
     if (category !== 'browsers') {
       processData(rawdata, logger);
     }

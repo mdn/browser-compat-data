@@ -509,7 +509,7 @@ export default {
    * @param root0
    * @param root0.data
    */
-  check(logger: Logger, { data }: { data: CompatData }) {
+  check: (logger: Logger, { data }: { data: CompatData }) => {
     const checker = new ConsistencyChecker();
     const allErrors = checker.check(data);
 

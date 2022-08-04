@@ -169,10 +169,10 @@ export default {
    * @param root0.path
    * @param root0.path.full
    */
-  check(
+  check: (
     logger: Logger,
     { data, path: { full } }: { data: CompatStatement; path: { full: string } },
-  ) {
+  ) => {
     processData(data, logger, full);
   },
 } as Linter;

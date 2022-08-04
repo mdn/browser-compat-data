@@ -7,31 +7,27 @@ import { Identifier, BrowserStatement } from '../types/types.js';
  *
  * @param {...any} args
  */
-export function joinPath(...args: (string | undefined)[]): string {
-  return Array.from(args).filter(Boolean).join('.');
-}
+export const joinPath = (...args: (string | undefined)[]): string =>
+  Array.from(args).filter(Boolean).join('.');
 
 /**
  *
  * @param obj
  */
-export function isFeature(obj): obj is Identifier {
-  return '__compat' in obj;
-}
+export const isFeature = (obj): obj is Identifier => '__compat' in obj;
 
 /**
  *
  * @param obj
  */
-export function isBrowser(obj): obj is BrowserStatement {
-  return 'name' in obj && 'releases' in obj;
-}
+export const isBrowser = (obj): obj is BrowserStatement =>
+  'name' in obj && 'releases' in obj;
 
 /**
  *
  * @param data
  */
-export function descendantKeys(data) {
+export const descendantKeys = (data) => {
   if (!data || typeof data !== 'object') {
     // Return if the data isn't an object
     return [];
@@ -47,4 +43,4 @@ export function descendantKeys(data) {
   }
 
   return Object.keys(data).filter((key) => key !== '__meta');
-}
+};

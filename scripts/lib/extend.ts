@@ -20,9 +20,8 @@ class DuplicateCompatError extends Error {
  * @param {any} v
  * @returns {boolean}
  */
-const isPlainObject = (v): v is object => {
-  return typeof v === 'object' && v !== null && !Array.isArray(v);
-};
+const isPlainObject = (v): v is object =>
+  typeof v === 'object' && v !== null && !Array.isArray(v);
 
 /**
  *

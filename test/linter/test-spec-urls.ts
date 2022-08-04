@@ -65,7 +65,7 @@ const allowedSpecURLs = [
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  */
-function processData(data: CompatStatement, logger: Logger): void {
+const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
     return;
   }
@@ -81,7 +81,7 @@ function processData(data: CompatStatement, logger: Logger): void {
       );
     }
   }
-}
+};
 
 export default {
   name: 'Spec URLs',
@@ -94,7 +94,7 @@ export default {
    * @param root0
    * @param root0.data
    */
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  check: (logger: Logger, { data }: { data: CompatStatement }) => {
     processData(data, logger);
   },
 } as Linter;

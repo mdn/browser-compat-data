@@ -17,7 +17,7 @@ const { browsers } = bcd;
  * @param {SupportBlock} support
  * @returns boolean
  */
-export function neverImplemented(support: SupportBlock): boolean {
+export const neverImplemented = (support: SupportBlock): boolean => {
   for (const s in support) {
     let data = support[s];
     if (!Array.isArray(data)) {
@@ -30,7 +30,7 @@ export function neverImplemented(support: SupportBlock): boolean {
     }
   }
   return true;
-}
+};
 
 const errorTime = new Date(),
   warningTime = new Date();
@@ -41,9 +41,9 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
  * @param {SupportBlock} support
  * @returns LinterMessageLevel | false
  */
-export function implementedAndRemoved(
+export const implementedAndRemoved = (
   support: SupportBlock,
-): LinterMessageLevel | false {
+): LinterMessageLevel | false => {
   let result: LinterMessageLevel = 'error';
   for (const [browser, data] of Object.entries(support) as [
     BrowserName,
@@ -75,13 +75,13 @@ export function implementedAndRemoved(
     }
   }
   return result;
-}
+};
 
 /**
  * @param {Logger} logger
  * @param {CompatStatement} data The data to test
  */
-export function processData(logger: Logger, data: CompatStatement): void {
+export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
     const { support, status } = data;
 
@@ -102,7 +102,7 @@ export function processData(logger: Logger, data: CompatStatement): void {
       );
     }
   }
-}
+};
 
 export default {
   name: 'Obsolete',
@@ -114,7 +114,7 @@ export default {
    * @param root0
    * @param root0.data
    */
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  check: (logger: Logger, { data }: { data: CompatStatement }) => {
     processData(logger, data);
   },
   exceptions: [

@@ -48,9 +48,8 @@ const getBaseAndHeadContents = (
  * @param {any} rhs
  * @returns {string}
  */
-const stringifyChange = (lhs: any, rhs: any): string => {
-  return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
-};
+const stringifyChange = (lhs: any, rhs: any): string =>
+  `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
 
 /**
  * @param {{base: SupportStatement, head: SupportStatement}} diff

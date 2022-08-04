@@ -13,7 +13,7 @@ import bcd from '../index.js';
  * @returns {DataType} A BCD subtree
  * @throws {ReferenceError} For invalid identifiers
  */
-export default function query(path: string, data: DataType = bcd): DataType {
+export default (path: string, data: DataType = bcd): DataType => {
   const pathElements = path.split('.');
   let lookup = data;
   while (pathElements.length) {
@@ -31,4 +31,4 @@ export default function query(path: string, data: DataType = bcd): DataType {
     }
   }
   return lookup;
-}
+};

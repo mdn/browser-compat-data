@@ -190,11 +190,8 @@ const getStat = (
   stats: VersionStatsEntry,
   type: keyof VersionStatsEntry,
   counts: boolean,
-): string | number => {
-  return counts
-    ? stats[type]
-    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
-};
+): string | number =>
+  counts ? stats[type] : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
 
 /**
  * Print statistics of BCD

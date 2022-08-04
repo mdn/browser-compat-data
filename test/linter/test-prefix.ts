@@ -13,11 +13,11 @@ import chalk from 'chalk-template';
  * @param {string} category The category the data belongs to
  * @param {Logger} logger The logger to output errors to
  */
-function processData(
+const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
-): void {
+): void => {
   let prefixes: string[] = [];
 
   if (category === 'api') {
@@ -66,7 +66,7 @@ function processData(
       }
     }
   }
-}
+};
 
 export default {
   name: 'Prefix',
@@ -80,13 +80,13 @@ export default {
    * @param root0.path
    * @param root0.path.category
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { category },
     }: { data: CompatStatement; path: { category: string } },
-  ) {
+  ) => {
     processData(data, category, logger);
   },
 } as Linter;

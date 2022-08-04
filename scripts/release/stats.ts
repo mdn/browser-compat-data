@@ -160,9 +160,7 @@ const contributors = (start: string, end: string): Promise<ContributorStats> =>
 /**
  * @returns {number}
  */
-const countFeatures = (): number => {
-  return [...walk()].length;
-};
+const countFeatures = (): number => [...walk()].length;
 
 const formatter = new Intl.NumberFormat('en-US');
 
@@ -171,9 +169,7 @@ const formatter = new Intl.NumberFormat('en-US');
  * @param {number} n
  * @returns {string}
  */
-const formatNumber = (n: number): string => {
-  return formatter.format(n);
-};
+const formatNumber = (n: number): string => formatter.format(n);
 
 /**
  *

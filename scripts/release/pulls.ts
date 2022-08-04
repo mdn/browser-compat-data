@@ -32,9 +32,8 @@ const queryToURL = (query: string): string => {
  * @param {string} query
  * @returns {string}
  */
-const appendLabel = (query: string): string => {
-  return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
-};
+const appendLabel = (query: string): string =>
+  `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
 
 /**
  *

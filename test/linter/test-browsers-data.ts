@@ -14,11 +14,11 @@ const { browsers } = bcd;
  * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
  */
-function processData(
+const processData = (
   browser: BrowserName,
   data: BrowserStatement,
   logger: Logger,
-): void {
+): void => {
   for (const status of ['current', 'nightly']) {
     const releasesForStatus = Object.entries(data.releases)
       .filter(([, data]) => data.status == status)
@@ -49,7 +49,7 @@ function processData(
       );
     }
   }
-}
+};
 
 export default {
   name: 'Browser Data',
@@ -63,13 +63,13 @@ export default {
    * @param root0.path
    * @param root0.path.browser
    */
-  check(
+  check: (
     logger: Logger,
     {
       data,
       path: { browser },
     }: { data: BrowserStatement; path: { browser: BrowserName } },
-  ) {
+  ) => {
     processData(browser, data, logger);
   },
 } as Linter;

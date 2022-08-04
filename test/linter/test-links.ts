@@ -22,7 +22,7 @@ type LinkError = {
  * @param {string|RegExp} regexp The regex to test with
  * @param {(match: Array.<?string>) => object} matchHandler The callback
  */
-function processLink(
+const processLink = (
   errors: LinkError[],
   actual: string,
   regexp: string | RegExp,
@@ -31,7 +31,7 @@ function processLink(
     expected?: string;
     actualLink?: string;
   } | void,
-): void {
+): void => {
   const re = new RegExp(regexp, 'g');
   /** @type {RegExpExecArray} */
   let match;
@@ -51,7 +51,7 @@ function processLink(
       });
     }
   }
-}
+};
 
 /**
  * Process the data for any errors within the links
@@ -59,7 +59,7 @@ function processLink(
  * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-export function processData(rawData: string): LinkError[] {
+export const processData = (rawData: string): LinkError[] => {
   const errors: LinkError[] = [];
 
   let actual = rawData;
@@ -74,12 +74,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://bugzil.la/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://bugzil.la/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -87,12 +85,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crbug.com/${match[2]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crbug.com/${match[2]}`,
+    }),
   );
 
   processLink(
@@ -100,12 +96,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crbug.com/${match[2]}/${match[3]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crbug.com/${match[2]}/${match[3]}`,
+    }),
   );
 
   processLink(
@@ -113,12 +107,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://chromium\.googlesource\.com/chromium/src/\+/([\w\d]+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crrev.com/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crrev.com/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -126,12 +118,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://webkit.org/b/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://webkit.org/b/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -241,12 +231,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`,
-    (match) => {
-      return {
-        issue: 'Use non-localized Microsoft Developer URL',
-        expected: `https://developer.microsoft.com/${match[2]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use non-localized Microsoft Developer URL',
+      expected: `https://developer.microsoft.com/${match[2]}`,
+    }),
   );
 
   processLink(
@@ -265,7 +253,7 @@ export function processData(rawData: string): LinkError[] {
   );
 
   return errors;
-}
+};
 
 export default {
   name: 'Links',
@@ -278,7 +266,7 @@ export default {
    * @param root0
    * @param root0.rawdata
    */
-  check(logger: Logger, { rawdata }: { rawdata: string }) {
+  check: (logger: Logger, { rawdata }: { rawdata: string }) => {
     const errors = processData(rawdata);
 
     for (const error of errors) {

@@ -18,11 +18,11 @@ import chalk from 'chalk-template';
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
  */
-function processData(
+const processData = (
   data: SupportStatement,
   browser: BrowserName,
   logger: Logger,
-): void {
+): void => {
   if (!Array.isArray(data)) {
     // If there's only one statement, skip since this is a linter for multiple statements
     return;
@@ -49,7 +49,7 @@ function processData(
     }
     statements.push(statementKey);
   }
-}
+};
 
 export default {
   name: 'Multiple Statements',
@@ -62,7 +62,7 @@ export default {
    * @param root0
    * @param root0.data
    */
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  check: (logger: Logger, { data }: { data: CompatStatement }) => {
     for (const [browser, support] of Object.entries(data.support)) {
       processData(support, browser as BrowserName, logger);
     }

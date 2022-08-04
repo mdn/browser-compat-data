@@ -51,22 +51,19 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  * @param {number} quantifier
  * @returns {string}
  */
-export const pluralize = (word: string, quantifier: number): string => {
-  return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
-};
+export const pluralize = (word: string, quantifier: number): string =>
+  chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
 
 /**
  * Escapes common invisible characters.
  *
  * @param {string} str
  */
-export function escapeInvisibles(str: string): string {
-  // This should now be O(n) instead of O(n*m),
-  // where n = string length; m = invisible characters
-  return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
-    return INVISIBLES_MAP[char] || char;
-  });
-}
+export const escapeInvisibles = (str: string): string =>
+  INVISIBLES_REGEXP[Symbol.replace](
+    str,
+    (char) => INVISIBLES_MAP[char] || char,
+  );
 
 /**
  * Gets the row and column matching the index in a string.
@@ -75,10 +72,10 @@ export function escapeInvisibles(str: string): string {
  * @param {number} index
  * @returns {[number, number] | [null, null]}
  */
-export function indexToPosRaw(
+export const indexToPosRaw = (
   str: string,
   index: number,
-): [number, number] | [null, null] {
+): [number, number] | [null, null] => {
   let line = 1,
     col = 1;
 
@@ -111,7 +108,7 @@ export function indexToPosRaw(
   }
 
   return [line, col];
-}
+};
 
 /**
  * Gets the row and column matching the index in a string and formats it.
@@ -120,17 +117,20 @@ export function indexToPosRaw(
  * @param {number} index
  * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-export function indexToPos(str: string, index: number): string {
+export const indexToPos = (str: string, index: number): string => {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
-}
+};
 
 /**
  * @param {string} actual
  * @param {string} expected
  * @returns {string} Statement explaining the difference in provided JSON strings
  */
-export function jsonDiff(actual: string, expected: string): string | undefined {
+export const jsonDiff = (
+  actual: string,
+  expected: string,
+): string | undefined => {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -147,7 +147,7 @@ export function jsonDiff(actual: string, expected: string): string | undefined {
       {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
-}
+};
 
 export type Linter = {
   name: string;

@@ -67,11 +67,11 @@ export const checkExperimental = (data: CompatStatement) => {
  * @param {Logger} logger
  * @param {string} path
  */
-function checkStatus(
+const checkStatus = (
   data: CompatStatement,
   logger: Logger,
   path: string[] = [],
-): void {
+): void => {
   const status = data.status;
   if (!status) {
     return;
@@ -101,7 +101,7 @@ function checkStatus(
       )}} as the feature is supported in multiple browser engines.}`,
     );
   }
-}
+};
 
 export default {
   name: 'Status',
@@ -113,7 +113,7 @@ export default {
    * @param root0
    * @param root0.data
    */
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  check: (logger: Logger, { data }: { data: CompatStatement }) => {
     checkStatus(data, logger);
   },
 } as Linter;

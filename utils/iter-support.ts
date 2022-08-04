@@ -12,10 +12,10 @@ import {
  * @param compat
  * @param browser
  */
-export default function iterSupport(
+export default (
   compat: CompatStatement,
   browser: BrowserName,
-): SimpleSupportStatement[] {
+): SimpleSupportStatement[] => {
   if (browser in compat.support) {
     const data = compat.support[browser];
     if (data) {
@@ -24,4 +24,4 @@ export default function iterSupport(
   }
 
   return [{ version_added: null }];
-}
+};

@@ -48,9 +48,9 @@ const load = async (...files: string[]): Promise<void> => {
         fixStatus(file);
       }
     } else {
-      const subFiles = (await fs.readdir(file)).map((subfile) => {
-        return path.join(file, subfile);
-      });
+      const subFiles = (await fs.readdir(file)).map((subfile) =>
+        path.join(file, subfile),
+      );
 
       load(...subFiles);
     }

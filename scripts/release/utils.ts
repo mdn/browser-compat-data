@@ -8,9 +8,8 @@ import { execSync } from 'node:child_process';
  * @param {string} command
  * @returns {string}
  */
-export const exec = (command: string): string => {
-  return execSync(command, { encoding: 'utf8' }).trim();
-};
+export const exec = (command: string): string =>
+  execSync(command, { encoding: 'utf8' }).trim();
 
 /**
  *
@@ -34,9 +33,8 @@ export const requireGitHubCLI = (): void => {
 /**
  * @returns {string}
  */
-export const getLatestTag = (): string => {
-  return exec('git describe --abbrev=0 --tags');
-};
+export const getLatestTag = (): string =>
+  exec('git describe --abbrev=0 --tags');
 
 /**
  *
