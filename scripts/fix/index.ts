@@ -1,10 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
+import { Stats } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import esMain from 'es-main';
+import chalk from 'chalk-template';
 
 import fixBrowserOrder from './browser-order.js';
 import fixFeatureOrder from './feature-order.js';
@@ -21,18 +24,22 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} files The files to load and perform fix upon
  * @returns {void}
  */
-function load(...files: string[]): void {
+const load = async (...files: string[]): Promise<void> => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
     }
 
-    if (!fs.existsSync(file)) {
-      console.warn('File not found, skipping:', file);
-      continue; // Ignore non-existent files
+    let fsStats: Stats;
+
+    try {
+      fsStats = await fs.stat(file);
+    } catch (e) {
+      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      continue;
     }
 
-    if (fs.statSync(file).isFile()) {
+    if (fsStats.isFile()) {
       if (path.extname(file) === '.json') {
         fixBrowserOrder(file);
         fixFeatureOrder(file);
@@ -41,23 +48,21 @@ function load(...files: string[]): void {
         fixLinks(file);
         fixStatus(file);
       }
+    } else {
+      const subFiles = (await fs.readdir(file)).map((subfile) => {
+        return path.join(file, subfile);
+      });
 
-      continue;
+      load(...subFiles);
     }
-
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
-
-    load(...subFiles);
   }
-}
+};
 
 if (esMain(import.meta)) {
   if (process.argv[2]) {
-    load(process.argv[2]);
+    await load(process.argv[2]);
   } else {
-    load(
+    await load(
       'api',
       'css',
       'html',
