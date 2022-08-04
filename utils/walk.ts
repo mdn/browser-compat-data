@@ -44,7 +44,7 @@ export function* browserReleaseWalk(
 
 /**
  *
- * @param {DatType} data
+ * @param {DataType} data
  * @param {string?} path
  * @param {number} depth
  * @yields {WalkOutput}

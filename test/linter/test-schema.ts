@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
 
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';

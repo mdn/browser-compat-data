@@ -2,11 +2,7 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import {
-  BrowserName,
-  CompatStatement,
-  SupportStatement,
-} from '../../types/types.js';
+import { BrowserName, SupportStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 
@@ -63,7 +59,7 @@ export default {
    */
   check: (logger: Logger, { data }: LinterData) => {
     for (const [browser, support] of Object.entries(data.support)) {
-      processData(support, browser as BrowserName, logger);
+      processData(support as SupportStatement, browser as BrowserName, logger);
     }
   },
 } as Linter;

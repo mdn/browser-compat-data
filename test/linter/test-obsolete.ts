@@ -15,7 +15,7 @@ const { browsers } = bcd;
 
 /**
  * @param {SupportBlock} support
- * @returns boolean
+ * @returns {boolean}
  */
 export const neverImplemented = (support: SupportBlock): boolean => {
   for (const s in support) {
@@ -39,7 +39,7 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
  * @param {SupportBlock} support
- * @returns LinterMessageLevel | false
+ * @returns {LinterMessageLevel | false}
  */
 export const implementedAndRemoved = (
   support: SupportBlock,

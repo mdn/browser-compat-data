@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import { CompatStatement, Identifier } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 

@@ -19,7 +19,7 @@ const parser = new HTMLParser();
  * Recursively test a DOM node for valid elements
  *
  * @param {any} node The DOM node to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  */
@@ -68,7 +68,7 @@ const testNode = (
  * Test a string for valid HTML
  *
  * @param {string} string The string to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  */
@@ -108,7 +108,7 @@ const validateHTML = (
  * Check the notes in the data
  *
  * @param {string|string[]} notes The notes to test
- * @param {Browsername} browser The browser the notes belong to
+ * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
  */

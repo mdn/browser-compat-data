@@ -4,8 +4,8 @@
 import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
-  CompatStatement,
   SimpleSupportStatement,
+  SupportBlock,
   VersionValue,
 } from '../../types/types.js';
 import {

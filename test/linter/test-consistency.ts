@@ -315,7 +315,7 @@ export class ConsistencyChecker {
    * Get all of the browsers with either unknown or no support in a feature
    *
    * @param {CompatStatement?} compatData The compat data to process
-   * @returns {Browsername[]} The list of browsers with non-truthy (false or null) support
+   * @returns {BrowserName[]} The list of browsers with non-truthy (false or null) support
    */
   extractSupportNotTrueBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
