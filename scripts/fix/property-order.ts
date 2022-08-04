@@ -21,6 +21,11 @@ const propOrder = {
 
 function doOrder(value: CompatStatement, order: string[]): CompatStatement;
 function doOrder(value: StatusBlock, order: string[]): StatusBlock;
+/**
+ *
+ * @param {CompatStatement|StatusBlock} value
+ * @param {string[]} order
+ */
 function doOrder(
   value: CompatStatement | StatusBlock,
   order: string[],

@@ -11,6 +11,8 @@ import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import { query } from '../utils/index.js';
 import mirror from './release/mirror.js';
 
+import { SupportStatement, Identifier, BrowserName } from '../types/types.js';
+
 type Contents = {
   base: string;
   head: string;
@@ -34,18 +36,32 @@ const getBaseAndHeadContents = (
   return { base, head };
 };
 
+/**
+ *
+ * @param lhs
+ * @param rhs
+ */
 const stringifyChange = (lhs: any, rhs: any): string => {
   return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
 };
 
 /**
- * @param {{base: SupportStatement, head: SupportStatement}} diffItem
+ * @param {{base: SupportStatement, head: SupportStatement}} diff
+ * @param {SupportStatement} diff.base
+ * @param {SupportStatement} diff.head
  * @param {{base: Identifier, head: Identifier}} contents
+ * @param {Identifier} contents.base
+ * @param {Identifier} contents.head
  * @param {Array.<string>} path
  * @param {string} direction
  */
-const doMirror = (diff, contents, path, direction): void => {
-  const browser = path[path.length - 1];
+const doMirror = (
+  diff: { base: SupportStatement; head: SupportStatement },
+  contents: { base: Identifier; head: Identifier },
+  path: string[],
+  direction: string,
+): void => {
+  const browser = path[path.length - 1] as BrowserName;
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
 
@@ -66,10 +82,20 @@ const describeByKind = (
   let doesMirror = '';
   if (diff.base === 'mirror') {
     doesMirror = 'No longer mirrors';
-    doMirror(diff, contents, diffItem.path, 'base');
+    doMirror(
+      diff,
+      contents as any as { base: Identifier; head: Identifier },
+      diffItem.path as string[],
+      'base',
+    );
   } else if (diff.head === 'mirror') {
     doesMirror = 'Now mirrors';
-    doMirror(diff, contents, diffItem.path, 'head');
+    doMirror(
+      diff,
+      contents as any as { base: Identifier; head: Identifier },
+      diffItem.path as string[],
+      'head',
+    );
   }
 
   switch (diffItem.kind) {

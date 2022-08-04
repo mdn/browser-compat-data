@@ -8,7 +8,20 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-const main = (opts): void => {
+/**
+ *
+ * @param {{ref1: string, ref2: string, format: string, github: boolean}} opts
+ * @param {string} opts.ref1
+ * @param {string} opts.ref2
+ * @param {string} opts.format
+ * @param {boolean} opts.github
+ */
+const main = (opts: {
+  ref1: string;
+  ref2: string;
+  format: string;
+  github: boolean;
+}): void => {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
@@ -19,7 +32,18 @@ const main = (opts): void => {
   }
 };
 
-const diff = (opts): { added: string[]; removed: string[] } => {
+/**
+ *
+ * @param {{ref1: string, ref2: string, github: boolean}} opts
+ * @param {string} opts.ref1
+ * @param {string} opts.ref2
+ * @param {boolean} opts.github
+ */
+const diff = (opts: {
+  ref1: string;
+  ref2: string;
+  github: boolean;
+}): { added: string[]; removed: string[] } => {
   const { ref1, ref2, github } = opts;
   let refA, refB;
 
@@ -48,6 +72,11 @@ const diff = (opts): { added: string[]; removed: string[] } => {
   return results;
 };
 
+/**
+ *
+ * @param {string} ref
+ * @param {boolean} skipGitHub
+ */
 const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   if (!skipGitHub) {
     try {
@@ -62,11 +91,18 @@ const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   return new Set(enumerateFeatures(ref));
 };
 
+/**
+ *
+ * @param {string} ref
+ */
 const getEnumerationFromGithub = (ref: string) => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
+  /**
+   *
+   */
   const unlinkFile = () => {
     try {
       fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
@@ -105,6 +141,10 @@ const getEnumerationFromGithub = (ref: string) => {
   }
 };
 
+/**
+ *
+ * @param {string} ref
+ */
 const enumerateFeatures = (ref = 'HEAD') => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
@@ -136,7 +176,16 @@ const enumerateFeatures = (ref = 'HEAD') => {
   }
 };
 
+/**
+ *
+ * @param {Array.<string>} added
+ * @param {Array.<string>} removed
+ */
 const printMarkdown = (added: string[], removed: string[]): void => {
+  /**
+   *
+   * @param {string} feat
+   */
   const fmtFeature = (feat: string) => `- \`${feat}\``;
 
   if (removed.length) {
@@ -183,7 +232,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  main(argv);
+  main(argv as any);
 }
 
 export default diff;

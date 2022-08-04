@@ -10,12 +10,22 @@ import { hideBin } from 'yargs/helpers';
 
 import { lowLevelWalk } from '../utils/walk.js';
 
-async function main(argv: any) {
+/**
+ *
+ * @param {{dest: string, dataFrom: string}} argv
+ * @param {string} argv.dest
+ * @param {string} argv.dataFrom
+ */
+async function main(argv: { dest: string; dataFrom: string }): Promise<void> {
   const { dest, dataFrom } = argv;
   fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
 }
 
-async function enumerateFeatures(dataFrom: string) {
+/**
+ *
+ * @param {string} dataFrom
+ */
+async function enumerateFeatures(dataFrom: string): Promise<string[]> {
   const feats: string[] = [];
 
   const walker = lowLevelWalk(
@@ -50,7 +60,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  await main(argv);
+  await main(argv as any);
 }
 
 export default enumerateFeatures;
