@@ -95,6 +95,14 @@ export default {
   name: 'Style',
   description: 'Tests the style and formatting of the JSON file',
   scope: 'file',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.rawdata
+   * @param root0.path
+   * @param root0.path.category
+   */
   check(
     logger: Logger,
     {

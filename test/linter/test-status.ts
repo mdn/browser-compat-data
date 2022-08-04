@@ -9,6 +9,10 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+/**
+ *
+ * @param data
+ */
 export const checkExperimental = (data: CompatStatement) => {
   if (data.status?.experimental) {
     // Check if experimental should be false (code copied from migration 007)
@@ -103,6 +107,12 @@ export default {
   name: 'Status',
   description: 'Test the status of support statements',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   */
   check(logger: Logger, { data }: { data: CompatStatement }) {
     checkStatus(data, logger);
   },

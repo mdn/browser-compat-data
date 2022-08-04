@@ -273,6 +273,12 @@ export default {
   description:
     'Test links in the file to ensure they conform to BCD guidelines',
   scope: 'file',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.rawdata
+   */
   check(logger: Logger, { rawdata }: { rawdata: string }) {
     const errors = processData(rawdata);
 

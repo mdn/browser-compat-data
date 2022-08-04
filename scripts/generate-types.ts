@@ -41,6 +41,9 @@ const compatDataTypes = {
     'Contains data for [WebExtensions](https://developer.mozilla.org/Add-ons/WebExtensions) JavaScript APIs and manifest keys.',
 };
 
+/**
+ *
+ */
 const generateBrowserNames = async () => {
   // Load browser data independently of index.ts, since index.ts depends
   // on the output of this script
@@ -69,6 +72,9 @@ const generateBrowserNames = async () => {
     .join(' | ')};`;
 };
 
+/**
+ *
+ */
 const generateCompatDataTypes = () => {
   const props = Object.entries(compatDataTypes).map(
     (t) =>
@@ -88,6 +94,11 @@ const generateCompatDataTypes = () => {
   )}\n}\n`;
 };
 
+/**
+ *
+ * @param browserTS
+ * @param compatTS
+ */
 const transformTS = (browserTS: string, compatTS: string): string => {
   // XXX Temporary until the following PR is merged and released:
   // https://github.com/bcherny/json-schema-to-typescript/pull/456
@@ -107,6 +118,10 @@ const transformTS = (browserTS: string, compatTS: string): string => {
   return ts;
 };
 
+/**
+ *
+ * @param destination
+ */
 const compile = async (
   destination: URL | string = new URL('../types/types.d.ts', import.meta.url),
 ) => {

@@ -28,6 +28,14 @@ export default {
   name: 'JSON Schema',
   description: 'Test a file to ensure that it follows the defined schema',
   scope: 'file',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.category
+   */
   check(
     logger: Logger,
     {

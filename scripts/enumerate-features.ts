@@ -16,16 +16,19 @@ import { lowLevelWalk } from '../utils/walk.js';
  * @param {string} argv.dest
  * @param {string} argv.dataFrom
  */
-async function main(argv: { dest: string; dataFrom: string }): Promise<void> {
+const main = async (argv: {
+  dest: string;
+  dataFrom: string;
+}): Promise<void> => {
   const { dest, dataFrom } = argv;
   fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
-}
+};
 
 /**
  *
  * @param {string} dataFrom
  */
-async function enumerateFeatures(dataFrom: string): Promise<string[]> {
+const enumerateFeatures = async (dataFrom: string): Promise<string[]> => {
   const feats: string[] = [];
 
   const walker = lowLevelWalk(
@@ -41,7 +44,7 @@ async function enumerateFeatures(dataFrom: string): Promise<string[]> {
   }
 
   return feats;
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(

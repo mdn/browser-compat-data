@@ -22,7 +22,11 @@ import {
 } from './utils.js';
 import diffFeatures from '../diff-features.js';
 
-async function main(argv: ReleaseYargs): Promise<void> {
+/**
+ *
+ * @param argv
+ */
+const main = async (argv: ReleaseYargs): Promise<void> => {
   const { startVersionTag, endVersionTag } = argv;
 
   requireGitHubCLI();
@@ -76,9 +80,14 @@ async function main(argv: ReleaseYargs): Promise<void> {
   console.log(await preamble());
   console.log(markdownifyChanges(allRemoves, allAdds));
   console.log('<!-- TODO: replace with `npm run release-stats` -->');
-}
+};
 
-function pullsFromGitHub(start: string, end: string): Array<FeatureChange> {
+/**
+ *
+ * @param start
+ * @param end
+ */
+const pullsFromGitHub = (start: string, end: string): Array<FeatureChange> => {
   const searchDetails = {
     limit: 1000, // As many PRs as GitHub will allow
     search: `${buildQuery(end, start, false)}`,
@@ -91,9 +100,12 @@ function pullsFromGitHub(start: string, end: string): Array<FeatureChange> {
   const command = `gh pr list ${args}`;
 
   return JSON.parse(exec(command));
-}
+};
 
-async function preamble(): Promise<string> {
+/**
+ *
+ */
+const preamble = async (): Promise<string> => {
   const packageJson = await fs.readFile(
     new URL('../../package.json', import.meta.url),
   );
@@ -109,14 +121,23 @@ async function preamble(): Promise<string> {
     })} <!-- TODO: replace with final release date-->`,
     '',
   ].join('\n');
-}
+};
 
-function markdownifyChanges(
+/**
+ *
+ * @param removed
+ * @param added
+ */
+const markdownifyChanges = (
   removed: FeatureChange[],
   added: FeatureChange[],
-): string {
+): string => {
   const notes: string[] = [];
 
+  /**
+   *
+   * @param obj
+   */
   const featureBullet = (obj: FeatureChange) =>
     `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
@@ -137,7 +158,7 @@ function markdownifyChanges(
   }
 
   return notes.join('\n');
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(

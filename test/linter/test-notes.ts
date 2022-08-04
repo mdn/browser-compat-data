@@ -165,6 +165,14 @@ export default {
   name: 'Notes',
   description: 'Test the notes in each support statement',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.full
+   */
   check(
     logger: Logger,
     { data, path: { full } }: { data: CompatStatement; path: { full: string } },

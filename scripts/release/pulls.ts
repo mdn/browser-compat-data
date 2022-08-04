@@ -16,17 +16,29 @@ const releaseNotesLabels = [
   'semver-minor-bump ➕',
 ];
 
-function queryToURL(query: string): string {
+/**
+ *
+ * @param query
+ */
+const queryToURL = (query: string): string => {
   const searchUrl = new URL(pullsBaseURL);
   searchUrl.search = `q=${query}`;
   return searchUrl.href;
-}
+};
 
-function appendLabel(query: string): string {
+/**
+ *
+ * @param query
+ */
+const appendLabel = (query: string): string => {
   return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
-}
+};
 
-function main(args): void {
+/**
+ *
+ * @param args
+ */
+const main = (args): void => {
   const {
     startVersionTag: start,
     endVersionTag: end,
@@ -52,7 +64,7 @@ function main(args): void {
   } else {
     console.log(queryToURL(query));
   }
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(

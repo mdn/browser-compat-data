@@ -110,6 +110,13 @@ function traverseFeatures(
   return features.filter((item, pos) => features.indexOf(item) == pos);
 }
 
+/**
+ *
+ * @param folders
+ * @param browsers
+ * @param values
+ * @param depth
+ */
 const main = (
   folders = [
     'api',

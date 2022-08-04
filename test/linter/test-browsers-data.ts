@@ -56,6 +56,14 @@ export default {
   name: 'Browser Data',
   description: 'Test the browser data',
   scope: 'browser',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.browser
+   */
   check(
     logger: Logger,
     {

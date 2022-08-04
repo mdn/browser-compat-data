@@ -169,11 +169,19 @@ export type LinterMessage = {
   [k: string]: any;
 };
 
+/**
+ *
+ */
 export class Logger {
   title: string;
   path: string;
   messages: LinterMessage[];
 
+  /**
+   *
+   * @param title
+   * @param path
+   */
   constructor(title: string, path: string) {
     this.title = title;
     this.path = path;
@@ -209,6 +217,9 @@ export class Logger {
   }
 }
 
+/**
+ *
+ */
 export class Linters {
   linters: Array<Linter>;
   messages: Record<string, LinterMessage[]>;
@@ -217,6 +228,10 @@ export class Linters {
   // true - failure did not occur (bad)
   missingExpectedFailures: Record<string, Record<string, boolean>>;
 
+  /**
+   *
+   * @param linters
+   */
   constructor(linters: Array<Linter>) {
     this.linters = linters;
     this.messages = {
@@ -233,6 +248,12 @@ export class Linters {
   /**
    * @param {LinterScope} scope
    * @param {object} data
+   * @param data.data
+   * @param data.rawdata
+   * @param data.path
+   * @param data.path.full
+   * @param data.path.category
+   * @param data.path.browser
    */
   runScope(
     scope: LinterScope,

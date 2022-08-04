@@ -29,6 +29,10 @@ import { hideBin } from 'yargs/helpers';
 import { exec, releaseYargsBuilder, ReleaseYargs } from './utils.js';
 import { walk } from '../../utils/index.js';
 
+/**
+ *
+ * @param url
+ */
 const getJSON = (url: string): Promise<any> =>
   new Promise((resolve, reject) =>
     http.get(
@@ -47,6 +51,10 @@ const getJSON = (url: string): Promise<any> =>
     ),
   );
 
+/**
+ *
+ * @param query
+ */
 const question = async (query: string): Promise<string> => {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -60,6 +68,10 @@ const question = async (query: string): Promise<string> => {
   return response;
 };
 
+/**
+ *
+ * @param questions
+ */
 const prompt = async (
   questions: Array<Question>,
 ): Promise<Record<Question['name'], number>> => {
@@ -70,6 +82,9 @@ const prompt = async (
   return results;
 };
 
+/**
+ *
+ */
 const stargazers = async (): Promise<number> => {
   const json = await getJSON(
     'https://api.github.com/repos/mdn/browser-compat-data',
@@ -77,10 +92,15 @@ const stargazers = async (): Promise<number> => {
   return json.stargazers_count;
 };
 
-function stats(
+/**
+ *
+ * @param start
+ * @param end
+ */
+const stats = (
   start: string,
   end: string,
-): Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'> {
+): Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'> => {
   // Get just the diff stats summary
   const diff = exec(`git diff --shortstat ${start}...${end}`);
   if (diff === '') {
@@ -104,8 +124,13 @@ function stats(
     insertions: Number(insertions),
     deletions: Number(deletions),
   };
-}
+};
 
+/**
+ *
+ * @param start
+ * @param end
+ */
 const contributors = (
   start: string,
   end: string,
@@ -124,16 +149,27 @@ const contributors = (
     Pick<Stats, 'releaseContributors' | 'totalContributors'>
   >;
 
+/**
+ *
+ */
 function countFeatures() {
   return [...walk()].length;
 }
 
 const formatter = new Intl.NumberFormat('en-US');
 
+/**
+ *
+ * @param n
+ */
 function formatNumber(n: number): string {
   return formatter.format(n);
 }
 
+/**
+ *
+ * @param details
+ */
 function formatStats(details: Stats): string {
   const releaseContributors = formatNumber(details.releaseContributors);
   const totalContributors = formatNumber(details.totalContributors);
@@ -156,6 +192,10 @@ function formatStats(details: Stats): string {
 - ${stars} total stargazers`;
 }
 
+/**
+ *
+ * @param argv
+ */
 async function main(argv: ReleaseYargs): Promise<void> {
   const { startVersionTag: start, endVersionTag: end } = argv;
 

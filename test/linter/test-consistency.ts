@@ -370,6 +370,10 @@ export class ConsistencyChecker {
     }
 
     // A convenience function to squash non-real values and previews into null
+    /**
+     *
+     * @param statement
+     */
     const resolveVersionAddedValue = (
       statement: SimpleSupportStatement,
     ): VersionValue =>
@@ -499,6 +503,12 @@ export default {
   name: 'Consistency',
   description: 'Test the version consistency between parent and child',
   scope: 'tree',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   */
   check(logger: Logger, { data }: { data: CompatData }) {
     const checker = new ConsistencyChecker();
     const allErrors = checker.check(data);

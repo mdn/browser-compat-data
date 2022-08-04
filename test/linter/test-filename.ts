@@ -6,6 +6,12 @@ import { Linter, Logger } from '../utils.js';
 
 import path from 'node:path';
 
+/**
+ *
+ * @param data
+ * @param pathParts
+ * @param currentPath
+ */
 function testFeaturePresence(
   data: Identifier,
   pathParts: string[],
@@ -55,6 +61,14 @@ export default {
   description:
     'Tests the filename to make sure it includes the intended feature',
   scope: 'file',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.full
+   */
   check(
     logger: Logger,
     { data, path: { full } }: { data: Identifier; path: { full: string } },

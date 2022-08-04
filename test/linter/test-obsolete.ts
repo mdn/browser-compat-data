@@ -109,6 +109,12 @@ export default {
   name: 'Obsolete',
   description: 'Test for obsolete data in each support statement',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   */
   check(logger: Logger, { data }: { data: CompatStatement }) {
     processData(logger, data);
   },

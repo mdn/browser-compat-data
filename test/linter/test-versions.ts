@@ -250,6 +250,14 @@ export default {
   name: 'Versions',
   description: 'Test the version numbers of support statements',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.category
+   */
   check(
     logger: Logger,
     {

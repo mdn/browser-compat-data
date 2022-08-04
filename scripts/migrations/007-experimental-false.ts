@@ -98,7 +98,7 @@ const fixExperimentalFile = (filename: string): void => {
 /**
  * @param {string[]} files
  */
-function load(...files: string[]): void {
+const load = (...files: string[]): void => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
@@ -122,7 +122,7 @@ function load(...files: string[]): void {
 
     load(...subFiles);
   }
-}
+};
 
 if (esMain(import.meta)) {
   if (process.argv[2]) {

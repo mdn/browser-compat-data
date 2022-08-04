@@ -15,6 +15,7 @@ import { hideBin } from 'yargs/helpers';
  * @param {string} opts.ref2
  * @param {string} opts.format
  * @param {boolean} opts.github
+ * @returns {void}
  */
 const main = (opts: {
   ref1: string;
@@ -38,6 +39,7 @@ const main = (opts: {
  * @param {string} opts.ref1
  * @param {string} opts.ref2
  * @param {boolean} opts.github
+ * @returns {{added: string[], removed: string[]}}
  */
 const diff = (opts: {
   ref1: string;
@@ -76,6 +78,7 @@ const diff = (opts: {
  *
  * @param {string} ref
  * @param {boolean} skipGitHub
+ * @returns {Set<string>}
  */
 const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   if (!skipGitHub) {
@@ -94,8 +97,9 @@ const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
 /**
  *
  * @param {string} ref
+ * @returns {string[]}
  */
-const getEnumerationFromGithub = (ref: string) => {
+const getEnumerationFromGithub = (ref: string): string[] => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
@@ -144,8 +148,9 @@ const getEnumerationFromGithub = (ref: string) => {
 /**
  *
  * @param {string} ref
+ * @returns {string[]}
  */
-const enumerateFeatures = (ref = 'HEAD') => {
+const enumerateFeatures = (ref = 'HEAD'): string[] => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -178,16 +183,18 @@ const enumerateFeatures = (ref = 'HEAD') => {
 
 /**
  *
+ * @param {string} feat
+ * @returns {string}
+ */
+const fmtFeature = (feat: string) => `- \`${feat}\``;
+
+/**
+ *
  * @param {Array.<string>} added
  * @param {Array.<string>} removed
+ * @returns {void}
  */
 const printMarkdown = (added: string[], removed: string[]): void => {
-  /**
-   *
-   * @param {string} feat
-   */
-  const fmtFeature = (feat: string) => `- \`${feat}\``;
-
   if (removed.length) {
     console.log('## Removed\n');
     console.log(removed.map(fmtFeature).join('\n'));

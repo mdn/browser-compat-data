@@ -18,12 +18,18 @@ type Contents = {
   head: string;
 };
 
+type DiffItem = {
+  name: string;
+  description: string;
+};
+
 // Note: This does not detect renamed files
 /**
  * @param {string} baseCommit
  * @param {string} basePath
  * @param {string} headCommit
  * @param {string} headPath
+ * @returns {Contents}
  */
 const getBaseAndHeadContents = (
   baseCommit: string,
@@ -38,8 +44,9 @@ const getBaseAndHeadContents = (
 
 /**
  *
- * @param lhs
- * @param rhs
+ * @param {any} lhs
+ * @param {any} rhs
+ * @returns {string}
  */
 const stringifyChange = (lhs: any, rhs: any): string => {
   return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
@@ -54,6 +61,7 @@ const stringifyChange = (lhs: any, rhs: any): string => {
  * @param {Identifier} contents.head
  * @param {Array.<string>} path
  * @param {string} direction
+ * @returns {void}
  */
 const doMirror = (
   diff: { base: SupportStatement; head: SupportStatement },
@@ -71,6 +79,7 @@ const doMirror = (
 /**
  * @param {Diff<string, string>} diffItem
  * @param {Contents} contents
+ * @returns {string}
  */
 const describeByKind = (
   diffItem: Diff<string, string>,
@@ -116,11 +125,12 @@ const describeByKind = (
 /**
  * @param {Diff<string, string>} diffItem
  * @param {Contents} contents
+ * @returns {DiffItem}
  */
 const describeDiffItem = (
   diffItem: Diff<string, string>,
   contents: Contents,
-): { name: string; description: string } => {
+): DiffItem => {
   const path = (diffItem.path as string[]).join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
@@ -139,11 +149,10 @@ const describeDiffItem = (
 };
 
 /**
- * @param {ReturnType<typeof describeDiffItem>[]} items
+ * @param {DiffItem[]} items
+ * @returns {Map<string, string>}
  */
-const mergeAsMap = (
-  items: { name: string; description: string }[],
-): Map<string, string> => {
+const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
   const map = new Map();
   for (const item of items) {
     const descriptions = map.get(item.name) || [];
@@ -156,6 +165,7 @@ const mergeAsMap = (
 /**
  * @param {string} base
  * @param {string} head
+ * @returns {Map<string, string>}
  */
 const getDiffs = (base: string, head = ''): Map<string, string> => {
   const namedDescriptions: { name: string; description: string }[] = [];

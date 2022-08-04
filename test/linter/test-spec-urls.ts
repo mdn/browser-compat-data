@@ -89,6 +89,12 @@ export default {
   description:
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   */
   check(logger: Logger, { data }: { data: CompatStatement }) {
     processData(data, logger);
   },

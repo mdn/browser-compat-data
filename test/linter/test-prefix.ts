@@ -73,6 +73,14 @@ export default {
   name: 'Prefix',
   description: 'Ensure that prefixes in support statements are valid',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.category
+   */
   check(
     logger: Logger,
     {

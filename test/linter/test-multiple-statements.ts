@@ -57,6 +57,12 @@ export default {
   description:
     'Ensure there are not multiple statements without partial implementation or prefixes/alt. names',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   */
   check(logger: Logger, { data }: { data: CompatStatement }) {
     for (const [browser, support] of Object.entries(data.support)) {
       processData(support, browser as BrowserName, logger);

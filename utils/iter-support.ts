@@ -7,6 +7,11 @@ import {
   SimpleSupportStatement,
 } from '../types/types.js';
 
+/**
+ *
+ * @param compat
+ * @param browser
+ */
 export default function iterSupport(
   compat: CompatStatement,
   browser: BrowserName,

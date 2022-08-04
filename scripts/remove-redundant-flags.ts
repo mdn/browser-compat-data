@@ -17,6 +17,10 @@ import { IS_WINDOWS } from '../test/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+/**
+ *
+ * @param {...any} args
+ */
 const getEarliestVersion = (...args: string[]) => {
   const versions = args
     .filter((version) => typeof version === 'string' && version !== 'preview')
@@ -38,6 +42,12 @@ const getEarliestVersion = (...args: string[]) => {
   return earliestVersion;
 };
 
+/**
+ *
+ * @param key
+ * @param value
+ * @param limitBrowser
+ */
 export const removeRedundantFlags = (
   key: string,
   value: any,
@@ -112,6 +122,11 @@ export const removeRedundantFlags = (
   return value;
 };
 
+/**
+ *
+ * @param filename
+ * @param limitBrowser
+ */
 export const fixRedundantFlags = (
   filename: string,
   limitBrowser: BrowserName | null,
@@ -134,6 +149,11 @@ export const fixRedundantFlags = (
   }
 };
 
+/**
+ *
+ * @param files_or_folders
+ * @param browser
+ */
 const main = (files_or_folders: string[], browser: BrowserName | null) => {
   for (let file of files_or_folders) {
     if (file.indexOf(dirname) !== 0) {

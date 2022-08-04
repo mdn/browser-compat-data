@@ -8,6 +8,12 @@ import fs from 'node:fs';
 import { checkExperimental } from '../../test/linter/test-status.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
+/**
+ *
+ * @param {value} key
+ * @param {Identifier} value
+ * @returns {Identifier}
+ */
 const fixStatus = (key: string, value: Identifier): Identifier => {
   const compat = value?.__compat;
   if (compat?.status) {
@@ -29,6 +35,7 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
 /**
  * @param {string} filename
+ * @returns {void}
  */
 const fixStatusFromFile = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

@@ -88,6 +88,14 @@ export default {
   description:
     'Test the presence of browser data within compatibility statements',
   scope: 'feature',
+  /**
+   *
+   * @param logger
+   * @param root0
+   * @param root0.data
+   * @param root0.path
+   * @param root0.path.category
+   */
   check(
     logger: Logger,
     {
