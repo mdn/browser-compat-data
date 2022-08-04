@@ -23,20 +23,20 @@ type Contents = {
  * @param {string} headCommit
  * @param {string} headPath
  */
-function getBaseAndHeadContents(
+const getBaseAndHeadContents = (
   baseCommit: string,
   basePath: string,
   headCommit: string,
   headPath: string,
-): Contents {
+): Contents => {
   const base = JSON.parse(getFileContent(baseCommit, basePath));
   const head = JSON.parse(getFileContent(headCommit, headPath));
   return { base, head };
-}
+};
 
-function stringifyChange(lhs: any, rhs: any): string {
+const stringifyChange = (lhs: any, rhs: any): string => {
   return `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
-}
+};
 
 /**
  * @param {{base: SupportStatement, head: SupportStatement}} diffItem
@@ -44,22 +44,22 @@ function stringifyChange(lhs: any, rhs: any): string {
  * @param {Array.<string>} path
  * @param {string} direction
  */
-function doMirror(diff, contents, path, direction) {
+const doMirror = (diff, contents, path, direction): void => {
   const browser = path[path.length - 1];
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
 
   diff[direction] = mirror(browser, query(dataPath, data).__compat.support);
-}
+};
 
 /**
  * @param {Diff<string, string>} diffItem
  * @param {Contents} contents
  */
-function describeByKind(
+const describeByKind = (
   diffItem: Diff<string, string>,
   contents: Contents,
-): string {
+): string => {
   const diff = { base: (diffItem as any).lhs, head: (diffItem as any).rhs };
 
   // Handle mirroring
@@ -82,14 +82,19 @@ function describeByKind(
       return `edited (${stringifyChange(diff.base, diff.head)})${
         doesMirror && ` - ${doesMirror}`
       }`;
+    default:
+      return '';
   }
-}
+};
 
 /**
  * @param {Diff<string, string>} diffItem
  * @param {Contents} contents
  */
-function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
+const describeDiffItem = (
+  diffItem: Diff<string, string>,
+  contents: Contents,
+): { name: string; description: string } => {
   const path = (diffItem.path as string[]).join('.');
   if (path.includes('.__compat.')) {
     const [name, member] = path.split('.__compat.');
@@ -105,14 +110,14 @@ function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
     name: (diffItem.path as string[]).slice(0, -1).join('.'),
     description: `${path} is ${describeByKind(diffItem, contents)}`,
   };
-}
+};
 
 /**
  * @param {ReturnType<typeof describeDiffItem>[]} items
  */
-function mergeAsMap(
+const mergeAsMap = (
   items: { name: string; description: string }[],
-): Map<string, string> {
+): Map<string, string> => {
   const map = new Map();
   for (const item of items) {
     const descriptions = map.get(item.name) || [];
@@ -120,13 +125,13 @@ function mergeAsMap(
     map.set(item.name, descriptions);
   }
   return map;
-}
+};
 
 /**
  * @param {string} base
  * @param {string} head
  */
-function getDiffs(base: string, head = ''): Map<string, string> {
+const getDiffs = (base: string, head = ''): Map<string, string> => {
   const namedDescriptions: { name: string; description: string }[] = [];
   for (const status of getGitDiffStatuses(base, head)) {
     if (!status.headPath.endsWith('.json') || !status.headPath.includes('/')) {
@@ -155,7 +160,7 @@ function getDiffs(base: string, head = ''): Map<string, string> {
     }
   }
   return mergeAsMap(namedDescriptions);
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(

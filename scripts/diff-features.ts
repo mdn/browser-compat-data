@@ -8,7 +8,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-function main(opts): void {
+const main = (opts): void => {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
@@ -17,12 +17,9 @@ function main(opts): void {
   } else {
     console.log(JSON.stringify(results, undefined, 2));
   }
-}
+};
 
-export default function diff(opts): {
-  added: string[];
-  removed: string[];
-} {
+const diff = (opts): { added: string[]; removed: string[] } => {
   const { ref1, ref2, github } = opts;
   let refA, refB;
 
@@ -49,9 +46,9 @@ export default function diff(opts): {
   };
 
   return results;
-}
+};
 
-function enumerate(ref: string, skipGitHub: boolean): Set<string> {
+const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   if (!skipGitHub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
@@ -63,9 +60,9 @@ function enumerate(ref: string, skipGitHub: boolean): Set<string> {
   }
 
   return new Set(enumerateFeatures(ref));
-}
+};
 
-function getEnumerationFromGithub(ref: string) {
+const getEnumerationFromGithub = (ref: string) => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
@@ -106,9 +103,9 @@ function getEnumerationFromGithub(ref: string) {
   } finally {
     unlinkFile();
   }
-}
+};
 
-function enumerateFeatures(ref = 'HEAD') {
+const enumerateFeatures = (ref = 'HEAD') => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -137,9 +134,9 @@ function enumerateFeatures(ref = 'HEAD') {
   } finally {
     execSync(`git worktree remove ${worktree}`);
   }
-}
+};
 
-function printMarkdown(added: string[], removed: string[]): void {
+const printMarkdown = (added: string[], removed: string[]): void => {
   const fmtFeature = (feat: string) => `- \`${feat}\``;
 
   if (removed.length) {
@@ -153,7 +150,7 @@ function printMarkdown(added: string[], removed: string[]): void {
     console.log('## Added\n');
     console.log(added.map(fmtFeature).join('\n'));
   }
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
@@ -188,3 +185,5 @@ if (esMain(import.meta)) {
 
   main(argv);
 }
+
+export default diff;
