@@ -174,7 +174,7 @@ export type LinterMessage = {
 
 export type LinterPath = {
   full: string;
-  category?: string;
+  category: string;
   browser?: BrowserName;
 };
 

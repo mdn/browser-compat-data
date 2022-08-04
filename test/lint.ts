@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 import { DataType } from '../types/index.js';
+import { BrowserName } from '../types/types.js';
 
 import fs from 'node:fs/promises';
 import { Stats } from 'node:fs';
@@ -16,7 +17,12 @@ import chalk from 'chalk-template';
 import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
 import { walk } from '../utils/index.js';
-import { pluralize, LinterMessage, LinterMessageLevel } from './utils.js';
+import {
+  pluralize,
+  LinterMessage,
+  LinterMessageLevel,
+  LinterPath,
+} from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -44,8 +50,9 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
-      const filePath: { full: string; category?: string } = {
+      const filePath: LinterPath = {
         full: path.relative(process.cwd(), file),
+        category: '',
       };
       if (filePath.full.includes(path.sep)) {
         filePath.category = filePath.full.split(path.sep)[0];
@@ -112,10 +119,11 @@ const main = async (
   for (const browser in data?.browsers) {
     linters.runScope('browser', {
       data: data.browsers[browser],
+      rawdata: '',
       path: {
         full: `browsers.${browser}`,
         category: 'browsers',
-        browser,
+        browser: browser as BrowserName,
       },
     });
   }
@@ -125,6 +133,7 @@ const main = async (
   for (const feature of walker) {
     linters.runScope('feature', {
       data: feature.compat,
+      rawdata: '',
       path: {
         full: feature.path,
         category: feature.path.split('.')[0],
@@ -135,8 +144,10 @@ const main = async (
   console.log(chalk`{cyan Testing all features together...}`);
   linters.runScope('tree', {
     data,
+    rawdata: '',
     path: {
       full: '',
+      category: '',
     },
   });
 
