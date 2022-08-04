@@ -85,16 +85,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo",
           "spec_url": "https://w3c.github.io/media-capabilities/#ref-for-dom-mediacapabilities-encodinginfo",
           "support": {
-            "chrome": {
-              "version_added": "67",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "chrome://flags/#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "101"
+              },
+              {
+                "version_added": "67",
+                "version_removed": "101",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "chrome://flags/#enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
