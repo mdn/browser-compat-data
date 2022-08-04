@@ -4,7 +4,9 @@
 import path from 'node:path';
 
 export function normalizePathInternal(p: string, testPath: any = path): string {
-  if (testPath.sep === '/') return p;
+  if (testPath.sep === '/') {
+    return p;
+  }
   return p.replace(/\\/gi, '/');
 }
 

@@ -49,7 +49,7 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
  *
  * @param {string} word Word in singular form
  * @param {number} quantifier
- * @return {string}
+ * @returns {string}
  */
 export const pluralize = (word: string, quantifier: number): string => {
   return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
@@ -73,7 +73,7 @@ export function escapeInvisibles(str: string): string {
  *
  * @param {string} str
  * @param {number} index
- * @return {[number, number] | [null, null]}
+ * @returns {[number, number] | [null, null]}
  */
 export function indexToPosRaw(
   str: string,
@@ -96,7 +96,9 @@ export function indexToPosRaw(
       case '\r':
         line++;
         col = 1;
-        if (i + 1 < index && str[i + 1] === '\r') i++;
+        if (i + 1 < index && str[i + 1] === '\r') {
+          i++;
+        }
         break;
       case '\t':
         // Use JSON `tab_size` value from `.editorconfig`
@@ -116,7 +118,7 @@ export function indexToPosRaw(
  *
  * @param {string} str
  * @param {number} index
- * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
 export function indexToPos(str: string, index: number): string {
   const [line, col] = indexToPosRaw(str, index);
@@ -126,16 +128,17 @@ export function indexToPos(str: string, index: number): string {
 /**
  * @param {string} actual
  * @param {string} expected
- * @return {string} Statement explaining the difference in provided JSON strings
+ * @returns {string} Statement explaining the difference in provided JSON strings
  */
 export function jsonDiff(actual: string, expected: string): string | undefined {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
-  if (actualLines.length !== expectedLines.length)
+  if (actualLines.length !== expectedLines.length) {
     return chalk`{bold different number of lines:
     {yellow → Actual:   {bold ${actualLines.length}}}
     {green → Expected: {bold ${expectedLines.length}}}}`;
+  }
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {

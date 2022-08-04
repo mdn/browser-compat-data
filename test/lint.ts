@@ -141,7 +141,9 @@ const main = async (
   });
 
   for (const [linter, messages] of Object.entries(linters.messages)) {
-    if (!messages.length) continue;
+    if (!messages.length) {
+      continue;
+    }
 
     const messagesByLevel: Record<LinterMessageLevel, LinterMessage[]> = {
       error: [],
@@ -209,7 +211,7 @@ const main = async (
       console.log(
         chalk`{yellow Linters have some exceptions, please help us remove them!}`,
       );
-      for (const linter of linters.linters)
+      for (const linter of linters.linters) {
         if (linter.exceptions) {
           console.log(
             chalk`{yellow  ${linter.name} has ${pluralize(
@@ -217,9 +219,11 @@ const main = async (
               linter.exceptions.length,
             )}}`,
           );
-          for (const exception of linter.exceptions)
+          for (const exception of linter.exceptions) {
             console.log(chalk`{yellow   - ${exception}}`);
+          }
         }
+      }
     }
   }
 

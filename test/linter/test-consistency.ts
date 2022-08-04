@@ -93,13 +93,15 @@ export class ConsistencyChecker {
 
   /**
    * @param {Identifier} data
-   * @return {string[]}
+   * @returns {string[]}
    */
   getSubfeatures(data: Identifier): string[] {
     const subfeatures: string[] = [];
     const keys = Object.keys(data).filter((key) => key != '__compat');
     for (const key of keys) {
-      if (data[key] === undefined) continue;
+      if (data[key] === undefined) {
+        continue;
+      }
 
       if ('__compat' in data[key]) {
         // If the subfeature has compat data
@@ -486,9 +488,8 @@ export class ConsistencyChecker {
           return browserData.every(callback);
         } else if (typeof browserData === 'object') {
           return callback(browserData);
-        } else {
-          return false;
         }
+        return false;
       },
     );
   }

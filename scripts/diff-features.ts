@@ -76,9 +76,8 @@ function getEnumerationFromGithub(ref: string) {
     } catch (err: any) {
       if (err.code == 'ENOENT') {
         return;
-      } else {
-        throw err;
       }
+      throw err;
     }
   };
 
@@ -92,7 +91,9 @@ function getEnumerationFromGithub(ref: string) {
     },
   ).trim();
 
-  if (!workflowRun) throw Error('No workflow run found for commit.');
+  if (!workflowRun) {
+    throw Error('No workflow run found for commit.');
+  }
 
   try {
     unlinkFile();
@@ -125,7 +126,7 @@ function enumerateFeatures(ref = 'HEAD') {
     execSync(`git worktree add ${worktree} ${hash}`);
 
     try {
-      execSync(`npm ci`, { cwd: worktree });
+      execSync('npm ci', { cwd: worktree });
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
@@ -146,7 +147,9 @@ function printMarkdown(added: string[], removed: string[]): void {
     console.log(removed.map(fmtFeature).join('\n'));
   }
   if (added.length) {
-    if (removed.length) console.log('');
+    if (removed.length) {
+      console.log('');
+    }
     console.log('## Added\n');
     console.log(added.map(fmtFeature).join('\n'));
   }

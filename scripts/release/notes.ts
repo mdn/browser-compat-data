@@ -82,7 +82,7 @@ function pullsFromGitHub(start: string, end: string): Array<FeatureChange> {
   const searchDetails = {
     limit: 1000, // As many PRs as GitHub will allow
     search: `${buildQuery(end, start, false)}`,
-    json: `number,url,mergeCommit`,
+    json: 'number,url,mergeCommit',
     jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
   };
   const args = Object.entries(searchDetails)

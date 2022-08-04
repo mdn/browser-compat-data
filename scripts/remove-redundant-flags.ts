@@ -30,8 +30,9 @@ const getEarliestVersion = (...args: string[]) => {
       earliestVersion === 'preview' ||
       (version !== 'preview' &&
         compareVersions.compare(earliestVersion, version, '>'))
-    )
+    ) {
       earliestVersion = version;
+    }
   }
 
   return earliestVersion;
@@ -44,7 +45,9 @@ export const removeRedundantFlags = (
 ) => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
-      if (limitBrowser && browser != limitBrowser) continue;
+      if (limitBrowser && browser != limitBrowser) {
+        continue;
+      }
 
       const supportData = Array.isArray(rawSupportData)
         ? rawSupportData
@@ -92,7 +95,9 @@ export const removeRedundantFlags = (
           }
         }
 
-        if (addData) result.push(supportData[i]);
+        if (addData) {
+          result.push(supportData[i]);
+        }
       }
 
       if (result.length == 1) {

@@ -158,7 +158,9 @@ async function main() {
     })
     .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
-      if (e.code !== 'ENOENT') throw e;
+      if (e.code !== 'ENOENT') {
+        throw e;
+      }
     });
 
   // Crate a new directory

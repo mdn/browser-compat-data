@@ -94,9 +94,8 @@ function isValidVersion(
     version !== false
   ) {
     return false;
-  } else {
-    return true;
   }
+  return true;
 }
 
 /**

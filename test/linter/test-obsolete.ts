@@ -20,8 +20,14 @@ const { browsers } = bcd;
 export function neverImplemented(support: SupportBlock): boolean {
   for (const s in support) {
     let data = support[s];
-    if (!Array.isArray(data)) data = [data];
-    for (const d of data) if (d.version_added) return false;
+    if (!Array.isArray(data)) {
+      data = [data];
+    }
+    for (const d of data) {
+      if (d.version_added) {
+        return false;
+      }
+    }
   }
   return true;
 }
@@ -45,20 +51,27 @@ export function implementedAndRemoved(
   ][]) {
     for (const d of Array.isArray(data) ? data : [data]) {
       // Feature is still supported or it is not known when feature was dropped
-      if (!d.version_removed || typeof d.version_removed === 'boolean')
+      if (!d.version_removed || typeof d.version_removed === 'boolean') {
         return false;
+      }
 
       const releaseDateData =
         browsers[browser].releases[d.version_removed].release_date;
 
       // No browser release date
-      if (!releaseDateData) return false;
+      if (!releaseDateData) {
+        return false;
+      }
 
       const releaseDate = new Date(releaseDateData);
       // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) return false;
+      if (warningTime < releaseDate) {
+        return false;
+      }
       // Feature was supported sufficiently recently to not show an error
-      if (errorTime < releaseDate) result = 'warning';
+      if (errorTime < releaseDate) {
+        result = 'warning';
+      }
     }
   }
   return result;

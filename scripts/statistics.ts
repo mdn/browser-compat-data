@@ -71,7 +71,7 @@ const checkSupport = (
  *
  * @param {CompatStatement} data The data to process and count stats for
  * @param {BrowserName[]} browsers The browsers to test
- * @param {object.<string, VersionStats>} stats The stats object to update
+ * @param {Object<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
 const processData = (
@@ -108,7 +108,7 @@ const processData = (
  *
  * @param {Identifier} data The compat data to iterate
  * @param {BrowserName[]} browsers The browsers to test
- * @param {object.<string, VersionStats>} stats The stats object to update
+ * @param {Object<string, VersionStats>} stats The stats object to update
  * @returns {void}
  */
 const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
@@ -126,7 +126,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
  *
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
- * @returns {object.<string, VersionStats>?}
+ * @returns {Object<string, VersionStats>?}
  */
 const getStats = (
   folder: string,

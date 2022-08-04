@@ -17,7 +17,9 @@ const errorTime = new Date(),
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
 const release = Object.entries(browsers.chrome.releases).find((r) => {
-  if (r[1].release_date === undefined) return;
+  if (r[1].release_date === undefined) {
+    return;
+  }
   const date = new Date(r[1].release_date);
   return errorTime < date && date < warningTime;
 });

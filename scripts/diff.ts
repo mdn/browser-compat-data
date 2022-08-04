@@ -95,18 +95,16 @@ function describeDiffItem(diffItem: Diff<string, string>, contents: Contents) {
     const [name, member] = path.split('.__compat.');
     if (path.endsWith('.notes') && diffItem.kind === 'E') {
       return { name, description: `${member} is edited (prose change)` };
-    } else {
-      return {
-        name,
-        description: `${member} is ${describeByKind(diffItem, contents)}`,
-      };
     }
-  } else {
     return {
-      name: (diffItem.path as string[]).slice(0, -1).join('.'),
-      description: `${path} is ${describeByKind(diffItem, contents)}`,
+      name,
+      description: `${member} is ${describeByKind(diffItem, contents)}`,
     };
   }
+  return {
+    name: (diffItem.path as string[]).slice(0, -1).join('.'),
+    description: `${path} is ${describeByKind(diffItem, contents)}`,
+  };
 }
 
 /**

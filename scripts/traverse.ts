@@ -36,8 +36,9 @@ function* iterateFeatures(
             let browserData = comp[browser];
 
             if (!browserData) {
-              if (values.length == 0 || values.includes('null'))
+              if (values.length == 0 || values.includes('null')) {
                 yield `${identifier}${i}`;
+              }
               continue;
             }
             if (!Array.isArray(browserData)) {
@@ -53,18 +54,21 @@ function* iterateFeatures(
                 // If checking for non-mirrored data and it's not mirrored
                 yield `${identifier}${i}`;
               } else if (browserData[range] === undefined) {
-                if (values.length == 0 || values.includes('null'))
+                if (values.length == 0 || values.includes('null')) {
                   yield `${identifier}${i}`;
+                }
               } else if (
                 values.length == 0 ||
                 values.includes(String(browserData[range].version_added)) ||
                 values.includes(String(browserData[range].version_removed))
               ) {
                 let f = `${identifier}${i}`;
-                if (browserData[range].prefix)
+                if (browserData[range].prefix) {
                   f += ` (${browserData[range].prefix} prefix)`;
-                if (browserData[range].alternative_name)
+                }
+                if (browserData[range].alternative_name) {
                   f += ` (as ${browserData[range].alternative_name})`;
+                }
                 yield f;
               }
             }

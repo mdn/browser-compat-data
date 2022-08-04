@@ -36,17 +36,33 @@ const compareStatements = (
     },
   };
 
-  if (has.a.unsupported && !has.b.unsupported) return 1;
-  if (!has.a.unsupported && has.b.unsupported) return -1;
+  if (has.a.unsupported && !has.b.unsupported) {
+    return 1;
+  }
+  if (!has.a.unsupported && has.b.unsupported) {
+    return -1;
+  }
 
-  if (has.a.flags && !has.b.flags) return 1;
-  if (!has.a.flags && has.b.flags) return -1;
+  if (has.a.flags && !has.b.flags) {
+    return 1;
+  }
+  if (!has.a.flags && has.b.flags) {
+    return -1;
+  }
 
-  if (has.a.altname && !has.b.altname) return 1;
-  if (!has.a.altname && has.b.altname) return -1;
+  if (has.a.altname && !has.b.altname) {
+    return 1;
+  }
+  if (!has.a.altname && has.b.altname) {
+    return -1;
+  }
 
-  if (has.a.partial && !has.b.partial) return 1;
-  if (!has.a.partial && has.b.partial) return -1;
+  if (has.a.partial && !has.b.partial) {
+    return 1;
+  }
+  if (!has.a.partial && has.b.partial) {
+    return -1;
+  }
 
   if (
     typeof a.version_added == 'string' &&

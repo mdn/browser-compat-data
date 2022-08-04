@@ -149,10 +149,14 @@ const processData = (
   ][]) {
     if (Array.isArray(support)) {
       for (const s of support) {
-        if (s.notes) checkNotes(s.notes, browser, feature, logger);
+        if (s.notes) {
+          checkNotes(s.notes, browser, feature, logger);
+        }
       }
     } else {
-      if (support.notes) checkNotes(support.notes, browser, feature, logger);
+      if (support.notes) {
+        checkNotes(support.notes, browser, feature, logger);
+      }
     }
   }
 };
