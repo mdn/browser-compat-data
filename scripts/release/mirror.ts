@@ -16,6 +16,32 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
+ * @typedef {import('../types').Identifier} Identifier
+ * @typedef {import('../types').SupportStatement} SupportStatement
+ * @typedef {import('../types').ReleaseStatement} ReleaseStatement
+ */
+
+const matchingSafariVersions = new Map([
+  ['≤4', '≤3'],
+  ['1', '1'],
+  ['1.1', '1'],
+  ['1.2', '1'],
+  ['1.3', '1'],
+  ['2', '1'],
+  ['3', '2'],
+  ['3.1', '2'],
+  ['4', '3.2'],
+  ['5', '4.2'],
+  ['5.1', '6'],
+  ['9.1', '9.3'],
+  ['10.1', '10.3'],
+  ['11.1', '11.3'],
+  ['12.1', '12.2'],
+  ['13.1', '13.4'],
+  ['14.1', '14.5'],
+]);
+
+/**
  * @param {string} targetBrowser
  * @param {string} sourceVersion
  * @returns {ReleaseStatement|boolean}
@@ -32,6 +58,21 @@ export const getMatchingBrowserVersion = (
     throw new Error('Browser does not have an upstream browser set.');
   }
   /* c8 ignore stop */
+
+  if (targetBrowser === 'safari_ios') {
+    // The mapping between Safari macOS and iOS releases is complicated and
+    // cannot be entirely derived from the WebKit versions. After Safari 15
+    // the versions have been the same, so map earlier versions manually
+    // and then assume if the versions are identical it's also a match.
+    const v = matchingSafariVersions.get(sourceVersion);
+    if (v) {
+      return v;
+    }
+    if (sourceVersion in browserData.releases) {
+      return sourceVersion;
+    }
+    throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
+  }
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
@@ -84,45 +125,6 @@ export const getMatchingBrowserVersion = (
 };
 
 /**
- * @param {Notes?} notes1
- * @param {Notes?} notes2
- * @returns {Notes?}
- */
-const combineNotes = (
-  notes1: Notes | null,
-  notes2: Notes | null,
-): Notes | null => {
-  let newNotes: string[] = [];
-
-  if (notes1) {
-    if (typeof notes1 === 'string') {
-      newNotes.push(notes1);
-    } else {
-      newNotes.push(...notes1);
-    }
-  }
-
-  if (notes2) {
-    if (typeof notes2 === 'string') {
-      newNotes.push(notes2);
-    } else {
-      newNotes.push(...notes2);
-    }
-  }
-
-  newNotes = newNotes.filter((item, pos) => newNotes.indexOf(item) == pos);
-
-  if (newNotes.length == 0) {
-    return null;
-  }
-  if (newNotes.length == 1) {
-    return newNotes[0];
-  }
-
-  return newNotes;
-};
-
-/**
  * @param {Notes?} notes
  * @param {RegExp} regex
  * @param {string} replace
@@ -166,95 +168,6 @@ const copyStatement = (
   }
 
   return newData as SimpleSupportStatement;
-};
-
-/**
- * @param {SupportStatement[]} data
- * @returns {SupportStatement}
- */
-const combineStatements = (...data: SupportStatement[]): SupportStatement => {
-  const ignoredKeys: (keyof SimpleSupportStatement)[] = [
-    'version_added',
-    'notes',
-    'impl_url',
-  ];
-
-  const flattenedData = data.flat(2);
-  const sections: { [index: string]: SimpleSupportStatement[] } = {};
-  let newData: SimpleSupportStatement[] = [];
-
-  for (const d of flattenedData) {
-    const key = (Object.keys(d) as (keyof typeof d)[])
-      .filter((k) => !ignoredKeys.includes(k))
-      .join('');
-    if (!(key in sections)) sections[key] = [];
-    sections[key].push(d);
-  }
-
-  for (const k of Object.keys(sections)) {
-    const currentStatement = sections[k][0];
-
-    if (sections[k].length == 1) {
-      newData.push(currentStatement);
-      continue;
-    }
-
-    for (const i in sections[k]) {
-      // TODO: fix me
-      // if (i === sections[k][0]) continue;
-      const newStatement = sections[k][i];
-
-      const currentVA = currentStatement.version_added;
-      const newVA = newStatement.version_added;
-
-      if (newVA === false) {
-        // Ignore statements with version_added being false
-        continue;
-      } else if (typeof newVA === 'string') {
-        if (
-          typeof currentVA !== 'string' ||
-          compareVersions.compare(
-            currentVA.replace('≤', ''),
-            newVA.replace('≤', ''),
-            '>',
-          )
-        ) {
-          currentStatement.version_added = newVA;
-        }
-      }
-
-      const newNotes = combineNotes(
-        currentStatement.notes || null,
-        newStatement.notes || null,
-      );
-      if (newNotes) currentStatement.notes = newNotes;
-    }
-
-    if ('notes' in currentStatement && !currentStatement.notes) {
-      delete currentStatement.notes;
-    }
-    newData.push(currentStatement);
-  }
-
-  if (newData.length === 1) {
-    return newData[0];
-  }
-
-  // Remove duplicate statements and statements that are only version_added = false
-  newData = newData
-    .filter((item, pos) => newData.indexOf(item) == pos)
-    .filter((item) => item.version_added);
-
-  switch (newData.length) {
-    case 0:
-      return { version_added: false };
-
-    case 1:
-      return newData[0];
-
-    default:
-      return newData;
-  }
 };
 
 /**
@@ -303,53 +216,44 @@ const bumpGeneric = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @returns {SimpleSupportStatement}
- */
-const bumpEdge = (
-  sourceData: SimpleSupportStatement,
-): SimpleSupportStatement => {
-  if (
-    typeof sourceData.version_removed === 'string' &&
-    compareVersions.compare(sourceData.version_removed, '79', '<=')
-  ) {
-    // If this feature was removed before Chrome 79, it's not present in Chromium Edge
-    return { version_added: false };
-  }
-
-  return bumpGeneric(sourceData, 'edge', [/Chrome/g, 'Edge']);
-};
-
-/**
  * @param {SupportStatement} data
  * @param {BrowserName} destination
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
   destination: BrowserName,
-): SupportStatement | null => {
-  let newData: SupportStatement | null = null;
-
+): SupportStatement => {
   if (Array.isArray(sourceData)) {
-    const newStatements = sourceData
-      .map((data) => bumpSupport(data, destination))
-      .filter((data) => data !== null);
+    // Bump the individual support statements and filter out results with a
+    // falsy version_added. It's not possible for sourceData to have a falsy
+    // version_added (enforced by the lint) so there can be no notes or similar
+    // to preserve from such statements.
+    const newData = sourceData
+      .map((data) => bumpSupport(data, destination) as SimpleSupportStatement)
+      .filter((item) => item.version_added);
 
-    return combineStatements(...(newStatements as SupportStatement[]));
-  }
+    switch (newData.length) {
+      case 0:
+        return { version_added: false };
 
-  if (destination === 'edge') {
-    newData = bumpEdge(sourceData);
-  } else {
-    let notesRepl: [RegExp, string] | undefined;
-    if (destination.includes('opera')) {
-      notesRepl = [/Chrome/g, 'Opera'];
-    } else if (destination === 'samsunginternet_android') {
-      notesRepl = [/Chrome/g, 'Samsung Internet'];
+      case 1:
+        return newData[0];
+
+      default:
+        return newData;
     }
-
-    newData = bumpGeneric(sourceData, destination, notesRepl);
   }
+
+  let notesRepl: [RegExp, string] | undefined;
+  if (destination === 'edge') {
+    notesRepl = [/Chrome/g, 'Edge'];
+  } else if (destination.includes('opera')) {
+    notesRepl = [/Chrome/g, 'Opera'];
+  } else if (destination === 'samsunginternet_android') {
+    notesRepl = [/Chrome/g, 'Samsung Internet'];
+  }
+
+  const newData = bumpGeneric(sourceData, destination, notesRepl);
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
@@ -358,8 +262,7 @@ export const bumpSupport = (
 
   if (newData.version_added === newData.version_removed) {
     // If version_added and version_removed are the same, feature is unsupported
-    newData.version_added = false;
-    delete newData.version_removed;
+    return { version_added: false };
   }
 
   return newData;
@@ -389,16 +292,7 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  const result = bumpSupport(upstreamData, destination);
-
-  /* c8 ignore start */
-  if (!result) {
-    // This should never be reached
-    throw new Error(`Result is null, cannot mirror!`);
-  }
-  /* c8 ignore stop */
-
-  return result;
+  return bumpSupport(upstreamData, destination);
 };
 
 export default mirrorSupport;
