@@ -4,7 +4,12 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["@typescript-eslint", "prettier", "jsdoc", "prefer-arrow"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jsdoc",
+    "prefer-arrow-functions"
+  ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -62,7 +67,10 @@
     "no-self-compare": "error",
     "no-unused-expressions": "off",
     "no-useless-call": "error",
-    "prefer-arrow/prefer-arrow-functions": "error",
+    "prefer-arrow-functions/prefer-arrow-functions": [
+      "error",
+      { "returnStyle": "implicit" }
+    ],
     "prefer-const": "error",
     "prettier/prettier": "error",
     "quotes": "off"
