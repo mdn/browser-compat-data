@@ -94,6 +94,7 @@ function* iterateFeatures(
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
+ * @returns {string[]}
  */
 const traverseFeatures = (
   obj,
@@ -111,10 +112,11 @@ const traverseFeatures = (
 
 /**
  *
- * @param folders
- * @param browsers
- * @param values
- * @param depth
+ * @param {string[]} folders
+ * @param {BrowserName[]} browsers
+ * @param {string[]} values
+ * @param {number} depth
+ * @returns {string[]}
  */
 const main = (
   folders = [
@@ -130,7 +132,7 @@ const main = (
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
-) => {
+): string[] => {
   const features: string[] = [];
 
   for (const folder in folders) {

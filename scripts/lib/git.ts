@@ -35,7 +35,7 @@ const parseFields = (fields: string[]): Fields => ({
  * @param {string} head
  * @returns {Fields[]}
  */
-const getGitDiffStatuses = (base: string, head: string): Array<Fields> =>
+const getGitDiffStatuses = (base: string, head: string): Fields[] =>
   child_process
     .execSync(`git diff --name-status ${base} ${head}`, { encoding: 'utf-8' })
     .trim()

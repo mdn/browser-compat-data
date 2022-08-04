@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
   CompatData,
@@ -372,7 +372,8 @@ export class ConsistencyChecker {
     // A convenience function to squash non-real values and previews into null
     /**
      *
-     * @param statement
+     * @param {SimpleSupportStatement} statement
+     * @returns {VersionValue}
      */
     const resolveVersionAddedValue = (
       statement: SimpleSupportStatement,
@@ -481,6 +482,7 @@ export class ConsistencyChecker {
     if (!compatData) {
       return [];
     }
+
     return (Object.keys(compatData.support) as BrowserName[]).filter(
       (browser) => {
         let browserData: InternalSupportStatement = compatData.support[browser];
@@ -505,11 +507,10 @@ export default {
   scope: 'tree',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (logger: Logger, { data }: { data: CompatData }) => {
+  check: (logger: Logger, { data }: LinterData) => {
     const checker = new ConsistencyChecker();
     const allErrors = checker.check(data);
 

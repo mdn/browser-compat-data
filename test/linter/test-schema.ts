@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import Ajv from 'ajv';
@@ -30,19 +30,10 @@ export default {
   scope: 'file',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
-   * @param root0.path
-   * @param root0.path.category
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) => {
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
     const schema =
       category === 'browsers' ? browserDataSchema : compatDataSchema;
     if (!ajv.validate(schema, data)) {

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
@@ -97,19 +97,10 @@ export default {
   scope: 'file',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.rawdata
-   * @param root0.path
-   * @param root0.path.category
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (
-    logger: Logger,
-    {
-      rawdata,
-      path: { category },
-    }: { rawdata: string; path: { category: string } },
-  ) => {
+  check: (logger: Logger, { rawdata, path: { category } }: LinterData) => {
     if (category !== 'browsers') {
       processData(rawdata, logger);
     }

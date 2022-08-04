@@ -9,8 +9,9 @@ import {
 
 /**
  *
- * @param compat
- * @param browser
+ * @param {CompatStatement} compat
+ * @param {BrowserName} browser
+ * @returns {SimpleSupportStatement[]}
  */
 export default (
   compat: CompatStatement,

@@ -5,8 +5,9 @@ import path from 'node:path';
 
 /**
  *
- * @param p
- * @param testPath
+ * @param {string} p
+ * @param {any} testPath
+ * @returns {string}
  */
 export const normalizePathInternal = (
   p: string,
@@ -20,6 +21,7 @@ export const normalizePathInternal = (
 
 /**
  *
- * @param p
+ * @param {string} p
+ * @returns {string}
  */
 export default (p: string): string => normalizePathInternal(p, path);

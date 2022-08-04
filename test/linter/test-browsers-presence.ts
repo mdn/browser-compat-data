@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -35,7 +35,7 @@ const processData = (
           'desktop',
           'mobile',
           'xr',
-          ...['api', 'javascript'].includes(category) ? ['server'] : [],
+          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
@@ -89,19 +89,10 @@ export default {
   scope: 'feature',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
-   * @param root0.path
-   * @param root0.path.category
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) => {
-    processData(data, category, logger);
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
+    processData(data, category || '', logger);
   },
 } as Linter;

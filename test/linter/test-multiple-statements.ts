@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
@@ -58,11 +58,10 @@ export default {
   scope: 'feature',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (logger: Logger, { data }: { data: CompatStatement }) => {
+  check: (logger: Logger, { data }: LinterData) => {
     for (const [browser, support] of Object.entries(data.support)) {
       processData(support, browser as BrowserName, logger);
     }

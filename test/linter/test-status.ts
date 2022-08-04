@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -11,9 +11,10 @@ const { browsers } = bcd;
 
 /**
  *
- * @param data
+ * @param {CompatStatement} data
+ * @returns {boolean}
  */
-export const checkExperimental = (data: CompatStatement) => {
+export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
     // Check if experimental should be false (code copied from migration 007)
 
@@ -109,11 +110,10 @@ export default {
   scope: 'feature',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (logger: Logger, { data }: { data: CompatStatement }) => {
+  check: (logger: Logger, { data }: LinterData) => {
     checkStatus(data, logger);
   },
 } as Linter;

@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { DataType } from '../types/index.js';
+import { BrowserName } from '../types/types.js';
+
 import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
@@ -58,6 +61,7 @@ export const pluralize = (word: string, quantifier: number): string =>
  * Escapes common invisible characters.
  *
  * @param {string} str
+ * @returns {string}
  */
 export const escapeInvisibles = (str: string): string =>
   INVISIBLES_REGEXP[Symbol.replace](
@@ -125,12 +129,9 @@ export const indexToPos = (str: string, index: number): string => {
 /**
  * @param {string} actual
  * @param {string} expected
- * @returns {string} Statement explaining the difference in provided JSON strings
+ * @returns {string?} Statement explaining the difference in provided JSON strings
  */
-export const jsonDiff = (
-  actual: string,
-  expected: string,
-): string | undefined => {
+export const jsonDiff = (actual: string, expected: string): string | null => {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
@@ -147,6 +148,8 @@ export const jsonDiff = (
       {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
+
+  return null;
 };
 
 export type Linter = {
@@ -169,6 +172,18 @@ export type LinterMessage = {
   [k: string]: any;
 };
 
+export type LinterPath = {
+  full: string;
+  category?: string;
+  browser?: BrowserName;
+};
+
+export type LinterData = {
+  data: DataType;
+  rawdata: string;
+  path: LinterPath;
+};
+
 /**
  *
  */
@@ -179,8 +194,8 @@ export class Logger {
 
   /**
    *
-   * @param title
-   * @param path
+   * @param {string} title
+   * @param {string} path
    */
   constructor(title: string, path: string) {
     this.title = title;
@@ -221,7 +236,7 @@ export class Logger {
  *
  */
 export class Linters {
-  linters: Array<Linter>;
+  linters: Linter[];
   messages: Record<string, LinterMessage[]>;
   // Contains all seen tested objects, boolean means:
   // false - failure occured (good)
@@ -230,9 +245,9 @@ export class Linters {
 
   /**
    *
-   * @param linters
+   * @param {Linter[]} linters
    */
-  constructor(linters: Array<Linter>) {
+  constructor(linters: Linter[]) {
     this.linters = linters;
     this.messages = {
       File: [],
@@ -247,22 +262,9 @@ export class Linters {
 
   /**
    * @param {LinterScope} scope
-   * @param {object} data
-   * @param data.data
-   * @param data.rawdata
-   * @param data.path
-   * @param data.path.full
-   * @param data.path.category
-   * @param data.path.browser
+   * @param {LinterData} data
    */
-  runScope(
-    scope: LinterScope,
-    data: {
-      data: any;
-      rawdata?: string;
-      path: { full: string; category?: string; browser?: string };
-    },
-  ): void {
+  runScope(scope: LinterScope, data: LinterData): void {
     const linters = this.linters.filter((linter) => linter.scope === scope);
     for (const linter of linters) {
       const logger = new Logger(linter.name, data.path.full);

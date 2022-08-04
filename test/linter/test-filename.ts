@@ -2,21 +2,22 @@
  * See LICENSE file for more information. */
 
 import { Identifier } from '../../types/types.js';
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import path from 'node:path';
 
 /**
  *
- * @param data
- * @param pathParts
- * @param currentPath
+ * @param {Identifier} data
+ * @param {string[]} pathParts
+ * @param {string} currentPath
+ * @returns {string|boolean}
  */
 const testFeaturePresence = (
   data: Identifier,
   pathParts: string[],
   currentPath: string,
-) => {
+): string | false => {
   const feature = pathParts[0];
   if (Object.keys(data).length > 1 || !(feature in data)) {
     return `Expected only "${currentPath}${feature}" but found "${currentPath}${Object.keys(
@@ -67,16 +68,10 @@ export default {
   scope: 'file',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.data
-   * @param root0.path
-   * @param root0.path.full
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (
-    logger: Logger,
-    { data, path: { full } }: { data: Identifier; path: { full: string } },
-  ) => {
+  check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, full, logger);
   },
 } as Linter;

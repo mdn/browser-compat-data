@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
@@ -20,7 +20,7 @@ type LinkError = {
  * @param {LinkError[]} errors The errors object to push the new errors to
  * @param {string} actual The link to test
  * @param {string|RegExp} regexp The regex to test with
- * @param {(match: Array.<?string>) => object} matchHandler The callback
+ * @param {(match: Array.<?string>) => object?} matchHandler The callback
  */
 const processLink = (
   errors: LinkError[],
@@ -30,7 +30,7 @@ const processLink = (
     issue: string;
     expected?: string;
     actualLink?: string;
-  } | void,
+  } | null,
 ): void => {
   const re = new RegExp(regexp, 'g');
   /** @type {RegExpExecArray} */
@@ -163,6 +163,8 @@ export const processData = (rawData: string): LinkError[] => {
           };
         }
       }
+
+      return null;
     },
   );
 
@@ -175,7 +177,7 @@ export const processData = (rawData: string): LinkError[] => {
       const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
 
       if (!pathMatch) {
-        return;
+        return null;
       }
 
       const locale = pathMatch[1];
@@ -224,6 +226,8 @@ export const processData = (rawData: string): LinkError[] => {
           expected: `https://developer.mozilla.org/${expectedPath}`,
         };
       }
+
+      return null;
     },
   );
 
@@ -249,6 +253,8 @@ export const processData = (rawData: string): LinkError[] => {
           expected: `https://developer.mozilla.org/${match[1]}`,
         };
       }
+
+      return null;
     },
   );
 
@@ -262,11 +268,10 @@ export default {
   scope: 'file',
   /**
    *
-   * @param logger
-   * @param root0
-   * @param root0.rawdata
+   * @param {Logger} logger
+   * @param {LinterData} root0
    */
-  check: (logger: Logger, { rawdata }: { rawdata: string }) => {
+  check: (logger: Logger, { rawdata }: LinterData) => {
     const errors = processData(rawdata);
 
     for (const error of errors) {
