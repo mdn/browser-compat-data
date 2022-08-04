@@ -17,7 +17,6 @@ import bcd from '../index.js';
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @returns {void}
  */
 function* iterateFeatures(
   obj,
@@ -94,7 +93,6 @@ function* iterateFeatures(
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @returns {void}
  */
 function traverseFeatures(
   obj,

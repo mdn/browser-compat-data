@@ -73,9 +73,9 @@ const generateBrowserNames = async () => {
 };
 
 /**
- *
+ * @returns {string}
  */
-const generateCompatDataTypes = () => {
+const generateCompatDataTypes = (): string => {
   const props = Object.entries(compatDataTypes).map(
     (t) =>
       `  /**\n   * ${t[1]}\n   */\n  ${t[0]}: ${
@@ -96,8 +96,9 @@ const generateCompatDataTypes = () => {
 
 /**
  *
- * @param browserTS
- * @param compatTS
+ * @param {string} browserTS
+ * @param {string} compatTS
+ * @returns {string}
  */
 const transformTS = (browserTS: string, compatTS: string): string => {
   // XXX Temporary until the following PR is merged and released:
@@ -120,7 +121,7 @@ const transformTS = (browserTS: string, compatTS: string): string => {
 
 /**
  *
- * @param destination
+ * @param {URL | string} destination
  */
 const compile = async (
   destination: URL | string = new URL('../types/types.d.ts', import.meta.url),

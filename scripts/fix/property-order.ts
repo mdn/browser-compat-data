@@ -63,7 +63,6 @@ export const orderProperties = (key: string, value: Identifier): Identifier => {
 
 /**
  * @param {string} filename
- * @returns {void}
  */
 const fixPropertyOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

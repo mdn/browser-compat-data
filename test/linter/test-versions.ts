@@ -144,7 +144,6 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
  * @param {SupportBlock} supportData The data to test
  * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function checkVersions(
   supportData: InternalSupportBlock,

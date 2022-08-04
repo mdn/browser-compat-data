@@ -7,7 +7,7 @@
 class DuplicateCompatError extends Error {
   /**
    *
-   * @param feature
+   * @param {string} feature
    */
   constructor(feature: string) {
     super(`${feature} already exists! Remove duplicate entries.`);
@@ -17,7 +17,8 @@ class DuplicateCompatError extends Error {
 
 /**
  *
- * @param v
+ * @param {any} v
+ * @returns {boolean}
  */
 const isPlainObject = (v): v is object => {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
@@ -25,9 +26,9 @@ const isPlainObject = (v): v is object => {
 
 /**
  *
- * @param target
- * @param source
- * @param feature
+ * @param {any} target
+ * @param {any} source
+ * @param {string} feature
  */
 const extend = (target, source, feature = ''): void => {
   if (!isPlainObject(target) || !isPlainObject(source)) {

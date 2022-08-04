@@ -64,7 +64,6 @@ const allowedSpecURLs = [
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function processData(data: CompatStatement, logger: Logger): void {
   if (!data.spec_url) {

@@ -1,7 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, SimpleSupportStatement } from '../types/types.js';
+import {
+  BrowserName,
+  SimpleSupportStatement,
+  CompatStatement,
+} from '../types/types.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,9 +23,10 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  *
- * @param {...any} args
+ * @param {string[]} args
+ * @returns {string}
  */
-const getEarliestVersion = (...args: string[]) => {
+const getEarliestVersion = (...args: string[]): string => {
   const versions = args
     .filter((version) => typeof version === 'string' && version !== 'preview')
     .map((version) => version.replace('≤', ''));
@@ -44,15 +49,16 @@ const getEarliestVersion = (...args: string[]) => {
 
 /**
  *
- * @param key
- * @param value
- * @param limitBrowser
+ * @param {string} key
+ * @param {CompatStatement} value
+ * @param {BrowserName?} limitBrowser
+ * @returns {CompatStatement}
  */
 export const removeRedundantFlags = (
   key: string,
-  value: any,
+  value: CompatStatement,
   limitBrowser: BrowserName | null,
-) => {
+): CompatStatement => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
       if (limitBrowser && browser != limitBrowser) {
@@ -81,9 +87,9 @@ export const removeRedundantFlags = (
 
         if (supportData[i].flags) {
           const versionToCheck = getEarliestVersion(
-            supportData[i].version_removed ||
-              (simpleStatement && simpleStatement.version_added),
-            simpleStatement && simpleStatement.version_added,
+            (supportData[i].version_removed as string) ||
+              ((simpleStatement && simpleStatement.version_added) as string),
+            (simpleStatement && simpleStatement.version_added) as string,
           );
 
           if (typeof versionToCheck === 'string') {
@@ -95,8 +101,8 @@ export const removeRedundantFlags = (
               releaseDate &&
               (!(simpleStatement && simpleStatement.version_removed) ||
                 compareVersions.compare(
-                  supportData[i].version_added.replace('≤', ''),
-                  simpleStatement.version_removed.replace('≤', ''),
+                  (supportData[i].version_added as string).replace('≤', ''),
+                  (simpleStatement.version_removed as string).replace('≤', ''),
                   '<',
                 ))
             ) {
@@ -124,13 +130,13 @@ export const removeRedundantFlags = (
 
 /**
  *
- * @param filename
- * @param limitBrowser
+ * @param {string} filename
+ * @param {BrowserName?} limitBrowser
  */
 export const fixRedundantFlags = (
   filename: string,
   limitBrowser: BrowserName | null,
-) => {
+): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
     JSON.parse(actual, (k, v) => removeRedundantFlags(k, v, limitBrowser)),
@@ -151,10 +157,13 @@ export const fixRedundantFlags = (
 
 /**
  *
- * @param files_or_folders
- * @param browser
+ * @param {string[]} files_or_folders
+ * @param {BrowserName?} browser
  */
-const main = (files_or_folders: string[], browser: BrowserName | null) => {
+const main = (
+  files_or_folders: string[],
+  browser: BrowserName | null,
+): void => {
   for (let file of files_or_folders) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', file);

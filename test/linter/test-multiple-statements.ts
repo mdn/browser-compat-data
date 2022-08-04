@@ -17,7 +17,6 @@ import chalk from 'chalk-template';
  * @param {SupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function processData(
   data: SupportStatement,

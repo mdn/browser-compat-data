@@ -12,7 +12,6 @@ import chalk from 'chalk-template';
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function processData(
   data: CompatStatement,

@@ -13,8 +13,8 @@ import compareVersions from 'compare-versions';
  3. Statements with partial support
  4. Statements with flags
  *
- * @param {SupportStatement} a - The first support statement object to perform comparison with
- * @param {SupportStatement} b - The second support statement object to perform comparison with
+ * @param {SimpleSupportStatement} a - The first support statement object to perform comparison with
+ * @param {SimpleSupportStatement} b - The second support statement object to perform comparison with
  * @returns {number} Direction to sort
  */
 const compareStatements = (

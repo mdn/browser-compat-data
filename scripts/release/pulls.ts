@@ -18,7 +18,8 @@ const releaseNotesLabels = [
 
 /**
  *
- * @param query
+ * @param {string} query
+ * @returns {string}
  */
 const queryToURL = (query: string): string => {
   const searchUrl = new URL(pullsBaseURL);
@@ -28,7 +29,8 @@ const queryToURL = (query: string): string => {
 
 /**
  *
- * @param query
+ * @param {string} query
+ * @returns {string}
  */
 const appendLabel = (query: string): string => {
   return `${query} label:${releaseNotesLabels.map((l) => `"${l}"`).join(',')}`;
@@ -36,9 +38,9 @@ const appendLabel = (query: string): string => {
 
 /**
  *
- * @param args
+ * @param {any} args
  */
-const main = (args): void => {
+const main = (args: any): void => {
   const {
     startVersionTag: start,
     endVersionTag: end,

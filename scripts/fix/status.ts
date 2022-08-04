@@ -35,7 +35,6 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
 /**
  * @param {string} filename
- * @returns {void}
  */
 const fixStatusFromFile = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

@@ -13,7 +13,6 @@ const { browsers } = bcd;
  * @param {BrowserName} browser
  * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function processData(
   browser: BrowserName,

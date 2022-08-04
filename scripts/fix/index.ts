@@ -22,7 +22,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
  *
  * @param {string[]} files The files to load and perform fix upon
- * @returns {void}
  */
 const load = async (...files: string[]): Promise<void> => {
   for (let file of files) {

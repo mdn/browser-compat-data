@@ -5,7 +5,8 @@ import { execSync } from 'node:child_process';
 
 /**
  *
- * @param command
+ * @param {string} command
+ * @returns {string}
  */
 export const exec = (command: string): string => {
   return execSync(command, { encoding: 'utf8' }).trim();
@@ -31,7 +32,7 @@ export const requireGitHubCLI = (): void => {
 };
 
 /**
- *
+ * @returns {string}
  */
 export const getLatestTag = (): string => {
   return exec('git describe --abbrev=0 --tags');
@@ -39,8 +40,9 @@ export const getLatestTag = (): string => {
 
 /**
  *
- * @param ref
- * @param querySafe
+ * @param {string} ref
+ * @param {boolean} querySafe
+ * @returns {string}
  */
 export const getRefDate = (ref: string, querySafe = false): string => {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
@@ -53,9 +55,10 @@ export const getRefDate = (ref: string, querySafe = false): string => {
 
 /**
  *
- * @param endRef
- * @param startRef
- * @param urlSafe
+ * @param {string} endRef
+ * @param {string} startRef
+ * @param {boolean} urlSafe
+ * @returns {string}
  */
 export const buildQuery = (
   endRef: string,
@@ -82,7 +85,7 @@ export type ReleaseYargs = {
 
 /**
  *
- * @param yargs
+ * @param {yargs} yargs
  */
 export const releaseYargsBuilder = (yargs): void => {
   yargs.positional('start-version-tag', {

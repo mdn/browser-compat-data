@@ -14,7 +14,6 @@ import chalk from 'chalk-template';
  * @param {CompatStatement} compat The compat data to test
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function checkDescription(
   ruleName: string,
@@ -37,7 +36,6 @@ function checkDescription(
  * @param {CompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
 function processApiData(
   data: CompatStatement,

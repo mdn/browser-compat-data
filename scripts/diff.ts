@@ -61,7 +61,6 @@ const stringifyChange = (lhs: any, rhs: any): string => {
  * @param {Identifier} contents.head
  * @param {Array.<string>} path
  * @param {string} direction
- * @returns {void}
  */
 const doMirror = (
   diff: { base: SupportStatement; head: SupportStatement },

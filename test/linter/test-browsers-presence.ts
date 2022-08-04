@@ -16,7 +16,6 @@ const { browsers } = bcd;
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
  * @param {string} [path] The path of the data.
- * @returns {void}
  */
 function processData(
   data: CompatStatement,

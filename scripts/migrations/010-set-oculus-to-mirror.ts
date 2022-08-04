@@ -65,7 +65,6 @@ export const fixWebViewFlags = (filename: string): void => {
  * and perform removal of flags from WebView support data.
  *
  * @param {string[]} files The files to load and perform migration upon
- * @returns {void}
  */
 const load = (...files: string[]): void => {
   for (let file of files) {

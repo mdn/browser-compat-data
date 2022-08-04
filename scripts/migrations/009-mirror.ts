@@ -25,8 +25,9 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  *
- * @param support
- * @param browser
+ * @param {InternalSupportBlock} support
+ * @param {BrowserName} browser
+ * @returns {boolean}
  */
 export const isMirrorEquivalent = (
   support: InternalSupportBlock,
@@ -54,8 +55,8 @@ export const isMirrorEquivalent = (
 
 /**
  *
- * @param bcd
- * @param browsers
+ * @param {CompatData} bcd
+ * @param {BrowserName[]} browsers
  */
 export const mirrorIfEquivalent = (
   bcd: CompatData,
@@ -74,8 +75,8 @@ export const mirrorIfEquivalent = (
 
 /**
  *
- * @param filename
- * @param browsers
+ * @param {string} filename
+ * @param {BrowserName[]} browsers
  */
 const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();

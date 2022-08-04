@@ -22,7 +22,6 @@ const parser = new HTMLParser();
  * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const testNode = (
   node,
@@ -72,7 +71,6 @@ const testNode = (
  * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const validateHTML = (
   string: string,
@@ -113,7 +111,6 @@ const validateHTML = (
  * @param {Browsername} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
  * @param {logger} logger The logger to output errors to
- * @returns {void}
  */
 const checkNotes = (
   notes: string | string[],
@@ -136,7 +133,6 @@ const checkNotes = (
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} feature The identifier of the feature
- * @returns {void}
  */
 const processData = (
   data: CompatStatement,

@@ -21,7 +21,6 @@ type LinkError = {
  * @param {string} actual The link to test
  * @param {string|RegExp} regexp The regex to test with
  * @param {(match: Array.<?string>) => object} matchHandler The callback
- * @returns {void}
  */
 function processLink(
   errors: LinkError[],

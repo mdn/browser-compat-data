@@ -36,7 +36,6 @@ export const orderFeatures = (_: string, value: Identifier): Identifier => {
  * The function will then automatically write any needed changes back into the file.
  *
  * @param {string} filename The filename to perform fix upon
- * @returns {void}
  */
 const fixFeatureOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

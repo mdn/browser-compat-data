@@ -12,6 +12,7 @@ type Fields = {
 /**
  * @param {string} x
  * @param {string} y
+ * @returns {string}
  */
 const getMergeBase = (x: string, y = 'HEAD'): string => {
   return child_process
@@ -21,7 +22,8 @@ const getMergeBase = (x: string, y = 'HEAD'): string => {
 
 /**
  *
- * @param fields
+ * @param {string[]} fields
+ * @returns {Fields}
  */
 const parseFields = (fields: string[]): Fields => {
   return {
@@ -34,6 +36,7 @@ const parseFields = (fields: string[]): Fields => {
 /**
  * @param {string} base
  * @param {string} head
+ * @returns {Fields[]}
  */
 const getGitDiffStatuses = (base: string, head: string): Array<Fields> => {
   return child_process
@@ -47,6 +50,7 @@ const getGitDiffStatuses = (base: string, head: string): Array<Fields> => {
 /**
  * @param {string} commit
  * @param {string} path
+ * @returns {string}
  */
 const getFileContent = (commit: string, path: string): string => {
   return child_process

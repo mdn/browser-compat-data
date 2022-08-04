@@ -80,7 +80,6 @@ export function implementedAndRemoved(
 /**
  * @param {Logger} logger
  * @param {CompatStatement} data The data to test
- * @returns {void}
  */
 export function processData(logger: Logger, data: CompatStatement): void {
   if (data && data.support) {

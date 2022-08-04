@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../../types/types.js';
+import { BrowserName, CompatData } from '../../types/types.js';
 import { InternalSupportStatement } from '../../types/index.js';
 
 import fs from 'node:fs/promises';
@@ -25,17 +25,18 @@ const targetdir = new URL('./build/', rootdir);
 const verbatimFiles = ['LICENSE', 'README.md'];
 
 /**
- *
+ * @returns {any}
  */
-export const generateMeta = () => {
+export const generateMeta = (): any => {
   return { version: packageJson.version };
 };
 
 /**
  *
- * @param data
+ * @param {CompatData} data
+ * @returns {CompatData}
  */
-export const applyMirroring = (data) => {
+export const applyMirroring = (data: CompatData): CompatData => {
   const response = Object.assign({}, data);
   const walker = walk(undefined, response);
 
@@ -58,11 +59,12 @@ export const applyMirroring = (data) => {
   return response;
 };
 
-// Returns an object containing the prepared BCD data
 /**
+ * Returns an object containing the prepared BCD data
  *
+ * @returns {CompatData}
  */
-export const createDataBundle = async () => {
+export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
   return {
@@ -73,9 +75,8 @@ export const createDataBundle = async () => {
 
 /* c8 ignore start */
 
-// Returns a promise for writing the data to JSON file
 /**
- *
+ * Returns a promise for writing the data to JSON file
  */
 const writeData = async () => {
   const dest = new URL('data.json', targetdir);
@@ -117,9 +118,8 @@ export * from "./types";`;
   await compileTS(new URL('types.d.ts', targetdir));
 };
 
-// Returns an array of promises for copying of all files that don't need transformation
 /**
- *
+ * Returns an array of promises for copying of all files that don't need transformation
  */
 const copyFiles = async () => {
   for (const file of verbatimFiles) {
@@ -132,9 +132,9 @@ const copyFiles = async () => {
 /* c8 ignore stop */
 
 /**
- *
+ * @returns {any}
  */
-export const createManifest = () => {
+export const createManifest = (): any => {
   const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {

@@ -15,7 +15,6 @@ import { hideBin } from 'yargs/helpers';
  * @param {string} opts.ref2
  * @param {string} opts.format
  * @param {boolean} opts.github
- * @returns {void}
  */
 const main = (opts: {
   ref1: string;
@@ -192,7 +191,6 @@ const fmtFeature = (feat: string) => `- \`${feat}\``;
  *
  * @param {Array.<string>} added
  * @param {Array.<string>} removed
- * @returns {void}
  */
 const printMarkdown = (added: string[], removed: string[]): void => {
   if (removed.length) {

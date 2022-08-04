@@ -72,7 +72,6 @@ const checkSupport = (
  * @param {CompatStatement} data The data to process and count stats for
  * @param {BrowserName[]} browsers The browsers to test
  * @param {Object<string, VersionStats>} stats The stats object to update
- * @returns {void}
  */
 const processData = (
   data: CompatStatement,
@@ -109,7 +108,6 @@ const processData = (
  * @param {Identifier} data The compat data to iterate
  * @param {BrowserName[]} browsers The browsers to test
  * @param {Object<string, VersionStats>} stats The stats object to update
- * @returns {void}
  */
 const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
   for (const key in data) {
@@ -204,7 +202,6 @@ const getStat = (
  * @param {VersionStats} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} counts Whether to display a count vs. a percentage
- * @returns {void}
  */
 const printStats = (
   stats: VersionStats | null,

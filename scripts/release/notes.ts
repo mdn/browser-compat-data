@@ -24,7 +24,7 @@ import diffFeatures from '../diff-features.js';
 
 /**
  *
- * @param argv
+ * @param {ReleaseYargs} argv
  */
 const main = async (argv: ReleaseYargs): Promise<void> => {
   const { startVersionTag, endVersionTag } = argv;
@@ -84,10 +84,11 @@ const main = async (argv: ReleaseYargs): Promise<void> => {
 
 /**
  *
- * @param start
- * @param end
+ * @param {string} start
+ * @param {string} end
+ * @returns {FeatureChange[]}
  */
-const pullsFromGitHub = (start: string, end: string): Array<FeatureChange> => {
+const pullsFromGitHub = (start: string, end: string): FeatureChange[] => {
   const searchDetails = {
     limit: 1000, // As many PRs as GitHub will allow
     search: `${buildQuery(end, start, false)}`,
@@ -103,7 +104,7 @@ const pullsFromGitHub = (start: string, end: string): Array<FeatureChange> => {
 };
 
 /**
- *
+ * @returns {string}
  */
 const preamble = async (): Promise<string> => {
   const packageJson = await fs.readFile(
@@ -125,21 +126,23 @@ const preamble = async (): Promise<string> => {
 
 /**
  *
- * @param removed
- * @param added
+ * @param {FeatureChange} obj
+ * @returns {string}
+ */
+const featureBullet = (obj: FeatureChange) =>
+  `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
+
+/**
+ *
+ * @param {FeatureChange[]} removed
+ * @param {FeatureChange[]} added
+ * @returns {string}
  */
 const markdownifyChanges = (
   removed: FeatureChange[],
   added: FeatureChange[],
 ): string => {
   const notes: string[] = [];
-
-  /**
-   *
-   * @param obj
-   */
-  const featureBullet = (obj: FeatureChange) =>
-    `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
   if (removed.length) {
     notes.push('### Removals', '');
