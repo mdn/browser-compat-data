@@ -19,16 +19,24 @@
               }
             ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "partial-implementation": true,
+                "notes": "Only supports clip paths defined by <code>url()</code>."
+              }
+            ],
             "firefox": {
               "version_added": "3.5"
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
-              "notes": "Internet Explorer only supports clip paths defined by <code>url()</code>."
+              "partial-implementation": true,
+              "notes": "Only supports clip paths defined by <code>url()</code>."
             },
             "oculus": "mirror",
             "opera": "mirror",
