@@ -26,7 +26,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
   for (const { compat } of walk(undefined, bcd)) {
-    if (!compat?.status?.experimental) {
+    if (!compat.status?.experimental) {
       continue;
     }
 

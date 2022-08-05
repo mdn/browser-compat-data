@@ -39,9 +39,6 @@ export const applyMirroring = (data: CompatData): CompatData => {
   const walker = walk(undefined, response);
 
   for (const feature of walker) {
-    if (!feature.compat) {
-      continue;
-    }
     for (const [browser, supportData] of Object.entries(
       feature.compat.support as InternalSupportStatement,
     )) {

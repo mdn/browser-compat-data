@@ -14,7 +14,14 @@ import bcd from '../index.js';
 import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
-type WalkOutput = {
+type BrowserReleaseWalkOutput = {
+  path: string;
+  data: DataType;
+  browser: BrowserStatement;
+  browserRelease: ReleaseStatement;
+};
+
+type LowLevelWalkOutput = {
   path: string;
   data: DataType;
   browser?: BrowserStatement;
@@ -22,16 +29,22 @@ type WalkOutput = {
   browserRelease?: ReleaseStatement;
 };
 
+type WalkOutput = {
+  path: string;
+  data: DataType;
+  compat: CompatStatement;
+};
+
 /**
  *
  * @param {DataType} data
  * @param {string?} path
- * @yields {WalkOutput}
+ * @yields {BrowserReleaseWalkOutput}
  */
 export function* browserReleaseWalk(
   data: DataType,
   path?: string,
-): IterableIterator<WalkOutput> {
+): IterableIterator<BrowserReleaseWalkOutput> {
   for (const [release, releaseData] of Object.entries(data.releases)) {
     yield {
       path: joinPath(path, 'releases', release),
@@ -47,15 +60,15 @@ export function* browserReleaseWalk(
  * @param {DataType} data
  * @param {string?} path
  * @param {number} depth
- * @yields {WalkOutput}
+ * @yields {LowLevelWalkOutput}
  */
 export function* lowLevelWalk(
   data: DataType = bcd,
   path?: string,
   depth = Infinity,
-): IterableIterator<WalkOutput> {
+): IterableIterator<LowLevelWalkOutput> {
   if (path !== undefined && path !== '__meta') {
-    const next: WalkOutput = {
+    const next: LowLevelWalkOutput = {
       path,
       data,
     };
@@ -89,7 +102,7 @@ export default function* walk(
   entryPoints?: string | string[],
   data: CompatData | CompatStatement | Identifier = bcd,
 ): IterableIterator<WalkOutput> {
-  const walkers: IterableIterator<WalkOutput>[] = [];
+  const walkers: IterableIterator<LowLevelWalkOutput>[] = [];
 
   if (entryPoints === undefined) {
     walkers.push(lowLevelWalk(data));
@@ -105,7 +118,7 @@ export default function* walk(
   for (const walker of walkers) {
     for (const step of walker) {
       if (step.compat) {
-        yield step;
+        yield step as WalkOutput;
       }
     }
   }
