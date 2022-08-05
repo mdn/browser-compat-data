@@ -1,3 +1,6 @@
+import { BrowserName } from './types/types.js';
+import { InternalSupportStatement } from './types/index.js';
+
 import esMain from 'es-main';
 import HTMLParser from '@desertnet/html-parser';
 
@@ -36,11 +39,13 @@ function* getLinks(notes) {
   yield* walk(parser.parse(notes));
 }
 
-function getReleaseDateMap(browsers) {
-  const dateMap = new Map();
+function getReleaseDateMap(
+  browsers: BrowserName[],
+): Map<BrowserName, Map<string, string>> {
+  const dateMap: Map<BrowserName, Map<string, string>> = new Map();
   for (const browser of browsers) {
     const releases = bcd.browsers[browser].releases;
-    const versions = new Map();
+    const versions: Map<string, string> = new Map();
     for (const [version, releaseData] of Object.entries(releases)) {
       const date = releaseData.release_date;
       if (date) {
@@ -53,32 +58,34 @@ function getReleaseDateMap(browsers) {
 }
 
 function main() {
-  const browsers = [];
+  const browsers: BrowserName[] = [];
   for (const [browser, browserData] of Object.entries(bcd.browsers)) {
     if (browser === 'ie') {
       continue;
     }
     if (['desktop', 'mobile'].includes(browserData.type)) {
-      browsers.push(browser);
+      browsers.push(browser as BrowserName);
     }
   }
   const dateMap = getReleaseDateMap(browsers);
-  const columns = browsers.flatMap(b => [`${b}_version`, `${b}_date`]);
+  const columns = browsers.flatMap((b) => [`${b}_version`, `${b}_date`]);
   console.log(`path,deprecated,experimental,count,first_date,last_date,${columns.join(',')},comments`);
-  for (const {path, compat} of walk(entryPoints, bcd)) {
+  for (const { path, compat } of walk(entryPoints, bcd)) {
     const url = compat.mdn_url;
-    const linkedPath = url ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})` : `=${JSON.stringify(path)}`;
+    const linkedPath = url
+      ? `=HYPERLINK(${JSON.stringify(url)};${JSON.stringify(path)})`
+      : `=${JSON.stringify(path)}`;
     const statuses = [
-      compat.status.deprecated,
-      compat.status.experimental
+      compat.status?.deprecated,
+      compat.status?.experimental,
     ].map((s) => `=${String(s).toUpperCase()}`);
     let count = 0;
     let first_date = '';
     let last_date = '';
-    const links = [];
-    const support = browsers.flatMap(browser => {
+    const links: string[] = [];
+    const support = browsers.flatMap((browser) => {
       // Flatten to string, true, false, or null using the first non-flag range.
-      let ranges = compat.support[browser];
+      let ranges = compat.support[browser] as InternalSupportStatement;
       if (ranges === 'mirror') {
         ranges = mirrorSupport(browser, compat.support);
       }
@@ -88,7 +95,7 @@ function main() {
       if (!Array.isArray(ranges)) {
         ranges = [ranges];
       }
-      ranges = ranges.filter(r => !r.flags);
+      ranges = ranges.filter((r) => !r.flags);
       if (!ranges.length) {
         return ['', ''];
       }
@@ -109,7 +116,7 @@ function main() {
       if (version.startsWith('≤')) {
         version = version.substring(1);
       }
-      const date = dateMap.get(browser).get(version);
+      const date = dateMap.get(browser)?.get(version);
       if (!date) {
         return ['', ''];
       }
