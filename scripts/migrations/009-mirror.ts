@@ -64,10 +64,8 @@ export const mirrorIfEquivalent = (
 ): void => {
   for (const { compat } of walk(undefined, bcd)) {
     for (const browser of browsers) {
-      if (compat) {
-        if (isMirrorEquivalent(compat.support, browser)) {
-          (compat.support[browser] as InternalSupportStatement) = 'mirror';
-        }
+      if (isMirrorEquivalent(compat.support, browser)) {
+        (compat.support[browser] as InternalSupportStatement) = 'mirror';
       }
     }
   }

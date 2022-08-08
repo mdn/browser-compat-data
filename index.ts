@@ -38,10 +38,6 @@ const load = async (...dirs: string[]) => {
         // Add source_file props
         const walker = walk(undefined, contents);
         for (const { compat } of walker) {
-          if (!compat) {
-            continue;
-          }
-
           compat.source_file = normalizePath(path.relative(dirname, fp));
         }
 
