@@ -55,7 +55,7 @@ const processData = (
     .replace('html/elements/input/', 'html/elements/input/type_')
     .replace('javascript/builtins/globals', 'javascript/builtins');
 
-  const failed = testFeaturePresence(data, p.split(path.sep), '');
+  const failed = testFeaturePresence(data, p.split('/'), '');
   if (failed) {
     logger.error(failed);
   }
