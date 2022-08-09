@@ -54,8 +54,12 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
         full: path.relative(process.cwd(), file),
         category: '',
       };
-      if (filePath.full.includes(path.sep)) {
-        filePath.category = filePath.full.split(path.sep)[0];
+      if (path.sep !== '/') {
+        // Normalize file paths for Windows users
+        filePath.full = filePath.full.replace(path.sep, '/');
+      }
+      if (filePath.full.includes('/')) {
+        filePath.category = filePath.full.split('/')[0];
       }
 
       try {
