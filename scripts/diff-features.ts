@@ -10,17 +10,17 @@ import { hideBin } from 'yargs/helpers';
 
 /**
  *
- * @param {{ref1: string, ref2: string, format: string, github: boolean}} opts
+ * @param {{ref1: string | undefined, ref2: string | undefined, format: string, github: boolean}} opts
  * @param {string} opts.ref1
  * @param {string} opts.ref2
  * @param {string} opts.format
  * @param {boolean} opts.github
  */
 const main = (opts: {
-  ref1: string;
-  ref2: string;
-  format: string;
-  github: boolean;
+  ref1: string | undefined;
+  ref2: string | undefined;
+  format?: string;
+  github?: boolean;
 }): void => {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
@@ -34,16 +34,16 @@ const main = (opts: {
 
 /**
  *
- * @param {{ref1: string, ref2: string, github: boolean}} opts
- * @param {string} opts.ref1
- * @param {string} opts.ref2
+ * @param {{ref1: string?, ref2: string?, github: boolean}} opts
+ * @param {string?} opts.ref1
+ * @param {string?} opts.ref2
  * @param {boolean} opts.github
  * @returns {{added: string[], removed: string[]}}
  */
 const diff = (opts: {
-  ref1: string;
-  ref2: string;
-  github: boolean;
+  ref1?: string;
+  ref2?: string;
+  github?: boolean;
 }): { added: string[]; removed: string[] } => {
   const { ref1, ref2, github } = opts;
   let refA, refB;
