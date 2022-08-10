@@ -30,8 +30,7 @@ const featureBullet = (obj: FeatureChange) =>
 
 /**
  *
- * @param {FeatureChange[]} removed
- * @param {FeatureChange[]} added
+ * @param {Changes} changes
  * @returns {string}
  */
 export const formatChanges = (changes: Changes): string => {
@@ -70,7 +69,7 @@ const pullsFromGitHub = (start: string): FeatureChange[] =>
 
 const getDiff = (
   pull: FeatureChange,
-): { added: string[]; removed: string[] } | undefined => {
+): { added: string[]; removed: string[] } | null => {
   process.stdout.write(
     chalk`{blue - Diffing features for {bold #${pull.number}}...}`,
   );
@@ -83,7 +82,7 @@ const getDiff = (
     console.log(
       chalk`{red ${e}}\n {yellow (Failed to diff features for #${pull.number}, skipping)}`,
     );
-    return;
+    return null;
   }
 
   console.log(

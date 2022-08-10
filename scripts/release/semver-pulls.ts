@@ -9,10 +9,8 @@ const releaseNotesLabels = {
   minor: 'semver-minor-bump ➕',
 };
 
-export const getSemverBumpPulls = (fromDate: string) => {
-  const mergeQuery = ``;
-
-  const pulls = Object.fromEntries(
+export const getSemverBumpPulls = (fromDate: string) =>
+  Object.fromEntries(
     ['major', 'minor'].map((l) => [
       l,
       queryPRs({
@@ -20,6 +18,3 @@ export const getSemverBumpPulls = (fromDate: string) => {
       }),
     ]),
   );
-
-  return pulls;
-};

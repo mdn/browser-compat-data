@@ -67,7 +67,7 @@ const contributors = async (): Promise<number> => {
   let count = 0;
   let page = 1;
 
-  while (true) {
+  while (page > 0) {
     // GitHub doesn't just expose the count on its own so we have to query further
     const json = await getJSON(
       `https://api.github.com/repos/mdn/browser-compat-data/contributors?per_page=100&page=${page}`,
@@ -85,7 +85,6 @@ const contributors = async (): Promise<number> => {
 /**
  *
  * @param {string} start
- * @param {string} end
  * @returns {ChangeStats}
  */
 const stats = (start: string): ChangeStats => {
@@ -99,7 +98,7 @@ const stats = (start: string): ChangeStats => {
   // Extract the numbers from a line like this:
   // 50 files changed, 1988 insertions(+), 2056 deletions(-)
   const match = diff.match(
-    /(?<changed>\d+) files? changed(?:, (?<insertions>\d+) insertions?(\(\+\)))?(?:, (?<deletions>\d+) deletions?\(\-\))?/,
+    /(?<changed>\d+) files? changed(?:, (?<insertions>\d+) insertions?(\(\+\)))?(?:, (?<deletions>\d+) deletions?\(-\))?/,
   );
   if (!match) {
     console.error(chalk`{red No changes for which to generate statistics.}`);
