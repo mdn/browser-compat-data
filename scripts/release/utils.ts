@@ -29,12 +29,7 @@ export const requireGitHubCLI = (): void => {
 };
 
 export const requireWriteAccess = async () => {
-  const ghconfig = (
-    await fs.readFile(process.env.HOME + '/.config/gh/hosts.yml')
-  ).toString();
-  const username = (
-    ghconfig.match(/user: ([\w_-]+)/) as unknown as string[]
-  )[1];
+  const username = exec('gh api user -q .login');
   const authStats = githubAPI(`/collaborators/${username}/permission`);
 
   if (authStats.permission === 'read') {
