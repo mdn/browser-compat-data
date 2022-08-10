@@ -30,6 +30,20 @@ export const requireGitHubCLI = (): void => {
   }
 };
 
+export const queryPRs = (queryArgs): any => {
+  const searchDetails = {
+    limit: 1000, // As many PRs as GitHub will allow
+    json: 'number',
+    ...queryArgs,
+  };
+  const args = Object.entries(searchDetails)
+    .map(([key, value]) => `--${key}='${value}'`)
+    .join(' ');
+  const command = `gh pr list ${args}`;
+
+  return JSON.parse(exec(command));
+};
+
 /**
  * @returns {string}
  */
@@ -76,23 +90,12 @@ export const buildQuery = (
   return `is:pr ${merged}`;
 };
 
-export type ReleaseYargs = {
-  startVersionTag: string;
-  endVersionTag: string;
-};
-
-/**
- *
- * @param {yargs} yargs
- */
-export const releaseYargsBuilder = (yargs): void => {
-  yargs.positional('start-version-tag', {
-    type: 'string',
-    defaultDescription: 'most recent tag',
-    default: getLatestTag,
-  });
-  yargs.positional('end-version-tag', {
-    type: 'string',
-    default: 'main',
-  });
+export const keypress = async () => {
+  process.stdin.setRawMode(true);
+  return new Promise((resolve) =>
+    process.stdin.once('data', () => {
+      process.stdin.setRawMode(false);
+      resolve(true);
+    }),
+  );
 };
