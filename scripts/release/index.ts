@@ -1,19 +1,22 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { exec, requireGitHubCLI, getLatestTag, getRefDate } from './utils.js';
-
 import fs from 'fs/promises';
 
 import chalk from 'chalk-template';
 import esMain from 'es-main';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 
 import { getSemverBumpPulls } from './semver-pulls.js';
 import { getStats, formatStats } from './stats.js';
-import { getChanges, formatChanges, FeatureChange } from './changes.js';
-import { keypress } from './utils.js';
+import { getChanges, formatChanges } from './changes.js';
+import {
+  exec,
+  requireGitHubCLI,
+  requireWriteAccess,
+  getLatestTag,
+  getRefDate,
+  keypress,
+} from './utils.js';
 
 const dirname = new URL('.', import.meta.url);
 
@@ -85,6 +88,7 @@ const commitAndPR = async (
 
 const main = async () => {
   requireGitHubCLI();
+  await requireWriteAccess();
 
   console.log(chalk`{blue Getting last version...}`);
   const lastVersion = getLatestTag();
@@ -116,7 +120,7 @@ const main = async () => {
   const stats = await getStats(lastVersion, thisVersion, lastVersionDate);
 
   console.log(chalk`{blue Getting lists of added/removed features...}`);
-  const changes = await getChanges(lastVersion);
+  const changes = await getChanges(lastVersionDate);
 
   console.log(chalk`{blue Applying changelog...}`);
   const notes = getNotes(thisVersion, changes, stats, versionBump);
