@@ -1,5 +1,46 @@
 # Release notes
 
+## [v5.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.9)
+
+August 9, 2022
+
+### Removals
+
+- `api.Element.MSGestureChange_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureEnd_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureHold_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureStart_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureTap_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSInertiaStart_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSManipulationStateChanged_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.expansion` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.gestureObject` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.initGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.MSGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.rotation` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.scale` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.translationX` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.translationY` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityAngular` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityExpansion` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityX` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityY` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column-align` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column-span` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row-align` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row-span` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-scrollbar-track-color` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+
+### Statistics
+
+- 1 contributor has changed 9 files with 0 additions and 1,023 deletions in 1 commit ([`v5.1.8...v5.1.9`](https://github.com/mdn/browser-compat-data/compare/v5.1.8...v5.1.9))
+- 13,584 total features
+- 448 total contributors
+- 4,172 total stargazers
+
 ## [v5.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.8)
 
 August 9, 2022
