@@ -48,16 +48,6 @@ export const IS_WINDOWS = platform() === 'win32';
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
- * Pluralizes a string
- *
- * @param {string} word Word in singular form
- * @param {number} quantifier
- * @returns {string}
- */
-export const pluralize = (word: string, quantifier: number): string =>
-  chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
-
-/**
  * Escapes common invisible characters.
  *
  * @param {string} str

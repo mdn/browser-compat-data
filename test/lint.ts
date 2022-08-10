@@ -16,13 +16,9 @@ import chalk from 'chalk-template';
 
 import linters from './linter/index.js';
 import extend from '../scripts/lib/extend.js';
+import pluralize from '../scripts/lib/pluralize.js';
 import { walk } from '../utils/index.js';
-import {
-  pluralize,
-  LinterMessage,
-  LinterMessageLevel,
-  LinterPath,
-} from './utils.js';
+import { LinterMessage, LinterMessageLevel, LinterPath } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -174,7 +170,7 @@ const main = async (
     }
 
     const errorCounts = Object.entries(messagesByLevel)
-      .map(([k, v]) => pluralize(k, v.length))
+      .map(([k, v]) => pluralize(k, v.length, true))
       .join(', ');
 
     console.error(
@@ -183,6 +179,7 @@ const main = async (
       } ${linter} - {bold ${pluralize(
         'problem',
         messages.length,
+        true,
       )}} (${errorCounts}):}`,
     );
 
@@ -232,6 +229,7 @@ const main = async (
             chalk`{yellow  ${linter.name} has ${pluralize(
               'exception',
               linter.exceptions.length,
+              true,
             )}}`,
           );
           for (const exception of linter.exceptions) {
