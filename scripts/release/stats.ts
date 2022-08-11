@@ -21,42 +21,16 @@ type ChangeStats = Pick<
 >;
 
 import chalk from 'chalk-template';
-import http from 'node:https';
 
-import { exec, queryPRs } from './utils.js';
+import { exec, queryPRs, githubAPI } from './utils.js';
 import { walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
-
-/**
- *
- * @param {string} url
- * @returns {any}
- */
-const getJSON = (url: string): Promise<any> =>
-  new Promise((resolve, reject) =>
-    http.get(
-      url,
-      { headers: { 'User-Agent': 'bcd-release-script' } },
-      (response) => {
-        let body = '';
-        response.on('data', (data) => {
-          body += data;
-        });
-        response.on('error', (error) => reject(error));
-        response.on('end', () => {
-          resolve(JSON.parse(body));
-        });
-      },
-    ),
-  );
 
 /**
  * @returns {number}
  */
 const stargazers = async (): Promise<number> => {
-  const json = await getJSON(
-    'https://api.github.com/repos/mdn/browser-compat-data',
-  );
+  const json = githubAPI('');
   return json.stargazers_count;
 };
 
@@ -69,9 +43,7 @@ const contributors = async (): Promise<number> => {
 
   while (page > 0) {
     // GitHub doesn't just expose the count on its own so we have to query further
-    const json = await getJSON(
-      `https://api.github.com/repos/mdn/browser-compat-data/contributors?per_page=100&page=${page}`,
-    );
+    const json = githubAPI(`/contributors?per_page=100&page=${page}`);
     if (json.length === 0) {
       break;
     }

@@ -14,10 +14,8 @@ interface Changes {
 }
 
 import chalk from 'chalk-template';
-import fs from 'node:fs/promises';
-import esMain from 'es-main';
 
-import { exec, queryPRs, requireGitHubCLI, buildQuery } from './utils.js';
+import { queryPRs } from './utils.js';
 import diffFeatures from '../diff-features.js';
 
 /**
@@ -57,12 +55,12 @@ export const formatChanges = (changes: Changes): string => {
 
 /**
  *
- * @param {string} start
+ * @param {string} fromDate
  * @returns {FeatureChange[]}
  */
-const pullsFromGitHub = (start: string): FeatureChange[] =>
+const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
   queryPRs({
-    search: `${buildQuery('main', start, false)}`,
+    search: `is:pr merged:>=${fromDate}`,
     json: 'number,url,mergeCommit',
     jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
   });
@@ -94,10 +92,10 @@ const getDiff = (
 
 /**
  *
- * @param {string} lastVersion
+ * @param {string} date
  */
-export const getChanges = async (lastVersion: string): Promise<Changes> => {
-  const pulls = pullsFromGitHub(lastVersion);
+export const getChanges = async (date: string): Promise<Changes> => {
+  const pulls = pullsFromGitHub(date);
 
   const changes: Changes = {
     added: [],

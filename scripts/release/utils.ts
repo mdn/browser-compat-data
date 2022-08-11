@@ -1,6 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import fs from 'fs/promises';
 import { execSync } from 'node:child_process';
 
 /**
@@ -8,8 +9,8 @@ import { execSync } from 'node:child_process';
  * @param {string} command
  * @returns {string}
  */
-export const exec = (command: string): string =>
-  execSync(command, { encoding: 'utf8' }).trim();
+export const exec = (command: string, opts?: any): string =>
+  execSync(command, { encoding: 'utf8', ...opts }).trim();
 
 /**
  *
@@ -17,10 +18,7 @@ export const exec = (command: string): string =>
 export const requireGitHubCLI = (): void => {
   const command = 'gh auth status';
   try {
-    execSync(command, {
-      encoding: 'utf8',
-      stdio: 'ignore',
-    });
+    execSync(command, { encoding: 'utf8', stdio: 'ignore' });
   } catch (err) {
     console.trace(err);
     console.error(`Error: ${command} failed.`);
@@ -29,6 +27,21 @@ export const requireGitHubCLI = (): void => {
     process.exit(1);
   }
 };
+
+export const requireWriteAccess = async () => {
+  const username = exec('gh api user -q .login');
+  const authStats = githubAPI(`/collaborators/${username}/permission`);
+
+  if (authStats.permission === 'read') {
+    console.error(
+      'Error: you must have write access to mdn/browser-compat-data to use this script.',
+    );
+    process.exit(1);
+  }
+};
+
+export const githubAPI = (endpoint: string): any =>
+  JSON.parse(exec(`gh api /repos/mdn/browser-compat-data${endpoint}`));
 
 export const queryPRs = (queryArgs): any => {
   const searchDetails = {
@@ -63,31 +76,6 @@ export const getRefDate = (ref: string, querySafe = false): string => {
     return rawDateString.replace('+', '%2B');
   }
   return rawDateString;
-};
-
-/**
- *
- * @param {string} endRef
- * @param {string} startRef
- * @param {boolean} urlSafe
- * @returns {string}
- */
-export const buildQuery = (
-  endRef: string,
-  startRef: string,
-  urlSafe: boolean,
-): string => {
-  let merged: string;
-  if (!['HEAD', 'main'].includes(endRef)) {
-    merged = `merged:${getRefDate(startRef, urlSafe)}..${getRefDate(
-      endRef,
-      urlSafe,
-    )}`;
-  } else {
-    merged = `merged:>=${getRefDate(startRef, urlSafe)}`;
-  }
-
-  return `is:pr ${merged}`;
 };
 
 export const keypress = async () => {
