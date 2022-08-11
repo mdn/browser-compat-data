@@ -35,7 +35,7 @@ export const removeWebViewFlags = (
 };
 
 /**
- * Perform removal of flags within WebView data within all the datain a
+ * Perform removal of flags within WebView data within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
  *
