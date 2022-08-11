@@ -51,7 +51,7 @@ export const removeWebViewFlags = (
 };
 
 /**
- * Perform removal of flags within WebView data within all the datain a
+ * Perform removal of flags within WebView data within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
  *
@@ -81,9 +81,8 @@ export const fixWebViewFlags = (filename: string): void => {
  * and perform removal of flags from WebView support data.
  *
  * @param {string[]} files The files to load and perform migration upon
- * @returns {void}
  */
-function load(...files: string[]): void {
+const load = (...files: string[]): void => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
@@ -101,13 +100,13 @@ function load(...files: string[]): void {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
+    const subFiles = fs
+      .readdirSync(file)
+      .map((subfile) => path.join(file, subfile));
 
     load(...subFiles);
   }
-}
+};
 
 if (esMain(import.meta)) {
   if (process.argv[2]) {

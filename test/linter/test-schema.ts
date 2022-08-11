@@ -1,8 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';
@@ -28,13 +27,12 @@ export default {
   name: 'JSON Schema',
   description: 'Test a file to ensure that it follows the defined schema',
   scope: 'file',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
     const schema =
       category === 'browsers' ? browserDataSchema : compatDataSchema;
     if (!ajv.validate(schema, data)) {

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../../types/types.js';
+import { BrowserName, CompatData } from '../../types/types.js';
 import { InternalSupportStatement } from '../../types/index.js';
 
 import fs from 'node:fs/promises';
@@ -24,18 +24,21 @@ const targetdir = new URL('./build/', rootdir);
 
 const verbatimFiles = ['LICENSE', 'README.md'];
 
-export function generateMeta() {
-  return { version: packageJson.version };
-}
+/**
+ * @returns {any}
+ */
+export const generateMeta = (): any => ({ version: packageJson.version });
 
-export function applyMirroring(data) {
+/**
+ *
+ * @param {CompatData} data
+ * @returns {CompatData}
+ */
+export const applyMirroring = (data: CompatData): CompatData => {
   const response = Object.assign({}, data);
   const walker = walk(undefined, response);
 
   for (const feature of walker) {
-    if (!feature.compat) {
-      continue;
-    }
     for (const [browser, supportData] of Object.entries(
       feature.compat.support as InternalSupportStatement,
     )) {
@@ -49,28 +52,37 @@ export function applyMirroring(data) {
   }
 
   return response;
-}
+};
 
-// Returns an object containing the prepared BCD data
-export async function createDataBundle() {
+/**
+ * Returns an object containing the prepared BCD data
+ *
+ * @returns {CompatData}
+ */
+export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
   return {
     ...applyMirroring(bcd),
     __meta: generateMeta(),
   };
-}
+};
 
 /* c8 ignore start */
 
-// Returns a promise for writing the data to JSON file
-async function writeData() {
+/**
+ * Returns a promise for writing the data to JSON file
+ */
+const writeData = async () => {
   const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
   await fs.writeFile(dest, stringify(data));
-}
+};
 
-async function writeWrapper() {
+/**
+ *
+ */
+const writeWrapper = async () => {
   const dest = new URL('legacynode.mjs', targetdir);
   const content = `// A small wrapper to allow ESM imports on older NodeJS versions that don't support import assertions
 import fs from 'node:fs';
@@ -78,9 +90,12 @@ const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)))
 export default bcd;
 `;
   await fs.writeFile(dest, content);
-}
+};
 
-async function writeTypeScript() {
+/**
+ *
+ */
+const writeTypeScript = async () => {
   const dest = new URL('index.ts', targetdir);
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
@@ -96,20 +111,25 @@ export * from "./types";`;
   await fs.writeFile(dest, content);
 
   await compileTS(new URL('types.d.ts', targetdir));
-}
+};
 
-// Returns an array of promises for copying of all files that don't need transformation
-async function copyFiles() {
+/**
+ * Returns an array of promises for copying of all files that don't need transformation
+ */
+const copyFiles = async () => {
   for (const file of verbatimFiles) {
     const src = new URL(file, rootdir);
     const dest = new URL(file, targetdir);
     await fs.copyFile(src, dest);
   }
-}
+};
 
 /* c8 ignore stop */
 
-export function createManifest() {
+/**
+ * @returns {any}
+ */
+export const createManifest = (): any => {
   const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {
@@ -139,17 +159,23 @@ export function createManifest() {
     }
   }
   return minimal;
-}
+};
 
 /* c8 ignore start */
 
-async function writeManifest() {
+/**
+ *
+ */
+const writeManifest = async () => {
   const dest = new URL('package.json', targetdir);
   const manifest = createManifest();
   await fs.writeFile(dest, JSON.stringify(manifest));
-}
+};
 
-async function main() {
+/**
+ *
+ */
+const main = async () => {
   // Remove existing files, if there are any
   await fs
     .rm(targetdir, {
@@ -158,7 +184,9 @@ async function main() {
     })
     .catch((e) => {
       // Missing folder is not an issue since we wanted to delete it anyway
-      if (e.code !== 'ENOENT') throw e;
+      if (e.code !== 'ENOENT') {
+        throw e;
+      }
     });
 
   // Crate a new directory
@@ -171,7 +199,7 @@ async function main() {
   await copyFiles();
 
   console.log('Data bundle is ready');
-}
+};
 
 if (esMain(import.meta)) {
   await main();

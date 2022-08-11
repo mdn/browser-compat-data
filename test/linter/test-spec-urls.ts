@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -64,9 +64,8 @@ const allowedSpecURLs = [
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(data: CompatStatement, logger: Logger): void {
+const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
     return;
   }
@@ -82,14 +81,19 @@ function processData(data: CompatStatement, logger: Logger): void {
       );
     }
   }
-}
+};
 
 export default {
   name: 'Spec URLs',
   description:
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);
   },
 } as Linter;

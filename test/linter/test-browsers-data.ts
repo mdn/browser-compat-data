@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserStatement, BrowserName } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -13,13 +13,12 @@ const { browsers } = bcd;
  * @param {BrowserName} browser
  * @param {BrowserStatement} data
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(
+const processData = (
   browser: BrowserName,
   data: BrowserStatement,
   logger: Logger,
-): void {
+): void => {
   for (const status of ['current', 'nightly']) {
     const releasesForStatus = Object.entries(data.releases)
       .filter(([, data]) => data.status == status)
@@ -50,19 +49,18 @@ function processData(
       );
     }
   }
-}
+};
 
 export default {
   name: 'Browser Data',
   description: 'Test the browser data',
   scope: 'browser',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { browser },
-    }: { data: BrowserStatement; path: { browser: BrowserName } },
-  ) {
-    processData(browser, data, logger);
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root8
+   */
+  check: (logger: Logger, { data, path: { browser } }: LinterData) => {
+    processData(browser as BrowserName, data, logger);
   },
 } as Linter;

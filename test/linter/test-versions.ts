@@ -1,11 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
-  CompatStatement,
   SimpleSupportStatement,
+  SupportBlock,
   VersionValue,
 } from '../../types/types.js';
 import {
@@ -82,11 +82,11 @@ const realValuesRequired: { [category: string]: string[] } = {
  * @param {VersionValue} version The version to test
  * @returns {boolean} Whether the browser allows that version
  */
-function isValidVersion(
+const isValidVersion = (
   browser: BrowserName,
   category: string,
   version: VersionValue,
-): boolean {
+): boolean => {
   if (typeof version === 'string') {
     return validBrowserVersions[browser].includes(version);
   } else if (
@@ -94,15 +94,9 @@ function isValidVersion(
     version !== false
   ) {
     return false;
-  } else {
-    return true;
   }
-}
-
-function hasVersionAddedOnly(statement: SimpleSupportStatement): boolean {
-  const keys = Object.keys(statement);
-  return keys.length === 1 && keys[0] === 'version_added';
-}
+  return true;
+};
 
 /**
  * Checks if the version number of version_removed is greater than or equal to
@@ -112,7 +106,9 @@ function hasVersionAddedOnly(statement: SimpleSupportStatement): boolean {
  * @param {SimpleSupportStatement} statement
  * @returns {(boolean|null)}
  */
-function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
+const addedBeforeRemoved = (
+  statement: SimpleSupportStatement,
+): boolean | null => {
   if (
     typeof statement.version_added !== 'string' ||
     typeof statement.version_removed !== 'string'
@@ -142,7 +138,7 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
   }
 
   return compareVersions.compare(added, removed, '<');
-}
+};
 
 /**
  * Check the data for any errors in provided versions
@@ -150,13 +146,12 @@ function addedBeforeRemoved(statement: SimpleSupportStatement): boolean | null {
  * @param {SupportBlock} supportData The data to test
  * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function checkVersions(
+const checkVersions = (
   supportData: InternalSupportBlock,
   category: string,
   logger: Logger,
-): void {
+): void => {
   const browsersToCheck = Object.keys(supportData) as BrowserName[];
 
   for (const browser of browsersToCheck) {
@@ -250,19 +245,18 @@ function checkVersions(
       }
     }
   }
-}
+};
 
 export default {
   name: 'Versions',
   description: 'Test the version numbers of support statements',
   scope: 'feature',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
     checkVersions(data.support, category, logger);
   },
 } as Linter;

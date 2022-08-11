@@ -23,6 +23,12 @@ import mirrorSupport from '../release/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+/**
+ *
+ * @param {InternalSupportBlock} support
+ * @param {BrowserName} browser
+ * @returns {boolean}
+ */
 export const isMirrorEquivalent = (
   support: InternalSupportBlock,
   browser: BrowserName,
@@ -47,21 +53,29 @@ export const isMirrorEquivalent = (
   return true;
 };
 
+/**
+ *
+ * @param {CompatData} bcd
+ * @param {BrowserName[]} browsers
+ */
 export const mirrorIfEquivalent = (
   bcd: CompatData,
   browsers: BrowserName[],
 ): void => {
   for (const { compat } of walk(undefined, bcd)) {
     for (const browser of browsers) {
-      if (compat) {
-        if (isMirrorEquivalent(compat.support, browser)) {
-          (compat.support[browser] as InternalSupportStatement) = 'mirror';
-        }
+      if (isMirrorEquivalent(compat.support, browser)) {
+        (compat.support[browser] as InternalSupportStatement) = 'mirror';
       }
     }
   }
 };
 
+/**
+ *
+ * @param {string} filename
+ * @param {BrowserName[]} browsers
+ */
 const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
@@ -76,9 +90,7 @@ const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
 if (esMain(import.meta)) {
   const defaultBrowsers = (
     Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
-  ).filter((browser) => {
-    return bcd.browsers[browser].upstream;
-  });
+  ).filter((browser) => bcd.browsers[browser].upstream);
 
   const defaultFolders = [
     'api',

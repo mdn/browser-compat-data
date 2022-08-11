@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../types/types.js';
+import { BrowserName, Identifier } from '../types/types.js';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -17,7 +17,7 @@ import bcd from '../index.js';
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @returns {void}
+ * @yields {string}
  */
 function* iterateFeatures(
   obj,
@@ -36,8 +36,9 @@ function* iterateFeatures(
             let browserData = comp[browser];
 
             if (!browserData) {
-              if (values.length == 0 || values.includes('null'))
+              if (values.length == 0 || values.includes('null')) {
                 yield `${identifier}${i}`;
+              }
               continue;
             }
             if (!Array.isArray(browserData)) {
@@ -53,18 +54,21 @@ function* iterateFeatures(
                 // If checking for non-mirrored data and it's not mirrored
                 yield `${identifier}${i}`;
               } else if (browserData[range] === undefined) {
-                if (values.length == 0 || values.includes('null'))
+                if (values.length == 0 || values.includes('null')) {
                   yield `${identifier}${i}`;
+                }
               } else if (
                 values.length == 0 ||
                 values.includes(String(browserData[range].version_added)) ||
                 values.includes(String(browserData[range].version_removed))
               ) {
                 let f = `${identifier}${i}`;
-                if (browserData[range].prefix)
+                if (browserData[range].prefix) {
                   f += ` (${browserData[range].prefix} prefix)`;
-                if (browserData[range].alternative_name)
+                }
+                if (browserData[range].alternative_name) {
                   f += ` (as ${browserData[range].alternative_name})`;
+                }
                 yield f;
               }
             }
@@ -90,22 +94,30 @@ function* iterateFeatures(
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @returns {void}
+ * @returns {string[]}
  */
-function traverseFeatures(
+const traverseFeatures = (
   obj,
   browsers: BrowserName[],
   values: string[],
   depth: number,
   identifier: string,
-): string[] {
+): string[] => {
   const features = Array.from(
     iterateFeatures(obj, browsers, values, depth, identifier),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
-}
+};
 
+/**
+ *
+ * @param {string[]} folders
+ * @param {BrowserName[]} browsers
+ * @param {string[]} values
+ * @param {number} depth
+ * @returns {string[]}
+ */
 const main = (
   folders = [
     'api',
@@ -120,7 +132,7 @@ const main = (
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
-) => {
+): string[] => {
   const features: string[] = [];
 
   for (const folder in folders) {

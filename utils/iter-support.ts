@@ -7,10 +7,16 @@ import {
   SimpleSupportStatement,
 } from '../types/types.js';
 
-export default function iterSupport(
+/**
+ *
+ * @param {CompatStatement} compat
+ * @param {BrowserName} browser
+ * @returns {SimpleSupportStatement[]}
+ */
+export default (
   compat: CompatStatement,
   browser: BrowserName,
-): SimpleSupportStatement[] {
+): SimpleSupportStatement[] => {
   if (browser in compat.support) {
     const data = compat.support[browser];
     if (data) {
@@ -19,4 +25,4 @@ export default function iterSupport(
   }
 
   return [{ version_added: null }];
-}
+};

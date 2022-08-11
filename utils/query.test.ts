@@ -5,8 +5,8 @@ import assert from 'node:assert/strict';
 
 import query from './query.js';
 
-describe('query()', function () {
-  describe('should throw on non-existent features', function () {
+describe('query()', () => {
+  describe('should throw on non-existent features', () => {
     assert.throws(() => query('nonExistentNameSpace'), ReferenceError);
     assert.throws(() => query('api.NonExistentFeature'), ReferenceError);
     assert.throws(
@@ -15,7 +15,7 @@ describe('query()', function () {
     );
   });
 
-  it('should return the expected point in the tree (namespace)', function () {
+  it('should return the expected point in the tree (namespace)', () => {
     const obj = query('css');
 
     assert.ok(!('__compat' in obj));
@@ -23,7 +23,7 @@ describe('query()', function () {
     assert.ok('at-rules' in obj);
   });
 
-  it('should return the expected point in the tree (feature)', function () {
+  it('should return the expected point in the tree (feature)', () => {
     const obj = query('api.HTMLAnchorElement.href');
 
     assert.ok('support' in obj.__compat);
@@ -34,7 +34,7 @@ describe('query()', function () {
     );
   });
 
-  it('should return the expected point in the tree (feature with children)', function () {
+  it('should return the expected point in the tree (feature with children)', () => {
     const obj = query('api.HTMLAnchorElement');
 
     assert.ok('__compat' in obj);

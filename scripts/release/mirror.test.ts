@@ -13,7 +13,7 @@ describe('mirror', () => {
   describe('default export', () => {
     describe('version numbers match expected values', () => {
       const mappings: {
-        [index in BrowserName]?: Array<[string, string | boolean]>;
+        [index in BrowserName]?: [string, string | boolean][];
       } = {
         chrome_android: [
           ['1', '18'],

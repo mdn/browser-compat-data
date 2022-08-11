@@ -1,8 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
-import { CompatStatement } from '../../types/types.js';
+import { Linter, Logger, LinterData } from '../utils.js';
+import { CompatStatement, Identifier } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 
@@ -12,13 +12,12 @@ import chalk from 'chalk-template';
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(
+const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
-): void {
+): void => {
   let prefixes: string[] = [];
 
   if (category === 'api') {
@@ -67,19 +66,18 @@ function processData(
       }
     }
   }
-}
+};
 
 export default {
   name: 'Prefix',
   description: 'Ensure that prefixes in support statements are valid',
   scope: 'feature',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { category },
-    }: { data: CompatStatement; path: { category: string } },
-  ) {
+  /**
+   *
+   * @param {Logger} logger
+   * @param {LinterData} root0
+   */
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
     processData(data, category, logger);
   },
 } as Linter;

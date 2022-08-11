@@ -16,15 +16,15 @@ const errorTime = new Date(),
   warningTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
-const release = Object.entries(browsers.chrome.releases).find(
-  ([_, statement]) => {
-    if (statement.release_date === undefined) return;
-    const date = new Date(statement.release_date);
-    return errorTime < date && date < warningTime;
-  },
-);
+const release = Object.entries(browsers.chrome.releases).find((r) => {
+  if (r[1].release_date === undefined) {
+    return false;
+  }
+  const date = new Date(r[1].release_date);
+  return errorTime < date && date < warningTime;
+});
 
-describe('neverImplemented', function () {
+describe('neverImplemented', () => {
   it('returns false for features which were implemented', () => {
     assert.equal(
       neverImplemented({
@@ -65,7 +65,7 @@ describe('neverImplemented', function () {
   });
 });
 
-describe('implementedAndRemoved', function () {
+describe('implementedAndRemoved', () => {
   it('returns false for features which were implemented and never removed', () => {
     assert.equal(
       implementedAndRemoved({
@@ -165,7 +165,7 @@ describe('implementedAndRemoved', function () {
   });
 });
 
-describe('processData', function () {
+describe('processData', () => {
   it('logs nothing for features which are still on standards track', () => {
     const logger = new Logger('', '');
     processData(logger, {
