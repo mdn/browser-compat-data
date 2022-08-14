@@ -20,10 +20,11 @@ const propOrder = {
 };
 
 /**
+ * Perform property ordering
  *
- * @param {CompatStatement|StatusBlock} value
- * @param {string[]} order
- * @returns {CompatStatement|StatusBlock}
+ * @param {CompatStatement|StatusBlock} value The object to order properties for
+ * @param {string[]} order The order to follow
+ * @returns {CompatStatement|StatusBlock} The ordered object
  */
 const doOrder = <T>(value: T, order: string[]): T =>
   order.reduce((result: { [index: string]: any }, key: string) => {
@@ -61,7 +62,9 @@ export const orderProperties = (key: string, value: Identifier): Identifier => {
 };
 
 /**
- * @param {string} filename
+ * Fix issues with the property order throughout the BCD files
+ *
+ * @param {string} filename The name of the file to fix
  */
 const fixPropertyOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

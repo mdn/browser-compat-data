@@ -23,13 +23,15 @@ type DiffItem = {
   description: string;
 };
 
-// Note: This does not detect renamed files
 /**
- * @param {string} baseCommit
- * @param {string} basePath
- * @param {string} headCommit
- * @param {string} headPath
- * @returns {Contents}
+ * Get contents from base and head commits
+ * Note: This does not detect renamed files
+ *
+ * @param {string} baseCommit Base commit
+ * @param {string} basePath Base path
+ * @param {string} headCommit Head commit
+ * @param {string} headPath Head path
+ * @returns {Contents} The contents of both commits
  */
 const getBaseAndHeadContents = (
   baseCommit: string,
@@ -43,29 +45,32 @@ const getBaseAndHeadContents = (
 };
 
 /**
+ * Returns a formatted string of before-and-after changes
  *
- * @param {any} lhs
- * @param {any} rhs
- * @returns {string}
+ * @param {any} lhs Left-hand (before) side
+ * @param {any} rhs Right-hand (after) side
+ * @returns {string} Formatted string
  */
 const stringifyChange = (lhs: any, rhs: any): string =>
   `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
 
 /**
- * @param {{base: SupportStatement, head: SupportStatement}} diff
- * @param {SupportStatement} diff.base
- * @param {SupportStatement} diff.head
- * @param {{base: Identifier, head: Identifier}} contents
- * @param {Identifier} contents.base
- * @param {Identifier} contents.head
- * @param {Array.<string>} path
- * @param {string} direction
+ * Perform mirroring on specified diff statement
+ *
+ * @param {{base: SupportStatement, head: SupportStatement}} diff The diff to perform mirroring on
+ * @param {SupportStatement} diff.base The diff to perform mirroring on
+ * @param {SupportStatement} diff.head The diff to perform mirroring on
+ * @param {{base: Identifier, head: Identifier}} contents The contents to mirror from
+ * @param {Identifier} contents.base The contents to mirror from
+ * @param {Identifier} contents.head The contents to mirror from
+ * @param {Array.<string>} path The feature path to mirror
+ * @param {'base' | 'head'} direction Whether to mirror 'base' or 'head'
  */
 const doMirror = (
   diff: { base: SupportStatement; head: SupportStatement },
   contents: { base: Identifier; head: Identifier },
   path: string[],
-  direction: string,
+  direction: 'base' | 'head',
 ): void => {
   const browser = path[path.length - 1] as BrowserName;
   const dataPath = path.slice(0, path.length - 3).join('.');
@@ -75,9 +80,11 @@ const doMirror = (
 };
 
 /**
- * @param {Diff<string, string>} diffItem
- * @param {Contents} contents
- * @returns {string}
+ * Describe the diff in text form (internal function)
+ *
+ * @param {Diff<string, string>} diffItem The diff to describe
+ * @param {Contents} contents The contents of the diff
+ * @returns {string} A human-readable diff description
  */
 const describeByKind = (
   diffItem: Diff<string, string>,
@@ -121,9 +128,11 @@ const describeByKind = (
 };
 
 /**
- * @param {Diff<string, string>} diffItem
- * @param {Contents} contents
- * @returns {DiffItem}
+ * Describe the diff in text form
+ *
+ * @param {Diff<string, string>} diffItem The diff to describe
+ * @param {Contents} contents The contents of the diff
+ * @returns {DiffItem} A human-readable diff description
  */
 const describeDiffItem = (
   diffItem: Diff<string, string>,
@@ -147,8 +156,10 @@ const describeDiffItem = (
 };
 
 /**
- * @param {DiffItem[]} items
- * @returns {Map<string, string>}
+ * Merge diff together as a map
+ *
+ * @param {DiffItem[]} items Diff items to merge
+ * @returns {Map<string, string>} A map of the diff items
  */
 const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
   const map = new Map();
@@ -161,9 +172,11 @@ const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
 };
 
 /**
- * @param {string} base
- * @param {string} head
- * @returns {Map<string, string>}
+ * Get the diffs as a map
+ *
+ * @param {string} base Base ref
+ * @param {string} head Head ref
+ * @returns {Map<string, string>} A map of the diff items
  */
 const getDiffs = (base: string, head = ''): Map<string, string> => {
   const namedDescriptions: { name: string; description: string }[] = [];

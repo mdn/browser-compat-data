@@ -19,17 +19,19 @@ import { queryPRs } from './utils.js';
 import diffFeatures from '../diff-features.js';
 
 /**
+ * Format a feature change in Markdown
  *
- * @param {FeatureChange} obj
- * @returns {string}
+ * @param {FeatureChange} obj The feature change to format
+ * @returns {string} The formatted feature change
  */
 const featureBullet = (obj: FeatureChange) =>
   `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
 /**
+ * Format all the feature changes in Markdown
  *
- * @param {Changes} changes
- * @returns {string}
+ * @param {Changes} changes The changes to format
+ * @returns {string} The formatted changes
  */
 export const formatChanges = (changes: Changes): string => {
   const output: string[] = [];
@@ -54,9 +56,10 @@ export const formatChanges = (changes: Changes): string => {
 };
 
 /**
+ * Get all the pulls that have been merged on GitHub
  *
- * @param {string} fromDate
- * @returns {FeatureChange[]}
+ * @param {string} fromDate The start date to get merged pulls from
+ * @returns {FeatureChange[]} The pull requests that have been merged
  */
 const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
   queryPRs({
@@ -65,6 +68,12 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
     jq: '[.[] | { mergeCommit: .mergeCommit.oid, number: .number, url: .url }]', // Flatten the structure provided by GitHub
   });
 
+/**
+ * Get the diff from the pull request
+ *
+ * @param {FeatureChange} pull The pull request to test
+ * @returns {{ added: string[]; removed: string[] }} The changes from the pull request
+ */
 const getDiff = (
   pull: FeatureChange,
 ): { added: string[]; removed: string[] } | null => {
@@ -91,8 +100,10 @@ const getDiff = (
 };
 
 /**
+ * Get changes from the pull requests that have been merged since a specified date
  *
- * @param {string} date
+ * @param {string} date The starting date to query pull requests from
+ * @returns {Changes} The changes from all of the pull requests
  */
 export const getChanges = async (date: string): Promise<Changes> => {
   const pulls = pullsFromGitHub(date);
