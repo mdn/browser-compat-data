@@ -4,8 +4,6 @@
 import { Identifier } from '../../types/types.js';
 import { Linter, Logger, LinterData } from '../utils.js';
 
-import path from 'node:path';
-
 /**
  * Test the filename based on the identifier
  *
