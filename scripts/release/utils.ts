@@ -1,7 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'fs/promises';
 import { execSync } from 'node:child_process';
 
 /**
