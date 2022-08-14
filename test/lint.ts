@@ -26,7 +26,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * Recursively load
  *
  * @param {string[]} files The files to test
- * @returns {DataType?}
+ * @returns {DataType?} The data from the loaded files
  */
 const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
   const data = {};
