@@ -50,8 +50,8 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 /**
  * Escapes common invisible characters.
  *
- * @param {string} str
- * @returns {string}
+ * @param {string} str The string to escape visibles for
+ * @returns {string} The string with invisibles escaped
  */
 export const escapeInvisibles = (str: string): string =>
   INVISIBLES_REGEXP[Symbol.replace](
@@ -62,9 +62,9 @@ export const escapeInvisibles = (str: string): string =>
 /**
  * Gets the row and column matching the index in a string.
  *
- * @param {string} str
- * @param {number} index
- * @returns {[number, number] | [null, null]}
+ * @param {string} str The string
+ * @param {number} index The character index
+ * @returns {[number, number] | [null, null]} The position from the index
  */
 export const indexToPosRaw = (
   str: string,
@@ -107,8 +107,8 @@ export const indexToPosRaw = (
 /**
  * Gets the row and column matching the index in a string and formats it.
  *
- * @param {string} str
- * @param {number} index
+ * @param {string} str The string
+ * @param {number} index The character index
  * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
 export const indexToPos = (str: string, index: number): string => {
@@ -117,8 +117,10 @@ export const indexToPos = (str: string, index: number): string => {
 };
 
 /**
- * @param {string} actual
- * @param {string} expected
+ * Get the stringified difference between two JSON strings
+ *
+ * @param {string} actual Actual JSON string
+ * @param {string} expected Expected JSON string
  * @returns {string?} Statement explaining the difference in provided JSON strings
  */
 export const jsonDiff = (actual: string, expected: string): string | null => {
@@ -175,7 +177,7 @@ export type LinterData = {
 };
 
 /**
- *
+ * Linter logger class
  */
 export class Logger {
   title: string;
@@ -183,9 +185,10 @@ export class Logger {
   messages: LinterMessage[];
 
   /**
+   * Construct the logger
    *
-   * @param {string} title
-   * @param {string} path
+   * @param {string} title Logger title
+   * @param {string} path The scope path
    */
   constructor(title: string, path: string) {
     this.title = title;
@@ -194,8 +197,10 @@ export class Logger {
   }
 
   /**
-   * @param {string} message
-   * @param {object} options
+   * Throw an error
+   *
+   * @param {string} message Message string
+   * @param {object} options Additional options (ex. actual, expected)
    */
   error(message: string, options?: object): void {
     this.messages.push({
@@ -208,8 +213,10 @@ export class Logger {
   }
 
   /**
-   * @param {string} message
-   * @param {object} options
+   * Throw a warning
+   *
+   * @param {string} message Message string
+   * @param {object} options Additional options (ex. actual, expected)
    */
   warning(message: string, options?: object): void {
     this.messages.push({
@@ -223,7 +230,7 @@ export class Logger {
 }
 
 /**
- *
+ * Linters class
  */
 export class Linters {
   linters: Linter[];
@@ -234,8 +241,9 @@ export class Linters {
   missingExpectedFailures: Record<string, Record<string, boolean>>;
 
   /**
+   * Construct the linters
    *
-   * @param {Linter[]} linters
+   * @param {Linter[]} linters All the linters
    */
   constructor(linters: Linter[]) {
     this.linters = linters;
@@ -251,8 +259,10 @@ export class Linters {
   }
 
   /**
-   * @param {LinterScope} scope
-   * @param {LinterData} data
+   * Run the linters for a specific scope
+   *
+   * @param {LinterScope} scope The scope to run
+   * @param {LinterData} data The data to lint
    */
   runScope(scope: LinterScope, data: LinterData): void {
     const linters = this.linters.filter((linter) => linter.scope === scope);

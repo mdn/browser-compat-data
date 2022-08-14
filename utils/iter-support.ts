@@ -8,10 +8,11 @@ import {
 } from '../types/types.js';
 
 /**
+ * Get support for a specific browser in array form
  *
- * @param {CompatStatement} compat
- * @param {BrowserName} browser
- * @returns {SimpleSupportStatement[]}
+ * @param {CompatStatement} compat The compatibility data
+ * @param {BrowserName} browser The browser to get data for
+ * @returns {SimpleSupportStatement[]} The array of support statements for the browser
  */
 export default (
   compat: CompatStatement,
