@@ -17,7 +17,7 @@ import bcd from '../index.js';
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @yields {string}
+ * @yields {string} The feature identifier
  */
 function* iterateFeatures(
   obj,
@@ -94,7 +94,7 @@ function* iterateFeatures(
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
  * @param {string} identifier The identifier of the current object
- * @returns {string[]}
+ * @returns {string[]} An array of the features
  */
 const traverseFeatures = (
   obj,
@@ -111,12 +111,13 @@ const traverseFeatures = (
 };
 
 /**
+ * Traverse the features within BCD
  *
- * @param {string[]} folders
- * @param {BrowserName[]} browsers
- * @param {string[]} values
- * @param {number} depth
- * @returns {string[]}
+ * @param {string[]} folders The folders to traverse
+ * @param {BrowserName[]} browsers The browsers to traverse for
+ * @param {string[]} values The version values to traverse for
+ * @param {number} depth The depth to traverse
+ * @returns {string[]} The list of features
  */
 const main = (
   folders = [

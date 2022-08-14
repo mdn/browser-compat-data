@@ -8,7 +8,7 @@ export type FeatureChange = {
   feature: string;
 };
 
-interface Changes {
+export interface Changes {
   added: FeatureChange[];
   removed: FeatureChange[];
 }

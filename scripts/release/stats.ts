@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-type Stats = {
+export type Stats = {
   commits: number;
   changed: number;
   insertions: number;
@@ -27,7 +27,9 @@ import { walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
 
 /**
- * @returns {number}
+ * Get stargazers for the repository
+ *
+ * @returns {number} The number of stargazer
  */
 const stargazers = async (): Promise<number> => {
   const json = githubAPI('');
@@ -35,7 +37,9 @@ const stargazers = async (): Promise<number> => {
 };
 
 /**
- * @returns {number}
+ * Get the number of contributors that have committed to the repository
+ *
+ * @returns {number} The number of contributors that have contributed to the repository
  */
 const contributors = async (): Promise<number> => {
   let count = 0;
@@ -55,9 +59,10 @@ const contributors = async (): Promise<number> => {
 };
 
 /**
+ * Get all of the stats for the release
  *
- * @param {string} start
- * @returns {ChangeStats}
+ * @param {string} start The last version number
+ * @returns {ChangeStats} The statistics
  */
 const stats = (start: string): ChangeStats => {
   // Get just the diff stats summary
@@ -90,6 +95,12 @@ const stats = (start: string): ChangeStats => {
   };
 };
 
+/**
+ * Get the number of contributors that have committed to this release
+ *
+ * @param {string} fromDate The date of the last release
+ * @returns {Set<string>} The authors of the commits
+ */
 const getReleaseContributors = (fromDate: string): Set<string> => {
   const prs = queryPRs({
     json: 'author',
@@ -99,14 +110,17 @@ const getReleaseContributors = (fromDate: string): Set<string> => {
 };
 
 /**
- * @returns {number}
+ * Count the number of features in BCD
+ *
+ * @returns {number} The number of features
  */
 const countFeatures = (): number => [...walk()].length;
 
 /**
+ * Format the stats as Markdown
  *
- * @param {Stats} details
- * @returns {string}
+ * @param {Stats} details The stats to format
+ * @returns {string} The formatted stats
  */
 export const formatStats = (details: Stats): string =>
   [
@@ -131,6 +145,14 @@ export const formatStats = (details: Stats): string =>
     '',
   ].join('\n');
 
+/**
+ * Get the statistics for the release
+ *
+ * @param {string} start The last release number
+ * @param {string} end This release number
+ * @param {string} startDate The date of the last release
+ * @returns {Stats} The release statistics
+ */
 export const getStats = async (
   start: string,
   end: string,

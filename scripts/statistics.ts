@@ -126,7 +126,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
  *
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
- * @returns {Object<string, VersionStats>?}
+ * @returns {Object<string, VersionStats>?} The statistics
  */
 const getStats = (
   folder: string,

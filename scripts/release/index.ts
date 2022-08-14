@@ -7,8 +7,8 @@ import chalk from 'chalk-template';
 import esMain from 'es-main';
 
 import { getSemverBumpPulls } from './semver-pulls.js';
-import { getStats, formatStats } from './stats.js';
-import { getChanges, formatChanges } from './changes.js';
+import { getStats, formatStats, Stats } from './stats.js';
+import { getChanges, formatChanges, Changes } from './changes.js';
 import {
   exec,
   requireGitHubCLI,
@@ -20,10 +20,19 @@ import {
 
 const dirname = new URL('.', import.meta.url);
 
+/**
+ * Get the release notes to add
+ *
+ * @param {string} thisVersion The current version number
+ * @param {Changes} changes The changes to format
+ * @param {Stats} stats The statistics from the hanges
+ * @param {string} versionBump Which part of the semver has been bumped
+ * @returns {string} The Markdown-formatted release notes
+ */
 const getNotes = (
   thisVersion: string,
-  changes,
-  stats,
+  changes: Changes,
+  stats: Stats,
   versionBump: string,
 ): string =>
   [
@@ -47,6 +56,11 @@ const getNotes = (
     formatStats(stats),
   ].join('\n');
 
+/**
+ * Add new release notes to the file
+ *
+ * @param {string} notesToAdd The notes to add to the release notes
+ */
 const addNotes = async (notesToAdd: string): Promise<void> => {
   const notesFilepath = new URL('../../RELEASE_NOTES.md', dirname);
   const currentNotes = (await fs.readFile(notesFilepath))
@@ -61,6 +75,12 @@ const addNotes = async (notesToAdd: string): Promise<void> => {
   await fs.writeFile(notesFilepath, newNotes);
 };
 
+/**
+ * Perform the commit and submit a pull request
+ *
+ * @param {string} thisVersion The current version number
+ * @param {boolean} wait Whether to wait for user to update the release notes (used when semver bump is minor or major)
+ */
 const commitAndPR = async (
   thisVersion: string,
   wait: boolean,
@@ -86,9 +106,12 @@ const commitAndPR = async (
   exec('git branch -d release');
 };
 
+/**
+ * Peform the release
+ */
 const main = async () => {
   requireGitHubCLI();
-  await requireWriteAccess();
+  requireWriteAccess();
 
   console.log(chalk`{blue Getting last version...}`);
   const lastVersion = getLatestTag();

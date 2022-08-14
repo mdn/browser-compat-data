@@ -8,7 +8,15 @@ const releaseNotesLabels = {
   minor: 'semver-minor-bump ➕',
 };
 
-export const getSemverBumpPulls = (fromDate: string) =>
+/**
+ * Get pull requests that have been merged since the specified date that perform a major/minor semver bump
+ *
+ * @param {string} fromDate The date to check PRs from
+ * @returns { { major: any; minor: any } } The PRs that perform semver bumps higher than a patch
+ */
+export const getSemverBumpPulls = (
+  fromDate: string,
+): { major: any; minor: any } =>
   Object.fromEntries(
     ['major', 'minor'].map((l) => [
       l,
@@ -16,4 +24,4 @@ export const getSemverBumpPulls = (fromDate: string) =>
         search: `merged:>=${fromDate} label:"${releaseNotesLabels[l]}"`,
       }),
     ]),
-  );
+  ) as { major: any; minor: any };
