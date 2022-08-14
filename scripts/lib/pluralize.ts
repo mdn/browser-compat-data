@@ -6,9 +6,10 @@ import chalk from 'chalk-template';
 const formatter = new Intl.NumberFormat('en-US');
 
 /**
+ * Format a number using Intl.NumberFormat
  *
- * @param {number} n
- * @returns {string}
+ * @param {number} n The number to format
+ * @returns {string} The formatted number
  */
 const formatNumber = (n: number): string => formatter.format(n);
 
@@ -16,9 +17,9 @@ const formatNumber = (n: number): string => formatter.format(n);
  * Pluralizes a string
  *
  * @param {string} word Word in singular form
- * @param {number} quantifier
- * @param {boolean} useChalk
- * @returns {string}
+ * @param {number} quantifier The quantifier
+ * @param {boolean} useChalk Use chalk formatting
+ * @returns {string} The pluralized string
  */
 const pluralize = (
   word: string,

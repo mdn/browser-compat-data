@@ -101,10 +101,11 @@ const tests: { input: Identifier; output: Identifier }[] = [
 ] as any;
 
 /**
+ * Update the order of the statements
  *
- * @param {string} key
- * @param {CompatStatement} value
- * @returns {CompatStatement}
+ * @param {string} key The key of the object (make sure it's '__compat')
+ * @param {CompatStatement} value The compat statement to update
+ * @returns {CompatStatement} The updated compat statement
  */
 const orderStatements = (
   key: string,

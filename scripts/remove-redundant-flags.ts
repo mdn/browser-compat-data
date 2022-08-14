@@ -22,9 +22,10 @@ import { IS_WINDOWS } from '../test/utils.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
+ * Get the earliest verion number from an array of versions
  *
- * @param {string[]} args
- * @returns {string}
+ * @param {string[]} args The version numbers to check
+ * @returns {string} The earliest of the version numbers
  */
 const getEarliestVersion = (...args: string[]): string => {
   const versions = args
@@ -48,11 +49,12 @@ const getEarliestVersion = (...args: string[]): string => {
 };
 
 /**
+ * Removes redundant flags from the compatibility data
  *
- * @param {string} key
- * @param {CompatStatement} value
- * @param {BrowserName?} limitBrowser
- * @returns {CompatStatement}
+ * @param {string} key The object key (make sure it's '__compat')
+ * @param {CompatStatement} value The compatibility statement to test
+ * @param {BrowserName?} limitBrowser If flags should only be removed from a specific browser
+ * @returns {CompatStatement} The compatibility statement with all of the flags removed
  */
 export const removeRedundantFlags = (
   key: string,
@@ -129,9 +131,10 @@ export const removeRedundantFlags = (
 };
 
 /**
+ * Removes redundant flags from the compatibility data of a specified file
  *
- * @param {string} filename
- * @param {BrowserName?} limitBrowser
+ * @param {string} filename The filename containing compatibility info
+ * @param {BrowserName?} limitBrowser If flags should only be removed from a specific browser
  */
 export const fixRedundantFlags = (
   filename: string,
@@ -156,9 +159,10 @@ export const fixRedundantFlags = (
 };
 
 /**
+ * Removes redundant flags from the compatibility data of specified files/folders
  *
- * @param {string[]} files_or_folders
- * @param {BrowserName?} browser
+ * @param {string[]} files_or_folders The files and/or folders to run removal on
+ * @param {BrowserName?} browser If flags should only be removed from a specific
  */
 const main = (
   files_or_folders: string[],

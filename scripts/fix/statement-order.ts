@@ -34,7 +34,9 @@ export const orderStatements = (
 };
 
 /**
- * @param {string} filename
+ * Fix issues with statement order throughout the BCD files
+ *
+ * @param {string} filename The name of the file to fix
  */
 const fixStatementOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

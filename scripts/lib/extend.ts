@@ -2,12 +2,13 @@
  * See LICENSE file for more information. */
 
 /**
- *
+ * Error class for duplicate compat statements during object merge
  */
 class DuplicateCompatError extends Error {
   /**
+   * Construct the error
    *
-   * @param {string} feature
+   * @param {string} feature The feature path
    */
   constructor(feature: string) {
     super(`${feature} already exists! Remove duplicate entries.`);
@@ -16,18 +17,20 @@ class DuplicateCompatError extends Error {
 }
 
 /**
+ * Check if the variable is an object ({})
  *
- * @param {any} v
- * @returns {boolean}
+ * @param {any} v The object to test
+ * @returns {boolean} Whether the object is a plain object
  */
 const isPlainObject = (v): v is object =>
   typeof v === 'object' && v !== null && !Array.isArray(v);
 
 /**
+ * Combine two objects containing browser compat data together
  *
- * @param {any} target
- * @param {any} source
- * @param {string} feature
+ * @param {any} target The object to extend
+ * @param {any} source The object to copy from
+ * @param {string} feature The feature path so far (internal for recursive calls)
  */
 const extend = (target, source, feature = ''): void => {
   if (!isPlainObject(target) || !isPlainObject(source)) {
