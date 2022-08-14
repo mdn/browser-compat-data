@@ -73,9 +73,10 @@ export default {
   description: 'Ensure that prefixes in support statements are valid',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     processData(data, category, logger);

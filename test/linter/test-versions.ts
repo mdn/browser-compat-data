@@ -103,8 +103,8 @@ const isValidVersion = (
  * that of version_added, assuming they are both version strings. If either one
  * is not a valid version string, return null.
  *
- * @param {SimpleSupportStatement} statement
- * @returns {(boolean|null)}
+ * @param {SimpleSupportStatement} statement The statement to test
+ * @returns {(boolean|null)} Whether the version added was earlier than the version removed
  */
 const addedBeforeRemoved = (
   statement: SimpleSupportStatement,
@@ -252,9 +252,10 @@ export default {
   description: 'Test the version numbers of support statements',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     checkVersions(data.support, category, logger);

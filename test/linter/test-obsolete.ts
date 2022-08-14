@@ -14,8 +14,10 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * @param {SupportBlock} support
- * @returns {boolean}
+ * Check if feature has never been implemented
+ *
+ * @param {SupportBlock} support The support statement
+ * @returns {boolean} If the feature was never implemented
  */
 export const neverImplemented = (support: SupportBlock): boolean => {
   for (const s in support) {
@@ -38,8 +40,10 @@ errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
- * @param {SupportBlock} support
- * @returns {LinterMessageLevel | false}
+ * Check if a feature has been implemented at some point but removed now
+ *
+ * @param {SupportBlock} support The support statement
+ * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
  */
 export const implementedAndRemoved = (
   support: SupportBlock,
@@ -78,7 +82,9 @@ export const implementedAndRemoved = (
 };
 
 /**
- * @param {Logger} logger
+ * Process and test the data
+ *
+ * @param {Logger} logger The logger to output errors to
  * @param {CompatStatement} data The data to test
  */
 export const processData = (logger: Logger, data: CompatStatement): void => {
@@ -109,9 +115,10 @@ export default {
   description: 'Test for obsolete data in each support statement',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     processData(logger, data);

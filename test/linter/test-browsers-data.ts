@@ -10,8 +10,10 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
- * @param {BrowserName} browser
- * @param {BrowserStatement} data
+ * Process and test the data
+ *
+ * @param {BrowserName} browser The name of the browser
+ * @param {BrowserStatement} data The browser statement
  * @param {Logger} logger The logger to output errors to
  */
 const processData = (
@@ -56,9 +58,10 @@ export default {
   description: 'Test the browser data',
   scope: 'browser',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root8
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { browser } }: LinterData) => {
     processData(browser as BrowserName, data, logger);

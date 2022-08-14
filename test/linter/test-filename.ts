@@ -7,13 +7,14 @@ import { Linter, Logger, LinterData } from '../utils.js';
 import path from 'node:path';
 
 /**
+ * Test the filename based on the identifier
  *
- * @param {Identifier} data
- * @param {string[]} pathParts
- * @param {string} currentPath
- * @returns {string|boolean}
+ * @param {Identifier} data The identifier
+ * @param {string[]} pathParts Parts of the path
+ * @param {string} currentPath The current path traversed
+ * @returns {string|boolean} A string with the error message if the lint failed, or false if it passed
  */
-const testFeaturePresence = (
+const testFilename = (
   data: Identifier,
   pathParts: string[],
   currentPath: string,
@@ -26,7 +27,7 @@ const testFeaturePresence = (
   }
 
   if (pathParts.length > 1) {
-    return testFeaturePresence(
+    return testFilename(
       data[feature],
       pathParts.splice(1),
       currentPath + feature + '.',
@@ -55,7 +56,7 @@ const processData = (
     .replace('html/elements/input/', 'html/elements/input/type_')
     .replace('javascript/builtins/globals', 'javascript/builtins');
 
-  const failed = testFeaturePresence(data, p.split('/'), '');
+  const failed = testFilename(data, p.split('/'), '');
   if (failed) {
     logger.error(failed);
   }
@@ -67,9 +68,10 @@ export default {
     'Tests the filename to make sure it includes the intended feature',
   scope: 'file',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, full, logger);

@@ -96,9 +96,10 @@ export default {
   description: 'Tests the style and formatting of the JSON file',
   scope: 'file',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { rawdata, path: { category } }: LinterData) => {
     if (category !== 'browsers') {

@@ -267,9 +267,10 @@ export default {
     'Test links in the file to ensure they conform to BCD guidelines',
   scope: 'file',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { rawdata }: LinterData) => {
     const errors = processData(rawdata);
