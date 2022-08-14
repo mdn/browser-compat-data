@@ -10,9 +10,10 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
+ * Check if experimental should be true or false
  *
- * @param {CompatStatement} data
- * @returns {boolean}
+ * @param {CompatStatement} data The data to check
+ * @returns {boolean} The expected experimental status
  */
 export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
@@ -64,9 +65,11 @@ export const checkExperimental = (data: CompatStatement): boolean => {
 };
 
 /**
- * @param {CompatStatement} data
- * @param {Logger} logger
- * @param {string} path
+ * Check the status blocks of the compat date
+ *
+ * @param {CompatStatement} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} path The feature path
  */
 const checkStatus = (
   data: CompatStatement,
@@ -109,9 +112,10 @@ export default {
   description: 'Test the status of support statements',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     checkStatus(data, logger);

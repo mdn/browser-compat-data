@@ -92,8 +92,10 @@ export class ConsistencyChecker {
   }
 
   /**
-   * @param {Identifier} data
-   * @returns {string[]}
+   * Get the subfeatures of an identifier
+   *
+   * @param {Identifier} data The identifier
+   * @returns {string[]} The subfeatures
    */
   getSubfeatures(data: Identifier): string[] {
     const subfeatures: string[] = [];
@@ -369,11 +371,11 @@ export class ConsistencyChecker {
       );
     }
 
-    // A convenience function to squash non-real values and previews into null
     /**
+     * A convenience function to squash non-real values and previews into null
      *
-     * @param {SimpleSupportStatement} statement
-     * @returns {VersionValue}
+     * @param {SimpleSupportStatement} statement The statement to use
+     * @returns {VersionValue} The version number or 'null'
      */
     const resolveVersionAddedValue = (
       statement: SimpleSupportStatement,
@@ -506,9 +508,10 @@ export default {
   description: 'Test the version consistency between parent and child',
   scope: 'tree',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     const checker = new ConsistencyChecker();

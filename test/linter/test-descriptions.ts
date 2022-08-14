@@ -99,9 +99,10 @@ export default {
   description: 'Test the descriptions of compatibility data',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
     if (category === 'api') {

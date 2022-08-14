@@ -89,9 +89,10 @@ export default {
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);

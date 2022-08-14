@@ -162,9 +162,10 @@ export default {
   description: 'Test the notes in each support statement',
   scope: 'feature',
   /**
+   * Test the data
    *
-   * @param {Logger} logger
-   * @param {LinterData} root0
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, logger, full);
