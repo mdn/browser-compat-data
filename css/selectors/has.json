@@ -13,7 +13,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "103",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.has-selector.enabled",
+                  "value_to_set": "true"
+                }
+              ],
               "notes": "See <a href='https://bugzil.la/418039'>bug 418039</a>."
             },
             "firefox_android": "mirror",
