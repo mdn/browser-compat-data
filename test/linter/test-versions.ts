@@ -32,6 +32,8 @@ const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
 };
 
 const browserTips: { [browser: string]: string } = {
+  nodejs:
+    'BCD does not record every individual version of Node.js, only the releases that update V8 engine versions or add a new feature. You may need to add the release to browsers/nodejs.json.',
   safari_ios:
     'The version numbers for Safari for iOS are based upon the iOS version number rather than the Safari version number. Maybe you are trying to use the desktop version number?',
   opera_android:
