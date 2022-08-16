@@ -41,7 +41,7 @@ const stargazers = async (): Promise<number> => {
  *
  * @returns {number} The number of contributors that have contributed to the repository
  */
-const contributors = (): number => githubAPI(`/contributors --paginate`).length;
+const contributors = (): number => githubAPI('/contributors --paginate').length;
 
 /**
  * Get all of the stats for the release
