@@ -41,7 +41,12 @@ const stargazers = async (): Promise<number> => {
  *
  * @returns {number} The number of contributors that have contributed to the repository
  */
-const contributors = (): number => githubAPI('/contributors --paginate').length;
+const contributors = (): number => {
+  const data = exec(
+    'gh api /repos/mdn/browser-compat-data/contributors?anon=1 --paginate',
+  );
+  return JSON.parse('[' + data.replace(/\]\[/g, '],[') + ']').flat(1).length;
+};
 
 /**
  * Get all of the stats for the release
