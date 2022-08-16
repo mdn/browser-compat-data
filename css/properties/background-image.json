@@ -171,7 +171,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
+                "version_added": "≤103",
                 "notes": "See <a href='https://bugzil.la/1107646'>bug 1107646</a>."
               },
               "firefox_android": "mirror",
@@ -181,13 +181,23 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "prefix": "-webkit-",
-                "version_added": "6",
-                "partial_implementation": true,
-                "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
-              },
-              "safari_ios": "mirror",
+              "safari": [
+                {
+                  "version_added": "≤15.6"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "≤15.6"
+                },
+                "mirror"
+              ],
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
