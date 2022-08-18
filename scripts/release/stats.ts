@@ -41,21 +41,11 @@ const stargazers = async (): Promise<number> => {
  *
  * @returns {number} The number of contributors that have contributed to the repository
  */
-const contributors = async (): Promise<number> => {
-  let count = 0;
-  let page = 1;
-
-  while (page > 0) {
-    // GitHub doesn't just expose the count on its own so we have to query further
-    const json = githubAPI(`/contributors?per_page=100&page=${page}`);
-    if (json.length === 0) {
-      break;
-    }
-    count += json.length;
-    page++;
-  }
-
-  return count;
+const contributors = (): number => {
+  const data = exec(
+    'gh api /repos/mdn/browser-compat-data/contributors?anon=1 --paginate',
+  );
+  return JSON.parse('[' + data.replace(/\]\[/g, '],[') + ']').flat(1).length;
 };
 
 /**
@@ -162,7 +152,7 @@ export const getStats = async (
   end,
   ...stats(start),
   releaseContributors: getReleaseContributors(startDate).size,
-  totalContributors: await contributors(),
+  totalContributors: contributors(),
   stars: await stargazers(),
   features: countFeatures(),
 });

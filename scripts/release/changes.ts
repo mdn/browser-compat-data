@@ -92,9 +92,17 @@ const getDiff = (
     return null;
   }
 
-  console.log(
-    chalk` {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`,
-  );
+  if (diff.added.length && diff.removed.length) {
+    console.log(
+      chalk` {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`,
+    );
+  } else if (diff.added.length) {
+    console.log(chalk` {blue ({green ${diff.added.length} added})}`);
+  } else if (diff.removed.length) {
+    console.log(chalk` {blue ({red ${diff.removed.length} removed})}`);
+  } else {
+    console.log(chalk` {blue (No feature count changes)}`);
+  }
 
   return diff;
 };
