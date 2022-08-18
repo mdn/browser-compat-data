@@ -196,7 +196,7 @@ const main = (
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [file]',
-    'Remove data for flags that have been removed two years back or more',
+    'Remove data for redundant flags',
     (yargs) => {
       yargs
         .positional('file', {
