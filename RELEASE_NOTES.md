@@ -1,5 +1,69 @@
 # Release notes
 
+## [v5.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.9)
+
+August 16, 2022
+
+### Removals
+
+- `api.Element.MSGestureChange_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureEnd_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureHold_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureStart_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSGestureTap_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSInertiaStart_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.Element.MSManipulationStateChanged_event` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.expansion` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.gestureObject` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.initGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.MSGestureEvent` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.rotation` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.scale` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.translationX` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.translationY` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityAngular` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityExpansion` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityX` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `api.MSGestureEvent.velocityY` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column-align` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-column-span` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row-align` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-grid-row-span` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+- `css.properties.-ms-scrollbar-track-color` ([#17120](https://github.com/mdn/browser-compat-data/pull/17120))
+
+### Additions
+
+- `api.IDBFactory.open.options_parameter` ([#17358](https://github.com/mdn/browser-compat-data/pull/17358))
+- `browsers.chrome_android.releases.108` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.chrome_android.releases.109` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.chrome_android.releases.110` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.chrome.releases.108` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.chrome.releases.109` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.chrome.releases.110` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.firefox_android.releases.106` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.firefox_android.releases.107` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.firefox_android.releases.108` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.firefox.releases.106` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.firefox.releases.107` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.firefox.releases.108` ([#17372](https://github.com/mdn/browser-compat-data/pull/17372))
+- `browsers.nodejs.releases.16.14.0` ([#17367](https://github.com/mdn/browser-compat-data/pull/17367))
+- `browsers.samsunginternet_android.releases.18.0` ([#17374](https://github.com/mdn/browser-compat-data/pull/17374))
+- `browsers.webview_android.releases.108` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.webview_android.releases.109` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `browsers.webview_android.releases.110` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
+- `css.types.image.paint.additional_paramters` ([#17314](https://github.com/mdn/browser-compat-data/pull/17314))
+- `webextensions.api.scripting.RegisteredContentScript.persistAcrossSessions` ([#17266](https://github.com/mdn/browser-compat-data/pull/17266))
+
+### Statistics
+
+- 8 contributors have changed 104 files with 1,356 additions and 2,071 deletions in 56 commits ([`v5.1.8...v5.1.9`](https://github.com/mdn/browser-compat-data/compare/v5.1.8...v5.1.9))
+- 13,587 total features
+- 934 total contributors
+- 4,184 total stargazers
+
 ## [v5.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.8)
 
 August 9, 2022
