@@ -5,9 +5,22 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer",
         "spec_url": "https://wicg.github.io/sanitizer-api/#sanitizer-api",
         "support": {
-          "chrome": {
-            "version_added": "105"
-          },
+          "chrome": [
+            {
+              "version_added": "105"
+            },
+            {
+              "version_added": "93",
+              "version_removed": "105",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
@@ -55,9 +68,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Sanitizer/Sanitizer",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-sanitizer-sanitizer",
           "support": {
-            "chrome": {
-              "version_added": "105"
-            },
+            "chrome": [
+              {
+                "version_added": "105"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "105",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
