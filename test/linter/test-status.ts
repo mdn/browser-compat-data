@@ -69,13 +69,8 @@ export const checkExperimental = (data: CompatStatement): boolean => {
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @param {string} path The feature path
  */
-const checkStatus = (
-  data: CompatStatement,
-  logger: Logger,
-  path: string[] = [],
-): void => {
+const checkStatus = (data: CompatStatement, logger: Logger): void => {
   const status = data.status;
   if (!status) {
     return;
@@ -83,26 +78,21 @@ const checkStatus = (
 
   if (status.experimental && status.deprecated) {
     logger.error(
-      chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
-        '.',
-      )}}`,
+      chalk`{red Unexpected simultaneous {bold experimental} and {bold deprecated} status}`,
       { fixable: true },
     );
   }
 
   if (data.spec_url && status.standard_track === false) {
     logger.error(
-      chalk`{red {bold ${path.join(
-        '.',
-      )}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
+      chalk`{red Marked as {bold non-standard}, but has a {bold spec_url}}`,
     );
   }
 
   if (!checkExperimental(data)) {
     logger.error(
-      chalk`{red Experimental should be set to {bold false} for {bold ${path.join(
-        '.',
-      )}} as the feature is supported in multiple browser engines.}`,
+      chalk`{red {bold Experimental} should be set to {bold false} as the feature is {bold supported} in {bold multiple browser} engines.}`,
+      { fixable: true },
     );
   }
 };
