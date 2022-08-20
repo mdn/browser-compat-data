@@ -69,11 +69,21 @@ export const checkExperimental = (data: CompatStatement): boolean => {
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
+ * @param {string} category The feature category
  */
-const checkStatus = (data: CompatStatement, logger: Logger): void => {
+const checkStatus = (
+  data: CompatStatement,
+  logger: Logger,
+  category: string,
+): void => {
   const status = data.status;
+
   if (!status) {
     return;
+  } else if (category === 'webextensions') {
+    logger.error(
+      chalk`{red Has a {bold status object}, which is {bold not allowed} for web extensions.}`,
+    );
   }
 
   if (status.experimental && status.deprecated) {
@@ -107,7 +117,7 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger: Logger, { data }: LinterData) => {
-    checkStatus(data, logger);
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
+    checkStatus(data, logger, category);
   },
 } as Linter;
