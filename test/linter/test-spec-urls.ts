@@ -50,6 +50,8 @@ const specsExceptions = [
 
   // Remove if https://github.com/w3c/browser-specs/pull/667#issuecomment-1200089758 is resolved
   'https://w3c.github.io/device-memory',
+
+  'https://wicg.github.io/directory-upload/proposal.html',
 ];
 
 const allowedSpecURLs = [
