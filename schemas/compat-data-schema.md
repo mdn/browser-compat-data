@@ -70,7 +70,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](/docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -313,26 +313,6 @@ Examples:
 
 Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatiblity data](https://github.com/mdn/browser-compat-data/issues/3555).
 
-### Initial versions
-
-The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
-
-| Browser          | Initial version | Notes                                                                                                                                                                    |
-| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Chrome           | 1               |                                                                                                                                                                          |
-| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
-| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
-| Firefox          | 1               |                                                                                                                                                                          |
-| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
-| IE               | 1               |                                                                                                                                                                          |
-| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
-| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
-| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
-| Safari           | 1               |                                                                                                                                                                          |
-| iOS Safari       | 1               |                                                                                                                                                                          |
-| Samsung Internet | 1.0             |                                                                                                                                                                          |
-| WebView Android  | 1               |                                                                                                                                                                          |
-
 ### Ranged versions
 
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
@@ -478,7 +458,7 @@ The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addi
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {
