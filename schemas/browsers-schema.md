@@ -97,6 +97,7 @@ The following table indicates initial versions for browsers in BCD. These are th
 | Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
 | IE               | 1               |                                                                                                                                                                          |
 | Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
+| Meta Quest       | 5.0             | The first version documented on the Oculus Developer website.                                                                                                            |
 | Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
 | Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
 | Safari           | 1               |                                                                                                                                                                          |
