@@ -9,9 +9,25 @@
           },
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "preview",
+              "partial_implementation": true,
+              "notes": "See <a href='https://bugzil.la/1746750'>bug 1746750</a>.",
+            },
+            {
+              "version_added": "98",
+              "partial_implementation": true,
+              "notes": "See <a href='https://bugzil.la/1746750'>bug 1746750</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "gfx.offscreencanvas.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
