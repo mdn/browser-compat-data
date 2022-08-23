@@ -1,5 +1,59 @@
 # Release notes
 
+## [v5.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.10)
+
+August 23, 2022
+
+### Removals
+
+- `api.CanvasRenderingContext2D.drawWidgetAsOnScreen` ([#17465](https://github.com/mdn/browser-compat-data/pull/17465))
+- `api.PresentationRequest.startWithDevice` ([#17468](https://github.com/mdn/browser-compat-data/pull/17468))
+
+### Additions
+
+- `api.AudioParamMap.@@iterator` ([#17482](https://github.com/mdn/browser-compat-data/pull/17482))
+- `api.CanvasFilter` ([#17485](https://github.com/mdn/browser-compat-data/pull/17485))
+- `api.CanvasFilter.CanvasFilter` ([#17485](https://github.com/mdn/browser-compat-data/pull/17485))
+- `api.CanvasRenderingContext2D.fontKerning` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.fontStretch` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.fontVariantCaps` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.isContextLost` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.letterSpacing` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.reset` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.roundRect` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.textRendering` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CanvasRenderingContext2D.wordSpacing` ([#17486](https://github.com/mdn/browser-compat-data/pull/17486))
+- `api.CSSImportRule.layerName` ([#17490](https://github.com/mdn/browser-compat-data/pull/17490))
+- `api.CSSLayerBlockRule` ([#17491](https://github.com/mdn/browser-compat-data/pull/17491))
+- `api.CSSLayerBlockRule.name` ([#17491](https://github.com/mdn/browser-compat-data/pull/17491))
+- `api.CSSLayerStatementRule` ([#17492](https://github.com/mdn/browser-compat-data/pull/17492))
+- `api.CSSLayerStatementRule.nameList` ([#17492](https://github.com/mdn/browser-compat-data/pull/17492))
+- `api.CSSMathClamp` ([#17493](https://github.com/mdn/browser-compat-data/pull/17493))
+- `api.CSSMathClamp.CSSMathClamp` ([#17493](https://github.com/mdn/browser-compat-data/pull/17493))
+- `api.CSSMathClamp.lower` ([#17493](https://github.com/mdn/browser-compat-data/pull/17493))
+- `api.CSSMathClamp.upper` ([#17493](https://github.com/mdn/browser-compat-data/pull/17493))
+- `api.CSSMathClamp.value` ([#17493](https://github.com/mdn/browser-compat-data/pull/17493))
+- `api.Element.beforexrselect_event` ([#17462](https://github.com/mdn/browser-compat-data/pull/17462))
+- `api.ElementInternals.ariaInvalid` ([#17498](https://github.com/mdn/browser-compat-data/pull/17498))
+- `api.ElementInternals.role` ([#17498](https://github.com/mdn/browser-compat-data/pull/17498))
+- `api.EventCounts.@@iterator` ([#17499](https://github.com/mdn/browser-compat-data/pull/17499))
+- `api.HTMLCanvasElement.getContext.2d_context.options_colorSpace_parameter` ([#17474](https://github.com/mdn/browser-compat-data/pull/17474))
+- `api.HTMLCanvasElement.getContext.2d_context.options_willReadFrequently_parameter` ([#17473](https://github.com/mdn/browser-compat-data/pull/17473))
+- `browsers.nodejs.releases.16.17.0` ([#17418](https://github.com/mdn/browser-compat-data/pull/17418))
+- `browsers.oculus.releases.23.0` ([#17457](https://github.com/mdn/browser-compat-data/pull/17457))
+- `browsers.opera.releases.92` ([#17475](https://github.com/mdn/browser-compat-data/pull/17475))
+- `css.properties.animation-composition` ([#17518](https://github.com/mdn/browser-compat-data/pull/17518))
+- `css.properties.break-after.paged_context.avoid-page` ([#17318](https://github.com/mdn/browser-compat-data/pull/17318))
+- `css.properties.contain.inline-size` ([#17469](https://github.com/mdn/browser-compat-data/pull/17469))
+- `css.properties.contain.style` ([#17469](https://github.com/mdn/browser-compat-data/pull/17469))
+
+### Statistics
+
+- 20 contributors have changed 277 files with 3,985 additions and 7,224 deletions in 62 commits ([`v5.1.9...v5.1.10`](https://github.com/mdn/browser-compat-data/compare/v5.1.9...v5.1.10))
+- 13,617 total features
+- 938 total contributors
+- 4,194 total stargazers
+
 ## [v5.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.1.9)
 
 August 16, 2022
