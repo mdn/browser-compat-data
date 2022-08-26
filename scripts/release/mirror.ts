@@ -10,7 +10,7 @@ import { InternalSupportBlock } from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
-import compareVersions from 'compare-versions';
+import { compareVersions, compare } from 'compare-versions';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -112,11 +112,7 @@ export const getMatchingBrowserVersion = (
       } else if (
         release.engine_version &&
         sourceRelease.engine_version &&
-        compareVersions.compare(
-          release.engine_version,
-          sourceRelease.engine_version,
-          '>=',
-        )
+        compare(release.engine_version, sourceRelease.engine_version, '>=')
       ) {
         return r;
       }

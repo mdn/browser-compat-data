@@ -16,7 +16,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index.js';
 
-import compareVersions from 'compare-versions';
+import { compare } from 'compare-versions';
 import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/release/mirror.js';
@@ -406,7 +406,7 @@ export class ConsistencyChecker {
           typeof selectedValue === 'string'
         ) {
           // Earlier value takes precedence
-          const resolvedIsEarlier = compareVersions.compare(
+          const resolvedIsEarlier = compare(
             resolvedValue.replace('≤', ''),
             selectedValue.replace('≤', ''),
             '<',
@@ -460,7 +460,7 @@ export class ConsistencyChecker {
       if (a_version_added === 'preview') {
         return false;
       }
-      return compareVersions.compare(
+      return compare(
         a_version_added.replace('≤', ''),
         b_version_added,
         a_version_added.startsWith('≤') ? '<=' : '<',

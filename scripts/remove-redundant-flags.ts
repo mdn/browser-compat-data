@@ -11,7 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import compareVersions from 'compare-versions';
+import { compare } from 'compare-versions';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -38,8 +38,7 @@ const getEarliestVersion = (...args: string[]): string => {
     if (
       !earliestVersion ||
       earliestVersion === 'preview' ||
-      (version !== 'preview' &&
-        compareVersions.compare(earliestVersion, version, '>'))
+      (version !== 'preview' && compare(earliestVersion, version, '>'))
     ) {
       earliestVersion = version;
     }
@@ -102,7 +101,7 @@ export const removeRedundantFlags = (
             if (
               releaseDate &&
               (!(simpleStatement && simpleStatement.version_removed) ||
-                compareVersions.compare(
+                compare(
                   (supportData[i].version_added as string).replace('≤', ''),
                   (simpleStatement.version_removed as string).replace('≤', ''),
                   '<',
