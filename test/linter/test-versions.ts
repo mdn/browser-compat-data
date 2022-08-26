@@ -13,7 +13,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index';
 
-import compareVersions from 'compare-versions';
+import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
@@ -125,7 +125,7 @@ const addedBeforeRemoved = (
   const added = statement.version_added.replace('≤', '');
   const removed = statement.version_removed.replace('≤', '');
 
-  if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
+  if (!validate(added) || !validate(removed)) {
     return null;
   }
 
@@ -139,7 +139,7 @@ const addedBeforeRemoved = (
     return true;
   }
 
-  return compareVersions.compare(added, removed, '<');
+  return compare(added, removed, '<');
 };
 
 /**
