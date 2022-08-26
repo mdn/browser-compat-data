@@ -227,7 +227,7 @@ const checkVersions = (
         if (statement.version_added === false) {
           if (
             Object.keys(statement).some(
-              (k) => !['version_added', 'notes'].includes(k),
+              (k) => !['version_added', 'notes', 'impl_url'].includes(k),
             )
           ) {
             logger.error(
