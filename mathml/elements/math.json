@@ -6,15 +6,37 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Element/math",
           "spec_url": "https://w3c.github.io/mathml-core/#the-top-level-math-element",
           "support": {
-            "chrome": {
-              "version_added": "24",
-              "version_removed": "25",
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "80",
+                "impl_url": "https://crbug.com/6606",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "24",
+                "version_removed": "25",
+                "partial_implementation": true,
+                "impl_url": "https://crbug.com/152430",
+                "notes": "Removed in Chrome 25 because <a href='https://crbug.com/152430#c32'>code was not yet production ready</a>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
+              "version_added": "80",
+              "impl_url": "https://crbug.com/6606",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "firefox": [
               {
@@ -33,12 +55,25 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "9.5",
-              "version_removed": "15",
-              "partial_implementation": true,
-              "notes": "Only supported in XHTML documents."
-            },
+            "opera": [
+              {
+                "version_added": "67",
+                "impl_url": "https://crbug.com/6606",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "9.5",
+                "version_removed": "15",
+                "partial_implementation": true,
+                "notes": "Only supported in XHTML documents."
+              }
+            ],
             "opera_android": {
               "version_added": "10.1",
               "version_removed": "14",
