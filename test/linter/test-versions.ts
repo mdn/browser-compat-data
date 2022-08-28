@@ -154,27 +154,26 @@ const checkVersions = (
   category: string,
   logger: Logger,
 ): void => {
-  const browsersToCheck = Object.keys(supportData) as BrowserName[];
+  const browsersToCheck = Object.keys(browsers).filter((b) =>
+    category === 'webextensions' ? browsers[b].accepts_webextensions : !!b,
+  ) as BrowserName[];
 
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       const supportStatement: InternalSupportStatement | undefined =
         supportData[browser];
+
       if (!supportStatement) {
+        if (realValuesRequired[category].includes(browser)) {
+          logger.error(chalk`{red {bold ${browser}} must be defined}`);
+        }
+
         continue;
       }
 
       for (const statement of Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement]) {
-        if (statement === undefined) {
-          if (realValuesRequired[category].includes(browser)) {
-            logger.error(chalk`{red → {bold ${browser}} must be defined}`);
-          }
-
-          continue;
-        }
-
         if (statement === 'mirror') {
           // If the data is to be mirrored, make sure it is mirrorable
           if (!browsers[browser].upstream) {
