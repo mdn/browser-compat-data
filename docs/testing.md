@@ -20,7 +20,7 @@ All data must conform to the schema, plus several additional consistency and sty
 
 For more information on the schema for feature data, see [`compat-data-schema.md`](../schemas/compat-data-schema.md) and [`compat-data.schema.json`](../schemas/compat-data.schema.json).
 
-For more information on the schema for browser data, see see [`browsers-schema.md`](../schemas/browsers-schema.md) and [`browsers.schema.json`](../schemas/browsers.schema.json).
+For more information on the schema for browser data, see [`browsers-schema.md`](../schemas/browsers-schema.md) and [`browsers.schema.json`](../schemas/browsers.schema.json).
 
 ## Generate statistics
 
