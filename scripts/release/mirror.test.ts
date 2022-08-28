@@ -187,7 +187,7 @@ describe('mirror', () => {
         assert.deepEqual(mirrored, { version_added: '27' });
       });
 
-      it('verion_added is false if resulting version_added == version_removed', () => {
+      it('version_added is false if resulting version_added == version_removed', () => {
         const support = {
           firefox: {
             version_added: '70',

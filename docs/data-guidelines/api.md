@@ -24,7 +24,7 @@ This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-dat
 
 Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
 
-Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback inferface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
+Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback interface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
 
 For example, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) is specified as taking an `EventListener` callback. Since `EventListener` is specified as an unexposed `callback interface EventListener`, it would be represented as a subfeature of `api.EventTarget.addEventListener`.
 

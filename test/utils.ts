@@ -236,7 +236,7 @@ export class Linters {
   linters: Linter[];
   messages: Record<string, LinterMessage[]>;
   // Contains all seen tested objects, boolean means:
-  // false - failure occured (good)
+  // false - failure occurred (good)
   // true - failure did not occur (bad)
   missingExpectedFailures: Record<string, Record<string, boolean>>;
 

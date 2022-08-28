@@ -281,7 +281,7 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatiblity data](https://github.com/mdn/browser-compat-data/issues/3555).
+Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 #### `version_removed`
 
@@ -312,7 +312,7 @@ Examples:
 }
 ```
 
-Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatiblity data](https://github.com/mdn/browser-compat-data/issues/3555).
+Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 ### Ranged versions
 

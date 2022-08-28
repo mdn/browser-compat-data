@@ -22,7 +22,7 @@ import { IS_WINDOWS } from '../test/utils.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
- * Get the earliest verion number from an array of versions
+ * Get the earliest version number from an array of versions
  *
  * @param {string[]} args The version numbers to check
  * @returns {string} The earliest of the version numbers
