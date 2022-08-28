@@ -108,7 +108,7 @@ August 16, 2022
 - `browsers.webview_android.releases.108` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
 - `browsers.webview_android.releases.109` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
 - `browsers.webview_android.releases.110` ([#17373](https://github.com/mdn/browser-compat-data/pull/17373))
-- `css.types.image.paint.additional_parameters` ([#17314](https://github.com/mdn/browser-compat-data/pull/17314))
+- `css.types.image.paint.additional_paramters` ([#17314](https://github.com/mdn/browser-compat-data/pull/17314))
 - `webextensions.api.scripting.RegisteredContentScript.persistAcrossSessions` ([#17266](https://github.com/mdn/browser-compat-data/pull/17266))
 
 ### Statistics
