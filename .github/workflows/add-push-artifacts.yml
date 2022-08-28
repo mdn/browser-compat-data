@@ -14,6 +14,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
+          cache: npm
       - run: npm ci
       - run: npx ts-node ./scripts/enumerate-features.ts features.json
       - run: npx ts-node ./scripts/diff-features.ts --no-github --format=json > features.diff.json
