@@ -25,7 +25,7 @@ const dirname = new URL('.', import.meta.url);
  *
  * @param {string} thisVersion The current version number
  * @param {Changes} changes The changes to format
- * @param {Stats} stats The statistics from the hanges
+ * @param {Stats} stats The statistics from the changes
  * @param {string} versionBump Which part of the semver has been bumped
  * @returns {string} The Markdown-formatted release notes
  */
@@ -107,7 +107,7 @@ const commitAndPR = async (
 };
 
 /**
- * Peform the release
+ * Perform the release
  */
 const main = async () => {
   requireGitHubCLI();
