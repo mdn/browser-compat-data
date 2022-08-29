@@ -112,13 +112,15 @@
           "support": {
             "chrome": [
               {
-                "version_added": "76"
+                "version_added": "76",
+                "notes": "The object returned by the promise returns a property called <code>outcome</code> instead of <code>userChoice</code>."
+                "partial_implementation": true,
               },
               {
                 "version_added": "44",
                 "version_removed": "76",
                 "partial_implementation": true,
-                "notes": "Did not comply with the spec and resolved with an empty promise."
+                "notes": "Resolved with an empty promise."
               }
             ],
             "chrome_android": "mirror",
