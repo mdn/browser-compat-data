@@ -123,7 +123,7 @@ Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissio
 
 For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
 
-```
+```json
 {
   "api": {
     "Permissions": {
