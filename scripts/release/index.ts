@@ -94,8 +94,8 @@ const commitAndPR = async (
     console.log(
       chalk`{yellow Please {bold modify RELEASE_NOTES.md} and fill out the {bold Notable changes} section. I'll wait for you.}`,
     );
-    await keypress();
     console.log(chalk`{yellow Press any key to continue.}`);
+    await keypress();
     console.log('');
   }
 
