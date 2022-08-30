@@ -17,6 +17,7 @@
           "ie": {
             "version_added": false
           },
+          "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
@@ -74,51 +75,22 @@
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "90",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.read",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-              },
-              {
-                "version_added": "87",
-                "version_removed": "90",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.clipboardItem",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-              },
-              {
-                "version_added": "63",
-                "version_removed": "87",
-                "partial_implementation": true,
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.dataTransfer",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": [
-                  "This method returns a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
-                  "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "90",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.events.asyncClipboard.read",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "63"
             },
@@ -170,6 +142,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -234,6 +207,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "63"
             },
@@ -274,6 +248,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {

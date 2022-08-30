@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { DataType } from '../types/index.js';
+import { BrowserName } from '../types/types.js';
+
 import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
@@ -45,40 +48,28 @@ export const IS_WINDOWS = platform() === 'win32';
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
- * Pluralizes a string
- *
- * @param {string} word Word in singular form
- * @param {number} quantifier
- * @return {string}
- */
-export const pluralize = (word: string, quantifier: number): string => {
-  return chalk`{bold ${quantifier}} ${word}${quantifier === 1 ? '' : 's'}`;
-};
-
-/**
  * Escapes common invisible characters.
  *
- * @param {string} str
+ * @param {string} str The string to escape visibles for
+ * @returns {string} The string with invisibles escaped
  */
-export function escapeInvisibles(str: string): string {
-  // This should now be O(n) instead of O(n*m),
-  // where n = string length; m = invisible characters
-  return INVISIBLES_REGEXP[Symbol.replace](str, (char) => {
-    return INVISIBLES_MAP[char] || char;
-  });
-}
+export const escapeInvisibles = (str: string): string =>
+  INVISIBLES_REGEXP[Symbol.replace](
+    str,
+    (char) => INVISIBLES_MAP[char] || char,
+  );
 
 /**
  * Gets the row and column matching the index in a string.
  *
- * @param {string} str
- * @param {number} index
- * @return {[number, number] | [null, null]}
+ * @param {string} str The string
+ * @param {number} index The character index
+ * @returns {[number, number] | [null, null]} The position from the index
  */
-export function indexToPosRaw(
+export const indexToPosRaw = (
   str: string,
   index: number,
-): [number, number] | [null, null] {
+): [number, number] | [null, null] => {
   let line = 1,
     col = 1;
 
@@ -96,7 +87,9 @@ export function indexToPosRaw(
       case '\r':
         line++;
         col = 1;
-        if (i + 1 < index && str[i + 1] === '\r') i++;
+        if (i + 1 < index && str[i + 1] === '\r') {
+          i++;
+        }
         break;
       case '\t':
         // Use JSON `tab_size` value from `.editorconfig`
@@ -109,33 +102,36 @@ export function indexToPosRaw(
   }
 
   return [line, col];
-}
+};
 
 /**
  * Gets the row and column matching the index in a string and formats it.
  *
- * @param {string} str
- * @param {number} index
- * @return {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ * @param {string} str The string
+ * @param {number} index The character index
+ * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
-export function indexToPos(str: string, index: number): string {
+export const indexToPos = (str: string, index: number): string => {
   const [line, col] = indexToPosRaw(str, index);
   return `(Ln ${line}, Col ${col})`;
-}
+};
 
 /**
- * @param {string} actual
- * @param {string} expected
- * @return {string} Statement explaining the difference in provided JSON strings
+ * Get the stringified difference between two JSON strings
+ *
+ * @param {string} actual Actual JSON string
+ * @param {string} expected Expected JSON string
+ * @returns {string?} Statement explaining the difference in provided JSON strings
  */
-export function jsonDiff(actual: string, expected: string): string | undefined {
+export const jsonDiff = (actual: string, expected: string): string | null => {
   const actualLines = actual.split(/\n/);
   const expectedLines = expected.split(/\n/);
 
-  if (actualLines.length !== expectedLines.length)
+  if (actualLines.length !== expectedLines.length) {
     return chalk`{bold different number of lines:
     {yellow → Actual:   {bold ${actualLines.length}}}
     {green → Expected: {bold ${expectedLines.length}}}}`;
+  }
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
@@ -144,7 +140,9 @@ export function jsonDiff(actual: string, expected: string): string | undefined {
       {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
     }
   }
-}
+
+  return null;
+};
 
 export type Linter = {
   name: string;
@@ -166,11 +164,32 @@ export type LinterMessage = {
   [k: string]: any;
 };
 
+export type LinterPath = {
+  full: string;
+  category: string;
+  browser?: BrowserName;
+};
+
+export type LinterData = {
+  data: DataType;
+  rawdata: string;
+  path: LinterPath;
+};
+
+/**
+ * Linter logger class
+ */
 export class Logger {
   title: string;
   path: string;
   messages: LinterMessage[];
 
+  /**
+   * Construct the logger
+   *
+   * @param {string} title Logger title
+   * @param {string} path The scope path
+   */
   constructor(title: string, path: string) {
     this.title = title;
     this.path = path;
@@ -178,8 +197,10 @@ export class Logger {
   }
 
   /**
-   * @param {string} message
-   * @param {object} options
+   * Throw an error
+   *
+   * @param {string} message Message string
+   * @param {object} options Additional options (ex. actual, expected)
    */
   error(message: string, options?: object): void {
     this.messages.push({
@@ -192,8 +213,10 @@ export class Logger {
   }
 
   /**
-   * @param {string} message
-   * @param {object} options
+   * Throw a warning
+   *
+   * @param {string} message Message string
+   * @param {object} options Additional options (ex. actual, expected)
    */
   warning(message: string, options?: object): void {
     this.messages.push({
@@ -206,44 +229,53 @@ export class Logger {
   }
 }
 
+/**
+ * Linters class
+ */
 export class Linters {
-  linters: Array<Linter>;
+  linters: Linter[];
   messages: Record<string, LinterMessage[]>;
-  expectedFailures: Record<string, string[]>;
+  // Contains all seen tested objects, boolean means:
+  // false - failure occurred (good)
+  // true - failure did not occur (bad)
+  missingExpectedFailures: Record<string, Record<string, boolean>>;
 
-  constructor(linters: Array<Linter>) {
+  /**
+   * Construct the linters
+   *
+   * @param {Linter[]} linters All the linters
+   */
+  constructor(linters: Linter[]) {
     this.linters = linters;
-    this.messages = {};
-    this.expectedFailures = {};
+    this.messages = {
+      File: [],
+    };
+    this.missingExpectedFailures = {};
 
     for (const linter of this.linters) {
       this.messages[linter.name] = [];
-      this.expectedFailures[linter.name] = [];
+      this.missingExpectedFailures[linter.name] = {};
     }
   }
 
   /**
-   * @param {LinterScope} scope
-   * @param {object} data
+   * Run the linters for a specific scope
+   *
+   * @param {LinterScope} scope The scope to run
+   * @param {LinterData} data The data to lint
    */
-  runScope(
-    scope: LinterScope,
-    data: {
-      data: any;
-      rawdata?: string;
-      path: { full: string; category?: string; browser?: string };
-    },
-  ): void {
+  runScope(scope: LinterScope, data: LinterData): void {
     const linters = this.linters.filter((linter) => linter.scope === scope);
     for (const linter of linters) {
       const logger = new Logger(linter.name, data.path.full);
       try {
         const shouldFail = linter.exceptions?.includes(data.path.full);
         linter.check(logger, data);
-        if (!shouldFail) {
-          this.messages[linter.name].push(...logger.messages);
+        if (shouldFail) {
+          this.missingExpectedFailures[linter.name][data.path.full] =
+            logger.messages.length === 0;
         } else {
-          this.expectedFailures[linter.name].push(data.path.full);
+          this.messages[linter.name].push(...logger.messages);
         }
       } catch (e: any) {
         this.messages[linter.name].push({

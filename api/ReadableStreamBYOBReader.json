@@ -13,22 +13,9 @@
             "version_added": "1.16"
           },
           "edge": "mirror",
-          "firefox": [
-            {
-              "version_added": "102"
-            },
-            {
-              "version_added": "99",
-              "version_removed": "102",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.streams.byte_streams.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "102"
+          },
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
@@ -40,6 +27,7 @@
               "Experimental implementation."
             ]
           },
+          "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
@@ -69,22 +57,9 @@
               "version_added": "1.16"
             },
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "99",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.byte_streams.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -92,6 +67,7 @@
             "nodejs": {
               "version_added": "16.5.0"
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -121,22 +97,9 @@
               "version_added": "1.16"
             },
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "99",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.byte_streams.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -144,6 +107,7 @@
             "nodejs": {
               "version_added": "16.5.0"
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -173,22 +137,9 @@
               "version_added": "1.16"
             },
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "99",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.byte_streams.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -196,6 +147,7 @@
             "nodejs": {
               "version_added": "16.5.0"
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -225,22 +177,9 @@
               "version_added": "1.16"
             },
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "99",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.byte_streams.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -248,6 +187,7 @@
             "nodejs": {
               "version_added": "16.5.0"
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -277,22 +217,9 @@
               "version_added": "1.16"
             },
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "102"
-              },
-              {
-                "version_added": "99",
-                "version_removed": "102",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.streams.byte_streams.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -300,6 +227,7 @@
             "nodejs": {
               "version_added": "16.5.0"
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -313,6 +241,45 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "reject_pending_read_request": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "<code>releaseLock()</code> throws if there are pending read requests (rather than pending read requests being rejected)."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "102"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }

@@ -3,7 +3,7 @@
 
 import { SimpleSupportStatement } from '../../types/types.js';
 
-import compareVersions from 'compare-versions';
+import { compareVersions } from 'compare-versions';
 
 /**
  *
@@ -13,8 +13,8 @@ import compareVersions from 'compare-versions';
  3. Statements with partial support
  4. Statements with flags
  *
- * @param {SupportStatement} a - The first support statement object to perform comparison with
- * @param {SupportStatement} b - The second support statement object to perform comparison with
+ * @param {SimpleSupportStatement} a - The first support statement object to perform comparison with
+ * @param {SimpleSupportStatement} b - The second support statement object to perform comparison with
  * @returns {number} Direction to sort
  */
 const compareStatements = (
@@ -36,17 +36,33 @@ const compareStatements = (
     },
   };
 
-  if (has.a.unsupported && !has.b.unsupported) return 1;
-  if (!has.a.unsupported && has.b.unsupported) return -1;
+  if (has.a.unsupported && !has.b.unsupported) {
+    return 1;
+  }
+  if (!has.a.unsupported && has.b.unsupported) {
+    return -1;
+  }
 
-  if (has.a.flags && !has.b.flags) return 1;
-  if (!has.a.flags && has.b.flags) return -1;
+  if (has.a.flags && !has.b.flags) {
+    return 1;
+  }
+  if (!has.a.flags && has.b.flags) {
+    return -1;
+  }
 
-  if (has.a.altname && !has.b.altname) return 1;
-  if (!has.a.altname && has.b.altname) return -1;
+  if (has.a.altname && !has.b.altname) {
+    return 1;
+  }
+  if (!has.a.altname && has.b.altname) {
+    return -1;
+  }
 
-  if (has.a.partial && !has.b.partial) return 1;
-  if (!has.a.partial && has.b.partial) return -1;
+  if (has.a.partial && !has.b.partial) {
+    return 1;
+  }
+  if (!has.a.partial && has.b.partial) {
+    return -1;
+  }
 
   if (
     typeof a.version_added == 'string' &&

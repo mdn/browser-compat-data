@@ -15,8 +15,12 @@
  * @returns {number} Result of localeCompare
  */
 const compareFeatures = (a: string, b: string): number => {
-  if (a == '__compat') return -1;
-  if (b == '__compat') return 1;
+  if (a == '__compat') {
+    return -1;
+  }
+  if (b == '__compat') {
+    return 1;
+  }
 
   const capsWordA = /^[A-Z](\w|-)*$/.test(a);
   const capsWordB = /^[A-Z](\w|-)*$/.test(b);
@@ -25,19 +29,37 @@ const compareFeatures = (a: string, b: string): number => {
 
   if (wordA || wordB) {
     if (capsWordA || capsWordB) {
-      if (capsWordA && capsWordB) return a.localeCompare(b, 'en');
-      if (capsWordA) return -1;
-      if (capsWordB) return 1;
+      if (capsWordA && capsWordB) {
+        return a.localeCompare(b, 'en');
+      }
+      if (capsWordA) {
+        return -1;
+      }
+      if (capsWordB) {
+        return 1;
+      }
     }
 
-    if (a == 'secure_context_required') return -1;
-    if (b == 'secure_context_required') return 1;
+    if (a == 'secure_context_required') {
+      return -1;
+    }
+    if (b == 'secure_context_required') {
+      return 1;
+    }
 
-    if (a == 'worker_support') return -1;
-    if (b == 'worker_support') return 1;
+    if (a == 'worker_support') {
+      return -1;
+    }
+    if (b == 'worker_support') {
+      return 1;
+    }
 
-    if (wordA && wordB) return a.localeCompare(b, 'en');
-    if (wordA) return -1;
+    if (wordA && wordB) {
+      return a.localeCompare(b, 'en');
+    }
+    if (wordA) {
+      return -1;
+    }
     return 1;
   }
   return a.localeCompare(b, 'en');

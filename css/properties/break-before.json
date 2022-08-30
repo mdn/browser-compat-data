@@ -2,10 +2,63 @@
   "css": {
     "properties": {
       "break-before": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/break-before",
+          "spec_url": [
+            "https://drafts.csswg.org/css-break/#break-between",
+            "https://drafts.csswg.org/css-regions/#region-flow-break",
+            "https://drafts.csswg.org/css-multicol/#break-before-break-after-break-inside"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "50"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "65"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "10"
+            },
+            "oculus": "mirror",
+            "opera": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "37"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "12.1"
+              }
+            ],
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
         "multicol_context": {
           "__compat": {
             "description": "Supported in Multi-column Layout",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/break-before",
             "spec_url": [
               "https://drafts.csswg.org/css-break/#break-between",
               "https://drafts.csswg.org/css-regions/#region-flow-break",
@@ -28,6 +81,7 @@
               "ie": {
                 "version_added": "10"
               },
+              "oculus": "mirror",
               "opera": [
                 {
                   "version_added": "37"
@@ -77,6 +131,7 @@
                 "ie": {
                   "version_added": false
                 },
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
@@ -109,14 +164,29 @@
                 "ie": {
                   "version_added": false
                 },
-                "opera": "mirror",
-                "opera_android": "mirror",
+                "oculus": "mirror",
+                "opera": [
+                  {
+                    "version_added": "88"
+                  },
+                  {
+                    "version_added": "11.1",
+                    "version_removed": "12.1"
+                  }
+                ],
+                "opera_android": [
+                  {
+                    "version_added": "70"
+                  },
+                  {
+                    "version_added": "11.1",
+                    "version_removed": "12.1"
+                  }
+                ],
                 "safari": {
                   "version_added": false
                 },
-                "safari_ios": {
-                  "version_added": false
-                },
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": "mirror"
               },
@@ -132,13 +202,18 @@
               "description": "<code>avoid-column</code>",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "102"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "12",
-                  "version_removed": "79"
-                },
+                "edge": [
+                  {
+                    "version_added": "102"
+                  },
+                  {
+                    "version_added": "12",
+                    "version_removed": "79"
+                  }
+                ],
                 "firefox": {
                   "version_added": false
                 },
@@ -146,8 +221,25 @@
                 "ie": {
                   "version_added": "10"
                 },
-                "opera": "mirror",
-                "opera_android": "mirror",
+                "oculus": "mirror",
+                "opera": [
+                  {
+                    "version_added": "88"
+                  },
+                  {
+                    "version_added": "11.1",
+                    "version_removed": "12.1"
+                  }
+                ],
+                "opera_android": [
+                  {
+                    "version_added": "70"
+                  },
+                  {
+                    "version_added": "11.1",
+                    "version_removed": "12.1"
+                  }
+                ],
                 "safari": {
                   "version_added": false
                 },
@@ -180,6 +272,7 @@
                 "ie": {
                   "version_added": "10"
                 },
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
@@ -200,7 +293,6 @@
         "paged_context": {
           "__compat": {
             "description": "Supported in Paged Media",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/break-before",
             "spec_url": [
               "https://drafts.csswg.org/css-break/#break-between",
               "https://drafts.csswg.org/css-regions/#region-flow-break",
@@ -221,6 +313,7 @@
               "ie": {
                 "version_added": "10"
               },
+              "oculus": "mirror",
               "opera": [
                 {
                   "version_added": "37"
@@ -271,6 +364,7 @@
                 "ie": {
                   "version_added": "10"
                 },
+                "oculus": "mirror",
                 "opera": {
                   "version_added": "11.1",
                   "version_removed": "12.1"
@@ -310,6 +404,7 @@
                 "ie": {
                   "version_added": "10"
                 },
+                "oculus": "mirror",
                 "opera": {
                   "version_added": "11.1",
                   "version_removed": "12.1"
@@ -337,12 +432,8 @@
                   "version_added": false,
                   "notes": "See <a href='https://crbug.com/538475'>bug 538475</a>."
                 },
-                "chrome_android": {
-                  "version_added": false
-                },
-                "edge": {
-                  "version_added": false
-                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -350,9 +441,8 @@
                 "ie": {
                   "version_added": false
                 },
-                "opera": {
-                  "version_added": false
-                },
+                "oculus": "mirror",
+                "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": false

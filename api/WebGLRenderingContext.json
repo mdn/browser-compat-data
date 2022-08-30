@@ -3,7 +3,7 @@
     "WebGLRenderingContext": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext",
-        "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14",
+        "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14",
         "support": {
           "chrome": {
             "version_added": "9"
@@ -23,6 +23,7 @@
             "version_added": "11",
             "notes": "To access the WebGL context, use <code>experimental-webgl</code> rather than the standard <code>webgl</code> identifier."
           },
+          "oculus": "mirror",
           "opera": {
             "version_added": "12"
           },
@@ -55,20 +56,26 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -88,7 +95,7 @@
       "activeTexture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/activeTexture",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -106,6 +113,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -133,7 +141,7 @@
       "attachShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/attachShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -151,6 +159,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -178,7 +187,7 @@
       "bindAttribLocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindAttribLocation",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -196,6 +205,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -224,8 +234,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindBuffer",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.1"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.1"
           ],
           "support": {
             "chrome": {
@@ -244,6 +254,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -265,39 +276,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -305,8 +283,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindFramebuffer",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.1"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.1"
           ],
           "support": {
             "chrome": {
@@ -325,6 +303,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -347,45 +326,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "bindRenderbuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindRenderbuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -403,6 +349,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -431,8 +378,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bindTexture",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.1"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.1"
           ],
           "support": {
             "chrome": {
@@ -451,6 +398,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -473,45 +421,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "blendColor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendColor",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -529,6 +444,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -556,7 +472,7 @@
       "blendEquation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquation",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -574,6 +490,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -595,46 +512,13 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
       "blendEquationSeparate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendEquationSeparate",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -652,6 +536,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -674,45 +559,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "blendFunc": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFunc",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -730,6 +582,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -757,7 +610,7 @@
       "blendFuncSeparate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/blendFuncSeparate",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -775,6 +628,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -816,6 +670,7 @@
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -836,7 +691,7 @@
       "bufferData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferData",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -854,6 +709,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -875,46 +731,13 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
       "bufferSubData": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/bufferSubData",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -932,6 +755,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -954,45 +778,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "canvas": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/canvas",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-canvas",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-canvas",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1010,6 +801,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1041,20 +833,26 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "44",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.offscreencanvas.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "44",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "gfx.offscreencanvas.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -1076,8 +874,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/checkFramebufferStatus",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.4"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.4"
           ],
           "support": {
             "chrome": {
@@ -1096,6 +894,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1118,45 +917,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "clear": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clear",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.11",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.11",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1174,6 +940,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1201,7 +968,7 @@
       "clearColor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearColor",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1219,6 +986,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1246,7 +1014,7 @@
       "clearDepth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearDepth",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1264,6 +1032,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1291,7 +1060,7 @@
       "clearStencil": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/clearStencil",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1309,6 +1078,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1336,7 +1106,7 @@
       "colorMask": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/colorMask",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1354,6 +1124,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1388,20 +1159,26 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "44",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -1412,7 +1189,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1421,7 +1198,7 @@
       "compileShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compileShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1439,6 +1216,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1466,7 +1244,7 @@
       "compressedTexImage2D": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexImage2D",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#COMPRESSEDTEXIMAGE2D",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#COMPRESSEDTEXIMAGE2D",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1484,6 +1262,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1525,39 +1304,7 @@
               "ie": {
                 "version_added": false
               },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -1578,7 +1325,7 @@
       "compressedTexSubImage2D": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/compressedTexSubImage2D",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#COMPRESSEDTEXSUBIMAGE2D",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#COMPRESSEDTEXSUBIMAGE2D",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1596,6 +1343,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1618,77 +1366,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          }
         }
       },
       "copyTexImage2D": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexImage2D",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1706,6 +1389,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1733,7 +1417,7 @@
       "copyTexSubImage2D": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/copyTexSubImage2D",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1751,6 +1435,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1778,7 +1463,7 @@
       "createBuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createBuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1796,6 +1481,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1823,7 +1509,7 @@
       "createFramebuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createFramebuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1841,6 +1527,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1868,7 +1555,7 @@
       "createProgram": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1886,6 +1573,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1913,7 +1601,7 @@
       "createRenderbuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createRenderbuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1931,6 +1619,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -1958,7 +1647,7 @@
       "createShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -1976,6 +1665,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2003,7 +1693,7 @@
       "createTexture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/createTexture",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2021,6 +1711,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2048,7 +1739,7 @@
       "cullFace": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/cullFace",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2066,6 +1757,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2093,7 +1785,7 @@
       "deleteBuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteBuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2111,6 +1803,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2138,7 +1831,7 @@
       "deleteFramebuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteFramebuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2156,6 +1849,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2183,7 +1877,7 @@
       "deleteProgram": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2201,6 +1895,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2228,7 +1923,7 @@
       "deleteRenderbuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteRenderbuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2246,6 +1941,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2273,7 +1969,7 @@
       "deleteShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2291,6 +1987,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2318,7 +2015,7 @@
       "deleteTexture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/deleteTexture",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2336,6 +2033,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2363,7 +2061,7 @@
       "depthFunc": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthFunc",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2381,6 +2079,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2408,7 +2107,7 @@
       "depthMask": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthMask",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2426,6 +2125,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2453,7 +2153,7 @@
       "depthRange": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/depthRange",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2471,6 +2171,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2498,7 +2199,7 @@
       "detachShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/detachShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2516,6 +2217,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2543,7 +2245,7 @@
       "disable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disable",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2561,6 +2263,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2588,7 +2291,7 @@
       "disableVertexAttribArray": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/disableVertexAttribArray",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2606,6 +2309,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2633,7 +2337,7 @@
       "drawArrays": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawArrays",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.11",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.11",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2651,6 +2355,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2678,7 +2383,7 @@
       "drawElements": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawElements",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.11",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.11",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2696,6 +2401,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2723,7 +2429,7 @@
       "drawingBufferHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferHeight",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-drawingBufferHeight",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-drawingBufferHeight",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2741,6 +2447,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2768,7 +2475,7 @@
       "drawingBufferWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/drawingBufferWidth",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-drawingBufferWidth",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-drawingBufferWidth",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2786,6 +2493,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2813,7 +2521,7 @@
       "enable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enable",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2831,6 +2539,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2858,7 +2567,7 @@
       "enableVertexAttribArray": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/enableVertexAttribArray",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2876,6 +2585,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2903,7 +2613,7 @@
       "finish": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/finish",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.11",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.11",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2921,6 +2631,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2948,7 +2659,7 @@
       "flush": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/flush",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.11",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.11",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2966,6 +2677,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -2993,7 +2705,7 @@
       "framebufferRenderbuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferRenderbuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3011,6 +2723,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3032,46 +2745,13 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
       "framebufferTexture2D": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/framebufferTexture2D",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3089,6 +2769,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3111,45 +2792,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "frontFace": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/frontFace",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3167,6 +2815,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3194,7 +2843,7 @@
       "generateMipmap": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/generateMipmap",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3212,6 +2861,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3234,45 +2884,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getActiveAttrib": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3290,6 +2907,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3317,7 +2935,7 @@
       "getActiveUniform": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getActiveUniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3335,6 +2953,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3362,7 +2981,7 @@
       "getAttachedShaders": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttachedShaders",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3380,6 +2999,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3407,7 +3027,7 @@
       "getAttribLocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getAttribLocation",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3425,6 +3045,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3453,8 +3074,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getBufferParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.3"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.3"
           ],
           "support": {
             "chrome": {
@@ -3473,6 +3094,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3495,45 +3117,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getContextAttributes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getContextAttributes",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.2",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.2",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3551,6 +3140,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3578,7 +3168,7 @@
       "getError": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getError",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3596,6 +3186,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3623,7 +3214,7 @@
       "getExtension": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getExtension",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.14",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.14",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3641,6 +3232,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3669,8 +3261,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getFramebufferAttachmentParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.4"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.4"
           ],
           "support": {
             "chrome": {
@@ -3689,6 +3281,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3711,47 +3304,14 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getParameter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.2"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.2"
           ],
           "support": {
             "chrome": {
@@ -3770,6 +3330,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3797,7 +3358,7 @@
       "getProgramInfoLog": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramInfoLog",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -3815,6 +3376,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3843,8 +3405,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getProgramParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.7"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.7"
           ],
           "support": {
             "chrome": {
@@ -3863,6 +3425,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3884,39 +3447,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -3924,8 +3454,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getRenderbufferParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.5"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.5"
           ],
           "support": {
             "chrome": {
@@ -3944,6 +3474,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -3966,45 +3497,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getShaderInfoLog": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderInfoLog",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4022,6 +3520,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4049,7 +3548,7 @@
       "getShaderParameter": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderParameter",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4067,6 +3566,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4094,7 +3594,7 @@
       "getShaderPrecisionFormat": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderPrecisionFormat",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4112,6 +3612,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4139,7 +3640,7 @@
       "getShaderSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getShaderSource",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4157,6 +3658,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4184,7 +3686,7 @@
       "getSupportedExtensions": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getSupportedExtensions",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.14",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.14",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4202,6 +3704,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4230,8 +3733,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getTexParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.6"
           ],
           "support": {
             "chrome": {
@@ -4250,6 +3753,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4271,39 +3775,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -4311,8 +3782,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniform",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.8"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.8"
           ],
           "support": {
             "chrome": {
@@ -4331,6 +3802,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4353,45 +3825,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getUniformLocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getUniformLocation",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4409,6 +3848,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4437,8 +3877,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttrib",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.8"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.8"
           ],
           "support": {
             "chrome": {
@@ -4457,6 +3897,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4479,45 +3920,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "getVertexAttribOffset": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/getVertexAttribOffset",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4535,6 +3943,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4562,7 +3971,7 @@
       "hint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/hint",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4580,6 +3989,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4607,7 +4017,7 @@
       "isBuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isBuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.5",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.5",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4625,6 +4035,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4652,7 +4063,7 @@
       "isContextLost": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isContextLost",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.13",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.13",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4670,6 +4081,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4698,8 +4110,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isEnabled",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.2"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.2"
           ],
           "support": {
             "chrome": {
@@ -4718,6 +4130,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4740,45 +4153,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "isFramebuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isFramebuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.6",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.6",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4796,6 +4176,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4823,7 +4204,7 @@
       "isProgram": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4841,6 +4222,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4868,7 +4250,7 @@
       "isRenderbuffer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isRenderbuffer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4886,6 +4268,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4913,7 +4296,7 @@
       "isShader": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isShader",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4931,6 +4314,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -4958,7 +4342,7 @@
       "isTexture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/isTexture",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -4976,6 +4360,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5003,45 +4388,7 @@
       "lineWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/lineWidth",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "11"
-            },
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "linkProgram": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/linkProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5059,6 +4406,53 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "12"
+            },
+            "opera_android": {
+              "version_added": "12"
+            },
+            "safari": {
+              "version_added": "5.1"
+            },
+            "safari_ios": {
+              "version_added": "8"
+            },
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": "4.4.3"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "linkProgram": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/linkProgram",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
+          "support": {
+            "chrome": {
+              "version_added": "9"
+            },
+            "chrome_android": {
+              "version_added": "25"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "4"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "11"
+            },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5100,6 +4494,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": false
             },
@@ -5128,9 +4523,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/pixelStorei",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#PIXEL_STORAGE_PARAMETERS",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.2"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#PIXEL_STORAGE_PARAMETERS",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.2"
           ],
           "support": {
             "chrome": {
@@ -5149,6 +4544,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5171,45 +4567,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "polygonOffset": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/polygonOffset",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5227,6 +4590,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5254,7 +4618,7 @@
       "readPixels": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/readPixels",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.12",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.12",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5272,6 +4636,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5294,79 +4659,14 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          }
         }
       },
       "renderbufferStorage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/renderbufferStorage",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.7",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.5"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.7",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.5"
           ],
           "support": {
             "chrome": {
@@ -5385,6 +4685,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5407,45 +4708,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "sampleCoverage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/sampleCoverage",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5463,6 +4731,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5490,7 +4759,7 @@
       "scissor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/scissor",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.4",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.4",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5508,6 +4777,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5535,7 +4805,7 @@
       "shaderSource": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/shaderSource",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5553,6 +4823,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5580,7 +4851,7 @@
       "stencilFunc": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFunc",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5598,6 +4869,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5625,7 +4897,7 @@
       "stencilFuncSeparate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilFuncSeparate",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5643,6 +4915,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5670,7 +4943,7 @@
       "stencilMask": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMask",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5688,6 +4961,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5715,7 +4989,7 @@
       "stencilMaskSeparate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilMaskSeparate",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5733,6 +5007,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5760,7 +5035,7 @@
       "stencilOp": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOp",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5778,6 +5053,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5805,7 +5081,7 @@
       "stencilOpSeparate": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/stencilOpSeparate",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.3",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.3",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -5823,6 +5099,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5851,8 +5128,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texImage2D",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.6"
           ],
           "support": {
             "chrome": {
@@ -5871,6 +5148,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -5892,71 +5170,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
           }
         }
       },
@@ -5964,8 +5177,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.6"
           ],
           "support": {
             "chrome": {
@@ -5984,6 +5197,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6005,39 +5219,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -6045,8 +5226,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texParameter",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.8",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.8",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.6"
           ],
           "support": {
             "chrome": {
@@ -6065,6 +5246,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6086,39 +5268,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
@@ -6126,8 +5275,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/texSubImage2D",
           "spec_url": [
-            "https://www.khronos.org/registry/webgl/specs/latest/1.0/#TEXSUBIMAGE2D",
-            "https://www.khronos.org/registry/webgl/specs/latest/2.0/#3.7.6"
+            "https://registry.khronos.org/webgl/specs/latest/1.0/#TEXSUBIMAGE2D",
+            "https://registry.khronos.org/webgl/specs/latest/2.0/#3.7.6"
           ],
           "support": {
             "chrome": {
@@ -6146,6 +5295,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6168,77 +5318,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          }
         }
       },
       "uniform1f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6256,6 +5341,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6283,7 +5369,7 @@
       "uniform1fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6301,6 +5387,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6328,7 +5415,7 @@
       "uniform1i": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6346,6 +5433,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6373,7 +5461,7 @@
       "uniform1iv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6391,6 +5479,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6418,7 +5507,7 @@
       "uniform2f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6436,6 +5525,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6463,7 +5553,7 @@
       "uniform2fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6481,6 +5571,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6508,7 +5599,7 @@
       "uniform2i": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6526,6 +5617,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6553,7 +5645,7 @@
       "uniform2iv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6571,6 +5663,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6598,7 +5691,7 @@
       "uniform3f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6616,6 +5709,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6643,7 +5737,7 @@
       "uniform3fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6661,6 +5755,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6688,7 +5783,7 @@
       "uniform3i": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6706,6 +5801,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6733,7 +5829,7 @@
       "uniform3iv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6751,6 +5847,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6778,7 +5875,7 @@
       "uniform4f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6796,6 +5893,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6823,7 +5921,7 @@
       "uniform4fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6841,6 +5939,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6868,7 +5967,7 @@
       "uniform4i": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6886,6 +5985,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6913,7 +6013,7 @@
       "uniform4iv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniform",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6931,6 +6031,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6958,7 +6059,7 @@
       "uniformMatrix2fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -6976,6 +6077,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -6997,78 +6099,13 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
           }
         }
       },
       "uniformMatrix3fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7086,6 +6123,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7107,78 +6145,13 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
           }
         }
       },
       "uniformMatrix4fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/uniformMatrix",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7196,6 +6169,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7218,77 +6192,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "WebGL2": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "56"
-              },
-              "chrome_android": {
-                "version_added": "58"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "SharedArrayBuffer_as_param": {
-            "__compat": {
-              "description": "<code>SharedArrayBuffer</code> as a parameter",
-              "support": {
-                "chrome": {
-                  "version_added": "60"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "79"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          }
         }
       },
       "useProgram": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/useProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7306,6 +6215,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7333,7 +6243,7 @@
       "validateProgram": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/validateProgram",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.9",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.9",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7351,6 +6261,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7378,7 +6289,7 @@
       "vertexAttrib1f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7396,6 +6307,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7423,7 +6335,7 @@
       "vertexAttrib1fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7441,6 +6353,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7482,6 +6395,7 @@
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -7502,7 +6416,7 @@
       "vertexAttrib2f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7520,6 +6434,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7547,7 +6462,7 @@
       "vertexAttrib2fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7565,6 +6480,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7606,6 +6522,7 @@
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -7626,7 +6543,7 @@
       "vertexAttrib3f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7644,6 +6561,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7671,7 +6589,7 @@
       "vertexAttrib3fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7689,6 +6607,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7730,6 +6649,7 @@
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -7750,7 +6670,7 @@
       "vertexAttrib4f": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7768,6 +6688,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7795,7 +6716,7 @@
       "vertexAttrib4fv": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttrib",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7813,6 +6734,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7854,6 +6776,7 @@
               "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -7874,7 +6797,7 @@
       "vertexAttribPointer": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/vertexAttribPointer",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.10",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.10",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7892,6 +6815,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },
@@ -7919,7 +6843,7 @@
       "viewport": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGLRenderingContext/viewport",
-          "spec_url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/#5.14.4",
+          "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#5.14.4",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -7937,6 +6861,7 @@
             "ie": {
               "version_added": "11"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "12"
             },

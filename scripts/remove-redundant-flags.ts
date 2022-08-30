@@ -1,13 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, SimpleSupportStatement } from '../types/types.js';
+import {
+  BrowserName,
+  SimpleSupportStatement,
+  CompatStatement,
+} from '../types/types.js';
 
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import compareVersions from 'compare-versions';
+import { compare } from 'compare-versions';
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -17,7 +21,13 @@ import { IS_WINDOWS } from '../test/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const getEarliestVersion = (...args: string[]) => {
+/**
+ * Get the earliest version number from an array of versions
+ *
+ * @param {string[]} args The version numbers to check
+ * @returns {string} The earliest of the version numbers
+ */
+const getEarliestVersion = (...args: string[]): string => {
   const versions = args
     .filter((version) => typeof version === 'string' && version !== 'preview')
     .map((version) => version.replace('≤', ''));
@@ -28,23 +38,33 @@ const getEarliestVersion = (...args: string[]) => {
     if (
       !earliestVersion ||
       earliestVersion === 'preview' ||
-      (version !== 'preview' &&
-        compareVersions.compare(earliestVersion, version, '>'))
-    )
+      (version !== 'preview' && compare(earliestVersion, version, '>'))
+    ) {
       earliestVersion = version;
+    }
   }
 
   return earliestVersion;
 };
 
+/**
+ * Removes redundant flags from the compatibility data
+ *
+ * @param {string} key The object key (make sure it's '__compat')
+ * @param {CompatStatement} value The compatibility statement to test
+ * @param {BrowserName?} limitBrowser If flags should only be removed from a specific browser
+ * @returns {CompatStatement} The compatibility statement with all of the flags removed
+ */
 export const removeRedundantFlags = (
   key: string,
-  value: any,
+  value: CompatStatement,
   limitBrowser: BrowserName | null,
-) => {
+): CompatStatement => {
   if (key === '__compat') {
     for (const [browser, rawSupportData] of Object.entries(value.support)) {
-      if (limitBrowser && browser != limitBrowser) continue;
+      if (limitBrowser && browser != limitBrowser) {
+        continue;
+      }
 
       const supportData = Array.isArray(rawSupportData)
         ? rawSupportData
@@ -68,9 +88,9 @@ export const removeRedundantFlags = (
 
         if (supportData[i].flags) {
           const versionToCheck = getEarliestVersion(
-            supportData[i].version_removed ||
-              (simpleStatement && simpleStatement.version_added),
-            simpleStatement && simpleStatement.version_added,
+            (supportData[i].version_removed as string) ||
+              ((simpleStatement && simpleStatement.version_added) as string),
+            (simpleStatement && simpleStatement.version_added) as string,
           );
 
           if (typeof versionToCheck === 'string') {
@@ -81,9 +101,9 @@ export const removeRedundantFlags = (
             if (
               releaseDate &&
               (!(simpleStatement && simpleStatement.version_removed) ||
-                compareVersions.compare(
-                  supportData[i].version_added.replace('≤', ''),
-                  simpleStatement.version_removed.replace('≤', ''),
+                compare(
+                  (supportData[i].version_added as string).replace('≤', ''),
+                  (simpleStatement.version_removed as string).replace('≤', ''),
                   '<',
                 ))
             ) {
@@ -92,7 +112,9 @@ export const removeRedundantFlags = (
           }
         }
 
-        if (addData) result.push(supportData[i]);
+        if (addData) {
+          result.push(supportData[i]);
+        }
       }
 
       if (result.length == 1) {
@@ -107,10 +129,16 @@ export const removeRedundantFlags = (
   return value;
 };
 
+/**
+ * Removes redundant flags from the compatibility data of a specified file
+ *
+ * @param {string} filename The filename containing compatibility info
+ * @param {BrowserName?} limitBrowser If flags should only be removed from a specific browser
+ */
 export const fixRedundantFlags = (
   filename: string,
   limitBrowser: BrowserName | null,
-) => {
+): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
     JSON.parse(actual, (k, v) => removeRedundantFlags(k, v, limitBrowser)),
@@ -129,7 +157,16 @@ export const fixRedundantFlags = (
   }
 };
 
-const main = (files_or_folders: string[], browser: BrowserName | null) => {
+/**
+ * Removes redundant flags from the compatibility data of specified files/folders
+ *
+ * @param {string[]} files_or_folders The files and/or folders to run removal on
+ * @param {BrowserName?} browser If flags should only be removed from a specific
+ */
+const main = (
+  files_or_folders: string[],
+  browser: BrowserName | null,
+): void => {
   for (let file of files_or_folders) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', file);
@@ -147,9 +184,9 @@ const main = (files_or_folders: string[], browser: BrowserName | null) => {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
+    const subFiles = fs
+      .readdirSync(file)
+      .map((subfile) => path.join(file, subfile));
 
     main(subFiles, browser);
   }
@@ -158,7 +195,7 @@ const main = (files_or_folders: string[], browser: BrowserName | null) => {
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
     '$0 [file]',
-    'Remove data for flags that have been removed two years back or more',
+    'Remove data for redundant flags',
     (yargs) => {
       yargs
         .positional('file', {

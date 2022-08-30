@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { Identifier } from '../types/types.js';
+
 type VersionStatsEntry = {
   all: number;
   true: number;
@@ -71,8 +73,7 @@ const checkSupport = (
  *
  * @param {CompatStatement} data The data to process and count stats for
  * @param {BrowserName[]} browsers The browsers to test
- * @param {object.<string, VersionStats>} stats The stats object to update
- * @returns {void}
+ * @param {Object<string, VersionStats>} stats The stats object to update
  */
 const processData = (
   data: CompatStatement,
@@ -108,8 +109,7 @@ const processData = (
  *
  * @param {Identifier} data The compat data to iterate
  * @param {BrowserName[]} browsers The browsers to test
- * @param {object.<string, VersionStats>} stats The stats object to update
- * @returns {void}
+ * @param {Object<string, VersionStats>} stats The stats object to update
  */
 const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
   for (const key in data) {
@@ -126,7 +126,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
  *
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
- * @returns {object.<string, VersionStats>?}
+ * @returns {Object<string, VersionStats>?} The statistics
  */
 const getStats = (
   folder: string,
@@ -192,11 +192,8 @@ const getStat = (
   stats: VersionStatsEntry,
   type: keyof VersionStatsEntry,
   counts: boolean,
-): string | number => {
-  return counts
-    ? stats[type]
-    : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
-};
+): string | number =>
+  counts ? stats[type] : `${((stats[type] / stats.all) * 100).toFixed(2)}%`;
 
 /**
  * Print statistics of BCD
@@ -204,7 +201,6 @@ const getStat = (
  * @param {VersionStats} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} counts Whether to display a count vs. a percentage
- * @returns {void}
  */
 const printStats = (
   stats: VersionStats | null,

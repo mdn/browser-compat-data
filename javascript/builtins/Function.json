@@ -26,6 +26,7 @@
             "nodejs": {
               "version_added": "0.10.0"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "3"
             },
@@ -73,6 +74,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "3"
               },
@@ -118,6 +120,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "4"
               },
@@ -161,6 +164,7 @@
                 "nodejs": {
                   "version_added": "0.10.0"
                 },
+                "oculus": "mirror",
                 "opera": {
                   "version_added": "5"
                 },
@@ -208,6 +212,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "3"
               },
@@ -253,6 +258,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "11.6"
               },
@@ -301,6 +307,7 @@
                 "version_added": "0.10.0",
                 "notes": "When calling this method, <code>thisArg</code> does not default to the global object."
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "4"
               },
@@ -345,6 +352,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "9.6"
               },
@@ -363,7 +371,7 @@
             "status": {
               "experimental": false,
               "standard_track": false,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -389,6 +397,7 @@
               "nodejs": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -430,6 +439,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "3"
               },
@@ -473,6 +483,7 @@
                 "nodejs": {
                   "version_added": "4.0.0"
                 },
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
@@ -515,6 +526,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "10.5"
               },
@@ -558,6 +570,7 @@
                 "nodejs": {
                   "version_added": "4.0.0"
                 },
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
@@ -585,11 +598,17 @@
                 "deno": {
                   "version_added": "1.0"
                 },
-                "edge": {
-                  "version_added": "14",
-                  "partial_implementation": true,
-                  "notes": "Names for functions defined in a dictionary are properly assigned; however, anonymous functions defined on a var/let variable assignment have blank names."
-                },
+                "edge": [
+                  {
+                    "version_added": "79"
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "79",
+                    "partial_implementation": true,
+                    "notes": "Names for functions defined in a dictionary are properly assigned; however, anonymous functions defined on a var/let variable assignment have blank names."
+                  }
+                ],
                 "firefox": {
                   "version_added": "53"
                 },
@@ -611,6 +630,7 @@
                     ]
                   }
                 ],
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
@@ -625,48 +645,6 @@
                 "standard_track": true,
                 "deprecated": false
               }
-            }
-          }
-        },
-        "toSource": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/toSource",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "74",
-                "notes": "Starting in Firefox 74, <code>toSource()</code> is no longer available for use by web content. It is still allowed for internal and privileged code."
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": false
             }
           }
         },
@@ -695,6 +673,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "3"
               },
@@ -719,7 +698,7 @@
               "description": "Implements <code>Function.prototype.toString</code> revision",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "66"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -736,6 +715,7 @@
                 "nodejs": {
                   "version_added": false
                 },
+                "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {

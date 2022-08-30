@@ -26,6 +26,7 @@
             "nodejs": {
               "version_added": "0.10.0"
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "5"
             },
@@ -71,6 +72,7 @@
               "nodejs": {
                 "version_added": "0.10.0"
               },
+              "oculus": "mirror",
               "opera": {
                 "version_added": "5"
               },
@@ -94,6 +96,7 @@
         "serializable_object": {
           "__compat": {
             "description": "<code>URIError</code> is serializable",
+            "mdn_url": "https://developer.mozilla.org/docs/Glossary/Serializable_object",
             "spec_url": "https://html.spec.whatwg.org/multipage/structured-data.html#serializable-objects",
             "support": {
               "chrome": {
@@ -105,8 +108,11 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1556604'>bug 1556604</a>."
+                "version_added": "103",
+                "notes": [
+                  "Version 103 serializable properties: <code>name</code>, <code>message</code>, <code>cause</code>, <code>fileName</code>, <code>lineNumber</code> and <code>columnNumber</code>.",
+                  "Version 104 also serializes <code>stack</code> in <a href='https://developer.mozilla.org/docs/Web/API/Window/postMessage'><code>window.postMessage()</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'><code>structuredClone()</code></a>."
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -115,6 +121,7 @@
               "nodejs": {
                 "version_added": false
               },
+              "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {

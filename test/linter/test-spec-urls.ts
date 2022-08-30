@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -45,10 +45,11 @@ const specsExceptions = [
   // Remove if https://github.com/w3c/mathml/issues/216 is resolved
   'https://w3c.github.io/mathml/',
 
-  // Remove once https://www.w3.org/TR/largest-contentful-paint/ updates,
-  // and browser-specs picks up the update; see discussion at
-  // https://github.com/mdn/browser-compat-data/pull/16527#issuecomment-1145773922
-  'https://w3c.github.io/largest-contentful-paint/',
+  // Remove when added to browser-specs
+  'https://drafts.csswg.org/css-color-6/',
+
+  // Remove if https://github.com/w3c/browser-specs/pull/667#issuecomment-1200089758 is resolved
+  'https://w3c.github.io/device-memory',
 ];
 
 const allowedSpecURLs = [
@@ -63,9 +64,8 @@ const allowedSpecURLs = [
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(data: CompatStatement, logger: Logger): void {
+const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
     return;
   }
@@ -81,14 +81,20 @@ function processData(data: CompatStatement, logger: Logger): void {
       );
     }
   }
-}
+};
 
 export default {
   name: 'Spec URLs',
   description:
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);
   },
 } as Linter;

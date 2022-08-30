@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -14,22 +14,21 @@ import chalk from 'chalk-template';
  * @param {CompatStatement} compat The compat data to test
  * @param {string} expected Expected description
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function checkDescription(
+const checkDescription = (
   ruleName: string,
   name: string,
   compat: CompatStatement,
   expected: string,
   logger: Logger,
-): void {
+): void => {
   const actual = compat.description || '';
   if (actual != expected) {
     logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
       Actual: {yellow "${actual}"}
       Expected: {green "${expected}"}}`);
   }
-}
+};
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
@@ -37,13 +36,12 @@ function checkDescription(
  * @param {CompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processApiData(
+const processApiData = (
   data: CompatStatement,
   path: string,
   logger: Logger,
-): void {
+): void => {
   const pathParts = path.split('.');
   const apiName = pathParts[1];
   const featureName = pathParts[2];
@@ -94,19 +92,19 @@ function processApiData(
       logger,
     );
   }
-}
+};
 
 export default {
   name: 'Descriptions',
   description: 'Test the descriptions of compatibility data',
   scope: 'feature',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { full, category },
-    }: { data: CompatStatement; path: { full: string; category: string } },
-  ) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
     if (category === 'api') {
       processApiData(data, full, logger);
     }

@@ -46,6 +46,7 @@
               ]
             }
           ],
+          "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
@@ -82,6 +83,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -117,6 +119,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -135,9 +138,9 @@
           }
         }
       },
-      "referrerpolicy": {
+      "init_referrerPolicy_parameter": {
         "__compat": {
-          "description": "referrerPolicy",
+          "description": "<code>init.referrerPolicy</code> parameter",
           "support": {
             "chrome": {
               "version_added": "52"
@@ -154,6 +157,7 @@
             "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
@@ -172,9 +176,9 @@
           }
         }
       },
-      "signal": {
+      "init_signal_parameter": {
         "__compat": {
-          "description": "signal",
+          "description": "<code>init.signal</code> parameter",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -193,6 +197,32 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.0.0"
+              },
+              {
+                "version_added": "17.5.0",
+                "version_removed": "18.0.0",
+                "flags": [
+                  {
+                    "name": "--experimental-fetch",
+                    "type": "runtime_flag"
+                  }
+                ]
+              },
+              {
+                "version_added": "16.15.0",
+                "version_removed": "17.0.0",
+                "flags": [
+                  {
+                    "name": "--experimental-fetch",
+                    "type": "runtime_flag"
+                  }
+                ]
+              }
+            ],
+            "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
