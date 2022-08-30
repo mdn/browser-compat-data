@@ -32,7 +32,7 @@ The JSON files contain [feature identifiers](#feature-identifiers), which are re
 
 ## Understanding the schema
 
-#### Feature hierarchies
+### Feature hierarchies
 
 Each feature is identified by a unique hierarchy of strings, e.g the `text-align` property is identified by `css.properties.text-align`.
 
