@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 import { normalizePathInternal } from './normalize-path.js';
 
-describe('normalizePath()', function () {
+describe('normalizePath()', () => {
   const pathWindows = {
     sep: '\\',
   };
@@ -14,13 +14,13 @@ describe('normalizePath()', function () {
     sep: '/',
   };
 
-  describe('On Windows should replace "\\" with "/"', function () {
+  describe('On Windows should replace "\\" with "/"', () => {
     assert.equal(normalizePathInternal('\\', pathWindows), '/');
     assert.equal(normalizePathInternal('\\a\\b', pathWindows), '/a/b');
     assert.equal(normalizePathInternal('a\\b', pathWindows), 'a/b');
   });
 
-  describe('should do nothing with anything else', function () {
+  describe('should do nothing with anything else', () => {
     assert.equal(normalizePathInternal('/', pathPOSIX), '/');
     assert.equal(normalizePathInternal('/a-b', pathPOSIX), '/a-b');
     assert.equal(normalizePathInternal('ab', pathPOSIX), 'ab');

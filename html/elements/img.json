@@ -113,22 +113,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "71"
-                },
-                {
-                  "version_added": "69",
-                  "version_removed": "71",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.width-and-height-map-to-aspect-ratio.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "71"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -147,17 +134,7 @@
                   "notes": "Safari doesn't preserve space for images without a valid <code>src</code>, which may disrupt layouts that rely on lazy loading (see <a href='https://webkit.org/b/224197'>bug 224197</a>)."
                 }
               ],
-              "safari_ios": [
-                {
-                  "version_added": "15"
-                },
-                {
-                  "version_added": "14",
-                  "version_removed": "15",
-                  "partial_implementation": true,
-                  "notes": "Safari doesn't preserve space for images without a valid <code>src</code>, which may disrupt layouts that rely on lazy loading (see <a href='https://webkit.org/b/224197'>bug 224197</a>)."
-                }
-              ],
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },

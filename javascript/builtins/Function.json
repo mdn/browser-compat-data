@@ -371,7 +371,7 @@
             "status": {
               "experimental": false,
               "standard_track": false,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -598,11 +598,17 @@
                 "deno": {
                   "version_added": "1.0"
                 },
-                "edge": {
-                  "version_added": "14",
-                  "partial_implementation": true,
-                  "notes": "Names for functions defined in a dictionary are properly assigned; however, anonymous functions defined on a var/let variable assignment have blank names."
-                },
+                "edge": [
+                  {
+                    "version_added": "79"
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "79",
+                    "partial_implementation": true,
+                    "notes": "Names for functions defined in a dictionary are properly assigned; however, anonymous functions defined on a var/let variable assignment have blank names."
+                  }
+                ],
                 "firefox": {
                   "version_added": "53"
                 },
@@ -692,7 +698,7 @@
               "description": "Implements <code>Function.prototype.toString</code> revision",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "66"
                 },
                 "chrome_android": "mirror",
                 "deno": {

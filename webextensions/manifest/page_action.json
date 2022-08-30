@@ -5,16 +5,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/page_action",
           "support": {
-            "chrome": [
-              {
-                "version_added": true,
-                "notes": "If an extension defines a page action, it is not allowed to define a browser action as well."
-              },
-              {
-                "version_added": "49",
-                "notes": "Since Chrome 49, page actions are displayed on the toolbar, rather than in the address bar."
-              }
-            ],
+            "chrome": {
+              "version_added": true,
+              "notes": [
+                "Since Chrome 49, page actions are displayed on the toolbar, rather than in the address bar.",
+                "If an extension defines a page action, it is not allowed to define a browser action as well."
+              ]
+            },
             "edge": {
               "version_added": "14"
             },
@@ -30,6 +27,10 @@
             },
             "safari": {
               "version_added": "14",
+              "notes": "If an extension defines a page action, it is not allowed to define a browser action as well."
+            },
+            "safari_ios": {
+              "version_added": "15",
               "notes": "If an extension defines a page action, it is not allowed to define a browser action as well."
             }
           }
@@ -50,7 +51,8 @@
               "opera": "mirror",
               "safari": {
                 "version_added": false
-              }
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -79,6 +81,10 @@
               "safari": {
                 "version_added": "14",
                 "notes": "SVG icons are not supported. Grayscale images will be treated as template icons and processed with the system accent color and system appearance."
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "SVG icons are not supported. Grayscale images will be treated as template icons and processed with the system accent color and system appearance."
               }
             }
           }
@@ -101,6 +107,9 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -123,6 +132,9 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -141,7 +153,8 @@
               "opera": "mirror",
               "safari": {
                 "version_added": false
-              }
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -161,7 +174,8 @@
               "opera": "mirror",
               "safari": {
                 "version_added": false
-              }
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -181,7 +195,8 @@
               "opera": "mirror",
               "safari": {
                 "version_added": false
-              }
+              },
+              "safari_ios": "mirror"
             }
           }
         }

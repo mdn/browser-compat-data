@@ -13,12 +13,9 @@
             "version_added": "17"
           },
           "firefox": {
-            "version_added": "44",
-            "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-          },
-          "firefox_android": {
             "version_added": "44"
           },
+          "firefox_android": "mirror",
           "ie": {
             "version_added": false
           },
@@ -52,12 +49,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "44",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
               "version_added": "44"
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -91,12 +85,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "45",
-              "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-            },
-            "firefox_android": {
               "version_added": "45"
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -208,7 +199,7 @@
               "version_added": "18"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "99"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -310,56 +301,66 @@
           "spec_url": "https://w3c.github.io/ServiceWorker/#fetch-event-respondwith",
           "support": {
             "chrome": {
-              "version_added": "42",
-              "notes": "NetworkError thrown if request mode is same-origin and response type is cors (see <a href='https://bugzil.la/1222008'>bug 1222008</a>). This is being worked on - see <a href='https://www.chromestatus.com/feature/5694278818856960'>https://www.chromestatus.com/feature/5694278818856960</a>."
+              "version_added": "42"
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "17",
-              "notes": "NetworkError thrown if request mode is same-origin and response type is cors (see <a href='https://bugzil.la/1222008'>bug 1222008</a>). This is being worked on - see <a href='https://www.chromestatus.com/feature/5694278818856960'>https://www.chromestatus.com/feature/5694278818856960</a>."
+              "version_added": "17"
             },
-            "firefox": [
-              {
-                "version_added": "59",
-                "notes": "NetworkError thrown if request mode is same-origin and response type is cors (see <a href='https://bugzil.la/1222008'>bug 1222008</a>)."
-              },
-              {
-                "version_added": "44",
-                "notes": "<a href='https://www.mozilla.org/en-US/firefox/organizations/'>Extended Support Releases (ESR)</a> before Firefox 78 ESR do not support service workers and the Push API."
-              }
-            ],
-            "firefox_android": [
-              {
-                "version_added": "59",
-                "notes": "NetworkError thrown if request mode is same-origin and response type is cors (see <a href='https://bugzil.la/1222008'>bug 1222008</a>)."
-              },
-              {
-                "version_added": "44"
-              }
-            ],
+            "firefox": {
+              "version_added": "44"
+            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "29"
-            },
-            "opera_android": {
-              "version_added": "29"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "4.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "networkerror_on_same-origin_cors": {
+          "__compat": {
+            "description": "<code>NetworkError</code> thrown if the request mode is <code>same-origin</code> and the response type is <code>cors</code>",
+            "support": {
+              "chrome": {
+                "version_added": "66"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "resource_url": {

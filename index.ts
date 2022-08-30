@@ -20,7 +20,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
-async function load(...dirs: string[]) {
+const load = async (...dirs: string[]) => {
   const result = {};
 
   for (const dir of dirs) {
@@ -38,8 +38,6 @@ async function load(...dirs: string[]) {
         // Add source_file props
         const walker = walk(undefined, contents);
         for (const { compat } of walker) {
-          if (!compat) continue;
-
           compat.source_file = normalizePath(path.relative(dirname, fp));
         }
 
@@ -52,7 +50,7 @@ async function load(...dirs: string[]) {
   }
 
   return result;
-}
+};
 
 export default (await load(
   'api',

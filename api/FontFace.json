@@ -82,7 +82,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "104",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.font-loading-api.workers.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -355,7 +362,7 @@
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontface-loaded",
           "support": {
             "chrome": {
-              "version_added": "35"
+              "version_added": "37"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -550,7 +557,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "10",
+              "version_removed": "13.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": {

@@ -7,10 +7,17 @@ import {
   SimpleSupportStatement,
 } from '../types/types.js';
 
-export default function iterSupport(
+/**
+ * Get support for a specific browser in array form
+ *
+ * @param {CompatStatement} compat The compatibility data
+ * @param {BrowserName} browser The browser to get data for
+ * @returns {SimpleSupportStatement[]} The array of support statements for the browser
+ */
+export default (
   compat: CompatStatement,
   browser: BrowserName,
-): SimpleSupportStatement[] {
+): SimpleSupportStatement[] => {
   if (browser in compat.support) {
     const data = compat.support[browser];
     if (data) {
@@ -19,4 +26,4 @@ export default function iterSupport(
   }
 
   return [{ version_added: null }];
-}
+};

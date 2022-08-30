@@ -23,6 +23,13 @@ import mirrorSupport from '../release/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+/**
+ * Check to see if the statement is equal to the mirrored statement
+ *
+ * @param {InternalSupportBlock} support The support statement to test
+ * @param {BrowserName} browser The browser to mirror for
+ * @returns {boolean} Whether the support statement is equal to mirroring
+ */
 export const isMirrorEquivalent = (
   support: InternalSupportBlock,
   browser: BrowserName,
@@ -47,21 +54,31 @@ export const isMirrorEquivalent = (
   return true;
 };
 
+/**
+ * Set the support statement for each browser to mirror if it matches mirroring
+ *
+ * @param {CompatData} bcd The compat data to update
+ * @param {BrowserName[]} browsers The browsers to test
+ */
 export const mirrorIfEquivalent = (
   bcd: CompatData,
   browsers: BrowserName[],
 ): void => {
   for (const { compat } of walk(undefined, bcd)) {
     for (const browser of browsers) {
-      if (compat) {
-        if (isMirrorEquivalent(compat.support, browser)) {
-          (compat.support[browser] as InternalSupportStatement) = 'mirror';
-        }
+      if (isMirrorEquivalent(compat.support, browser)) {
+        (compat.support[browser] as InternalSupportStatement) = 'mirror';
       }
     }
   }
 };
 
+/**
+ * Update compat data to 'mirror' if the statement matches mirroring
+ *
+ * @param {string} filename The name of the file to update
+ * @param {BrowserName[]} browsers The browsers to update
+ */
 const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
@@ -76,9 +93,7 @@ const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
 if (esMain(import.meta)) {
   const defaultBrowsers = (
     Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
-  ).filter((browser) => {
-    return bcd.browsers[browser].upstream;
-  });
+  ).filter((browser) => bcd.browsers[browser].upstream);
 
   const defaultFolders = [
     'api',

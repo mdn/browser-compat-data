@@ -7,7 +7,9 @@ import { IS_WINDOWS } from '../../test/utils.js';
 import { processData } from '../../test/linter/test-links.js';
 
 /**
- * @param {string} filename
+ * Fix issues with links throughout the BCD files
+ *
+ * @param {string} filename The name of the file to fix
  */
 const fixLinks = (filename: string): void => {
   const errors = processData(filename);

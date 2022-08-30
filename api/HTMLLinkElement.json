@@ -206,10 +206,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/fetchPriority",
           "spec_url": "https://wicg.github.io/priority-hints/#link",
           "support": {
-            "chrome": {
-              "version_added": "101",
-              "alternative_name": "fetchpriority"
-            },
+            "chrome": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "101",
+                "version_removed": "102",
+                "alternative_name": "fetchpriority"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -220,19 +226,13 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": false
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -606,6 +606,42 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        }
+      },
+      "sheet": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-linkstyle-sheet",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "9"
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
