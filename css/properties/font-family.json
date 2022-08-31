@@ -46,7 +46,7 @@
             "deprecated": false
           }
         },
-        "system_ui": {
+        "system-ui": {
           "__compat": {
             "description": "<code>system-ui</code>",
             "support": {
@@ -74,15 +74,16 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "alternative_name": "-apple-system",
-                "version_added": "9",
-                "notes": "Supported since macOS 10.11."
-              },
-              "safari_ios": {
-                "alternative_name": "-apple-system",
-                "version_added": "9"
-              },
+              "safari": [
+                {
+                  "version_added": "11"
+                },
+                {
+                  "alternative_name": "-apple-system",
+                  "version_added": "9"
+                }
+              ],
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
