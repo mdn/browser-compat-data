@@ -57,6 +57,7 @@
     "eslint-plugin-promise": "~6.0.0",
     "fast-json-stable-stringify": "~2.1.0",
     "fdir": "~5.2.0",
+    "husky": "^8.0.1",
     "json-schema-to-typescript": "~10.1.5",
     "mocha": "~10.0.0",
     "open-cli": "~7.0.1",
@@ -68,7 +69,7 @@
     "yargs": "~17.5.0"
   },
   "scripts": {
-    "prepare": "npm run gentypes",
+    "prepare": "husky install && npm run gentypes",
     "diff": "ts-node scripts/diff.ts",
     "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
