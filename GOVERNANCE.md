@@ -12,7 +12,7 @@ _Everyone_ who is involved in any form with the project must abide by the projec
 
 Users are community members who have a need for the project. They are typically consumers of the compat data (see [data consumers](README.md#projects-using-the-data)). Anyone can be a User; there are no special requirements and the data is licensed under [CC0](LICENSE). Common User contributions include evangelizing the project (e.g., display a link on a website and raise awareness through word-of-mouth), informing developers of strengths and weaknesses from a new user perspective, or providing moral support (a “thank you” goes a long way).
 
-Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#Contributors), as described in the next section.
+Users who continue to engage with the project and its community will often become more and more involved. Such Users may find themselves becoming [Contributors](#contributors), as described in the next section.
 
 ### Contributors
 
@@ -21,7 +21,7 @@ Contributors are community members who contribute in concrete ways to the projec
 Contributors:
 
 - Have read-only access to source code and therefore can submit changes via pull requests.
-- Have their contribution reviewed and merged by a [Peer](#Peers) or [Owner](#Owners). Owners and Peers work with Contributors to review their code and prepare it for merging.
+- Have their contribution reviewed and merged by a [Peer](#peers) or [Owner](#owners). Owners and Peers work with Contributors to review their code and prepare it for merging.
 - May also review pull requests. This can be helpful, but their approval or disapproval is not decisive for merging or not merging PRs.
 
 As Contributors gain experience and familiarity with the project, their profile within, and commitment to, the community will increase. At some stage, they may find themselves being nominated for becoming a Peer by an existing Peer or Owner.
@@ -37,7 +37,7 @@ Peers:
 - May merge pull requests that relate to compat data and browser data updates.
   - Other contributor's pull requests may be merged by peers.
   - A peer's own pull requests may be merged after approval from a fellow peer or owner.
-- Have their non-data update work reviewed and merged by [Owners](#Owners).
+- Have their non-data update work reviewed and merged by [Owners](#owners).
   - Non-data pull requests are PRs that change the schema, add or remove browsers, update project meta-docs, the linter, or other infrastructure changes.
 - May merge a pull request that immediately fixes a failing test, regardless of the author.
   - Owner review should still be requested on "critical fix" PRs.
@@ -57,7 +57,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 #### List of current peers
 
-- Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
+- Alexis Deveria (@Fyrd), Adobe, <https://caniuse.com>
 - Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
 - Luca Casonato (@lucacasonato), Deno

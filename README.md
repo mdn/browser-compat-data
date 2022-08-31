@@ -2,7 +2,7 @@
 
 [https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)
 
-The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#Projects-using-the-data).
+The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#projects-using-the-data).
 
 Read how this project is [governed](GOVERNANCE.md).
 
@@ -72,7 +72,7 @@ The `@mdn/browser-compat-data` package contains a tree of objects, with support 
 
 The definitive description of the format used to represent individual features and browsers is the [schema definitions](schemas/).
 
-Apart from the explicitly documented objects below, feature-level support data may change at any time. See [_Semantic versioning policy_](#Semantic-versioning-policy) for details.
+Apart from the explicitly documented objects below, feature-level support data may change at any time. See [_Semantic versioning policy_](#semantic-versioning-policy) for details.
 
 The package contains the following top-level objects:
 
@@ -155,7 +155,7 @@ Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensio
 
 For the purposes of [semantic versioning](https://semver.org/) (SemVer), the public API consists of:
 
-- The high-level namespace objects documented in [_Package contents_](#Package-contents)
+- The high-level namespace objects documented in [_Package contents_](#package-contents)
 - The schema definitions for browser and support data structures
 - The TypeScript definitions
 

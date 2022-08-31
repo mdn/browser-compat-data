@@ -3950,7 +3950,7 @@ July 15, 2021
   <details>
   <summary>Features removed and added</summary>
 
-  **Removed**
+  <h4>Removed</h4>
 
   - `api.Clients.matchAll.includeUncontrolled_option`
   - `api.CSSStyleSheet.insertRule.optional_index`
@@ -3998,7 +3998,7 @@ July 15, 2021
   - `javascript.builtins.Intl.NumberFormat.NumberFormat.unit`
   - `javascript.builtins.Intl.NumberFormat.NumberFormat.unitDisplay`
 
-  **Added**
+   <h4>Added</h4>
 
   - `api.Clients.matchAll.options_includeUncontrolled_parameter`
   - `api.CSSStyleSheet.insertRule.index_parameter_optional`
@@ -4974,7 +4974,7 @@ March 4, 2021
   - `api.KeyboardEvent.DOM_KEY_LOCATION_RIGHT`
   - `api.KeyboardEvent.DOM_KEY_LOCATION_STANDARD`
 
-**Statistics**
+### Statistics
 
 - 19 contributors have changed 122 files with 4,549 additions and 2,365 deletions in 43 commits ([`v3.1.1...v3.1.2`](https://github.com/mdn/browser-compat-data/compare/v3.1.1...v3.1.2))
 - 13,024 total features
@@ -4985,7 +4985,7 @@ March 4, 2021
 
 February 18, 2021
 
-**Notable changes**
+### Notable changes
 
 - `css.properties.grid-template-rows.masonry` feature was moved from its previously erroneous entry as `css.properties.masonry`. ([#9078](https://github.com/mdn/browser-compat-data/pull/9078))
 
@@ -5034,7 +5034,7 @@ February 18, 2021
 
 - The subfeatures of `api.Element.getBoundingClientRect` (`height`, `width`, `x`, and `y`) were removed because they duplicated the subfeatures of `api.DOMRectReadOnly`. ([#9061](https://github.com/mdn/browser-compat-data/pull/9061))
 
-**Statistics**
+### Statistics
 
 - 13 contributors have changed 77 files with 4,859 additions and 3,148 deletions in 57 commits ([`v3.1.0...v3.1.1`](https://github.com/mdn/browser-compat-data/compare/v3.1.0...v3.1.1))
 - 12,975 total features
@@ -5045,7 +5045,7 @@ February 18, 2021
 
 February 11, 2021
 
-**Notable changes**
+### Notable changes
 
 - We've adopted [a new data guideline for interface mixins](docs/data-guidelines/api.md#mixins). From v3.1.0, new data for [interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) will be represented as subfeatures of their exposed interfaces, instead of fictitious mixin interfaces.
 
@@ -5076,7 +5076,7 @@ February 11, 2021
 
 - `css.selectors.-webkit-autofill` has been renamed to `css.selectors.autofill` to reflect the standardized name ([#8877](https://github.com/mdn/browser-compat-data/pull/8877))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 49 files with 1,534 additions and 644 deletions in 37 commits ([`v3.0.6...v3.1.0`](https://github.com/mdn/browser-compat-data/compare/v3.0.6...v3.1.0))
 - 12,972 total features
@@ -5087,11 +5087,11 @@ February 11, 2021
 
 February 4, 2021
 
-**Notable changes**
+### Notable changes
 
 - `api.WEBGL_color_buffer_float.RGB32F_EXT`, a constant, was removed following the [_Constants_ data guideline](docs/data-guidelines/api.md#constants) ([#8934](https://github.com/mdn/browser-compat-data/pull/8934))
 
-**Statistics**
+### Statistics
 
 - 17 contributors have changed 90 files with 939 additions and 446 deletions in 56 commits ([`v3.0.5...v3.0.6`](https://github.com/mdn/browser-compat-data/compare/v3.0.5...v3.0.6))
 - 12,955 total features
@@ -5102,12 +5102,12 @@ February 4, 2021
 
 January 28, 2021
 
-**Notable changes**
+### Notable changes
 
 - `html.elements.command`, never implemented, was removed as irrelevant ([#8825](https://github.com/mdn/browser-compat-data/issues/8825))
 - `html.elements.element`, never implemented, was removed as irrelevant ([#8826](https://github.com/mdn/browser-compat-data/issues/8826))
 
-**Statistics**
+### Statistics
 
 - 15 contributors have changed 82 files with 294 additions and 524 deletions in 20 commits ([`v3.0.4...v3.0.5`](https://github.com/mdn/browser-compat-data/compare/v3.0.4...v3.0.5))
 - 12,951 total features
@@ -5118,7 +5118,7 @@ January 28, 2021
 
 January 21, 2021
 
-**Statistics**
+### Statistics
 
 - 17 contributors have changed 150 files with 1,521 additions and 310 deletions in 36 commits ([`v3.0.3...v3.0.4`](https://github.com/mdn/browser-compat-data/compare/v3.0.3...v3.0.4))
 - 12,958 total features
@@ -5129,14 +5129,14 @@ January 21, 2021
 
 January 14, 2021
 
-**Notable changes**
+### Notable changes
 
 - `api.CharacterData.ChildNode` has been removed as a duplicate of `api.ChildNode` ([#8052](https://github.com/mdn/browser-compat-data/issues/8052))
 - `api.PaymentRequest.paymentAddress` has been renamed to `api.PaymentRequest.shippingAddress` to reflect it's specified name ([#7669](https://github.com/mdn/browser-compat-data/issues/7669))
 - `api.WorkerGlobalScope.close` has been removed as a duplicate of `api.DedicatedWorkerGlobalScope.close` and `api.SharedWorkerGlobalScope.close`([#7363](https://github.com/mdn/browser-compat-data/issues/7363))
 - `html.manifest.serviceworker`, never implemented, was removed as irrelevant ([#8069](https://github.com/mdn/browser-compat-data/issues/8069))
 
-**Statistics**
+### Statistics
 
 - 16 contributors have changed 56 files with 1,807 additions and 756 deletions in 49 commits ([`v3.0.2...v3.0.3`](https://github.com/mdn/browser-compat-data/compare/v3.0.2...v3.0.3))
 - 12,944 total features
@@ -5147,7 +5147,7 @@ January 14, 2021
 
 January 7, 2021
 
-**Notable changes**
+### Notable changes
 
 - Removed `api.UIEvent.cancelBubble` as a duplicate of `api.Event.cancelBubble` ([#7350](https://github.com/mdn/browser-compat-data/issues/7350), [#7360](https://github.com/mdn/browser-compat-data/issues/7360))
 - Removed `Navigator` mixin `worker_support` features `api.NavigatorConcurrentHardware.worker_support`, `api.NavigatorLanguage.worker_support`, and `api.NavigatorOnLine.worker_support`, as redundant to `api.Navigator` data ([#8277](https://github.com/mdn/browser-compat-data/issues/8277))
@@ -5156,7 +5156,7 @@ January 7, 2021
 - Removed `api.NDEFWriter` as irrelevant ([#8459](https://github.com/mdn/browser-compat-data/issues/8459))
 - A new data guideline has been adopted: no new constants features will be accepted into BCD ([#8062](https://github.com/mdn/browser-compat-data/issues/8062))
 
-**Statistics**
+### Statistics
 
 - 19 contributors have changed 459 files with 24,184 additions and 8,900 deletions in 530 commits ([`v3.0.1...v3.0.2`](https://github.com/mdn/browser-compat-data/compare/v3.0.1...v3.0.2))
 - 12,922 total features
@@ -5167,11 +5167,11 @@ January 7, 2021
 
 December 17, 2020
 
-**Notable changes**
+### Notable changes
 
 - The feature `api.HTMLInputElement.weight` was removed since it probably never existed and was replaced with `api.HTMLInputElement.width` which does ([#7671](https://github.com/mdn/browser-compat-data/issues/7671))
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 268 files with 18,717 additions and 4,315 deletions in 303 commits ([`v3.0.0...v3.0.1`](https://github.com/mdn/browser-compat-data/compare/v3.0.0...v3.0.1))
 - 12,567 total features
@@ -5190,7 +5190,7 @@ Version 3.0.0 makes some potentially-breaking changes to improve the consistency
 
 Review the changes below for details.
 
-**Notable changes**
+### Notable changes
 
 - **(Breaking)** UC and QQ browsers were removed from the schema and support data, due to limited coverage and contribution activity. ([#7240](https://github.com/mdn/browser-compat-data/issues/7240))
 - Node.js data with releases before `0.10.0` were increased to that version, as if this were the first major, stable release (though the true story is rather more complex). Special thanks to the [Node.js Release Working Group](https://github.com/nodejs/Release) for their insight into Node.js's history. ([#7562](https://github.com/mdn/browser-compat-data/issues/7562); [#6861](https://github.com/mdn/browser-compat-data/issues/6861))
@@ -5237,7 +5237,7 @@ Review the changes below for details.
 - `css.properties.word-wrap` was removed as a duplicate of `css.properties.overflow-wrap`'s `alternative_name` data ([#7387](https://github.com/mdn/browser-compat-data/issues/7387))
 - `css.selectors.-moz-ui-invalid` was renamed to `css.properties.user-invalid` to reflect the standard name ([#7431](https://github.com/mdn/browser-compat-data/issues/7431))
 
-**Statistics**
+### Statistics
 
 - 30 contributors have changed 393 files with 6,481 additions and 5,881 deletions in 156 commits ([`v2.0.7...v3.0.0`](https://github.com/mdn/browser-compat-data/compare/v2.0.7...v3.0.0))
 - 12,274 total features
@@ -5248,7 +5248,7 @@ Review the changes below for details.
 
 November 19, 2020
 
-**Notable changes**
+### Notable changes
 
 - Internet Explorer version `"≤6"` is now an accepted value, to reflect testing limitations for older versions ([#7337](https://github.com/mdn/browser-compat-data/issues/7337))
 - The following features were [removed as irrelevant](docs/data-guidelines/index.md#removal-of-irrelevant-features):
@@ -5258,7 +5258,7 @@ November 19, 2020
   - `api.SVGMeshElement` ([#6941](https://github.com/mdn/browser-compat-data/issues/6941))
   - `api.WebAuthentication` ([#6860](https://github.com/mdn/browser-compat-data/issues/6860))
 
-**Statistics**
+### Statistics
 
 - 15 contributors have changed 175 files with 2,109 additions and 1,545 deletions in 41 commits ([`v2.0.6...v2.0.7`](https://github.com/mdn/browser-compat-data/compare/v2.0.6...v2.0.7))
 - 12,246 total features
@@ -5269,7 +5269,7 @@ November 19, 2020
 
 November 12, 2020
 
-**Notable changes**
+### Notable changes
 
 - iOS Safari version "≤3" is now an accepted value, to reflect testing limitations for older versions ([#7345](https://github.com/mdn/browser-compat-data/issues/7345))
 - `api.MediaKeyStatusMap.iterator` was renamed to `api.MediaKeyStatusMap.@@iterator` ([#7315](https://github.com/mdn/browser-compat-data/issues/7315))
@@ -5298,7 +5298,7 @@ November 12, 2020
   - `css.properties.break-before.region_context` ([#6961](https://github.com/mdn/browser-compat-data/issues/6961))
   - `css.properties.break-inside.region_context` ([#6961](https://github.com/mdn/browser-compat-data/issues/6961))
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 113 files with 1,428 additions and 2,048 deletions in 52 commits ([`v2.0.5...v2.0.6`](https://github.com/mdn/browser-compat-data/compare/v2.0.5...v2.0.6))
 - 12,247 total features
@@ -5309,7 +5309,7 @@ November 12, 2020
 
 November 5, 2020
 
-**Notable changes**
+### Notable changes
 
 - Safari version `"≤4"` is now an accepted value, to reflect testing limitations for older versions ([#6915](https://github.com/mdn/browser-compat-data/issues/6915))
 - The following features have been removed:
@@ -5320,7 +5320,7 @@ November 5, 2020
   - `api.HTMLInputElement.mozSetFileArray` because it was never exposed to the Web ([#6982](https://github.com/mdn/browser-compat-data/issues/6982))
   - `api.HTMLInputElement.mozSetFileNameArray` because it was never exposed to the Web ([#6982](https://github.com/mdn/browser-compat-data/issues/6982))
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 230 files with 7,273 additions and 5,019 deletions in 97 commits ([`v2.0.4...v2.0.5`](https://github.com/mdn/browser-compat-data/compare/v2.0.4...v2.0.5))
 - 12,264 total features
@@ -5331,7 +5331,7 @@ November 5, 2020
 
 October 29, 2020
 
-**Notable changes**
+### Notable changes
 
 - Data about how the aspect ratio is computed for some HTML elements has been moved from the `css.properties.aspect-ratio.internal-value` feature to `aspect_ratio_computed_from_attributes` subfeatures of the affected HTML elements ([#6918](https://github.com/mdn/browser-compat-data/issues/6918))
 - The following features have been removed because they were never implemented:
@@ -5342,7 +5342,7 @@ October 29, 2020
   - `api.DocumentOrShadowRoot.nodesFromPoint` ([#6929](https://github.com/mdn/browser-compat-data/issues/6929))
   - `api.Window.restore` ([#6987](https://github.com/mdn/browser-compat-data/issues/6987))
 
-**Statistics**
+### Statistics
 
 - 22 contributors have changed 172 files with 4,225 additions and 2,772 deletions in 177 commits ([`v2.0.3...v2.0.4`](https://github.com/mdn/browser-compat-data/compare/v2.0.3...v2.0.4))
 - 12,266 total features
@@ -5356,7 +5356,7 @@ October 29, 2020
 **This is the final release under the name `mdn-browser-compat-data`.**
 This package is now published as `@mdn/browser-compat-data`. For more information, read _[Upgrading from `mdn-browser-compat-data` 1.1 to `@mdn/browser-compat-data` 2.0.x](https://github.com/mdn/browser-compat-data/blob/v1.1.2/UPGRADE-2.0.x.md)_.
 
-**Notable changes**
+### Notable changes
 
 - Data about how the aspect ratio is computed for some HTML elements has been moved from the `css.properties.aspect-ratio.internal-value` feature to `aspect_ratio_computed_from_attributes` subfeatures of the affected HTML elements ([#6918](https://github.com/mdn/browser-compat-data/issues/6918))
 - The following features have been removed because they were never implemented:
@@ -5367,7 +5367,7 @@ This package is now published as `@mdn/browser-compat-data`. For more informatio
   - `api.DocumentOrShadowRoot.nodesFromPoint` ([#6929](https://github.com/mdn/browser-compat-data/issues/6929))
   - `api.Window.restore` ([#6987](https://github.com/mdn/browser-compat-data/issues/6987))
 
-**Statistics**
+### Statistics
 
 - 22 contributors have changed 169 files with 4,226 additions and 2,883 deletions in 174 commits ([`v1.1.1...v1.1.2`](https://github.com/mdn/browser-compat-data/compare/v1.1.1...v1.1.2))
 - 12,266 total features
@@ -5378,7 +5378,7 @@ This package is now published as `@mdn/browser-compat-data`. For more informatio
 
 October 15, 2020
 
-**Statistics**
+### Statistics
 
 - 14 contributors have changed 51 files with 1,623 additions and 1,053 deletions in 51 commits ([`v2.0.2...v2.0.3`](https://github.com/mdn/browser-compat-data/compare/v2.0.2...v2.0.3))
 - 12,246 total features
@@ -5392,7 +5392,7 @@ October 15, 2020
 **Deprecation notice**
 This package is now published as `@mdn/browser-compat-data`. For more information, read _[Upgrading from `mdn-browser-compat-data` 1.1 to `@mdn/browser-compat-data` 2.0.x](https://github.com/mdn/browser-compat-data/blob/v1.1.1/UPGRADE-2.0.x.md)_.
 
-**Statistics**
+### Statistics
 
 - 14 contributors have changed 52 files with 1,624 additions and 1,054 deletions in 49 commits ([`v1.1.0...v1.1.1`](https://github.com/mdn/browser-compat-data/compare/v1.1.0...v1.1.1))
 - 12,246 total features
@@ -5403,14 +5403,14 @@ This package is now published as `@mdn/browser-compat-data`. For more informatio
 
 October 8, 2020
 
-**Notable changes**
+### Notable changes
 
 - Feature moves and removals:
   - `api.DOMTokenList.remove_whitespace_and_duplicates` has been split into `api.DOMTokenList.remove_duplicates` and `api.DOMTokenList.trim_whitespace` ([#6691](https://github.com/mdn/browser-compat-data/issues/6691))
   - `api.AudioContext.createConstantSource` was removed because it duplicated `api.BaseAudioContext.createConstantSource` ([#6799](https://github.com/mdn/browser-compat-data/issues/6799))
   - `api.Document.contains` was removed because it duplicated `api.Node.contains` ([#6850](https://github.com/mdn/browser-compat-data/issues/6850))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 55 files with 1,734 additions and 1,495 deletions in 42 commits ([`v2.0.1...v2.0.2`](https://github.com/mdn/browser-compat-data/compare/v2.0.1...v2.0.2))
 - 12,243 total features
@@ -5421,11 +5421,11 @@ October 8, 2020
 
 October 8, 2020
 
-**Notice**
+### Notice
 
 This package is now published as `@mdn/browser-compat-data`. For more information, read _[Upgrading from `mdn-browser-compat-data` 1.1 to `@mdn/browser-compat-data` 2.0.x](https://github.com/mdn/browser-compat-data/blob/v1.1.0/UPGRADE-2.0.x.md)_.
 
-**Notable changes**
+### Notable changes
 
 - Deprecation: if you require this package (with the `mdn-` package name), then a warning will be emitted ([#6777](https://github.com/mdn/browser-compat-data/issues/6777))
 - Deprecation: if you're running Node.js version 8, then a warning will be emitted ([#6777](https://github.com/mdn/browser-compat-data/issues/6777))
@@ -5434,7 +5434,7 @@ This package is now published as `@mdn/browser-compat-data`. For more informatio
   - `api.AudioContext.createConstantSource` was removed because it duplicated `api.BaseAudioContext.createConstantSource` ([#6799](https://github.com/mdn/browser-compat-data/issues/6799))
   - `api.Document.contains` was removed because it duplicated `api.Node.contains` ([#6850](https://github.com/mdn/browser-compat-data/issues/6850))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 58 files with 1,795 additions and 1,495 deletions in 39 commits ([`v1.0.40...v1.1.0`](https://github.com/mdn/browser-compat-data/compare/v1.0.40...v1.1.0))
 - 12,243 total features
@@ -5445,7 +5445,7 @@ This package is now published as `@mdn/browser-compat-data`. For more informatio
 
 October 1, 2020
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 20 files with 496 additions and 271 deletions in 13 commits ([`v2.0.0...v2.0.1`](https://github.com/mdn/browser-compat-data/compare/v2.0.0...v2.0.1))
 - 12,242 total features
@@ -5458,7 +5458,7 @@ October 1, 2020
 
 **Notice**: In the future, this package will be published as `@mdn/browser-compat-data`. For more information, read [#6640](https://github.com/mdn/browser-compat-data/issues/6640).
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 20 files with 496 additions and 271 deletions in 11 commits ([`v1.0.39...v1.0.40`](https://github.com/mdn/browser-compat-data/compare/v1.0.39...v1.0.40))
 - 12,242 total features
@@ -5469,12 +5469,12 @@ October 1, 2020
 
 September 24, 2020
 
-**Notable changes**
+### Notable changes
 
 - **Breaking**: Initial release as `@mdn/browser-compat-data`.
 - **Breaking**: Node.js 10 or later is now required.
 
-**Statistics**
+### Statistics
 
 - 12,242 total features
 - 701 total contributors
@@ -5486,13 +5486,13 @@ September 24, 2020
 
 **Notice**: In the future, this package will be published as `@mdn/browser-compat-data`. To give feedback on this and other upcoming breaking changes, please read [#6640](https://github.com/mdn/browser-compat-data/issues/6640).
 
-**Notable changes**
+### Notable changes
 
 - `api.Element.name` was removed because it's actually implemented as part of several `HTML*Element.name` interfaces ([#6751](https://github.com/mdn/browser-compat-data/issues/6751) and [#6683](https://github.com/mdn/browser-compat-data/issues/6683))
 - `api.Element.accessKey` was removed because there's no indication that the feature was implemented in any browser
   browser (in contrast to `api.HTMLElement.accessKey`) ([#6746](https://github.com/mdn/browser-compat-data/issues/6746))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 76 files with 3,678 additions and 2,715 deletions in 19 commits ([`v1.0.38...v1.0.39`](https://github.com/mdn/browser-compat-data/compare/v1.0.38...v1.0.39))
 - 12,242 total features
@@ -5505,12 +5505,12 @@ September 17, 2020
 
 **Notice**: In the future, this package will be published under a new, scoped name. To give feedback on this and other upcoming breaking changes, please read [#6640](https://github.com/mdn/browser-compat-data/issues/6640).
 
-**Notable changes**
+### Notable changes
 
 - `css.at-rules.media.light-level` was removed because it was never implemented in any browser and has been dropped from the Media Queries specification ([#6706](https://github.com/mdn/browser-compat-data/issues/6706))
 - `api.CSSTransition.CSSTransition` was removed because it was never actually implemented in any browser ([#6707](https://github.com/mdn/browser-compat-data/issues/6707))
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 161 files with 1,348 additions and 1,146 deletions in 25 commits ([`v1.0.37...v1.0.38`](https://github.com/mdn/browser-compat-data/compare/v1.0.37...v1.0.38))
 - 12,195 total features
@@ -5529,7 +5529,7 @@ September 10, 2020
 
 **Notice**: In the future, this package will be published under a new, scoped name. To give feedback on this and other upcoming breaking changes, please read [#6640](https://github.com/mdn/browser-compat-data/issues/6640).
 
-**Notable changes**
+### Notable changes
 
 - CSS property data for `-ms-grid-columns` and `-ms-grid-row` was restructured ([#6599](https://github.com/mdn/browser-compat-data/issues/6599))
   - `css.properties.-ms-grid-columns` was removed (its data is now reflected as `"alternative_name"` data in `css.properties.grid-template-columns`)
@@ -5537,7 +5537,7 @@ September 10, 2020
 - `api.Console.timestamp` is now `api.Console.timeStamp` to correct a typo ([#6650](https://github.com/mdn/browser-compat-data/issues/6650))
 - `api.Gamepad.Gamepad` was removed because the constructor never existed ([#6664](https://github.com/mdn/browser-compat-data/issues/6664))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 50 files with 965 additions and 720 deletions in 18 commits ([`v1.0.36...v1.0.37`](https://github.com/mdn/browser-compat-data/compare/v1.0.36...v1.0.37))
 - 12,195 total features
@@ -5548,15 +5548,15 @@ September 10, 2020
 
 September 3, 2020
 
-**News**
+### News
 
 In the future, this package will be published under a new, scoped name. To give feedback on this and other upcoming breaking changes, please read [#6640](https://github.com/mdn/browser-compat-data/issues/6640).
 
-**Notable changes**
+### Notable changes
 
 - `svg.elements.discard.begin` and `svg.elements.discard.href` were removed as dubious ([#6600](https://github.com/mdn/browser-compat-data/issues/6600))
 
-**Statistics**
+### Statistics
 
 - 27 contributors have changed 173 files with 1,712 additions and 13,220 deletions in 61 commits ([`v1.0.35...v1.0.36`](https://github.com/mdn/browser-compat-data/compare/v1.0.35...v1.0.36))
 - 12,198 total features
@@ -5567,13 +5567,13 @@ In the future, this package will be published under a new, scoped name. To give 
 
 August 20, 2020
 
-**Notable changes**
+### Notable changes
 
 - `api.CSS.wmin` is now `api.CSS.vmin` to correct a typo ([#6507](https://github.com/mdn/browser-compat-data/issues/6507))
 - `api.RTCStatsEvent` was removed because it never shipped in any browser ([#6516](https://github.com/mdn/browser-compat-data/issues/6516))
 - `api.Response.trailer` was removed because it never shipped in any browser ([#6543](https://github.com/mdn/browser-compat-data/issues/6543))
 
-**Statistics**
+### Statistics
 
 - 20 contributors have changed 34 files with 1,024 additions and 1,070 deletions in 39 commits ([`v1.0.34...v1.0.35`](https://github.com/mdn/browser-compat-data/compare/v1.0.34...v1.0.35))
 - 12,190 total features
@@ -5584,11 +5584,11 @@ August 20, 2020
 
 August 6, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 36 files with 884 additions and 156 deletions in 29 commits ([`v1.0.33...v1.0.34`](https://github.com/mdn/browser-compat-data/compare/v1.0.33...v1.0.34))
 - 12191 total features
@@ -5599,7 +5599,7 @@ August 6, 2020
 
 July 30, 2020
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 27 files with 720 additions and 103 deletions in 19 commits ([`v1.0.32...v1.0.33`](https://github.com/mdn/browser-compat-data/compare/v1.0.32...v1.0.33))
 - 12178 total features
@@ -5610,13 +5610,13 @@ July 30, 2020
 
 July 23, 2020
 
-**Notable changes**
+### Notable changes
 
 - Updated our data guideline for irrelevant features to allow data removal if "a feature is unsupported in all releases in the past five years.".
-- Removed CSS data that meets the new criteria in https://github.com/mdn/browser-compat-data/pull/6418 and https://github.com/mdn/browser-compat-data/pull/6407.
-- Data for `FinalizationRegistry.prototype.cleanupSome` has been removed in https://github.com/mdn/browser-compat-data/pull/6426 due to the method not being standardized and available yet.
+- Removed CSS data that meets the new criteria in <https://github.com/mdn/browser-compat-data/pull/6418> and <https://github.com/mdn/browser-compat-data/pull/6407>.
+- Data for `FinalizationRegistry.prototype.cleanupSome` has been removed in <https://github.com/mdn/browser-compat-data/pull/6426> due to the method not being standardized and available yet.
 
-**Statistics**
+### Statistics
 
 - 13 contributors have changed 38 files with 249 additions and 1984 deletions in 19 commits ([`v1.0.31...v1.0.32`](https://github.com/mdn/browser-compat-data/compare/v1.0.31...v1.0.32))
 - 12167 total features
@@ -5627,11 +5627,11 @@ July 23, 2020
 
 July 16, 2020
 
-**Notable changes**
+### Notable changes
 
 - none
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 13 files with 408 additions and 61 deletions in 15 commits ([`v1.0.30...v1.0.31`](https://github.com/mdn/browser-compat-data/compare/v1.0.30...v1.0.31))
 - 12196 total features
@@ -5642,11 +5642,11 @@ July 16, 2020
 
 July 9, 2020
 
-**Notable changes**
+### Notable changes
 
-- The data for `api.CSSMathNegate.values` is now at `api.CSSMathNegate.value` (typo fix in https://github.com/mdn/browser-compat-data/pull/6371)
+- The data for `api.CSSMathNegate.values` is now at `api.CSSMathNegate.value` (typo fix in <https://github.com/mdn/browser-compat-data/pull/6371>)
 
-**Statistics**
+### Statistics
 
 - 5 contributors have changed 13 files with 411 additions and 25 deletions in 11 commits ([`v1.0.29...v1.0.30`](https://github.com/mdn/browser-compat-data/compare/v1.0.29...v1.0.30))
 - 12189 total features
@@ -5657,11 +5657,11 @@ July 9, 2020
 
 July 2, 2020
 
-**Notable changes**
+### Notable changes
 
 - none
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 50 files with 833 additions and 311 deletions in 29 commits ([`v1.0.28...v1.0.29`](https://github.com/mdn/browser-compat-data/compare/v1.0.28...v1.0.29))
 - 12181 total features
@@ -5672,11 +5672,11 @@ July 2, 2020
 
 June 25, 2020
 
-**Notable changes**
+### Notable changes
 
 - none
 
-**Statistics**
+### Statistics
 
 - 7 contributors have changed 11 files with 95 additions and 46 deletions in 9 commits ([`v1.0.27...v1.0.28`](https://github.com/mdn/browser-compat-data/compare/v1.0.27...v1.0.28))
 - 12172 total features
@@ -5687,7 +5687,7 @@ June 25, 2020
 
 June 22, 2020
 
-**Notable changes**
+### Notable changes
 
 - Safari 14 supports WebExtensions
 - The following Streams API constructor data points have been removed ([#6314](https://github.com/mdn/browser-compat-data/issues/6314)):
@@ -5696,7 +5696,7 @@ June 22, 2020
   - `api.ReadableStreamDefaultController.ReadableStreamDefaultController`
   - `api.WritableStreamDefaultController.WritableStreamDefaultController`
 
-**Statistics**
+### Statistics
 
 - 4 contributors have changed 112 files with 4455 additions and 364 deletions in 7 commits ([`v1.0.26...v1.0.27`](https://github.com/mdn/browser-compat-data/compare/v1.0.26...v1.0.27))
 - 12172 total features
@@ -5707,11 +5707,11 @@ June 22, 2020
 
 June 18, 2020
 
-**Notable changes**
+### Notable changes
 
 - none
 
-**Statistics**
+### Statistics
 
 - 6 contributors have changed 25 files with 1501 additions and 398 deletions in 18 commits ([`v1.0.25...v1.0.26`](https://github.com/mdn/browser-compat-data/compare/v1.0.25...v1.0.26))
 - 12170 total features
@@ -5722,14 +5722,14 @@ June 18, 2020
 
 June 11, 2020
 
-**Notable changes**
+### Notable changes
 
 - The `javascript.builtin.Intl.Collator.caseFirst` data has been moved to `javascript.builtin.Intl.Collator.Collator.caseFirst` ([#6253](https://github.com/mdn/browser-compat-data/issues/6253))
 - JS operator data has been moved to remove unnecessary group trees ([#6246](https://github.com/mdn/browser-compat-data/issues/6246), [#6270](https://github.com/mdn/browser-compat-data/issues/6270), [#6272](https://github.com/mdn/browser-compat-data/issues/6272), [#6276](https://github.com/mdn/browser-compat-data/issues/6276)).
   - These JS operator groups have been dissolved: comparison, bitwise, assignment, arithmetic.
   - Find the operators now directly under the operators tree, for example: `javascript.operators.bitwise.and` -> `javascript.operators.bitwise_and`
 
-**Statistics**
+### Statistics
 
 - 17 contributors have changed 81 files with 4690 additions and 2291 deletions in 32 commits ([`v1.0.24...v1.0.25`](https://github.com/mdn/browser-compat-data/compare/v1.0.24...v1.0.25))
 - 12166 total features
@@ -5740,7 +5740,7 @@ June 11, 2020
 
 June 4, 2020
 
-**Notable changes**
+### Notable changes
 
 - The following data point has been removed:
   - `css.selectors.read-write.matches_editable_elements` ([#6244](https://github.com/mdn/browser-compat-data/issues/6244))
@@ -5749,7 +5749,7 @@ June 4, 2020
   - `javascript.operators.logical.or` -> `javascript.operators.logical_or`
   - `javascript.operators.logical.not` -> `javascript.operators.logical_not`
 
-**Statistics**
+### Statistics
 
 - 15 contributors have changed 45 files with 1304 additions and 498 deletions in 22 commits ([`v1.0.23...v1.0.24`](https://github.com/mdn/browser-compat-data/compare/v1.0.23...v1.0.24))
 - 12129 total features
@@ -5760,14 +5760,14 @@ June 4, 2020
 
 May 28, 2020
 
-**Notable changes**
+### Notable changes
 
 - The following [irrelevant features](docs/data-guidelines/index.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.String.quote` ([#6207](https://github.com/mdn/browser-compat-data/issues/6207))
   - `javascript.builtins.String.replace.flags` ([#6206](https://github.com/mdn/browser-compat-data/issues/6206))
   - `api.LocalFileSystem` and `api.LocalFileSystemSync` ([#6163](https://github.com/mdn/browser-compat-data/issues/6163))
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 32 files with 1260 additions and 621 deletions in 21 commits ([`v1.0.22...v1.0.23`](https://github.com/mdn/browser-compat-data/compare/v1.0.22...v1.0.23))
 - 12123 total features
@@ -5778,16 +5778,16 @@ May 28, 2020
 
 May 21, 2020
 
-**Notable changes**
+### Notable changes
 
 - The following [irrelevant features](docs/data-guidelines/index.md#removal-of-irrelevant-features) have been removed:
   - `javascript.builtins.Date.toLocaleFormat` ([#6183](https://github.com/mdn/browser-compat-data/issues/6183))
   - `javascript.builtins.String.match.flags` ([#6184](https://github.com/mdn/browser-compat-data/issues/6184))
   - `javascript.statements.try_catch.conditional_clauses` ([#6192](https://github.com/mdn/browser-compat-data/issues/6192))
 - `javascript.statements.default.exports` has moved to `javascript.statements.exports.default` (see [#5869](https://github.com/mdn/browser-compat-data/issues/5869)).
-- A new guideline for how [Permissions API permissions data](docs/data-guidelines/api.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see https://github.com/mdn/browser-compat-data/pull/6156.
+- A new guideline for how [Permissions API permissions data](docs/data-guidelines/api.md#permissions-api-permissions-permissionname_permission) is stored has been accepted and the descriptions have been fixed, see <https://github.com/mdn/browser-compat-data/pull/6156>.
 
-**Statistics**
+### Statistics
 
 - 14 contributors have changed 47 files with 806 additions and 541 deletions in 38 commits ([`v1.0.21...v1.0.22`](https://github.com/mdn/browser-compat-data/compare/v1.0.21...v1.0.22))
 - 12122 total features
@@ -5798,11 +5798,11 @@ May 21, 2020
 
 May 14, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 16 contributors have changed 87 files with 1221 additions and 498 deletions in 26 commits ([`v1.0.20...v1.0.21`](https://github.com/mdn/browser-compat-data/compare/v1.0.20...v1.0.21))
 - 12118 total features
@@ -5813,11 +5813,11 @@ May 14, 2020
 
 May 7, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 45 files with 1911 additions and 241 deletions in 35 commits ([`v1.0.19...v1.0.20`](https://github.com/mdn/browser-compat-data/compare/v1.0.19...v1.0.20))
 - 12092 total features
@@ -5828,11 +5828,11 @@ May 7, 2020
 
 April 30, 2020
 
-**Notable changes**
+### Notable changes
 
-- A new guideline for deleting irrelevant data is now in place. (https://github.com/mdn/browser-compat-data/pull/6018)
+- A new guideline for deleting irrelevant data is now in place. (<https://github.com/mdn/browser-compat-data/pull/6018>)
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 39 files with 1930 additions and 1264 deletions in 24 commits ([`v1.0.18...v1.0.19`](https://github.com/mdn/browser-compat-data/compare/v1.0.18...v1.0.19))
 - 12068 total features
@@ -5843,11 +5843,11 @@ April 30, 2020
 
 April 23, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 23 contributors have changed 31 files with 1346 additions and 488 deletions in 42 commits ([`v1.0.17...v1.0.18`](https://github.com/mdn/browser-compat-data/compare/v1.0.17...v1.0.18))
 - 12053 total features
@@ -5858,11 +5858,11 @@ April 23, 2020
 
 April 9, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 8 contributors have changed 45 files with 529 additions and 504 deletions in 29 commits ([`v1.0.16...v1.0.17`](https://github.com/mdn/browser-compat-data/compare/v1.0.16...v1.0.17))
 - 12043 total features
@@ -5873,11 +5873,11 @@ April 9, 2020
 
 April 2, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 16 contributors have changed 140 files with 3214 additions and 1517 deletions in 39 commits ([`v1.0.15...v1.0.16`](https://github.com/mdn/browser-compat-data/compare/v1.0.15...v1.0.16))
 - 12040 total features
@@ -5888,11 +5888,11 @@ April 2, 2020
 
 March 26, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 55 files with 1332 additions and 323 deletions in 17 commits ([`v1.0.14...v1.0.15`](https://github.com/mdn/browser-compat-data/compare/v1.0.14...v1.0.15))
 - 12007 total features
@@ -5903,11 +5903,11 @@ March 26, 2020
 
 March 23, 2020
 
-**Notable changes**
+### Notable changes
 
 - Besides regular data updates, this release contains a fix for a bug introduced in the last release (1.0.13). Support was changed Node versions <10.0.0 and it is now restored support to Node versions ≥8.0.0. See [#5852](https://github.com/mdn/browser-compat-data/issues/5852) and [#5863](https://github.com/mdn/browser-compat-data/issues/5863).
 
-**Statistics**
+### Statistics
 
 - 5 contributors have changed 37 files with 824 additions and 247 deletions in 8 commits ([`v1.0.13...v1.0.14`](https://github.com/mdn/browser-compat-data/compare/v1.0.13...v1.0.14))
 - 12003 total features
@@ -5920,11 +5920,11 @@ March 19, 2020
 
 **Warning**: This release contains a breaking change for Node versions <10.0.0. The next patch release restores support to Node versions ≥8.0.0 See [#5852](https://github.com/mdn/browser-compat-data/issues/5852) and [#5863](https://github.com/mdn/browser-compat-data/issues/5863).
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 16 contributors have changed 64 files with 2443 additions and 1399 deletions in 30 commits ([`v1.0.12...v1.0.13`](https://github.com/mdn/browser-compat-data/compare/v1.0.12...v1.0.13))
 - 11991 total features
@@ -5935,11 +5935,11 @@ March 19, 2020
 
 March 12, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 8 contributors have changed 20 files with 445 additions and 375 deletions in 13 commits ([`v1.0.11...v1.0.12`](https://github.com/mdn/browser-compat-data/compare/v1.0.11...v1.0.12))
 - 11969 total features
@@ -5950,11 +5950,11 @@ March 12, 2020
 
 March 5, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 8 contributors have changed 19 files with 1581 additions and 515 deletions in 16 commits ([`v1.0.10...v1.0.11`](https://github.com/mdn/browser-compat-data/compare/v1.0.10...v1.0.11))
 - 11968 total features
@@ -5965,11 +5965,11 @@ March 5, 2020
 
 February 27, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 50 files with 724 additions and 319 deletions in 29 commits ([`v1.0.9...v1.0.10`](https://github.com/mdn/browser-compat-data/compare/v1.0.9...v1.0.10))
 - 11953 total features
@@ -5980,11 +5980,11 @@ February 27, 2020
 
 February 20, 2020
 
-**Notable changes**
+### Notable changes
 
-- Edge compat data has been updated throughout due to engine change (see https://github.com/mdn/browser-compat-data/issues/5214)
+- Edge compat data has been updated throughout due to engine change (see <https://github.com/mdn/browser-compat-data/issues/5214>)
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 1264 files with 10265 additions and 7001 deletions in 34 commits ([`v1.0.8...v1.0.9`](https://github.com/mdn/browser-compat-data/compare/v1.0.8...v1.0.9))
 - 11949 total features
@@ -5995,11 +5995,11 @@ February 20, 2020
 
 February 13, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 114 files with 7954 additions and 5973 deletions in 37 commits ([`v1.0.7...v1.0.8`](https://github.com/mdn/browser-compat-data/compare/v1.0.7...v1.0.8))
 - 11935 total features
@@ -6010,11 +6010,11 @@ February 13, 2020
 
 February 13, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 327 files with 3039 additions and 2724 deletions in 65 commits ([`v1.0.6...v1.0.7`](https://github.com/mdn/browser-compat-data/compare/v1.0.6...v1.0.7))
 - 11887 total features
@@ -6025,11 +6025,11 @@ February 13, 2020
 
 January 23, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 13 contributors have changed 45 files with 1139 additions and 547 deletions in 30 commits ([`v1.0.5...v1.0.6`](https://github.com/mdn/browser-compat-data/compare/v1.0.5...v1.0.6))
 - 11887 total features
@@ -6040,11 +6040,11 @@ January 23, 2020
 
 January 16, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 99 files with 1409 additions and 1941 deletions in 34 commits ([`v1.0.4...v1.0.5`](https://github.com/mdn/browser-compat-data/compare/v1.0.4...v1.0.5))
 - 11876 total features
@@ -6055,11 +6055,11 @@ January 16, 2020
 
 January 9, 2020
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 240 files with 3938 additions and 1330 deletions in 96 commits ([`v1.0.3...v1.0.4`](https://github.com/mdn/browser-compat-data/compare/v1.0.3...v1.0.4))
 - 11886 total features
@@ -6070,11 +6070,11 @@ January 9, 2020
 
 December 19, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 339 files with 3,745 additions and 758 deletions in 29 commits ([`v1.0.2...v1.0.3`](https://github.com/mdn/browser-compat-data/compare/v1.0.2...v1.0.3))
 - 11,875 total features
@@ -6085,11 +6085,11 @@ December 19, 2019
 
 December 12, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 17 contributors have changed 742 files with 7115 additions and 3324 deletions in 41 commits ([`v1.0.1...v1.0.2`](https://github.com/mdn/browser-compat-data/compare/v1.0.1...v1.0.2))
 - 11859 total features
@@ -6100,11 +6100,11 @@ December 12, 2019
 
 December 4, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 19 contributors have changed 258 files with 2499 additions and 1656 deletions in 68 commits ([`v1.0.0...v1.0.1`](https://github.com/mdn/browser-compat-data/compare/v1.0.0...v1.0.1))
 - 11849 total features
@@ -6119,7 +6119,7 @@ The mdn-browser-compat-data 1.0.0 release is a non-breaking release! It is the 1
 
 From now on: we're guaranteeing data structure stability and any changes to how the data is exposed will be communicated using minor and major version bumps. Compatibility data will still be continuously updated on a weekly basis and the patch version will be used if data-only updates happened. So, you can expect a 1.0.1 release next week.
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 306 files with 2117 additions and 1024 deletions in 42 commits ([`v0.0.99...v1.0.0`](https://github.com/mdn/browser-compat-data/compare/v0.0.99...v1.0.0))
 - 11827 total features
@@ -6132,7 +6132,7 @@ November 14, 2019
 
 ### Notable changes
 
-**Next week (on 21st November 2019), we will release version 1.0.0 (instead of 0.0.100). Please make sure your package.json semver query takes this into account! (see also npm semver calculator at https://semver.npmjs.com/)**
+**Next week (on 21st November 2019), we will release version 1.0.0 (instead of 0.0.100). Please make sure your package.json semver query takes this into account! (see also npm semver calculator at <https://semver.npmjs.com/>)**
 
 There are no breaking changes in 1.0.0. It is just that we should finally use semver correctly and call it a 1.0.0 :)
 
@@ -6147,11 +6147,11 @@ There are no breaking changes in 1.0.0. It is just that we should finally use se
 
 October 24, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 56 files with 1528 additions and 573 deletions in 27 commits ([`v0.0.97...v0.0.98`](https://github.com/mdn/browser-compat-data/compare/v0.0.97...v0.0.98))
 - 11801 total features
@@ -6162,11 +6162,11 @@ October 24, 2019
 
 October 17, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 18 contributors have changed 104 files with 737 additions and 451 deletions in 38 commits ([`v0.0.96...v0.0.97`](https://github.com/mdn/browser-compat-data/compare/v0.0.96...v0.0.97))
 - 11789 total features
@@ -6177,11 +6177,11 @@ October 17, 2019
 
 October 10, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 76 files with 1267 additions and 552 deletions in 37 commits ([`v0.0.95...v0.0.96`](https://github.com/mdn/browser-compat-data/compare/v0.0.95...v0.0.96))
 - 11777 total features
@@ -6192,11 +6192,11 @@ October 10, 2019
 
 October 2, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 27 contributors have changed 79 files with 2562 additions and 878 deletions in 55 commits ([`v0.0.94...v0.0.95`](https://github.com/mdn/browser-compat-data/compare/v0.0.94...v0.0.95))
 - 11768 total features
@@ -6207,11 +6207,11 @@ October 2, 2019
 
 September 12, 2019
 
-**Notable changes**
+### Notable changes
 
-- MDN compat data now collaborates with caniuse https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/
+- MDN compat data now collaborates with caniuse <https://hacks.mozilla.org/2019/09/caniuse-and-mdn-compat-data-collaboration/>
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 119 files with 11912 additions and 663 deletions in 37 commits ([`v0.0.93...v0.0.94`](https://github.com/mdn/browser-compat-data/compare/v0.0.93...v0.0.94))
 - 11734 total features
@@ -6222,11 +6222,11 @@ September 12, 2019
 
 September 5, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 257 files with 11539 additions and 8922 deletions in 45 commits ([`v0.0.92...v0.0.93`](https://github.com/mdn/browser-compat-data/compare/v0.0.92...v0.0.93))
 - 11716 total features
@@ -6237,11 +6237,11 @@ September 5, 2019
 
 August 29, 2019
 
-**Notable changes**
+### Notable changes
 
 - We now have 100% CSS data coverage for major browsers ([#3710](https://github.com/mdn/browser-compat-data/issues/3710))
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 665 files with 32134 additions and 28865 deletions in 48 commits ([`v0.0.91...v0.0.92`](https://github.com/mdn/browser-compat-data/compare/v0.0.91...v0.0.92))
 - 11674 total features
@@ -6252,11 +6252,11 @@ August 29, 2019
 
 August 22, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 20 contributors have changed 117 files with 1304 additions and 761 deletions in 53 commits ([`v0.0.90...v0.0.91`](https://github.com/mdn/browser-compat-data/compare/v0.0.90...v0.0.91))
 - 11625 total features
@@ -6267,11 +6267,11 @@ August 22, 2019
 
 August 15, 2019
 
-**Notable changes**
+### Notable changes
 
 - The data now includes a range version for webview_android ("≤37" is now a valid version) ([#4583](https://github.com/mdn/browser-compat-data/issues/4583))
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 178 files with 1039 additions and 623 deletions in 29 commits ([`v0.0.89...v0.0.90`](https://github.com/mdn/browser-compat-data/compare/v0.0.89...v0.0.90))
 - 11618 total features
@@ -6282,11 +6282,11 @@ August 15, 2019
 
 August 8, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 12 contributors have changed 24 files with 1266 additions and 295 deletions in 20 commits ([`v0.0.88...v0.0.89`](https://github.com/mdn/browser-compat-data/compare/v0.0.88...v0.0.89))
 - 11615 total features
@@ -6297,11 +6297,11 @@ August 8, 2019
 
 August 1, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 21 contributors have changed 58 files with 1144 additions and 291 deletions in 37 commits ([`v0.0.87...v0.0.88`](https://github.com/mdn/browser-compat-data/compare/v0.0.87...v0.0.88))
 - 11597 total features
@@ -6312,11 +6312,11 @@ August 1, 2019
 
 July 18, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 75 files with 890 additions and 874 deletions in 25 commits ([`v0.0.86...v0.0.87`](https://github.com/mdn/browser-compat-data/compare/v0.0.86...v0.0.87))
 - 11582 total features
@@ -6327,11 +6327,11 @@ July 18, 2019
 
 July 11, 2019
 
-**Notable changes**
+### Notable changes
 
 - We've removed data for the discontinued Windows Mobile version of Edge. See [#3888](https://github.com/mdn/browser-compat-data/issues/3888) for details.
 
-**Statistics**
+### Statistics
 
 - 20 contributors have changed 1472 files with 3801 additions and 25324 deletions in 76 commits ([`v0.0.85...v0.0.86`](https://github.com/mdn/browser-compat-data/compare/v0.0.85...v0.0.86))
 - 11587 total features
@@ -6342,11 +6342,11 @@ July 11, 2019
 
 June 27, 2019
 
-**Notable changes**
+### Notable changes
 
 - We've started the process of removing data for the discontinued Windows Mobile version of Edge. See [#3888](https://github.com/mdn/browser-compat-data/issues/3888) for details.
 
-**Statistics**
+### Statistics
 
 - 11,571 total features
 - 25 contributors have changed 196 files with 4,915 additions and 5,689 deletions in 64 commits ([`v0.0.84...v0.0.85`](https://github.com/mdn/browser-compat-data/compare/v0.0.84...v0.0.85))
@@ -6357,11 +6357,11 @@ June 27, 2019
 
 June 13, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10 contributors have changed 493 files with 879 additions and 5364 deletions in 23 commits ([`v0.0.83...v0.0.84`](https://github.com/mdn/browser-compat-data/compare/v0.0.83...v0.0.84))
 - 11543 total features
@@ -6372,11 +6372,11 @@ June 13, 2019
 
 June 6, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 15 contributors have changed 63 files with 1380 additions and 231 deletions in 20 commits ([`v0.0.82...v0.0.83`](https://github.com/mdn/browser-compat-data/compare/v0.0.82...v0.0.83))
 - 11530 total features
@@ -6387,11 +6387,11 @@ June 6, 2019
 
 May 30, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 11 contributors have changed 44 files with 1686 additions and 162 deletions in 14 commits ([`v0.0.81...v0.0.82`](https://github.com/mdn/browser-compat-data/compare/v0.0.81...v0.0.82))
 - 11513 total features
@@ -6402,11 +6402,11 @@ May 30, 2019
 
 May 23, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 17 contributors have changed 122 files with 1216 additions and 603 deletions in 27 commits ([`v0.0.80...v0.0.81`](https://github.com/mdn/browser-compat-data/compare/v0.0.80...v0.0.81))
 - 11479 total features
@@ -6417,11 +6417,11 @@ May 23, 2019
 
 May 16, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 14 contributors have changed 97 files with 5670 additions and 2427 deletions in 43 commits ([`v0.0.79...v0.0.80`](https://github.com/mdn/browser-compat-data/compare/v0.0.79...v0.0.80))
 - 11470 total features
@@ -6432,11 +6432,11 @@ May 16, 2019
 
 May 9, 2019
 
-**Notable changes**
+### Notable changes
 
 - browser release exports now also contain engine information ([#3877](https://github.com/mdn/browser-compat-data/issues/3877))
 
-**Statistics**
+### Statistics
 
 - 13 contributors have changed 220 files with 3469 additions and 1425 deletions in 56 commits ([`v0.0.78...v0.0.79`](https://github.com/mdn/browser-compat-data/compare/v0.0.78...v0.0.79))
 - 11413 total features
@@ -6447,11 +6447,11 @@ May 9, 2019
 
 May 2, 2019
 
-**Notable changes**
+### Notable changes
 
 - nodejs 6 was EOL'ed, so this package now requires nodejs 8. ([#4034](https://github.com/mdn/browser-compat-data/issues/4034))
 
-**Statistics**
+### Statistics
 
 - 19 contributors have changed 247 files with 3565 additions and 1683 deletions in 62 commits ([`v0.0.77...v0.0.78`](https://github.com/mdn/browser-compat-data/compare/v0.0.77...v0.0.78))
 - 11406 total features
@@ -6462,11 +6462,11 @@ May 2, 2019
 
 April 25, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 16 contributors have changed 290 files with 3986 additions and 2220 deletions in 61 commits ([`v0.0.76...v0.0.77`](https://github.com/mdn/browser-compat-data/compare/v0.0.76...v0.0.77))
 - 11380 total features
@@ -6477,11 +6477,11 @@ April 25, 2019
 
 April 18, 2019
 
-**Notable changes**
+### Notable changes
 
-- Updated TypeScript definitions (https://github.com/mdn/browser-compat-data/pull/3739)
+- Updated TypeScript definitions (<https://github.com/mdn/browser-compat-data/pull/3739>)
 
-**Statistics**
+### Statistics
 
 - 15 contributors have changed 286 files with 4802 additions and 1763 deletions in 63 commits ([`v0.0.75...v0.0.76`](https://github.com/mdn/browser-compat-data/compare/v0.0.75...v0.0.76))
 - 428 total contributors
@@ -6492,13 +6492,13 @@ April 18, 2019
 
 April 11, 2019
 
-**Notable changes**
+### Notable changes
 
 - A document describing the repo's governance has been added ([#3668](https://github.com/mdn/browser-compat-data/issues/3668))
 - Opera Android data is now validated against actual release versions ([#1712](https://github.com/mdn/browser-compat-data/issues/1712))
 - The flag of type `compile_flag` has been removed from the schema ([#3752](https://github.com/mdn/browser-compat-data/issues/3752))
 
-**Statistics**
+### Statistics
 
 - 20 contributors have changed 818 files with 9663 additions and 5528 deletions in 47 commits ([`v0.0.74...v0.0.75`](https://github.com/mdn/browser-compat-data/compare/v0.0.74...v0.0.75))
 - 11297 total features
@@ -6509,11 +6509,11 @@ April 11, 2019
 
 April 4, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 14 contributors have changed 271 files with 4731 additions and 2474 deletions in 32 commits ([`v0.0.73...v0.0.74`](https://github.com/mdn/browser-compat-data/compare/v0.0.73...v0.0.74))
 - 11251 total features
@@ -6524,11 +6524,11 @@ April 4, 2019
 
 March 28, 2019
 
-**Notable changes**
+### Notable changes
 
-- [`matches` objects](schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(https://github.com/mdn/browser-compat-data/pull/3631)
+- [`matches` objects](schemas/compat-data-schema.md#the-matches-object) have been added to the schema.(<https://github.com/mdn/browser-compat-data/pull/3631>)
 
-**Statistics**
+### Statistics
 
 - 21 contributors have changed 187 files with 3649 additions and 2230 deletions in 55 commits ([`v0.0.72...v0.0.73`](https://github.com/mdn/browser-compat-data/compare/v0.0.72...v0.0.73))
 - 11210 total features
@@ -6539,11 +6539,11 @@ March 28, 2019
 
 March 21, 2019
 
-**Notable changes**
+### Notable changes
 
-- The year goal for the data quality of this data set has been agreed on and will be measured regularly. See https://github.com/mdn/browser-compat-data/issues/3555 for details.
+- The year goal for the data quality of this data set has been agreed on and will be measured regularly. See <https://github.com/mdn/browser-compat-data/issues/3555> for details.
 
-**Statistics**
+### Statistics
 
 - 11196 total features
 - 18 contributors have changed 39 files with 3718 additions and 627 deletions in 29 commits ([`v0.0.71...v0.0.72`](https://github.com/mdn/browser-compat-data/compare/v0.0.71...v0.0.72))
@@ -6554,11 +6554,11 @@ March 21, 2019
 
 March 14, 2019
 
-**Notable changes**
+### Notable changes
 
 - `version_added` is now required to be different from `version_removed` ([#3546](https://github.com/mdn/browser-compat-data/issues/3546))
 
-**Statistics**
+### Statistics
 
 - 11,141 total features
 - 15 contributors have changed 103 files with 7,244 additions and 2,265 deletions in 35 commits ([`v0.0.70...v0.0.71`](https://github.com/mdn/browser-compat-data/compare/v0.0.70...v0.0.71))
@@ -6569,12 +6569,12 @@ March 14, 2019
 
 March 7, 2019
 
-**Notable changes**
+### Notable changes
 
 - Total number features for which we have compat data is now above 11,000. \o/
-- If you're using this project in TypeScript, this PR might affect you: https://github.com/mdn/browser-compat-data/pull/3004
+- If you're using this project in TypeScript, this PR might affect you: <https://github.com/mdn/browser-compat-data/pull/3004>
 
-**Statistics**
+### Statistics
 
 - 13 contributors have changed 97 files with 5311 additions and 1172 deletions in 23 commits ([`v0.0.69...v0.0.70`](https://github.com/mdn/browser-compat-data/compare/v0.0.69...v0.0.70))
 - 11043 total features
@@ -6585,11 +6585,11 @@ March 7, 2019
 
 February 28, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10975 total features
 - 16 contributors have changed 102 files with 4135 additions and 1372 deletions in 42 commits ([`v0.0.68...v0.0.69`](https://github.com/mdn/browser-compat-data/compare/v0.0.68...v0.0.69))
@@ -6600,11 +6600,11 @@ February 28, 2019
 
 February 21, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10913 total features
 - 18 contributors have changed 86 files with 7487 additions and 1247 deletions in 36 commits ([`v0.0.67...v0.0.68`](https://github.com/mdn/browser-compat-data/compare/v0.0.67...v0.0.68))
@@ -6615,13 +6615,13 @@ February 21, 2019
 
 February 14, 2019
 
-**Notable changes**
+### Notable changes
 
 - Browser data schema now supports `pref_url` to document where flags are changed ([#3407](https://github.com/mdn/browser-compat-data/issues/3407))
 - Desktop browsers are now required in `support` objects ([#3413](https://github.com/mdn/browser-compat-data/issues/3413), [#3419](https://github.com/mdn/browser-compat-data/issues/3419))
 - Node 6 is now documented as the minimum Node version required for the package ([#3428](https://github.com/mdn/browser-compat-data/issues/3428))
 
-**Statistics**
+### Statistics
 
 - 10,799 total features
 - 16 contributors have changed 247 files with 5,045 additions and 2,359 deletions in 28 commits ([`v0.0.66...v0.0.67`](https://github.com/mdn/browser-compat-data/compare/v0.0.66...v0.0.67))
@@ -6632,13 +6632,13 @@ February 14, 2019
 
 February 7, 2019
 
-**Notable changes**
+### Notable changes
 
-- Browsers now need to be sorted alphabetically in the data (https://github.com/mdn/browser-compat-data/pull/1882)
-- WebKit bug URLs are now consistent (https://github.com/mdn/browser-compat-data/pull/3371)
-- The linter now ensures that version_added is earlier than version_removed (https://github.com/mdn/browser-compat-data/pull/3370)
+- Browsers now need to be sorted alphabetically in the data (<https://github.com/mdn/browser-compat-data/pull/1882>)
+- WebKit bug URLs are now consistent (<https://github.com/mdn/browser-compat-data/pull/3371>)
+- The linter now ensures that version_added is earlier than version_removed (<https://github.com/mdn/browser-compat-data/pull/3370>)
 
-**Statistics**
+### Statistics
 
 - 10779 total features
 - 18 contributors have changed 138 files with 1624 additions and 1029 deletions in 34 commits ([`v0.0.65...v0.0.66`](https://github.com/mdn/browser-compat-data/compare/v0.0.65...v0.0.66))
@@ -6649,11 +6649,11 @@ February 7, 2019
 
 January 31, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10769 total features
 - 15 contributors have changed 23 files with 889 additions and 364 deletions in 19 commits ([`v0.0.64...v0.0.65`](https://github.com/mdn/browser-compat-data/compare/v0.0.64...v0.0.65))
@@ -6664,11 +6664,11 @@ January 31, 2019
 
 January 24, 2019
 
-**Notable changes**
+### Notable changes
 
 - None
 
-**Statistics**
+### Statistics
 
 - 10763 total features
 - 18 contributors have changed 106 files with 4490 additions and 1601 deletions in 49 commits ([`v0.0.62...v0.0.64`](https://github.com/mdn/browser-compat-data/compare/v0.0.62...v0.0.64))
@@ -6679,11 +6679,11 @@ January 24, 2019
 
 January 17, 2019
 
-**Notable changes**
+### Notable changes
 
 - Generating these release notes has been partly automated ([#3199](https://github.com/mdn/browser-compat-data/issues/3199))
 
-**Statistics**
+### Statistics
 
 - 10740 total features
 - 9 contributors have changed 32 files with 2032 additions and 613 deletions in 21 commits ([`v0.0.62...v0.0.63`](https://github.com/mdn/browser-compat-data/compare/v0.0.62...v0.0.63))
@@ -6694,17 +6694,17 @@ January 17, 2019
 
 January 10, 2019
 
-**Notable changes**
+### Notable changes
 
-- Descriptions in compat-data schema have been cleaned up https://github.com/mdn/browser-compat-data/pull/3100
-- Line ending inconsistencies are fixed https://github.com/mdn/browser-compat-data/pull/3231
-- ajv has been updated, and ajv-better-errors has been added resulting in having the linter print better error messages https://github.com/mdn/browser-compat-data/pull/2338
-- Edge Mobile 16/17/18 has been removed https://github.com/mdn/browser-compat-data/pull/3117
-- Add new field "spec_url" has been added and populated for JavaScript data https://github.com/mdn/browser-compat-data/pull/2983
-- The schema has been made more consistent so a single note isn’t inside an array https://github.com/mdn/browser-compat-data/pull/3090
-- A new linting rule has been added so that some browsers can't be used in specific categories anymore (e.g. no Samsung in WebExtensions data) https://github.com/mdn/browser-compat-data/pull/2487
+- Descriptions in compat-data schema have been cleaned up <https://github.com/mdn/browser-compat-data/pull/3100>
+- Line ending inconsistencies are fixed <https://github.com/mdn/browser-compat-data/pull/3231>
+- ajv has been updated, and ajv-better-errors has been added resulting in having the linter print better error messages <https://github.com/mdn/browser-compat-data/pull/2338>
+- Edge Mobile 16/17/18 has been removed <https://github.com/mdn/browser-compat-data/pull/3117>
+- Add new field "spec_url" has been added and populated for JavaScript data <https://github.com/mdn/browser-compat-data/pull/2983>
+- The schema has been made more consistent so a single note isn’t inside an array <https://github.com/mdn/browser-compat-data/pull/3090>
+- A new linting rule has been added so that some browsers can't be used in specific categories anymore (e.g. no Samsung in WebExtensions data) <https://github.com/mdn/browser-compat-data/pull/2487>
 
-**Statistics**
+### Statistics
 
 - 10720 total features
 - 33 contributors have changed 288 files with 5655 additions and 3391 deletions in 61 commits ([`v0.0.61...v0.0.62`](https://github.com/mdn/browser-compat-data/compare/v0.0.61...v0.0.62))
@@ -6715,11 +6715,11 @@ January 10, 2019
 
 December 20, 2018
 
-**Notable changes**
+### Notable changes
 
 - Added documentation for using Web API Confluence to update data ([#3167](https://github.com/mdn/browser-compat-data/issues/3167))
 
-**Statistics**
+### Statistics
 
 - 10609 total features
 - 10 contributors have changed 27 files with 3384 additions and 180 deletions in 21 commits ([`v0.0.60...v0.0.61`](https://github.com/mdn/browser-compat-data/compare/v0.0.60...v0.0.61))
@@ -6730,12 +6730,12 @@ December 20, 2018
 
 December 13, 2018
 
-**Notable changes**
+### Notable changes
 
 - The publishing procedures have been updated ([#3158](https://github.com/mdn/browser-compat-data/issues/3158))
 - A GitHub PR template has been added ([#3208](https://github.com/mdn/browser-compat-data/issues/3208))
 
-**Statistics**
+### Statistics
 
 - 26 contributors have changed 62 files with 1977 additions and 353 deletions in 42 commits ([`v0.0.59...v0.0.60`](https://github.com/mdn/browser-compat-data/compare/v0.0.59...v0.0.60))
 - 336 total contributors
@@ -6746,11 +6746,11 @@ December 13, 2018
 
 November 26, 2018
 
-Notable changes:
+### Notable changes
 
 - None
 
-Statistics:
+### Statistics
 
 - 13 contributors have changed 50 files with 1,988 additions and 2,056 deletions in 34 commits [`v0.0.58...v0.0.59`](https://github.com/mdn/browser-compat-data/compare/v0.0.58...v0.0.59)
 - 327 total contributors
@@ -6760,12 +6760,12 @@ Statistics:
 
 November 8, 2018
 
-Notable changes:
+### Notable changes
 
 - Use yargs to parse the arguments passed to the linter ([#2155](https://github.com/mdn/browser-compat-data/issues/2155))
 - Sort browsers in api/\* json files ([#3049](https://github.com/mdn/browser-compat-data/issues/3049))
 
-Statistics:
+### Statistics
 
 - 11 contributors have changed 616 files with 14,578 additions and 12,345 deletions in 17 commits
   [`v0.0.57...v0.0.58`](https://github.com/mdn/browser-compat-data/compare/v0.0.57...v0.0.58)
@@ -6776,12 +6776,12 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - Add a VS Code snippet config for creating new BCD files ([#2939](https://github.com/mdn/browser-compat-data/issues/2939))
 - Make the lint output less verbose by adding ora ([#2528](https://github.com/mdn/browser-compat-data/issues/2528))
 
-Statistics:
+### Statistics
 
 - 20 contributors have changed 37 files with 1,427 additions and 593 deletions in 25 commits
   [`v0.0.56...v0.0.57`](https://github.com/mdn/browser-compat-data/compare/v0.0.56...v0.0.57)
@@ -6790,11 +6790,11 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - None
 
-Statistics:
+### Statistics
 
 - 13 contributors changed 34 files with 1,015 additions and 104 deletions in 16 commits [`v0.0.55...v0.0.56`](https://github.com/mdn/browser-compat-data/compare/v0.0.55...v0.0.56)
 - 310 total contributors
@@ -6805,11 +6805,11 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - None
 
-Statistics:
+### Statistics
 
 - 21 contributors changed 52 files with 1,103 additions and 519 deletions in 39 commits [`v0.0.54...v0.0.55`](https://github.com/mdn/browser-compat-data/compare/v0.0.54...v0.0.55)
 
@@ -6817,12 +6817,12 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - Sort browsers in css/\* json files ([#2922](https://github.com/mdn/browser-compat-data/issues/2922))
 - Add descriptions to schema properties ([#2923](https://github.com/mdn/browser-compat-data/issues/2923))
 
-Statistics:
+### Statistics
 
 - 14 contributors changed 468 files with 5,777 additions and 3,377 deletions in 23 commits [`v0.0.53...v0.0.54`](https://github.com/mdn/browser-compat-data/compare/v0.0.53...v0.0.54)
 
@@ -6830,7 +6830,7 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - Add json schema data to the .vscode/settings.json file ([#2905](https://github.com/mdn/browser-compat-data/issues/2905))
 - Sort browsers for html/\* ([#2900](https://github.com/mdn/browser-compat-data/issues/2900))
@@ -6839,7 +6839,7 @@ Notable changes:
 - Sort browsers for svg/\* ([#2897](https://github.com/mdn/browser-compat-data/issues/2897))
 - Sort browsers for webdriver/\* ([#2896](https://github.com/mdn/browser-compat-data/issues/2896))
 
-Statistics:
+### Statistics
 
 - 19 contributors have changed 524 files with 11,065 additions and 7,262 deletions in 37 commits
   [`v0.0.52...v0.0.53`](https://github.com/mdn/browser-compat-data/compare/v0.0.52...v0.0.53)
@@ -6851,11 +6851,11 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - Add webview_android browser data ([#2690](https://github.com/mdn/browser-compat-data/issues/2690))
 
-Statistics:
+### Statistics
 
 - 21 contributors changed 211 files with 6,604 additions and 1,276 deletions in 50 commits [`v0.0.51...v0.0.52`](https://github.com/mdn/browser-compat-data/compare/v0.0.51...v0.0.52)
 - 283 total contributors
@@ -6866,11 +6866,11 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - None
 
-Statistics:
+### Statistics
 
 - 17 contributors changed 63 files with 3,676 additions and 747 deletions in 47 commits [`v0.0.50...v0.0.51`](https://github.com/mdn/browser-compat-data/compare/v0.0.50...v0.0.51)
 - 277 total contributors
@@ -6881,11 +6881,11 @@ Statistics:
 
 November 9, 2018
 
-Notable changes:
+### Notable changes
 
 - None
 
-Statistics:
+### Statistics
 
 - 22 contributors changed 62 files with 2,110 additions and 448 deletions in 51 commits [`v0.0.49...v0.0.50`](https://github.com/mdn/browser-compat-data/compare/v0.0.49...v0.0.50)
 - 273 total contributors
@@ -6896,7 +6896,7 @@ Statistics:
 
 November 8, 2018
 
-Notable changes:
+### Notable changes
 
 - Standardized bugzilla bug link format. ([#2511](https://github.com/mdn/browser-compat-data/issues/2511))
 

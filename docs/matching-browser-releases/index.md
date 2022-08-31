@@ -101,7 +101,7 @@ You can use Mercurial **blame** to identify the changeset that introduced the fe
 
 The specific appearance of the display will vary depending on what tool you're using to view the blame information; for example, Mozilla DXR's [output for the `RTCPeerConnection.webidl` file](https://hg.mozilla.org/mozilla-central/annotate/c2593a3058afdfeaac5c990e18794ee8257afe99/dom/webidl/RTCPeerConnection.webidl#l) looked like this when this article was written:
 
-![](hg-tooltip-revision.png)
+![Mouse hovering over commit number in right column, showing modal of commit details](hg-tooltip-revision.png)
 
 Here, the mouse is pointing at a row with the revision number `199991` beside it. This has opened up a tooltip with details about that revision: It was created for bug 1032835, entitled "addTrack/removeTrack on-top of existing implementation". The tooltip includes several links which can be helpful:
 
@@ -174,13 +174,13 @@ Once in the WebIDL file, click the "Blame" link under "VCS Links" in the Navigat
 
 Once in the blame view, hover the mouse cursor over the revision number at the left side of the WebIDL on the same line as (or the first revision number found immediately above) the line of WebIDL corresponding to the feature you're interested in. For example, if you're looking for when the `RTCPeerConnection` method `addTrack()` was added to Firefox:
 
-![](hg-tooltip-revision.png)
+![Mouse hovering over commit number in right column, showing modal of commit details](hg-tooltip-revision.png)
 
 This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details on how to get the version information you need from there.
 
 If you can't find the changeset you need just by browsing the blame page, the next thing to try is to look through the revision history. Click on the `revisions` link at the top of the Mercurial blame page, or the "Log" link in the Navigation box on the DXR page. This will present a list of every changeset that altered the file you're looking at. Look for a revision that matches the feature change you're interested in; if you find a promising revision, click the `diff` link next to that revision.
 
-![](hg-revisions-ontrack.png)
+![Row of revision table showing details of commit](hg-revisions-ontrack.png)
 
 This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from_a_mercurial_changeset_number).
 
@@ -254,7 +254,7 @@ You can also reach a changeset's overview more directly. If you're looking at th
 
 For example, if I have the changeset number `79525105ef9a`, I want to visit <https://hg.mozilla.org/mozilla-central/rev/79525105ef9a>. This brings up a page that looks like this:
 
-![](hg-changeset.png)
+![Screen shot of https://hg.mozilla.org/mozilla-central/rev/79525105ef9a the full changeset details](hg-changeset.png)
 
 Below this is a list of the files that changed followed by the actual diffs showing the specific changes made.
 

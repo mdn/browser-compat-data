@@ -60,13 +60,13 @@ Each feature is uniquely accessible, independently of the file it is defined in.
 
 The hierarchy of identifiers is not defined by the schema and is a convention of the project using the schema.
 
-#### Features
+### Features
 
 A feature is described by an identifier containing the `__compat` property. In other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.
 
 When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.
 
-#### Sub-features
+### Sub-features
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
@@ -435,7 +435,7 @@ Example for two flags required:
 
 An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
 
-For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
+For changeset/commit URLs, this is typically a <https://trac.webkit.org/changeset/>, <https://hg.mozilla.org/mozilla-central/rev/>, or <https://crrev.com/> URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a <https://webkit.org/b/>, <https://bugzil.la/>, or <https://crbug.com/> URL indicating an intent to implement and ship the feature.
 
 #### `notes`
 

@@ -2,7 +2,7 @@
 
 This document describes frequently asked questions and their answers. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
 
-## The tables on MDN haven't updated yet!
+## The tables on MDN haven't updated yet
 
 Once a pull request is merged to update BCD, it takes a week or two for a new version of the repository to be released, and then a few days for it to launch on MDN. The process is:
 
@@ -16,7 +16,7 @@ Once a pull request is merged to update BCD, it takes a week or two for a new ve
    - For new pages, or for pages without existing compatibility tables, you must add the `{{Compat}}` macro and the `browser-compat` front-matter key to the page.
      For instructions, see [Inserting the data into MDN pages](https://developer.mozilla.org/en-US/docs/MDN/Structures/Compatibility_tables#inserting_the_data_into_mdn_pages).
 
-## I opened a PR but it hasn't been reviewed yet.
+## I opened a PR but it hasn't been reviewed yet
 
 Sorry for the wait. Many outside factors, such as our other projects, may grab our attention and slow BCD PR reviews. If it has been more than a month and there has been no response from a reviewer, please feel free to ping one of us and request a review. You can find a list of peers and owners in the [governance doc](../GOVERNANCE.md).
 
