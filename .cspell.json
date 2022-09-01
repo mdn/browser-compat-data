@@ -1,0 +1,46 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "maxNumberOfProblems": 10000,
+  "dictionaries": [
+    "companies",
+    "css",
+    "file-types",
+    "fonts",
+    "html-symbol-entities",
+    "html",
+    "typescript",
+    "software-terms",
+    "project-words"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./project-words.txt",
+      "description": "Project Words",
+      "noSuggest": true
+    }
+  ],
+  "ignoreRegExpList": ["Urls", "iOES"],
+  "ignorePaths": [
+    "build/**",
+    "coverage/**",
+    "project-words.txt",
+    "RELEASE_NOTES.md",
+    "node_modules/**",
+    "scripts/**",
+    "GOVERNANCE.md",
+    "package*.json"
+  ],
+  "words": [],
+  "overrides": [
+    {
+      "filename": "api/AnalyserNode.json",
+      "ignoreWords": ["Analyser"]
+    },
+    {
+      "filename": "api/BaseAudioContext.json",
+      "ignoreWords": ["Analyser"]
+    }
+  ]
+}

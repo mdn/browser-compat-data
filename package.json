@@ -46,6 +46,7 @@
     "chalk": "~5.2.0",
     "chalk-template": "~0.5.0",
     "compare-versions": "~5.0.0",
+    "cspell": "^6.30.2",
     "deep-diff": "~1.0.2",
     "es-main": "~1.2.0",
     "eslint": "~8.36.0",
@@ -89,6 +90,8 @@
     "release": "ts-node scripts/release/index.ts",
     "remove-redundant-flags": "ts-node scripts/remove-redundant-flags.ts",
     "show-errors": "npm test 1> /dev/null",
+    "spelling": "cspell \"**\"",
+    "spelling:regen": " cspell --no-progress --words-only --unique \"**\" > project-words.txt",
     "test": "npm run format && npm run lint && npm run unittest",
     "traverse": "ts-node scripts/traverse.ts"
   }
