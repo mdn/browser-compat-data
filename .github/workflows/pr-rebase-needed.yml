@@ -1,4 +1,4 @@
-name: 'PR Needs Rebase'
+name: PR Needs Rebase
 on:
   push:
   pull_request_target:
@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write # To add labels and comment on PRs
 
 jobs:
   idle:
