@@ -104,6 +104,7 @@ const processApiData = (
  * @param {CompatStatement} data The data to test
  * @param {string} category The feature category
  * @param {string} path The path of the feature
+ * @returns {DescriptionError[]} The errors caught in the file
  */
 export const processData = (
   data: CompatStatement,
