@@ -13,5 +13,3 @@
 #### Related issues
 
 <!-- 🔨 If applicable, use "Fixes #XYZ" -->
-
-<!-- ✅ After submitting, review the results of the "Checks" tab! -->
