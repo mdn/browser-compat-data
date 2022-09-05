@@ -1,17 +1,16 @@
 {
   "api": {
-    "PerformanceEventTiming": {
+    "WebTransport": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming",
-        "spec_url": "https://w3c.github.io/event-timing/#sec-performance-event-timing",
+        "spec_url": "https://w3c.github.io/webtransport/#web-transport",
         "support": {
           "chrome": {
-            "version_added": "76"
+            "version_added": "97"
           },
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": "89"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
@@ -28,51 +27,18 @@
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "cancelable": {
+      "WebTransport": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/cancelable",
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-cancelable",
+          "description": "<code>WebTransport()</code> constructor",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-webtransport",
           "support": {
             "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "89"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "interactionId": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-interactionid",
-          "support": {
-            "chrome": {
-              "version_added": "96"
+              "version_added": "97"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -100,18 +66,17 @@
           }
         }
       },
-      "processingEnd": {
+      "close": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/processingEnd",
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-processingend",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-close",
           "support": {
             "chrome": {
-              "version_added": "76"
+              "version_added": "97"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "89"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -128,24 +93,23 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "processingStart": {
+      "closed": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/processingStart",
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-processingstart",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-closed",
           "support": {
             "chrome": {
-              "version_added": "76"
+              "version_added": "97"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "89"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -162,24 +126,23 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "target": {
+      "createBidirectionalStream": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceEventTiming/target",
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-target",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-createbidirectionalstream",
           "support": {
             "chrome": {
-              "version_added": "85"
+              "version_added": "97"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "89"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -196,23 +159,23 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "toJSON": {
+      "createUnidirectionalStream": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/event-timing/#dom-performanceeventtiming-tojson",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-createunidirectionalstream",
           "support": {
             "chrome": {
-              "version_added": "76"
+              "version_added": "97"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "89"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -229,7 +192,139 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "datagrams": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-datagrams",
+          "support": {
+            "chrome": {
+              "version_added": "97"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "incomingBidirectionalStreams": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingbidirectionalstreams",
+          "support": {
+            "chrome": {
+              "version_added": "97"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "incomingUnidirectionalStreams": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingunidirectionalstreams",
+          "support": {
+            "chrome": {
+              "version_added": "97"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "ready": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-ready",
+          "support": {
+            "chrome": {
+              "version_added": "97"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
