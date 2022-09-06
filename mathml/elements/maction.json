@@ -16,13 +16,13 @@
                   "value_to_set": "Enabled"
                 }
               ],
-              "notes": "By default, only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
+              "notes": "This follows MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "1",
-              "notes": "Since Firefox 16, if an <code>actiontype</code> is not specified (is empty) or if the <code>selection</code> attribute is invalid, the markup will throw a MathML error (invalid-markup)."
+              "notes": "Firefox 106 and later versions follow MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -34,9 +34,7 @@
             "safari": {
               "version_added": "8"
             },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -55,7 +53,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "106"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -67,9 +66,7 @@
               "safari": {
                 "version_added": "8"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -122,10 +119,12 @@
                 "edge": "mirror",
                 "firefox": [
                   {
-                    "version_added": "9"
+                    "version_added": "9",
+                    "version_removed": "106"
                   },
                   {
                     "version_added": "1",
+                    "version_removed": "106",
                     "partial_implementation": true,
                     "notes": "The first implementation used a syntax different from the one of the MathML 3 specification."
                   }
@@ -160,7 +159,8 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "1"
+                  "version_added": "1",
+                  "version_removed": "106"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -172,9 +172,7 @@
                 "safari": {
                   "version_added": "8"
                 },
-                "safari_ios": {
-                  "version_added": false
-                },
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": "mirror"
               },
@@ -196,6 +194,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "1",
+                "version_removed": "106",
                 "notes": [
                   "In Firefox 15, the <code>selection</code> attribute is now ignored for actiontype other than <code>toggle</code>.",
                   "In Firefox 16, the <code>selection</code> attribute is taken into account again when an unknown <code>actiontype</code> is specified."
@@ -211,9 +210,7 @@
               "safari": {
                 "version_added": "8"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
