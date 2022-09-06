@@ -217,23 +217,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "101"
-              },
-              {
-                "version_added": "75",
-                "version_removed": "101",
-                "notes": "See <a href='https://bugzil.la/1613746'>bug 1613746</a>.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.constructable-stylesheets.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "101"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1751,43 +1737,6 @@
               "standard_track": true,
               "deprecated": false
             }
-          }
-        }
-      },
-      "createEntityReference": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/createEntityReference",
-          "spec_url": "https://dom.spec.whatwg.org/#dom-document-createentityreference",
-          "support": {
-            "chrome": {
-              "version_added": "1",
-              "version_removed": "29"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "version_removed": "7"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "1",
-              "version_removed": "10"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": true
           }
         }
       },
@@ -4084,22 +4033,9 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getAnimations",
           "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
           "support": {
-            "chrome": [
-              {
-                "version_added": "84"
-              },
-              {
-                "version_added": "61",
-                "partial_implementation": true,
-                "notes": "Implements an older version of the specification.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "84"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -4549,48 +4485,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "height": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/height",
-          "support": {
-            "chrome": {
-              "version_added": "1",
-              "version_removed": "31"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "version_removed": "6"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "1",
-              "version_removed": "10"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "1.0",
-              "version_removed": "3.0"
-            },
-            "webview_android": {
-              "version_added": "1",
-              "version_removed": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -6975,51 +6869,6 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "prerender": {
-          "__compat": {
-            "description": "<code>prerender</code> value",
-            "support": {
-              "chrome": {
-                "version_added": "14",
-                "version_removed": "73"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "49",
-                "version_removed": "59"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": {
-                "version_added": "≤15",
-                "version_removed": "60"
-              },
-              "opera_android": {
-                "version_added": "≤14",
-                "version_removed": "52"
-              },
-              "safari": {
-                "version_added": "7",
-                "version_removed": "14.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37",
-                "version_removed": "73"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
         }
       },
       "vlinkColor": {
@@ -7124,48 +6973,6 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "width": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/width",
-          "support": {
-            "chrome": {
-              "version_added": "1",
-              "version_removed": "31"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "version_removed": "6"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "1",
-              "version_removed": "10"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "1.0",
-              "version_removed": "3.0"
-            },
-            "webview_android": {
-              "version_added": "1",
-              "version_removed": "4.4.3"
-            }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },

@@ -76,6 +76,13 @@ Apart from the explicitly documented objects below, feature-level support data m
 
 The package contains the following top-level objects:
 
+### `__meta`
+
+An object containing the following package metadata:
+
+- `version` - the package version
+- `timestamp` - the timestamp of when the package version was built
+
 ### [`api`](api)
 
 Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.

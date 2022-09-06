@@ -891,14 +891,28 @@
               "opera": {
                 "version_added": false
               },
-              "safari": {
-                "notes": "Before Safari 16, this permission granted a 10 MB storage quota. Since Safari 16, the storage quota is unlimited.",
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "notes": "Does not grant an unlimited storage quota. Grants a 10 MB storage quota, instead of the standard 5 MB.",
-                "version_added": "15"
-              }
+              "safari": [
+                {
+                  "version_added": "16",
+                  "notes": "Since Safari 16, the storage quota is unlimited."
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Does not grant an unlimited storage quota. Grants a 10 MB storage quota, instead of the standard 5 MB."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "16",
+                  "notes": "Since Safari 16, the storage quota is unlimited."
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Does not grant an unlimited storage quota. Grants a 10 MB storage quota, instead of the standard 5 MB."
+                }
+              ]
             }
           }
         },

@@ -35,10 +35,6 @@ const specsExceptions = [
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
 
-  // Not really a browser feature, thus not in browser-specs
-  // Remove if it is in the main ECMA spec
-  'https://tc39.es/proposal-hashbang/out.html',
-
   // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
   'https://w3c.github.io/webrtc-extensions/',
 
@@ -47,9 +43,6 @@ const specsExceptions = [
 
   // Remove when added to browser-specs
   'https://drafts.csswg.org/css-color-6/',
-
-  // Remove if https://github.com/w3c/browser-specs/pull/667#issuecomment-1200089758 is resolved
-  'https://w3c.github.io/device-memory',
 ];
 
 const allowedSpecURLs = [

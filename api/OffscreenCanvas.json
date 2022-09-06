@@ -10,17 +10,23 @@
           },
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": "44",
-            "partial_implementation": true,
-            "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "gfx.offscreencanvas.enabled"
-              }
-            ]
-          },
+          "firefox": [
+            {
+              "version_added": "preview"
+            },
+            {
+              "version_added": "44",
+              "partial_implementation": true,
+              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "gfx.offscreencanvas.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
@@ -52,16 +58,96 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "contextlost_event": {
+        "__compat": {
+          "description": "<code>contextlost</code> event",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-contextlost",
+            "https://html.spec.whatwg.org/multipage/canvas.html#handler-offscreencanvas-oncontextlost"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "99"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": {
-              "version_added": "46",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "contextrestored_event": {
+        "__compat": {
+          "description": "<code>contextrestored</code> event",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-contextrestored",
+            "https://html.spec.whatwg.org/multipage/canvas.html#handler-offscreencanvas-oncontextrestored"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "99"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -94,18 +180,25 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "alternative_name": "toBlob",
-              "version_added": "46",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview",
+                "alternative_name": "toBlob"
+              },
+              {
+                "alternative_name": "toBlob",
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -174,17 +267,23 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "44",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -214,17 +313,23 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "46",
-                "partial_implementation": true,
-                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.offscreencanvas.enabled"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "46",
+                  "partial_implementation": true,
+                  "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "gfx.offscreencanvas.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -257,17 +362,23 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "44",
-                "partial_implementation": true,
-                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.offscreencanvas.enabled"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "44",
+                  "partial_implementation": true,
+                  "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "gfx.offscreencanvas.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -300,17 +411,23 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "44",
-                "partial_implementation": true,
-                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.offscreencanvas.enabled"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "44",
+                  "partial_implementation": true,
+                  "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "gfx.offscreencanvas.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -380,17 +497,23 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "44",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -422,17 +545,23 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "46",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -464,17 +593,23 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "partial_implementation": true,
-              "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "gfx.offscreencanvas.enabled"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "44",
+                "partial_implementation": true,
+                "notes": "See <a href='https://bugzil.la/1390089'>bug 1390089</a>.",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "gfx.offscreencanvas.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
