@@ -181,7 +181,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
-- `ie`, Microsoft Internet Explorer (discontinued)
+- `ie`, Microsoft Internet Explorer (discontinued; BCD is frozen)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
 - `oculus`, Meta Quest Browser (formerly Oculus Quest), based on Google Chrome (on Android)
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15

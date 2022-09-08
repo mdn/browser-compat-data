@@ -144,7 +144,7 @@ Per request, we have added a new `timestamp` property to the top-level `__meta` 
 
 #### Internet Explorer data is now in "legacy mode"
 
-The [death of Internet Explorer](http://death-to-ie11.com/) had finally arrived about two months ago (whoo!), and as such we have de-prioritized updates to IE's data. While we will not reject updates to IE data, we will not be spending much time on this browser, and eventually, we will remove the data entirely from BCD in a year or two. We strongly recommend that all developers writing IE-compatible websites drop support and focus on modern browsers, such as Chrome, Firefox and Safari.
+The [death of Internet Explorer](http://death-to-ie11.com/) had finally arrived about two months ago (whoo!), and as such we have frozen the BCD for IE. We will no longer be maintaining the data for IE and will remove the data entirely from BCD in a year or two. We strongly recommend that all developers writing IE-compatible websites drop support and focus on modern browsers, such as Chrome, Firefox and Safari.
 
 ### Removals
 
