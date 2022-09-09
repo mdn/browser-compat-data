@@ -8,6 +8,10 @@ import {
   SupportBlock,
   SupportStatement,
 } from '../../types/types.js';
+import {
+  InternalSupportBlock,
+  InternalSupportStatement,
+} from '../../types/index.js';
 
 import chalk from 'chalk-template';
 import bcd from '../../index.js';
@@ -46,19 +50,29 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
  * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
  */
 export const implementedAndRemoved = (
-  support: SupportBlock,
+  support: InternalSupportBlock,
 ): LinterMessageLevel | false => {
   let result: LinterMessageLevel = 'error';
   for (const [browser, data] of Object.entries(support) as [
     BrowserName,
-    SupportStatement,
+    InternalSupportStatement,
   ][]) {
     if (browser === 'ie') {
       // Don't consider IE support in obsolete checks
       continue;
     }
 
+    // Feature is set to mirror; issues will come up in upstream browsers, ignore
+    if (data === 'mirror') {
+      continue;
+    }
+
     for (const d of Array.isArray(data) ? data : [data]) {
+      // Feature was not supported in this browser; test other browsers
+      if (d.version_added === false) {
+        continue;
+      }
+
       // Feature is still supported or it is not known when feature was dropped
       if (!d.version_removed || typeof d.version_removed === 'boolean') {
         return false;
