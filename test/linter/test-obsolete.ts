@@ -2,12 +2,7 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger, LinterData, LinterMessageLevel } from '../utils.js';
-import {
-  BrowserName,
-  CompatStatement,
-  SupportBlock,
-  SupportStatement,
-} from '../../types/types.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
 import {
   InternalSupportBlock,
   InternalSupportStatement,
@@ -20,10 +15,10 @@ const { browsers } = bcd;
 /**
  * Check if feature has never been implemented
  *
- * @param {SupportBlock} support The support statement
+ * @param {InternalSupportBlock} support The support statement
  * @returns {boolean} If the feature was never implemented
  */
-export const neverImplemented = (support: SupportBlock): boolean => {
+export const neverImplemented = (support: InternalSupportBlock): boolean => {
   for (const s in support) {
     let data = support[s];
     if (!Array.isArray(data)) {
@@ -46,7 +41,7 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 /**
  * Check if a feature has been implemented at some point but removed now
  *
- * @param {SupportBlock} support The support statement
+ * @param {InternalSupportBlock} support The support statement
  * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
  */
 export const implementedAndRemoved = (
