@@ -63,8 +63,8 @@ export const implementedAndRemoved = (
     }
 
     for (const d of Array.isArray(data) ? data : [data]) {
-      // Feature was not supported in this browser; test other browsers
-      if (d.version_added === false) {
+      // Feature not supported and not being worked on; test other browsers
+      if (d.version_added === false && !d.impl_url) {
         continue;
       }
 
@@ -105,12 +105,18 @@ export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
     const { support, status } = data;
 
+    // XXX
     const abandoned = status && status.standard_track === false;
-    const rule1Fail = abandoned && neverImplemented(support);
-    if (rule1Fail) {
-      logger.error(
-        chalk`feature was never implemented in any browser and the specification has been abandoned.`,
-      );
+    const unimplemented = neverImplemented(support);
+    if (unimplemented) {
+      const rule1Fail = abandoned && unimplemented;
+      if (rule1Fail) {
+        logger.error(
+          chalk`feature was never implemented in any browser and the specification has been abandoned.`,
+        );
+      }
+
+      // If the feature was never implemented, skip the next check
       return;
     }
 
