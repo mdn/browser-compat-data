@@ -103,25 +103,18 @@ export const implementedAndRemoved = (
  */
 export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
-    const { support, status } = data;
+    const { support } = data;
 
-    // XXX
-    const abandoned = status && status.standard_track === false;
-    const unimplemented = neverImplemented(support);
-    if (unimplemented) {
-      const rule1Fail = abandoned && unimplemented;
-      if (rule1Fail) {
-        logger.error(
-          chalk`feature was never implemented in any browser and the specification has been abandoned.`,
-        );
-      }
+    const rule1Fail = neverImplemented(data.support);
+    if (rule1Fail) {
+      logger.error(chalk`feature was never implemented.`);
 
-      // If the feature was never implemented, skip the next check
+      // No need to perform the next check if the first one fails
       return;
     }
 
     // Note: This check is time-based
-    const rule2Fail = implementedAndRemoved(support);
+    const rule2Fail = implementedAndRemoved(data.support);
     if (rule2Fail) {
       logger[rule2Fail](
         chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
