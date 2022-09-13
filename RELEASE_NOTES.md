@@ -1,5 +1,137 @@
 # Release notes
 
+## [v5.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.1)
+
+September 6, 2022
+
+### Removals
+
+- `api.BlobBuilder` ([#17644](https://github.com/mdn/browser-compat-data/pull/17644))
+- `api.Document.createEntityReference` ([#17616](https://github.com/mdn/browser-compat-data/pull/17616))
+- `api.Document.height` ([#17616](https://github.com/mdn/browser-compat-data/pull/17616))
+- `api.Document.visibilityState.prerender` ([#17673](https://github.com/mdn/browser-compat-data/pull/17673))
+- `api.Document.width` ([#17616](https://github.com/mdn/browser-compat-data/pull/17616))
+- `css.properties.font-family.system_ui` ([#17476](https://github.com/mdn/browser-compat-data/pull/17476))
+- `mathml.elements.math.mode` ([#17624](https://github.com/mdn/browser-compat-data/pull/17624))
+- `mathml.elements.mover.align` ([#17620](https://github.com/mdn/browser-compat-data/pull/17620))
+- `mathml.elements.msub.subscriptshift` ([#17617](https://github.com/mdn/browser-compat-data/pull/17617))
+- `mathml.elements.msubsup.subscriptshift` ([#17617](https://github.com/mdn/browser-compat-data/pull/17617))
+- `mathml.elements.msubsup.superscriptshift` ([#17617](https://github.com/mdn/browser-compat-data/pull/17617))
+- `mathml.elements.msup.superscriptshift` ([#17617](https://github.com/mdn/browser-compat-data/pull/17617))
+- `mathml.elements.munder.align` ([#17620](https://github.com/mdn/browser-compat-data/pull/17620))
+- `mathml.elements.munderover.align` ([#17620](https://github.com/mdn/browser-compat-data/pull/17620))
+
+### Additions
+
+- `api.BrowserCaptureMediaStreamTrack` ([#17677](https://github.com/mdn/browser-compat-data/pull/17677))
+- `api.BrowserCaptureMediaStreamTrack.clone` ([#17677](https://github.com/mdn/browser-compat-data/pull/17677))
+- `api.BrowserCaptureMediaStreamTrack.cropTo` ([#17677](https://github.com/mdn/browser-compat-data/pull/17677))
+- `api.CropTarget` ([#17678](https://github.com/mdn/browser-compat-data/pull/17678))
+- `api.CropTarget.fromElement` ([#17678](https://github.com/mdn/browser-compat-data/pull/17678))
+- `api.HTMLAnchorElement.attributionSourceId` ([#17650](https://github.com/mdn/browser-compat-data/pull/17650))
+- `api.HTMLFormElement.rel` ([#17655](https://github.com/mdn/browser-compat-data/pull/17655))
+- `api.HTMLFormElement.relList` ([#17655](https://github.com/mdn/browser-compat-data/pull/17655))
+- `api.KeyboardLayoutMap.@@iterator` ([#17657](https://github.com/mdn/browser-compat-data/pull/17657))
+- `api.MediaDevices.setCaptureHandleConfig` ([#17658](https://github.com/mdn/browser-compat-data/pull/17658))
+- `api.MediaStreamTrack.capturehandlechange_event` ([#17659](https://github.com/mdn/browser-compat-data/pull/17659))
+- `api.MediaStreamTrack.getCaptureHandle` ([#17660](https://github.com/mdn/browser-compat-data/pull/17660))
+- `api.OES_draw_buffers_indexed` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.blendEquationiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.blendEquationSeparateiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.blendFunciOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.blendFuncSeparateiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.colorMaskiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.disableiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OES_draw_buffers_indexed.enableiOES` ([#17683](https://github.com/mdn/browser-compat-data/pull/17683))
+- `api.OffscreenCanvas.contextlost_event` ([#17665](https://github.com/mdn/browser-compat-data/pull/17665))
+- `api.OffscreenCanvas.contextrestored_event` ([#17665](https://github.com/mdn/browser-compat-data/pull/17665))
+- `api.Path2D.roundRect` ([#17666](https://github.com/mdn/browser-compat-data/pull/17666))
+- `api.PerformanceEventTiming.interactionId` ([#17667](https://github.com/mdn/browser-compat-data/pull/17667))
+- `api.PublicKeyCredential.authenticatorAttachment` ([#17668](https://github.com/mdn/browser-compat-data/pull/17668))
+- `api.RTCRtpSender.transform` ([#17669](https://github.com/mdn/browser-compat-data/pull/17669))
+- `api.RTCStatsReport.@@iterator` ([#17670](https://github.com/mdn/browser-compat-data/pull/17670))
+- `api.Screen.isExtended` ([#17671](https://github.com/mdn/browser-compat-data/pull/17671))
+- `api.ScreenDetailed` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.availLeft` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.availTop` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.devicePixelRatio` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.isInternal` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.isPrimary` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.label` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.left` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.ScreenDetailed.top` ([#17684](https://github.com/mdn/browser-compat-data/pull/17684))
+- `api.WebGL2RenderingContext.lineWidth` ([#17676](https://github.com/mdn/browser-compat-data/pull/17676))
+- `api.WebTransport` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.close` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.closed` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.createBidirectionalStream` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.createUnidirectionalStream` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.datagrams` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.incomingBidirectionalStreams` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.incomingUnidirectionalStreams` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.ready` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransport.WebTransport` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportBidirectionalStream` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportBidirectionalStream.readable` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportBidirectionalStream.writable` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.incomingHighWaterMark` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.incomingMaxAge` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.maxDatagramSize` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.outgoingHighWaterMark` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.outgoingMaxAge` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.readable` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportDatagramDuplexStream.writable` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportError` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportError.source` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportError.streamErrorCode` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `api.WebTransportError.WebTransportError` ([#17686](https://github.com/mdn/browser-compat-data/pull/17686))
+- `browsers.edge.releases.107` ([#17646](https://github.com/mdn/browser-compat-data/pull/17646))
+- `browsers.firefox_android.releases.109` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.110` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.111` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.112` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.113` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.114` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.115` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.116` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.117` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.118` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.119` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.120` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox_android.releases.121` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.109` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.110` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.111` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.112` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.113` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.114` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.115` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.116` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.117` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.118` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.119` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.120` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `browsers.firefox.releases.121` ([#17648](https://github.com/mdn/browser-compat-data/pull/17648))
+- `css.at-rules.container` ([#17619](https://github.com/mdn/browser-compat-data/pull/17619))
+- `css.at-rules.font-face.OpenType_CBDT_CBLC` ([#17645](https://github.com/mdn/browser-compat-data/pull/17645))
+- `css.at-rules.font-face.OpenType_COLRv0` ([#17645](https://github.com/mdn/browser-compat-data/pull/17645))
+- `css.at-rules.font-face.OpenType_COLRv1` ([#17645](https://github.com/mdn/browser-compat-data/pull/17645))
+- `css.at-rules.font-face.OpenType_SBIX` ([#17645](https://github.com/mdn/browser-compat-data/pull/17645))
+- `css.at-rules.font-face.OpenType_SVG` ([#17645](https://github.com/mdn/browser-compat-data/pull/17645))
+- `css.properties.font-family.math` ([#17662](https://github.com/mdn/browser-compat-data/pull/17662))
+- `css.properties.font-family.system-ui` ([#17476](https://github.com/mdn/browser-compat-data/pull/17476))
+- `css.properties.font-palette` ([#17623](https://github.com/mdn/browser-compat-data/pull/17623))
+- `css.properties.font-size.math` ([#17664](https://github.com/mdn/browser-compat-data/pull/17664))
+- `css.properties.math-shift` ([#17692](https://github.com/mdn/browser-compat-data/pull/17692))
+
+### Statistics
+
+- 16 contributors have changed 126 files with 3,631 additions and 1,333 deletions in 69 commits ([`v5.2.0...v5.2.1`](https://github.com/mdn/browser-compat-data/compare/v5.2.0...v5.2.1))
+- 13,775 total features
+- 942 total contributors
+- 4,213 total stargazers
+
 ## [v5.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.0)
 
 August 30, 2022
@@ -12,7 +144,7 @@ Per request, we have added a new `timestamp` property to the top-level `__meta` 
 
 #### Internet Explorer data is now in "legacy mode"
 
-The [death of Internet Explorer](http://death-to-ie11.com/) had finally arrived about two months ago (whoo!), and as such we have de-prioritized updates to IE's data. While we will not reject updates to IE data, we will not be spending much time on this browser, and eventually, we will remove the data entirely from BCD in a year or two. We strongly recommend that all developers writing IE-compatible websites drop support and focus on modern browsers, such as Chrome, Firefox and Safari.
+The [death of Internet Explorer](http://death-to-ie11.com/) had finally arrived about two months ago (whoo!), and as such we have frozen the BCD for IE. We will no longer be maintaining the data for IE and will remove the data entirely from BCD in a year or two. We strongly recommend that all developers writing IE-compatible websites drop support and focus on modern browsers, such as Chrome, Firefox and Safari.
 
 ### Removals
 
