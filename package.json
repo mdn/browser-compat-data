@@ -70,22 +70,22 @@
     "yargs": "~17.5.0"
   },
   "scripts": {
-    "prepare": "husky install && npm run gentypes",
-    "diff": "ts-node scripts/diff.ts",
-    "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
-    "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
-    "format": "eslint . && prettier --check .",
-    "format:fix": "eslint --quiet --fix . && prettier --write .",
-    "lint": "ts-node test/lint.ts",
-    "lint:fix": "ts-node scripts/fix/index.ts",
-    "fix": "npm run format:fix && npm run lint:fix",
-    "stats": "ts-node scripts/statistics.ts",
     "build": "ts-node scripts/release/build.ts",
+    "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
+    "diff": "ts-node scripts/diff.ts",
+    "fix": "npm run format:fix && npm run lint:fix",
+    "format:fix": "eslint --quiet --fix . && prettier --write .",
+    "format": "eslint . && prettier --check .",
     "gentypes": "ts-node scripts/generate-types.ts",
+    "lint:fix": "ts-node scripts/fix/index.ts",
+    "lint": "ts-node test/lint.ts",
+    "prepare": "husky install && npm run gentypes",
     "release": "ts-node scripts/release/index.ts",
     "remove-redundant-flags": "ts-node scripts/remove-redundant-flags.ts",
     "show-errors": "npm test 1> /dev/null",
+    "stats": "ts-node scripts/statistics.ts",
     "test": "npm run format && npm run lint && npm run unittest",
-    "traverse": "ts-node scripts/traverse.ts"
+    "traverse": "ts-node scripts/traverse.ts",
+    "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\""
   }
 }
