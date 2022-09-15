@@ -42,7 +42,7 @@ const specsExceptions = [
   'https://w3c.github.io/mathml/',
 
   // Remove when added to browser-specs
-  'https://drafts.csswg.org/css-color-6/',
+  'https://w3c.github.io/csswg-drafts/css-color-6/',
 ];
 
 const allowedSpecURLs = [
@@ -50,7 +50,10 @@ const allowedSpecURLs = [
   ...specData.map((spec) => spec.nightly.url),
   ...specData.map((spec) => spec.series.nightlyUrl),
   ...specsExceptions,
-];
+].map((s) =>
+  // Since drafts.csswg.org is down too often, use an alternative canonical URL
+  s.replace('drafts.csswg.org', 'w3c.github.io/csswg-drafts'),
+);
 
 /**
  * Process the data for spec URL errors
@@ -68,10 +71,17 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (let specURL of featureSpecURLs) {
-    specURL = specURL.replace('w3c.github.io/csswg-drafts', 'drafts.csswg.org');
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+        {
+          tip: specURL.includes('drafts.csswg.org')
+            ? chalk`{cyan due to how often https://drafts.csswg.org is down, use https://w3c.github.io/csswg-drafts instead -- that is, replace {bold ${specURL}} with {bold ${specURL.replace(
+                'drafts.csswg.org',
+                'w3c.github.io/csswg-drafts',
+              )}}}`
+            : null,
+        },
       );
     }
   }
