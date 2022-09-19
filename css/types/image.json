@@ -50,12 +50,16 @@
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": "17",
-                "notes": "Supports the original dual-image with percentage implementation only."
+                "notes": [
+                  "Supports the original dual-image with percentage implementation only.",
+                  "See <a href='https://crbug.com/614906'>bug 614906</a> for supporting the unprefixed <code>cross-fade()</code> function."
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1657516'>bug 1657516</a>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -86,16 +90,8 @@
                   "notes": "Supports the original dual-image with percentage implementation only."
                 }
               ],
-              "samsunginternet_android": {
-                "prefix": "-webkit-",
-                "version_added": "1.0",
-                "notes": "Support for the original dual-image with percentage implementation only."
-              },
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "≤37",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              }
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
