@@ -39,7 +39,7 @@ Here is an example scenario:
   - A subfeature node is added to the method parameter that was _not_ supported by the second browser.
 - Yet another browser implements the method with a new parameter. 
   - A method subfeature is added for the new parameter because it was added in a different version than the parent method.
-- The specification changes to require that the interface now can be used in workers:
+- The browser changes to require that the interface now can be used in workers:
   - A "supported in workers" subfeature is added to the interface feature because this is a change in compatibility.
 
     > **Note:** If all browsers implemented worker support in their first implementation then no subfeature would be required.
