@@ -1,5 +1,59 @@
 # Release notes
 
+## [v5.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.2)
+
+September 13, 2022
+
+### Removals
+
+- `api.CanvasRenderingContext2D.drawWindow` ([#17706](https://github.com/mdn/browser-compat-data/pull/17706))
+- `api.RTCIceCredentialType.oauth` ([#17748](https://github.com/mdn/browser-compat-data/pull/17748))
+- `mathml.elements.mfrac.bevelled` ([#17735](https://github.com/mdn/browser-compat-data/pull/17735))
+
+### Additions
+
+- `api.Element.ariaColIndexText` ([#17642](https://github.com/mdn/browser-compat-data/pull/17642))
+- `api.Element.ariaRowIndexText` ([#17642](https://github.com/mdn/browser-compat-data/pull/17642))
+- `api.ElementInternals.ariaColIndexText` ([#17642](https://github.com/mdn/browser-compat-data/pull/17642))
+- `api.ElementInternals.ariaRowIndexText` ([#17642](https://github.com/mdn/browser-compat-data/pull/17642))
+- `api.FontData` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.FontData.blob` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.FontData.family` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.FontData.fullName` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.FontData.postscriptName` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.FontData.style` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `api.LaunchParams` ([#17682](https://github.com/mdn/browser-compat-data/pull/17682))
+- `api.LaunchParams.files` ([#17682](https://github.com/mdn/browser-compat-data/pull/17682))
+- `api.LaunchQueue` ([#17682](https://github.com/mdn/browser-compat-data/pull/17682))
+- `api.LaunchQueue.setConsumer` ([#17682](https://github.com/mdn/browser-compat-data/pull/17682))
+- `api.Navigator.globalPrivacyControl` ([#17722](https://github.com/mdn/browser-compat-data/pull/17722))
+- `api.ScreenDetails` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.ScreenDetails.currentScreen` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.ScreenDetails.currentscreenchange_event` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.ScreenDetails.screens` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.ScreenDetails.screenschange_event` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.WebGL2RenderingContext.drawingBufferColorSpace` ([#17675](https://github.com/mdn/browser-compat-data/pull/17675))
+- `api.WebGL2RenderingContext.unpackColorSpace` ([#17675](https://github.com/mdn/browser-compat-data/pull/17675))
+- `api.WebGLRenderingContext.drawingBufferColorSpace` ([#17675](https://github.com/mdn/browser-compat-data/pull/17675))
+- `api.WebGLRenderingContext.unpackColorSpace` ([#17675](https://github.com/mdn/browser-compat-data/pull/17675))
+- `api.Window.getScreenDetails` ([#17685](https://github.com/mdn/browser-compat-data/pull/17685))
+- `api.Window.launchQueue` ([#17682](https://github.com/mdn/browser-compat-data/pull/17682))
+- `api.Window.queryLocalFonts` ([#17679](https://github.com/mdn/browser-compat-data/pull/17679))
+- `http.headers.Sec-GPC` ([#17722](https://github.com/mdn/browser-compat-data/pull/17722))
+- `mathml.elements.mstyle.background` ([#17741](https://github.com/mdn/browser-compat-data/pull/17741))
+- `mathml.elements.mstyle.color` ([#17741](https://github.com/mdn/browser-compat-data/pull/17741))
+- `mathml.elements.mstyle.fontsize` ([#17741](https://github.com/mdn/browser-compat-data/pull/17741))
+- `mathml.elements.mstyle.fontstyle` ([#17741](https://github.com/mdn/browser-compat-data/pull/17741))
+- `mathml.elements.mstyle.fontweight` ([#17741](https://github.com/mdn/browser-compat-data/pull/17741))
+- `webextensions.api.privacy.network.globalPrivacyControl` ([#17722](https://github.com/mdn/browser-compat-data/pull/17722))
+
+### Statistics
+
+- 16 contributors have changed 662 files with 2,899 additions and 2,490 deletions in 58 commits ([`v5.2.1...v5.2.2`](https://github.com/mdn/browser-compat-data/compare/v5.2.1...v5.2.2))
+- 13,806 total features
+- 944 total contributors
+- 4,223 total stargazers
+
 ## [v5.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.1)
 
 September 6, 2022
