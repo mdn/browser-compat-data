@@ -1,5 +1,44 @@
 # Release notes
 
+## [v5.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.3)
+
+September 20, 2022
+
+### Removals
+
+- `css.at-rules.scroll-timeline` ([#17212](https://github.com/mdn/browser-compat-data/pull/17212))
+- `css.at-rules.scroll-timeline.orientation` ([#17212](https://github.com/mdn/browser-compat-data/pull/17212))
+- `css.at-rules.scroll-timeline.scroll-offsets` ([#17212](https://github.com/mdn/browser-compat-data/pull/17212))
+- `css.at-rules.scroll-timeline.source` ([#17212](https://github.com/mdn/browser-compat-data/pull/17212))
+- `javascript.builtins.Date.toSource` ([#17838](https://github.com/mdn/browser-compat-data/pull/17838))
+
+### Additions
+
+- `api.CSSContainerRule` ([#17778](https://github.com/mdn/browser-compat-data/pull/17778))
+- `api.Document.pointerlockchange_event` ([#17816](https://github.com/mdn/browser-compat-data/pull/17816))
+- `api.Document.pointerlockerror_event` ([#17816](https://github.com/mdn/browser-compat-data/pull/17816))
+- `browsers.opera_android.releases.71` ([#17836](https://github.com/mdn/browser-compat-data/pull/17836))
+- `browsers.opera.releases.93` ([#17803](https://github.com/mdn/browser-compat-data/pull/17803))
+- `css.at-rules.font-face.src.tech_keyword` ([#17815](https://github.com/mdn/browser-compat-data/pull/17815))
+- `css.at-rules.media.prefers-color-scheme.respects-inherited-scheme` ([#17846](https://github.com/mdn/browser-compat-data/pull/17846))
+- `css.properties.container` ([#17789](https://github.com/mdn/browser-compat-data/pull/17789))
+- `css.properties.container-name` ([#17789](https://github.com/mdn/browser-compat-data/pull/17789))
+- `css.properties.container-type` ([#17789](https://github.com/mdn/browser-compat-data/pull/17789))
+- `css.types.calc-constant` ([#17828](https://github.com/mdn/browser-compat-data/pull/17828))
+- `css.types.calc-constant.e` ([#17828](https://github.com/mdn/browser-compat-data/pull/17828))
+- `css.types.calc-constant.infinity` ([#17828](https://github.com/mdn/browser-compat-data/pull/17828))
+- `css.types.calc-constant.NaN` ([#17828](https://github.com/mdn/browser-compat-data/pull/17828))
+- `css.types.calc-constant.pi` ([#17828](https://github.com/mdn/browser-compat-data/pull/17828))
+- `webextensions.api.storage.StorageArea.get.empty_key` ([#17826](https://github.com/mdn/browser-compat-data/pull/17826))
+- `webextensions.api.storage.StorageArea.remove.empty_key` ([#17826](https://github.com/mdn/browser-compat-data/pull/17826))
+
+### Statistics
+
+- 14 contributors have changed 137 files with 2,293 additions and 1,251 deletions in 51 commits ([`v5.2.2...v5.2.3`](https://github.com/mdn/browser-compat-data/compare/v5.2.2...v5.2.3))
+- 13,816 total features
+- 944 total contributors
+- 4,239 total stargazers
+
 ## [v5.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.2)
 
 September 13, 2022
