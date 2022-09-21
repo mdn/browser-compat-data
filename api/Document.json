@@ -6850,9 +6850,7 @@
             ],
             "safari": [
               {
-                "version_added": "14",
-                "partial_implementation": true,
-                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
+                "version_added": "16"
               },
               {
                 "version_added": "10.1",
@@ -6870,9 +6868,29 @@
                   "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
                   "The <code>onvisibilitychange</code> event handler property is not supported."
                 ]
+              },
+              {
+                "version_removed": "14.1",
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>."
               }
             ],
-            "safari_ios": "mirror",
+            "safari_ios": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_removed": "14.5",
+                "version_added": "7",
+                "partial_implementation": true,
+                "notes": [
+                  "Doesn't fire the <code>visibilitychange</code> event when navigating away from a document, so also include code to check for the <code>pagehide</code> event (which does fire for that case in all current browsers). See WebKit bugs <a href='https://webkit.org/b/116769'>116769</a>, <a href='https://webkit.org/b/151234'>151234</a>, <a href='https://webkit.org/b/151610'>151610</a>, and <a href='https://webkit.org/b/194897'>194897</a>.",
+                  "Before Safari 14, the event does not bubble, so <code>document.addEventListener('visibilitychange', ...)</code> works, but <code>window.addEventListener('visibilitychange', ...)</code> does not.",
+                  "The <code>onvisibilitychange</code> event handler property is not supported."
+                ]
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
