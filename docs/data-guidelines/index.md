@@ -68,6 +68,12 @@ If you set `"partial_implementation": true`, then write a note describing how th
 
 This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-data/pull/7332).
 
+## `"partial_implementation"` requires an affirmative `"version_added"`
+
+The `partial_implementation` property qualifies an affirmative support statement. If you set `"partial_implementation": true`, then set the `version_added` property to a string describing the version that introduced partial support.
+
+This guideline was proposed in [#17861](https://github.com/mdn/browser-compat-data/pull/17861).
+
 ## Non-functional defined names imply `"partial_implementation"`
 
 If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.

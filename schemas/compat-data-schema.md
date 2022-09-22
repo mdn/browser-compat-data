@@ -459,7 +459,7 @@ The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addi
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is required [that you add a note explaining how it diverges from the standard](../docs/data-guidelines/index.md#partial_implementation-requires-a-note)) (such as that it implements an old version of the standard) and [that you set the `version_added` property to a string value](../docs/data-guidelines/index.md#partial_implementation-requires-an-affirmative-version_added).
 
 ```json
 {
