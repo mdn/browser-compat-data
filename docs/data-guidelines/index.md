@@ -70,7 +70,7 @@ This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-dat
 
 ## Non-functional defined names imply `"partial_implementation"`
 
-If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
+If a browser recognizes an API name, but the API doesn’t have any discernible behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
 
 For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
 
