@@ -55,7 +55,10 @@ const allowedSpecURLs = [
     ])
     .flat(),
   ...specsExceptions,
-];
+].map((s) =>
+  // Since drafts.csswg.org is down too often, use an alternative canonical URL
+  s.replace('drafts.csswg.org', 'w3c.github.io/csswg-drafts'),
+);
 
 /**
  * Process the data for spec URL errors
