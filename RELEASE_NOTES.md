@@ -1,5 +1,31 @@
 # Release notes
 
+## [v5.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.4)
+
+September 27, 2022
+
+### Additions
+
+- `api.AudioDecoder.dequeue_event` ([#17832](https://github.com/mdn/browser-compat-data/pull/17832))
+- `api.AudioEncoder.dequeue_event` ([#17832](https://github.com/mdn/browser-compat-data/pull/17832))
+- `api.VideoDecoder.dequeue_event` ([#17832](https://github.com/mdn/browser-compat-data/pull/17832))
+- `api.VideoEncoder.dequeue_event` ([#17832](https://github.com/mdn/browser-compat-data/pull/17832))
+- `css.types.abs` ([#10552](https://github.com/mdn/browser-compat-data/pull/10552))
+- `css.types.hypot` ([#17871](https://github.com/mdn/browser-compat-data/pull/17871))
+- `css.types.mod` ([#17873](https://github.com/mdn/browser-compat-data/pull/17873))
+- `css.types.pow` ([#17869](https://github.com/mdn/browser-compat-data/pull/17869))
+- `css.types.rem` ([#17872](https://github.com/mdn/browser-compat-data/pull/17872))
+- `css.types.round` ([#17874](https://github.com/mdn/browser-compat-data/pull/17874))
+- `css.types.sign` ([#10570](https://github.com/mdn/browser-compat-data/pull/10570))
+- `css.types.sqrt` ([#17870](https://github.com/mdn/browser-compat-data/pull/17870))
+
+### Statistics
+
+- 9 contributors have changed 47 files with 767 additions and 358 deletions in 30 commits ([`v5.2.3...v5.2.4`](https://github.com/mdn/browser-compat-data/compare/v5.2.3...v5.2.4))
+- 13,828 total features
+- 945 total contributors
+- 4,240 total stargazers
+
 ## [v5.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.3)
 
 September 20, 2022
