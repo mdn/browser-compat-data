@@ -43,6 +43,9 @@ const specsExceptions = [
 
   // Remove when added to browser-specs
   'https://w3c.github.io/csswg-drafts/css-color-6/',
+
+  // Remove if https://github.com/w3c/browser-specs/issues/730 is resolved
+  'https://w3c.github.io/csswg-drafts/css2',
 ];
 
 const allowedSpecURLs = [
@@ -55,10 +58,7 @@ const allowedSpecURLs = [
     ])
     .flat(),
   ...specsExceptions,
-].map((s) =>
-  // Since drafts.csswg.org is down too often, use an alternative canonical URL
-  s.replace('drafts.csswg.org', 'w3c.github.io/csswg-drafts'),
-);
+];
 
 /**
  * Process the data for spec URL errors
