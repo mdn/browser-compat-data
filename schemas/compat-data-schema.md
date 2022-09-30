@@ -330,6 +330,8 @@ For certain browsers, ranged versions are allowed as it is sometimes impractical
 - Opera Android
   - "≤12.1" (the last Presto-based Opera and possibly earlier)
   - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
+- Quest
+  - "≤23.0" (the first publicly-available Quest version which was programmatically measured)
 - Safari
   - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
 - Safari iOS
