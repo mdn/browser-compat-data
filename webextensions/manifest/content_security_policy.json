@@ -6,7 +6,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_security_policy",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": true,
+              "notes": "The <code>object-src</code> directive is required."
             },
             "edge": {
               "version_added": "14",
@@ -14,17 +15,22 @@
             },
             "firefox": {
               "version_added": "48",
-              "notes": "Firefox does not support 'http://127.0.0.1' or 'http://localhost' as script sources: they must be served over HTTPS."
+              "notes": [
+                "Firefox does not support 'http://127.0.0.1' or 'http://localhost' as script sources: they must be served over HTTPS.",
+                "Until Firefox 105, the <code>object-src</code> directive was required with a secure source. From Firefox 106, the <code>object-src</code> directive is optional.",
+              ]
             },
             "firefox_android": {
               "version_added": false
             },
             "opera": "mirror",
             "safari": {
-              "version_added": "14"
+              "version_added": "14",
+              "notes": "There is no requirement to include the <code>object-src</code> directive."
             },
             "safari_ios": {
-              "version_added": "15"
+              "version_added": "15",
+              "notes": "There is no requirement to include the <code>object-src</code> directive."
             }
           }
         },
@@ -34,7 +40,10 @@
             "support": {
               "chrome": {
                 "version_added": "88",
-                "notes": "Available for use in Manifest V3 or later."
+                "notes": [
+                  "Available for use in Manifest V3 or later.",
+                  "The <code>object-src</code> directive is required."
+                ]
               },
               "edge": "mirror",
               "firefox": {
@@ -52,7 +61,10 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "15.4",
-                "notes": "Available for use in Manifest V3 or later."
+                "notes": [
+                  "Available for use in Manifest V3 or later.",
+                  "There is no requirement to include the <code>object-src</code> directive."
+                ]
               },
               "safari_ios": "mirror"
             }
