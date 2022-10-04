@@ -1,5 +1,55 @@
 # Release notes
 
+## [v5.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.5)
+
+October 4, 2022
+
+### Removals
+
+- `css.types.color.color_keywords` ([#17924](https://github.com/mdn/browser-compat-data/pull/17924))
+- `css.types.color.color_keywords.rebeccapurple` ([#17924](https://github.com/mdn/browser-compat-data/pull/17924))
+- `http.headers.Content-Security-Policy.navigate-to` ([#17902](https://github.com/mdn/browser-compat-data/pull/17902))
+
+### Additions
+
+- `api.Navigator.userActivation` ([#17887](https://github.com/mdn/browser-compat-data/pull/17887))
+- `api.OffscreenCanvasRenderingContext2D.commit` ([#17880](https://github.com/mdn/browser-compat-data/pull/17880))
+- `api.UserActivation` ([#17887](https://github.com/mdn/browser-compat-data/pull/17887))
+- `api.UserActivation.hasBeenActive` ([#17887](https://github.com/mdn/browser-compat-data/pull/17887))
+- `api.UserActivation.isActive` ([#17887](https://github.com/mdn/browser-compat-data/pull/17887))
+- `browsers.edge.releases.108` ([#17935](https://github.com/mdn/browser-compat-data/pull/17935))
+- `css.properties.contain-intrinsic-block-size` ([#17890](https://github.com/mdn/browser-compat-data/pull/17890))
+- `css.properties.contain-intrinsic-height` ([#17890](https://github.com/mdn/browser-compat-data/pull/17890))
+- `css.properties.contain-intrinsic-inline-size` ([#17890](https://github.com/mdn/browser-compat-data/pull/17890))
+- `css.properties.contain-intrinsic-width` ([#17890](https://github.com/mdn/browser-compat-data/pull/17890))
+- `css.types.color.named-color` ([#17924](https://github.com/mdn/browser-compat-data/pull/17924))
+- `css.types.color.named-color.rebeccapurple` ([#17924](https://github.com/mdn/browser-compat-data/pull/17924))
+- `css.types.color.system-color` ([#17924](https://github.com/mdn/browser-compat-data/pull/17924))
+- `mathml.elements.menclose.notation.actuarial` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.bottom` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.box` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.circle` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.downdiagonalstrike` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.horizontalstrike` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.left` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.longdiv` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.right` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.roundedbox` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.top` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.updiagonalstrike` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.menclose.notation.verticalstrike` ([#17912](https://github.com/mdn/browser-compat-data/pull/17912))
+- `mathml.elements.mfrac.linethickness.thin_medium_thick` ([#17920](https://github.com/mdn/browser-compat-data/pull/17920))
+- `mathml.elements.ms.lquote_rquote_attributes` ([#17928](https://github.com/mdn/browser-compat-data/pull/17928))
+- `mathml.elements.semantics.advanced_visible_child_selection` ([#17927](https://github.com/mdn/browser-compat-data/pull/17927))
+- `mathml.global_attributes.mathsize.small_normal_big` ([#17921](https://github.com/mdn/browser-compat-data/pull/17921))
+
+### Statistics
+
+- 12 contributors have changed 45 files with 1,478 additions and 886 deletions in 25 commits ([`v5.2.4...v5.2.5`](https://github.com/mdn/browser-compat-data/compare/v5.2.4...v5.2.5))
+- 13,854 total features
+- 945 total contributors
+- 4,244 total stargazers
+
 ## [v5.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.4)
 
 September 27, 2022
