@@ -293,6 +293,10 @@ Most of the time, APIs and other features are present in both the desktop and An
 
 The [Searchfox](https://searchfox.org/) website provides another method you can use to search Firefox source code. Searchfox is a tool that indexes the Firefox repositories (most usefully, the main [mozilla-central source code](https://searchfox.org/mozilla-central/source) and, interesting, the [WHATWG HTML specification is indexed](https://searchfox.org/whatwg-html/source) as well).
 
+## Quest
+
+The Meta Quest browser is based upon the Android build of Chromium. Unlike other Chromium-based browsers, Quest's version numbers do not correlate to those from Chromium. Chromium's release notes and revision history (referenced above) are valid sources of information, but you will need to find authoritative information on a given release of Quest before you can identify the relevant developments in Chromium. [The Oculus Browser Developer Release Notes](https://developer.oculus.com/documentation/web/browser-release-notes/) offers some information of this type.
+
 ## Safari
 
 Fortunately, the WebKit source repository, found in SVN and available on the web using Trac, has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.

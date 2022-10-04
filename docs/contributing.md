@@ -67,7 +67,7 @@ While contributing to BCD, there are a number of tools and other resources we re
 
 #### Chromium
 
-These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Samsung Internet, WebView and more.
+These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Quest, Samsung Internet, WebView and more.
 
 - [Chrome Platform Status](https://chromestatus.com/features): A list of features that have been added or are planned to be added in Chrome.
 - [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
