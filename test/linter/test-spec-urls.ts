@@ -38,9 +38,6 @@ const specsExceptions = [
   // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
   'https://w3c.github.io/webrtc-extensions/',
 
-  // Remove if https://github.com/w3c/mathml/issues/216 is resolved
-  'https://w3c.github.io/mathml/',
-
   // Remove when added to browser-specs
   'https://w3c.github.io/csswg-drafts/css-color-6/',
 
