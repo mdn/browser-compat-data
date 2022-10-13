@@ -1,5 +1,42 @@
 # Release notes
 
+## [v5.2.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.6)
+
+October 11, 2022
+
+### Additions
+
+- `mathml.attribute_values.named_space` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.attribute_values.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mfrac.linethickness.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mfrac.linethickness.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mmultiscripts.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mmultiscripts.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mo.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mo.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mpadded.depth` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.named_spaces` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.nonzero_unitless_values` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.pseudo_units` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.relative_values` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.scale_factor` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mspace.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.msub.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msubsup.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msubsup.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msup.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mtable.width.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mtable.width.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.global_attributes.mathsize.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.global_attributes.mathsize.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+
+### Statistics
+
+- 4 contributors have changed 17 files with 1,032 additions and 331 deletions in 13 commits ([`v5.2.5...v5.2.6`](https://github.com/mdn/browser-compat-data/compare/v5.2.5...v5.2.6))
+- 13,877 total features
+- 945 total contributors
+- 4,251 total stargazers
+
 ## [v5.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.5)
 
 October 4, 2022
