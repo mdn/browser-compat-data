@@ -18,7 +18,7 @@ Once a pull request is merged to update BCD, it takes a week or two for a new ve
 
 ## I opened a PR but it hasn't been reviewed yet.
 
-Sorry for the wait. Many outside factors, such as our other projects, may grab our attention and slow BCD PR reviews. If it has been more than a month and there has been no repsonse from a reviewer, please feel free to ping one of us and request a review. You can find a list of peers and owners in the [governance doc](../GOVERNANCE.md).
+Sorry for the wait. Many outside factors, such as our other projects, may grab our attention and slow BCD PR reviews. If it has been more than a month and there has been no response from a reviewer, please feel free to ping one of us and request a review. You can find a list of peers and owners in the [governance doc](../GOVERNANCE.md).
 
 ## My PR was closed due to inactivity, may I reopen it?
 

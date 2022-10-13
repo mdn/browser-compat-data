@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>:is()</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:is",
-          "spec_url": "https://drafts.csswg.org/selectors/#matches-pseudo",
+          "spec_url": "https://w3c.github.io/csswg-drafts/selectors/#matches-pseudo",
           "support": {
             "chrome": [
               {
@@ -15,18 +15,6 @@
                 "version_added": "12",
                 "alternative_name": ":-webkit-any()",
                 "notes": "Doesn't support combinators."
-              },
-              {
-                "version_removed": "88",
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
               }
             ],
             "chrome_android": "mirror",
@@ -42,17 +30,6 @@
                   "Doesn't support combinators.",
                   "See <a href='https://bugzil.la/906353'>bug 906353</a>."
                 ]
-              },
-              {
-                "version_added": "77",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.is-where-selectors.enabled",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "Enabled by default in Firefox Nightly."
               }
             ],
             "firefox_android": "mirror",

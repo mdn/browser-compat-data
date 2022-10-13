@@ -35,27 +35,25 @@ const specsExceptions = [
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
 
-  // Not really a browser feature, thus not in browser-specs
-  // Remove if it is in the main ECMA spec
-  'https://tc39.es/proposal-hashbang/out.html',
-
   // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
   'https://w3c.github.io/webrtc-extensions/',
 
-  // Remove if https://github.com/w3c/mathml/issues/216 is resolved
-  'https://w3c.github.io/mathml/',
-
   // Remove when added to browser-specs
-  'https://drafts.csswg.org/css-color-6/',
+  'https://w3c.github.io/csswg-drafts/css-color-6/',
 
-  // Remove if https://github.com/w3c/browser-specs/pull/667#issuecomment-1200089758 is resolved
-  'https://w3c.github.io/device-memory',
+  // Remove if https://github.com/w3c/browser-specs/issues/730 is resolved
+  'https://w3c.github.io/csswg-drafts/css2',
 ];
 
 const allowedSpecURLs = [
-  ...specData.map((spec) => spec.url),
-  ...specData.map((spec) => spec.nightly.url),
-  ...specData.map((spec) => spec.series.nightlyUrl),
+  ...specData
+    .map((spec) => [
+      spec.url,
+      spec.nightly.url,
+      ...spec.nightly.alternateUrls,
+      spec.series.nightlyUrl,
+    ])
+    .flat(),
   ...specsExceptions,
 ];
 
@@ -75,6 +73,19 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
+    // Since drafts.csswg.org is down too often, use an alternative canonical URL
+    if (specURL.startsWith('https://drafts.csswg.org')) {
+      logger.error(
+        chalk`Due to how often {bold https://drafts.csswg.org} is down, use {bold https://w3c.github.io/csswg-drafts} instead.`,
+        {
+          tip: chalk`replace {bold ${specURL}} with {bold ${specURL.replace(
+            'drafts.csswg.org',
+            'w3c.github.io/csswg-drafts',
+          )}}`,
+        },
+      );
+    }
+
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,

@@ -238,8 +238,8 @@ if (esMain(import.meta)) {
           type: 'boolean',
           description: "Don't fetch artifacts from GitHub.",
         })
-        .example('$0', 'compare HEAD to parent commmit')
-        .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
+        .example('$0', 'compare HEAD to parent commit')
+        .example('$0 176d4ed', 'compare 176d4ed to its parent commit')
         .example('$0 topic-branch main', 'compare a branch to main');
     },
   );
