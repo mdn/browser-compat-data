@@ -4,6 +4,10 @@
 
 October 14, 2022
 
+### Notable changes
+
+Starting with this release, BCD will now be released on Tuesdays and Fridays.
+
 ### Removals
 
 - `api.Element.openOrClosedShadowRoot` ([#17707](https://github.com/mdn/browser-compat-data/pull/17707))
