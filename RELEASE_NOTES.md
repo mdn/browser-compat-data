@@ -1,5 +1,32 @@
 # Release notes
 
+## [v5.2.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.7)
+
+October 14, 2022
+
+### Removals
+
+- `api.Element.openOrClosedShadowRoot` ([#17707](https://github.com/mdn/browser-compat-data/pull/17707))
+- `api.XRWebGLSubImage.textureHeight` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `api.XRWebGLSubImage.textureWidth` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+
+### Additions
+
+- `api.Element.beforematch_event` ([#17981](https://github.com/mdn/browser-compat-data/pull/17981))
+- `api.XRWebGLSubImage.colorTextureHeight` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `api.XRWebGLSubImage.colorTextureWidth` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `css.properties.scroll-timeline` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `css.properties.scroll-timeline-axis` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `css.properties.scroll-timeline-name` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `webextensions.api.dom.openOrClosedShadowRoot` ([#17707](https://github.com/mdn/browser-compat-data/pull/17707))
+
+### Statistics
+
+- 6 contributors have changed 25 files with 449 additions and 298 deletions in 23 commits ([`v5.2.6...v5.2.7`](https://github.com/mdn/browser-compat-data/compare/v5.2.6...v5.2.7))
+- 13,881 total features
+- 945 total contributors
+- 4,259 total stargazers
+
 ## [v5.2.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.6)
 
 October 11, 2022
