@@ -1,5 +1,24 @@
 # Release notes
 
+## [v5.2.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.8)
+
+October 18, 2022
+
+### Additions
+
+- `css.at-rules.supports.font-format` ([#18034](https://github.com/mdn/browser-compat-data/pull/18034))
+- `css.at-rules.supports.font-tech` ([#18034](https://github.com/mdn/browser-compat-data/pull/18034))
+- `webextensions.api.tabs.ZoomSettings.defaultZoomFactor` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+- `webextensions.api.tabs.ZoomSettings.mode` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+- `webextensions.api.tabs.ZoomSettings.scope` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+
+### Statistics
+
+- 6 contributors have changed 16 files with 358 additions and 197 deletions in 19 commits ([`v5.2.7...v5.2.8`](https://github.com/mdn/browser-compat-data/compare/v5.2.7...v5.2.8))
+- 13,886 total features
+- 947 total contributors
+- 4,262 total stargazers
+
 ## [v5.2.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.7)
 
 October 14, 2022
