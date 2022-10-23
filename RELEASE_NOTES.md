@@ -1,5 +1,22 @@
 # Release notes
 
+## [v5.2.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.9)
+
+October 21, 2022
+
+### Additions
+
+- `browsers.deno.releases.1.25` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+- `browsers.deno.releases.1.26` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+- `browsers.deno.releases.1.27` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+
+### Statistics
+
+- 5 contributors have changed 21 files with 107 additions and 72 deletions in 22 commits ([`v5.2.8...v5.2.9`](https://github.com/mdn/browser-compat-data/compare/v5.2.8...v5.2.9))
+- 13,886 total features
+- 948 total contributors
+- 4,265 total stargazers
+
 ## [v5.2.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.8)
 
 October 18, 2022
