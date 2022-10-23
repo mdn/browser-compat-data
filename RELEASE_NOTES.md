@@ -1,5 +1,109 @@
 # Release notes
 
+## [v5.2.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.9)
+
+October 21, 2022
+
+### Additions
+
+- `browsers.deno.releases.1.25` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+- `browsers.deno.releases.1.26` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+- `browsers.deno.releases.1.27` ([#18052](https://github.com/mdn/browser-compat-data/pull/18052))
+
+### Statistics
+
+- 5 contributors have changed 21 files with 107 additions and 72 deletions in 22 commits ([`v5.2.8...v5.2.9`](https://github.com/mdn/browser-compat-data/compare/v5.2.8...v5.2.9))
+- 13,886 total features
+- 948 total contributors
+- 4,265 total stargazers
+
+## [v5.2.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.8)
+
+October 18, 2022
+
+### Additions
+
+- `css.at-rules.supports.font-format` ([#18034](https://github.com/mdn/browser-compat-data/pull/18034))
+- `css.at-rules.supports.font-tech` ([#18034](https://github.com/mdn/browser-compat-data/pull/18034))
+- `webextensions.api.tabs.ZoomSettings.defaultZoomFactor` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+- `webextensions.api.tabs.ZoomSettings.mode` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+- `webextensions.api.tabs.ZoomSettings.scope` ([#17966](https://github.com/mdn/browser-compat-data/pull/17966))
+
+### Statistics
+
+- 6 contributors have changed 16 files with 358 additions and 197 deletions in 19 commits ([`v5.2.7...v5.2.8`](https://github.com/mdn/browser-compat-data/compare/v5.2.7...v5.2.8))
+- 13,886 total features
+- 947 total contributors
+- 4,262 total stargazers
+
+## [v5.2.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.7)
+
+October 14, 2022
+
+### Notable changes
+
+Starting with this release, BCD will now be released on Tuesdays and Fridays.
+
+### Removals
+
+- `api.Element.openOrClosedShadowRoot` ([#17707](https://github.com/mdn/browser-compat-data/pull/17707))
+- `api.XRWebGLSubImage.textureHeight` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `api.XRWebGLSubImage.textureWidth` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+
+### Additions
+
+- `api.Element.beforematch_event` ([#17981](https://github.com/mdn/browser-compat-data/pull/17981))
+- `api.XRWebGLSubImage.colorTextureHeight` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `api.XRWebGLSubImage.colorTextureWidth` ([#17985](https://github.com/mdn/browser-compat-data/pull/17985))
+- `css.properties.scroll-timeline` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `css.properties.scroll-timeline-axis` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `css.properties.scroll-timeline-name` ([#17952](https://github.com/mdn/browser-compat-data/pull/17952))
+- `webextensions.api.dom.openOrClosedShadowRoot` ([#17707](https://github.com/mdn/browser-compat-data/pull/17707))
+
+### Statistics
+
+- 6 contributors have changed 25 files with 449 additions and 298 deletions in 23 commits ([`v5.2.6...v5.2.7`](https://github.com/mdn/browser-compat-data/compare/v5.2.6...v5.2.7))
+- 13,881 total features
+- 945 total contributors
+- 4,259 total stargazers
+
+## [v5.2.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.6)
+
+October 11, 2022
+
+### Additions
+
+- `mathml.attribute_values.named_space` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.attribute_values.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mfrac.linethickness.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mfrac.linethickness.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mmultiscripts.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mmultiscripts.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mo.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mo.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mpadded.depth` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.named_spaces` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.nonzero_unitless_values` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.pseudo_units` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.relative_values` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mpadded.scale_factor` ([#17953](https://github.com/mdn/browser-compat-data/pull/17953))
+- `mathml.elements.mspace.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.msub.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msubsup.subscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msubsup.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.msup.superscriptshift` ([#17962](https://github.com/mdn/browser-compat-data/pull/17962))
+- `mathml.elements.mtable.width.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.elements.mtable.width.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.global_attributes.mathsize.named_spaces` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+- `mathml.global_attributes.mathsize.nonzero_unitless_values` ([#17934](https://github.com/mdn/browser-compat-data/pull/17934))
+
+### Statistics
+
+- 4 contributors have changed 17 files with 1,032 additions and 331 deletions in 13 commits ([`v5.2.5...v5.2.6`](https://github.com/mdn/browser-compat-data/compare/v5.2.5...v5.2.6))
+- 13,877 total features
+- 945 total contributors
+- 4,251 total stargazers
+
 ## [v5.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.5)
 
 October 4, 2022
