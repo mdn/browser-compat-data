@@ -1,5 +1,21 @@
 # Release notes
 
+## [v5.2.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.10)
+
+October 25, 2022
+
+### Additions
+
+- `browsers.nodejs.releases.19.0.0` ([#18076](https://github.com/mdn/browser-compat-data/pull/18076))
+- `browsers.opera_android.releases.72` ([#18059](https://github.com/mdn/browser-compat-data/pull/18059))
+
+### Statistics
+
+- 6 contributors have changed 37 files with 568 additions and 356 deletions in 15 commits ([`v5.2.9...v5.2.10`](https://github.com/mdn/browser-compat-data/compare/v5.2.9...v5.2.10))
+- 13,886 total features
+- 949 total contributors
+- 4,268 total stargazers
+
 ## [v5.2.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.9)
 
 October 21, 2022
