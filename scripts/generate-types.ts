@@ -91,7 +91,8 @@ const generateCompatDataTypes = (): string => {
       };`,
   );
 
-  const metaType = 'export interface MetaBlock {\n  version: string;\n}';
+  const metaType =
+    'export interface MetaBlock {\n  version: string;\n  timestamp: string;\n}';
 
   return `${metaType}\n\nexport interface CompatData {\n${props.join(
     '\n\n',

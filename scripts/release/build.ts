@@ -29,7 +29,10 @@ const verbatimFiles = ['LICENSE', 'README.md'];
  *
  * @returns {any} Metadata to embed into BCD
  */
-export const generateMeta = (): any => ({ version: packageJson.version });
+export const generateMeta = (): any => ({
+  version: packageJson.version,
+  timestamp: new Date(),
+});
 
 /**
  * Apply mirroring to all statements

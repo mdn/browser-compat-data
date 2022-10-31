@@ -53,6 +53,11 @@ export const implementedAndRemoved = (
     BrowserName,
     SupportStatement,
   ][]) {
+    if (browser === 'ie') {
+      // Don't consider IE support in obsolete checks
+      continue;
+    }
+
     for (const d of Array.isArray(data) ? data : [data]) {
       // Feature is still supported or it is not known when feature was dropped
       if (!d.version_removed || typeof d.version_removed === 'boolean') {

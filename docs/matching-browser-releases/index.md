@@ -85,7 +85,7 @@ There may be some exceptions and you should test the feature you are documenting
 
 After Opera 12.16, Opera adopted the Blink engine and released Opera 15 (skipping 13 and 14), becoming based upon Chromium.
 
-## Matching Chrome versions
+### Matching Chrome versions
 
 After migrating to the Blink engine, Opera's version became Chrome's/Blink's version minus 13 — that is, Opera 15 used Blink 28 (15+13=28) — until Opera Desktop 69 and Opera Android 43. The browser files within the browser-compat-data project contain a mapping of Opera versions to Chromium/Blink versions; see [browsers/opera.json](../../browsers/opera.json) and [browsers/opera_android.json](../../browsers/opera_android.json).
 
@@ -195,7 +195,7 @@ If the change is one that can't be determined from changes to WebIDL, you'll hav
 - The first line of the C++ function implementing the feature (or a function that's used only by the implementation of the feature). The existence of this line indicates the feature exists, but you can also look for changes to the parameter list.
 - A `return` operation which changes from returning nothing or `undefined` to some new value, or changes return type.
 
-Locating an appropriate line of code can be tricky, and can take some practice. It's not difficult, but it does mean learning some techniques. a few suggestions:
+Locating an appropriate line of code can be tricky, and can take some practice. It's not difficult, but it does mean learning some techniques. A few suggestions:
 
 - To locate source files related to an element, use the search
 
@@ -275,7 +275,7 @@ At any rate, **the version number next to "first release with" is the number you
 
 ### Checking for platform-specific availability
 
-Most of the time, APIs and other features are present in both the desktop and Android versions of Firefox, or in all desktop versions (Mac, WIndows, and Linux). There are exceptions, however. Here are some tips that will help you identify those exceptions.
+Most of the time, APIs and other features are present in both the desktop and Android versions of Firefox, or in all desktop versions (Mac, Windows, and Linux). There are exceptions, however. Here are some tips that will help you identify those exceptions.
 
 - Find the bug that introduces the change you're looking for, then look at the tests for that bug. See if the test for the feature is disabled by a line that looks something like one of the following:
 
@@ -292,6 +292,10 @@ Most of the time, APIs and other features are present in both the desktop and An
 ### Searchfox
 
 The [Searchfox](https://searchfox.org/) website provides another method you can use to search Firefox source code. Searchfox is a tool that indexes the Firefox repositories (most usefully, the main [mozilla-central source code](https://searchfox.org/mozilla-central/source) and, interesting, the [WHATWG HTML specification is indexed](https://searchfox.org/whatwg-html/source) as well).
+
+## Quest
+
+The Meta Quest browser is based upon the Android build of Chromium. Unlike other Chromium-based browsers, Quest's version numbers do not correlate to those from Chromium. Chromium's release notes and revision history (referenced above) are valid sources of information, but you will need to find authoritative information on a given release of Quest before you can identify the relevant developments in Chromium. [The Oculus Browser Developer Release Notes](https://developer.oculus.com/documentation/web/browser-release-notes/) offers some information of this type.
 
 ## Safari
 

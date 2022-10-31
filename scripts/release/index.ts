@@ -25,7 +25,7 @@ const dirname = new URL('.', import.meta.url);
  *
  * @param {string} thisVersion The current version number
  * @param {Changes} changes The changes to format
- * @param {Stats} stats The statistics from the hanges
+ * @param {Stats} stats The statistics from the changes
  * @param {string} versionBump Which part of the semver has been bumped
  * @returns {string} The Markdown-formatted release notes
  */
@@ -94,8 +94,8 @@ const commitAndPR = async (
     console.log(
       chalk`{yellow Please {bold modify RELEASE_NOTES.md} and fill out the {bold Notable changes} section. I'll wait for you.}`,
     );
-    await keypress();
     console.log(chalk`{yellow Press any key to continue.}`);
+    await keypress();
     console.log('');
   }
 
@@ -107,7 +107,7 @@ const commitAndPR = async (
 };
 
 /**
- * Peform the release
+ * Perform the release
  */
 const main = async () => {
   requireGitHubCLI();
