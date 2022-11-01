@@ -1,5 +1,73 @@
 # Release notes
 
+## [v5.2.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.12)
+
+November 1, 2022
+
+### Removals
+
+- `css.at-rules.viewport` ([#17860](https://github.com/mdn/browser-compat-data/pull/17860))
+
+### Additions
+
+- `css.properties.object-view-box` ([#17895](https://github.com/mdn/browser-compat-data/pull/17895))
+- `http.headers.Content-Security-Policy.script-src.wasm-unsafe-eval` ([#17947](https://github.com/mdn/browser-compat-data/pull/17947))
+
+### Statistics
+
+- 12 contributors have changed 13 files with 197 additions and 127 deletions in 12 commits ([`v5.2.11...v5.2.12`](https://github.com/mdn/browser-compat-data/compare/v5.2.11...v5.2.12))
+- 13,905 total features
+- 954 total contributors
+- 4,275 total stargazers
+
+## [v5.2.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.11)
+
+October 28, 2022
+
+### Additions
+
+- `api.FileSystemFileHandle.createSyncAccessHandle` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.close` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.close.sync_version` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.flush` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.flush.sync_version` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.getSize` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.getSize.sync_version` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.read` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.truncate` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.truncate.sync_version` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.FileSystemSyncAccessHandle.write` ([#18067](https://github.com/mdn/browser-compat-data/pull/18067))
+- `api.InkPresenter` ([#18092](https://github.com/mdn/browser-compat-data/pull/18092))
+- `api.InkPresenter.expectedImprovement` ([#18092](https://github.com/mdn/browser-compat-data/pull/18092))
+- `api.InkPresenter.presentationArea` ([#18092](https://github.com/mdn/browser-compat-data/pull/18092))
+- `api.InkPresenter.updateInkTrailStartPoint` ([#18092](https://github.com/mdn/browser-compat-data/pull/18092))
+- `api.PerformanceResourceTiming.renderBlockingStatus` ([#18046](https://github.com/mdn/browser-compat-data/pull/18046))
+- `css.properties.animation-timeline.scroll` ([#18064](https://github.com/mdn/browser-compat-data/pull/18064))
+
+### Statistics
+
+- 12 contributors have changed 18 files with 799 additions and 60 deletions in 15 commits ([`v5.2.10...v5.2.11`](https://github.com/mdn/browser-compat-data/compare/v5.2.10...v5.2.11))
+- 13,904 total features
+- 950 total contributors
+- 4,271 total stargazers
+
+## [v5.2.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.10)
+
+October 25, 2022
+
+### Additions
+
+- `browsers.nodejs.releases.19.0.0` ([#18076](https://github.com/mdn/browser-compat-data/pull/18076))
+- `browsers.opera_android.releases.72` ([#18059](https://github.com/mdn/browser-compat-data/pull/18059))
+
+### Statistics
+
+- 6 contributors have changed 37 files with 568 additions and 356 deletions in 15 commits ([`v5.2.9...v5.2.10`](https://github.com/mdn/browser-compat-data/compare/v5.2.9...v5.2.10))
+- 13,886 total features
+- 949 total contributors
+- 4,268 total stargazers
+
 ## [v5.2.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.9)
 
 October 21, 2022
