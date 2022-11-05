@@ -61,6 +61,11 @@ export const getMatchingBrowserVersion = (
   }
   /* c8 ignore stop */
 
+  if (sourceVersion == 'preview') {
+    // If target browser doesn't have a preview version, map preview -> false
+    return browserData.preview_name ? 'preview' : false;
+  }
+
   if (targetBrowser === 'safari_ios') {
     // The mapping between Safari macOS and iOS releases is complicated and
     // cannot be entirely derived from the WebKit versions. After Safari 15
@@ -78,11 +83,6 @@ export const getMatchingBrowserVersion = (
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
-
-  if (sourceVersion == 'preview') {
-    // If target browser doesn't have a preview version, map preview -> false
-    return browserData.preview_name ? 'preview' : false;
-  }
 
   const range = sourceVersion.includes('≤');
   const sourceRelease =
