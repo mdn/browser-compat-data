@@ -80,7 +80,8 @@ export const getMatchingBrowserVersion = (
   releaseKeys.sort(compareVersions);
 
   if (sourceVersion == 'preview') {
-    return 'preview';
+    // If target browser doesn't have a preview version, map preview -> false
+    return browserData.preview_name ? 'preview' : false;
   }
 
   const range = sourceVersion.includes('≤');
