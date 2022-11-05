@@ -1,5 +1,26 @@
 # Release notes
 
+## [v5.2.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.13)
+
+November 4, 2022
+
+### Additions
+
+- `api.NavigateEvent.canIntercept` ([#18105](https://github.com/mdn/browser-compat-data/pull/18105))
+- `browsers.edge.releases.109` ([#18123](https://github.com/mdn/browser-compat-data/pull/18123))
+- `browsers.safari_ios.releases.16.1` ([#18131](https://github.com/mdn/browser-compat-data/pull/18131))
+- `browsers.safari.releases.16.1` ([#18131](https://github.com/mdn/browser-compat-data/pull/18131))
+- `css.properties.display.math` ([#18145](https://github.com/mdn/browser-compat-data/pull/18145))
+- `css.properties.text-transform.math-auto` ([#18146](https://github.com/mdn/browser-compat-data/pull/18146))
+- `svg.attributes.conditional_processing.requiredExtensions.mathml` ([#18144](https://github.com/mdn/browser-compat-data/pull/18144))
+
+### Statistics
+
+- 8 contributors have changed 34 files with 672 additions and 543 deletions in 21 commits ([`v5.2.12...v5.2.13`](https://github.com/mdn/browser-compat-data/compare/v5.2.12...v5.2.13))
+- 13,909 total features
+- 954 total contributors
+- 4,285 total stargazers
+
 ## [v5.2.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.12)
 
 November 1, 2022
