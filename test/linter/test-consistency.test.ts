@@ -7,7 +7,7 @@ import { ConsistencyChecker } from './test-consistency.js';
 
 const check = new ConsistencyChecker();
 
-describe('ConsistencyChecker.getVersionAdded()', function () {
+describe('ConsistencyChecker.getVersionAdded()', () => {
   it('returns null for non-real values', () => {
     assert.equal(
       check.getVersionAdded({ chrome: { version_added: null } }, 'chrome'),

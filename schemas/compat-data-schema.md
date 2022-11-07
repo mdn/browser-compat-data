@@ -32,7 +32,7 @@ The JSON files contain [feature identifiers](#feature-identifiers), which are re
 
 ## Understanding the schema
 
-#### Feature hierarchies
+### Feature hierarchies
 
 Each feature is identified by a unique hierarchy of strings, e.g the `text-align` property is identified by `css.properties.text-align`.
 
@@ -70,7 +70,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](/docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -162,11 +162,13 @@ The `__compat` object consists of the following:
   It is intended to be used as a caption or title and should be kept short.
   The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used.
 
+- An automated `source_file` property containing the path to the source file containing the feature. This is used to create links to the repository source (in the form of `https://github.com/mdn/browser-compat-data/blob/main/<source_file>`). For example, `api.History.forward` will contain a `source_file` property of `api/History.json` since the feature is defined in that file.
+
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
+  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`).
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 #### Browser identifiers
@@ -179,8 +181,9 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
-- `ie`, Microsoft Internet Explorer (discontinued)
+- `ie`, Microsoft Internet Explorer (discontinued; BCD is frozen)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
+- `oculus`, Meta Quest Browser (formerly Oculus Quest), based on Google Chrome (on Android)
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
 - `safari`, Safari on macOS
@@ -190,26 +193,9 @@ The currently accepted browser identifiers should be declared in alphabetical or
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
-#### Mirroring data
-
-Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Internet). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
-
-An example of this would be the following:
-
-```js
-"support": {
-  "chrome": {
-    "version_added": "66"
-  },
-  "chrome_android": "mirror", // will become { version_added: "66" }
-}
-```
-
-This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
-
 #### The `support_statement` object
 
-The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is an array of `simple_support_statement` objects, but if there is only one of them, the array must be omitted.
+The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is either a `simple_support_statement` object, an array of two or more `simple_support_statement` objects, or the string `"mirror"`.
 
 If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first. In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without. If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
 
@@ -237,6 +223,23 @@ Example of a `support` compat object (with 1 entry, array omitted):
   "ie": { "version_added": "6.0" }
 }
 ```
+
+#### Mirroring data
+
+Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Internet). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
+
+An example of this would be the following:
+
+```js
+"support": {
+  "chrome": {
+    "version_added": "66"
+  },
+  "chrome_android": "mirror", // will become { version_added: "66" }
+}
+```
+
+This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
 
 ### Compat data in support statements
 
@@ -278,9 +281,11 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
+Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
+
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed.
+Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
 
 Default values:
 
@@ -307,25 +312,7 @@ Examples:
 }
 ```
 
-### Initial versions
-
-The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
-
-| Browser          | Initial version | Notes                                                                                                                                                                    |
-| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Chrome           | 1               |                                                                                                                                                                          |
-| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
-| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
-| Firefox          | 1               |                                                                                                                                                                          |
-| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
-| IE               | 1               |                                                                                                                                                                          |
-| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
-| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
-| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
-| Safari           | 1               |                                                                                                                                                                          |
-| iOS Safari       | 1               |                                                                                                                                                                          |
-| Samsung Internet | 1.0             |                                                                                                                                                                          |
-| WebView Android  | 1               |                                                                                                                                                                          |
+Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 ### Ranged versions
 
@@ -392,8 +379,8 @@ In some cases features are named entirely differently and not just prefixed. Exa
 ```json
 {
   "alternative_name": "mozRequestFullScreen",
-  "version_added": "true",
-  "version_removed": "9.0"
+  "version_added": "4",
+  "version_removed": "9"
 }
 ```
 
@@ -450,10 +437,6 @@ An optional changeset/commit URL for the revision which implemented the feature 
 
 For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
 
-#### `partial_implementation`
-
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example).
-
 #### `notes`
 
 A string or `array` of strings containing additional information. If there is only one entry, the value of `notes` must simply be a string instead of an array.
@@ -472,7 +455,19 @@ Example:
 }
 ```
 
-The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addition, `<a>` tags may be used, such as to link to a browser's bug report, or MDN documentation.
+The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addition, `<a>` tags may be used, such as to link to a browser's bug report, or MDN documentation. Do not format `notes` as Markdown.
+
+#### `partial_implementation`
+
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+
+```json
+{
+  "version_added": "6",
+  "partial_implementation": true,
+  "notes": "The event handler is supported, but the event never fires."
+}
+```
 
 ### Status information
 

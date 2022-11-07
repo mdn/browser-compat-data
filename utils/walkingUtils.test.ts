@@ -12,39 +12,39 @@ import {
   descendantKeys,
 } from './walkingUtils.js';
 
-describe('joinPath()', function () {
-  it('joins dotted paths to features', function () {
+describe('joinPath()', () => {
+  it('joins dotted paths to features', () => {
     assert.equal(joinPath('html', 'elements'), 'html.elements');
   });
 
-  it('silently discards undefineds', function () {
+  it('silently discards undefineds', () => {
     assert.equal(joinPath(undefined, undefined, undefined), '');
     assert.equal(joinPath(undefined, 'api'), 'api');
   });
 });
 
-describe('isBrowser()', function () {
-  it('returns true for browser-like objects', function () {
+describe('isBrowser()', () => {
+  it('returns true for browser-like objects', () => {
     assert.equal(isBrowser(bcd.browsers.firefox), true);
   });
 
-  it('returns false for feature-like objects', function () {
+  it('returns false for feature-like objects', () => {
     assert.equal(isBrowser(query('html.elements.a')), false);
   });
 });
 
-describe('isFeature()', function () {
-  it('returns false for browser-like objects', function () {
+describe('isFeature()', () => {
+  it('returns false for browser-like objects', () => {
     assert.equal(isFeature(bcd.browsers.chrome), false);
   });
 
-  it('returns true for feature-like objects', function () {
+  it('returns true for feature-like objects', () => {
     assert.equal(isFeature(query('html.elements.a')), true);
   });
 });
 
-describe('descendantKeys()', function () {
-  it('returns empty array if data is invalid', function () {
+describe('descendantKeys()', () => {
+  it('returns empty array if data is invalid', () => {
     assert.strictEqual(descendantKeys(123).length, 0);
     assert.strictEqual(descendantKeys('Hello World!').length, 0);
     assert.strictEqual(descendantKeys(null).length, 0);

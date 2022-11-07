@@ -12,7 +12,6 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
    1. [Updating the compat data](#updating-the-compat-data)
    1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
 1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
-   1. [Optional: Generating data using the Web API Confluence Dashboard](#optional-generating-data-using-the-web-api-confluence-dashboard)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
    1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 1. [Getting help](#getting-help)
@@ -68,7 +67,7 @@ While contributing to BCD, there are a number of tools and other resources we re
 
 #### Chromium
 
-These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Samsung Internet, WebView and more.
+These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Quest, Samsung Internet, WebView and more.
 
 - [Chrome Platform Status](https://chromestatus.com/features): A list of features that have been added or are planned to be added in Chrome.
 - [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
@@ -93,7 +92,7 @@ There are many ways you can help improve this repository! For example:
 
 - **Fix a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues), or maybe you found your own. We recommend checking out issues labeled as ["good first issue"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue+%3A100%3A%22) or ["help wanted"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted+%3Asos%3A%22) first.
 - **Fix existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
-- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines.md) to add new features.
+- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines/index.md) to add new features.
 - **Review a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls). Let us know if these look good to you.
 
 ### Updating the compat data
@@ -102,7 +101,7 @@ If you're going to submit a pull request modifying the compat data, we highly re
 
 ### Finding browser version numbers for features
 
-When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](https://developer.mozilla.org/docs/MDN/Contribute/Processes/Matching_features_to_browser_version).
+When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](./matching-browser-releases/index.md).
 
 ## Opening issues and pull requests
 
@@ -113,10 +112,6 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 - Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 - Nesting of feature identifiers should make sense.
 - Notes use correct grammar and spelling. They should be complete sentences ending with a period.
-
-### Optional: Generating data using the Web API Confluence Dashboard
-
-If the feature you're interested in is a JavaScript API, you can cross-reference data against [Web API Confluence](https://web-confluence.appspot.com/) using the `confluence` command. This command overwrites data in your current working tree according to data from the dashboard. See [Using Confluence](using-confluence.md) for instructions.
 
 ### Optional: Generating data using the mdn-bcd-collector project
 

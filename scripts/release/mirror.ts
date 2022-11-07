@@ -10,7 +10,7 @@ import { InternalSupportBlock } from '../../types/index.js';
 
 type Notes = string | string[] | null;
 
-import compareVersions from 'compare-versions';
+import { compareVersions, compare } from 'compare-versions';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -32,7 +32,7 @@ const matchingSafariVersions = new Map([
   ['3.1', '2'],
   ['4', '3.2'],
   ['5', '4.2'],
-  ['5.1', '6'],
+  ['5.1', '5'],
   ['9.1', '9.3'],
   ['10.1', '10.3'],
   ['11.1', '11.3'],
@@ -42,9 +42,11 @@ const matchingSafariVersions = new Map([
 ]);
 
 /**
- * @param {string} targetBrowser
- * @param {string} sourceVersion
- * @returns {ReleaseStatement|boolean}
+ * Convert a version number to the matching version of the target browser
+ *
+ * @param {string} targetBrowser The browser to mirror to
+ * @param {string} sourceVersion The version from the source browser
+ * @returns {ReleaseStatement|boolean} The matching browser version
  */
 export const getMatchingBrowserVersion = (
   targetBrowser: BrowserName,
@@ -58,6 +60,11 @@ export const getMatchingBrowserVersion = (
     throw new Error('Browser does not have an upstream browser set.');
   }
   /* c8 ignore stop */
+
+  if (sourceVersion == 'preview') {
+    // If target browser doesn't have a preview version, map preview -> false
+    return browserData.preview_name ? 'preview' : false;
+  }
 
   if (targetBrowser === 'safari_ios') {
     // The mapping between Safari macOS and iOS releases is complicated and
@@ -76,10 +83,6 @@ export const getMatchingBrowserVersion = (
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
-
-  if (sourceVersion == 'preview') {
-    return 'preview';
-  }
 
   const range = sourceVersion.includes('≤');
   const sourceRelease =
@@ -110,11 +113,7 @@ export const getMatchingBrowserVersion = (
       } else if (
         release.engine_version &&
         sourceRelease.engine_version &&
-        compareVersions.compare(
-          release.engine_version,
-          sourceRelease.engine_version,
-          '>=',
-        )
+        compare(release.engine_version, sourceRelease.engine_version, '>=')
       ) {
         return r;
       }
@@ -125,11 +124,13 @@ export const getMatchingBrowserVersion = (
 };
 
 /**
- * @param {Notes?} notes
- * @param {RegExp} regex
- * @param {string} replace
+ * Update the notes by mirroring the version and replacing the browser name
+ *
+ * @param {Notes?} notes The notes to update
+ * @param {RegExp} regex The regex to check and search
+ * @param {string} replace The text to replace with
  * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
- * @returns {Notes?}
+ * @returns {Notes?} The notes with replacement performed
  */
 const updateNotes = (
   notes: Notes | null,
@@ -156,8 +157,10 @@ const updateNotes = (
 };
 
 /**
- * @param {SimpleSupportStatement} data
- * @returns {SimpleSupportStatement}
+ * Copy a support statement
+ *
+ * @param {SimpleSupportStatement} data The data to copied
+ * @returns {SimpleSupportStatement} The new copied object
  */
 const copyStatement = (
   data: SimpleSupportStatement,
@@ -171,53 +174,11 @@ const copyStatement = (
 };
 
 /**
- * @param {SimpleSupportStatement} sourceData
- * @param {BrowserName} targetBrowser
- * @param {[RegExp, string]} notesRepl
- * @returns {SimpleSupportStatement}
- */
-const bumpGeneric = (
-  sourceData: SimpleSupportStatement,
-  targetBrowser: BrowserName,
-  notesRepl?: [RegExp, string],
-): SimpleSupportStatement => {
-  const newData: SimpleSupportStatement = copyStatement(sourceData);
-
-  if (typeof sourceData.version_added === 'string') {
-    newData.version_added = getMatchingBrowserVersion(
-      targetBrowser,
-      sourceData.version_added,
-    );
-  }
-
-  if (
-    sourceData.version_removed &&
-    typeof sourceData.version_removed === 'string'
-  ) {
-    newData.version_removed = getMatchingBrowserVersion(
-      targetBrowser,
-      sourceData.version_removed,
-    );
-  }
-
-  if (notesRepl && sourceData.notes) {
-    const newNotes = updateNotes(
-      sourceData.notes,
-      notesRepl[0],
-      notesRepl[1],
-      (v: string) => getMatchingBrowserVersion(targetBrowser, v),
-    );
-    if (newNotes) {
-      newData.notes = newNotes;
-    }
-  }
-
-  return newData;
-};
-
-/**
- * @param {SupportStatement} data
- * @param {BrowserName} destination
+ * Perform mirroring of data
+ *
+ * @param {SupportStatement} sourceData The data to mirror from
+ * @param {BrowserName} destination The destination browser
+ * @returns {SupportStatement} The mirrored support statement
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
@@ -253,7 +214,36 @@ export const bumpSupport = (
     notesRepl = [/Chrome/g, 'Samsung Internet'];
   }
 
-  const newData = bumpGeneric(sourceData, destination, notesRepl);
+  const newData: SimpleSupportStatement = copyStatement(sourceData);
+
+  if (typeof sourceData.version_added === 'string') {
+    newData.version_added = getMatchingBrowserVersion(
+      destination,
+      sourceData.version_added,
+    );
+  }
+
+  if (
+    sourceData.version_removed &&
+    typeof sourceData.version_removed === 'string'
+  ) {
+    newData.version_removed = getMatchingBrowserVersion(
+      destination,
+      sourceData.version_removed,
+    );
+  }
+
+  if (notesRepl && sourceData.notes) {
+    const newNotes = updateNotes(
+      sourceData.notes,
+      notesRepl[0],
+      notesRepl[1],
+      (v: string) => getMatchingBrowserVersion(destination, v),
+    );
+    if (newNotes) {
+      newData.notes = newNotes;
+    }
+  }
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
@@ -268,6 +258,13 @@ export const bumpSupport = (
   return newData;
 };
 
+/**
+ * Perform mirroring for the target browser
+ *
+ * @param {BrowserName} destination The browser to mirror to
+ * @param {InternalSupportBlock} data The data to mirror with
+ * @returns {SupportStatement} The mirrored data
+ */
 const mirrorSupport = (
   destination: BrowserName,
   data: InternalSupportBlock,

@@ -15,17 +15,12 @@
                   "name": "#enable-experimental-web-platform-features",
                   "value_to_set": "Enabled"
                 }
-              ],
-              "notes": "By default, only the first child is rendered while the others have their <code>display</code> set to <code>none</code>."
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "1",
-              "notes": [
-                "<code>annotation</code> and <code>annotation-xml</code> elements are ignored if the <code>src</code> attribute is set.",
-                "The algorithm for determining the visible child has been corrected in Firefox 23 to match the MathML specification. In prior versions only the first child element was rendered."
-              ]
+              "version_added": "1"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -35,7 +30,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "5"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -47,8 +42,9 @@
             "deprecated": false
           }
         },
-        "displaystyle": {
+        "advanced_visible_child_selection": {
           "__compat": {
+            "description": "Use the <a href='https://developer.mozilla.org/docs/Web/MathML/Element/semantics#sect1'>algorithm described on MDN</a> to determine the visible child.",
             "support": {
               "chrome": {
                 "version_added": false
@@ -56,7 +52,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "83"
+                "version_added": "23",
+                "version_removed": "106"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -66,7 +63,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "8"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -74,8 +71,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
-              "deprecated": false
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }

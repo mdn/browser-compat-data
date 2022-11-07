@@ -1,12 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
-import {
-  BrowserName,
-  CompatStatement,
-  SupportStatement,
-} from '../../types/types.js';
+import { Linter, Logger, LinterData } from '../utils.js';
+import { BrowserName, SupportStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
 
@@ -17,13 +13,12 @@ import chalk from 'chalk-template';
  * @param {SupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(
+const processData = (
   data: SupportStatement,
   browser: BrowserName,
   logger: Logger,
-): void {
+): void => {
   if (!Array.isArray(data)) {
     // If there's only one statement, skip since this is a linter for multiple statements
     return;
@@ -50,16 +45,22 @@ function processData(
     }
     statements.push(statementKey);
   }
-}
+};
 
 export default {
   name: 'Multiple Statements',
   description:
     'Ensure there are not multiple statements without partial implementation or prefixes/alt. names',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     for (const [browser, support] of Object.entries(data.support)) {
-      processData(support, browser as BrowserName, logger);
+      processData(support as SupportStatement, browser as BrowserName, logger);
     }
   },
 } as Linter;

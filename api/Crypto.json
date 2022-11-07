@@ -30,12 +30,19 @@
           "ie": {
             "version_added": "11"
           },
-          "nodejs": {
-            "version_added": "15.0.0",
-            "alternative_name": "crypto.webcrypto",
-            "partial_implementation": true,
-            "notes": "<code>Crypto</code> is not a concrete interface, but calling <code>require('crypto').webcrypto</code> returns an instance of the <code>Crypto</code> class."
-          },
+          "nodejs": [
+            {
+              "version_added": "19.0.0",
+              "notes": "<code>Crypto</code> is not a concrete interface, but its methods are available on the global <code>crypto</code> object."
+            },
+            {
+              "version_added": "15.0.0",
+              "version_removed": "19.0.0",
+              "alternative_name": "crypto.webcrypto",
+              "partial_implementation": true,
+              "notes": "<code>Crypto</code> is not a concrete interface, but calling <code>require('crypto').webcrypto</code> returns an instance of the <code>Crypto</code> class."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -124,10 +131,16 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "16.7.0",
-              "notes": "From version 14.17.0, a similar method is available as <a href='https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto'><code>crypto.randomUUID()</code></a>."
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0"
+              },
+              {
+                "version_added": "16.7.0",
+                "version_removed": "19.0.0",
+                "notes": "From version 14.17.0, a similar method is available as <a href='https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto'><code>crypto.randomUUID()</code></a>."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -221,9 +234,7 @@
               "safari": {
                 "version_added": "15"
               },
-              "safari_ios": {
-                "version_added": "15"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },

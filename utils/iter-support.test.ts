@@ -5,21 +5,21 @@ import assert from 'node:assert/strict';
 
 import iterSupport from './iter-support.js';
 
-describe('iterSupport()', function () {
-  it('returns a `"version_added": null` support statement for non-existent browsers', function () {
+describe('iterSupport()', () => {
+  it('returns a `"version_added": null` support statement for non-existent browsers', () => {
     assert.deepEqual(iterSupport({ support: { firefox: [] } }, 'chrome'), [
       { version_added: null },
     ]);
   });
 
-  it('returns a single support statement as an array', function () {
+  it('returns a single support statement as an array', () => {
     assert.deepEqual(
       iterSupport({ support: { firefox: { version_added: true } } }, 'firefox'),
       [{ version_added: true }],
     );
   });
 
-  it('returns an array of support statements as an array', function () {
+  it('returns an array of support statements as an array', () => {
     const compatObj = {
       support: { firefox: [{ version_added: true }, { version_added: '1' }] },
     };

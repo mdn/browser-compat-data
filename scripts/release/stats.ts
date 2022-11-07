@@ -1,12 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-type Question = {
-  name: string;
-  message: string;
-};
-
-type Stats = {
+export type Stats = {
   commits: number;
   changed: number;
   insertions: number;
@@ -20,163 +15,144 @@ type Stats = {
   end: string;
 };
 
-import http from 'node:https';
-import readline from 'readline';
-import esMain from 'es-main';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+type ChangeStats = Pick<
+  Stats,
+  'commits' | 'changed' | 'insertions' | 'deletions'
+>;
 
-import { exec, releaseYargsBuilder, ReleaseYargs } from './utils.js';
+import chalk from 'chalk-template';
+
+import { exec, queryPRs, githubAPI } from './utils.js';
 import { walk } from '../../utils/index.js';
+import pluralize from '../lib/pluralize.js';
 
-const getJSON = (url: string): Promise<any> =>
-  new Promise((resolve, reject) =>
-    http.get(
-      url,
-      { headers: { 'User-Agent': 'bcd-release-script' } },
-      (response) => {
-        let body = '';
-        response.on('data', (data) => {
-          body += data;
-        });
-        response.on('error', (error) => reject(error));
-        response.on('end', () => {
-          resolve(JSON.parse(body));
-        });
-      },
-    ),
-  );
-
-const question = async (query: string): Promise<string> => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  const response = await new Promise<string>((resolve) =>
-    rl.question(query, resolve),
-  );
-  rl.close();
-  console.log();
-  return response;
-};
-
-const prompt = async (
-  questions: Array<Question>,
-): Promise<Record<Question['name'], number>> => {
-  const results: Record<Question['name'], number> = {};
-  for (const q of questions) {
-    results[q.name] = await question(`${q.message} `).then(Number);
-  }
-  return results;
-};
-
+/**
+ * Get stargazers for the repository
+ *
+ * @returns {number} The number of stargazer
+ */
 const stargazers = async (): Promise<number> => {
-  const json = await getJSON(
-    'https://api.github.com/repos/mdn/browser-compat-data',
-  );
+  const json = githubAPI('');
   return json.stargazers_count;
 };
 
-function stats(
-  start: string,
-  end: string,
-): Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'> {
+/**
+ * Get the number of contributors that have committed to the repository
+ *
+ * @returns {number} The number of contributors that have contributed to the repository
+ */
+const contributors = (): number => {
+  const data = exec(
+    'gh api /repos/mdn/browser-compat-data/contributors?anon=1 --paginate',
+  );
+  return JSON.parse('[' + data.replace(/\]\[/g, '],[') + ']').flat(1).length;
+};
+
+/**
+ * Get all of the stats for the release
+ *
+ * @param {string} start The last version number
+ * @returns {ChangeStats} The statistics
+ */
+const stats = (start: string): ChangeStats => {
   // Get just the diff stats summary
-  const diff = exec(`git diff --shortstat ${start}...${end}`);
+  const diff = exec(`git diff --shortstat ${start}...main`);
   if (diff === '') {
-    console.log('No changes for which to generate statistics.');
+    console.error(chalk`{red No changes for which to generate statistics.}`);
     process.exit(1);
   }
 
   // Extract the numbers from a line like this:
   // 50 files changed, 1988 insertions(+), 2056 deletions(-)
   const match = diff.match(
-    /(\d+) files* changed, (\d+) insertions*\(\+\), (\d+) deletions*/,
+    /(?<changed>\d+) files? changed(?:, (?<insertions>\d+) insertions?(\(\+\)))?(?:, (?<deletions>\d+) deletions?\(-\))?/,
   );
-  const [, changed, insertions, deletions] = match as string[];
+  if (!match) {
+    console.error(chalk`{red No changes for which to generate statistics.}`);
+    process.exit(1);
+  }
+
+  const { changed, insertions, deletions } = match.groups as any;
 
   // Get the number of commits
-  const commits = exec(`git rev-list --count ${start}...${end}`);
+  const commits = exec(`git rev-list --count ${start}...main`);
 
   return {
     commits: Number(commits),
-    changed: Number(changed),
-    insertions: Number(insertions),
-    deletions: Number(deletions),
+    changed: Number(changed) || 0,
+    insertions: Number(insertions) || 0,
+    deletions: Number(deletions) || 0,
   };
-}
+};
 
-const contributors = (
+/**
+ * Get the number of contributors that have committed to this release
+ *
+ * @param {string} fromDate The date of the last release
+ * @returns {Set<string>} The authors of the commits
+ */
+const getReleaseContributors = (fromDate: string): Set<string> => {
+  const prs = queryPRs({
+    json: 'author',
+    search: `merged:>=${fromDate}`,
+  });
+  return new Set(prs.map((pr) => pr.author.login));
+};
+
+/**
+ * Count the number of features in BCD
+ *
+ * @returns {number} The number of features
+ */
+const countFeatures = (): number => [...walk()].length;
+
+/**
+ * Format the stats as Markdown
+ *
+ * @param {Stats} details The stats to format
+ * @returns {string} The formatted stats
+ */
+export const formatStats = (details: Stats): string =>
+  [
+    '### Statistics',
+    '',
+    `- ${pluralize('contributor', details.releaseContributors)} ${
+      details.releaseContributors > 1 ? 'have' : 'has'
+    } changed ${pluralize('file', details.changed)} with ${pluralize(
+      'addition',
+      details.insertions,
+    )} and ${pluralize('deletion', details.deletions)} in ${pluralize(
+      'commit',
+      details.commits,
+    )} ([\`${details.start}...${
+      details.end
+    }\`](https://github.com/mdn/browser-compat-data/compare/${
+      details.start
+    }...${details.end}))`,
+    `- ${pluralize('total feature', details.features)}`,
+    `- ${pluralize('total contributor', details.totalContributors)}`,
+    `- ${pluralize('total stargazer', details.stars)}`,
+    '',
+  ].join('\n');
+
+/**
+ * Get the statistics for the release
+ *
+ * @param {string} start The last release number
+ * @param {string} end This release number
+ * @param {string} startDate The date of the last release
+ * @returns {Stats} The release statistics
+ */
+export const getStats = async (
   start: string,
   end: string,
-): Promise<Pick<Stats, 'releaseContributors' | 'totalContributors'>> =>
-  prompt([
-    {
-      name: 'releaseContributors',
-      message: `Find "contributors" at https://github.com/mdn/browser-compat-data/compare/${start}...${end}\nHow many people have contributed to this release?`,
-    },
-    {
-      name: 'totalContributors',
-      message:
-        'Find "contributors" at https://github.com/mdn/browser-compat-data/\nHow many people have contributed to browser-compat-data overall?',
-    },
-  ]) as unknown as Promise<
-    Pick<Stats, 'releaseContributors' | 'totalContributors'>
-  >;
-
-function countFeatures() {
-  return [...walk()].length;
-}
-
-const formatter = new Intl.NumberFormat('en-US');
-
-function formatNumber(n: number): string {
-  return formatter.format(n);
-}
-
-function formatStats(details: Stats): string {
-  const releaseContributors = formatNumber(details.releaseContributors);
-  const totalContributors = formatNumber(details.totalContributors);
-  const changed = formatNumber(details.changed);
-  const insertions = formatNumber(details.insertions);
-  const deletions = formatNumber(details.deletions);
-  const commits = formatNumber(details.commits);
-  const features = formatNumber(details.features);
-  const stars = formatNumber(details.stars);
-  const { start, end } = details;
-
-  return `\
-### Statistics
-
-<!-- TODO: replace 'main' with the release version number -->
-
-- ${releaseContributors} contributors have changed ${changed} files with ${insertions} additions and ${deletions} deletions in ${commits} commits ([\`${start}...${end}\`](https://github.com/mdn/browser-compat-data/compare/${start}...${end}))
-- ${features} total features
-- ${totalContributors} total contributors
-- ${stars} total stargazers`;
-}
-
-async function main(argv: ReleaseYargs): Promise<void> {
-  const { startVersionTag: start, endVersionTag: end } = argv;
-
-  console.log(
-    formatStats({
-      start,
-      end,
-      ...stats(start, end),
-      ...(await contributors(start, end)),
-      stars: await stargazers(),
-      features: countFeatures(),
-    }),
-  );
-}
-
-if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [start-version-tag [end-version-tag]]',
-    'Generate statistics for release notes',
-    releaseYargsBuilder,
-  );
-
-  await main(argv as unknown as ReleaseYargs);
-}
+  startDate: string,
+): Promise<Stats> => ({
+  start,
+  end,
+  ...stats(start),
+  releaseContributors: getReleaseContributors(startDate).size,
+  totalContributors: contributors(),
+  stars: await stargazers(),
+  features: countFeatures(),
+});

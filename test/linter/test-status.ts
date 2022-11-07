@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -9,7 +9,13 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-export const checkExperimental = (data: CompatStatement) => {
+/**
+ * Check if experimental should be true or false
+ *
+ * @param {CompatStatement} data The data to check
+ * @returns {boolean} The expected experimental status
+ */
+export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
     // Check if experimental should be false (code copied from migration 007)
 
@@ -59,51 +65,59 @@ export const checkExperimental = (data: CompatStatement) => {
 };
 
 /**
- * @param {CompatStatement} data
- * @param {Logger} logger
- * @param {string} path
+ * Check the status blocks of the compat date
+ *
+ * @param {CompatStatement} data The data to test
+ * @param {Logger} logger The logger to output errors to
+ * @param {string} category The feature category
  */
-function checkStatus(
+const checkStatus = (
   data: CompatStatement,
   logger: Logger,
-  path: string[] = [],
-): void {
+  category: string,
+): void => {
   const status = data.status;
+
   if (!status) {
     return;
+  } else if (category === 'webextensions') {
+    logger.error(
+      chalk`{red Has a {bold status object}, which is {bold not allowed} for web extensions.}`,
+    );
   }
 
   if (status.experimental && status.deprecated) {
     logger.error(
-      chalk`{red Unexpected simultaneous experimental and deprecated status in ${path.join(
-        '.',
-      )}}`,
+      chalk`{red Unexpected simultaneous {bold experimental} and {bold deprecated} status}`,
       { fixable: true },
     );
   }
 
   if (data.spec_url && status.standard_track === false) {
     logger.error(
-      chalk`{red {bold ${path.join(
-        '.',
-      )}} is marked as {bold non-standard}, but has a {bold spec_url}}`,
+      chalk`{red Marked as {bold non-standard}, but has a {bold spec_url}}`,
     );
   }
 
   if (!checkExperimental(data)) {
     logger.error(
-      chalk`{red Experimental should be set to {bold false} for {bold ${path.join(
-        '.',
-      )}} as the feature is supported in multiple browser engines.}`,
+      chalk`{red {bold Experimental} should be set to {bold false} as the feature is {bold supported} in {bold multiple browser} engines.}`,
+      { fixable: true },
     );
   }
-}
+};
 
 export default {
   name: 'Status',
   description: 'Test the status of support statements',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
-    checkStatus(data, logger);
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
+    checkStatus(data, logger, category);
   },
 } as Linter;

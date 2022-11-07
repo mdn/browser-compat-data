@@ -3,7 +3,7 @@
     "FontFaceSet": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet",
-        "spec_url": "https://drafts.csswg.org/css-font-loading/#FontFaceSet-interface",
+        "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#FontFaceSet-interface",
         "support": {
           "chrome": {
             "version_added": "35"
@@ -36,7 +36,7 @@
       "FontFaceSet": {
         "__compat": {
           "description": "<code>FontFaceSet()</code> constructor",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-fontfaceset",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-fontfaceset",
           "support": {
             "chrome": {
               "version_added": false
@@ -77,7 +77,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "105"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -103,7 +103,7 @@
       "add": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/add",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-add",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-add",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -137,10 +137,12 @@
       "check": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/check",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-check",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-check",
           "support": {
             "chrome": {
-              "version_added": "35"
+              "version_added": "35",
+              "partial_implementation": true,
+              "notes": "The method returns <code>false</code> instead of <code>true</code> for nonexistent or locally installed fonts. See <a href='https://crbug.com/591602'>bug 591602</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -171,7 +173,7 @@
       "clear": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/clear",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-clear",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-clear",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -205,7 +207,7 @@
       "delete": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/delete",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-delete",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-delete",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -371,7 +373,7 @@
       "load": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/load",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-load",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-load",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -406,7 +408,7 @@
         "__compat": {
           "description": "<code>loading</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloading",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-onloading",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -441,7 +443,7 @@
         "__compat": {
           "description": "<code>loadingdone</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloadingdone",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-onloadingdone",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -476,7 +478,7 @@
         "__compat": {
           "description": "<code>loadingerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloadingerror",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-onloadingerror",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -510,7 +512,7 @@
       "ready": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/ready",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-ready",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-ready",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -577,7 +579,7 @@
       "status": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/status",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-status",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#dom-fontfaceset-status",
           "support": {
             "chrome": {
               "version_added": "35"

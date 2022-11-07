@@ -19,7 +19,7 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
  */
-export function orderFeatures(_: string, value: Identifier): Identifier {
+export const orderFeatures = (_: string, value: Identifier): Identifier => {
   if (value instanceof Object && '__compat' in value) {
     value = Object.keys(value)
       .sort(compareFeatures)
@@ -29,14 +29,13 @@ export function orderFeatures(_: string, value: Identifier): Identifier {
       }, {});
   }
   return value;
-}
+};
 
 /**
  * Perform a fix of feature order within all the data in a specified file.
  * The function will then automatically write any needed changes back into the file.
  *
  * @param {string} filename The filename to perform fix upon
- * @returns {void}
  */
 const fixFeatureOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

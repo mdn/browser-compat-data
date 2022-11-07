@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
@@ -20,10 +20,9 @@ type LinkError = {
  * @param {LinkError[]} errors The errors object to push the new errors to
  * @param {string} actual The link to test
  * @param {string|RegExp} regexp The regex to test with
- * @param {(match: Array.<?string>) => object} matchHandler The callback
- * @returns {void}
+ * @param {(match: Array.<?string>) => object?} matchHandler The callback
  */
-function processLink(
+const processLink = (
   errors: LinkError[],
   actual: string,
   regexp: string | RegExp,
@@ -31,8 +30,8 @@ function processLink(
     issue: string;
     expected?: string;
     actualLink?: string;
-  } | void,
-): void {
+  } | null,
+): void => {
   const re = new RegExp(regexp, 'g');
   /** @type {RegExpExecArray} */
   let match;
@@ -52,7 +51,7 @@ function processLink(
       });
     }
   }
-}
+};
 
 /**
  * Process the data for any errors within the links
@@ -60,7 +59,7 @@ function processLink(
  * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
-export function processData(rawData: string): LinkError[] {
+export const processData = (rawData: string): LinkError[] => {
   const errors: LinkError[] = [];
 
   let actual = rawData;
@@ -75,12 +74,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://bugzil.la/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://bugzil.la/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -88,12 +85,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crbug.com/${match[2]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crbug.com/${match[2]}`,
+    }),
   );
 
   processLink(
@@ -101,12 +96,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crbug.com/${match[2]}/${match[3]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crbug.com/${match[2]}/${match[3]}`,
+    }),
   );
 
   processLink(
@@ -114,12 +107,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://chromium\.googlesource\.com/chromium/src/\+/([\w\d]+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://crrev.com/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crrev.com/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -127,12 +118,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`,
-    (match) => {
-      return {
-        issue: 'Use shortenable URL',
-        expected: `https://webkit.org/b/${match[1]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://webkit.org/b/${match[1]}`,
+    }),
   );
 
   processLink(
@@ -174,6 +163,8 @@ export function processData(rawData: string): LinkError[] {
           };
         }
       }
+
+      return null;
     },
   );
 
@@ -186,7 +177,7 @@ export function processData(rawData: string): LinkError[] {
       const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
 
       if (!pathMatch) {
-        return;
+        return null;
       }
 
       const locale = pathMatch[1];
@@ -235,6 +226,8 @@ export function processData(rawData: string): LinkError[] {
           expected: `https://developer.mozilla.org/${expectedPath}`,
         };
       }
+
+      return null;
     },
   );
 
@@ -242,12 +235,10 @@ export function processData(rawData: string): LinkError[] {
     errors,
     actual,
     String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`,
-    (match) => {
-      return {
-        issue: 'Use non-localized Microsoft Developer URL',
-        expected: `https://developer.microsoft.com/${match[2]}`,
-      };
-    },
+    (match) => ({
+      issue: 'Use non-localized Microsoft Developer URL',
+      expected: `https://developer.microsoft.com/${match[2]}`,
+    }),
   );
 
   processLink(
@@ -262,18 +253,26 @@ export function processData(rawData: string): LinkError[] {
           expected: `https://developer.mozilla.org/${match[1]}`,
         };
       }
+
+      return null;
     },
   );
 
   return errors;
-}
+};
 
 export default {
   name: 'Links',
   description:
     'Test links in the file to ensure they conform to BCD guidelines',
   scope: 'file',
-  check(logger: Logger, { rawdata }: { rawdata: string }) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { rawdata }: LinterData) => {
     const errors = processData(rawdata);
 
     for (const error of errors) {

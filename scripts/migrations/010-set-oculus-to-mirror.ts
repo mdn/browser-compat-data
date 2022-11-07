@@ -15,14 +15,13 @@ import { IS_WINDOWS } from '../../test/utils.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
- * Check to see if the key is __compat and modify the value to remove
- * flags from WebView Android.
+ * Check to see if the key is __compat and set 'oculus' to 'mirror'
  *
  * @param {string} key The key in the object
  * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value with WebView flags removed
+ * @returns {CompatStatement} The new value with 'oculus' set to 'mirror'
  */
-export const removeWebViewFlags = (
+export const doSetOculusToMirror = (
   key: string,
   value: CompatStatement,
 ): CompatStatement => {
@@ -35,16 +34,16 @@ export const removeWebViewFlags = (
 };
 
 /**
- * Perform removal of flags within WebView data within all the datain a
+ * Set '__compat.support.oculus' to 'mirror' within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
  *
  * @param {string} filename The filename to perform migration upon
  */
-export const fixWebViewFlags = (filename: string): void => {
+export const setOculusToMirror = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
-    JSON.parse(actual, removeWebViewFlags),
+    JSON.parse(actual, doSetOculusToMirror),
     null,
     2,
   );
@@ -62,12 +61,11 @@ export const fixWebViewFlags = (filename: string): void => {
 
 /**
  * Recursively load one or more files and/or directories passed as arguments
- * and perform removal of flags from WebView support data.
+ * and perform setting '__compat.support.oculus' to 'mirror' for.
  *
  * @param {string[]} files The files to load and perform migration upon
- * @returns {void}
  */
-function load(...files: string[]): void {
+const load = (...files: string[]): void => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
@@ -79,19 +77,19 @@ function load(...files: string[]): void {
 
     if (fs.statSync(file).isFile()) {
       if (path.extname(file) === '.json') {
-        fixWebViewFlags(file);
+        setOculusToMirror(file);
       }
 
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
+    const subFiles = fs
+      .readdirSync(file)
+      .map((subfile) => path.join(file, subfile));
 
     load(...subFiles);
   }
-}
+};
 
 if (esMain(import.meta)) {
   if (process.argv[2]) {
