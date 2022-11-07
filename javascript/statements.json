@@ -1389,15 +1389,31 @@
               },
               "nodejs": [
                 {
-                  "version_added": "16.15.0"
+                  "version_added": "17.5.0"
+                },
+                {
+                  "version_added": "17.0.0",
+                  "version_removed": "17.5.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--experimental-json-modules"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "16.15.0",
+                  "version_removed": "17.0.0"
                 },
                 {
                   "version_added": "16.14.0",
+                  "version_removed": "16.15.0",
                   "partial_implementation": true,
                   "notes": "<code>assert</code> no longer throws a parser error, but the <code>--experimental-json-modules</code> flag is still needed to load JSON modules."
                 },
                 {
                   "version_added": "16.0.0",
+                  "version_removed": "16.14.0",
                   "flags": [
                     {
                       "type": "runtime_flag",
