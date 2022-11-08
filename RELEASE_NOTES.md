@@ -1,5 +1,21 @@
 # Release notes
 
+## [v5.2.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.14)
+
+November 8, 2022
+
+### Additions
+
+- `browsers.opera.releases.94` ([#18165](https://github.com/mdn/browser-compat-data/pull/18165))
+- `css.properties.hyphenate-limit-chars` ([#18149](https://github.com/mdn/browser-compat-data/pull/18149))
+
+### Statistics
+
+- 6 contributors have changed 12 files with 352 additions and 308 deletions in 11 commits ([`v5.2.13...v5.2.14`](https://github.com/mdn/browser-compat-data/compare/v5.2.13...v5.2.14))
+- 13,910 total features
+- 955 total contributors
+- 4,293 total stargazers
+
 ## [v5.2.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.13)
 
 November 4, 2022
