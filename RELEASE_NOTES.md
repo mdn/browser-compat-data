@@ -1,5 +1,69 @@
 # Release notes
 
+## [v5.2.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.15)
+
+November 11, 2022
+
+### Additions
+
+- `api.ContentVisibilityAutoStateChangedEvent` ([#18176](https://github.com/mdn/browser-compat-data/pull/18176))
+- `api.ContentVisibilityAutoStateChangedEvent.ContentVisibilityAutoStateChangedEvent` ([#18176](https://github.com/mdn/browser-compat-data/pull/18176))
+- `api.ContentVisibilityAutoStateChangedEvent.skipped` ([#18176](https://github.com/mdn/browser-compat-data/pull/18176))
+- `api.Element.contentvisibilityautostatechanged_event` ([#18176](https://github.com/mdn/browser-compat-data/pull/18176))
+- `api.MediaSource.activeSourceBuffers.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.addSourceBuffer.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.canConstructInDedicatedWorker` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.clearLiveSeekableRange.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.duration.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.endOfStream.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.handle` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.isTypeSupported.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.readyState.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.removeSourceBuffer.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.setLiveSeekableRange.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.sourceBuffers.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.sourceclose_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.sourceended_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.sourceopen_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSource.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.MediaSourceHandle` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.abort_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.abort.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.appendBuffer.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.appendWindowEnd.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.appendWindowStart.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.audioTracks.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.buffered.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.changeType.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.error_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.mode.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.remove.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.textTracks.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.timestampOffset.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.update_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.updateend_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.updatestart_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.updating.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.videoTracks.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBuffer.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBufferList.addsourcebuffer_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBufferList.length.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBufferList.removesourcebuffer_event.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.SourceBufferList.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.corruptedVideoFrames.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.creationTime.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.droppedVideoFrames.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.totalFrameDelay.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.totalVideoFrames.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+- `api.VideoPlaybackQuality.worker_support` ([#18189](https://github.com/mdn/browser-compat-data/pull/18189))
+
+### Statistics
+
+- 5 contributors have changed 20 files with 1,703 additions and 117 deletions in 6 commits ([`v5.2.14...v5.2.15`](https://github.com/mdn/browser-compat-data/compare/v5.2.14...v5.2.15))
+- 13,960 total features
+- 955 total contributors
+- 4,295 total stargazers
+
 ## [v5.2.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.14)
 
 November 8, 2022
