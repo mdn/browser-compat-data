@@ -456,7 +456,11 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "57"
+                "version_added": "57",
+                "notes": [
+                  "Must be called from inside the handler for a <a href='/en-US/docs/Mozilla/Add-ons/WebExtensions/User_actions'>user action</a>. From Firefox 108, this restriction has been lifted behind a preference. See <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1799344'>bug 1799344</a>.",
+                  "Support for the <code>windowId</code> parameter was added in Firefox 108."
+                ]
               },
               "firefox_android": {
                 "version_added": "79"
