@@ -1,5 +1,16 @@
 # Release notes
 
+## [v5.2.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.16)
+
+November 15, 2022
+
+### Statistics
+
+- 3 contributors have changed 29 files with 766 additions and 1,057 deletions in 5 commits ([`v5.2.15...v5.2.16`](https://github.com/mdn/browser-compat-data/compare/v5.2.15...v5.2.16))
+- 13,960 total features
+- 956 total contributors
+- 4,294 total stargazers
+
 ## [v5.2.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.15)
 
 November 11, 2022
