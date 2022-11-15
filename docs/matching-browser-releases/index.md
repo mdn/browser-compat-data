@@ -4,11 +4,13 @@ When contributing to the documentation on the MDN web docs site, you will often 
 
 > **Note:** In this article, the term **feature** is used to refer to anything that might need to be documented on MDN. This includes APIs, HTML elements, new HTML attributes, new CSS properties, new possible values for CSS properties, and so forth. Anything that needs to be documented, from very small to very large.
 
-## Chrome
+## Chromium
+
+### Chrome
 
 There are various ways to locate information about the release of a feature on Chrome. Some of them are quite easy but less likely to provide the details you need, while others take some significant work but are much more likely to provide precise details.
 
-### Useful resources
+#### Useful resources
 
 The following sites and tools are helpful when trying to track down history information for a feature in Chrome:
 
@@ -23,7 +25,7 @@ The following sites and tools are helpful when trying to track down history info
 - [Interfaces not exposed to WebView](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt)
 - [WebKit bugs](https://bugs.webkit.org/)
 
-### Getting the Chrome version for a changeset or revision
+#### Getting the Chrome version for a changeset or revision
 
 Given a particular Chrome changeset or revision number, you can look up the version number of Chrome that first shipped with those changes included using Google's [Find Releases tool](https://storage.googleapis.com/chromium-find-releases-static/index.html). As long as the change happened after the Chrome code moved to `git`, this will return the corresponding version number.
 
@@ -33,7 +35,9 @@ For example, given the string `05b49ea1`, the tool first looks for a match among
 
 Here, we see that changeset `05b49ea1` was first landed for Chrome 56, but was then backported to Chrome 55 and was presumably shipped there. This assumes the feature was not backed out at some point, and it's important to check on this.
 
-### Version numbers for Chrome for Android
+#### Version numbers for Chrome for Android
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 Chrome for Android shares version numbers with the desktop release, although not every desktop Chrome version has a corresponding Android version. The table below will help map features to versions of Chrome for Android
 
@@ -43,13 +47,15 @@ Chrome for Android shares version numbers with the desktop release, although not
 | 19-25                                               | 25 (there were no Chrome for Android versions 19 through 24)    |
 | 26 and higher                                       | The same version as desktop                                     |
 
-### Version numbers for features in Android WebView
+#### Version numbers for features in Android WebView
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 The Android WebView component switched to being based off the latest version of Chrome during the Chrome 37 lifecycle, so any feature that's present in Android WebView _and_ was introduced during or after the Chrome 37 time period should have the same versions as the Chrome release at the same time. For example, if a feature is added to WebView while Chrome 55 is current, then the value of `version_added` is `55`.
 
 If a feature is added to WebView prior to the Chrome 37 time period, and its version number is not known (looking these up is a more difficult process), specify `≤37` as the version. Otherwise, if you do know the WebView component's version number, use that instead.
 
-#### Features excluded from WebView
+##### Features excluded from WebView
 
 One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt) which are not available in a WebView.
 
@@ -65,15 +71,17 @@ If only an interface line is included in the exclusion list, then the entire int
 
 Items listed under "`[GLOBAL OBJECT]`" are globals which are not available on WebView.
 
-### View a specific release's code
+#### View a specific release's code
 
 The Chromium source code repository maintains a set of tags, one for each release of Chrome going back to version 10.0.601.0. A [list of links to these tags](https://chromium.googlesource.com/chromium/src.git/+refs) is available. This is helpful when you need to check for the presence of a given feature in a particular release, or to see if a given change was backed out or not prior to the release of a given version of Chrome.
 
-## Edge
+### Edge
 
 Edge is based on Chromium and Microsoft has replaced older versions of the previously EdgeHTML-based browser with the new Chromium-based browser.
 
-### Matching Chrome versions
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 Edge continuously fetches _upstream_ changes from the Chromium project and its version numbering strategy is the same as Chrome's. Although it can take a few days (or weeks) for a feature that appears in Chrome to also appear in Edge, the feature will ship in both browsers under the same version number.
 
@@ -81,15 +89,37 @@ Indeed, after Edge 18, when Edge adopted Chromium, the version number jumped to 
 
 There may be some exceptions and you should test the feature you are documenting in both browsers. While most features will be the same between all Chromium browsers at the same version number, Edge has its own _downstream_ codebase and may alter, remove, or disable certain Chromium features.
 
-## Opera
+### Opera
 
 After Opera 12.16, Opera adopted the Blink engine and released Opera 15 (skipping 13 and 14), becoming based upon Chromium.
 
-### Matching Chrome versions
+#### Matching Chrome versions
 
-After migrating to the Blink engine, Opera's version became Chrome's/Blink's version minus 13 — that is, Opera 15 used Blink 28 (15+13=28) — until Opera Desktop 69 and Opera Android 43. The browser files within the browser-compat-data project contain a mapping of Opera versions to Chromium/Blink versions; see [browsers/opera.json](../../browsers/opera.json) and [browsers/opera_android.json](../../browsers/opera_android.json).
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+After migrating to the Blink engine, Opera's version became Chrome's/Blink's version minus 13 — that is, Opera 15 used Blink 28 (15+13=28) — until Opera Desktop 69 and Opera Android 43. The browser files contain a mapping of Opera versions to Chromium/Blink versions; see [browsers/opera.json](../../browsers/opera.json) and [browsers/opera_android.json](../../browsers/opera_android.json).
 
 There may be some exceptions and you should test the feature you are documenting in both browsers. While most features will be the same between all Chromium browsers at the same version number, Opera has its own _downstream_ codebase and may alter, remove, or disable certain Chromium features.
+
+### Samsung Internet
+
+Samsung Internet is a Chromium browser specifically tailored for Android devices by Samsung. Its release cycle differs from Chromium. Unlike other forks, however, sometimes Samsung Internet will pull features from newer Chromium versions (ex. Samsung Internet 11.2, which is based on Chromium 75, may include features from Chromium 77).
+
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+Most of the features for Samsung Internet will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occassions, however, Samsung Internet may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
+
+### Quest
+
+The Meta Quest (formerly known as Oculus Quest) browser is based upon the Android build of Chromium. Like Samsung Internet, its release cycle differs from Chromium.
+
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+Most of the features for the Quest's browser may simply be automatically mirrored from Chrome Android. However, if you need to manually track down version numbers for the browser, we have found that there is very little public documentation and the documentation that is present is severely outdated. Additionally, like Samsung Internet, there is no public repository, but unlike Samsung Internet, older APKs are not available for downloading and installation. We recommend that contributors simply stick with auto-mirroring the data and leave tracking down specific versions to Oculus Browser engineers.
 
 ## Firefox
 
@@ -293,31 +323,27 @@ Most of the time, APIs and other features are present in both the desktop and An
 
 The [Searchfox](https://searchfox.org/) website provides another method you can use to search Firefox source code. Searchfox is a tool that indexes the Firefox repositories (most usefully, the main [mozilla-central source code](https://searchfox.org/mozilla-central/source) and, interesting, the [WHATWG HTML specification is indexed](https://searchfox.org/whatwg-html/source) as well).
 
-## Quest
-
-The Meta Quest browser is based upon the Android build of Chromium. Unlike other Chromium-based browsers, Quest's version numbers do not correlate to those from Chromium. Chromium's release notes and revision history (referenced above) are valid sources of information, but you will need to find authoritative information on a given release of Quest before you can identify the relevant developments in Chromium. [The Oculus Browser Developer Release Notes](https://developer.oculus.com/documentation/web/browser-release-notes/) offers some information of this type.
-
 ## Safari
 
-Fortunately, the WebKit source repository, found in SVN and available on the web using Trac, has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.
+Fortunately, the [WebKit source repository](https://github.com/WebKit/WebKit) has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.
 
-You can then compare the WebKit version number to the Safari version history found on Wikipedia, if necessary, to determine exactly which Safari version was shipped with the change in place.
+You can then compare the WebKit version number to the Safari version history in the [`browsers/safari.json`](../../browsers/safari.json) file, if necessary, to determine exactly which Safari version was shipped with the change in place.
 
-### Useful links
+#### Useful links
 
 - [WebKit bug database](https://bugs.webkit.org/)
 - [WebKit feature status catalog](https://webkit.org/status/)
 - [Safari Technology Preview release notes and history](https://developer.apple.com/safari/technology-preview/release-notes/) (Each Safari tech preview release has notes here)
-- [Trac revision timeline](https://trac.webkit.org/)
-- [Browse WebKit source](https://trac.webkit.org/browser)
+- [Browse WebKit source](https://github.com/WebKit/WebKit)
 
-  - [By Apple product release number](https://trac.webkit.org/browser/webkit/releases/Apple) (Safari, iOS, Safari Technology Preview, watchOS, some older macOS releases). This is how we number Safari in our [Browser Compatibility Database](https://github.com/mdn/browser-compat-data).
-  - [By Safari build number](https://trac.webkit.org/browser/webkit/tags) (SVN tags)
-  - [By WebKit build number](https://trac.webkit.org/browser/webkit/branches) (SVN branches)
-  - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history) (list of Safari versions with feature summaries and the corresponding WebKit build number for each)
+  - [By Safari build number](https://github.com/WebKit/WebKit/tags) (Git tags)
+  - [By WebKit build number](https://github.com/WebKit/WebKit/branches) (Git branches)
+  - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history) (list of Safari versions with feature summaries and the corresponding WebKit build number for each -- mirrored from BCD)
 
 > **Warning:** Version numbers listed in the documentation at <https://developer.apple.com/documentation/webkitjs> are inaccurate. Please use other resources to determine the version numbers.
 
-### Safari on iOS/iPadOS
+#### Safari on iOS/iPadOS
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Safari desktop._
 
 The entries for Safari on iOS/iPadOS use the OS version number, rather than the Safari version number. Before Safari iOS 6, the versions did not perfectly match the Safari Desktop counterparts. See the relevant [browser JSON](../../browsers/safari-ios.json) for a mapping of Safari to Safari iOS/iPadOS versions.
