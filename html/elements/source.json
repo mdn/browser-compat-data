@@ -47,16 +47,22 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": {
-                "version_added": "106",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.picture_source_dimension_attributes.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "108"
+                },
+                {
+                  "version_added": "106",
+                  "version_removed": "108",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.picture_source_dimension_attributes.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "9"
