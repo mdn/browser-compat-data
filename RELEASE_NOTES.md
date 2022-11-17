@@ -1,5 +1,27 @@
 # Release notes
 
+## [v5.2.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.17)
+
+November 17, 2022
+
+### Removals
+
+- `api.Performance.measure.returns_undefined` ([#18216](https://github.com/mdn/browser-compat-data/pull/18216))
+
+### Additions
+
+- `api.Performance.measure.returns_performancemeasure` ([#18216](https://github.com/mdn/browser-compat-data/pull/18216))
+- `api.PerformanceObserver.PerformanceObserver.droppedEntriesCount` ([#18217](https://github.com/mdn/browser-compat-data/pull/18217))
+- `http.headers.Sec-CH-Prefers-Color-Scheme` ([#18203](https://github.com/mdn/browser-compat-data/pull/18203))
+- `http.headers.Sec-CH-Prefers-Reduced-Motion` ([#18203](https://github.com/mdn/browser-compat-data/pull/18203))
+
+### Statistics
+
+- 7 contributors have changed 7 files with 142 additions and 37 deletions in 7 commits ([`v5.2.16...v5.2.17`](https://github.com/mdn/browser-compat-data/compare/v5.2.16...v5.2.17))
+- 13,963 total features
+- 958 total contributors
+- 4,299 total stargazers
+
 ## [v5.2.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.16)
 
 November 15, 2022
