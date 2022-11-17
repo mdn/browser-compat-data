@@ -625,7 +625,8 @@
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
-                ]
+                ],
+                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior. Spec and implementation work needed."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1117,7 +1118,7 @@
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "18"
+              "version_added": false
             },
             "firefox": {
               "version_added": false
@@ -1141,7 +1142,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1685,7 +1686,8 @@
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
-                ]
+                ],
+                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior. Spec and implementation work needed."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
