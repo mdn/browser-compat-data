@@ -104,19 +104,13 @@ export const getMatchingBrowserVersion = (
     ) {
       // Handle mirroring for Chromium forks when upstream version is pre-Blink
       return range ? `≤${r}` : r;
-    } else if (release.engine == sourceRelease.engine) {
-      if (
-        ['beta', 'nightly'].includes(release.status) &&
-        release.status == sourceRelease.status
-      ) {
-        return r;
-      } else if (
-        release.engine_version &&
-        sourceRelease.engine_version &&
-        compare(release.engine_version, sourceRelease.engine_version, '>=')
-      ) {
-        return r;
-      }
+    } else if (
+      release.engine == sourceRelease.engine &&
+      release.engine_version &&
+      sourceRelease.engine_version &&
+      compare(release.engine_version, sourceRelease.engine_version, '>=')
+    ) {
+      return r;
     }
   }
 

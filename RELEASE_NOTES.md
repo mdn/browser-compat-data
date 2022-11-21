@@ -1,5 +1,42 @@
 # Release notes
 
+## [v5.2.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.17)
+
+November 18, 2022
+
+### Removals
+
+- `api.Performance.measure.returns_undefined` ([#18216](https://github.com/mdn/browser-compat-data/pull/18216))
+
+### Additions
+
+- `api.Performance.mark.markOptions_parameter` ([#18229](https://github.com/mdn/browser-compat-data/pull/18229))
+- `api.Performance.mark.returns_performancemark` ([#18229](https://github.com/mdn/browser-compat-data/pull/18229))
+- `api.Performance.measure.measureOptions_parameter` ([#18228](https://github.com/mdn/browser-compat-data/pull/18228))
+- `api.Performance.measure.returns_performancemeasure` ([#18216](https://github.com/mdn/browser-compat-data/pull/18216))
+- `api.PerformanceObserver.PerformanceObserver.droppedEntriesCount` ([#18217](https://github.com/mdn/browser-compat-data/pull/18217))
+- `html.manifest.id` ([#18197](https://github.com/mdn/browser-compat-data/pull/18197))
+- `http.headers.Sec-CH-Prefers-Color-Scheme` ([#18203](https://github.com/mdn/browser-compat-data/pull/18203))
+- `http.headers.Sec-CH-Prefers-Reduced-Motion` ([#18203](https://github.com/mdn/browser-compat-data/pull/18203))
+
+### Statistics
+
+- 11 contributors have changed 12 files with 321 additions and 55 deletions in 13 commits ([`v5.2.16...v5.2.17`](https://github.com/mdn/browser-compat-data/compare/v5.2.16...v5.2.17))
+- 13,967 total features
+- 958 total contributors
+- 4,303 total stargazers
+
+## [v5.2.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.16)
+
+November 15, 2022
+
+### Statistics
+
+- 3 contributors have changed 29 files with 766 additions and 1,057 deletions in 5 commits ([`v5.2.15...v5.2.16`](https://github.com/mdn/browser-compat-data/compare/v5.2.15...v5.2.16))
+- 13,960 total features
+- 956 total contributors
+- 4,294 total stargazers
+
 ## [v5.2.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.15)
 
 November 11, 2022
