@@ -62,7 +62,7 @@ While contributing to BCD, there are a number of tools and other resources we re
 #### General
 
 - [MDN Web Docs](https://developer.mozilla.org): yes, we use our own documentation regularly to obtain code examples and determine what a feature is meant to do!
-- [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
+- [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
 - [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with open source plans.
 
 #### Chromium
@@ -115,7 +115,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
-If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://github.com/GooborgStudios/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
 
 ### Optional: Generating data by mirroring
 
