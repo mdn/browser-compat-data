@@ -103,8 +103,6 @@ export const implementedAndRemoved = (
  */
 export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
-    const { support } = data;
-
     const rule1Fail = neverImplemented(data.support);
     if (rule1Fail) {
       logger.error(chalk`feature was never implemented.`);
