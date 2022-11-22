@@ -15,18 +15,12 @@
                   "name": "#enable-experimental-web-platform-features",
                   "value_to_set": "Enabled"
                 }
-              ],
-              "notes": "This follows MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>."
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "1",
-              "notes": [
-                "In Firefox 1, only the first child element is rendered.",
-                "In Firefox 23, the algorithm to determine the visible child <a href='https://developer.mozilla.org/docs/Web/MathML/Element/semantics#sect1'>described on MDN</a> has been implemented.",
-                "Firefox 106 and later versions follow MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>."
-              ]
+              "version_added": "1"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -36,11 +30,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "5",
-              "notes": [
-                "In Safari 5, only the first child element is rendered.",
-                "In Safari 8, the algorithm to determine the visible child <a href='https://developer.mozilla.org/docs/Web/MathML/Element/semantics#sect1'>described on MDN</a> has been implemented."
-              ]
+              "version_added": "5"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -50,6 +40,40 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "advanced_visible_child_selection": {
+          "__compat": {
+            "description": "Use the <a href='https://developer.mozilla.org/docs/Web/MathML/Element/semantics#sect1'>algorithm described on MDN</a> to determine the visible child.",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "23",
+                "version_removed": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "8"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
           }
         }
       }

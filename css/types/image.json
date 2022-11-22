@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;image&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image",
-          "spec_url": "https://drafts.csswg.org/css-images/#image-values",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#image-values",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -45,17 +45,21 @@
           "__compat": {
             "description": "<code>cross-fade()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#cross-fade-function",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": "17",
-                "notes": "Supports the original dual-image with percentage implementation only."
+                "notes": [
+                  "Supports the original dual-image with percentage implementation only.",
+                  "See <a href='https://crbug.com/614906'>bug 614906</a> for supporting the unprefixed <code>cross-fade()</code> function."
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1657516'>bug 1657516</a>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -86,16 +90,8 @@
                   "notes": "Supports the original dual-image with percentage implementation only."
                 }
               ],
-              "samsunginternet_android": {
-                "prefix": "-webkit-",
-                "version_added": "1.0",
-                "notes": "Support for the original dual-image with percentage implementation only."
-              },
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "≤37",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              }
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -108,7 +104,7 @@
           "__compat": {
             "description": "<code>element()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#element-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -179,7 +175,7 @@
           "__compat": {
             "description": "<code>&lt;gradient&gt;</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#gradients",
             "support": {
               "chrome": [
                 {
@@ -264,7 +260,7 @@
             "__compat": {
               "description": "<code>conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#conic-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -332,7 +328,7 @@
             "__compat": {
               "description": "<code>linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#linear-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#linear-gradients",
               "support": {
                 "chrome": [
                   {
@@ -586,7 +582,7 @@
             "__compat": {
               "description": "<code>radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#radial-gradients",
               "support": {
                 "chrome": [
                   {
@@ -822,7 +818,7 @@
             "__compat": {
               "description": "<code>repeating-conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#repeating-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -857,7 +853,7 @@
             "__compat": {
               "description": "<code>repeating-linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -1111,7 +1107,7 @@
             "__compat": {
               "description": "<code>repeating-radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -1355,7 +1351,7 @@
           "__compat": {
             "description": "<code>image()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1397,7 +1393,7 @@
           "__compat": {
             "description": "<code>image-set()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-set-notation",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
@@ -1501,9 +1497,7 @@
                   "version_added": false
                 },
                 "safari_ios": "mirror",
-                "samsunginternet_android": {
-                  "version_added": false
-                },
+                "samsunginternet_android": "mirror",
                 "webview_android": "mirror"
               },
               "status": {

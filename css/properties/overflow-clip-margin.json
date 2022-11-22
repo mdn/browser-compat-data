@@ -4,16 +4,19 @@
       "overflow-clip-margin": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow-clip-margin",
-          "spec_url": "https://drafts.csswg.org/css-overflow/#overflow-clip-margin",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-overflow/#overflow-clip-margin",
           "support": {
             "chrome": {
-              "version_added": "90"
+              "version_added": "90",
+              "partial_implementation": true,
+              "notes": "Only works when both axes are using <code>overflow: clip</code>. See <a href='https://crbug.com/1354474'>bug 1354474</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1661582'>bug 1661582</a>."
+              "version_added": "102",
+              "partial_implementation": true,
+              "notes": "Only supports using a length, not a visual box. See <a href='https://bugzil.la/1661582'>bug 1661582</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -30,7 +33,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

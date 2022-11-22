@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;length&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/length",
-          "spec_url": "https://drafts.csswg.org/css-values/#lengths",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-values/#lengths",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -150,6 +150,46 @@
             }
           }
         },
+        "container_query_length_units": {
+          "__compat": {
+            "description": "Container query length units <code>cqw</code>, <code>cqh</code>, <code>cqi</code>, <code>cqb</code>, <code>cqmin</code>, <code>cqmax</code>",
+            "support": {
+              "chrome": {
+                "version_added": "105"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "108",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.container-queries.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "ex": {
           "__compat": {
             "description": "<code>ex</code> unit",
@@ -194,8 +234,7 @@
             "description": "<code>ic</code> unit",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/937101'>bug 937101</a>."
+                "version_added": "106"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -341,7 +380,7 @@
             "description": "<code>vb</code> unit",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -412,7 +451,7 @@
             "description": "<code>vi</code> unit",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -445,7 +484,7 @@
             "description": "<code>dvb</code>, <code>dvh</code>, <code>dvi</code>, <code>dvmax</code>, <code>dvmin</code>, <code>dvw</code> units",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -478,7 +517,7 @@
             "description": "<code>lvb</code>, <code>lvh</code>, <code>lvi</code>, <code>lvmax</code>, <code>lvmin</code>, <code>lvw</code> units",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -511,7 +550,7 @@
             "description": "<code>svb</code>, <code>svh</code>, <code>svi</code>, <code>svmax</code>, <code>svmin</code>, <code>svw</code> units",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "chrome_android": "mirror",
               "edge": "mirror",

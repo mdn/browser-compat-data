@@ -32,9 +32,7 @@
             "safari": {
               "version_added": "5.1"
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -42,39 +40,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "bevelled": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "71"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         },
         "denomalign": {
@@ -89,10 +54,7 @@
                 "version_added": "1",
                 "version_removed": "71"
               },
-              "firefox_android": {
-                "version_added": "4",
-                "version_removed": "79"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -102,15 +64,13 @@
               "safari": {
                 "version_added": "5.1"
               },
-              "safari_ios": {
-                "version_added": "5"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -119,7 +79,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "83",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -133,13 +100,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "5.1",
-                "notes": "Before Safari 9, &lt;length&gt; values are not supported. Only <code>0</code>, <code>thin</code>, <code>medium</code>, and <code>thick</code> are supported."
-              },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari": [
+                {
+                  "version_added": "9"
+                },
+                {
+                  "version_added": "5.1",
+                  "partial_implementation": true,
+                  "notes": "Only <code>0</code>, <code>thin</code>, <code>medium</code>, and <code>thick</code> are supported."
+                }
+              ],
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -147,6 +118,109 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "named_spaces": {
+            "__compat": {
+              "description": "Named spaces (e.g. <code>thinmathspace</code> to mean 3/18em)",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Attribute/Values#legacy_mathml_lengths",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "1"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
+            }
+          },
+          "nonzero_unitless_values": {
+            "__compat": {
+              "description": "Nonzero unitless values (e.g. 5 to mean 500% the default thickness)",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Attribute/Values#legacy_mathml_lengths",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "1",
+                  "version_removed": "70"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
+            }
+          },
+          "thin_medium_thick": {
+            "__compat": {
+              "description": "<code>thin</code>, <code>medium</code>, <code>thick</code> values",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "1",
+                  "version_removed": "83"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "5.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
             }
           }
         },
@@ -162,10 +236,7 @@
                 "version_added": "1",
                 "version_removed": "71"
               },
-              "firefox_android": {
-                "version_added": "4",
-                "version_removed": "79"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -175,15 +246,13 @@
               "safari": {
                 "version_added": "5.1"
               },
-              "safari_ios": {
-                "version_added": "5"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
