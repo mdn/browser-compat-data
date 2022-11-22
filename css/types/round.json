@@ -12,9 +12,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "108",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.round.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
