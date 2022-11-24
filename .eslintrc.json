@@ -4,18 +4,72 @@
     "jest": true,
     "node": true
   },
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "jsdoc",
+    "prefer-arrow-functions"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jsdoc/recommended"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "parser": "@babel/eslint-parser",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": "error"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-expressions": "error",
+    "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
+    "consistent-return": "error",
+    "curly": "error",
+    "default-case": "off",
+    "default-case-last": "error",
+    "jsdoc/check-param-names": "error",
+    "jsdoc/require-description": "warn",
+    "jsdoc/require-jsdoc": [
+      "warn",
+      {
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "ClassExpression": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        }
+      }
+    ],
+    "jsdoc/require-param-type": "error",
+    "jsdoc/require-returns": "error",
+    "jsdoc/require-returns-type": "error",
+    "jsdoc/no-undefined-types": "error",
+    "jsdoc/require-yields": "error",
+    "linebreak-style": ["error", "unix"],
+    "no-console": "off",
+    "no-else-return": "error",
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-eval": "error",
+    "no-labels": "error",
+    "no-lone-blocks": "error",
+    "no-return-assign": "error",
+    "no-self-compare": "error",
+    "no-unused-expressions": "off",
+    "no-useless-call": "error",
+    "prefer-arrow-functions/prefer-arrow-functions": [
+      "error",
+      { "returnStyle": "implicit" }
+    ],
+    "prefer-const": "error",
+    "prettier/prettier": "error",
+    "quotes": "off"
   }
 }

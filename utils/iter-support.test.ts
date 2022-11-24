@@ -1,0 +1,30 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import assert from 'node:assert/strict';
+
+import iterSupport from './iter-support.js';
+
+describe('iterSupport()', () => {
+  it('returns a `"version_added": null` support statement for non-existent browsers', () => {
+    assert.deepEqual(iterSupport({ support: { firefox: [] } }, 'chrome'), [
+      { version_added: null },
+    ]);
+  });
+
+  it('returns a single support statement as an array', () => {
+    assert.deepEqual(
+      iterSupport({ support: { firefox: { version_added: true } } }, 'firefox'),
+      [{ version_added: true }],
+    );
+  });
+
+  it('returns an array of support statements as an array', () => {
+    const compatObj = {
+      support: { firefox: [{ version_added: true }, { version_added: '1' }] },
+    };
+    const support = [{ version_added: true }, { version_added: '1' }];
+
+    assert.deepEqual(iterSupport(compatObj, 'firefox'), support);
+  });
+});
