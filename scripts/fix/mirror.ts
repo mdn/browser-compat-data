@@ -8,20 +8,12 @@ import {
 } from '../../types/index.js';
 
 import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-import esMain from 'es-main';
-import { fdir } from 'fdir';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 import stringify from 'fast-json-stable-stringify';
 
 import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
 import mirrorSupport from '../release/mirror.js';
-
-const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const downstreamBrowsers = (
   Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
@@ -62,7 +54,6 @@ export const isMirrorEquivalent = (
  * Set the support statement for each browser to mirror if it matches mirroring
  *
  * @param {CompatData} bcd The compat data to update
- * @param {BrowserName[]} browsers The browsers to test
  */
 export const mirrorIfEquivalent = (bcd: CompatData): void => {
   for (const { compat } of walk(undefined, bcd)) {

@@ -2,22 +2,13 @@
  * See LICENSE file for more information. */
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import {
-  BrowserName,
-  SimpleSupportStatement,
-  SupportBlock,
-  VersionValue,
-} from '../../types/types.js';
-import {
-  InternalSupportBlock,
-  InternalSupportStatement,
-} from '../../types/index';
+import { BrowserName, SupportBlock } from '../../types/types.js';
+import { InternalSupportBlock } from '../../types/index';
 
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
-import mirrorSupport from '../../scripts/release/mirror.js';
 import { isMirrorEquivalent } from '../../scripts/fix/mirror.js';
 
 /**
