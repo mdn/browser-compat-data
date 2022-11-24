@@ -217,5 +217,17 @@ Thanks to:
         for testing services
       </p>
     </td>
+    <td>
+      <img
+        src="https://user-images.githubusercontent.com/5179191/203835995-e4cf2b3f-483f-419f-afda-bad1200c04f2.png"
+        height="86"
+        alt="LambdaTest"
+      />
+      <p>
+        <a href="https://www.lambdatest.com/hyperexecute">LambdaTest Open Source</a
+        >
+        for testing services
+      </p>
+    </td>
   </tr>
 </table>
