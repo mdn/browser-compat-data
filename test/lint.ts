@@ -138,7 +138,7 @@ const main = async (
         full: feature.path,
         category: feature.path.split('.')[0],
       },
-      parent: feature.parent,
+      parent: feature.parentCompat,
     });
   }
 

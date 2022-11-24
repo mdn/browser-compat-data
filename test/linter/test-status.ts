@@ -116,29 +116,27 @@ const checkStatusInheritance = (
   parentStatus: StatusBlock,
   logger: Logger,
 ) => {
-  if (childStatus && parentStatus) {
-    if (!childStatus.deprecated && parentStatus.deprecated) {
-      logger.error(
-        chalk`{red Unexpected non-deprecated status while the parent is deprecated}`,
-        { fixable: true },
-      );
-    }
-    if (
-      !childStatus.experimental &&
-      !childStatus.deprecated &&
-      parentStatus.experimental
-    ) {
-      logger.error(
-        chalk`{red Unexpected non-experimental and non-deprecated status while the parent is experimental}`,
-        { fixable: true },
-      );
-    }
-    if (childStatus?.standard_track && !parentStatus.standard_track) {
-      logger.error(
-        chalk`{red Unexpected standard track status while the parent is nonstandard}`,
-        { fixable: true },
-      );
-    }
+  if (!childStatus.deprecated && parentStatus.deprecated) {
+    logger.error(
+      chalk`{red Unexpected non-deprecated status while the parent is deprecated}`,
+      { fixable: true },
+    );
+  }
+  if (
+    !childStatus.experimental &&
+    !childStatus.deprecated &&
+    parentStatus.experimental
+  ) {
+    logger.error(
+      chalk`{red Unexpected non-experimental and non-deprecated status while the parent is experimental}`,
+      { fixable: true },
+    );
+  }
+  if (childStatus?.standard_track && !parentStatus.standard_track) {
+    logger.error(
+      chalk`{red Unexpected standard track status while the parent is nonstandard}`,
+      { fixable: true },
+    );
   }
 };
 
@@ -154,8 +152,8 @@ export default {
    */
   check: (logger: Logger, { data, path: { category }, parent }: LinterData) => {
     checkStatusContradiction(data, logger, category);
-    if (parent?.__compat) {
-      checkStatusInheritance(data.__compat, parent.__compat, logger);
+    if (data.status && parent?.status) {
+      checkStatusInheritance(data.status, parent.status, logger);
     }
   },
 } as Linter;

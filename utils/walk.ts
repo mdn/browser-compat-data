@@ -27,14 +27,14 @@ type LowLevelWalkOutput = {
   browser?: BrowserStatement;
   compat?: CompatStatement;
   browserRelease?: ReleaseStatement;
-  parent?: DataType;
+  parentCompat?: CompatStatement;
 };
 
 type WalkOutput = {
   path: string;
   data: DataType;
   compat: CompatStatement;
-  parent?: DataType;
+  parentCompat?: CompatStatement;
 };
 
 /**
@@ -70,13 +70,13 @@ export function* lowLevelWalk(
   data: DataType = bcd,
   path?: string,
   depth = Infinity,
-  parent: DataType = null,
+  parentCompat?: CompatStatement,
 ): IterableIterator<LowLevelWalkOutput> {
   if (path !== undefined && path !== '__meta') {
     const next: LowLevelWalkOutput = {
       path,
       data,
-      parent,
+      parentCompat,
     };
 
     if (isBrowser(data)) {
@@ -93,7 +93,12 @@ export function* lowLevelWalk(
 
   if (depth > 0) {
     for (const key of descendantKeys(data)) {
-      yield* lowLevelWalk(data[key], joinPath(path, key), depth - 1, data);
+      yield* lowLevelWalk(
+        data[key],
+        joinPath(path, key),
+        depth - 1,
+        data.__compat,
+      );
     }
   }
 }
