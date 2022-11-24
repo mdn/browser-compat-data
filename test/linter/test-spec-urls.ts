@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
@@ -35,26 +35,25 @@ const specsExceptions = [
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
 
-  // Not really a browser feature, thus not in browser-specs
-  // Remove if it is in the main ECMA spec
-  'https://tc39.es/proposal-hashbang/out.html',
-
   // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
   'https://w3c.github.io/webrtc-extensions/',
 
-  // Remove if https://github.com/w3c/mathml/issues/216 is resolved
-  'https://w3c.github.io/mathml/',
+  // Remove when added to browser-specs
+  'https://w3c.github.io/csswg-drafts/css-color-6/',
 
-  // Remove once https://www.w3.org/TR/largest-contentful-paint/ updates,
-  // and browser-specs picks up the update; see discussion at
-  // https://github.com/mdn/browser-compat-data/pull/16527#issuecomment-1145773922
-  'https://w3c.github.io/largest-contentful-paint/',
+  // Remove if https://github.com/w3c/browser-specs/issues/730 is resolved
+  'https://w3c.github.io/csswg-drafts/css2',
 ];
 
 const allowedSpecURLs = [
-  ...specData.map((spec) => spec.url),
-  ...specData.map((spec) => spec.nightly.url),
-  ...specData.map((spec) => spec.series.nightlyUrl),
+  ...specData
+    .map((spec) => [
+      spec.url,
+      spec.nightly.url,
+      ...spec.nightly.alternateUrls,
+      spec.series.nightlyUrl,
+    ])
+    .flat(),
   ...specsExceptions,
 ];
 
@@ -63,9 +62,8 @@ const allowedSpecURLs = [
  *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @returns {void}
  */
-function processData(data: CompatStatement, logger: Logger): void {
+const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
     return;
   }
@@ -75,20 +73,39 @@ function processData(data: CompatStatement, logger: Logger): void {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
+    // Since drafts.csswg.org is down too often, use an alternative canonical URL
+    if (specURL.startsWith('https://drafts.csswg.org')) {
+      logger.error(
+        chalk`Due to how often {bold https://drafts.csswg.org} is down, use {bold https://w3c.github.io/csswg-drafts} instead.`,
+        {
+          tip: chalk`replace {bold ${specURL}} with {bold ${specURL.replace(
+            'drafts.csswg.org',
+            'w3c.github.io/csswg-drafts',
+          )}}`,
+        },
+      );
+    }
+
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
       );
     }
   }
-}
+};
 
 export default {
   name: 'Spec URLs',
   description:
     'Ensure the spec_url values match spec URLs in w3c/browser-specs (or defined exceptions)',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);
   },
 } as Linter;

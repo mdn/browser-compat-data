@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import chalk from 'chalk-template';
 import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
@@ -16,7 +16,7 @@ import { orderProperties } from '../../scripts/fix/property-order.js';
  * @param {string} rawData The raw contents of the file to test
  * @param {Logger} logger The logger to output errors to
  */
-function processData(rawData: string, logger: Logger): void {
+const processData = (rawData: string, logger: Logger): void => {
   let actual = rawData;
   /** @type {import('../../types').CompatData} */
   const dataObject = JSON.parse(actual);
@@ -89,19 +89,19 @@ function processData(rawData: string, logger: Logger): void {
       )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
     );
   }
-}
+};
 
 export default {
   name: 'Style',
   description: 'Tests the style and formatting of the JSON file',
   scope: 'file',
-  check(
-    logger: Logger,
-    {
-      rawdata,
-      path: { category },
-    }: { rawdata: string; path: { category: string } },
-  ) {
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { rawdata, path: { category } }: LinterData) => {
     if (category !== 'browsers') {
       processData(rawdata, logger);
     }

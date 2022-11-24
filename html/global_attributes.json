@@ -89,38 +89,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete",
           "support": {
-            "chrome": [
-              {
-                "version_added": "66",
-                "notes": [
-                  "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              },
-              {
-                "version_added": true,
-                "notes": [
-                  "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "66",
-                "notes": [
-                  "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              },
-              {
-                "version_added": true,
-                "notes": [
-                  "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": true,
+              "notes": [
+                "In Chrome 66, support was added for the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
+                "Originally only supported on the <code>&lt;input&gt;</code> element.",
+                "Chrome does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
+              ]
+            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "≤79"
             },
@@ -142,38 +119,8 @@
               "version_added": null
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": [
-              {
-                "version_added": "9.0",
-                "notes": [
-                  "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "Samsung Internet does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              },
-              {
-                "version_added": true,
-                "notes": [
-                  "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "Samsung Internet does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "66",
-                "notes": [
-                  "Support added for <code>autocomplete</code> on the <code>&lt;textarea&gt;</code> and <code>&lt;select&gt;</code> elements.",
-                  "WebView does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              },
-              {
-                "version_added": true,
-                "notes": [
-                  "Originally only supported on the <code>&lt;input&gt;</code> element.",
-                  "WebView does not accept <code>off</code> as a value. See <a href='https://crbug.com/587466'>bug 587466</a>."
-                ]
-              }
-            ]
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -528,22 +475,10 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "85",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.menuitem.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "9",
-                "version_removed": "85"
-              }
-            ],
+            "firefox": {
+              "version_added": "9",
+              "version_removed": "85"
+            },
             "firefox_android": {
               "version_added": "32",
               "version_removed": "56",
@@ -690,22 +625,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "94"
-              },
-              {
-                "version_added": "79",
-                "version_removed": "94",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.forms.enterkeyhint",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "94"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -734,7 +656,7 @@
       "exportparts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/exportparts",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#element-attrdef-html-global-exportparts",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-shadow-parts/#element-attrdef-html-global-exportparts",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -894,11 +816,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
-            },
-            "firefox_android": {
               "version_added": false
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -945,21 +865,6 @@
               {
                 "version_added": "17",
                 "version_removed": "23"
-              },
-              {
-                "version_added": "23",
-                "version_removed": "95",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.forms.inputmode",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": [
-                  "Before version 77, Firefox does not support <code>inputmode</code> when <code>contenteditable</code> is <code>true</code>.",
-                  "Before version 75, Firefox accepts values from an earlier specification. From version 75, it accepts values from the WHATWG Living Standard. See <a href='https://bugzil.la/1509527'>bug 1509527</a>."
-                ]
               }
             ],
             "firefox_android": {
@@ -1309,29 +1214,16 @@
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/part",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#part-attr",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-shadow-parts/#part-attr",
           "support": {
             "chrome": {
               "version_added": "73"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "72"
-              },
-              {
-                "version_added": "69",
-                "version_removed": "72",
-                "flags": [
-                  {
-                    "name": "layout.css.shadow-parts.enabled",
-                    "type": "preference",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "72"
+            },
             "firefox_android": {
               "version_added": false
             },

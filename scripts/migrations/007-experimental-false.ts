@@ -22,11 +22,13 @@ const { browsers } = bcd;
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
+ * Fix the experimental status throughout compatibility data
+ *
  * @param {CompatData} bcd Parsed BCD object to be updated in place.
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
   for (const { compat } of walk(undefined, bcd)) {
-    if (!compat?.status?.experimental) {
+    if (!compat.status?.experimental) {
       continue;
     }
 
@@ -82,6 +84,8 @@ export const fixExperimental = (bcd: CompatData | Identifier): void => {
 };
 
 /**
+ * Fix the experimental status throughout a file
+ *
  * @param {string} filename Filename of BCD to be updated in place.
  */
 const fixExperimentalFile = (filename: string): void => {
@@ -96,9 +100,11 @@ const fixExperimentalFile = (filename: string): void => {
 };
 
 /**
- * @param {string[]} files
+ * Load files and fix experimental status
+ *
+ * @param {string[]} files The files to fix
  */
-function load(...files: string[]): void {
+const load = (...files: string[]): void => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
       file = path.resolve(dirname, '..', '..', file);
@@ -116,13 +122,13 @@ function load(...files: string[]): void {
       continue;
     }
 
-    const subFiles = fs.readdirSync(file).map((subfile) => {
-      return path.join(file, subfile);
-    });
+    const subFiles = fs
+      .readdirSync(file)
+      .map((subfile) => path.join(file, subfile));
 
     load(...subFiles);
   }
-}
+};
 
 if (esMain(import.meta)) {
   if (process.argv[2]) {

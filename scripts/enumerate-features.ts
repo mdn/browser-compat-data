@@ -10,17 +10,33 @@ import { hideBin } from 'yargs/helpers';
 
 import { lowLevelWalk } from '../utils/walk.js';
 
-async function main(argv: any) {
+/**
+ * Enumerate features and write to a destination file
+ *
+ * @param {{dest: string, dataFrom: string}} argv Arguments
+ * @param {string} argv.dest Destination file name
+ * @param {string?} argv.dataFrom Where the data is (leave blank for repository folder)
+ */
+const main = async (argv: {
+  dest: string;
+  dataFrom?: string;
+}): Promise<void> => {
   const { dest, dataFrom } = argv;
   fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
-}
+};
 
-async function enumerateFeatures(dataFrom: string) {
+/**
+ * Enumerate compat data features
+ *
+ * @param {string?} dataFrom Where to get the data from (leave blank for repository folder)
+ * @returns {string[]} A list of features
+ */
+const enumerateFeatures = async (dataFrom?: string): Promise<string[]> => {
   const feats: string[] = [];
 
   const walker = lowLevelWalk(
     dataFrom
-      ? await import(path.join(process.cwd(), dataFrom, 'index.js'))
+      ? (await import(path.join(process.cwd(), dataFrom, 'index.js'))).default
       : undefined,
   );
 
@@ -31,7 +47,7 @@ async function enumerateFeatures(dataFrom: string) {
   }
 
   return feats;
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
@@ -50,7 +66,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  await main(argv);
+  await main(argv as any);
 }
 
 export default enumerateFeatures;

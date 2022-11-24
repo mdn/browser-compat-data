@@ -3,20 +3,16 @@
     "OVR_multiview2": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/OVR_multiview2",
-        "spec_url": "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/",
+        "spec_url": "https://registry.khronos.org/webgl/extensions/OVR_multiview2/",
         "support": {
-          "chrome": [
-            {
-              "version_added": "75",
-              "alternative_name": "OVRMultiview2"
-            },
-            {
-              "version_added": "70",
-              "version_removed": "75",
-              "alternative_name": "WebGLMultiview"
-            }
-          ],
-          "chrome_android": "mirror",
+          "chrome": {
+            "version_added": "93",
+            "partial_implementation": true,
+            "notes": "Not supported on macOS."
+          },
+          "chrome_android": {
+            "version_added": "93"
+          },
           "edge": "mirror",
           "firefox": {
             "version_added": "71"
@@ -26,9 +22,7 @@
             "version_added": false
           },
           "oculus": "mirror",
-          "opera": {
-            "version_added": false
-          },
+          "opera": "mirror",
           "opera_android": {
             "version_added": false
           },
@@ -48,18 +42,11 @@
       "framebufferTextureMultiviewOVR": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OVR_multiview2/framebufferTextureMultiviewOVR",
-          "spec_url": "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/",
+          "spec_url": "https://registry.khronos.org/webgl/extensions/OVR_multiview2/",
           "support": {
-            "chrome": [
-              {
-                "version_added": "75"
-              },
-              {
-                "version_added": "70",
-                "version_removed": "75",
-                "alternative_name": "framebufferTextureMultiviewWEBGL"
-              }
-            ],
+            "chrome": {
+              "version_added": "93"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -70,9 +57,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
+            "opera": "mirror",
             "opera_android": {
               "version_added": false
             },

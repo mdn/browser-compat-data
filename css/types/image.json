@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;image&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image",
-          "spec_url": "https://drafts.csswg.org/css-images/#image-values",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#image-values",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -45,17 +45,21 @@
           "__compat": {
             "description": "<code>cross-fade()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#cross-fade-function",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": "17",
-                "notes": "Supports the original dual-image with percentage implementation only."
+                "notes": [
+                  "Supports the original dual-image with percentage implementation only.",
+                  "See <a href='https://crbug.com/614906'>bug 614906</a> for supporting the unprefixed <code>cross-fade()</code> function."
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1657516'>bug 1657516</a>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -86,16 +90,8 @@
                   "notes": "Supports the original dual-image with percentage implementation only."
                 }
               ],
-              "samsunginternet_android": {
-                "prefix": "-webkit-",
-                "version_added": "1.0",
-                "notes": "Support for the original dual-image with percentage implementation only."
-              },
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "≤37",
-                "notes": "Supports the original dual-image with percentage implementation only."
-              }
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -108,7 +104,7 @@
           "__compat": {
             "description": "<code>element()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#element-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -179,7 +175,7 @@
           "__compat": {
             "description": "<code>&lt;gradient&gt;</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#gradients",
             "support": {
               "chrome": [
                 {
@@ -242,15 +238,7 @@
                   "version_added": "5.1"
                 }
               ],
-              "safari_ios": [
-                {
-                  "version_added": "7"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "6"
-                }
-              ],
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": [
                 {
@@ -272,27 +260,16 @@
             "__compat": {
               "description": "<code>conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#conic-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "83"
-                  },
-                  {
-                    "version_added": "75",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.conic-gradient.enabled"
-                      }
-                    ]
-                  }
-                ],
+                "firefox": {
+                  "version_added": "83"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -351,7 +328,7 @@
             "__compat": {
               "description": "<code>linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#linear-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#linear-gradients",
               "support": {
                 "chrome": [
                   {
@@ -384,24 +361,7 @@
                     ]
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "49"
-                  },
-                  {
-                    "prefix": "-moz-",
-                    "version_added": "4",
-                    "notes": [
-                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
-                    ]
-                  }
-                ],
+                "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
                   "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <code><a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</a></code>."
@@ -452,19 +412,7 @@
                     ]
                   }
                 ],
-                "safari_ios": [
-                  {
-                    "version_added": "7"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "6",
-                    "notes": [
-                      "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(linear,…)</a></code> function. It is more limited than the later standard version: you cannot specify both a position and an angle like in <code>linear-gradient()</code>. This old outdated syntax is still supported for compatibility purposes.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
-                    ]
-                  }
-                ],
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": [
                   {
@@ -537,9 +485,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -576,9 +522,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -622,9 +566,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -640,7 +582,7 @@
             "__compat": {
               "description": "<code>radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#radial-gradients",
               "support": {
                 "chrome": [
                   {
@@ -670,21 +612,7 @@
                     "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "49"
-                  },
-                  {
-                    "prefix": "-moz-",
-                    "version_added": "4",
-                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
-                  }
-                ],
+                "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
                   "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <code><a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</a></code>."
@@ -728,16 +656,7 @@
                     "notes": "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(radial,…)</a></code> function. This old outdated syntax is still supported for compatibility purposes."
                   }
                 ],
-                "safari_ios": [
-                  {
-                    "version_added": "7"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "6",
-                    "notes": "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(radial,…)</a></code> function. This old outdated syntax is still supported for compatibility purposes."
-                  }
-                ],
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": [
                   {
@@ -883,9 +802,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -901,27 +818,16 @@
             "__compat": {
               "description": "<code>repeating-conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#repeating-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "83"
-                  },
-                  {
-                    "version_added": "75",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.conic-gradient.enabled"
-                      }
-                    ]
-                  }
-                ],
+                "firefox": {
+                  "version_added": "83"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -947,7 +853,7 @@
             "__compat": {
               "description": "<code>repeating-linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -980,24 +886,7 @@
                     ]
                   }
                 ],
-                "firefox_android": [
-                  {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "49"
-                  },
-                  {
-                    "prefix": "-moz-",
-                    "version_added": "4",
-                    "notes": [
-                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
-                    ]
-                  }
-                ],
+                "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
                   "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <code><a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</a></code>."
@@ -1048,19 +937,7 @@
                     ]
                   }
                 ],
-                "safari_ios": [
-                  {
-                    "version_added": "7"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "6",
-                    "notes": [
-                      "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(linear,…)</a></code> function. It is more limited than the later standard version: you cannot specify both a position and an angle like in <code>repeating-linear-gradient()</code>. This old outdated syntax is still supported for compatibility purposes.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
-                    ]
-                  }
-                ],
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": [
                   {
@@ -1133,9 +1010,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -1172,9 +1047,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -1218,9 +1091,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -1236,7 +1107,7 @@
             "__compat": {
               "description": "<code>repeating-radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient",
-              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -1323,16 +1194,7 @@
                     "notes": "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(radial,…)</a></code> function. This old outdated syntax is still supported for compatibility purposes."
                   }
                 ],
-                "safari_ios": [
-                  {
-                    "version_added": "7"
-                  },
-                  {
-                    "prefix": "-webkit-",
-                    "version_added": "6",
-                    "notes": "Safari 4 was supporting an experimental <code><a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'>-webkit-gradient(radial,…)</a></code> function. This old outdated syntax is still supported for compatibility purposes."
-                  }
-                ],
+                "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": [
                   {
@@ -1376,21 +1238,7 @@
                       "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
                     }
                   ],
-                  "firefox_android": [
-                    {
-                      "version_added": "16",
-                      "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "49"
-                    },
-                    {
-                      "prefix": "-moz-",
-                      "version_added": "10",
-                      "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
-                    }
-                  ],
+                  "firefox_android": "mirror",
                   "ie": {
                     "version_added": "10"
                   },
@@ -1486,9 +1334,7 @@
                   "safari": {
                     "version_added": "7"
                   },
-                  "safari_ios": {
-                    "version_added": "7"
-                  },
+                  "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
@@ -1505,7 +1351,7 @@
           "__compat": {
             "description": "<code>image()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1547,7 +1393,7 @@
           "__compat": {
             "description": "<code>image-set()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-set-notation",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
@@ -1626,6 +1472,39 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "additional_parameters": {
+            "__compat": {
+              "description": "Supports additional parameters to pass to the <code>paintWorklet</code>",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }

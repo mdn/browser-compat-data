@@ -1,49 +1,57 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 import chalk from 'chalk-template';
+
+type DescriptionError = {
+  path: string;
+  ruleName: string;
+  actual: string;
+  expected: string;
+};
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
  *
  * @param {string} ruleName The name of the error
- * @param {string} name The name of the API method
+ * @param {string} path The feature path
  * @param {CompatStatement} compat The compat data to test
  * @param {string} expected Expected description
- * @param {Logger} logger The logger to output errors to
- * @returns {void}
+ * @param {DescriptionError[]} errors The array of errors to push to
  */
-function checkDescription(
+const checkDescription = (
   ruleName: string,
-  name: string,
+  path: string,
   compat: CompatStatement,
   expected: string,
-  logger: Logger,
-): void {
+  errors: DescriptionError[],
+): void => {
   const actual = compat.description || '';
   if (actual != expected) {
-    logger.error(chalk`{red → Incorrect ${ruleName} description for {bold ${name}}
-      Actual: {yellow "${actual}"}
-      Expected: {green "${expected}"}}`);
+    errors.push({
+      ruleName,
+      path,
+      actual,
+      expected,
+    });
   }
-}
+};
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
  *
  * @param {CompatStatement} data The data to test
  * @param {string} path The path of the feature
- * @param {Logger} logger The logger to output errors to
- * @returns {void}
+ * @param {DescriptionError[]} errors The array of errors to push to
  */
-function processApiData(
+const processApiData = (
   data: CompatStatement,
   path: string,
-  logger: Logger,
-): void {
+  errors: DescriptionError[],
+): void => {
   const pathParts = path.split('.');
   const apiName = pathParts[1];
   const featureName = pathParts[2];
@@ -56,59 +64,79 @@ function processApiData(
   if (featureName == apiName) {
     checkDescription(
       'constructor',
-      `${apiName}()`,
+      path,
       data,
       `<code>${apiName}()</code> constructor`,
-      logger,
+      errors,
     );
   } else if (featureName.endsWith('_event')) {
     checkDescription(
       'event',
-      `${apiName}.${featureName}`,
+      path,
       data,
       `<code>${featureName.replace('_event', '')}</code> event`,
-      logger,
+      errors,
     );
   } else if (featureName.endsWith('_permission')) {
     checkDescription(
       'permission',
-      `${apiName}.${featureName}`,
+      path,
       data,
       `<code>${featureName.replace('_permission', '')}</code> permission`,
-      logger,
+      errors,
     );
   } else if (featureName == 'secure_context_required') {
     checkDescription(
       'secure context required',
-      `${apiName}()`,
+      path,
       data,
       'Secure context required',
-      logger,
+      errors,
     );
   } else if (featureName == 'worker_support') {
-    checkDescription(
-      'worker',
-      `${apiName}()`,
-      data,
-      'Available in workers',
-      logger,
-    );
+    checkDescription('worker', path, data, 'Available in workers', errors);
   }
-}
+};
+
+/**
+ * Process data and check for any incorrect descriptions in said data, logging any errors
+ *
+ * @param {CompatStatement} data The data to test
+ * @param {string} category The feature category
+ * @param {string} path The path of the feature
+ * @returns {DescriptionError[]} The errors caught in the file
+ */
+export const processData = (
+  data: CompatStatement,
+  category: string,
+  path: string,
+): DescriptionError[] => {
+  const errors: DescriptionError[] = [];
+
+  if (category === 'api') {
+    processApiData(data, path, errors);
+  }
+
+  return errors;
+};
 
 export default {
   name: 'Descriptions',
   description: 'Test the descriptions of compatibility data',
   scope: 'feature',
-  check(
-    logger: Logger,
-    {
-      data,
-      path: { full, category },
-    }: { data: CompatStatement; path: { full: string; category: string } },
-  ) {
-    if (category === 'api') {
-      processApiData(data, full, logger);
+  /**
+   * Test the data
+   *
+   * @param {Logger} logger The logger to output errors to
+   * @param {LinterData} root The data to test
+   */
+  check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
+    const errors = processData(data, category, full);
+
+    for (const error of errors) {
+      logger.error(chalk`{red → Incorrect ${error.ruleName} description for {bold ${error.path}}
+      Actual: {yellow "${error.actual}"}
+      Expected: {green "${error.expected}"}}`);
     }
   },
 } as Linter;

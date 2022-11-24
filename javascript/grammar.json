@@ -200,7 +200,7 @@
         "__compat": {
           "description": "Hashbang (<code>#!</code>) comment syntax",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Lexical_grammar#Hashbang_comments",
-          "spec_url": "https://tc39.es/proposal-hashbang/out.html#sec-updated-syntax",
+          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-hashbang",
           "support": {
             "chrome": {
               "version_added": "74"
@@ -859,6 +859,82 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "trailing_commas_in_dynamic_import": {
+          "__compat": {
+            "description": "Trailing comma in dynamic import",
+            "support": {
+              "chrome": {
+                "version_added": "91"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.17"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1736059'>bug 1736059</a>."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "17.5.0"
+                },
+                {
+                  "version_added": "16.15.0",
+                  "version_removed": "17.0.0"
+                },
+                {
+                  "version_added": "16.14.0",
+                  "version_removed": "16.15.0",
+                  "partial_implementation": true,
+                  "notes": "The second parameter no longer throws a parser error, but the <code>--experimental-json-modules</code> flag is still needed to load JSON modules."
+                },
+                {
+                  "version_added": "17.0.0",
+                  "version_removed": "17.5.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--experimental-json-modules"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "16.0.0",
+                  "version_removed": "16.14.0",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--harmony-import-assertions"
+                    }
+                  ]
+                }
+              ],
+              "oculus": "mirror",
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
           }
         },
         "trailing_commas_in_functions": {

@@ -19,17 +19,24 @@ const propOrder = {
   status: ['experimental', 'standard_track', 'deprecated'],
 };
 
-function doOrder(value: CompatStatement, order: string[]): CompatStatement;
-function doOrder(value: StatusBlock, order: string[]): StatusBlock;
-function doOrder(
-  value: CompatStatement | StatusBlock,
-  order: string[],
-): CompatStatement | StatusBlock {
-  return order.reduce((result: { [index: string]: any }, key: string) => {
-    if (key in value) result[key] = value[key];
-    return result;
-  }, {}) as CompatStatement | StatusBlock;
-}
+/**
+ * Perform property ordering
+ *
+ * @param {CompatStatement|StatusBlock} value The object to order properties for
+ * @param {string[]} order The order to follow
+ * @returns {CompatStatement|StatusBlock} The ordered object
+ */
+const doOrder = <T>(value: T, order: string[]): T => {
+  if (value && typeof value === 'object') {
+    return order.reduce((result: { [index: string]: any }, key: string) => {
+      if (key in value) {
+        result[key] = value[key];
+      }
+      return result;
+    }, {}) as T;
+  }
+  return value;
+};
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -39,10 +46,9 @@ function doOrder(
  *
  * @param {string} key The key in the object
  * @param {Identifier} value The value of the key
- *
  * @returns {Identifier} The new value
  */
-export function orderProperties(key: string, value: Identifier): Identifier {
+export const orderProperties = (key: string, value: Identifier): Identifier => {
   if (value instanceof Object && '__compat' in value) {
     value.__compat = doOrder(
       value.__compat as CompatStatement,
@@ -57,10 +63,12 @@ export function orderProperties(key: string, value: Identifier): Identifier {
     }
   }
   return value;
-}
+};
 
 /**
- * @param {string} filename
+ * Fix issues with the property order throughout the BCD files
+ *
+ * @param {string} filename The name of the file to fix
  */
 const fixPropertyOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

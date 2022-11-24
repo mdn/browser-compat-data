@@ -7,8 +7,15 @@
           "spec_url": "https://w3c.github.io/mathml-core/#space-mspace",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
+              "version_added": "81",
+              "impl_url": "https://crrev.com/c/1936251",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -20,14 +27,10 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "7"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -43,7 +46,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "81",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -58,39 +68,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "displaystyle": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "83"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
+                "version_added": "7"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -107,7 +85,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "81",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -122,7 +107,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "7"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -135,8 +120,10 @@
             }
           }
         },
-        "width": {
+        "named_spaces": {
           "__compat": {
+            "description": "Named spaces (e.g. <code>thinmathspace</code> to mean 3/18em) for <code>width</code>, <code>height</code> and <code>depth</code> attributes",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Attribute/Values#legacy_mathml_lengths",
             "support": {
               "chrome": {
                 "version_added": false
@@ -154,7 +141,47 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "width": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "81",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1",
+                "notes": "Support for negative values has been implemented in Firefox 23."
+              },
+              "firefox_android": "mirror",
+              "ie": {
                 "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "7"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

@@ -110,9 +110,19 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BeforeInstallPromptEvent/prompt",
           "spec_url": "https://wicg.github.io/manifest-incubations/#dom-beforeinstallpromptevent-prompt",
           "support": {
-            "chrome": {
-              "version_added": "44"
-            },
+            "chrome": [
+              {
+                "version_added": "76",
+                "notes": "The object returned by the promise returns a property called <code>outcome</code> instead of <code>userChoice</code>.",
+                "partial_implementation": true
+              },
+              {
+                "version_added": "44",
+                "version_removed": "76",
+                "partial_implementation": true,
+                "notes": "Resolved with an empty promise."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {

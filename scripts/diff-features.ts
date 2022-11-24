@@ -8,7 +8,21 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-function main(opts): void {
+/**
+ * Compare two references and print diff as Markdown or JSON
+ *
+ * @param {{ref1: string | undefined, ref2: string | undefined, format: string, github: boolean}} opts Options
+ * @param {string} opts.ref1 First reference to compare
+ * @param {string} opts.ref2 Second reference to compare
+ * @param {string} opts.format Format to export data as (either 'markdown' or 'json', default 'json')
+ * @param {boolean} opts.github Whether to obtain artifacts from GitHub
+ */
+const main = (opts: {
+  ref1: string | undefined;
+  ref2: string | undefined;
+  format?: string;
+  github?: boolean;
+}): void => {
   const { ref1, ref2, format, github } = opts;
   const results = diff({ ref1, ref2, github });
 
@@ -17,12 +31,22 @@ function main(opts): void {
   } else {
     console.log(JSON.stringify(results, undefined, 2));
   }
-}
+};
 
-export default function diff(opts): {
-  added: string[];
-  removed: string[];
-} {
+/**
+ * Compare two references and get feature diff
+ *
+ * @param {{ref1: string?, ref2: string?, github: boolean}} opts Options
+ * @param {string?} opts.ref1 First reference to compare
+ * @param {string?} opts.ref2 Second reference to compare
+ * @param {boolean} opts.github Whether to obtain artifacts from GitHub
+ * @returns {{added: string[], removed: string[]}} Diff between two refs
+ */
+const diff = (opts: {
+  ref1?: string;
+  ref2?: string;
+  github?: boolean;
+}): { added: string[]; removed: string[] } => {
   const { ref1, ref2, github } = opts;
   let refA, refB;
 
@@ -49,34 +73,51 @@ export default function diff(opts): {
   };
 
   return results;
-}
+};
 
-function enumerate(ref: string, skipGitHub: boolean): Set<string> {
+/**
+ * Enumerate features from GitHub or local checkout
+ *
+ * @param {string} ref Reference to obtain features for
+ * @param {boolean} skipGitHub Skip fetching artifacts from GitHub
+ * @returns {Set<string>} Feature list from reference
+ */
+const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
   if (!skipGitHub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
-    } catch {
-      console.error('Fetching artifact from GitHub failed. Using fallback.');
+    } catch (e) {
+      console.error(
+        `Fetching artifact from GitHub failed: ${e} Using fallback.`,
+      );
     }
   }
 
   return new Set(enumerateFeatures(ref));
-}
+};
 
-function getEnumerationFromGithub(ref: string) {
+/**
+ * Enumerate features from GitHub
+ *
+ * @param {string} ref Reference to obtain features for
+ * @returns {string[]} Feature list from reference
+ */
+const getEnumerationFromGithub = (ref: string): string[] => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
+  /**
+   * Unlinks the workflow file
+   */
   const unlinkFile = () => {
     try {
       fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
     } catch (err: any) {
       if (err.code == 'ENOENT') {
         return;
-      } else {
-        throw err;
       }
+      throw err;
     }
   };
 
@@ -90,7 +131,9 @@ function getEnumerationFromGithub(ref: string) {
     },
   ).trim();
 
-  if (!workflowRun) throw Error('No workflow run found for commit.');
+  if (!workflowRun) {
+    throw Error('No workflow run found for commit.');
+  }
 
   try {
     unlinkFile();
@@ -103,9 +146,15 @@ function getEnumerationFromGithub(ref: string) {
   } finally {
     unlinkFile();
   }
-}
+};
 
-function enumerateFeatures(ref = 'HEAD') {
+/**
+ * Enumerate features from local checkout
+ *
+ * @param {string} ref Reference to obtain features for
+ * @returns {string[]} Feature list from reference
+ */
+const enumerateFeatures = (ref = 'HEAD'): string[] => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -123,7 +172,7 @@ function enumerateFeatures(ref = 'HEAD') {
     execSync(`git worktree add ${worktree} ${hash}`);
 
     try {
-      execSync(`npm ci`, { cwd: worktree });
+      execSync('npm ci', { cwd: worktree });
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
@@ -134,21 +183,35 @@ function enumerateFeatures(ref = 'HEAD') {
   } finally {
     execSync(`git worktree remove ${worktree}`);
   }
-}
+};
 
-function printMarkdown(added: string[], removed: string[]): void {
-  const fmtFeature = (feat: string) => `- \`${feat}\``;
+/**
+ * Format feature for Markdown printing
+ *
+ * @param {string} feat Feature
+ * @returns {string} Formatted feature
+ */
+const fmtFeature = (feat: string) => `- \`${feat}\``;
 
+/**
+ * Print feature diff as Markdown
+ *
+ * @param {Array.<string>} added List of added features
+ * @param {Array.<string>} removed List of removed features
+ */
+const printMarkdown = (added: string[], removed: string[]): void => {
   if (removed.length) {
     console.log('## Removed\n');
     console.log(removed.map(fmtFeature).join('\n'));
   }
   if (added.length) {
-    if (removed.length) console.log('');
+    if (removed.length) {
+      console.log('');
+    }
     console.log('## Added\n');
     console.log(added.map(fmtFeature).join('\n'));
   }
-}
+};
 
 if (esMain(import.meta)) {
   const { argv } = yargs(hideBin(process.argv)).command(
@@ -175,11 +238,13 @@ if (esMain(import.meta)) {
           type: 'boolean',
           description: "Don't fetch artifacts from GitHub.",
         })
-        .example('$0', 'compare HEAD to parent commmit')
-        .example('$0 176d4ed', 'compare 176d4ed to its parent commmit')
+        .example('$0', 'compare HEAD to parent commit')
+        .example('$0 176d4ed', 'compare 176d4ed to its parent commit')
         .example('$0 topic-branch main', 'compare a branch to main');
     },
   );
 
-  main(argv);
+  main(argv as any);
 }
+
+export default diff;

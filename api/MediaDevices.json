@@ -146,7 +146,8 @@
               "version_added": "72"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "notes": "See <a href='https://crbug.com/487935'>bug 487935</a>."
             },
             "edge": [
               {
@@ -154,6 +155,8 @@
               },
               {
                 "version_added": "17",
+                "version_removed": "79",
+                "partial_implementation": true,
                 "notes": "Available as a member of <code>Navigator</code> instead of <code>MediaDevices</code>."
               }
             ],
@@ -184,10 +187,7 @@
               "version_added": false
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false,
-              "notes": "API is available, but will always fail with <code>NotAllowedError</code>."
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -380,6 +380,39 @@
                   "value_to_set": "true"
                 }
               ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setCaptureHandleConfig": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/mediacapture-handle/identity/#dom-mediadevices-setcapturehandleconfig",
+          "support": {
+            "chrome": {
+              "version_added": "102"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
