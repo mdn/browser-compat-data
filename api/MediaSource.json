@@ -15,16 +15,7 @@
               "prefix": "WebKit"
             }
           ],
-          "chrome_android": [
-            {
-              "version_added": "31"
-            },
-            {
-              "version_added": "25",
-              "version_removed": "31",
-              "prefix": "WebKit"
-            }
-          ],
+          "chrome_android": "mirror",
           "edge": {
             "version_added": "12"
           },
@@ -37,26 +28,9 @@
           "ie": {
             "version_added": "11"
           },
-          "opera": [
-            {
-              "version_added": "18"
-            },
-            {
-              "version_added": "15",
-              "version_removed": "18",
-              "prefix": "WebKit"
-            }
-          ],
-          "opera_android": [
-            {
-              "version_added": "18"
-            },
-            {
-              "version_added": "14",
-              "version_removed": "18",
-              "prefix": "WebKit"
-            }
-          ],
+          "oculus": "mirror",
+          "opera": "mirror",
+          "opera_android": "mirror",
           "safari": {
             "version_added": "8"
           },
@@ -65,26 +39,8 @@
             "partial_implementation": true,
             "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
           },
-          "samsunginternet_android": [
-            {
-              "version_added": "2.0"
-            },
-            {
-              "prefix": "WebKit",
-              "version_added": "1.5",
-              "version_removed": "2.0"
-            }
-          ],
-          "webview_android": [
-            {
-              "version_added": "4.4.3"
-            },
-            {
-              "version_added": "4.4",
-              "version_removed": "4.4.3",
-              "prefix": "WebKit"
-            }
-          ]
+          "samsunginternet_android": "mirror",
+          "webview_android": "mirror"
         },
         "status": {
           "experimental": false,
@@ -94,9 +50,9 @@
       },
       "MediaSource": {
         "__compat": {
+          "description": "<code>MediaSource()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/MediaSource",
           "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-constructor",
-          "description": "<code>MediaSource()</code> constructor",
           "support": {
             "chrome": [
               {
@@ -124,6 +80,7 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
+            "oculus": "mirror",
             "opera": {
               "version_added": "15"
             },
@@ -138,17 +95,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -160,9 +146,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -176,12 +160,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -190,9 +171,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
@@ -201,6 +180,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -212,9 +224,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -228,12 +238,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -242,15 +249,80 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "canConstructInDedicatedWorker": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker",
+          "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-canconstructindedicatedworker",
+          "support": {
+            "chrome": {
+              "version_added": "108"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -264,27 +336,20 @@
             "chrome": {
               "version_added": "62"
             },
-            "chrome_android": {
-              "version_added": "62"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
             "firefox": {
               "version_added": "50"
             },
-            "firefox_android": {
-              "version_added": "50"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "49"
-            },
-            "opera_android": {
-              "version_added": "46"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "10.1"
             },
@@ -293,17 +358,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "62"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -315,9 +409,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -331,12 +423,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -345,9 +434,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
@@ -356,6 +443,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -367,9 +487,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -383,12 +501,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -397,15 +512,80 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "handle": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/handle",
+          "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-handle",
+          "support": {
+            "chrome": {
+              "version_added": "108"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -423,13 +603,7 @@
                 "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
               ]
             },
-            "chrome_android": {
-              "version_added": "25",
-              "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
-              ]
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
               "notes": [
@@ -449,20 +623,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15",
-              "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
-              ]
-            },
-            "opera_android": {
-              "version_added": "14",
-              "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
-              ]
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -471,13 +634,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5",
-              "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
-              ]
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3",
               "notes": [
@@ -490,6 +647,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -517,9 +707,8 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
             "opera_android": {
               "version_added": "14"
             },
@@ -531,17 +720,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "2.0"
-            },
-            "webview_android": {
-              "version_added": "4.4.3"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -553,9 +771,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -569,12 +785,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -583,9 +796,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
@@ -594,6 +805,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -605,27 +849,20 @@
             "chrome": {
               "version_added": "62"
             },
-            "chrome_android": {
-              "version_added": "62"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "17"
             },
             "firefox": {
               "version_added": "50"
             },
-            "firefox_android": {
-              "version_added": "50"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": {
-              "version_added": "49"
-            },
-            "opera_android": {
-              "version_added": "46"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "10.1"
             },
@@ -634,17 +871,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "8.0"
-            },
-            "webview_android": {
-              "version_added": "62"
-            }
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -656,9 +922,7 @@
             "chrome": {
               "version_added": "23"
             },
-            "chrome_android": {
-              "version_added": "25"
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -672,12 +936,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": {
-              "version_added": "15"
-            },
-            "opera_android": {
-              "version_added": "14"
-            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "8"
             },
@@ -686,9 +947,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": {
-              "version_added": "1.5"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
             }
@@ -697,6 +956,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -717,17 +1009,7 @@
                 "notes": "The <code>onsourceclose</code> event handler property is not supported."
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "31",
-                "version_removed": "53",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
-              }
-            ],
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "17"
@@ -765,28 +1047,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": [
-              {
-                "version_added": "40"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "40",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "41",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
-              }
-            ],
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": [
               {
                 "version_added": "10.1"
@@ -803,33 +1066,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "version_added": "2.0",
-                "version_removed": "6.0",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "4.4.3",
-                "version_removed": "53",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
-              }
-            ]
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -850,17 +1126,7 @@
                 "notes": "The <code>onsourceended</code> event handler property is not supported."
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "31",
-                "version_removed": "53",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
-              }
-            ],
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "17"
@@ -882,28 +1148,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": [
-              {
-                "version_added": "40"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "40",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "41",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
-              }
-            ],
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": [
               {
                 "version_added": "10.1"
@@ -920,17 +1167,7 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "version_added": "2.0",
-                "version_removed": "6.0",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
-              }
-            ],
+            "samsunginternet_android": "mirror",
             "webview_android": [
               {
                 "version_added": "53"
@@ -947,6 +1184,39 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -967,17 +1237,7 @@
                 "notes": "The <code>onsourceopen</code> event handler property is not supported."
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "31",
-                "version_removed": "53",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
-              }
-            ],
+            "chrome_android": "mirror",
             "edge": [
               {
                 "version_added": "17"
@@ -999,28 +1259,9 @@
               "version_added": "11",
               "notes": "Only works on Windows 8+."
             },
-            "opera": [
-              {
-                "version_added": "40"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "40",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "41"
-              },
-              {
-                "version_added": "18",
-                "version_removed": "41",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
-              }
-            ],
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": [
               {
                 "version_added": "10.1"
@@ -1037,33 +1278,46 @@
               "partial_implementation": true,
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
-            "samsunginternet_android": [
-              {
-                "version_added": "6.0"
-              },
-              {
-                "version_added": "2.0",
-                "version_removed": "6.0",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
-              }
-            ],
-            "webview_android": [
-              {
-                "version_added": "53"
-              },
-              {
-                "version_added": "4.4.3",
-                "version_removed": "53",
-                "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
-              }
-            ]
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "worker_support": {
+          "__compat": {
+            "description": "Available in workers",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }

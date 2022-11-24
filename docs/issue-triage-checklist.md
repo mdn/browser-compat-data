@@ -2,13 +2,14 @@
 
 Helping process and understand new issues is a great way to help the project. To review a new issue, follow these steps. It looks lengthy, but with practice, many issues can be processed in a few minutes.
 
-## Close fast
+## Close irrelevant issues fast
 
 Avoid wasting time on issues which are not relevant to the repository by closing them quickly.
 
 - **Is it obvious spam?** Close it without comment and label it [_spam :wastebasket:_](https://github.com/mdn/browser-compat-data/labels/spam%20%3Awastebasket%3A).
 - **Is the issue template wholly incomplete?** Close it and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
 - **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
+- **Is the issue a duplicate of another issue?** Close it with a comment stating it is a duplicate, mentioning the original issue number, and label it [_duplicate :dancing_women:_](https://github.com/mdn/browser-compat-data/labels/duplicate%20%3Adancing_women%3A).
 - **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
 
 ## Confirm the title, description, and metadata
@@ -50,28 +51,11 @@ Most reporters won't do these things on their own, but these are important steps
 
 ### Get testing details
 
-- **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/) test for this feature, link to it.**
+- **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/) test for this feature, link to it.**
 - **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
 - **Ask the reporter if they have a minimal test case** (e.g., on CodePen).
 - If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.
-
-### Chrome (and Chromium-based browsers)
-
-These details can be helpful if an issue is specific to the Chromium-based browsers: Chrome, Chrome for Android, Android WebView, Edge (versions ≥79), Opera, Opera for Android, and Samsung Internet.
-
-- **Link to a Chrome Platform Status entry, if it exists.**
-- If applicable, **request or link to a relevant issue on [the Chromium issue tracker](https://bugs.chromium.org/p/chromium/issues/list)**.
-- If applicable, **comment if the interface is listed in [`not-webview-exposed.txt`](https://source.chromium.org/chromium/chromium/src/+/master:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt).**
-
-### Firefox and Firefox for Android
-
-- If applicable, **request or link to a relevant bug on [Bugzilla](http://bugzilla.mozilla.org/).**
-- If the issue affects Firefox for Android only, **check whether the feature was introduced before or after Firefox 68 and make a note of it in a comment or the issue description**.
-
-### Safari
-
-- If applicable, **request or link to a relevant bug on [WebKit Bugzilla](https://bugs.webkit.org/).**
-- If a version has been identified for addition or removal, **check the release notes linked from [`safari.json`](https://github.com/mdn/browser-compat-data/blob/main/browsers/safari.json)**.
+- **If there is a bug or commit, link to it.** Bugs can be found using the links provided in the [helpful resources section of the contributing document](./contributing.md#helpful-resources).
 
 ## Propose next steps
 
