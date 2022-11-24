@@ -161,6 +161,7 @@ export type LinterMessage = {
   title: string;
   path: string;
   message: string;
+  fixable?: true;
   [k: string]: any;
 };
 
@@ -281,7 +282,7 @@ export class Linters {
         this.messages[linter.name].push({
           level: 'error',
           title: linter.name,
-          path: e.traceback,
+          path: data.path.full,
           message: 'Linter failure! ' + e,
         });
       }

@@ -23,6 +23,10 @@ import mirrorSupport from '../release/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+const downstreamBrowsers = (
+  Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
+).filter((browser) => bcd.browsers[browser].upstream);
+
 /**
  * Check to see if the statement is equal to the mirrored statement
  *
@@ -60,12 +64,9 @@ export const isMirrorEquivalent = (
  * @param {CompatData} bcd The compat data to update
  * @param {BrowserName[]} browsers The browsers to test
  */
-export const mirrorIfEquivalent = (
-  bcd: CompatData,
-  browsers: BrowserName[],
-): void => {
+export const mirrorIfEquivalent = (bcd: CompatData): void => {
   for (const { compat } of walk(undefined, bcd)) {
-    for (const browser of browsers) {
+    for (const browser of downstreamBrowsers) {
       if (isMirrorEquivalent(compat.support, browser)) {
         (compat.support[browser] as InternalSupportStatement) = 'mirror';
       }
@@ -76,13 +77,12 @@ export const mirrorIfEquivalent = (
 /**
  * Update compat data to 'mirror' if the statement matches mirroring
  *
- * @param {string} filename The name of the file to update
- * @param {BrowserName[]} browsers The browsers to update
+ * @param {string} filename The name of the file to fix
  */
-const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
+const fixMirror = (filename: string): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
-  mirrorIfEquivalent(bcd, browsers);
+  mirrorIfEquivalent(bcd);
   const expected = JSON.stringify(bcd, null, 2);
 
   if (actual !== expected) {
@@ -90,50 +90,4 @@ const updateInPlace = (filename: string, browsers: BrowserName[]): void => {
   }
 };
 
-if (esMain(import.meta)) {
-  const defaultBrowsers = (
-    Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
-  ).filter((browser) => bcd.browsers[browser].upstream);
-
-  const defaultFolders = [
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'webdriver',
-    'webextensions',
-  ];
-
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0',
-    'Replace support statements with "mirror" where equivalent',
-    (yargs) => {
-      yargs
-        .option('browsers', {
-          describe:
-            'The browsers to attempt migration for. A support statement will only be update if all of the browsers can be mirrored.',
-          type: 'array',
-          default: defaultBrowsers,
-        })
-        .option('folders', {
-          describe: 'The folders to attempt migration for.',
-          type: 'array',
-          default: defaultFolders,
-        });
-    },
-  );
-
-  for (const dir of (argv as any).folders) {
-    const files = new fdir()
-      .withBasePath()
-      .filter((fp) => fp.endsWith('.json'))
-      .crawl(path.join(dirname, '..', '..', dir))
-      .sync();
-    for (const file of files as string[]) {
-      updateInPlace(file, (argv as any).browsers);
-    }
-  }
-}
+export default fixMirror;
