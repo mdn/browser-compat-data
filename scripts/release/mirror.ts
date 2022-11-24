@@ -61,6 +61,11 @@ export const getMatchingBrowserVersion = (
   }
   /* c8 ignore stop */
 
+  if (sourceVersion == 'preview') {
+    // If target browser doesn't have a preview version, map preview -> false
+    return browserData.preview_name ? 'preview' : false;
+  }
+
   if (targetBrowser === 'safari_ios') {
     // The mapping between Safari macOS and iOS releases is complicated and
     // cannot be entirely derived from the WebKit versions. After Safari 15
@@ -78,10 +83,6 @@ export const getMatchingBrowserVersion = (
 
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
-
-  if (sourceVersion == 'preview') {
-    return 'preview';
-  }
 
   const range = sourceVersion.includes('≤');
   const sourceRelease =
@@ -103,19 +104,13 @@ export const getMatchingBrowserVersion = (
     ) {
       // Handle mirroring for Chromium forks when upstream version is pre-Blink
       return range ? `≤${r}` : r;
-    } else if (release.engine == sourceRelease.engine) {
-      if (
-        ['beta', 'nightly'].includes(release.status) &&
-        release.status == sourceRelease.status
-      ) {
-        return r;
-      } else if (
-        release.engine_version &&
-        sourceRelease.engine_version &&
-        compare(release.engine_version, sourceRelease.engine_version, '>=')
-      ) {
-        return r;
-      }
+    } else if (
+      release.engine == sourceRelease.engine &&
+      release.engine_version &&
+      sourceRelease.engine_version &&
+      compare(release.engine_version, sourceRelease.engine_version, '>=')
+    ) {
+      return r;
     }
   }
 
