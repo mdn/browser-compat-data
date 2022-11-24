@@ -9,10 +9,10 @@ import type {
   SimpleSupportStatement,
 } from '../../types/types';
 
-function stringOrArrayIncludes(
+const stringOrArrayIncludes = (
   target: SimpleSupportStatement['notes'],
   str: string,
-) {
+) => {
   if (!target) {
     return false;
   }
@@ -20,28 +20,24 @@ function stringOrArrayIncludes(
     return target.some((item) => item.includes(str));
   }
   return target.includes(str);
-}
+};
 
-function includesTrackingBug(statement: SimpleSupportStatement) {
-  return (
-    stringOrArrayIncludes(statement.notes, 'crbug.com') ||
-    stringOrArrayIncludes(statement.notes, 'bugzil.la') ||
-    stringOrArrayIncludes(statement.notes, 'webkit.org/b/')
-  );
-}
+const includesTrackingBug = (statement: SimpleSupportStatement) =>
+  stringOrArrayIncludes(statement.notes, 'crbug.com') ||
+  stringOrArrayIncludes(statement.notes, 'bugzil.la') ||
+  stringOrArrayIncludes(statement.notes, 'webkit.org/b/');
 
-export function hasSupportHistory(compat: CompatStatement) {
-  return Object.values(compat.support).some(
+export const hasSupportHistory = (compat: CompatStatement) =>
+  Object.values(compat.support).some(
     (c) => Array.isArray(c) || !!c.version_added || includesTrackingBug(c),
   );
-}
 
 export default {
   name: 'Support history',
   description:
     'Ensure that there are no features where there is no browser support',
   scope: 'feature',
-  check(logger: Logger, { data }: { data: CompatStatement }) {
+  check: (logger: Logger, { data }: { data: CompatStatement }) => {
     if (!hasSupportHistory(data)) {
       logger.error(chalk`No support and no tracking bug`);
     }

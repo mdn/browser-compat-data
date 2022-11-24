@@ -4,10 +4,9 @@
 import { readFileSync, writeFileSync, unlinkSync } from 'node:fs';
 import { hasSupportHistory } from '../../test/linter/test-support-history.js';
 
-/**
- * @param {Identifier} data
- */
-function check(data) {
+import type { Identifier } from '../../types/types';
+
+const check = (data: Identifier) => {
   let hasIssue = false;
   if (data.__compat && !hasSupportHistory(data.__compat)) {
     hasIssue = true;
@@ -21,9 +20,9 @@ function check(data) {
     }
   }
   return hasIssue;
-}
+};
 
-function fixSupportHistory(filename: string) {
+const fixSupportHistory = (filename: string) => {
   const actual = readFileSync(filename, 'utf-8').trim();
   const data = JSON.parse(actual);
 
@@ -39,6 +38,6 @@ function fixSupportHistory(filename: string) {
   } else {
     unlinkSync(filename);
   }
-}
+};
 
 export default fixSupportHistory;
