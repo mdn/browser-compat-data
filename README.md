@@ -2,32 +2,68 @@
 
 [https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)
 
-This repository contains compatibility data for Web technologies.
-Browser compatibility data describes which platforms (where "platforms" are
-usually, but not always, web browsers) support particular Web APIs.
-
-This data can be used in documentation, to build compatibility tables listing
-browser support for APIs. For example:
-[Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).
+The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#Projects-using-the-data).
 
 Read how this project is [governed](GOVERNANCE.md).
 
-Chat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).
+Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
-## Installation
+## Installation and Import
+
+### NodeJS
 
 You can install `@mdn/browser-compat-data` as a node package.
 
-```
+```bash
 npm install @mdn/browser-compat-data
+# ...or...
+yarn add @mdn/browser-compat-data
+```
+
+Then, you can import BCD into your project with either `import` or `require()`:
+
+```js
+// ESM with Import Assertions (NodeJS 16+)
+import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+
+// ...or...
+
+// ESM Wrapper for older NodeJS versions (NodeJS v12+)
+import bcd from '@mdn/browser-compat-data/forLegacyNode';
+
+// ...or...
+
+// CommonJS Module (Any NodeJS)
+const bcd = require('@mdn/browser-compat-data');
+```
+
+### Deno/Browsers
+
+You can import `@mdn/browser-compat-data` using a CDN.
+
+```js
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
+```
+
+### Other Languages
+
+You can obtain the raw compatibility data for `@mdn/browser-compat-data` using a CDN and loading the `data.json` file included in releases.
+
+```py
+https://unpkg.com/@mdn/browser-compat-data/data.json
 ```
 
 ## Usage
 
+Once you have imported BCD, you can access the compatibility data for any feature by accessing the properties of the dictionary.
+
 ```js
-const bcd = require('@mdn/browser-compat-data');
-bcd.css.properties.background;
+// Grab the desired support statement
+const support = bcd.css.properties.background.__compat;
 // returns a compat data object (see schema)
+
+// You may use any syntax to obtain dictionary items
+const support = bcd['api']['Document']['body']['__compat'];
 ```
 
 ## Package contents
@@ -40,22 +76,29 @@ Apart from the explicitly documented objects below, feature-level support data m
 
 The package contains the following top-level objects:
 
+### `__meta`
+
+An object containing the following package metadata:
+
+- `version` - the package version
+- `timestamp` - the timestamp of when the package version was built
+
 ### [`api`](api)
 
 Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.
 
 ### [`browsers`](browsers)
 
-Data for browser and engine releases. See the [browser schema](schemas/browsers-schema.md) for details.
+Data for browsers and JavaScript runtimes. See the [browser schema](schemas/browsers-schema.md) for details.
 
 ### [`css`](css)
 
 Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, including:
 
-- `at-rules` - at-rules
-- `properties` - properties
-- `selectors` - selectors (such as basic selectors, combinators, or pseudo elements)
-- `types` - types for rule values
+- `at-rules` - at-rules (e.g. `@media`)
+- `properties` - Properties (e.g. `background`, `color`, `font-variant`)
+- `selectors` - Selectors (such as basic selectors, combinators, or pseudo elements)
+- `types` - Value types for rule values
 
 ### [`html`](html)
 
@@ -114,6 +157,7 @@ For the purposes of [semantic versioning](https://semver.org/) (SemVer), the pub
 
 - The high-level namespace objects documented in [_Package contents_](#Package-contents)
 - The schema definitions for browser and support data structures
+- The TypeScript definitions
 
 The details of browser compatibility change frequently, as browsers ship new features, standards organizations revise specifications, and Web developers discover new bugs. We routinely publish updates to the package to reflect these changes.
 
@@ -121,11 +165,11 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 ## Issues?
 
-If you find a problem, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
+If you find a problem with the compatibility data (such as incorrect version numbers) or there is a new web feature you think we should document, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
 
 ## Contributing
 
-We're very happy to accept contributions to this data. See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
+Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
 
 ## Projects using the data
 

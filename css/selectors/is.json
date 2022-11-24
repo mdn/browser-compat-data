@@ -5,23 +5,11 @@
         "__compat": {
           "description": "<code>:is()</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:is",
-          "spec_url": "https://drafts.csswg.org/selectors/#matches-pseudo",
+          "spec_url": "https://w3c.github.io/csswg-drafts/selectors/#matches-pseudo",
           "support": {
             "chrome": [
               {
                 "version_added": "88"
-              },
-              {
-                "version_removed": "88",
-                "version_added": "68",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
               },
               {
                 "version_added": "12",
@@ -29,54 +17,13 @@
                 "notes": "Doesn't support combinators."
               }
             ],
-            "chrome_android": [
-              {
-                "version_added": "88"
-              },
-              {
-                "version_added": "18",
-                "alternative_name": ":-webkit-any()",
-                "notes": "Doesn't support combinators."
-              }
-            ],
-            "edge": [
-              {
-                "version_added": "88"
-              },
-              {
-                "version_removed": "88",
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
-              },
-              {
-                "version_added": "79",
-                "alternative_name": ":-webkit-any()",
-                "notes": "Doesn't support combinators."
-              }
-            ],
+            "chrome_android": "mirror",
+            "edge": "mirror",
             "firefox": [
               {
                 "version_added": "78"
               },
               {
-                "version_added": "77",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.is-where-selectors.enabled",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "Enabled by default in Firefox Nightly."
-              },
-              {
                 "version_added": "4",
                 "alternative_name": ":-moz-any()",
                 "notes": [
@@ -85,54 +32,13 @@
                 ]
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "4",
-                "alternative_name": ":-moz-any()",
-                "notes": [
-                  "Doesn't support combinators.",
-                  "See <a href='https://bugzil.la/906353'>bug 906353</a>."
-                ]
-              }
-            ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "opera": [
-              {
-                "version_added": "74"
-              },
-              {
-                "version_removed": "74",
-                "version_added": "55",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Combinators in the selector list argument may not match correctly (see <a href='https://crbug.com/842157'>bug 842157</a>)."
-              },
-              {
-                "version_added": "15",
-                "alternative_name": ":-webkit-any()",
-                "notes": "Doesn't support combinators."
-              }
-            ],
-            "opera_android": [
-              {
-                "version_added": "63"
-              },
-              {
-                "version_added": "14",
-                "alternative_name": ":-webkit-any()",
-                "notes": "Doesn't support combinators."
-              }
-            ],
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": [
               {
                 "version_added": "14"
@@ -166,13 +72,13 @@
                 "version_added": "15.0"
               },
               {
+                "alternative_name": ":-webkit-any()",
+                "version_added": "1.0"
+              },
+              {
                 "alternative_name": ":matches()",
                 "version_added": "9.0",
                 "version_removed": "10.0"
-              },
-              {
-                "alternative_name": ":-webkit-any()",
-                "version_added": "1.0"
               }
             ],
             "webview_android": [
@@ -200,39 +106,24 @@
               "chrome": {
                 "version_added": "88"
               },
-              "chrome_android": {
-                "version_added": "88"
-              },
-              "edge": {
-                "version_added": "88"
-              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
               "firefox": {
                 "version_added": "82"
               },
-              "firefox_android": {
-                "version_added": "82"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "opera": {
-                "version_added": "74"
-              },
-              "opera_android": {
-                "version_added": "63"
-              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "14"
               },
-              "safari_ios": {
-                "version_added": "14"
-              },
-              "samsunginternet_android": {
-                "version_added": "15.0"
-              },
-              "webview_android": {
-                "version_added": "88"
-              }
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
