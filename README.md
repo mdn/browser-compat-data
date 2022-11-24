@@ -194,7 +194,7 @@ Thanks to:
     <td>
       <img
         src="https://user-images.githubusercontent.com/498917/52569900-852b3080-2e12-11e9-9bd0-f1e256b13e53.png"
-        height="86"
+        height="56"
         alt="BrowserStack"
       />
       <p>
@@ -208,7 +208,7 @@ Thanks to:
     <td>
       <img
         src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true"
-        height="86"
+        height="56"
         alt="Testing Powered By Sauce Labs"
       />
       <p>
@@ -220,7 +220,7 @@ Thanks to:
     <td>
       <img
         src="https://user-images.githubusercontent.com/5179191/203835995-e4cf2b3f-483f-419f-afda-bad1200c04f2.png"
-        height="86"
+        height="56"
         alt="LambdaTest"
       />
       <p>
