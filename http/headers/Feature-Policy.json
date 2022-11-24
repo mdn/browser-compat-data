@@ -1,25 +1,18 @@
 {
   "http": {
     "headers": {
-      "Permissions-Policy": {
+      "Feature-Policy": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy",
           "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#permissions-policy-http-header-field",
           "support": {
-            "chrome": [
-              {
-                "version_added": "88"
-              },
-              {
-                "version_added": "60",
-                "alternative_name": "Feature-Policy"
-              }
-            ],
+            "chrome": {
+              "version_added": "60"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "74",
-              "alternative_name": "Feature-Policy",
               "partial_implementation": true,
               "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
             },
@@ -32,7 +25,6 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1",
-              "alternative_name": "Feature-Policy",
               "partial_implementation": true,
               "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
             },
@@ -48,18 +40,12 @@
         },
         "accelerometer": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/accelerometer",
-            "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/accelerometer",
+            "spec_url": "https://w3c.github.io/accelerometer/#ref-for-policy-controlled-feature",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "66",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "67"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -88,18 +74,12 @@
         },
         "ambient-light-sensor": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/ambient-light-sensor",
-            "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/ambient-light-sensor",
+            "spec_url": "https://w3c.github.io/ambient-light/#ref-for-policy-controlled-feature",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "66",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "67"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -128,23 +108,16 @@
         },
         "autoplay": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/autoplay",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/autoplay",
             "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#autoplay-feature",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "64"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: autoplay",
                 "flags": [
                   {
                     "type": "preference",
@@ -174,25 +147,53 @@
             }
           }
         },
+        "battery": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/battery",
+            "spec_url": "https://w3c.github.io/battery/#permissions-policy-integration",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Will be implemented, see <a href='https://crbug.com/1007264'>bug 1007264</a>."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "camera": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/camera",
-            "spec_url": "https://w3c.github.io/mediacapture-main/#permissions-policy-integration",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/camera",
+            "spec_url": "https://w3c.github.io/mediacapture-main/#dfn-camera",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: camera",
                 "partial_implementation": true,
                 "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
               },
@@ -208,8 +209,7 @@
                 "version_added": "45"
               },
               "safari": {
-                "version_added": "11.1",
-                "alternative_name": "Feature-Policy: camera"
+                "version_added": "11.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -222,39 +222,64 @@
             }
           }
         },
-        "document-domain": {
+        "display-capture": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/document-domain",
-            "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#policy-controlled-features",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/display-capture",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#permissions-policy-integration",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--enable-blink-features=ExperimentalProductivityFeatures"
-                    }
-                  ]
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--enable-blink-features=ExperimentalProductivityFeatures"
-                    }
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "94"
+              },
               "chrome_android": {
                 "version_added": false
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: document-domain",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "13",
+                "partial_implementation": true,
+                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "document-domain": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/document-domain",
+            "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#document-domain-feature",
+            "support": {
+              "chrome": {
+                "version_added": "77"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "74",
                 "flags": [
                   {
                     "type": "preference",
@@ -286,23 +311,16 @@
         },
         "encrypted-media": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/encrypted-media",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/encrypted-media",
             "spec_url": "https://w3c.github.io/encrypted-media/#permissions-policy-integration",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: encrypted-media",
                 "flags": [
                   {
                     "type": "preference",
@@ -336,105 +354,18 @@
             }
           }
         },
-        "execution-while-not-rendered": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/execution-while-not-rendered",
-            "spec_url": "https://wicg.github.io/page-lifecycle/#feature-policies",
-            "support": {
-              "chrome": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--enable-blink-features=ExperimentalProductivityFeatures"
-                  }
-                ]
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "execution-while-out-of-viewport": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/execution-while-out-of-viewport",
-            "spec_url": "https://wicg.github.io/page-lifecycle/#feature-policies",
-            "support": {
-              "chrome": {
-                "version_added": true,
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--enable-blink-features=ExperimentalProductivityFeatures"
-                  }
-                ]
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "fullscreen": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/fullscreen",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/fullscreen",
             "spec_url": "https://fullscreen.spec.whatwg.org/#permissions-policy-integration",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "62",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "62"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: fullscreen",
                 "partial_implementation": true,
                 "notes": [
                   "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
@@ -464,17 +395,23 @@
         },
         "gamepad": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/gamepad",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gamepad",
             "spec_url": "https://w3c.github.io/gamepad/#permission-policy",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "86",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#restrict-gamepad-access",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "91",
-                "alternative_name": "Feature-Policy: gamepad",
                 "partial_implementation": true,
                 "notes": [
                   "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
@@ -504,23 +441,16 @@
         },
         "geolocation": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/geolocation",
-            "spec_url": "https://w3c.github.io/geolocation-api/#permissions-policy",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/geolocation",
+            "spec_url": "https://w3c.github.io/geolocation-api/#dfn-geolocation",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: geolocation",
                 "partial_implementation": true,
                 "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
               },
@@ -547,51 +477,11 @@
         },
         "gyroscope": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/gyroscope",
-            "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
-            "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "66",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "hid": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/hid",
-            "spec_url": "https://wicg.github.io/webhid/#permissions-policy",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/gyroscope",
+            "spec_url": "https://w3c.github.io/gyroscope/#ref-for-policy-controlled-feature",
             "support": {
               "chrome": {
-                "version_added": "89"
+                "version_added": "67"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -621,14 +511,17 @@
         },
         "idle-detection": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/idle-detection",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/idle-detection",
             "spec_url": "https://wicg.github.io/idle-detection/#api-permissions-policy",
             "support": {
               "chrome": {
                 "version_added": "94"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": {
+                "version_added": "94",
+                "version_removed": "96"
+              },
               "firefox": {
                 "version_added": false
               },
@@ -655,18 +548,12 @@
         },
         "magnetometer": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/magnetometer",
-            "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/magnetometer",
+            "spec_url": "https://w3c.github.io/magnetometer/#ref-for-policy-controlled-feature",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "66",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "67"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -697,23 +584,16 @@
         },
         "microphone": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/microphone",
-            "spec_url": "https://w3c.github.io/mediacapture-main/#permissions-policy-integration",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/microphone",
+            "spec_url": "https://w3c.github.io/mediacapture-main/#dfn-microphone",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: microphone",
                 "partial_implementation": true,
                 "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
               },
@@ -729,8 +609,7 @@
                 "version_added": "45"
               },
               "safari": {
-                "version_added": "11.1",
-                "alternative_name": "Feature-Policy: microphone"
+                "version_added": "11.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -745,23 +624,16 @@
         },
         "midi": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/midi",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi",
             "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-policy-integration",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "64",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: midi",
                 "flags": [
                   {
                     "type": "preference",
@@ -793,23 +665,16 @@
         },
         "payment": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/payment",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/payment",
             "spec_url": "https://w3c.github.io/payment-request/#permissions-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "60",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: payment",
                 "flags": [
                   {
                     "type": "preference",
@@ -841,18 +706,12 @@
         },
         "picture-in-picture": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/picture-in-picture",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/picture-in-picture",
             "spec_url": "https://w3c.github.io/picture-in-picture/#feature-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "71",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "71"
+              },
               "chrome_android": {
                 "version_added": false
               },
@@ -887,18 +746,12 @@
         },
         "publickey-credentials-get": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/publickey-credentials-get",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/publickey-credentials-get",
             "spec_url": "https://w3c.github.io/webauthn/#sctn-permissions-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "84",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "84"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -929,83 +782,9 @@
             }
           }
         },
-        "screen-wake-lock": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/screen-wake-lock",
-            "spec_url": "https://w3c.github.io/screen-wake-lock/#policy-control",
-            "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "84",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "serial": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/serial",
-            "spec_url": "https://wicg.github.io/serial/#permissions-policy",
-            "support": {
-              "chrome": {
-                "version_added": "89"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "speaker-selection": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/speaker-selection",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/speaker-selection",
             "spec_url": "https://w3c.github.io/mediacapture-output/#permissions-policy-integration",
             "support": {
               "chrome": {
@@ -1015,7 +794,6 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "92",
-                "alternative_name": "Feature-Policy: speaker-selection",
                 "partial_implementation": true,
                 "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
                 "flags": [
@@ -1047,20 +825,47 @@
             }
           }
         },
+        "sync-xhr": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/sync-xhr",
+            "support": {
+              "chrome": {
+                "version_added": "65"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "usb": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/usb",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/usb",
             "spec_url": "https://wicg.github.io/webusb/#permissions-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "60",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "60"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -1091,23 +896,16 @@
         },
         "web-share": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/web-share",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/web-share",
             "spec_url": "https://w3c.github.io/web-share/#permissions-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "86",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": false
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "81",
-                "alternative_name": "Feature-Policy: web-share",
                 "partial_implementation": true,
                 "notes": [
                   "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
@@ -1133,39 +931,6 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "wildcards": {
-          "__compat": {
-            "description": "Wildcards in Permissions-Policy allowlist origins",
-            "support": {
-              "chrome": {
-                "version_added": "108"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
               "experimental": true,
               "standard_track": true,
               "deprecated": false
@@ -1174,18 +939,12 @@
         },
         "xr-spatial-tracking": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/xr-spatial-tracking",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/xr-spatial-tracking",
             "spec_url": "https://immersive-web.github.io/webxr/#permissions-policy",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88"
-                },
-                {
-                  "version_added": "79",
-                  "alternative_name": "Feature-Policy"
-                }
-              ],
+              "chrome": {
+                "version_added": "79"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
