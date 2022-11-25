@@ -331,30 +331,16 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "69",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.webidl.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "65",
-                "version_removed": "69",
-                "alternative_name": "policy",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.webidl.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "69",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.security.featurePolicy.webidl.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -558,8 +544,7 @@
             },
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/196698'>bug 196698</a>."
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -758,7 +743,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "50"
+              "version_added": "61"
             },
             "firefox_android": "mirror",
             "ie": {

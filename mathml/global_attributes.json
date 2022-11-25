@@ -99,7 +99,6 @@
       "href": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Global_attributes/href",
-          "spec_url": "https://w3c.github.io/mathml/#fund_globatt",
           "support": {
             "chrome": {
               "version_added": false
@@ -127,7 +126,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -250,11 +249,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "70",
-              "impl_url": "https://hg.mozilla.org/mozilla-central/rev/3b30c8db537c",
-              "notes": "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3."
-            },
+            "firefox": [
+              {
+                "version_added": "70",
+                "impl_url": "https://hg.mozilla.org/mozilla-central/rev/3b30c8db537c"
+              },
+              {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Attribute only accepted on a few elements, as specified in MathML 3."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -268,10 +273,7 @@
               "version_added": "5",
               "impl_url": "https://trac.webkit.org/changeset/63079"
             },
-            "safari_ios": {
-              "version_added": "4",
-              "impl_url": "https://trac.webkit.org/changeset/63079"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -279,6 +281,109 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        },
+        "named_spaces": {
+          "__compat": {
+            "description": "Named spaces (e.g. <code>thinmathspace</code> to mean 3/18em)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Attribute/Values#legacy_mathml_lengths",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "nonzero_unitless_values": {
+          "__compat": {
+            "description": "Nonzero unitless values (e.g. 5 to mean 500%)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/MathML/Attribute/Values#legacy_mathml_lengths",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1",
+                "version_removed": "70"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "small_normal_big": {
+          "__compat": {
+            "description": "<code>small</code>, <code>normal</code>, <code>big</code> values",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1",
+                "version_removed": "83"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "5"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
           }
         }
       },

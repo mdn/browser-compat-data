@@ -161,6 +161,7 @@ export type LinterMessage = {
   title: string;
   path: string;
   message: string;
+  fixable?: true;
   [k: string]: any;
 };
 
@@ -236,7 +237,7 @@ export class Linters {
   linters: Linter[];
   messages: Record<string, LinterMessage[]>;
   // Contains all seen tested objects, boolean means:
-  // false - failure occured (good)
+  // false - failure occurred (good)
   // true - failure did not occur (bad)
   missingExpectedFailures: Record<string, Record<string, boolean>>;
 
@@ -281,7 +282,7 @@ export class Linters {
         this.messages[linter.name].push({
           level: 'error',
           title: linter.name,
-          path: e.traceback,
+          path: data.path.full,
           message: 'Linter failure! ' + e,
         });
       }

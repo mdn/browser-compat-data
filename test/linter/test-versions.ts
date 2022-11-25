@@ -13,7 +13,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index';
 
-import compareVersions from 'compare-versions';
+import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
@@ -125,7 +125,7 @@ const addedBeforeRemoved = (
   const added = statement.version_added.replace('≤', '');
   const removed = statement.version_removed.replace('≤', '');
 
-  if (!compareVersions.validate(added) || !compareVersions.validate(removed)) {
+  if (!validate(added) || !validate(removed)) {
     return null;
   }
 
@@ -139,7 +139,7 @@ const addedBeforeRemoved = (
     return true;
   }
 
-  return compareVersions.compare(added, removed, '<');
+  return compare(added, removed, '<');
 };
 
 /**
@@ -154,27 +154,26 @@ const checkVersions = (
   category: string,
   logger: Logger,
 ): void => {
-  const browsersToCheck = Object.keys(supportData) as BrowserName[];
+  const browsersToCheck = Object.keys(browsers).filter((b) =>
+    category === 'webextensions' ? browsers[b].accepts_webextensions : !!b,
+  ) as BrowserName[];
 
   for (const browser of browsersToCheck) {
     if (validBrowserVersions[browser]) {
       const supportStatement: InternalSupportStatement | undefined =
         supportData[browser];
+
       if (!supportStatement) {
+        if (realValuesRequired[category].includes(browser)) {
+          logger.error(chalk`{red {bold ${browser}} must be defined}`);
+        }
+
         continue;
       }
 
       for (const statement of Array.isArray(supportStatement)
         ? supportStatement
         : [supportStatement]) {
-        if (statement === undefined) {
-          if (realValuesRequired[category].includes(browser)) {
-            logger.error(chalk`{red → {bold ${browser}} must be defined}`);
-          }
-
-          continue;
-        }
-
         if (statement === 'mirror') {
           // If the data is to be mirrored, make sure it is mirrorable
           if (!browsers[browser].upstream) {
@@ -227,7 +226,7 @@ const checkVersions = (
         if (statement.version_added === false) {
           if (
             Object.keys(statement).some(
-              (k) => !['version_added', 'notes'].includes(k),
+              (k) => !['version_added', 'notes', 'impl_url'].includes(k),
             )
           ) {
             logger.error(

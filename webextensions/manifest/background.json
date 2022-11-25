@@ -18,6 +18,9 @@
             "opera": "mirror",
             "safari": {
               "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
             }
           }
         },
@@ -25,7 +28,8 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
                 "version_added": "14"
@@ -36,7 +40,12 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Available for use in Manifest V2 or later."
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "Available for use in Manifest V2 or later."
               }
             }
           }
@@ -45,25 +54,48 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
                 "version_added": "14",
-                "notes": "The 'persistent' property is mandatory."
+                "notes": "This property is required."
               },
               "firefox": {
                 "version_added": "48",
                 "notes": [
-                  "Only persistent pages are supported. As of version 101, extension developers can turn on event pages for testing in Manifest V2 using the <code>extensions.eventPages.enabled</code> preference and in Manifest V3 using the <code>extensions.manifestV3.enabled</code> preference.",
+                  "From Firefox 106, persistent and non-persistent pages are supported for Manifest V2.",
+                  "To Firefox 105, only persistent pages are supported.",
+                  "From Firefox 101 to 105, extension developers can turn on event pages for testing in Manifest V2 using the <code>extensions.eventPages.enabled</code> preference.",
+                  "From Firefox 101, extension developers can turn on event pages for testing in Manifest V3 using the <code>extensions.manifestV3.enabled</code> preference.",
                   "Before version 66, Firefox would log a warning even if the value was set to <code>true</code>."
                 ]
               },
               "firefox_android": "mirror",
               "opera": "mirror",
-              "safari": {
-                "notes": "Before 14.1, only persistent pages are supported.",
-                "version_added": "14"
-              }
+              "safari": [
+                {
+                  "version_added": "14.1",
+                  "notes": "Since Safari 15.4, ignored if <code>service_worker</code> is used."
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Only persistent pages are supported."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code> or <code>service_worker</code>.",
+                  "partial_implementation": true,
+                  "version_added": "15.4"
+                },
+                {
+                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code>.",
+                  "partial_implementation": true,
+                  "version_added": "15"
+                }
+              ]
             }
           }
         },
@@ -71,7 +103,8 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
                 "version_added": "14"
@@ -83,8 +116,34 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Available for use in Manifest V2 or later."
+              },
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "Available for use in Manifest V2 or later."
               }
+            }
+          }
+        },
+        "service_worker": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "88",
+                "notes": "Available for use in Manifest V2 or later."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "15.4",
+                "notes": "Available for use in Manifest V2 or later."
+              },
+              "safari_ios": "mirror"
             }
           }
         }

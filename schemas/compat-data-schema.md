@@ -32,7 +32,7 @@ The JSON files contain [feature identifiers](#feature-identifiers), which are re
 
 ## Understanding the schema
 
-#### Feature hierarchies
+### Feature hierarchies
 
 Each feature is identified by a unique hierarchy of strings, e.g the `text-align` property is identified by `css.properties.text-align`.
 
@@ -70,7 +70,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](/docs/data-guidelines.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](/docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -168,7 +168,7 @@ The `__compat` object consists of the following:
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://www.khronos.org/registry/webgl/extensions/[^/]+/` (e.g. `https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/`).
+  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`).
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 #### Browser identifiers
@@ -181,8 +181,9 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `edge`, Microsoft Edge (on Windows), based on the EdgeHTML version (before version 79), and later on the Chromium version
 - `firefox`, Mozilla Firefox (on desktops)
 - `firefox_android`, Firefox for Android, sometimes nicknamed Fennec
-- `ie`, Microsoft Internet Explorer (discontinued)
+- `ie`, Microsoft Internet Explorer (discontinued; BCD is frozen)
 - `nodejs` Node.js JavaScript runtime built on Chrome's V8 JavaScript engine
+- `oculus`, Meta Quest Browser (formerly Oculus Quest), based on Google Chrome (on Android)
 - `opera`, the Opera browser (desktop), based on Blink since Opera 15
 - `opera_android`, the Opera browser (Android version)
 - `safari`, Safari on macOS
@@ -280,7 +281,7 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatiblity data](https://github.com/mdn/browser-compat-data/issues/3555).
+Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 #### `version_removed`
 
@@ -311,27 +312,7 @@ Examples:
 }
 ```
 
-Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatiblity data](https://github.com/mdn/browser-compat-data/issues/3555).
-
-### Initial versions
-
-The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
-
-| Browser          | Initial version | Notes                                                                                                                                                                    |
-| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Chrome           | 1               |                                                                                                                                                                          |
-| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
-| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
-| Firefox          | 1               |                                                                                                                                                                          |
-| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
-| IE               | 1               |                                                                                                                                                                          |
-| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
-| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
-| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
-| Safari           | 1               |                                                                                                                                                                          |
-| iOS Safari       | 1               |                                                                                                                                                                          |
-| Samsung Internet | 1.0             |                                                                                                                                                                          |
-| WebView Android  | 1               |                                                                                                                                                                          |
+Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 ### Ranged versions
 
@@ -478,7 +459,7 @@ The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addi
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {
