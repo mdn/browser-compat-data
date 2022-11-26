@@ -4,6 +4,7 @@
 import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
+
 import {
   applyMirroring,
   createDataBundle,

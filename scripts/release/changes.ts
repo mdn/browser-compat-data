@@ -15,8 +15,9 @@ export interface Changes {
 
 import chalk from 'chalk-template';
 
-import { queryPRs } from './utils.js';
 import diffFeatures from '../diff-features.js';
+
+import { queryPRs } from './utils.js';
 
 /**
  * Format a feature change in Markdown

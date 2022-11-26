@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { compareVersions, compare } from 'compare-versions';
+
+import bcd from '../../index.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -8,12 +11,9 @@ import {
 } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index.js';
 
-type Notes = string | string[] | null;
-
-import { compareVersions, compare } from 'compare-versions';
-
-import bcd from '../../index.js';
 const { browsers } = bcd;
+
+type Notes = string | string[] | null;
 
 /**
  * @typedef {import('../types').Identifier} Identifier
