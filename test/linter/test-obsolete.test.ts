@@ -3,13 +3,14 @@
 
 import assert from 'node:assert/strict';
 
+import bcd from '../../index.js';
+import { Logger } from '../utils.js';
+
 import {
   neverImplemented,
   implementedAndRemoved,
   processData,
 } from './test-obsolete.js';
-import bcd from '../../index.js';
-import { Logger } from '../utils.js';
 const { browsers } = bcd;
 
 const errorTime = new Date(),

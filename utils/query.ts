@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import { DataType } from '../types/index.js';
-
 import bcd from '../index.js';
 
 /**

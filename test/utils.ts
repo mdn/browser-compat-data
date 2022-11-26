@@ -1,11 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { platform } from 'node:os';
+
+import chalk from 'chalk-template';
+
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
-
-import { platform } from 'node:os';
-import chalk from 'chalk-template';
 
 /**
  * @typedef LinterScope
@@ -161,6 +162,7 @@ export type LinterMessage = {
   title: string;
   path: string;
   message: string;
+  fixable?: true;
   [k: string]: any;
 };
 
@@ -281,7 +283,7 @@ export class Linters {
         this.messages[linter.name].push({
           level: 'error',
           title: linter.name,
-          path: e.traceback,
+          path: data.path.full,
           message: 'Linter failure! ' + e,
         });
       }

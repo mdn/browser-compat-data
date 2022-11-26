@@ -6,16 +6,26 @@
   },
   "plugins": [
     "@typescript-eslint",
+    "import",
     "prettier",
     "jsdoc",
-    "prefer-arrow-functions"
+    "prefer-arrow-functions",
+    "unicorn"
   ],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:prettier/recommended",
     "plugin:jsdoc/recommended"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -33,6 +43,14 @@
     "curly": "error",
     "default-case": "off",
     "default-case-last": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "parent", "sibling", "index", "type"]
+      }
+    ],
+    "import/no-named-as-default-member": "off",
     "jsdoc/check-param-names": "error",
     "jsdoc/require-description": "warn",
     "jsdoc/require-jsdoc": [
@@ -70,6 +88,7 @@
     ],
     "prefer-const": "error",
     "prettier/prettier": "error",
-    "quotes": "off"
+    "quotes": "off",
+    "unicorn/prefer-node-protocol": "error"
   }
 }
