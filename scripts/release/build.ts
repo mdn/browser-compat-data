@@ -1,17 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, CompatData } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
-
 import fs from 'node:fs/promises';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
-import mirrorSupport from './mirror.js';
+import { InternalSupportStatement } from '../../types/index.js';
+import { BrowserName, CompatData } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
+
+import mirrorSupport from './mirror.js';
 
 const dirname = new URL('.', import.meta.url);
 const rootdir = new URL('../../', dirname);
