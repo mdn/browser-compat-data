@@ -1,12 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import chalk from 'chalk-template';
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, SupportBlock } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index';
-
-import chalk from 'chalk-template';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 import { isMirrorEquivalent } from '../../scripts/fix/mirror.js';

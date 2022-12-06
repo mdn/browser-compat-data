@@ -1,12 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, Identifier } from '../types/types.js';
-
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+import { BrowserName, Identifier } from '../types/types.js';
 import bcd from '../index.js';
 
 /**

@@ -1,5 +1,106 @@
 # Release notes
 
+## [v5.2.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.20)
+
+November 29, 2022
+
+### Additions
+
+- `api.Element.checkVisibility` ([#18270](https://github.com/mdn/browser-compat-data/pull/18270))
+- `api.FileSystemDirectoryHandle.@@asyncIterator` ([#18271](https://github.com/mdn/browser-compat-data/pull/18271))
+- `api.FontFaceSet.@@iterator` ([#18273](https://github.com/mdn/browser-compat-data/pull/18273))
+- `api.HTMLLinkElement.blocking` ([#18275](https://github.com/mdn/browser-compat-data/pull/18275))
+- `api.HTMLScriptElement.blocking` ([#18276](https://github.com/mdn/browser-compat-data/pull/18276))
+- `api.HTMLStyleElement.blocking` ([#18277](https://github.com/mdn/browser-compat-data/pull/18277))
+- `api.MIDIInputMap.@@iterator` ([#18278](https://github.com/mdn/browser-compat-data/pull/18278))
+- `api.NDEFReader.makeReadOnly` ([#18279](https://github.com/mdn/browser-compat-data/pull/18279))
+- `api.NodeList.@@iterator` ([#18280](https://github.com/mdn/browser-compat-data/pull/18280))
+- `api.PublicKeyCredential.isConditionalMediationAvailable` ([#18282](https://github.com/mdn/browser-compat-data/pull/18282))
+- `api.PushSubscriptionChangeEvent.PushSubscriptionChangeEvent` ([#18283](https://github.com/mdn/browser-compat-data/pull/18283))
+- `api.RTCRtpReceiver.transform` ([#18284](https://github.com/mdn/browser-compat-data/pull/18284))
+
+### Statistics
+
+- 2 contributors have changed 76 files with 1,814 additions and 396 deletions in 31 commits ([`v5.2.19...v5.2.20`](https://github.com/mdn/browser-compat-data/compare/v5.2.19...v5.2.20))
+- 14,063 total features
+- 964 total contributors
+- 4,318 total stargazers
+
+## [v5.2.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.19)
+
+November 25, 2022
+
+### Removals
+
+- `api.Request.Request.readablestream_request_body` ([#18155](https://github.com/mdn/browser-compat-data/pull/18155))
+
+### Additions
+
+- `api.Credential.isConditionalMediationAvailable` ([#18156](https://github.com/mdn/browser-compat-data/pull/18156))
+- `api.CSS.cqb` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.cqh` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.cqi` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.cqmax` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.cqmin` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.cqw` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.CSS.highlights` ([#18162](https://github.com/mdn/browser-compat-data/pull/18162))
+- `api.DedicatedWorkerGlobalScope.rtctransform_event` ([#18167](https://github.com/mdn/browser-compat-data/pull/18167))
+- `api.Highlight` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.@@iterator` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.add` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.clear` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.delete` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.entries` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.forEach` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.has` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.Highlight` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.keys` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.priority` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.size` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.type` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.Highlight.values` ([#18293](https://github.com/mdn/browser-compat-data/pull/18293))
+- `api.HighlightRegistry` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.@@iterator` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.clear` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.delete` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.entries` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.forEach` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.get` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.has` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.keys` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.set` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.size` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.HighlightRegistry.values` ([#18294](https://github.com/mdn/browser-compat-data/pull/18294))
+- `api.Request.Request.request_body_readablestream` ([#18155](https://github.com/mdn/browser-compat-data/pull/18155))
+- `api.RTCRtpScriptTransform` ([#18295](https://github.com/mdn/browser-compat-data/pull/18295))
+- `api.RTCRtpScriptTransform.RTCRtpScriptTransform` ([#18295](https://github.com/mdn/browser-compat-data/pull/18295))
+- `api.RTCRtpScriptTransformer` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCRtpScriptTransformer.generateKeyFrame` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCRtpScriptTransformer.options` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCRtpScriptTransformer.readable` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCRtpScriptTransformer.sendKeyFrameRequest` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCRtpScriptTransformer.writable` ([#18296](https://github.com/mdn/browser-compat-data/pull/18296))
+- `api.RTCTransformEvent` ([#18297](https://github.com/mdn/browser-compat-data/pull/18297))
+- `api.RTCTransformEvent.transformer` ([#18297](https://github.com/mdn/browser-compat-data/pull/18297))
+- `api.Sanitizer.getDefaultConfiguration` ([#18285](https://github.com/mdn/browser-compat-data/pull/18285))
+- `api.Screen.change_event` ([#18286](https://github.com/mdn/browser-compat-data/pull/18286))
+- `api.WindowClient.ancestorOrigins` ([#18289](https://github.com/mdn/browser-compat-data/pull/18289))
+- `api.XRAnchorSet.@@iterator` ([#18290](https://github.com/mdn/browser-compat-data/pull/18290))
+- `api.XRCamera` ([#18298](https://github.com/mdn/browser-compat-data/pull/18298))
+- `api.XRCamera.height` ([#18298](https://github.com/mdn/browser-compat-data/pull/18298))
+- `api.XRCamera.width` ([#18298](https://github.com/mdn/browser-compat-data/pull/18298))
+- `api.XRView.camera` ([#18291](https://github.com/mdn/browser-compat-data/pull/18291))
+- `api.XRWebGLBinding.getCameraImage` ([#18292](https://github.com/mdn/browser-compat-data/pull/18292))
+- `html.elements.source.height` ([#18081](https://github.com/mdn/browser-compat-data/pull/18081))
+- `html.elements.source.width` ([#18081](https://github.com/mdn/browser-compat-data/pull/18081))
+
+### Statistics
+
+- 7 contributors have changed 84 files with 2,954 additions and 1,038 deletions in 33 commits ([`v5.2.18...v5.2.19`](https://github.com/mdn/browser-compat-data/compare/v5.2.18...v5.2.19))
+- 14,051 total features
+- 964 total contributors
+- 4,310 total stargazers
+
 ## [v5.2.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.18)
 
 November 22, 2022

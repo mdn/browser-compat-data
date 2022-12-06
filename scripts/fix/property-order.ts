@@ -1,10 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier, CompatStatement, StatusBlock } from '../../types/types.js';
-
 import fs from 'node:fs';
 
+import { Identifier, CompatStatement, StatusBlock } from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
 const propOrder = {

@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 import assert from 'node:assert/strict';
+
 import { CompatStatement } from '../../types/types.js';
 
 import { fixExperimental } from './007-experimental-false.js';

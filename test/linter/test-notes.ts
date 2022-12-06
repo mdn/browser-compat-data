@@ -1,17 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import chalk from 'chalk-template';
+import HTMLParser from '@desertnet/html-parser';
+
+import { Linter, Logger, LinterData, VALID_ELEMENTS } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
   SupportStatement,
 } from '../../types/types.js';
-
-import chalk from 'chalk-template';
-import HTMLParser from '@desertnet/html-parser';
-
-import { VALID_ELEMENTS } from '../utils.js';
 
 const parser = new HTMLParser();
 

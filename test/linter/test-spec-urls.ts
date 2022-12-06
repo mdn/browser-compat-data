@@ -1,12 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import chalk from 'chalk-template';
+import specData from 'browser-specs' assert { type: 'json' };
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
-
-import chalk from 'chalk-template';
-
-import specData from 'browser-specs' assert { type: 'json' };
 
 /*
  * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to

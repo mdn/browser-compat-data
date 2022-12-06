@@ -1,11 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { platform } from 'node:os';
+
+import chalk from 'chalk-template';
+
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
-
-import { platform } from 'node:os';
-import chalk from 'chalk-template';
 
 /**
  * @typedef LinterScope
