@@ -11,23 +11,8 @@ permissions:
 
 jobs:
   auto-merge:
-    runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
-
-    steps:
-      - name: Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: git config
-        run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
-
-      - name: Squash and merge
-        if: ${{ steps.dependabot-metadata.outputs.update-type == 'version-update:semver-minor' || steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
-        run: gh pr comment ${{ github.event.pull_request.html_url }} --body "@dependabot squash and merge"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: mdn/workflows/.github/workflows/auto-merge.yml@main
+    with:
+      target-repo: "mdn/browser-compat-data"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
