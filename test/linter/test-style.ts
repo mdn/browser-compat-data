@@ -1,10 +1,16 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
-
 import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, jsonDiff } from '../utils.js';
+
+import {
+  Linter,
+  Logger,
+  LinterData,
+  IS_WINDOWS,
+  indexToPos,
+  jsonDiff,
+} from '../utils.js';
 import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
 import { orderFeatures } from '../../scripts/fix/feature-order.js';
 import { orderStatements } from '../../scripts/fix/statement-order.js';
