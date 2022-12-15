@@ -1,5 +1,22 @@
 # Release notes
 
+## [v5.2.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.22)
+
+December 14, 2022
+
+### Additions
+
+- `api.URLPattern.URLPattern.ignoreCase_option` ([#18388](https://github.com/mdn/browser-compat-data/pull/18388))
+- `http.headers.Critical-CH` ([#18389](https://github.com/mdn/browser-compat-data/pull/18389))
+- `http.headers.Permissions-Policy.display-capture` ([#18257](https://github.com/mdn/browser-compat-data/pull/18257))
+
+### Statistics
+
+- 5 contributors have changed 9 files with 282 additions and 634 deletions in 19 commits ([`v5.2.21...v5.2.22`](https://github.com/mdn/browser-compat-data/compare/v5.2.21...v5.2.22))
+- 14,091 total features
+- 964 total contributors
+- 4,337 total stargazers
+
 ## [v5.2.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.21)
 
 December 9, 2022
