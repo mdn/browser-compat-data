@@ -1,5 +1,63 @@
 # Release notes
 
+## [v5.2.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.22)
+
+December 14, 2022
+
+### Additions
+
+- `api.URLPattern.URLPattern.ignoreCase_option` ([#18388](https://github.com/mdn/browser-compat-data/pull/18388))
+- `http.headers.Critical-CH` ([#18389](https://github.com/mdn/browser-compat-data/pull/18389))
+- `http.headers.Permissions-Policy.display-capture` ([#18257](https://github.com/mdn/browser-compat-data/pull/18257))
+
+### Statistics
+
+- 5 contributors have changed 9 files with 282 additions and 634 deletions in 19 commits ([`v5.2.21...v5.2.22`](https://github.com/mdn/browser-compat-data/compare/v5.2.21...v5.2.22))
+- 14,091 total features
+- 964 total contributors
+- 4,337 total stargazers
+
+## [v5.2.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.21)
+
+December 9, 2022
+
+### Additions
+
+- `api.PerformanceResourceTiming.responseStatus` ([#18328](https://github.com/mdn/browser-compat-data/pull/18328))
+- `browsers.deno.releases.1.28` ([#18341](https://github.com/mdn/browser-compat-data/pull/18341))
+- `browsers.edge.releases.110` ([#18373](https://github.com/mdn/browser-compat-data/pull/18373))
+- `css.properties.font-variant-emoji` ([#18381](https://github.com/mdn/browser-compat-data/pull/18381))
+- `css.properties.font-variant.font-variant-emoji` ([#18381](https://github.com/mdn/browser-compat-data/pull/18381))
+- `javascript.builtins.AsyncFunction.AsyncFunction` ([#18383](https://github.com/mdn/browser-compat-data/pull/18383))
+- `javascript.builtins.AsyncGeneratorFunction.AsyncGeneratorFunction` ([#18383](https://github.com/mdn/browser-compat-data/pull/18383))
+- `javascript.builtins.GeneratorFunction.GeneratorFunction` ([#18383](https://github.com/mdn/browser-compat-data/pull/18383))
+- `webextensions.api.omnibox.onDeleteSuggestion` ([#18372](https://github.com/mdn/browser-compat-data/pull/18372))
+- `webextensions.api.omnibox.SuggestResult.content` ([#18372](https://github.com/mdn/browser-compat-data/pull/18372))
+- `webextensions.api.omnibox.SuggestResult.deletable` ([#18372](https://github.com/mdn/browser-compat-data/pull/18372))
+- `webextensions.api.omnibox.SuggestResult.description` ([#18372](https://github.com/mdn/browser-compat-data/pull/18372))
+- `webextensions.api.webRequest.SecurityInfo.certificates` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.certificateTransparencyStatus` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.cipherSuite` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.errorMessage` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.hsts` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.isDomainMismatch` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.isExtendedValidation` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.isNotValidAtThisTime` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.isUntrusted` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.keaGroupName` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.protocolVersion` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.secretKeyLength` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.signatureSchemeName` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.state` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+- `webextensions.api.webRequest.SecurityInfo.weaknessReasons` ([#18371](https://github.com/mdn/browser-compat-data/pull/18371))
+
+### Statistics
+
+- 11 contributors have changed 97 files with 1,183 additions and 519 deletions in 36 commits ([`v5.2.20...v5.2.21`](https://github.com/mdn/browser-compat-data/compare/v5.2.20...v5.2.21))
+- 14,088 total features
+- 964 total contributors
+- 4,330 total stargazers
+
 ## [v5.2.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.20)
 
 November 29, 2022

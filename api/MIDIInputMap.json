@@ -385,23 +385,12 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "108"
-              },
-              {
-                "version_added": "97",
-                "version_removed": "108",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webmidi.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": false,
+            "firefox": {
+              "version_added": "108"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
@@ -416,7 +405,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
