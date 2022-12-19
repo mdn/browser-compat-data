@@ -1,10 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import chalk from 'chalk-template';
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, SupportStatement } from '../../types/types.js';
-
-import chalk from 'chalk-template';
 
 /**
  * Process data and check to make sure there aren't multiple support statements without

@@ -1,16 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import fs from 'node:fs';
+
+import stringify from 'fast-json-stable-stringify';
+
 import { CompatData, BrowserName } from '../../types/types.js';
 import {
   InternalSupportStatement,
   InternalSupportBlock,
 } from '../../types/index.js';
-
-import fs from 'node:fs';
-
-import stringify from 'fast-json-stable-stringify';
-
 import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
 import mirrorSupport from '../release/mirror.js';
