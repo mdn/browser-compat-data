@@ -64,6 +64,40 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "serverCertificateHashes": {
+          "__compat": {
+            "description": "<code>serverCertificateHashes</code> option",
+            "spec_url": "https://w3c.github.io/webtransport/#ref-for-dom-webtransportoptions-servercertificatehashes%E2%91%A0",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "close": {
@@ -169,9 +203,16 @@
         "__compat": {
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-createunidirectionalstream",
           "support": {
-            "chrome": {
-              "version_added": "97"
-            },
+            "chrome": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "alternative_name": "createSendStream"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -195,6 +236,39 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "byob_readers": {
+          "__compat": {
+            "description": "BYOB reader support",
+            "support": {
+              "chrome": {
+                "version_added": "109"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -235,9 +309,16 @@
         "__compat": {
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingbidirectionalstreams",
           "support": {
-            "chrome": {
-              "version_added": "97"
-            },
+            "chrome": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "alternative_name": "receiveBidirectionalStreams"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -268,9 +349,16 @@
         "__compat": {
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingunidirectionalstreams",
           "support": {
-            "chrome": {
-              "version_added": "97"
-            },
+            "chrome": [
+              {
+                "version_added": "100"
+              },
+              {
+                "version_added": "97",
+                "version_removed": "100",
+                "alternative_name": "receiveStreams"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {

@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { compare } from 'compare-versions';
+import chalk from 'chalk-template';
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
@@ -15,9 +18,6 @@ import {
   InternalSupportBlock,
   InternalSupportStatement,
 } from '../../types/index.js';
-
-import { compare } from 'compare-versions';
-import chalk from 'chalk-template';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/release/mirror.js';
 

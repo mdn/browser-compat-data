@@ -9,8 +9,8 @@ import {
   ReleaseStatement,
 } from '../types/types.js';
 import { DataType } from '../types/index.js';
-
 import bcd from '../index.js';
+
 import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 

@@ -1,7 +1,20 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier } from '../types/types.js';
+import chalk from 'chalk-template';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import bcd from '../index.js';
+import {
+  BrowserName,
+  CompatStatement,
+  SupportStatement,
+  Identifier,
+} from '../types/types.js';
+
+import { getRefDate } from './release/utils.js';
 
 type VersionStatsEntry = {
   all: number;
@@ -12,21 +25,6 @@ type VersionStatsEntry = {
 };
 
 type VersionStats = { [k: string]: VersionStatsEntry };
-
-import {
-  BrowserName,
-  CompatStatement,
-  SupportStatement,
-} from '../types/types.js';
-
-import chalk from 'chalk-template';
-import esMain from 'es-main';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-
-import bcd from '../index.js';
-
-import { getRefDate } from './release/utils.js';
 
 const webextensionsBrowsers: BrowserName[] = [
   'chrome',
