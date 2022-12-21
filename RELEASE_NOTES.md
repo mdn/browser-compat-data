@@ -1,5 +1,63 @@
 # Release notes
 
+## [v5.2.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.23)
+
+December 21, 2022
+
+### Removals
+
+- `html.manifest.shortcuts` ([#18427](https://github.com/mdn/browser-compat-data/pull/18427))
+
+### Additions
+
+- `api.CaptureController` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.CaptureController.CaptureController` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.CaptureController.setFocusBehavior` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.Document.scrollend_event` ([#18407](https://github.com/mdn/browser-compat-data/pull/18407))
+- `api.Element.scrollend_event` ([#18407](https://github.com/mdn/browser-compat-data/pull/18407))
+- `api.LaunchParams.targetURL` ([#18427](https://github.com/mdn/browser-compat-data/pull/18427))
+- `api.MediaDevices.getDisplayMedia.controller_option` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaDevices.getDisplayMedia.preferCurrentTab_option` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaDevices.getDisplayMedia.selfBrowserSurface_option` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaDevices.getDisplayMedia.surfaceSwitching_option` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaDevices.getDisplayMedia.systemAudio_option` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaSession.setActionHandler.hangup_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.nextslide_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.nexttrack_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.pause_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.play_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.previousslide_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.previoustrack_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.seekbackward_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.seekforward_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.seekto_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.skipad_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.stop_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.togglecamera_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaSession.setActionHandler.togglemicrophone_type` ([#18413](https://github.com/mdn/browser-compat-data/pull/18413))
+- `api.MediaTrackConstraints.suppressLocalAudioPlayback` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaTrackSettings.suppressLocalAudioPlayback` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.MediaTrackSupportedConstraints.suppressLocalAudioPlayback` ([#18264](https://github.com/mdn/browser-compat-data/pull/18264))
+- `api.Permissions.local-fonts_permission` ([#18419](https://github.com/mdn/browser-compat-data/pull/18419))
+- `api.WebTransport.createUnidirectionalStream.byob_readers` ([#18209](https://github.com/mdn/browser-compat-data/pull/18209))
+- `api.WebTransport.WebTransport.serverCertificateHashes` ([#18209](https://github.com/mdn/browser-compat-data/pull/18209))
+- `api.Window.credentialless` ([#18455](https://github.com/mdn/browser-compat-data/pull/18455))
+- `css.at-rules.font-face.src.drop_invalid_item` ([#18454](https://github.com/mdn/browser-compat-data/pull/18454))
+- `css.at-rules.import.layer` ([#18461](https://github.com/mdn/browser-compat-data/pull/18461))
+- `html.elements.a.text_fragments` ([#18411](https://github.com/mdn/browser-compat-data/pull/18411))
+- `html.elements.iframe.credentialless` ([#18455](https://github.com/mdn/browser-compat-data/pull/18455))
+- `html.manifest.launch_handler` ([#18427](https://github.com/mdn/browser-compat-data/pull/18427))
+- `html.manifest.launch_handler.client_mode` ([#18427](https://github.com/mdn/browser-compat-data/pull/18427))
+- `http.headers.Permissions-Policy.local-fonts` ([#18419](https://github.com/mdn/browser-compat-data/pull/18419))
+- `http.headers.Sec-CH-Save-Data` ([#18243](https://github.com/mdn/browser-compat-data/pull/18243))
+
+### Statistics
+
+- 12 contributors have changed 45 files with 2,216 additions and 283 deletions in 34 commits ([`v5.2.22...v5.2.23`](https://github.com/mdn/browser-compat-data/compare/v5.2.22...v5.2.23))
+- 14,130 total features
+- 966 total contributors
+- 4,344 total stargazers
+
 ## [v5.2.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.22)
 
 December 14, 2022
