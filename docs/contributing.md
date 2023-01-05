@@ -77,14 +77,20 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 
 #### Firefox
 
+- [Firefox Releases](https://www.mozilla.org/en-US/firefox/releases/): A list of release notes for different versions of Firefox.
 - [Bugzilla](https://bugzil.la): The bug tracker for Firefox.
 - [Searchfox](https://searchfox.org/): Source code search for Firefox source code. Useful to find specific behavior changes that are hard to test in the browser, and to determine which Firefox version the change was included in.
 
 #### Safari
 
+- [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes): A list of release notes for different versions of Safari.
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
 - [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+
+#### Edge
+- [New Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of release notes for latest Microsoft Edge Stable Channel.
+- [Archived Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of archived release notes for Microsoft Edge Stable Channel.
 
 ## Ways to contribute
 
