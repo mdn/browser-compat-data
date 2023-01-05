@@ -49,16 +49,26 @@
           "__compat": {
             "description": "Prefixed <code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
             "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "1"
-              },
+              "chrome": [
+                {
+                  "version_added": "≤80"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "prefix": "-moz-",
-                "version_added": "1"
-              },
+              "firefox": [
+                {
+                  "version_added": "≤72"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "1"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -68,7 +78,7 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "preview"
+                  "version_added": "≤13.1"
                 },
                 {
                   "prefix": "-webkit-",
@@ -133,7 +143,7 @@
             "description": "<code>match-parent</code>",
             "support": {
               "chrome": {
-                "version_added": "16"
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
