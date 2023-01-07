@@ -11,7 +11,7 @@ permissions:
 jobs:
   ping:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v2
