@@ -89,6 +89,7 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 - [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
 
 #### Edge
+
 - [New Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of release notes for latest Microsoft Edge Stable Channel.
 - [Archived Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of archived release notes for Microsoft Edge Stable Channel.
 
