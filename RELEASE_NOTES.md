@@ -1,5 +1,20 @@
 # Release notes
 
+## [v5.2.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.27)
+
+January 10, 2023
+
+### Removals
+
+- `api.MediaStreamTrackAudioSourceNode.mediaStreamTrack` ([#18554](https://github.com/mdn/browser-compat-data/pull/18554))
+
+### Statistics
+
+- 6 contributors have changed 20 files with 107 additions and 100 deletions in 20 commits ([`v5.2.26...v5.2.27`](https://github.com/mdn/browser-compat-data/compare/v5.2.26...v5.2.27))
+- 14,046 total features
+- 970 total contributors
+- 4,358 total stargazers
+
 ## [v5.2.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.26)
 
 January 6, 2023
