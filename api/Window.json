@@ -180,7 +180,7 @@
           "spec_url": "https://wicg.github.io/manifest-incubations/#dom-window-onappinstalled",
           "support": {
             "chrome": {
-              "version_added": "64"
+              "version_added": "61"
             },
             "chrome_android": {
               "version_added": "57"
@@ -195,11 +195,11 @@
             },
             "oculus": "mirror",
             "opera": {
-              "version_added": false,
+              "version_added": "≤94",
               "notes": "Opera exposes the <code>onappinstalled</code> event handler, but the event is never fired."
             },
             "opera_android": {
-              "version_added": false,
+              "version_added": "≤72",
               "notes": "Opera exposes the <code>onappinstalled</code> event handler, but the event is never fired."
             },
             "safari": {
@@ -1742,19 +1742,13 @@
           "spec_url": "https://w3c.github.io/gamepad/#event-gamepadconnected",
           "support": {
             "chrome": {
-              "version_added": "35",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "37",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "edge": {
-              "version_added": "≤18",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "firefox": [
               {
@@ -1782,18 +1776,26 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
               "version_added": "10.1",
               "partial_implementation": true,
               "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
             },
             "safari_ios": {
+              "version_added": "≤16.2"
+            },
+            "samsunginternet_android": {
               "version_added": false
             },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1809,19 +1811,13 @@
           "spec_url": "https://w3c.github.io/gamepad/#event-gamepaddisconnected",
           "support": {
             "chrome": {
-              "version_added": "35",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "chrome_android": {
-              "version_added": "37",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "edge": {
-              "version_added": "≤18",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "version_added": false
             },
             "firefox": [
               {
@@ -1849,18 +1845,26 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
               "version_added": "10.1",
               "partial_implementation": true,
               "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
             },
             "safari_ios": {
+              "version_added": "≤16.2"
+            },
+            "samsunginternet_android": {
               "version_added": false
             },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -2328,10 +2332,12 @@
           "spec_url": "https://wicg.github.io/web-app-launch/#launchqueue-interface",
           "support": {
             "chrome": {
-              "version_added": "110"
+              "version_added": "102"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "102"
+            },
             "firefox": {
               "version_added": false
             },
@@ -2340,7 +2346,9 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": "mirror",
+            "opera": {
+              "version_added": "≤94"
+            },
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -2681,7 +2689,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "60"
+              "version_added": "≤15"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2963,7 +2971,7 @@
             },
             "oculus": "mirror",
             "opera": {
-              "version_added": false
+              "version_added": "≤94"
             },
             "opera_android": "mirror",
             "safari": {
@@ -3442,7 +3450,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/origin.html#origin-keyed-agent-clusters",
           "support": {
             "chrome": {
-              "version_added": "88"
+              "version_added": "90"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -4062,7 +4070,7 @@
             },
             "oculus": "mirror",
             "opera": {
-              "version_added": false
+              "version_added": "≤94"
             },
             "opera_android": "mirror",
             "safari": {
@@ -5739,7 +5747,7 @@
               "notes": "See <a href='https://webkit.org/b/151885'>WebKit bug 151885</a> for possible future removal from Safari."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "≤16.2"
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -6034,7 +6042,7 @@
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "15"
+              "version_added": "≤13"
             },
             "firefox": {
               "version_added": "45"
@@ -6429,7 +6437,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6487,7 +6495,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6549,7 +6557,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6580,7 +6588,7 @@
               "version_added": false
             },
             "chrome_android": {
-              "version_added": "56",
+              "version_added": false,
               "notes": [
                 "Chrome for Android 56 supports only Google Daydream View.",
                 "Chrome for Android 57 adds support for Google Cardboard."
@@ -6613,7 +6621,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": false
             },
             "ie": {
               "version_added": false
@@ -6660,7 +6668,8 @@
               ]
             },
             "edge": {
-              "version_added": "15"
+              "version_added": "15",
+              "version_removed": "18> ≤80"
             },
             "firefox": [
               {
@@ -6685,7 +6694,7 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": false
             },
             "ie": {
               "version_added": false

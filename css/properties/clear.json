@@ -48,14 +48,8 @@
             "description": "Flow-relative values <code>inline-start</code> and <code>inline-end</code>",
             "support": {
               "chrome": {
-                "version_added": "70",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "≤15",
+                "version_removed": "15> ≤31"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -70,9 +64,11 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "14.1> ≤15.1"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "≤16.2"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },

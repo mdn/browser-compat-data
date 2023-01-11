@@ -79,7 +79,7 @@
             ],
             "safari": [
               {
-                "version_added": "14"
+                "version_added": "≤9.1"
               },
               {
                 "version_added": "3",
@@ -171,9 +171,12 @@
                 "notes": [
                   "This value is supported with the prefixed version of the property only.",
                   "According to the <a href='https://webkit.org/blog/164/background-clip-text/'>WebKit blog</a>, text decorations or shadows are not included in the clipping."
-                ]
+                ],
+                "version_removed": "15> ≤31"
               },
-              "chrome_android": "mirror",
+              "chrome_android": {
+                "version_added": false
+              },
               "edge": [
                 {
                   "version_added": "15"
@@ -192,8 +195,12 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": {
+                "version_added": false
+              },
               "safari": [
                 {
                   "version_added": "14"
@@ -208,14 +215,11 @@
                 }
               ],
               "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
+              "samsunginternet_android": {
+                "version_added": false
+              },
               "webview_android": {
-                "version_added": "≤37",
-                "partial_implementation": true,
-                "notes": [
-                  "This value is supported with the prefixed version of the property only.",
-                  "According to the <a href='https://webkit.org/blog/164/background-clip-text/'>WebKit blog</a>, text decorations or shadows are not included in the clipping."
-                ]
+                "version_added": false
               }
             },
             "status": {

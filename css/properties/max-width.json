@@ -57,13 +57,28 @@
                 "version_added": "46"
               },
               "edge": "mirror",
-              "firefox": {
-                "partial_implementation": true,
-                "prefix": "-moz-",
-                "version_added": "3",
-                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
-              },
-              "firefox_android": "mirror",
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "partial_implementation": true,
+                  "prefix": "-moz-",
+                  "version_added": "3",
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "≤108"
+                },
+                {
+                  "partial_implementation": true,
+                  "prefix": "-moz-",
+                  "version_added": "4",
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -111,7 +126,8 @@
             "description": "<code>fit-content()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "≤15",
+                "version_removed": "15> ≤31"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -279,10 +295,16 @@
           "__compat": {
             "description": "<code>stretch</code>",
             "support": {
-              "chrome": {
-                "alternative_name": "-webkit-fill-available",
-                "version_added": "22"
-              },
+              "chrome": [
+                {
+                  "version_added": "≤15",
+                  "version_removed": "15> ≤31"
+                },
+                {
+                  "alternative_name": "-webkit-fill-available",
+                  "version_added": "22"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
