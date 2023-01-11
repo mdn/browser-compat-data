@@ -19,10 +19,6 @@ const specsExceptions = [
   // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
   'https://w3c.github.io/setImmediate/',
 
-  // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/339
-  'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
-  'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
-
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 
@@ -34,14 +30,10 @@ const specsExceptions = [
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
 
-  // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
+  // See https://github.com/w3c/browser-specs/issues/305
+  // Features with this URL need to be checked after some time
+  // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
-
-  // Remove when added to browser-specs
-  'https://w3c.github.io/csswg-drafts/css-color-6/',
-
-  // Remove if https://github.com/w3c/browser-specs/issues/730 is resolved
-  'https://w3c.github.io/csswg-drafts/css2',
 ];
 
 const allowedSpecURLs = [
