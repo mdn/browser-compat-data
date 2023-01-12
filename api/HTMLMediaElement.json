@@ -2792,7 +2792,10 @@
             "chrome": {
               "version_added": "49"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "notes": "Not available due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+            },
             "edge": {
               "version_added": "17"
             },
@@ -2811,9 +2814,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": true,

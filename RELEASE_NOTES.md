@@ -1,5 +1,44 @@
 # Release notes
 
+## [v5.2.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.27)
+
+January 10, 2023
+
+### Removals
+
+- `api.MediaStreamTrackAudioSourceNode.mediaStreamTrack` ([#18554](https://github.com/mdn/browser-compat-data/pull/18554))
+
+### Statistics
+
+- 6 contributors have changed 20 files with 107 additions and 100 deletions in 20 commits ([`v5.2.26...v5.2.27`](https://github.com/mdn/browser-compat-data/compare/v5.2.26...v5.2.27))
+- 14,046 total features
+- 970 total contributors
+- 4,358 total stargazers
+
+## [v5.2.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.26)
+
+January 6, 2023
+
+### Removals
+
+- `api.DOMMatrixReadOnly.transform` ([#18542](https://github.com/mdn/browser-compat-data/pull/18542))
+
+### Additions
+
+- `api.FileSystemHandle.remove` ([#18537](https://github.com/mdn/browser-compat-data/pull/18537))
+- `browsers.opera.releases.95` ([#18522](https://github.com/mdn/browser-compat-data/pull/18522))
+- `browsers.opera.releases.96` ([#18522](https://github.com/mdn/browser-compat-data/pull/18522))
+- `browsers.safari_ios.releases.16.2` ([#18526](https://github.com/mdn/browser-compat-data/pull/18526))
+- `browsers.safari.releases.16.2` ([#18526](https://github.com/mdn/browser-compat-data/pull/18526))
+- `css.types.color.system-color.mark_marktext_buttonborder` ([#18515](https://github.com/mdn/browser-compat-data/pull/18515))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 150 additions and 86 deletions in 12 commits ([`v5.2.25...v5.2.26`](https://github.com/mdn/browser-compat-data/compare/v5.2.25...v5.2.26))
+- 14,047 total features
+- 968 total contributors
+- 4,357 total stargazers
+
 ## [v5.2.25](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.25)
 
 January 3, 2023
