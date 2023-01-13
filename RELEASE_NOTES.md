@@ -1,5 +1,75 @@
 # Release notes
 
+## [v5.2.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.28)
+
+January 13, 2023
+
+### Removals
+
+- `api.CrashReportBody` ([#18541](https://github.com/mdn/browser-compat-data/pull/18541))
+- `api.CrashReportBody.reason` ([#18541](https://github.com/mdn/browser-compat-data/pull/18541))
+- `api.CrashReportBody.toJSON` ([#18541](https://github.com/mdn/browser-compat-data/pull/18541))
+- `api.Element.ariaColIndexText` ([#18546](https://github.com/mdn/browser-compat-data/pull/18546))
+- `api.Element.ariaRowIndexText` ([#18546](https://github.com/mdn/browser-compat-data/pull/18546))
+- `api.ElementInternals.ariaColIndexText` ([#18546](https://github.com/mdn/browser-compat-data/pull/18546))
+- `api.ElementInternals.ariaRowIndexText` ([#18546](https://github.com/mdn/browser-compat-data/pull/18546))
+- `api.Permissions.accelerometer_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.accessibility-events_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.ambient-light-sensor_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.background-sync_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.camera_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.clipboard-read_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.clipboard-write_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.geolocation_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.gyroscope_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.local-fonts_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.magnetometer_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.microphone_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.midi_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.notifications_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.payment-handler_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.persistent-storage_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.push_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.speaker-selection_permission` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+
+### Additions
+
+- `api.AudioContext.AudioContext.options_sinkId_parameter` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.AudioContext.setSinkId` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.AudioContext.sinkchange_event` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.AudioContext.sinkId` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.AudioSinkInfo` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.AudioSinkInfo.type` ([#18516](https://github.com/mdn/browser-compat-data/pull/18516))
+- `api.Permissions.permission_accelerometer` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_accessibility-events` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_ambient-light-sensor` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_background-sync` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_camera` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_clipboard-read` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_clipboard-write` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_geolocation` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_gyroscope` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_local-fonts` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_magnetometer` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_microphone` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_midi` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_notifications` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_payment-handler` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_persistent-storage` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_push` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `api.Permissions.permission_speaker-selection` ([#18561](https://github.com/mdn/browser-compat-data/pull/18561))
+- `browsers.chrome_android.releases.111` ([#18619](https://github.com/mdn/browser-compat-data/pull/18619))
+- `browsers.chrome.releases.111` ([#18619](https://github.com/mdn/browser-compat-data/pull/18619))
+- `browsers.edge.releases.111` ([#18649](https://github.com/mdn/browser-compat-data/pull/18649))
+- `browsers.webview_android.releases.111` ([#18619](https://github.com/mdn/browser-compat-data/pull/18619))
+
+### Statistics
+
+- 14 contributors have changed 86 files with 2,073 additions and 1,305 deletions in 44 commits ([`v5.2.27...v5.2.28`](https://github.com/mdn/browser-compat-data/compare/v5.2.27...v5.2.28))
+- 14,045 total features
+- 973 total contributors
+- 4,361 total stargazers
+
 ## [v5.2.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.27)
 
 January 10, 2023
