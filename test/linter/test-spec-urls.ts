@@ -21,6 +21,12 @@ const specsExceptions = [
 
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
+  
+  // Exceptions for RFCs for HTTP extension not directly implemented by browsers
+  // but useful for applications writers (like WebDAV)
+  'https://www.rfc-editor.org/rfc/rfc2518.html',
+  'https://www.rfc-editor.org/rfc/rfc5842.html',
+  'https://www.rfc-editor.org/rfc/rfc3229.html',
 
   // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
   // Remove if it is in the main ECMA spec
