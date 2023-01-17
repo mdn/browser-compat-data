@@ -1,5 +1,27 @@
 # Release notes
 
+## [v5.2.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.29)
+
+January 17, 2023
+
+### Removals
+
+- `api.Bluetooth.referringDevice` ([#18646](https://github.com/mdn/browser-compat-data/pull/18646))
+
+### Additions
+
+- `html.manifest.serviceworker` ([#18492](https://github.com/mdn/browser-compat-data/pull/18492))
+- `html.manifest.serviceworker.scope` ([#18492](https://github.com/mdn/browser-compat-data/pull/18492))
+- `html.manifest.serviceworker.src` ([#18492](https://github.com/mdn/browser-compat-data/pull/18492))
+- `html.manifest.serviceworker.use_cache` ([#18492](https://github.com/mdn/browser-compat-data/pull/18492))
+
+### Statistics
+
+- 5 contributors have changed 14 files with 377 additions and 674 deletions in 10 commits ([`v5.2.28...v5.2.29`](https://github.com/mdn/browser-compat-data/compare/v5.2.28...v5.2.29))
+- 14,048 total features
+- 973 total contributors
+- 4,371 total stargazers
+
 ## [v5.2.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.28)
 
 January 13, 2023
