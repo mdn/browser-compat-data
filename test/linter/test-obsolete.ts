@@ -136,7 +136,6 @@ export default {
     processData(logger, data);
   },
   exceptions: [
-    'css.types.length.lh',
     'css.types.length.rlh',
     'http.headers.Cache-Control.stale-if-error',
     'http.headers.Feature-Policy.layout-animations',

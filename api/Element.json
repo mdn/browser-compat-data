@@ -945,40 +945,6 @@
           }
         }
       },
-      "ariaColIndexText": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText",
-          "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariacolindextext",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "ariaColSpan": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaColSpan",
@@ -1797,40 +1763,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndex",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariarowindex",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ariaRowIndexText": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText",
-          "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariarowindextext",
           "support": {
             "chrome": {
               "version_added": "81"
@@ -3307,51 +3239,6 @@
           }
         }
       },
-      "createShadowRoot": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/createShadowRoot",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "35",
-                "version_removed": "80",
-                "notes": "In Chrome 45, the ability to have multiple shadow roots was deprecated."
-              },
-              {
-                "version_added": "25",
-                "version_removed": "36",
-                "prefix": "webkit"
-              }
-            ],
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "79",
-              "version_removed": "80"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "cut_event": {
         "__compat": {
           "description": "<code>cut</code> event",
@@ -3452,6 +3339,7 @@
       },
       "elementTiming": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/elementTiming",
           "spec_url": "https://wicg.github.io/element-timing/#dom-element-elementtiming",
           "support": {
             "chrome": {
@@ -5785,43 +5673,6 @@
           }
         }
       },
-      "msContentZoom_event": {
-        "__compat": {
-          "description": "<code>msContentZoom</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/msContentZoom_event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "11"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "namespaceURI": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/namespaceURI",
@@ -7245,7 +7096,8 @@
             "description": "<code>options.unadjustedMovement</code> parameter",
             "support": {
               "chrome": {
-                "version_added": "92"
+                "version_added": "88",
+                "notes": "Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -7614,6 +7466,44 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "scrollend_event": {
+        "__compat": {
+          "description": "<code>scrollend</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollend_event",
+          "spec_url": [
+            "https://w3c.github.io/csswg-drafts/cssom-view/#eventdef-document-scrollend",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscrollend"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "preview"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "109"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
