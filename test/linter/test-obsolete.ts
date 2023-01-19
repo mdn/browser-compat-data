@@ -4,12 +4,11 @@
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData, LinterMessageLevel } from '../utils.js';
+import { BrowserName, CompatStatement } from '../../types/types.js';
 import {
-  BrowserName,
-  CompatStatement,
   InternalSupportBlock,
   InternalSupportStatement,
-} from '../../types/types.js';
+} from '../../types/index.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
