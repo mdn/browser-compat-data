@@ -1,5 +1,39 @@
 # Release notes
 
+## [v5.2.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.30)
+
+January 20, 2023
+
+### Removals
+
+- `api.Document.registerElement` ([#18681](https://github.com/mdn/browser-compat-data/pull/18681))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse.serviceWorkerScript` ([#18680](https://github.com/mdn/browser-compat-data/pull/18680))
+
+### Additions
+
+- `api.CookieStore.delete.partitioned_option` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.get.partitioned_return_property` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.getAll.partitioned_return_property` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.set.partitioned_option` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CredentialsContainer.get.identity_option` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `api.fetch.init_keepalive_parameter` ([#18332](https://github.com/mdn/browser-compat-data/pull/18332))
+- `api.IdentityCredential` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `api.IdentityCredential.token` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `http.headers.Permissions-Policy.identity-credentials-get` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `http.headers.Set-Cookie.Partitioned` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse_serviceWorkerScript` ([#18680](https://github.com/mdn/browser-compat-data/pull/18680))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse.serviceWorkerScript` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.permissions.webRequestFilterResponse` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.permissions.webRequestFilterResponse.serviceWorkerScript` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+
+### Statistics
+
+- 8 contributors have changed 14 files with 470 additions and 89 deletions in 12 commits ([`v5.2.29...v5.2.30`](https://github.com/mdn/browser-compat-data/compare/v5.2.29...v5.2.30))
+- 14,061 total features
+- 974 total contributors
+- 4,373 total stargazers
+
 ## [v5.2.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.29)
 
 January 17, 2023
