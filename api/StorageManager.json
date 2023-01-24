@@ -101,6 +101,7 @@
       },
       "getDirectory": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/StorageManager/getDirectory",
           "spec_url": "https://fs.spec.whatwg.org/#dom-storagemanager-getdirectory",
           "support": {
             "chrome": {
@@ -110,9 +111,21 @@
               "version_added": "109"
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "97",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.fs.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
