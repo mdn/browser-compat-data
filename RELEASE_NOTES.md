@@ -1,5 +1,47 @@
 # Release notes
 
+## [v5.2.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.31)
+
+January 24, 2023
+
+### Removals
+
+- `javascript.operators.logical_nullish_assignment` ([#18700](https://github.com/mdn/browser-compat-data/pull/18700))
+- `webextensions.manifest.permissions.webRequestFilterResponse.serviceWorkerScript` ([#18701](https://github.com/mdn/browser-compat-data/pull/18701))
+
+### Additions
+
+- `api.CSS.dvb` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvh` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvi` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvmax` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvmin` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvw` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvb` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvh` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvi` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvmax` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvmin` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvw` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `javascript.operators.nullish_coalescing_assignment` ([#18700](https://github.com/mdn/browser-compat-data/pull/18700))
+- `mathml.elements.mo.form` ([#18685](https://github.com/mdn/browser-compat-data/pull/18685))
+- `mathml.elements.mo.largeop` ([#18685](https://github.com/mdn/browser-compat-data/pull/18685))
+- `webextensions.api.find.find.options` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.caseSensitive` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.entireWord` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.includeRangeData` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.includeRectData` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.matchDiacritics` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.tabId` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.manifest.permissions.webRequestFilterResponse_serviceWorkerScript` ([#18701](https://github.com/mdn/browser-compat-data/pull/18701))
+
+### Statistics
+
+- 7 contributors have changed 35 files with 833 additions and 215 deletions in 23 commits ([`v5.2.30...v5.2.31`](https://github.com/mdn/browser-compat-data/compare/v5.2.30...v5.2.31))
+- 14,082 total features
+- 974 total contributors
+- 4,383 total stargazers
+
 ## [v5.2.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.30)
 
 January 20, 2023
