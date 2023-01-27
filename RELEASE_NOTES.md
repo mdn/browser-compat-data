@@ -1,5 +1,41 @@
 # Release notes
 
+## [v5.2.32](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.32)
+
+January 27, 2023
+
+### Removals
+
+- `http.headers.Content-Security-Policy.require-sri-for` ([#18740](https://github.com/mdn/browser-compat-data/pull/18740))
+
+### Additions
+
+- `api.CSS.svb` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svh` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svi` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmax` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmin` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svw` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSSKeyframesRule.length` ([#18743](https://github.com/mdn/browser-compat-data/pull/18743))
+- `api.MathMLElement.attributeStyleMap` ([#18747](https://github.com/mdn/browser-compat-data/pull/18747))
+- `api.XRHand.@@iterator` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.entries` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.forEach` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.get` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.keys` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.size` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.values` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `browsers.opera_android.releases.73` ([#18746](https://github.com/mdn/browser-compat-data/pull/18746))
+- `browsers.safari_ios.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+- `browsers.safari.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+
+### Statistics
+
+- 7 contributors have changed 23 files with 617 additions and 94 deletions in 14 commits ([`v5.2.31...v5.2.32`](https://github.com/mdn/browser-compat-data/compare/v5.2.31...v5.2.32))
+- 14,096 total features
+- 976 total contributors
+- 4,390 total stargazers
+
 ## [v5.2.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.31)
 
 January 24, 2023
