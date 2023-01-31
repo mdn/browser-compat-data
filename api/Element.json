@@ -407,17 +407,22 @@
             "description": "<code>options.pseudoElement</code> parameter",
             "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-keyframeeffectoptions-pseudoelement",
             "support": {
-              "chrome": {
-                "version_added": "81",
-                "partial_implementation": true,
-                "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "84"
+                },
+                {
+                  "version_added": "81",
+                  "partial_implementation": true,
+                  "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -433,14 +438,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
