@@ -1,5 +1,33 @@
 # Release notes
 
+## [v5.2.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.34)
+
+February 3, 2023
+
+### Additions
+
+- `api.GestureEvent.altKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.ctrlKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.metaKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.shiftKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.target` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.Navigator.getAutoplayPolicy` ([#18784](https://github.com/mdn/browser-compat-data/pull/18784))
+- `api.SVGAltGlyphElement.href` ([#18766](https://github.com/mdn/browser-compat-data/pull/18766))
+- `api.SVGGlyphRefElement.href` ([#18767](https://github.com/mdn/browser-compat-data/pull/18767))
+- `api.Window.getDigitalGoodsService` ([#18769](https://github.com/mdn/browser-compat-data/pull/18769))
+- `css.properties.baseline-source` ([#18803](https://github.com/mdn/browser-compat-data/pull/18803))
+
+### Statistics
+
+- 4 contributors have changed 8 files with 509 additions and 14 deletions in 9 commits ([`v5.2.33...v5.2.34`](https://github.com/mdn/browser-compat-data/compare/v5.2.33...v5.2.34))
+- 14,116 total features
+- 979 total contributors
+- 4,395 total stargazers
+
 ## [v5.2.33](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.33)
 
 January 31, 2023
