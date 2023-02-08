@@ -315,10 +315,17 @@
             "description": "<code>selfBrowserSurface</code> option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-selfbrowsersurface",
             "support": {
-              "chrome": {
-                "version_added": "107",
-                "notes": "Default value = <code>include</code>"
-              },
+              "chrome": [
+                {
+                  "version_added": "112",
+                  "notes": "Default value = <code>exclude</code>"
+                },
+                {
+                  "version_added": "107",
+                  "version_removed": "111",
+                  "notes": "Default value = <code>include</code>"
+                }
+              ],
               "chrome_android": {
                 "version_added": false
               },
