@@ -40,12 +40,19 @@
             "deprecated": false
           }
         },
-        "shadowroot": {
+        "shadowrootmode": {
           "__compat": {
             "support": {
-              "chrome": {
-                "version_added": "90"
+              "chrome": [ 
+              {
+                "version_added": "111"
               },
+              {
+                "version_added": "90",
+                "version_removed": "111",
+                "alternative_name": "shadowroot"
+              }
+            ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -70,7 +77,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
