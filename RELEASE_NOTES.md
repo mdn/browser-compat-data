@@ -1,5 +1,140 @@
 # Release notes
 
+## [v5.2.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.34)
+
+February 3, 2023
+
+### Additions
+
+- `api.GestureEvent.altKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.ctrlKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.metaKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.shiftKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.target` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.Navigator.getAutoplayPolicy` ([#18784](https://github.com/mdn/browser-compat-data/pull/18784))
+- `api.SVGAltGlyphElement.href` ([#18766](https://github.com/mdn/browser-compat-data/pull/18766))
+- `api.SVGGlyphRefElement.href` ([#18767](https://github.com/mdn/browser-compat-data/pull/18767))
+- `api.Window.getDigitalGoodsService` ([#18769](https://github.com/mdn/browser-compat-data/pull/18769))
+- `css.properties.baseline-source` ([#18803](https://github.com/mdn/browser-compat-data/pull/18803))
+
+### Statistics
+
+- 4 contributors have changed 8 files with 509 additions and 14 deletions in 9 commits ([`v5.2.33...v5.2.34`](https://github.com/mdn/browser-compat-data/compare/v5.2.33...v5.2.34))
+- 14,116 total features
+- 979 total contributors
+- 4,395 total stargazers
+
+## [v5.2.33](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.33)
+
+January 31, 2023
+
+### Removals
+
+- `api.MediaSource.activeSourceBuffers.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.addSourceBuffer.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.clearLiveSeekableRange.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.duration.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.endOfStream.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.isTypeSupported.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.MediaSource.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.readyState.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.removeSourceBuffer.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.setLiveSeekableRange.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceBuffers.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceclose_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceended_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceopen_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `javascript.builtins.Temporal.Calendar.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Duration.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Instant.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDate.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDateTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainMonthDay.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainYearMonth.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.TimeZone.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.ZonedDateTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+
+### Additions
+
+- `api.Element.animate.options_timeline_parameter` ([#18776](https://github.com/mdn/browser-compat-data/pull/18776))
+- `api.MathMLElement.autofocus` ([#18764](https://github.com/mdn/browser-compat-data/pull/18764))
+- `api.MathMLElement.nonce` ([#18764](https://github.com/mdn/browser-compat-data/pull/18764))
+- `api.MediaSource.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MIDIOutputMap.@@iterator` ([#18763](https://github.com/mdn/browser-compat-data/pull/18763))
+- `api.OffscreenCanvasRenderingContext2D.createConicGradient` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontKerning` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontStretch` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontVariantCaps` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.isContextLost` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.letterSpacing` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.reset` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.roundRect` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.textRendering` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.wordSpacing` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.PaymentRequestEvent.changeShippingAddress` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.changeShippingOption` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.paymentOptions` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.shippingOptions` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `css.selectors.highlight` ([#18720](https://github.com/mdn/browser-compat-data/pull/18720))
+- `javascript.builtins.Temporal.Calendar.Calendar` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Duration.Duration` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Instant.Instant` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDate.PlainDate` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDateTime.PlainDateTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainMonthDay.PlainMonthDay` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainTime.PlainTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainYearMonth.PlainYearMonth` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.TimeZone.TimeZone` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.ZonedDateTime.ZonedDateTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+
+### Statistics
+
+- 9 contributors have changed 34 files with 1,423 additions and 818 deletions in 25 commits ([`v5.2.32...v5.2.33`](https://github.com/mdn/browser-compat-data/compare/v5.2.32...v5.2.33))
+- 14,102 total features
+- 979 total contributors
+- 4,393 total stargazers
+
+## [v5.2.32](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.32)
+
+January 27, 2023
+
+### Removals
+
+- `http.headers.Content-Security-Policy.require-sri-for` ([#18740](https://github.com/mdn/browser-compat-data/pull/18740))
+
+### Additions
+
+- `api.CSS.svb` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svh` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svi` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmax` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmin` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svw` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSSKeyframesRule.length` ([#18743](https://github.com/mdn/browser-compat-data/pull/18743))
+- `api.MathMLElement.attributeStyleMap` ([#18747](https://github.com/mdn/browser-compat-data/pull/18747))
+- `api.XRHand.@@iterator` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.entries` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.forEach` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.get` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.keys` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.size` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.values` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `browsers.opera_android.releases.73` ([#18746](https://github.com/mdn/browser-compat-data/pull/18746))
+- `browsers.safari_ios.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+- `browsers.safari.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+
+### Statistics
+
+- 7 contributors have changed 23 files with 617 additions and 94 deletions in 14 commits ([`v5.2.31...v5.2.32`](https://github.com/mdn/browser-compat-data/compare/v5.2.31...v5.2.32))
+- 14,096 total features
+- 976 total contributors
+- 4,390 total stargazers
+
 ## [v5.2.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.31)
 
 January 24, 2023
