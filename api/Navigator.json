@@ -670,7 +670,7 @@
       "contacts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
-          "spec_url": "https://w3c.github.io/contact-api/spec/#dom-navigator-contacts",
+          "spec_url": "https://w3c.github.io/contact-picker/spec/#dom-navigator-contacts",
           "support": {
             "chrome": {
               "version_added": false
@@ -943,6 +943,52 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "getAutoplayPolicy": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getAutoplayPolicy",
+          "spec_url": "https://w3c.github.io/autoplay/#dom-navigator-getautoplaypolicy",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "110",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.media.autoplay-policy-detection.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -1951,40 +1997,6 @@
               "standard_track": false,
               "deprecated": true
             }
-          }
-        }
-      },
-      "mozIsLocallyAvailable": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mozIsLocallyAvailable",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "3",
-              "version_removed": "35"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -4252,6 +4264,8 @@
       },
       "unregisterProtocolHandler": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/unregisterProtocolHandler",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-unregisterprotocolhandler-dev",
           "support": {
             "chrome": {
               "version_added": "38"

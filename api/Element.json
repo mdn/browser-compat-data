@@ -407,17 +407,22 @@
             "description": "<code>options.pseudoElement</code> parameter",
             "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-keyframeeffectoptions-pseudoelement",
             "support": {
-              "chrome": {
-                "version_added": "81",
-                "partial_implementation": true,
-                "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "84"
+                },
+                {
+                  "version_added": "81",
+                  "partial_implementation": true,
+                  "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -433,14 +438,48 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_timeline_parameter": {
+          "__compat": {
+            "description": "<code>options.timeline</code> parameter",
+            "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-keyframeanimationoptions-timeline",
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -915,40 +954,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaColIndex",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariacolindex",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ariaColIndexText": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaColIndexText",
-          "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariacolindextext",
           "support": {
             "chrome": {
               "version_added": "81"
@@ -1797,40 +1802,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndex",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariarowindex",
-          "support": {
-            "chrome": {
-              "version_added": "81"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "12.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "ariaRowIndexText": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaRowIndexText",
-          "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariarowindextext",
           "support": {
             "chrome": {
               "version_added": "81"
@@ -3181,9 +3152,9 @@
           }
         }
       },
-      "contentvisibilityautostatechanged_event": {
+      "contentvisibilityautostatechange_event": {
         "__compat": {
-          "description": "<code>contentvisibilityautostatechanged</code> event",
+          "description": "<code>contentvisibilityautostatechange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/contentvisibilityautostatechanged_event",
           "spec_url": "https://www.w3.org/TR/css-contain-2/#content-visibility-auto-state-changed",
           "support": {
@@ -3193,7 +3164,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "110"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3210,7 +3181,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3304,51 +3275,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "createShadowRoot": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/createShadowRoot",
-          "support": {
-            "chrome": [
-              {
-                "version_added": "35",
-                "version_removed": "80",
-                "notes": "In Chrome 45, the ability to have multiple shadow roots was deprecated."
-              },
-              {
-                "version_added": "25",
-                "version_removed": "36",
-                "prefix": "webkit"
-              }
-            ],
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "79",
-              "version_removed": "80"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },
@@ -5786,43 +5712,6 @@
           }
         }
       },
-      "msContentZoom_event": {
-        "__compat": {
-          "description": "<code>msContentZoom</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/msContentZoom_event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "11"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "namespaceURI": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/namespaceURI",
@@ -7157,12 +7046,8 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": false
               },
@@ -7246,7 +7131,8 @@
             "description": "<code>options.unadjustedMovement</code> parameter",
             "support": {
               "chrome": {
-                "version_added": "92"
+                "version_added": "88",
+                "notes": "Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -7618,6 +7504,44 @@
           }
         }
       },
+      "scrollend_event": {
+        "__compat": {
+          "description": "<code>scrollend</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollend_event",
+          "spec_url": [
+            "https://w3c.github.io/csswg-drafts/cssom-view/#eventdef-document-scrollend",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscrollend"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "preview"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "109"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "scrollHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollHeight",
@@ -7817,18 +7741,27 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollLeft",
           "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-element-scrollleft",
           "support": {
-            "chrome": {
-              "version_added": "1",
-              "notes": "For right-to-left elements, this property uses 0-100 (most left to most right) instead of negative values. See <a href='https://crbug.com/721759'>bug 721759</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "86"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "86",
+                "notes": "For right-to-left elements, this property uses 0-100 (most left to most right) instead of negative values. See <a href='https://crbug.com/721759'>bug 721759</a>."
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "notes": [
-                "From Edge 79, for right-to-left elements, this property uses 0-100 (most left to most right) instead of negative values. See <a href='https://crbug.com/721759'>bug 721759</a>.",
-                "Before Edge 79, for right-to-left elements, this property uses 100-0 (most left to most right) instead of negative values."
-              ]
-            },
+            "edge": [
+              {
+                "version_added": "86"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "86",
+                "notes": "For right-to-left elements, this property uses 0-100 (most left to most right) instead of negative values. See <a href='https://crbug.com/721759'>bug 721759</a>."
+              }
+            ],
             "firefox": {
               "version_added": "1"
             },

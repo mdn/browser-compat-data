@@ -30,7 +30,7 @@ const checkMirroring = (
 
   for (const browser of browsersToCheck) {
     if (isMirrorEquivalent(supportData, browser)) {
-      logger.warning(
+      logger.error(
         chalk`Data for {bold ${browser}} can be automatically mirrored, use {bold "${browser}": "mirror"} instead`,
         { fixable: true },
       );
