@@ -10,6 +10,7 @@ import { InternalSupportStatement } from '../../types/index.js';
 import { BrowserName, CompatData } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
+import { WalkOutput } from '../../utils/walk.js';
 
 import mirrorSupport from './mirror.js';
 
@@ -35,29 +36,22 @@ export const generateMeta = (): any => ({
 });
 
 /**
- * Apply mirroring to all statements
+ * Apply mirroring to a feature
  *
- * @param {CompatData} data The BCD to perform mirroring on
- * @returns {CompatData} BCD with all of the mirroring applied
+ * @param {WalkOutput} feature The BCD to perform mirroring on
+ * @returns {void}
  */
-export const applyMirroring = (data: CompatData): CompatData => {
-  const response = Object.assign({}, data);
-  const walker = walk(undefined, response);
-
-  for (const feature of walker) {
-    for (const [browser, supportData] of Object.entries(
-      feature.compat.support as InternalSupportStatement,
-    )) {
-      if (supportData === 'mirror') {
-        (feature.data as any).__compat.support[browser] = mirrorSupport(
-          browser as BrowserName,
-          feature.compat.support,
-        );
-      }
+export const applyMirroring = (feature: WalkOutput): void => {
+  for (const [browser, supportData] of Object.entries(
+    feature.compat.support as InternalSupportStatement,
+  )) {
+    if (supportData === 'mirror') {
+      (feature.data as any).__compat.support[browser] = mirrorSupport(
+        browser as BrowserName,
+        feature.compat.support,
+      );
     }
   }
-
-  return response;
 };
 
 /**
@@ -68,8 +62,15 @@ export const applyMirroring = (data: CompatData): CompatData => {
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
+  const data = Object.assign({}, bcd);
+  const walker = walk(undefined, data);
+
+  for (const feature of walker) {
+    applyMirroring(feature);
+  }
+
   return {
-    ...applyMirroring(bcd),
+    ...data,
     __meta: generateMeta(),
   };
 };
