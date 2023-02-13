@@ -29,7 +29,7 @@ type LowLevelWalkOutput = {
   browserRelease?: ReleaseStatement;
 };
 
-type WalkOutput = {
+export type WalkOutput = {
   path: string;
   data: DataType;
   compat: CompatStatement;
