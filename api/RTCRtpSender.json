@@ -148,11 +148,11 @@
               "version_added": "68"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "≤79"
+            },
             "firefox": {
-              "version_added": "46",
-              "partial_implementation": true,
-              "notes": "<code>codecs</code>, <code>headerExtensions</code>, <code>rtcp</code> options in returned object are defined but not used."
+              "version_added": "46"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -172,6 +172,232 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "return_object_property_codecs": {
+          "__compat": {
+            "description": "<code>codecs</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#codecs",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpparameters-codecs",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "The property is defined but not implemented/used."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_degradationPreference": {
+          "__compat": {
+            "description": "<code>degradationPreference</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#degradationpreference",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
+        "return_object_property_encodings": {
+          "__compat": {
+            "description": "<code>encodings</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#encodings",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpsendparameters-encodings",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": false,
+                "notes": "Firefox uses <code>RTCRtpParameters.encodings</code> instead."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_headerExtensions": {
+          "__compat": {
+            "description": "<code>headerExtensions</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#headerextensions",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpparameters-headerextensions",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "The property is defined but not implemented/used."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_rtcp": {
+          "__compat": {
+            "description": "<code>rtcp</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#rtcp",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpparameters-rtcp",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": "46",
+                "partial_implementation": true,
+                "notes": "The property is defined but not implemented/used."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_transactionId": {
+          "__compat": {
+            "description": "<code>transactionId</code> property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#transactionId",
+            "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpsendparameters-transactionid",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "≤79"
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
