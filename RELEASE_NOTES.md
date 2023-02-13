@@ -1,5 +1,37 @@
 # Release notes
 
+## [v5.2.35](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.35)
+
+February 10, 2023
+
+### Removals
+
+- `api.ContentVisibilityAutoStateChangedEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangedEvent.ContentVisibilityAutoStateChangedEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangedEvent.skipped` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.Element.contentvisibilityautostatechanged_event` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+
+### Additions
+
+- `api.ContentVisibilityAutoStateChangeEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangeEvent.ContentVisibilityAutoStateChangeEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangeEvent.skipped` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.Element.contentvisibilityautostatechange_event` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ReadableStream.async_iterable` ([#18824](https://github.com/mdn/browser-compat-data/pull/18824))
+- `browsers.chrome.releases.112` ([#18842](https://github.com/mdn/browser-compat-data/pull/18842))
+- `browsers.edge.releases.112` ([#18870](https://github.com/mdn/browser-compat-data/pull/18870))
+- `browsers.nodejs.releases.12.6.0` ([#18871](https://github.com/mdn/browser-compat-data/pull/18871))
+- `browsers.opera.releases.97` ([#18817](https://github.com/mdn/browser-compat-data/pull/18817))
+- `html.elements.form.rel` ([#18868](https://github.com/mdn/browser-compat-data/pull/18868))
+- `javascript.operators.import_meta.resolve` ([#18737](https://github.com/mdn/browser-compat-data/pull/18737))
+
+### Statistics
+
+- 14 contributors have changed 35 files with 405 additions and 691 deletions in 30 commits ([`v5.2.34...v5.2.35`](https://github.com/mdn/browser-compat-data/compare/v5.2.34...v5.2.35))
+- 14,119 total features
+- 980 total contributors
+- 4,406 total stargazers
+
 ## [v5.2.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.34)
 
 February 3, 2023
