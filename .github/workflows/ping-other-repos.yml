@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     # Don't run in forks, or when Dependabot merges a PR.
     if: |
-      github.repository == 'mdn/content' &&
+      github.repository == 'mdn/browser-compat-data' &&
       github.triggering_actor != 'dependabot[bot]'
     steps:
       - name: Ping w3c/mdn-spec-links
