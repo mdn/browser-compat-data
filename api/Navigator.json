@@ -412,7 +412,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/canShare",
           "spec_url": "https://w3c.github.io/web-share/#canshare-data-method",
           "support": {
-            "chrome": [
+            "chrome": {
+              "version_added": "89",
+              "partial_implementation": true,
+              "notes": "Only supported on Chrome OS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+            },
+            "chrome_android": {
+              "version_added": "75"
+            },
+            "edge": [
               {
                 "version_added": "93"
               },
@@ -420,13 +428,9 @@
                 "version_added": "89",
                 "version_removed": "93",
                 "partial_implementation": true,
-                "notes": "Not supported on macOS."
+                "notes": "Only supported on Windows."
               }
             ],
-            "chrome_android": {
-              "version_added": "75"
-            },
-            "edge": "mirror",
             "firefox": {
               "version_added": "96",
               "flags": [
@@ -467,9 +471,7 @@
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-files",
             "support": {
               "chrome": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
+                "version_added": "89"
               },
               "chrome_android": {
                 "version_added": "76"
@@ -509,9 +511,7 @@
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-text",
             "support": {
               "chrome": {
-                "version_added": "89",
-                "partial_implementation": true,
-                "notes": "Not supported on macOS, see <a href='https://crbug.com/1144920'>bug 1144920</a>."
+                "version_added": "89"
               },
               "chrome_android": {
                 "version_added": "76"
@@ -4038,7 +4038,15 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/share",
           "spec_url": "https://w3c.github.io/web-share/#share-method",
           "support": {
-            "chrome": [
+            "chrome": {
+              "version_added": "89",
+              "partial_implementation": true,
+              "notes": "Only supported on Chrome OS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+            },
+            "chrome_android": {
+              "version_added": "61"
+            },
+            "edge": [
               {
                 "version_added": "93"
               },
@@ -4046,13 +4054,9 @@
                 "version_added": "89",
                 "version_removed": "93",
                 "partial_implementation": true,
-                "notes": "Not supported on macOS."
+                "notes": "Only supported on Windows."
               }
             ],
-            "chrome_android": {
-              "version_added": "61"
-            },
-            "edge": "mirror",
             "firefox": {
               "version_added": "71",
               "flags": [
@@ -4094,17 +4098,9 @@
             "description": "<code>data.files</code> parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-files",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "93"
-                },
-                {
-                  "version_added": "89",
-                  "version_removed": "93",
-                  "partial_implementation": true,
-                  "notes": "Not supported on macOS."
-                }
-              ],
+              "chrome": {
+                "version_added": "89"
+              },
               "chrome_android": {
                 "version_added": "76"
               },
@@ -4142,17 +4138,9 @@
             "description": "<code>data.text</code> parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-text",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "93"
-                },
-                {
-                  "version_added": "89",
-                  "version_removed": "93",
-                  "partial_implementation": true,
-                  "notes": "Not supported on macOS."
-                }
-              ],
+              "chrome": {
+                "version_added": "89"
+              },
               "chrome_android": {
                 "version_added": "76"
               },
