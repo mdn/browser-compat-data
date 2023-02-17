@@ -106,7 +106,8 @@
               },
               {
                 "version_added": "39",
-                "notes": "Only enumerates input devices."
+                "partial_implementation": true,
+                "notes": "<code>enumerateDevices()</code> only returns input devices."
               },
               {
                 "version_added": "63",
@@ -120,23 +121,11 @@
                 "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
-            "firefox_android":  [
-              {
-                "version_added": "39",
-                "notes": "Only enumerates input devices."
-              },
-              {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.setsinkid.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
-              }
-            ],
+            "firefox_android": {
+              "version_added": "39",
+              "partial_implementation": true,
+              "notes": "<code>enumerateDevices()</code> only returns input devices."
+            },
             "ie": {
               "version_added": false
             },
@@ -571,17 +560,24 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "88",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "88",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
             },
-            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
