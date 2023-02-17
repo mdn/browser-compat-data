@@ -101,7 +101,12 @@
             },
             "firefox": [
               {
-                "version_added": "39"
+                "version_added": "preview",
+                "notes": "<code>enumerateDevices()</code> enumerates both input and output devices. Previously only input devices were returned."
+              },
+              {
+                "version_added": "39",
+                "notes": "Only enumerates input devices."
               },
               {
                 "version_added": "63",
@@ -115,7 +120,23 @@
                 "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
               }
             ],
-            "firefox_android": "mirror",
+            "firefox_android":  [
+              {
+                "version_added": "39",
+                "notes": "Only enumerates input devices."
+              },
+              {
+                "version_added": "63",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Before Firefox 63, <code>enumerateDevices()</code> only returned input devices. Starting with Firefox 63, output devices are also included if the <code>media.setsinkid.enabled</code> preference is enabled."
+              }
+            ],
             "ie": {
               "version_added": false
             },
