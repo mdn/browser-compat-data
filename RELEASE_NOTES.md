@@ -1,5 +1,504 @@
 # Release notes
 
+## [v5.2.37](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.37)
+
+February 21, 2023
+
+### Removals
+
+- `api.Request.priority` ([#18944](https://github.com/mdn/browser-compat-data/pull/18944))
+- `api.RTCRtpSendParameters` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.degradationPreference` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.encodings` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.transactionId` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `css.properties.-moz-binding` ([#18946](https://github.com/mdn/browser-compat-data/pull/18946))
+- `html.elements.iframe.fetchpriority` ([#18944](https://github.com/mdn/browser-compat-data/pull/18944))
+- `html.elements.template.shadowroot` ([#18855](https://github.com/mdn/browser-compat-data/pull/18855))
+
+### Additions
+
+- `html.elements.template.shadowrootmode` ([#18855](https://github.com/mdn/browser-compat-data/pull/18855))
+
+### Statistics
+
+- 10 contributors have changed 24 files with 299 additions and 946 deletions in 23 commits ([`v5.2.36...v5.2.37`](https://github.com/mdn/browser-compat-data/compare/v5.2.36...v5.2.37))
+- 14,243 total features
+- 984 total contributors
+- 4,417 total stargazers
+
+## [v5.2.36](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.36)
+
+February 17, 2023
+
+### Removals
+
+- `css.properties.hyphens.afrikaans` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.bosnian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.bulgarian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.catalan` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.croatian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.czech` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.danish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.dutch` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.english` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.esperanto` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.estonian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.finish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.french` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.galician` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.german_reformed_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.german_swiss_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.german_traditional_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.hungarian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.icelandic` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.interlingua` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.italian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.kurmanji` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.latin` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.lithuanian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.mongolian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.norwegian_nn` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.norwegian_no` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.polish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.portuguese` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.portuguese_brazilian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.russian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.slovenian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.spanish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.swedish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.turkish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.ukrainian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.upper_sorbian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.welsh` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `webextensions.api.scripting.unregisterContentScripts.persistAcrossSessions` ([#18879](https://github.com/mdn/browser-compat-data/pull/18879))
+- `webextensions.api.webRequest.ResourceType.xbl` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+
+### Additions
+
+- `api.RTCRtpReceiver.getParameters.return_object_property_codecs` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpReceiver.getParameters.return_object_property_headerExtensions` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpReceiver.getParameters.return_object_property_rtcp` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_codecs` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_degradationPreference` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_encodings` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_headerExtensions` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_rtcp` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.getParameters.return_object_property_transactionId` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_codecs_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_degradationPreference_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_encodings_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_headerExtensions_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_rtcp_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `api.RTCRtpSender.setParameters.parameters_transactionId_parameter` ([#18834](https://github.com/mdn/browser-compat-data/pull/18834))
+- `browsers.chrome_android.releases.112` ([#18880](https://github.com/mdn/browser-compat-data/pull/18880))
+- `browsers.webview_android.releases.112` ([#18880](https://github.com/mdn/browser-compat-data/pull/18880))
+- `css.properties.hyphens.auto_value` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_afrikaans` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_bosnian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_bulgarian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_catalan` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_croatian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_czech` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_danish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_dutch` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_english` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_esperanto` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_estonian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_finish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_french` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_galician` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_german_reformed_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_german_swiss_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_german_traditional_orthography` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_hungarian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_icelandic` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_interlingua` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_italian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_kurmanji` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_latin` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_lithuanian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_mongolian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_norwegian_nn` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_norwegian_no` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_polish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_portuguese` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_portuguese_brazilian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_russian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_slovenian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_spanish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_swedish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_turkish` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_ukrainian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_upper_sorbian` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `css.properties.hyphens.language_welsh` ([#18887](https://github.com/mdn/browser-compat-data/pull/18887))
+- `javascript.builtins.ArrayBuffer.ArrayBuffer.maxByteLength_option` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.ArrayBuffer.maxByteLength` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.ArrayBuffer.resizable` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.ArrayBuffer.resize` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.SharedArrayBuffer.grow` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.SharedArrayBuffer.growable` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.SharedArrayBuffer.maxByteLength` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `javascript.builtins.SharedArrayBuffer.SharedArrayBuffer.maxByteLength_option` ([#18898](https://github.com/mdn/browser-compat-data/pull/18898))
+- `webextensions.api.declarativeNetRequest.DYNAMIC_RULESET_ID` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.getAvailableStaticRuleCount` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.getDynamicRules` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.getEnabledRulesets` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.getMatchedRules` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.GETMATCHEDRULES_QUOTA_INTERVAL` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.getSessionRules` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.GUARANTEED_MINIMUM_STATIC_RULES` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.isRegexSupported` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MatchedRule` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MatchedRule.extensionId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MAX_GETMATCHEDRULES_CALLS_PER_INTERVAL` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_ENABLED_STATIC_RULESETS` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_REGEX_RULES` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_STATIC_RULESETS` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.documentId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.documentLifecycle` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.frameId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.frameType` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.initiator` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.method` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.parentDocumentId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.parentFrameId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.requestId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.tabId` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.type` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.onRuleMatchedDebug.request.url` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.Redirect` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.beacon` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.csp_report` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.font` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.image` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.imageset` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.main_frame` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.media` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.object` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.object_subrequest` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.other` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.ping` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.script` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.speculative` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.stylesheet` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.sub_frame` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.web_manifest` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.webbundle` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.websocket` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.webtransport` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.xml_dtd` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.xmlhttprequest` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.ResourceType.xslt` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.Rule` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.requestHeaders` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.requestHeaders.header` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.requestHeaders.operation` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.requestHeaders.value` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.responseHeaders` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.responseHeaders.header` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.responseHeaders.operation` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleAction.responseHeaders.value` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.domains` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.excludedDomains` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.excludedInitiatorDomains` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.excludedRequestDomains` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.excludedRequestMethods` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.requestDomains` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.requestMethods` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.RuleCondition.tabIds` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.SESSION_RULESET_ID` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.setExtensionActionOptions` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.setExtensionActionOptions.options` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.setExtensionActionOptions.options.tabUpdate` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.testMatchOutcome` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.testMatchOutcome.options` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.testMatchOutcome.options.includeOtherExtensions` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.updateDynamicRules` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.updateEnabledRulesets` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.updateSessionRules` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.URLTransform` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.URLTransform.queryTransform` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.URLTransform.queryTransform.addOrReplaceParams` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.declarativeNetRequest.URLTransform.queryTransform.addOrReplaceParams.replaceOnly` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.api.scripting.ExecutionWorld` ([#18878](https://github.com/mdn/browser-compat-data/pull/18878))
+- `webextensions.api.scripting.ExecutionWorld.ISOLATED` ([#18878](https://github.com/mdn/browser-compat-data/pull/18878))
+- `webextensions.api.scripting.ExecutionWorld.MAIN` ([#18878](https://github.com/mdn/browser-compat-data/pull/18878))
+- `webextensions.api.scripting.RegisteredContentScript.world` ([#18878](https://github.com/mdn/browser-compat-data/pull/18878))
+- `webextensions.api.search.query` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.query.queryInfo` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.query.queryInfo.disposition` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.query.queryInfo.tabId` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.query.queryInfo.text` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.search.searchProperties` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.search.searchProperties.disposition` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.search.searchProperties.engine` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.search.searchProperties.query` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.api.search.search.searchProperties.tabId` ([#18903](https://github.com/mdn/browser-compat-data/pull/18903))
+- `webextensions.manifest.declarative_net_request` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.declarative_net_request.rule_resources` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.declarative_net_request.rule_resources.enabled` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.declarative_net_request.rule_resources.id` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.declarative_net_request.rule_resources.path` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.permissions.declarativeNetRequest` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.permissions.declarativeNetRequestFeedback` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+- `webextensions.manifest.permissions.declarativeNetRequestWithHostAccess` ([#18403](https://github.com/mdn/browser-compat-data/pull/18403))
+
+### Statistics
+
+- 12 contributors have changed 49 files with 3,854 additions and 583 deletions in 42 commits ([`v5.2.35...v5.2.36`](https://github.com/mdn/browser-compat-data/compare/v5.2.35...v5.2.36))
+- 14,250 total features
+- 984 total contributors
+- 4,412 total stargazers
+
+## [v5.2.35](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.35)
+
+February 10, 2023
+
+### Removals
+
+- `api.ContentVisibilityAutoStateChangedEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangedEvent.ContentVisibilityAutoStateChangedEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangedEvent.skipped` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.Element.contentvisibilityautostatechanged_event` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+
+### Additions
+
+- `api.ContentVisibilityAutoStateChangeEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangeEvent.ContentVisibilityAutoStateChangeEvent` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ContentVisibilityAutoStateChangeEvent.skipped` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.Element.contentvisibilityautostatechange_event` ([#18848](https://github.com/mdn/browser-compat-data/pull/18848))
+- `api.ReadableStream.async_iterable` ([#18824](https://github.com/mdn/browser-compat-data/pull/18824))
+- `browsers.chrome.releases.112` ([#18842](https://github.com/mdn/browser-compat-data/pull/18842))
+- `browsers.edge.releases.112` ([#18870](https://github.com/mdn/browser-compat-data/pull/18870))
+- `browsers.nodejs.releases.12.6.0` ([#18871](https://github.com/mdn/browser-compat-data/pull/18871))
+- `browsers.opera.releases.97` ([#18817](https://github.com/mdn/browser-compat-data/pull/18817))
+- `html.elements.form.rel` ([#18868](https://github.com/mdn/browser-compat-data/pull/18868))
+- `javascript.operators.import_meta.resolve` ([#18737](https://github.com/mdn/browser-compat-data/pull/18737))
+
+### Statistics
+
+- 14 contributors have changed 35 files with 405 additions and 691 deletions in 30 commits ([`v5.2.34...v5.2.35`](https://github.com/mdn/browser-compat-data/compare/v5.2.34...v5.2.35))
+- 14,119 total features
+- 980 total contributors
+- 4,406 total stargazers
+
+## [v5.2.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.34)
+
+February 3, 2023
+
+### Additions
+
+- `api.GestureEvent.altKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.clientY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.ctrlKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.metaKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenX` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.screenY` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.shiftKey` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.GestureEvent.target` ([#18761](https://github.com/mdn/browser-compat-data/pull/18761))
+- `api.Navigator.getAutoplayPolicy` ([#18784](https://github.com/mdn/browser-compat-data/pull/18784))
+- `api.SVGAltGlyphElement.href` ([#18766](https://github.com/mdn/browser-compat-data/pull/18766))
+- `api.SVGGlyphRefElement.href` ([#18767](https://github.com/mdn/browser-compat-data/pull/18767))
+- `api.Window.getDigitalGoodsService` ([#18769](https://github.com/mdn/browser-compat-data/pull/18769))
+- `css.properties.baseline-source` ([#18803](https://github.com/mdn/browser-compat-data/pull/18803))
+
+### Statistics
+
+- 4 contributors have changed 8 files with 509 additions and 14 deletions in 9 commits ([`v5.2.33...v5.2.34`](https://github.com/mdn/browser-compat-data/compare/v5.2.33...v5.2.34))
+- 14,116 total features
+- 979 total contributors
+- 4,395 total stargazers
+
+## [v5.2.33](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.33)
+
+January 31, 2023
+
+### Removals
+
+- `api.MediaSource.activeSourceBuffers.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.addSourceBuffer.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.clearLiveSeekableRange.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.duration.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.endOfStream.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.isTypeSupported.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.MediaSource.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.readyState.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.removeSourceBuffer.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.setLiveSeekableRange.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceBuffers.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceclose_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceended_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MediaSource.sourceopen_event.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `javascript.builtins.Temporal.Calendar.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Duration.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Instant.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDate.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDateTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainMonthDay.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainYearMonth.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.TimeZone.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.ZonedDateTime.constructor` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+
+### Additions
+
+- `api.Element.animate.options_timeline_parameter` ([#18776](https://github.com/mdn/browser-compat-data/pull/18776))
+- `api.MathMLElement.autofocus` ([#18764](https://github.com/mdn/browser-compat-data/pull/18764))
+- `api.MathMLElement.nonce` ([#18764](https://github.com/mdn/browser-compat-data/pull/18764))
+- `api.MediaSource.worker_support` ([#18795](https://github.com/mdn/browser-compat-data/pull/18795))
+- `api.MIDIOutputMap.@@iterator` ([#18763](https://github.com/mdn/browser-compat-data/pull/18763))
+- `api.OffscreenCanvasRenderingContext2D.createConicGradient` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontKerning` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontStretch` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.fontVariantCaps` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.isContextLost` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.letterSpacing` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.reset` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.roundRect` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.textRendering` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.OffscreenCanvasRenderingContext2D.wordSpacing` ([#18748](https://github.com/mdn/browser-compat-data/pull/18748))
+- `api.PaymentRequestEvent.changeShippingAddress` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.changeShippingOption` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.paymentOptions` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `api.PaymentRequestEvent.shippingOptions` ([#18765](https://github.com/mdn/browser-compat-data/pull/18765))
+- `css.selectors.highlight` ([#18720](https://github.com/mdn/browser-compat-data/pull/18720))
+- `javascript.builtins.Temporal.Calendar.Calendar` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Duration.Duration` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.Instant.Instant` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDate.PlainDate` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainDateTime.PlainDateTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainMonthDay.PlainMonthDay` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainTime.PlainTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.PlainYearMonth.PlainYearMonth` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.TimeZone.TimeZone` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+- `javascript.builtins.Temporal.ZonedDateTime.ZonedDateTime` ([#18794](https://github.com/mdn/browser-compat-data/pull/18794))
+
+### Statistics
+
+- 9 contributors have changed 34 files with 1,423 additions and 818 deletions in 25 commits ([`v5.2.32...v5.2.33`](https://github.com/mdn/browser-compat-data/compare/v5.2.32...v5.2.33))
+- 14,102 total features
+- 979 total contributors
+- 4,393 total stargazers
+
+## [v5.2.32](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.32)
+
+January 27, 2023
+
+### Removals
+
+- `http.headers.Content-Security-Policy.require-sri-for` ([#18740](https://github.com/mdn/browser-compat-data/pull/18740))
+
+### Additions
+
+- `api.CSS.svb` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svh` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svi` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmax` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svmin` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSS.svw` ([#18742](https://github.com/mdn/browser-compat-data/pull/18742))
+- `api.CSSKeyframesRule.length` ([#18743](https://github.com/mdn/browser-compat-data/pull/18743))
+- `api.MathMLElement.attributeStyleMap` ([#18747](https://github.com/mdn/browser-compat-data/pull/18747))
+- `api.XRHand.@@iterator` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.entries` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.forEach` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.get` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.keys` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.size` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `api.XRHand.values` ([#18749](https://github.com/mdn/browser-compat-data/pull/18749))
+- `browsers.opera_android.releases.73` ([#18746](https://github.com/mdn/browser-compat-data/pull/18746))
+- `browsers.safari_ios.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+- `browsers.safari.releases.16.3` ([#18736](https://github.com/mdn/browser-compat-data/pull/18736))
+
+### Statistics
+
+- 7 contributors have changed 23 files with 617 additions and 94 deletions in 14 commits ([`v5.2.31...v5.2.32`](https://github.com/mdn/browser-compat-data/compare/v5.2.31...v5.2.32))
+- 14,096 total features
+- 976 total contributors
+- 4,390 total stargazers
+
+## [v5.2.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.31)
+
+January 24, 2023
+
+### Removals
+
+- `javascript.operators.logical_nullish_assignment` ([#18700](https://github.com/mdn/browser-compat-data/pull/18700))
+- `webextensions.manifest.permissions.webRequestFilterResponse.serviceWorkerScript` ([#18701](https://github.com/mdn/browser-compat-data/pull/18701))
+
+### Additions
+
+- `api.CSS.dvb` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvh` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvi` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvmax` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvmin` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.dvw` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvb` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvh` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvi` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvmax` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvmin` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `api.CSS.lvw` ([#18678](https://github.com/mdn/browser-compat-data/pull/18678))
+- `javascript.operators.nullish_coalescing_assignment` ([#18700](https://github.com/mdn/browser-compat-data/pull/18700))
+- `mathml.elements.mo.form` ([#18685](https://github.com/mdn/browser-compat-data/pull/18685))
+- `mathml.elements.mo.largeop` ([#18685](https://github.com/mdn/browser-compat-data/pull/18685))
+- `webextensions.api.find.find.options` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.caseSensitive` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.entireWord` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.includeRangeData` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.includeRectData` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.matchDiacritics` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.api.find.find.options.tabId` ([#18688](https://github.com/mdn/browser-compat-data/pull/18688))
+- `webextensions.manifest.permissions.webRequestFilterResponse_serviceWorkerScript` ([#18701](https://github.com/mdn/browser-compat-data/pull/18701))
+
+### Statistics
+
+- 7 contributors have changed 35 files with 833 additions and 215 deletions in 23 commits ([`v5.2.30...v5.2.31`](https://github.com/mdn/browser-compat-data/compare/v5.2.30...v5.2.31))
+- 14,082 total features
+- 974 total contributors
+- 4,383 total stargazers
+
+## [v5.2.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.30)
+
+January 20, 2023
+
+### Removals
+
+- `api.Document.registerElement` ([#18681](https://github.com/mdn/browser-compat-data/pull/18681))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse.serviceWorkerScript` ([#18680](https://github.com/mdn/browser-compat-data/pull/18680))
+
+### Additions
+
+- `api.CookieStore.delete.partitioned_option` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.get.partitioned_return_property` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.getAll.partitioned_return_property` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CookieStore.set.partitioned_option` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `api.CredentialsContainer.get.identity_option` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `api.fetch.init_keepalive_parameter` ([#18332](https://github.com/mdn/browser-compat-data/pull/18332))
+- `api.IdentityCredential` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `api.IdentityCredential.token` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `http.headers.Permissions-Policy.identity-credentials-get` ([#18628](https://github.com/mdn/browser-compat-data/pull/18628))
+- `http.headers.Set-Cookie.Partitioned` ([#18591](https://github.com/mdn/browser-compat-data/pull/18591))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse_serviceWorkerScript` ([#18680](https://github.com/mdn/browser-compat-data/pull/18680))
+- `webextensions.manifest.optional_permissions.webRequestFilterResponse.serviceWorkerScript` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.permissions.webRequestFilterResponse` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+- `webextensions.manifest.permissions.webRequestFilterResponse.serviceWorkerScript` ([#18665](https://github.com/mdn/browser-compat-data/pull/18665))
+
+### Statistics
+
+- 8 contributors have changed 14 files with 470 additions and 89 deletions in 12 commits ([`v5.2.29...v5.2.30`](https://github.com/mdn/browser-compat-data/compare/v5.2.29...v5.2.30))
+- 14,061 total features
+- 974 total contributors
+- 4,373 total stargazers
+
 ## [v5.2.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.29)
 
 January 17, 2023

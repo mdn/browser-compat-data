@@ -177,7 +177,7 @@ const enumerateFeatures = (ref = 'HEAD'): string[] => {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(`ts-node ./scripts/enumerate-features --data-from=${worktree}`);
+    execSync(`ts-node ./scripts/enumerate-features.ts --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
