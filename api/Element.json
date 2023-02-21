@@ -300,16 +300,14 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-keyframeeffectoptions-composite",
             "support": {
               "chrome": {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
+                "version_added": "≤80"
               },
-              "chrome_android": "mirror",
-              "edge": "mirror",
+              "chrome_android": {
+                "version_added": "≤109"
+              },
+              "edge": {
+                "version_added": "≤80"
+              },
               "firefox": {
                 "version_added": "80"
               },
@@ -319,13 +317,19 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": "mirror",
+              "opera_android": {
+                "version_added": "≤73"
+              },
               "safari": {
-                "version_added": false
+                "version_added": "≤13.1"
               },
               "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "samsunginternet_android": {
+                "version_added": "≤19.0"
+              },
+              "webview_android": {
+                "version_added": "≤109"
+              }
             },
             "status": {
               "experimental": true,
@@ -355,7 +359,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "≤13.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -409,7 +413,7 @@
             "support": {
               "chrome": [
                 {
-                  "version_added": "84"
+                  "version_added": "81"
                 },
                 {
                   "version_added": "81",
@@ -424,7 +428,22 @@
                 }
               ],
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": [
+                {
+                  "version_added": "81"
+                },
+                {
+                  "version_added": "81",
+                  "partial_implementation": true,
+                  "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features"
+                    }
+                  ]
+                }
+              ],
               "firefox": {
                 "version_added": "75"
               },
@@ -2332,10 +2351,14 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-beforematch",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": false
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2347,13 +2370,19 @@
             "opera": {
               "version_added": false
             },
-            "opera_android": "mirror",
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -2403,10 +2432,16 @@
           "spec_url": "https://immersive-web.github.io/dom-overlays/#onbeforexrselect",
           "support": {
             "chrome": {
-              "version_added": "83"
+              "version_added": "83",
+              "version_removed": "90"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": {
+              "version_added": "83",
+              "version_removed": "90"
+            },
             "firefox": {
               "version_added": false
             },
@@ -2416,13 +2451,19 @@
             },
             "oculus": "mirror",
             "opera": "mirror",
-            "opera_android": "mirror",
+            "opera_android": {
+              "version_added": false
+            },
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -3248,16 +3289,20 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": "9",
               "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>; however, the event handler is supported since IE 5.5. The event can be listened to via <code>element.oncopy</code>."
@@ -3267,16 +3312,21 @@
               "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "≤12.1"
+              "version_added": false
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "version_removed": "13.1> ≤14.1"
             },
             "safari_ios": {
               "version_added": "3"
             },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -3295,16 +3345,20 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": "9",
               "notes": "Before Internet Explorer 9, this event is not supported via <code>addEventListener</code>; however, the event handler is supported since IE 5.5. The event can be listened to via <code>element.oncopy</code>."
@@ -3314,16 +3368,21 @@
               "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "≤12.1"
+              "version_added": false
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "version_removed": "13.1> ≤14.1"
             },
             "safari_ios": {
               "version_added": "3"
             },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "samsunginternet_android": {
+              "version_added": false
+            },
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -3560,16 +3619,20 @@
           "spec_url": "https://w3c.github.io/uievents/#event-type-focusin",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "52"
+              "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": "9"
             },
@@ -3578,15 +3641,17 @@
               "version_added": "11.6"
             },
             "opera_android": {
-              "version_added": "12.1"
+              "version_added": false
             },
             "safari": {
               "version_added": "5"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": false
             }
           },
           "status": {
@@ -3603,16 +3668,20 @@
           "spec_url": "https://w3c.github.io/uievents/#event-type-focusout",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "52"
+              "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": "9"
             },
@@ -3621,15 +3690,17 @@
               "version_added": "11.6"
             },
             "opera_android": {
-              "version_added": "12.1"
+              "version_added": false
             },
             "safari": {
               "version_added": "5"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": false
             }
           },
           "status": {
@@ -3854,7 +3925,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "9.1"
+              "version_added": false
             },
             "safari_ios": {
               "version_added": "2"
@@ -3890,7 +3961,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "9.1"
+              "version_added": false
             },
             "safari_ios": {
               "version_added": "2"
@@ -3926,7 +3997,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "9.1"
+              "version_added": false
             },
             "safari_ios": {
               "version_added": "2"
@@ -5889,16 +5960,20 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": "9",
               "notes": [
@@ -5911,17 +5986,20 @@
               "version_added": "≤12.1"
             },
             "opera_android": {
-              "version_added": "≤12.1"
+              "version_added": false
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "version_removed": "13.1> ≤14.1"
             },
             "safari_ios": {
               "version_added": "3"
             },
-            "samsunginternet_android": "mirror",
+            "samsunginternet_android": {
+              "version_added": false
+            },
             "webview_android": {
-              "version_added": "≤37"
+              "version_added": false
             }
           },
           "status": {
@@ -7694,7 +7772,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "13.1> ≤14.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
