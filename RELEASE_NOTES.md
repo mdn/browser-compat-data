@@ -1,5 +1,31 @@
 # Release notes
 
+## [v5.2.37](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.37)
+
+February 21, 2023
+
+### Removals
+
+- `api.Request.priority` ([#18944](https://github.com/mdn/browser-compat-data/pull/18944))
+- `api.RTCRtpSendParameters` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.degradationPreference` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.encodings` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `api.RTCRtpSendParameters.transactionId` ([#18935](https://github.com/mdn/browser-compat-data/pull/18935))
+- `css.properties.-moz-binding` ([#18946](https://github.com/mdn/browser-compat-data/pull/18946))
+- `html.elements.iframe.fetchpriority` ([#18944](https://github.com/mdn/browser-compat-data/pull/18944))
+- `html.elements.template.shadowroot` ([#18855](https://github.com/mdn/browser-compat-data/pull/18855))
+
+### Additions
+
+- `html.elements.template.shadowrootmode` ([#18855](https://github.com/mdn/browser-compat-data/pull/18855))
+
+### Statistics
+
+- 10 contributors have changed 24 files with 299 additions and 946 deletions in 23 commits ([`v5.2.36...v5.2.37`](https://github.com/mdn/browser-compat-data/compare/v5.2.36...v5.2.37))
+- 14,243 total features
+- 984 total contributors
+- 4,417 total stargazers
+
 ## [v5.2.36](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.36)
 
 February 17, 2023
