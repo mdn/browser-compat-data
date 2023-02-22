@@ -12,6 +12,19 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+// Once a category has been stripped of unsupported features, add it to this list
+const categoriesToCheck = [
+  'api',
+  // 'css',
+  // 'html',
+  // 'http',
+  // 'javascript',
+  // 'mathml',
+  // 'svg',
+  // 'webdriver',
+  // 'webextensions'
+];
+
 /**
  * Check if feature has never been implemented
  *
@@ -131,8 +144,8 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger: Logger, { data }: LinterData) => {
-    processData(logger, data);
+  check: (logger: Logger, { data, path: { category } }: LinterData) => {
+    if (categoriesToCheck.includes(category)) processData(logger, data);
   },
   exceptions: [
     'http.headers.Cache-Control.stale-if-error',
