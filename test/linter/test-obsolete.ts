@@ -150,13 +150,13 @@ export default {
     }
   },
   // XXX Exceptions disabled while the corresponding categories are ignored
-  exceptions: [
-    // 'http.headers.Cache-Control.stale-if-error',
-    // 'http.headers.Feature-Policy.layout-animations',
-    // 'http.headers.Feature-Policy.legacy-image-formats',
-    // 'http.headers.Feature-Policy.oversized-images',
-    // 'http.headers.Feature-Policy.unoptimized-images',
-    // 'http.headers.Feature-Policy.unsized-media',
-    // 'svg.elements.view.zoomAndPan',
-  ],
+  // exceptions: [
+  // 'http.headers.Cache-Control.stale-if-error',
+  // 'http.headers.Feature-Policy.layout-animations',
+  // 'http.headers.Feature-Policy.legacy-image-formats',
+  // 'http.headers.Feature-Policy.oversized-images',
+  // 'http.headers.Feature-Policy.unoptimized-images',
+  // 'http.headers.Feature-Policy.unsized-media',
+  // 'svg.elements.view.zoomAndPan',
+  // ],
 } as Linter;
