@@ -145,7 +145,9 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    if (categoriesToCheck.includes(category)) processData(logger, data);
+    if (categoriesToCheck.includes(category)) {
+      processData(logger, data);
+    }
   },
   exceptions: [
     'http.headers.Cache-Control.stale-if-error',
