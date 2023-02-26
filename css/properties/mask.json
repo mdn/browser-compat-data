@@ -35,10 +35,17 @@
                 "version_removed": "79"
               }
             ],
-            "firefox": {
-              "version_added": "2",
-              "notes": "From Firefox 10, the default color space when handling masks is sRGB. Previously, the default and only supported color space was linear RGB. This changes the appearance of mask effects, but brings Firefox into compliance with the second edition of the SVG 1.1 specification."
-            },
+            "firefox": [
+              {
+                "version_added": "53",
+                "notes": "Added support for CSS Masking Module Level 1, including the <code>mask</code> shorthand, and <code>mask-image</code>, <code>mask-repeat</code>, <code>mask-size</code>, etc."
+              },
+              {
+                "version_added": "2",
+                "partial_implementation": true,
+                "notes": "Supports SVG masks only (<code>mask: url(image.svg)</code> or <code>mask: url(#svg-fragment)</code>)."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -47,6 +54,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": [
+              {
+                "version_added": "15.4"
+              },
               {
                 "version_added": "3.1",
                 "partial_implementation": true,
