@@ -21,14 +21,15 @@ const { browsers } = bcd;
 const validBrowserVersions: { [browser: string]: string[] } = {};
 
 const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
-  chrome: ['≤15', '≤37'],
-  edge: ['≤18', '≤79'],
+  chrome: ['≤15', '≤37', '≤80'],
+  edge: ['≤18', '≤79', '≤80'],
+  firefox: ['≤72'],
   ie: ['≤6', '≤11'],
-  opera: ['≤12.1', '≤15'],
-  opera_android: ['≤12.1', '≤14'],
-  safari: ['≤4'],
-  safari_ios: ['≤3'],
-  webview_android: ['≤37'],
+  opera: ['≤12.1', '≤15', '≤66'],
+  opera_android: ['≤12.1', '≤14', '≤56'],
+  safari: ['≤4', '≤13.1'],
+  safari_ios: ['≤3', '≤13.4'],
+  webview_android: ['≤37', '≤80'],
 };
 
 const browserTips: { [browser: string]: string } = {

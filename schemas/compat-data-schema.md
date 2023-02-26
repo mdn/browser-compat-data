@@ -318,24 +318,34 @@ Note: many data categories no longer allow for `version_removed` to be set to `t
 
 For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
 
+- Chrome
+  - "≤15" (the earliest version testable in BrowserStack)
+  - "≤37" (the earliest version testable in SauceLabs)
+  - "≤80" (the first version released in 2020)
 - Edge
-  - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
-  - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
+  - "≤18" (the last EdgeHTML-based Edge)
+  - "≤79" (the first Chromium-based Edge)
+  - "≤80" (the first version released in 2020)
 - Internet Explorer
-  - "≤6" (the earliest IE version testable in BrowserStack and possibly earlier)
-  - "≤11" (the last IE version and possibly earlier)
+  - "≤6" (the earliest version testable in BrowserStack)
+  - "≤11" (the last IE version)
 - Opera
-  - "≤12.1" (the last Presto-based Opera and possibly earlier)
-  - "≤15" (the first Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera)
+  - "≤15" (the first Chromium-based Opera)
+  - "≤66" (the first version released in 2020)
 - Opera Android
-  - "≤12.1" (the last Presto-based Opera and possibly earlier)
-  - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
+  - "≤12.1" (the last Presto-based Opera)
+  - "≤14" (the first Chromium-based Opera)
+  - "≤56" (the first version released in 2020)
 - Safari
-  - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
+  - "≤4" (the earliest version testable in BrowserStack)
+  - "≤13.1" (the first version released in 2020)
 - Safari iOS
-  - "≤3" (the earliest Safari iOS version testable in BrowserStack and possibly earlier)
+  - "≤3" (the earliest version testable in BrowserStack)
+  - "≤13.4" (the first version released in 2020)
 - WebView Android
-  - "≤37" (the first Chrome-based WebView and possibly previous Android versions)
+  - "≤37" (the first Chrome-based WebView)
+  - "≤80" (the first version released in 2020)
 
 For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
