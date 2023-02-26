@@ -1,5 +1,69 @@
 # Release notes
 
+## [v5.2.38](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.38)
+
+February 23, 2023
+
+### Removals
+
+- `javascript.builtins.RegExp.lookbehind_assertion` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.builtins.RegExp.named_capture_groups` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.builtins.RegExp.property_escapes` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+
+### Additions
+
+- `api.Document.startViewTransition` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `api.Element.auxclick_event.type_pointerevent` ([#18945](https://github.com/mdn/browser-compat-data/pull/18945))
+- `api.Element.click_event.type_pointerevent` ([#18945](https://github.com/mdn/browser-compat-data/pull/18945))
+- `api.Element.contextmenu_event.type_pointerevent` ([#18945](https://github.com/mdn/browser-compat-data/pull/18945))
+- `api.ViewTransition` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `api.ViewTransition.finished` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `api.ViewTransition.ready` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `api.ViewTransition.skipTransition` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `api.ViewTransition.updateCallbackDone` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `browsers.safari_ios.releases.16.4` ([#18973](https://github.com/mdn/browser-compat-data/pull/18973))
+- `browsers.safari.releases.16.4` ([#18973](https://github.com/mdn/browser-compat-data/pull/18973))
+- `browsers.samsunginternet_android.releases.20.0` ([#19001](https://github.com/mdn/browser-compat-data/pull/19001))
+- `css.at-rules.container.style_queries_for_custom_properties` ([#18996](https://github.com/mdn/browser-compat-data/pull/18996))
+- `css.properties.view-transition-name` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `css.selectors.view-transition` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `css.selectors.view-transition-group` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `css.selectors.view-transition-image-pair` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `css.selectors.view-transition-new` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `css.selectors.view-transition-old` ([#18916](https://github.com/mdn/browser-compat-data/pull/18916))
+- `javascript.builtins.Function.@@hasInstance` ([#18999](https://github.com/mdn/browser-compat-data/pull/18999))
+- `javascript.regular_expressions.backreference` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.capturing_group` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.character_class` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.character_class_escape` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.character_escape` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.disjunction` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.input_boundary_assertion` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.lookahead_assertion` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.lookbehind_assertion` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.named_backreference` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.named_capture_groups` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.non_capture_group` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.property_escapes` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.quantifier` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.wildcard` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `javascript.regular_expressions.word_boundary_assertion` ([#18966](https://github.com/mdn/browser-compat-data/pull/18966))
+- `webextensions.api.webRequest.ResourceType.image` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.main_frame` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.object` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.other` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.script` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.stylesheet` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.sub_frame` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+- `webextensions.api.webRequest.ResourceType.xmlhttprequest` ([#18869](https://github.com/mdn/browser-compat-data/pull/18869))
+
+### Statistics
+
+- 12 contributors have changed 112 files with 2,834 additions and 6,652 deletions in 22 commits ([`v5.2.37...v5.2.38`](https://github.com/mdn/browser-compat-data/compare/v5.2.37...v5.2.38))
+- 14,281 total features
+- 984 total contributors
+- 4,420 total stargazers
+
 ## [v5.2.37](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.37)
 
 February 21, 2023
