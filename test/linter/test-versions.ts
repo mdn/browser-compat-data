@@ -18,18 +18,18 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-const validBrowserVersions: { [browser: string]: string[] } = {};
-
-const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
-  chrome: ['≤15', '≤37'],
-  edge: ['≤18', '≤79'],
-  ie: ['≤6', '≤11'],
-  opera: ['≤12.1', '≤15'],
-  opera_android: ['≤12.1', '≤14'],
-  safari: ['≤4'],
-  safari_ios: ['≤3'],
-  webview_android: ['≤37'],
-};
+const validBrowserVersions: { [browser: string]: string[] } = Object.keys(
+  browsers,
+).reduce(
+  (o, browser) => ({
+    ...o,
+    [browser]: [
+      ...Object.keys(browsers[browser].releases),
+      ...(browsers[browser].preview_name ? ['preview'] : []),
+    ],
+  }),
+  {},
+);
 
 const browserTips: { [browser: string]: string } = {
   nodejs:
@@ -40,17 +40,7 @@ const browserTips: { [browser: string]: string } = {
     'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
 };
 
-for (const browser of Object.keys(browsers) as BrowserName[]) {
-  validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
-  if (VERSION_RANGE_BROWSERS[browser]) {
-    validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
-  }
-  if (browsers[browser].preview_name) {
-    validBrowserVersions[browser].push('preview');
-  }
-}
-
-const realValuesTargetBrowsers = [
+const realOrRangedValuesTargetBrowsers = [
   'chrome',
   'chrome_android',
   'edge',
@@ -64,15 +54,15 @@ const realValuesTargetBrowsers = [
   'webview_android',
 ];
 
-const realValuesRequired: { [category: string]: string[] } = {
-  api: realValuesTargetBrowsers,
-  css: realValuesTargetBrowsers,
+const realOrRangedValuesRequired: { [category: string]: string[] } = {
+  api: realOrRangedValuesTargetBrowsers,
+  css: realOrRangedValuesTargetBrowsers,
   html: [],
   http: [],
   svg: [],
-  javascript: [...realValuesTargetBrowsers, 'nodejs'],
-  mathml: realValuesTargetBrowsers,
-  webdriver: realValuesTargetBrowsers,
+  javascript: [...realOrRangedValuesTargetBrowsers, 'nodejs'],
+  mathml: realOrRangedValuesTargetBrowsers,
+  webdriver: realOrRangedValuesTargetBrowsers,
   webextensions: [],
 };
 
@@ -90,9 +80,9 @@ const isValidVersion = (
   version: VersionValue,
 ): boolean => {
   if (typeof version === 'string') {
-    return validBrowserVersions[browser].includes(version);
+    return validBrowserVersions[browser].includes(version.replace('≤', ''));
   } else if (
-    realValuesRequired[category].includes(browser) &&
+    realOrRangedValuesRequired[category].includes(browser) &&
     version !== false
   ) {
     return false;
@@ -164,7 +154,7 @@ const checkVersions = (
         supportData[browser];
 
       if (!supportStatement) {
-        if (realValuesRequired[category].includes(browser)) {
+        if (realOrRangedValuesRequired[category].includes(browser)) {
           logger.error(chalk`{red {bold ${browser}} must be defined}`);
         }
 
