@@ -230,7 +230,7 @@
               "version_added": "50"
             },
             "safari": {
-              "version_added": "preview"
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3054,10 +3054,15 @@
                 "version_removed": "14"
               }
             ],
-            "safari": {
-              "version_added": "5.1",
-              "prefix": "webkit"
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "5.1",
+                "prefix": "webkit"
+              }
+            ],
             "safari_ios": {
               "version_added": "12",
               "prefix": "webkit",
@@ -3533,10 +3538,15 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "6",
-              "alternative_name": "webkitIsFullScreen"
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "6",
+                "alternative_name": "webkitIsFullScreen"
+              }
+            ],
             "safari_ios": {
               "version_added": "12",
               "alternative_name": "webkitIsFullScreen",
@@ -3631,10 +3641,15 @@
                 "version_removed": "14"
               }
             ],
-            "safari": {
-              "version_added": "5.1",
-              "alternative_name": "webkitfullscreenchange"
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "5.1",
+                "alternative_name": "webkitfullscreenchange"
+              }
+            ],
             "safari_ios": {
               "version_added": "12",
               "alternative_name": "webkitfullscreenchange",
@@ -3728,16 +3743,28 @@
                 "version_removed": "14"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "webkit"
-            },
-            "safari_ios": {
-              "version_added": "12",
-              "prefix": "webkit",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "version_added": "12",
+                "prefix": "webkit",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3807,10 +3834,15 @@
                 "version_removed": "14"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "prefix": "webkit"
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "6",
+                "prefix": "webkit"
+              }
+            ],
             "safari_ios": {
               "version_added": "12",
               "prefix": "webkit",
@@ -3897,10 +3929,15 @@
                 "version_removed": "14"
               }
             ],
-            "safari": {
-              "version_added": "6",
-              "alternative_name": "webkitfullscreenerror"
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "6",
+                "alternative_name": "webkitfullscreenerror"
+              }
+            ],
             "safari_ios": {
               "version_added": "12",
               "alternative_name": "webkitfullscreenerror",
@@ -6239,7 +6276,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.5"
+              "version_added": "15.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -6322,6 +6359,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "startViewTransition": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/startViewTransition",
+          "spec_url": "https://w3c.github.io/csswg-drafts/css-view-transitions-1/#dom-document-startviewtransition",
+          "support": {
+            "chrome": {
+              "version_added": "111"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
