@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0 # get the full repository checkout, not just the inciting commit
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version-file: ".nvmrc"
           cache: npm
       - run: npm ci
       - run: npx ts-node ./scripts/enumerate-features.ts features.json
