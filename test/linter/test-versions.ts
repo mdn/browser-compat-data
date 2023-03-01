@@ -21,6 +21,7 @@ const { browsers } = bcd;
 const validBrowserVersions: { [browser: string]: string[] } = {};
 
 const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
+  chrome: ['≤15', '≤37'],
   edge: ['≤18', '≤79'],
   ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],
