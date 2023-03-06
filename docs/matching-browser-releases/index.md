@@ -109,7 +109,7 @@ Samsung Internet is a Chromium browser specifically tailored for Android devices
 
 _Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
-Most of the features for Samsung Internet will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occassions, however, Samsung Internet may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
+Most of the features for Samsung Internet will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occasions, however, Samsung Internet may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
 
 ### Quest
 
