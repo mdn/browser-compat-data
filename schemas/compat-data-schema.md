@@ -316,7 +316,7 @@ Note: many data categories no longer allow for `version_removed` to be set to `t
 
 ### Ranged versions
 
-Ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in.
+Ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when an excessive amount of work if needed to find out the version number a feature initially shipped in.
 
 For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
