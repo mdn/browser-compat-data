@@ -1,5 +1,62 @@
 # Release notes
 
+## [v5.2.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.40)
+
+March 7, 2023
+
+### Additions
+
+- `svg.attributes.presentation.fill.context-fill` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `svg.attributes.presentation.stroke.context-stroke` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `webextensions.api.menus.ContextType.action` ([#19005](https://github.com/mdn/browser-compat-data/pull/19005))
+- `webextensions.manifest.background.type` ([#19055](https://github.com/mdn/browser-compat-data/pull/19055))
+
+### Statistics
+
+- 7 contributors have changed 14 files with 300 additions and 216 deletions in 22 commits ([`v5.2.39...v5.2.40`](https://github.com/mdn/browser-compat-data/compare/v5.2.39...v5.2.40))
+- 14,271 total features
+- 985 total contributors
+- 4,428 total stargazers
+
+## [v5.2.39](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.39)
+
+February 28, 2023
+
+### Removals
+
+- `api.Element.show_event` ([#18979](https://github.com/mdn/browser-compat-data/pull/18979))
+- `api.HTMLElement.contextMenu` ([#18980](https://github.com/mdn/browser-compat-data/pull/18980))
+- `api.HTMLMenuItemElement` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.checked` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.default` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.disabled` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.icon` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.label` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.radiogroup` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.type` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.checked` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.command` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.default` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.disabled` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.icon` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.radiogroup` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.type` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+
+### Additions
+
+- `webextensions.api.webRequest.SecurityInfo.usedDelegatedCredentials` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedEch` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedOcsp` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedPrivateDns` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+
+### Statistics
+
+- 5 contributors have changed 16 files with 1,374 additions and 704 deletions in 12 commits ([`v5.2.38...v5.2.39`](https://github.com/mdn/browser-compat-data/compare/v5.2.38...v5.2.39))
+- 14,267 total features
+- 985 total contributors
+- 4,421 total stargazers
+
 ## [v5.2.38](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.38)
 
 February 23, 2023
