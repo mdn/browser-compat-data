@@ -1,5 +1,23 @@
 # Release notes
 
+## [v5.2.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.40)
+
+March 7, 2023
+
+### Additions
+
+- `svg.attributes.presentation.fill.context-fill` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `svg.attributes.presentation.stroke.context-stroke` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `webextensions.api.menus.ContextType.action` ([#19005](https://github.com/mdn/browser-compat-data/pull/19005))
+- `webextensions.manifest.background.type` ([#19055](https://github.com/mdn/browser-compat-data/pull/19055))
+
+### Statistics
+
+- 7 contributors have changed 14 files with 300 additions and 216 deletions in 22 commits ([`v5.2.39...v5.2.40`](https://github.com/mdn/browser-compat-data/compare/v5.2.39...v5.2.40))
+- 14,271 total features
+- 985 total contributors
+- 4,428 total stargazers
+
 ## [v5.2.39](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.39)
 
 February 28, 2023
