@@ -51,7 +51,7 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 /**
  * Escapes common invisible characters.
  *
- * @param {string} str The string to escape visibles for
+ * @param {string} str The string to escape invisibles for
  * @returns {string} The string with invisibles escaped
  */
 export const escapeInvisibles = (str: string): string =>
