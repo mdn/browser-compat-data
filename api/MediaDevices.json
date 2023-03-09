@@ -101,7 +101,13 @@
             },
             "firefox": [
               {
-                "version_added": "39"
+                "version_added": "preview",
+                "notes": "<code>enumerateDevices()</code> enumerates both input and output devices. Previously only input devices were returned."
+              },
+              {
+                "version_added": "39",
+                "partial_implementation": true,
+                "notes": "<code>enumerateDevices()</code> only returns input devices."
               },
               {
                 "version_added": "63",
@@ -550,16 +556,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "88",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "88",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false

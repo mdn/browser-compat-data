@@ -268,7 +268,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "alternative_name": "Feature-Policy: display-cature",
+                "alternative_name": "Feature-Policy: display-capture",
                 "partial_implementation": true,
                 "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
               },
@@ -1163,19 +1163,27 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "92",
-                "alternative_name": "Feature-Policy: speaker-selection",
-                "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.setsinkid.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview",
+                  "alternative_name": "Feature-Policy: speaker-selection",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                },
+                {
+                  "version_added": "92",
+                  "alternative_name": "Feature-Policy: speaker-selection",
+                  "partial_implementation": true,
+                  "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "media.setsinkid.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
