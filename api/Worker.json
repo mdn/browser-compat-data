@@ -159,10 +159,25 @@
                 "version_added": "1.0"
               },
               "edge": "mirror",
-              "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1247687'>bug 1247687</a>"
-              },
+              "firefox": [
+                {
+                  "version_added": "preview",
+                  "partial_implementation": true,
+                  "notes": "Does not support dynamic import. See <a href='https://bugzil.la/1540913'>bug 1540913</a>"
+                },
+                {
+                  "version_added": "111",
+                  "partial_implementation": true,
+                  "notes": "Does not support dynamic import. See <a href='https://bugzil.la/1540913'>bug 1540913</a>",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.workers.modules.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -176,7 +191,11 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "15",
+                "notes": [
+                  "Nested workers support was introduced in Safari 15.5.",
+                  "Script loading in nested workers was introduced in Safari 16.4."
+                ]
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
