@@ -1,5 +1,32 @@
 # Release notes
 
+## [v5.2.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.41)
+
+March 10, 2023
+
+### Removals
+
+- `api.HTMLMenuElement.label` ([#18981](https://github.com/mdn/browser-compat-data/pull/18981))
+- `api.HTMLMenuElement.type` ([#18982](https://github.com/mdn/browser-compat-data/pull/18982))
+- `api.SVGMatrix` ([#18768](https://github.com/mdn/browser-compat-data/pull/18768))
+- `api.WebKitCSSMatrix` ([#18768](https://github.com/mdn/browser-compat-data/pull/18768))
+
+### Additions
+
+- `api.fetch.authorization_removed_cross_origin` ([#19064](https://github.com/mdn/browser-compat-data/pull/19064))
+- `browsers.chrome_android.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `browsers.chrome.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `browsers.opera.releases.98` ([#19081](https://github.com/mdn/browser-compat-data/pull/19081))
+- `browsers.webview_android.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `css.at-rules.page.page` ([#18922](https://github.com/mdn/browser-compat-data/pull/18922))
+
+### Statistics
+
+- 9 contributors have changed 27 files with 513 additions and 350 deletions in 26 commits ([`v5.2.40...v5.2.41`](https://github.com/mdn/browser-compat-data/compare/v5.2.40...v5.2.41))
+- 14,269 total features
+- 985 total contributors
+- 4,428 total stargazers
+
 ## [v5.2.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.40)
 
 March 7, 2023
