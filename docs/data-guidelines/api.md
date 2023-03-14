@@ -214,6 +214,28 @@ For example, the `ImageData` API has worker support, recorded like this:
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
 
+## Stringifier attributes (`toString`)
+
+Interfaces may have an attribute with a [`stringifier` keyword](https://webidl.spec.whatwg.org/#idl-stringifiers) in its IDL definition. When the `stringifier` keyword is present on an attribute, a `toString()` method is generated, which returns the value of that attribute. Record both the attribute and the `toString()` method.
+
+For example, the `MediaList` API has a `mediaText` attribute with the `stringifier` keyword (`stringifier attribute [LegacyNullToEmptyString] CSSOMString mediaText;`). Both are recorded like so:
+
+```json
+{
+  "api": {
+    "MediaList": {
+      "__compat": { ... },
+      "mediaText": {
+        "__compat": { ... }
+      },
+      "toString": {
+        "__compat": { ... }
+      }
+    }
+  }
+}
+```
+
 ## APIs moved on the prototype chain
 
 [Web IDL interfaces](https://webidl.spec.whatwg.org/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
