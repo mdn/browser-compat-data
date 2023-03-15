@@ -18,18 +18,8 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-const validBrowserVersions: { [browser: string]: string[] } = {};
-
-const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
-  chrome: ['≤15', '≤37'],
-  edge: ['≤18', '≤79'],
-  ie: ['≤6', '≤11'],
-  opera: ['≤12.1', '≤15'],
-  opera_android: ['≤12.1', '≤14'],
-  safari: ['≤4'],
-  safari_ios: ['≤3'],
-  webview_android: ['≤37'],
-};
+const twoYearsAgo = new Date();
+twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
 
 const browserTips: { [browser: string]: string } = {
   nodejs:
@@ -39,16 +29,6 @@ const browserTips: { [browser: string]: string } = {
   opera_android:
     'Blink editions of Opera Android and Opera desktop were the Chrome version number minus 13, up until Opera Android 43 when they began skipping Chrome versions. Please double-check browsers/opera_android.json to make sure you are using the correct versions.',
 };
-
-for (const browser of Object.keys(browsers) as BrowserName[]) {
-  validBrowserVersions[browser] = Object.keys(browsers[browser].releases);
-  if (VERSION_RANGE_BROWSERS[browser]) {
-    validBrowserVersions[browser].push(...VERSION_RANGE_BROWSERS[browser]);
-  }
-  if (browsers[browser].preview_name) {
-    validBrowserVersions[browser].push('preview');
-  }
-}
 
 const realValuesTargetBrowsers = [
   'chrome',
@@ -90,7 +70,12 @@ const isValidVersion = (
   version: VersionValue,
 ): boolean => {
   if (typeof version === 'string') {
-    return validBrowserVersions[browser].includes(version);
+    if (version === 'preview') {
+      return !!browsers[browser].preview_name;
+    }
+    return Object.keys(browsers[browser].releases).includes(
+      version.replace('≤', ''),
+    );
   } else if (
     realValuesRequired[category].includes(browser) &&
     version !== false
@@ -159,90 +144,102 @@ const checkVersions = (
   ) as BrowserName[];
 
   for (const browser of browsersToCheck) {
-    if (validBrowserVersions[browser]) {
-      const supportStatement: InternalSupportStatement | undefined =
-        supportData[browser];
+    const supportStatement: InternalSupportStatement | undefined =
+      supportData[browser];
 
-      if (!supportStatement) {
-        if (realValuesRequired[category].includes(browser)) {
-          logger.error(chalk`{red {bold ${browser}} must be defined}`);
+    if (!supportStatement) {
+      if (realValuesRequired[category].includes(browser)) {
+        logger.error(chalk`{red {bold ${browser}} must be defined}`);
+      }
+
+      continue;
+    }
+
+    for (const statement of Array.isArray(supportStatement)
+      ? supportStatement
+      : [supportStatement]) {
+      if (statement === 'mirror') {
+        // If the data is to be mirrored, make sure it is mirrorable
+        if (!browsers[browser].upstream) {
+          logger.error(
+            chalk`{bold ${browser}} is set to mirror, however {bold ${browser}} does not have an upstream browser.`,
+          );
         }
-
         continue;
       }
 
-      for (const statement of Array.isArray(supportStatement)
-        ? supportStatement
-        : [supportStatement]) {
-        if (statement === 'mirror') {
-          // If the data is to be mirrored, make sure it is mirrorable
-          if (!browsers[browser].upstream) {
-            logger.error(
-              chalk`{bold ${browser}} is set to mirror, however {bold ${browser}} does not have an upstream browser.`,
-            );
-          }
+      for (const property of ['version_added', 'version_removed']) {
+        const version = statement[property];
+        if (property == 'version_removed' && version === undefined) {
+          // Undefined is allowed for version_removed
           continue;
         }
-
-        for (const property of ['version_added', 'version_removed']) {
-          const version = statement[property];
-          if (property == 'version_removed' && version === undefined) {
-            // Undefined is allowed for version_removed
-            continue;
-          }
-          if (!isValidVersion(browser, category, version)) {
-            logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${validBrowserVersions[
-                browser
-              ].join(', ')}`,
-              { tip: browserTips[browser] },
-            );
-          }
-        }
-
-        if ('version_added' in statement && 'version_removed' in statement) {
-          if (statement.version_added === statement.version_removed) {
-            logger.error(
-              chalk`{bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}`,
-            );
-          }
-          if (
-            typeof statement.version_added === 'string' &&
-            typeof statement.version_removed === 'string' &&
-            addedBeforeRemoved(statement) === false
-          ) {
-            logger.error(
-              chalk`{bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
-            );
-          }
-        }
-
-        if ('flags' in statement && !browsers[browser].accepts_flags) {
+        if (!isValidVersion(browser, category, version)) {
           logger.error(
-            chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+            chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${Object.keys(
+              browsers[browser],
+            ).join(', ')}`,
+            { tip: browserTips[browser] },
           );
         }
 
-        if (statement.version_added === false) {
+        if (typeof version === 'string' && version.includes('≤')) {
+          const releaseData =
+            browsers[browser].releases[version.replace('≤', '')];
           if (
-            Object.keys(statement).some(
-              (k) => !['version_added', 'notes', 'impl_url'].includes(k),
-            )
+            !releaseData ||
+            !releaseData.release_date ||
+            new Date(releaseData.release_date) > twoYearsAgo
           ) {
             logger.error(
-              chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
+              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or older. Ranged values are also not allowed for browser versions without a known release date.}`,
             );
           }
         }
+      }
 
+      if ('version_added' in statement && 'version_removed' in statement) {
+        if (statement.version_added === statement.version_removed) {
+          logger.error(
+            chalk`{bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}`,
+          );
+        }
         if (
-          Array.isArray(supportStatement) &&
-          statement.version_added === false
+          typeof statement.version_added === 'string' &&
+          typeof statement.version_removed === 'string' &&
+          addedBeforeRemoved(statement) === false
         ) {
           logger.error(
-            chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
+            chalk`{bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
           );
         }
+      }
+
+      if ('flags' in statement && !browsers[browser].accepts_flags) {
+        logger.error(
+          chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+        );
+      }
+
+      if (statement.version_added === false) {
+        if (
+          Object.keys(statement).some(
+            (k) => !['version_added', 'notes', 'impl_url'].includes(k),
+          )
+        ) {
+          logger.error(
+            chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
+          );
+        }
+      }
+
+      if (
+        Array.isArray(supportStatement) &&
+        statement.version_added === false
+      ) {
+        logger.error(
+          chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
+        );
       }
     }
   }
