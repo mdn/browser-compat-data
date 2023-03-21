@@ -1,5 +1,22 @@
 # Release notes
 
+## [v5.2.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.44)
+
+March 21, 2023
+
+### Additions
+
+- `api.Document.prerendering` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.Document.prerenderingchange_event` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.PerformanceNavigationTiming.activationStart` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 1,018 additions and 531 deletions in 22 commits ([`v5.2.43...v5.2.44`](https://github.com/mdn/browser-compat-data/compare/v5.2.43...v5.2.44))
+- 14,287 total features
+- 988 total contributors
+- 4,438 total stargazers
+
 ## [v5.2.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.43)
 
 March 17, 2023
