@@ -1,5 +1,49 @@
 # Release notes
 
+## [v5.2.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.44)
+
+March 21, 2023
+
+### Additions
+
+- `api.Document.prerendering` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.Document.prerenderingchange_event` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.PerformanceNavigationTiming.activationStart` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 1,018 additions and 531 deletions in 22 commits ([`v5.2.43...v5.2.44`](https://github.com/mdn/browser-compat-data/compare/v5.2.43...v5.2.44))
+- 14,287 total features
+- 988 total contributors
+- 4,438 total stargazers
+
+## [v5.2.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.43)
+
+March 17, 2023
+
+### Removals
+
+- `api.HTMLContentElement` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.getDistributedNodes` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.select` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `html.elements.content` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+
+### Additions
+
+- `api.DOMTokenList.toString` ([#19091](https://github.com/mdn/browser-compat-data/pull/19091))
+- `api.MediaList.toString` ([#19093](https://github.com/mdn/browser-compat-data/pull/19093))
+- `api.XMLHttpRequest.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+- `browsers.edge.releases.113` ([#19136](https://github.com/mdn/browser-compat-data/pull/19136))
+- `browsers.opera_android.releases.74` ([#19122](https://github.com/mdn/browser-compat-data/pull/19122))
+- `http.headers.Authorization.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+
+### Statistics
+
+- 7 contributors have changed 83 files with 532 additions and 499 deletions in 30 commits ([`v5.2.42...v5.2.43`](https://github.com/mdn/browser-compat-data/compare/v5.2.42...v5.2.43))
+- 14,284 total features
+- 987 total contributors
+- 4,435 total stargazers
+
 ## [v5.2.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.42)
 
 March 14, 2023
