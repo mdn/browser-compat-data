@@ -49,26 +49,68 @@
           "__compat": {
             "description": "Prefixed <code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
             "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "prefix": "-moz-",
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
+              "chrome": [
+                {
+                  "version_added": "≤80"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "≤111"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "18"
+                }
+              ],
+              "edge": [
+                {
+                  "version_added": "≤80"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "79"
+                }
+              ],
+              "firefox": [
+                {
+                  "version_added": "≤72"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "1"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "≤111"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "4"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": "mirror",
+              "opera_android": [
+                {
+                  "version_added": "≤74"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                }
+              ],
               "safari": [
                 {
-                  "version_added": "preview"
+                  "version_added": "≤13.1"
                 },
                 {
                   "prefix": "-webkit-",
@@ -79,12 +121,37 @@
                   "version_added": "1"
                 }
               ],
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "37"
-              }
+              "safari_ios": [
+                {
+                  "version_added": "≤16.3"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-khtml-",
+                  "version_added": "1"
+                }
+              ],
+              "samsunginternet_android": [
+                {
+                  "version_added": "≤20.0"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1.0"
+                }
+              ],
+              "webview_android": [
+                {
+                  "version_added": "≤111"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "37"
+                }
+              ]
             },
             "status": {
               "experimental": false,
@@ -133,10 +200,14 @@
             "description": "<code>match-parent</code>",
             "support": {
               "chrome": {
-                "version_added": "16"
+                "version_added": false
               },
-              "chrome_android": "mirror",
-              "edge": "mirror",
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": false
+              },
               "firefox": {
                 "version_added": "40"
               },
@@ -146,14 +217,18 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": "mirror",
+              "opera_android": {
+                "version_added": false
+              },
               "safari": {
                 "version_added": "15.4"
               },
               "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
+              "samsunginternet_android": {
+                "version_added": false
+              },
               "webview_android": {
-                "version_added": "37"
+                "version_added": false
               }
             },
             "status": {
