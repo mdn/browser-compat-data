@@ -192,7 +192,7 @@ const checkVersions = (
             new Date(releaseData.release_date) > twoYearsAgo
           ) {
             logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or older. Ranged values are also not allowed for browser versions without a known release date.`,
+              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or older (on or before ${twoYearsAgo}). Ranged values are also not allowed for browser versions without a known release date.`,
             );
           }
         }
