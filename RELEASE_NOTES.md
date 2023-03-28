@@ -1,5 +1,173 @@
 # Release notes
 
+## [v5.2.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.45)
+
+March 24, 2023
+
+### Statistics
+
+- 4 contributors have changed 18 files with 75 additions and 49 deletions in 17 commits ([`v5.2.44...v5.2.45`](https://github.com/mdn/browser-compat-data/compare/v5.2.44...v5.2.45))
+- 14,287 total features
+- 988 total contributors
+- 4,441 total stargazers
+
+## [v5.2.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.44)
+
+March 21, 2023
+
+### Additions
+
+- `api.Document.prerendering` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.Document.prerenderingchange_event` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.PerformanceNavigationTiming.activationStart` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 1,018 additions and 531 deletions in 22 commits ([`v5.2.43...v5.2.44`](https://github.com/mdn/browser-compat-data/compare/v5.2.43...v5.2.44))
+- 14,287 total features
+- 988 total contributors
+- 4,438 total stargazers
+
+## [v5.2.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.43)
+
+March 17, 2023
+
+### Removals
+
+- `api.HTMLContentElement` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.getDistributedNodes` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.select` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `html.elements.content` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+
+### Additions
+
+- `api.DOMTokenList.toString` ([#19091](https://github.com/mdn/browser-compat-data/pull/19091))
+- `api.MediaList.toString` ([#19093](https://github.com/mdn/browser-compat-data/pull/19093))
+- `api.XMLHttpRequest.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+- `browsers.edge.releases.113` ([#19136](https://github.com/mdn/browser-compat-data/pull/19136))
+- `browsers.opera_android.releases.74` ([#19122](https://github.com/mdn/browser-compat-data/pull/19122))
+- `http.headers.Authorization.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+
+### Statistics
+
+- 7 contributors have changed 83 files with 532 additions and 499 deletions in 30 commits ([`v5.2.42...v5.2.43`](https://github.com/mdn/browser-compat-data/compare/v5.2.42...v5.2.43))
+- 14,284 total features
+- 987 total contributors
+- 4,435 total stargazers
+
+## [v5.2.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.42)
+
+March 14, 2023
+
+### Additions
+
+- `api.CSSContainerRule.containerName` ([#19089](https://github.com/mdn/browser-compat-data/pull/19089))
+- `api.CSSContainerRule.containerQuery` ([#19089](https://github.com/mdn/browser-compat-data/pull/19089))
+- `api.CSSFontFeatureValuesRule.annotation` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.characterVariant` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.ornaments` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.styleset` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.stylistic` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.swash` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.FileSystemHandle.move` ([#19056](https://github.com/mdn/browser-compat-data/pull/19056))
+- `api.FormData.FormData.submitter` ([#19106](https://github.com/mdn/browser-compat-data/pull/19106))
+- `api.HTMLElement.virtualKeyboardPolicy` ([#18762](https://github.com/mdn/browser-compat-data/pull/18762))
+- `api.XRSession.enabledFeatures` ([#19095](https://github.com/mdn/browser-compat-data/pull/19095))
+- `html.global_attributes.virtualkeyboardpolicy` ([#18762](https://github.com/mdn/browser-compat-data/pull/18762))
+- `html.manifest.file_handlers` ([#19096](https://github.com/mdn/browser-compat-data/pull/19096))
+- `javascript.operators.import.worker_support` ([#19054](https://github.com/mdn/browser-compat-data/pull/19054))
+
+### Statistics
+
+- 9 contributors have changed 23 files with 1,042 additions and 208 deletions in 20 commits ([`v5.2.41...v5.2.42`](https://github.com/mdn/browser-compat-data/compare/v5.2.41...v5.2.42))
+- 14,284 total features
+- 987 total contributors
+- 4,433 total stargazers
+
+## [v5.2.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.41)
+
+March 10, 2023
+
+### Removals
+
+- `api.HTMLMenuElement.label` ([#18981](https://github.com/mdn/browser-compat-data/pull/18981))
+- `api.HTMLMenuElement.type` ([#18982](https://github.com/mdn/browser-compat-data/pull/18982))
+- `api.SVGMatrix` ([#18768](https://github.com/mdn/browser-compat-data/pull/18768))
+- `api.WebKitCSSMatrix` ([#18768](https://github.com/mdn/browser-compat-data/pull/18768))
+
+### Additions
+
+- `api.fetch.authorization_removed_cross_origin` ([#19064](https://github.com/mdn/browser-compat-data/pull/19064))
+- `browsers.chrome_android.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `browsers.chrome.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `browsers.opera.releases.98` ([#19081](https://github.com/mdn/browser-compat-data/pull/19081))
+- `browsers.webview_android.releases.113` ([#19070](https://github.com/mdn/browser-compat-data/pull/19070))
+- `css.at-rules.page.page` ([#18922](https://github.com/mdn/browser-compat-data/pull/18922))
+
+### Statistics
+
+- 9 contributors have changed 27 files with 513 additions and 350 deletions in 26 commits ([`v5.2.40...v5.2.41`](https://github.com/mdn/browser-compat-data/compare/v5.2.40...v5.2.41))
+- 14,269 total features
+- 985 total contributors
+- 4,428 total stargazers
+
+## [v5.2.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.40)
+
+March 7, 2023
+
+### Additions
+
+- `svg.attributes.presentation.fill.context-fill` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `svg.attributes.presentation.stroke.context-stroke` ([#19022](https://github.com/mdn/browser-compat-data/pull/19022))
+- `webextensions.api.menus.ContextType.action` ([#19005](https://github.com/mdn/browser-compat-data/pull/19005))
+- `webextensions.manifest.background.type` ([#19055](https://github.com/mdn/browser-compat-data/pull/19055))
+
+### Statistics
+
+- 7 contributors have changed 14 files with 300 additions and 216 deletions in 22 commits ([`v5.2.39...v5.2.40`](https://github.com/mdn/browser-compat-data/compare/v5.2.39...v5.2.40))
+- 14,271 total features
+- 985 total contributors
+- 4,428 total stargazers
+
+## [v5.2.39](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.39)
+
+February 28, 2023
+
+### Removals
+
+- `api.Element.show_event` ([#18979](https://github.com/mdn/browser-compat-data/pull/18979))
+- `api.HTMLElement.contextMenu` ([#18980](https://github.com/mdn/browser-compat-data/pull/18980))
+- `api.HTMLMenuItemElement` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.checked` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.default` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.disabled` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.icon` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.label` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.radiogroup` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `api.HTMLMenuItemElement.type` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.checked` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.command` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.default` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.disabled` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.icon` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.radiogroup` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+- `html.elements.menuitem.type` ([#18983](https://github.com/mdn/browser-compat-data/pull/18983))
+
+### Additions
+
+- `webextensions.api.webRequest.SecurityInfo.usedDelegatedCredentials` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedEch` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedOcsp` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+- `webextensions.api.webRequest.SecurityInfo.usedPrivateDns` ([#18956](https://github.com/mdn/browser-compat-data/pull/18956))
+
+### Statistics
+
+- 5 contributors have changed 16 files with 1,374 additions and 704 deletions in 12 commits ([`v5.2.38...v5.2.39`](https://github.com/mdn/browser-compat-data/compare/v5.2.38...v5.2.39))
+- 14,267 total features
+- 985 total contributors
+- 4,421 total stargazers
+
 ## [v5.2.38](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.38)
 
 February 23, 2023
