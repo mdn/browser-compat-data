@@ -1,5 +1,20 @@
 # Release notes
 
+## [v5.2.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.46)
+
+March 28, 2023
+
+### Removals
+
+- `api.Window.devicelight_event` ([#19237](https://github.com/mdn/browser-compat-data/pull/19237))
+
+### Statistics
+
+- 6 contributors have changed 27 files with 491 additions and 263 deletions in 27 commits ([`v5.2.45...v5.2.46`](https://github.com/mdn/browser-compat-data/compare/v5.2.45...v5.2.46))
+- 14,286 total features
+- 988 total contributors
+- 4,444 total stargazers
+
 ## [v5.2.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.45)
 
 March 24, 2023
