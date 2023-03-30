@@ -37,13 +37,12 @@
             ],
             "firefox": [
               {
-                "version_added": "53",
-                "notes": "Added support for CSS Masking Module Level 1, including the <code>mask</code> shorthand, and <code>mask-image</code>, <code>mask-repeat</code>, <code>mask-size</code>, etc."
+                "version_added": "53"
               },
               {
                 "version_added": "2",
                 "partial_implementation": true,
-                "notes": "Supports SVG masks only (<code>mask: url(image.svg)</code> or <code>mask: url(#svg-fragment)</code>)."
+                "notes": "Only supports `mask: url(some_file.svg#mask_id)` or `mask: url(#mask_id)`, where the URL is a reference to an SVG `<mask>` element."
               }
             ],
             "firefox_android": "mirror",
