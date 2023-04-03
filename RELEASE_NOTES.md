@@ -1,5 +1,22 @@
 # Release notes
 
+## [v5.2.47](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.47)
+
+March 31, 2023
+
+### Additions
+
+- `css.at-rules.media.prefers-reduced-transparency` ([#19135](https://github.com/mdn/browser-compat-data/pull/19135))
+- `javascript.builtins.String.isWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+- `javascript.builtins.String.toWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 226 additions and 209 deletions in 14 commits ([`v5.2.46...v5.2.47`](https://github.com/mdn/browser-compat-data/compare/v5.2.46...v5.2.47))
+- 14,289 total features
+- 991 total contributors
+- 4,446 total stargazers
+
 ## [v5.2.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.46)
 
 March 28, 2023
