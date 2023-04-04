@@ -1,5 +1,48 @@
 # Release notes
 
+## [v5.2.47](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.47)
+
+March 31, 2023
+
+### Additions
+
+- `css.at-rules.media.prefers-reduced-transparency` ([#19135](https://github.com/mdn/browser-compat-data/pull/19135))
+- `javascript.builtins.String.isWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+- `javascript.builtins.String.toWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 226 additions and 209 deletions in 14 commits ([`v5.2.46...v5.2.47`](https://github.com/mdn/browser-compat-data/compare/v5.2.46...v5.2.47))
+- 14,289 total features
+- 991 total contributors
+- 4,446 total stargazers
+
+## [v5.2.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.46)
+
+March 28, 2023
+
+### Removals
+
+- `api.Window.devicelight_event` ([#19237](https://github.com/mdn/browser-compat-data/pull/19237))
+
+### Statistics
+
+- 6 contributors have changed 27 files with 491 additions and 263 deletions in 27 commits ([`v5.2.45...v5.2.46`](https://github.com/mdn/browser-compat-data/compare/v5.2.45...v5.2.46))
+- 14,286 total features
+- 988 total contributors
+- 4,444 total stargazers
+
+## [v5.2.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.45)
+
+March 24, 2023
+
+### Statistics
+
+- 4 contributors have changed 18 files with 75 additions and 49 deletions in 17 commits ([`v5.2.44...v5.2.45`](https://github.com/mdn/browser-compat-data/compare/v5.2.44...v5.2.45))
+- 14,287 total features
+- 988 total contributors
+- 4,441 total stargazers
+
 ## [v5.2.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.44)
 
 March 21, 2023

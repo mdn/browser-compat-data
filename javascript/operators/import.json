@@ -67,8 +67,14 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1540913'>bug 1540913</a>"
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.workers.modules.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
