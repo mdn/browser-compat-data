@@ -1,394 +1,56 @@
 {
   "api": {
-    "ReadableStream": {
+    "GPUTexture": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream",
-        "spec_url": "https://streams.spec.whatwg.org/#rs-class",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture",
+        "spec_url": "https://gpuweb.github.io/gpuweb/#texture-interface",
         "support": {
           "chrome": {
-            "version_added": "43"
+            "version_added": "113",
+            "notes": "Currently supported on ChromeOS, macOS, and Windows only."
           },
-          "chrome_android": "mirror",
-          "deno": {
-            "version_added": "1.0"
+          "chrome_android": {
+            "version_added": false
           },
-          "edge": {
-            "version_added": "14"
-          },
+          "edge": "mirror",
           "firefox": {
-            "version_added": "65"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
           },
-          "nodejs": [
-            {
-              "version_added": "18.0.0"
-            },
-            {
-              "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
-            }
-          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "10.1"
+            "version_added": false
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "ReadableStream": {
+      "createView": {
         "__compat": {
-          "description": "<code>ReadableStream()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/ReadableStream",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-constructor⑤",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/createView",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-createview",
           "support": {
             "chrome": {
-              "version_added": "43"
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "cancel": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/cancel",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-cancel③",
-          "support": {
-            "chrome": {
-              "version_added": "43"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": {
-              "version_added": "14"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getReader": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/getReader",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-get-reader⑤",
-          "support": {
-            "chrome": {
-              "version_added": "43"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": {
-              "version_added": "14"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "locked": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/locked",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-locked②",
-          "support": {
-            "chrome": {
-              "version_added": "43"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": {
-              "version_added": "14"
-            },
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pipeThrough": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeThrough",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-pipe-through②",
-          "support": {
-            "chrome": {
-              "version_added": "59"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "102"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pipeTo": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/pipeTo",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-pipe-to④",
-          "support": {
-            "chrome": {
-              "version_added": "59"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "100"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "tee": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/tee",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-tee②",
-          "support": {
-            "chrome": {
-              "version_added": "43"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "65"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "transferable": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Glossary/Transferable_objects",
-          "spec_url": "https://streams.spec.whatwg.org/#rs-transfer",
-          "support": {
-            "chrome": {
-              "version_added": "87"
-            },
-            "chrome_android": "mirror",
-            "deno": {
+            "chrome_android": {
               "version_added": false
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "103"
-            },
-            "firefox_android": "mirror",
-            "ie": {
               "version_added": false
-            },
-            "nodejs": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "values": {
-        "__compat": {
-          "spec_url": "https://streams.spec.whatwg.org/#readablestream",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "110"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -411,29 +73,358 @@
           }
         }
       },
-      "@@asyncIterator": {
+      "depthOrArrayLayers": {
         "__compat": {
-          "description": "Async iterable (supports iteration using <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of'><code>for await ... of</code></a>)",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Symbol/asyncIterator",
-          "spec_url": "https://streams.spec.whatwg.org/#rs-asynciterator",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/depthOrArrayLayers",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-depthorarraylayers",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
+            "chrome_android": {
+              "version_added": false
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "110"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "16.5.0"
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "destroy": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/destroy",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-destroy",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "dimension": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/dimension",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-dimension",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "format": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/format",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-format",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "height": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/height",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-height",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "label": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/label",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuobjectbase-label",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "mipLevelCount": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/mipLevelCount",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-miplevelcount",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sampleCount": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/sampleCount",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-samplecount",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "usage": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/usage",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-usage",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "width": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUTexture/width",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-width",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
             },
             "oculus": "mirror",
             "opera": "mirror",
