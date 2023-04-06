@@ -6,7 +6,9 @@
         "spec_url": "https://w3c.github.io/mediacapture-transform/#track-processor-interface",
         "support": {
           "chrome": {
-            "version_added": "94"
+            "version_added": "94",
+            "partial_implementation": true,
+            "notes": "Chrome incorrectly exposes this interface only on the Window scope, rather than the DedicatedWorker scope as defined in the spec."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
