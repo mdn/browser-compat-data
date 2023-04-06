@@ -1,5 +1,376 @@
 # Release notes
 
+## [v5.2.48](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.48)
+
+April 4, 2023
+
+### Removals
+
+- `api.HTMLShadowElement` ([#19293](https://github.com/mdn/browser-compat-data/pull/19293))
+- `api.HTMLShadowElement.getDistributedNodes` ([#19293](https://github.com/mdn/browser-compat-data/pull/19293))
+- `api.ReadableStream.async_iterable` ([#19094](https://github.com/mdn/browser-compat-data/pull/19094))
+- `html.elements.shadow` ([#19293](https://github.com/mdn/browser-compat-data/pull/19293))
+
+### Additions
+
+- `api.GPU` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPU.getPreferredCanvasFormat` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPU.requestAdapter` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter.features` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter.isFallbackAdapter` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter.limits` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter.requestAdapterInfo` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapter.requestDevice` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapterInfo` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapterInfo.architecture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapterInfo.description` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapterInfo.device` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUAdapterInfo.vendor` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBindGroup.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBindGroupLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBindGroupLayout.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.destroy` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.getMappedRange` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.mapAsync` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.mapState` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.size` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.unmap` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUBuffer.usage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCanvasContext` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCanvasContext.canvas` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCanvasContext.configure` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCanvasContext.getCurrentTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCanvasContext.unconfigure` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandBuffer.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.beginComputePass` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.beginRenderPass` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.clearBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.copyBufferToBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.copyBufferToTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.copyTextureToBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.copyTextureToTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.finish` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.insertDebugMarker` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.popDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.pushDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.resolveQuerySet` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCommandEncoder.writeTimestamp` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationInfo` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationInfo.messages` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.length` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.lineNum` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.linePos` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.message` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.offset` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUCompilationMessage.type` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.dispatchWorkgroups` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.dispatchWorkgroupsIndirect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.end` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.insertDebugMarker` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.popDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.pushDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.setBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.setPipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePassEncoder.writeTimestamp` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePipeline.getBindGroupLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUComputePipeline.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createBindGroupLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createCommandEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createComputePipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createComputePipelineAsync` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createPipelineLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createQuerySet` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createRenderBundleEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createRenderPipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createRenderPipelineAsync` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createSampler` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createShaderModule` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.createTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.destroy` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.features` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.importExternalTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.limits` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.lost` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.popErrorScope` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.pushErrorScope` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.queue` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDevice.uncapturederror_event` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDeviceLostInfo` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDeviceLostInfo.message` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUDeviceLostInfo.reason` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUError.message` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUExternalTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUExternalTexture.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUInternalError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUInternalError.GPUInternalError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUOutOfMemoryError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUOutOfMemoryError.GPUOutOfMemoryError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUPipelineLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUPipelineLayout.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQuerySet` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQuerySet.count` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQuerySet.destroy` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQuerySet.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQuerySet.type` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.copyExternalImageToTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.onSubmittedWorkDone` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.submit` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.writeBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUQueue.writeTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundle` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundle.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.draw` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.drawIndexed` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.drawIndexedIndirect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.drawIndirect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.finish` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.insertDebugMarker` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.popDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.pushDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.setBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.setIndexBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.setPipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderBundleEncoder.setVertexBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.beginOcclusionQuery` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.draw` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.drawIndexed` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.drawIndexedIndirect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.drawIndirect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.end` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.endOcclusionQuery` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.executeBundles` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.insertDebugMarker` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.popDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.pushDebugGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setBlendConstant` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setIndexBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setPipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setScissorRect` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setStencilReference` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setVertexBuffer` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.setViewport` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPassEncoder.writeTimestamp` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPipeline` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPipeline.getBindGroupLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPURenderPipeline.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSampler` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSampler.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUShaderModule` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUShaderModule.getCompilationInfo` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUShaderModule.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedFeatures` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxBindGroups` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxBindingsPerBindGroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxBufferSize` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxColorAttachmentBytesPerSample` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxColorAttachments` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeInvocationsPerWorkgroup` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeWorkgroupSizeX` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeWorkgroupSizeY` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeWorkgroupSizeZ` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeWorkgroupsPerDimension` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxComputeWorkgroupStorageSize` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxDynamicStorageBuffersPerPipelineLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxDynamicUniformBuffersPerPipelineLayout` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxInterStageShaderComponents` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxInterStageShaderVariables` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxSampledTexturesPerShaderStage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxSamplersPerShaderStage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxStorageBufferBindingSize` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxStorageBuffersPerShaderStage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxStorageTexturesPerShaderStage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxTextureArrayLayers` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxTextureDimension1D` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxTextureDimension2D` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxTextureDimension3D` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxUniformBufferBindingSize` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxUniformBuffersPerShaderStage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxVertexAttributes` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxVertexBufferArrayStride` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.maxVertexBuffers` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.minStorageBufferOffsetAlignment` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUSupportedLimits.minUniformBufferOffsetAlignment` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.createView` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.depthOrArrayLayers` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.destroy` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.dimension` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.format` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.height` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.mipLevelCount` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.sampleCount` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.usage` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTexture.width` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTextureView` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUTextureView.label` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUUncapturedErrorEvent` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUUncapturedErrorEvent.error` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUUncapturedErrorEvent.GPUUncapturedErrorEvent` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUValidationError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.GPUValidationError.GPUValidationError` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.HTMLCanvasElement.getContext.webgpu_context` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.Navigator.gpu` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `api.ReadableStream.@@asyncIterator` ([#19094](https://github.com/mdn/browser-compat-data/pull/19094))
+- `api.ReadableStream.values` ([#19094](https://github.com/mdn/browser-compat-data/pull/19094))
+- `api.WorkerNavigator.gpu` ([#18853](https://github.com/mdn/browser-compat-data/pull/18853))
+- `css.properties.overflow-x.overlay` ([#19283](https://github.com/mdn/browser-compat-data/pull/19283))
+- `css.properties.overflow-y.overlay` ([#19283](https://github.com/mdn/browser-compat-data/pull/19283))
+- `javascript.builtins.Array.fromAsync` ([#19259](https://github.com/mdn/browser-compat-data/pull/19259))
+- `javascript.builtins.FinalizationRegistry.symbol_as_target` ([#19274](https://github.com/mdn/browser-compat-data/pull/19274))
+- `javascript.builtins.WeakMap.symbol_as_keys` ([#19274](https://github.com/mdn/browser-compat-data/pull/19274))
+- `javascript.builtins.WeakRef.symbol_as_target` ([#19274](https://github.com/mdn/browser-compat-data/pull/19274))
+- `javascript.builtins.WeakSet.symbol_as_keys` ([#19274](https://github.com/mdn/browser-compat-data/pull/19274))
+- `webextensions.api.action` ([#19026](https://github.com/mdn/browser-compat-data/pull/19026))
+- `webextensions.api.scripting` ([#19026](https://github.com/mdn/browser-compat-data/pull/19026))
+
+### Statistics
+
+- 12 contributors have changed 69 files with 8,866 additions and 294 deletions in 25 commits ([`v5.2.47...v5.2.48`](https://github.com/mdn/browser-compat-data/compare/v5.2.47...v5.2.48))
+- 14,519 total features
+- 993 total contributors
+- 4,451 total stargazers
+
+## [v5.2.47](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.47)
+
+March 31, 2023
+
+### Additions
+
+- `css.at-rules.media.prefers-reduced-transparency` ([#19135](https://github.com/mdn/browser-compat-data/pull/19135))
+- `javascript.builtins.String.isWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+- `javascript.builtins.String.toWellFormed` ([#19276](https://github.com/mdn/browser-compat-data/pull/19276))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 226 additions and 209 deletions in 14 commits ([`v5.2.46...v5.2.47`](https://github.com/mdn/browser-compat-data/compare/v5.2.46...v5.2.47))
+- 14,289 total features
+- 991 total contributors
+- 4,446 total stargazers
+
+## [v5.2.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.46)
+
+March 28, 2023
+
+### Removals
+
+- `api.Window.devicelight_event` ([#19237](https://github.com/mdn/browser-compat-data/pull/19237))
+
+### Statistics
+
+- 6 contributors have changed 27 files with 491 additions and 263 deletions in 27 commits ([`v5.2.45...v5.2.46`](https://github.com/mdn/browser-compat-data/compare/v5.2.45...v5.2.46))
+- 14,286 total features
+- 988 total contributors
+- 4,444 total stargazers
+
+## [v5.2.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.45)
+
+March 24, 2023
+
+### Statistics
+
+- 4 contributors have changed 18 files with 75 additions and 49 deletions in 17 commits ([`v5.2.44...v5.2.45`](https://github.com/mdn/browser-compat-data/compare/v5.2.44...v5.2.45))
+- 14,287 total features
+- 988 total contributors
+- 4,441 total stargazers
+
+## [v5.2.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.44)
+
+March 21, 2023
+
+### Additions
+
+- `api.Document.prerendering` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.Document.prerenderingchange_event` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+- `api.PerformanceNavigationTiming.activationStart` ([#18744](https://github.com/mdn/browser-compat-data/pull/18744))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 1,018 additions and 531 deletions in 22 commits ([`v5.2.43...v5.2.44`](https://github.com/mdn/browser-compat-data/compare/v5.2.43...v5.2.44))
+- 14,287 total features
+- 988 total contributors
+- 4,438 total stargazers
+
+## [v5.2.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.43)
+
+March 17, 2023
+
+### Removals
+
+- `api.HTMLContentElement` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.getDistributedNodes` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `api.HTMLContentElement.select` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+- `html.elements.content` ([#19147](https://github.com/mdn/browser-compat-data/pull/19147))
+
+### Additions
+
+- `api.DOMTokenList.toString` ([#19091](https://github.com/mdn/browser-compat-data/pull/19091))
+- `api.MediaList.toString` ([#19093](https://github.com/mdn/browser-compat-data/pull/19093))
+- `api.XMLHttpRequest.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+- `browsers.edge.releases.113` ([#19136](https://github.com/mdn/browser-compat-data/pull/19136))
+- `browsers.opera_android.releases.74` ([#19122](https://github.com/mdn/browser-compat-data/pull/19122))
+- `http.headers.Authorization.authorization_removed_cross_origin` ([#19092](https://github.com/mdn/browser-compat-data/pull/19092))
+
+### Statistics
+
+- 7 contributors have changed 83 files with 532 additions and 499 deletions in 30 commits ([`v5.2.42...v5.2.43`](https://github.com/mdn/browser-compat-data/compare/v5.2.42...v5.2.43))
+- 14,284 total features
+- 987 total contributors
+- 4,435 total stargazers
+
+## [v5.2.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.42)
+
+March 14, 2023
+
+### Additions
+
+- `api.CSSContainerRule.containerName` ([#19089](https://github.com/mdn/browser-compat-data/pull/19089))
+- `api.CSSContainerRule.containerQuery` ([#19089](https://github.com/mdn/browser-compat-data/pull/19089))
+- `api.CSSFontFeatureValuesRule.annotation` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.characterVariant` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.ornaments` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.styleset` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.stylistic` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.CSSFontFeatureValuesRule.swash` ([#19090](https://github.com/mdn/browser-compat-data/pull/19090))
+- `api.FileSystemHandle.move` ([#19056](https://github.com/mdn/browser-compat-data/pull/19056))
+- `api.FormData.FormData.submitter` ([#19106](https://github.com/mdn/browser-compat-data/pull/19106))
+- `api.HTMLElement.virtualKeyboardPolicy` ([#18762](https://github.com/mdn/browser-compat-data/pull/18762))
+- `api.XRSession.enabledFeatures` ([#19095](https://github.com/mdn/browser-compat-data/pull/19095))
+- `html.global_attributes.virtualkeyboardpolicy` ([#18762](https://github.com/mdn/browser-compat-data/pull/18762))
+- `html.manifest.file_handlers` ([#19096](https://github.com/mdn/browser-compat-data/pull/19096))
+- `javascript.operators.import.worker_support` ([#19054](https://github.com/mdn/browser-compat-data/pull/19054))
+
+### Statistics
+
+- 9 contributors have changed 23 files with 1,042 additions and 208 deletions in 20 commits ([`v5.2.41...v5.2.42`](https://github.com/mdn/browser-compat-data/compare/v5.2.41...v5.2.42))
+- 14,284 total features
+- 987 total contributors
+- 4,433 total stargazers
+
 ## [v5.2.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.41)
 
 March 10, 2023
