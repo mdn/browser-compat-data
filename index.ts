@@ -1,14 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatData } from './types/types.js';
-
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { fdir } from 'fdir';
 
+import { CompatData } from './types/types.js';
 import extend from './scripts/lib/extend.js';
 import { normalizePath, walk } from './utils/index.js';
 

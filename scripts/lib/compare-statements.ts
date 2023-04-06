@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { SimpleSupportStatement } from '../../types/types.js';
-
 import { compareVersions } from 'compare-versions';
+
+import { SimpleSupportStatement } from '../../types/types.js';
 
 /**
  *

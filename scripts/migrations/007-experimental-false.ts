@@ -1,6 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import esMain from 'es-main';
+
 import {
   CompatData,
   BrowserName,
@@ -8,14 +14,7 @@ import {
   ReleaseStatement,
   SimpleSupportStatement,
 } from '../../types/types.js';
-
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import esMain from 'es-main';
-
 import { walk } from '../../utils/index.js';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 

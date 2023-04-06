@@ -1,12 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, CompatStatement } from '../../types/types.js';
-
 import fs from 'node:fs';
 
+import { BrowserName, CompatStatement } from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
-
 import compareStatements from '../lib/compare-statements.js';
 
 /**

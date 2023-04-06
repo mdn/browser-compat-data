@@ -1,12 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import {
-  BrowserName,
-  SimpleSupportStatement,
-  CompatStatement,
-} from '../types/types.js';
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -16,6 +10,11 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+import {
+  BrowserName,
+  SimpleSupportStatement,
+  CompatStatement,
+} from '../types/types.js';
 import bcd from '../index.js';
 import { IS_WINDOWS } from '../test/utils.js';
 

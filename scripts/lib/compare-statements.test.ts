@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier, CompatStatement } from '../../types/types.js';
-
 import assert from 'node:assert/strict';
+
+import { Identifier, CompatStatement } from '../../types/types.js';
 
 import compareStatements from './compare-statements.js';
 

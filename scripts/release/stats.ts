@@ -22,9 +22,10 @@ type ChangeStats = Pick<
 
 import chalk from 'chalk-template';
 
-import { exec, queryPRs, githubAPI } from './utils.js';
 import { walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
+
+import { exec, queryPRs, githubAPI } from './utils.js';
 
 /**
  * Get stargazers for the repository

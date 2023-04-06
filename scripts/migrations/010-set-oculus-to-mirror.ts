@@ -1,15 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatStatement } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 
+import { InternalSupportStatement } from '../../types/index.js';
+import { CompatStatement } from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));

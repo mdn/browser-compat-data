@@ -1,6 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { compare, validate } from 'compare-versions';
+import chalk from 'chalk-template';
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
@@ -12,16 +15,13 @@ import {
   InternalSupportBlock,
   InternalSupportStatement,
 } from '../../types/index';
-
-import { compare, validate } from 'compare-versions';
-import chalk from 'chalk-template';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
 const validBrowserVersions: { [browser: string]: string[] } = {};
 
 const VERSION_RANGE_BROWSERS: { [browser: string]: string[] } = {
+  chrome: ['≤15', '≤37'],
   edge: ['≤18', '≤79'],
   ie: ['≤6', '≤11'],
   opera: ['≤12.1', '≤15'],

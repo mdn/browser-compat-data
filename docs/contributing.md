@@ -62,7 +62,7 @@ While contributing to BCD, there are a number of tools and other resources we re
 #### General
 
 - [MDN Web Docs](https://developer.mozilla.org): yes, we use our own documentation regularly to obtain code examples and determine what a feature is meant to do!
-- [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
+- [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
 - [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with open source plans.
 
 #### Chromium
@@ -77,14 +77,21 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 
 #### Firefox
 
+- [Firefox Releases](https://www.mozilla.org/en-US/firefox/releases/): A list of release notes for different versions of Firefox.
 - [Bugzilla](https://bugzil.la): The bug tracker for Firefox.
 - [Searchfox](https://searchfox.org/): Source code search for Firefox source code. Useful to find specific behavior changes that are hard to test in the browser, and to determine which Firefox version the change was included in.
 
 #### Safari
 
+- [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes): A list of release notes for different versions of Safari.
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
 - [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+
+#### Edge
+
+- [New Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of release notes for latest Microsoft Edge Stable Channel.
+- [Archived Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of archived release notes for Microsoft Edge Stable Channel.
 
 ## Ways to contribute
 
@@ -115,7 +122,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
-If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://github.com/GooborgStudios/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
 
 ### Optional: Generating data by mirroring
 

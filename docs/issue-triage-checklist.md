@@ -51,7 +51,7 @@ Most reporters won't do these things on their own, but these are important steps
 
 ### Get testing details
 
-- **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/) test for this feature, link to it.**
+- **If there is an [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/) test for this feature, link to it.**
 - **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
 - **Ask the reporter if they have a minimal test case** (e.g., on CodePen).
 - If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.

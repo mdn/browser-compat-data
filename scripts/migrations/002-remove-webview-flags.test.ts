@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier } from '../../types/types.js';
-
 import assert from 'node:assert/strict';
+
+import { Identifier } from '../../types/types.js';
 
 import { removeWebViewFlags } from './002-remove-webview-flags.js';
 

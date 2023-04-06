@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName } from '../../types/types.js';
-
 import assert from 'node:assert/strict';
 
+import { BrowserName } from '../../types/types.js';
 import bcd from '../../index.js';
-import mirrorSupport from './mirror.js';
 import { InternalSupportBlock } from '../../types/index.js';
+
+import mirrorSupport from './mirror.js';
 
 describe('mirror', () => {
   describe('default export', () => {

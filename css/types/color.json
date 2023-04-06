@@ -48,12 +48,19 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#color-function",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "111",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.more_color_4.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -78,7 +85,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -132,7 +139,7 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color-5/#color-mix",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -153,21 +160,26 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "15",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "CSS color-mix()"
-                  }
-                ]
-              },
+              "safari": [
+                {
+                  "version_added": "16.2"
+                },
+                {
+                  "version_added": "15",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "CSS color-mix()"
+                    }
+                  ]
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -441,12 +453,19 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#lab-colors",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "111",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.more_color_4.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -463,7 +482,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -476,12 +495,19 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#lab-colors",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "111",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.more_color_4.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -498,7 +524,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -592,12 +618,19 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#ok-lab",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "111",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.more_color_4.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -614,7 +647,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -627,12 +660,19 @@
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#ok-lab",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "111"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "111",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.more_color_4.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -649,7 +689,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1027,12 +1067,50 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "mark_marktext_buttonborder": {
+            "__compat": {
+              "description": "Mark, MarkText, ButtonBorder",
+              "spec_url": [
+                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-mark",
+                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-marktext",
+                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-buttonborder"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "109"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "transparent": {
           "__compat": {
             "description": "<code>transparent</code> keyword",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#transparent",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color#transparent",
             "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#transparent-color",
             "support": {
               "chrome": {

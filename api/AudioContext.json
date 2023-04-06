@@ -160,12 +160,12 @@
             "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-latencyhint",
             "support": {
               "chrome": {
-                "version_added": "60"
+                "version_added": "58"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "61"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -175,8 +175,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/214258'>bug 214258</a>."
+                "version_added": "14.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -218,6 +217,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_sinkId_parameter": {
+          "__compat": {
+            "description": "<code>options.sinkId</code> parameter",
+            "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-sinkid",
+            "support": {
+              "chrome": {
+                "version_added": "110"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -300,7 +333,7 @@
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediaelementsource",
           "support": {
             "chrome": {
-              "version_added": "14"
+              "version_added": "15"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -338,7 +371,7 @@
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamdestination",
           "support": {
             "chrome": {
-              "version_added": "14"
+              "version_added": "25"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -353,7 +386,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "6"
+              "version_added": "11"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -374,7 +407,7 @@
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamsource",
           "support": {
             "chrome": {
-              "version_added": "14"
+              "version_added": "22"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -391,7 +424,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "6"
+              "version_added": "11"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -540,6 +573,109 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setSinkId": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/setSinkId",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-setsinkid",
+          "support": {
+            "chrome": {
+              "version_added": "110"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sinkchange_event": {
+        "__compat": {
+          "description": "<code>sinkchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/sinkchange_event",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#eventdef-audiocontext-sinkchange",
+          "support": {
+            "chrome": {
+              "version_added": "110"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sinkId": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/sinkId",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-sinkid",
+          "support": {
+            "chrome": {
+              "version_added": "110"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

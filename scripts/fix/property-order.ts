@@ -1,10 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier, CompatStatement, StatusBlock } from '../../types/types.js';
-
 import fs from 'node:fs';
 
+import { Identifier, CompatStatement, StatusBlock } from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
 const propOrder = {
@@ -26,13 +25,17 @@ const propOrder = {
  * @param {string[]} order The order to follow
  * @returns {CompatStatement|StatusBlock} The ordered object
  */
-const doOrder = <T>(value: T, order: string[]): T =>
-  order.reduce((result: { [index: string]: any }, key: string) => {
-    if (key in value) {
-      result[key] = value[key];
-    }
-    return result;
-  }, {}) as T;
+const doOrder = <T>(value: T, order: string[]): T => {
+  if (value && typeof value === 'object') {
+    return order.reduce((result: { [index: string]: any }, key: string) => {
+      if (key in value) {
+        result[key] = value[key];
+      }
+      return result;
+    }, {}) as T;
+  }
+  return value;
+};
 
 /**
  * Return a new feature object whose first-level properties have been

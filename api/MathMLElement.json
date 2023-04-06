@@ -5,10 +5,21 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MathMLElement",
         "spec_url": "https://w3c.github.io/mathml-core/#dom-mathmlelement",
         "support": {
-          "chrome": {
-            "version_added": false,
-            "notes": "See <a href='https://crbug.com/6606'>bug 6606</a>."
-          },
+          "chrome": [
+            {
+              "version_added": "109"
+            },
+            {
+              "version_added": "80",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
@@ -34,12 +45,92 @@
           "deprecated": false
         }
       },
+      "attributeStyleMap": {
+        "__compat": {
+          "spec_url": "https://drafts.css-houdini.org/css-typed-om-1/#dom-elementcssinlinestyle-attributestylemap",
+          "support": {
+            "chrome": {
+              "version_added": "109"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "autofocus": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "support": {
+            "chrome": {
+              "version_added": "109"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "15.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "blur": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "109"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -69,9 +160,21 @@
       "dataset": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "109"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -101,9 +204,21 @@
       "focus": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "109"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -130,13 +245,58 @@
           }
         }
       },
+      "nonce": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#dom-noncedelement-nonce",
+          "support": {
+            "chrome": {
+              "version_added": "109"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "15.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "style": {
         "__compat": {
           "spec_url": "https://w3c.github.io/csswg-drafts/cssom/#dom-elementcssinlinestyle-style",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "109"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -166,9 +326,21 @@
       "tabIndex": {
         "__compat": {
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "109"
+              },
+              {
+                "version_added": "80",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {

@@ -6,9 +6,11 @@
         "spec_url": "https://w3c.github.io/clipboard-apis/#clipboarditem",
         "support": {
           "chrome": {
-            "version_added": "66"
+            "version_added": "76"
           },
-          "chrome_android": "mirror",
+          "chrome_android": {
+            "version_added": "84"
+          },
           "edge": "mirror",
           "firefox": {
             "version_added": "87",
@@ -46,16 +48,28 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-clipboarditem",
           "support": {
-            "chrome": {
-              "version_added": "66",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
-            "chrome_android": {
-              "version_added": "66",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data. Full implementation would also allow for a string or a Promise which resolves with either a string or blob. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "76",
+                "version_removed": "98",
+                "partial_implementation": true,
+                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "84",
+                "version_removed": "98",
+                "partial_implementation": true,
+                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "87",
@@ -78,11 +92,7 @@
               "version_added": "13.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -98,9 +108,11 @@
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-gettype",
           "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "76"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "84"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "87",
@@ -141,7 +153,9 @@
             "chrome": {
               "version_added": false
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "84"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "87",
@@ -180,9 +194,11 @@
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-types",
           "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "76"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "84"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "87",

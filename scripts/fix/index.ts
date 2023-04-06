@@ -15,6 +15,7 @@ import fixPropertyOrder from './property-order.js';
 import fixStatementOrder from './statement-order.js';
 import fixLinks from './links.js';
 import fixStatus from './status.js';
+import fixMirror from './mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -46,6 +47,7 @@ const load = async (...files: string[]): Promise<void> => {
         fixStatementOrder(file);
         fixLinks(file);
         fixStatus(file);
+        fixMirror(file);
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>

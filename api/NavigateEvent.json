@@ -70,12 +70,12 @@
           }
         }
       },
-      "canTransition": {
+      "canIntercept": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-cantransition",
+          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-canintercept",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "105"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -102,6 +102,41 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        }
+      },
+      "canTransition": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "102",
+              "version_removed": "108"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -352,10 +387,10 @@
       },
       "restoreScroll": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-restorescroll",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "102",
+              "version_removed": "108"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -380,7 +415,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -457,10 +492,10 @@
       },
       "transitionWhile": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-transitionwhile",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "102",
+              "version_removed": "108"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -485,7 +520,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }

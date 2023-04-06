@@ -101,7 +101,13 @@
             },
             "firefox": [
               {
-                "version_added": "39"
+                "version_added": "preview",
+                "notes": "<code>enumerateDevices()</code> enumerates both input and output devices. Previously only input devices were returned."
+              },
+              {
+                "version_added": "39",
+                "partial_implementation": true,
+                "notes": "<code>enumerateDevices()</code> only returns input devices."
               },
               {
                 "version_added": "63",
@@ -147,7 +153,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/487935'>bug 487935</a>."
+              "notes": "From Chrome Android 72 to 88, this method was exposed, but always failed with <code>NotAllowedError</code>. See <a href='https://crbug.com/487935'>bug 487935</a>."
             },
             "edge": [
               {
@@ -172,7 +178,7 @@
             ],
             "firefox_android": {
               "version_added": false,
-              "notes": "API is available, but will always fail with <code>NotAllowedError</code>."
+              "notes": "From Firefox Android 66 to 79, this method was exposed, but always failed with <code>NotAllowedError</code>."
             },
             "ie": {
               "version_added": false
@@ -233,6 +239,185 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "controller_option": {
+          "__compat": {
+            "description": "<code>controller</code> option",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-controller",
+            "support": {
+              "chrome": {
+                "version_added": "109"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "preferCurrentTab_option": {
+          "__compat": {
+            "description": "<code>preferCurrentTab</code> option",
+            "support": {
+              "chrome": {
+                "version_added": "94"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "selfBrowserSurface_option": {
+          "__compat": {
+            "description": "<code>selfBrowserSurface</code> option",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-selfbrowsersurface",
+            "support": {
+              "chrome": {
+                "version_added": "107"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "surfaceSwitching_option": {
+          "__compat": {
+            "description": "<code>surfaceSwitching</code> option",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-surfaceswitching",
+            "support": {
+              "chrome": {
+                "version_added": "107"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "systemAudio_option": {
+          "__compat": {
+            "description": "<code>systemAudio</code> option",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-systemaudio",
+            "support": {
+              "chrome": {
+                "version_added": "105"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -371,16 +556,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "88",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "88",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.setsinkid.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -409,7 +599,9 @@
             "chrome": {
               "version_added": "102"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false

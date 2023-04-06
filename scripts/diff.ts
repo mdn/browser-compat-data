@@ -7,11 +7,11 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import { query } from '../utils/index.js';
-import mirror from './release/mirror.js';
-
 import { SupportStatement, Identifier, BrowserName } from '../types/types.js';
+
+import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
+import mirror from './release/mirror.js';
 
 type Contents = {
   base: string;
