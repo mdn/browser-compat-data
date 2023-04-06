@@ -34,6 +34,10 @@ const specsExceptions = [
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
+
+  // Remove once https://github.com/whatwg/html/pull/8502
+  // is merged and the new URL is live
+  'https://wicg.github.io/navigation-api',
 ];
 
 const allowedSpecURLs = [

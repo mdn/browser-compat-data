@@ -11,16 +11,28 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "103",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.scroll-linked-animations.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "110",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.scroll-driven-animations.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "version_added": "103",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.scroll-linked-animations.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
