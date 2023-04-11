@@ -1,5 +1,41 @@
 # Release notes
 
+## [v5.2.49](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.49)
+
+April 7, 2023
+
+### Additions
+
+- `api.GPUPipelineError` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `api.GPUPipelineError.GPUPipelineError` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `api.GPUPipelineError.reason` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `browsers.chrome_android.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `browsers.chrome.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `browsers.webview_android.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `css.types.image.gradient.conic-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.conic-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.linear-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.linear-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.radial-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.radial-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-conic-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-conic-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-linear-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-linear-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-radial-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-radial-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `webextensions.api.scripting.executeScript.InjectionResult` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.error` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.frameId` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.result` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+
+### Statistics
+
+- 9 contributors have changed 17 files with 796 additions and 405 deletions in 16 commits ([`v5.2.48...v5.2.49`](https://github.com/mdn/browser-compat-data/compare/v5.2.48...v5.2.49))
+- 14,538 total features
+- 993 total contributors
+- 4,453 total stargazers
+
 ## [v5.2.48](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.48)
 
 April 4, 2023
