@@ -1,5 +1,83 @@
 # Release notes
 
+## [v5.2.50](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.50)
+
+April 11, 2023
+
+### Removals
+
+- `api.PermissionsPolicyViolationReportBody` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.columnNumber` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.disposition` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.featureId` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.lineNumber` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.message` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.sourceFile` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+- `api.PermissionsPolicyViolationReportBody.toJSON` ([#18559](https://github.com/mdn/browser-compat-data/pull/18559))
+
+### Additions
+
+- `api.HTMLElement.beforetoggle_event` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `api.HTMLElement.hidePopover` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `api.HTMLElement.popover` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `api.HTMLElement.showPopover` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `api.HTMLElement.toggle_event` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `api.HTMLElement.togglePopover` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `html.global_attributes.popover` ([#19328](https://github.com/mdn/browser-compat-data/pull/19328))
+- `javascript.builtins.AggregateError.errors` ([#19336](https://github.com/mdn/browser-compat-data/pull/19336))
+- `javascript.builtins.Array.toReversed` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.Array.toSorted` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.Array.toSpliced` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.Array.with` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.Promise.@@species` ([#19340](https://github.com/mdn/browser-compat-data/pull/19340))
+- `javascript.builtins.SharedArrayBuffer.@@species` ([#19340](https://github.com/mdn/browser-compat-data/pull/19340))
+- `javascript.builtins.TypedArray.toReversed` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.TypedArray.toSorted` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+- `javascript.builtins.TypedArray.with` ([#19338](https://github.com/mdn/browser-compat-data/pull/19338))
+
+### Statistics
+
+- 8 contributors have changed 16 files with 1,161 additions and 401 deletions in 19 commits ([`v5.2.49...v5.2.50`](https://github.com/mdn/browser-compat-data/compare/v5.2.49...v5.2.50))
+- 14,547 total features
+- 995 total contributors
+- 4,456 total stargazers
+
+## [v5.2.49](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.49)
+
+April 7, 2023
+
+### Additions
+
+- `api.GPUPipelineError` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `api.GPUPipelineError.GPUPipelineError` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `api.GPUPipelineError.reason` ([#19321](https://github.com/mdn/browser-compat-data/pull/19321))
+- `browsers.chrome_android.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `browsers.chrome.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `browsers.webview_android.releases.114` ([#19332](https://github.com/mdn/browser-compat-data/pull/19332))
+- `css.types.image.gradient.conic-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.conic-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.linear-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.linear-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.radial-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.radial-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-conic-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-conic-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-linear-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-linear-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-radial-gradient.hue_interpolation_method` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `css.types.image.gradient.repeating-radial-gradient.interpolation_color_space` ([#19244](https://github.com/mdn/browser-compat-data/pull/19244))
+- `webextensions.api.scripting.executeScript.InjectionResult` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.error` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.frameId` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+- `webextensions.api.scripting.executeScript.InjectionResult.result` ([#19247](https://github.com/mdn/browser-compat-data/pull/19247))
+
+### Statistics
+
+- 9 contributors have changed 17 files with 796 additions and 405 deletions in 16 commits ([`v5.2.48...v5.2.49`](https://github.com/mdn/browser-compat-data/compare/v5.2.48...v5.2.49))
+- 14,538 total features
+- 993 total contributors
+- 4,453 total stargazers
+
 ## [v5.2.48](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.48)
 
 April 4, 2023
