@@ -99,6 +99,7 @@ export const getRefDate = (ref: string, querySafe = false): string => {
 
 /**
  * Wait for a key press
+ * @returns {Promise<true>} Once the key is pressed, return
  */
 export const keypress = async () => {
   process.stdin.setRawMode(true);
