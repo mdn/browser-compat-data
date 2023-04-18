@@ -43,7 +43,6 @@ const compatDataTypes = {
 
 /**
  * Generate the browser names TypeScript
- *
  * @returns {string} The stringified TypeScript typedef
  */
 const generateBrowserNames = async () => {
@@ -76,7 +75,6 @@ const generateBrowserNames = async () => {
 
 /**
  * Generate the CompatData TypeScript
- *
  * @returns {string} The stringified TypeScript typedef
  */
 const generateCompatDataTypes = (): string => {
@@ -101,7 +99,6 @@ const generateCompatDataTypes = (): string => {
 
 /**
  * Transform the TypeScript to remove unneeded bits of typedefs
- *
  * @param {string} browserTS Typedefs for BrowserName
  * @param {string} compatTS Typedefs for CompatData
  * @returns {string} Updated typedefs
@@ -127,7 +124,6 @@ const transformTS = (browserTS: string, compatTS: string): string => {
 
 /**
  * Compile the TypeScript typedefs from the schema JSON
- *
  * @param {URL | string} destination Output destination
  */
 const compile = async (

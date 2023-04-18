@@ -5,7 +5,6 @@ import path from 'node:path';
 
 /**
  * Normalize a file path for cross-platform compatibility
- *
  * @param {string} p The file path
  * @param {any} testPath The path handler
  * @returns {string} The normalized path
@@ -22,7 +21,6 @@ export const normalizePathInternal = (
 
 /**
  * Normalize a file path for cross-platform compatibility
- *
  * @param {string} p The file path
  * @returns {string} The normalized path
  */

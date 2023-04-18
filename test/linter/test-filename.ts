@@ -6,7 +6,6 @@ import { Linter, Logger, LinterData } from '../utils.js';
 
 /**
  * Test the filename based on the identifier
- *
  * @param {Identifier} data The identifier
  * @param {string[]} pathParts Parts of the path
  * @param {string} currentPath The current path traversed
@@ -37,7 +36,6 @@ const testFilename = (
 
 /**
  * Process the data to make sure it defines the features appropriate to the file's name
- *
  * @param {Identifier} data The raw contents of the file to test
  * @param {string} filepath The file path
  * @param {Logger} logger The logger to output errors to
@@ -67,7 +65,6 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
