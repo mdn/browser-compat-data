@@ -12,7 +12,6 @@ import { isMirrorEquivalent } from '../../scripts/fix/mirror.js';
 
 /**
  * Check the data to ensure all statements that should use `mirror` do
- *
  * @param {SupportBlock} supportData The data to test
  * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
@@ -44,7 +43,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

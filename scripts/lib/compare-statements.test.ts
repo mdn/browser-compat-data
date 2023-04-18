@@ -102,7 +102,6 @@ const tests: { input: Identifier; output: Identifier }[] = [
 
 /**
  * Update the order of the statements
- *
  * @param {string} key The key of the object (make sure it's '__compat')
  * @param {CompatStatement} value The compat statement to update
  * @returns {CompatStatement} The updated compat statement

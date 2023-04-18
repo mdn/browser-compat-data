@@ -7,7 +7,6 @@
 class DuplicateCompatError extends Error {
   /**
    * Construct the error
-   *
    * @param {string} feature The feature path
    */
   constructor(feature: string) {
@@ -18,7 +17,6 @@ class DuplicateCompatError extends Error {
 
 /**
  * Check if the variable is an object ({})
- *
  * @param {any} v The object to test
  * @returns {boolean} Whether the object is a plain object
  */
@@ -27,7 +25,6 @@ const isPlainObject = (v): v is object =>
 
 /**
  * Combine two objects containing browser compat data together
- *
  * @param {any} target The object to extend
  * @param {any} source The object to copy from
  * @param {string} feature The feature path so far (internal for recursive calls)
