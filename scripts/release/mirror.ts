@@ -43,7 +43,6 @@ const matchingSafariVersions = new Map([
 
 /**
  * Convert a version number to the matching version of the target browser
- *
  * @param {string} targetBrowser The browser to mirror to
  * @param {string} sourceVersion The version from the source browser
  * @returns {ReleaseStatement|boolean} The matching browser version
@@ -119,7 +118,6 @@ export const getMatchingBrowserVersion = (
 
 /**
  * Update the notes by mirroring the version and replacing the browser name
- *
  * @param {Notes?} notes The notes to update
  * @param {RegExp} regex The regex to check and search
  * @param {string} replace The text to replace with
@@ -152,7 +150,6 @@ const updateNotes = (
 
 /**
  * Copy a support statement
- *
  * @param {SimpleSupportStatement} data The data to copied
  * @returns {SimpleSupportStatement} The new copied object
  */
@@ -169,7 +166,6 @@ const copyStatement = (
 
 /**
  * Perform mirroring of data
- *
  * @param {SupportStatement} sourceData The data to mirror from
  * @param {BrowserName} destination The destination browser
  * @returns {SupportStatement} The mirrored support statement
@@ -254,7 +250,6 @@ export const bumpSupport = (
 
 /**
  * Perform mirroring for the target browser
- *
  * @param {BrowserName} destination The browser to mirror to
  * @param {InternalSupportBlock} data The data to mirror with
  * @returns {SupportStatement} The mirrored data

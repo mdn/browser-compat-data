@@ -22,7 +22,6 @@ const dirname = new URL('.', import.meta.url);
 
 /**
  * Get the release notes to add
- *
  * @param {string} thisVersion The current version number
  * @param {Changes} changes The changes to format
  * @param {Stats} stats The statistics from the changes
@@ -58,7 +57,6 @@ const getNotes = (
 
 /**
  * Add new release notes to the file
- *
  * @param {string} notesToAdd The notes to add to the release notes
  */
 const addNotes = async (notesToAdd: string): Promise<void> => {
@@ -77,7 +75,6 @@ const addNotes = async (notesToAdd: string): Promise<void> => {
 
 /**
  * Perform the commit and submit a pull request
- *
  * @param {string} thisVersion The current version number
  * @param {boolean} wait Whether to wait for user to update the release notes (used when semver bump is minor or major)
  */

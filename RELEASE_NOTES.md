@@ -1,5 +1,28 @@
 # Release notes
 
+## [v5.2.51](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.51)
+
+April 18, 2023
+
+### Removals
+
+- `api.HTMLVideoElement.autoPictureInPicture` ([#19408](https://github.com/mdn/browser-compat-data/pull/19408))
+- `api.XRCompositionLayer.chromaticAberrationCorrection` ([#19406](https://github.com/mdn/browser-compat-data/pull/19406))
+
+### Additions
+
+- `api.Headers.getSetCookie` ([#19360](https://github.com/mdn/browser-compat-data/pull/19360))
+- `browsers.edge.releases.114` ([#19388](https://github.com/mdn/browser-compat-data/pull/19388))
+- `webextensions.api.storage.StorageArea.setAccessLevel` ([#19323](https://github.com/mdn/browser-compat-data/pull/19323))
+- `webextensions.manifest.icons.svg_icons` ([#19361](https://github.com/mdn/browser-compat-data/pull/19361))
+
+### Statistics
+
+- 11 contributors have changed 120 files with 484 additions and 835 deletions in 43 commits ([`v5.2.50...v5.2.51`](https://github.com/mdn/browser-compat-data/compare/v5.2.50...v5.2.51))
+- 14,548 total features
+- 997 total contributors
+- 4,463 total stargazers
+
 ## [v5.2.50](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.50)
 
 April 11, 2023
