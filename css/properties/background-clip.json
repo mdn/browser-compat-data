@@ -79,7 +79,7 @@
             ],
             "safari": [
               {
-                "version_added": "14"
+                "version_added": "≤13.1"
               },
               {
                 "version_added": "3",
@@ -166,11 +166,11 @@
             "description": "<code>text</code>",
             "support": {
               "chrome": {
-                "version_added": "3",
-                "partial_implementation": true,
-                "notes": "The <code>text</code> value is only supported by <code>-webkit-background-clip</code> (and not by <code>background-clip</code>)."
+                "version_added": false
               },
-              "chrome_android": "mirror",
+              "chrome_android": {
+                "version_added": false
+              },
               "edge": [
                 {
                   "version_added": "15"
@@ -202,8 +202,12 @@
                 }
               ],
               "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "samsunginternet_android": {
+                "version_added": false
+              },
+              "webview_android": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": false,
