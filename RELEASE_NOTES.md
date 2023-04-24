@@ -1,5 +1,37 @@
 # Release notes
 
+## [v5.2.52](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.52)
+
+April 21, 2023
+
+### Additions
+
+- `api.CredentialsContainer.create.publicKey_option` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions.appidExclude` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions.credProps` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions.credProtect` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions.largeBlob` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.extensions.minPinLength` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.requireResidentKey` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.create.publicKey_option.residentKey` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.get.publicKey_option` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.get.publicKey_option.extensions` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.get.publicKey_option.extensions.appid` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `api.CredentialsContainer.get.publicKey_option.extensions.largeBlob` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+- `browsers.nodejs.releases.20.0.0` ([#19438](https://github.com/mdn/browser-compat-data/pull/19438))
+- `css.selectors.nesting` ([#19270](https://github.com/mdn/browser-compat-data/pull/19270))
+- `css.selectors.popover-open` ([#19358](https://github.com/mdn/browser-compat-data/pull/19358))
+- `css.types.ray` ([#19421](https://github.com/mdn/browser-compat-data/pull/19421))
+- `http.headers.Permissions-Policy.publickey-credentials-create` ([#19306](https://github.com/mdn/browser-compat-data/pull/19306))
+
+### Statistics
+
+- 10 contributors have changed 106 files with 1,741 additions and 462 deletions in 19 commits ([`v5.2.51...v5.2.52`](https://github.com/mdn/browser-compat-data/compare/v5.2.51...v5.2.52))
+- 14,565 total features
+- 997 total contributors
+- 4,464 total stargazers
+
 ## [v5.2.51](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.51)
 
 April 18, 2023
