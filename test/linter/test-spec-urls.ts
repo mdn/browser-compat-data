@@ -34,6 +34,10 @@ const specsExceptions = [
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
+
+  // Remove once https://github.com/whatwg/html/pull/8502
+  // is merged and the new URL is live
+  'https://wicg.github.io/navigation-api',
 ];
 
 const allowedSpecURLs = [
@@ -50,7 +54,6 @@ const allowedSpecURLs = [
 
 /**
  * Process the data for spec URL errors
- *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  */
@@ -92,7 +95,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

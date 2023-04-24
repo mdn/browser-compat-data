@@ -27,7 +27,6 @@ const verbatimFiles = ['LICENSE', 'README.md'];
 
 /**
  * Generate metadata to embed into BCD builds
- *
  * @returns {any} Metadata to embed into BCD
  */
 export const generateMeta = (): any => ({
@@ -37,7 +36,6 @@ export const generateMeta = (): any => ({
 
 /**
  * Apply mirroring to a feature
- *
  * @param {WalkOutput} feature The BCD to perform mirroring on
  * @returns {void}
  */
@@ -56,7 +54,6 @@ export const applyMirroring = (feature: WalkOutput): void => {
 
 /**
  * Generate a BCD data bundle
- *
  * @returns {CompatData} An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
@@ -135,7 +132,6 @@ const copyFiles = async () => {
 
 /**
  * Generate the JSON for a published package.json
- *
  * @returns {any} A generated package.json for build output
  */
 export const createManifest = (): any => {

@@ -20,7 +20,6 @@ const propOrder = {
 
 /**
  * Perform property ordering
- *
  * @param {CompatStatement|StatusBlock} value The object to order properties for
  * @param {string[]} order The order to follow
  * @returns {CompatStatement|StatusBlock} The ordered object
@@ -42,7 +41,6 @@ const doOrder = <T>(value: T, order: string[]): T => {
  * ordered according to doOrder, and so will be stringified in that
  * order as well. This relies on guaranteed "own" property ordering,
  * which is insertion order for non-integer keys (which is our case).
- *
  * @param {string} key The key in the object
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
@@ -66,7 +64,6 @@ export const orderProperties = (key: string, value: Identifier): Identifier => {
 
 /**
  * Fix issues with the property order throughout the BCD files
- *
  * @param {string} filename The name of the file to fix
  */
 const fixPropertyOrder = (filename: string): void => {

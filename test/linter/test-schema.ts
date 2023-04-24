@@ -29,7 +29,6 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
