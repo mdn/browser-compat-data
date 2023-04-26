@@ -54,7 +54,6 @@ const allowedSpecURLs = [
 
 /**
  * Process the data for spec URL errors
- *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  */
@@ -96,7 +95,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

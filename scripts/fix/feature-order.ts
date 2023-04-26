@@ -13,7 +13,6 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * stringified in that order as well. This relies on guaranteed "own"
  * property ordering, which is insertion order for non-integer keys
  * (which is our case).
- *
  * @param {string} _ The key in the object
  * @param {Identifier} value The value of the key
  * @returns {Identifier} The new value
@@ -33,7 +32,6 @@ export const orderFeatures = (_: string, value: Identifier): Identifier => {
 /**
  * Perform a fix of feature order within all the data in a specified file.
  * The function will then automatically write any needed changes back into the file.
- *
  * @param {string} filename The filename to perform fix upon
  */
 const fixFeatureOrder = (filename: string): void => {
