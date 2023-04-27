@@ -1,5 +1,67 @@
 # Release notes
 
+## [v5.2.53](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.53)
+
+April 25, 2023
+
+### Removals
+
+- `api.RTCIceTransport.RTCIceTransport` ([#19474](https://github.com/mdn/browser-compat-data/pull/19474))
+- `html.elements.iframe.sandbox-allow-downloads` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-modals` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-popups` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-popups-to-escape-sandbox` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-presentation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-same-origin` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-storage-access-by-user-activation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox-allow-top-navigation-by-user-activation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `javascript.builtins.Intl.Locale.calendars` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.collations` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.hourCycles` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.numberingSystems` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.textInfo` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.timeZones` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.weekInfo` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+
+### Additions
+
+- `browsers.deno.releases.1.29` ([#19470](https://github.com/mdn/browser-compat-data/pull/19470))
+- `browsers.deno.releases.1.30` ([#19470](https://github.com/mdn/browser-compat-data/pull/19470))
+- `browsers.deno.releases.1.31` ([#19470](https://github.com/mdn/browser-compat-data/pull/19470))
+- `browsers.deno.releases.1.32` ([#19470](https://github.com/mdn/browser-compat-data/pull/19470))
+- `html.elements.iframe.sandbox.allow-downloads` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-downloads-without-user-activation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-forms` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-modals` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-orientation-lock` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-pointer-lock` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-popups` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-popups-to-escape-sandbox` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-presentation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-same-origin` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-scripts` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-storage-access-by-user-activation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-top-navigation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-top-navigation-by-user-activation` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `html.elements.iframe.sandbox.allow-top-navigation-to-custom-protocols` ([#18862](https://github.com/mdn/browser-compat-data/pull/18862))
+- `javascript.builtins.Intl.Locale.getCalendars` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getCollations` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getHourCycles` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getNumberingSystems` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getTextInfo` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getTimeZones` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `javascript.builtins.Intl.Locale.getWeekInfo` ([#19451](https://github.com/mdn/browser-compat-data/pull/19451))
+- `webextensions.manifest.browser_specific_settings.gecko` ([#19363](https://github.com/mdn/browser-compat-data/pull/19363))
+- `webextensions.manifest.browser_specific_settings.gecko_android` ([#19363](https://github.com/mdn/browser-compat-data/pull/19363))
+- `webextensions.manifest.browser_specific_settings.safari` ([#19363](https://github.com/mdn/browser-compat-data/pull/19363))
+
+### Statistics
+
+- 10 contributors have changed 25 files with 1,708 additions and 1,420 deletions in 31 commits ([`v5.2.52...v5.2.53`](https://github.com/mdn/browser-compat-data/compare/v5.2.52...v5.2.53))
+- 14,574 total features
+- 1,000 total contributors
+- 4,469 total stargazers
+
 ## [v5.2.52](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.52)
 
 April 21, 2023
