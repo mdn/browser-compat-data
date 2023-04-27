@@ -59,12 +59,17 @@
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "partial_implementation": true,
-                "prefix": "-moz-",
-                "version_added": "3",
-                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
-              },
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "partial_implementation": true,
+                  "prefix": "-moz-",
+                  "version_added": "3",
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
