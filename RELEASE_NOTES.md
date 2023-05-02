@@ -1,5 +1,29 @@
 # Release notes
 
+## [v5.2.55](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.55)
+
+May 2, 2023
+
+### Removals
+
+- `api.AudioListener.dopplerFactor` ([#19578](https://github.com/mdn/browser-compat-data/pull/19578))
+- `api.AudioListener.speedOfSound` ([#19579](https://github.com/mdn/browser-compat-data/pull/19579))
+- `api.PannerNode.setVelocity` ([#19580](https://github.com/mdn/browser-compat-data/pull/19580))
+- `api.RTCStatsReport.type_inbound-rtp.qpSum` ([#19581](https://github.com/mdn/browser-compat-data/pull/19581))
+- `api.RTCStatsReport.type_outbound-rtp.qpSum` ([#19581](https://github.com/mdn/browser-compat-data/pull/19581))
+
+### Additions
+
+- `browsers.deno.releases.1.33` ([#19593](https://github.com/mdn/browser-compat-data/pull/19593))
+- `browsers.nodejs.releases.19.7.0` ([#19583](https://github.com/mdn/browser-compat-data/pull/19583))
+
+### Statistics
+
+- 6 contributors have changed 20 files with 86 additions and 236 deletions in 9 commits ([`v5.2.54...v5.2.55`](https://github.com/mdn/browser-compat-data/compare/v5.2.54...v5.2.55))
+- 14,746 total features
+- 1,001 total contributors
+- 4,474 total stargazers
+
 ## [v5.2.54](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.54)
 
 April 28, 2023
