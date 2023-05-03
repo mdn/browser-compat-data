@@ -4330,17 +4330,22 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-hasstorageaccess",
           "support": {
-            "chrome": {
-              "version_added": "78",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "113"
+              },
+              {
+                "version_added": "78",
+                "version_removed": "112",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "85"
@@ -4353,16 +4358,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
@@ -6048,21 +6044,42 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-requeststorageaccess",
           "support": {
-            "chrome": {
-              "version_added": "78",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "113",
+                "notes": [
+                  "Only resolves <code>requestStorageAccess()</code> calls that come from domains within a <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party set</a>.",
+                  "Client-side storage access granted per-frame, as per spec updates <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>."
+                ]
+              },
+              {
+                "version_added": "78",
+                "version_removed": "112",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "85"
-            },
+            "edge": [
+              {
+                "version_added": "113",
+                "notes": [
+                  "Only resolves <code>requestStorageAccess()</code> calls that come from domains within a <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party set</a>.",
+                  "Each embedded site instance must separately opt in to client-side storage access via a <code>requestStorageAccess()</code> call, as per <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>spec updates</a>."
+                ]
+              },
+              {
+                "version_added": "85",
+                "version_removed": "112",
+                "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
+              }
+            ],
             "firefox": {
               "version_added": "65"
             },
@@ -6071,19 +6088,11 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "11.1"
+              "version_added": "11.1",
+              "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
