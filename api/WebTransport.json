@@ -2,6 +2,7 @@
   "api": {
     "WebTransport": {
       "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport",
         "spec_url": "https://w3c.github.io/webtransport/#web-transport",
         "support": {
           "chrome": {
@@ -9,9 +10,21 @@
           },
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "preview"
+            },
+            {
+              "version_added": "109",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "network.webtransport.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
@@ -35,6 +48,7 @@
       "WebTransport": {
         "__compat": {
           "description": "<code>WebTransport()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/WebTransport",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-webtransport",
           "support": {
             "chrome": {
@@ -42,9 +56,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -65,19 +91,169 @@
             "deprecated": false
           }
         },
-        "serverCertificateHashes": {
+        "options_allowPooling_parameter": {
           "__compat": {
-            "description": "<code>serverCertificateHashes</code> option",
-            "spec_url": "https://w3c.github.io/webtransport/#ref-for-dom-webtransportoptions-servercertificatehashes%E2%91%A0",
+            "description": "<code>options.allowPooling</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportoptions-allowpooling",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_congestionControl_parameter": {
+          "__compat": {
+            "description": "<code>options.congestionControl</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportoptions-congestioncontrol",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_requireUnreliable_parameter": {
+          "__compat": {
+            "description": "<code>options.requireUnreliable</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportoptions-requireunreliable",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_serverCertificateHashes_parameter": {
+          "__compat": {
+            "description": "<code>options.serverCertificateHashes</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportoptions-servercertificatehashes",
             "support": {
               "chrome": {
                 "version_added": "100"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -102,6 +278,7 @@
       },
       "close": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/close",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-close",
           "support": {
             "chrome": {
@@ -109,9 +286,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -135,6 +324,7 @@
       },
       "closed": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/closed",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-closed",
           "support": {
             "chrome": {
@@ -142,9 +332,67 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "congestionControl": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/congestionControl",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-congestioncontrol",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -168,6 +416,7 @@
       },
       "createBidirectionalStream": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/createBidirectionalStream",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-createbidirectionalstream",
           "support": {
             "chrome": {
@@ -175,9 +424,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -197,10 +458,57 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "options_sendOrder_parameter": {
+          "__compat": {
+            "description": "<code>options.sendOrder</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportsendstreamoptions-sendorder",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "createUnidirectionalStream": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/createUnidirectionalStream",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-createunidirectionalstream",
           "support": {
             "chrome": {
@@ -208,9 +516,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -240,9 +560,67 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
                 "version_added": false
               },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_sendOrder_parameter": {
+          "__compat": {
+            "description": "<code>options.sendOrder</code> parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportsendstreamoptions-sendorder",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "109",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.webtransport.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -267,6 +645,7 @@
       },
       "datagrams": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/datagrams",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-datagrams",
           "support": {
             "chrome": {
@@ -274,9 +653,113 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
               "version_added": false
             },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "draining": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/draining",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-draining",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getStats": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/getStats",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-getstats",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -300,6 +783,7 @@
       },
       "incomingBidirectionalStreams": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/incomingBidirectionalStreams",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingbidirectionalstreams",
           "support": {
             "chrome": {
@@ -307,9 +791,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -333,6 +829,7 @@
       },
       "incomingUnidirectionalStreams": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/incomingUnidirectionalStreams",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-incomingunidirectionalstreams",
           "support": {
             "chrome": {
@@ -340,9 +837,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -366,6 +875,7 @@
       },
       "ready": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransport/ready",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-ready",
           "support": {
             "chrome": {
@@ -373,9 +883,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.webtransport.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
