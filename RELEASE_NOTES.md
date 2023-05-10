@@ -1,5 +1,92 @@
 # Release notes
 
+## [v5.2.57](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.57)
+
+May 9, 2023
+
+### Statistics
+
+- 3 contributors have changed 13 files with 202 additions and 460 deletions in 16 commits ([`v5.2.56...v5.2.57`](https://github.com/mdn/browser-compat-data/compare/v5.2.56...v5.2.57))
+- 14,779 total features
+- 1,002 total contributors
+- 4,482 total stargazers
+
+## [v5.2.56](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.56)
+
+May 5, 2023
+
+### Removals
+
+- `api.WebTransport.WebTransport.serverCertificateHashes` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+
+### Additions
+
+- `api.CSSImportRule.supportsText` ([#19606](https://github.com/mdn/browser-compat-data/pull/19606))
+- `api.fetch.init_priority_parameter` ([#19634](https://github.com/mdn/browser-compat-data/pull/19634))
+- `api.Request.Request.init_priority_parameter` ([#19634](https://github.com/mdn/browser-compat-data/pull/19634))
+- `api.WebTransport.congestionControl` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.createBidirectionalStream.options_sendOrder_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.createUnidirectionalStream.options_sendOrder_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.draining` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.getStats` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.WebTransport.options_allowPooling_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.WebTransport.options_congestionControl_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.WebTransport.options_requireUnreliable_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `api.WebTransport.WebTransport.options_serverCertificateHashes_parameter` ([#19605](https://github.com/mdn/browser-compat-data/pull/19605))
+- `webextensions.api.action.getBadgeBackgroundColor.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.getBadgeText.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.getPopup.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.getTitle.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.isEnabled.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.onClicked.OnClickData` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.onClicked.tab` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setBadgeBackgroundColor.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setBadgeBackgroundColor.null` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setBadgeBackgroundColor.string` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setBadgeText.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setBadgeText.null` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setIcon.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setIcon.imageData` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setIcon.null` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setPopup.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setPopup.null` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setTitle.details_windowId_parameter` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.action.setTitle.null` ([#19322](https://github.com/mdn/browser-compat-data/pull/19322))
+- `webextensions.api.cookies.CookieStore.id` ([#19446](https://github.com/mdn/browser-compat-data/pull/19446))
+- `webextensions.api.cookies.CookieStore.incognito` ([#19446](https://github.com/mdn/browser-compat-data/pull/19446))
+- `webextensions.api.cookies.CookieStore.tabIds` ([#19446](https://github.com/mdn/browser-compat-data/pull/19446))
+
+### Statistics
+
+- 9 contributors have changed 58 files with 1,665 additions and 429 deletions in 23 commits ([`v5.2.55...v5.2.56`](https://github.com/mdn/browser-compat-data/compare/v5.2.55...v5.2.56))
+- 14,779 total features
+- 1,002 total contributors
+- 4,479 total stargazers
+
+## [v5.2.55](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.55)
+
+May 2, 2023
+
+### Removals
+
+- `api.AudioListener.dopplerFactor` ([#19578](https://github.com/mdn/browser-compat-data/pull/19578))
+- `api.AudioListener.speedOfSound` ([#19579](https://github.com/mdn/browser-compat-data/pull/19579))
+- `api.PannerNode.setVelocity` ([#19580](https://github.com/mdn/browser-compat-data/pull/19580))
+- `api.RTCStatsReport.type_inbound-rtp.qpSum` ([#19581](https://github.com/mdn/browser-compat-data/pull/19581))
+- `api.RTCStatsReport.type_outbound-rtp.qpSum` ([#19581](https://github.com/mdn/browser-compat-data/pull/19581))
+
+### Additions
+
+- `browsers.deno.releases.1.33` ([#19593](https://github.com/mdn/browser-compat-data/pull/19593))
+- `browsers.nodejs.releases.19.7.0` ([#19583](https://github.com/mdn/browser-compat-data/pull/19583))
+
+### Statistics
+
+- 6 contributors have changed 20 files with 86 additions and 236 deletions in 9 commits ([`v5.2.54...v5.2.55`](https://github.com/mdn/browser-compat-data/compare/v5.2.54...v5.2.55))
+- 14,746 total features
+- 1,001 total contributors
+- 4,474 total stargazers
+
 ## [v5.2.54](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.54)
 
 April 28, 2023
