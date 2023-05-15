@@ -75,6 +75,51 @@
               "deprecated": false
             }
           }
+        },
+        "supports": {
+          "__compat": {
+            "description": "<code>supports( [<supports-condition> | <declaration>] )</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "114",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.import-supports.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       }
     }
