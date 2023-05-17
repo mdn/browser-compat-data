@@ -1,5 +1,34 @@
 # Release notes
 
+## [v5.2.58](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.58)
+
+May 16, 2023
+
+### Removals
+
+- `api.Element.error_event` ([#19875](https://github.com/mdn/browser-compat-data/pull/19875))
+- `webextensions.api.userScripts.cookieStoreId` ([#19717](https://github.com/mdn/browser-compat-data/pull/19717))
+
+### Additions
+
+- `api.HTMLElement.error_event` ([#19875](https://github.com/mdn/browser-compat-data/pull/19875))
+- `api.Permissions.permission_storage-access` ([#19614](https://github.com/mdn/browser-compat-data/pull/19614))
+- `api.WebTransportReceiveStream` ([#19693](https://github.com/mdn/browser-compat-data/pull/19693))
+- `api.WebTransportReceiveStream.getStats` ([#19693](https://github.com/mdn/browser-compat-data/pull/19693))
+- `css.properties.shape-outside.path` ([#19225](https://github.com/mdn/browser-compat-data/pull/19225))
+- `css.properties.text-wrap` ([#19798](https://github.com/mdn/browser-compat-data/pull/19798))
+- `css.properties.white-space-collapse` ([#19798](https://github.com/mdn/browser-compat-data/pull/19798))
+- `css.properties.white-space.shorthand_values` ([#19798](https://github.com/mdn/browser-compat-data/pull/19798))
+- `http.headers.Permissions-Policy.storage-access` ([#19614](https://github.com/mdn/browser-compat-data/pull/19614))
+- `webextensions.api.userScripts.register.cookieStoreId` ([#19717](https://github.com/mdn/browser-compat-data/pull/19717))
+
+### Statistics
+
+- 13 contributors have changed 191 files with 2,000 additions and 2,337 deletions in 187 commits ([`v5.2.57...v5.2.58`](https://github.com/mdn/browser-compat-data/compare/v5.2.57...v5.2.58))
+- 14,787 total features
+- 1,003 total contributors
+- 4,486 total stargazers
+
 ## [v5.2.57](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.57)
 
 May 9, 2023
