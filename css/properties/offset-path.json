@@ -67,7 +67,7 @@
         },
         "path-support": {
           "__compat": {
-            "description": "Supports the <code>path()</code> function as a value",
+            "description": "Support for <code>path()</code> function as a value",
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -100,23 +100,43 @@
         },
         "ray-support": {
           "__compat": {
-            "description": "Supports the <code>ray()</code> function as a value",
+            "description": "Support for <code>ray()</code> function as a value",
             "support": {
               "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "72",
+                "version_added": "64",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "layout.css.motion-path-ray.enabled",
-                    "value_to_set": "true"
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
                   }
                 ]
               },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "112",
+                  "notes": "<code>&lt;ray-size&gt;</code> is optional with the default value <code>closest-side</code>.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.motion-path-ray.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "72",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.motion-path-ray.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false

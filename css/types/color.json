@@ -5,7 +5,7 @@
         "__compat": {
           "description": "&lt;color&gt;",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#color-syntax",
+          "spec_url": "https://drafts.csswg.org/css-color/#color-syntax",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -45,7 +45,7 @@
           "__compat": {
             "description": "<code>color()</code> (Profiled color values)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#color-function",
+            "spec_url": "https://drafts.csswg.org/css-color/#color-function",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -53,14 +53,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "111",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.more_color_4.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -95,7 +88,7 @@
           "__compat": {
             "description": "<code>color-contrast()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color-6/#colorcontrast",
+            "spec_url": "https://drafts.csswg.org/css-color-6/#colorcontrast",
             "support": {
               "chrome": {
                 "version_added": false
@@ -136,7 +129,7 @@
           "__compat": {
             "description": "<code>color-mix()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color-5/#color-mix",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -144,14 +137,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "88",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.color-mix.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -160,21 +146,26 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "15",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "CSS color-mix()"
-                  }
-                ]
-              },
+              "safari": [
+                {
+                  "version_added": "16.2"
+                },
+                {
+                  "version_added": "15",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "CSS color-mix()"
+                    }
+                  ]
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -184,7 +175,7 @@
           "__compat": {
             "description": "<code>currentcolor</code> keyword",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#currentcolor",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#currentcolor-color",
+            "spec_url": "https://drafts.csswg.org/css-color/#currentcolor-color",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -225,7 +216,7 @@
           "__compat": {
             "description": "<code>hsl()</code> (HSL color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hsl",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#the-hsl-notation",
+            "spec_url": "https://drafts.csswg.org/css-color/#the-hsl-notation",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -334,7 +325,7 @@
           "__compat": {
             "description": "<code>hsla()</code> (HSL color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hsla",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#rgb-functions",
+            "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -410,7 +401,7 @@
           "__compat": {
             "description": "<code>hwb()</code> (HWB color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hwb",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#the-hwb-notation",
+            "spec_url": "https://drafts.csswg.org/css-color/#the-hwb-notation",
             "support": {
               "chrome": {
                 "version_added": "101"
@@ -445,7 +436,7 @@
           "__compat": {
             "description": "<code>lab()</code> (Lab color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lab",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#lab-colors",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -453,14 +444,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "111",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.more_color_4.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -487,7 +471,7 @@
           "__compat": {
             "description": "<code>lch()</code> (LCH color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lch",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#lab-colors",
+            "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -495,14 +479,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "111",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.more_color_4.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -529,7 +506,7 @@
           "__compat": {
             "description": "Named colors",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#named-colors",
+            "spec_url": "https://drafts.csswg.org/css-color/#named-colors",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -610,7 +587,7 @@
           "__compat": {
             "description": "<code>oklab()</code> (Oklab color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/oklab",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#ok-lab",
+            "spec_url": "https://drafts.csswg.org/css-color/#ok-lab",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -618,14 +595,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "111",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.more_color_4.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -652,7 +622,7 @@
           "__compat": {
             "description": "<code>oklch()</code> (OKLCH color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/oklch",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#ok-lab",
+            "spec_url": "https://drafts.csswg.org/css-color/#ok-lab",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -660,14 +630,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "111",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.more_color_4.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -694,7 +657,7 @@
           "__compat": {
             "description": "<code>rgb()</code> (RGB color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/rgb",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#rgb-functions",
+            "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -836,7 +799,7 @@
           "__compat": {
             "description": "RGB hexadecimal notation (<code>#RRGGBB</code>, <code>#RGB</code>, …)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/hex-color",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#hex-notation",
+            "spec_url": "https://drafts.csswg.org/css-color/#hex-notation",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -916,7 +879,7 @@
           "__compat": {
             "description": "<code>rgba()</code> (RGB color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/rgba",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#rgb-functions",
+            "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1025,7 +988,7 @@
           "__compat": {
             "description": "System colors",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/system-color",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#css-system-colors",
+            "spec_url": "https://drafts.csswg.org/css-color/#css-system-colors",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1067,9 +1030,9 @@
             "__compat": {
               "description": "Mark, MarkText, ButtonBorder",
               "spec_url": [
-                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-mark",
-                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-marktext",
-                "https://w3c.github.io/csswg-drafts/css-color/#valdef-system-color-buttonborder"
+                "https://drafts.csswg.org/css-color/#valdef-system-color-mark",
+                "https://drafts.csswg.org/css-color/#valdef-system-color-marktext",
+                "https://drafts.csswg.org/css-color/#valdef-system-color-buttonborder"
               ],
               "support": {
                 "chrome": {
@@ -1106,7 +1069,7 @@
           "__compat": {
             "description": "<code>transparent</code> keyword",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color#transparent",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-color/#transparent-color",
+            "spec_url": "https://drafts.csswg.org/css-color/#transparent-color",
             "support": {
               "chrome": {
                 "version_added": "1"

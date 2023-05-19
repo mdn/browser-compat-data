@@ -2,6 +2,25 @@
   "webextensions": {
     "api": {
       "scripting": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/",
+          "support": {
+            "chrome": {
+              "version_added": "88",
+              "notes": "Available for use in Manifest V3 or later."
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "102"
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": "15.4"
+            },
+            "safari_ios": "mirror"
+          }
+        },
         "ExecutionWorld": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/ExecutionWorld",
@@ -65,8 +84,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/InjectionTarget",
             "support": {
               "chrome": {
-                "version_added": "88",
-                "notes": "Available for use in Manifest V3 or later."
+                "version_added": "88"
               },
               "edge": "mirror",
               "firefox": {
@@ -163,6 +181,84 @@
                 "version_added": "15.4"
               },
               "safari_ios": "mirror"
+            }
+          },
+          "InjectionResult": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "88"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "102"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "notes": "Safari returns an array with the results, instead of an array of InjectionResults."
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "error": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false,
+                    "notes": "See <a href='https://crbug.com/1271527'>Issue 1271527: Propagate errors from scripting.executeScript to InjectionResult</a>."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "102"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "frameId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "90"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "102"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "result": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "88"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "102"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
             }
           },
           "injectImmediately": {
@@ -360,7 +456,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4",
+                "notes": "Available for use in Manifest V2 or later."
               },
               "safari_ios": "mirror"
             }

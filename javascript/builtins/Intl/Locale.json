@@ -162,46 +162,6 @@
               }
             }
           },
-          "calendars": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendars",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.calendars",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "caseFirst": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/caseFirst",
@@ -282,13 +242,15 @@
               }
             }
           },
-          "collations": {
+          "getCalendars": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/collations",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.collations",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getCalendars",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getCalendars",
               "support": {
                 "chrome": {
-                  "version_added": "99"
+                  "version_added": "99",
+                  "alternative_name": "calendars",
+                  "notes": "Implemented as an accessor property."
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -303,14 +265,336 @@
                   "version_added": false
                 },
                 "nodejs": {
-                  "version_added": false
+                  "version_added": "18.0.0",
+                  "alternative_name": "calendars",
+                  "notes": "Implemented as an accessor property."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "calendars",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getCollations": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getCollations",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getCollations",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "collations",
+                  "notes": "Implemented as an accessor property."
                 },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "collations",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "collations",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getHourCycles": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getHourCycles",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getHourCycles",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "hourCycles",
+                  "notes": "Implemented as an accessor property."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "hourCycles",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "hourCycles",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getNumberingSystems": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getNumberingSystems",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getNumberingSystems",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "numberingSystems",
+                  "notes": "Implemented as an accessor property."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "numberingSystems",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "numberingSystems",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getTextInfo": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTextInfo",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getTextInfo",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "textInfo",
+                  "notes": "Implemented as an accessor property."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "textInfo",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "textInfo",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getTimeZones": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTimeZones",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getTimeZones",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "timeZones",
+                  "notes": "Implemented as an accessor property."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "timeZones",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "timeZones",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "getWeekInfo": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getWeekInfo",
+              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getWeekInfo",
+              "support": {
+                "chrome": {
+                  "version_added": "99",
+                  "alternative_name": "weekInfo",
+                  "notes": "Implemented as an accessor property."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "18.0.0",
+                  "alternative_name": "weekInfo",
+                  "notes": "Implemented as an accessor property."
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "alternative_name": "weekInfo",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": "mirror"
@@ -350,46 +634,6 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "14"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "hourCycles": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycles",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.hourCycles",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -562,46 +806,6 @@
               }
             }
           },
-          "numberingSystems": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/numberingSystems",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.numberingSystems",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "numeric": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/numeric",
@@ -722,86 +926,6 @@
               }
             }
           },
-          "textInfo": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/textInfo",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.textInfo",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "timeZones": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/timeZones",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.timeZones",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "toString": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/toString",
@@ -830,46 +954,6 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "14"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "weekInfo": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/weekInfo",
-              "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.weekInfo",
-              "support": {
-                "chrome": {
-                  "version_added": "99"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
