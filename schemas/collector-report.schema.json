@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/schema",
+
+  "definitions": {
+    "exposure": {
+      "type": "string",
+      "enum": ["ServiceWorker", "SharedWorker", "Window", "Worker"]
+    },
+
+    "feature_name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_0-9-$@.]*$",
+      "description": "Dot separated identifier path.\n\n@example \"javascript.builtins.Array.at\"",
+      "examples": ["javascript.builtins.Array.at"]
+    },
+
+    "collector_result": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "exposure": { "$ref": "#/definitions/exposure" },
+            "name": { "$ref": "#/definitions/feature_name" },
+            "result": { "type": "boolean" }
+          },
+          "additionalProperties": false,
+          "required": ["exposure", "name", "result"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "exposure": { "$ref": "#/definitions/exposure" },
+            "message": {
+              "type": "string",
+              "pattern": "^threw .*$|^Testing .* in workers is not yet implemented$|^Browser does not support detection methods$",
+              "description": "Reason a result could not be collected.\n\n@example \"threw TypeError: Failed to construct 'Notification': Illegal constructor.\"\n@example \"Testing CanvasRenderingContext2D in workers is not yet implemented\"\n@example \"Browser does not support detection methods\""
+            },
+            "name": { "$ref": "#/definitions/feature_name" },
+            "result": { "type": "null" }
+          },
+          "additionalProperties": false,
+          "required": ["exposure", "message", "name", "result"]
+        }
+      ]
+    }
+  },
+
+  "title": "CollectorReport",
+  "type": "object",
+  "properties": {
+    "__version": {
+      "type": "string",
+      "pattern": "^[0-9.]+$",
+      "description": "Version of mdn-bcd-collector that collected the report."
+    },
+    "results": {
+      "type": "object",
+      "patternProperties": {
+        "^https://mdn-bcd-collector.appspot.com/tests/.*$": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/collector_result"
+          }
+        }
+      },
+      "minProperties": 1
+    },
+    "userAgent": {
+      "type": "string",
+      "description": "User agent of tested browser."
+    }
+  },
+  "required": ["__version", "results", "userAgent"],
+  "additionalProperties": false
+}
