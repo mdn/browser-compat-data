@@ -1,5 +1,49 @@
 # Release notes
 
+## [v5.2.59](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.59)
+
+May 19, 2023
+
+### Removals
+
+- `html.elements.applet` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.align` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.alt` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.archive` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.code` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.codebase` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.datafld` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.datasrc` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.height` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.hspace` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.mayscript` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.name` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.object` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.src` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.vspace` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `html.elements.applet.width` ([#19645](https://github.com/mdn/browser-compat-data/pull/19645))
+- `svg.elements.discard` ([#19782](https://github.com/mdn/browser-compat-data/pull/19782))
+
+### Additions
+
+- `browsers.chrome_android.releases.115` ([#19611](https://github.com/mdn/browser-compat-data/pull/19611))
+- `browsers.chrome.releases.115` ([#19611](https://github.com/mdn/browser-compat-data/pull/19611))
+- `browsers.safari_ios.releases.16.5` ([#19879](https://github.com/mdn/browser-compat-data/pull/19879))
+- `browsers.safari.releases.16.5` ([#19879](https://github.com/mdn/browser-compat-data/pull/19879))
+- `browsers.webview_android.releases.115` ([#19611](https://github.com/mdn/browser-compat-data/pull/19611))
+- `css.at-rules.import.supports` ([#19863](https://github.com/mdn/browser-compat-data/pull/19863))
+- `html.elements.link.blocking` ([#19880](https://github.com/mdn/browser-compat-data/pull/19880))
+- `html.elements.script.blocking` ([#19880](https://github.com/mdn/browser-compat-data/pull/19880))
+- `html.elements.search` ([#19357](https://github.com/mdn/browser-compat-data/pull/19357))
+- `html.elements.style.blocking` ([#19880](https://github.com/mdn/browser-compat-data/pull/19880))
+
+### Statistics
+
+- 11 contributors have changed 657 files with 1,604 additions and 2,315 deletions in 26 commits ([`v5.2.58...v5.2.59`](https://github.com/mdn/browser-compat-data/compare/v5.2.58...v5.2.59))
+- 14,775 total features
+- 1,004 total contributors
+- 4,489 total stargazers
+
 ## [v5.2.58](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.58)
 
 May 16, 2023
