@@ -122,7 +122,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
-If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://github.com/GooborgStudios/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://mdn-bcd-collector.gooborg.com/docs/update-bcd.md) for instructions.
 
 ### Optional: Generating data by mirroring
 
