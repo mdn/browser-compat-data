@@ -3,7 +3,13 @@
 
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData, LinterMessageLevel } from '../utils.js';
+import {
+  Linter,
+  Logger,
+  LinterData,
+  LinterMessageLevel,
+  twoYearsAgo,
+} from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 import {
   InternalSupportBlock,
@@ -46,10 +52,9 @@ export const neverImplemented = (support: InternalSupportBlock): boolean => {
   return true;
 };
 
-const errorTime = new Date(),
-  warningTime = new Date();
+export const errorTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-warningTime.setFullYear(warningTime.getFullYear() - 2);
+export const warningTime = twoYearsAgo;
 
 /**
  * Check if a feature has been implemented at some point but removed now

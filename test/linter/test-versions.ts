@@ -4,7 +4,7 @@
 import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import { Linter, Logger, LinterData, twoYearsAgo } from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -17,9 +17,6 @@ import {
 } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
-
-const twoYearsAgo = new Date();
-twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
 
 const browserTips: { [browser: string]: string } = {
   nodejs:
