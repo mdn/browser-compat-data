@@ -70,9 +70,7 @@ const isValidVersion = (
     if (version === 'preview') {
       return !!browsers[browser].preview_name;
     }
-    return Object.keys(browsers[browser].releases).includes(
-      version.replace('≤', ''),
-    );
+    return Object.hasOwn(browsers[browser].releases, version.replace('≤', ''));
   } else if (
     realValuesRequired[category].includes(browser) &&
     version !== false
@@ -168,7 +166,7 @@ const checkVersions = (
       for (const property of ['version_added', 'version_removed']) {
         const version = statement[property];
         if (property == 'version_removed' && version === undefined) {
-          // Undefined is allowed for version_removed
+          // version_removed is optional.
           continue;
         }
         if (!isValidVersion(browser, category, version)) {
@@ -180,7 +178,7 @@ const checkVersions = (
           );
         }
 
-        if (typeof version === 'string' && version.includes('≤')) {
+        if (typeof version === 'string' && version.startsWith('≤')) {
           const releaseData =
             browsers[browser].releases[version.replace('≤', '')];
           if (
@@ -189,7 +187,7 @@ const checkVersions = (
             new Date(releaseData.release_date) > twoYearsAgo
           ) {
             logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or older (on or before ${twoYearsAgo}). Ranged values are also not allowed for browser versions without a known release date.`,
+              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or earlier (on or before ${twoYearsAgo}). Ranged values are also not allowed for browser versions without a known release date.`,
             );
           }
         }
@@ -220,9 +218,7 @@ const checkVersions = (
 
       if (statement.version_added === false) {
         if (
-          Object.keys(statement).some(
-            (k) => !['version_added', 'notes', 'impl_url'].includes(k),
-          )
+          ['version_added', 'notes', 'impl_url'].some((k) => Object.hasOwn(statement, k))
         ) {
           logger.error(
             chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
