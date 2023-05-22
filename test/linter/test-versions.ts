@@ -218,7 +218,9 @@ const checkVersions = (
 
       if (statement.version_added === false) {
         if (
-          ['version_added', 'notes', 'impl_url'].some((k) => Object.hasOwn(statement, k))
+          ['version_added', 'notes', 'impl_url'].some((k) =>
+            Object.hasOwn(statement, k),
+          )
         ) {
           logger.error(
             chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
