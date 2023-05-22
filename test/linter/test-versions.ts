@@ -215,8 +215,8 @@ const checkVersions = (
 
       if (statement.version_added === false) {
         if (
-          ['version_added', 'notes', 'impl_url'].some((k) =>
-            Object.hasOwn(statement, k),
+          Object.keys(statement).some(
+            (k) => !['version_added', 'notes', 'impl_url'].includes(k),
           )
         ) {
           logger.error(
