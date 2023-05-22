@@ -2,11 +2,23 @@
   "api": {
     "CanvasFilter": {
       "__compat": {
-        "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#canvasfilter",
         "support": {
-          "chrome": {
-            "version_added": "99"
-          },
+          "chrome": [
+            {
+              "version_added": "113",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            {
+              "version_added": "99",
+              "version_removed": "113"
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
@@ -35,11 +47,23 @@
       "CanvasFilter": {
         "__compat": {
           "description": "<code>CanvasFilter()</code> constructor",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvasfilter",
           "support": {
-            "chrome": {
-              "version_added": "99"
-            },
+            "chrome": [
+              {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "99",
+                "version_removed": "113"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
