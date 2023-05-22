@@ -58,7 +58,6 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
  * Escapes common invisible characters.
- *
  * @param {string} str The string to escape invisibles for
  * @returns {string} The string with invisibles escaped
  */
@@ -70,7 +69,6 @@ export const escapeInvisibles = (str: string): string =>
 
 /**
  * Gets the row and column matching the index in a string.
- *
  * @param {string} str The string
  * @param {number} index The character index
  * @returns {[number, number] | [null, null]} The position from the index
@@ -115,7 +113,6 @@ export const indexToPosRaw = (
 
 /**
  * Gets the row and column matching the index in a string and formats it.
- *
  * @param {string} str The string
  * @param {number} index The character index
  * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
@@ -127,7 +124,6 @@ export const indexToPos = (str: string, index: number): string => {
 
 /**
  * Get the stringified difference between two JSON strings
- *
  * @param {string} actual Actual JSON string
  * @param {string} expected Expected JSON string
  * @returns {string?} Statement explaining the difference in provided JSON strings
@@ -196,7 +192,6 @@ export class Logger {
 
   /**
    * Construct the logger
-   *
    * @param {string} title Logger title
    * @param {string} path The scope path
    */
@@ -208,7 +203,6 @@ export class Logger {
 
   /**
    * Throw an error
-   *
    * @param {string} message Message string
    * @param {object} options Additional options (ex. actual, expected)
    */
@@ -224,7 +218,6 @@ export class Logger {
 
   /**
    * Throw a warning
-   *
    * @param {string} message Message string
    * @param {object} options Additional options (ex. actual, expected)
    */
@@ -252,7 +245,6 @@ export class Linters {
 
   /**
    * Construct the linters
-   *
    * @param {Linter[]} linters All the linters
    */
   constructor(linters: Linter[]) {
@@ -270,7 +262,6 @@ export class Linters {
 
   /**
    * Run the linters for a specific scope
-   *
    * @param {LinterScope} scope The scope to run
    * @param {LinterData} data The data to lint
    */

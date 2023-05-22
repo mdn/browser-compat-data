@@ -55,7 +55,6 @@ const realValuesRequired: { [category: string]: string[] } = {
 
 /**
  * Test to see if the browser allows for the specified version
- *
  * @param {BrowserName} browser The browser to check
  * @param {string} category The category of the data
  * @param {VersionValue} version The version to test
@@ -84,7 +83,6 @@ const isValidVersion = (
  * Checks if the version number of version_removed is greater than or equal to
  * that of version_added, assuming they are both version strings. If either one
  * is not a valid version string, return null.
- *
  * @param {SimpleSupportStatement} statement The statement to test
  * @returns {(boolean|null)} Whether the version added was earlier than the version removed
  */
@@ -124,7 +122,6 @@ const addedBeforeRemoved = (
 
 /**
  * Check the data for any errors in provided versions
- *
  * @param {SupportBlock} supportData The data to test
  * @param {string} category The category the data
  * @param {Logger} logger The logger to output errors to
@@ -246,7 +243,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

@@ -577,12 +577,14 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4"
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -670,7 +672,7 @@
       "contacts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
-          "spec_url": "https://w3c.github.io/contact-picker/spec/#dom-navigator-contacts",
+          "spec_url": "https://w3c.github.io/contact-picker/#dom-navigator-contacts",
           "support": {
             "chrome": {
               "version_added": false
@@ -838,7 +840,10 @@
             },
             "firefox": {
               "version_added": "9",
-              "notes": "Before Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>yes</code> and <code>no</code> rather than <code>1</code> and <code>0</code>."
+              "notes": [
+                "In Firefox, <code>navigator.doNotTrack</code> returns <code>\"unspecified\"</code> instead of <code>null</code>.",
+                "Before Firefox 32, <code>navigator.doNotTrack</code> would report values of <code>\"yes\"</code> and <code>\"no\"</code> rather than <code>\"1\"</code> and <code>\"0\"</code>."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -956,21 +961,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview"
-              },
-              {
-                "version_added": "110",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.media.autoplay-policy-detection.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "112"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1398,6 +1391,47 @@
           "status": {
             "experimental": true,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "gpu": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/gpu",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#navigator-gpu",
+          "support": {
+            "chrome": {
+              "version_added": "113",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "partial_implementation": true,
+              "notes": "Currently supported on Linux and Windows only."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -2006,7 +2040,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-online-dev",
           "support": {
             "chrome": {
-              "version_added": "1",
+              "version_added": "2",
               "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
             },
             "chrome_android": {
@@ -3970,6 +4004,7 @@
               "version_added": "17"
             },
             "firefox": {
+              "notes": "In Firefox private windows, the <code>serviceWorker</code> object is <code>undefined</code>. See <a href='https://bugzil.la/1320796'>bug 1320796</a>.",
               "version_added": "44"
             },
             "firefox_android": "mirror",
@@ -4022,12 +4057,14 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4"
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

@@ -3,31 +3,19 @@
     "manifest": {
       "action": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action",
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/action",
           "support": {
             "chrome": {
-              "version_added": "88",
-              "notes": [
-                "Available for use in Manifest V3 or later.",
-                "If an extension defines a browser action, it is not allowed to define a page action as well."
-              ]
+              "version_added": "88"
             },
-            "edge": {
-              "version_added": "88",
-              "notes": "Available for use in Manifest V3 or later."
-            },
+            "edge": "mirror",
             "firefox": {
-              "version_added": "101",
-              "notes": [
-                "Available for use in Manifest V3 or later.",
-                "Extension developers can turn on Manifest V3 for testing purposes using the <code>extensions.manifestV3.enabled</code> preference."
-              ]
+              "version_added": "109"
             },
             "firefox_android": "mirror",
             "opera": "mirror",
             "safari": {
-              "version_added": "15.4",
-              "notes": "Available for use in Manifest V3 or later."
+              "version_added": "15.4"
             },
             "safari_ios": "mirror"
           }
@@ -36,11 +24,12 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": "88"
+                "version_added": false
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "101"
+                "version_added": "109",
+                "notes": "Deprecated. See <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/user_interface/Browser_styles'>Browser styles</a> for more details."
               },
               "firefox_android": {
                 "version_added": false
@@ -61,7 +50,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "101"
+                "version_added": "109"
               },
               "firefox_android": {
                 "version_added": false
@@ -90,7 +79,7 @@
                 ]
               },
               "firefox": {
-                "version_added": "101"
+                "version_added": "109"
               },
               "firefox_android": {
                 "version_added": false
@@ -112,7 +101,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "101"
+                "version_added": "109"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -131,10 +120,10 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "101"
+                "version_added": "109"
               },
               "firefox_android": {
-                "version_added": "101",
+                "version_added": "109",
                 "notes": "Browser actions are presented as menu items, and the title is the menu item's label."
               },
               "opera": "mirror",
@@ -153,7 +142,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "101"
+                "version_added": "109"
               },
               "firefox_android": {
                 "version_added": false

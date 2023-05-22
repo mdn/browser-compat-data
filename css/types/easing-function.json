@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;easing-function&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/easing-function",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-easing/#easing-functions",
+          "spec_url": "https://drafts.csswg.org/css-easing/#easing-functions",
           "support": {
             "chrome": {
               "version_added": "4"
@@ -85,20 +85,26 @@
             "description": "<code>linear()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "113"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "104",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.linear-easing-function.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "112"
+                },
+                {
+                  "version_added": "104",
+                  "version_removed": "112",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.linear-easing-function.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -114,7 +120,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

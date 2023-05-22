@@ -10,6 +10,12 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
+## Dictionaries and enumerations (enums)
+
+[Dictionaries](https://webidl.spec.whatwg.org/#idl-dictionaries) and [enumerations (enums)](https://webidl.spec.whatwg.org/#idl-enums) in Web IDL are used in specifications to define a set of properties that may be reused across various interfaces. For web developers, they aren't observable directly; they act as helpers for web browser engineers to avoid internally repeating API definitions. Add dictionary members and enum values to the appropriate methods and properties when needed.
+
+For example, [`ScrollToOptions`](https://drafts.csswg.org/cssom-view/#dictdef-scrolltooptions) is a dictionary defined in the CSSOM View specification. The properties of this dictionary are available to an argument of various methods, including `Element.scroll()`, `Element.scrollTo()`, `Window.scrollBy()` and more. These properties are added to each of the members as [parameter object features](./index.md#parameters-and-parameter-object-features).
+
 ## Mixins
 
 [Interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers for web browser engineers to avoid internally repeating API definitions. Add mixin members directly to the corresponding interface they're exposed on.
@@ -213,6 +219,28 @@ For example, the `ImageData` API has worker support, recorded like this:
 ```
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
+
+## Stringifier attributes (`toString`)
+
+Interfaces may have an attribute with a [`stringifier` keyword](https://webidl.spec.whatwg.org/#idl-stringifiers) in its IDL definition. When the `stringifier` keyword is present on an attribute, a `toString()` method is generated, which returns the value of that attribute. Record both the attribute and the `toString()` method.
+
+For example, the `MediaList` API has a `mediaText` attribute with the `stringifier` keyword (`stringifier attribute [LegacyNullToEmptyString] CSSOMString mediaText;`). Both are recorded like so:
+
+```json
+{
+  "api": {
+    "MediaList": {
+      "__compat": { ... },
+      "mediaText": {
+        "__compat": { ... }
+      },
+      "toString": {
+        "__compat": { ... }
+      }
+    }
+  }
+}
+```
 
 ## APIs moved on the prototype chain
 

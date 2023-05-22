@@ -4,23 +4,28 @@
       "content-visibility": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/content-visibility",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-contain/#content-visibility",
+          "spec_url": "https://drafts.csswg.org/css-contain/#content-visibility",
           "support": {
             "chrome": {
               "version_added": "85"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "109",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.content-visibility.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "109",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.content-visibility.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false

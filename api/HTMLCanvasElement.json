@@ -191,7 +191,7 @@
             "description": "<code>bitmaprenderer</code> context",
             "support": {
               "chrome": {
-                "version_added": "56"
+                "version_added": "66"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -206,7 +206,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "11.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -224,7 +224,7 @@
               "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagebitmaprenderingcontextsettings-alpha",
               "support": {
                 "chrome": {
-                  "version_added": "56"
+                  "version_added": "66"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -239,7 +239,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "11.1"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -474,7 +474,7 @@
               "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "75"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -500,7 +500,7 @@
                 "webview_android": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -667,7 +667,7 @@
               "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#WEBGLCONTEXTATTRIBUTES",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "75"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -693,10 +693,51 @@
                 "webview_android": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
+            }
+          }
+        },
+        "webgpu_context": {
+          "__compat": {
+            "description": "<code>webgpu</code> context",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#canvas-getcontext",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "partial_implementation": true,
+                "notes": "Currently supported on Linux and Windows only."
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         },
@@ -1088,7 +1129,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-canvas-todataurl-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "2"
             },
             "chrome_android": "mirror",
             "edge": {
