@@ -10,8 +10,12 @@
     "feature_name": {
       "type": "string",
       "pattern": "^[a-zA-Z_0-9-$@.]*$",
-      "description": "Dot separated identifier path.\n\n@example \"javascript.builtins.Array.at\"",
-      "examples": ["javascript.builtins.Array.at"]
+      "description": "Dot separated identifier path.\n\n@example \"javascript.builtins.Array.at\""
+    },
+
+    "result_message": {
+      "type": "string",
+      "description": "An error message from the browser or from the test framework.\n\n@example \"threw TypeError: Failed to construct 'Notification': Illegal constructor.\"\n@example \"Testing CanvasRenderingContext2D in workers is not yet implemented\"\n@example \"Browser does not support detection methods\""
     },
 
     "collector_result": {
@@ -20,6 +24,7 @@
           "type": "object",
           "properties": {
             "exposure": { "$ref": "#/definitions/exposure" },
+            "message": { "$ref": "#/definitions/result_message" },
             "name": { "$ref": "#/definitions/feature_name" },
             "result": { "type": "boolean" }
           },
@@ -30,11 +35,7 @@
           "type": "object",
           "properties": {
             "exposure": { "$ref": "#/definitions/exposure" },
-            "message": {
-              "type": "string",
-              "pattern": "^threw .*$|^Testing .* in workers is not yet implemented$|^Browser does not support detection methods$",
-              "description": "Reason a result could not be collected.\n\n@example \"threw TypeError: Failed to construct 'Notification': Illegal constructor.\"\n@example \"Testing CanvasRenderingContext2D in workers is not yet implemented\"\n@example \"Browser does not support detection methods\""
-            },
+            "message": { "$ref": "#/definitions/result_message" },
             "name": { "$ref": "#/definitions/feature_name" },
             "result": { "type": "null" }
           },
@@ -53,10 +54,16 @@
       "pattern": "^[0-9.]+$",
       "description": "Version of mdn-bcd-collector that collected the report."
     },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "results": {
       "type": "object",
       "patternProperties": {
-        "^https://mdn-bcd-collector.appspot.com/tests/.*$": {
+        "^.*://.*$": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/collector_result"
