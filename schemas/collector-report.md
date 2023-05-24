@@ -1,6 +1,6 @@
 # The collector report JSON schema
 
-This document details the structure of reports collected by https://github.com/foolip/mdn-bcd-collector and stored in https://github.com/foolip/mdn-bcd-results.
+This document details the structure of reports collected by https://github.com/GooborgStudios/mdn-bcd-collector and stored in https://github.com/GooborgStudios/mdn-bcd-results.
 
 ## JSON structure
 
@@ -8,7 +8,7 @@ Below is an example of the report data:
 
 ```json
 {
-  "__version": "6.2.7",
+  "__version": "9.3.1",
   "results": {
     "https://mdn-bcd-collector.appspot.com/tests/": [
       {
@@ -32,23 +32,17 @@ Below is an example of the report data:
 
 ### `exposure`
 
-The `exposure` string is a required property. It must be one of four values whether the test was executed in a window (`"Window"`), web worker (`"Worker"`), shared worker (`"SharedWorker"`) or service worker (`"ServiceWorker"`).
+The `exposure` string is a required property. It must be one of four values whether the test was executed in a window (`"Window"`), dedicated worker (`"Worker"`), shared worker (`"SharedWorker"`) or service worker (`"ServiceWorker"`).
 
 ### `message`
 
-The `message` string is a required property if `result` is `null`.
+The `message` string is a required property if `result` is `null` and optional if `result` is a `boolean`.
 
-Some example messages are:
-
-```js
-"threw TypeError: Failed to construct 'Notification': Illegal constructor.";
-'Testing CanvasRenderingContext2D in workers is not yet implemented';
-'Browser does not support detection methods';
-```
+The message can be an error message from the browser or from the test framework, for example "threw TypeError: Failed to construct 'Notification': Illegal constructor." or "Browser does not support detection methods" respectively.
 
 ### `name`
 
-The `name` string is a required property and represents the feature identifier the result is for. The identifier is made of dot-separated elements. For example `"javascript.builtins.Array.at"` points to feature in BCD under `{"javascript": {"builtins": {"Array": {"at": {"__compat": ...}}}}}`.
+The `name` string is a required property and represents the feature identifier the result is for. The identifier is a dot-separated path commonly used in BCD. For example, "javascript.builtins.Array.at" refers to the feature at `{"javascript": {"builtins": {"Array": {"at": {"__compat": ...}}}}}`.
 
 ### `result`
 
@@ -56,11 +50,11 @@ The `result` boolean or `null` value is a required property indicating if the te
 
 ### `__version`
 
-The `__version` string is a required property and the version of https://github.com/foolip/mdn-bcd-collector that collected the report.
+The `__version` string is a required property and the version of mdn-bcd-collector that collected the report.
 
 ### `results`
 
-The `results` object is a required property and maps the collection page endpoint to an array of test results. There must be at least one key in the map. Each key must start with `https://mdn-bcd-collector.appspot.com/tests/`.
+The `results` object is a required property and maps the collection page endpoint to an array of test results. There must be at least one key in the map.
 
 ### `userAgent`
 
