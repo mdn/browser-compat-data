@@ -26,6 +26,10 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
 
+## Namespaces
+
+[Namespaces](https://webidl.spec.whatwg.org/#idl-namespaces) in Web IDL are similar to interfaces. A namespace should only be documented in BCD if it contains properties or methods that would normally be documented. For example, the `console` namespace contains several properties and methods, so it should be documented in BCD. The `GPUBufferUsage` namespace only contains constants, which should not be documented in BCD; thus, the `GPUBufferUsage` namespace should not be documented.
+
 ## Callback interfaces and functions
 
 Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
