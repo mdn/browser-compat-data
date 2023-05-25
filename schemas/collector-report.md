@@ -1,6 +1,6 @@
 # The collector report JSON schema
 
-This document details the structure of reports collected by https://github.com/GooborgStudios/mdn-bcd-collector and stored in https://github.com/GooborgStudios/mdn-bcd-results.
+This document details the structure of reports produced by https://mdn-bcd-collector.appspot.com/, https://mdn-bcd-collector.gooborg.com/, and potentially other tooling.
 
 ## JSON structure
 
@@ -10,7 +10,7 @@ Below is an example of the report data:
 {
   "__version": "9.3.1",
   "results": {
-    "https://mdn-bcd-collector.appspot.com/tests/": [
+    "https://mdn-bcd-collector.example/tests/": [
       {
         "exposure": "ServiceWorker",
         "name": "api.AbortController.AbortController",
