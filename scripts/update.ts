@@ -17,7 +17,7 @@ import {
 import esMain from 'es-main';
 import fs from 'fs-extra';
 import klaw from 'klaw';
-import { Minimatch } from 'minimatch';
+import minimatch from 'minimatch';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -61,6 +61,8 @@ type ManualOverride = [string, string, string, TestResultValue];
 export type Overrides = Array<string | ManualOverride>;
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
+
+const { Minimatch } = minimatch;
 
 const BASE_DIR = new URL('..', import.meta.url);
 
@@ -696,7 +698,7 @@ if (esMain(import.meta)) {
     default: { browsers },
   } = await import(`${BCD_DIR}/index.js`);
   const overrides = await fs.readJson(
-    new URL('custom/overrides.json', MDN_COLLECTOR_DIR),
+    path.join(MDN_COLLECTOR_DIR, 'custom/overrides.json'),
   );
 
   const { argv }: { argv: any } = yargs(hideBin(process.argv)).command(
