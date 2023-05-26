@@ -613,9 +613,9 @@ export const update = (
   return modified;
 };
 
-/* c8 ignore start */
 // |paths| can be files or directories. Returns an object mapping
 // from (absolute) path to the parsed file content.
+/* c8 ignore start */
 export const loadJsonFiles = async (
   paths: string[],
 ): Promise<{ [filename: string]: any }> => {
