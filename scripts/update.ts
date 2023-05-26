@@ -31,36 +31,36 @@ import {
 import logger from '../utils/logger.js';
 import { parseUA } from '../utils/ua-parser.js';
 
-export type Exposure = 'Window' | 'Worker' | 'SharedWorker' | 'ServiceWorker';
+type Exposure = 'Window' | 'Worker' | 'SharedWorker' | 'ServiceWorker';
 
-export type TestResultValue = boolean | null;
+type TestResultValue = boolean | null;
 
-export interface TestResult {
+interface TestResult {
   exposure: Exposure;
   name: string;
   result: TestResultValue;
   message?: string;
 }
 
-export interface TestResults {
+interface TestResults {
   [key: string]: TestResult[];
 }
 
-export interface Report {
+interface Report {
   __version: string;
   results: TestResults;
   userAgent: string;
 }
 
-export type BrowserSupportMap = Map<string, TestResultValue>;
-export type SupportMap = Map<BrowserName, BrowserSupportMap>;
-export type SupportMatrix = Map<string, SupportMap>;
+type BrowserSupportMap = Map<string, TestResultValue>;
+type SupportMap = Map<BrowserName, BrowserSupportMap>;
+type SupportMatrix = Map<string, SupportMap>;
 
 type ManualOverride = [string, string, string, TestResultValue];
 
-export type Overrides = Array<string | ManualOverride>;
+type Overrides = Array<string | ManualOverride>;
 
-export type InternalSupportStatement = SupportStatement | 'mirror';
+type InternalSupportStatement = SupportStatement | 'mirror';
 
 const { Minimatch } = minimatch;
 
