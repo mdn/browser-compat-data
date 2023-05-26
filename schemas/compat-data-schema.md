@@ -314,28 +314,9 @@ Examples:
 
 Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
-### Ranged versions
+### Ranged versions (≤)
 
-For certain browsers, ranged versions are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions should be used sparingly and only when it is impossible to find out the version number a feature initially shipped in. The following ranged version values are allowed:
-
-- Edge
-  - "≤18" (the last EdgeHTML-based Edge and possibly earlier)
-  - "≤79" (the first Chromium-based Edge and possibly in EdgeHTML-based Edge)
-- Internet Explorer
-  - "≤6" (the earliest IE version testable in BrowserStack and possibly earlier)
-  - "≤11" (the last IE version and possibly earlier)
-- Opera
-  - "≤12.1" (the last Presto-based Opera and possibly earlier)
-  - "≤15" (the first Chromium-based Opera and possibly in Presto-based Opera)
-- Opera Android
-  - "≤12.1" (the last Presto-based Opera and possibly earlier)
-  - "≤14" (the first Chromium-based Opera and possibly in Presto-based Opera)
-- Safari
-  - "≤4" (the earliest Safari version testable in BrowserStack and possibly earlier)
-- Safari iOS
-  - "≤3" (the earliest Safari iOS version testable in BrowserStack and possibly earlier)
-- WebView Android
-  - "≤37" (the first Chrome-based WebView and possibly previous Android versions)
+For certain browser versions, ranged versions (also called "ranged values") are allowed as it is sometimes impractical to find out in which early version of a browser a feature shipped. Ranged versions are a way to include some version data in BCD, while also stating the version number may not be accurate. These values state that the feature has been confirmed to be supported in at least a certain version of the browser, but may have been added in an earlier release. Ranged versions are indicated by the `Less Than or Equal To (U+2264)` (`≤`) symbol before the version number.
 
 For example, the statement below means, "supported in at least version 37 and possibly in earlier versions as well".
 
@@ -344,6 +325,8 @@ For example, the statement below means, "supported in at least version 37 and po
   "version_added": "≤37"
 }
 ```
+
+Ranged versions should be used sparingly and only when it is impossible or highly impractical to find out the version number a feature initially shipped in. Ranged versions are allowed for browser releases dating back two years or earlier. Contributors are encouraged to eliminate ranged versions and replace them with exact version numbers whenever possible.
 
 #### `prefix`
 
