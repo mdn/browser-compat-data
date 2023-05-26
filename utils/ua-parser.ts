@@ -12,49 +12,29 @@ import {
 } from 'compare-versions';
 import uaParser from 'ua-parser-js';
 
-import { Browsers } from '../types/types';
+const getMajorVersion = (version) => version.split('.')[0];
 
-interface UserAgentData {
-  browser: {
-    id: string;
-    name: string;
-  };
-  version: string;
-  fullVersion: string;
-  os: {
-    name: string;
-    version: string;
-  };
-  inBcd: boolean | undefined;
-}
-
-/**
- * Get major version of semver string.
- * @param {string} version A semantic version
- * @returns {string} Major version
- */
-const getMajorVersion = (version: string) => version.split('.')[0];
-
-/**
- * Get major and minor verion of a semver string.
- * @param {string} version A semantic version
- * @returns {string} Major and minor version
- */
-const getMajorMinorVersion = (version: string) => {
+const getMajorMinorVersion = (version) => {
   const [major, minor] = version.split('.');
   return `${major}.${minor || 0}`;
 };
 
-/**
- * Parse user agent string.
- * @param {string} userAgent A user agent
- * @param {Browsers} browsers Record of browser ids to BrowserStatement
- * @returns {UserAgentData} Parsed user agent
- */
-const parseUA = (userAgent: string, browsers: Browsers) => {
+const parseUA = (userAgent, browsers) => {
   const ua = uaParser(userAgent);
 
-  const data: UserAgentData = {
+  const data: {
+    browser: {
+      id: string;
+      name: string;
+    };
+    version: string;
+    fullVersion: string;
+    os: {
+      name: string;
+      version: string;
+    };
+    inBcd: boolean | undefined;
+  } = {
     browser: { id: '', name: '' },
     version: '',
     fullVersion: '',

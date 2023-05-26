@@ -9,15 +9,7 @@
 import winston from 'winston';
 import { LoggingWinston } from '@google-cloud/logging-winston';
 
-type LogTransport =
-  | LoggingWinston
-  | winston.transports.ConsoleTransportInstance;
-
-/**
- * Get a winston logging transport.
- * @returns {LogTransport} winston logging transport
- */
-const getTransport = (): LogTransport => {
+const getTransport = () => {
   /* c8 ignore next 3 */
   if (process.env.GOOGLE_APPLICATION_CREDENTIALS) {
     return new LoggingWinston();
