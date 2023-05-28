@@ -7,12 +7,21 @@
           "spec_url": "https://w3c.github.io/csswg-drafts/scroll-animations-1/#view-timeline-axis",
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": "115",
+              "notes": "Supports the <code>x</code> and <code>y</code> values, and not the deprecated <code>horizontal</code> and <code>vertical</code> values."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "111",
+              "notes": "Supports the deprecated <code>horizontal</code> and <code>vertical</code> values, and not the <code>x</code> and <code>y</code> values.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.scroll-driven-animations.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
