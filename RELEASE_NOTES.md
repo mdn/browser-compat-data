@@ -1,5 +1,70 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.60](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.60)
+
+May 30, 2023
+
+### Removals
+
+- `api.SVGAltGlyphDefElement` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `api.SVGAltGlyphElement` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `api.SVGAltGlyphElement.format` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `api.SVGAltGlyphElement.glyphRef` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `api.SVGAltGlyphElement.href` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `api.SVGAltGlyphItemElement` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `html.elements.area.media` ([#19948](https://github.com/mdn/browser-compat-data/pull/19948))
+- `html.elements.bgsound` ([#19655](https://github.com/mdn/browser-compat-data/pull/19655))
+- `html.elements.blink` ([#19658](https://github.com/mdn/browser-compat-data/pull/19658))
+- `html.elements.keygen` ([#19696](https://github.com/mdn/browser-compat-data/pull/19696))
+- `html.elements.spacer` ([#19739](https://github.com/mdn/browser-compat-data/pull/19739))
+- `svg.elements.altGlyph` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.dx` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.dy` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.format` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.glyphRef` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.rotate` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.x` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.xlink_href` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyph.y` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyphDef` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `svg.elements.altGlyphItem` ([#19776](https://github.com/mdn/browser-compat-data/pull/19776))
+- `webextensions.api.tabs.onUpdated.extraParameters` ([#19970](https://github.com/mdn/browser-compat-data/pull/19970))
+- `webextensions.api.tabs.onUpdated.extraParameters.properties.isArticle` ([#19970](https://github.com/mdn/browser-compat-data/pull/19970))
+
+### Additions
+
+- `api.CSSStyleRule.cssRules` ([#19915](https://github.com/mdn/browser-compat-data/pull/19915))
+- `api.CSSStyleRule.deleteRule` ([#19915](https://github.com/mdn/browser-compat-data/pull/19915))
+- `api.CSSStyleRule.insertRule` ([#19915](https://github.com/mdn/browser-compat-data/pull/19915))
+- `api.GPUSupportedFeatures.@@iterator` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.entries` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.forEach` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.has` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.keys` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.size` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.GPUSupportedFeatures.values` ([#19923](https://github.com/mdn/browser-compat-data/pull/19923))
+- `api.RTCStatsReport.@@iterator` ([#19924](https://github.com/mdn/browser-compat-data/pull/19924))
+- `api.ServiceWorker.ecmascript_modules` ([#19835](https://github.com/mdn/browser-compat-data/pull/19835))
+- `api.SharedWorker.SharedWorker.ecmascript_modules` ([#19835](https://github.com/mdn/browser-compat-data/pull/19835))
+- `api.WebTransport.reliability` ([#19926](https://github.com/mdn/browser-compat-data/pull/19926))
+- `api.Worklet.ecmascript_modules` ([#19835](https://github.com/mdn/browser-compat-data/pull/19835))
+- `browsers.edge.releases.115` ([#19963](https://github.com/mdn/browser-compat-data/pull/19963))
+- `browsers.samsunginternet_android.releases.21.0` ([#19964](https://github.com/mdn/browser-compat-data/pull/19964))
+- `css.selectors.lang.argument_list` ([#19957](https://github.com/mdn/browser-compat-data/pull/19957))
+- `css.selectors.lang.wildcards` ([#19957](https://github.com/mdn/browser-compat-data/pull/19957))
+- `javascript.statements.import.service_worker_support` ([#19835](https://github.com/mdn/browser-compat-data/pull/19835))
+- `javascript.statements.import.worklet_support` ([#19835](https://github.com/mdn/browser-compat-data/pull/19835))
+- `webextensions.api.commands.onChanged` ([#19944](https://github.com/mdn/browser-compat-data/pull/19944))
+- `webextensions.api.tabs.onUpdated.filter` ([#19970](https://github.com/mdn/browser-compat-data/pull/19970))
+- `webextensions.api.tabs.onUpdated.filter.properties.isArticle` ([#19970](https://github.com/mdn/browser-compat-data/pull/19970))
+
+### Statistics
+
+- 12 contributors have changed 191 files with 8,457 additions and 8,544 deletions in 76 commits ([`v5.2.59...v5.2.60`](https://github.com/mdn/browser-compat-data/compare/v5.2.59...v5.2.60))
+- 14,773 total features
+- 1,005 total contributors
+- 4,498 total stargazers
+
 ## [v5.2.59](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.59)
 
 May 19, 2023
