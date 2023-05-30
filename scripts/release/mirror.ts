@@ -197,11 +197,11 @@ export const bumpSupport = (
 
   let notesRepl: [RegExp, string] | undefined;
   if (destination === 'edge') {
-    notesRepl = [/Chrome/g, 'Edge'];
+    notesRepl = [/Chrome(?!OS)/g, 'Edge'];
   } else if (destination.includes('opera')) {
-    notesRepl = [/Chrome/g, 'Opera'];
+    notesRepl = [/Chrome(?!OS)/g, 'Opera'];
   } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/Chrome/g, 'Samsung Internet'];
+    notesRepl = [/Chrome(?!OS)/g, 'Samsung Internet'];
   }
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
