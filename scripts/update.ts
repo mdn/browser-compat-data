@@ -4,14 +4,14 @@
 import assert from 'node:assert';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import fs from 'node:fs/promises';
 
 import {
   compare as compareVersions,
   compareVersions as compareVersionsSort,
 } from 'compare-versions';
 import esMain from 'es-main';
-import fs from 'fs-extra';
-import minimatch from 'minimatch';
+import { Minimatch } from 'minimatch';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
@@ -56,8 +56,6 @@ type ManualOverride = [string, string, string, TestResultValue];
 type Overrides = Array<string | ManualOverride>;
 
 type InternalSupportStatement = SupportStatement | 'mirror';
-
-const { Minimatch } = minimatch;
 
 const BASE_DIR = new URL('..', import.meta.url);
 
@@ -610,9 +608,17 @@ export const update = (
   return modified;
 };
 
+/* c8 ignore start */
+/**
+ * Read a file and parse it as JSON.
+ * @param {string} file Path to json file
+ * @returns {Promise<any>} Parsed JSON object
+ */
+const readJson = async (file: string): Promise<any> =>
+  JSON.parse(await fs.readFile(file, 'utf8'));
+
 // |paths| can be files or directories. Returns an object mapping
 // from (absolute) path to the parsed file content.
-/* c8 ignore start */
 export const loadJsonFiles = async (
   paths: string[],
 ): Promise<{ [filename: string]: any }> => {
@@ -633,12 +639,11 @@ export const loadJsonFiles = async (
     }
   }
 
-  const entries = await Promise.all(
-    jsonFiles.map(async (file) => {
-      const data = await fs.readJson(file);
-      return [file, data];
-    }),
-  );
+  const entries: [string, JSON][] = [];
+
+  for (const file of jsonFiles) {
+    entries.push([file, await readJson(file)]);
+  }
 
   return Object.fromEntries(entries);
 };
@@ -690,7 +695,7 @@ if (esMain(import.meta)) {
   const {
     default: { browsers },
   } = await import(`${BCD_DIR}/index.js`);
-  const overrides = await fs.readJson(
+  const overrides = await readJson(
     path.join(MDN_COLLECTOR_DIR, 'custom/overrides.json'),
   );
 
