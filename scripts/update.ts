@@ -1,10 +1,5 @@
-//
-// mdn-bcd-collector: scripts/update-bcd.ts
-// Script to update the BCD data using collected results
-//
-// © Gooborg Studios, Google LLC
-// See the LICENSE file for copyright details
-//
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 import assert from 'node:assert';
 import path from 'node:path';
