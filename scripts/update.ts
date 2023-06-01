@@ -15,6 +15,7 @@ import klaw from 'klaw';
 import minimatch from 'minimatch';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import chalk from 'chalk-template';
 
 import {
   Browsers,
@@ -23,7 +24,6 @@ import {
   Identifier,
   SupportStatement,
 } from '../types/types.js';
-import logger from '../utils/logger.js';
 import { parseUA } from '../utils/ua-parser.js';
 
 type Exposure = 'Window' | 'Worker' | 'SharedWorker' | 'ServiceWorker';
@@ -180,15 +180,17 @@ export const getSupportMatrix = (
     const { browser, version, inBcd } = parseUA(report.userAgent, browsers);
     if (!inBcd) {
       if (inBcd === false) {
-        logger.warn(
-          `Ignoring unknown ${browser.name} version ${version} (${report.userAgent})`,
+        console.warn(
+          chalk`{yellow warn}: Ignoring unknown ${browser.name} version ${version} (${report.userAgent})`,
         );
       } else if (browser.name) {
-        logger.warn(
-          `Ignoring unknown browser ${browser.name} ${version} (${report.userAgent})`,
+        console.warn(
+          chalk`{yellow warn}: Ignoring unknown browser ${browser.name} ${version} (${report.userAgent})`,
         );
       } else {
-        logger.warn(`Unable to parse browser from UA ${report.userAgent}`);
+        console.warn(
+          chalk`{yellow warn}: Unable to parse browser from UA ${report.userAgent}`,
+        );
       }
 
       continue;
@@ -370,8 +372,8 @@ export const update = (
       const inferredStatements = inferSupportStatements(versionMap);
       if (inferredStatements.length !== 1) {
         // TODO: handle more complicated scenarios
-        logger.warn(
-          `${path} skipped for ${browser} due to multiple inferred statements`,
+        console.warn(
+          chalk`{yellow warn}: ${path} skipped for ${browser} due to multiple inferred statements`,
         );
         continue;
       }
@@ -504,8 +506,8 @@ export const update = (
 
       if (defaultStatements.length !== 1) {
         // TODO: handle more complicated scenarios
-        logger.warn(
-          `${path} skipped for ${browser} due to multiple default statements`,
+        console.warn(
+          chalk`{yellow warn}: ${path} skipped for ${browser} due to multiple default statements`,
         );
         continue;
       }
@@ -514,8 +516,8 @@ export const update = (
 
       if (simpleStatement.version_removed) {
         // TODO: handle updating existing added+removed entries.
-        logger.warn(
-          `${path} skipped for ${browser} due to added+removed statement`,
+        console.warn(
+          chalk`{yellow warn}: ${path} skipped for ${browser} due to added+removed statement`,
         );
         continue;
       }
@@ -552,8 +554,8 @@ export const update = (
             '<',
           )
         ) {
-          logger.warn(
-            `${path} skipped for ${browser}; BCD says support was added in a version newer than there are results for`,
+          console.warn(
+            chalk`{yellow warn}: ${path} skipped for ${browser}; BCD says support was added in a version newer than there are results for`,
           );
           continue;
         }
@@ -682,7 +684,7 @@ export const main = async (
     if (!modified) {
       continue;
     }
-    logger.info(`Updating ${path.relative(BCD_DIR, file)}`);
+    console.info(chalk`{green info}: Updating ${path.relative(BCD_DIR, file)}`);
     const json = JSON.stringify(data, null, '  ') + '\n';
     await fs.writeFile(file, json);
   }
