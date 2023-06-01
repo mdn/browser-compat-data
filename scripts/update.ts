@@ -41,7 +41,7 @@ interface TestResults {
   [key: string]: TestResult[];
 }
 
-interface Report {
+export interface Report {
   __version: string;
   results: TestResults;
   userAgent: string;
@@ -51,7 +51,7 @@ type BrowserSupportMap = Map<string, TestResultValue>;
 type SupportMap = Map<BrowserName, BrowserSupportMap>;
 type SupportMatrix = Map<string, SupportMap>;
 
-type ManualOverride = [string, string, string, TestResultValue];
+export type ManualOverride = [string, string, string, TestResultValue];
 
 type Overrides = Array<string | ManualOverride>;
 
@@ -72,6 +72,15 @@ const CATEGORIES = ['api', 'css.properties', 'javascript.builtins'];
 const { default: mirror } = await import(
   `${BCD_DIR}/scripts/release/mirror.js`
 );
+
+export const logger = {
+  warn: (message: string) => {
+    console.warn(chalk`{yellow warn}: ${message}`);
+  },
+  info: (message: string) => {
+    console.info(chalk`{green warn}: ${message}`);
+  },
+};
 
 export const findEntry = (
   bcd: Identifier,
@@ -178,17 +187,15 @@ export const getSupportMatrix = (
     const { browser, version, inBcd } = parseUA(report.userAgent, browsers);
     if (!inBcd) {
       if (inBcd === false) {
-        console.warn(
-          chalk`{yellow warn}: Ignoring unknown ${browser.name} version ${version} (${report.userAgent})`,
+        logger.warn(
+          `Ignoring unknown ${browser.name} version ${version} (${report.userAgent})`,
         );
       } else if (browser.name) {
-        console.warn(
-          chalk`{yellow warn}: Ignoring unknown browser ${browser.name} ${version} (${report.userAgent})`,
+        logger.warn(
+          `Ignoring unknown browser ${browser.name} ${version} (${report.userAgent})`,
         );
       } else {
-        console.warn(
-          chalk`{yellow warn}: Unable to parse browser from UA ${report.userAgent}`,
-        );
+        logger.warn(`Unable to parse browser from UA ${report.userAgent}`);
       }
 
       continue;
@@ -370,8 +377,8 @@ export const update = (
       const inferredStatements = inferSupportStatements(versionMap);
       if (inferredStatements.length !== 1) {
         // TODO: handle more complicated scenarios
-        console.warn(
-          chalk`{yellow warn}: ${path} skipped for ${browser} due to multiple inferred statements`,
+        logger.warn(
+          `${path} skipped for ${browser} due to multiple inferred statements`,
         );
         continue;
       }
@@ -504,8 +511,8 @@ export const update = (
 
       if (defaultStatements.length !== 1) {
         // TODO: handle more complicated scenarios
-        console.warn(
-          chalk`{yellow warn}: ${path} skipped for ${browser} due to multiple default statements`,
+        logger.warn(
+          `${path} skipped for ${browser} due to multiple default statements`,
         );
         continue;
       }
@@ -514,8 +521,8 @@ export const update = (
 
       if (simpleStatement.version_removed) {
         // TODO: handle updating existing added+removed entries.
-        console.warn(
-          chalk`{yellow warn}: ${path} skipped for ${browser} due to added+removed statement`,
+        logger.warn(
+          `${path} skipped for ${browser} due to added+removed statement`,
         );
         continue;
       }
@@ -552,8 +559,8 @@ export const update = (
             '<',
           )
         ) {
-          console.warn(
-            chalk`{yellow warn}: ${path} skipped for ${browser}; BCD says support was added in a version newer than there are results for`,
+          logger.warn(
+            `${path} skipped for ${browser}; BCD says support was added in a version newer than there are results for`,
           );
           continue;
         }
@@ -685,7 +692,7 @@ export const main = async (
     if (!modified) {
       continue;
     }
-    console.info(chalk`{green info}: Updating ${path.relative(BCD_DIR, file)}`);
+    logger.info(`Updating ${path.relative(BCD_DIR, file)}`);
     const json = JSON.stringify(data, null, '  ') + '\n';
     await fs.writeFile(file, json);
   }
