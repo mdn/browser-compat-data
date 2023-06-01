@@ -1,10 +1,5 @@
-//
-// mdn-bcd-collector: lib/logger.ts
-// Logging output module to log to either the console or GAE cloud
-//
-// © Gooborg Studios, Google LLC
-// See the LICENSE file for copyright details
-//
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
 
 import winston from 'winston';
 import { LoggingWinston } from '@google-cloud/logging-winston';
