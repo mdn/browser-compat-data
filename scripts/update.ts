@@ -11,11 +11,11 @@ import {
 } from 'compare-versions';
 import esMain from 'es-main';
 import fs from 'fs-extra';
-import klaw from 'klaw';
 import minimatch from 'minimatch';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
+import { fdir } from 'fdir';
 
 import {
   Browsers,
@@ -616,25 +616,21 @@ export const update = (
 export const loadJsonFiles = async (
   paths: string[],
 ): Promise<{ [filename: string]: any }> => {
-  // Ignores .DS_Store, .git, etc.
-  const dotFilter = (item) => {
-    const basename = path.basename(item);
-    return basename === '.' || basename[0] !== '.';
-  };
+  const jsonCrawler = new fdir()
+    .withFullPaths()
+    .filter((item) => {
+      // Ignores .DS_Store, .git, etc.
+      const basename = path.basename(item);
+      return basename === '.' || basename[0] !== '.';
+    })
+    .filter((item) => item.endsWith('.json'));
 
   const jsonFiles: string[] = [];
 
   for (const p of paths) {
-    await new Promise((resolve, reject) => {
-      klaw(p, { filter: dotFilter })
-        .on('data', (item) => {
-          if (item.path.endsWith('.json')) {
-            jsonFiles.push(item.path);
-          }
-        })
-        .on('error', reject)
-        .on('end', resolve);
-    });
+    for (const item of await jsonCrawler.crawl(p).withPromise()) {
+      jsonFiles.push(item);
+    }
   }
 
   const entries = await Promise.all(
