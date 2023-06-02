@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.61](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.61)
+
+June 2, 2023
+
+### Removals
+
+- `api.WebTransport.createBidirectionalStream.options_sendOrder_parameter` ([#19983](https://github.com/mdn/browser-compat-data/pull/19983))
+- `api.WebTransport.createUnidirectionalStream.options_sendOrder_parameter` ([#19983](https://github.com/mdn/browser-compat-data/pull/19983))
+
+### Additions
+
+- `api.WebTransport.byob_readers` ([#19983](https://github.com/mdn/browser-compat-data/pull/19983))
+- `api.WebTransportDatagramDuplexStream.byob_readers` ([#19983](https://github.com/mdn/browser-compat-data/pull/19983))
+- `css.properties.content.gradient` ([#19896](https://github.com/mdn/browser-compat-data/pull/19896))
+- `css.properties.content.image-set` ([#19896](https://github.com/mdn/browser-compat-data/pull/19896))
+- `javascript.builtins.Date.UTC.optional_monthIndex` ([#19972](https://github.com/mdn/browser-compat-data/pull/19972))
+
+### Statistics
+
+- 8 contributors have changed 14 files with 274 additions and 235 deletions in 10 commits ([`v5.2.60...v5.2.61`](https://github.com/mdn/browser-compat-data/compare/v5.2.60...v5.2.61))
+- 14,776 total features
+- 1,005 total contributors
+- 4,502 total stargazers
+
 ## [v5.2.60](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.60)
 
 May 30, 2023
