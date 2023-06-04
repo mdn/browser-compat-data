@@ -26,7 +26,7 @@ Then, you can import BCD into your project with either `import` or `require()`:
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
-const bcd = await import('@mdn/browser-compat-data', {
+const { default: bcd } = await import('@mdn/browser-compat-data', {
   assert: { type: 'json' },
 });
 
@@ -35,7 +35,7 @@ const bcd = await import('@mdn/browser-compat-data', {
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
 // ...or...
-const bcd = await import('@mdn/browser-compat-data/forLegacyNode');
+const { default: bcd } = await import('@mdn/browser-compat-data/forLegacyNode');
 
 // ...or...
 
@@ -50,9 +50,12 @@ You can import `@mdn/browser-compat-data` using a CDN.
 ```js
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
-const bcd = await import('https://unpkg.com/@mdn/browser-compat-data', {
-  assert: { type: 'json' },
-});
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    assert: { type: 'json' },
+  }
+);
 ```
 
 ### Other Languages
