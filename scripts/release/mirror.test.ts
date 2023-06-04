@@ -154,6 +154,22 @@ describe('mirror', () => {
             'Before Opera 57, this method always returned <code>true</code> even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
         });
       });
+
+      it('ChromeOS is not renamed to EdgeOS, OperaOS, etc.', () => {
+        const support = {
+          chrome: {
+            version_added: '65',
+            notes:
+              'This feature is only supported in ChromeOS, macOS and Linux.',
+          },
+        };
+
+        const mirrored = mirrorSupport('opera', support);
+        assert.deepEqual(mirrored, {
+          version_added: '52',
+          notes: 'This feature is only supported in ChromeOS, macOS and Linux.',
+        });
+      });
     });
 
     describe('Validations', () => {
