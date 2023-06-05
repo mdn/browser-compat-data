@@ -8,6 +8,14 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
+const getTwoYearsAgo = () => {
+  const date = new Date();
+  date.setFullYear(date.getFullYear() - 2);
+  return date;
+};
+
+export const twoYearsAgo = getTwoYearsAgo();
+
 /**
  * @typedef LinterScope
  * @type {('file'|'feature'|'browser'|'tree')}
