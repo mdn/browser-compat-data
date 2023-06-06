@@ -28,7 +28,7 @@ This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-dat
 
 ## Namespaces
 
-[Namespaces](https://webidl.spec.whatwg.org/#idl-namespaces) in Web IDL are similar to interfaces. A namespace should only be documented in BCD if it contains properties or methods that would normally be documented. For example, the `console` namespace contains several properties and methods, so it should be documented in BCD. The `GPUBufferUsage` namespace only contains constants, which should not be documented in BCD; thus, the `GPUBufferUsage` namespace should not be documented.
+[Namespaces](https://webidl.spec.whatwg.org/#idl-namespaces) in Web IDL are similar to interfaces. A namespace should only be documented in BCD if it contains properties or functions that would normally be documented. For example, the `console` namespace contains many functions, so it should be documented in BCD. The `GPUBufferUsage` namespace only contains constants, which should not be documented in BCD; thus, the `GPUBufferUsage` namespace should not be documented.
 
 ## Callback interfaces and functions
 
