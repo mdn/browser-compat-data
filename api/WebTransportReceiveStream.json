@@ -1,31 +1,18 @@
 {
   "api": {
-    "UserProximityEvent": {
+    "WebTransportReceiveStream": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/UserProximityEvent",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream",
+        "spec_url": "https://w3c.github.io/webtransport/#webtransportreceivestream",
         "support": {
           "chrome": {
             "version_added": false
           },
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": [
-            {
-              "version_added": "15",
-              "version_removed": "61"
-            },
-            {
-              "version_added": "62",
-              "version_removed": "89",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "device.sensors.proximity.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "114"
+          },
           "firefox_android": "mirror",
           "ie": {
             "version_added": false
@@ -41,36 +28,24 @@
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": false,
-          "standard_track": false,
-          "deprecated": true
+          "experimental": true,
+          "standard_track": true,
+          "deprecated": false
         }
       },
-      "near": {
+      "getStats": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream/getStats",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportreceivestream-getstats",
           "support": {
             "chrome": {
               "version_added": false
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              },
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "114"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -86,9 +61,9 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }

@@ -67,19 +67,6 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    // Since drafts.csswg.org is down too often, use an alternative canonical URL
-    if (specURL.startsWith('https://drafts.csswg.org')) {
-      logger.error(
-        chalk`Due to how often {bold https://drafts.csswg.org} is down, use {bold https://w3c.github.io/csswg-drafts} instead.`,
-        {
-          tip: chalk`replace {bold ${specURL}} with {bold ${specURL.replace(
-            'drafts.csswg.org',
-            'w3c.github.io/csswg-drafts',
-          )}}`,
-        },
-      );
-    }
-
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
