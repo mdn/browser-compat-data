@@ -1,0 +1,17 @@
+name: PR Needs Rebase
+on:
+  push:
+  pull_request_target:
+    types: [synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write # To add labels and comment on PRs
+
+jobs:
+  idle:
+    uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
+    with:
+      target-repo: "mdn/browser-compat-data"
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

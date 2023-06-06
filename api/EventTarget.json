@@ -1,0 +1,693 @@
+{
+  "api": {
+    "EventTarget": {
+      "__compat": {
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget",
+        "spec_url": "https://dom.spec.whatwg.org/#interface-eventtarget",
+        "support": {
+          "chrome": {
+            "version_added": "1"
+          },
+          "chrome_android": "mirror",
+          "deno": {
+            "version_added": "1.0"
+          },
+          "edge": {
+            "version_added": "12"
+          },
+          "firefox": {
+            "version_added": "1"
+          },
+          "firefox_android": "mirror",
+          "ie": {
+            "version_added": "6"
+          },
+          "nodejs": {
+            "version_added": "14.5.0"
+          },
+          "oculus": "mirror",
+          "opera": {
+            "version_added": "7"
+          },
+          "opera_android": {
+            "version_added": "10.1"
+          },
+          "safari": {
+            "version_added": "1",
+            "notes": "<code>window.EventTarget</code> did not exist on versions of Safari before 10.1."
+          },
+          "safari_ios": {
+            "version_added": "1",
+            "notes": "<code>window.EventTarget</code> did not exist on versions of Safari iOS before 10.3."
+          },
+          "samsunginternet_android": "mirror",
+          "webview_android": {
+            "version_added": "≤37"
+          }
+        },
+        "status": {
+          "experimental": false,
+          "standard_track": true,
+          "deprecated": false
+        }
+      },
+      "EventTarget": {
+        "__compat": {
+          "description": "<code>EventTarget()</code> constructor",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/EventTarget",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-eventtarget-eventtarget①",
+          "support": {
+            "chrome": {
+              "version_added": "64"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "59"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": [
+              {
+                "version_added": "15.0.0"
+              },
+              {
+                "version_added": "14.5.0",
+                "version_removed": "15.0.0",
+                "partial_implementation": true,
+                "notes": "Only available from the <code>events</code> module"
+              }
+            ],
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "addEventListener": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/addEventListener",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-eventtarget-addeventlistener③",
+          "support": {
+            "chrome": {
+              "version_added": "1",
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": "mirror",
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "attachEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method."
+              }
+            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "7"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": "1",
+              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "options_parameter": {
+          "__compat": {
+            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "≤18"
+              },
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "14.5.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "options_capture_parameter": {
+            "__compat": {
+              "description": "<code>options.capture</code> parameter",
+              "spec_url": "https://dom.spec.whatwg.org/#dom-eventlisteneroptions-capture",
+              "support": {
+                "chrome": {
+                  "version_added": "52"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "≤18"
+                },
+                "firefox": {
+                  "version_added": "49"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "14.5.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_once_parameter": {
+            "__compat": {
+              "description": "<code>options.once</code> parameter",
+              "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-once",
+              "support": {
+                "chrome": {
+                  "version_added": "55"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "≤18"
+                },
+                "firefox": {
+                  "version_added": "50"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "14.5.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_passive_parameter": {
+            "__compat": {
+              "description": "<code>options.passive</code> parameter",
+              "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-passive",
+              "support": {
+                "chrome": {
+                  "version_added": "51"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": {
+                  "version_added": "≤18"
+                },
+                "firefox": {
+                  "version_added": "49"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "14.5.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "10"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_passive_parameter_default_true_touch": {
+            "__compat": {
+              "description": "<code>options.passive</code> parameter defaults to <code>true</code> for <code>touchstart</code> and <code>touchmove</code> events",
+              "support": {
+                "chrome": {
+                  "version_added": "55"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": null
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "61"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_passive_parameter_default_true_wheel": {
+            "__compat": {
+              "description": "<code>options.passive</code> parameter defaults to <code>true</code> for <code>wheel</code> and <code>mousewheel</code> events",
+              "support": {
+                "chrome": {
+                  "version_added": "73"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": null
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "84"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_signal_parameter": {
+            "__compat": {
+              "description": "<code>options.signal</code> parameter",
+              "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-signal",
+              "support": {
+                "chrome": {
+                  "version_added": "90"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.0"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "86"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "15"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "useCapture_parameter_optional": {
+          "__compat": {
+            "description": "<code>useCapture</code> parameter is optional",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "6"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": "14.5.0"
+              },
+              "oculus": "mirror",
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "12"
+              },
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "dispatchEvent": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/dispatchEvent",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-eventtarget-dispatchevent③",
+          "support": {
+            "chrome": {
+              "version_added": "4"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "2"
+            },
+            "firefox_android": "mirror",
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "fireEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method."
+              }
+            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "9"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "3.1"
+            },
+            "safari_ios": {
+              "version_added": "3"
+            },
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": "4"
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "removeEventListener": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/removeEventListener",
+          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-eventtarget-removeeventlistener②",
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": "mirror",
+            "ie": [
+              {
+                "version_added": "9"
+              },
+              {
+                "alternative_name": "detachEvent",
+                "version_added": "6",
+                "version_removed": "11",
+                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method."
+              }
+            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "7"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "options_parameter": {
+          "__compat": {
+            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "support": {
+              "chrome": {
+                "version_added": "49"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "≤18"
+              },
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "14.5.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "useCapture_parameter_optional": {
+          "__compat": {
+            "description": "<code>useCapture</code> parameter is optional",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "6"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "9"
+              },
+              "nodejs": {
+                "version_added": "14.5.0"
+              },
+              "oculus": "mirror",
+              "opera": {
+                "version_added": "11.6"
+              },
+              "opera_android": {
+                "version_added": "12"
+              },
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
