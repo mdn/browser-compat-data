@@ -1,5 +1,66 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.62](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.62)
+
+June 6, 2023
+
+### Removals
+
+- `api.DeviceLightEvent` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.DeviceLightEvent.value` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.DeviceProximityEvent` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.DeviceProximityEvent.max` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.DeviceProximityEvent.min` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.DeviceProximityEvent.value` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.UserProximityEvent` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.UserProximityEvent.near` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.WebGL2RenderingContext.commit` ([#20011](https://github.com/mdn/browser-compat-data/pull/20011))
+- `api.WebGLRenderingContext.commit` ([#20011](https://github.com/mdn/browser-compat-data/pull/20011))
+- `api.Window.deviceproximity_event` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+- `api.Window.userproximity_event` ([#20014](https://github.com/mdn/browser-compat-data/pull/20014))
+
+### Additions
+
+- `api.AnimationTimeline.getCurrentTime` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.Element.animate.options_rangeEnd_parameter` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.Element.animate.options_rangeStart_parameter` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ScrollTimeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ScrollTimeline.axis` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ScrollTimeline.ScrollTimeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ScrollTimeline.source` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.SVGFEImageElement.crossOrigin` ([#19999](https://github.com/mdn/browser-compat-data/pull/19999))
+- `api.SVGImageElement.crossOrigin` ([#19999](https://github.com/mdn/browser-compat-data/pull/19999))
+- `api.ViewTimeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ViewTimeline.endOffset` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ViewTimeline.startOffset` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ViewTimeline.subject` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `api.ViewTimeline.ViewTimeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `browsers.deno.releases.1.34` ([#20015](https://github.com/mdn/browser-compat-data/pull/20015))
+- `css.at-rules.keyframes.named_range_keyframes` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.animation-range` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.animation-range-end` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.animation-range-start` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.animation-timeline.view` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.animation.animation-timeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.view-timeline` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.view-timeline-axis` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.view-timeline-inset` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.properties.view-timeline-name` ([#19942](https://github.com/mdn/browser-compat-data/pull/19942))
+- `css.types.line-style` ([#19573](https://github.com/mdn/browser-compat-data/pull/19573))
+- `css.types.overflow` ([#19483](https://github.com/mdn/browser-compat-data/pull/19483))
+- `css.types.overflow.clip` ([#19483](https://github.com/mdn/browser-compat-data/pull/19483))
+- `css.types.overflow.overlay` ([#19483](https://github.com/mdn/browser-compat-data/pull/19483))
+- `svg.elements.feImage.crossorigin` ([#19999](https://github.com/mdn/browser-compat-data/pull/19999))
+- `svg.elements.image.crossorigin` ([#19999](https://github.com/mdn/browser-compat-data/pull/19999))
+- `svg.elements.image.decoding` ([#20038](https://github.com/mdn/browser-compat-data/pull/20038))
+
+### Statistics
+
+- 9 contributors have changed 58 files with 1,348 additions and 916 deletions in 37 commits ([`v5.2.61...v5.2.62`](https://github.com/mdn/browser-compat-data/compare/v5.2.61...v5.2.62))
+- 14,795 total features
+- 1,005 total contributors
+- 4,507 total stargazers
+
 ## [v5.2.61](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.61)
 
 June 2, 2023

@@ -47,18 +47,28 @@
         },
         "block_alignment_values": {
           "__compat": {
-            "description": "Prefixed <code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
+            "description": "<code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
             "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "1"
-              },
+              "chrome": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "prefix": "-moz-",
-                "version_added": "1"
-              },
+              "firefox": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "1"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -68,7 +78,7 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "preview"
+                  "version_added": "≤4"
                 },
                 {
                   "prefix": "-webkit-",
