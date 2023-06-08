@@ -4,7 +4,7 @@
 import assert from 'node:assert';
 
 import sinon from 'sinon';
-import { Minimatch } from 'minimatch';
+import _minimatch from 'minimatch';
 
 import { Browsers, CompatData, Identifier } from '../types/types';
 
@@ -19,6 +19,8 @@ import {
   splitRange,
   update,
 } from './update.js';
+
+const { Minimatch } = _minimatch;
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const chromeAndroid86UaString =
