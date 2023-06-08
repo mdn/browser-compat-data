@@ -280,3 +280,30 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+
+### Static API members
+
+Always append the suffix `_static` to static members of an interface and have a description with text in the form of `<code>json()</code> static method`.
+
+For example, the `Response` interface has both, a prototype and static method called `json()`. The static method is represented as `api.Response.json_static`. It has the description `<code>json()</code> static method`. The prototype method is represented as `api.Response.json` without suffix and without description.
+
+```json
+{
+  "api": {
+    "Response": {
+      "__compat": {},
+      "json": {
+        "__compat": {}
+      },
+      "json_static": {
+        "__compat": {
+          "description": "<code>json()</code> static method",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on a discussion in [#16613](https://github.com/mdn/browser-compat-data/issues/16613).
