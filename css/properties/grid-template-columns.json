@@ -262,8 +262,15 @@
             "spec_url": "https://drafts.csswg.org/css-grid/#subgrids",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
+                "version_added": "114",
+                "impl_url": "https://crbug.com/618969",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
