@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.63](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.63)
+
+June 9, 2023
+
+### Removals
+
+- `css.properties.text-decoration.blink` ([#20056](https://github.com/mdn/browser-compat-data/pull/20056))
+- `html.global_attributes.contenteditable.caret` ([#20071](https://github.com/mdn/browser-compat-data/pull/20071))
+- `html.global_attributes.contenteditable.events` ([#20071](https://github.com/mdn/browser-compat-data/pull/20071))
+- `html.global_attributes.contenteditable.typing` ([#20071](https://github.com/mdn/browser-compat-data/pull/20071))
+
+### Additions
+
+- `html.manifest.shortcuts` ([#20059](https://github.com/mdn/browser-compat-data/pull/20059))
+
+### Statistics
+
+- 7 contributors have changed 39 files with 318 additions and 351 deletions in 28 commits ([`v5.2.62...v5.2.63`](https://github.com/mdn/browser-compat-data/compare/v5.2.62...v5.2.63))
+- 14,792 total features
+- 1,006 total contributors
+- 4,512 total stargazers
+
 ## [v5.2.62](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.62)
 
 June 6, 2023
