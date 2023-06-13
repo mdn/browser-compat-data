@@ -4,6 +4,10 @@
 
 June 13, 2023
 
+### Notable changes
+
+Static methods are now suffixed with `_static`. See [#16613](https://github.com/mdn/browser-compat-data/issues/16613) for more details.
+
 ### Removals
 
 - `api.AbortSignal.abort` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
