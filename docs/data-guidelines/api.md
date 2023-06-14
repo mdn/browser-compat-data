@@ -26,6 +26,10 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
 
+## Namespaces
+
+[Namespaces](https://webidl.spec.whatwg.org/#idl-namespaces) in Web IDL are similar to interfaces. A namespace should only be documented in BCD if it contains properties or functions that would normally be documented. For example, the `console` namespace contains many functions, so it should be documented in BCD. The `GPUBufferUsage` namespace only contains constants, which should not be documented in BCD; thus, the `GPUBufferUsage` namespace should not be documented.
+
 ## Callback interfaces and functions
 
 Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
@@ -276,3 +280,30 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+
+### Static API members
+
+Always append the suffix `_static` to static members of an interface and have a description with text in the form of `<code>json()</code> static method`.
+
+For example, the `Response` interface has both, a prototype and static method called `json()`. The static method is represented as `api.Response.json_static`. It has the description `<code>json()</code> static method`. The prototype method is represented as `api.Response.json` without suffix and without description.
+
+```json
+{
+  "api": {
+    "Response": {
+      "__compat": {},
+      "json": {
+        "__compat": {}
+      },
+      "json_static": {
+        "__compat": {
+          "description": "<code>json()</code> static method",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on a discussion in [#16613](https://github.com/mdn/browser-compat-data/issues/16613).
