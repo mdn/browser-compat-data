@@ -1,5 +1,47 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.66](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.66)
+
+June 20, 2023
+
+### Removals
+
+- `api.AnimationTimeline.getCurrentTime` ([#20158](https://github.com/mdn/browser-compat-data/pull/20158))
+- `api.InstallEvent.activeWorker` ([#20138](https://github.com/mdn/browser-compat-data/pull/20138))
+- `api.Plugin.version` ([#20168](https://github.com/mdn/browser-compat-data/pull/20168))
+- `css.at-rules.page.page` ([#20165](https://github.com/mdn/browser-compat-data/pull/20165))
+- `css.properties.line-height.-moz-block-height` ([#20143](https://github.com/mdn/browser-compat-data/pull/20143))
+- `css.properties.overflow-clip-box` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box-block` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box-inline` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box.shorthand` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.scroll-snap-coordinate` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-destination` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-points-x` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-points-y` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-type-x` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-type-y` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.text-underline-position.above_below` ([#20172](https://github.com/mdn/browser-compat-data/pull/20172))
+- `css.properties.text-underline-position.auto-pos` ([#20173](https://github.com/mdn/browser-compat-data/pull/20173))
+- `css.properties.width.fill` ([#20171](https://github.com/mdn/browser-compat-data/pull/20171))
+
+### Additions
+
+- `api.URLSearchParams.delete.value_parameter` ([#20110](https://github.com/mdn/browser-compat-data/pull/20110))
+- `api.URLSearchParams.has.value_parameter` ([#20110](https://github.com/mdn/browser-compat-data/pull/20110))
+- `browsers.chrome_android.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `browsers.chrome.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `browsers.nodejs.releases.20.2.0` ([#20163](https://github.com/mdn/browser-compat-data/pull/20163))
+- `browsers.webview_android.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `css.properties.timeline-scope` ([#20158](https://github.com/mdn/browser-compat-data/pull/20158))
+
+### Statistics
+
+- 7 contributors have changed 40 files with 311 additions and 1,058 deletions in 29 commits ([`v5.2.65...v5.2.66`](https://github.com/mdn/browser-compat-data/compare/v5.2.65...v5.2.66))
+- 14,797 total features
+- 1,010 total contributors
+- 4,519 total stargazers
+
 ## [v5.2.65](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.65)
 
 June 16, 2023
