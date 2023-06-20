@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.65](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.65)
+
+June 16, 2023
+
+### Additions
+
+- `api.GPU.wgslLanguageFeatures` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.VisibilityStateEntry` ([#20119](https://github.com/mdn/browser-compat-data/pull/20119))
+- `api.WGSLLanguageFeatures` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.@@iterator` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.entries` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.forEach` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.has` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.keys` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.size` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.values` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+
+### Statistics
+
+- 5 contributors have changed 13 files with 792 additions and 236 deletions in 17 commits ([`v5.2.64...v5.2.65`](https://github.com/mdn/browser-compat-data/compare/v5.2.64...v5.2.65))
+- 14,812 total features
+- 1,010 total contributors
+- 4,516 total stargazers
+
 ## [v5.2.64](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.64)
 
 June 13, 2023
