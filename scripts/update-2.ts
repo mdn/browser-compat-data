@@ -536,32 +536,40 @@ const persistRemoved = () =>
   );
 
 const update = (bcd, supportMatrix, filter) => {
-  compose(
+  let modified = false;
+  for (const value of compose(
     expand(function* () {
-      yield state({ bcd, supportMatrix });
+      yield value({ bcd, supportMatrix });
     }),
     expandSupportMatrix(),
     filterPath(filter.path),
     provideEntry(),
     filterEntryExists(),
     expandBrowserMap(),
-
     filterBrowser(filter.browser),
     provideInferredStatements(),
     filterOneInferred(),
     filterRelease(filter.release),
     filterDefaultStatements(),
-
     persistNonDefault(),
     filterDefaultStatements2(),
     filterDefaultRemoved(),
     filterCurrentPreview(),
     filterCurrentBeforeSupport(),
-
     persistInferredRange(),
     persistAddedOverPartial(),
     persistAddedOver(),
     persistRemoved(),
     filterExactOnly(),
-  )();
+  )()) {
+    if (!value.filtered) {
+      const { state } = value;
+      state.support[state.browser] =
+        state.statements.length === 1 ? state.statements[0] : state.statements;
+      modified = true;
+    } else {
+      log.warn(value.filtered.message);
+    }
+  }
+  return modified;
 };
