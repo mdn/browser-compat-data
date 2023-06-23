@@ -1,5 +1,22 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.2.67](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.67)
+
+June 23, 2023
+
+### Removals
+
+- `api.USBPermissionResult` ([#20206](https://github.com/mdn/browser-compat-data/pull/20206))
+- `api.USBPermissionResult.devices` ([#20206](https://github.com/mdn/browser-compat-data/pull/20206))
+- `api.WebTransport.draining` ([#20167](https://github.com/mdn/browser-compat-data/pull/20167))
+
+### Statistics
+
+- 4 contributors have changed 23 files with 133 additions and 180 deletions in 23 commits ([`v5.2.66...v5.2.67`](https://github.com/mdn/browser-compat-data/compare/v5.2.66...v5.2.67))
+- 14,794 total features
+- 1,012 total contributors
+- 4,519 total stargazers
+
 ## [v5.2.66](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.66)
 
 June 20, 2023
