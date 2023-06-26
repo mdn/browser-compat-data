@@ -14,7 +14,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "115",
-              "notes": "<code>Sec-Purpose: prefetch</code> replaces <code>X-moz: prefetch</code>, which was used to indicate a prefetch request in earlier versions. This is incorrectly sent with <code>Accept: */*</code> instead of the accept string used for navigation requests."
+              "notes": "<code>Sec-Purpose: prefetch</code> replaces the non-standard <code>X-moz: prefetch</code> header that was used to indicate a prefetch request in earlier versions. Prefetch requests should also include the header <code>Accept</code> header string for navigations, but <code>Accept: */*</code> is sent instead."
             },
             "firefox_android": "mirror",
             "ie": {
