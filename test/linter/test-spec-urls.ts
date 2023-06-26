@@ -40,11 +40,11 @@ const specsExceptions = [
   'https://wicg.github.io/navigation-api',
 
   // Proposals for WebAssembly
-  'https://github.com/WebAssembly/spec/blob/master/proposals',
-  'https://github.com/WebAssembly/exception-handling/blob/master/proposals',
-  'https://github.com/WebAssembly/extended-const/blob/master/proposals',
-  'https://github.com/WebAssembly/tail-call/blob/master/proposals',
-  'https://github.com/WebAssembly/threads/blob/master/proposal',
+  'https://github.com/WebAssembly/spec/blob/main/proposals',
+  'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
+  'https://github.com/WebAssembly/extended-const/blob/main/proposals',
+  'https://github.com/WebAssembly/tail-call/blob/main/proposals',
+  'https://github.com/WebAssembly/threads/blob/main/proposal',
 ];
 
 const allowedSpecURLs = [

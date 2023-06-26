@@ -21,7 +21,7 @@ const categoriesToCheck = [
   // 'javascript',
   // 'mathml',
   // 'svg',
-  // 'webassembly',
+  'webassembly',
   // 'webdriver',
   // 'webextensions'
 ];
