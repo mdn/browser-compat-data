@@ -38,6 +38,13 @@ const specsExceptions = [
   // Remove once https://github.com/whatwg/html/pull/8502
   // is merged and the new URL is live
   'https://wicg.github.io/navigation-api',
+
+  // Proposals for WebAssembly
+  'https://github.com/WebAssembly/spec/blob/master/proposals',
+  'https://github.com/WebAssembly/exception-handling/blob/master/proposals',
+  'https://github.com/WebAssembly/extended-const/blob/master/proposals',
+  'https://github.com/WebAssembly/tail-call/blob/master/proposals',
+  'https://github.com/WebAssembly/threads/blob/master/proposal',
 ];
 
 const allowedSpecURLs = [
