@@ -49,6 +49,7 @@ const realValuesRequired: { [category: string]: string[] } = {
   svg: [],
   javascript: [...realValuesTargetBrowsers, 'nodejs'],
   mathml: realValuesTargetBrowsers,
+  webassembly: realValuesTargetBrowsers,
   webdriver: realValuesTargetBrowsers,
   webextensions: [],
 };
