@@ -1,5 +1,41 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.0)
+
+June 27, 2023
+
+### Notable changes
+
+In this release, we have added a brand new category for WebAssembly features. This data is based on https://mdn-bcd-collector.gooborg.com/tests/webassembly, which uses https://github.com/GoogleChromeLabs/wasm-feature-detect to detect feature support.
+
+### Removals
+
+- `api.Request.Request.navigate_mode` ([#20193](https://github.com/mdn/browser-compat-data/pull/20193))
+
+### Additions
+
+- `http.headers.Sec-Purpose` ([#20169](https://github.com/mdn/browser-compat-data/pull/20169))
+- `webassembly.BigInt-to-i64-integration` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.bulk-memory-operations` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.exception-handling` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.extended-constant-expressions` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.fixed-width-SIMD` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.multi-value` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.mutable-globals` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.non-trapping-float-to-int-conversions` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.reference-types` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.sign-extension-operations` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.tail-calls` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.threads-and-atomics` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webextensions.api.tabs.onUpdated.changeInfo.autoDiscardable` ([#20211](https://github.com/mdn/browser-compat-data/pull/20211))
+
+### Statistics
+
+- 6 contributors have changed 41 files with 597 additions and 86 deletions in 13 commits ([`v5.2.67...v5.3.0`](https://github.com/mdn/browser-compat-data/compare/v5.2.67...v5.3.0))
+- 14,807 total features
+- 1,012 total contributors
+- 4,523 total stargazers
+
 ## [v5.2.67](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.67)
 
 June 23, 2023
