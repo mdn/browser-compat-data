@@ -28,7 +28,6 @@ const commitAndPR = async (
 ): Promise<void> => {
   exec('git switch main');
   exec('git switch -c release');
-  exec('git add package.json package-lock.json RELEASE_NOTES.md');
 
   if (wait) {
     console.log('');
@@ -40,6 +39,7 @@ const commitAndPR = async (
     console.log('');
   }
 
+  exec('git add package.json package-lock.json RELEASE_NOTES.md');
   exec(`git commit -m "Release ${thisVersion}"`);
   exec('git push --set-upstream origin release');
   exec('gh pr create --fill');
