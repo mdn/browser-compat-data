@@ -7,14 +7,27 @@
           "spec_url": "https://drafts.fxtf.org/motion/#offset-position-property",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/638055'>bug 638055</a>."
+              "version_added": "115",
+              "notes": "The keyword `normal` is not part of the syntax.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1559232'>bug 1559232</a>."
+              "version_added": "115",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.motion-path-offset-position.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
