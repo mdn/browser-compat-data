@@ -59,6 +59,7 @@ export default (await load(
   'javascript',
   'mathml',
   'svg',
+  'webassembly',
   'webdriver',
   'webextensions',
 )) as CompatData;
