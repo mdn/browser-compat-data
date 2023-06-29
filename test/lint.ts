@@ -104,6 +104,7 @@ const main = async (
     'svg',
     'javascript',
     'mathml',
+    'webassembly',
     'webdriver',
     'webextensions',
   ],
