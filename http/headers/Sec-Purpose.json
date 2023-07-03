@@ -1,0 +1,44 @@
+{
+  "http": {
+    "headers": {
+      "Sec-Purpose": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-Purpose",
+          "spec_url": "https://fetch.spec.whatwg.org/#sec-purpose-header",
+          "support": {
+            "chrome": {
+              "version_added": false,
+              "notes": "Chrome uses the legacy <code>Purpose: prefetch</code> header to indicate a request is a prefetch. See <a href='https://crbug.com/1358419'>bug 1358419</a>."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "115",
+              "notes": "<code>Sec-Purpose: prefetch</code> replaces the non-standard <code>X-moz: prefetch</code> header that was used to indicate a prefetch request in earlier versions. Prefetch requests should also include the header <code>Accept</code> header string for navigations, but <code>Accept: */*</code> is sent instead."
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": {
+              "version_added": false
+            },
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
