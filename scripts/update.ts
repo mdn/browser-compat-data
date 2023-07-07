@@ -11,7 +11,7 @@ import {
   compareVersions as compareVersionsSort,
 } from 'compare-versions';
 import esMain from 'es-main';
-import _minimatch from 'minimatch';
+import { Minimatch } from 'minimatch';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
@@ -25,8 +25,6 @@ import {
   SupportStatement,
 } from '../types/types.js';
 import { parseUA } from '../utils/ua-parser.js';
-
-const { Minimatch } = _minimatch;
 
 type Exposure = 'Window' | 'Worker' | 'SharedWorker' | 'ServiceWorker';
 
