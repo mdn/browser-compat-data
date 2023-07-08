@@ -1,5 +1,43 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.1)
+
+July 7, 2023
+
+### Removals
+
+- `api.Navigator.registerProtocolHandler.title_parameter_required` ([#20268](https://github.com/mdn/browser-compat-data/pull/20268))
+
+### Additions
+
+- `api.CredentialsContainer.get.otp_option` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `api.CustomElementRegistry.getName` ([#20186](https://github.com/mdn/browser-compat-data/pull/20186))
+- `api.GPU.requestAdapter.discrete_adapter_default_ac` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `api.GPURenderBundleEncoder.setVertexBuffer.unset_vertex_buffer` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `api.GPURenderPassEncoder.setVertexBuffer.unset_vertex_buffer` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `browsers.chrome_android.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome_android.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.116` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.webview_android.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.webview_android.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `css.properties.animation-duration.auto` ([#20132](https://github.com/mdn/browser-compat-data/pull/20132))
+- `html.global_attributes.autocomplete.one-time-code` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `http.headers.Permissions-Policy.otp-credentials` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `webextensions.api.declarativeNetRequest.RuleCondition.isUrlFilterCaseSensitive` ([#20130](https://github.com/mdn/browser-compat-data/pull/20130))
+- `webextensions.manifest.optional_permissions.devtools` ([#20107](https://github.com/mdn/browser-compat-data/pull/20107))
+- `webextensions.manifest.permissions.devtools` ([#20107](https://github.com/mdn/browser-compat-data/pull/20107))
+
+### Statistics
+
+- 16 contributors have changed 60 files with 4,570 additions and 594 deletions in 52 commits ([`v5.3.0...v5.3.1`](https://github.com/mdn/browser-compat-data/compare/v5.3.0...v5.3.1))
+- 14,817 total features
+- 1,017 total contributors
+- 4,530 total stargazers
+
 ## [v5.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.0)
 
 June 27, 2023
