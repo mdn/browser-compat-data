@@ -11,7 +11,7 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
 1. [Ways to contribute](#ways-to-contribute)
    1. [Updating the compat data](#updating-the-compat-data)
    1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
-1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
+1. [Opening pull requests](#opening-pull-requests)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
    1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 1. [Getting help](#getting-help)
@@ -110,7 +110,7 @@ If you're going to submit a pull request modifying the compat data, we highly re
 
 When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](./matching-browser-releases/index.md).
 
-## Opening issues and pull requests
+## Opening pull requests
 
 Before submitting your pull request, [validate your new data against the schema](testing.md).
 
