@@ -170,7 +170,7 @@ const checkVersions = (
         if (!isValidVersion(browser, category, version)) {
           logger.error(
             chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${Object.keys(
-              browsers[browser],
+              browsers[browser].releases,
             ).join(', ')}`,
             { tip: browserTips[browser] },
           );
