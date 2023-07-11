@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.2)
+
+July 11, 2023
+
+### Additions
+
+- `browsers.deno.releases.1.35` ([#20295](https://github.com/mdn/browser-compat-data/pull/20295))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 612 additions and 833 deletions in 15 commits ([`v5.3.1...v5.3.2`](https://github.com/mdn/browser-compat-data/compare/v5.3.1...v5.3.2))
+- 14,817 total features
+- 1,018 total contributors
+- 4,532 total stargazers
+
 ## [v5.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.1)
 
 July 7, 2023
