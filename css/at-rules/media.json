@@ -1307,7 +1307,15 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "impl_url": "https://crbug.com/1424879"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1330,7 +1338,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/175497"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
