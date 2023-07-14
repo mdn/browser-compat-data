@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.3)
+
+July 14, 2023
+
+### Removals
+
+- `css.properties.column-width.intrinsic_sizes` ([#20338](https://github.com/mdn/browser-compat-data/pull/20338))
+
+### Statistics
+
+- 4 contributors have changed 6 files with 179 additions and 381 deletions in 8 commits ([`v5.3.2...v5.3.3`](https://github.com/mdn/browser-compat-data/compare/v5.3.2...v5.3.3))
+- 14,816 total features
+- 1,018 total contributors
+- 4,536 total stargazers
+
 ## [v5.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.2)
 
 July 11, 2023
