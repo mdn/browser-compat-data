@@ -8,7 +8,6 @@
           "support": {
             "chrome": {
               "version_added": "115",
-              "notes": "The keyword `normal` is not part of the syntax.",
               "flags": [
                 {
                   "type": "preference",
@@ -20,7 +19,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "115",
+              "version_added": "116",
               "flags": [
                 {
                   "type": "preference",
@@ -47,6 +46,46 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "normal-support": {
+          "__compat": {
+            "description": "Support for <code>normal</code> keyword value",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.motion-path-offset-position.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }
