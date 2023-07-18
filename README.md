@@ -153,6 +153,10 @@ Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, inclu
 - `attributes` - Attributes
 - `elements` - Elements
 
+### [`webassembly`](webassembly)
+
+Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
+
 ### [`webdriver`](webdriver)
 
 Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.

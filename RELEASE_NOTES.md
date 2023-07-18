@@ -1,5 +1,475 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.4)
+
+July 18, 2023
+
+### Additions
+
+- `webextensions.api.action.getUserSettings` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+- `webextensions.api.action.getUserSettings.returns_userSettings_isOnToolbar_property` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+
+### Statistics
+
+- 3 contributors have changed 3 files with 155 additions and 133 deletions in 7 commits ([`v5.3.3...v5.3.4`](https://github.com/mdn/browser-compat-data/compare/v5.3.3...v5.3.4))
+- 14,818 total features
+- 1,018 total contributors
+- 4,541 total stargazers
+
+## [v5.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.3)
+
+July 14, 2023
+
+### Removals
+
+- `css.properties.column-width.intrinsic_sizes` ([#20338](https://github.com/mdn/browser-compat-data/pull/20338))
+
+### Statistics
+
+- 4 contributors have changed 6 files with 179 additions and 381 deletions in 8 commits ([`v5.3.2...v5.3.3`](https://github.com/mdn/browser-compat-data/compare/v5.3.2...v5.3.3))
+- 14,816 total features
+- 1,018 total contributors
+- 4,536 total stargazers
+
+## [v5.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.2)
+
+July 11, 2023
+
+### Additions
+
+- `browsers.deno.releases.1.35` ([#20295](https://github.com/mdn/browser-compat-data/pull/20295))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 612 additions and 833 deletions in 15 commits ([`v5.3.1...v5.3.2`](https://github.com/mdn/browser-compat-data/compare/v5.3.1...v5.3.2))
+- 14,817 total features
+- 1,018 total contributors
+- 4,532 total stargazers
+
+## [v5.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.1)
+
+July 7, 2023
+
+### Removals
+
+- `api.Navigator.registerProtocolHandler.title_parameter_required` ([#20268](https://github.com/mdn/browser-compat-data/pull/20268))
+
+### Additions
+
+- `api.CredentialsContainer.get.otp_option` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `api.CustomElementRegistry.getName` ([#20186](https://github.com/mdn/browser-compat-data/pull/20186))
+- `api.GPU.requestAdapter.discrete_adapter_default_ac` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `api.GPURenderBundleEncoder.setVertexBuffer.unset_vertex_buffer` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `api.GPURenderPassEncoder.setVertexBuffer.unset_vertex_buffer` ([#20281](https://github.com/mdn/browser-compat-data/pull/20281))
+- `browsers.chrome_android.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome_android.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.chrome.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.116` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.edge.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.webview_android.releases.117` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `browsers.webview_android.releases.118` ([#20257](https://github.com/mdn/browser-compat-data/pull/20257))
+- `css.properties.animation-duration.auto` ([#20132](https://github.com/mdn/browser-compat-data/pull/20132))
+- `html.global_attributes.autocomplete.one-time-code` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `http.headers.Permissions-Policy.otp-credentials` ([#20101](https://github.com/mdn/browser-compat-data/pull/20101))
+- `webextensions.api.declarativeNetRequest.RuleCondition.isUrlFilterCaseSensitive` ([#20130](https://github.com/mdn/browser-compat-data/pull/20130))
+- `webextensions.manifest.optional_permissions.devtools` ([#20107](https://github.com/mdn/browser-compat-data/pull/20107))
+- `webextensions.manifest.permissions.devtools` ([#20107](https://github.com/mdn/browser-compat-data/pull/20107))
+
+### Statistics
+
+- 16 contributors have changed 60 files with 4,570 additions and 594 deletions in 52 commits ([`v5.3.0...v5.3.1`](https://github.com/mdn/browser-compat-data/compare/v5.3.0...v5.3.1))
+- 14,817 total features
+- 1,017 total contributors
+- 4,530 total stargazers
+
+## [v5.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.0)
+
+June 27, 2023
+
+### Notable changes
+
+In this release, we have added a brand new category for WebAssembly features. This data is based on https://mdn-bcd-collector.gooborg.com/tests/webassembly, which uses https://github.com/GoogleChromeLabs/wasm-feature-detect to detect feature support.
+
+### Removals
+
+- `api.Request.Request.navigate_mode` ([#20193](https://github.com/mdn/browser-compat-data/pull/20193))
+
+### Additions
+
+- `http.headers.Sec-Purpose` ([#20169](https://github.com/mdn/browser-compat-data/pull/20169))
+- `webassembly.BigInt-to-i64-integration` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.bulk-memory-operations` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.exception-handling` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.extended-constant-expressions` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.fixed-width-SIMD` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.multi-value` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.mutable-globals` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.non-trapping-float-to-int-conversions` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.reference-types` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.sign-extension-operations` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.tail-calls` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webassembly.threads-and-atomics` ([#20136](https://github.com/mdn/browser-compat-data/pull/20136))
+- `webextensions.api.tabs.onUpdated.changeInfo.autoDiscardable` ([#20211](https://github.com/mdn/browser-compat-data/pull/20211))
+
+### Statistics
+
+- 6 contributors have changed 41 files with 597 additions and 86 deletions in 13 commits ([`v5.2.67...v5.3.0`](https://github.com/mdn/browser-compat-data/compare/v5.2.67...v5.3.0))
+- 14,807 total features
+- 1,012 total contributors
+- 4,523 total stargazers
+
+## [v5.2.67](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.67)
+
+June 23, 2023
+
+### Removals
+
+- `api.USBPermissionResult` ([#20206](https://github.com/mdn/browser-compat-data/pull/20206))
+- `api.USBPermissionResult.devices` ([#20206](https://github.com/mdn/browser-compat-data/pull/20206))
+- `api.WebTransport.draining` ([#20167](https://github.com/mdn/browser-compat-data/pull/20167))
+
+### Statistics
+
+- 4 contributors have changed 23 files with 133 additions and 180 deletions in 23 commits ([`v5.2.66...v5.2.67`](https://github.com/mdn/browser-compat-data/compare/v5.2.66...v5.2.67))
+- 14,794 total features
+- 1,012 total contributors
+- 4,519 total stargazers
+
+## [v5.2.66](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.66)
+
+June 20, 2023
+
+### Removals
+
+- `api.AnimationTimeline.getCurrentTime` ([#20158](https://github.com/mdn/browser-compat-data/pull/20158))
+- `api.InstallEvent.activeWorker` ([#20138](https://github.com/mdn/browser-compat-data/pull/20138))
+- `api.Plugin.version` ([#20168](https://github.com/mdn/browser-compat-data/pull/20168))
+- `css.at-rules.page.page` ([#20165](https://github.com/mdn/browser-compat-data/pull/20165))
+- `css.properties.line-height.-moz-block-height` ([#20143](https://github.com/mdn/browser-compat-data/pull/20143))
+- `css.properties.overflow-clip-box` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box-block` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box-inline` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.overflow-clip-box.shorthand` ([#20148](https://github.com/mdn/browser-compat-data/pull/20148))
+- `css.properties.scroll-snap-coordinate` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-destination` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-points-x` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-points-y` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-type-x` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.scroll-snap-type-y` ([#20146](https://github.com/mdn/browser-compat-data/pull/20146))
+- `css.properties.text-underline-position.above_below` ([#20172](https://github.com/mdn/browser-compat-data/pull/20172))
+- `css.properties.text-underline-position.auto-pos` ([#20173](https://github.com/mdn/browser-compat-data/pull/20173))
+- `css.properties.width.fill` ([#20171](https://github.com/mdn/browser-compat-data/pull/20171))
+
+### Additions
+
+- `api.URLSearchParams.delete.value_parameter` ([#20110](https://github.com/mdn/browser-compat-data/pull/20110))
+- `api.URLSearchParams.has.value_parameter` ([#20110](https://github.com/mdn/browser-compat-data/pull/20110))
+- `browsers.chrome_android.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `browsers.chrome.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `browsers.nodejs.releases.20.2.0` ([#20163](https://github.com/mdn/browser-compat-data/pull/20163))
+- `browsers.webview_android.releases.116` ([#20159](https://github.com/mdn/browser-compat-data/pull/20159))
+- `css.properties.timeline-scope` ([#20158](https://github.com/mdn/browser-compat-data/pull/20158))
+
+### Statistics
+
+- 7 contributors have changed 40 files with 311 additions and 1,058 deletions in 29 commits ([`v5.2.65...v5.2.66`](https://github.com/mdn/browser-compat-data/compare/v5.2.65...v5.2.66))
+- 14,797 total features
+- 1,010 total contributors
+- 4,519 total stargazers
+
+## [v5.2.65](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.65)
+
+June 16, 2023
+
+### Additions
+
+- `api.GPU.wgslLanguageFeatures` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.VisibilityStateEntry` ([#20119](https://github.com/mdn/browser-compat-data/pull/20119))
+- `api.WGSLLanguageFeatures` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.@@iterator` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.entries` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.forEach` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.has` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.keys` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.size` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+- `api.WGSLLanguageFeatures.values` ([#20111](https://github.com/mdn/browser-compat-data/pull/20111))
+
+### Statistics
+
+- 5 contributors have changed 13 files with 792 additions and 236 deletions in 17 commits ([`v5.2.64...v5.2.65`](https://github.com/mdn/browser-compat-data/compare/v5.2.64...v5.2.65))
+- 14,812 total features
+- 1,010 total contributors
+- 4,516 total stargazers
+
+## [v5.2.64](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.64)
+
+June 13, 2023
+
+### Notable changes
+
+Static methods are now suffixed with `_static`. See [#16613](https://github.com/mdn/browser-compat-data/issues/16613) for more details.
+
+### Removals
+
+- `api.AbortSignal.abort` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AbortSignal.abort.reason_parameter` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AbortSignal.timeout` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AudioDecoder.isConfigSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AudioEncoder.isConfigSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BarcodeDetector.getSupportedFormats` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.canonicalUUID` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getCharacteristic` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getDescriptor` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getService` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Credential.isConditionalMediationAvailable` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CropTarget.fromElement` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ch` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cm` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqb` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqh` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqmax` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqmin` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqw` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.deg` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dpcm` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dpi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dppx` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvb` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvh` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvmax` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvmin` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvw` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.em` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.escape` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ex` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.fr` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.grad` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.highlights` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.Hz` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.in` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.kHz` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvb` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvh` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvmax` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvmin` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvw` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.mm` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ms` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.number` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.paintWorklet` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.pc` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.percent` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.pt` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.px` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.Q` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.rad` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.registerProperty` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.rem` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.s` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.supports` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svb` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svh` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svmax` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svmin` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svw` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.turn` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vb` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vh` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vi` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vmax` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vmin` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vw` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSNumericValue.parse` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSStyleValue.parse` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSStyleValue.parseAll` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DeviceMotionEvent.requestPermission` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DeviceOrientationEvent.requestPermission` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromFloat32Array` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromFloat64Array` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromMatrix` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromFloat32Array` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromFloat64Array` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromMatrix` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMPoint.fromPoint` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMPointReadOnly.fromPoint` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMQuad.fromQuad` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMQuad.fromRect` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMRect.fromRect` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMRectReadOnly.fromRect` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.HTMLScriptElement.supports` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.bound` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.lowerBound` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.only` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.upperBound` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IdleDetector.requestPermission` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.ImageDecoder.isTypeSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaRecorder.isTypeSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaSource.canConstructInDedicatedWorker` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaSource.isTypeSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.maxActions` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.permission` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.requestPermission` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PerformanceObserver.supportedEntryTypes` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PublicKeyCredential.isConditionalMediationAvailable` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PushManager.supportedContentEncodings` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Response.error` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Response.redirect` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCPeerConnection.generateCertificate` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCRtpReceiver.getCapabilities` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCRtpSender.getCapabilities` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Sanitizer.getDefaultConfiguration` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.URL.createObjectURL` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.URL.revokeObjectURL` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.VideoDecoder.isConfigSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.VideoEncoder.isConfigSupported` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.XRWebGLLayer.getNativeFramebufferScaleFactor` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+
+### Additions
+
+- `api.AbortSignal.abort_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AbortSignal.abort_static.reason_parameter` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AbortSignal.timeout_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AudioDecoder.isConfigSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.AudioEncoder.isConfigSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BarcodeDetector.getSupportedFormats_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.canonicalUUID_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getCharacteristic_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getDescriptor_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.BluetoothUUID.getService_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Credential.isConditionalMediationAvailable_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CropTarget.fromElement_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ch_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cm_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqb_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqh_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqmax_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqmin_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.cqw_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.deg_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dpcm_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dpi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dppx_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvb_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvh_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvmax_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvmin_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.dvw_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.em_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.escape_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ex_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.fr_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.grad_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.highlights_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.Hz_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.in_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.kHz_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvb_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvh_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvmax_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvmin_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.lvw_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.mm_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.ms_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.number_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.paintWorklet_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.pc_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.percent_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.pt_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.px_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.Q_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.rad_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.registerProperty_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.rem_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.s_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.supports_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svb_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svh_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svmax_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svmin_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.svw_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.turn_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vb_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vh_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vi_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vmax_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vmin_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSS.vw_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSNumericValue.parse_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSStyleValue.parse_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.CSSStyleValue.parseAll_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DeviceMotionEvent.requestPermission_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DeviceOrientationEvent.requestPermission_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromFloat32Array_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromFloat64Array_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrix.fromMatrix_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromFloat32Array_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromFloat64Array_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMMatrixReadOnly.fromMatrix_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMPoint.fromPoint_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMPointReadOnly.fromPoint_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMQuad.fromQuad_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMQuad.fromRect_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMRect.fromRect_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.DOMRectReadOnly.fromRect_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.HTMLScriptElement.supports_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.bound_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.lowerBound_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.only_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IDBKeyRange.upperBound_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.IdleDetector.requestPermission_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.ImageDecoder.isTypeSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaRecorder.isTypeSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaSource.canConstructInDedicatedWorker_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.MediaSource.isTypeSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.maxActions_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.permission_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Notification.requestPermission_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PerformanceObserver.supportedEntryTypes_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PublicKeyCredential.isConditionalMediationAvailable_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.PushManager.supportedContentEncodings_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Response.error_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Response.json_static` ([#20083](https://github.com/mdn/browser-compat-data/pull/20083))
+- `api.Response.redirect_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCPeerConnection.generateCertificate_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCRtpReceiver.getCapabilities_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.RTCRtpSender.getCapabilities_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.Sanitizer.getDefaultConfiguration_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.URL.canParse_static` ([#20093](https://github.com/mdn/browser-compat-data/pull/20093))
+- `api.URL.createObjectURL_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.URL.revokeObjectURL_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.VideoDecoder.isConfigSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.VideoEncoder.isConfigSupported_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `api.XRWebGLLayer.getNativeFramebufferScaleFactor_static` ([#20063](https://github.com/mdn/browser-compat-data/pull/20063))
+- `browsers.safari_ios.releases.17` ([#20064](https://github.com/mdn/browser-compat-data/pull/20064))
+- `browsers.safari.releases.17` ([#20064](https://github.com/mdn/browser-compat-data/pull/20064))
+- `http.headers.Access-Control-Allow-Headers.authorization_not_covered_by_wildcard` ([#20092](https://github.com/mdn/browser-compat-data/pull/20092))
+- `javascript.builtins.Intl.DurationFormat` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.Intl.DurationFormat.DurationFormat` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.Intl.DurationFormat.format` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.Intl.DurationFormat.formatToParts` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.Intl.DurationFormat.resolvedOptions` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.Intl.DurationFormat.supportedLocalesOf` ([#15033](https://github.com/mdn/browser-compat-data/pull/15033))
+- `javascript.builtins.RegExp.unicodeSets` ([#20091](https://github.com/mdn/browser-compat-data/pull/20091))
+
+### Statistics
+
+- 16 contributors have changed 89 files with 1,071 additions and 348 deletions in 26 commits ([`v5.2.63...v5.2.64`](https://github.com/mdn/browser-compat-data/compare/v5.2.63...v5.2.64))
+- 14,802 total features
+- 1,009 total contributors
+- 4,511 total stargazers
+
 ## [v5.2.63](https://github.com/mdn/browser-compat-data/releases/tag/v5.2.63)
 
 June 9, 2023

@@ -44,6 +44,46 @@
             "deprecated": false
           }
         },
+        "authorization_not_covered_by_wildcard": {
+          "__compat": {
+            "description": "<code>Authorization</code> header is not covered by wildcard",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "115",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.cors_preflight.authorization_covered_by_wildcard",
+                    "value_to_set": "false"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "wildcard": {
           "__compat": {
             "description": "Wildcard (<code>*</code>)",

@@ -35,6 +35,8 @@ const compatDataTypes = {
   mathml:
     'Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.',
   svg: 'Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG) elements, attributes, and global attributes.',
+  webassembly:
+    'Contains data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.',
   webdriver:
     'Contains data for [WebDriver](https://developer.mozilla.org/docs/Web/WebDriver) commands.',
   webextensions:
