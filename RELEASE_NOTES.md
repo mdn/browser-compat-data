@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.4)
+
+July 18, 2023
+
+### Additions
+
+- `webextensions.api.action.getUserSettings` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+- `webextensions.api.action.getUserSettings.returns_userSettings_isOnToolbar_property` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+
+### Statistics
+
+- 3 contributors have changed 3 files with 155 additions and 133 deletions in 7 commits ([`v5.3.3...v5.3.4`](https://github.com/mdn/browser-compat-data/compare/v5.3.3...v5.3.4))
+- 14,818 total features
+- 1,018 total contributors
+- 4,541 total stargazers
+
 ## [v5.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.3)
 
 July 14, 2023
