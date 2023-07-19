@@ -37,7 +37,7 @@ For Node.js, new versions may be added if:
 
 - The Node.js version includes a V8 engine bump
 - It is a major semver bump (ex. v19 -> v20)
-- Support has changed for feature tracked in BCD (ex. if Node.js v14.3.0 supports a new JavaScript builtin, but the V8 engine is the same version)
+- Support has changed for feature tracked in BCD (ex. if Node.js v14.3.0 supports a new Web API builtin, but the V8 engine is the same version)
 
 To add a new Node.js release:
 
