@@ -1,5 +1,61 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.5)
+
+July 21, 2023
+
+### Removals
+
+- `javascript.builtins.Temporal.now` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.instant` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.plainDate` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.plainDateISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.plainDateTime` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.plainDateTimeISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.timeZone` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.zonedDateTime` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.now.zonedDateTimeISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+
+### Additions
+
+- `api.GPUAdapter.requestDevice.lost_device_on_duplicate` ([#20365](https://github.com/mdn/browser-compat-data/pull/20365))
+- `api.GPUDevice.importExternalTexture.videoframe_source` ([#20365](https://github.com/mdn/browser-compat-data/pull/20365))
+- `api.GPUPipelineError.GPUPipelineError.message_optional` ([#20365](https://github.com/mdn/browser-compat-data/pull/20365))
+- `api.GPUQueue.copyExternalImageToTexture.videoframe_source` ([#20365](https://github.com/mdn/browser-compat-data/pull/20365))
+- `css.properties.offset-position.normal` ([#20250](https://github.com/mdn/browser-compat-data/pull/20250))
+- `javascript.builtins.Temporal.Now` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.instant` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.plainDate` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.plainDateISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.plainDateTime` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.plainDateTimeISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.timeZone` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.zonedDateTime` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+- `javascript.builtins.Temporal.Now.zonedDateTimeISO` ([#20355](https://github.com/mdn/browser-compat-data/pull/20355))
+
+### Statistics
+
+- 8 contributors have changed 34 files with 430 additions and 173 deletions in 18 commits ([`v5.3.4...v5.3.5`](https://github.com/mdn/browser-compat-data/compare/v5.3.4...v5.3.5))
+- 14,823 total features
+- 1,018 total contributors
+- 4,543 total stargazers
+
+## [v5.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.4)
+
+July 18, 2023
+
+### Additions
+
+- `webextensions.api.action.getUserSettings` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+- `webextensions.api.action.getUserSettings.returns_userSettings_isOnToolbar_property` ([#20244](https://github.com/mdn/browser-compat-data/pull/20244))
+
+### Statistics
+
+- 3 contributors have changed 3 files with 155 additions and 133 deletions in 7 commits ([`v5.3.3...v5.3.4`](https://github.com/mdn/browser-compat-data/compare/v5.3.3...v5.3.4))
+- 14,818 total features
+- 1,018 total contributors
+- 4,541 total stargazers
+
 ## [v5.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.3)
 
 July 14, 2023
