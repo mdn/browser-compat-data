@@ -467,7 +467,11 @@
                 "version_added": "47",
                 "notes": "Firefox 47 and later support <code>display-mode</code> values <code>fullscreen</code> and <code>browser</code>. Firefox 57 added support for <code>minimal-ui</code> and <code>standalone</code> values."
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "47",
+                "partial_implementation": true,
+                "notes": "Only supports the <code>browser</code> value, which always reports <code>true</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -971,7 +975,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1006,7 +1010,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1480,14 +1484,14 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1515,7 +1519,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1535,7 +1539,14 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#video-dynamic-range",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
