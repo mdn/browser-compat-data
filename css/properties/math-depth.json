@@ -23,18 +23,23 @@
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "83",
-              "impl_url": "https://bugzil.la/1667090",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.math-depth.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Implementation lacks support for <code>font-size: math</code> to be complete."
-            },
+            "firefox": [
+              {
+                "version_added": "117"
+              },
+              {
+                "version_added": "83",
+                "impl_url": "https://bugzil.la/1667090",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.math-depth.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "Implementation lacks support for <code>font-size: math</code> to be complete."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -51,7 +56,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
