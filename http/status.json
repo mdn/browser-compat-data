@@ -44,32 +44,26 @@
           "support": {
             "chrome": {
               "version_added": "103",
-              "notes": "Supported in HTTP/2 and later (SPDY/QUIC)"
+              "notes": "Supported in HTTP/2 and later for preconnect and preload."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview",
-                "notes": "Supported in HTTP1.0 and later"
-              },
-              {
-                "version_added": "102",
-                "notes": "Supported in HTTP1.0 and later",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "network.early-hints.enabled",
-                    "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "network.early-hints.preconnect.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102",
+              "notes": "Supported in HTTP1.0 and later for preconnect.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "network.early-hints.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "network.early-hints.preconnect.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "ie": {
               "version_added": false
             },
@@ -78,7 +72,8 @@
               "version_added": false
             },
             "safari": {
-              "version_added": false
+              "version_added": "preview",
+              "notes": "Supported in HTTP/2 and later for preconnect."
             }
           },
           "status": {
