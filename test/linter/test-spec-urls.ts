@@ -26,9 +26,6 @@ const specsExceptions = [
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
 
-  // Exception for "103 Early Hints" HTTP status code
-  'https://www.rfc-editor.org/rfc/rfc8297',
-
   // For the 'shared' flag in WebAssembly.Memory
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
