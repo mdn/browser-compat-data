@@ -49,7 +49,50 @@
             "deprecated": false
           }
         },
-        "size-support": {
+        "position": {
+          "__compat": {
+            "description": "<code>&lt;at-position&gt;</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "116",
+                  "notes": "<code>&lt;at-position&gt;</code> is optional. If omitted, the <code>offset-position</code> of the element is used.",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.motion-path-ray.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "size": {
           "__compat": {
             "description": "<code>&lt;ray-size&gt;</code>",
             "support": {
@@ -98,15 +141,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview",
-                "notes": "<code>&lt;ray-size&gt;</code> is required."
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
