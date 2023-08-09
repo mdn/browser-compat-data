@@ -1,5 +1,56 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.8)
+
+August 4, 2023
+
+### Additions
+
+- `api.HTMLElement.togglePopover.returns_boolean` ([#20439](https://github.com/mdn/browser-compat-data/pull/20439))
+- `api.ReadableStream.from_static` ([#20443](https://github.com/mdn/browser-compat-data/pull/20443))
+- `browsers.edge.releases.119` ([#20444](https://github.com/mdn/browser-compat-data/pull/20444))
+- `browsers.edge.releases.120` ([#20444](https://github.com/mdn/browser-compat-data/pull/20444))
+- `browsers.safari_ios.releases.16.6` ([#20469](https://github.com/mdn/browser-compat-data/pull/20469))
+- `browsers.safari.releases.16.6` ([#20469](https://github.com/mdn/browser-compat-data/pull/20469))
+- `javascript.builtins.ArrayBuffer.detached` ([#20470](https://github.com/mdn/browser-compat-data/pull/20470))
+- `javascript.builtins.ArrayBuffer.transfer` ([#20470](https://github.com/mdn/browser-compat-data/pull/20470))
+- `javascript.builtins.ArrayBuffer.transferToFixedLength` ([#20470](https://github.com/mdn/browser-compat-data/pull/20470))
+
+### Statistics
+
+- 8 contributors have changed 29 files with 608 additions and 242 deletions in 19 commits ([`v5.3.7...v5.3.8`](https://github.com/mdn/browser-compat-data/compare/v5.3.7...v5.3.8))
+- 14,841 total features
+- 1,020 total contributors
+- 4,553 total stargazers
+
+## [v5.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.7)
+
+August 1, 2023
+
+### Additions
+
+- `browsers.samsunginternet_android.releases.22.0` ([#20405](https://github.com/mdn/browser-compat-data/pull/20405))
+- `javascript.builtins.Intl.NumberFormat.resolvedOptions.result_roundingIncrement_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.NumberFormat.resolvedOptions.result_roundingMode_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.NumberFormat.resolvedOptions.result_roundingPriority_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.NumberFormat.resolvedOptions.result_signDisplay_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.NumberFormat.resolvedOptions.result_trailingZeroDisplay_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.PluralRules.options_roundingIncrement_parameter` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.PluralRules.options_roundingMode_parameter` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.PluralRules.options_roundingPriority_parameter` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.PluralRules.options_trailingZeroDisplay_parameter` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.resolvedOptions.result_roundingIncrement_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.resolvedOptions.result_roundingMode_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.resolvedOptions.result_roundingPriority_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+- `javascript.builtins.Intl.PluralRules.resolvedOptions.result_trailingZeroDisplay_property` ([#20371](https://github.com/mdn/browser-compat-data/pull/20371))
+
+### Statistics
+
+- 9 contributors have changed 15 files with 800 additions and 333 deletions in 23 commits ([`v5.3.6...v5.3.7`](https://github.com/mdn/browser-compat-data/compare/v5.3.6...v5.3.7))
+- 14,836 total features
+- 1,019 total contributors
+- 4,551 total stargazers
+
 ## [v5.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.6)
 
 July 25, 2023
