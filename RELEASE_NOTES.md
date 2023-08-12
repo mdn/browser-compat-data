@@ -1,5 +1,44 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.9)
+
+August 11, 2023
+
+### Removals
+
+- `api.console.debug.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `api.console.error.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `api.console.exception.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `api.console.info.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `api.console.log.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `api.console.warn.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `javascript.builtins.Array.group` ([#20497](https://github.com/mdn/browser-compat-data/pull/20497))
+- `javascript.builtins.Array.groupToMap` ([#20497](https://github.com/mdn/browser-compat-data/pull/20497))
+- `webextensions.api.proxy.register` ([#20513](https://github.com/mdn/browser-compat-data/pull/20513))
+- `webextensions.api.proxy.unregister` ([#20513](https://github.com/mdn/browser-compat-data/pull/20513))
+
+### Additions
+
+- `api.console.substitution_strings` ([#20493](https://github.com/mdn/browser-compat-data/pull/20493))
+- `http.headers.Clear-Site-Data.clientHints` ([#20524](https://github.com/mdn/browser-compat-data/pull/20524))
+- `javascript.builtins.Map.groupBy` ([#20497](https://github.com/mdn/browser-compat-data/pull/20497))
+- `javascript.builtins.Object.groupBy` ([#20497](https://github.com/mdn/browser-compat-data/pull/20497))
+- `javascript.builtins.Set.difference` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.intersection` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.isDisjointFrom` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.isSubsetOf` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.isSupersetOf` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.symmetricDifference` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.builtins.Set.union` ([#20479](https://github.com/mdn/browser-compat-data/pull/20479))
+- `javascript.regular_expressions.named_capturing_group.duplicate_named_capturing_groups` ([#20474](https://github.com/mdn/browser-compat-data/pull/20474))
+
+### Statistics
+
+- 9 contributors have changed 35 files with 852 additions and 776 deletions in 30 commits ([`v5.3.8...v5.3.9`](https://github.com/mdn/browser-compat-data/compare/v5.3.8...v5.3.9))
+- 14,843 total features
+- 1,021 total contributors
+- 4,560 total stargazers
+
 ## [v5.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.8)
 
 August 4, 2023
