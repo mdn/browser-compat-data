@@ -4,7 +4,7 @@
       "text-justify": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-justify",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-text/#text-justify-property",
+          "spec_url": "https://drafts.csswg.org/css-text/#text-justify-property",
           "support": {
             "chrome": {
               "version_added": "32",
@@ -18,10 +18,24 @@
               "notes": "<code>inter-word</code> and <code>distribute</code> (deprecated) values are supported, but <code>distribute</code> behavior is buggy."
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "notes": "Standard values <code>inter-character</code> and <code>none</code> are supported. The deprecated <code>distribute</code> value is also supported."
-            },
+            "edge": [
+              {
+                "version_added": "79",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "true"
+                  }
+                ],
+                "notes": "<code>inter-word</code> and <code>distribute</code> (deprecated) values are supported, but <code>distribute</code> behavior is buggy."
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "notes": "Standard values <code>inter-character</code> and <code>none</code> are supported. The deprecated <code>distribute</code> value is also supported."
+              }
+            ],
             "firefox": {
               "version_added": "55"
             },

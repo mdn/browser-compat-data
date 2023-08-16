@@ -40,45 +40,41 @@
       "103": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Status/103",
-          "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#early-hints",
+          "spec_url": [
+            "https://www.rfc-editor.org/rfc/rfc8297#section-2",
+            "https://html.spec.whatwg.org/multipage/semantics.html#early-hints"
+          ],
           "support": {
             "chrome": {
               "version_added": "103",
-              "notes": "Supported in HTTP/2 and later (SPDY/QUIC)"
+              "notes": "Supported in <a href='https://developer.chrome.com/blog/early-hints/'>HTTP/2 and later for preconnect and preload</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview",
-                "notes": "Supported in HTTP1.0 and later"
-              },
-              {
-                "version_added": "102",
-                "notes": "Supported in HTTP1.0 and later",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "network.early-hints.enabled",
-                    "value_to_set": "true"
-                  },
-                  {
-                    "type": "preference",
-                    "name": "network.early-hints.preconnect.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "102",
+              "notes": "Supported in HTTP1.0 and later for preconnect.",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "network.early-hints.enabled",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "network.early-hints.preconnect.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "ie": {
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
+            "opera": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview",
+              "notes": "Supported in HTTP/2 and later for preconnect."
             }
           },
           "status": {

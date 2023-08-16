@@ -115,11 +115,26 @@
               "version_added": "38"
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "43",
-              "partial_implementation": true,
-              "notes": "Always throws <code>NotSupportedError</code>."
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "43",
+                "partial_implementation": true,
+                "notes": "Always throws <code>NotSupportedError</code>."
+              },
+              {
+                "version_added": "97",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.screenorientation.allow-lock",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": [
               {
                 "version_added": "43",
@@ -139,7 +154,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -215,7 +230,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

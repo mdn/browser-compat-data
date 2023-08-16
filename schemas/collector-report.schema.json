@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/schema",
+
+  "definitions": {
+    "exposure": {
+      "type": "string",
+      "enum": ["ServiceWorker", "SharedWorker", "Window", "Worker"]
+    },
+
+    "feature_name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z_0-9-$@.]*$",
+      "description": "Dot separated identifier path.\n\n@example \"javascript.builtins.Array.at\""
+    },
+
+    "result_message": {
+      "type": "string",
+      "description": "An error message from the browser or from the test framework.\n\n@example \"threw TypeError: Failed to construct 'Notification': Illegal constructor.\"\n@example \"Testing CanvasRenderingContext2D in workers is not yet implemented\"\n@example \"Browser does not support detection methods\""
+    },
+
+    "collector_result": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "exposure": { "$ref": "#/definitions/exposure" },
+            "message": { "$ref": "#/definitions/result_message" },
+            "name": { "$ref": "#/definitions/feature_name" },
+            "result": { "type": "boolean" }
+          },
+          "additionalProperties": false,
+          "required": ["exposure", "name", "result"]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "exposure": { "$ref": "#/definitions/exposure" },
+            "message": { "$ref": "#/definitions/result_message" },
+            "name": { "$ref": "#/definitions/feature_name" },
+            "result": { "type": "null" }
+          },
+          "additionalProperties": false,
+          "required": ["exposure", "message", "name", "result"]
+        }
+      ]
+    }
+  },
+
+  "title": "CollectorReport",
+  "type": "object",
+  "properties": {
+    "__version": {
+      "type": "string",
+      "pattern": "^[0-9.]+$",
+      "description": "Version of mdn-bcd-collector that collected the report."
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "results": {
+      "type": "object",
+      "patternProperties": {
+        "^.*://.*$": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/collector_result"
+          }
+        }
+      },
+      "minProperties": 1
+    },
+    "userAgent": {
+      "type": "string",
+      "description": "User agent of tested browser."
+    }
+  },
+  "required": ["__version", "results", "userAgent"],
+  "additionalProperties": false
+}

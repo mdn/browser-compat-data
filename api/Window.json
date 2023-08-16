@@ -1109,7 +1109,7 @@
       "devicePixelRatio": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/devicePixelRatio",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-devicepixelratio",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-devicepixelratio",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1148,54 +1148,6 @@
           }
         }
       },
-      "deviceproximity_event": {
-        "__compat": {
-          "description": "<code>deviceproximity</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/deviceproximity_event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              },
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "document": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/document",
@@ -1231,6 +1183,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "documentPictureInPicture": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/documentPictureInPicture",
+          "spec_url": "https://wicg.github.io/document-picture-in-picture/#dom-window-documentpictureinpicture",
+          "support": {
+            "chrome": {
+              "version_added": "116"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1819,7 +1807,7 @@
       "getComputedStyle": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/getComputedStyle",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom/#dom-window-getcomputedstyle",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-window-getcomputedstyle",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2174,7 +2162,7 @@
       "innerHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/innerHeight",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-innerheight",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-innerheight",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2221,7 +2209,7 @@
       "innerWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/innerWidth",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-innerwidth",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-innerwidth",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2578,7 +2566,7 @@
       "matchMedia": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/matchMedia",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-matchmedia",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-matchmedia",
           "support": {
             "chrome": {
               "version_added": "9"
@@ -2745,7 +2733,7 @@
       "moveBy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/moveBy",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-moveby",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-moveby",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2785,7 +2773,7 @@
       "moveTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/moveTo",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-moveto",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-moveto",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2931,7 +2919,8 @@
       },
       "navigation": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#global",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/navigation",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigation",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -3142,7 +3131,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/open",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/window-object.html#dom-open-dev",
-            "https://w3c.github.io/csswg-drafts/cssom-view/#the-features-argument-to-the-open()-method"
+            "https://drafts.csswg.org/cssom-view/#the-features-argument-to-the-open()-method"
           ],
           "support": {
             "chrome": {
@@ -3359,7 +3348,7 @@
               "version_added": "≤14"
             },
             "safari": {
-              "version_added": "16.4"
+              "version_added": false
             },
             "safari_ios": {
               "version_added": "≤3"
@@ -3457,7 +3446,7 @@
       "outerHeight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/outerHeight",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-outerheight",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-outerheight",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3499,7 +3488,7 @@
       "outerWidth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/outerWidth",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-outerwidth",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-outerwidth",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3619,7 +3608,7 @@
       "pageXOffset": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageXOffset",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-pagexoffset",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-pagexoffset",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3659,7 +3648,7 @@
       "pageYOffset": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageYOffset",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-pageyoffset",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-pageyoffset",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3942,7 +3931,7 @@
               "version_added": "1"
             },
             "firefox_android": {
-              "version_added": "113"
+              "version_added": "114"
             },
             "ie": {
               "version_added": "5"
@@ -3987,7 +3976,8 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "Firefox strips newline characters from the prompt response; see <a href='https://bugzil.la/1716229'>bug 1716229</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4295,7 +4285,7 @@
         "__compat": {
           "description": "<code>resize</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/resize_event",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#resizing-viewports",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#resizing-viewports",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -4343,7 +4333,7 @@
       "resizeBy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/resizeBy",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-resizeby",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-resizeby",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4386,7 +4376,7 @@
       "resizeTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/resizeTo",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-resizeto",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-resizeto",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4467,7 +4457,7 @@
       "screen": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/screen",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-screen",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screen",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4507,7 +4497,7 @@
       "screenLeft": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/screenLeft",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-screenleft",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screenleft",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4547,7 +4537,7 @@
       "screenTop": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/screenTop",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-screentop",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screentop",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4587,7 +4577,7 @@
       "screenX": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/screenX",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-screenx",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screenx",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4628,7 +4618,7 @@
       "screenY": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/screenY",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-screeny",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screeny",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4669,7 +4659,7 @@
       "scroll": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scroll",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-scroll",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scroll",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -4851,7 +4841,7 @@
       "scrollBy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollBy",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-scrollby",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollby",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5123,7 +5113,7 @@
       "scrollTo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollTo",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-scrollto",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollto",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5263,7 +5253,7 @@
       "scrollX": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollX",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-scrollx",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollx",
           "support": {
             "chrome": [
               {
@@ -5375,7 +5365,7 @@
       "scrollY": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollY",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-scrolly",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrolly",
           "support": {
             "chrome": [
               {
@@ -5711,7 +5701,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "5.1",
-              "notes": "See <a href='https://webkit.org/b/151885'>WebKit bug 151885</a> for possible future removal from Safari."
+              "version_removed": "16.4"
             },
             "safari_ios": {
               "version_added": false
@@ -6285,57 +6275,10 @@
           }
         }
       },
-      "userproximity_event": {
-        "__compat": {
-          "description": "<code>userproximity</code> event",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "15",
-                "version_removed": "61"
-              },
-              {
-                "version_added": "62",
-                "version_removed": "89",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "device.sensors.proximity.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "visualViewport": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-window-visualviewport",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-visualviewport",
           "support": {
             "chrome": {
               "version_added": "61"

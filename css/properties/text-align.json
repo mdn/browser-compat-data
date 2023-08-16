@@ -5,8 +5,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-align",
           "spec_url": [
-            "https://w3c.github.io/csswg-drafts/css-logical/#text-align",
-            "https://w3c.github.io/csswg-drafts/css-text/#text-align-property"
+            "https://drafts.csswg.org/css-logical/#text-align",
+            "https://drafts.csswg.org/css-text/#text-align-property"
           ],
           "support": {
             "chrome": {
@@ -47,18 +47,28 @@
         },
         "block_alignment_values": {
           "__compat": {
-            "description": "Prefixed <code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
+            "description": "<code>center</code>, <code>left</code>, and <code>right</code> values for block alignment",
             "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "1"
-              },
+              "chrome": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "1"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "prefix": "-moz-",
-                "version_added": "1"
-              },
+              "firefox": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "1"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -68,7 +78,7 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "preview"
+                  "version_added": "≤4"
                 },
                 {
                   "prefix": "-webkit-",
@@ -133,7 +143,8 @@
             "description": "<code>match-parent</code>",
             "support": {
               "chrome": {
-                "version_added": "16"
+                "version_added": "16",
+                "prefix": "-webkit-"
               },
               "chrome_android": "mirror",
               "edge": "mirror",

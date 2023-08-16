@@ -25,11 +25,17 @@ Then, you can import BCD into your project with either `import` or `require()`:
 ```js
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  assert: { type: 'json' },
+});
 
 // ...or...
 
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data/forLegacyNode');
 
 // ...or...
 
@@ -43,6 +49,13 @@ You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    assert: { type: 'json' },
+  }
+);
 ```
 
 ### Other Languages
@@ -139,6 +152,10 @@ Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, inclu
 
 - `attributes` - Attributes
 - `elements` - Elements
+
+### [`webassembly`](webassembly)
+
+Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
 
 ### [`webdriver`](webdriver)
 
