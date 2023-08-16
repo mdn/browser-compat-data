@@ -78,22 +78,22 @@
   },
   "scripts": {
     "prepare": "husky install && npm run gentypes",
-    "diff": "ts-node scripts/diff.ts",
+    "diff": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/diff.ts",
     "unittest": "c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "eslint . && prettier --check .",
     "format:fix": "eslint --quiet --fix . && prettier --write .",
-    "lint": "ts-node test/lint.ts",
-    "lint:fix": "ts-node scripts/fix/index.ts",
+    "lint": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning test/lint.ts",
+    "lint:fix": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/fix/index.ts",
     "fix": "npm run format:fix && npm run lint:fix",
-    "stats": "ts-node scripts/statistics.ts",
-    "build": "ts-node scripts/release/build.ts",
-    "gentypes": "ts-node scripts/generate-types.ts",
-    "release": "ts-node scripts/release/index.ts",
-    "remove-redundant-flags": "ts-node scripts/remove-redundant-flags.ts",
+    "stats": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/statistics.ts",
+    "build": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/release/build.ts",
+    "gentypes": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/generate-types.ts",
+    "release": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/release/index.ts",
+    "remove-redundant-flags": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/remove-redundant-flags.ts",
     "show-errors": "npm test 1> /dev/null",
     "test": "npm run format && npm run lint && npm run unittest",
-    "traverse": "ts-node scripts/traverse.ts",
-    "update": "ts-node scripts/update.ts"
+    "traverse": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/traverse.ts",
+    "update": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/update.ts"
   }
 }
