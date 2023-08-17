@@ -7,8 +7,15 @@
           "spec_url": "https://drafts.csswg.org/css-scrollbars/#scrollbar-color",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/891944'>bug 891944</a>."
+              "version_added": "118",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "impl_url": "https://crbug.com/891944"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
