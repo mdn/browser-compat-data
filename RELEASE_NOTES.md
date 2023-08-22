@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.11)
+
+August 19, 2023
+
+### Additions
+
+- `api.CredentialsContainer.get.identity_option.context_option` ([#20547](https://github.com/mdn/browser-compat-data/pull/20547))
+- `api.CredentialsContainer.get.identity_option.loginHint` ([#20547](https://github.com/mdn/browser-compat-data/pull/20547))
+- `api.IdentityProvider` ([#20547](https://github.com/mdn/browser-compat-data/pull/20547))
+- `api.IdentityProvider.getUserInfo` ([#20547](https://github.com/mdn/browser-compat-data/pull/20547))
+- `css.properties.text-wrap.pretty` ([#20555](https://github.com/mdn/browser-compat-data/pull/20555))
+
+### Statistics
+
+- 5 contributors have changed 12 files with 242 additions and 83 deletions in 11 commits ([`v5.3.10...v5.3.11`](https://github.com/mdn/browser-compat-data/compare/v5.3.10...v5.3.11))
+- 14,870 total features
+- 1,021 total contributors
+- 4,563 total stargazers
+
 ## [v5.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.10)
 
 August 15, 2023
