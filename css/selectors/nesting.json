@@ -5,15 +5,17 @@
         "__compat": {
           "description": "Nesting selector (<code>&</code>)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Nesting_selectors",
-          "spec_url": "https://drafts.csswg.org/css-nesting/#nesting-selector",
+          "spec_url": "https://drafts.csswg.org/css-nesting/#nest-selector",
           "support": {
             "chrome": {
-              "version_added": "112"
+              "version_added": "112",
+              "partial_implementation": true,
+              "notes": "Does not support nested rules that start with a type selector."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "117"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -23,7 +25,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.5"
+              "version_added": "16.5",
+              "partial_implementation": true,
+              "notes": "Does not support nested rules that start with a type selector."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
