@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.14)
+
+August 29, 2023
+
+### Removals
+
+- `api.FileSystemSyncAccessHandle.close.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.flush.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.getSize.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.truncate.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+
+### Additions
+
+- `api.FileSystemSyncAccessHandle.close.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.flush.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.getSize.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.truncate.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `http.headers.Range.cors_safe` ([#20605](https://github.com/mdn/browser-compat-data/pull/20605))
+
+### Statistics
+
+- 4 contributors have changed 154 files with 556 additions and 483 deletions in 12 commits ([`v5.3.13...v5.3.14`](https://github.com/mdn/browser-compat-data/compare/v5.3.13...v5.3.14))
+- 14,886 total features
+- 1,022 total contributors
+- 4,573 total stargazers
+
 ## [v5.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.13)
 
 August 25, 2023
