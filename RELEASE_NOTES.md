@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.13)
+
+August 25, 2023
+
+### Additions
+
+- `css.types.basic-shape.rect` ([#20558](https://github.com/mdn/browser-compat-data/pull/20558))
+- `css.types.basic-shape.xywh` ([#20558](https://github.com/mdn/browser-compat-data/pull/20558))
+- `javascript.builtins.Iterator.drop` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.every` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.filter` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.find` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.flatMap` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.forEach` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.from` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.Iterator` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.map` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.reduce` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.some` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.take` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.toArray` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+
+### Statistics
+
+- 5 contributors have changed 8 files with 715 additions and 59 deletions in 12 commits ([`v5.3.12...v5.3.13`](https://github.com/mdn/browser-compat-data/compare/v5.3.12...v5.3.13))
+- 14,885 total features
+- 1,022 total contributors
+- 4,570 total stargazers
+
 ## [v5.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.12)
 
 August 22, 2023
