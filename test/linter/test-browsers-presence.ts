@@ -33,7 +33,9 @@ const processData = (
           'desktop',
           'mobile',
           'xr',
-          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+          ...(['api', 'javascript', 'webassembly'].includes(category)
+            ? ['server']
+            : []),
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
