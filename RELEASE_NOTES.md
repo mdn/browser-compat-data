@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.15)
+
+September 8, 2023
+
+### Removals
+
+- `css.selectors.hover.pseudo_elements` ([#20486](https://github.com/mdn/browser-compat-data/pull/20486))
+- `html.elements.link.prefetch` ([#20641](https://github.com/mdn/browser-compat-data/pull/20641))
+- `html.elements.link.prefetch.secure_context_required` ([#20641](https://github.com/mdn/browser-compat-data/pull/20641))
+
+### Additions
+
+- `api.Element.requestFullscreen.options_screen_parameter` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `api.Permissions.permission_window-management` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `css.at-rules.media.or_syntax` ([#20587](https://github.com/mdn/browser-compat-data/pull/20587))
+- `html.elements.base.href.forbid_data_javascript_urls` ([#20646](https://github.com/mdn/browser-compat-data/pull/20646))
+- `http.headers.Permissions-Policy.window-management` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `http.headers.Sec-CH-Prefers-Reduced-Transparency` ([#20393](https://github.com/mdn/browser-compat-data/pull/20393))
+- `webextensions.api.devtools.panels.create.iconPath` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+- `webextensions.api.devtools.panels.create.pagePath` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+- `webextensions.api.devtools.panels.create.title` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+
+### Statistics
+
+- 12 contributors have changed 44 files with 485 additions and 360 deletions in 34 commits ([`v5.3.14...v5.3.15`](https://github.com/mdn/browser-compat-data/compare/v5.3.14...v5.3.15))
+- 14,892 total features
+- 1,024 total contributors
+- 4,581 total stargazers
+
 ## [v5.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.14)
 
 August 29, 2023
