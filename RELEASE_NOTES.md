@@ -1,5 +1,104 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.15)
+
+September 8, 2023
+
+### Removals
+
+- `css.selectors.hover.pseudo_elements` ([#20486](https://github.com/mdn/browser-compat-data/pull/20486))
+- `html.elements.link.prefetch` ([#20641](https://github.com/mdn/browser-compat-data/pull/20641))
+- `html.elements.link.prefetch.secure_context_required` ([#20641](https://github.com/mdn/browser-compat-data/pull/20641))
+
+### Additions
+
+- `api.Element.requestFullscreen.options_screen_parameter` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `api.Permissions.permission_window-management` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `css.at-rules.media.or_syntax` ([#20587](https://github.com/mdn/browser-compat-data/pull/20587))
+- `html.elements.base.href.forbid_data_javascript_urls` ([#20646](https://github.com/mdn/browser-compat-data/pull/20646))
+- `http.headers.Permissions-Policy.window-management` ([#20600](https://github.com/mdn/browser-compat-data/pull/20600))
+- `http.headers.Sec-CH-Prefers-Reduced-Transparency` ([#20393](https://github.com/mdn/browser-compat-data/pull/20393))
+- `webextensions.api.devtools.panels.create.iconPath` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+- `webextensions.api.devtools.panels.create.pagePath` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+- `webextensions.api.devtools.panels.create.title` ([#20617](https://github.com/mdn/browser-compat-data/pull/20617))
+
+### Statistics
+
+- 12 contributors have changed 44 files with 485 additions and 360 deletions in 34 commits ([`v5.3.14...v5.3.15`](https://github.com/mdn/browser-compat-data/compare/v5.3.14...v5.3.15))
+- 14,892 total features
+- 1,024 total contributors
+- 4,581 total stargazers
+
+## [v5.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.14)
+
+August 29, 2023
+
+### Removals
+
+- `api.FileSystemSyncAccessHandle.close.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.flush.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.getSize.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.truncate.sync_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+
+### Additions
+
+- `api.FileSystemSyncAccessHandle.close.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.flush.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.getSize.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `api.FileSystemSyncAccessHandle.truncate.async_version` ([#20621](https://github.com/mdn/browser-compat-data/pull/20621))
+- `http.headers.Range.cors_safe` ([#20605](https://github.com/mdn/browser-compat-data/pull/20605))
+
+### Statistics
+
+- 4 contributors have changed 154 files with 556 additions and 483 deletions in 12 commits ([`v5.3.13...v5.3.14`](https://github.com/mdn/browser-compat-data/compare/v5.3.13...v5.3.14))
+- 14,886 total features
+- 1,022 total contributors
+- 4,573 total stargazers
+
+## [v5.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.13)
+
+August 25, 2023
+
+### Additions
+
+- `css.types.basic-shape.rect` ([#20558](https://github.com/mdn/browser-compat-data/pull/20558))
+- `css.types.basic-shape.xywh` ([#20558](https://github.com/mdn/browser-compat-data/pull/20558))
+- `javascript.builtins.Iterator.drop` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.every` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.filter` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.find` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.flatMap` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.forEach` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.from` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.Iterator` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.map` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.reduce` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.some` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.take` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+- `javascript.builtins.Iterator.toArray` ([#20573](https://github.com/mdn/browser-compat-data/pull/20573))
+
+### Statistics
+
+- 5 contributors have changed 8 files with 715 additions and 59 deletions in 12 commits ([`v5.3.12...v5.3.13`](https://github.com/mdn/browser-compat-data/compare/v5.3.12...v5.3.13))
+- 14,885 total features
+- 1,022 total contributors
+- 4,570 total stargazers
+
+## [v5.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.12)
+
+August 22, 2023
+
+### Additions
+
+- `browsers.deno.releases.1.36` ([#20582](https://github.com/mdn/browser-compat-data/pull/20582))
+
+### Statistics
+
+- 4 contributors have changed 10 files with 117 additions and 82 deletions in 12 commits ([`v5.3.11...v5.3.12`](https://github.com/mdn/browser-compat-data/compare/v5.3.11...v5.3.12))
+- 14,870 total features
+- 1,022 total contributors
+- 4,567 total stargazers
+
 ## [v5.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.11)
 
 August 19, 2023
