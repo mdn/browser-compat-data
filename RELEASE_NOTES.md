@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.16)
+
+September 15, 2023
+
+### Additions
+
+- `api.RTCRtpTransceiver.currentDirection.stopped_value` ([#20680](https://github.com/mdn/browser-compat-data/pull/20680))
+- `api.RTCRtpTransceiver.direction.value_stopped` ([#20680](https://github.com/mdn/browser-compat-data/pull/20680))
+- `api.Window.beforeunload_event.generic_string_displayed` ([#20709](https://github.com/mdn/browser-compat-data/pull/20709))
+- `browsers.chrome_android.releases.119` ([#20678](https://github.com/mdn/browser-compat-data/pull/20678))
+- `browsers.chrome.releases.119` ([#20678](https://github.com/mdn/browser-compat-data/pull/20678))
+- `css.properties.font-size-adjust.from-font` ([#20693](https://github.com/mdn/browser-compat-data/pull/20693))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 464 additions and 112 deletions in 17 commits ([`v5.3.15...v5.3.16`](https://github.com/mdn/browser-compat-data/compare/v5.3.15...v5.3.16))
+- 14,896 total features
+- 1,024 total contributors
+- 4,590 total stargazers
+
 ## [v5.3.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.15)
 
 September 8, 2023
