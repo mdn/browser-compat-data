@@ -68,7 +68,7 @@
           },
           "webview_android": {
             "version_added": false,
-            "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
+            "impl_url": "https://crbug.com/551446"
           }
         },
         "status": {
@@ -910,7 +910,15 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "117",
+              "notes": "Enabled by default on Windows",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.webnotifications.requireinteraction.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1003,7 +1011,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "17"
+              "version_added": "16.6"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -180,11 +180,16 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/path",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-path",
             "support": {
-              "chrome": {
-                "version_added": "46",
-                "partial_implementation": true,
-                "notes": "Only supported on the <code>offset-path</code> property."
-              },
+              "chrome": [
+                {
+                  "version_added": "88"
+                },
+                {
+                  "version_added": "46",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the <code>offset-path</code> property."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
@@ -255,6 +260,94 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rect": {
+          "__compat": {
+            "description": "<code>rect()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/rect",
+            "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-rect",
+            "support": {
+              "chrome": {
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": "Only supported on the <code>offset-path</code> property."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.basic-shape-rect.enabled, layout.css.motion-path-basic-shapes.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "xywh": {
+          "__compat": {
+            "description": "<code>xywh()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/xwyh",
+            "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-xywh",
+            "support": {
+              "chrome": {
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": "Only supported on the <code>offset-path</code> property."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.basic-shape-xywh.enabled, layout.css.motion-path-basic-shapes.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
