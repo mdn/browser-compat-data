@@ -91,7 +91,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "notes": "See <a href='https://crbug.com/825443'>bug 825443</a>.",
+                  "impl_url": "https://crbug.com/825443",
                   "version_added": false
                 },
                 "edge": "mirror",
@@ -421,16 +421,10 @@
                   "version_added": true
                 },
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "59",
-                    "version_removed": "94",
-                    "notes": "Returns a post-redirect URL rather than the raw value of the <code>src</code> attribute of the clicked element."
-                  }
-                ],
+                "firefox": {
+                  "version_added": "48",
+                  "notes": "Between Firefox 59 and Firefox 94, this returns a post-redirect URL rather than the raw value of the <code>src</code> attribute of the clicked element."
+                },
                 "firefox_android": {
                   "version_added": false
                 },

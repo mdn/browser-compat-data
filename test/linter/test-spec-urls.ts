@@ -35,9 +35,12 @@ const specsExceptions = [
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
 
-  // Remove once https://github.com/whatwg/html/pull/8502
-  // is merged and the new URL is live
-  'https://wicg.github.io/navigation-api',
+  // Proposals for WebAssembly
+  'https://github.com/WebAssembly/spec/blob/main/proposals',
+  'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
+  'https://github.com/WebAssembly/extended-const/blob/main/proposals',
+  'https://github.com/WebAssembly/tail-call/blob/main/proposals',
+  'https://github.com/WebAssembly/threads/blob/main/proposal',
 ];
 
 const allowedSpecURLs = [

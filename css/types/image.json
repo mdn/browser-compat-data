@@ -59,7 +59,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1657516'>bug 1657516</a>."
+                "impl_url": "https://bugzil.la/1657516"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -334,7 +334,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -368,7 +368,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -542,7 +542,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -576,7 +576,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -927,7 +927,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -961,7 +961,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1063,7 +1063,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1097,7 +1097,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1271,7 +1271,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1305,7 +1305,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1661,7 +1661,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1695,7 +1695,7 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": false,
-                    "notes": "See <a href='https://bugzil.la/1824041'>bug 1824041</a>."
+                    "impl_url": "https://bugzil.la/1824041"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -1834,12 +1834,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "prefix": "-webkit-",
-                "version_added": "6",
-                "partial_implementation": true,
-                "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
-              },
+              "safari": [
+                {
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"

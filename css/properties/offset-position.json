@@ -7,14 +7,19 @@
           "spec_url": "https://drafts.fxtf.org/motion/#offset-position-property",
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/638055'>bug 638055</a>."
+              "version_added": "116"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1559232'>bug 1559232</a>."
+              "version_added": "116",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.motion-path-offset-position.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -34,6 +39,46 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "normal": {
+          "__compat": {
+            "description": "<code>normal</code> keyword value",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.motion-path-offset-position.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }
