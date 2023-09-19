@@ -14,7 +14,7 @@
             "firefox": {
               "version_added": "74",
               "partial_implementation": true,
-              "notes": "Header not sent but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
+              "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -26,7 +26,7 @@
             "safari": {
               "version_added": "11.1",
               "partial_implementation": true,
-              "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+              "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -118,15 +118,13 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "74",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.featurePolicy.header.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "partial_implementation": true,
+                "notes": "Header not recognized but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1694922'>bug 1694922</a>)"
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": false,
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
+              },
               "ie": {
                 "version_added": false
               },
@@ -141,7 +139,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -195,7 +193,7 @@
               "firefox": {
                 "version_added": "74",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -237,7 +235,7 @@
               "firefox": {
                 "version_added": "74",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "firefox_android": {
                 "version_added": false
@@ -251,7 +249,7 @@
               "safari": {
                 "version_added": "13",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "safari_ios": {
                 "version_added": false
@@ -367,7 +365,7 @@
                 "version_added": "74",
                 "partial_implementation": true,
                 "notes": [
-                  "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                  "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>).",
                   "Before Firefox 80, applying <code>fullscreen</code> to an <code>&lt;iframe&gt;</code> (i.e. via the <code>allow</code> attribute) does not work unless the <code>allowfullscreen</code> attribute is also present."
                 ]
               },
@@ -413,7 +411,7 @@
                 "version_added": "91",
                 "partial_implementation": true,
                 "notes": [
-                  "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                  "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>).",
                   "The default allowlist is <code>*</code> instead of <code>self</code> (as required by the specification)."
                 ]
               },
@@ -451,7 +449,7 @@
               "firefox": {
                 "version_added": "74",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -660,7 +658,7 @@
               "firefox": {
                 "version_added": "74",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -927,7 +925,7 @@
               "firefox": {
                 "version_added": "116",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "firefox_android": {
                 "version_added": false,
@@ -1102,14 +1100,14 @@
                 "version_added": "81",
                 "partial_implementation": true,
                 "notes": [
-                  "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements.",
+                  "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>).",
                   "Firefox recognizes the <code>web-share</code> permissions policy, but this has no effect in versions of Firefox that do not support the <a href='https://developer.mozilla.org/docs/Web/API/Navigator/share'><code>share()</code></a> method."
                 ]
               },
               "firefox_android": {
                 "version_added": "81",
                 "partial_implementation": true,
-                "notes": "Only supported through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements."
+                "notes": "Header not recognised but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1627890'>bug 1627890</a>)"
               },
               "ie": {
                 "version_added": false
