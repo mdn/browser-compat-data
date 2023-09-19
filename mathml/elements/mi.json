@@ -40,9 +40,7 @@
             "spec_url": "https://w3c.github.io/mathml-core/#dfn-mathvariant",
             "support": {
               "chrome": {
-                "version_added": "109",
-                "partial_implementation": true,
-                "notes": "The only value supported is 'normal'."
+                "version_added": "109"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -50,7 +48,7 @@
                 "version_added": "70",
                 "impl_url": "https://hg.mozilla.org/mozilla-central/rev/3b30c8db537c",
                 "notes": [
-                  "Prior to Firefox 70, the attribute was only accepted on a few elements, as specified in MathML 3.",
+                  "The only allowed value in MathML Core is 'normal'. Firefox enables a number of other deprecated values from the MathML 3 specification (see <a href='https://bugzil.la/1845461'>bug 1845461</a>).",
                   "Implementation does not rely on the CSS approach described in MathML Core (via <code>text-transform</code>."
                 ]
               },
@@ -66,9 +64,8 @@
               "safari": {
                 "version_added": "10",
                 "impl_url": "https://trac.webkit.org/changeset/203679",
-                "partial_implementation": true,
                 "notes": [
-                  "Safari only accepts the attribute on a few elements, as specified in MathML 3.",
+                  "The only allowed value in MathML Core is 'normal'. Safari enables a number of other deprecated values from the MathML 3 specification.",
                   "Implementation does not rely on the CSS approach described in MathML Core (via <code>text-transform</code>."
                 ]
               },
