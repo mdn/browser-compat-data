@@ -1,5 +1,93 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.17)
+
+September 19, 2023
+
+### Removals
+
+- `api.FileSystemSyncAccessHandle.close.async_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.flush.async_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.getSize.async_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.truncate.async_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.IdentityProvider.getUserInfo` ([#20736](https://github.com/mdn/browser-compat-data/pull/20736))
+- `api.OverconstrainedErrorEvent` ([#20385](https://github.com/mdn/browser-compat-data/pull/20385))
+- `api.OverconstrainedErrorEvent.error` ([#20385](https://github.com/mdn/browser-compat-data/pull/20385))
+
+### Additions
+
+- `api.AbortSignal.any_static` ([#20692](https://github.com/mdn/browser-compat-data/pull/20692))
+- `api.AnimationTimeline.duration` ([#20734](https://github.com/mdn/browser-compat-data/pull/20734))
+- `api.CSSStartingStyleRule` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `api.FileSystemSyncAccessHandle.close.sync_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.flush.sync_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.getSize.sync_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.FileSystemSyncAccessHandle.truncate.sync_version` ([#20732](https://github.com/mdn/browser-compat-data/pull/20732))
+- `api.GamepadHapticActuator.canPlayEffectType` ([#20735](https://github.com/mdn/browser-compat-data/pull/20735))
+- `api.IdentityProvider.getUserInfo_static` ([#20736](https://github.com/mdn/browser-compat-data/pull/20736))
+- `api.Response.body.readable_byte_stream` ([#20702](https://github.com/mdn/browser-compat-data/pull/20702))
+- `api.RTCPeerConnection.getReceivers.stopped_transceivers_removed` ([#20694](https://github.com/mdn/browser-compat-data/pull/20694))
+- `api.RTCPeerConnection.getSenders.stopped_transceivers_removed` ([#20694](https://github.com/mdn/browser-compat-data/pull/20694))
+- `api.RTCPeerConnection.getTransceivers.stopped_transceivers_removed` ([#20694](https://github.com/mdn/browser-compat-data/pull/20694))
+- `api.TaskSignal.any_static` ([#20737](https://github.com/mdn/browser-compat-data/pull/20737))
+- `api.VisibilityStateEntry.duration` ([#20738](https://github.com/mdn/browser-compat-data/pull/20738))
+- `api.VisibilityStateEntry.entryType` ([#20738](https://github.com/mdn/browser-compat-data/pull/20738))
+- `api.VisibilityStateEntry.name` ([#20738](https://github.com/mdn/browser-compat-data/pull/20738))
+- `api.VisibilityStateEntry.startTime` ([#20738](https://github.com/mdn/browser-compat-data/pull/20738))
+- `browsers.nodejs.releases.18.1.0` ([#20724](https://github.com/mdn/browser-compat-data/pull/20724))
+- `browsers.nodejs.releases.18.17.0` ([#20692](https://github.com/mdn/browser-compat-data/pull/20692))
+- `browsers.nodejs.releases.20.3.0` ([#20692](https://github.com/mdn/browser-compat-data/pull/20692))
+- `browsers.nodejs.releases.20.6.0` ([#20726](https://github.com/mdn/browser-compat-data/pull/20726))
+- `css.at-rules.starting-style` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `css.properties.content-visibility.keyframe_animatable` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `css.properties.content-visibility.transitionable` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `css.properties.display.keyframe_animatable` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `css.properties.display.transitionable` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `css.properties.font-synthesis-position` ([#20688](https://github.com/mdn/browser-compat-data/pull/20688))
+- `css.properties.font-synthesis.position` ([#20688](https://github.com/mdn/browser-compat-data/pull/20688))
+- `css.properties.font-synthesis.style` ([#20688](https://github.com/mdn/browser-compat-data/pull/20688))
+- `css.properties.font-synthesis.weight` ([#20688](https://github.com/mdn/browser-compat-data/pull/20688))
+- `css.properties.overlay` ([#20671](https://github.com/mdn/browser-compat-data/pull/20671))
+- `html.elements.a.href_sms` ([#20701](https://github.com/mdn/browser-compat-data/pull/20701))
+- `html.elements.textarea.wrap.hard` ([#20485](https://github.com/mdn/browser-compat-data/pull/20485))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.locales_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_currency_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_localeMatcher_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_maximumFractionDigits_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_maximumSignificantDigits_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_minimumFractionDigits_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_minimumIntegerDigits_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_minimumSignificantDigits_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_numberingSystem_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+- `javascript.builtins.Intl.NumberFormat.NumberFormat.options_style_parameter` ([#20588](https://github.com/mdn/browser-compat-data/pull/20588))
+
+### Statistics
+
+- 14 contributors have changed 45 files with 1,528 additions and 572 deletions in 32 commits ([`v5.3.16...v5.3.17`](https://github.com/mdn/browser-compat-data/compare/v5.3.16...v5.3.17))
+- 14,929 total features
+- 1,027 total contributors
+- 4,592 total stargazers
+
+## [v5.3.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.16)
+
+September 15, 2023
+
+### Additions
+
+- `api.RTCRtpTransceiver.currentDirection.stopped_value` ([#20680](https://github.com/mdn/browser-compat-data/pull/20680))
+- `api.RTCRtpTransceiver.direction.value_stopped` ([#20680](https://github.com/mdn/browser-compat-data/pull/20680))
+- `api.Window.beforeunload_event.generic_string_displayed` ([#20709](https://github.com/mdn/browser-compat-data/pull/20709))
+- `browsers.chrome_android.releases.119` ([#20678](https://github.com/mdn/browser-compat-data/pull/20678))
+- `browsers.chrome.releases.119` ([#20678](https://github.com/mdn/browser-compat-data/pull/20678))
+- `css.properties.font-size-adjust.from-font` ([#20693](https://github.com/mdn/browser-compat-data/pull/20693))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 464 additions and 112 deletions in 17 commits ([`v5.3.15...v5.3.16`](https://github.com/mdn/browser-compat-data/compare/v5.3.15...v5.3.16))
+- 14,896 total features
+- 1,024 total contributors
+- 4,590 total stargazers
+
 ## [v5.3.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.15)
 
 September 8, 2023
