@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.18)
+
+September 22, 2023
+
+### Removals
+
+- `mathml.global_attributes.mathvariant` ([#20746](https://github.com/mdn/browser-compat-data/pull/20746))
+
+### Additions
+
+- `css.properties.offset-path.url` ([#20710](https://github.com/mdn/browser-compat-data/pull/20710))
+- `mathml.elements.mi.mathvariant` ([#20746](https://github.com/mdn/browser-compat-data/pull/20746))
+- `webassembly.garbage-collection` ([#20576](https://github.com/mdn/browser-compat-data/pull/20576))
+
+### Statistics
+
+- 6 contributors have changed 17 files with 188 additions and 139 deletions in 8 commits ([`v5.3.17...v5.3.18`](https://github.com/mdn/browser-compat-data/compare/v5.3.17...v5.3.18))
+- 14,931 total features
+- 1,027 total contributors
+- 4,594 total stargazers
+
 ## [v5.3.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.17)
 
 September 19, 2023
