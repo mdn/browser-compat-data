@@ -1365,6 +1365,7 @@
       "globalPrivacyControl": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/globalPrivacyControl",
+          "spec_url": "https://privacycg.github.io/gpc-spec/#dom-globalprivacycontrol",
           "support": {
             "chrome": {
               "version_added": false
@@ -1372,20 +1373,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "95",
-              "impl_url": "https://hg.mozilla.org/mozilla-central/rev/09e51e6d4a7e",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "privacy.globalprivacycontrol.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "privacy.globalprivacycontrol.functionality.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview",
+              "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1403,7 +1392,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
