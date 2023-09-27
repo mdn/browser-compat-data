@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.19)
+
+September 26, 2023
+
+### Additions
+
+- `api.WorkerNavigator.globalPrivacyControl` ([#20730](https://github.com/mdn/browser-compat-data/pull/20730))
+- `browsers.deno.releases.1.37` ([#20767](https://github.com/mdn/browser-compat-data/pull/20767))
+- `browsers.edge.releases.121` ([#20808](https://github.com/mdn/browser-compat-data/pull/20808))
+- `browsers.opera.releases.100` ([#20765](https://github.com/mdn/browser-compat-data/pull/20765))
+- `browsers.opera.releases.102` ([#20765](https://github.com/mdn/browser-compat-data/pull/20765))
+- `browsers.opera.releases.103` ([#20765](https://github.com/mdn/browser-compat-data/pull/20765))
+
+### Statistics
+
+- 8 contributors have changed 113 files with 1,329 additions and 4,353 deletions in 33 commits ([`v5.3.18...v5.3.19`](https://github.com/mdn/browser-compat-data/compare/v5.3.18...v5.3.19))
+- 14,932 total features
+- 1,027 total contributors
+- 4,598 total stargazers
+
 ## [v5.3.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.18)
 
 September 22, 2023
