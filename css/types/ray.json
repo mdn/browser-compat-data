@@ -8,14 +8,7 @@
           "spec_url": "https://drafts.fxtf.org/motion/#ray-function",
           "support": {
             "chrome": {
-              "version_added": "64",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "116"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -49,27 +42,60 @@
             "deprecated": false
           }
         },
-        "size-support": {
+        "position": {
           "__compat": {
-            "description": "<code>&lt;ray-size&gt;</code>",
+            "description": "<code>at &lt;position&gt;</code>",
             "support": {
               "chrome": {
-                "version_added": "64",
-                "notes": "<code>&lt;ray-size&gt;</code> is required.",
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116",
+                "notes": "<code>&lt;at-position&gt;</code> is optional. If omitted, the <code>offset-position</code> of the element is used.",
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
+                    "name": "layout.css.motion-path-ray.enabled",
+                    "value_to_set": "true"
                   }
                 ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "size": {
+          "__compat": {
+            "description": "<code>&lt;size&gt;</code>",
+            "support": {
+              "chrome": {
+                "version_added": "116"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "112",
-                  "notes": "<code>&lt;ray-size&gt;</code> is optional. If omitted, the value <code>closest-side</code> is used.",
+                  "notes": "<code>&lt;size&gt;</code> is optional. If omitted, the value <code>closest-side</code> is used.",
                   "flags": [
                     {
                       "type": "preference",
@@ -80,7 +106,7 @@
                 },
                 {
                   "version_added": "72",
-                  "notes": "<code>&lt;ray-size&gt;</code> is required.",
+                  "notes": "<code>&lt;size&gt;</code> is required.",
                   "flags": [
                     {
                       "type": "preference",
@@ -98,15 +124,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview",
-                "notes": "<code>&lt;ray-size&gt;</code> is required."
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

@@ -854,7 +854,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/521319'>bug 521319</a>."
+              "impl_url": "https://crbug.com/521319"
             }
           },
           "status": {
@@ -1233,7 +1233,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
+              "impl_url": "https://crbug.com/648207"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -2087,14 +2087,20 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-playbackrate-dev",
           "support": {
             "chrome": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "firefox": {
-              "version_added": "20"
+              "version_added": "20",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -2102,10 +2108,14 @@
             },
             "oculus": "mirror",
             "opera": {
-              "version_added": "≤12.1"
+              "version_added": "≤12.1",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "opera_android": {
-              "version_added": "≤12.1"
+              "version_added": "≤12.1",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "safari": {
               "version_added": "3.1"
@@ -2114,9 +2124,7 @@
               "version_added": "3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2271,17 +2279,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "101"
-              },
-              {
-                "prefix": "moz",
-                "version_added": "20",
-                "version_removed": "115",
-                "notes": "Disable by default in version 115 (behind preference <code>dom.media.mozPreservesPitch.enabled</code>). May be fully removed in a future release (see <a href='https://bugzil.la/1765201'>bug 1765201</a>)."
-              }
-            ],
+            "firefox": {
+              "version_added": "101"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -2292,12 +2292,12 @@
             "safari": {
               "prefix": "webkit",
               "version_added": "4",
-              "notes": "See <a href='https://webkit.org/b/214922'>bug 214922</a>."
+              "impl_url": "https://webkit.org/b/214922"
             },
             "safari_ios": {
               "prefix": "webkit",
               "version_added": "4",
-              "notes": "See <a href='https://webkit.org/b/214922'>bug 214922</a>."
+              "impl_url": "https://webkit.org/b/214922"
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -2473,7 +2473,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/521319'>bug 521319</a>."
+              "impl_url": "https://crbug.com/521319"
             }
           },
           "status": {

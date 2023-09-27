@@ -401,22 +401,9 @@
             "description": "<code>options.pseudoElement</code> parameter",
             "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-keyframeeffectoptions-pseudoelement",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "84"
-                },
-                {
-                  "version_added": "81",
-                  "partial_implementation": true,
-                  "notes": "A valid animation object is returned but the targeted pseudoelement is not visually animated.",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features"
-                    }
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "84"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -2359,7 +2346,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1675847'>bug 1675847</a>."
+                "impl_url": "https://bugzil.la/1675847"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2370,7 +2357,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/218665'>bug 218665</a>."
+                "impl_url": "https://webkit.org/b/218665"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2888,7 +2875,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1675847'>bug 1675847</a>."
+                "impl_url": "https://bugzil.la/1675847"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2899,7 +2886,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/218665'>bug 218665</a>."
+                "impl_url": "https://webkit.org/b/218665"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3358,7 +3345,7 @@
             },
             "safari_ios": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/213953'>bug 213953</a>."
+              "impl_url": "https://webkit.org/b/213953"
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -3380,7 +3367,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1675847'>bug 1675847</a>."
+                "impl_url": "https://bugzil.la/1675847"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -3391,7 +3378,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/218665'>bug 218665</a>."
+                "impl_url": "https://webkit.org/b/218665"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -7172,6 +7159,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_screen_parameter": {
+          "__compat": {
+            "description": "<code>options.screen</code> parameter",
+            "spec_url": "https://w3c.github.io/window-management/#ref-for-dom-fullscreenoptions-screen",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
