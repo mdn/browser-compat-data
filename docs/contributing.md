@@ -120,9 +120,9 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 - Nesting of feature identifiers should make sense.
 - Notes use correct grammar and spelling. They should be complete sentences ending with a period.
 
-### Optional: Generating data using the mdn-bcd-collector project
+### Optional: Using the mdn-bcd-collector project
 
-If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://mdn-bcd-collector.gooborg.com/docs/update-bcd.md) for instructions.
+If the feature you're interested in is an API, CSS or JavaScript feature, you can check data against the [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See also the docs on [updating BCD using the results](bcd-collector.md) for instructions.
 
 ### Optional: Generating data by mirroring
 
