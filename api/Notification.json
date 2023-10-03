@@ -909,17 +909,23 @@
             "edge": {
               "version_added": "17"
             },
-            "firefox": {
-              "version_added": "117",
-              "notes": "Enabled by default on Windows",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.webnotifications.requireinteraction.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "117",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Behind a flag on other operating systems."
+              },
+              {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webnotifications.requireinteraction.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -937,7 +943,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
