@@ -2,7 +2,7 @@
 
 The [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/) helps to keep BCD up-to-date and as accurate as possible, by running predefined JavaScript code in browsers to determine what features are and are not supported. See also [About the mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/docs/about.md).
 
-The `update` script can update BCD according to results collected from the mdn-bcd-collector.
+The `update` script can update your local copy of BCD according to results collected from the mdn-bcd-collector.
 
 ## Prerequisites
 
