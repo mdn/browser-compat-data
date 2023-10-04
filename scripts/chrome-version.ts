@@ -5,6 +5,7 @@ export {};
 const releaseBranch = 'stable';
 const betaBranch = 'beta';
 const nightlyBranch = 'canary';
+const chromestatusURL = 'https://chromestatus.com/api/v0/channels';
 
 /**
  * newChromeEntry - Add a new Chrome entry in the JSON list for Chrome browsers
@@ -31,7 +32,7 @@ const newChromeEntry = (
   }
   release['status'] = status;
   release['engine'] = 'Blink';
-  release['engine_version'] = version;
+  release['engine_version'] = version.toString();
 };
 
 /**
@@ -67,9 +68,9 @@ const getReleaseNotesURL = async (date) => {
 };
 
 //
-// Get the JSON with the versions from Google
+// Get the JSON with the versions from chromestatus
 //
-const googleVersions = await fetch('https://chromestatus.com/api/v0/channels');
+const googleVersions = await fetch(chromestatusURL);
 
 // There is a bug in chromestatus: the first 4 characters are erroneous.
 // It isn't a valid JSON file.
@@ -163,5 +164,5 @@ if (chromeBCD.browsers.chrome.releases[(canary + 1).toString()]) {
 //
 // Write the JSON back into chrome.json
 //
-fs.writeFileSync('./chrome.json', JSON.stringify(chromeBCD));
+fs.writeFileSync('./chrome.json', JSON.stringify(chromeBCD, null, 2));
 console.log('File written successfully\n');
