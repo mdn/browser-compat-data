@@ -55,7 +55,6 @@ const getReleaseNotesURL = async (date) => {
 
   // Second possibility (less reliable)
   url = `https://chromereleases.googleblog.com/${year}/${month}/stable-channel-update-for-desktop.html`;
-  console.log(url);
 
   releaseNote = await fetch(url);
 
