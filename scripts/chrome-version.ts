@@ -38,6 +38,7 @@ const newChromeEntry = (
  * getReleaseNotesURL - Guess the URL of the release notes
  *
  * @param {string} date Date in the format YYYYMMDD
+ * @returns {string} The URL of the release notes or the empty string if not found
  */
 const getReleaseNotesURL = async (date) => {
   const dateObj = new Date(date);
