@@ -166,4 +166,4 @@ if (chromeBCD.browsers.chrome.releases[(canary + 1).toString()]) {
 // Write the JSON back into chrome.json
 //
 fs.writeFileSync('./chrome.json', JSON.stringify(chromeBCD, null, 2));
-console.log('File generated succesfully.')
+console.log('File generated succesfully.');
