@@ -4,8 +4,6 @@ export {};
 
 import * as fs from 'node:fs';
 
-import * as core from '@actions/core';
-
 const releaseBranch = 'stable';
 const betaBranch = 'beta';
 const nightlyBranch = 'dev';
@@ -67,7 +65,7 @@ const getReleaseNotesURL = async (date) => {
   if (releaseNote.status == 200) {
     return url;
   }
-  core.warning('Release note not found');
+  console.warn('Release note not found');
   return '';
 };
 
@@ -133,7 +131,7 @@ for (let i = 1; i < stable; i++) {
   if (chromeBCD.browsers.chrome.releases[i.toString()]) {
     chromeBCD.browsers.chrome.releases[i.toString()].status = 'retired';
   } else {
-    core.warning(`Chrome ${i} is missing.`);
+    console.warn(`Chrome ${i} is missing.`);
   }
 }
 
@@ -168,4 +166,4 @@ if (chromeBCD.browsers.chrome.releases[(canary + 1).toString()]) {
 // Write the JSON back into chrome.json
 //
 fs.writeFileSync('./chrome.json', JSON.stringify(chromeBCD, null, 2));
-core.info('File generated succesfully.')
+console.log('File generated succesfully.')
