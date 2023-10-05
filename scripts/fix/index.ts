@@ -71,6 +71,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

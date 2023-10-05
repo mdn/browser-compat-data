@@ -6,34 +6,13 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/math-depth",
           "spec_url": "https://w3c.github.io/mathml-core/#the-math-script-level-property",
           "support": {
-            "chrome": [
-              {
-                "version_added": "109"
-              },
-              {
-                "version_added": "87",
-                "impl_url": "https://crrev.com/c/2423843",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "109"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "83",
-              "impl_url": "https://bugzil.la/1667090",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.math-depth.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Implementation lacks support for <code>font-size: math</code> to be complete."
+              "version_added": "117"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -44,14 +23,14 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/202303'>bug 202303</a>."
+              "impl_url": "https://webkit.org/b/202303"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

@@ -394,6 +394,41 @@
             }
           }
         },
+        "generic_string_displayed": {
+          "__compat": {
+            "description": "Dialog displays a generic string, not event handler return value",
+            "support": {
+              "chrome": {
+                "version_added": "51"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "44"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "9.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
+        },
         "preventdefault_activation": {
           "__compat": {
             "description": "Activation using <code>event.preventDefault()</code>",
@@ -884,7 +919,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1475599'>bug 1475599</a>."
+              "impl_url": "https://bugzil.la/1475599"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -895,7 +930,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/231750'>bug 231750</a>."
+              "impl_url": "https://webkit.org/b/231750"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1188,6 +1223,42 @@
           }
         }
       },
+      "documentPictureInPicture": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/documentPictureInPicture",
+          "spec_url": "https://wicg.github.io/document-picture-in-picture/#dom-window-documentpictureinpicture",
+          "support": {
+            "chrome": {
+              "version_added": "116"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "dump": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/dump",
@@ -1340,17 +1411,6 @@
               {
                 "version_added": "2",
                 "notes": "From Firefox 78 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-              },
-              {
-                "version_added": "102",
-                "alternative_name": "sidebar",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.window.sidebar.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
               },
               {
                 "version_added": "1",
@@ -2388,23 +2448,10 @@
               "version_added": "4"
             },
             "chrome_android": "mirror",
-            "deno": [
-              {
-                "version_added": "1.16",
-                "notes": "The key used for the Web Storage bucket is based on various factors. See <a href='https://deno.land/manual/runtime/web_storage_api'>the Deno manual</a>."
-              },
-              {
-                "version_added": "1.10",
-                "version_removed": "1.16",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--location",
-                    "value_to_set": "<desired origin>"
-                  }
-                ]
-              }
-            ],
+            "deno": {
+              "version_added": "1.16",
+              "notes": "The key used for the Web Storage bucket is based on various factors. See <a href='https://deno.land/manual/runtime/web_storage_api'>the Deno manual</a>."
+            },
             "edge": {
               "version_added": "12"
             },
@@ -2681,7 +2728,7 @@
             },
             "safari": {
               "version_added": "16.4",
-              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
+              "impl_url": "https://webkit.org/b/171216"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2883,7 +2930,8 @@
       },
       "navigation": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#global",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/navigation",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigation",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -3939,7 +3987,8 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "Firefox strips newline characters from the prompt response; see <a href='https://bugzil.la/1716229'>bug 1716229</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5817,7 +5866,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/487255'>bug 487255</a>."
+              "impl_url": "https://crbug.com/487255"
             }
           },
           "status": {
