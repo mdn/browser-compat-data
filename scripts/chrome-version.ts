@@ -2,6 +2,10 @@
  * See LICENSE file for more information. */
 export {};
 
+import * as fs from 'node:fs';
+
+import * as core from '@actions/core';
+
 const releaseBranch = 'stable';
 const betaBranch = 'beta';
 const nightlyBranch = 'dev';
@@ -63,7 +67,7 @@ const getReleaseNotesURL = async (date) => {
   if (releaseNote.status == 200) {
     return url;
   }
-  console.log('Release note not found');
+  core.warning('Release note not found');
   return '';
 };
 
@@ -100,7 +104,6 @@ const canaryReleaseDate = versions[nightlyBranch].stable_date.substring(0, 10); 
 //
 // Get the chrome.json from the local BCD
 //
-import * as fs from 'node:fs';
 const file = fs.readFileSync('./chrome.json');
 const chromeBCD = JSON.parse(file.toString());
 
@@ -130,7 +133,7 @@ for (let i = 1; i < stable; i++) {
   if (chromeBCD.browsers.chrome.releases[i.toString()]) {
     chromeBCD.browsers.chrome.releases[i.toString()].status = 'retired';
   } else {
-    console.log(`WARNING: Chrome ${i} is missing.`);
+    core.warning(`Chrome ${i} is missing.`);
   }
 }
 
@@ -165,4 +168,4 @@ if (chromeBCD.browsers.chrome.releases[(canary + 1).toString()]) {
 // Write the JSON back into chrome.json
 //
 fs.writeFileSync('./chrome.json', JSON.stringify(chromeBCD, null, 2));
-console.log('File written successfully\n');
+core.info('File generated succesfully.')
