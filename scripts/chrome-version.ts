@@ -4,7 +4,7 @@ export {};
 
 const releaseBranch = 'stable';
 const betaBranch = 'beta';
-const nightlyBranch = 'canary';
+const nightlyBranch = 'dev';
 const chromestatusURL = 'https://chromestatus.com/api/v0/channels';
 
 /**
