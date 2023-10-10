@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.22)
+
+October 10, 2023
+
+### Additions
+
+- `html.elements.input.mozactionhint` ([#20925](https://github.com/mdn/browser-compat-data/pull/20925))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 1,244 additions and 4,326 deletions in 17 commits ([`v5.3.21...v5.3.22`](https://github.com/mdn/browser-compat-data/compare/v5.3.21...v5.3.22))
+- 14,909 total features
+- 1,030 total contributors
+- 4,606 total stargazers
+
 ## [v5.3.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.21)
 
 October 6, 2023
