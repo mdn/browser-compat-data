@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.21)
+
+October 6, 2023
+
+### Additions
+
+- `browsers.chrome.releases.120` ([#20891](https://github.com/mdn/browser-compat-data/pull/20891))
+- `browsers.chrome.releases.121` ([#20891](https://github.com/mdn/browser-compat-data/pull/20891))
+- `browsers.opera.releases.104` ([#20907](https://github.com/mdn/browser-compat-data/pull/20907))
+- `browsers.safari_ios.releases.17.1` ([#20890](https://github.com/mdn/browser-compat-data/pull/20890))
+- `browsers.safari.releases.17.1` ([#20890](https://github.com/mdn/browser-compat-data/pull/20890))
+
+### Statistics
+
+- 5 contributors have changed 6 files with 93 additions and 277 deletions in 9 commits ([`v5.3.20...v5.3.21`](https://github.com/mdn/browser-compat-data/compare/v5.3.20...v5.3.21))
+- 14,908 total features
+- 1,029 total contributors
+- 4,605 total stargazers
+
 ## [v5.3.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.20)
 
 October 3, 2023
