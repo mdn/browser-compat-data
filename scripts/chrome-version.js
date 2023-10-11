@@ -5,28 +5,29 @@ export {};
 import * as fs from 'node:fs';
 
 const options = {
-  desktop : {
-    bcdFile : 'chrome.json',
-    bcdBrowserName : 'chrome',
-    releaseBranch : 'stable',
-    betaBranch : 'beta',
-    nightlyBranch : 'dev',
+  desktop: {
+    bcdFile: 'chrome.json',
+    bcdBrowserName: 'chrome',
+    releaseBranch: 'stable',
+    betaBranch: 'beta',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'stable-channel-update-for-desktop',
     firstRelease: 1,
     skippedReleases: [82], // 82 was skipped during COVID
-    chromestatusURL : 'https://chromestatus.com/api/v0/channels'
+    chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
-  android : {
-    bcdFile : 'chrome_android.json',
-    bcdBrowserName : 'chrome_android',
-    releaseBranch : 'stable',
-    betaBranch : 'beta',
-    nightlyBranch : 'dev',
+  android: {
+    bcdFile: 'chrome_android.json',
+    bcdBrowserName: 'chrome_android',
+    releaseBranch: 'stable',
+    betaBranch: 'beta',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 25,
     skippedReleases: [82], // 82 was skipped during COVID
-    chromestatusURL : 'https://chromestatus.com/api/v0/channels'}
-}
+    chromestatusURL: 'https://chromestatus.com/api/v0/channels',
+  },
+};
 
 /**
  * newChromeEntry - Add a new Chrome entry in the JSON list for Chrome browsers
@@ -46,9 +47,7 @@ const newChromeEntry = (
   releaseDate,
   releaseNotesURL,
 ) => {
-
-  console.log(browser, ':', status);
-  const release = json.browsers[browser].releases[version]= new Object();
+  const release = (json.browsers[browser].releases[version] = new Object());
   //const release = browserObj[version] = new Object();
   if (releaseDate) {
     release['release_date'] = releaseDate;
@@ -76,7 +75,6 @@ const getReleaseNotesURL = async (date, core) => {
 
   // First possibility
   let url = `https://chromereleases.googleblog.com/${year}/${month}/${core}_${day}.html`;
-  console.log(`test url: ${url}`)
   let releaseNote = await fetch(url);
 
   if (releaseNote.status == 200) {
@@ -100,8 +98,7 @@ const getReleaseNotesURL = async (date, core) => {
  *
  * @param {object} options The list of options for this type of chromiums.
  */
-const updateChromiumFile = async(options) => {
-
+const updateChromiumFile = async (options) => {
   //
   // Get the JSON with the versions from chromestatus
   //
@@ -122,15 +119,22 @@ const updateChromiumFile = async(options) => {
 
   // Get current stable version
   const stable = versions[options.releaseBranch].version;
-  const stableReleaseDate = versions[options.releaseBranch].stable_date.substring(0, 10); // Remove the time part
+  const stableReleaseDate = versions[
+    options.releaseBranch
+  ].stable_date.substring(0, 10); // Remove the time part
 
   // Get current beta version
   const beta = versions[options.betaBranch].version;
-  const betaReleaseDate = versions[options.betaBranch].stable_date.substring(0, 10); // Remove the time part
+  const betaReleaseDate = versions[options.betaBranch].stable_date.substring(
+    0,
+    10,
+  ); // Remove the time part
 
   // Get current nightly (= canary) version
   const canary = versions[options.nightlyBranch].version;
-  const canaryReleaseDate = versions[options.nightlyBranch].stable_date.substring(0, 10); // Remove the time part
+  const canaryReleaseDate = versions[
+    options.nightlyBranch
+  ].stable_date.substring(0, 10); // Remove the time part
 
   //
   // Get the chrome.json from the local BCD
@@ -143,12 +147,17 @@ const updateChromiumFile = async(options) => {
   //
 
   // Update the stable version entry
-  const releaseNotesURL = await getReleaseNotesURL(stableReleaseDate, options.releaseNoteCore);
-  console.log(`Stable URL:${releaseNotesURL}`)
+  const releaseNotesURL = await getReleaseNotesURL(
+    stableReleaseDate,
+    options.releaseNoteCore,
+  );
   if (chromeBCD.browsers[options.bcdBrowserName].releases[stable]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_date = stableReleaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_notes = releaseNotesURL;
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].status = 'current';
+    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_date =
+      stableReleaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_notes =
+      releaseNotesURL;
+    chromeBCD.browsers[options.bcdBrowserName].releases[stable].status =
+      'current';
   } else {
     // New entry
     newChromeEntry(
@@ -165,7 +174,9 @@ const updateChromiumFile = async(options) => {
   for (let i = options.firstRelease; i < stable; i++) {
     if (!options.skippedReleases.includes(i)) {
       if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
-        chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()].status = 'retired';
+        chromeBCD.browsers[options.bcdBrowserName].releases[
+          i.toString()
+        ].status = 'retired';
       } else {
         console.warn(`Chrome ${i} is missing.`);
       }
@@ -173,34 +184,57 @@ const updateChromiumFile = async(options) => {
   }
 
   // Update the beta version entry
-  console.log(options.bcdBrowserName);
   if (chromeBCD.browsers[options.bcdBrowserName].releases[beta]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[beta].release_date = betaReleaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[beta].release_date =
+      betaReleaseDate;
     chromeBCD.browsers[options.bcdBrowserName].releases[beta].status = 'beta';
   } else {
     // New entry
-    newChromeEntry(chromeBCD,
-      options.bcdBrowserName, beta, 'beta', betaReleaseDate, '');
+    newChromeEntry(
+      chromeBCD,
+      options.bcdBrowserName,
+      beta,
+      'beta',
+      betaReleaseDate,
+      '',
+    );
   }
 
   // Update the nightly version (canary) entry
   if (chromeBCD.browsers[options.bcdBrowserName].releases[canary]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[canary].release_date = canaryReleaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[canary].status = 'nightly';
+    chromeBCD.browsers[options.bcdBrowserName].releases[canary].release_date =
+      canaryReleaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[canary].status =
+      'nightly';
   } else {
     // New entry
-    newChromeEntry(chromeBCD,
-      options.bcdBrowserName, canary, 'nightly', canaryReleaseDate, '');
+    newChromeEntry(
+      chromeBCD,
+      options.bcdBrowserName,
+      canary,
+      'nightly',
+      canaryReleaseDate,
+      '',
+    );
   }
 
   // Add a planned version entry
-  if (chromeBCD.browsers[options.bcdBrowserName].releases[(canary + 1).toString()]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[(canary + 1).toString()].status =
-      'planned';
+  if (
+    chromeBCD.browsers[options.bcdBrowserName].releases[(canary + 1).toString()]
+  ) {
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      (canary + 1).toString()
+    ].status = 'planned';
   } else {
     // New entry
-    newChromeEntry(chromeBCD,
-      options.bcdBrowserName, (canary + 1).toString(), 'planned', '', '');
+    newChromeEntry(
+      chromeBCD,
+      options.bcdBrowserName,
+      (canary + 1).toString(),
+      'planned',
+      '',
+      '',
+    );
   }
 
   //
@@ -208,7 +242,9 @@ const updateChromiumFile = async(options) => {
   //
   fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(chromeBCD, null, 2));
   console.log(`File generated succesfully: ${options.bcdFile}`);
-}
+};
 
+console.log('Check Android for Desktop.');
 updateChromiumFile(options.desktop);
+console.log('Check Android for Android.');
 updateChromiumFile(options.android);
