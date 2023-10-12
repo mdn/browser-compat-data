@@ -178,7 +178,11 @@ const updateChromiumFile = async (options) => {
           i.toString()
         ].status = 'retired';
       } else {
-        console.warn(`Chrome ${i} is missing.`);
+        // There is a retired version missing. Chromestatus doesn't list them.
+        // There is an oddity: the verison is not skipped but not in chromestatus
+        console.warn(
+          `Chrome ${i} not found in Chromestatus! Add it manually or add an exception.`,
+        );
       }
     }
   }
@@ -245,6 +249,7 @@ const updateChromiumFile = async (options) => {
 };
 
 console.log('Check Android for Desktop.');
-updateChromiumFile(options.desktop);
+await updateChromiumFile(options.desktop);
+
 console.log('Check Android for Android.');
-updateChromiumFile(options.android);
+await updateChromiumFile(options.android);
