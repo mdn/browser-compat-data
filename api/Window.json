@@ -356,18 +356,24 @@
         },
         "event_returnvalue_activation": {
           "__compat": {
-            "description": "Activation using <code>event.returnValue = \"string\";</code>",
+            "description": "Activation using <code>event.returnValue = <any-truthy-value>;</code>",
             "support": {
-              "chrome": {
-                "version_added": "30"
-              },
+              "chrome": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "30",
+                  "version_removed": "118",
+                  "partial_implementation": true,
+                  "notes": "Incorrectly activated the dialog with an empty string value."
+                }
+              ],
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "12"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "6"
               },
@@ -434,16 +440,21 @@
             "description": "Activation using <code>event.preventDefault()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "119"
               },
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "12",
-                "version_removed": "79"
-              },
+              "edge": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79"
+                }
+              ],
               "firefox": {
                 "version_added": "6"
               },
@@ -472,7 +483,7 @@
         },
         "return_string_activation": {
           "__compat": {
-            "description": "Activation using <code>return \"string\";</code>",
+            "description": "Activation using <code>return <any-truthy-value>;</code>",
             "support": {
               "chrome": {
                 "version_added": "1"
