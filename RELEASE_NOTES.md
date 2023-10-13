@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.23)
+
+October 13, 2023
+
+### Additions
+
+- `css.types.color.light-dark` ([#20935](https://github.com/mdn/browser-compat-data/pull/20935))
+
+### Statistics
+
+- 9 contributors have changed 9 files with 49 additions and 16 deletions in 12 commits ([`v5.3.22...v5.3.23`](https://github.com/mdn/browser-compat-data/compare/v5.3.22...v5.3.23))
+- 14,910 total features
+- 1,030 total contributors
+- 4,609 total stargazers
+
 ## [v5.3.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.22)
 
 October 10, 2023
