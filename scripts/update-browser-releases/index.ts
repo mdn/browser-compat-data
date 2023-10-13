@@ -107,16 +107,28 @@ if (updateWebview && updateMobile) {
 
 import { updateChromiumFile } from './chrome-version.js';
 
-// Arguments:
-//  Engine selections:
-//   --chrome : update chrome
-//   --firefox : update firefox
-//   --all : update all
-//   If none of the three, equivalent of -all. If several, they add
-//  Mobile/Desktop selection
-//   --mobile: update all mobile
-//   --desktop: update all desktop
-//  If several they add; if none: equivalent to --mobile --desktop
+// Handle `--help`
+if (process.argv.indexOf('--help') > -1) {
+  console.log('Update the JSON files containing data about browser versions.\n');
+  console.log('\u001b[1mUSAGE\u001b[0m');
+  console.log('node --loader=ts-node/esm update-browser-releases\n');
+  console.log('\u001b[1mFLAGS\u001b[0m');
+  console.log('Engine selection');
+  console.log('  --chrome - Update Google Chrome');
+  console.log('  --firefox - Update Mozilla Firefox');
+  console.log('  --all - Update all browsers');
+  console.log('\n  If none of these flags are specified, default to --all.');
+  console.log('\nDevice selection');
+  console.log('  --desktop - Update desktop versions');
+  console.log('  --mobile - Update mobile versions');
+  console.log('\n  If none of these flags are specified, default to --desktop --mobile.');
+  console.log('\nOthers');
+  console.log('  --help - Display this information')
+  process.exit();
+}
+
+
+// Read arguments
 const updateAll =
   !(
     process.argv.indexOf('--all') > -1 ||
