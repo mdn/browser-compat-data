@@ -3,36 +3,7 @@
 
 import * as fs from 'node:fs';
 
-/**
- * newBrowserEntry - Add a new browser entry in the JSON list
- *
- * @param {object} json json file to update
- * @param {object} browser the entry name where to add it in the bcd file
- * @param {string} version new version to add
- * @param {string} status new status
- * @param {string} releaseDate new release date
- * @param {string} releaseNotesURL url of the release notes
- */
-const newBrowserEntry = (
-  json,
-  browser,
-  version,
-  status,
-  releaseDate,
-  releaseNotesURL,
-) => {
-  const release = (json.browsers[browser].releases[version] = new Object());
-  //const release = browserObj[version] = new Object();
-  if (releaseDate) {
-    release['release_date'] = releaseDate;
-  }
-  if (releaseNotesURL) {
-    release['release_notes'] = releaseNotesURL;
-  }
-  release['status'] = status;
-  release['engine'] = 'Blink';
-  release['engine_version'] = version.toString();
-};
+import { newBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
@@ -139,6 +110,7 @@ export const updateChromiumFile = async (options) => {
       options.bcdBrowserName,
       stable,
       'current',
+      options.browserEngine,
       stableReleaseDate,
       releaseNotesURL,
     );
@@ -173,6 +145,7 @@ export const updateChromiumFile = async (options) => {
       options.bcdBrowserName,
       beta,
       'beta',
+      options.browserEngine,
       betaReleaseDate,
       '',
     );
@@ -191,6 +164,7 @@ export const updateChromiumFile = async (options) => {
       options.bcdBrowserName,
       canary,
       'nightly',
+      options.browserEngine,
       canaryReleaseDate,
       '',
     );
@@ -210,6 +184,7 @@ export const updateChromiumFile = async (options) => {
       options.bcdBrowserName,
       (canary + 1).toString(),
       'planned',
+      options.browserEngine,
       '',
       '',
     );

@@ -47,6 +47,7 @@ const options = {
   desktop: {
     bcdFile: './browsers/chrome.json',
     bcdBrowserName: 'chrome',
+    browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
     nightlyBranch: 'dev',
@@ -58,6 +59,7 @@ const options = {
   android: {
     bcdFile: './browsers/chrome_android.json',
     bcdBrowserName: 'chrome_android',
+    browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
     nightlyBranch: 'dev',
