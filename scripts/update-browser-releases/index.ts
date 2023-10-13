@@ -5,7 +5,9 @@ import { updateChromiumFile } from './chrome-version.js';
 
 // Handle `--help`
 if (process.argv.indexOf('--help') > -1) {
-  console.log('Update the JSON files containing data about browser versions.\n');
+  console.log(
+    'Update the JSON files containing data about browser versions.\n',
+  );
   console.log('\u001b[1mUSAGE\u001b[0m');
   console.log('node --loader=ts-node/esm update-browser-releases\n');
   console.log('\u001b[1mFLAGS\u001b[0m');
@@ -17,12 +19,13 @@ if (process.argv.indexOf('--help') > -1) {
   console.log('\nDevice selection');
   console.log('  --desktop - Update desktop versions');
   console.log('  --mobile - Update mobile versions');
-  console.log('\n  If none of these flags are specified, default to --desktop --mobile.');
+  console.log(
+    '\n  If none of these flags are specified, default to --desktop --mobile.',
+  );
   console.log('\nOthers');
-  console.log('  --help - Display this information')
+  console.log('  --help - Display this information');
   process.exit();
 }
-
 
 // Read arguments
 const updateAll =
