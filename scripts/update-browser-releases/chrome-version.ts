@@ -1,36 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
-export {};
 
 import * as fs from 'node:fs';
 
-const options = {
-  desktop: {
-    bcdFile: 'chrome.json',
-    bcdBrowserName: 'chrome',
-    releaseBranch: 'stable',
-    betaBranch: 'beta',
-    nightlyBranch: 'dev',
-    releaseNoteCore: 'stable-channel-update-for-desktop',
-    firstRelease: 1,
-    skippedReleases: [82], // 82 was skipped during COVID
-    chromestatusURL: 'https://chromestatus.com/api/v0/channels',
-  },
-  android: {
-    bcdFile: 'chrome_android.json',
-    bcdBrowserName: 'chrome_android',
-    releaseBranch: 'stable',
-    betaBranch: 'beta',
-    nightlyBranch: 'dev',
-    releaseNoteCore: 'chrome-for-android-update',
-    firstRelease: 25,
-    skippedReleases: [82], // 82 was skipped during COVID
-    chromestatusURL: 'https://chromestatus.com/api/v0/channels',
-  },
-};
-
 /**
- * newChromeEntry - Add a new Chrome entry in the JSON list for Chrome browsers
+ * newBrowserEntry - Add a new browser entry in the JSON list
  *
  * @param {object} json json file to update
  * @param {object} browser the entry name where to add it in the bcd file
@@ -39,7 +13,7 @@ const options = {
  * @param {string} releaseDate new release date
  * @param {string} releaseNotesURL url of the release notes
  */
-const newChromeEntry = (
+const newBrowserEntry = (
   json,
   browser,
   version,
@@ -98,7 +72,7 @@ const getReleaseNotesURL = async (date, core) => {
  *
  * @param {object} options The list of options for this type of chromiums.
  */
-const updateChromiumFile = async (options) => {
+export const updateChromiumFile = async (options) => {
   //
   // Get the JSON with the versions from chromestatus
   //
@@ -139,7 +113,7 @@ const updateChromiumFile = async (options) => {
   //
   // Get the chrome.json from the local BCD
   //
-  const file = fs.readFileSync(`./${options.bcdFile}`);
+  const file = fs.readFileSync(`${options.bcdFile}`);
   const chromeBCD = JSON.parse(file.toString());
 
   //
@@ -160,7 +134,7 @@ const updateChromiumFile = async (options) => {
       'current';
   } else {
     // New entry
-    newChromeEntry(
+    newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       stable,
@@ -194,7 +168,7 @@ const updateChromiumFile = async (options) => {
     chromeBCD.browsers[options.bcdBrowserName].releases[beta].status = 'beta';
   } else {
     // New entry
-    newChromeEntry(
+    newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       beta,
@@ -212,7 +186,7 @@ const updateChromiumFile = async (options) => {
       'nightly';
   } else {
     // New entry
-    newChromeEntry(
+    newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       canary,
@@ -231,7 +205,7 @@ const updateChromiumFile = async (options) => {
     ].status = 'planned';
   } else {
     // New entry
-    newChromeEntry(
+    newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       (canary + 1).toString(),
@@ -247,9 +221,3 @@ const updateChromiumFile = async (options) => {
   fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(chromeBCD, null, 2));
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
-
-console.log('Check Android for Desktop.');
-await updateChromiumFile(options.desktop);
-
-console.log('Check Android for Android.');
-await updateChromiumFile(options.android);
