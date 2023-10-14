@@ -16,9 +16,6 @@ const specsExceptions = [
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
 
-  // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
-  'https://w3c.github.io/setImmediate/',
-
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 

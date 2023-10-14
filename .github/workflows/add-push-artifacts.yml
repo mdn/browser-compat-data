@@ -11,7 +11,7 @@ jobs:
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # get the full repository checkout, not just the inciting commit
       - uses: actions/setup-node@v3
@@ -19,8 +19,8 @@ jobs:
           node-version-file: ".nvmrc"
           cache: npm
       - run: npm ci
-      - run: npx ts-node ./scripts/enumerate-features.ts features.json
-      - run: npx ts-node ./scripts/diff-features.ts --no-github --format=json > features.diff.json
+      - run: node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts features.json
+      - run: node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/diff-features.ts --no-github --format=json > features.diff.json
       - uses: actions/upload-artifact@v3
         with:
           name: enumerate-features

@@ -65,7 +65,7 @@
           },
           "sameSite": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set",
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
               "support": {
                 "chrome": {
                   "version_added": true
@@ -472,7 +472,7 @@
         },
         "sameSiteStatus": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
             "support": {
               "chrome": {
                 "version_added": true
@@ -492,6 +492,91 @@
               "safari_ios": {
                 "notes": "Only supports explicit.",
                 "version_added": "15"
+              }
+            }
+          },
+          "lax": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "no_restriction": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "notes": "Represents a cookie without a <code>SameSite</code> attribute.",
+                  "version_added": "63"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "strict": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "unspecified": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }
