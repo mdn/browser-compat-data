@@ -64,11 +64,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1.2",
-              "partial_implementation": true,
-              "notes": "<code>outline</code> does not follow the shape of <code>border-radius</code>. See <a href='https://webkit.org/b/20807'>bug 20807</a>."
-            },
+            "safari": [
+              {
+                "version_added": "16.4"
+              },
+              {
+                "version_added": "1.2",
+                "version_removed": "16.4",
+                "partial_implementation": true,
+                "notes": "Before Safari 16.4, <code>outline</code> does not follow the shape of <code>border-radius</code>. See <a href='https://webkit.org/b/20807'>bug 20807</a>."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.0"

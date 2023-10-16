@@ -68,7 +68,7 @@
           },
           "webview_android": {
             "version_added": false,
-            "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
+            "impl_url": "https://crbug.com/551446"
           }
         },
         "status": {
@@ -263,16 +263,19 @@
             },
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17",
+              "notes": "Badging is supported for web apps saved to the Dock in Safari 17 on the macOS Sonoma beta"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4"
+            },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -906,9 +909,23 @@
             "edge": {
               "version_added": "17"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "117",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Behind a flag on other operating systems."
+              },
+              {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webnotifications.requireinteraction.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -926,7 +943,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1000,7 +1017,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "17"
+              "version_added": "16.6"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
