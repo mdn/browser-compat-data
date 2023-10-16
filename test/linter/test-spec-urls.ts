@@ -16,9 +16,6 @@ const specsExceptions = [
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
 
-  // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
-  'https://w3c.github.io/setImmediate/',
-
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 
@@ -34,10 +31,6 @@ const specsExceptions = [
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
-
-  // Remove once https://github.com/whatwg/html/pull/8502
-  // is merged and the new URL is live
-  'https://wicg.github.io/navigation-api',
 
   // Proposals for WebAssembly
   'https://github.com/WebAssembly/spec/blob/main/proposals',

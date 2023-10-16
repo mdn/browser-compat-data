@@ -1,0 +1,24 @@
+name: Trigger mdn/bcd-utils API update
+
+on:
+  workflow_run:
+    workflows: ["Release package"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  send_repo_dispatch_event:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.DISPATCH_PAT }}
+          script: |
+            const result = await github.rest.repos.createDispatchEvent({
+              owner: 'mdn',
+              repo: 'bcd-utils',
+              event_type: 'bcd_release',
+              client_payload: {}
+            })
+            console.log(result);
