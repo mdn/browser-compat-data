@@ -79,7 +79,7 @@ const options = {
     betaBranch: 'beta',
     nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
-    firstRelease: 25,
+    firstRelease: 37,
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   }
