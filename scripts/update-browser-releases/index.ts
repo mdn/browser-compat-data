@@ -13,7 +13,7 @@ if (process.argv.indexOf('--help') > -1) {
   console.log('\u001b[1mFLAGS\u001b[0m');
   console.log('Engine selection');
   console.log('  --chrome - Update Google Chrome');
-  console.log('  --webview – Update Webview')
+  console.log('  --webview – Update Webview');
   console.log('  --firefox - Update Mozilla Firefox');
   console.log('  --all - Update all browsers');
   console.log('\n  If none of these flags are specified, default to --all.');
@@ -82,7 +82,7 @@ const options = {
     firstRelease: 37,
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
-  }
+  },
 };
 
 if (updateChrome && updateDesktop) {
