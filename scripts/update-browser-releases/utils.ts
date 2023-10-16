@@ -22,7 +22,6 @@ export const newBrowserEntry = (
   releaseNotesURL,
 ) => {
   const release = (json.browsers[browser].releases[version] = new Object());
-  //const release = browserObj[version] = new Object();
   if (releaseDate) {
     release['release_date'] = releaseDate;
   }
