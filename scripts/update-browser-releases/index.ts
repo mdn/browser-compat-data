@@ -13,6 +13,7 @@ if (process.argv.indexOf('--help') > -1) {
   console.log('\u001b[1mFLAGS\u001b[0m');
   console.log('Engine selection');
   console.log('  --chrome - Update Google Chrome');
+  console.log('  --webview – Update Webview')
   console.log('  --firefox - Update Mozilla Firefox');
   console.log('  --all - Update all browsers');
   console.log('\n  If none of these flags are specified, default to --all.');
@@ -31,11 +32,13 @@ if (process.argv.indexOf('--help') > -1) {
 const updateAll =
   !(
     process.argv.indexOf('--all') > -1 ||
+    process.argv.indexOf('--webview') > -1 ||
     process.argv.indexOf('--chrome') > -1 ||
     process.argv.indexOf('--firefox') > -1
   ) || process.argv.indexOf('--all') > -1;
 const updateChrome = process.argv.indexOf('--chrome') > -1 || updateAll;
 //const updateFirefox = (process.argv.indexOf('--chrome') > -1) || updateAll;
+const updateWebview = process.argv.indexOf('--webview') > -1 || updateAll;
 const updateAllTypes = !(
   process.argv.indexOf('--mobile') > -1 ||
   process.argv.indexOf('--desktop') > -1
@@ -68,6 +71,18 @@ const options = {
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
+  webview_android: {
+    bcdFile: './browsers/webview_android.json',
+    bcdBrowserName: 'webview_android',
+    browserEngine: 'Blink',
+    releaseBranch: 'stable',
+    betaBranch: 'beta',
+    nightlyBranch: 'dev',
+    releaseNoteCore: 'chrome-for-android-update',
+    firstRelease: 25,
+    skippedReleases: [82], // 82 was skipped during COVID
+    chromestatusURL: 'https://chromestatus.com/api/v0/channels',
+  }
 };
 
 if (updateChrome && updateDesktop) {
@@ -78,4 +93,9 @@ if (updateChrome && updateDesktop) {
 if (updateChrome && updateMobile) {
   console.log('Check Chrome for Android.');
   await updateChromiumFile(options.android);
+}
+
+if (updateWebview && updateMobile) {
+  console.log('Check Webview for Android.');
+  await updateChromiumFile(options.webview_android);
 }
