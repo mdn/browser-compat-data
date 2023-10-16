@@ -39,7 +39,7 @@ const getReleaseNotesURL = async (date, core) => {
 };
 
 /**
- * updateChromiumFile - Update the json file listing the browser version of a chromium entry
+ * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
  *
  * @param {object} options The list of options for this type of chromiums.
  */
