@@ -553,14 +553,28 @@
             "__compat": {
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
               "support": {
-                "chrome": {
-                  "version_added": "105",
-                  "notes": "Initial support included same-origin prerendering only."
-                },
-                "chrome_android": {
-                  "version_added": "103",
-                  "notes": "Initial support included same-origin prerendering only."
-                },
+                "chrome": [
+                  {
+                    "version_added": "109",
+                    "notes": "Full support including same-site cross-origin prerendering."
+                  },
+                  {
+                    "version_added": "105",
+                    "partial_implementation": true,
+                    "notes": "Initial support included same-origin prerendering only."
+                  }
+                ],
+                "chrome_android": [
+                  {
+                    "version_added": "109",
+                    "notes": "Full support including same-site cross-origin prerendering."
+                  },
+                  {
+                    "version_added": "103",
+                    "partial_implementation": true,
+                    "notes": "Initial support included same-origin prerendering only."
+                  }
+                ],
                 "edge": "mirror",
                 "firefox": {
                   "version_added": false
@@ -583,39 +597,6 @@
                 "experimental": true,
                 "standard_track": true,
                 "deprecated": false
-              }
-            },
-            "crossorigin_prerending": {
-              "__compat": {
-                "description": "Same-site cross-origin prerendering",
-                "support": {
-                  "chrome": {
-                    "version_added": "109"
-                  },
-                  "chrome_android": "mirror",
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": "mirror",
-                  "ie": {
-                    "version_added": false
-                  },
-                  "oculus": "mirror",
-                  "opera": "mirror",
-                  "opera_android": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror",
-                  "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
-                },
-                "status": {
-                  "experimental": true,
-                  "standard_track": true,
-                  "deprecated": false
-                }
               }
             },
             "prefetch": {
@@ -725,12 +706,10 @@
                   "description": "<code>anonymous-client-ip-when-cross-origin</code> value",
                   "support": {
                     "chrome": {
-                      "version_added": "110",
-                      "notes": "Chrome includes a browser-specific mechanism to provide an anonymous client IP."
+                      "version_added": "110"
                     },
                     "chrome_android": {
-                      "version_added": "103",
-                      "notes": "Chrome Android includes a browser-specific mechanism to provide an anonymous client IP."
+                      "version_added": "103"
                     },
                     "edge": {
                       "version_added": false
