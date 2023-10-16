@@ -43,7 +43,7 @@ const getReleaseNotesURL = async (date, core) => {
  *
  * @param {object} options The list of options for this type of chromiums.
  */
-export const updateChromiumFile = async (options) => {
+export const updateChromiumReleases = async (options) => {
   //
   // Get the JSON with the versions from chromestatus
   //
