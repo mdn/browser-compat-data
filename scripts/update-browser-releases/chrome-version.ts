@@ -6,13 +6,13 @@ import * as fs from 'node:fs';
 import { newBrowserEntry } from './utils.js';
 
 /**
- * getReleaseNotesURL - Guess the URL of the release notes
+ * getChromeReleaseNotesURL - Guess the URL of the release notes
  *
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-const getReleaseNotesURL = async (date, core) => {
+const getChromeReleaseNotesURL = async (date, core) => {
   const dateObj = new Date(date);
   const year = dateObj.getUTCFullYear();
   const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
@@ -92,7 +92,7 @@ export const updateChromiumFile = async (options) => {
   //
 
   // Update the stable version entry
-  const releaseNotesURL = await getReleaseNotesURL(
+  const releaseNotesURL = await getChromeReleaseNotesURL(
     stableReleaseDate,
     options.releaseNoteCore,
   );
