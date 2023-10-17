@@ -13,7 +13,7 @@ if (process.argv.indexOf('--help') > -1) {
   console.log('\u001b[1mFLAGS\u001b[0m');
   console.log('Engine selection');
   console.log('  --chrome - Update Google Chrome');
-  console.log('  --webview – Update Webview');
+  console.log('  --webview - Update Webview');
   console.log('  --firefox - Update Mozilla Firefox');
   console.log('  --all - Update all browsers');
   console.log('\n  If none of these flags are specified, default to --all.');
@@ -87,15 +87,15 @@ const options = {
 
 if (updateChrome && updateDesktop) {
   console.log('Check Chrome for Desktop.');
-  await updateChromiumFile(options.desktop);
+  await updateChromiumReleases(options.desktop);
 }
 
 if (updateChrome && updateMobile) {
   console.log('Check Chrome for Android.');
-  await updateChromiumFile(options.android);
+  await updateChromiumReleases(options.android);
 }
 
 if (updateWebview && updateMobile) {
   console.log('Check Webview for Android.');
-  await updateChromiumFile(options.webview_android);
+  await updateChromiumReleases(options.webview_android);
 }
