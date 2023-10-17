@@ -356,18 +356,24 @@
         },
         "event_returnvalue_activation": {
           "__compat": {
-            "description": "Activation using <code>event.returnValue = \"string\";</code>",
+            "description": "Activation by setting <code>event.returnValue</code> to any truthy value",
             "support": {
-              "chrome": {
-                "version_added": "30"
-              },
+              "chrome": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "30",
+                  "version_removed": "118",
+                  "partial_implementation": true,
+                  "notes": "Incorrectly activated the dialog with an empty string value."
+                }
+              ],
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "12"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "6"
               },
@@ -434,16 +440,21 @@
             "description": "Activation using <code>event.preventDefault()</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "119"
               },
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "12",
-                "version_removed": "79"
-              },
+              "edge": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79"
+                }
+              ],
               "firefox": {
                 "version_added": "6"
               },
@@ -472,7 +483,7 @@
         },
         "return_string_activation": {
           "__compat": {
-            "description": "Activation using <code>return \"string\";</code>",
+            "description": "Activation by returning any truthy value",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -3178,6 +3189,39 @@
             "deprecated": false
           }
         },
+        "features_parameter_attributionsrc": {
+          "__compat": {
+            "description": "<code>features</code> parameter accepts <code>\"attributionsrc\"</code> value",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "features_parameter_popup": {
           "__compat": {
             "description": "<code>features</code> parameter accepts <code>\"popup\"</code> value",
@@ -5641,6 +5685,39 @@
           "status": {
             "experimental": false,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "sharedStorage": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sharedStorage",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
