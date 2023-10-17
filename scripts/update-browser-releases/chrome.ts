@@ -125,7 +125,7 @@ export const updateChromiumReleases = async (options) => {
         ].status = 'retired';
       } else {
         // There is a retired version missing. Chromestatus doesn't list them.
-        // There is an oddity: the verison is not skipped but not in chromestatus
+        // There is an oddity: the version is not skipped but not in chromestatus
         console.warn(
           `Chrome ${i} not found in Chromestatus! Add it manually or add an exception.`,
         );
