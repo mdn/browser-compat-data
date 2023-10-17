@@ -70,7 +70,10 @@ const processData = (data: CompatStatement, logger: Logger): void => {
   for (const specURL of featureSpecURLs) {
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
-        chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+        chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
+         - there is a more current specification URL
+         - the specification is listed in https://github.com/w3c/browser-specs
+         - the specification has a standing of "good".`,
       );
     }
   }
