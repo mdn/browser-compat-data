@@ -64,24 +64,18 @@ export const updateChromiumReleases = async (options) => {
   // Extract the useful data
   //
 
-  // Get current stable version
-  const stable = versions[options.releaseBranch].version;
-  const stableReleaseDate = versions[
-    options.releaseBranch
-  ].stable_date.substring(0, 10); // Remove the time part
-
-  // Get current beta version
-  const beta = versions[options.betaBranch].version;
-  const betaReleaseDate = versions[options.betaBranch].stable_date.substring(
-    0,
-    10,
-  ); // Remove the time part
-
-  // Get current nightly (= canary) version
-  const canary = versions[options.nightlyBranch].version;
-  const canaryReleaseDate = versions[
-    options.nightlyBranch
-  ].stable_date.substring(0, 10); // Remove the time part
+  const channels = [
+    options.releaseBranch,
+    options.betaBranch,
+    options.nightlyBranch,
+  ];
+  const data = {};
+  for (const channel of channels) {
+    const versionData = versions[channel];
+    data[channel] = new Object();
+    data[channel].version = versionData.version;
+    data[channel].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
+  }
 
   //
   // Get the chrome.json from the local BCD
@@ -95,31 +89,42 @@ export const updateChromiumReleases = async (options) => {
 
   // Update the stable version entry
   const releaseNotesURL = await getReleaseNotesURL(
-    stableReleaseDate,
+    data[options.releaseBranch].releaseDate,
     options.releaseNoteCore,
   );
-  if (chromeBCD.browsers[options.bcdBrowserName].releases[stable]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_date =
-      stableReleaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].release_notes =
-      releaseNotesURL;
-    chromeBCD.browsers[options.bcdBrowserName].releases[stable].status =
-      'current';
+  if (
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.releaseBranch].version
+    ]
+  ) {
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.releaseBranch].version
+    ].release_date = data[options.releaseBranch].releaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.releaseBranch].version
+    ].release_notes = releaseNotesURL;
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.releaseBranch].version
+    ].status = 'current';
   } else {
     // New entry
     newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
-      stable,
+      data[options.releaseBranch].version,
       'current',
       options.browserEngine,
-      stableReleaseDate,
+      data[options.releaseBranch].releaseDate,
       releaseNotesURL,
     );
   }
 
   // Check that all older releases are 'retired'
-  for (let i = options.firstRelease; i < stable; i++) {
+  for (
+    let i = options.firstRelease;
+    i < data[options.releaseBranch].version;
+    i++
+  ) {
     if (!options.skippedReleases.includes(i)) {
       if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
         chromeBCD.browsers[options.bcdBrowserName].releases[
@@ -136,55 +141,70 @@ export const updateChromiumReleases = async (options) => {
   }
 
   // Update the beta version entry
-  if (chromeBCD.browsers[options.bcdBrowserName].releases[beta]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[beta].release_date =
-      betaReleaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[beta].status = 'beta';
+  if (
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.betaBranch].version
+    ]
+  ) {
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.betaBranch].version
+    ].release_date = data[options.betaBranch].releaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.betaBranch].version
+    ].status = 'beta';
   } else {
     // New entry
     newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
-      beta,
+      data[options.betaBranch].version,
       'beta',
       options.browserEngine,
-      betaReleaseDate,
+      data[options.betaBranch].releaseDate,
       '',
     );
   }
 
   // Update the nightly version (canary) entry
-  if (chromeBCD.browsers[options.bcdBrowserName].releases[canary]) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[canary].release_date =
-      canaryReleaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[canary].status =
-      'nightly';
+  if (
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.nightlyBranch].version
+    ]
+  ) {
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.nightlyBranch].version
+    ].release_date = data[options.nightlyBranch].releaseDate;
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      data[options.nightlyBranch].version
+    ].status = 'nightly';
   } else {
     // New entry
     newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
-      canary,
+      data[options.nightlyBranch].version,
       'nightly',
       options.browserEngine,
-      canaryReleaseDate,
+      data[options.nightlyBranch].releaseDate,
       '',
     );
   }
 
   // Add a planned version entry
   if (
-    chromeBCD.browsers[options.bcdBrowserName].releases[(canary + 1).toString()]
+    chromeBCD.browsers[options.bcdBrowserName].releases[
+      (data[options.nightlyBranch].version + 1).toString()
+    ]
   ) {
     chromeBCD.browsers[options.bcdBrowserName].releases[
-      (canary + 1).toString()
+      (data[options.nightlyBranch].version + 1).toString()
     ].status = 'planned';
   } else {
     // New entry
     newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
-      (canary + 1).toString(),
+      (data[options.nightlyBranch].version + 1).toString(),
       'planned',
       options.browserEngine,
       '',
