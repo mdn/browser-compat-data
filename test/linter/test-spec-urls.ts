@@ -42,9 +42,7 @@ const specsExceptions = [
 
 const allowedSpecURLs = [
   ...specData
-    .filter(
-      (spec) => spec.standing !== 'discontinued' && spec.standing !== 'pending',
-    )
+    .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
       spec.nightly.url,
