@@ -3,6 +3,8 @@
 
 import * as fs from 'node:fs';
 
+import chalk from 'chalk-template';
+
 import { newBrowserEntry } from './utils.js';
 
 /**
@@ -34,7 +36,7 @@ const getReleaseNotesURL = async (date, core) => {
   if (releaseNote.status == 200) {
     return url;
   }
-  console.warn('Release note not found');
+  console.warn(chalk`{yellow Release note not found}`);
   return '';
 };
 
@@ -127,7 +129,7 @@ export const updateChromiumReleases = async (options) => {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
         console.warn(
-          `Chrome ${i} not found in Chromestatus! Add it manually or add an exception.`,
+          chalk`{yellow Chrome ${i} not found in Chromestatus! Add it manually or add an exception.}`,
         );
       }
     }
@@ -194,5 +196,5 @@ export const updateChromiumReleases = async (options) => {
   // Write the JSON back into chrome.json
   //
   fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(chromeBCD, null, 2));
-  console.log(`File generated successfully: ${options.bcdFile}`);
+  console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
