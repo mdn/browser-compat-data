@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { updateChromiumReleases } from './chrome-version.js';
+import { updateChromiumReleases } from './chrome.js';
 
 // Handle `--help`
 if (process.argv.indexOf('--help') > -1) {
