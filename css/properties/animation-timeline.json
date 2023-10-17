@@ -6,46 +6,21 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/animation-timeline",
           "spec_url": "https://drafts.csswg.org/css-animations-2/#animation-timeline",
           "support": {
-            "chrome": [
-              {
-                "version_added": "115"
-              },
-              {
-                "version_added": "85",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "115"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "110",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scroll-driven-animations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "97",
-                "version_removed": "110",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scroll-linked-animations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "110",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.scroll-driven-animations.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -77,37 +52,20 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "110",
-                  "notes": [
-                    "Zero scroll range is treated as 100% but should be 0% (see <a href='https://bugzil.la/1780865'>bug 1780865</a>).",
-                    "Supports the deprecated <code>horizontal</code> and <code>vertical</code> axis values, and not the <code>x</code> and <code>y</code> values."
-                  ],
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.scroll-driven-animations.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                {
-                  "version_added": "101",
-                  "version_removed": "110",
-                  "notes": [
-                    "Zero scroll range is treated as 100% but should be 0% (see <a href='https://bugzil.la/1780865'>bug 1780865</a>).",
-                    "Supports the deprecated <code>horizontal</code> and <code>vertical</code> axis values, and not the <code>x</code> and <code>y</code> values."
-                  ],
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.scroll-linked-animations.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "110",
+                "notes": [
+                  "Zero scroll range is treated as 100% but should be 0% (see <a href='https://bugzil.la/1780865'>bug 1780865</a>).",
+                  "Supports the deprecated <code>horizontal</code> and <code>vertical</code> axis values, and not the <code>x</code> and <code>y</code> values."
+                ],
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.scroll-driven-animations.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
