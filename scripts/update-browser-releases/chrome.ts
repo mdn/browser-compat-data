@@ -77,11 +77,11 @@ export const updateChromiumReleases = async (options) => {
   const channels = new Map([
     ['current', options.releaseBranch],
     ['beta', options.betaBranch],
-    ['nightly', options.nightlyBranch]
+    ['nightly', options.nightlyBranch],
   ]);
   const data = {};
 
-  for(const [key, value] of channels) {
+  for (const [key, value] of channels) {
     // Extract the useful data
     const versionData = versions[value];
     data[value] = {};
@@ -96,16 +96,16 @@ export const updateChromiumReleases = async (options) => {
     );
 
     if (
-      chromeBCD.browsers[options.bcdBrowserName].releases[
-        data[value].version
-      ]
+      chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
     ) {
       // The entry already exists
       updateBrowserEntry(
-        chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version],
+        chromeBCD.browsers[options.bcdBrowserName].releases[
+          data[value].version
+        ],
         data[value].releaseDate,
         key,
-        releaseNotesURL
+        releaseNotesURL,
       );
     } else {
       // New entry
@@ -170,4 +170,4 @@ export const updateChromiumReleases = async (options) => {
 
   fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(chromeBCD, null, 2));
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
-}
+};

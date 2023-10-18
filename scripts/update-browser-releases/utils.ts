@@ -3,7 +3,7 @@
 
 /**
  * newBrowserEntry - Add a new browser entry in the JSON list
- *
+
  * @param {object} json json file to update
  * @param {object} browser the entry name where to add it in the bcd file
  * @param {string} version new version to add
@@ -50,4 +50,4 @@ export const updateBrowserEntry = (
   entry['status'] = status;
   entry['release_date'] = releaseDate;
   entry['release_notes'] = releaseNotesURL;
-}
+};
