@@ -26,7 +26,6 @@ export const newBrowserEntry = (
     release['release_date'] = releaseDate;
   }
   if (releaseNotesURL) {
-    console.log(releaseNotesURL);
     release['release_notes'] = releaseNotesURL;
   }
   release['status'] = status;
