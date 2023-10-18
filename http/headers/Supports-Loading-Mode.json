@@ -1,24 +1,20 @@
 {
-  "css": {
-    "properties": {
-      "offset-distance": {
+  "http": {
+    "headers": {
+      "Supports-Loading-Mode": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-distance",
-          "spec_url": "https://drafts.fxtf.org/motion/#offset-distance-property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Supports-Loading-Mode",
+          "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#supports-loading-mode",
           "support": {
-            "chrome": [
-              {
-                "version_added": "55"
-              },
-              {
-                "alternative_name": "motion-distance",
-                "version_added": "46"
-              }
-            ],
+            "chrome": {
+              "version_added": "109",
+              "partial_implementation": true,
+              "notes": "Initial implementation supports <code>credentialed-prerender</code> only."
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "72"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -28,14 +24,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
