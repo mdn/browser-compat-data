@@ -73,7 +73,7 @@ const processData = (data: CompatStatement, logger: Logger): void => {
         chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
          - there is a more current specification URL
          - the specification is listed in https://github.com/w3c/browser-specs
-         - the specification has a standing of "good".`,
+         - the specification has a "good" standing`,
       );
     }
   }
