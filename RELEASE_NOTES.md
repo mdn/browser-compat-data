@@ -1,5 +1,85 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.24)
+
+October 17, 2023
+
+### Removals
+
+- `html.elements.area.type` ([#20543](https://github.com/mdn/browser-compat-data/pull/20543))
+
+### Additions
+
+- `api.AudioSession` ([#20960](https://github.com/mdn/browser-compat-data/pull/20960))
+- `api.AudioSession.type` ([#20960](https://github.com/mdn/browser-compat-data/pull/20960))
+- `api.fetch.init_attributionReporting_parameter` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.HTMLAnchorElement.attributionSrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.HTMLImageElement.attributionSrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.HTMLScriptElement.attributionSrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.PerformanceResourceTiming.deliveryType.navigational-prefetch` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `api.PublicKeyCredential.parseCreationOptionsFromJSON_static` ([#20870](https://github.com/mdn/browser-compat-data/pull/20870))
+- `api.PublicKeyCredential.parseRequestOptionsFromJSON_static` ([#20870](https://github.com/mdn/browser-compat-data/pull/20870))
+- `api.PublicKeyCredential.toJSON` ([#20870](https://github.com/mdn/browser-compat-data/pull/20870))
+- `api.Request.Request.init_attributionReporting_parameter` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.SharedStorage` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorage.append` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorage.clear` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorage.delete` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorage.set` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageOperation` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageRunOperation` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageRunOperation.run` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageSelectURLOperation` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageSelectURLOperation.run` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageWorklet` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageWorkletGlobalScope` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageWorkletGlobalScope.register` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SharedStorageWorkletGlobalScope.sharedStorage` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_aes` ([#20863](https://github.com/mdn/browser-compat-data/pull/20863))
+- `api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hkdf` ([#20863](https://github.com/mdn/browser-compat-data/pull/20863))
+- `api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_hmac` ([#20863](https://github.com/mdn/browser-compat-data/pull/20863))
+- `api.SubtleCrypto.deriveKey.derivedKeyAlgorithm_option_pbkdf2` ([#20863](https://github.com/mdn/browser-compat-data/pull/20863))
+- `api.Window.open.features_parameter_attributionsrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `api.Window.sharedStorage` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WindowSharedStorage` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WindowSharedStorage.run` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WindowSharedStorage.selectURL` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WindowSharedStorage.worklet` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.@@asyncIterator` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.context` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.entries` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.get` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.keys` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.length` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.WorkletSharedStorage.remainingBudget` ([#20375](https://github.com/mdn/browser-compat-data/pull/20375))
+- `api.XMLHttpRequest.setAttributionReporting` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `html.elements.a.attributionsrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `html.elements.details.name` ([#20861](https://github.com/mdn/browser-compat-data/pull/20861))
+- `html.elements.img.attributionsrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `html.elements.script.attributionsrc` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `html.elements.script.type.speculationrules` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `html.elements.script.type.speculationrules.prefetch` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `html.elements.script.type.speculationrules.referrer_policy` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `html.elements.script.type.speculationrules.requires` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `html.elements.script.type.speculationrules.requires.anonymous-client-ip-when-cross-origin` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `http.headers.Attribution-Reporting-Eligible` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `http.headers.Attribution-Reporting-Register-Source` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `http.headers.Attribution-Reporting-Register-Trigger` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `http.headers.Attribution-Reporting-Support` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `http.headers.Content-Security-Policy.script-src.inline-speculation-rules` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `http.headers.Permissions-Policy.attribution-reporting` ([#20460](https://github.com/mdn/browser-compat-data/pull/20460))
+- `http.headers.Sec-Purpose.prefetch` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `http.headers.Sec-Purpose.speculationrules` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+- `http.headers.Supports-Loading-Mode` ([#20742](https://github.com/mdn/browser-compat-data/pull/20742))
+
+### Statistics
+
+- 10 contributors have changed 67 files with 2,495 additions and 270 deletions in 39 commits ([`v5.3.23...v5.3.24`](https://github.com/mdn/browser-compat-data/compare/v5.3.23...v5.3.24))
+- 14,971 total features
+- 1,031 total contributors
+- 4,616 total stargazers
+
 ## [v5.3.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.23)
 
 October 13, 2023
