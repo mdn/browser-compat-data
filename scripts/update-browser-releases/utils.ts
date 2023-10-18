@@ -26,9 +26,29 @@ export const newBrowserEntry = (
     release['release_date'] = releaseDate;
   }
   if (releaseNotesURL) {
+    console.log(releaseNotesURL);
     release['release_notes'] = releaseNotesURL;
   }
   release['status'] = status;
   release['engine'] = engine;
   release['engine_version'] = version.toString();
 };
+
+/**
+ * updateBrowserEntry - Update browser entry in the JSON list
+ *
+ * @param {object} entry the entry to update
+ * @param {string} releaseDate new release date
+ * @param {string} status new status
+ * @param {string} releaseNotesURL url of the release notes
+ */
+export const updateBrowserEntry = (
+  entry,
+  releaseDate,
+  status,
+  releaseNotesURL,
+) => {
+  entry['status'] = status;
+  entry['release_date'] = releaseDate;
+  entry['release_notes'] = releaseNotesURL;
+}

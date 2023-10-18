@@ -5,16 +5,21 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
-import { newBrowserEntry } from './utils.js';
+import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
  *
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
+ * @param {string} status The status of the release
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-const getReleaseNotesURL = async (date, core) => {
+const getReleaseNotesURL = async (date, core, status) => {
+  // If the status isn't stable, do not give back any release notes.
+  if (status !== 'stable') {
+    return '';
+  }
   const dateObj = new Date(date);
   const year = dateObj.getUTCFullYear();
   const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
@@ -61,65 +66,64 @@ export const updateChromiumReleases = async (options) => {
   const versions = JSON.parse(buffer);
 
   //
-  // Extract the useful data
-  //
-
-  const channels = [
-    options.releaseBranch,
-    options.betaBranch,
-    options.nightlyBranch,
-  ];
-  const data = {};
-  for (const channel of channels) {
-    const versionData = versions[channel];
-    data[channel] = new Object();
-    data[channel].version = versionData.version;
-    data[channel].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
-  }
-
-  //
   // Get the chrome.json from the local BCD
   //
   const file = fs.readFileSync(`${options.bcdFile}`);
   const chromeBCD = JSON.parse(file.toString());
 
   //
-  // Update the JSON in memory
+  // Update the three channels
   //
+  const channels = new Map([
+    ['current', options.releaseBranch],
+    ['beta', options.betaBranch],
+    ['nightly', options.nightlyBranch]
+  ]);
+  const data = {};
 
-  // Update the stable version entry
-  const releaseNotesURL = await getReleaseNotesURL(
-    data[options.releaseBranch].releaseDate,
-    options.releaseNoteCore,
-  );
-  if (
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.releaseBranch].version
-    ]
-  ) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.releaseBranch].version
-    ].release_date = data[options.releaseBranch].releaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.releaseBranch].version
-    ].release_notes = releaseNotesURL;
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.releaseBranch].version
-    ].status = 'current';
-  } else {
-    // New entry
-    newBrowserEntry(
-      chromeBCD,
-      options.bcdBrowserName,
-      data[options.releaseBranch].version,
-      'current',
-      options.browserEngine,
-      data[options.releaseBranch].releaseDate,
-      releaseNotesURL,
+  for(const [key, value] of channels) {
+    // Extract the useful data
+    const versionData = versions[value];
+    data[value] = {};
+    data[value].version = versionData.version;
+    data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
+
+    // Update the JSON in memory
+    const releaseNotesURL = await getReleaseNotesURL(
+      data[value].releaseDate,
+      options.releaseNoteCore,
+      value,
     );
+
+    if (
+      chromeBCD.browsers[options.bcdBrowserName].releases[
+        data[value].version
+      ]
+    ) {
+      // The entry already exists
+      updateBrowserEntry(
+        chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version],
+        data[value].releaseDate,
+        key,
+        releaseNotesURL
+      );
+    } else {
+      // New entry
+      newBrowserEntry(
+        chromeBCD,
+        options.bcdBrowserName,
+        data[value].version,
+        key,
+        options.browserEngine,
+        data[value].releaseDate,
+        releaseNotesURL,
+      );
+    }
   }
 
+  //
   // Check that all older releases are 'retired'
+  //
   for (
     let i = options.firstRelease;
     i < data[options.releaseBranch].version;
@@ -140,57 +144,9 @@ export const updateChromiumReleases = async (options) => {
     }
   }
 
-  // Update the beta version entry
-  if (
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.betaBranch].version
-    ]
-  ) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.betaBranch].version
-    ].release_date = data[options.betaBranch].releaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.betaBranch].version
-    ].status = 'beta';
-  } else {
-    // New entry
-    newBrowserEntry(
-      chromeBCD,
-      options.bcdBrowserName,
-      data[options.betaBranch].version,
-      'beta',
-      options.browserEngine,
-      data[options.betaBranch].releaseDate,
-      '',
-    );
-  }
-
-  // Update the nightly version (canary) entry
-  if (
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.nightlyBranch].version
-    ]
-  ) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.nightlyBranch].version
-    ].release_date = data[options.nightlyBranch].releaseDate;
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      data[options.nightlyBranch].version
-    ].status = 'nightly';
-  } else {
-    // New entry
-    newBrowserEntry(
-      chromeBCD,
-      options.bcdBrowserName,
-      data[options.nightlyBranch].version,
-      'nightly',
-      options.browserEngine,
-      data[options.nightlyBranch].releaseDate,
-      '',
-    );
-  }
-
+  //
   // Add a planned version entry
+  //
   if (
     chromeBCD.browsers[options.bcdBrowserName].releases[
       (data[options.nightlyBranch].version + 1).toString()
@@ -212,9 +168,6 @@ export const updateChromiumReleases = async (options) => {
     );
   }
 
-  //
-  // Write the JSON back into chrome.json
-  //
   fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(chromeBCD, null, 2));
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
-};
+}
