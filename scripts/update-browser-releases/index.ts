@@ -18,7 +18,7 @@ const argv = yargs(process.argv.slice(2))
     group: 'Engine selection:',
   })
   .option('firefox', {
-    describe: 'Update Google Webview',
+    describe: 'Update Mozilla Firefox',
     type: 'boolean',
     group: 'Engine selection:',
   })
@@ -104,6 +104,17 @@ const options = {
     firefoxScheduleURL:
       'https://whattrainisitnow.com/api/release/schedule/?version=',
   },
+  firefox_android: {
+    bcdFile: './browsers/firefox_android.json',
+    bcdBrowserName: 'firefox_android',
+    betaBranch: 'beta',
+    nightlyBranch: 'nightly',
+    firstRelease: 4,
+    skippedReleases: [11, 12, 13, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78],
+    firefoxReleaseDateURL: 'https://whattrainisitnow.com/api/firefox/releases/',
+    firefoxScheduleURL:
+      'https://whattrainisitnow.com/api/release/schedule/?version=',
+  },
 };
 
 if (updateChrome && updateDesktop) {
@@ -124,4 +135,9 @@ if (updateWebview && updateMobile) {
 if (updateFirefox && updateDesktop) {
   console.log('Check Firefox for Desktop.');
   await updateFirefoxReleases(options.firefox_desktop);
+}
+
+if (updateFirefox && updateMobile) {
+  console.log('Check Firefox for Android.');
+  await updateFirefoxReleases(options.firefox_android);
 }
