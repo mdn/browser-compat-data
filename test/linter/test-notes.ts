@@ -1,23 +1,20 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import chalk from 'chalk-template';
+import HTMLParser from '@desertnet/html-parser';
+
+import { Linter, Logger, LinterData, VALID_ELEMENTS } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
   SupportStatement,
 } from '../../types/types.js';
 
-import chalk from 'chalk-template';
-import HTMLParser from '@desertnet/html-parser';
-
-import { VALID_ELEMENTS } from '../utils.js';
-
 const parser = new HTMLParser();
 
 /**
  * Recursively test a DOM node for valid elements
- *
  * @param {any} node The DOM node to test
  * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
@@ -66,7 +63,6 @@ const testNode = (
 
 /**
  * Test a string for valid HTML
- *
  * @param {string} string The string to test
  * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
@@ -106,7 +102,6 @@ const validateHTML = (
 
 /**
  * Check the notes in the data
- *
  * @param {string|string[]} notes The notes to test
  * @param {BrowserName} browser The browser the notes belong to
  * @param {string} feature The identifier of the feature
@@ -129,7 +124,6 @@ const checkNotes = (
 
 /**
  * Process the data for notes errors
- *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} feature The identifier of the feature
@@ -163,7 +157,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

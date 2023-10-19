@@ -15,12 +15,12 @@ import fixPropertyOrder from './property-order.js';
 import fixStatementOrder from './statement-order.js';
 import fixLinks from './links.js';
 import fixStatus from './status.js';
+import fixMirror from './mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
- *
  * @param {string[]} files The files to load and perform fix upon
  */
 const load = async (...files: string[]): Promise<void> => {
@@ -46,6 +46,7 @@ const load = async (...files: string[]): Promise<void> => {
         fixStatementOrder(file);
         fixLinks(file);
         fixStatus(file);
+        fixMirror(file);
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>
@@ -70,6 +71,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

@@ -1,14 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatData } from './types/types.js';
-
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { fdir } from 'fdir';
 
+import { CompatData } from './types/types.js';
 import extend from './scripts/lib/extend.js';
 import { normalizePath, walk } from './utils/index.js';
 
@@ -16,7 +15,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more directories passed as arguments.
- *
  * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
@@ -61,6 +59,7 @@ export default (await load(
   'javascript',
   'mathml',
   'svg',
+  'webassembly',
   'webdriver',
   'webextensions',
 )) as CompatData;

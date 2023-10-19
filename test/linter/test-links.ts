@@ -1,10 +1,16 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
-
 import chalk from 'chalk-template';
-import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
+
+import {
+  Linter,
+  Logger,
+  LinterData,
+  IS_WINDOWS,
+  indexToPos,
+  indexToPosRaw,
+} from '../utils.js';
 
 type LinkError = {
   issue: string;
@@ -16,7 +22,6 @@ type LinkError = {
 
 /**
  * Given a RegEx expression, test the link for errors
- *
  * @param {LinkError[]} errors The errors object to push the new errors to
  * @param {string} actual The link to test
  * @param {string|RegExp} regexp The regex to test with
@@ -55,7 +60,6 @@ const processLink = (
 
 /**
  * Process the data for any errors within the links
- *
  * @param {string} rawData The raw contents of the file to test
  * @returns {LinkError[]} A list of errors found in the links
  */
@@ -268,7 +272,6 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

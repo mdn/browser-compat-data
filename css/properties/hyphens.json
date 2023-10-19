@@ -4,39 +4,25 @@
       "hyphens": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/hyphens",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-text/#hyphens-property",
+          "spec_url": "https://drafts.csswg.org/css-text/#hyphens-property",
           "support": {
             "chrome": [
-              {
-                "partial_implementation": true,
-                "version_added": "55",
-                "notes": "<code>auto</code> value is only supported on macOS and Android and for languages the OS provides hyphenation for."
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "13",
-                "notes": "Only <code>-webkit-hyphens: none</code> is supported."
-              }
-            ],
-            "chrome_android": [
               {
                 "version_added": "55"
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "18"
+                "version_added": "13"
               }
             ],
+            "chrome_android": "mirror",
             "edge": [
               {
-                "partial_implementation": true,
-                "version_added": "79",
-                "notes": "<code>auto</code> value is only supported on macOS and Android and for languages the OS provides hyphenation for."
+                "version_added": "79"
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "79",
-                "notes": "Only <code>-webkit-hyphens: none</code> is supported."
+                "version_added": "79"
               },
               {
                 "prefix": "-ms-",
@@ -52,8 +38,7 @@
               },
               {
                 "prefix": "-moz-",
-                "version_added": "6",
-                "notes": "Automatic hyphenation only works for languages with hyphenation dictionaries that are integrated into Firefox."
+                "version_added": "6"
               }
             ],
             "firefox_android": "mirror",
@@ -64,32 +49,28 @@
               "notes": "Only works if the specified language is the same as the language of the underlying OS."
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "44",
-              "partial_implementation": true,
-              "notes": "<code>auto</code> value is only supported on macOS and Android."
-            },
-            "opera_android": {
-              "version_added": "43"
-            },
-            "safari": {
-              "prefix": "-webkit-",
-              "version_added": "5.1"
-            },
-            "safari_ios": {
-              "prefix": "-webkit-",
-              "version_added": "4.2"
-            },
-            "samsunginternet_android": "mirror",
-            "webview_android": [
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": [
               {
-                "version_added": "55"
+                "version_added": "17"
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "4"
+                "version_added": "5.1"
               }
-            ]
+            ],
+            "safari_ios": [
+              {
+                "version_added": "17"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "4.2"
+              }
+            ],
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -97,7 +78,51 @@
             "deprecated": false
           }
         },
-        "afrikaans": {
+        "auto_value": {
+          "__compat": {
+            "description": "Support for the <code>auto</code> value",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "88"
+                },
+                {
+                  "version_added": "55",
+                  "partial_implementation": true,
+                  "notes": "Only supported on macOS."
+                }
+              ],
+              "chrome_android": {
+                "version_added": "55"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "6"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "5.1"
+              },
+              "safari_ios": {
+                "version_added": "4.2"
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "language_afrikaans": {
           "__compat": {
             "description": "Hyphenation dictionary for Afrikaans (af, af-*)",
             "support": {
@@ -130,7 +155,7 @@
             }
           }
         },
-        "bosnian": {
+        "language_bosnian": {
           "__compat": {
             "description": "Hyphenation dictionary for Bosnian, Serbian, and Serbo-Croatian (sh, sh-*, sr, sr-*, bs, bs-*)",
             "support": {
@@ -163,7 +188,7 @@
             }
           }
         },
-        "bulgarian": {
+        "language_bulgarian": {
           "__compat": {
             "description": "Hyphenation dictionary for Bulgarian (bg, bg-*)",
             "support": {
@@ -196,7 +221,7 @@
             }
           }
         },
-        "catalan": {
+        "language_catalan": {
           "__compat": {
             "description": "Hyphenation dictionary for Catalan (ca, ca-*)",
             "support": {
@@ -229,7 +254,7 @@
             }
           }
         },
-        "croatian": {
+        "language_croatian": {
           "__compat": {
             "description": "Hyphenation dictionary for Croatian (hr, hr-*)",
             "support": {
@@ -262,7 +287,7 @@
             }
           }
         },
-        "czech": {
+        "language_czech": {
           "__compat": {
             "description": "Hyphenation dictionary for Czech (cs, cs-*)",
             "support": {
@@ -295,7 +320,7 @@
             }
           }
         },
-        "danish": {
+        "language_danish": {
           "__compat": {
             "description": "Hyphenation dictionary for Danish (da, da-*)",
             "support": {
@@ -328,7 +353,7 @@
             }
           }
         },
-        "dutch": {
+        "language_dutch": {
           "__compat": {
             "description": "Hyphenation dictionary for Dutch (nl, nl-*)",
             "support": {
@@ -361,7 +386,7 @@
             }
           }
         },
-        "english": {
+        "language_english": {
           "__compat": {
             "description": "Hyphenation dictionary for English (en, en-*)",
             "support": {
@@ -402,7 +427,7 @@
             }
           }
         },
-        "esperanto": {
+        "language_esperanto": {
           "__compat": {
             "description": "Hyphenation dictionary for Esperanto (eo, eo-*)",
             "support": {
@@ -435,7 +460,7 @@
             }
           }
         },
-        "estonian": {
+        "language_estonian": {
           "__compat": {
             "description": "Hyphenation dictionary for Estonian (et, et-*)",
             "support": {
@@ -468,7 +493,7 @@
             }
           }
         },
-        "finish": {
+        "language_finish": {
           "__compat": {
             "description": "Hyphenation dictionary for Finnish (fi, fi-*)",
             "support": {
@@ -501,7 +526,7 @@
             }
           }
         },
-        "french": {
+        "language_french": {
           "__compat": {
             "description": "Hyphenation dictionary for French (fr, fr-*)",
             "support": {
@@ -534,7 +559,7 @@
             }
           }
         },
-        "galician": {
+        "language_galician": {
           "__compat": {
             "description": "Hyphenation dictionary for Galician (gl, gl-*)",
             "support": {
@@ -567,7 +592,7 @@
             }
           }
         },
-        "german_reformed_orthography": {
+        "language_german_reformed_orthography": {
           "__compat": {
             "description": "Hyphenation dictionary for German, Reformed Orthography of 1996 (de, de-1996, de-DE, de-AT, de-*)",
             "support": {
@@ -600,7 +625,7 @@
             }
           }
         },
-        "german_swiss_orthography": {
+        "language_german_swiss_orthography": {
           "__compat": {
             "description": "Hyphenation dictionary for German, Swiss Orthography (de-CH, de-CH-*)",
             "support": {
@@ -633,7 +658,7 @@
             }
           }
         },
-        "german_traditional_orthography": {
+        "language_german_traditional_orthography": {
           "__compat": {
             "description": "Hyphenation dictionary for German, Traditional Orthography of 1901 (de-1901, de-AT-1901, de-DE-1901)",
             "support": {
@@ -666,7 +691,7 @@
             }
           }
         },
-        "hungarian": {
+        "language_hungarian": {
           "__compat": {
             "description": "Hyphenation dictionary for Hungarian (hu, hu-*)",
             "support": {
@@ -699,7 +724,7 @@
             }
           }
         },
-        "icelandic": {
+        "language_icelandic": {
           "__compat": {
             "description": "Hyphenation dictionary for Icelandic (is, is-*)",
             "support": {
@@ -732,7 +757,7 @@
             }
           }
         },
-        "interlingua": {
+        "language_interlingua": {
           "__compat": {
             "description": "Hyphenation dictionary for Interlingua (ia, ia-*)",
             "support": {
@@ -765,7 +790,7 @@
             }
           }
         },
-        "italian": {
+        "language_italian": {
           "__compat": {
             "description": "Hyphenation dictionary for Italian (it, it-*)",
             "support": {
@@ -798,7 +823,7 @@
             }
           }
         },
-        "kurmanji": {
+        "language_kurmanji": {
           "__compat": {
             "description": "Hyphenation dictionary for Kurmanji (kmr, kmr-*)",
             "support": {
@@ -831,7 +856,7 @@
             }
           }
         },
-        "latin": {
+        "language_latin": {
           "__compat": {
             "description": "Hyphenation dictionary for Latin (la, la-*)",
             "support": {
@@ -864,7 +889,7 @@
             }
           }
         },
-        "lithuanian": {
+        "language_lithuanian": {
           "__compat": {
             "description": "Hyphenation dictionary for Lithuanian (lt, lt-*)",
             "support": {
@@ -897,7 +922,7 @@
             }
           }
         },
-        "mongolian": {
+        "language_mongolian": {
           "__compat": {
             "description": "Hyphenation dictionary for Mongolian (mn, mn-*)",
             "support": {
@@ -930,7 +955,7 @@
             }
           }
         },
-        "norwegian_nn": {
+        "language_norwegian_nn": {
           "__compat": {
             "description": "Hyphenation dictionary for Norwegian (Nynorsk) (nn, nn-*)",
             "support": {
@@ -965,7 +990,7 @@
             }
           }
         },
-        "norwegian_no": {
+        "language_norwegian_no": {
           "__compat": {
             "description": "Hyphenation dictionary for Norwegian (Bokmål) (no, no-*, nb, nb-*)",
             "support": {
@@ -998,7 +1023,7 @@
             }
           }
         },
-        "polish": {
+        "language_polish": {
           "__compat": {
             "description": "Hyphenation dictionary for Polish (pl, pl-*)",
             "support": {
@@ -1031,7 +1056,7 @@
             }
           }
         },
-        "portuguese": {
+        "language_portuguese": {
           "__compat": {
             "description": "Hyphenation dictionary for Portuguese (pt, pt-*)",
             "support": {
@@ -1064,7 +1089,7 @@
             }
           }
         },
-        "portuguese_brazilian": {
+        "language_portuguese_brazilian": {
           "__compat": {
             "description": "Hyphenation dictionary for Brazilian Portuguese (pt-BR)",
             "support": {
@@ -1098,7 +1123,7 @@
             }
           }
         },
-        "russian": {
+        "language_russian": {
           "__compat": {
             "description": "Hyphenation dictionary for Russian (ru, ru-*)",
             "support": {
@@ -1131,7 +1156,7 @@
             }
           }
         },
-        "slovenian": {
+        "language_slovenian": {
           "__compat": {
             "description": "Hyphenation dictionary for Slovenian (sl, sl-*)",
             "support": {
@@ -1164,7 +1189,7 @@
             }
           }
         },
-        "spanish": {
+        "language_spanish": {
           "__compat": {
             "description": "Hyphenation dictionary for Spanish (es, es-*)",
             "support": {
@@ -1197,7 +1222,7 @@
             }
           }
         },
-        "swedish": {
+        "language_swedish": {
           "__compat": {
             "description": "Hyphenation dictionary for Swedish (sv, sv-*)",
             "support": {
@@ -1230,7 +1255,7 @@
             }
           }
         },
-        "turkish": {
+        "language_turkish": {
           "__compat": {
             "description": "Hyphenation dictionary for Turkish (tr, tr-*)",
             "support": {
@@ -1263,7 +1288,7 @@
             }
           }
         },
-        "ukrainian": {
+        "language_ukrainian": {
           "__compat": {
             "description": "Hyphenation dictionary for Ukrainian (uk, uk-*)",
             "support": {
@@ -1296,7 +1321,7 @@
             }
           }
         },
-        "upper_sorbian": {
+        "language_upper_sorbian": {
           "__compat": {
             "description": "Hyphenation dictionary for Upper Sorbian (hsb, hsb-*)",
             "support": {
@@ -1329,7 +1354,7 @@
             }
           }
         },
-        "welsh": {
+        "language_welsh": {
           "__compat": {
             "description": "Hyphenation dictionary for Welsh (cy, cy-*)",
             "support": {

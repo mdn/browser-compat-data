@@ -1,16 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier } from '../../types/types.js';
-
 import fs from 'node:fs';
 
+import { Identifier } from '../../types/types.js';
 import { checkExperimental } from '../../test/linter/test-status.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * Fix the status values
- *
  * @param {value} key The key of the object
  * @param {Identifier} value The value to update
  * @returns {Identifier} The updated value
@@ -36,7 +34,6 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
 /**
  * Fix feature statuses throughout the BCD files
- *
  * @param {string} filename The name of the file to fix
  */
 const fixStatusFromFile = (filename: string): void => {

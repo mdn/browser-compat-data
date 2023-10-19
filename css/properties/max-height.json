@@ -4,7 +4,7 @@
       "max-height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/max-height",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-sizing-4/#width-height-keywords",
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
           "support": {
             "chrome": {
               "version_added": "18"
@@ -59,12 +59,17 @@
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "partial_implementation": true,
-                "prefix": "-moz-",
-                "version_added": "3",
-                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
-              },
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "partial_implementation": true,
+                  "prefix": "-moz-",
+                  "version_added": "3",
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false

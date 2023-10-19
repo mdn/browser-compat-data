@@ -25,11 +25,17 @@ Then, you can import BCD into your project with either `import` or `require()`:
 ```js
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  assert: { type: 'json' },
+});
 
 // ...or...
 
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data/forLegacyNode');
 
 // ...or...
 
@@ -43,6 +49,13 @@ You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    assert: { type: 'json' },
+  }
+);
 ```
 
 ### Other Languages
@@ -140,6 +153,10 @@ Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, inclu
 - `attributes` - Attributes
 - `elements` - Elements
 
+### [`webassembly`](webassembly)
+
+Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
+
 ### [`webdriver`](webdriver)
 
 Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
@@ -194,7 +211,7 @@ Thanks to:
     <td>
       <img
         src="https://user-images.githubusercontent.com/498917/52569900-852b3080-2e12-11e9-9bd0-f1e256b13e53.png"
-        height="86"
+        height="56"
         alt="BrowserStack"
       />
       <p>
@@ -208,11 +225,23 @@ Thanks to:
     <td>
       <img
         src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true"
-        height="86"
+        height="56"
         alt="Testing Powered By Sauce Labs"
       />
       <p>
         <a href="https://opensource.saucelabs.com/">Sauce Labs Open Source</a
+        >
+        for testing services
+      </p>
+    </td>
+    <td>
+      <img
+        src="https://user-images.githubusercontent.com/5179191/203835995-e4cf2b3f-483f-419f-afda-bad1200c04f2.png"
+        height="56"
+        alt="LambdaTest"
+      />
+      <p>
+        <a href="https://www.lambdatest.com/hyperexecute">LambdaTest Open Source</a
         >
         for testing services
       </p>

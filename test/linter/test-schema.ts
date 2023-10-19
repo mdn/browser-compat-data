@@ -1,12 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
-
 import Ajv from 'ajv';
 import ajvErrors from 'ajv-errors';
 import ajvFormats from 'ajv-formats';
 import betterAjvErrors from 'better-ajv-errors';
+
+import { Linter, Logger, LinterData } from '../utils.js';
 
 import compatDataSchema from './../../schemas/compat-data.schema.json' assert { type: 'json' };
 import browserDataSchema from './../../schemas/browsers.schema.json' assert { type: 'json' };
@@ -29,7 +29,6 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

@@ -35,6 +35,8 @@ const compatDataTypes = {
   mathml:
     'Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.',
   svg: 'Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG) elements, attributes, and global attributes.',
+  webassembly:
+    'Contains data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.',
   webdriver:
     'Contains data for [WebDriver](https://developer.mozilla.org/docs/Web/WebDriver) commands.',
   webextensions:
@@ -43,7 +45,6 @@ const compatDataTypes = {
 
 /**
  * Generate the browser names TypeScript
- *
  * @returns {string} The stringified TypeScript typedef
  */
 const generateBrowserNames = async () => {
@@ -76,7 +77,6 @@ const generateBrowserNames = async () => {
 
 /**
  * Generate the CompatData TypeScript
- *
  * @returns {string} The stringified TypeScript typedef
  */
 const generateCompatDataTypes = (): string => {
@@ -101,7 +101,6 @@ const generateCompatDataTypes = (): string => {
 
 /**
  * Transform the TypeScript to remove unneeded bits of typedefs
- *
  * @param {string} browserTS Typedefs for BrowserName
  * @param {string} compatTS Typedefs for CompatData
  * @returns {string} Updated typedefs
@@ -118,8 +117,28 @@ const transformTS = (browserTS: string, compatTS: string): string => {
     )
     .replace('export interface CompatDataFile {}', '')
     .replace(
-      ' */\nexport type WebextensionsIdentifier',
-      ' * THIS INTERFACE SHOULD NOT BE USED AND MAY BE REMOVED AT ANY TIME; USE THE "Identifier" INTERFACE INSTEAD.\n */\nexport type WebextensionsIdentifier',
+      /\/\*\*\n \* This interface was referenced by `CompatDataFile`'s JSON-Schema definition\n \* via the `patternProperty` "\^webextensions\*\$"\.\n \*\/\nexport type WebextensionsIdentifier = Identifier;\n/,
+      '',
+    )
+    .replace(
+      /\/\*\*\n \* This interface was referenced by `CompatDataFile`'s JSON-Schema\n \* via the `definition` "webextensions_identifier"\.\n \*\/\nexport type WebextensionsIdentifier1 = .*;\n/,
+      '',
+    )
+    .replace(
+      /\/\*\*\n \* This interface was referenced by `CompatDataFile`'s JSON-Schema\n \* via the `definition` "spec_url_value"\.\n \*\/\nexport type SpecUrlValue = string;\n/,
+      '',
+    )
+    .replace(
+      /\/\*\*\n \* This interface was referenced by `CompatDataFile`'s JSON-Schema\n \* via the `definition` "impl_url_value"\.\n \*\/\nexport type ImplUrlValue = string;\n/,
+      '',
+    )
+    .replace(
+      '/**\n * This interface was referenced by `CompatDataFile`\'s JSON-Schema\n * via the `definition` "support_block".\n */\nexport type SupportBlock1 = Partial<Record<BrowserName, SupportStatement>>;\n',
+      '',
+    )
+    .replace(
+      /\/\*\*\n \* This interface was referenced by `CompatDataFile`'s JSON-Schema\n \* via the `definition` "status_block"\.\n \*\/\nexport interface StatusBlock1 {(.*\n)*}\n/,
+      '',
     );
 
   return ts;
@@ -127,7 +146,6 @@ const transformTS = (browserTS: string, compatTS: string): string => {
 
 /**
  * Compile the TypeScript typedefs from the schema JSON
- *
  * @param {URL | string} destination Output destination
  */
 const compile = async (

@@ -15,12 +15,12 @@ export interface Changes {
 
 import chalk from 'chalk-template';
 
-import { queryPRs } from './utils.js';
 import diffFeatures from '../diff-features.js';
+
+import { queryPRs } from './utils.js';
 
 /**
  * Format a feature change in Markdown
- *
  * @param {FeatureChange} obj The feature change to format
  * @returns {string} The formatted feature change
  */
@@ -29,7 +29,6 @@ const featureBullet = (obj: FeatureChange) =>
 
 /**
  * Format all the feature changes in Markdown
- *
  * @param {Changes} changes The changes to format
  * @returns {string} The formatted changes
  */
@@ -57,7 +56,6 @@ export const formatChanges = (changes: Changes): string => {
 
 /**
  * Get all the pulls that have been merged on GitHub
- *
  * @param {string} fromDate The start date to get merged pulls from
  * @returns {FeatureChange[]} The pull requests that have been merged
  */
@@ -70,7 +68,6 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
 
 /**
  * Get the diff from the pull request
- *
  * @param {FeatureChange} pull The pull request to test
  * @returns {{ added: string[]; removed: string[] }} The changes from the pull request
  */
@@ -109,7 +106,6 @@ const getDiff = (
 
 /**
  * Get changes from the pull requests that have been merged since a specified date
- *
  * @param {string} date The starting date to query pull requests from
  * @returns {Changes} The changes from all of the pull requests
  */

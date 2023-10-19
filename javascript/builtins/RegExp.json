@@ -159,20 +159,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "8.10.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "8.10.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -388,7 +377,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "16.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -498,6 +487,7 @@
           "__compat": {
             "description": "<code>RegExp.input</code> (<code>$_</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/input",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -533,8 +523,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -588,6 +578,7 @@
           "__compat": {
             "description": "<code>RegExp.lastMatch</code> (<code>$&</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastMatch",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -627,8 +618,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -636,6 +627,7 @@
           "__compat": {
             "description": "<code>RegExp.lastParen</code> (<code>$+</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastParen",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -675,8 +667,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -684,6 +676,7 @@
           "__compat": {
             "description": "<code>RegExp.leftContext</code> (<code>$`</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/leftContext",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -723,47 +716,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
-            }
-          }
-        },
-        "lookbehind_assertion": {
-          "__compat": {
-            "description": "lookbehind assertions (<code>(?&lt;= )</code> and <code>(?&lt;! )</code>)",
-            "support": {
-              "chrome": {
-                "version_added": "62"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "8.10.0"
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -897,108 +851,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "named_capture_groups": {
-          "__compat": {
-            "description": "Named capture groups",
-            "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-patterns",
-            "support": {
-              "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "11.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "property_escapes": {
-          "__compat": {
-            "description": "Unicode property escapes (<code>\\p{...}</code>)",
-            "support": {
-              "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "11.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -1006,6 +859,7 @@
           "__compat": {
             "description": "<code>RegExp.rightContext</code> (<code>$'</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/rightContext",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1045,8 +899,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -1522,6 +1376,46 @@
             }
           }
         },
+        "unicodeSets": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicodeSets",
+            "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.unicodesets",
+            "support": {
+              "chrome": {
+                "version_added": "112"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.32"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "20.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "@@match": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match",
@@ -1710,20 +1604,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "6.5.0"
-                },
-                {
-                  "version_added": "6.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "6.5.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
