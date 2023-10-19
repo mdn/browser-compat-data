@@ -24,17 +24,6 @@ const getFirefoxReleaseNotesURL = async (version) => {
  * @param {object} options The list of options for this type of chromiums.
  */
 export const updateFirefoxReleases = async (options) => {
-  /*
-  //
-  // Extract the current planned version and its release date
-  //
-  const planned = (Number(nightlyTrain.version) + 1).toString();
-  const plannedTrainInfo = await fetch(
-    `${options.firefoxSpecificScheduleURL}${planned}`,
-  );
-  const plannedTrain = await plannedTrainInfo.json();
-  const plannedReleaseDate = plannedTrain.release.substring(0, 10); // Remove the time part
-*/
   //
   // Get the firefox.json from the local BCD
   //
