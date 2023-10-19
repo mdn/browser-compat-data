@@ -22,13 +22,13 @@ type ChangeStats = Pick<
 
 import chalk from 'chalk-template';
 
-import { exec, queryPRs, githubAPI } from './utils.js';
 import { walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
 
+import { exec, queryPRs, githubAPI } from './utils.js';
+
 /**
  * Get stargazers for the repository
- *
  * @returns {number} The number of stargazer
  */
 const stargazers = async (): Promise<number> => {
@@ -38,7 +38,6 @@ const stargazers = async (): Promise<number> => {
 
 /**
  * Get the number of contributors that have committed to the repository
- *
  * @returns {number} The number of contributors that have contributed to the repository
  */
 const contributors = (): number => {
@@ -50,7 +49,6 @@ const contributors = (): number => {
 
 /**
  * Get all of the stats for the release
- *
  * @param {string} start The last version number
  * @returns {ChangeStats} The statistics
  */
@@ -87,7 +85,6 @@ const stats = (start: string): ChangeStats => {
 
 /**
  * Get the number of contributors that have committed to this release
- *
  * @param {string} fromDate The date of the last release
  * @returns {Set<string>} The authors of the commits
  */
@@ -101,14 +98,12 @@ const getReleaseContributors = (fromDate: string): Set<string> => {
 
 /**
  * Count the number of features in BCD
- *
  * @returns {number} The number of features
  */
 const countFeatures = (): number => [...walk()].length;
 
 /**
  * Format the stats as Markdown
- *
  * @param {Stats} details The stats to format
  * @returns {string} The formatted stats
  */
@@ -137,7 +132,6 @@ export const formatStats = (details: Stats): string =>
 
 /**
  * Get the statistics for the release
- *
  * @param {string} start The last release number
  * @param {string} end This release number
  * @param {string} startDate The date of the last release

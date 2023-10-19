@@ -1,21 +1,22 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import chalk from 'chalk-template';
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement, Identifier } from '../../types/types.js';
 
-import chalk from 'chalk-template';
-
 /**
  * Process the data for prefix errors
- *
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
+ * @param {string} feature The full feature path
  * @param {Logger} logger The logger to output errors to
  */
 const processData = (
   data: CompatStatement,
   category: string,
+  feature: string,
   logger: Logger,
 ): void => {
   let prefixes: string[] = [];
@@ -44,6 +45,8 @@ const processData = (
     return;
   }
 
+  const featureName = feature.split('.')[-1];
+
   for (const support of Object.values(data.support)) {
     const supportStatements = Array.isArray(support) ? support : [support];
 
@@ -64,6 +67,17 @@ const processData = (
           chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
         );
       }
+      if (
+        statement.alternative_name &&
+        statement.alternative_name.endsWith(featureName)
+      ) {
+        logger.error(
+          chalk`Use {bold "prefix": "${statement.alternative_name.replace(
+            featureName,
+            '',
+          )}"} instead of {bold "alternative_name": "statement.alternative_name"}`,
+        );
+      }
     }
   }
 };
@@ -74,11 +88,10 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    processData(data, category, logger);
+  check: (logger: Logger, { data, path: { category, full } }: LinterData) => {
+    processData(data, category, full, logger);
   },
 } as Linter;

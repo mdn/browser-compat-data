@@ -1,17 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linter, Logger, LinterData } from '../utils.js';
-import { BrowserStatement, BrowserName } from '../../types/types.js';
-
 import chalk from 'chalk-template';
 
+import { Linter, Logger, LinterData } from '../utils.js';
+import { BrowserStatement, BrowserName } from '../../types/types.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /**
  * Process and test the data
- *
  * @param {BrowserName} browser The name of the browser
  * @param {BrowserStatement} data The browser statement
  * @param {Logger} logger The logger to output errors to
@@ -59,7 +57,6 @@ export default {
   scope: 'browser',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

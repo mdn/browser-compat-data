@@ -3,13 +3,14 @@
 
 import assert from 'node:assert/strict';
 
+import bcd from '../../index.js';
+import { Logger } from '../utils.js';
+
 import {
   neverImplemented,
   implementedAndRemoved,
   processData,
 } from './test-obsolete.js';
-import bcd from '../../index.js';
-import { Logger } from '../utils.js';
 const { browsers } = bcd;
 
 const errorTime = new Date(),
@@ -67,6 +68,7 @@ describe('neverImplemented', () => {
 
 describe('implementedAndRemoved', () => {
   it('returns false for features which were implemented and never removed', () => {
+    assert.ok(release);
     assert.equal(
       implementedAndRemoved({
         chrome: { version_added: '1' },
@@ -90,6 +92,34 @@ describe('implementedAndRemoved', () => {
             ],
           },
         ],
+      }),
+      false,
+    );
+    assert.equal(
+      implementedAndRemoved({
+        chrome: [
+          {
+            version_added: '2',
+            version_removed: release[0],
+          },
+          {
+            version_added: '1',
+            version_removed: '2',
+            flags: [
+              {
+                type: 'preference',
+                name: 'flag',
+              },
+            ],
+          },
+        ],
+        chrome_android: 'mirror',
+        firefox: {
+          version_added: false,
+        },
+        safari: {
+          version_added: '6',
+        },
       }),
       false,
     );
@@ -159,6 +189,31 @@ describe('implementedAndRemoved', () => {
             ],
           },
         ],
+      }),
+      'warning',
+    );
+    assert.equal(
+      implementedAndRemoved({
+        chrome: [
+          {
+            version_added: '2',
+            version_removed,
+          },
+          {
+            version_added: '1',
+            version_removed: '2',
+            flags: [
+              {
+                type: 'preference',
+                name: 'flag',
+              },
+            ],
+          },
+        ],
+        chrome_android: 'mirror',
+        firefox: {
+          version_added: false,
+        },
       }),
       'warning',
     );

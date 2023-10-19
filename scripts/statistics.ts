@@ -1,7 +1,20 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier } from '../types/types.js';
+import chalk from 'chalk-template';
+import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+import bcd from '../index.js';
+import {
+  BrowserName,
+  CompatStatement,
+  SupportStatement,
+  Identifier,
+} from '../types/types.js';
+
+import { getRefDate } from './release/utils.js';
 
 type VersionStatsEntry = {
   all: number;
@@ -12,21 +25,6 @@ type VersionStatsEntry = {
 };
 
 type VersionStats = { [k: string]: VersionStatsEntry };
-
-import {
-  BrowserName,
-  CompatStatement,
-  SupportStatement,
-} from '../types/types.js';
-
-import chalk from 'chalk-template';
-import esMain from 'es-main';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
-
-import bcd from '../index.js';
-
-import { getRefDate } from './release/utils.js';
 
 const webextensionsBrowsers: BrowserName[] = [
   'chrome',
@@ -40,7 +38,6 @@ const webextensionsBrowsers: BrowserName[] = [
 
 /**
  * Check whether a support statement is a specified type
- *
  * @param {SupportStatement} supportData The support statement to check
  * @param {string|boolean|null} type What type of support (true, null, ranged)
  * @returns {boolean} If the support statement has the type
@@ -70,10 +67,9 @@ const checkSupport = (
 
 /**
  * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
- *
  * @param {CompatStatement} data The data to process and count stats for
  * @param {BrowserName[]} browsers The browsers to test
- * @param {Object<string, VersionStats>} stats The stats object to update
+ * @param {{[key: string]: VersionStats}} stats The stats object to update
  */
 const processData = (
   data: CompatStatement,
@@ -106,10 +102,9 @@ const processData = (
 
 /**
  * Iterate through all of the data and process statistics
- *
  * @param {Identifier} data The compat data to iterate
  * @param {BrowserName[]} browsers The browsers to test
- * @param {Object<string, VersionStats>} stats The stats object to update
+ * @param {{[key: string]: VersionStats}} stats The stats object to update
  */
 const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
   for (const key in data) {
@@ -123,10 +118,9 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
 
 /**
  * Get all of the stats
- *
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
- * @returns {Object<string, VersionStats>?} The statistics
+ * @returns {{[key: string]: VersionStats}?} The statistics
  */
 const getStats = (
   folder: string,
@@ -182,7 +176,6 @@ const getStats = (
 
 /**
  * Get value as either percentage or number as requested
- *
  * @param {VersionStatsEntry} stats The stats object to get data from
  * @param {string} type The type of statistic to obtain
  * @param {boolean} counts Whether to return the integer itself
@@ -197,7 +190,6 @@ const getStat = (
 
 /**
  * Print statistics of BCD
- *
  * @param {VersionStats} stats The stats object to print from
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} counts Whether to display a count vs. a percentage

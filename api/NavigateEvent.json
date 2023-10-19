@@ -2,7 +2,8 @@
   "api": {
     "NavigateEvent": {
       "__compat": {
-        "spec_url": "https://wicg.github.io/navigation-api/#navigate-event-class",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent",
+        "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-navigateevent-interface",
         "support": {
           "chrome": {
             "version_added": "102"
@@ -37,10 +38,47 @@
       "NavigateEvent": {
         "__compat": {
           "description": "<code>NavigateEvent()</code> constructor",
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-navigateevent",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/NavigateEvent",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-navigateevent-interface",
           "support": {
             "chrome": {
               "version_added": "102"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "canIntercept": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/canIntercept",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-canintercept-dev",
+          "support": {
+            "chrome": {
+              "version_added": "105"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -72,10 +110,10 @@
       },
       "canTransition": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-cantransition",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "102",
+              "version_removed": "108"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -99,15 +137,16 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "destination": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-destination",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/destination",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-destination-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -142,7 +181,8 @@
       },
       "downloadRequest": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-downloadrequest",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/downloadRequest",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-downloadrequest-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -177,7 +217,8 @@
       },
       "formData": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-formdata",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/formData",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-formdata-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -212,7 +253,8 @@
       },
       "hashChange": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-hashchange",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/hashChange",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-hashchange-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -245,9 +287,47 @@
           }
         }
       },
+      "hasUAVisualTransition": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-hasuavisualtransition",
+          "support": {
+            "chrome": {
+              "version_added": "118"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": false
+            },
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "info": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-info",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/info",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-info-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -282,7 +362,8 @@
       },
       "intercept": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-intercept",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-intercept-dev",
           "support": {
             "chrome": {
               "version_added": "105"
@@ -317,7 +398,8 @@
       },
       "navigationType": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-navigationtype",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/navigationType",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-navigationtype-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -352,10 +434,10 @@
       },
       "restoreScroll": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-restorescroll",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "102",
+              "version_removed": "108"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -380,14 +462,15 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
       },
       "scroll": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-scroll",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/scroll",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-scroll-dev",
           "support": {
             "chrome": {
               "version_added": "105"
@@ -422,7 +505,8 @@
       },
       "signal": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-signal",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/signal",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-signal-dev",
           "support": {
             "chrome": {
               "version_added": "102"
@@ -457,10 +541,10 @@
       },
       "transitionWhile": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-transitionwhile",
           "support": {
             "chrome": {
-              "version_added": "102"
+              "version_added": "102",
+              "version_removed": "108"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -485,14 +569,15 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
       },
       "userInitiated": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/navigation-api/#dom-navigateevent-userinitiated",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/userInitiated",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-userinitiated-dev",
           "support": {
             "chrome": {
               "version_added": "102"

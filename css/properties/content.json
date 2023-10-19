@@ -4,7 +4,7 @@
       "content": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/content",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-content/#content-property",
+          "spec_url": "https://drafts.csswg.org/css-content/#content-property",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -110,6 +110,82 @@
             }
           }
         },
+        "gradient": {
+          "__compat": {
+            "description": "<code>&lt;gradient&gt;</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
+            "support": {
+              "chrome": {
+                "version_added": "26"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "113",
+                "notes": "<code>content: &lt;gradient&gt;</code>` doesn't paint on ::before/::after pseudo elements. See <a href='https://bugzil.la/1832901'>bug 1832901</a>.",
+                "partial_implementation": true
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "image-set": {
+          "__compat": {
+            "description": "<code>image-set()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "support": {
+              "chrome": {
+                "version_added": "113"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "113",
+                "notes": "<code>content: image-set(…);</code>` doesn't paint on ::before/::after pseudo elements. See <a href='https://bugzil.la/1832901'>bug 1832901</a>.",
+                "partial_implementation": true
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "none_applies_to_elements": {
           "__compat": {
             "description": "<code>content: none</code> for elements",
@@ -153,7 +229,7 @@
           "__compat": {
             "description": "<code>url()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/url()",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-values/#urls",
+            "spec_url": "https://drafts.csswg.org/css-values/#urls",
             "support": {
               "chrome": {
                 "version_added": "1"

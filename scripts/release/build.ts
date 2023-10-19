@@ -1,17 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, CompatData } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
-
 import fs from 'node:fs/promises';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
-import mirrorSupport from './mirror.js';
+import { InternalSupportStatement } from '../../types/index.js';
+import { BrowserName, CompatData } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
+import { WalkOutput } from '../../utils/walk.js';
+
+import mirrorSupport from './mirror.js';
 
 const dirname = new URL('.', import.meta.url);
 const rootdir = new URL('../../', dirname);
@@ -26,7 +27,6 @@ const verbatimFiles = ['LICENSE', 'README.md'];
 
 /**
  * Generate metadata to embed into BCD builds
- *
  * @returns {any} Metadata to embed into BCD
  */
 export const generateMeta = (): any => ({
@@ -35,41 +35,39 @@ export const generateMeta = (): any => ({
 });
 
 /**
- * Apply mirroring to all statements
- *
- * @param {CompatData} data The BCD to perform mirroring on
- * @returns {CompatData} BCD with all of the mirroring applied
+ * Apply mirroring to a feature
+ * @param {WalkOutput} feature The BCD to perform mirroring on
+ * @returns {void}
  */
-export const applyMirroring = (data: CompatData): CompatData => {
-  const response = Object.assign({}, data);
-  const walker = walk(undefined, response);
-
-  for (const feature of walker) {
-    for (const [browser, supportData] of Object.entries(
-      feature.compat.support as InternalSupportStatement,
-    )) {
-      if (supportData === 'mirror') {
-        (feature.data as any).__compat.support[browser] = mirrorSupport(
-          browser as BrowserName,
-          feature.compat.support,
-        );
-      }
+export const applyMirroring = (feature: WalkOutput): void => {
+  for (const [browser, supportData] of Object.entries(
+    feature.compat.support as InternalSupportStatement,
+  )) {
+    if (supportData === 'mirror') {
+      (feature.data as any).__compat.support[browser] = mirrorSupport(
+        browser as BrowserName,
+        feature.compat.support,
+      );
     }
   }
-
-  return response;
 };
 
 /**
  * Generate a BCD data bundle
- *
  * @returns {CompatData} An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
+  const data = Object.assign({}, bcd);
+  const walker = walk(undefined, data);
+
+  for (const feature of walker) {
+    applyMirroring(feature);
+  }
+
   return {
-    ...applyMirroring(bcd),
+    ...data,
     __meta: generateMeta(),
   };
 };
@@ -134,7 +132,6 @@ const copyFiles = async () => {
 
 /**
  * Generate the JSON for a published package.json
- *
  * @returns {any} A generated package.json for build output
  */
 export const createManifest = (): any => {

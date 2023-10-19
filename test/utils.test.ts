@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 import assert from 'node:assert/strict';
+
 import { escapeInvisibles, jsonDiff } from './utils.js';
 
 describe('utils', () => {

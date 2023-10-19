@@ -1,19 +1,16 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { BrowserName, CompatStatement } from '../../types/types.js';
-
 import fs from 'node:fs';
 
+import { BrowserName, CompatStatement } from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
-
 import compareStatements from '../lib/compare-statements.js';
 
 /**
  * Return a new "support_block" object whose support statements have
  * been ordered in reverse chronological order, moving statements
  * with flags, partial support, prefixes, or alternative names lower.
- *
  * @param {string} key The key in the object
  * @param {CompatStatement} value The value of the key
  * @returns {CompatStatement} The new value
@@ -35,7 +32,6 @@ export const orderStatements = (
 
 /**
  * Fix issues with statement order throughout the BCD files
- *
  * @param {string} filename The name of the file to fix
  */
 const fixStatementOrder = (filename: string): void => {

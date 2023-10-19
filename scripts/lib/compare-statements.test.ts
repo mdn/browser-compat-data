@@ -1,9 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Identifier, CompatStatement } from '../../types/types.js';
-
 import assert from 'node:assert/strict';
+
+import { Identifier, CompatStatement } from '../../types/types.js';
 
 import compareStatements from './compare-statements.js';
 
@@ -102,7 +102,6 @@ const tests: { input: Identifier; output: Identifier }[] = [
 
 /**
  * Update the order of the statements
- *
  * @param {string} key The key of the object (make sure it's '__compat')
  * @param {CompatStatement} value The compat statement to update
  * @returns {CompatStatement} The updated compat statement

@@ -1,12 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import chalk from 'chalk-template';
+import specData from 'web-specs' assert { type: 'json' };
+
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
-
-import chalk from 'chalk-template';
-
-import specData from 'browser-specs' assert { type: 'json' };
 
 /*
  * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to
@@ -16,13 +15,6 @@ import specData from 'browser-specs' assert { type: 'json' };
 const specsExceptions = [
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
-
-  // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
-  'https://w3c.github.io/setImmediate/',
-
-  // Remove if supported in browser-specs https://github.com/w3c/browser-specs/issues/339
-  'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-digest-headers-05',
-  'https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-expect-ct-08',
 
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
@@ -35,18 +27,22 @@ const specsExceptions = [
   // Remove if this spec will be merged with the main WebAssembly spec
   'https://webassembly.github.io/threads/js-api/',
 
-  // Remove if https://github.com/w3c/webrtc-extensions/issues/108 is closed
+  // See https://github.com/w3c/browser-specs/issues/305
+  // Features with this URL need to be checked after some time
+  // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
 
-  // Remove when added to browser-specs
-  'https://w3c.github.io/csswg-drafts/css-color-6/',
-
-  // Remove if https://github.com/w3c/browser-specs/issues/730 is resolved
-  'https://w3c.github.io/csswg-drafts/css2',
+  // Proposals for WebAssembly
+  'https://github.com/WebAssembly/spec/blob/main/proposals',
+  'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
+  'https://github.com/WebAssembly/extended-const/blob/main/proposals',
+  'https://github.com/WebAssembly/tail-call/blob/main/proposals',
+  'https://github.com/WebAssembly/threads/blob/main/proposal',
 ];
 
 const allowedSpecURLs = [
   ...specData
+    .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
       spec.nightly.url,
@@ -59,7 +55,6 @@ const allowedSpecURLs = [
 
 /**
  * Process the data for spec URL errors
- *
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  */
@@ -73,22 +68,12 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    // Since drafts.csswg.org is down too often, use an alternative canonical URL
-    if (specURL.startsWith('https://drafts.csswg.org')) {
-      logger.error(
-        chalk`Due to how often {bold https://drafts.csswg.org} is down, use {bold https://w3c.github.io/csswg-drafts} instead.`,
-        {
-          tip: chalk`replace {bold ${specURL}} with {bold ${specURL.replace(
-            'drafts.csswg.org',
-            'w3c.github.io/csswg-drafts',
-          )}}`,
-        },
-      );
-    }
-
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
-        chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+        chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
+         - there is a more current specification URL
+         - the specification is listed in https://github.com/w3c/browser-specs
+         - the specification has a "good" standing`,
       );
     }
   }
@@ -101,7 +86,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
