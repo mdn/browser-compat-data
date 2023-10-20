@@ -3,6 +3,7 @@
 import yargs from 'yargs';
 
 import { updateChromiumReleases } from './chrome.js';
+import { updateFirefoxReleases } from './firefox.js';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: npm run update-browser-releases -- (flags)')
@@ -13,6 +14,11 @@ const argv = yargs(process.argv.slice(2))
   })
   .option('webview', {
     describe: 'Update Google Webview',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
+  .option('firefox', {
+    describe: 'Update Mozilla Firefox',
     type: 'boolean',
     group: 'Engine selection:',
   })
@@ -40,16 +46,18 @@ const argv = yargs(process.argv.slice(2))
   .parse();
 
 // Read arguments
-const updateAllBrowsers = argv['all'] || !(argv['chrome'] || argv['webview']);
+const updateAllBrowsers =
+  argv['all'] || !(argv['chrome'] || argv['webview'] || argv['firefox']);
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
+const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
 
 const options = {
-  desktop: {
+  chrome_desktop: {
     bcdFile: './browsers/chrome.json',
     bcdBrowserName: 'chrome',
     browserEngine: 'Blink',
@@ -61,7 +69,7 @@ const options = {
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
-  android: {
+  chrome_android: {
     bcdFile: './browsers/chrome_android.json',
     bcdBrowserName: 'chrome_android',
     browserEngine: 'Blink',
@@ -85,19 +93,51 @@ const options = {
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
+  firefox_desktop: {
+    bcdFile: './browsers/firefox.json',
+    bcdBrowserName: 'firefox',
+    betaBranch: 'beta',
+    nightlyBranch: 'nightly',
+    firstRelease: 1,
+    skippedReleases: [],
+    firefoxReleaseDateURL: 'https://whattrainisitnow.com/api/firefox/releases/',
+    firefoxScheduleURL:
+      'https://whattrainisitnow.com/api/release/schedule/?version=',
+  },
+  firefox_android: {
+    bcdFile: './browsers/firefox_android.json',
+    bcdBrowserName: 'firefox_android',
+    betaBranch: 'beta',
+    nightlyBranch: 'nightly',
+    firstRelease: 4,
+    skippedReleases: [11, 12, 13, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78],
+    firefoxReleaseDateURL: 'https://whattrainisitnow.com/api/firefox/releases/',
+    firefoxScheduleURL:
+      'https://whattrainisitnow.com/api/release/schedule/?version=',
+  },
 };
 
 if (updateChrome && updateDesktop) {
   console.log('Check Chrome for Desktop.');
-  await updateChromiumReleases(options.desktop);
+  await updateChromiumReleases(options.chrome_desktop);
 }
 
 if (updateChrome && updateMobile) {
   console.log('Check Chrome for Android.');
-  await updateChromiumReleases(options.android);
+  await updateChromiumReleases(options.chrome_android);
 }
 
 if (updateWebview && updateMobile) {
   console.log('Check Webview for Android.');
   await updateChromiumReleases(options.webview_android);
+}
+
+if (updateFirefox && updateDesktop) {
+  console.log('Check Firefox for Desktop.');
+  await updateFirefoxReleases(options.firefox_desktop);
+}
+
+if (updateFirefox && updateMobile) {
+  console.log('Check Firefox for Android.');
+  await updateFirefoxReleases(options.firefox_android);
 }
