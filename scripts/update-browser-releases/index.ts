@@ -53,7 +53,8 @@ const argv = yargs(process.argv.slice(2))
 
 // Read arguments
 const updateAllBrowsers =
-  argv['all'] || !(argv['chrome'] || argv['webview'] || argv['firefox'] || argv['edge']);
+  argv['all'] ||
+  !(argv['chrome'] || argv['webview'] || argv['firefox'] || argv['edge']);
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
 const updateFirefox = argv['firefox'] || updateAllBrowsers;
