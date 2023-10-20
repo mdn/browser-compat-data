@@ -83,7 +83,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'dev',
+    nightlyBranch: 'canary',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 25,
     skippedReleases: [82], // 82 was skipped during COVID
