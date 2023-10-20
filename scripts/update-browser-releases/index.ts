@@ -3,6 +3,7 @@
 import yargs from 'yargs';
 
 import { updateChromiumReleases } from './chrome.js';
+import { updateEdgeReleases } from './edge.js';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: npm run update-browser-releases -- (flags)')
@@ -13,6 +14,11 @@ const argv = yargs(process.argv.slice(2))
   })
   .option('webview', {
     describe: 'Update Google Webview',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
+  .option('edge', {
+    describe: 'Update Microsoft Edge',
     type: 'boolean',
     group: 'Engine selection:',
   })
@@ -40,9 +46,11 @@ const argv = yargs(process.argv.slice(2))
   .parse();
 
 // Read arguments
-const updateAllBrowsers = argv['all'] || !(argv['chrome'] || argv['webview']);
+const updateAllBrowsers =
+  argv['all'] || !(argv['chrome'] || argv['webview'] || argv['edge']);
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
+const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
@@ -65,25 +73,42 @@ const options = {
     bcdFile: './browsers/chrome_android.json',
     bcdBrowserName: 'chrome_android',
     browserEngine: 'Blink',
-    releaseBranch: 'stable',
-    betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    releaseBranch: 'Stable',
+    betaBranch: 'Beta',
+    nightlyBranch: 'Dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 25,
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
   webview_android: {
-    bcdFile: './browsers/webview_android.json',
-    bcdBrowserName: 'webview_android',
+    bcdFile: './browsers/chrome_android.json',
+    bcdBrowserName: 'chrome_android',
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
     nightlyBranch: 'canary',
-    releaseNoteCore: 'chrome-for-android-update',
-    firstRelease: 37,
+    releaseNoteCore: 'schrome-for-android-update',
+    firstRelease: 12,
     skippedReleases: [82], // 82 was skipped during COVID
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
+  },
+  edge_desktop: {
+    bcdFile: './browsers/edge.json',
+    bcdBrowserName: 'edge',
+    browserEngine: 'Blink',
+    releaseBranch: 'Stable',
+    betaBranch: 'Beta',
+    nightlyBranch: 'Dev',
+    firstRelease: 12,
+    skippedReleases: [
+      12, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+      36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53,
+      54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
+      72, 73, 74, 75, 76, 77, 78, 82,
+    ], // 82 was skipped during COVID
+    edgeupdatesURL:
+      'https://edgeupdates.microsoft.com/api/products?view=enterprise',
   },
 };
 
@@ -100,4 +125,9 @@ if (updateChrome && updateMobile) {
 if (updateWebview && updateMobile) {
   console.log('Check Webview for Android.');
   await updateChromiumReleases(options.webview_android);
+}
+
+if (updateEdge && updateDesktop) {
+  console.log('Check Edge for Desktop.');
+  await updateEdgeReleases(options.edge_desktop);
 }
