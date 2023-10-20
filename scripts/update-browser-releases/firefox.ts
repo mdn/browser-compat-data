@@ -5,6 +5,8 @@ import * as fs from 'node:fs';
 
 import { updateBrowserEntry, newBrowserEntry } from './utils.js';
 
+import type { ReleaseStatement } from '../../types/types.js';
+
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
  *
@@ -100,13 +102,15 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Set all older releases are 'retired'
   //
-  Object.entries(firefoxBCD.browsers[options.bcdBrowserName].releases).forEach(
-    ([key, entry]) => {
-      if (parseFloat(key) < stableRelease) {
-        entry.status = 'retired';
-      }
+  Object.entries(
+    firefoxBCD.browsers[options.bcdBrowserName].releases as {
+      [version: string]: ReleaseStatement;
     },
-  );
+  ).forEach(([key, entry]) => {
+    if (parseFloat(key) < stableRelease) {
+      entry.status = 'retired';
+    }
+  });
 
   //
   // Add a planned version entry
