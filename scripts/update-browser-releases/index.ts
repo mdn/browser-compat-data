@@ -101,6 +101,7 @@ const options = {
     firstRelease: 1,
     skippedReleases: [],
     firefoxReleaseDateURL: 'https://whattrainisitnow.com/api/firefox/releases/',
+    firefoxESRDateURL: 'https://whattrainisitnow.com/api/esr/releases/',
     firefoxScheduleURL:
       'https://whattrainisitnow.com/api/release/schedule/?version=',
   },
@@ -112,6 +113,7 @@ const options = {
     firstRelease: 4,
     skippedReleases: [11, 12, 13, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78],
     firefoxReleaseDateURL: 'https://whattrainisitnow.com/api/firefox/releases/',
+    firefoxESRDateURL: 'https://whattrainisitnow.com/api/esr/releases/',
     firefoxScheduleURL:
       'https://whattrainisitnow.com/api/release/schedule/?version=',
   },

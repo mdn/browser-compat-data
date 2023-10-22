@@ -100,14 +100,33 @@ export const updateFirefoxReleases = async (options) => {
   }
 
   //
-  // Set all older releases are 'retired'
+  // Set all older releases are 'retired' (and the current ESR to 'esr')
   //
+
+  // Find latest ESR
+
+  // Get the JSON with all released versions and their dates
+  const firefoxESRVersions = await fetch(options.firefoxESRDateURL);
+  const esrFirefoxVersions = await firefoxESRVersions.json();
+
+  // Extract the current esr version
+  let esrRelease = 1;
+
+  Object.entries(esrFirefoxVersions).forEach(([key]) => {
+    if (parseInt(key) > esrRelease) {
+      esrRelease = parseInt(key);
+    }
+  });
+
+  // Replace all old entries with 'retired' or 'esr'
   Object.entries(
     firefoxBCD.browsers[options.bcdBrowserName].releases as {
       [version: string]: ReleaseStatement;
     },
   ).forEach(([key, entry]) => {
-    if (parseFloat(key) < stableRelease) {
+    if (key === String(esrRelease)) {
+      entry.status = 'esr';
+    } else if (parseFloat(key) < stableRelease) {
       entry.status = 'retired';
     }
   });
