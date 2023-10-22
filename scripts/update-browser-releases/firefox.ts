@@ -160,6 +160,9 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Write the JSON back into chrome.json
   //
-  fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(firefoxBCD, null, 2));
+  fs.writeFileSync(
+    `./${options.bcdFile}`,
+    JSON.stringify(firefoxBCD, null, 2) + '\n',
+  );
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
