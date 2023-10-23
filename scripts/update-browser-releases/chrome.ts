@@ -98,9 +98,9 @@ export const updateChromiumReleases = async (options) => {
     ) {
       // The entry already exists
       updateBrowserEntry(
-        chromeBCD.browsers[options.bcdBrowserName].releases[
-          data[value].version
-        ],
+        chromeBCD,
+        options.bcdBrowserName,
+        data[value].version,
         data[value].releaseDate,
         key,
         releaseNotesURL,
@@ -129,9 +129,15 @@ export const updateChromiumReleases = async (options) => {
   ) {
     if (!options.skippedReleases.includes(i)) {
       if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
-        chromeBCD.browsers[options.bcdBrowserName].releases[
-          i.toString()
-        ].status = 'retired';
+        updateBrowserEntry(
+          chromeBCD,
+          options.bcdBrowserName,
+          i.toString(),
+          chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
+            .release_date,
+          'retired',
+          '',
+        );
       } else {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
@@ -145,20 +151,23 @@ export const updateChromiumReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  if (
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      (data[options.nightlyBranch].version + 1).toString()
-    ]
-  ) {
-    chromeBCD.browsers[options.bcdBrowserName].releases[
-      (data[options.nightlyBranch].version + 1).toString()
-    ].status = 'planned';
+  const plannedVersion = (data[options.nightlyBranch].version + 1).toString();
+  if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
+    updateBrowserEntry(
+      chromeBCD,
+      options.bcdBrowserName,
+      plannedVersion,
+      chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
+        .release_date,
+      'planned',
+      '',
+    );
   } else {
     // New entry
     newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
-      (data[options.nightlyBranch].version + 1).toString(),
+      plannedVersion,
       'planned',
       options.browserEngine,
       '',
