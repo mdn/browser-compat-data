@@ -156,7 +156,7 @@ export const updateEdgeReleases = async (options) => {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
         console.warn(
-          chalk`{yellow Chrome ${i} not found in Chromestatus! Add it manually or add an exception.}`,
+          chalk`{yellow Edge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
         );
       }
     }
