@@ -54,7 +54,7 @@ export const updateEdgeReleases = async (options) => {
   const edgeVersions = JSON.parse(await buffer.text());
 
   //
-  // Get the chrome.json from the local BCD
+  // Get the edge.json from the local BCD
   //
   const file = fs.readFileSync(`${options.bcdFile}`);
   const edgeBCD = JSON.parse(file.toString());
