@@ -189,6 +189,9 @@ export const updateEdgeReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
-  fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(edgeBCD, null, 2) + '\n');
+  fs.writeFileSync(
+    `./${options.bcdFile}`,
+    JSON.stringify(edgeBCD, null, 2) + '\n',
+  );
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
