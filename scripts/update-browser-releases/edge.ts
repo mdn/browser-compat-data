@@ -82,7 +82,12 @@ export const updateEdgeReleases = async (options) => {
     // Get the last version
     const version = parseFloat(entry['Releases'][0]['ProductVersion']);
 
-    // We need to find the first release with this version:
+    // We need to find the first release with this version.
+    // As, they are from the newer to the older in the JSON object,
+    // we are looking for the first that is not the latest version
+    // and get the one immediately above (the first release of that
+    // version)
+    //
     // The full version number is needed for the release note URL
     // as well as the date
     let id = 1;
