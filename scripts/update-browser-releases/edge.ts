@@ -220,8 +220,8 @@ export const updateEdgeReleases = async (options) => {
         edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].status =
           'retired';
       } else {
-        // There is a retired version missing. Chromestatus doesn't list them.
-        // There is an oddity: the version is not skipped but not in chromestatus
+        // There is a retired version missing. Edgeupdates doesn't list them.
+        // There is an oddity: the version is not skipped but not in edgeupdates
         console.warn(
           chalk`{yellow Edge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
         );
