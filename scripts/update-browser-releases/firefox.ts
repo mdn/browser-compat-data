@@ -58,26 +58,6 @@ const sortStringify = (obj, indent) => {
   }
   return `${result}${indent}}`; // Close the brace and return the string
 };
-/*
-const replacer = (key, value) =>
-
-  value instanceof Object && !(value instanceof Array) ?
-		Object.keys(value)
-		.sort((a, b) => {
-      // If they both start with a number, convert to float (so that 1.5 < 10)
-      if (a[0] >= '0' && a[0]<= '9' && b[0] >= '0' && b[0]<= '9') {
-        return compareVersions(a, b);
-      }
-      //console.log(`a=${a}; b=${b}; result=${a>b?1:-1}`);
-      if (a===b) {return 0;}
-      return a > b?1:-1; // Normal case
-    }).reduce((sorted, key) => {
-      console.log(key, '-', value[key]);
-			sorted[key] = value[key];
-			return sorted;
-		}, {}) :
-		value;
-*/
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
