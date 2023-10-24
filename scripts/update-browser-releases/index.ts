@@ -115,8 +115,7 @@ const options = {
       54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
       72, 73, 74, 75, 76, 77, 78, 82,
     ],
-    edgeupdatesURL:
-      'https://edgeupdates.microsoft.com/api/products',
+    edgeupdatesURL: 'https://edgeupdates.microsoft.com/api/products',
     releaseScheduleURL:
       'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
   },
