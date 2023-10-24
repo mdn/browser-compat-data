@@ -8,19 +8,70 @@ import chalk from 'chalk-template';
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
+ * getFutureReleaseDate - Read the future release date
+ * @param {string} release The release number of the versin
+ * @param {string} releaseScheduleURL The url of the MD file having it
+ * @returns {string} The date in the YYYY-MM-DD format
+ */
+const getFutureReleaseDate = async (release, releaseScheduleURL) => {
+  // Fetch the MD of the release schedule
+  const scheduleMD = await fetch(releaseScheduleURL);
+  const text = await scheduleMD.text();
+  if (!text) {
+    console.error(chalk`{red Release file not found.}`);
+    return '';
+  }
+  // Find the line
+  //const regexp = new RegExp(`| ${release} |\\w*|\\w*| ?Week of (\\w*) ?|\\w*|`, 'i');
+  const regexp = new RegExp(
+    `\\| ${release} \\|.*\\|.*\\| ?Week of (.*) ?\\|.*\\|`,
+    'i',
+  );
+  const result = text.match(regexp);
+  if (!result) {
+    console.log(chalk`{yellow Release date not found for Edge ${release}.}`);
+    return '';
+  }
+  const releaseDateText = result[1];
+
+  // Get the date frome the file
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const year = releaseDateText.substring(7, 11);
+  const month = months.indexOf(releaseDateText.substring(3, 6)) + 1;
+  const day = releaseDateText.substring(0, 2);
+
+  const releaseDate = new Date(`${year}-${month}-${day}Z`);
+
+  return releaseDate.toISOString().substring(0, 10); // Remove the time part
+};
+
+/**
  * getReleaseNotesURL - Guess the URL of the release notes
  * @param {string} status The status of the release
- * @param {string} fullVersion The version of the release
+ * @param {string} fullRelease The release of the release
  * @param {string} date The date of the release
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-const getReleaseNotesURL = async (status, fullVersion, date) => {
+const getReleaseNotesURL = async (status, fullRelease, date) => {
   // If the status isn't stable, do not give back any release notes.
   if (status !== 'Stable') {
     return '';
   }
 
-  const versionStr = fullVersion.replace(/\./g, '');
+  const releaseStr = fullRelease.replace(/\./g, '');
   const month = [
     'january',
     'february',
@@ -39,7 +90,7 @@ const getReleaseNotesURL = async (status, fullVersion, date) => {
   const dateStr = `${
     month[dateObj.getMonth()]
   }-${dateObj.getDate()}-${dateObj.getFullYear()}`;
-  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${versionStr}-${dateStr}`;
+  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
 };
 
 /**
@@ -48,7 +99,7 @@ const getReleaseNotesURL = async (status, fullVersion, date) => {
  */
 export const updateEdgeReleases = async (options) => {
   //
-  // Get the JSON with the versions from chromestatus
+  // Get the JSON with the versions from edgereleases
   //
   const buffer = await fetch(options.edgeupdatesURL);
   const edgeVersions = JSON.parse(await buffer.text());
@@ -113,6 +164,11 @@ export const updateEdgeReleases = async (options) => {
       data[value].versionDate = entry['Releases'][id][
         'PublishedTime'
       ].substring(0, 10); // Remove the time part;
+    } else {
+      data[value].versionDate = await getFutureReleaseDate(
+        data[value].version,
+        options.releaseScheduleURL,
+      );
     }
 
     //
@@ -176,23 +232,30 @@ export const updateEdgeReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  if (
-    edgeBCD.browsers[options.bcdBrowserName].releases[
-      (data[options.nightlyBranch].version + 1).toString()
-    ]
-  ) {
-    edgeBCD.browsers[options.bcdBrowserName].releases[
-      (data[options.nightlyBranch].version + 1).toString()
-    ].status = 'planned';
+  const planned = (data[options.nightlyBranch].version + 1).toString();
+  const releaseDate = await getFutureReleaseDate(
+    planned,
+    options.releaseScheduleURL,
+  );
+
+  if (edgeBCD.browsers[options.bcdBrowserName].releases[planned]) {
+    updateBrowserEntry(
+      edgeBCD.browsers[options.bcdBrowserName].releases[planned],
+      releaseDate,
+      'planned',
+      '',
+    );
+    edgeBCD.browsers[options.bcdBrowserName].releases[planned].status =
+      'planned';
   } else {
     // New entry
     newBrowserEntry(
       edgeBCD,
       options.bcdBrowserName,
-      (data[options.nightlyBranch].version + 1).toString(),
+      planned.toString(),
       'planned',
       options.browserEngine,
-      '',
+      releaseDate,
       '',
     );
   }

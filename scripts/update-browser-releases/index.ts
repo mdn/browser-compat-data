@@ -117,6 +117,8 @@ const options = {
     ], // 82 was skipped during COVID
     edgeupdatesURL:
       'https://edgeupdates.microsoft.com/api/products?view=enterprise',
+    releaseScheduleURL:
+      'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
   },
   firefox_desktop: {
     bcdFile: './browsers/firefox.json',
