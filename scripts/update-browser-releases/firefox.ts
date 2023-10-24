@@ -61,7 +61,6 @@ const sortStringify = (obj, indent) => {
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
- *
  * @param {string} version release version
  * @returns {string} The URL of the release notes or the empty string if not found
  */
@@ -74,7 +73,6 @@ const getFirefoxReleaseNotesURL = async (version) => {
 
 /**
  * updateFirefoxFile - Update the json file listing the browser version of a chromium entry
- *
  * @param {object} options The list of options for this type of chromiums.
  */
 export const updateFirefoxReleases = async (options) => {
@@ -212,7 +210,6 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Write the JSON back into chrome.json
   //
-  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(firefoxBCD, '') + '\n`);
-  //console.log(sortStringify(firefoxBCD, ''));
+  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(firefoxBCD, ''));
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
