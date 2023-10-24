@@ -3,10 +3,62 @@
 
 import * as fs from 'node:fs';
 
+import { compareVersions } from 'compare-versions';
+
 import { updateBrowserEntry, newBrowserEntry } from './utils.js';
 
 import type { ReleaseStatement } from '../../types/types.js';
 
+const indentStep = '  '; // Constant with the indent step that sortStringify should use
+
+/**
+ * sortStringify - Stringify an object using a mixed lexicographic-semver order
+ * @param {object} obj The object to stringify
+ * @param {string} indent The indentation to add, as a string
+ * @returns {string} The URL of the release notes or the empty string if not found
+ */
+const sortStringify = (obj, indent) => {
+  const sortedKeys = Object.keys(obj).sort((a, b) => {
+    // If they both start with a number, convert to float (so that 1.5 < 10)
+    // and apply number comparison
+    if (a[0] >= '0' && a[0] <= '9' && b[0] >= '0' && b[0] <= '9') {
+      return compareVersions(a, b);
+    }
+
+    // Normal string comparison: lexicographic order
+    if (a === b) {
+      return 0;
+    }
+    return a > b ? 1 : -1;
+  });
+
+  let result = '{\n'; // obj is an object, it must be enclosed in braces
+  for (let i = 0; i < sortedKeys.length; i++) {
+    const key = sortedKeys[i];
+    let value = obj[key];
+
+    if (value instanceof Object) {
+      // An object: recursively call this method
+      value = `${sortStringify(value, indent + indentStep)}`;
+    } else {
+      // A value or an array: call the regulare JSON.stringify function
+      value = `${JSON.stringify(value)}`;
+    }
+
+    // Add it to the result
+    result += `${indent}${indentStep}"${key}": ${value}`;
+
+    // Check if this is the last entry or not: if not, add a comma
+    if (i != sortedKeys.length - 1) {
+      result += ',';
+    }
+
+    // We always need a carriage return
+    result += '\n';
+  }
+  return `${result}${indent}}`; // Close the brace and return the string
+};
+/*
 const replacer = (key, value) =>
 
   value instanceof Object && !(value instanceof Array) ?
@@ -14,23 +66,18 @@ const replacer = (key, value) =>
 		.sort((a, b) => {
       // If they both start with a number, convert to float (so that 1.5 < 10)
       if (a[0] >= '0' && a[0]<= '9' && b[0] >= '0' && b[0]<= '9') {
-        let ret;
-        if (parseFloat(a) > parseFloat(b)) {ret = 1;}
-        else if (parseFloat(a) < parseFloat(b)) {ret = -1;}
-        else {ret = 0;}
-       //console.log(`a=${a}; b=${b}; result=${ret}`);
-        return ret;
+        return compareVersions(a, b);
       }
       //console.log(`a=${a}; b=${b}; result=${a>b?1:-1}`);
       if (a===b) {return 0;}
       return a > b?1:-1; // Normal case
     }).reduce((sorted, key) => {
-      console.log(key, "-", value[key]);
+      console.log(key, '-', value[key]);
 			sorted[key] = value[key];
 			return sorted;
 		}, {}) :
 		value;
-
+*/
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
@@ -185,7 +232,7 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Write the JSON back into chrome.json
   //
-
-  fs.writeFileSync(`./${options.bcdFile}`, JSON.stringify(firefoxBCD, replacer, 2) +'\n`');
+  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(firefoxBCD, '') + '\n`);
+  //console.log(sortStringify(firefoxBCD, ''));
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
