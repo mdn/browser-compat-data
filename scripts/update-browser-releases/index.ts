@@ -116,7 +116,7 @@ const options = {
       72, 73, 74, 75, 76, 77, 78, 82,
     ],
     edgeupdatesURL:
-      'https://edgeupdates.microsoft.com/api/products?view=enterprise',
+      'https://edgeupdates.microsoft.com/api/products',
     releaseScheduleURL:
       'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
   },
