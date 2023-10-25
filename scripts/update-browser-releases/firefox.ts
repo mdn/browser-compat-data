@@ -27,15 +27,21 @@ const sortStringify = (obj, indent, orders) => {
     }
 
     // Use lexicographic order unless they are in a hardcoded position
-    const hardcoded = orders.forEach((order) => {
-      // Check if both entry are in one of the order
-      if (order.indexOf(a) != -1 && order.indexOf(b) != -1) {
-        console.log(a, b, 'hardcoded ('+ order.indexOf(a)+ ' '+order.indexOf(b)+')');
-        return order.indexOf(b) - order.indexOf(a);
+
+    // Order according the hardcoded arrays
+    let hardcoded; // Initially undefined
+    orders.forEach((order) => {
+      if (hardcoded) {
+        return; // Already found
       }
-      return undefined;
+
+      // Check if both entry are in the order array
+      if (order.indexOf(a) != -1 && order.indexOf(b) != -1) {
+        hardcoded = order.indexOf(a) - order.indexOf(b);
+      }
     });
 
+    // Hardcoded order detected: let's use it
     if (hardcoded) {
       return hardcoded;
     }
@@ -228,7 +234,10 @@ export const updateFirefoxReleases = async (options) => {
 
   // We want the 'release' object to be after 'type' and 'upstream'
   // The others in lexicographic order.
-  const orders = [['accepts_flags', 'accept_webextensions', 'name', 'pref_url', 'preview_url', 'type', 'upstream', 'releases']];
+  // This is an array of array because there may be different orders
+  // at different ordering
+  // Non-listed entries will be put in the lexcicographical order.
+  const orders = [['type', 'upstream', 'releases']];
 
   // Write the file
   fs.writeFileSync(
