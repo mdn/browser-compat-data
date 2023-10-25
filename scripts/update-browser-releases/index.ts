@@ -151,7 +151,7 @@ if (updateChrome && updateDesktop) {
 }
 
 if (updateChrome && updateMobile) {
-  console.log('### Updates for Chrome for Android.');
+  console.log('### Updates for Chrome for Android');
   await updateChromiumReleases(options.chrome_android);
 }
 
