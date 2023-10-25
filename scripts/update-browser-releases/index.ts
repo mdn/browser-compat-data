@@ -146,31 +146,31 @@ const options = {
 };
 
 if (updateChrome && updateDesktop) {
-  console.log('Check Chrome for Desktop.');
+  console.log('### Updates for Chrome for Desktop.');
   await updateChromiumReleases(options.chrome_desktop);
 }
 
 if (updateChrome && updateMobile) {
-  console.log('Check Chrome for Android.');
+  console.log('### Updates for Chrome for Android.');
   await updateChromiumReleases(options.chrome_android);
 }
 
 if (updateWebview && updateMobile) {
-  console.log('Check Webview for Android.');
+  console.log('### Updates for Webview for Android.');
   await updateChromiumReleases(options.webview_android);
 }
 
 if (updateEdge && updateDesktop) {
-  console.log('Check Edge for Desktop.');
+  console.log('### Updates for Edge for Desktop.');
   await updateEdgeReleases(options.edge_desktop);
 }
 
 if (updateFirefox && updateDesktop) {
-  console.log('Check Firefox for Desktop.');
+  console.log('### Updates for Firefox for Desktop.');
   await updateFirefoxReleases(options.firefox_desktop);
 }
 
 if (updateFirefox && updateMobile) {
-  console.log('Check Firefox for Android.');
+  console.log('### Updates for Firefox for Android.');
   await updateFirefoxReleases(options.firefox_android);
 }

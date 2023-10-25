@@ -18,7 +18,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   const scheduleMD = await fetch(releaseScheduleURL);
   const text = await scheduleMD.text();
   if (!text) {
-    console.error(chalk`{red Release file not found.}`);
+    console.log(chalk`{red \nRelease file not found.}`);
     return '';
   }
   // Find the line
@@ -29,7 +29,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   );
   const result = text.match(regexp);
   if (!result) {
-    console.log(chalk`{yellow Release date not found for Edge ${release}.}`);
+    console.log(chalk`{yellow \nRelease date not found for Edge ${release}.}`);
     return '';
   }
   const releaseDateText = result[1];
@@ -99,8 +99,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   const releaseNote = await fetch(URL);
   if (releaseNote.status != 200) {
     // File not found -> log a warning
-    console.warn(
-      chalk`{red Release note files not found for Edge ${fullRelease}}`,
+    console.log(
+      chalk`{red \nRelease note files not found for Edge ${fullRelease}}`,
     );
     return '';
   }
@@ -109,8 +109,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   const releaseNoteText = await releaseNote.text();
   if (releaseNoteText.indexOf(`<h2 id="${id}">`) == -1) {
     // Section not found -> log a warning
-    console.warn(
-      chalk`{red Section not found in official release notes for Edge ${fullRelease}}`,
+    console.log(
+      chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`,
     );
   }
 
@@ -248,8 +248,8 @@ export const updateEdgeReleases = async (options) => {
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
         // There is an oddity: the version is not skipped but not in edgeupdates
-        console.warn(
-          chalk`{yellow Edge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
+        console.log(
+          chalk`{yellow \nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
         );
       }
     }
@@ -295,5 +295,4 @@ export const updateEdgeReleases = async (options) => {
     `./${options.bcdFile}`,
     sortStringify(edgeBCD, '') + '\n',
   );
-  console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };

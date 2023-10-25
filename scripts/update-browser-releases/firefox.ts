@@ -184,6 +184,4 @@ export const updateFirefoxReleases = async (options) => {
     `./${options.bcdFile}`,
     sortStringify(firefoxBCD, '') + '\n',
   );
-
-  console.log(`File generated succesfully: ${options.bcdFile}`);
 };

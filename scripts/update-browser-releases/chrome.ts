@@ -41,7 +41,7 @@ const getReleaseNotesURL = async (version, date, core, status) => {
   if (releaseNote.status == 200) {
     return url;
   }
-  console.warn(chalk`{red Release note not found for ${version}}`);
+  console.log(chalk`{red \nRelease note not found for ${version}}`);
   return '';
 };
 
@@ -143,8 +143,8 @@ export const updateChromiumReleases = async (options) => {
       } else {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
-        console.warn(
-          chalk`{yellow Chrome ${i} not found in Chromestatus! Add it manually or add an exception.}`,
+        console.log(
+          chalk`{yellow \nChrome ${i} not found in Chromestatus! Add it manually or add an exception.}`,
         );
       }
     }
@@ -181,6 +181,4 @@ export const updateChromiumReleases = async (options) => {
   // Write the update browser's json to file
   //
   fs.writeFileSync(`./${options.bcdFile}`, sortStringify(chromeBCD, '') + '\n');
-
-  console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
