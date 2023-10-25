@@ -165,7 +165,7 @@ export const updateFirefoxReleases = async (options) => {
   // at different ordering
   // Non-listed entries will be put in the lexcicographical order.
   const orders = [
-    ['type', 'update', 'release'],
+    ['type', 'update', 'releases'],
     ['release_date', 'status', 'release_notes', 'engine', 'engine_version'],
   ];
 
