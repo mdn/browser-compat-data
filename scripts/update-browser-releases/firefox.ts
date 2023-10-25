@@ -9,7 +9,6 @@ import type { ReleaseStatement } from '../../types/types.js';
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
- *
  * @param {string} version release version
  * @returns {string} The URL of the release notes or the empty string if not found
  */
@@ -22,7 +21,6 @@ const getFirefoxReleaseNotesURL = async (version) => {
 
 /**
  * updateFirefoxFile - Update the json file listing the browser version of a chromium entry
- *
  * @param {object} options The list of options for this type of chromiums.
  */
 export const updateFirefoxReleases = async (options) => {
