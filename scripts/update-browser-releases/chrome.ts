@@ -9,12 +9,13 @@ import { newBrowserEntry, updateBrowserEntry, sortStringify } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
+ * @param {string} version Version number
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
  * @param {string} status The status of the release
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-const getReleaseNotesURL = async (date, core, status) => {
+const getReleaseNotesURL = async (version, date, core, status) => {
   // If the status isn't stable, do not give back any release notes.
   if (status !== 'stable') {
     return '';
@@ -40,7 +41,7 @@ const getReleaseNotesURL = async (date, core, status) => {
   if (releaseNote.status == 200) {
     return url;
   }
-  console.warn(chalk`{yellow Release note not found}`);
+  console.warn(chalk`{red Release note not found for ${version}}`);
   return '';
 };
 
@@ -88,6 +89,7 @@ export const updateChromiumReleases = async (options) => {
 
     // Update the JSON in memory
     const releaseNotesURL = await getReleaseNotesURL(
+      versionData.version,
       data[value].releaseDate,
       options.releaseNoteCore,
       value,
