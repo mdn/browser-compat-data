@@ -5,11 +5,10 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { newBrowserEntry, updateBrowserEntry, sortStringify } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
- *
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
  * @param {string} status The status of the release
@@ -47,7 +46,6 @@ const getReleaseNotesURL = async (date, core, status) => {
 
 /**
  * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
- *
  * @param {object} options The list of options for this type of chromiums.
  */
 export const updateChromiumReleases = async (options) => {
@@ -171,9 +169,22 @@ export const updateChromiumReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
+
+  // We want the 'release' object to be after 'type' and 'upstream'
+  // The others in lexicographic order.
+  // This is an array of array because there may be different orders
+  // at different ordering
+  // Non-listed entries will be put in the lexcicographical order.
+  const orders = [
+    ['type', 'upstream', 'releases'],
+    ['release_date', 'status', 'release_notes', 'engine', 'engine_version'],
+  ];
+
+  // Write the file
   fs.writeFileSync(
     `./${options.bcdFile}`,
-    JSON.stringify(chromeBCD, null, 2) + '\n',
+    sortStringify(chromeBCD, '', orders) + '\n',
   );
+
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
