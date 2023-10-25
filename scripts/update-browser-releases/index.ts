@@ -146,7 +146,7 @@ const options = {
 };
 
 if (updateChrome && updateDesktop) {
-  console.log('### Updates for Chrome for Desktop.');
+  console.log('### Updates for Chrome for Desktop');
   await updateChromiumReleases(options.chrome_desktop);
 }
 
