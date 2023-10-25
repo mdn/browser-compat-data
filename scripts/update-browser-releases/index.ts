@@ -161,7 +161,7 @@ if (updateWebview && updateMobile) {
 }
 
 if (updateEdge && updateDesktop) {
-  console.log('### Updates for Edge for Desktop.');
+  console.log('### Updates for Edge for Desktop');
   await updateEdgeReleases(options.edge_desktop);
 }
 
