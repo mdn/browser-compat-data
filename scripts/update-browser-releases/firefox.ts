@@ -3,82 +3,9 @@
 
 import * as fs from 'node:fs';
 
-import { compareVersions } from 'compare-versions';
-
-import { updateBrowserEntry, newBrowserEntry } from './utils.js';
+import { updateBrowserEntry, newBrowserEntry, sortStringify } from './utils.js';
 
 import type { ReleaseStatement } from '../../types/types.js';
-
-const indentStep = '  '; // Constant with the indent step that sortStringify should use
-
-/**
- * sortStringify - Stringify an object using a mixed lexicographic-semver order
- * @param {object} obj The object to stringify
- * @param {string} indent The indentation to add, as a string
- * @param {Array} orders Fixed order to use (An Array of arrays)
- * @returns {string} The URL of the release notes or the empty string if not found
- */
-const sortStringify = (obj, indent, orders) => {
-  const sortedKeys = Object.keys(obj).sort((a, b) => {
-    // If they both start with a number, convert to float (so that 1.5 < 10)
-    // and apply number comparison
-    if (a[0] >= '0' && a[0] <= '9' && b[0] >= '0' && b[0] <= '9') {
-      return compareVersions(a, b);
-    }
-
-    // Use lexicographic order unless they are in a hardcoded position
-
-    // Order according the hardcoded arrays
-    let hardcoded; // Initially undefined
-    orders.forEach((order) => {
-      if (hardcoded) {
-        return; // Already found
-      }
-
-      // Check if both entry are in the order array
-      if (order.indexOf(a) != -1 && order.indexOf(b) != -1) {
-        hardcoded = order.indexOf(a) - order.indexOf(b);
-      }
-    });
-
-    // Hardcoded order detected: let's use it
-    if (hardcoded) {
-      return hardcoded;
-    }
-
-    // Normal string comparison: lexicographic order
-    if (a === b) {
-      return 0;
-    }
-    return a > b ? 1 : -1;
-  });
-
-  let result = '{\n'; // obj is an object, it must be enclosed in braces
-  for (let i = 0; i < sortedKeys.length; i++) {
-    const key = sortedKeys[i];
-    let value = obj[key];
-
-    if (value instanceof Object) {
-      // An object: recursively call this method
-      value = `${sortStringify(value, indent + indentStep, orders)}`;
-    } else {
-      // A value or an array: call the regulare JSON.stringify function
-      value = `${JSON.stringify(value)}`;
-    }
-
-    // Add it to the result
-    result += `${indent}${indentStep}"${key}": ${value}`;
-
-    // Check if this is the last entry or not: if not, add a comma
-    if (i != sortedKeys.length - 1) {
-      result += ',';
-    }
-
-    // We always need a carriage return
-    result += '\n';
-  }
-  return `${result}${indent}}`; // Close the brace and return the string
-};
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
