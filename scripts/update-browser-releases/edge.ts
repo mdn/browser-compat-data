@@ -92,7 +92,7 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
     month[dateObj.getMonth()]
   }-${dateObj.getDate()}-${dateObj.getFullYear()}`;
 
-  const URL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel2#version-${releaseStr}-${dateStr}`;
+  const URL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
   const id = URL.split('#')[1];
 
   // Fetch the page
