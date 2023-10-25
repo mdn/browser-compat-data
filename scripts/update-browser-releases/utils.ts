@@ -136,7 +136,7 @@ export const sortStringify = (obj, indent) => {
 
     if (value instanceof Object) {
       // An object: recursively call this method
-      value = `${sortStringify(value, indent + indentStep, orders)}`;
+      value = `${sortStringify(value, indent + indentStep)}`;
     } else {
       // A value or an array: call the regular JSON.stringify function
       value = `${JSON.stringify(value)}`;

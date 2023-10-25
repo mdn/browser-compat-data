@@ -5,7 +5,7 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { newBrowserEntry, updateBrowserEntry, sortStringify } from './utils.js';
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -212,7 +212,9 @@ export const updateEdgeReleases = async (options) => {
     ) {
       // The entry already exists
       updateBrowserEntry(
-        edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version],
+        edgeBCD,
+        options.bcdBrowserName,
+        data[value].version,
         data[value]?.versionDate,
         key,
         releaseNotesURL,
@@ -264,7 +266,9 @@ export const updateEdgeReleases = async (options) => {
 
   if (edgeBCD.browsers[options.bcdBrowserName].releases[planned]) {
     updateBrowserEntry(
-      edgeBCD.browsers[options.bcdBrowserName].releases[planned],
+      edgeBCD,
+      options.bcdBrowserName,
+      planned,
       releaseDate,
       'planned',
       '',
@@ -289,7 +293,7 @@ export const updateEdgeReleases = async (options) => {
   //
   fs.writeFileSync(
     `./${options.bcdFile}`,
-    JSON.stringify(edgeBCD, null, 2) + '\n',
+    sortStringify(edgeBCD, '') + '\n',
   );
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
