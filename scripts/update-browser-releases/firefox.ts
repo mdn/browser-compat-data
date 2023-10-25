@@ -76,9 +76,13 @@ export const updateFirefoxReleases = async (options) => {
       data[value].releaseDate = releasedFirefoxVersions[stableRelease + '.0'];
     }
 
-    if (firefoxBCD.browsers[options.bcdBrowserName].releases[key]) {
+    if (
+      firefoxBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+    ) {
       updateBrowserEntry(
-        firefoxBCD.browsers[options.bcdBrowserName].releases[key],
+        firefoxBCD,
+        options.bcdBrowserName,
+        data[value].version,
         data[value].releaseDate,
         key,
         releaseNotesURL,
@@ -123,9 +127,23 @@ export const updateFirefoxReleases = async (options) => {
     },
   ).forEach(([key, entry]) => {
     if (key === String(esrRelease)) {
-      entry.status = 'esr';
+      updateBrowserEntry(
+        firefoxBCD,
+        options.bcdBrowserName,
+        key,
+        entry.release_date,
+        'esr',
+        '',
+      );
     } else if (parseFloat(key) < stableRelease) {
-      entry.status = 'retired';
+      updateBrowserEntry(
+        firefoxBCD,
+        options.bcdBrowserName,
+        key,
+        entry.release_date,
+        'retired',
+        '',
+      );
     }
   });
 
@@ -138,10 +156,14 @@ export const updateFirefoxReleases = async (options) => {
   const train = await trainInfo.json();
 
   if (firefoxBCD.browsers[options.bcdBrowserName].releases[planned]) {
-    firefoxBCD.browsers[options.bcdBrowserName].releases[planned].release_date =
-      train.release.substring(0, 10); // Remove the time part
-    firefoxBCD.browsers[options.bcdBrowserName].releases[planned].status =
-      'planned';
+    updateBrowserEntry(
+      firefoxBCD,
+      options.bcdBrowserName,
+      planned,
+      train.release.substring(0, 10),
+      'planned',
+      '',
+    );
   } else {
     // New entry
     newBrowserEntry(
@@ -162,6 +184,4 @@ export const updateFirefoxReleases = async (options) => {
     `./${options.bcdFile}`,
     sortStringify(firefoxBCD, '') + '\n',
   );
-
-  console.log(`File generated succesfully: ${options.bcdFile}`);
 };
