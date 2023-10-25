@@ -158,21 +158,9 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Write the JSON back into chrome.json
   //
-
-  // We want the 'release' object to be after 'type' and 'upstream'
-  // The others in lexicographic order.
-  // This is an array of array because there may be different orders
-  // at different ordering
-  // Non-listed entries will be put in the lexcicographical order.
-  const orders = [
-    ['type', 'update', 'releases'],
-    ['release_date', 'status', 'release_notes', 'engine', 'engine_version'],
-  ];
-
-  // Write the file
   fs.writeFileSync(
     `./${options.bcdFile}`,
-    sortStringify(firefoxBCD, '', orders) + '\n',
+    sortStringify(firefoxBCD, '') + '\n',
   );
 
   console.log(`File generated succesfully: ${options.bcdFile}`);

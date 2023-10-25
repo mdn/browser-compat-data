@@ -58,13 +58,19 @@ export const updateBrowserEntry = (
  * sortStringify - Stringify an object using a mixed lexicographic-semver order
  * @param {object} obj The object to stringify
  * @param {string} indent The indentation to add, as a string
- * @param {Array} orders Fixed order to use (An Array of arrays)
- *   Example: [['type', 'update', 'release']] will put release after type or update
- *   Example: [['type', 'update', 'release'],
- *             ['release_date', 'status', 'release notes', 'engine' , 'engine_version']]
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-export const sortStringify = (obj, indent, orders) => {
+export const sortStringify = (obj, indent) => {
+  // We want the 'release' object to be after 'type' and 'upstream'
+  // The others in lexicographic order.
+  // This is an array of array because there may be different orders
+  // at different ordering
+  // Non-listed entries will be put in the lexcicographical order.
+  const orders = [
+    ['type', 'update', 'releases'],
+    ['release_date', 'status', 'release_notes', 'engine', 'engine_version'],
+  ];
+
   const indentStep = '  '; // Constant with the indent step that sortStringify will use
 
   const sortedKeys = Object.keys(obj).sort((a, b) => {
