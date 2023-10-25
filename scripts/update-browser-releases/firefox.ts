@@ -15,14 +15,29 @@ const indentStep = '  '; // Constant with the indent step that sortStringify sho
  * sortStringify - Stringify an object using a mixed lexicographic-semver order
  * @param {object} obj The object to stringify
  * @param {string} indent The indentation to add, as a string
+ * @param {Array} orders Fixed order to use (An Array of arrays)
  * @returns {string} The URL of the release notes or the empty string if not found
  */
-const sortStringify = (obj, indent) => {
+const sortStringify = (obj, indent, orders) => {
   const sortedKeys = Object.keys(obj).sort((a, b) => {
     // If they both start with a number, convert to float (so that 1.5 < 10)
     // and apply number comparison
     if (a[0] >= '0' && a[0] <= '9' && b[0] >= '0' && b[0] <= '9') {
       return compareVersions(a, b);
+    }
+
+    // Use lexicographic order unless they are in a hardcoded position
+    const hardcoded = orders.forEach((order) => {
+      // Check if both entry are in one of the order
+      if (order.indexOf(a) != -1 && order.indexOf(b) != -1) {
+        console.log(a, b, 'hardcoded ('+ order.indexOf(a)+ ' '+order.indexOf(b)+')');
+        return order.indexOf(b) - order.indexOf(a);
+      }
+      return undefined;
+    });
+
+    if (hardcoded) {
+      return hardcoded;
     }
 
     // Normal string comparison: lexicographic order
@@ -39,7 +54,7 @@ const sortStringify = (obj, indent) => {
 
     if (value instanceof Object) {
       // An object: recursively call this method
-      value = `${sortStringify(value, indent + indentStep)}`;
+      value = `${sortStringify(value, indent + indentStep, orders)}`;
     } else {
       // A value or an array: call the regulare JSON.stringify function
       value = `${JSON.stringify(value)}`;
@@ -210,9 +225,16 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Write the JSON back into chrome.json
   //
+
+  // We want the 'release' object to be after 'type' and 'upstream'
+  // The others in lexicographic order.
+  const orders = [['accepts_flags', 'accept_webextensions', 'name', 'pref_url', 'preview_url', 'type', 'upstream', 'releases']];
+
+  // Write the file
   fs.writeFileSync(
     `./${options.bcdFile}`,
-    sortStringify(firefoxBCD, '') + '\n',
+    sortStringify(firefoxBCD, '', orders) + '\n',
   );
+
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
