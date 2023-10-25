@@ -169,10 +169,7 @@ export const updateChromiumReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
-  fs.writeFileSync(
-    `./${options.bcdFile}`,
-    sortStringify(chromeBCD, '') + '\n',
-  );
+  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(chromeBCD, '') + '\n');
 
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };
