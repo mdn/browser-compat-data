@@ -171,6 +171,6 @@ if (updateFirefox && updateDesktop) {
 }
 
 if (updateFirefox && updateMobile) {
-  console.log('### Updates for Firefox for Android.');
+  console.log('### Updates for Firefox for Android');
   await updateFirefoxReleases(options.firefox_android);
 }
