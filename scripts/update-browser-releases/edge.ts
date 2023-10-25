@@ -71,6 +71,7 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
     return '';
   }
 
+  // Calculate the URL
   const releaseStr = fullRelease.replace(/\./g, '');
   const month = [
     'january',
@@ -90,7 +91,30 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   const dateStr = `${
     month[dateObj.getMonth()]
   }-${dateObj.getDate()}-${dateObj.getFullYear()}`;
-  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
+
+  const URL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel2#version-${releaseStr}-${dateStr}`;
+  const id = URL.split('#')[1];
+
+  // Fetch the page
+  const releaseNote = await fetch(URL);
+  if (releaseNote.status != 200) {
+    // File not found -> log a warning
+    console.warn(
+      chalk`{red Release note files not found for Edge ${fullRelease}}`,
+    );
+    return '';
+  }
+
+  // Check if the id exists
+  const releaseNoteText = await releaseNote.text();
+  if (releaseNoteText.indexOf(`<h2 id="${id}">`) == -1) {
+    // Section not found -> log a warning
+    console.warn(
+      chalk`{red Section not found in official release notes for Edge ${fullRelease}}`,
+    );
+  }
+
+  return URL;
 };
 
 /**
