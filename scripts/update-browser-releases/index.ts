@@ -166,7 +166,7 @@ if (updateEdge && updateDesktop) {
 }
 
 if (updateFirefox && updateDesktop) {
-  console.log('### Updates for Firefox for Desktop.');
+  console.log('### Updates for Firefox for Desktop');
   await updateFirefoxReleases(options.firefox_desktop);
 }
 
