@@ -5,7 +5,7 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { newBrowserEntry, updateBrowserEntry, sortStringify } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
@@ -169,9 +169,7 @@ export const updateChromiumReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
-  fs.writeFileSync(
-    `./${options.bcdFile}`,
-    JSON.stringify(chromeBCD, null, 2) + '\n',
-  );
+  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(chromeBCD, '') + '\n');
+
   console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
 };

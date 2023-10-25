@@ -3,7 +3,7 @@
 
 import * as fs from 'node:fs';
 
-import { updateBrowserEntry, newBrowserEntry } from './utils.js';
+import { updateBrowserEntry, newBrowserEntry, sortStringify } from './utils.js';
 
 import type { ReleaseStatement } from '../../types/types.js';
 
@@ -160,7 +160,8 @@ export const updateFirefoxReleases = async (options) => {
   //
   fs.writeFileSync(
     `./${options.bcdFile}`,
-    JSON.stringify(firefoxBCD, null, 2) + '\n',
+    sortStringify(firefoxBCD, '') + '\n',
   );
+
   console.log(`File generated succesfully: ${options.bcdFile}`);
 };
