@@ -156,7 +156,7 @@ if (updateChrome && updateMobile) {
 }
 
 if (updateWebview && updateMobile) {
-  console.log('### Updates for Webview for Android.');
+  console.log('### Updates for Webview for Android');
   await updateChromiumReleases(options.webview_android);
 }
 
