@@ -7,7 +7,12 @@ import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 
 import { InternalSupportStatement } from '../../types/index.js';
-import { BrowserName, CompatData } from '../../types/types.js';
+import {
+  BrowserName,
+  CompatData,
+  CompatStatement,
+  Group,
+} from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
@@ -33,6 +38,32 @@ export const generateMeta = (): any => ({
   version: packageJson.version,
   timestamp: new Date(),
 });
+
+const groupsToExport: Group[] = [];
+
+/**
+ * Generate groups to export in BCD builds
+ * @param {WalkOutput} feature The feature to get groups from
+ */
+export const generateExportGroups = (feature: WalkOutput): void => {
+  const featureGroups = feature.compat.groups as CompatStatement['groups'];
+  if (featureGroups) {
+    for (const featureGroup of featureGroups) {
+      const exists = groupsToExport.find(
+        (exportGroup) => exportGroup.id === featureGroup,
+      );
+      if (exists) {
+        for (const exportGroup of groupsToExport) {
+          if (exportGroup.id === featureGroup) {
+            exportGroup.features.push(feature.path);
+          }
+        }
+      } else {
+        groupsToExport.push({ id: featureGroup, features: [feature.path] });
+      }
+    }
+  }
+};
 
 /**
  * Apply mirroring to a feature
@@ -64,10 +95,12 @@ export const createDataBundle = async (): Promise<CompatData> => {
 
   for (const feature of walker) {
     applyMirroring(feature);
+    generateExportGroups(feature);
   }
 
   return {
     ...data,
+    groups: groupsToExport,
     __meta: generateMeta(),
   };
 };

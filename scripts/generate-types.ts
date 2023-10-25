@@ -30,6 +30,7 @@ const compatDataTypes = {
   css: 'Contains data for [CSS](https://developer.mozilla.org/docs/Web/CSS) properties, selectors, and at-rules.',
   html: 'Contains data for [HTML](https://developer.mozilla.org/docs/Web/HTML) elements, attributes, and global attributes.',
   http: 'Contains data for [HTTP](https://developer.mozilla.org/docs/Web/HTTP) headers, statuses, and methods.',
+  groups: 'Contains group data',
   javascript:
     'Contains data for [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.',
   mathml:
@@ -87,6 +88,8 @@ const generateCompatDataTypes = (): string => {
           ? 'MetaBlock'
           : t[0] === 'browsers'
           ? 'Browsers'
+          : t[0] === 'groups'
+          ? 'Group[]'
           : 'Identifier'
       };`,
   );
@@ -94,7 +97,10 @@ const generateCompatDataTypes = (): string => {
   const metaType =
     'export interface MetaBlock {\n  version: string;\n  timestamp: string;\n}';
 
-  return `${metaType}\n\nexport interface CompatData {\n${props.join(
+  const groupType =
+    'export interface Group {\n  id: string;\n  features: string[];\n}';
+
+  return `${metaType}\n\n${groupType}\n\nexport interface CompatData {\n${props.join(
     '\n\n',
   )}\n}\n`;
 };
