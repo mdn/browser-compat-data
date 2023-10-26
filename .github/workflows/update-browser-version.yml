@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   update:
-    name: Update browser-version
+    name: Update browser version files
     runs-on: ubuntu-latest
     env:
       RESULT:
@@ -28,11 +28,10 @@ jobs:
           echo "RESULT<<EOF" >> $GITHUB_ENV
           npm run update-browser-releases -- --all >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-          echo $GITHUB_ENV
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update browser releases json files
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
