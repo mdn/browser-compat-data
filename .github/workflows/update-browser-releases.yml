@@ -32,10 +32,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # need the rights to create and edit PRs
+          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update browser releases json files
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
           signoff: false
           branch: browser-version-json
           delete-branch: true
