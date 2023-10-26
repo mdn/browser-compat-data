@@ -9,6 +9,50 @@ import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
+const updateReleaseNotesIfArchived = async (originalURL) => {
+  const id = originalURL.split('#')[1];
+
+  // Test if the original URL still works
+
+  // Fetch the page
+  const releaseNote = await fetch(originalURL);
+  if (releaseNote.status != 200) {
+    // File not found -> log a warning
+    console.log(
+      chalk`{red \nRelease note files not found for Edge (${releaseNote.status}).`,
+    );
+    return originalURL; // We keep the original URL
+  }
+
+  // Check if the id exists
+  const releaseNoteText = await releaseNote.text();
+  if (releaseNoteText.indexOf(`<h2 id="${id}">`) !== -1) {
+    // Found! We keep it
+    return originalURL;
+  }
+
+  // The URL has not been found! Check in the archive
+  const archiveURL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel#${id}`;
+  const archivedReleaseNotes = await fetch(archiveURL);
+  if (archivedReleaseNotes.status != 200) {
+    // File not found -> log a warning
+    console.log(
+      chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`,
+    );
+    return originalURL; // We keep the original URL
+  }
+
+  // Check if id exists in the archive
+  const archiveReleaseNotesText = await archivedReleaseNotes.text();
+  if (archiveReleaseNotesText.indexOf(`<h2 id="${id}">`) == -1) {
+    // Section not found: keep the orgiinal
+    return originalURL;
+  }
+
+  // Return the archived entry.
+  return archiveURL;
+}
+
 /**
  * getFutureReleaseDate - Read the future release date
  * @param {string} release The release number of the versin
@@ -108,8 +152,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   }
 
   // Check if the id exists
-  const releaseNoteText = await releaseNote.text();
-  if (releaseNoteText.indexOf(`<h2 id="${id}">`) == -1) {
+  const releaseNotesText = await releaseNote.text();
+  if (releaseNotesText.indexOf(`<h2 id="${id}">`) == -1) {
     // Section not found -> log a warning
     console.log(
       chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`,
@@ -245,6 +289,14 @@ export const updateEdgeReleases = async (options) => {
   ) {
     if (!options.skippedReleases.includes(i)) {
       if (edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
+        updateBrowserEntry(
+          edgeBCD,
+          options.bcdBrowserName,
+          i.toString(),
+          edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].release_date,
+          'retired',
+          await updateReleaseNotesIfArchived(edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].release_notes),
+        );
         edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].status =
           'retired';
       } else {
@@ -275,8 +327,6 @@ export const updateEdgeReleases = async (options) => {
       'planned',
       '',
     );
-    edgeBCD.browsers[options.bcdBrowserName].releases[planned].status =
-      'planned';
   } else {
     // New entry
     newBrowserEntry(
