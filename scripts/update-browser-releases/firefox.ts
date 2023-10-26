@@ -3,7 +3,9 @@
 
 import * as fs from 'node:fs';
 
-import { updateBrowserEntry, newBrowserEntry, sortStringify } from './utils.js';
+import stringify from '../lib/stringify-and-order-properties.js';
+
+import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 import type { ReleaseStatement } from '../../types/types.js';
 
@@ -178,10 +180,7 @@ export const updateFirefoxReleases = async (options) => {
   }
 
   //
-  // Write the JSON back into chrome.json
+  // Write the update browser's json to file
   //
-  fs.writeFileSync(
-    `./${options.bcdFile}`,
-    sortStringify(firefoxBCD, '') + '\n',
-  );
+  fs.writeFileSync(`./${options.bcdFile}`, stringify(firefoxBCD) + '\n');
 };
