@@ -1,14 +1,15 @@
-name: Update browser versions
+name: Update browser releases
 
 on:
   workflow_dispatch:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update:
-    name: Update browser version files
+    name: Update browser releases
     runs-on: ubuntu-latest
     env:
       RESULT:
@@ -22,7 +23,7 @@ jobs:
           cache: npm
       - run: npm install -D typescript
       - run: npm install -D ts-node
-      - name: Run update-browser-version script
+      - name: Run update-browser-releases script
         id: ubr
         run: |
           echo "RESULT<<EOF" >> $GITHUB_ENV
@@ -31,15 +32,14 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # need the rights to create and edit PRs
-          commit-message: Update browser releases json files
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
+          commit-message: Update browser releases
+          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
           signoff: false
-          branch: browser-version-json
+          branch: browser-releases
           delete-branch: true
-          title: "Update browser version files"
+          title: "Update browser releases"
           body: |
-            The output of the `update-browser_version` script is:
+            The output of the `update-browser-releases` script is:
             ${{ env.RESULT }}
           draft: false
