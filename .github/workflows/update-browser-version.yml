@@ -1,0 +1,45 @@
+name: Update browser versions
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Update browser version files
+    runs-on: ubuntu-latest
+    env:
+      RESULT:
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # get the full repository checkout, not just the inciting commit
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+      - run: npm install -D typescript
+      - run: npm install -D ts-node
+      - name: Run update-browser-version script
+        id: ubr
+        run: |
+          echo "RESULT<<EOF" >> $GITHUB_ENV
+          npm run update-browser-releases -- --all >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # need the rights to create and edit PRs
+          commit-message: Update browser releases json files
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: browser-version-json
+          delete-branch: true
+          title: "Update browser version files"
+          body: |
+            The output of the `update-browser_version` script is:
+            ${{ env.RESULT }}
+          draft: false
