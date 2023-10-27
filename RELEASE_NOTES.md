@@ -1,5 +1,56 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.27)
+
+October 27, 2023
+
+### Removals
+
+- `api.SVGAElement.referrerPolicy.no-referrer-when-downgrade` ([#21086](https://github.com/mdn/browser-compat-data/pull/21086))
+- `api.SVGAElement.referrerPolicy.origin-when-cross-origin` ([#21086](https://github.com/mdn/browser-compat-data/pull/21086))
+- `api.SVGAElement.referrerPolicy.unsafe-url` ([#21086](https://github.com/mdn/browser-compat-data/pull/21086))
+- `webextensions.api.tabs.create.createProperties.active` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.cookieStoreId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.discarded` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.index` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.muted` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.openerTabId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.openInReaderMode` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.pinned` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.selected` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.title` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.url` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.createProperties.windowId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+
+### Additions
+
+- `browsers.opera.releases.105` ([#21080](https://github.com/mdn/browser-compat-data/pull/21080))
+- `html.elements.script.type.speculationrules.prerender` ([#21085](https://github.com/mdn/browser-compat-data/pull/21085))
+- `webextensions.api.runtime.MessageSender.documentId` ([#20970](https://github.com/mdn/browser-compat-data/pull/20970))
+- `webextensions.api.runtime.MessageSender.documentLifecycle` ([#20970](https://github.com/mdn/browser-compat-data/pull/20970))
+- `webextensions.api.runtime.MessageSender.id` ([#20970](https://github.com/mdn/browser-compat-data/pull/20970))
+- `webextensions.api.runtime.MessageSender.origin` ([#20970](https://github.com/mdn/browser-compat-data/pull/20970))
+- `webextensions.api.runtime.MessageSender.tab` ([#20970](https://github.com/mdn/browser-compat-data/pull/20970))
+- `webextensions.api.tabs.create.active` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.cookieStoreId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.discarded` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.index` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.muted` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.openerTabId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.openInReaderMode` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.pinned` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.selected` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.title` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.url` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+- `webextensions.api.tabs.create.windowId` ([#20971](https://github.com/mdn/browser-compat-data/pull/20971))
+
+### Statistics
+
+- 9 contributors have changed 20 files with 1,036 additions and 504 deletions in 22 commits ([`v5.3.26...v5.3.27`](https://github.com/mdn/browser-compat-data/compare/v5.3.26...v5.3.27))
+- 15,050 total features
+- 1,033 total contributors
+- 4,623 total stargazers
+
 ## [v5.3.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.26)
 
 October 24, 2023
