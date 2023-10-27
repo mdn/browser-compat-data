@@ -5,7 +5,9 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
-import { newBrowserEntry, updateBrowserEntry, sortStringify } from './utils.js';
+import stringify from '../lib/stringify-and-order-properties.js';
+
+import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -291,5 +293,5 @@ export const updateEdgeReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
-  fs.writeFileSync(`./${options.bcdFile}`, sortStringify(edgeBCD, '') + '\n');
+  fs.writeFileSync(`./${options.bcdFile}`, stringify(edgeBCD) + '\n');
 };
