@@ -88,7 +88,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/393466'>bug 393466</a>."
+              "impl_url": "https://crbug.com/393466"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -138,7 +138,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16.4",
-              "notes": "See <a href='https://webkit.org/b/197960'>bug 197960</a>."
+              "impl_url": "https://webkit.org/b/197960"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -410,14 +410,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "17"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1241,7 +1241,7 @@
               },
               "chrome_android": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/953169'>bug 953169</a>."
+                "impl_url": "https://crbug.com/953169"
               },
               "edge": {
                 "version_added": "17"
@@ -1251,7 +1251,7 @@
               },
               "firefox_android": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1544660'>bug 1544660</a>."
+                "impl_url": "https://bugzil.la/1544660"
               },
               "ie": {
                 "version_added": false
@@ -1629,11 +1629,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10",
-              "partial_implementation": true,
-              "notes": "The property is defined only for its useful elements: <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, and <code>&lt;style&gt;</code>; it is undefined for all other elements."
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The property is defined only for its useful elements: <code>&lt;link&gt;</code>, <code>&lt;script&gt;</code>, and <code>&lt;style&gt;</code>; it is undefined for all other elements."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -2183,14 +2189,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "17"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2263,14 +2269,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

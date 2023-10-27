@@ -16,9 +16,6 @@ const specsExceptions = [
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
 
-  // Remove once Window.{clearImmediate,setImmediate} are irrelevant and removed
-  'https://w3c.github.io/setImmediate/',
-
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
 
@@ -41,10 +38,12 @@ const specsExceptions = [
   'https://github.com/WebAssembly/extended-const/blob/main/proposals',
   'https://github.com/WebAssembly/tail-call/blob/main/proposals',
   'https://github.com/WebAssembly/threads/blob/main/proposal',
+  'https://github.com/WebAssembly/relaxed-simd/blob/main/proposals',
 ];
 
 const allowedSpecURLs = [
   ...specData
+    .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
       spec.nightly.url,
@@ -72,7 +71,10 @@ const processData = (data: CompatStatement, logger: Logger): void => {
   for (const specURL of featureSpecURLs) {
     if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
       logger.error(
-        chalk`Invalid specification URL found: {bold ${specURL}}. Try a more current specification URL and/or check if the specification URL is listed in https://github.com/w3c/browser-specs.`,
+        chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
+         - there is a more current specification URL
+         - the specification is listed in https://github.com/w3c/browser-specs
+         - the specification has a "good" standing`,
       );
     }
   }

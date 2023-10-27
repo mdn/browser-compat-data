@@ -264,6 +264,39 @@
           }
         }
       },
+      "audioSession": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "authentication": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/authentication",
@@ -315,14 +348,14 @@
               },
               {
                 "version_added": "56",
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "enabled"
                   }
-                ]
+                ],
+                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
               }
             ],
             "chrome_android": {
@@ -336,14 +369,14 @@
               },
               {
                 "version_added": "79",
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "enabled"
                   }
-                ]
+                ],
+                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
               }
             ],
             "firefox": {
@@ -363,7 +396,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
+              "impl_url": "https://crbug.com/1100993"
             }
           },
           "status": {
@@ -575,7 +608,8 @@
             },
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17",
+              "notes": "Badging is supported for installed web apps on macOS Sonoma and higher."
             },
             "safari_ios": {
               "version_added": "16.4"
@@ -654,7 +688,7 @@
             },
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/185697'>bug 185697</a>."
+              "impl_url": "https://webkit.org/b/185697"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -833,7 +867,6 @@
       "doNotTrack": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/doNotTrack",
-          "spec_url": "https://www.w3.org/TR/tracking-dnt/#dom-navigator-donottrack",
           "support": {
             "chrome": {
               "version_added": "23"
@@ -852,9 +885,9 @@
             },
             "firefox_android": "mirror",
             "ie": {
+              "prefix": "ms",
               "version_added": "9",
               "version_removed": "11",
-              "prefix": "ms",
               "notes": "For IE11 and subsequent versions, use <code>window.doNotTrack</code>"
             },
             "oculus": "mirror",
@@ -874,7 +907,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -1070,8 +1103,8 @@
                 "version_added": "35"
               },
               {
-                "version_added": "21",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "21"
               }
             ],
             "chrome_android": "mirror",
@@ -1100,8 +1133,8 @@
                 "version_added": "37"
               },
               {
-                "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "≤37"
               }
             ]
           },
@@ -1220,8 +1253,8 @@
                 "version_added": "53"
               },
               {
-                "version_added": "21",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "21"
               }
             ],
             "chrome_android": "mirror",
@@ -1230,17 +1263,17 @@
                 "version_added": "12"
               },
               {
-                "version_added": "79",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "79"
               }
             ],
             "firefox": {
-              "version_added": "17",
-              "prefix": "moz"
+              "prefix": "moz",
+              "version_added": "17"
             },
             "firefox_android": {
-              "version_added": "24",
-              "prefix": "moz"
+              "prefix": "moz",
+              "version_added": "24"
             },
             "ie": {
               "version_added": false
@@ -1251,8 +1284,8 @@
                 "version_added": "40"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               },
               {
                 "version_added": "12",
@@ -1264,8 +1297,8 @@
                 "version_added": "41"
               },
               {
-                "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "14"
               },
               {
                 "version_added": "12",
@@ -1283,8 +1316,8 @@
                 "version_added": "53"
               },
               {
-                "version_added": "40",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "40"
               }
             ]
           },
@@ -1371,20 +1404,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "95",
-              "impl_url": "https://hg.mozilla.org/mozilla-central/rev/09e51e6d4a7e",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "privacy.globalprivacycontrol.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "privacy.globalprivacycontrol.functionality.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview",
+              "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1788,8 +1809,8 @@
                 "version_added": "11"
               },
               {
-                "version_added": "10",
-                "prefix": "ms"
+                "prefix": "ms",
+                "version_added": "10"
               }
             ],
             "oculus": "mirror",
@@ -2004,17 +2025,17 @@
             "description": "Returns MIME types from plugins rather than hard-coded PDF values",
             "support": {
               "chrome": {
-                "version_removed": "94",
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "94"
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_removed": "94",
-                "version_added": "12"
+                "version_added": "12",
+                "version_removed": "94"
               },
               "firefox": {
-                "version_removed": "99",
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "99"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2022,12 +2043,12 @@
               },
               "oculus": "mirror",
               "opera": {
-                "version_removed": "80",
-                "version_added": "≤12.1"
+                "version_added": "≤12.1",
+                "version_removed": "80"
               },
               "opera_android": {
-                "version_removed": "66",
-                "version_added": "≤12.1"
+                "version_added": "≤12.1",
+                "version_removed": "66"
               },
               "safari": {
                 "version_added": "1"
@@ -2195,7 +2216,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/490120'>bug 490120</a>."
+              "impl_url": "https://crbug.com/490120"
             }
           },
           "status": {
@@ -2295,17 +2316,17 @@
             "description": "Returns plugins rather than hard-coded PDF plugin values",
             "support": {
               "chrome": {
-                "version_removed": "94",
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "94"
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_removed": "94",
-                "version_added": "12"
+                "version_added": "12",
+                "version_removed": "94"
               },
               "firefox": {
-                "version_removed": "99",
-                "version_added": "1"
+                "version_added": "1",
+                "version_removed": "99"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2313,12 +2334,12 @@
               },
               "oculus": "mirror",
               "opera": {
-                "version_removed": "80",
-                "version_added": "≤12.1"
+                "version_added": "≤12.1",
+                "version_removed": "80"
               },
               "opera_android": {
-                "version_removed": "66",
-                "version_added": "≤12.1"
+                "version_added": "≤12.1",
+                "version_removed": "66"
               },
               "safari": {
                 "version_added": "1"
@@ -2364,7 +2385,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/521319'>bug 521319</a>."
+              "impl_url": "https://crbug.com/521319"
             }
           },
           "status": {
@@ -3763,28 +3784,10 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "108",
-                "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-addons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'>Permission Policy: <code>midi</code></a>."
-              },
-              {
-                "version_added": "97",
-                "version_removed": "108",
-                "notes": [
-                  "Version 107 and later, API use is gated by a site permission add-on that is automatically generated by Firefox.",
-                  "Version 105 and later, the <code>dom.webmidi.gated</code> preference may be set <code>false</code> to allow WebMIDI to be used without a site permission addon.",
-                  "Version 100 to 104 (inclusive) WebMIDI is not available (API use is gated by a site permission add-on that is no longer available)."
-                ],
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.webmidi.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "108",
+              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'>Permission Policy: <code>midi</code></a>."
+            },
             "firefox_android": {
               "version_added": false
             },
@@ -3979,8 +3982,8 @@
               "version_added": "17"
             },
             "firefox": {
-              "notes": "In Firefox private windows, the <code>serviceWorker</code> object is <code>undefined</code>. See <a href='https://bugzil.la/1320796'>bug 1320796</a>.",
-              "version_added": "44"
+              "version_added": "44",
+              "notes": "In Firefox private windows, the <code>serviceWorker</code> object is <code>undefined</code>. See <a href='https://bugzil.la/1320796'>bug 1320796</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4030,7 +4033,8 @@
             },
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17",
+              "notes": "Badging is supported for web apps saved to the Dock in Safari 17 on the macOS Sonoma beta"
             },
             "safari_ios": {
               "version_added": "16.4"
@@ -4445,7 +4449,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/921655'>bug 921655</a>."
+              "impl_url": "https://crbug.com/921655"
             }
           },
           "status": {
@@ -4589,9 +4593,9 @@
                 ]
               },
               {
+                "prefix": "moz",
                 "version_added": "11",
-                "version_removed": "16",
-                "prefix": "moz"
+                "version_removed": "16"
               }
             ],
             "firefox_android": [
@@ -4609,9 +4613,9 @@
                 ]
               },
               {
+                "prefix": "moz",
                 "version_added": "14",
-                "version_removed": "16",
-                "prefix": "moz"
+                "version_removed": "16"
               }
             ],
             "ie": {
