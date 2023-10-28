@@ -9,49 +9,70 @@ import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
-const updateReleaseNotesIfArchived = async (originalURL) => {
-  const id = originalURL.split('#')[1];
+//
+// Content of the two release note files
+//
+let releaseNotesText;
+let archivedReleaseNotesText;
 
-  // Test if the original URL still works
+/**
+ * initReleaseNoteFiles - Fetch both release notes file and store them
+ */
+const initReleaseNoteFiles = async () => {
+  // Fetch the regular page
+  const releaseNote = await fetch(
+    'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel',
+  );
 
-  // Fetch the page
-  const releaseNote = await fetch(originalURL);
+  // Check that it exists, if not exit.
   if (releaseNote.status != 200) {
     // File not found -> log a warning
     console.log(
       chalk`{red \nRelease note files not found for Edge (${releaseNote.status}).`,
     );
-    return originalURL; // We keep the original URL
+  } else {
+    releaseNotesText = await releaseNote.text();
   }
 
-  // Check if the id exists
-  const releaseNoteText = await releaseNote.text();
-  if (releaseNoteText.indexOf(`<h2 id="${id}">`) !== -1) {
-    // Found! We keep it
-    return originalURL;
-  }
-
-  // The URL has not been found! Check in the archive
-  const archiveURL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel#${id}`;
-  const archivedReleaseNotes = await fetch(archiveURL);
+  // Fetch the archived page
+  const archivedReleaseNotes = await fetch(
+    'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel',
+  );
   if (archivedReleaseNotes.status != 200) {
     // File not found -> log a warning
     console.log(
       chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`,
     );
+  } else {
+  archivedReleaseNotesText = await archivedReleaseNotes.text();
+}
+};
+
+/**
+ * updateReleaseNotesIfArchived - Return the new release notes URL to use
+ * @param {string} originalURL The URL that is currently used
+ * @returns {string} The new URL to use (eventually the same)
+ */
+const updateReleaseNotesIfArchived = (originalURL) => {
+  const id = originalURL.split('#')[1];
+
+  // Test if the original URL still works
+
+  // If the files doesn't exist or the id not found in the archive
+  // Keep the original file
+  if (
+    !{id} ||
+    !releaseNotesText ||
+    releaseNotesText.indexOf(`<h2 id="${id}">`) == -1 ||
+    !archivedReleaseNotesText ||
+    archivedReleaseNotesText.indexOf(`<h2 id="${id}">`) == -1
+  ) {
     return originalURL; // We keep the original URL
   }
 
-  // Check if id exists in the archive
-  const archiveReleaseNotesText = await archivedReleaseNotes.text();
-  if (archiveReleaseNotesText.indexOf(`<h2 id="${id}">`) == -1) {
-    // Section not found: keep the orgiinal
-    return originalURL;
-  }
-
   // Return the archived entry.
-  return archiveURL;
-}
+  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel#${id}`;
+};
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -138,29 +159,17 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
     month[dateObj.getMonth()]
   }-${dateObj.getDate()}-${dateObj.getFullYear()}`;
 
-  const URL = `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
-  const id = URL.split('#')[1];
-
-  // Fetch the page
-  const releaseNote = await fetch(URL);
-  if (releaseNote.status != 200) {
-    // File not found -> log a warning
-    console.log(
-      chalk`{red \nRelease note files not found for Edge ${fullRelease}}`,
-    );
-    return '';
-  }
-
   // Check if the id exists
-  const releaseNotesText = await releaseNote.text();
-  if (releaseNotesText.indexOf(`<h2 id="${id}">`) == -1) {
+  if (
+    releaseNotesText.indexOf(`<h2 id="version-${releaseStr}-${dateStr}">`) == -1
+  ) {
     // Section not found -> log a warning
     console.log(
       chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`,
     );
   }
 
-  return URL;
+  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
 };
 
 /**
@@ -168,6 +177,11 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
  * @param {object} options The list of options for Edge.
  */
 export const updateEdgeReleases = async (options) => {
+  //
+  // Read the release note files
+  //
+  await initReleaseNoteFiles();
+
   //
   // Get the JSON with the versions from edgereleases
   //
@@ -293,12 +307,14 @@ export const updateEdgeReleases = async (options) => {
           edgeBCD,
           options.bcdBrowserName,
           i.toString(),
-          edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].release_date,
+          edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
+            .release_date,
           'retired',
-          await updateReleaseNotesIfArchived(edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].release_notes),
+          updateReleaseNotesIfArchived(
+            edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
+              .release_notes
+          ),
         );
-        edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()].status =
-          'retired';
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
         // There is an oddity: the version is not skipped but not in edgeupdates
