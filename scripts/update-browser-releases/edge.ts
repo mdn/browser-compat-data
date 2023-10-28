@@ -44,8 +44,8 @@ const initReleaseNoteFiles = async () => {
       chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`,
     );
   } else {
-  archivedReleaseNotesText = await archivedReleaseNotes.text();
-}
+    archivedReleaseNotesText = await archivedReleaseNotes.text();
+  }
 };
 
 /**
@@ -61,7 +61,7 @@ const updateReleaseNotesIfArchived = (originalURL) => {
   // If the files doesn't exist or the id not found in the archive
   // Keep the original file
   if (
-    !{id} ||
+    !{ id } ||
     !releaseNotesText ||
     releaseNotesText.indexOf(`<h2 id="${id}">`) == -1 ||
     !archivedReleaseNotesText ||
@@ -312,7 +312,7 @@ export const updateEdgeReleases = async (options) => {
           'retired',
           updateReleaseNotesIfArchived(
             edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-              .release_notes
+              .release_notes,
           ),
         );
       } else {
