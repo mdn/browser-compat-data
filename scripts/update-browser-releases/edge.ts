@@ -57,19 +57,17 @@ const updateReleaseNotesIfArchived = (originalURL) => {
   const id = originalURL.split('#')[1];
 
   // Test if the original URL still works
-
   // If the files doesn't exist or the id not found in the archive
   // Keep the original file
   if (
-    !{ id } ||
+    !id ||
     !releaseNotesText ||
-    releaseNotesText.indexOf(`<h2 id="${id}">`) == -1 ||
+    releaseNotesText.indexOf(`<h2 id="${id}">`) != -1 ||
     !archivedReleaseNotesText ||
     archivedReleaseNotesText.indexOf(`<h2 id="${id}">`) == -1
   ) {
     return originalURL; // We keep the original URL
   }
-
   // Return the archived entry.
   return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel#${id}`;
 };
