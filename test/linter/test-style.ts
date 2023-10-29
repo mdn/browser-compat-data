@@ -93,7 +93,7 @@ const processData = (
     logger.error(
       chalk`Statement sorting error on ${jsonDiff(
         actual,
-        expectedFeatureSorting,
+        expectedStatementSorting,
       )}`,
       { fixable: true },
     );
