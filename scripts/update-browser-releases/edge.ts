@@ -5,6 +5,8 @@ import * as fs from 'node:fs';
 
 import chalk from 'chalk-template';
 
+import stringify from '../lib/stringify-and-order-properties.js';
+
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
@@ -18,7 +20,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   const scheduleMD = await fetch(releaseScheduleURL);
   const text = await scheduleMD.text();
   if (!text) {
-    console.error(chalk`{red Release file not found.}`);
+    console.log(chalk`{red \nRelease file not found.}`);
     return '';
   }
   // Find the line
@@ -29,7 +31,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   );
   const result = text.match(regexp);
   if (!result) {
-    console.log(chalk`{yellow Release date not found for Edge ${release}.}`);
+    console.log(chalk`{yellow \nRelease date not found for Edge ${release}.}`);
     return '';
   }
   const releaseDateText = result[1];
@@ -99,8 +101,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   const releaseNote = await fetch(URL);
   if (releaseNote.status != 200) {
     // File not found -> log a warning
-    console.warn(
-      chalk`{red Release note files not found for Edge ${fullRelease}}`,
+    console.log(
+      chalk`{red \nRelease note files not found for Edge ${fullRelease}}`,
     );
     return '';
   }
@@ -109,8 +111,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
   const releaseNoteText = await releaseNote.text();
   if (releaseNoteText.indexOf(`<h2 id="${id}">`) == -1) {
     // Section not found -> log a warning
-    console.warn(
-      chalk`{red Section not found in official release notes for Edge ${fullRelease}}`,
+    console.log(
+      chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`,
     );
   }
 
@@ -212,7 +214,9 @@ export const updateEdgeReleases = async (options) => {
     ) {
       // The entry already exists
       updateBrowserEntry(
-        edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version],
+        edgeBCD,
+        options.bcdBrowserName,
+        data[value].version,
         data[value]?.versionDate,
         key,
         releaseNotesURL,
@@ -246,8 +250,8 @@ export const updateEdgeReleases = async (options) => {
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
         // There is an oddity: the version is not skipped but not in edgeupdates
-        console.warn(
-          chalk`{yellow Edge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
+        console.log(
+          chalk`{yellow \nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
         );
       }
     }
@@ -264,7 +268,9 @@ export const updateEdgeReleases = async (options) => {
 
   if (edgeBCD.browsers[options.bcdBrowserName].releases[planned]) {
     updateBrowserEntry(
-      edgeBCD.browsers[options.bcdBrowserName].releases[planned],
+      edgeBCD,
+      options.bcdBrowserName,
+      planned,
       releaseDate,
       'planned',
       '',
@@ -287,9 +293,5 @@ export const updateEdgeReleases = async (options) => {
   //
   // Write the update browser's json to file
   //
-  fs.writeFileSync(
-    `./${options.bcdFile}`,
-    JSON.stringify(edgeBCD, null, 2) + '\n',
-  );
-  console.log(chalk`{bold File generated successfully: ${options.bcdFile}}`);
+  fs.writeFileSync(`./${options.bcdFile}`, stringify(edgeBCD) + '\n');
 };
