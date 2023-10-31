@@ -15,6 +15,11 @@ const tests: { input: Identifier; output: Identifier }[] = [
           chrome: [
             { version_added: '20', prefix: 'webkit' },
             {
+              version_added: '18',
+              partial_implementation: true,
+              notes: 'Fries are kind of cold',
+            },
+            {
               version_added: '10',
               version_removed: '18',
               partial_implementation: true,
@@ -46,6 +51,11 @@ const tests: { input: Identifier; output: Identifier }[] = [
           chrome: [
             { version_added: '20' },
             { version_added: '20', prefix: 'webkit' },
+            {
+              version_added: '18',
+              partial_implementation: true,
+              notes: 'Fries are kind of cold',
+            },
             {
               version_added: '12',
               flags: [

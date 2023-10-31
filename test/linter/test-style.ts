@@ -14,38 +14,62 @@ import {
 import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
 import { orderFeatures } from '../../scripts/fix/feature-order.js';
 import { orderStatements } from '../../scripts/fix/statement-order.js';
-import { orderProperties } from '../../scripts/fix/property-order.js';
+import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-properties.js';
 
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema
  * @param {string} rawData The raw contents of the file to test
  * @param {Logger} logger The logger to output errors to
+ * @param {string} category The category of the file
  */
-const processData = (rawData: string, logger: Logger): void => {
+const processData = (
+  rawData: string,
+  logger: Logger,
+  category: string,
+): void => {
   let actual = rawData;
-  /** @type {import('../../types').CompatData} */
+  let expectedPropertySorting = stringifyAndOrderProperties(rawData);
+
+  // prevent false positives from git.core.autocrlf on Windows
+  if (IS_WINDOWS) {
+    actual = actual.replace(/\r/g, '');
+    expectedPropertySorting = expectedPropertySorting.replace(/\r/g, '');
+  }
+
+  if (actual !== expectedPropertySorting) {
+    logger.error(
+      chalk`Property sorting error on ${jsonDiff(
+        actual,
+        expectedPropertySorting,
+      )}`,
+      { tip: chalk`Run {bold npm run fix} to fix sorting automatically` },
+    );
+  }
+
+  // Skip remaining checks if file is browser file
+  if (category === 'browsers') {
+    return;
+  }
+
   const dataObject = JSON.parse(actual);
   let expected = JSON.stringify(dataObject, null, 2);
   let expectedBrowserSorting = JSON.stringify(dataObject, orderSupportBlock, 2);
   let expectedFeatureSorting = JSON.stringify(dataObject, orderFeatures, 2);
   let expectedStatementSorting = JSON.stringify(dataObject, orderStatements, 2);
-  let expectedPropertySorting = JSON.stringify(dataObject, orderProperties, 2);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {
-    actual = actual.replace(/\r/g, '');
     expected = expected.replace(/\r/g, '');
     expectedBrowserSorting = expectedBrowserSorting.replace(/\r/g, '');
     expectedFeatureSorting = expectedFeatureSorting.replace(/\r/g, '');
     expectedStatementSorting = expectedStatementSorting.replace(/\r/g, '');
-    expectedPropertySorting = expectedPropertySorting.replace(/\r/g, '');
   }
 
   if (actual !== expected) {
     logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
   }
 
-  if (expected !== expectedBrowserSorting) {
+  if (actual !== expectedBrowserSorting) {
     logger.error(
       chalk`Browser sorting error on ${jsonDiff(
         actual,
@@ -55,7 +79,7 @@ const processData = (rawData: string, logger: Logger): void => {
     );
   }
 
-  if (expected !== expectedFeatureSorting) {
+  if (actual !== expectedFeatureSorting) {
     logger.error(
       chalk`Feature sorting error on ${jsonDiff(
         actual,
@@ -65,23 +89,13 @@ const processData = (rawData: string, logger: Logger): void => {
     );
   }
 
-  if (expected !== expectedStatementSorting) {
+  if (actual !== expectedStatementSorting) {
     logger.error(
       chalk`Statement sorting error on ${jsonDiff(
         actual,
-        expectedFeatureSorting,
+        expectedStatementSorting,
       )}`,
       { fixable: true },
-    );
-  }
-
-  if (expected !== expectedPropertySorting) {
-    logger.error(
-      chalk`Property sorting error on ${jsonDiff(
-        actual,
-        expectedFeatureSorting,
-      )}`,
-      { tip: chalk`Run {bold npm run fix} to fix sorting automatically` },
     );
   }
 
@@ -106,8 +120,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { rawdata, path: { category } }: LinterData) => {
-    if (category !== 'browsers') {
-      processData(rawdata, logger);
-    }
+    processData(rawdata, logger, category);
   },
 } as Linter;
