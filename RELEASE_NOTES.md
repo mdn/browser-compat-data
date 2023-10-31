@@ -1,5 +1,69 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.28)
+
+October 31, 2023
+
+### Additions
+
+- `api.Counter` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.identifier` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.listStyle` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.separator` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Document.browsingTopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.fetch.init_browsingTopics_parameter` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.HTMLIFrameElement.browsingTopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.MediaController` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.buffered` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.currentTime` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.defaultPlaybackRate` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.duration` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.MediaController` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.muted` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.pause` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.paused` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.play` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.playbackRate` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.playbackState` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.played` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.seekable` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.unpause` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.volume` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.Rect` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.bottom` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.left` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.right` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.top` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Request.Request.init_browsingTopics_parameter` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.RGBColor` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.blue` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.green` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.red` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.WebGLTimerQueryEXT` ([#21035](https://github.com/mdn/browser-compat-data/pull/21035))
+- `browsers.chrome_android.releases.120` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.chrome_android.releases.121` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.firefox_android.releases.122` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.firefox.releases.122` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.119` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.120` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.121` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `css.properties.-webkit-line-clamp.none` ([#21014](https://github.com/mdn/browser-compat-data/pull/21014))
+- `css.properties.clip-rule` ([#21042](https://github.com/mdn/browser-compat-data/pull/21042))
+- `css.properties.font-variant.historical-forms` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `css.properties.font-variant.sub` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `css.properties.font-variant.super` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `html.elements.iframe.browsingtopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Observe-Browsing-Topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Permissions-Policy.browsing-topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Sec-Browsing-Topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+
+### Statistics
+
+- 13 contributors have changed 289 files with 4,660 additions and 2,546 deletions in 32 commits ([`v5.3.27...v5.3.28`](https://github.com/mdn/browser-compat-data/compare/v5.3.27...v5.3.28))
+- 15,093 total features
+- 1,036 total contributors
+- 4,627 total stargazers
+
 ## [v5.3.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.27)
 
 October 27, 2023
