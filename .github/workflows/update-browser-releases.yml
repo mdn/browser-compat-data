@@ -3,6 +3,9 @@ name: Update browser releases
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "30 4 * * 1-5"
+
 permissions:
   contents: write
   pull-requests: write
