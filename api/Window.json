@@ -2789,6 +2789,42 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Moved relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1",
+                "notes": "Multi-screen coordinates are used, but windows are clamped to their existing displays."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "moveTo": {
@@ -2841,8 +2877,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "1",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "notes": "Multi-screen coordinates are used, but windows are clamped to their existing displays."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2852,8 +2887,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "Moved relative to the origin of the current screen."
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3380,9 +3416,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "1",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "version_added": "1"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -3392,8 +3426,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "Opened relative to the origin of the primary screen."
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -4669,9 +4704,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "64",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "version_added": "64"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -4681,7 +4714,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "1"
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -4744,9 +4779,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "64",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "version_added": "64"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -4756,7 +4789,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "1"
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -4820,9 +4855,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "1",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "version_added": "1"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -4832,7 +4865,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "1"
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Behavior is inconsistent/unreliable."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -4874,7 +4909,9 @@
               "version_added": "≤12.1"
             },
             "safari": {
-              "version_added": "1"
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "Behavior is inconsistent/unreliable."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -4896,9 +4933,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "64",
-                "partial_implementation": true,
-                "notes": "Behavior is inconsistent/unreliable."
+                "version_added": "64"
               },
               "firefox_android": "mirror",
               "ie": {
