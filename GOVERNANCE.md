@@ -58,6 +58,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 #### List of current peers
 
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
+- Chris David Mills (@chrisdavidmills)
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
@@ -169,7 +170,6 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
-- Chris David Mills (@chrisdavidmills), Mozilla
 - Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
