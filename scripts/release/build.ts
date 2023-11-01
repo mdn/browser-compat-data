@@ -11,7 +11,7 @@ import {
   BrowserName,
   CompatData,
   CompatStatement,
-  Group,
+  WebFeature,
 } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
@@ -39,27 +39,32 @@ export const generateMeta = (): any => ({
   timestamp: new Date(),
 });
 
-const groupsToExport: Group[] = [];
+const webFeaturesToExport: any[] = [];
 
 /**
- * Generate groups to export in BCD builds
+ * Collect web-features to export
  * @param {WalkOutput} feature The feature to get groups from
  */
-export const generateExportGroups = (feature: WalkOutput): void => {
-  const featureGroups = feature.compat.groups as CompatStatement['groups'];
-  if (featureGroups) {
-    for (const featureGroup of featureGroups) {
-      const exists = groupsToExport.find(
-        (exportGroup) => exportGroup.id === featureGroup,
-      );
-      if (exists) {
-        for (const exportGroup of groupsToExport) {
-          if (exportGroup.id === featureGroup) {
-            exportGroup.features.push(feature.path);
+export const collectWebFeaturesToExport = (feature: WalkOutput): void => {
+  const tags = feature.compat.tags as CompatStatement['tags'];
+  if (tags) {
+    for (const tag of tags) {
+      if (tag.startsWith('webfeatures:')) {
+        const exists = webFeaturesToExport.find(
+          (exportGroup) => exportGroup.id === tag,
+        );
+        if (exists) {
+          for (const exportGroup of webFeaturesToExport) {
+            if (exportGroup.id === tag) {
+              exportGroup.features.push(feature.path);
+            }
           }
+        } else {
+          webFeaturesToExport.push({
+            id: tag.replace('webfeatures:', ''),
+            features: [feature.path],
+          });
         }
-      } else {
-        groupsToExport.push({ id: featureGroup, features: [feature.path] });
       }
     }
   }
@@ -95,12 +100,14 @@ export const createDataBundle = async (): Promise<CompatData> => {
 
   for (const feature of walker) {
     applyMirroring(feature);
-    generateExportGroups(feature);
+    collectWebFeaturesToExport(feature);
   }
+
+  // TODO call a new function here to compute compat for an export group
 
   return {
     ...data,
-    groups: groupsToExport,
+    webfeatures: webFeaturesToExport,
     __meta: generateMeta(),
   };
 };

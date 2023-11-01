@@ -14,7 +14,7 @@ import bcd from '../index.js';
  * @param {BrowserName[]} browsers The browsers to test for
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
- * @param {string} group The group to filter results with
+ * @param {string} tag The tag to filter results with
  * @param {string} identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
@@ -23,7 +23,7 @@ function* iterateFeatures(
   browsers: BrowserName[],
   values: string[],
   depth: number,
-  group: string,
+  tag: string,
   identifier: string,
 ): IterableIterator<string> {
   depth--;
@@ -31,9 +31,9 @@ function* iterateFeatures(
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
-          if (group) {
-            const groups = obj[i].__compat.groups;
-            if (groups && groups.includes(group)) {
+          if (tag) {
+            const tags = obj[i].__compat.tags;
+            if (tags && tags.includes(tag)) {
               yield `${identifier}${i}`;
             }
           } else {
@@ -86,7 +86,7 @@ function* iterateFeatures(
           browsers,
           values,
           depth,
-          group,
+          tag,
           identifier + i + '.',
         );
       }
@@ -100,7 +100,7 @@ function* iterateFeatures(
  * @param {string[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
- * @param {string} group The group to filter results with
+ * @param {string} tag The tag to filter results with
  * @param {string} identifier The identifier of the current object
  * @returns {string[]} An array of the features
  */
@@ -109,11 +109,11 @@ const traverseFeatures = (
   browsers: BrowserName[],
   values: string[],
   depth: number,
-  group: string,
+  tag: string,
   identifier: string,
 ): string[] => {
   const features = Array.from(
-    iterateFeatures(obj, browsers, values, depth, group, identifier),
+    iterateFeatures(obj, browsers, values, depth, tag, identifier),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
@@ -125,7 +125,7 @@ const traverseFeatures = (
  * @param {BrowserName[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
- * @param {string} group The group to filter results with
+ * @param {string} tag The tag to filter results with
  * @returns {string[]} The list of features
  */
 const main = (
@@ -143,7 +143,7 @@ const main = (
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
-  group = '',
+  tag = '',
 ): string[] => {
   const features: string[] = [];
 
@@ -154,7 +154,7 @@ const main = (
         browsers,
         values,
         depth,
-        group,
+        tag,
         folders[folder] + '.',
       ),
     );
@@ -191,9 +191,9 @@ if (esMain(import.meta)) {
           nargs: 1,
           default: [],
         })
-        .option('group', {
-          alias: 'g',
-          describe: 'Filter by group value.',
+        .option('tag', {
+          alias: 't',
+          describe: 'Filter by tag value.',
           type: 'string',
           nargs: 1,
           default: '',
@@ -230,8 +230,8 @@ if (esMain(import.meta)) {
           'Find all features in Samsung Internet that mirror data from Chrome Android',
         )
         .example(
-          'npm run traverse -- -g idle-detection',
-          'Find all features that belong to the idle-detection group',
+          'npm run traverse -- -t webfeatures:idle-detection',
+          'Find all features tagged with webfeatures:idle-detection.',
         );
     },
   );
@@ -243,7 +243,7 @@ if (esMain(import.meta)) {
     argv.browser,
     filter,
     argv.depth,
-    argv.group,
+    argv.tag,
   );
   console.log(features.join('\n'));
   console.log(features.length);
