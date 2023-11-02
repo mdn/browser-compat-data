@@ -24,8 +24,10 @@ const getFirefoxReleaseNotesURL = async (version) => {
 /**
  * updateFirefoxFile - Update the json file listing the browser version of a chromium entry
  * @param {object} options The list of options for this type of chromiums.
+ * @returns {string} The log of what has been generated (empty if nothing)
  */
 export const updateFirefoxReleases = async (options) => {
+  let result = '';
   //
   // Get the firefox.json from the local BCD
   //
@@ -81,7 +83,7 @@ export const updateFirefoxReleases = async (options) => {
     if (
       firefoxBCD.browsers[options.bcdBrowserName].releases[data[value].version]
     ) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         data[value].version,
@@ -91,7 +93,7 @@ export const updateFirefoxReleases = async (options) => {
       );
     } else {
       // New entry
-      newBrowserEntry(
+      result += newBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         data[value].version,
@@ -129,7 +131,7 @@ export const updateFirefoxReleases = async (options) => {
     },
   ).forEach(([key, entry]) => {
     if (key === String(esrRelease)) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         key,
@@ -138,7 +140,7 @@ export const updateFirefoxReleases = async (options) => {
         '',
       );
     } else if (parseFloat(key) < stableRelease) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         key,
@@ -158,7 +160,7 @@ export const updateFirefoxReleases = async (options) => {
   const train = await trainInfo.json();
 
   if (firefoxBCD.browsers[options.bcdBrowserName].releases[planned]) {
-    updateBrowserEntry(
+    result += updateBrowserEntry(
       firefoxBCD,
       options.bcdBrowserName,
       planned,
@@ -168,7 +170,7 @@ export const updateFirefoxReleases = async (options) => {
     );
   } else {
     // New entry
-    newBrowserEntry(
+    result += newBrowserEntry(
       firefoxBCD,
       options.bcdBrowserName,
       planned,
@@ -183,4 +185,10 @@ export const updateFirefoxReleases = async (options) => {
   // Write the update browser's json to file
   //
   fs.writeFileSync(`./${options.bcdFile}`, stringify(firefoxBCD) + '\n');
+
+  // Returns the log
+  if (result) {
+    result = `### Updates for ${options.browserName}${result}`;
+  }
+  return result;
 };
