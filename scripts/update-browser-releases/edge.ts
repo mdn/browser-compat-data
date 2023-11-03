@@ -297,6 +297,7 @@ export const updateEdgeReleases = async (options) => {
       }
     }
   }
+
   //
   // Check that all older releases are 'retired'
   //
