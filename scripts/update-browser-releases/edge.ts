@@ -236,61 +236,67 @@ export const updateEdgeReleases = async (options) => {
     data[value].version = parseFloat(entry['Releases'][id]['ProductVersion']);
     data[value].fullVersion = entry['Releases'][id]['ProductVersion'];
 
-    // NOTE: the published date is the one of the actual release
-    // (being the Stable, Beta, or Nightly),
-    // and not the one of the future release like we would like
-    // So we only get it if we are on the 'current' channel.
-
-    // Get published date
-    if (key === 'current') {
-      data[value].versionDate = entry['Releases'][id][
-        'PublishedTime'
-      ].substring(0, 10); // Remove the time part;
-    } else {
-      data[value].versionDate = await getFutureReleaseDate(
-        data[value].version,
-        options.releaseScheduleURL,
-      );
-    }
-
-    //
-    // Update the JSON in memory
-    //
-
-    // Get the release notes
-    const releaseNotesURL = await getReleaseNotesURL(
-      value,
-      data[value].fullVersion,
-      data[value].versionDate,
-    );
-
-    // Update in memory
+    // We skip beta and nightly versions if they are of the same version as the released one
     if (
-      edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+      key === 'current' ||
+      (key !== 'current' &&
+        data[value].version !== data[channels.get('current')].version)
     ) {
-      // The entry already exists
-      updateBrowserEntry(
-        edgeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        data[value]?.versionDate,
-        key,
-        releaseNotesURL,
+      // NOTE: the published date is the one of the actual release
+      // (being the Stable, Beta, or Nightly),
+      // and not the one of the future release like we would like
+      // So we only get it if we are on the 'current' channel.
+
+      // Get published date
+      if (key === 'current') {
+        data[value].versionDate = entry['Releases'][id][
+          'PublishedTime'
+        ].substring(0, 10); // Remove the time part;
+      } else {
+        data[value].versionDate = await getFutureReleaseDate(
+          data[value].version,
+          options.releaseScheduleURL,
+        );
+      }
+
+      //
+      // Update the JSON in memory
+      //
+
+      // Get the release notes
+      const releaseNotesURL = await getReleaseNotesURL(
+        value,
+        data[value].fullVersion,
+        data[value].versionDate,
       );
-    } else {
-      // New entry
-      newBrowserEntry(
-        edgeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        key,
-        options.browserEngine,
-        data[value]?.versionDate,
-        releaseNotesURL,
-      );
+
+      // Update in memory if different than release version (beta is released later than current)
+      if (
+        edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+      ) {
+        // The entry already exists
+        updateBrowserEntry(
+          edgeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          data[value]?.versionDate,
+          key,
+          releaseNotesURL,
+        );
+      } else {
+        // New entry
+        newBrowserEntry(
+          edgeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          key,
+          options.browserEngine,
+          data[value]?.versionDate,
+          releaseNotesURL,
+        );
+      }
     }
   }
-
   //
   // Check that all older releases are 'retired'
   //
