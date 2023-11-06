@@ -241,37 +241,13 @@ export const updateEdgeReleases = async (options) => {
     // and not the one of the future release like we would like
     // So we only get it if we are on the 'current' channel.
 
-    // Get published date
-    if (key === 'current') {
-      data[value].versionDate = entry['Releases'][id][
-        'PublishedTime'
-      ].substring(0, 10); // Remove the time part;
-    } else {
-      try {
-        data[value].versionDate = await getFutureReleaseDate(
-          data[value].version,
-          options.releaseScheduleURL,
-        );
-      } catch (str) {
-        result += str;
-      }
-    }
+
 
     //
     // Update the JSON in memory
     //
 
-    // Get the release notes
-    let releaseNotesURL = '';
-    try {
-      releaseNotesURL = await getReleaseNotesURL(
-        value,
-        data[value].fullVersion,
-        data[value].versionDate,
-      );
-    } catch (s) {
-      result += s;
-    }
+
 
     // Update in memory
     // We skip beta and nightly versions if they are of the same version as the released one
@@ -280,26 +256,56 @@ export const updateEdgeReleases = async (options) => {
       (key !== 'current' &&
         data[value].version !== data[channels.get('current')].version)
     ) {
-      // The entry already exists
-      result += updateBrowserEntry(
-        edgeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        data[value]?.versionDate,
-        key,
-        releaseNotesURL,
-      );
-    } else {
-      // New entry
-      result += newBrowserEntry(
-        edgeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        key,
-        options.browserEngine,
-        data[value]?.versionDate,
-        releaseNotesURL,
-      );
+      // Get published date
+      if (key === 'current') {
+        data[value].versionDate = entry['Releases'][id][
+          'PublishedTime'
+        ].substring(0, 10); // Remove the time part;
+      } else {
+        try {
+          data[value].versionDate = await getFutureReleaseDate(
+            data[value].version,
+            options.releaseScheduleURL,
+          );
+        } catch (str) {
+          result += str;
+        }
+      }
+
+      // Get the release notes
+      let releaseNotesURL = '';
+      try {
+        releaseNotesURL = await getReleaseNotesURL(
+          value,
+          data[value].fullVersion,
+          data[value].versionDate,
+        );
+      } catch (s) {
+        result += s;
+      }
+
+      if (edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]) {
+        // The entry already exists
+        result += updateBrowserEntry(
+          edgeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          data[value]?.versionDate,
+          key,
+          releaseNotesURL,
+        );
+      } else {
+        // New entry
+        result += newBrowserEntry(
+          edgeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          key,
+          options.browserEngine,
+          data[value]?.versionDate,
+          releaseNotesURL,
+        );
+      }
     }
   }
 
@@ -376,7 +382,7 @@ export const updateEdgeReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browsername}${result}`;
+    result = `### Updates for ${options.browserName}${result}`;
   }
   return result;
 };
