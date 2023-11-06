@@ -245,7 +245,6 @@ export const updateEdgeReleases = async (options) => {
     // Update the JSON in memory
     //
 
-    // Update in memory
     // We skip beta and nightly versions if they are of the same version as the released one
     if (
       key === 'current' ||
