@@ -21,7 +21,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more files and/or directories passed as arguments and perform automatic fixes.
- *
  * @param {string[]} files The files to load and perform fix upon
  */
 const load = async (...files: string[]): Promise<void> => {
@@ -40,14 +39,16 @@ const load = async (...files: string[]): Promise<void> => {
     }
 
     if (fsStats.isFile()) {
-      if (path.extname(file) === '.json') {
-        fixBrowserOrder(file);
-        fixFeatureOrder(file);
+      if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
         fixPropertyOrder(file);
-        fixStatementOrder(file);
-        fixLinks(file);
-        fixStatus(file);
-        fixMirror(file);
+        if (!file.includes('/browsers/')) {
+          fixBrowserOrder(file);
+          fixFeatureOrder(file);
+          fixStatementOrder(file);
+          fixLinks(file);
+          fixStatus(file);
+          fixMirror(file);
+        }
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>
@@ -65,6 +66,7 @@ if (esMain(import.meta)) {
   } else {
     await load(
       'api',
+      'browsers',
       'css',
       'html',
       'http',
@@ -72,6 +74,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

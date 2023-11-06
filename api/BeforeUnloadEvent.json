@@ -3,7 +3,7 @@
     "BeforeUnloadEvent": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent",
-        "spec_url": "https://html.spec.whatwg.org/multipage/browsing-the-web.html#the-beforeunloadevent-interface",
+        "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-beforeunloadevent-interface",
         "support": {
           "chrome": {
             "version_added": "30"
@@ -44,9 +44,17 @@
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/browsing-the-web.html#dom-beforeunloadevent-returnvalue",
           "support": {
-            "chrome": {
-              "version_added": "30"
-            },
+            "chrome": [
+              {
+                "version_added": "119"
+              },
+              {
+                "version_added": "30",
+                "version_removed": "119",
+                "partial_implementation": true,
+                "notes": "Before Chrome 119, an empty string incorrectly activated the confirmation dialog."
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": false
@@ -76,7 +84,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },

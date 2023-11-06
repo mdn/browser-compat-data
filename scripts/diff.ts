@@ -26,7 +26,6 @@ type DiffItem = {
 /**
  * Get contents from base and head commits
  * Note: This does not detect renamed files
- *
  * @param {string} baseCommit Base commit
  * @param {string} basePath Base path
  * @param {string} headCommit Head commit
@@ -46,7 +45,6 @@ const getBaseAndHeadContents = (
 
 /**
  * Returns a formatted string of before-and-after changes
- *
  * @param {any} lhs Left-hand (before) side
  * @param {any} rhs Right-hand (after) side
  * @returns {string} Formatted string
@@ -56,7 +54,6 @@ const stringifyChange = (lhs: any, rhs: any): string =>
 
 /**
  * Perform mirroring on specified diff statement
- *
  * @param {{base: SupportStatement, head: SupportStatement}} diff The diff to perform mirroring on
  * @param {SupportStatement} diff.base The diff to perform mirroring on
  * @param {SupportStatement} diff.head The diff to perform mirroring on
@@ -81,7 +78,6 @@ const doMirror = (
 
 /**
  * Describe the diff in text form (internal function)
- *
  * @param {Diff<string, string>} diffItem The diff to describe
  * @param {Contents} contents The contents of the diff
  * @returns {string} A human-readable diff description
@@ -129,7 +125,6 @@ const describeByKind = (
 
 /**
  * Describe the diff in text form
- *
  * @param {Diff<string, string>} diffItem The diff to describe
  * @param {Contents} contents The contents of the diff
  * @returns {DiffItem} A human-readable diff description
@@ -157,7 +152,6 @@ const describeDiffItem = (
 
 /**
  * Merge diff together as a map
- *
  * @param {DiffItem[]} items Diff items to merge
  * @returns {Map<string, string>} A map of the diff items
  */
@@ -173,7 +167,6 @@ const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
 
 /**
  * Get the diffs as a map
- *
  * @param {string} base Base ref
  * @param {string} head Head ref
  * @returns {Map<string, string>} A map of the diff items

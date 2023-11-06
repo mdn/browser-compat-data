@@ -5,9 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-columns",
           "spec_url": [
-            "https://w3c.github.io/csswg-drafts/css-grid/#track-sizing",
-            "https://w3c.github.io/csswg-drafts/css-grid/#subgrids",
-            "https://w3c.github.io/csswg-drafts/css-grid-3/#masonry-layout"
+            "https://drafts.csswg.org/css-grid/#track-sizing",
+            "https://drafts.csswg.org/css-grid/#subgrids",
+            "https://drafts.csswg.org/css-grid-3/#masonry-layout"
           ],
           "support": {
             "chrome": {
@@ -29,8 +29,8 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "10",
-              "alternative_name": "-ms-grid-columns"
+              "alternative_name": "-ms-grid-columns",
+              "version_added": "10"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -87,7 +87,7 @@
           "__compat": {
             "description": "<code>fit-content()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/fit-content",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-sizing-4/#sizing-values",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#sizing-values",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -125,7 +125,7 @@
         "masonry": {
           "__compat": {
             "description": "<code>masonry</code>",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-grid-3/#masonry-layout",
+            "spec_url": "https://drafts.csswg.org/css-grid-3/#masonry-layout",
             "support": {
               "chrome": {
                 "version_added": false
@@ -150,7 +150,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -167,7 +167,7 @@
           "__compat": {
             "description": "<code>minmax()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/minmax()",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-grid/#valdef-grid-template-columns-minmax",
+            "spec_url": "https://drafts.csswg.org/css-grid/#valdef-grid-template-columns-minmax",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -206,7 +206,7 @@
           "__compat": {
             "description": "<code>repeat()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeat()",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-grid/#repeat-notation",
+            "spec_url": "https://drafts.csswg.org/css-grid/#repeat-notation",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -222,14 +222,14 @@
                 {
                   "version_added": "57",
                   "version_removed": "76",
-                  "notes": "<code>repeat(auto-fill, ...)</code> and <code>repeat(auto-fit, ...)</code> only support one repeated column (see <a href='https://bugzil.la/1341507'>bug 1341507</a>).",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "<code>repeat(auto-fill, ...)</code> and <code>repeat(auto-fit, ...)</code> only support one repeated column (see <a href='https://bugzil.la/1341507'>bug 1341507</a>)."
                 },
                 {
                   "version_added": "52",
                   "version_removed": "57",
-                  "notes": "<a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> doesn't work in <code>repeat()</code> (see <a href='https://bugzil.la/1350069'>bug 1350069</a>).",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "<a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> doesn't work in <code>repeat()</code> (see <a href='https://bugzil.la/1350069'>bug 1350069</a>)."
                 }
               ],
               "firefox_android": "mirror",
@@ -259,20 +259,17 @@
           "__compat": {
             "description": "<code>subgrid</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-grid/#subgrids",
+            "spec_url": "https://drafts.csswg.org/css-grid/#subgrids",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/618969'>bug 618969</a>."
+                "version_added": "117"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "71"
               },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },

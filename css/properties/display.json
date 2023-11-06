@@ -4,7 +4,7 @@
       "display": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-display/#the-display-properties",
+          "spec_url": "https://drafts.csswg.org/css-display/#the-display-properties",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -111,7 +111,7 @@
           "__compat": {
             "description": "<code>&lt;display-outside&gt;</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-outside",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-display/#typedef-display-outside",
+            "spec_url": "https://drafts.csswg.org/css-display/#typedef-display-outside",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -303,8 +303,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
-                "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate.",
-                "version_added": "6.0"
+                "version_added": "6.0",
+                "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate."
               },
               "webview_android": "mirror"
             },
@@ -455,8 +455,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
-                "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate.",
-                "version_added": "6.0"
+                "version_added": "6.0",
+                "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate."
               },
               "webview_android": "mirror"
             },
@@ -505,10 +505,44 @@
             }
           }
         },
+        "keyframe_animatable": {
+          "__compat": {
+            "description": "<code>@keyframe</code> animatable",
+            "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "list-item": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/display-listitem",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-display/#typedef-display-listitem",
+            "spec_url": "https://drafts.csswg.org/css-display/#typedef-display-listitem",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -581,21 +615,9 @@
         "math": {
           "__compat": {
             "support": {
-              "chrome": [
-                {
-                  "version_added": "109"
-                },
-                {
-                  "version_added": "87",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features",
-                      "value_to_set": "Enabled"
-                    }
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "109"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -627,16 +649,14 @@
             "description": "Multi-keyword values",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "115"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "70"
               },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -774,6 +794,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "transitionable": {
+          "__compat": {
+            "description": "Transitionable when setting <code>transition-behavior: allow-discrete</code>",
+            "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

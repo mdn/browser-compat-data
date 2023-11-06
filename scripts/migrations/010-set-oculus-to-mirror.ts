@@ -15,7 +15,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Check to see if the key is __compat and set 'oculus' to 'mirror'
- *
  * @param {string} key The key in the object
  * @param {CompatStatement} value The value of the key
  * @returns {CompatStatement} The new value with 'oculus' set to 'mirror'
@@ -36,7 +35,6 @@ export const doSetOculusToMirror = (
  * Set '__compat.support.oculus' to 'mirror' within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
- *
  * @param {string} filename The filename to perform migration upon
  */
 export const setOculusToMirror = (filename: string): void => {
@@ -61,7 +59,6 @@ export const setOculusToMirror = (filename: string): void => {
 /**
  * Recursively load one or more files and/or directories passed as arguments
  * and perform setting '__compat.support.oculus' to 'mirror' for.
- *
  * @param {string[]} files The files to load and perform migration upon
  */
 const load = (...files: string[]): void => {
@@ -103,6 +100,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
     );
   }

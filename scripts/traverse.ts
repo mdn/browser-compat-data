@@ -10,7 +10,6 @@ import bcd from '../index.js';
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- *
  * @param {Identifier} obj The compat data to traverse through
  * @param {BrowserName[]} browsers The browsers to test for
  * @param {string[]} values The values to test for
@@ -87,7 +86,6 @@ function* iterateFeatures(
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- *
  * @param {Identifier} obj The compat data to traverse through
  * @param {string[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
@@ -111,7 +109,6 @@ const traverseFeatures = (
 
 /**
  * Traverse the features within BCD
- *
  * @param {string[]} folders The folders to traverse
  * @param {BrowserName[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
@@ -127,6 +124,7 @@ const main = (
     'svg',
     'javascript',
     'mathml',
+    'webassembly',
     'webdriver',
   ],
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],

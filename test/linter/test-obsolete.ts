@@ -21,13 +21,13 @@ const categoriesToCheck = [
   // 'javascript',
   // 'mathml',
   // 'svg',
+  'webassembly',
   // 'webdriver',
   // 'webextensions'
 ];
 
 /**
  * Check if feature has never been implemented
- *
  * @param {InternalSupportBlock} support The support statement
  * @returns {boolean} If the feature was never implemented
  */
@@ -53,7 +53,6 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
  * Check if a feature has been implemented at some point but removed now
- *
  * @param {InternalSupportBlock} support The support statement
  * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
  */
@@ -110,7 +109,6 @@ export const implementedAndRemoved = (
 
 /**
  * Process and test the data
- *
  * @param {Logger} logger The logger to output errors to
  * @param {CompatStatement} data The data to test
  */
@@ -140,7 +138,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

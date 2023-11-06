@@ -4,7 +4,7 @@
       "font-variant-emoji": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/font-variant-emoji",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-fonts/#font-variant-emoji-prop",
+          "spec_url": "https://drafts.csswg.org/css-fonts/#font-variant-emoji-prop",
           "support": {
             "chrome": {
               "version_added": false
@@ -12,7 +12,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "108"
+              "version_added": "108",
+              "flags": [
+                {
+                  "name": "layout.css.font-variant-emoji.enabled",
+                  "type": "preference",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {

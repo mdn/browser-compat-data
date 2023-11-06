@@ -6,7 +6,7 @@
         "spec_url": [
           "https://dom.spec.whatwg.org/#interface-document",
           "https://html.spec.whatwg.org/multipage/dom.html#the-document-object",
-          "https://w3c.github.io/csswg-drafts/cssom-view/#extensions-to-the-document-interface",
+          "https://drafts.csswg.org/cssom-view/#extensions-to-the-document-interface",
           "https://w3c.github.io/pointerlock/#extensions-to-the-document-interface",
           "https://w3c.github.io/selection-api/#extensions-to-document-interface"
         ],
@@ -210,7 +210,7 @@
       "adoptedStyleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom/#dom-documentorshadowroot-adoptedstylesheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
           "support": {
             "chrome": {
               "version_added": "73"
@@ -753,6 +753,39 @@
           }
         }
       },
+      "browsingTopics": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/browsingTopics",
+          "support": {
+            "chrome": {
+              "version_added": "115"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "captureEvents": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/captureEvents",
@@ -828,7 +861,7 @@
       "caretPositionFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/caretPositionFromPoint",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-document-caretpositionfrompoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-caretpositionfrompoint",
           "support": {
             "chrome": {
               "version_added": false
@@ -2559,7 +2592,7 @@
       "elementFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementFromPoint",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-document-elementfrompoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementfrompoint",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -2605,7 +2638,7 @@
       "elementsFromPoint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/elementsFromPoint",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-document-elementsfrompoint",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-elementsfrompoint",
           "support": {
             "chrome": {
               "version_added": "43",
@@ -2617,9 +2650,9 @@
                 "version_added": "79"
               },
               {
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79",
-                "prefix": "ms",
                 "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
               }
             ],
@@ -2628,8 +2661,8 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "10",
               "prefix": "ms",
+              "version_added": "10",
               "notes": "Returns a <code>NodeList</code> instead of an array. See <a href='https://msdn.microsoft.com/en-us/library/hh772121(v=vs.85).aspx'>the MSDN documentation</a>. Returns <code>null</code> when the point provided has no elements beneath it (e.g., when given a point outside the document)."
             },
             "oculus": "mirror",
@@ -2995,8 +3028,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               }
             ],
             "chrome_android": "mirror",
@@ -3005,8 +3038,8 @@
                 "version_added": "79"
               },
               {
-                "version_added": "12",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "12"
               },
               {
                 "version_added": "12",
@@ -3018,14 +3051,14 @@
                 "version_added": "64"
               },
               {
-                "version_added": "9",
-                "alternative_name": "mozCancelFullScreen"
+                "alternative_name": "mozCancelFullScreen",
+                "version_added": "9"
               }
             ],
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "11",
-              "alternative_name": "msExitFullscreen"
+              "alternative_name": "msExitFullscreen",
+              "version_added": "11"
             },
             "oculus": "mirror",
             "opera": [
@@ -3033,8 +3066,8 @@
                 "version_added": "58"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -3046,8 +3079,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -3059,13 +3092,13 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "5.1",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "5.1"
               }
             ],
             "safari_ios": {
-              "version_added": "12",
               "prefix": "webkit",
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Only available on iPad, not on iPhone."
             },
@@ -3075,8 +3108,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "≤37"
               }
             ]
           },
@@ -3106,7 +3139,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3168,8 +3201,8 @@
                 "version_added": "37"
               },
               {
-                "version_added": "22",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "22"
               }
             ],
             "chrome_android": "mirror",
@@ -3181,9 +3214,9 @@
                 "version_added": "50"
               },
               {
+                "prefix": "moz",
                 "version_added": "14",
-                "version_removed": "50",
-                "prefix": "moz"
+                "version_removed": "50"
               }
             ],
             "firefox_android": "mirror",
@@ -3360,7 +3393,7 @@
       "fonts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fonts",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-font-loading/#FontFaceSet-interface",
+          "spec_url": "https://drafts.csswg.org/css-font-loading/#FontFaceSet-interface",
           "support": {
             "chrome": {
               "version_added": "35"
@@ -3508,8 +3541,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "15",
-                "alternative_name": "webkitIsFullScreen"
+                "alternative_name": "webkitIsFullScreen",
+                "version_added": "15"
               }
             ],
             "chrome_android": "mirror",
@@ -3518,8 +3551,8 @@
                 "version_added": "79"
               },
               {
-                "version_added": "12",
-                "alternative_name": "webkitIsFullScreen"
+                "alternative_name": "webkitIsFullScreen",
+                "version_added": "12"
               }
             ],
             "firefox": [
@@ -3527,8 +3560,8 @@
                 "version_added": "64"
               },
               {
-                "version_added": "9",
-                "alternative_name": "mozFullScreen"
+                "alternative_name": "mozFullScreen",
+                "version_added": "9"
               }
             ],
             "firefox_android": "mirror",
@@ -3543,13 +3576,13 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "6",
-                "alternative_name": "webkitIsFullScreen"
+                "alternative_name": "webkitIsFullScreen",
+                "version_added": "6"
               }
             ],
             "safari_ios": {
-              "version_added": "12",
               "alternative_name": "webkitIsFullScreen",
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Only available on iPad, not on iPhone."
             },
@@ -3559,8 +3592,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "≤37",
-                "alternative_name": "webkitIsFullScreen"
+                "alternative_name": "webkitIsFullScreen",
+                "version_added": "≤37"
               }
             ]
           },
@@ -3582,8 +3615,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "15",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "15"
               }
             ],
             "chrome_android": "mirror",
@@ -3592,8 +3625,8 @@
                 "version_added": "79"
               },
               {
-                "version_added": "12",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "12"
               },
               {
                 "version_added": "12",
@@ -3605,14 +3638,14 @@
                 "version_added": "64"
               },
               {
-                "version_added": "10",
-                "alternative_name": "mozfullscreenchange"
+                "alternative_name": "mozfullscreenchange",
+                "version_added": "10"
               }
             ],
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "11",
-              "alternative_name": "MSFullscreenChange"
+              "alternative_name": "MSFullscreenChange",
+              "version_added": "11"
             },
             "oculus": "mirror",
             "opera": [
@@ -3620,8 +3653,8 @@
                 "version_added": "58"
               },
               {
-                "version_added": "15",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -3633,8 +3666,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": "14",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -3646,13 +3679,13 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "5.1",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "5.1"
               }
             ],
             "safari_ios": {
-              "version_added": "12",
               "alternative_name": "webkitfullscreenchange",
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Only available on iPad, not on iPhone."
             },
@@ -3662,8 +3695,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "≤37",
-                "alternative_name": "webkitfullscreenchange"
+                "alternative_name": "webkitfullscreenchange",
+                "version_added": "≤37"
               }
             ]
           },
@@ -3684,8 +3717,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "20",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "20"
               }
             ],
             "chrome_android": "mirror",
@@ -3694,8 +3727,8 @@
                 "version_added": "79"
               },
               {
-                "version_added": "12",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "12"
               },
               {
                 "version_added": "12",
@@ -3707,14 +3740,14 @@
                 "version_added": "64"
               },
               {
-                "version_added": "9",
-                "alternative_name": "mozFullScreenElement"
+                "alternative_name": "mozFullScreenElement",
+                "version_added": "9"
               }
             ],
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "11",
-              "alternative_name": "msFullscreenElement"
+              "alternative_name": "msFullscreenElement",
+              "version_added": "11"
             },
             "oculus": "mirror",
             "opera": [
@@ -3722,8 +3755,8 @@
                 "version_added": "58"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -3735,8 +3768,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -3748,8 +3781,8 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "6",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "6"
               }
             ],
             "safari_ios": [
@@ -3759,8 +3792,8 @@
                 "notes": "Only available on iPad, not on iPhone."
               },
               {
-                "version_added": "12",
                 "prefix": "webkit",
+                "version_added": "12",
                 "partial_implementation": true,
                 "notes": "Only available on iPad, not on iPhone."
               }
@@ -3785,8 +3818,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "20",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "20"
               }
             ],
             "chrome_android": "mirror",
@@ -3798,14 +3831,14 @@
                 "version_added": "64"
               },
               {
-                "version_added": "10",
-                "alternative_name": "mozFullScreenEnabled"
+                "alternative_name": "mozFullScreenEnabled",
+                "version_added": "10"
               }
             ],
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "11",
-              "alternative_name": "msFullscreenEnabled"
+              "alternative_name": "msFullscreenEnabled",
+              "version_added": "11"
             },
             "oculus": "mirror",
             "opera": [
@@ -3813,8 +3846,8 @@
                 "version_added": "58"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -3826,8 +3859,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -3839,13 +3872,13 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "6",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "6"
               }
             ],
             "safari_ios": {
-              "version_added": "12",
               "prefix": "webkit",
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Only available on iPad, not on iPhone."
             },
@@ -3870,8 +3903,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "18",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "18"
               }
             ],
             "chrome_android": "mirror",
@@ -3880,8 +3913,8 @@
                 "version_added": "79"
               },
               {
-                "version_added": "12",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "12"
               },
               {
                 "version_added": "12",
@@ -3893,14 +3926,14 @@
                 "version_added": "64"
               },
               {
-                "version_added": "10",
-                "alternative_name": "mozfullscreenerror"
+                "alternative_name": "mozfullscreenerror",
+                "version_added": "10"
               }
             ],
             "firefox_android": "mirror",
             "ie": {
-              "version_added": "11",
-              "alternative_name": "MSFullscreenError"
+              "alternative_name": "MSFullscreenError",
+              "version_added": "11"
             },
             "oculus": "mirror",
             "opera": [
@@ -3908,8 +3941,8 @@
                 "version_added": "58"
               },
               {
-                "version_added": "15",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -3921,8 +3954,8 @@
                 "version_added": "50"
               },
               {
-                "version_added": "14",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -3934,13 +3967,13 @@
                 "version_added": "16.4"
               },
               {
-                "version_added": "6",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "6"
               }
             ],
             "safari_ios": {
-              "version_added": "12",
               "alternative_name": "webkitfullscreenerror",
+              "version_added": "12",
               "partial_implementation": true,
               "notes": "Only available on iPad, not on iPhone."
             },
@@ -3950,8 +3983,8 @@
                 "version_added": "71"
               },
               {
-                "version_added": "≤37",
-                "alternative_name": "webkitfullscreenerror"
+                "alternative_name": "webkitfullscreenerror",
+                "version_added": "≤37"
               }
             ]
           },
@@ -3965,7 +3998,7 @@
       "getAnimations": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/getAnimations",
-          "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-documentorshadowroot-getanimations",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -4005,7 +4038,7 @@
       },
       "getBoxQuads": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-geometryutils-getboxquads",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-geometryutils-getboxquads",
           "support": {
             "chrome": {
               "version_added": false
@@ -4325,22 +4358,61 @@
           }
         }
       },
+      "hasRedemptionRecord": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/trust-token-api/#dom-document-hasredemptionrecord",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "hasStorageAccess": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-hasstorageaccess",
           "support": {
-            "chrome": {
-              "version_added": "78",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "113",
+                "partial_implementation": true,
+                "notes": "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>."
+              },
+              {
+                "version_added": "78",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "85"
@@ -4353,16 +4425,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
@@ -4432,8 +4495,8 @@
                 "version_added": "33"
               },
               {
-                "version_added": "13",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "13"
               }
             ],
             "chrome_android": "mirror",
@@ -4446,9 +4509,9 @@
                 "notes": "Since Firefox 56 it also returns <code>true</code> on macOS when the window is completely hidden by another non-translucent application."
               },
               {
+                "prefix": "moz",
                 "version_added": "10",
-                "version_removed": "52",
-                "prefix": "moz"
+                "version_removed": "52"
               }
             ],
             "firefox_android": "mirror",
@@ -4472,8 +4535,8 @@
                 "version_added": "4.4.3"
               },
               {
-                "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "≤37"
               }
             ]
           },
@@ -4828,7 +4891,7 @@
       "location": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/location",
-          "spec_url": "https://html.spec.whatwg.org/multipage/history.html#the-location-interface",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-location-interface",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5184,9 +5247,9 @@
                 "version_added": "36"
               },
               {
+                "prefix": "webkit",
                 "version_added": "22",
-                "version_removed": "38",
-                "prefix": "webkit"
+                "version_removed": "38"
               }
             ],
             "chrome_android": "mirror",
@@ -5198,9 +5261,9 @@
                 "version_added": "50"
               },
               {
+                "prefix": "moz",
                 "version_added": "14",
-                "version_removed": "50",
-                "prefix": "moz"
+                "version_removed": "50"
               }
             ],
             "firefox_android": "mirror",
@@ -5243,9 +5306,9 @@
                 "version_added": "50"
               },
               {
+                "prefix": "moz",
                 "version_added": "14",
-                "version_removed": "50",
-                "prefix": "moz"
+                "version_removed": "50"
               }
             ],
             "firefox_android": "mirror",
@@ -5285,9 +5348,9 @@
                 "version_added": "36"
               },
               {
+                "prefix": "webkit",
                 "version_added": "22",
-                "version_removed": "38",
-                "prefix": "webkit"
+                "version_removed": "38"
               }
             ],
             "chrome_android": "mirror",
@@ -5299,9 +5362,9 @@
                 "version_added": "50"
               },
               {
+                "prefix": "moz",
                 "version_added": "14",
-                "version_removed": "50",
-                "prefix": "moz"
+                "version_removed": "50"
               }
             ],
             "firefox_android": "mirror",
@@ -5398,6 +5461,7 @@
       },
       "prerendering": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/prerendering",
           "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#dom-document-prerendering",
           "support": {
             "chrome": {
@@ -5432,6 +5496,7 @@
       "prerenderingchange_event": {
         "__compat": {
           "description": "<code>prerenderingchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/prerenderingchange_event",
           "spec_url": [
             "https://wicg.github.io/nav-speculation/prerendering.html#eventdef-document-prerenderingchange",
             "https://wicg.github.io/nav-speculation/prerendering.html#dom-document-onprerenderingchange"
@@ -6048,21 +6113,42 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-requeststorageaccess",
           "support": {
-            "chrome": {
-              "version_added": "78",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "See <a href='https://crbug.com/989663'>bug 989663</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "113",
+                "partial_implementation": true,
+                "notes": [
+                  "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>.",
+                  "Client-side storage access granted per-frame, as per spec updates <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>."
+                ]
+              },
+              {
+                "version_added": "78",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "85"
-            },
+            "edge": [
+              {
+                "version_added": "113",
+                "notes": [
+                  "Only resolves <code>requestStorageAccess()</code> calls that come from domains within a <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party set</a>.",
+                  "Each embedded site instance must separately opt in to client-side storage access via a <code>requestStorageAccess()</code> call, as per <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>spec updates</a>."
+                ]
+              },
+              {
+                "version_added": "85",
+                "version_removed": "112",
+                "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
+              }
+            ],
             "firefox": {
               "version_added": "65"
             },
@@ -6071,19 +6157,11 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#storage-access-api",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "11.1"
+              "version_added": "11.1",
+              "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -6212,7 +6290,7 @@
           "description": "<code>scroll</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scroll_event",
           "spec_url": [
-            "https://w3c.github.io/csswg-drafts/cssom-view/#eventdef-document-scroll",
+            "https://drafts.csswg.org/cssom-view/#eventdef-document-scroll",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll"
           ],
           "support": {
@@ -6256,12 +6334,12 @@
           "description": "<code>scrollend</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scrollend_event",
           "spec_url": [
-            "https://w3c.github.io/csswg-drafts/cssom-view/#eventdef-document-scrollend",
+            "https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscrollend"
           ],
           "support": {
             "chrome": {
-              "version_added": "preview"
+              "version_added": "114"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -6292,7 +6370,7 @@
       "scrollingElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scrollingElement",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom-view/#dom-document-scrollingelement",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-scrollingelement",
           "support": {
             "chrome": {
               "version_added": "44"
@@ -6438,7 +6516,7 @@
       "startViewTransition": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/startViewTransition",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-view-transitions-1/#dom-document-startviewtransition",
+          "spec_url": "https://drafts.csswg.org/css-view-transitions/#dom-document-startviewtransition",
           "support": {
             "chrome": {
               "version_added": "111"
@@ -6472,7 +6550,7 @@
       "styleSheets": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/styleSheets",
-          "spec_url": "https://w3c.github.io/csswg-drafts/cssom/#dom-documentorshadowroot-stylesheets",
+          "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-stylesheets",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6545,7 +6623,7 @@
       "timeline": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/timeline",
-          "spec_url": "https://w3c.github.io/csswg-drafts/web-animations-1/#dom-document-timeline",
+          "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-document-timeline",
           "support": {
             "chrome": {
               "version_added": "84"
@@ -6635,8 +6713,8 @@
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
-                "version_added": "13",
                 "prefix": "webkit",
+                "version_added": "13",
                 "partial_implementation": true,
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
@@ -6672,8 +6750,8 @@
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
-                "version_added": "15",
                 "prefix": "webkit",
+                "version_added": "15",
                 "partial_implementation": true,
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
@@ -6694,8 +6772,8 @@
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
-                "version_added": "14",
                 "prefix": "webkit",
+                "version_added": "14",
                 "partial_implementation": true,
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
@@ -6745,8 +6823,8 @@
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               },
               {
-                "version_added": "≤37",
                 "prefix": "webkit",
+                "version_added": "≤37",
                 "partial_implementation": true,
                 "notes": "The <code>onvisibilitychange</code> event handler property is not supported."
               }
@@ -6769,8 +6847,8 @@
                 "version_added": "33"
               },
               {
-                "version_added": "13",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "13"
               }
             ],
             "chrome_android": "mirror",
@@ -6782,9 +6860,9 @@
                 "version_added": "18"
               },
               {
+                "prefix": "moz",
                 "version_added": "10",
-                "version_removed": "52",
-                "prefix": "moz"
+                "version_removed": "52"
               }
             ],
             "firefox_android": "mirror",
@@ -6797,8 +6875,8 @@
                 "version_added": "20"
               },
               {
-                "version_added": "15",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "15"
               },
               {
                 "version_added": "12.1",
@@ -6810,8 +6888,8 @@
                 "version_added": "20"
               },
               {
-                "version_added": "14",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "14"
               },
               {
                 "version_added": "12.1",
@@ -6828,8 +6906,8 @@
                 "version_added": "4.4.3"
               },
               {
-                "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "≤37"
               }
             ]
           },

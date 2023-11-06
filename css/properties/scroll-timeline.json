@@ -4,35 +4,30 @@
       "scroll-timeline": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scroll-timeline",
-          "spec_url": "https://w3c.github.io/csswg-drafts/scroll-animations/#scroll-timeline-shorthand",
+          "spec_url": "https://drafts.csswg.org/scroll-animations/#scroll-timeline-shorthand",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "115",
+              "partial_implementation": true,
+              "notes": "<code>scroll-timeline-attachment</code> not included in shorthand."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "110",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scroll-driven-animations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "version_added": "103",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.scroll-linked-animations.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "111",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.scroll-driven-animations.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "notes": [
+                "The syntax of the shorthand property uses the fixed order of name and then the axis.",
+                "Supports the deprecated <code>horizontal</code> and <code>vertical</code> axis values, and not the <code>x</code> and <code>y</code> values.",
+                "The <code>@scroll-timeline</code> at-rule is replaced with the longhand properties <code>scroll-timeline-name</code> and <code>scroll-timeline-axis</code> and the shorthand property <code>scroll-timeline</code>."
+              ]
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
