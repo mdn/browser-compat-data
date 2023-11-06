@@ -236,11 +236,6 @@ export const updateEdgeReleases = async (options) => {
     data[value].version = parseFloat(entry['Releases'][id]['ProductVersion']);
     data[value].fullVersion = entry['Releases'][id]['ProductVersion'];
 
-    // NOTE: the published date is the one of the actual release
-    // (being the Stable, Beta, or Nightly),
-    // and not the one of the future release like we would like
-    // So we only get it if we are on the 'current' channel.
-
     //
     // Update the JSON in memory
     //
@@ -251,6 +246,11 @@ export const updateEdgeReleases = async (options) => {
       (key !== 'current' &&
         data[value].version !== data[channels.get('current')].version)
     ) {
+      // NOTE: the published date is the one of the actual release
+      // (being the Stable, Beta, or Nightly),
+      // and not the one of the future release like we would like
+      // So we only get it if we are on the 'current' channel.
+
       // Get published date
       if (key === 'current') {
         data[value].versionDate = entry['Releases'][id][
