@@ -66,6 +66,7 @@ const updateDesktop = argv['desktop'] || updateAllDevices;
 
 const options = {
   chrome_desktop: {
+    browserName: 'Chrome for Desktop',
     bcdFile: './browsers/chrome.json',
     bcdBrowserName: 'chrome',
     browserEngine: 'Blink',
@@ -78,6 +79,7 @@ const options = {
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
   chrome_android: {
+    browserName: 'Chrome for Android',
     bcdFile: './browsers/chrome_android.json',
     bcdBrowserName: 'chrome_android',
     browserEngine: 'Blink',
@@ -90,6 +92,7 @@ const options = {
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
   webview_android: {
+    browserName: 'Webview for Android',
     bcdFile: './browsers/webview_android.json',
     bcdBrowserName: 'webview_android',
     browserEngine: 'Blink',
@@ -102,6 +105,7 @@ const options = {
     chromestatusURL: 'https://chromestatus.com/api/v0/channels',
   },
   edge_desktop: {
+    browserName: 'Edge for Desktop',
     bcdFile: './browsers/edge.json',
     bcdBrowserName: 'edge',
     browserEngine: 'Blink',
@@ -121,6 +125,7 @@ const options = {
       'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
   },
   firefox_desktop: {
+    browserName: 'Firefox for Desktop',
     bcdFile: './browsers/firefox.json',
     bcdBrowserName: 'firefox',
     betaBranch: 'beta',
@@ -133,6 +138,7 @@ const options = {
       'https://whattrainisitnow.com/api/release/schedule/?version=',
   },
   firefox_android: {
+    browserName: 'Firefox for Android',
     bcdFile: './browsers/firefox_android.json',
     bcdBrowserName: 'firefox_android',
     betaBranch: 'beta',
@@ -146,32 +152,38 @@ const options = {
   },
 };
 
+let result = '';
+
 if (updateChrome && updateDesktop) {
-  console.log('### Updates for Chrome for Desktop');
-  await updateChromiumReleases(options.chrome_desktop);
+  const add = await updateChromiumReleases(options.chrome_desktop);
+  result += (result && add ? '\n' : '') + add;
 }
 
 if (updateChrome && updateMobile) {
-  console.log('### Updates for Chrome for Android');
-  await updateChromiumReleases(options.chrome_android);
+  const add = await updateChromiumReleases(options.chrome_android);
+  result += (result && add ? '\n' : '') + add;
 }
 
 if (updateWebview && updateMobile) {
-  console.log('### Updates for Webview for Android');
-  await updateChromiumReleases(options.webview_android);
+  const add = await updateChromiumReleases(options.webview_android);
+  result += (result && add ? '\n' : '') + add;
 }
 
 if (updateEdge && updateDesktop) {
-  console.log('### Updates for Edge for Desktop');
-  await updateEdgeReleases(options.edge_desktop);
+  const add = await updateEdgeReleases(options.edge_desktop);
+  result += (result && add ? '\n' : '') + add;
 }
 
 if (updateFirefox && updateDesktop) {
-  console.log('### Updates for Firefox for Desktop');
-  await updateFirefoxReleases(options.firefox_desktop);
+  const add = await updateFirefoxReleases(options.firefox_desktop);
+  result += (result && add ? '\n' : '') + add;
 }
 
 if (updateFirefox && updateMobile) {
-  console.log('### Updates for Firefox for Android');
-  await updateFirefoxReleases(options.firefox_android);
+  const add = await updateFirefoxReleases(options.firefox_android);
+  result += (result && add ? '\n' : '') + add;
+}
+
+if (result) {
+  console.log(result);
 }

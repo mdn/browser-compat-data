@@ -12,6 +12,7 @@ import chalk from 'chalk-template';
  * @param {string} engine name of the engine
  * @param {string} releaseDate new release date
  * @param {string} releaseNotesURL url of the release notes
+ * @returns {string} Text describing what has has been added
  */
 export const newBrowserEntry = (
   json,
@@ -32,9 +33,7 @@ export const newBrowserEntry = (
   release['status'] = status;
   release['engine'] = engine;
   release['engine_version'] = version.toString();
-  console.log(
-    chalk`{yellow - New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release. }`,
-  );
+  return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
 
 /**
@@ -45,6 +44,7 @@ export const newBrowserEntry = (
  * @param {string} releaseDate new release date
  * @param {string} status new status
  * @param {string} releaseNotesURL url of the release notes
+ * @returns {string} Text describing what has has been updated
  */
 export const updateBrowserEntry = (
   json,
@@ -55,22 +55,19 @@ export const updateBrowserEntry = (
   releaseNotesURL,
 ) => {
   const entry = json.browsers[browser].releases[version];
+  let result = '';
   if (entry['status'] !== status) {
-    console.log(
-      chalk`{cyan - New status for {bold ${browser} ${version}}: {bold ${status}}, previously ${entry['status']}}`,
-    );
+    result += chalk`{cyan \n- New status for {bold ${browser} ${version}}: {bold ${status}}, previously ${entry['status']}.}`;
     entry['status'] = status;
   }
   if (entry['release_date'] !== releaseDate) {
-    console.log(
-      chalk`{cyan - New release date for {bold ${browser} ${version}}: {bold ${releaseDate}}, previously ${entry['release_date']}}`,
-    );
+    result += chalk`{cyan \n- New release date for {bold ${browser} ${version}}: {bold ${releaseDate}}, previously ${entry['release_date']}.}`;
     entry['release_date'] = releaseDate;
   }
   if (releaseNotesURL && entry['release_notes'] !== releaseNotesURL) {
-    console.log(
-      chalk`{cyan - New release notes for {bold ${browser} ${version}}: {bold ${releaseNotesURL}}, previously ${entry['release_notes']}}`,
-    );
+    result += chalk`{cyan \n- New release notes for {bold ${browser} ${version}}: {bold ${releaseNotesURL}}, previously ${entry['release_notes']}.}`;
     entry['release_notes'] = releaseNotesURL;
   }
+
+  return result;
 };
