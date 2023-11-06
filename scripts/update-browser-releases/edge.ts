@@ -241,13 +241,9 @@ export const updateEdgeReleases = async (options) => {
     // and not the one of the future release like we would like
     // So we only get it if we are on the 'current' channel.
 
-
-
     //
     // Update the JSON in memory
     //
-
-
 
     // Update in memory
     // We skip beta and nightly versions if they are of the same version as the released one
@@ -284,7 +280,9 @@ export const updateEdgeReleases = async (options) => {
         result += s;
       }
 
-      if (edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]) {
+      if (
+        edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+      ) {
         // The entry already exists
         result += updateBrowserEntry(
           edgeBCD,
