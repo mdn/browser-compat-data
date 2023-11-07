@@ -53,7 +53,6 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "102",
-              "notes": "Supported in HTTP1.0 and later for preconnect.",
               "flags": [
                 {
                   "type": "preference",
@@ -65,7 +64,8 @@
                   "name": "network.early-hints.preconnect.enabled",
                   "value_to_set": "true"
                 }
-              ]
+              ],
+              "notes": "Supported in HTTP1.0 and later for preconnect."
             },
             "ie": {
               "version_added": false
@@ -73,12 +73,12 @@
             "oculus": "mirror",
             "opera": "mirror",
             "safari": {
-              "version_added": "preview",
+              "version_added": "17",
               "notes": "Supported in HTTP/2 and later for preconnect."
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

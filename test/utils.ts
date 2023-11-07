@@ -283,7 +283,7 @@ export class Linters {
           level: 'error',
           title: linter.name,
           path: data.path.full,
-          message: 'Linter failure! ' + e,
+          message: 'Linter failure! ' + e.stack,
         });
       }
     }

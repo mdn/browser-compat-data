@@ -4,7 +4,6 @@
       "Sec-GPC": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Sec-GPC",
-          "spec_url": "https://privacycg.github.io/gpc-spec/#the-sec-gpc-header-field-for-http-requests",
           "support": {
             "chrome": {
               "version_added": false
@@ -13,14 +12,14 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
-              "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>.",
               "flags": [
                 {
                   "type": "preference",
                   "name": "privacy.globalprivacycontrol.enabled",
                   "value_to_set": "true"
                 }
-              ]
+              ],
+              "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -38,7 +37,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
