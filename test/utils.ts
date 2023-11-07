@@ -8,6 +8,10 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
+/**
+ * Get the date exactly two years ago
+ * @returns {Date} The date, two years prior to today
+ */
 const getTwoYearsAgo = () => {
   const date = new Date();
   date.setFullYear(date.getFullYear() - 2);
