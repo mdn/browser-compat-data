@@ -176,6 +176,11 @@ export const orderProperties = (key: string, value: any): any => {
   return value;
 };
 
+/**
+ * Stringify an object in a specific order of properties
+ * @param {any} rawdata The object to stringify
+ * @returns {string} The stringified object
+ */
 const stringifyAndOrderProperties = (rawdata: any): string => {
   if (rawdata instanceof Object) {
     rawdata = JSON.stringify(rawdata);
