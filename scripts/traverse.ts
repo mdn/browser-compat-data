@@ -230,8 +230,8 @@ if (esMain(import.meta)) {
           'Find all features in Samsung Internet that mirror data from Chrome Android',
         )
         .example(
-          'npm run traverse -- -t webfeatures:idle-detection',
-          'Find all features tagged with webfeatures:idle-detection.',
+          'npm run traverse -- -t web-features:idle-detection',
+          'Find all features tagged with web-features:idle-detection.',
         );
     },
   );

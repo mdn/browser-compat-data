@@ -6,7 +6,7 @@ The optional `tags` property is an array of strings allowing to assign tags to a
 
 ```json
 "tags": [
-  "webfeature:idle-detection"
+  "web-features:idle-detection"
 ],
 ```
 
@@ -20,46 +20,46 @@ This document governs the list of allowed namespaces in BCD tags.
 
 The currently allowed namespaces are:
 
-- `webfeature`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md). This is an experimental namespace and it might change in breaking ways. Don't rely on it yet.
+- `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md). This is an experimental namespace and it might change in breaking ways. Don't rely on it yet.
 
-### The `webfeature` namespace
+### The `web-features` namespace
 
-The `webfeature` namespace is reserved to tag BCD features that belong to a particular [web platform feature group](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
+The `web-features` namespace is reserved to tag BCD features that belong to a particular [web platform feature group](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
 
-The [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features) project is importing web platform feature groups using this BCD tag. If you want to create a group of BCD features and don't want it to be exported to the web-platform-dx/web-features project, don't use the `webfeature` namespace.
+The [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features) project is importing web platform feature groups using this BCD tag. If you want to create a group of BCD features and don't want it to be exported to the web-platform-dx/web-features project, don't use the `web-features` namespace.
 
-#### Naming guidelines for `webfeature` tags
+#### Naming guidelines for `web-features` tags
 
-There are a few guidelines for naming `webfeature` groups:
+There are a few guidelines for naming `web-features` groups:
 
 - Prefer identifiers known to be in widespread use by web developers.
   Favor describing things as they are most-widely known, even if it's not the most technically correct option.
 
-  - 👍 Recommended: `webfeature:javascript`
-  - 👎 Not recommended: `webfeature:ecmascript`
+  - 👍 Recommended: `web-features:javascript`
+  - 👎 Not recommended: `web-features:ecmascript`
 
 - Avoid prefixing identifiers that mark a feature as specific to a technology, such as `css-` or `js-`.
   Features can and do cross such boundaries.
 
-  - 👍 Recommended: `webfeature:container-queries`
-  - 👎 Not recommended: `webfeature:css-container-queries`
+  - 👍 Recommended: `web-features:container-queries`
+  - 👎 Not recommended: `web-features:css-container-queries`
 
 - Avoid frequently-used abbreviations and nouns in identifiers, such as `api` or `web`.
 
-  - 👍 Recommended: `webfeature:navigation`
-  - 👎 Not recommended: `webfeature:navigation-api`
+  - 👍 Recommended: `web-features:navigation`
+  - 👎 Not recommended: `web-features:navigation-api`
 
 - Prefer common, descriptive noun phrases over abbreviations, metonymy, and syntax.
 
-  - 👍 Recommended: `webfeature:offscreen-canvas`
-  - 👎 Not recommended: `webfeature:offscreencanvas` (as in `OffscreenCanvas`)
-  - 👍 Recommended: `webfeature:grid`
-  - 👎 Not recommended: `webfeature:display-grid` (as in `display: grid`)
+  - 👍 Recommended: `web-features:offscreen-canvas`
+  - 👎 Not recommended: `web-features:offscreencanvas` (as in `OffscreenCanvas`)
+  - 👍 Recommended: `web-features:grid`
+  - 👎 Not recommended: `web-features:display-grid` (as in `display: grid`)
 
 - Prefer shorter identifiers to longer identifiers, as long as they're unique and unamibguous.
 
-  - 👍 Recommended: `webfeature:has`
-  - 👎 Not recommended: `webfeature:has-pseudo-class`
+  - 👍 Recommended: `web-features:has`
+  - 👎 Not recommended: `web-features:has-pseudo-class`
 
 Feature identifiers may use common suffixes (such as `-api`) to resolve naming conflicts.
 
@@ -69,13 +69,13 @@ In order to comply with these guidelines, BCD provides some tooling to help you 
 
 ### Getting a list of all features with a specific tag
 
-To see all features tagged with `"webfeature:idle-detection"`, you can use BCD's `traverse` script like this:
+To see all features tagged with `"web-features:idle-detection"`, you can use BCD's `traverse` script like this:
 
 ```js
-npm run traverse -- -t webfeature:idle-detection
+npm run traverse -- -t web-features:idle-detection
 ```
 
-This will log all the BCD paths and the total number of features tagged with `"webfeature:idle-detection"`:
+This will log all the BCD paths and the total number of features tagged with `"web-features:idle-detection"`:
 
 ```
 api.IdleDetector

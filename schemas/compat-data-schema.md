@@ -174,7 +174,7 @@ The `__compat` object consists of the following:
 - An optional `tags` property which is an array of strings allowing to assign tags to the feature.
   Each tag in the array must be namespaced. The currently allowed namespaces are:
 
-  - `webfeatures`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
+  - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
 
   For more information, see the [tagging data guidelines](/docs/data-guidelines/tags.md).
 
