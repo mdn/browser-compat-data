@@ -10,7 +10,7 @@ The optional `tags` property is an array of strings allowing to assign tags to a
 ],
 ```
 
-Tags are always an array and the items consist of namespaced names. A namespace must be provided (see below). The name (after the colon) can only be lowercase alphanumeric characters (`a`-`z` and `0-9`) plus the `-` character (hyphen or minus sign) as a word separator.
+Tags are always an array and the items consist of namespaced names. A namespace must be provided (see below). The name (after the colon) can only be lowercase alphanumeric characters (`a-z` and `0-9`) plus the `-` character (hyphen or minus sign) as a word separator.
 
 ## Tag namespaces
 
@@ -32,7 +32,7 @@ The [web-platform-dx/web-features](https://github.com/web-platform-dx/web-featur
 
 There are a few guidelines for naming `webfeature` groups:
 
-- Prefer identifiers to known to be in widespread use by web developers.
+- Prefer identifiers known to be in widespread use by web developers.
   Favor describing things as they are most-widely known, even if it's not the most technically correct option.
 
   - 👍 Recommended: `webfeature:javascript`
