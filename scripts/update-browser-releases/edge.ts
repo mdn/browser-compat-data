@@ -17,9 +17,12 @@ let archivedReleaseNotesText;
 
 /**
  * initReleaseNoteFiles - Fetch both release notes file and store them
+ * @returns {string} Logs (error messages)
  */
 const initReleaseNoteFiles = async () => {
-  // Fetch the regular page
+  let result = '';
+
+  // Fetch the regular page1
   const releaseNote = await fetch(
     'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel',
   );
@@ -27,9 +30,7 @@ const initReleaseNoteFiles = async () => {
   // Check that it exists, if not exit.
   if (releaseNote.status != 200) {
     // File not found -> log a warning
-    console.log(
-      chalk`{red \nRelease note files not found for Edge (${releaseNote.status}).`,
-    );
+    result = chalk`{red \nRelease note files not found for Edge (${releaseNote.status}).`;
   } else {
     releaseNotesText = await releaseNote.text();
   }
@@ -40,12 +41,12 @@ const initReleaseNoteFiles = async () => {
   );
   if (archivedReleaseNotes.status != 200) {
     // File not found -> log a warning
-    console.log(
-      chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`,
-    );
+    result += chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`;
   } else {
     archivedReleaseNotesText = await archivedReleaseNotes.text();
   }
+
+  return result;
 };
 
 /**
@@ -77,14 +78,14 @@ const updateReleaseNotesIfArchived = (originalURL) => {
  * @param {string} release The release number of the versin
  * @param {string} releaseScheduleURL The url of the MD file having it
  * @returns {string} The date in the YYYY-MM-DD format
+ * Throws a string in case of an error
  */
 const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   // Fetch the MD of the release schedule
   const scheduleMD = await fetch(releaseScheduleURL);
   const text = await scheduleMD.text();
   if (!text) {
-    console.log(chalk`{red \nRelease file not found.}`);
-    return '';
+    throw chalk`{red \nRelease file not found.}`;
   }
   // Find the line
   //const regexp = new RegExp(`| ${release} |\\w*|\\w*| ?Week of (\\w*) ?|\\w*|`, 'i');
@@ -94,8 +95,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   );
   const result = text.match(regexp);
   if (!result) {
-    console.log(chalk`{yellow \nRelease date not found for Edge ${release}.}`);
-    return '';
+    throw chalk`{yellow \nRelease date not found for Edge ${release}.}`;
   }
   const releaseDateText = result[1];
 
@@ -129,6 +129,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
  * @param {string} fullRelease The release of the release
  * @param {string} date The date of the release
  * @returns {string} The URL of the release notes or the empty string if not found
+ * Throws a string in case of error
  */
 const getReleaseNotesURL = async (status, fullRelease, date) => {
   // If the status isn't stable, do not give back any release notes.
@@ -162,9 +163,7 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
     releaseNotesText.indexOf(`<h2 id="version-${releaseStr}-${dateStr}">`) == -1
   ) {
     // Section not found -> log a warning
-    console.log(
-      chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`,
-    );
+    throw chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`;
   }
 
   return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
@@ -173,12 +172,13 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
 /**
  * updateEdgeReleases - Update the json file listing the browser releases of an Edge browser
  * @param {object} options The list of options for Edge.
+ * @returns {string} The log of what has been generated (empty if nothing)
  */
 export const updateEdgeReleases = async (options) => {
   //
   // Read the release note files
   //
-  await initReleaseNoteFiles();
+  let result = await initReleaseNoteFiles();
 
   //
   // Get the JSON with the versions from edgereleases
@@ -236,6 +236,10 @@ export const updateEdgeReleases = async (options) => {
     data[value].version = parseFloat(entry['Releases'][id]['ProductVersion']);
     data[value].fullVersion = entry['Releases'][id]['ProductVersion'];
 
+    //
+    // Update the JSON in memory
+    //
+
     // We skip beta and nightly versions if they are of the same version as the released one
     if (
       key === 'current' ||
@@ -253,29 +257,33 @@ export const updateEdgeReleases = async (options) => {
           'PublishedTime'
         ].substring(0, 10); // Remove the time part;
       } else {
-        data[value].versionDate = await getFutureReleaseDate(
-          data[value].version,
-          options.releaseScheduleURL,
-        );
+        try {
+          data[value].versionDate = await getFutureReleaseDate(
+            data[value].version,
+            options.releaseScheduleURL,
+          );
+        } catch (str) {
+          result += str;
+        }
       }
 
-      //
-      // Update the JSON in memory
-      //
-
       // Get the release notes
-      const releaseNotesURL = await getReleaseNotesURL(
-        value,
-        data[value].fullVersion,
-        data[value].versionDate,
-      );
+      let releaseNotesURL = '';
+      try {
+        releaseNotesURL = await getReleaseNotesURL(
+          value,
+          data[value].fullVersion,
+          data[value].versionDate,
+        );
+      } catch (s) {
+        result += s;
+      }
 
-      // Update in memory if different than release version (beta is released later than current)
       if (
         edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
       ) {
         // The entry already exists
-        updateBrowserEntry(
+        result += updateBrowserEntry(
           edgeBCD,
           options.bcdBrowserName,
           data[value].version,
@@ -285,7 +293,7 @@ export const updateEdgeReleases = async (options) => {
         );
       } else {
         // New entry
-        newBrowserEntry(
+        result += newBrowserEntry(
           edgeBCD,
           options.bcdBrowserName,
           data[value].version,
@@ -308,7 +316,7 @@ export const updateEdgeReleases = async (options) => {
   ) {
     if (!options.skippedReleases.includes(i)) {
       if (edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
-        updateBrowserEntry(
+        result += updateBrowserEntry(
           edgeBCD,
           options.bcdBrowserName,
           i.toString(),
@@ -323,9 +331,7 @@ export const updateEdgeReleases = async (options) => {
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
         // There is an oddity: the version is not skipped but not in edgeupdates
-        console.log(
-          chalk`{yellow \nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.}`,
-        );
+        result += chalk`{yellow \nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.}`;
       }
     }
   }
@@ -334,13 +340,18 @@ export const updateEdgeReleases = async (options) => {
   // Add a planned version entry
   //
   const planned = (data[options.nightlyBranch].version + 1).toString();
-  const releaseDate = await getFutureReleaseDate(
-    planned,
-    options.releaseScheduleURL,
-  );
+  let releaseDate;
+  try {
+    releaseDate = await getFutureReleaseDate(
+      planned,
+      options.releaseScheduleURL,
+    );
+  } catch (s) {
+    result += s;
+  }
 
   if (edgeBCD.browsers[options.bcdBrowserName].releases[planned]) {
-    updateBrowserEntry(
+    result += updateBrowserEntry(
       edgeBCD,
       options.bcdBrowserName,
       planned,
@@ -350,7 +361,7 @@ export const updateEdgeReleases = async (options) => {
     );
   } else {
     // New entry
-    newBrowserEntry(
+    result += newBrowserEntry(
       edgeBCD,
       options.bcdBrowserName,
       planned.toString(),
@@ -365,4 +376,10 @@ export const updateEdgeReleases = async (options) => {
   // Write the update browser's json to file
   //
   fs.writeFileSync(`./${options.bcdFile}`, stringify(edgeBCD) + '\n');
+
+  // Returns the log
+  if (result) {
+    result = `### Updates for ${options.browserName}${result}`;
+  }
+  return result;
 };

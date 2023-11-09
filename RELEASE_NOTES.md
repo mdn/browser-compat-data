@@ -1,5 +1,50 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.29)
+
+November 7, 2023
+
+### Removals
+
+- `api.RTCIceServer` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.credential` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.credentialType` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.url` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.urls` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.username` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+
+### Additions
+
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.credential_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.credentialType_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.url_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.urls_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.username_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.Screen.availLeft.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.availTop.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.left.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.top.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.moveTo.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.open.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenLeft.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenTop.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenX.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenY.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `browsers.chrome_android.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `browsers.chrome.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `browsers.deno.releases.1.38` ([#21144](https://github.com/mdn/browser-compat-data/pull/21144))
+- `browsers.webview_android.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `css.properties.color-adjust` ([#21044](https://github.com/mdn/browser-compat-data/pull/21044))
+- `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat.options_parameter.options_calendar_parameter` ([#21143](https://github.com/mdn/browser-compat-data/pull/21143))
+- `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat.options_parameter.options_numberingSystem_parameter` ([#21143](https://github.com/mdn/browser-compat-data/pull/21143))
+
+### Statistics
+
+- 14 contributors have changed 36 files with 1,236 additions and 1,011 deletions in 35 commits ([`v5.3.28...v5.3.29`](https://github.com/mdn/browser-compat-data/compare/v5.3.28...v5.3.29))
+- 15,105 total features
+- 1,040 total contributors
+- 4,631 total stargazers
+
 ## [v5.3.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.28)
 
 October 31, 2023

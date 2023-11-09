@@ -16,6 +16,7 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
  * @param {string} core The core of the name of the release note
  * @param {string} status The status of the release
  * @returns {string} The URL of the release notes or the empty string if not found
+ * Throws a string in case of error
  */
 const getReleaseNotesURL = async (version, date, core, status) => {
   // If the status isn't stable, do not give back any release notes.
@@ -40,18 +41,21 @@ const getReleaseNotesURL = async (version, date, core, status) => {
 
   releaseNote = await fetch(url);
 
-  if (releaseNote.status == 200) {
-    return url;
+  if (releaseNote.status !== 200) {
+    throw chalk`{red \nRelease note not found for ${version}}.`;
   }
-  console.log(chalk`{red \nRelease note not found for ${version}}`);
-  return '';
+
+  return url;
 };
 
 /**
  * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
  * @param {object} options The list of options for this type of chromiums.
+ * @returns {string} The log of what has been generated (empty if nothing)
  */
 export const updateChromiumReleases = async (options) => {
+  let result = '';
+
   //
   // Get the JSON with the versions from chromestatus
   //
@@ -90,18 +94,23 @@ export const updateChromiumReleases = async (options) => {
     data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
 
     // Update the JSON in memory
-    const releaseNotesURL = await getReleaseNotesURL(
-      versionData.version,
-      data[value].releaseDate,
-      options.releaseNoteCore,
-      value,
-    );
+    let releaseNotesURL;
+    try {
+      releaseNotesURL = await getReleaseNotesURL(
+        versionData.version,
+        data[value].releaseDate,
+        options.releaseNoteCore,
+        value,
+      );
+    } catch (str) {
+      result += str;
+    }
 
     if (
       chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
     ) {
       // The entry already exists
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         chromeBCD,
         options.bcdBrowserName,
         data[value].version,
@@ -111,7 +120,7 @@ export const updateChromiumReleases = async (options) => {
       );
     } else {
       // New entry
-      newBrowserEntry(
+      result += newBrowserEntry(
         chromeBCD,
         options.bcdBrowserName,
         data[value].version,
@@ -133,7 +142,7 @@ export const updateChromiumReleases = async (options) => {
   ) {
     if (!options.skippedReleases.includes(i)) {
       if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
-        updateBrowserEntry(
+        result += updateBrowserEntry(
           chromeBCD,
           options.bcdBrowserName,
           i.toString(),
@@ -145,9 +154,7 @@ export const updateChromiumReleases = async (options) => {
       } else {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
-        console.log(
-          chalk`{yellow \nChrome ${i} not found in Chromestatus! Add it manually or add an exception.}`,
-        );
+        result += chalk`{red \nChrome ${i} not found in Chromestatus! Add it manually or add an exception.}`;
       }
     }
   }
@@ -157,7 +164,7 @@ export const updateChromiumReleases = async (options) => {
   //
   const plannedVersion = (data[options.nightlyBranch].version + 1).toString();
   if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
-    updateBrowserEntry(
+    result += updateBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       plannedVersion,
@@ -168,7 +175,7 @@ export const updateChromiumReleases = async (options) => {
     );
   } else {
     // New entry
-    newBrowserEntry(
+    result += newBrowserEntry(
       chromeBCD,
       options.bcdBrowserName,
       plannedVersion,
@@ -183,4 +190,10 @@ export const updateChromiumReleases = async (options) => {
   // Write the update browser's json to file
   //
   fs.writeFileSync(`./${options.bcdFile}`, stringify(chromeBCD) + '\n');
+
+  // Returns the log
+  if (result) {
+    result = `### Updates for ${options.browserName}${result}`;
+  }
+  return result;
 };
