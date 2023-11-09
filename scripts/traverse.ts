@@ -124,6 +124,7 @@ const main = (
     'svg',
     'javascript',
     'mathml',
+    'webassembly',
     'webdriver',
   ],
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],

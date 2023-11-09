@@ -18,6 +18,7 @@ describe('lowLevelWalk()', () => {
       'javascript',
       'mathml',
       'svg',
+      'webassembly',
       'webdriver',
       'webextensions',
     ];

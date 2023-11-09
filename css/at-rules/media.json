@@ -6,8 +6,8 @@
           "description": "<code>@media</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media",
           "spec_url": [
-            "https://w3c.github.io/csswg-drafts/mediaqueries/#media-descriptor-table",
-            "https://w3c.github.io/csswg-drafts/css-conditional-3/#at-media"
+            "https://drafts.csswg.org/mediaqueries/#media-descriptor-table",
+            "https://drafts.csswg.org/css-conditional-3/#at-media"
           ],
           "support": {
             "chrome": {
@@ -52,7 +52,7 @@
           "__compat": {
             "description": "<code>any-hover</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/any-hover",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#any-input",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
             "support": {
               "chrome": {
                 "version_added": "41"
@@ -91,7 +91,7 @@
           "__compat": {
             "description": "<code>any-pointer</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/any-pointer",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#any-input",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
             "support": {
               "chrome": {
                 "version_added": "41"
@@ -128,7 +128,7 @@
           "__compat": {
             "description": "<code>aspect-ratio</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/aspect-ratio",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#aspect-ratio",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#aspect-ratio",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -171,7 +171,7 @@
           "__compat": {
             "description": "<code>calc()</code> expressions",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/calc()",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-values/#calc-notation",
+            "spec_url": "https://drafts.csswg.org/css-values/#calc-notation",
             "support": {
               "chrome": {
                 "version_added": "66"
@@ -206,7 +206,7 @@
           "__compat": {
             "description": "<code>color</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/color",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#color",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#color",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -251,7 +251,7 @@
           "__compat": {
             "description": "<code>color-gamut</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/color-gamut",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#color-gamut",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#color-gamut",
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -286,7 +286,7 @@
           "__compat": {
             "description": "<code>color-index</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/color-index",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#color-index",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#color-index",
             "support": {
               "chrome": {
                 "version_added": "29"
@@ -321,7 +321,7 @@
           "__compat": {
             "description": "<code>device-aspect-ratio</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/device-aspect-ratio",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#device-aspect-ratio",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#device-aspect-ratio",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -366,7 +366,7 @@
           "__compat": {
             "description": "<code>device-height</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/device-height",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#device-height",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#device-height",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -411,7 +411,7 @@
           "__compat": {
             "description": "<code>device-width</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/device-width",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#device-width",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#device-width",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -456,7 +456,7 @@
           "__compat": {
             "description": "<code>display-mode</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/display-mode",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#display-mode",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#display-mode",
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -467,7 +467,11 @@
                 "version_added": "47",
                 "notes": "Firefox 47 and later support <code>display-mode</code> values <code>fullscreen</code> and <code>browser</code>. Firefox 57 added support for <code>minimal-ui</code> and <code>standalone</code> values."
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "47",
+                "partial_implementation": true,
+                "notes": "Only supports the <code>browser</code> value, which always reports <code>true</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -494,7 +498,7 @@
           "__compat": {
             "description": "<code>dynamic-range</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/dynamic-range",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#dynamic-range",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#dynamic-range",
             "support": {
               "chrome": {
                 "version_added": "98"
@@ -529,15 +533,12 @@
           "__compat": {
             "description": "<code>forced-colors</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/forced-colors",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#forced-colors",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#forced-colors",
             "support": {
               "chrome": {
                 "version_added": "89"
               },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/970285'>bug 970285</a>."
-              },
+              "chrome_android": "mirror",
               "edge": {
                 "version_added": "79"
               },
@@ -549,14 +550,10 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -573,7 +570,7 @@
           "__compat": {
             "description": "<code>grid</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/grid",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#grid",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#grid",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -618,7 +615,7 @@
           "__compat": {
             "description": "<code>height</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/height",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#height",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#height",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -663,7 +660,7 @@
           "__compat": {
             "description": "<code>hover</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/hover",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#hover",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#hover",
             "support": {
               "chrome": {
                 "version_added": "38",
@@ -710,7 +707,7 @@
           "__compat": {
             "description": "<code>inverted-colors</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/inverted-colors",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#inverted",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#inverted",
             "support": {
               "chrome": {
                 "version_added": false
@@ -718,7 +715,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.inverted-colors.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -821,7 +825,7 @@
           "__compat": {
             "description": "<code>monochrome</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/monochrome",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#monochrome",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#monochrome",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -899,11 +903,45 @@
             }
           }
         },
+        "or_syntax": {
+          "__compat": {
+            "description": "<code>or</code> syntax from Media Queries Level 4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#testing_for_multiple_features_with_or",
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "orientation": {
           "__compat": {
             "description": "<code>orientation</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/orientation",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#orientation",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#orientation",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -946,7 +984,7 @@
           "__compat": {
             "description": "<code>overflow-block</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/overflow-block",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#mf-overflow-block",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#mf-overflow-block",
             "support": {
               "chrome": {
                 "version_added": "113"
@@ -964,7 +1002,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -981,7 +1019,7 @@
           "__compat": {
             "description": "<code>overflow-inline</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/overflow-inline",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#mf-overflow-inline",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#mf-overflow-inline",
             "support": {
               "chrome": {
                 "version_added": "113"
@@ -999,7 +1037,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1016,7 +1054,7 @@
           "__compat": {
             "description": "<code>pointer</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/pointer",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#pointer",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#pointer",
             "support": {
               "chrome": {
                 "version_added": "41"
@@ -1059,7 +1097,7 @@
           "__compat": {
             "description": "<code>prefers-color-scheme</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#prefers-color-scheme",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme",
             "support": {
               "chrome": {
                 "version_added": "76"
@@ -1177,7 +1215,7 @@
           "__compat": {
             "description": "<code>prefers-contrast</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-contrast",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#prefers-contrast",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-contrast",
             "support": {
               "chrome": {
                 "version_added": "96"
@@ -1214,18 +1252,18 @@
           "__compat": {
             "description": "<code>prefers-reduced-data</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-data",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#prefers-reduced-data",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-data",
             "support": {
               "chrome": {
                 "version_added": "85",
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>.",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
-                ]
+                ],
+                "impl_url": "https://crbug.com/1051189"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1246,7 +1284,7 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>."
+                "impl_url": "https://crbug.com/1051189"
               }
             },
             "status": {
@@ -1260,7 +1298,7 @@
           "__compat": {
             "description": "<code>prefers-reduced-motion</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-motion",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#prefers-reduced-motion",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-motion",
             "support": {
               "chrome": {
                 "version_added": "74"
@@ -1297,10 +1335,10 @@
           "__compat": {
             "description": "<code>prefers-reduced-transparency</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-transparency",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#prefers-reduced-transparency",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "118"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1323,7 +1361,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/175497"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1339,7 +1378,7 @@
         "range_syntax": {
           "__compat": {
             "description": "Range syntax from Media Queries Level 4",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#syntax_improvements_in_level_4",
             "support": {
               "chrome": {
                 "version_added": "104"
@@ -1351,8 +1390,8 @@
                   "version_added": "102"
                 },
                 {
-                  "partial_implementation": true,
                   "version_added": "63",
+                  "partial_implementation": true,
                   "notes": "Only supports range notations where the feature name comes before any value <code>(width &#62; 500px)</code>"
                 }
               ],
@@ -1381,7 +1420,7 @@
           "__compat": {
             "description": "<code>resolution</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/resolution",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#resolution",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#resolution",
             "support": {
               "chrome": {
                 "version_added": "29"
@@ -1395,8 +1434,8 @@
                   "version_added": "8"
                 },
                 {
-                  "partial_implementation": true,
                   "version_added": "3.5",
+                  "partial_implementation": true,
                   "notes": "Supports <a href='https://developer.mozilla.org/docs/Web/CSS/integer'><code>&lt;integer&gt;</code></a> values only."
                 }
               ],
@@ -1441,11 +1480,10 @@
           "__compat": {
             "description": "<code>scripting</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/scripting",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#scripting",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#scripting",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/489957'>bug 489957</a>."
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1457,14 +1495,10 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1481,7 +1515,7 @@
           "__compat": {
             "description": "<code>update</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/update-frequency",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#update",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#update",
             "support": {
               "chrome": {
                 "version_added": "113"
@@ -1499,7 +1533,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1516,10 +1550,17 @@
           "__compat": {
             "description": "<code>video-dynamic-range</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/video-dynamic-range",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries-5/#video-dynamic-range",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#video-dynamic-range",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1551,7 +1592,7 @@
           "__compat": {
             "description": "<code>width</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/width",
-            "spec_url": "https://w3c.github.io/csswg-drafts/mediaqueries/#width",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#width",
             "support": {
               "chrome": {
                 "version_added": "1"

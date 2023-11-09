@@ -22,7 +22,6 @@ type Notes = string | string[] | null;
  */
 
 const matchingSafariVersions = new Map([
-  ['≤4', '≤3'],
   ['1', '1'],
   ['1.1', '1'],
   ['1.2', '1'],
@@ -52,6 +51,7 @@ export const getMatchingBrowserVersion = (
   sourceVersion: string,
 ) => {
   const browserData = browsers[targetBrowser];
+  const range = sourceVersion.includes('≤');
 
   /* c8 ignore start */
   if (!browserData.upstream) {
@@ -70,12 +70,12 @@ export const getMatchingBrowserVersion = (
     // cannot be entirely derived from the WebKit versions. After Safari 15
     // the versions have been the same, so map earlier versions manually
     // and then assume if the versions are identical it's also a match.
-    const v = matchingSafariVersions.get(sourceVersion);
+    const v = matchingSafariVersions.get(sourceVersion.replace('≤', ''));
     if (v) {
-      return v;
+      return (range ? '≤' : '') + v;
     }
-    if (sourceVersion in browserData.releases) {
-      return sourceVersion;
+    if (sourceVersion.replace('≤', '') in browserData.releases) {
+      return (range ? '≤' : '') + sourceVersion;
     }
     throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
   }
@@ -83,7 +83,6 @@ export const getMatchingBrowserVersion = (
   const releaseKeys = Object.keys(browserData.releases);
   releaseKeys.sort(compareVersions);
 
-  const range = sourceVersion.includes('≤');
   const sourceRelease =
     browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
 
@@ -197,11 +196,11 @@ export const bumpSupport = (
 
   let notesRepl: [RegExp, string] | undefined;
   if (destination === 'edge') {
-    notesRepl = [/Chrome/g, 'Edge'];
+    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Edge'];
   } else if (destination.includes('opera')) {
-    notesRepl = [/Chrome/g, 'Opera'];
+    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Opera'];
   } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/Chrome/g, 'Samsung Internet'];
+    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Samsung Internet'];
   }
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);

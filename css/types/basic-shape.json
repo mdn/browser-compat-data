@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;basic-shape&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#basic-shape-functions",
+          "spec_url": "https://drafts.csswg.org/css-shapes/#basic-shape-functions",
           "support": {
             "chrome": {
               "version_added": "37"
@@ -73,7 +73,7 @@
           "__compat": {
             "description": "<code>circle()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/circle",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#funcdef-basic-shape-circle",
+            "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-circle",
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -108,7 +108,7 @@
           "__compat": {
             "description": "<code>ellipse()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/ellipse",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#funcdef-basic-shape-ellipse",
+            "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-ellipse",
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -143,7 +143,7 @@
           "__compat": {
             "description": "<code>inset()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/inset",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#funcdef-basic-shape-inset",
+            "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-inset",
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -178,13 +178,18 @@
           "__compat": {
             "description": "<code>path()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/path",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#funcdef-basic-shape-path",
+            "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-path",
             "support": {
-              "chrome": {
-                "version_added": "46",
-                "partial_implementation": true,
-                "notes": "Only supported on the <code>offset-path</code> property."
-              },
+              "chrome": [
+                {
+                  "version_added": "88"
+                },
+                {
+                  "version_added": "46",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the <code>offset-path</code> property."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
@@ -229,7 +234,7 @@
           "__compat": {
             "description": "<code>polygon()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/polygon",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-shapes/#funcdef-basic-shape-polygon",
+            "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-polygon",
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -255,6 +260,94 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rect": {
+          "__compat": {
+            "description": "<code>rect()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/rect",
+            "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-rect",
+            "support": {
+              "chrome": {
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": "Only supported on the <code>offset-path</code> property."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.basic-shape-rect.enabled, layout.css.motion-path-basic-shapes.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "xywh": {
+          "__compat": {
+            "description": "<code>xywh()</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/xwyh",
+            "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-xywh",
+            "support": {
+              "chrome": {
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": "Only supported on the <code>offset-path</code> property."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.basic-shape-xywh.enabled, layout.css.motion-path-basic-shapes.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

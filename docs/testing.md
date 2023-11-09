@@ -34,7 +34,7 @@ By default, the script will traverse and print the dotted path to every feature.
 
 Run `npm run traverse -- --help` for a complete list of options and examples.
 
-The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/master/browsers/). This argument may be repeated to traverse multiple browsers. By default, the script will traverse all browsers.
+The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](https://github.com/mdn/browser-compat-data/blob/main/browsers/). This argument may be repeated to traverse multiple browsers. By default, the script will traverse all browsers.
 
 The `-f` or `--filter` argument may be any value accepted by `version_added` or `version_removed`. This argument may be repeated to test multiple values. By default, the script will traverse all features regardless of their value. The `-n` or `--non-real` argument may be included as a convenience alias for `-f null -f true`.
 

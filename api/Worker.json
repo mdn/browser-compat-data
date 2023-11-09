@@ -40,21 +40,6 @@
                 "Worker script environment expects CommonJS modules.",
                 "Must be imported from the <code>worker_threads</code> module."
               ]
-            },
-            {
-              "version_added": "10.5.0",
-              "partial_implementation": true,
-              "notes": [
-                "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>.",
-                "Worker script environment expects CommonJS modules.",
-                "Must be imported from the <code>worker_threads</code> module."
-              ],
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--experimental-worker"
-                }
-              ]
             }
           ],
           "oculus": "mirror",
@@ -112,17 +97,6 @@
                 "version_added": "11.7.0",
                 "partial_implementation": true,
                 "notes": "Takes entirely different options."
-              },
-              {
-                "version_added": "10.5.0",
-                "partial_implementation": true,
-                "notes": "Takes entirely different options.",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--experimental-worker"
-                  }
-                ]
               }
             ],
             "oculus": "mirror",
@@ -159,25 +133,9 @@
                 "version_added": "1.0"
               },
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "preview",
-                  "partial_implementation": true,
-                  "notes": "Does not support dynamic import. See <a href='https://bugzil.la/1540913'>bug 1540913</a>"
-                },
-                {
-                  "version_added": "111",
-                  "partial_implementation": true,
-                  "notes": "Does not support dynamic import. See <a href='https://bugzil.la/1540913'>bug 1540913</a>",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.workers.modules.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "114"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -214,7 +172,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/794548'>Chromium bug 794548</a>."
+                "impl_url": "https://crbug.com/794548"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -235,8 +193,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/192749'>WebKit bug 192749</a>."
+                "version_added": "16"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -306,7 +263,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "114"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -412,17 +369,6 @@
                 "version_added": "11.7.0",
                 "partial_implementation": true,
                 "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-              },
-              {
-                "version_added": "10.5.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>.",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--experimental-worker"
-                  }
-                ]
               }
             ],
             "oculus": "mirror",
@@ -481,7 +427,7 @@
             },
             "safari": {
               "version_added": "16.4",
-              "notes": "See <a href='https://webkit.org/b/171216'>bug 171216</a>."
+              "impl_url": "https://webkit.org/b/171216"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -550,24 +496,13 @@
             "nodejs": [
               {
                 "version_added": "12.17.0",
-                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
-                "partial_implementation": true
+                "partial_implementation": true,
+                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects"
               },
               {
                 "version_added": "11.7.0",
-                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
-                "partial_implementation": true
-              },
-              {
-                "version_added": "10.5.0",
-                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects",
                 "partial_implementation": true,
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--experimental-worker"
-                  }
-                ]
+                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects"
               }
             ],
             "oculus": "mirror",
@@ -625,17 +560,6 @@
                 "version_added": "11.7.0",
                 "partial_implementation": true,
                 "notes": "Also takes an optional callback to be executed when the worker has terminated."
-              },
-              {
-                "version_added": "10.5.0",
-                "partial_implementation": true,
-                "notes": "Also takes an optional callback to be executed when the worker has terminated.",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--experimental-worker"
-                  }
-                ]
               }
             ],
             "oculus": "mirror",
