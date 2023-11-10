@@ -5,7 +5,6 @@ import { execSync } from 'node:child_process';
 
 /**
  * Execute a command
- *
  * @param {string} command The command to execute
  * @param {any} opts The options to pass to execSync
  * @returns {string} The output from the command
@@ -46,7 +45,6 @@ export const requireWriteAccess = () => {
 
 /**
  * Run a query on the GitHub API using the GitHub CLI
- *
  * @param {string} endpoint The API endpoint to query
  * @returns {any} The response from the API
  */
@@ -55,7 +53,6 @@ export const githubAPI = (endpoint: string): any =>
 
 /**
  * Query pull requests
- *
  * @param {string} queryArgs The CLI arguments for the query
  * @returns {any} The response from the API
  */
@@ -75,7 +72,6 @@ export const queryPRs = (queryArgs: any): any => {
 
 /**
  * Get the latest Git tag
- *
  * @returns {string} The latest Git tag
  */
 export const getLatestTag = (): string =>
@@ -83,7 +79,6 @@ export const getLatestTag = (): string =>
 
 /**
  * Get the date of a specified ref
- *
  * @param {string} ref The ref to check
  * @param {boolean} querySafe Format the string for HTML
  * @returns {string} The ref date
@@ -99,6 +94,7 @@ export const getRefDate = (ref: string, querySafe = false): string => {
 
 /**
  * Wait for a key press
+ * @returns {Promise<true>} Once the key is pressed, return
  */
 export const keypress = async () => {
   process.stdin.setRawMode(true);

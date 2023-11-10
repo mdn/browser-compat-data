@@ -8,7 +8,6 @@ import { CompatStatement, Identifier } from '../../types/types.js';
 
 /**
  * Process the data for prefix errors
- *
  * @param {Identifier} data The data to test
  * @param {string} category The category the data belongs to
  * @param {string} feature The full feature path
@@ -89,7 +88,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

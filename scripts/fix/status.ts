@@ -9,7 +9,6 @@ import { IS_WINDOWS } from '../../test/utils.js';
 
 /**
  * Fix the status values
- *
  * @param {value} key The key of the object
  * @param {Identifier} value The value to update
  * @returns {Identifier} The updated value
@@ -35,7 +34,6 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
 /**
  * Fix feature statuses throughout the BCD files
- *
  * @param {string} filename The name of the file to fix
  */
 const fixStatusFromFile = (filename: string): void => {

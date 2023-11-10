@@ -207,8 +207,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "See <a href='https://crbug.com/1227424'>bug 1227424</a>."
+              "version_added": "113"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -223,15 +222,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/227799'>bug 227799</a>."
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -447,7 +445,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "116"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1386,6 +1384,88 @@
           }
         }
       },
+      "popoverTargetAction": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetAction",
+          "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#dom-popovertargetaction",
+          "support": {
+            "chrome": {
+              "version_added": "114"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "114",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.popover.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "popoverTargetElement": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetElement",
+          "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#dom-popovertargetelement",
+          "support": {
+            "chrome": {
+              "version_added": "114"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "114",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.popover.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "readOnly": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-readonly",
@@ -1652,7 +1732,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/234348'>bug 234348</a>."
+              "impl_url": "https://webkit.org/b/234348"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1957,7 +2037,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "impl_url": "https://webkit.org/b/234009"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1990,10 +2070,11 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "version_added": "16"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -2025,7 +2106,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "impl_url": "https://webkit.org/b/234009"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2058,10 +2139,12 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "version_added": "preview"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/261703"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -2092,10 +2175,12 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "version_added": "preview"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/261703"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -2126,8 +2211,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "version_added": "16"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2161,7 +2245,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "impl_url": "https://webkit.org/b/234009"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2195,7 +2279,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "impl_url": "https://webkit.org/b/234009"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2229,7 +2313,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/234009'>bug 234009</a>."
+                "impl_url": "https://webkit.org/b/234009"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

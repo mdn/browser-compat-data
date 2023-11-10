@@ -9,7 +9,6 @@ import {
 
 /**
  * Get support for a specific browser in array form
- *
  * @param {CompatStatement} compat The compatibility data
  * @param {BrowserName} browser The browser to get data for
  * @returns {SimpleSupportStatement[]} The array of support statements for the browser

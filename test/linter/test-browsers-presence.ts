@@ -10,7 +10,6 @@ const { browsers } = bcd;
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
- *
  * @param {CompatStatement} data The data to test
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
@@ -34,7 +33,9 @@ const processData = (
           'desktop',
           'mobile',
           'xr',
-          ...(['api', 'javascript'].includes(category) ? ['server'] : []),
+          ...(['api', 'javascript', 'webassembly'].includes(category)
+            ? ['server']
+            : []),
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
@@ -88,7 +89,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

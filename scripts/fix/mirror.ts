@@ -20,7 +20,6 @@ const downstreamBrowsers = (
 
 /**
  * Check to see if the statement is equal to the mirrored statement
- *
  * @param {InternalSupportBlock} support The support statement to test
  * @param {BrowserName} browser The browser to mirror for
  * @returns {boolean} Whether the support statement is equal to mirroring
@@ -51,7 +50,6 @@ export const isMirrorEquivalent = (
 
 /**
  * Set the support statement for each browser to mirror if it matches mirroring
- *
  * @param {CompatData} bcd The compat data to update
  */
 export const mirrorIfEquivalent = (bcd: CompatData): void => {
@@ -66,7 +64,6 @@ export const mirrorIfEquivalent = (bcd: CompatData): void => {
 
 /**
  * Update compat data to 'mirror' if the statement matches mirroring
- *
  * @param {string} filename The name of the file to fix
  */
 const fixMirror = (filename: string): void => {

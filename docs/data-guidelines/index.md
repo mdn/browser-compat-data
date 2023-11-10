@@ -1,17 +1,6 @@
 # Data guidelines
 
 This folder contains guidelines to help you record data in a consistent and understandable way. It covers the project's requirements for the way features should be represented, including requirements that are not coded into the linter or schema.
-
-<!-- BEGIN TEMPLATE --
-
-## Short title in sentence case
-
-A description of what to do, preferably in the imperative. If applicable, include an example to illustrate the rule.
-
-If it's helpful to understanding the rule, summarize the rationale. Definitely cite the issue or pull request where this was decided (it may be the PR that merges the policy).
-
--- END TEMPLATE -->
-
 This file contains general guidelines that apply to all features added to BCD. For guidelines that apply to specific categories of data, check out their respective files within this folder.
 
 - [API](./api.md)

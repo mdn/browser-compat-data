@@ -9,7 +9,6 @@ import { BrowserName, SupportStatement } from '../../types/types.js';
 /**
  * Process data and check to make sure there aren't multiple support statements without
  * `partial_implementation` or `prefix`/`alternative_name`
- *
  * @param {SupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
@@ -54,7 +53,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

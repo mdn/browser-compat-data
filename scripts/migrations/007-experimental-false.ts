@@ -22,7 +22,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Fix the experimental status throughout compatibility data
- *
  * @param {CompatData} bcd Parsed BCD object to be updated in place.
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
@@ -84,7 +83,6 @@ export const fixExperimental = (bcd: CompatData | Identifier): void => {
 
 /**
  * Fix the experimental status throughout a file
- *
  * @param {string} filename Filename of BCD to be updated in place.
  */
 const fixExperimentalFile = (filename: string): void => {
@@ -100,7 +98,6 @@ const fixExperimentalFile = (filename: string): void => {
 
 /**
  * Load files and fix experimental status
- *
  * @param {string[]} files The files to fix
  */
 const load = (...files: string[]): void => {
@@ -142,6 +139,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

@@ -71,16 +71,9 @@
                 "ie": {
                   "version_added": "11"
                 },
-                "nodejs": [
-                  {
-                    "version_added": "13.0.0"
-                  },
-                  {
-                    "version_added": "0.12.0",
-                    "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>NumberFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
-                  }
-                ],
+                "nodejs": {
+                  "version_added": "0.12.0"
+                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -149,6 +142,56 @@
                 }
               }
             },
+            "locales_parameter": {
+              "__compat": {
+                "description": "<code>locales</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": [
+                    {
+                      "version_added": "13.0.0"
+                    },
+                    {
+                      "version_added": "0.12.0",
+                      "partial_implementation": true,
+                      "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>NumberFormat</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    }
+                  ],
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "options_compactDisplay_parameter": {
               "__compat": {
                 "description": "<code>options.compactDisplay</code> parameter",
@@ -176,6 +219,49 @@
                   "opera_android": "mirror",
                   "safari": {
                     "version_added": "14.1"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_currency_parameter": {
+              "__compat": {
+                "description": "<code>options.currency</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -274,6 +360,264 @@
                 }
               }
             },
+            "options_localeMatcher_parameter": {
+              "__compat": {
+                "description": "<code>options.localeMatcher</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_maximumFractionDigits_parameter": {
+              "__compat": {
+                "description": "<code>options.maximumFractionDigits</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_maximumSignificantDigits_parameter": {
+              "__compat": {
+                "description": "<code>options.maximumSignificantDigits</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_minimumFractionDigits_parameter": {
+              "__compat": {
+                "description": "<code>options.minimumFractionDigits</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_minimumIntegerDigits_parameter": {
+              "__compat": {
+                "description": "<code>options.minimumIntegerDigits</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "options_minimumSignificantDigits_parameter": {
+              "__compat": {
+                "description": "<code>options.minimumSignificantDigits</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "options_notation_parameter": {
               "__compat": {
                 "description": "<code>options.notation</code> parameter",
@@ -313,12 +657,55 @@
                 }
               }
             },
+            "options_numberingSystem_parameter": {
+              "__compat": {
+                "description": "<code>options.numberingSystem</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "options_roundingIncrement_parameter": {
               "__compat": {
                 "description": "<code>options.roundingIncrement</code> parameter",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "106"
                   },
                   "chrome_android": "mirror",
                   "deno": {
@@ -326,26 +713,26 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
                   },
                   "nodejs": {
-                    "version_added": false
+                    "version_added": "19.0.0"
                   },
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
@@ -356,7 +743,7 @@
                 "description": "<code>options.roundingMode</code> parameter",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "106"
                   },
                   "chrome_android": "mirror",
                   "deno": {
@@ -364,26 +751,26 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
                   },
                   "nodejs": {
-                    "version_added": false
+                    "version_added": "19.0.0"
                   },
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
@@ -394,7 +781,7 @@
                 "description": "<code>options.roundingPriority</code> parameter",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "106"
                   },
                   "chrome_android": "mirror",
                   "deno": {
@@ -402,26 +789,26 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
                   },
                   "nodejs": {
-                    "version_added": false
+                    "version_added": "19.0.0"
                   },
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
@@ -470,7 +857,7 @@
                   "description": "<code>negative</code> value",
                   "support": {
                     "chrome": {
-                      "version_added": false
+                      "version_added": "106"
                     },
                     "chrome_android": "mirror",
                     "deno": {
@@ -485,23 +872,66 @@
                       "version_added": false
                     },
                     "nodejs": {
-                      "version_added": false
+                      "version_added": "19.0.0"
                     },
                     "oculus": "mirror",
                     "opera": "mirror",
                     "opera_android": "mirror",
                     "safari": {
-                      "version_added": false
+                      "version_added": "15.4"
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
                     "webview_android": "mirror"
                   },
                   "status": {
-                    "experimental": true,
+                    "experimental": false,
                     "standard_track": true,
                     "deprecated": false
                   }
+                }
+              }
+            },
+            "options_style_parameter": {
+              "__compat": {
+                "description": "<code>options.style</code> parameter",
+                "support": {
+                  "chrome": {
+                    "version_added": "24"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
+                  "edge": {
+                    "version_added": "12"
+                  },
+                  "firefox": {
+                    "version_added": "29"
+                  },
+                  "firefox_android": {
+                    "version_added": "56"
+                  },
+                  "ie": {
+                    "version_added": "11"
+                  },
+                  "nodejs": {
+                    "version_added": "0.12.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "10"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
                 }
               }
             },
@@ -518,7 +948,7 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
@@ -674,7 +1104,7 @@
                   "description": "<code>options.useGrouping</code> parameter accepts: <code>'always'</code>, <code>'auto'</code>, <code>'min2'</code> (in addition to: <code>true</code> and <code>false</code>)",
                   "support": {
                     "chrome": {
-                      "version_added": false
+                      "version_added": "106"
                     },
                     "chrome_android": "mirror",
                     "deno": {
@@ -682,26 +1112,26 @@
                     },
                     "edge": "mirror",
                     "firefox": {
-                      "version_added": false
+                      "version_added": "116"
                     },
                     "firefox_android": "mirror",
                     "ie": {
                       "version_added": false
                     },
                     "nodejs": {
-                      "version_added": false
+                      "version_added": "19.0.0"
                     },
                     "opera": "mirror",
                     "opera_android": "mirror",
                     "safari": {
-                      "version_added": false
+                      "version_added": "16.4"
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
                     "webview_android": "mirror"
                   },
                   "status": {
-                    "experimental": true,
+                    "experimental": false,
                     "standard_track": true,
                     "deprecated": false
                   }
@@ -760,7 +1190,7 @@
                 "description": "<code>number</code> param string value is decimal (not <code>Number</code>)",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "106"
                   },
                   "chrome_android": "mirror",
                   "deno": {
@@ -768,27 +1198,27 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
                   },
                   "nodejs": {
-                    "version_added": false
+                    "version_added": "19.0.0"
                   },
                   "oculus": "mirror",
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
@@ -798,7 +1228,7 @@
           "formatRange": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/formatRange",
-              "spec_url": "https://tc39.es/proposal-intl-numberformat-v3/out/numberformat/proposed.html#sec-intl.numberformat.prototype.formatrange",
+              "spec_url": "https://tc39.es/ecma402/#sec-intl.numberformat.prototype.formatrange",
               "support": {
                 "chrome": {
                   "version_added": "106"
@@ -809,14 +1239,14 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "116"
                 },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
                 },
                 "nodejs": {
-                  "version_added": false
+                  "version_added": "19.0.0"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -838,7 +1268,7 @@
           "formatRangeToParts": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/formatRangeToParts",
-              "spec_url": "https://tc39.es/proposal-intl-numberformat-v3/out/numberformat/proposed.html#sec-intl.numberformat.prototype.formatrangetoparts",
+              "spec_url": "https://tc39.es/ecma402/#sec-intl.numberformat.prototype.formatrangetoparts",
               "support": {
                 "chrome": {
                   "version_added": "106"
@@ -849,14 +1279,14 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "116"
                 },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
                 },
                 "nodejs": {
-                  "version_added": false
+                  "version_added": "19.0.0"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -962,12 +1392,12 @@
                 "deprecated": false
               }
             },
-            "result_useGrouping_property": {
+            "result_roundingIncrement_property": {
               "__compat": {
-                "description": "The result <code>useGrouping</code> parameter may contain <code>'always'</code>, <code>'auto'</code>, <code>'min2'</code>, <code>true</code> and <code>false</code> (previous versions may only contain <code>true</code> and <code>false</code>)",
+                "description": "The result <code>roundingMode</code> parameter with possible integer values:<code>'1'</code>, <code>'2'</code>, <code>'5'</code>, <code>'10'</code>, <code>'20'</code>, <code>'25'</code>, <code>'50'</code>, <code>'100'</code>, <code>'2000'</code>, <code>'2500'</code>, <code>'5000'</code>.",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "106"
                   },
                   "chrome_android": "mirror",
                   "deno": {
@@ -975,26 +1405,216 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "116"
                   },
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
                   },
                   "nodejs": {
-                    "version_added": false
+                    "version_added": "19.0.0"
                   },
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "16.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "result_roundingMode_property": {
+              "__compat": {
+                "description": "The result <code>roundingMode</code> parameter with possible values:<code>'ceil'</code>, <code>'floor'</code>, <code>'expand'</code>, <code>'trunc'</code>, <code>'halfCeil'</code>, <code>'halfFloor'</code>, <code>'halfExpand'</code>, <code>'halfTrunc'</code>, <code>'halfEven'</code>.",
+                "support": {
+                  "chrome": {
+                    "version_added": "106"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "116"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "19.0.0"
+                  },
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "result_roundingPriority_property": {
+              "__compat": {
+                "description": "The result <code>roundingPriority</code> parameter with possible values: <code>'auto'</code>, <code>'morePrecision'</code>, <code>'lessPrecision'</code>.",
+                "support": {
+                  "chrome": {
+                    "version_added": "106"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "116"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "19.0.0"
+                  },
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "result_signDisplay_property": {
+              "__compat": {
+                "description": "The result <code>signDisplay</code> parameter may contain <code>'auto'</code>, <code>'always'</code>, <code>'exceptZero'</code>, <code>negative</code> and <code>never</code> (previous versions did not allow <code>negative</code>)",
+                "support": {
+                  "chrome": {
+                    "version_added": "106"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "116"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "19.0.0"
+                  },
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "result_trailingZeroDisplay_property": {
+              "__compat": {
+                "description": "The result <code>trailingZeroDisplay</code> parameter with possible values: <code>'auto'</code>, <code>'stripIfInteger'</code>.",
+                "support": {
+                  "chrome": {
+                    "version_added": "106"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "116"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "19.0.0"
+                  },
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "result_useGrouping_property": {
+              "__compat": {
+                "description": "The result <code>useGrouping</code> parameter may contain <code>'always'</code>, <code>'auto'</code>, <code>'min2'</code>, <code>true</code> and <code>false</code> (previous versions may only contain <code>true</code> and <code>false</code>)",
+                "support": {
+                  "chrome": {
+                    "version_added": "106"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "116"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "19.0.0"
+                  },
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }

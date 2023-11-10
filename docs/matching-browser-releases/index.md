@@ -325,9 +325,28 @@ The [Searchfox](https://searchfox.org/) website provides another method you can 
 
 ## Safari
 
+### Finding through entrypoint
+
 Fortunately, the [WebKit source repository](https://github.com/WebKit/WebKit) has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.
 
 You can then compare the WebKit version number to the Safari version history in the [`browsers/safari.json`](../../browsers/safari.json) file, if necessary, to determine exactly which Safari version was shipped with the change in place.
+
+### Finding through revision number
+
+If you have a revision number for a given change (which is usually included in the WebKit bug, or the GitHub PR) and you have the WebKit repository cloned, you can use the following command to get the releases of Safari which include the revision number:
+
+```bash
+git tag --contains <rev> | grep releases/Apple/Safari
+```
+
+For example, you can go to https://bugs.webkit.org/show_bug.cgi?id=171216 to get the commit link of https://commits.webkit.org/256896@main. From there we can get the revision number of `5e2beb55a112f682aff66e5646e77ce9e079054c`, which we can then use in our command:
+
+```bash
+$ git tag --contains 5e2beb55a112f682aff66e5646e77ce9e079054c | grep releases/Apple/Safari
+releases/Apple/Safari-16.4-iOS-16.4
+releases/Apple/Safari-16.4-iOS-16.4-iPadOS
+releases/Apple/Safari-16.4-macOS-13.3
+```
 
 #### Useful links
 

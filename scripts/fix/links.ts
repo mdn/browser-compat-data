@@ -8,7 +8,6 @@ import { processData } from '../../test/linter/test-links.js';
 
 /**
  * Fix issues with links throughout the BCD files
- *
  * @param {string} filename The name of the file to fix
  */
 const fixLinks = (filename: string): void => {

@@ -10,7 +10,6 @@ import { hideBin } from 'yargs/helpers';
 
 /**
  * Compare two references and print diff as Markdown or JSON
- *
  * @param {{ref1: string | undefined, ref2: string | undefined, format: string, github: boolean}} opts Options
  * @param {string} opts.ref1 First reference to compare
  * @param {string} opts.ref2 Second reference to compare
@@ -35,8 +34,7 @@ const main = (opts: {
 
 /**
  * Compare two references and get feature diff
- *
- * @param {{ref1: string?, ref2: string?, github: boolean}} opts Options
+ * @param {{ref1: string | null, ref2: string | null, github: boolean}} opts Options
  * @param {string?} opts.ref1 First reference to compare
  * @param {string?} opts.ref2 Second reference to compare
  * @param {boolean} opts.github Whether to obtain artifacts from GitHub
@@ -77,7 +75,6 @@ const diff = (opts: {
 
 /**
  * Enumerate features from GitHub or local checkout
- *
  * @param {string} ref Reference to obtain features for
  * @param {boolean} skipGitHub Skip fetching artifacts from GitHub
  * @returns {Set<string>} Feature list from reference
@@ -98,7 +95,6 @@ const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
 
 /**
  * Enumerate features from GitHub
- *
  * @param {string} ref Reference to obtain features for
  * @returns {string[]} Feature list from reference
  */
@@ -150,7 +146,6 @@ const getEnumerationFromGithub = (ref: string): string[] => {
 
 /**
  * Enumerate features from local checkout
- *
  * @param {string} ref Reference to obtain features for
  * @returns {string[]} Feature list from reference
  */
@@ -177,7 +172,9 @@ const enumerateFeatures = (ref = 'HEAD'): string[] => {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(`ts-node ./scripts/enumerate-features.ts --data-from=${worktree}`);
+    execSync(
+      `node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts --data-from=${worktree}`,
+    );
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
@@ -187,7 +184,6 @@ const enumerateFeatures = (ref = 'HEAD'): string[] => {
 
 /**
  * Format feature for Markdown printing
- *
  * @param {string} feat Feature
  * @returns {string} Formatted feature
  */
@@ -195,7 +191,6 @@ const fmtFeature = (feat: string) => `- \`${feat}\``;
 
 /**
  * Print feature diff as Markdown
- *
  * @param {Array.<string>} added List of added features
  * @param {Array.<string>} removed List of removed features
  */

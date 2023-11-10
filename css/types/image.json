@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>&lt;image&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image",
-          "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#image-values",
+          "spec_url": "https://drafts.csswg.org/css-images/#image-values",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -45,7 +45,7 @@
           "__compat": {
             "description": "<code>cross-fade()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#cross-fade-function",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
@@ -59,7 +59,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1657516'>bug 1657516</a>."
+                "impl_url": "https://bugzil.la/1657516"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -104,7 +104,7 @@
           "__compat": {
             "description": "<code>element()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#element-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -118,16 +118,16 @@
                 },
                 {
                   "prefix": "-moz-",
-                  "partial_implementation": true,
                   "version_added": "29",
                   "version_removed": "57",
+                  "partial_implementation": true,
                   "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
                 },
                 {
                   "prefix": "-moz-",
-                  "partial_implementation": true,
                   "version_added": "4",
                   "version_removed": "29",
+                  "partial_implementation": true,
                   "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
                 }
               ],
@@ -138,16 +138,16 @@
                 },
                 {
                   "prefix": "-moz-",
-                  "partial_implementation": true,
                   "version_added": "29",
                   "version_removed": "60",
+                  "partial_implementation": true,
                   "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
                 },
                 {
                   "prefix": "-moz-",
-                  "partial_implementation": true,
                   "version_added": "4",
                   "version_removed": "29",
+                  "partial_implementation": true,
                   "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
                 }
               ],
@@ -175,7 +175,7 @@
           "__compat": {
             "description": "<code>&lt;gradient&gt;</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#gradients",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
             "support": {
               "chrome": [
                 {
@@ -260,7 +260,7 @@
             "__compat": {
               "description": "<code>conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#conic-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -322,13 +322,81 @@
                   "deprecated": false
                 }
               }
+            },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
             }
           },
           "linear-gradient": {
             "__compat": {
               "description": "<code>linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#linear-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#linear-gradients",
               "support": {
                 "chrome": [
                   {
@@ -463,6 +531,74 @@
                 }
               }
             },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
@@ -582,7 +718,7 @@
             "__compat": {
               "description": "<code>radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#radial-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
               "support": {
                 "chrome": [
                   {
@@ -780,6 +916,74 @@
                 }
               }
             },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
@@ -818,7 +1022,7 @@
             "__compat": {
               "description": "<code>repeating-conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#repeating-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -847,13 +1051,81 @@
                 "standard_track": true,
                 "deprecated": false
               }
+            },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
             }
           },
           "repeating-linear-gradient": {
             "__compat": {
               "description": "<code>repeating-linear-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -988,6 +1260,74 @@
                 }
               }
             },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
@@ -1107,7 +1447,7 @@
             "__compat": {
               "description": "<code>repeating-radial-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient",
-              "spec_url": "https://w3c.github.io/csswg-drafts/css-images/#repeating-gradients",
+              "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
               "support": {
                 "chrome": [
                   {
@@ -1264,7 +1604,7 @@
                     }
                   ],
                   "safari": {
-                    "version_added": false
+                    "version_added": "7"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1298,6 +1638,74 @@
                   "opera_android": "mirror",
                   "safari": {
                     "version_added": "12.1"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "hue_interpolation_method": {
+              "__compat": {
+                "description": "Hue interpolation method",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "interpolation_color_space": {
+              "__compat": {
+                "description": "Interpolation color space",
+                "support": {
+                  "chrome": {
+                    "version_added": "111"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1824041"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "16.2"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1351,7 +1759,7 @@
           "__compat": {
             "description": "<code>image()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
             "support": {
               "chrome": {
                 "version_added": false
@@ -1360,14 +1768,10 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": [
-                  "See <a href='https://bugzil.la/703217'>bug 703217</a>.",
-                  "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
-                ]
+                "notes": "See <a href='https://bugzil.la/703217'>bug 703217</a>."
               },
               "firefox_android": {
-                "version_added": false,
-                "notes": "The <a href='https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect'><code>-moz-image-rect()</code></a> function supports fragments as of Firefox 4."
+                "version_added": false
               },
               "ie": {
                 "version_added": false
@@ -1393,12 +1797,17 @@
           "__compat": {
             "description": "<code>image-set()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
-            "spec_url": "https://w3c.github.io/csswg-drafts/css-images-4/#image-set-notation",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
             "support": {
-              "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "21"
-              },
+              "chrome": [
+                {
+                  "version_added": "113"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "21"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
@@ -1421,12 +1830,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "prefix": "-webkit-",
-                "version_added": "6",
-                "partial_implementation": true,
-                "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit. See <a href='https://webkit.org/b/160934'>bug 160934</a>."
-              },
+              "safari": [
+                {
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "6",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"

@@ -6,7 +6,6 @@ import bcd from '../index.js';
 
 /**
  * Get a subtree of compat data.
- *
  * @param {string} path Dotted path to a given feature (e.g., `css.properties.background`)
  * @param {DataType} data A tree to query. All of BCD, by default.
  * @returns {DataType} A BCD subtree

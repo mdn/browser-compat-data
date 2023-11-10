@@ -24,7 +24,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load
- *
  * @param {string[]} files The files to test
  * @returns {DataType?} The data from the loaded files
  */
@@ -92,7 +91,6 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
 
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
- *
  * @param {string[]?} files The file(s) and/or folder(s) to test. Leave undefined for everything.
  * @returns {boolean} Whether there were any errors
  */
@@ -106,6 +104,7 @@ const main = async (
     'svg',
     'javascript',
     'mathml',
+    'webassembly',
     'webdriver',
     'webextensions',
   ],

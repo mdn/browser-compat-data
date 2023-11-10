@@ -15,7 +15,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /**
  * Check to see if the key is __compat and modify the value to remove
  * flags from WebView Android.
- *
  * @param {string} key The key in the object
  * @param {CompatStatement} value The value of the key
  * @returns {CompatStatement} The new value with WebView flags removed
@@ -53,7 +52,6 @@ export const removeWebViewFlags = (
  * Perform removal of flags within WebView data within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
- *
  * @param {string} filename The filename to perform migration upon
  */
 export const fixWebViewFlags = (filename: string): void => {
@@ -78,7 +76,6 @@ export const fixWebViewFlags = (filename: string): void => {
 /**
  * Recursively load one or more files and/or directories passed as arguments
  * and perform removal of flags from WebView support data.
- *
  * @param {string[]} files The files to load and perform migration upon
  */
 const load = (...files: string[]): void => {
@@ -120,6 +117,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

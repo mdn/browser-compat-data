@@ -10,7 +10,6 @@ const releaseNotesLabels = {
 
 /**
  * Get pull requests that have been merged since the specified date that perform a major/minor semver bump
- *
  * @param {string} fromDate The date to check PRs from
  * @returns { { major: any; minor: any } } The PRs that perform semver bumps higher than a patch
  */

@@ -12,7 +12,6 @@ import { lowLevelWalk } from '../utils/walk.js';
 
 /**
  * Enumerate features and write to a destination file
- *
  * @param {{dest: string, dataFrom: string}} argv Arguments
  * @param {string} argv.dest Destination file name
  * @param {string?} argv.dataFrom Where the data is (leave blank for repository folder)
@@ -27,7 +26,6 @@ const main = async (argv: {
 
 /**
  * Enumerate compat data features
- *
  * @param {string?} dataFrom Where to get the data from (leave blank for repository folder)
  * @returns {string[]} A list of features
  */

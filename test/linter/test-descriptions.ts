@@ -15,7 +15,6 @@ type DescriptionError = {
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
- *
  * @param {string} ruleName The name of the error
  * @param {string} path The feature path
  * @param {CompatStatement} compat The compat data to test
@@ -42,7 +41,6 @@ const checkDescription = (
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
- *
  * @param {CompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @param {DescriptionError[]} errors The array of errors to push to
@@ -100,7 +98,6 @@ const processApiData = (
 
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
- *
  * @param {CompatStatement} data The data to test
  * @param {string} category The feature category
  * @param {string} path The path of the feature
@@ -126,7 +123,6 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   *
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */

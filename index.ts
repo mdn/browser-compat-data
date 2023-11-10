@@ -15,7 +15,6 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more directories passed as arguments.
- *
  * @param {string[]} dirs The directories to load
  * @returns {object} All of the browser compatibility data
  */
@@ -60,6 +59,7 @@ export default (await load(
   'javascript',
   'mathml',
   'svg',
+  'webassembly',
   'webdriver',
   'webextensions',
 )) as CompatData;
