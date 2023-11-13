@@ -903,6 +903,40 @@
             }
           }
         },
+        "or_syntax": {
+          "__compat": {
+            "description": "<code>or</code> syntax from Media Queries Level 4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#testing_for_multiple_features_with_or",
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "orientation": {
           "__compat": {
             "description": "<code>orientation</code> media feature",
@@ -1222,14 +1256,14 @@
             "support": {
               "chrome": {
                 "version_added": "85",
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>.",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
-                ]
+                ],
+                "impl_url": "https://crbug.com/1051189"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1250,7 +1284,7 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>."
+                "impl_url": "https://crbug.com/1051189"
               }
             },
             "status": {
@@ -1304,15 +1338,7 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency",
             "support": {
               "chrome": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "impl_url": "https://crbug.com/1424879"
+                "version_added": "118"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1352,7 +1378,7 @@
         "range_syntax": {
           "__compat": {
             "description": "Range syntax from Media Queries Level 4",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#syntax_improvements_in_level_4",
             "support": {
               "chrome": {
                 "version_added": "104"
@@ -1364,8 +1390,8 @@
                   "version_added": "102"
                 },
                 {
-                  "partial_implementation": true,
                   "version_added": "63",
+                  "partial_implementation": true,
                   "notes": "Only supports range notations where the feature name comes before any value <code>(width &#62; 500px)</code>"
                 }
               ],
@@ -1408,8 +1434,8 @@
                   "version_added": "8"
                 },
                 {
-                  "partial_implementation": true,
                   "version_added": "3.5",
+                  "partial_implementation": true,
                   "notes": "Supports <a href='https://developer.mozilla.org/docs/Web/CSS/integer'><code>&lt;integer&gt;</code></a> values only."
                 }
               ],
@@ -1457,8 +1483,7 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#scripting",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/489957'>bug 489957</a>."
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1470,12 +1495,8 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "17"
               },

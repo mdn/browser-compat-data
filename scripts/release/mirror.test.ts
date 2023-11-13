@@ -142,16 +142,20 @@ describe('mirror', () => {
         const support = {
           chrome: {
             version_added: '65',
-            notes:
+            notes: [
               'Before Chrome 70, this method always returned <code>true</code> even if the webcam was not connected. Since version 70, this method correctly returns the webcam state.',
+              'Google Chrome will always use the default webcam.',
+            ],
           },
         };
 
         const mirrored = mirrorSupport('opera', support);
         assert.deepEqual(mirrored, {
           version_added: '52',
-          notes:
+          notes: [
             'Before Opera 57, this method always returned <code>true</code> even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
+            'Opera will always use the default webcam.',
+          ],
         });
       });
 

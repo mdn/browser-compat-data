@@ -146,20 +146,9 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": [
-                {
-                  "version_added": "16.2"
-                },
-                {
-                  "version_added": "15",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "CSS color-mix()"
-                    }
-                  ]
-                }
-              ],
+              "safari": {
+                "version_added": "16.2"
+              },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
@@ -497,6 +486,42 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "light-dark": {
+          "__compat": {
+            "description": "<code>light-dark()</code>",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#light-dark",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/1490618"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "120"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/262914"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -1024,6 +1049,51 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "accentcolor_accentcolortext": {
+            "__compat": {
+              "description": "<code>AccentColor</code> and <code>AccentColorText</code>",
+              "spec_url": [
+                "https://drafts.csswg.org/css-color/#valdef-system-color-accentcolor",
+                "https://drafts.csswg.org/css-color/#valdef-system-color-accentcolortext"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "115",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "103"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.5",
+                  "notes": "Only supports a fallback: The native color when accent colour (in macOS' appearance panel) is set to 'multicolour'. On iOS falls back to the blue accent colour"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           },
           "mark_marktext_buttonborder": {

@@ -59,7 +59,10 @@
               },
               "edge": {
                 "version_added": "14",
-                "notes": "This property is required."
+                "notes": [
+                  "Available for use in Manifest V2 only.",
+                  "Before Edge 79, this property was required."
+                ]
               },
               "firefox": {
                 "version_added": "48",
@@ -84,14 +87,14 @@
               ],
               "safari_ios": [
                 {
-                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code> or <code>service_worker</code>.",
+                  "version_added": "15.4",
                   "partial_implementation": true,
-                  "version_added": "15.4"
+                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code> or <code>service_worker</code>."
                 },
                 {
-                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code>.",
+                  "version_added": "15",
                   "partial_implementation": true,
-                  "version_added": "15"
+                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code>."
                 }
               ]
             }

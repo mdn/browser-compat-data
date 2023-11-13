@@ -11,12 +11,12 @@
               },
               "edge": "mirror",
               "firefox": {
-                "notes": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID.",
-                "version_added": "45"
+                "version_added": "45",
+                "notes": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
               },
               "firefox_android": {
-                "notes": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID.",
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Before version 54, 'id' was the add-on's internal UUID, not the add-on ID."
               },
               "opera": "mirror",
               "safari": {
@@ -24,6 +24,44 @@
               },
               "safari_ios": {
                 "version_added": "15"
+              }
+            }
+          },
+          "documentId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "106"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "documentLifecycle": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "106"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -50,11 +88,11 @@
               }
             }
           },
-          "tlsChannelId": {
+          "id": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "32"
+                  "version_added": "26"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -63,6 +101,69 @@
                 "firefox_android": {
                   "version_added": "48"
                 },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "origin": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "80"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "tab": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "tlsChannelId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "32"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
                   "version_added": false
@@ -370,16 +471,17 @@
                 "version_added": "50"
               },
               "firefox_android": {
-                "version_added": "68"
+                "version_added": false,
+                "notes": "Only available to privileged extensions in <a href='https://mozilla.github.io/geckoview/'>GeckoView</a> 68 and later. See the <a href='https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/web-extensions.html'>GeckoView Docs</a> for additional details."
               },
               "opera": "mirror",
               "safari": {
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
               },
               "safari_ios": {
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari.",
-                "version_added": "15"
+                "version_added": "15",
+                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
               }
             }
           }
@@ -393,12 +495,12 @@
               },
               "edge": "mirror",
               "firefox": {
-                "notes": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>.",
-                "version_added": "45"
+                "version_added": "45",
+                "notes": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
               },
               "firefox_android": {
-                "notes": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>.",
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "If this is called from a page that is part of a private browsing window, such as a sidebar in a private window or a popup opened from a private window, then it will always return <code>null</code>."
               },
               "opera": "mirror",
               "safari": {
@@ -572,8 +674,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/lastError",
             "support": {
               "chrome": {
-                "notes": "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property.",
-                "version_added": true
+                "version_added": true,
+                "notes": "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property."
               },
               "edge": "mirror",
               "firefox": {
@@ -584,12 +686,12 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>lastError</code> is only set if a callback is used. <code>Promise</code> results that fail will be rejected with an <code>Error</code> object.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>lastError</code> is only set if a callback is used. <code>Promise</code> results that fail will be rejected with an <code>Error</code> object."
               },
               "safari_ios": {
-                "notes": "<code>lastError</code> is only set if a callback is used. <code>Promise</code> results that fail will be rejected with an <code>Error</code> object.",
-                "version_added": "15"
+                "version_added": "15",
+                "notes": "<code>lastError</code> is only set if a callback is used. <code>Promise</code> results that fail will be rejected with an <code>Error</code> object."
               }
             }
           }
@@ -667,8 +769,8 @@
               },
               "edge": "mirror",
               "firefox": {
-                "notes": "Before version 55, this event is not triggered for temporarily installed add-ons.",
-                "version_added": "52"
+                "version_added": "52",
+                "notes": "Before version 55, this event is not triggered for temporarily installed add-ons."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -1117,16 +1219,17 @@
                 "version_added": "50"
               },
               "firefox_android": {
-                "version_added": "68"
+                "version_added": false,
+                "notes": "Only available to privileged extensions in <a href='https://mozilla.github.io/geckoview/'>GeckoView</a> 68 and later. See the <a href='https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/web-extensions.html'>GeckoView Docs</a> for additional details."
               },
               "opera": "mirror",
               "safari": {
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
               },
               "safari_ios": {
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari.",
-                "version_added": "15"
+                "version_added": "15",
+                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
               }
             }
           }
@@ -1171,14 +1274,14 @@
               ],
               "opera": "mirror",
               "safari": {
-                "notes": "API exists, but has no effect.",
+                "version_added": "14",
                 "partial_implementation": true,
-                "version_added": "14"
+                "notes": "API exists, but has no effect."
               },
               "safari_ios": {
-                "notes": "API exists, but has no effect.",
+                "version_added": "15",
                 "partial_implementation": true,
-                "version_added": "15"
+                "notes": "API exists, but has no effect."
               }
             }
           }

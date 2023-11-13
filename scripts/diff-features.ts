@@ -34,7 +34,7 @@ const main = (opts: {
 
 /**
  * Compare two references and get feature diff
- * @param {{ref1: string?, ref2: string?, github: boolean}} opts Options
+ * @param {{ref1: string | null, ref2: string | null, github: boolean}} opts Options
  * @param {string?} opts.ref1 First reference to compare
  * @param {string?} opts.ref2 Second reference to compare
  * @param {boolean} opts.github Whether to obtain artifacts from GitHub
@@ -172,7 +172,9 @@ const enumerateFeatures = (ref = 'HEAD'): string[] => {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(`ts-node ./scripts/enumerate-features.ts --data-from=${worktree}`);
+    execSync(
+      `node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts --data-from=${worktree}`,
+    );
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {

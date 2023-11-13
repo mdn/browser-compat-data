@@ -46,26 +46,12 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "103",
-              "notes": "Supported in <a href='https://developer.chrome.com/blog/early-hints/'>HTTP/2 and later for preconnect and preload</a>."
+              "version_added": "103"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "102",
-              "notes": "Supported in HTTP1.0 and later for preconnect.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "network.early-hints.enabled",
-                  "value_to_set": "true"
-                },
-                {
-                  "type": "preference",
-                  "name": "network.early-hints.preconnect.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "120"
             },
             "ie": {
               "version_added": false
@@ -73,14 +59,77 @@
             "oculus": "mirror",
             "opera": "mirror",
             "safari": {
-              "version_added": "preview",
-              "notes": "Supported in HTTP/2 and later for preconnect."
+              "version_added": "17"
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "preconnect": {
+          "__compat": {
+            "description": "<code>rel=preconnect</code>",
+            "support": {
+              "chrome": {
+                "version_added": "103"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "120"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "17",
+                "notes": "Supported in HTTP/2 and later only."
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "preload": {
+          "__compat": {
+            "description": "<code>rel=preload</code>",
+            "support": {
+              "chrome": {
+                "version_added": "103"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "102",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "network.early-hints.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
