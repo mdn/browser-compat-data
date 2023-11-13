@@ -955,6 +955,7 @@
       },
       "credentialless": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/credentialless",
           "support": {
             "chrome": {
               "version_added": "110"
@@ -2027,6 +2028,7 @@
       },
       "getScreenDetails": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/getScreenDetails",
           "spec_url": "https://w3c.github.io/window-management/#api-window-getScreenDetails-method",
           "support": {
             "chrome": {
@@ -2331,6 +2333,7 @@
       },
       "launchQueue": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/launchQueue",
           "spec_url": "https://wicg.github.io/web-app-launch/#launchqueue-interface",
           "support": {
             "chrome": {
@@ -2829,6 +2832,43 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Moved relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100",
+                "notes": "Without the <code>window-management</code> permission, multi-screen coordinates are used, but windows are clamped to their existing displays."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1",
+                "notes": "Multi-screen coordinates are used, but windows are clamped to their existing displays."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "mozInnerScreenX": {
@@ -2906,6 +2946,9 @@
               "version_added": "1"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.38"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -3285,7 +3328,7 @@
                 "version_added": "≤12.1"
               },
               "safari": {
-                "version_added": false
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -3331,6 +3374,42 @@
               "experimental": false,
               "standard_track": false,
               "deprecated": true
+            }
+          }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Opened relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100",
+                "notes": "Without the <code>window-management</code> permission, multi-screen coordinates are used, but windows are clamped to their existing displays."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
@@ -3466,6 +3545,7 @@
       },
       "originAgentCluster": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster",
           "spec_url": "https://html.spec.whatwg.org/multipage/origin.html#origin-keyed-agent-clusters",
           "support": {
             "chrome": {
@@ -4063,6 +4143,7 @@
       },
       "queryLocalFonts": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/queryLocalFonts",
           "spec_url": "https://wicg.github.io/local-font-access/#dom-window-querylocalfonts",
           "support": {
             "chrome": {
@@ -4586,6 +4667,41 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "screenTop": {
@@ -4625,6 +4741,41 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -4667,6 +4818,41 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "screenY": {
@@ -4707,6 +4893,41 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "relative-multi-screen": {
+          "__compat": {
+            "description": "Relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
+            "support": {
+              "chrome": {
+                "version_added": "100"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1",
+                "partial_implementation": true,
+                "notes": "Coordinate origin used is inconsistent/unreliable."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

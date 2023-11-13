@@ -1,5 +1,212 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.3.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.30)
+
+November 10, 2023
+
+### Removals
+
+- `api.RTCRtpContributingSource` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpContributingSource.audioLevel` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpContributingSource.source` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpContributingSource.timestamp` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `css.properties.text-underline-position.left_right` ([#21022](https://github.com/mdn/browser-compat-data/pull/21022))
+
+### Additions
+
+- `api.RTCRtpReceiver.getContributingSources.audioLevel` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpReceiver.getContributingSources.rtpTimestamp` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpReceiver.getContributingSources.source` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `api.RTCRtpReceiver.getContributingSources.timestamp` ([#19582](https://github.com/mdn/browser-compat-data/pull/19582))
+- `css.properties.alignment-baseline` ([#21040](https://github.com/mdn/browser-compat-data/pull/21040))
+- `css.properties.baseline-shift` ([#21041](https://github.com/mdn/browser-compat-data/pull/21041))
+- `css.properties.break-after.always` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.auto` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.avoid` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.avoid-column` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.avoid-page` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.column` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.left` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.page` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.recto` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.right` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-after.verso` ([#21017](https://github.com/mdn/browser-compat-data/pull/21017))
+- `css.properties.break-before.always` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.auto` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.avoid` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.avoid-column` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.avoid-page` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.column` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.left` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.page` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.recto` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.right` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-before.verso` ([#21016](https://github.com/mdn/browser-compat-data/pull/21016))
+- `css.properties.break-inside.auto` ([#21018](https://github.com/mdn/browser-compat-data/pull/21018))
+- `css.properties.break-inside.avoid` ([#21018](https://github.com/mdn/browser-compat-data/pull/21018))
+- `css.properties.break-inside.avoid-column` ([#21018](https://github.com/mdn/browser-compat-data/pull/21018))
+- `css.properties.break-inside.avoid-page` ([#21018](https://github.com/mdn/browser-compat-data/pull/21018))
+- `css.properties.color-interpolation` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.color-interpolation-filters` ([#21045](https://github.com/mdn/browser-compat-data/pull/21045))
+- `css.properties.cx` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.cy` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.d` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.dominant-baseline` ([#21046](https://github.com/mdn/browser-compat-data/pull/21046))
+- `css.properties.fill` ([#21049](https://github.com/mdn/browser-compat-data/pull/21049))
+- `css.properties.fill-opacity` ([#21047](https://github.com/mdn/browser-compat-data/pull/21047))
+- `css.properties.fill-rule` ([#21048](https://github.com/mdn/browser-compat-data/pull/21048))
+- `css.properties.flood-color` ([#21050](https://github.com/mdn/browser-compat-data/pull/21050))
+- `css.properties.flood-opacity` ([#21051](https://github.com/mdn/browser-compat-data/pull/21051))
+- `css.properties.glyph-orientation-vertical` ([#21052](https://github.com/mdn/browser-compat-data/pull/21052))
+- `css.properties.grid-column-gap` ([#21053](https://github.com/mdn/browser-compat-data/pull/21053))
+- `css.properties.grid-gap` ([#21055](https://github.com/mdn/browser-compat-data/pull/21055))
+- `css.properties.grid-row-gap` ([#21054](https://github.com/mdn/browser-compat-data/pull/21054))
+- `css.properties.image-rendering.smooth` ([#21020](https://github.com/mdn/browser-compat-data/pull/21020))
+- `css.properties.lighting-color` ([#21056](https://github.com/mdn/browser-compat-data/pull/21056))
+- `css.properties.marker` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.marker-end` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.marker-mid` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.marker-start` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.r` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.rx` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.ry` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.shape-rendering` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.speak` ([#21057](https://github.com/mdn/browser-compat-data/pull/21057))
+- `css.properties.stroke` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-color` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-dasharray` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-dashoffset` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-linecap` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-linejoin` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-miterlimit` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-opacity` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.stroke-width` ([#21059](https://github.com/mdn/browser-compat-data/pull/21059))
+- `css.properties.text-anchor` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.text-underline-position.left` ([#21022](https://github.com/mdn/browser-compat-data/pull/21022))
+- `css.properties.text-underline-position.right` ([#21022](https://github.com/mdn/browser-compat-data/pull/21022))
+- `css.properties.vector-effect` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.word-wrap` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.x` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `css.properties.y` ([#21043](https://github.com/mdn/browser-compat-data/pull/21043))
+- `http.status.103.preconnect` ([#21083](https://github.com/mdn/browser-compat-data/pull/21083))
+- `http.status.103.preload` ([#21083](https://github.com/mdn/browser-compat-data/pull/21083))
+
+### Statistics
+
+- 9 contributors have changed 78 files with 2,956 additions and 291 deletions in 39 commits ([`v5.3.29...v5.3.30`](https://github.com/mdn/browser-compat-data/compare/v5.3.29...v5.3.30))
+- 15,176 total features
+- 1,042 total contributors
+- 4,630 total stargazers
+
+## [v5.3.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.29)
+
+November 7, 2023
+
+### Removals
+
+- `api.RTCIceServer` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.credential` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.credentialType` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.url` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.urls` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCIceServer.username` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+
+### Additions
+
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.credential_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.credentialType_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.url_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.urls_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.RTCPeerConnection.RTCPeerConnection.configuration_iceServers_parameter.username_parameter` ([#19577](https://github.com/mdn/browser-compat-data/pull/19577))
+- `api.Screen.availLeft.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.availTop.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.left.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Screen.top.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.moveTo.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.open.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenLeft.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenTop.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenX.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `api.Window.screenY.relative-multi-screen` ([#21123](https://github.com/mdn/browser-compat-data/pull/21123))
+- `browsers.chrome_android.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `browsers.chrome.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `browsers.deno.releases.1.38` ([#21144](https://github.com/mdn/browser-compat-data/pull/21144))
+- `browsers.webview_android.releases.122` ([#21137](https://github.com/mdn/browser-compat-data/pull/21137))
+- `css.properties.color-adjust` ([#21044](https://github.com/mdn/browser-compat-data/pull/21044))
+- `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat.options_parameter.options_calendar_parameter` ([#21143](https://github.com/mdn/browser-compat-data/pull/21143))
+- `javascript.builtins.Intl.DateTimeFormat.DateTimeFormat.options_parameter.options_numberingSystem_parameter` ([#21143](https://github.com/mdn/browser-compat-data/pull/21143))
+
+### Statistics
+
+- 14 contributors have changed 36 files with 1,236 additions and 1,011 deletions in 35 commits ([`v5.3.28...v5.3.29`](https://github.com/mdn/browser-compat-data/compare/v5.3.28...v5.3.29))
+- 15,105 total features
+- 1,040 total contributors
+- 4,631 total stargazers
+
+## [v5.3.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.28)
+
+October 31, 2023
+
+### Additions
+
+- `api.Counter` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.identifier` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.listStyle` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Counter.separator` ([#21037](https://github.com/mdn/browser-compat-data/pull/21037))
+- `api.Document.browsingTopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.fetch.init_browsingTopics_parameter` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.HTMLIFrameElement.browsingTopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.MediaController` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.buffered` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.currentTime` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.defaultPlaybackRate` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.duration` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.MediaController` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.muted` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.pause` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.paused` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.play` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.playbackRate` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.playbackState` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.played` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.seekable` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.unpause` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.MediaController.volume` ([#21039](https://github.com/mdn/browser-compat-data/pull/21039))
+- `api.Rect` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.bottom` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.left` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.right` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Rect.top` ([#21038](https://github.com/mdn/browser-compat-data/pull/21038))
+- `api.Request.Request.init_browsingTopics_parameter` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `api.RGBColor` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.blue` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.green` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.RGBColor.red` ([#21036](https://github.com/mdn/browser-compat-data/pull/21036))
+- `api.WebGLTimerQueryEXT` ([#21035](https://github.com/mdn/browser-compat-data/pull/21035))
+- `browsers.chrome_android.releases.120` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.chrome_android.releases.121` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.firefox_android.releases.122` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.firefox.releases.122` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.119` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.120` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `browsers.webview_android.releases.121` ([#21113](https://github.com/mdn/browser-compat-data/pull/21113))
+- `css.properties.-webkit-line-clamp.none` ([#21014](https://github.com/mdn/browser-compat-data/pull/21014))
+- `css.properties.clip-rule` ([#21042](https://github.com/mdn/browser-compat-data/pull/21042))
+- `css.properties.font-variant.historical-forms` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `css.properties.font-variant.sub` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `css.properties.font-variant.super` ([#21019](https://github.com/mdn/browser-compat-data/pull/21019))
+- `html.elements.iframe.browsingtopics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Observe-Browsing-Topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Permissions-Policy.browsing-topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+- `http.headers.Sec-Browsing-Topics` ([#20457](https://github.com/mdn/browser-compat-data/pull/20457))
+
+### Statistics
+
+- 13 contributors have changed 289 files with 4,660 additions and 2,546 deletions in 32 commits ([`v5.3.27...v5.3.28`](https://github.com/mdn/browser-compat-data/compare/v5.3.27...v5.3.28))
+- 15,093 total features
+- 1,036 total contributors
+- 4,627 total stargazers
+
 ## [v5.3.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.27)
 
 October 27, 2023
