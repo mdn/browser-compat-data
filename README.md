@@ -81,7 +81,7 @@ const support = bcd['api']['Document']['body']['__compat'];
 
 ## Package contents
 
-The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 12,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
+The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 15,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
 
 The definitive description of the format used to represent individual features and browsers is the [schema definitions](schemas/).
 
@@ -200,7 +200,6 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
 - [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
 - [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
-- [Hexo Plugin: hexo-compat-report](https://github.com/TimDaub/hexo-compat-report) - Allows to embed MDN's compatibility table in a hexo blog post.
 
 ## Acknowledgments
 
