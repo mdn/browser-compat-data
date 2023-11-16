@@ -1237,9 +1237,9 @@
             }
           }
         },
-        "import_assertions": {
+        "import_attribues_assert": {
           "__compat": {
-            "description": "Import assertions",
+            "description": "Import attributes (`assert` syntax)",
             "support": {
               "chrome": {
                 "version_added": "91"
@@ -1250,8 +1250,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1736059"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1268,7 +1267,7 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "15"
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1277,7 +1276,7 @@
             "status": {
               "experimental": false,
               "standard_track": false,
-              "deprecated": false
+              "deprecated": true
             }
           },
           "type_json": {
@@ -1293,8 +1292,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1736059"
+                  "version_added": false
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -1317,7 +1315,7 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": "15"
+                  "version_added": false
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1326,6 +1324,87 @@
               "status": {
                 "experimental": false,
                 "standard_track": false,
+                "deprecated": true
+              }
+            }
+          }
+        },
+        "import_attributes": {
+          "__compat": {
+            "description": "Import attributes",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/v8/13856"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.37"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1736059"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "21.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "type_json": {
+            "__compat": {
+              "description": "import with <code>{type: 'json'}</code>",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.37"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1736059"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "21.0.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
                 "deprecated": false
               }
             }
