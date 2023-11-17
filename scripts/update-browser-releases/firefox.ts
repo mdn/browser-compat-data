@@ -22,7 +22,7 @@ const getFirefoxReleaseNotesURL = async (version) => {
 };
 
 /**
- * updateFirefoxFile - Update the json file listing the browser version of a chromium entry
+ * updateFirefoxFile - Update the json file listing the browser version of a firefox entry
  * @param {object} options The list of options for this type of chromiums.
  * @returns {string} The log of what has been generated (empty if nothing)
  */

@@ -5,6 +5,7 @@ import yargs from 'yargs';
 import { updateChromiumReleases } from './chrome.js';
 import { updateEdgeReleases } from './edge.js';
 import { updateFirefoxReleases } from './firefox.js';
+import { updateSafariReleases } from './safari.js';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: npm run update-browser-releases -- (flags)')
@@ -25,6 +26,11 @@ const argv = yargs(process.argv.slice(2))
   })
   .option('firefox', {
     describe: 'Update Mozilla Firefox',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
+  .option('safari', {
+    describe: 'Update Apple Safari',
     type: 'boolean',
     group: 'Engine selection:',
   })
@@ -59,6 +65,7 @@ const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
 const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
+const updateSafari = argv['safari'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
@@ -150,6 +157,18 @@ const options = {
     firefoxScheduleURL:
       'https://whattrainisitnow.com/api/release/schedule/?version=',
   },
+  safari_desktop: {
+    browserName: 'Safari for Desktop',
+    bcdFile: './browsers/safari.json',
+    bcdBrowserName: 'safari',
+    releaseNoteJSON: 'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+  },
+  safari_ios: {
+    browserName: 'Safari for iOS',
+    bcdFile: './browsers/safari_ios.json',
+    bcdBrowserName: 'safari_ios',
+    releaseNoteJSON: 'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+  },
 };
 
 let result = '';
@@ -181,6 +200,16 @@ if (updateFirefox && updateDesktop) {
 
 if (updateFirefox && updateMobile) {
   const add = await updateFirefoxReleases(options.firefox_android);
+  result += (result && add ? '\n' : '') + add;
+}
+
+if (updateSafari && updateDesktop) {
+  const add = await updateSafariReleases(options.safari_desktop);
+  result += (result && add ? '\n' : '') + add;
+}
+
+if (updateSafari && updateMobile) {
+  const add = await updateSafariReleases(options.safari_ios);
   result += (result && add ? '\n' : '') + add;
 }
 

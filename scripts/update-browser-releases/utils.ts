@@ -12,6 +12,7 @@ import chalk from 'chalk-template';
  * @param {string} engine name of the engine
  * @param {string} releaseDate new release date
  * @param {string} releaseNotesURL url of the release notes
+ * @param {string} engineVersion the version of the engine
  * @returns {string} Text describing what has has been added
  */
 export const newBrowserEntry = (
@@ -22,6 +23,7 @@ export const newBrowserEntry = (
   engine,
   releaseDate,
   releaseNotesURL,
+  engineVersion = null,
 ) => {
   const release = (json.browsers[browser].releases[version] = new Object());
   if (releaseDate) {
@@ -32,7 +34,9 @@ export const newBrowserEntry = (
   }
   release['status'] = status;
   release['engine'] = engine;
-  release['engine_version'] = version.toString();
+  release['engine_version'] = engineVersion
+    ? engineVersion
+    : version.toString();
   return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
 
@@ -44,6 +48,7 @@ export const newBrowserEntry = (
  * @param {string} releaseDate new release date
  * @param {string} status new status
  * @param {string} releaseNotesURL url of the release notes
+ * @param {string} engineVersion the version of the engine
  * @returns {string} Text describing what has has been updated
  */
 export const updateBrowserEntry = (
@@ -53,6 +58,7 @@ export const updateBrowserEntry = (
   releaseDate,
   status,
   releaseNotesURL,
+  engineVersion,
 ) => {
   const entry = json.browsers[browser].releases[version];
   let result = '';
@@ -67,6 +73,11 @@ export const updateBrowserEntry = (
   if (releaseNotesURL && entry['release_notes'] !== releaseNotesURL) {
     result += chalk`{cyan \n- New release notes for {bold ${browser} ${version}}: {bold ${releaseNotesURL}}, previously ${entry['release_notes']}.}`;
     entry['release_notes'] = releaseNotesURL;
+  }
+
+  if (engineVersion && entry['engine_version'] != engineVersion) {
+    result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
+    entry['engineVersion'] = engineVersion;
   }
 
   return result;
