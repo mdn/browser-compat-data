@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   update:
+    if: github.repository == 'mdn/browser-compat-data'
     name: Update browser releases
     runs-on: ubuntu-latest
     env:
