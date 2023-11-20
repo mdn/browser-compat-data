@@ -1,5 +1,41 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.4.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.0)
+
+November 18, 2023
+
+### Notable changes
+
+A new `tags` property has been added to the schema! See https://github.com/mdn/browser-compat-data/blob/main/docs/data-guidelines/tags.md for more details on feature tagging.
+
+### Additions
+
+- `api.CloseWatcher` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.cancel_event` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.close` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.close_event` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.CloseWatcher` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.destroy` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.CloseWatcher.requestClose` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.GPUSupportedLimits.maxBindGroupsPlusVertexBuffers` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.HTMLDetailsElement.name` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.HTMLSelectElement.showPicker` ([#20852](https://github.com/mdn/browser-compat-data/pull/20852))
+- `api.IntersectionObserver.scrollMargin` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.Navigator.login` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.NavigatorLogin` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.NavigatorLogin.setStatus` ([#21148](https://github.com/mdn/browser-compat-data/pull/21148))
+- `api.WebKitPoint.WebKitPoint` ([#21239](https://github.com/mdn/browser-compat-data/pull/21239))
+- `browsers.safari_ios.releases.17.2` ([#21237](https://github.com/mdn/browser-compat-data/pull/21237))
+- `browsers.safari.releases.17.2` ([#21236](https://github.com/mdn/browser-compat-data/pull/21236))
+- `browsers.samsunginternet_android.releases.23.0` ([#21238](https://github.com/mdn/browser-compat-data/pull/21238))
+
+### Statistics
+
+- 9 contributors have changed 48 files with 936 additions and 115 deletions in 26 commits ([`v5.3.31...v5.4.0`](https://github.com/mdn/browser-compat-data/compare/v5.3.31...v5.4.0))
+- 15,202 total features
+- 1,047 total contributors
+- 4,636 total stargazers
+
 ## [v5.3.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.3.31)
 
 November 14, 2023
