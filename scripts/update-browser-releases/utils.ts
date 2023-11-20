@@ -23,7 +23,7 @@ export const newBrowserEntry = (
   engine,
   releaseDate,
   releaseNotesURL,
-  engineVersion = null,
+  engineVersion,
 ) => {
   const release = (json.browsers[browser].releases[version] = new Object());
   if (releaseDate) {
@@ -34,9 +34,9 @@ export const newBrowserEntry = (
   }
   release['status'] = status;
   release['engine'] = engine;
-  release['engine_version'] = engineVersion
-    ? engineVersion
-    : version.toString();
+  if (engineVersion) {
+    release['engine_version'] = engineVersion;
+  }
   return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
 
@@ -66,7 +66,7 @@ export const updateBrowserEntry = (
     result += chalk`{cyan \n- New status for {bold ${browser} ${version}}: {bold ${status}}, previously ${entry['status']}.}`;
     entry['status'] = status;
   }
-  if (entry['release_date'] !== releaseDate) {
+  if (releaseDate && entry['release_date'] !== releaseDate) {
     result += chalk`{cyan \n- New release date for {bold ${browser} ${version}}: {bold ${releaseDate}}, previously ${entry['release_date']}.}`;
     entry['release_date'] = releaseDate;
   }

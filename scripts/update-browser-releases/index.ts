@@ -60,16 +60,27 @@ const argv = yargs(process.argv.slice(2))
 // Read arguments
 const updateAllBrowsers =
   argv['all'] ||
-  !(argv['chrome'] || argv['webview'] || argv['firefox'] || argv['edge']);
+  !(
+    argv['chrome'] ||
+    argv['webview'] ||
+    argv['firefox'] ||
+    argv['edge'] ||
+    argv['safari']
+  );
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
 const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
+console.log('Safari:', updateSafari, argv['safari']);
+console.log('Firefox:', updateFirefox, argv['firefox']);
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
+  console.log('allDevices: ', updateAllDevices);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
+console.log('desktop: ', updateDesktop, argv['desktop']);
+
 
 const options = {
   chrome_desktop: {
@@ -161,13 +172,17 @@ const options = {
     browserName: 'Safari for Desktop',
     bcdFile: './browsers/safari.json',
     bcdBrowserName: 'safari',
-    releaseNoteJSON: 'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteJSON:
+      'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteURLBase: 'https://developer.apple.com',
   },
   safari_ios: {
     browserName: 'Safari for iOS',
     bcdFile: './browsers/safari_ios.json',
     bcdBrowserName: 'safari_ios',
-    releaseNoteJSON: 'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteJSON:
+      'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteURLBase: 'https://developer.apple.com',
   },
 };
 
@@ -204,11 +219,13 @@ if (updateFirefox && updateMobile) {
 }
 
 if (updateSafari && updateDesktop) {
+  console.log('Safari desktop');
   const add = await updateSafariReleases(options.safari_desktop);
   result += (result && add ? '\n' : '') + add;
 }
 
 if (updateSafari && updateMobile) {
+  console.log('Safari iOS');
   const add = await updateSafariReleases(options.safari_ios);
   result += (result && add ? '\n' : '') + add;
 }
