@@ -1,47 +1,40 @@
 {
-  "css": {
-    "properties": {
-      "mask-origin": {
+  "webassembly": {
+    "api": {
+      "Module": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask-origin",
-          "spec_url": "https://drafts.fxtf.org/css-masking/#the-mask-origin",
+          "mdn_url": "https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module",
+          "spec_url": "https://webassembly.github.io/spec/js-api/#modules",
           "support": {
-            "chrome": [
-              {
-                "version_added": "120"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "1"
-              }
-            ],
+            "chrome": {
+              "version_added": "57"
+            },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "16"
+            },
             "firefox": {
-              "version_added": "53"
+              "version_added": "52"
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "8.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": [
-              {
-                "version_added": "15.4"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "4"
-              }
-            ],
+            "safari": {
+              "version_added": "11"
+            },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "prefix": "-webkit-",
-              "version_added": "2"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -49,28 +42,37 @@
             "deprecated": false
           }
         },
-        "fill-box": {
+        "Module": {
           "__compat": {
-            "description": "<code>fill-box</code>",
+            "description": "<code>Module()</code> constructor",
+            "mdn_url": "https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/Module",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#dom-module-module",
             "support": {
               "chrome": {
-                "version_added": "120"
+                "version_added": "57"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "16"
+              },
               "firefox": {
-                "version_added": "53"
+                "version_added": "52"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
+              "nodejs": {
+                "version_added": "8.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/137293"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -83,71 +85,36 @@
             }
           }
         },
-        "non_standard_values": {
+        "customSections": {
           "__compat": {
-            "description": "Non-standard values <code>content</code>, <code>padding</code>, <code>border</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/customSections",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#dom-module-customsections",
             "support": {
               "chrome": {
-                "prefix": "-webkit-",
-                "version_added": "1"
+                "version_added": "57"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "16"
+              },
               "firefox": {
-                "version_added": false
+                "version_added": "52"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": [
-                {
-                  "version_added": "15.4"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "4"
-                }
-              ],
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": {
-                "prefix": "-webkit-",
-                "version_added": "2"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": false
-            }
-          }
-        },
-        "stroke-box": {
-          "__compat": {
-            "description": "<code>stroke-box</code>",
-            "support": {
-              "chrome": {
-                "version_added": "120"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "53"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
+              "nodejs": {
+                "version_added": "8.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/137293"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -160,28 +127,78 @@
             }
           }
         },
-        "view-box": {
+        "exports": {
           "__compat": {
-            "description": "<code>view-box</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/exports",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#dom-module-exports",
             "support": {
               "chrome": {
-                "version_added": "120"
+                "version_added": "57"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "16"
+              },
               "firefox": {
-                "version_added": "53"
+                "version_added": "52"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
+              "nodejs": {
+                "version_added": "8.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/137293"
+                "version_added": "11"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "imports": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/WebAssembly/JavaScript_interface/Module/imports",
+            "spec_url": "https://webassembly.github.io/spec/js-api/#dom-module-imports",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": {
+                "version_added": "16"
+              },
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "8.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

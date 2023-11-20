@@ -36,7 +36,7 @@ const propOrder = {
       'description',
       'mdn_url',
       'spec_url',
-      'matches',
+      'tags',
       'support',
       'status',
     ],
