@@ -16,13 +16,12 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
  * @returns {object} Data for the release
  */
 const extractReleaseData = (str) => {
-  console.log(str);
   // Note: \s is needed as some spaces in Apple source are non-breaking
   const result = /Released\s(.*)\s.*\sVersion\s(.*?)\s(beta\s)?\((.*)\)/.exec(
     str,
   );
   if (!result) {
-    console.log(chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`);
+    console.warn(chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`);
     return null;
   }
   return {
@@ -42,11 +41,10 @@ const extractReleaseData = (str) => {
 export const updateSafariReleases = async (options) => {
   let result = '';
   //
-  // Get the firefox.json from the local BCD
+  // Get the safari.json from the local BCD
   //
   const file = fs.readFileSync(`${options.bcdFile}`);
   const safariBCD = JSON.parse(file.toString());
-  console.log(safariBCD);
 
   //
   // Read JSON of release notes
@@ -91,20 +89,19 @@ export const updateSafariReleases = async (options) => {
       stableRelease = releaseData;
     } else {
       // Check old engine value (should not change, but let's check)
-      console.log(`'${releaseData.version}'`);
-      console.log(Number(releaseData.version) in safariBCD.browsers[options.bcdBrowserName].releases);
       if (
         !(releaseData.version in safariBCD.browsers[options.bcdBrowserName].releases)
       ) {
-        console.warn(
-          chalk`{yellow Old version ${releaseData.version} not found in BCD file}`,
-        );
+        if (Number(releaseData.version) > 15) { // We know that version past Safari 15 matches iOS versions too
+          console.warn(
+            chalk`{yellow Old version ${releaseData.version} not found in BCD file}`,
+          );
+        }
         continue;
       }
       const engineStored =
         safariBCD.browsers[options.bcdBrowserName].releases[releaseData.version]
           .engine_version;
-      console.log (`Detected: ${releaseData.engine}; Stored: ${engineStored}`);
       if (releaseData.engine !== engineStored) {
         // Differs!
         console.warn(
@@ -181,7 +178,7 @@ export const updateSafariReleases = async (options) => {
         safariBCD,
         options.bcdBrowserName,
         key,
-        entry.release_date,
+        entry['release_date'],
         'retired',
         '',
         '',

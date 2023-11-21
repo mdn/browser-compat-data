@@ -67,7 +67,6 @@ export const updateFirefoxReleases = async (options) => {
       const releasedFirefoxVersions = await firefoxVersions.json();
 
       // Extract the current stable version and its release date
-
       Object.entries(releasedFirefoxVersions).forEach(([key]) => {
         if (parseFloat(key) > stableRelease) {
           stableRelease = parseFloat(key);
@@ -90,6 +89,7 @@ export const updateFirefoxReleases = async (options) => {
         data[value].releaseDate,
         key,
         releaseNotesURL,
+        '',
       );
     } else {
       // New entry
@@ -101,6 +101,7 @@ export const updateFirefoxReleases = async (options) => {
         'Gecko',
         data[value].releaseDate,
         releaseNotesURL,
+        data[value].version,
       );
     }
   }
@@ -138,6 +139,7 @@ export const updateFirefoxReleases = async (options) => {
         entry.release_date,
         'esr',
         '',
+        '',
       );
     } else if (parseFloat(key) < stableRelease) {
       result += updateBrowserEntry(
@@ -147,6 +149,7 @@ export const updateFirefoxReleases = async (options) => {
         entry.release_date,
         'retired',
         '',
+        '',
       );
     }
   });
@@ -154,7 +157,7 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  const planned = stableRelease + 3;
+  const planned = Number(data[options.nightlyBranch].version) + 1;
   // Get the JSON for the planned version train
   const trainInfo = await fetch(`${options.firefoxScheduleURL}${planned}`);
   const train = await trainInfo.json();
@@ -167,6 +170,7 @@ export const updateFirefoxReleases = async (options) => {
       train.release.substring(0, 10),
       'planned',
       '',
+      '',
     );
   } else {
     // New entry
@@ -176,8 +180,9 @@ export const updateFirefoxReleases = async (options) => {
       planned,
       'planned',
       'Gecko',
-      train.release.substring(0, 10), // Remove the time part
+      train.release?.substring(0, 10), // Remove the time part
       await getFirefoxReleaseNotesURL(planned),
+      planned,
     );
   }
 

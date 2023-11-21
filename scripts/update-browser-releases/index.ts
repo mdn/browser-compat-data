@@ -72,15 +72,10 @@ const updateWebview = argv['webview'] || updateAllBrowsers;
 const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
-console.log('Safari:', updateSafari, argv['safari']);
-console.log('Firefox:', updateFirefox, argv['firefox']);
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
-  console.log('allDevices: ', updateAllDevices);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
-console.log('desktop: ', updateDesktop, argv['desktop']);
-
 
 const options = {
   chrome_desktop: {
@@ -219,13 +214,11 @@ if (updateFirefox && updateMobile) {
 }
 
 if (updateSafari && updateDesktop) {
-  console.log('Safari desktop');
   const add = await updateSafariReleases(options.safari_desktop);
   result += (result && add ? '\n' : '') + add;
 }
 
 if (updateSafari && updateMobile) {
-  console.log('Safari iOS');
   const add = await updateSafariReleases(options.safari_ios);
   result += (result && add ? '\n' : '') + add;
 }
