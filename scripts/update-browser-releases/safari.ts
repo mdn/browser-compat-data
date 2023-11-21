@@ -11,7 +11,7 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * extractReleaseData - Extract release info from string given by Apple
- * @param {string} str The string with release inforormation
+ * @param {string} str The string with release information
  *            E.g., Released September 18, 2023 — Version 17 (19616.1.27)
  * @returns {object} Data for the release
  */
@@ -29,15 +29,15 @@ const extractReleaseData = (str) => {
   return {
     date: new Date(`${result[1]} UTC`).toISOString().substring(0, 10),
     version: result[2],
-    beta: Boolean(result[3]),
-    engine: result[4].substring(2),
+    channel: result[3] ? 'beta' : 'retired',
+    engineVersion: result[4].substring(2),
     releaseNote: '',
   };
 };
 
 /**
  * updateSafariFile - Update the json file listing the browser version of a safari entry
- * @param {object} options The list of options for this type of chromiums.
+ * @param {object} options The list of options for this type of Safari.
  * @returns {string} The log of what has been generated (empty if nothing)
  */
 export const updateSafariReleases = async (options) => {
@@ -59,21 +59,20 @@ export const updateSafariReleases = async (options) => {
     return '';
   }
   const safariRelease = JSON.parse(await releaseNoteFile.text());
-
-  //
-  // Compute stable and beta release number
-  //
-  let stableRelease;
-  let betaRelease;
-
   const releases = safariRelease['references'];
+
+  //
+  // Collect release data from JSON
+  //
+  const releaseData = [];
   for (const id in releases) {
+    // Filter out data from "Technologies" overview page
     if (releases[id].kind !== 'article') {
       continue;
     }
-    const releaseData = extractReleaseData(releases[id].abstract[0].text);
+    const releaseDataEntry = extractReleaseData(releases[id].abstract[0].text);
 
-    if (!releaseData) {
+    if (!releaseDataEntry) {
       console.warn(
         chalk`{yellow Release string from Apple not understandable (${releases[id].abstract[0].text})}`,
       );
@@ -82,117 +81,61 @@ export const updateSafariReleases = async (options) => {
 
     // Compute release note
     if (releases[id].url) {
-      releaseData.releaseNote = `${options.releaseNoteURLBase}${releases[id].url}`;
+      releaseDataEntry.releaseNote = `${options.releaseNoteURLBase}${releases[id].url}`;
     } else {
-      releaseData.releaseNote = '';
+      releaseDataEntry.releaseNote = '';
+    }
+    // Don't use the date for beta, we only record release dates, not beta dates
+    if (releaseDataEntry.channel === 'beta') {
+      releaseDataEntry.date = '';
     }
 
-    if (releaseData.beta) {
-      betaRelease = releaseData;
-    } else if (!stableRelease || releaseData.version > stableRelease.version) {
-      stableRelease = releaseData;
-    } else {
-      // Check old engine value (should not change, but let's check)
-      if (
-        !(
-          releaseData.version in
-          safariBCD.browsers[options.bcdBrowserName].releases
-        )
-      ) {
-        if (Number(releaseData.version) > 15) {
-          // We know that version past Safari 15 matches iOS versions too
-          console.warn(
-            chalk`{yellow Old version ${releaseData.version} not found in BCD file}`,
-          );
-        }
-        continue;
-      }
-      const engineStored =
-        safariBCD.browsers[options.bcdBrowserName].releases[releaseData.version]
-          .engine_version;
-      if (releaseData.engine !== engineStored) {
-        // Differs!
-        console.warn(
-          chalk`{yellow Engine for ${releaseData.version} (${releaseData.engine}) doesn't match engine stored (${engineStored})}`,
-        );
-      }
+    releaseData.push(releaseDataEntry);
+  }
+
+  //
+  // Find current release
+  //
+  const dates = [];
+  releaseData.forEach((release) => {
+    if (release.channel !== 'beta') {
+      dates.push(release.date);
     }
-  }
+  });
+  const currentDate = dates.sort().pop();
+  releaseData.forEach((release) => {
+    if (release.date === currentDate) {
+      release.channel = 'current';
+    }
+  });
 
   //
-  // Update stable release
+  // Update from releaseData object to BCD
   //
-  if (
-    safariBCD.browsers[options.bcdBrowserName].releases[stableRelease.version]
-  ) {
-    result += updateBrowserEntry(
-      safariBCD,
-      options.bcdBrowserName,
-      stableRelease.version,
-      stableRelease.date,
-      'current',
-      stableRelease.releaseNote,
-      stableRelease.engineVersion,
-    );
-  } else {
-    result += newBrowserEntry(
-      safariBCD,
-      options.bcdBrowserName,
-      stableRelease.version,
-      'current',
-      'WebKit',
-      stableRelease.date,
-      stableRelease.releaseNote,
-      stableRelease.engineVersion,
-    );
-  }
-
-  //
-  // Update beta release
-  //
-  if (
-    safariBCD.browsers[options.bcdBrowserName].releases[betaRelease.version]
-  ) {
-    result += updateBrowserEntry(
-      safariBCD,
-      options.bcdBrowserName,
-      betaRelease.version,
-      '',
-      'beta',
-      '',
-      '',
-    );
-  } else {
-    result += newBrowserEntry(
-      safariBCD,
-      options.bcdBrowserName,
-      betaRelease.version,
-      'beta',
-      'WebKit',
-      '',
-      stableRelease.releaseNote,
-      '',
-    );
-  }
-
-  //
-  // Replace all old entries with 'retired'
-  //
-  Object.entries(safariBCD.browsers[options.bcdBrowserName].releases).forEach(
-    ([key, entry]) => {
-      if (parseFloat(key) < stableRelease) {
-        result += updateBrowserEntry(
-          safariBCD,
-          options.bcdBrowserName,
-          key,
-          entry['release_date'],
-          'retired',
-          '',
-          '',
-        );
-      }
-    },
-  );
+  releaseData.forEach((release) => {
+    if (safariBCD.browsers[options.bcdBrowserName].releases[release.version]) {
+      result += updateBrowserEntry(
+        safariBCD,
+        options.bcdBrowserName,
+        release.version,
+        release.date,
+        release.channel,
+        release.releaseNote,
+        release.engineVersion,
+      );
+    } else {
+      result += newBrowserEntry(
+        safariBCD,
+        options.bcdBrowserName,
+        release.version,
+        release.channel,
+        'WebKit',
+        release.date,
+        release.releaseNote,
+        release.engineVersion,
+      );
+    }
+  });
 
   //
   // Write the update browser's json to file

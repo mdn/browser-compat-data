@@ -77,7 +77,7 @@ export const updateBrowserEntry = (
 
   if (engineVersion && entry['engine_version'] != engineVersion) {
     result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
-    entry['engineVersion'] = engineVersion;
+    entry['engine_version'] = engineVersion;
   }
 
   return result;
