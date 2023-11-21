@@ -21,7 +21,9 @@ const extractReleaseData = (str) => {
     str,
   );
   if (!result) {
-    console.warn(chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`);
+    console.warn(
+      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`,
+    );
     return null;
   }
   return {
@@ -51,7 +53,9 @@ export const updateSafariReleases = async (options) => {
   //
   const releaseNoteFile = await fetch(`${options.releaseNoteJSON}`);
   if (releaseNoteFile.status !== 200) {
-    console.error( chalk`{red \nRelease note file not found at Apple (${options.releaseNoteJSON}).}`);
+    console.error(
+      chalk`{red \nRelease note file not found at Apple (${options.releaseNoteJSON}).}`,
+    );
     return '';
   }
   const safariRelease = JSON.parse(await releaseNoteFile.text());
@@ -90,9 +94,13 @@ export const updateSafariReleases = async (options) => {
     } else {
       // Check old engine value (should not change, but let's check)
       if (
-        !(releaseData.version in safariBCD.browsers[options.bcdBrowserName].releases)
+        !(
+          releaseData.version in
+          safariBCD.browsers[options.bcdBrowserName].releases
+        )
       ) {
-        if (Number(releaseData.version) > 15) { // We know that version past Safari 15 matches iOS versions too
+        if (Number(releaseData.version) > 15) {
+          // We know that version past Safari 15 matches iOS versions too
           console.warn(
             chalk`{yellow Old version ${releaseData.version} not found in BCD file}`,
           );
@@ -170,21 +178,21 @@ export const updateSafariReleases = async (options) => {
   //
   // Replace all old entries with 'retired'
   //
-  Object.entries(
-    safariBCD.browsers[options.bcdBrowserName].releases
-  ).forEach(([key, entry]) => {
-    if (parseFloat(key) < stableRelease) {
-      result += updateBrowserEntry(
-        safariBCD,
-        options.bcdBrowserName,
-        key,
-        entry['release_date'],
-        'retired',
-        '',
-        '',
-      );
-    }
-  });
+  Object.entries(safariBCD.browsers[options.bcdBrowserName].releases).forEach(
+    ([key, entry]) => {
+      if (parseFloat(key) < stableRelease) {
+        result += updateBrowserEntry(
+          safariBCD,
+          options.bcdBrowserName,
+          key,
+          entry['release_date'],
+          'retired',
+          '',
+          '',
+        );
+      }
+    },
+  );
 
   //
   // Write the update browser's json to file
