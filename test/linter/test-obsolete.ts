@@ -23,7 +23,7 @@ const categoriesToCheck = [
   // 'svg',
   'webassembly',
   // 'webdriver',
-  // 'webextensions'
+  'webextensions',
 ];
 
 /**
