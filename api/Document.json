@@ -4398,7 +4398,10 @@
           "support": {
             "chrome": [
               {
-                "version_added": "113",
+                "version_added": "117"
+              },
+              {
+                "version_added": "115",
                 "partial_implementation": true,
                 "notes": "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>."
               },
@@ -4413,12 +4416,31 @@
                 ]
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": [
+              {
+                "version_added": "120"
+              },
+              {
+                "version_added": "115",
+                "partial_implementation": true,
+                "notes": "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>."
+              },
+              {
+                "version_added": "78",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "edge": {
               "version_added": "85"
             },
             "firefox": {
-              "version_added": "65"
+              "version_added": "117"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4428,7 +4450,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "11.1"
+              "version_added": "11.1",
+              "notes": "Does not support the <code>navigator.permissions.query({name: 'storage-access'})</code>."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -6115,6 +6138,9 @@
           "support": {
             "chrome": [
               {
+                "version_added": "117"
+              },
+              {
                 "version_added": "113",
                 "partial_implementation": true,
                 "notes": [
@@ -6134,7 +6160,30 @@
                 "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": [
+              {
+                "version_added": "120"
+              },
+              {
+                "version_added": "113",
+                "partial_implementation": true,
+                "notes": [
+                  "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>.",
+                  "Client-side storage access granted per-frame, as per spec updates <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>."
+                ]
+              },
+              {
+                "version_added": "78",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#storage-access-api",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Client-side storage access granted per-page (<a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works'>see explanation</a>)"
+              }
+            ],
             "edge": [
               {
                 "version_added": "113",
