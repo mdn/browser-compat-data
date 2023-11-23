@@ -113,27 +113,31 @@ export const updateSafariReleases = async (options) => {
   // Update from releaseData object to BCD
   //
   releaseData.forEach((release) => {
-    if (safariBCD.browsers[options.bcdBrowserName].releases[release.version]) {
-      result += updateBrowserEntry(
-        safariBCD,
-        options.bcdBrowserName,
-        release.version,
-        release.date,
-        release.channel,
-        release.releaseNote,
-        release.engineVersion,
-      );
-    } else {
-      result += newBrowserEntry(
-        safariBCD,
-        options.bcdBrowserName,
-        release.version,
-        release.channel,
-        'WebKit',
-        release.date,
-        release.releaseNote,
-        release.engineVersion,
-      );
+    if (!options.skippedReleases.includes(release.version)) {
+      if (
+        safariBCD.browsers[options.bcdBrowserName].releases[release.version]
+      ) {
+        result += updateBrowserEntry(
+          safariBCD,
+          options.bcdBrowserName,
+          release.version,
+          release.date,
+          release.channel,
+          release.releaseNote,
+          release.engineVersion,
+        );
+      } else {
+        result += newBrowserEntry(
+          safariBCD,
+          options.bcdBrowserName,
+          release.version,
+          release.channel,
+          'WebKit',
+          release.date,
+          release.releaseNote,
+          release.engineVersion,
+        );
+      }
     }
   });
 
