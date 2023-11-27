@@ -290,6 +290,7 @@ export const updateEdgeReleases = async (options) => {
           data[value]?.versionDate,
           key,
           releaseNotesURL,
+          '',
         );
       } else {
         // New entry
@@ -301,6 +302,7 @@ export const updateEdgeReleases = async (options) => {
           options.browserEngine,
           data[value]?.versionDate,
           releaseNotesURL,
+          data[value].version,
         );
       }
     }
@@ -327,6 +329,7 @@ export const updateEdgeReleases = async (options) => {
             edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
               .release_notes,
           ),
+          '',
         );
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
@@ -358,6 +361,7 @@ export const updateEdgeReleases = async (options) => {
       releaseDate,
       'planned',
       '',
+      '',
     );
   } else {
     // New entry
@@ -368,6 +372,7 @@ export const updateEdgeReleases = async (options) => {
       'planned',
       options.browserEngine,
       releaseDate,
+      '',
       '',
     );
   }

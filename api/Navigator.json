@@ -449,7 +449,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on Chrome OS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "chrome_android": {
               "version_added": "75"
@@ -1824,6 +1824,39 @@
           }
         }
       },
+      "managed": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/WebApiDevice/managed_config/#dom-navigator-managed",
+          "support": {
+            "chrome": {
+              "version_added": "91"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "maxTouchPoints": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/maxTouchPoints",
@@ -2112,7 +2145,7 @@
           "support": {
             "chrome": {
               "version_added": "2",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, Chrome OS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
             },
             "chrome_android": {
               "version_added": "18"
@@ -4096,7 +4129,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on Chrome OS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
             },
             "chrome_android": {
               "version_added": "61"

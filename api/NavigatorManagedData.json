@@ -1,19 +1,16 @@
 {
   "api": {
-    "HTMLTemplateElement": {
+    "NavigatorManagedData": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement",
-        "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#htmltemplateelement",
+        "spec_url": "https://wicg.github.io/WebApiDevice/managed_config/#navigatormanageddata",
         "support": {
           "chrome": {
-            "version_added": "26"
+            "version_added": "91"
           },
           "chrome_android": "mirror",
-          "edge": {
-            "version_added": "13"
-          },
+          "edge": "mirror",
           "firefox": {
-            "version_added": "22"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
@@ -23,60 +20,24 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "8"
+            "version_added": false
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "content": {
+      "getManagedConfiguration": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTemplateElement/content",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-template-content-dev",
+          "spec_url": "https://wicg.github.io/WebApiDevice/managed_config/#dom-navigatormanageddata-getmanagedconfiguration",
           "support": {
             "chrome": {
-              "version_added": "26"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "13"
-            },
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "8"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "shadowRootMode": {
-        "__compat": {
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-template-shadowrootmode",
-          "support": {
-            "chrome": {
-              "version_added": "111"
+              "version_added": "91"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -91,14 +52,48 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "managedconfigurationchange_event": {
+        "__compat": {
+          "description": "<code>managedconfigurationchange</code> event",
+          "spec_url": "https://wicg.github.io/WebApiDevice/managed_config/#onmanagedconfigurationchange-attribute",
+          "support": {
+            "chrome": {
+              "version_added": "119"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

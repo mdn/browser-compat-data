@@ -117,6 +117,7 @@ export const updateChromiumReleases = async (options) => {
         data[value].releaseDate,
         key,
         releaseNotesURL,
+        '',
       );
     } else {
       // New entry
@@ -128,6 +129,7 @@ export const updateChromiumReleases = async (options) => {
         options.browserEngine,
         data[value].releaseDate,
         releaseNotesURL,
+        data[value].version,
       );
     }
   }
@@ -149,6 +151,7 @@ export const updateChromiumReleases = async (options) => {
           chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
             .release_date,
           'retired',
+          '',
           '',
         );
       } else {
@@ -172,6 +175,7 @@ export const updateChromiumReleases = async (options) => {
         .release_date,
       'planned',
       '',
+      '',
     );
   } else {
     // New entry
@@ -183,6 +187,7 @@ export const updateChromiumReleases = async (options) => {
       options.browserEngine,
       '',
       '',
+      plannedVersion,
     );
   }
 
