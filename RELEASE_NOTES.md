@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.4.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.2)
+
+November 28, 2023
+
+### Removals
+
+- `api.Window.pageXOffset` ([#21348](https://github.com/mdn/browser-compat-data/pull/21348))
+- `api.Window.pageYOffset` ([#21348](https://github.com/mdn/browser-compat-data/pull/21348))
+- `css.properties.grid-column-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+- `css.properties.grid-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+- `css.properties.grid-row-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+
+### Additions
+
+- `api.MediaKeys.getStatusForPolicy` ([#21368](https://github.com/mdn/browser-compat-data/pull/21368))
+- `api.WebTransportBidirectionalStream.readable.returns_WebTransportReceiveStream` ([#21355](https://github.com/mdn/browser-compat-data/pull/21355))
+- `api.WebTransportBidirectionalStream.writable.returns_WebTransportSendStream` ([#21355](https://github.com/mdn/browser-compat-data/pull/21355))
+- `javascript.builtins.Promise.withResolvers` ([#21364](https://github.com/mdn/browser-compat-data/pull/21364))
+- `webextensions.api.webRequest.onBeforeSendHeaders.details.frameAncestors` ([#21356](https://github.com/mdn/browser-compat-data/pull/21356))
+
+### Statistics
+
+- 11 contributors have changed 41 files with 439 additions and 489 deletions in 28 commits ([`v5.4.1...v5.4.2`](https://github.com/mdn/browser-compat-data/compare/v5.4.1...v5.4.2))
+- 15,213 total features
+- 1,049 total contributors
+- 4,659 total stargazers
+
 ## [v5.4.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.1)
 
 November 24, 2023
