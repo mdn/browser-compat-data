@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.4.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.3)
+
+December 1, 2023
+
+### Additions
+
+- `browsers.opera_android.releases.75` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.76` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.77` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.78` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `css.selectors.closed` ([#21369](https://github.com/mdn/browser-compat-data/pull/21369))
+- `css.selectors.open` ([#21369](https://github.com/mdn/browser-compat-data/pull/21369))
+- `webextensions.api.tabs.Tab.hidden` ([#21392](https://github.com/mdn/browser-compat-data/pull/21392))
+
+### Statistics
+
+- 9 contributors have changed 46 files with 400 additions and 273 deletions in 17 commits ([`v5.4.2...v5.4.3`](https://github.com/mdn/browser-compat-data/compare/v5.4.2...v5.4.3))
+- 15,216 total features
+- 1,051 total contributors
+- 4,660 total stargazers
+
 ## [v5.4.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.2)
 
 November 28, 2023
