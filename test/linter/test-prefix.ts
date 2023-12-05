@@ -45,8 +45,7 @@ const processData = (
     return;
   }
 
-  const featureParts = feature.split('.');
-  const featureName = featureParts[featureParts.length - 1];
+  const featureName = feature.split('.').at(-1);
   const strippedFeatureName = featureName.replace(/_(event|static)/, '');
 
   for (const support of Object.values(data.support)) {
