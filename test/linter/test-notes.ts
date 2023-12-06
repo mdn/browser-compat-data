@@ -64,7 +64,6 @@ const testNode = (node): string[] => {
 /**
  * Test a string for valid HTML
  * @param {string} string The string to test
- * @param {string} section The section being linted
  * @returns {string[]} The errors found during validation
  */
 export const validateHTML = (string: string): string[] => {

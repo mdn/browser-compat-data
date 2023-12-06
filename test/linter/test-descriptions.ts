@@ -103,14 +103,12 @@ const processApiData = (
  * @param {CompatStatement} data The data to test
  * @param {string} category The feature category
  * @param {string} path The path of the feature
- * @param {Logger} logger The logger for HTML errors
  * @returns {(DescriptionError | string)[]} The errors caught in the file
  */
 export const processData = (
   data: CompatStatement,
   category: string,
   path: string,
-  logger: Logger,
 ): (DescriptionError | string)[] => {
   const errors: (DescriptionError | string)[] = [];
 
@@ -135,7 +133,7 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
-    const errors = processData(data, category, full, logger);
+    const errors = processData(data, category, full);
 
     for (const error of errors) {
       if (typeof error === 'string') {
