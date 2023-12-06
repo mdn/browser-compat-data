@@ -64,7 +64,7 @@ const processApiData = (
       'constructor',
       path,
       data,
-      `<code>${apiName}()</code> constructor`,
+      `\`${apiName}()\` constructor`,
       errors,
     );
   } else if (featureName.endsWith('_event')) {
@@ -72,7 +72,7 @@ const processApiData = (
       'event',
       path,
       data,
-      `<code>${featureName.replace('_event', '')}</code> event`,
+      `\`${featureName.replace('_event', '')}\` event`,
       errors,
     );
   } else if (featureName.endsWith('_permission')) {
@@ -80,7 +80,7 @@ const processApiData = (
       'permission',
       path,
       data,
-      `<code>${featureName.replace('_permission', '')}</code> permission`,
+      `\`${featureName.replace('_permission', '')}\` permission`,
       errors,
     );
   } else if (featureName == 'secure_context_required') {
@@ -130,7 +130,7 @@ export default {
     const errors = processData(data, category, full);
 
     for (const error of errors) {
-      logger.error(chalk`{red → Incorrect ${error.ruleName} description for {bold ${error.path}}
+      logger.error(chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
       Actual: {yellow "${error.actual}"}
       Expected: {green "${error.expected}"}}`);
     }
