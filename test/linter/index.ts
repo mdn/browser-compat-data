@@ -18,6 +18,7 @@ import testSchema from './test-schema.js';
 import testSpecURLs from './test-spec-urls.js';
 import testStatus from './test-status.js';
 import testStyle from './test-style.js';
+import testTags from './test-tags.js';
 import testVersions from './test-versions.js';
 
 export default new Linters([
@@ -36,5 +37,6 @@ export default new Linters([
   testSpecURLs,
   testStatus,
   testStyle,
+  testTags,
   testVersions,
 ]);

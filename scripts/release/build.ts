@@ -100,19 +100,19 @@ export default bcd;
  * Write the TypeScript index for TypeScript users
  */
 const writeTypeScript = async () => {
-  const dest = new URL('index.ts', targetdir);
+  const destRequire = new URL('require.d.ts', targetdir);
+  const destImport = new URL('import.d.mts', targetdir);
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatData } from "./types";
+import { CompatData } from "./types.js";
 
-import bcd from "./data.json";
+declare var bcd: CompatData;
+export default bcd;
+export * from "./types.js";`;
 
-// XXX The cast to "any" mitigates a TS definition issue.
-// This is a longstanding TypeScript issue; see https://github.com/microsoft/TypeScript/issues/17867.
-export default bcd as any as CompatData;
-export * from "./types";`;
-  await fs.writeFile(dest, content);
+  await fs.writeFile(destRequire, content);
+  await fs.writeFile(destImport, content);
 
   await compileTS(new URL('types.d.ts', targetdir));
 };
@@ -138,10 +138,22 @@ export const createManifest = (): any => {
   const minimal: { [index: string]: any } = {
     main: 'data.json',
     exports: {
-      '.': './data.json',
-      './forLegacyNode': './legacynode.mjs',
+      '.': {
+        require: {
+          types: './require.d.ts',
+          default: './data.json',
+        },
+        import: {
+          types: './import.d.mts',
+          default: './data.json',
+        },
+      },
+      './forLegacyNode': {
+        types: './import.d.mts',
+        default: './legacynode.mjs',
+      },
     },
-    types: 'index.ts',
+    types: 'require.d.ts',
   };
 
   const minimalKeys = [
@@ -174,7 +186,7 @@ export const createManifest = (): any => {
 const writeManifest = async () => {
   const dest = new URL('package.json', targetdir);
   const manifest = createManifest();
-  await fs.writeFile(dest, JSON.stringify(manifest));
+  await fs.writeFile(dest, JSON.stringify(manifest, null, 2));
 };
 
 /**

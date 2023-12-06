@@ -269,16 +269,16 @@
                 "version_added": "14"
               },
               "firefox": {
-                "notes": "Available as an alias to the <code>menus</code> permission.",
-                "version_added": "55"
+                "version_added": "55",
+                "notes": "Available as an alias to the <code>menus</code> permission."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": "mirror",
               "safari": {
-                "notes": "Available as an alias to the <code>menus</code> permission.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Available as an alias to the <code>menus</code> permission."
               },
               "safari_ios": {
                 "version_added": false
@@ -1049,12 +1049,34 @@
             }
           }
         },
+        "webRequestAuthProvider": {
+          "__compat": {
+            "description": "<code>webRequestAuthProvider</code>",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1820569"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "webRequestBlocking": {
           "__compat": {
             "description": "<code>webRequestBlocking</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "In Manifest V3, no longer available for most extensions (the exception being policy-installed extensions). Use the <code>declarativeNetRequest</code> API instead."
               },
               "edge": {
                 "version_added": "14"

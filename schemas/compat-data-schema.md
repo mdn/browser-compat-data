@@ -171,6 +171,13 @@ The `__compat` object consists of the following:
   Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`).
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
+- An optional `tags` property which is an array of strings allowing to assign tags to the feature.
+  Each tag in the array must be namespaced. The currently allowed namespaces are:
+
+  - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
+
+  For more information, see the [tagging data guidelines](/docs/data-guidelines/tags.md).
+
 #### Browser identifiers
 
 The currently accepted browser identifiers should be declared in alphabetical order:

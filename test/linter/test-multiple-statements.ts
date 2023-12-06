@@ -34,8 +34,8 @@ const processData = (
     const statementKey = d.prefix
       ? `prefix: ${d.prefix}`
       : d.alternative_name
-      ? `alt. name: ${d.alternative_name}`
-      : 'normal name';
+        ? `alt. name: ${d.alternative_name}`
+        : 'normal name';
 
     if (statements.includes(statementKey)) {
       logger.error(
