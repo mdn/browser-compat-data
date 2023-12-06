@@ -8,6 +8,10 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
+/**
+ * Get the date exactly two years ago
+ * @returns {Date} The date, two years prior to today
+ */
 const getTwoYearsAgo = () => {
   const date = new Date();
   date.setFullYear(date.getFullYear() - 2);
@@ -283,7 +287,7 @@ export class Linters {
           level: 'error',
           title: linter.name,
           path: data.path.full,
-          message: 'Linter failure! ' + e,
+          message: 'Linter failure! ' + e.stack,
         });
       }
     }

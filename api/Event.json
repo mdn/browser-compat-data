@@ -220,8 +220,8 @@
                 "version_added": "53"
               },
               {
-                "version_removed": "53",
                 "version_added": "1",
+                "version_removed": "53",
                 "partial_implementation": true,
                 "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/UIEvent'><code>UIEvent</code></a>, not all <code>Event</code> objects."
               }
@@ -264,6 +264,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/composed",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-composed①",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -306,15 +309,18 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/composedPath",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-composedpath①",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "53"
               },
               {
+                "alternative_name": "deepPath",
                 "version_added": "50",
-                "version_removed": "53",
-                "alternative_name": "deepPath"
+                "version_removed": "53"
               }
             ],
             "chrome_android": "mirror",

@@ -14,6 +14,7 @@ import bcd from '../index.js';
  * @param {BrowserName[]} browsers The browsers to test for
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
+ * @param {string} tag The tag to filter results with
  * @param {string} identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
@@ -22,6 +23,7 @@ function* iterateFeatures(
   browsers: BrowserName[],
   values: string[],
   depth: number,
+  tag: string,
   identifier: string,
 ): IterableIterator<string> {
   depth--;
@@ -29,45 +31,52 @@ function* iterateFeatures(
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
-          const comp = obj[i].__compat.support;
-          for (const browser of browsers) {
-            let browserData = comp[browser];
-
-            if (!browserData) {
-              if (values.length == 0 || values.includes('null')) {
-                yield `${identifier}${i}`;
-              }
-              continue;
+          if (tag) {
+            const tags = obj[i].__compat.tags;
+            if (tags && tags.includes(tag)) {
+              yield `${identifier}${i}`;
             }
-            if (!Array.isArray(browserData)) {
-              browserData = [browserData];
-            }
+          } else {
+            const comp = obj[i].__compat.support;
+            for (const browser of browsers) {
+              let browserData = comp[browser];
 
-            for (const range in browserData) {
-              if (browserData[range] === 'mirror') {
-                if (values.includes('mirror')) {
-                  yield `${identifier}${i}`;
-                }
-              } else if (values.includes('nonmirror')) {
-                // If checking for non-mirrored data and it's not mirrored
-                yield `${identifier}${i}`;
-              } else if (browserData[range] === undefined) {
+              if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
                   yield `${identifier}${i}`;
                 }
-              } else if (
-                values.length == 0 ||
-                values.includes(String(browserData[range].version_added)) ||
-                values.includes(String(browserData[range].version_removed))
-              ) {
-                let f = `${identifier}${i}`;
-                if (browserData[range].prefix) {
-                  f += ` (${browserData[range].prefix} prefix)`;
+                continue;
+              }
+              if (!Array.isArray(browserData)) {
+                browserData = [browserData];
+              }
+
+              for (const range in browserData) {
+                if (browserData[range] === 'mirror') {
+                  if (values.includes('mirror')) {
+                    yield `${identifier}${i}`;
+                  }
+                } else if (values.includes('nonmirror')) {
+                  // If checking for non-mirrored data and it's not mirrored
+                  yield `${identifier}${i}`;
+                } else if (browserData[range] === undefined) {
+                  if (values.length == 0 || values.includes('null')) {
+                    yield `${identifier}${i}`;
+                  }
+                } else if (
+                  values.length == 0 ||
+                  values.includes(String(browserData[range].version_added)) ||
+                  values.includes(String(browserData[range].version_removed))
+                ) {
+                  let f = `${identifier}${i}`;
+                  if (browserData[range].prefix) {
+                    f += ` (${browserData[range].prefix} prefix)`;
+                  }
+                  if (browserData[range].alternative_name) {
+                    f += ` (as ${browserData[range].alternative_name})`;
+                  }
+                  yield f;
                 }
-                if (browserData[range].alternative_name) {
-                  f += ` (as ${browserData[range].alternative_name})`;
-                }
-                yield f;
               }
             }
           }
@@ -77,6 +86,7 @@ function* iterateFeatures(
           browsers,
           values,
           depth,
+          tag,
           identifier + i + '.',
         );
       }
@@ -90,6 +100,7 @@ function* iterateFeatures(
  * @param {string[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
+ * @param {string} tag The tag to filter results with
  * @param {string} identifier The identifier of the current object
  * @returns {string[]} An array of the features
  */
@@ -98,10 +109,11 @@ const traverseFeatures = (
   browsers: BrowserName[],
   values: string[],
   depth: number,
+  tag: string,
   identifier: string,
 ): string[] => {
   const features = Array.from(
-    iterateFeatures(obj, browsers, values, depth, identifier),
+    iterateFeatures(obj, browsers, values, depth, tag, identifier),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
@@ -113,6 +125,7 @@ const traverseFeatures = (
  * @param {BrowserName[]} browsers The browsers to traverse for
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
+ * @param {string} tag The tag to filter results with
  * @returns {string[]} The list of features
  */
 const main = (
@@ -130,6 +143,7 @@ const main = (
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
+  tag = '',
 ): string[] => {
   const features: string[] = [];
 
@@ -140,6 +154,7 @@ const main = (
         browsers,
         values,
         depth,
+        tag,
         folders[folder] + '.',
       ),
     );
@@ -176,6 +191,13 @@ if (esMain(import.meta)) {
           nargs: 1,
           default: [],
         })
+        .option('tag', {
+          alias: 't',
+          describe: 'Filter by tag value.',
+          type: 'string',
+          nargs: 1,
+          default: '',
+        })
         .option('non-real', {
           alias: 'n',
           describe:
@@ -206,13 +228,23 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -b samsunginternet_android -f mirror',
           'Find all features in Samsung Internet that mirror data from Chrome Android',
+        )
+        .example(
+          'npm run traverse -- -t web-features:idle-detection',
+          'Find all features tagged with web-features:idle-detection.',
         );
     },
   );
 
   const filter = [...argv.filter, ...(argv.nonReal ? ['true', 'null'] : [])];
 
-  const features = main(argv.folder, argv.browser, filter, argv.depth);
+  const features = main(
+    argv.folder,
+    argv.browser,
+    filter,
+    argv.depth,
+    argv.tag,
+  );
   console.log(features.join('\n'));
   console.log(features.length);
 }

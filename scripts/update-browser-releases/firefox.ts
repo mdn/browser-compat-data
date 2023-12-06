@@ -3,7 +3,9 @@
 
 import * as fs from 'node:fs';
 
-import { updateBrowserEntry, newBrowserEntry, sortStringify } from './utils.js';
+import stringify from '../lib/stringify-and-order-properties.js';
+
+import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 import type { ReleaseStatement } from '../../types/types.js';
 
@@ -20,10 +22,12 @@ const getFirefoxReleaseNotesURL = async (version) => {
 };
 
 /**
- * updateFirefoxFile - Update the json file listing the browser version of a chromium entry
+ * updateFirefoxFile - Update the json file listing the browser version of a firefox entry
  * @param {object} options The list of options for this type of chromiums.
+ * @returns {string} The log of what has been generated (empty if nothing)
  */
 export const updateFirefoxReleases = async (options) => {
+  let result = '';
   //
   // Get the firefox.json from the local BCD
   //
@@ -63,7 +67,6 @@ export const updateFirefoxReleases = async (options) => {
       const releasedFirefoxVersions = await firefoxVersions.json();
 
       // Extract the current stable version and its release date
-
       Object.entries(releasedFirefoxVersions).forEach(([key]) => {
         if (parseFloat(key) > stableRelease) {
           stableRelease = parseFloat(key);
@@ -79,17 +82,18 @@ export const updateFirefoxReleases = async (options) => {
     if (
       firefoxBCD.browsers[options.bcdBrowserName].releases[data[value].version]
     ) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         data[value].version,
         data[value].releaseDate,
         key,
         releaseNotesURL,
+        '',
       );
     } else {
       // New entry
-      newBrowserEntry(
+      result += newBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         data[value].version,
@@ -97,6 +101,7 @@ export const updateFirefoxReleases = async (options) => {
         'Gecko',
         data[value].releaseDate,
         releaseNotesURL,
+        data[value].version,
       );
     }
   }
@@ -127,21 +132,23 @@ export const updateFirefoxReleases = async (options) => {
     },
   ).forEach(([key, entry]) => {
     if (key === String(esrRelease)) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         key,
         entry.release_date,
         'esr',
         '',
+        '',
       );
     } else if (parseFloat(key) < stableRelease) {
-      updateBrowserEntry(
+      result += updateBrowserEntry(
         firefoxBCD,
         options.bcdBrowserName,
         key,
         entry.release_date,
         'retired',
+        '',
         '',
       );
     }
@@ -150,38 +157,43 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  const planned = stableRelease + 3;
+  const planned = Number(data[options.nightlyBranch].version) + 1;
   // Get the JSON for the planned version train
   const trainInfo = await fetch(`${options.firefoxScheduleURL}${planned}`);
   const train = await trainInfo.json();
 
   if (firefoxBCD.browsers[options.bcdBrowserName].releases[planned]) {
-    updateBrowserEntry(
+    result += updateBrowserEntry(
       firefoxBCD,
       options.bcdBrowserName,
       planned,
       train.release.substring(0, 10),
       'planned',
       '',
+      '',
     );
   } else {
     // New entry
-    newBrowserEntry(
+    result += newBrowserEntry(
       firefoxBCD,
       options.bcdBrowserName,
       planned,
       'planned',
       'Gecko',
-      train.release.substring(0, 10), // Remove the time part
+      train.release?.substring(0, 10), // Remove the time part
       await getFirefoxReleaseNotesURL(planned),
+      planned,
     );
   }
 
   //
-  // Write the JSON back into chrome.json
+  // Write the update browser's json to file
   //
-  fs.writeFileSync(
-    `./${options.bcdFile}`,
-    sortStringify(firefoxBCD, '') + '\n',
-  );
+  fs.writeFileSync(`./${options.bcdFile}`, stringify(firefoxBCD) + '\n');
+
+  // Returns the log
+  if (result) {
+    result = `### Updates for ${options.browserName}${result}`;
+  }
+  return result;
 };

@@ -18,9 +18,9 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>reason</code> and <code>extensionId</code> will not be populated.",
                 "version_added": "14",
-                "partial_implementation": true
+                "partial_implementation": true,
+                "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
               },
               "safari_ios": {
                 "version_added": false
@@ -740,6 +740,25 @@
               }
             }
           },
+          "hidden": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "59"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "highlighted": {
             "__compat": {
               "support": {
@@ -916,9 +935,9 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "notes": "<code>reason</code> and <code>extensionId</code> will not be populated.",
                   "version_added": "14",
-                  "partial_implementation": true
+                  "partial_implementation": true,
+                  "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1378,8 +1397,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/captureVisibleTab",
             "support": {
               "chrome": {
-                "notes": "The default file format is 'jpeg'.",
-                "version_added": "5"
+                "version_added": "5",
+                "notes": "The default file format is 'jpeg'."
               },
               "edge": {
                 "version_added": "15"
@@ -1392,18 +1411,18 @@
               },
               "opera": "mirror",
               "safari": {
+                "version_added": "14",
                 "notes": [
                   "The default file format is 'jpeg'.",
                   "<code>&lt;all_urls&gt;</code> permission is optional."
-                ],
-                "version_added": "14"
+                ]
               },
               "safari_ios": {
+                "version_added": "15",
                 "notes": [
                   "The default file format is 'jpeg'.",
                   "<code>&lt;all_urls&gt;</code> permission is optional."
-                ],
-                "version_added": "15"
+                ]
               }
             }
           }
@@ -1447,14 +1466,14 @@
                   },
                   "opera": "mirror",
                   "safari": {
-                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not.",
                     "version_added": "14",
-                    "partial_implementation": true
+                    "partial_implementation": true,
+                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not."
                   },
                   "safari_ios": {
-                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not.",
                     "version_added": "15",
-                    "partial_implementation": true
+                    "partial_implementation": true,
+                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not."
                   }
                 }
               }
@@ -1707,12 +1726,12 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "notes": "Before version 57, extensions were not allowed to open 'view-source:' pages.",
-                  "version_added": "45"
+                  "version_added": "45",
+                  "notes": "Before version 57, extensions were not allowed to open 'view-source:' pages."
                 },
                 "firefox_android": {
-                  "notes": "Before version 57, extensions were not allowed to open 'view-source:' pages.",
-                  "version_added": "54"
+                  "version_added": "54",
+                  "notes": "Before version 57, extensions were not allowed to open 'view-source:' pages."
                 },
                 "opera": "mirror",
                 "safari": {
@@ -2834,9 +2853,9 @@
                   },
                   "opera": "mirror",
                   "safari": {
-                    "notes": "<code>reason</code> and <code>extensionId</code> will not be populated.",
                     "version_added": "14",
-                    "partial_implementation": true
+                    "partial_implementation": true,
+                    "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
                   },
                   "safari_ios": {
                     "version_added": false
@@ -2979,9 +2998,9 @@
                         "version_added": "62"
                       },
                       {
+                        "alternative_name": "isarticle",
                         "version_added": "61",
-                        "version_removed": "71",
-                        "alternative_name": "isarticle"
+                        "version_removed": "71"
                       }
                     ],
                     "firefox_android": {
@@ -3074,8 +3093,8 @@
                 "version_added": true
               },
               "edge": {
-                "notes": "The <code>panel</code>, <code>app</code>, <code>devtools</code> and <code>popup</code> values for <code>WindowType</code> are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "The <code>panel</code>, <code>app</code>, <code>devtools</code> and <code>popup</code> values for <code>WindowType</code> are not supported."
               },
               "firefox": {
                 "version_added": "45"
@@ -3085,12 +3104,12 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "Pattern matching supports <code>*</code> and <code>?</code>.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Pattern matching supports <code>*</code> and <code>?</code>."
               },
               "safari_ios": {
-                "notes": "Pattern matching supports <code>*</code> and <code>?</code>.",
-                "version_added": "15"
+                "version_added": "15",
+                "notes": "Pattern matching supports <code>*</code> and <code>?</code>."
               }
             }
           },
@@ -3250,19 +3269,19 @@
                     "version_added": "79"
                   },
                   "firefox": {
-                    "notes": "Treated as an alias for <code>queryInfo.active</code>.",
-                    "version_added": "60"
+                    "version_added": "60",
+                    "notes": "Treated as an alias for <code>queryInfo.active</code>."
                   },
                   "firefox_android": [
                     {
-                      "notes": "Treated as an alias for <code>queryInfo.active</code>.",
                       "version_added": "61",
-                      "version_removed": "79"
+                      "version_removed": "79",
+                      "notes": "Treated as an alias for <code>queryInfo.active</code>."
                     },
                     {
-                      "notes": "Treated as an alias for <code>queryInfo.active</code> except when an extension has a popup open. In this situation, <code>queryInfo.highlighted</code> will return the popup, while <code>queryInfo.active</code> will return the tab that was selected before the popup opened.",
                       "version_added": "60",
-                      "version_removed": "61"
+                      "version_removed": "61",
+                      "notes": "Treated as an alias for <code>queryInfo.active</code> except when an extension has a popup open. In this situation, <code>queryInfo.highlighted</code> will return the popup, while <code>queryInfo.active</code> will return the tab that was selected before the popup opened."
                     }
                   ],
                   "opera": "mirror",
@@ -3628,9 +3647,9 @@
                   "version_added": "81"
                 },
                 {
-                  "notes": "This function does not work on macOS.",
                   "version_added": "56",
-                  "version_removed": "81"
+                  "version_removed": "81",
+                  "notes": "This function does not work on macOS."
                 }
               ],
               "firefox_android": {
@@ -3804,7 +3823,7 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror"
             }

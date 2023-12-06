@@ -19,11 +19,11 @@ const categoriesToCheck = [
   // 'html',
   // 'http',
   // 'javascript',
-  // 'mathml',
+  'mathml',
   // 'svg',
   'webassembly',
   // 'webdriver',
-  // 'webextensions'
+  'webextensions',
 ];
 
 /**

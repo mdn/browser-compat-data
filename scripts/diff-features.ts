@@ -34,7 +34,7 @@ const main = (opts: {
 
 /**
  * Compare two references and get feature diff
- * @param {{ref1: string?, ref2: string?, github: boolean}} opts Options
+ * @param {{ref1: string | null, ref2: string | null, github: boolean}} opts Options
  * @param {string?} opts.ref1 First reference to compare
  * @param {string?} opts.ref2 Second reference to compare
  * @param {boolean} opts.github Whether to obtain artifacts from GitHub
