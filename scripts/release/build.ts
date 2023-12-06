@@ -91,11 +91,13 @@ export const addVersionLast = (feature: WalkOutput): void => {
         }
       }
     } else if (typeof supportData === 'object') {
-      (feature.data as any).__compat.support[browser].version_last =
-        getPreviousVersion(
-          browser as BrowserName,
-          (supportData as any).version_removed,
-        );
+      if ((supportData as any).version_removed) {
+        (feature.data as any).__compat.support[browser].version_last =
+          getPreviousVersion(
+            browser as BrowserName,
+            (supportData as any).version_removed,
+          );
+      }
     }
   }
 };
