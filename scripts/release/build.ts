@@ -81,15 +81,18 @@ export const addVersionLast = (feature: WalkOutput): void => {
     feature.compat.support as InternalSupportStatement,
   )) {
     if (Array.isArray(supportData)) {
-      for (let i = 0; i < supportData.length; i++) {
-        if (supportData[i].version_removed) {
-          (feature.data as any).__compat.support[browser][i].version_last =
-            getPreviousVersion(
+      (feature.data as any).__compat.support[browser] = supportData.map((d) => {
+        if (d.version_removed) {
+          return {
+            ...d,
+            version_last: getPreviousVersion(
               browser as BrowserName,
-              supportData[i].version_removed,
-            );
+              d.version_removed,
+            ),
+          };
         }
-      }
+        return d;
+      });
     } else if (typeof supportData === 'object') {
       if ((supportData as any).version_removed) {
         (feature.data as any).__compat.support[browser].version_last =
