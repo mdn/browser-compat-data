@@ -237,7 +237,7 @@ const checkVersions = (
 
       if ('version_last' in statement) {
         logger.error(
-          chalk`{bold version_last} is an automatically generated value and should not be manually defined.`,
+          chalk`{bold version_last} is automatically generated and should not be defined manually.`,
         );
       }
     }
