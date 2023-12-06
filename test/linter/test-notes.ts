@@ -44,7 +44,9 @@ const testNode = (
       if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
         logger.error(
-          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes other than href}. {bold <a>} elements may only have an {bold href} attribute.`,
+          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes other than href} (found {bold ${attrs.join(
+            ', ',
+          )}}). {bold <a>} elements may only have an {bold href} attribute.`,
         );
       }
     } else {
@@ -80,7 +82,7 @@ const validateHTML = (
 
   if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    testNode(parser.parse(string), browser, feature, logger);
+    testNode(parser.parse(html), browser, feature, logger);
   } else {
     logger.error(
       chalk`Notes for {bold ${feature}} in {bold ${browser}} have invalid HTML: ${htmlErrors
