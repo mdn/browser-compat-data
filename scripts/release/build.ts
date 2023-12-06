@@ -5,12 +5,14 @@ import fs from 'node:fs/promises';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
+import { compareVersions } from 'compare-versions';
 
 import { InternalSupportStatement } from '../../types/index.js';
-import { BrowserName, CompatData } from '../../types/types.js';
+import { BrowserName, CompatData, VersionValue } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
+import bcd from '../../index.js';
 
 import mirrorSupport from './mirror.js';
 
@@ -52,18 +54,63 @@ export const applyMirroring = (feature: WalkOutput): void => {
   }
 };
 
+const getPreviousVersion = (
+  browser: BrowserName,
+  version: VersionValue,
+): VersionValue => {
+  if (typeof version === 'string' && !version.startsWith('≤')) {
+    const browserVersions = Object.keys(bcd.browsers[browser].releases).sort(
+      compareVersions,
+    );
+    const currentVersionIndex = browserVersions.indexOf(version);
+    if (currentVersionIndex > 0) {
+      return browserVersions[currentVersionIndex - 1];
+    }
+  }
+
+  return version;
+};
+
+/**
+ * Add version_last
+ * @param {WalkOutput} feature The BCD to transform
+ * @returns {void}
+ */
+export const addVersionLast = (feature: WalkOutput): void => {
+  for (const [browser, supportData] of Object.entries(
+    feature.compat.support as InternalSupportStatement,
+  )) {
+    if (Array.isArray(supportData)) {
+      for (let i = 0; i < supportData.length; i++) {
+        if (supportData[i].version_removed) {
+          (feature.data as any).__compat.support[browser][i].version_last =
+            getPreviousVersion(
+              browser as BrowserName,
+              supportData[i].version_removed,
+            );
+        }
+      }
+    } else if (typeof supportData === 'object') {
+      (feature.data as any).__compat.support[browser].version_last =
+        getPreviousVersion(
+          browser as BrowserName,
+          (supportData as any).version_removed,
+        );
+    }
+  }
+};
+
 /**
  * Generate a BCD data bundle
  * @returns {CompatData} An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
-  const { default: bcd } = await import('../../index.js');
-
   const data = Object.assign({}, bcd);
   const walker = walk(undefined, data);
 
   for (const feature of walker) {
     applyMirroring(feature);
+    addVersionLast(feature);
   }
 
   return {

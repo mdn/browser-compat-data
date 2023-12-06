@@ -234,6 +234,12 @@ const checkVersions = (
           chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
         );
       }
+
+      if ('version_last' in statement) {
+        logger.error(
+          chalk`{bold version_last} is an automatically generated value and should not be manually defined.`,
+        );
+      }
     }
   }
 };
