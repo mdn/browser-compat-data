@@ -45,7 +45,8 @@ const processData = (
     return;
   }
 
-  const featureName = feature.split('.')[-1];
+  const featureName = feature.split('.').at(-1);
+  const strippedFeatureName = featureName.replace(/_(event|static)/, '');
 
   for (const support of Object.values(data.support)) {
     const supportStatements = Array.isArray(support) ? support : [support];
@@ -67,16 +68,20 @@ const processData = (
           chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
         );
       }
-      if (
-        statement.alternative_name &&
-        statement.alternative_name.endsWith(featureName)
-      ) {
-        logger.error(
-          chalk`Use {bold "prefix": "${statement.alternative_name.replace(
-            featureName,
-            '',
-          )}"} instead of {bold "alternative_name": "statement.alternative_name"}`,
-        );
+      if (statement.alternative_name) {
+        const altNameMatchesPrefix = prefixes.find((p) => {
+          const prefixedName = `${p}${strippedFeatureName}`;
+          return [
+            prefixedName,
+            ':' + prefixedName,
+            '::' + prefixedName,
+          ].includes(statement.alternative_name);
+        });
+        if (altNameMatchesPrefix) {
+          logger.error(
+            chalk`Use {bold "prefix": "${altNameMatchesPrefix}"} instead of {bold "alternative_name": "${statement.alternative_name}"}`,
+          );
+        }
       }
     }
   }
