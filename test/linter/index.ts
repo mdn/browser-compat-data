@@ -8,6 +8,7 @@ import testBrowsersPresence from './test-browsers-presence.js';
 import testConsistency from './test-consistency.js';
 import testDescriptions from './test-descriptions.js';
 import testFilename from './test-filename.js';
+import testFlags from './test-flags.js';
 import testLinks from './test-links.js';
 import testMirror from './test-mirror.js';
 import testMultipleStatements from './test-multiple-statements.js';
@@ -27,6 +28,7 @@ export default new Linters([
   testConsistency,
   testDescriptions,
   testFilename,
+  testFlags,
   testLinks,
   testMirror,
   testMultipleStatements,

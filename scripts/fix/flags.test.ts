@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { removeRedundantFlags } from './remove-redundant-flags.js';
+import { removeIrrelevantFlags } from './flags.js';
 
 const tests = [
   {
@@ -402,17 +402,101 @@ const tests = [
       },
     },
   },
+  {
+    input: {
+      test9: {
+        __compat: {
+          support: {
+            edge: [
+              {
+                version_added: '79',
+                version_removed: '80',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: 'WebVR',
+                  },
+                ],
+              },
+              {
+                version_added: '15',
+                version_removed: '79',
+              },
+            ],
+          },
+        },
+      },
+    },
+    output: {
+      test9: {
+        __compat: {
+          support: {
+            edge: {
+              version_added: '15',
+              version_removed: '79',
+            },
+          },
+        },
+      },
+    },
+  },
+  {
+    input: {
+      test10: {
+        __compat: {
+          support: {
+            firefox: [
+              {
+                version_added: 'preview',
+              },
+              {
+                version_added: '105',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: 'layout.css.font-tech.enabled',
+                    value_to_set: 'true',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      },
+    },
+    output: {
+      test10: {
+        __compat: {
+          support: {
+            firefox: [
+              {
+                version_added: 'preview',
+              },
+              {
+                version_added: '105',
+                flags: [
+                  {
+                    type: 'preference',
+                    name: 'layout.css.font-tech.enabled',
+                    value_to_set: 'true',
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      },
+    },
+  },
 ];
 
-describe('remove-redundant-flags', () => {
+describe('fix -> flags', () => {
   let i = 1;
   for (const test of tests) {
     it(`Test #${i}`, () => {
       const expected = JSON.stringify(test['output'], null, 2);
       const output = JSON.stringify(
-        JSON.parse(JSON.stringify(test['input']), (key, value) =>
-          removeRedundantFlags(key, value, null),
-        ),
+        JSON.parse(JSON.stringify(test['input']), removeIrrelevantFlags),
         null,
         2,
       );
