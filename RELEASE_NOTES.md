@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.4.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.4)
+
+December 5, 2023
+
+### Removals
+
+- `html.elements.form.autocapitalize` ([#21458](https://github.com/mdn/browser-compat-data/pull/21458))
+
+### Additions
+
+- `http.headers.Origin-Agent-Cluster` ([#21424](https://github.com/mdn/browser-compat-data/pull/21424))
+
+### Statistics
+
+- 7 contributors have changed 17 files with 300 additions and 215 deletions in 13 commits ([`v5.4.3...v5.4.4`](https://github.com/mdn/browser-compat-data/compare/v5.4.3...v5.4.4))
+- 15,216 total features
+- 1,052 total contributors
+- 4,659 total stargazers
+
 ## [v5.4.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.3)
 
 December 1, 2023
