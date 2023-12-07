@@ -42,6 +42,7 @@ const processData = (
     ).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
+        b !== 'ie' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
 
@@ -68,7 +69,7 @@ const processData = (
     }
 
     const missingEntries = requiredBrowsers.filter(
-      (value) => value !== 'ie' && !(value in support),
+      (value) => !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(
