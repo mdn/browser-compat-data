@@ -13,13 +13,11 @@ const { browsers } = bcd;
  * @param {CompatStatement} data The data to test
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
- * @param {string} [path] The path of the data.
  */
 const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
-  path = '',
 ): void => {
   if (data.support) {
     const support = data.support;
@@ -93,6 +91,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    processData(data, category || '', logger);
+    processData(data, category, logger);
   },
 } as Linter;
