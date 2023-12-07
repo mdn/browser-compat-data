@@ -52,9 +52,9 @@ const processData = (
     );
     if (undefEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
+        chalk`Has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -63,18 +63,18 @@ const processData = (
     ).filter((value) => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
+        chalk`Has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
           ', ',
         )}}`,
       );
     }
 
     const missingEntries = requiredBrowsers.filter(
-      (value) => !(value in support),
+      (value) => value !== 'ie' && !(value in support),
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`{bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
+        chalk`Missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
           ', ',
         )}}`,
       );
