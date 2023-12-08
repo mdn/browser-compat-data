@@ -57,9 +57,9 @@ If a feature is added to WebView prior to the Chrome 37 time period, and its ver
 
 ##### Features excluded from WebView
 
-One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt) which are not available in a WebView.
+One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromium/chromium/src/+/main:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt;l=53) which are not available in a WebView.
 
-```js
+```webidl
 interface HTMLIFrameElement : HTMLElement
     getter allowPaymentRequest
     setter allowPaymentRequest
@@ -136,7 +136,7 @@ The specific appearance of the display will vary depending on what tool you're u
 Here, the mouse is pointing at a row with the revision number `199991` beside it. This has opened up a tooltip with details about that revision: It was created for bug 1032835, entitled "addTrack/removeTrack on-top of existing implementation". The tooltip includes several links which can be helpful:
 
 - <40 digit hexadecimal changeset number>
-  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from_a_mercurial_changeset_number) will show you how to track down the version information.
+  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from-a-mercurial-changeset-number) will show you how to track down the version information.
 - Bugzilla bug link
   - : A link back to the bug on Bugzilla that corresponds to this change. You may find useful information in the bug, including potentially the version number the change shipped in, but odds are good that's where you started.
 - Parent changeset revision number
@@ -144,7 +144,7 @@ Here, the mouse is pointing at a row with the revision number `199991` beside it
 - `diff`
   - : A link that will produce a diff showing the differences between the parent changeset and the changeset that introduced the change you're looking at.
 - `changeset`
-  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details.
+  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details.
 
 > **Note:** If you aren't able to find the change because it apparently happens before Firefox was migrated to Mercurial from CVS, try using Mercurial blame on the [Unified Firefox repository](https://hg.mozilla.org/mozilla-unified/), which has tags in place, each representing the code state at specific points in the history of the project, including each beta and each release build.
 
@@ -174,11 +174,11 @@ If you're updating compatibility data for a given API interface, or for a proper
 
 A good place to start: do a Bugzilla search for a bug that mentions what you're looking for:
 
-- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting_the_firefox_release_for_a_bug_number) and determine when this interface was added to Firefox.
+- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting-the-firefox-release-for-a-bug-number) and determine when this interface was added to Firefox.
 - If you're looking for a property or method on an interface having been added, try searching for the interface name and the method or property name both, similar to the previous suggestion. You may find that the method was added along with the entire interface or API, so be sure to watch for the addition of the broader area too.
 - If all else fails, just search for the API name, ideally limiting the search to bugs that are also resolved, as in the first suggestion above.
 
-If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting_the_firefox_release_for_a_bug_number) to review how to isolate that compatibility data from the bug's contents.
+If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting-the-firefox-release-for-a-bug-number) to review how to isolate that compatibility data from the bug's contents.
 
 #### Finding the version from the source tree
 
@@ -206,13 +206,13 @@ Once in the blame view, hover the mouse cursor over the revision number at the l
 
 ![](hg-tooltip-revision.png)
 
-This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details on how to get the version information you need from there.
+This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details on how to get the version information you need from there.
 
 If you can't find the changeset you need just by browsing the blame page, the next thing to try is to look through the revision history. Click on the `revisions` link at the top of the Mercurial blame page, or the "Log" link in the Navigation box on the DXR page. This will present a list of every changeset that altered the file you're looking at. Look for a revision that matches the feature change you're interested in; if you find a promising revision, click the `diff` link next to that revision.
 
 ![](hg-revisions-ontrack.png)
 
-This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from_a_mercurial_changeset_number).
+This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from-a-mercurial-changeset-number).
 
 ##### For HTML elements
 
@@ -259,7 +259,7 @@ Once you've found a representative line of code, the goal is to identify the Fir
 
 ##### For CSS features
 
-CSS changes can be a little bit tricker to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
+CSS changes can be a little bit trickier to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
 
 To determine when support for a given **value** for a property was added, try opening the file [`nsCSSProps.cpp`](https://searchfox.org/mozilla-central/source/layout/style/nsCSSProps.cpp) and looking through the tables of property values found there. These tables are all of type `KTableEntry`; each entry in the tables maps a CSS keyword to a value used to represent it internally. For instance, to determine when Firefox added support for the CSS Scroll Snap type value `proximity`, look through `nsCSSProps.cpp` until you find in the table `nsCSSProps::kScrollSnapTypeKTable`:
 
@@ -272,7 +272,7 @@ const KTableEntry nsCSSProps::kScrollSnapTypeKTable[] = {
 };
 ```
 
-And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using_mercurial_blame).
+And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using-mercurial-blame).
 
 ### From a Mercurial changeset number
 
