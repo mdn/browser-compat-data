@@ -86,7 +86,7 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 - [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes): A list of release notes for different versions of Safari.
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
-- [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+- [Backported Releases List](data-guidelines/index.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
 
 #### Edge
 
