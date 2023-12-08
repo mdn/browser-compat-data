@@ -25,7 +25,7 @@ export const orderSupportBlock = (
   value: CompatStatement,
 ): CompatStatement => {
   if (key === '__compat') {
-    const support: SupportBlock = (
+    value.support = (
       Object.keys(value.support) as (keyof typeof value.support)[]
     )
       .sort()
@@ -33,7 +33,6 @@ export const orderSupportBlock = (
         result[key] = value.support[key];
         return result;
       }, {});
-    value.support = support;
   }
   return value;
 };
