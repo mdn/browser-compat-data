@@ -6210,7 +6210,7 @@ This package may now be directly imported through ESM! On NodeJS v16.15+, Deno a
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 ```
 
-For older NodeJS versions, a separate import has been included called `forLegacyNode` (note this may be removed in a future update). Imports via CommonJS (`require()`) are still available, and there are no plans to deprecate it for the forseeable future.
+For older NodeJS versions, a separate import has been included called `forLegacyNode` (note this may be removed in a future update). Imports via CommonJS (`require()`) are still available, and there are no plans to deprecate it for the foreseeable future.
 
 ```js
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
