@@ -17,11 +17,17 @@ import extend from '../scripts/lib/extend.js';
 import pluralize from '../scripts/lib/pluralize.js';
 import { walk } from '../utils/index.js';
 
-import linters from './linter/index.js';
-import { LinterMessage, LinterMessageLevel, LinterPath } from './utils.js';
+import * as linterModules from './linter/index.js';
+import {
+  Linters,
+  LinterMessage,
+  LinterMessageLevel,
+  LinterPath,
+} from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+const linters = new Linters(Object.values(linterModules));
 /**
  * Normalize and categorize file path
  * @param {string} file The file path
