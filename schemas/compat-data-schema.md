@@ -85,8 +85,8 @@ Here is an example of a `__compat` statement, with all of the properties and the
   "api": {
     "Document": {
       "fake_event": {
+        // ↓↓↓↓↓↓
         "__compat": {
-          // <---
           "description": "<code>fake</code> event", // A friendly description of the feature
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fake_event", // The associated MDN article
           "spec_url": [
