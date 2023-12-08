@@ -53,7 +53,7 @@ Do not set this label on a pull request when it:
 - Only updates compatibility data
 - Performs anything that would result in a major semver bump (use the next label)
 
-Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](./publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).
+Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).
 
 ## semver-major-bump 🚨
 
@@ -75,4 +75,4 @@ Do not set this label on a pull request when it:
 - Only updates compatibility data
 - Only performs a migration that does not break backwards compatibility
 
-Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](./publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).
+Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).

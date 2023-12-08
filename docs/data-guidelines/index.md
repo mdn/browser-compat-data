@@ -3,9 +3,9 @@
 This folder contains guidelines to help you record data in a consistent and understandable way. It covers the project's requirements for the way features should be represented, including requirements that are not coded into the linter or schema.
 This file contains general guidelines that apply to all features added to BCD. For guidelines that apply to specific categories of data, check out their respective files within this folder.
 
-- [API](./api.md)
-- [Browsers](./browsers.md)
-- [Tagging BCD features](./tags.md)
+- [API](api.md)
+- [Browsers](browsers.md)
+- [Tagging BCD features](tags.md)
 
 ## Choosing a version number
 

@@ -108,7 +108,7 @@ If you're going to submit a pull request modifying the compat data, we highly re
 
 ### Finding browser version numbers for features
 
-When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](./matching-browser-releases/index.md).
+When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](matching-browser-releases/index.md).
 
 ## Opening pull requests
 
