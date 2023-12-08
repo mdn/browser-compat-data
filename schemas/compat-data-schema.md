@@ -30,7 +30,7 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 ### File and folder breakdown
 
-The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and put into sub folders.
+The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and placed into subfolders.
 
 ## Understanding the schema
 
