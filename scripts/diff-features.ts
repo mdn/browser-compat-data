@@ -65,12 +65,10 @@ const diff = (opts: {
   const aSide = enumerate(refA, github === false);
   const bSide = enumerate(refB, github === false);
 
-  const results = {
+  return {
     added: [...bSide].filter((feature) => !aSide.has(feature)),
     removed: [...aSide].filter((feature) => !bSide.has(feature)),
   };
-
-  return results;
 };
 
 /**
@@ -226,7 +224,7 @@ if (esMain(import.meta)) {
           type: 'string',
           nargs: 1,
           choices: ['json', 'markdown'],
-          demand: 'a named format is required',
+          demandOption: 'a named format is required',
           default: 'markdown',
         })
         .option('no-github', {
