@@ -6,7 +6,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import bcd from '../index.js';
+import bcdData from '../index.js';
 import {
   BrowserName,
   CompatStatement,
@@ -125,6 +125,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
 const getStats = (
   folder: string,
   allBrowsers: boolean,
+  bcd = bcdData,
 ): VersionStats | null => {
   /** @constant {string[]} */
   const browsers: BrowserName[] = allBrowsers
