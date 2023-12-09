@@ -15,10 +15,10 @@ const parser = new HTMLParser();
 
 /**
  * Recursively test a DOM node for valid elements
- * @param {any} node The DOM node to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param node The DOM node to test
+ * @param browser The browser the notes belong to
+ * @param feature The identifier of the feature
+ * @param logger The logger to output errors to
  */
 const testNode = (
   node,
@@ -63,10 +63,10 @@ const testNode = (
 
 /**
  * Test a string for valid HTML
- * @param {string} string The string to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param string The string to test
+ * @param browser The browser the notes belong to
+ * @param feature The identifier of the feature
+ * @param logger The logger to output errors to
  */
 const validateHTML = (
   string: string,
@@ -102,10 +102,10 @@ const validateHTML = (
 
 /**
  * Check the notes in the data
- * @param {string|string[]} notes The notes to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param notes The notes to test
+ * @param browser The browser the notes belong to
+ * @param feature The identifier of the feature
+ * @param logger The logger to output errors to
  */
 const checkNotes = (
   notes: string | string[],
@@ -124,9 +124,9 @@ const checkNotes = (
 
 /**
  * Process the data for notes errors
- * @param {CompatStatement} data The data to test
- * @param {Logger} logger The logger to output errors to
- * @param {string} feature The identifier of the feature
+ * @param data The data to test
+ * @param logger The logger to output errors to
+ * @param feature The identifier of the feature
  */
 const processData = (
   data: CompatStatement,
@@ -157,8 +157,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.full The full filepath of the data
    */
   check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, logger, full);

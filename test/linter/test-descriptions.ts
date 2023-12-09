@@ -15,11 +15,11 @@ type DescriptionError = {
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
- * @param {string} ruleName The name of the error
- * @param {string} path The feature path
- * @param {CompatStatement} compat The compat data to test
- * @param {string} expected Expected description
- * @param {DescriptionError[]} errors The array of errors to push to
+ * @param ruleName The name of the error
+ * @param path The feature path
+ * @param compat The compat data to test
+ * @param expected Expected description
+ * @param errors The array of errors to push to
  */
 const checkDescription = (
   ruleName: string,
@@ -41,9 +41,9 @@ const checkDescription = (
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
- * @param {string} path The path of the feature
- * @param {DescriptionError[]} errors The array of errors to push to
+ * @param data The data to test
+ * @param path The path of the feature
+ * @param errors The array of errors to push to
  */
 const processApiData = (
   data: CompatStatement,
@@ -98,10 +98,10 @@ const processApiData = (
 
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
- * @param {string} category The feature category
- * @param {string} path The path of the feature
- * @returns {DescriptionError[]} The errors caught in the file
+ * @param data The data to test
+ * @param category The feature category
+ * @param path The path of the feature
+ * @returns The errors caught in the file
  */
 export const processData = (
   data: CompatStatement,
@@ -123,8 +123,12 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The feature data
+   * @param root.path The path to the feature data
+   * @param root.path.full The full filepath to the feature data
+   * @param root.path.category The category of the feature
    */
   check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
     const errors = processData(data, category, full);

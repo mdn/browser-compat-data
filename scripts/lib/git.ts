@@ -11,9 +11,9 @@ type Fields = {
 
 /**
  * Get the git merge base
- * @param {string} x The first git reference
- * @param {string} y The second git reference
- * @returns {string} The output from the `git merge-base` command
+ * @param x The first git reference
+ * @param y The second git reference
+ * @returns The output from the `git merge-base` command
  */
 const getMergeBase = (x: string, y = 'HEAD'): string =>
   child_process
@@ -22,8 +22,8 @@ const getMergeBase = (x: string, y = 'HEAD'): string =>
 
 /**
  * Parse fields from a git diff status output
- * @param {string[]} fields The fields to parse
- * @returns {Fields} The parsed fields
+ * @param fields The fields to parse
+ * @returns The parsed fields
  */
 const parseFields = (fields: string[]): Fields => ({
   value: fields[0],
@@ -33,9 +33,9 @@ const parseFields = (fields: string[]): Fields => ({
 
 /**
  * Get git diff statuses between two refs
- * @param {string} base The first git ref
- * @param {string} head The second git refs
- * @returns {Fields[]} The diff statuses
+ * @param base The first git ref
+ * @param head The second git refs
+ * @returns The diff statuses
  */
 const getGitDiffStatuses = (base: string, head: string): Fields[] =>
   child_process
@@ -47,9 +47,9 @@ const getGitDiffStatuses = (base: string, head: string): Fields[] =>
 
 /**
  * Get file contents from a specific commit and file path
- * @param {string} commit The commit hash to get contents from
- * @param {string} path The file path to get contents from
- * @returns {string} The file contents
+ * @param commit The commit hash to get contents from
+ * @param path The file path to get contents from
+ * @returns The file contents
  */
 const getFileContent = (commit: string, path: string): string =>
   child_process

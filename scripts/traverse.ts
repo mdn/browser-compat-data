@@ -6,20 +6,21 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { BrowserName, Identifier } from '../types/types.js';
+import { InternalSupportStatement } from '../types/index.js';
 import bcd from '../index.js';
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {BrowserName[]} browsers The browsers to test for
- * @param {string[]} values The values to test for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @param {string} identifier The identifier of the current object
+ * @param obj The compat data to traverse through
+ * @param browsers The browsers to test for
+ * @param values The values to test for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @param identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
 function* iterateFeatures(
-  obj,
+  obj: Identifier,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -32,14 +33,14 @@ function* iterateFeatures(
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
           if (tag) {
-            const tags = obj[i].__compat.tags;
+            const tags = obj[i].__compat?.tags;
             if (tags && tags.includes(tag)) {
               yield `${identifier}${i}`;
             }
           } else {
-            const comp = obj[i].__compat.support;
+            const comp = obj[i].__compat?.support;
             for (const browser of browsers) {
-              let browserData = comp[browser];
+              let browserData = comp![browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
@@ -52,7 +53,9 @@ function* iterateFeatures(
               }
 
               for (const range in browserData) {
-                if (browserData[range] === 'mirror') {
+                if (
+                  (browserData[range] as InternalSupportStatement) === 'mirror'
+                ) {
                   if (values.includes('mirror')) {
                     yield `${identifier}${i}`;
                   }
@@ -96,16 +99,16 @@ function* iterateFeatures(
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {string[]} browsers The browsers to traverse for
- * @param {string[]} values The version values to traverse for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @param {string} identifier The identifier of the current object
- * @returns {string[]} An array of the features
+ * @param obj The compat data to traverse through
+ * @param browsers The browsers to traverse for
+ * @param values The version values to traverse for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @param identifier The identifier of the current object
+ * @returns An array of the features
  */
 const traverseFeatures = (
-  obj,
+  obj: Identifier,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -121,12 +124,12 @@ const traverseFeatures = (
 
 /**
  * Traverse the features within BCD
- * @param {string[]} folders The folders to traverse
- * @param {BrowserName[]} browsers The browsers to traverse for
- * @param {string[]} values The version values to traverse for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @returns {string[]} The list of features
+ * @param folders The folders to traverse
+ * @param browsers The browsers to traverse for
+ * @param values The version values to traverse for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @returns The list of features
  */
 const main = (
   folders = [

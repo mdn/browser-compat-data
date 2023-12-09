@@ -37,8 +37,8 @@ export type WalkOutput = {
 
 /**
  * Walk through the browser releases
- * @param {DataType} data The data to iterate
- * @param {string?} path The current path
+ * @param data The data to iterate
+ * @param path The current path
  * @yields {BrowserReleaseWalkOutput} The release info
  */
 export function* browserReleaseWalk(
@@ -57,9 +57,9 @@ export function* browserReleaseWalk(
 
 /**
  * Walk through the compatibility statements
- * @param {DataType} data The data to iterate
- * @param {string?} path The current path
- * @param {number} depth The maximum depth to iterate
+ * @param data The data to iterate
+ * @param path The current path
+ * @param depth The maximum depth to iterate
  * @yields {LowLevelWalkOutput} The feature info
  */
 export function* lowLevelWalk(
@@ -94,8 +94,8 @@ export function* lowLevelWalk(
 
 /**
  * Walk the data for compat features
- * @param {string|string[]} entryPoints Entry points to iterate
- * @param {DataType} data The data to iterate
+ * @param entryPoints Entry points to iterate
+ * @param data The data to iterate
  * @yields {WalkOutput} The feature info
  */
 export default function* walk(

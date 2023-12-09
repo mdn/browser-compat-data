@@ -4,14 +4,14 @@
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { CompatStatement, Identifier } from '../../types/types.js';
+import { CompatStatement } from '../../types/types.js';
 
 /**
  * Process the data for prefix errors
- * @param {Identifier} data The data to test
- * @param {string} category The category the data belongs to
- * @param {string} feature The full feature path
- * @param {Logger} logger The logger to output errors to
+ * @param data The data to test
+ * @param category The category the data belongs to
+ * @param feature The full feature path
+ * @param logger The logger to output errors to
  */
 const processData = (
   data: CompatStatement,
@@ -95,8 +95,12 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
+   * @param root.path.full The full filepath of the data
    */
   check: (logger: Logger, { data, path: { category, full } }: LinterData) => {
     processData(data, category, full, logger);

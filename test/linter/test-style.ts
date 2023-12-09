@@ -18,9 +18,9 @@ import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-p
 
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema
- * @param {string} rawData The raw contents of the file to test
- * @param {Logger} logger The logger to output errors to
- * @param {string} category The category of the file
+ * @param rawData The raw contents of the file to test
+ * @param logger The logger to output errors to
+ * @param category The category of the file
  */
 const processData = (
   rawData: string,
@@ -116,8 +116,11 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.rawdata The raw contents of the file to test
+   * @param root.path The path of the file
+   * @param root.path.category The category of the file
    */
   check: (logger: Logger, { rawdata, path: { category } }: LinterData) => {
     processData(rawdata, logger, category);

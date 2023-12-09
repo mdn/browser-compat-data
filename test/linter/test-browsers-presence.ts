@@ -10,10 +10,10 @@ const { browsers } = bcd;
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
- * @param {CompatStatement} data The data to test
- * @param {string} category The category the data belongs to.
- * @param {Logger} logger The logger to output errors to.
- * @param {string} [path] The path of the data.
+ * @param data The data to test
+ * @param category The category the data belongs to.
+ * @param logger The logger to output errors to.
+ * @param [path] The path of the data.
  */
 const processData = (
   data: CompatStatement,
@@ -89,8 +89,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     processData(data, category || '', logger);

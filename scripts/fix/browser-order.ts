@@ -16,9 +16,9 @@ import { IS_WINDOWS } from '../../test/utils.js';
  * and so will be stringified in that order as well. This relies on
  * guaranteed "own" property ordering, which is insertion order for
  * non-integer keys (which is our case).
- * @param {string} key The key of the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} Value with sorting applied
+ * @param key The key of the object
+ * @param value The value of the key
+ * @returns Value with sorting applied
  */
 export const orderSupportBlock = (
   key: string,
@@ -41,7 +41,7 @@ export const orderSupportBlock = (
  * Perform a fix of the browser order of a __compat.support block within
  * all the data in a specified file.  The function will then automatically
  * write any needed changes back into the file.
- * @param {string} filename The path to the file to fix in-place
+ * @param filename The path to the file to fix in-place
  */
 const fixBrowserOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

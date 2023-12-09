@@ -10,8 +10,8 @@ const { browsers } = bcd;
 
 /**
  * Check if experimental should be true or false
- * @param {CompatStatement} data The data to check
- * @returns {boolean} The expected experimental status
+ * @param data The data to check
+ * @returns The expected experimental status
  */
 export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
@@ -64,9 +64,9 @@ export const checkExperimental = (data: CompatStatement): boolean => {
 
 /**
  * Check the status blocks of the compat date
- * @param {CompatStatement} data The data to test
- * @param {Logger} logger The logger to output errors to
- * @param {string} category The feature category
+ * @param data The data to test
+ * @param logger The logger to output errors to
+ * @param category The feature category
  */
 const checkStatus = (
   data: CompatStatement,
@@ -110,8 +110,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     checkStatus(data, logger, category);
