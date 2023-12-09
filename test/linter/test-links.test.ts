@@ -67,7 +67,7 @@ describe('test-links', () => {
   });
 
   it('should process bug links correctly', () => {
-    const rawData = "....<a href='http://bugzil.la/12345'>Bug 12345</a>";
+    const rawData = "<a href='http://bugzil.la/12345'>Bug 12345</a>";
     const errors = processData(rawData);
 
     assert.strictEqual(errors.length, 1);
@@ -81,11 +81,14 @@ describe('test-links', () => {
 
     assert.strictEqual(errors.length, 1);
     assert.strictEqual(errors[0].issue, 'Move word "bug" into link text');
-    assert.strictEqual(errors[0].expected, "<a href='...'>bug 12345</a>");
+    assert.strictEqual(
+      errors[0].expected,
+      "<a href='https://bugzil.la/12345'>bug 12345</a>",
+    );
   });
 
-  it('should process bug links with "Bug" word within sentence correctly', () => {
-    const rawData = "....<a href='https://bugzil.la/12345'>Bug 12345</a>";
+  it('should process bug links with capital "Bug"', () => {
+    const rawData = "<a href='https://bugzil.la/12345'>Bug 12345</a>";
     const errors = processData(rawData);
 
     assert.strictEqual(errors.length, 1);
@@ -94,6 +97,16 @@ describe('test-links', () => {
       'Use lowercase "bug" word within sentence',
     );
     assert.strictEqual(errors[0].expected, 'bug 12345');
+  });
+
+  it('should process bug links with non-standard bug text', () => {
+    const rawData =
+      "see <a href='https://crbug.com/67890'>Chrome bug 67890</a>.";
+    const errors = processData(rawData);
+
+    assert.strictEqual(errors.length, 1);
+    assert.strictEqual(errors[0].issue, 'Use standard link text');
+    assert.strictEqual(errors[0].expected, 'bug 67890');
   });
 
   describe('MDN links', () => {
@@ -107,6 +120,19 @@ describe('test-links', () => {
         errors[0].actual,
         'http://developer.mozilla.org/docs/Web/API/console',
       );
+      assert.strictEqual(
+        errors[0].expected,
+        'https://developer.mozilla.org/docs/Web/API/console',
+      );
+    });
+
+    it('should process MDN links on subdomain correctly', () => {
+      const rawData =
+        '"https://allizom.developer.mozilla.org/docs/Web/API/console"';
+      const errors = processData(rawData);
+
+      assert.strictEqual(errors.length, 1);
+      assert.strictEqual(errors[0].issue, 'Use correct MDN domain');
       assert.strictEqual(
         errors[0].expected,
         'https://developer.mozilla.org/docs/Web/API/console',
