@@ -193,7 +193,7 @@ export const processData = (rawData: string): LinkError[] => {
         };
       }
 
-      if (!path.startsWith('/docs/')) {
+      if (!path.startsWith('docs/')) {
         const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
 
         if (pathMatch) {
