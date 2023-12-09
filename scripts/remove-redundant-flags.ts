@@ -110,7 +110,7 @@ export const removeRedundantFlags = (
         }
 
         if (addData) {
-          result.push(supportData[i]);
+          result.push(support);
         }
       }
 
