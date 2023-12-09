@@ -14,26 +14,26 @@ import bcd from '../index.js';
 import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
-type BrowserReleaseWalkOutput = {
+interface BrowserReleaseWalkOutput {
   path: string;
   data: DataType;
   browser: BrowserStatement;
   browserRelease: ReleaseStatement;
-};
+}
 
-type LowLevelWalkOutput = {
+interface LowLevelWalkOutput {
   path: string;
   data: DataType;
   browser?: BrowserStatement;
   compat?: CompatStatement;
   browserRelease?: ReleaseStatement;
-};
+}
 
-export type WalkOutput = {
+export interface WalkOutput {
   path: string;
   data: DataType;
   compat: CompatStatement;
-};
+}
 
 /**
  * Walk through the browser releases

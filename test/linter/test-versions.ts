@@ -18,7 +18,7 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-const browserTips: { [browser: string]: string } = {
+const browserTips: Record<string, string> = {
   nodejs:
     'BCD does not record every individual version of Node.js, only the releases that update V8 engine versions or add a new feature. You may need to add the release to browsers/nodejs.json.',
   safari_ios:
@@ -41,7 +41,7 @@ const realValuesTargetBrowsers = [
   'webview_android',
 ];
 
-const realValuesRequired: { [category: string]: string[] } = {
+const realValuesRequired: Record<string, string[]> = {
   api: realValuesTargetBrowsers,
   css: realValuesTargetBrowsers,
   html: [],

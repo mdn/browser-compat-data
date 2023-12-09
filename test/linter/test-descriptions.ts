@@ -6,12 +6,12 @@ import chalk from 'chalk-template';
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
-type DescriptionError = {
+interface DescriptionError {
   path: string;
   ruleName: string;
   actual: string;
   expected: string;
-};
+}
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
