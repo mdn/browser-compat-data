@@ -3,6 +3,8 @@
 
 import assert from 'node:assert/strict';
 
+import { BrowserName } from '../types/types.js';
+
 import { iterateFeatures } from './traverse.js';
 
 describe('iterateFeatures', () => {
@@ -26,7 +28,7 @@ describe('iterateFeatures', () => {
       },
     };
 
-    const browsers = ['chrome', 'firefox'];
+    const browsers: BrowserName[] = ['chrome', 'firefox'];
     const values = ['1.0', 'null'];
     const depth = 2;
     const tag = '';
