@@ -42,10 +42,7 @@ export const isMirrorEquivalent = (
     // This can happen with missing engine_version. Don't mirror anything.
     return false;
   }
-  if (stringify(mirrored) !== stringify(original)) {
-    return false;
-  }
-  return true;
+  return stringify(mirrored) === stringify(original);
 };
 
 /**

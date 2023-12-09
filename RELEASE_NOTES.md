@@ -1,5 +1,150 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.4.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.5)
+
+December 8, 2023
+
+### Removals
+
+- `api.Permissions.permission_speaker-selection` ([#21529](https://github.com/mdn/browser-compat-data/pull/21529))
+- `api.Sanitizer.sanitizeFor` ([#21514](https://github.com/mdn/browser-compat-data/pull/21514))
+- `css.properties.background-position-x.two_value_syntax` ([#21539](https://github.com/mdn/browser-compat-data/pull/21539))
+- `css.properties.background-position-y.2_value_syntax` ([#21539](https://github.com/mdn/browser-compat-data/pull/21539))
+- `css.properties.hyphens.language_finish` ([#21499](https://github.com/mdn/browser-compat-data/pull/21499))
+- `webextensions.manifest.omnibox.key` ([#21527](https://github.com/mdn/browser-compat-data/pull/21527))
+
+### Additions
+
+- `api.CredentialsContainer.create.publicKey_option.extensions.payment` ([#21460](https://github.com/mdn/browser-compat-data/pull/21460))
+- `api.Fence` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.Fence.getNestedConfigs` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.Fence.reportEvent` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.Fence.setReportEventDataForAutomaticBeacons` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.Fence.setReportEventDataForAutomaticBeacons.start_commit_eventType` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.FencedFrameConfig` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.FencedFrameConfig.setSharedStorageContext` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.HTMLFencedFrameElement` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.HTMLFencedFrameElement.allow` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.HTMLFencedFrameElement.config` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.HTMLFencedFrameElement.height` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.HTMLFencedFrameElement.width` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.Navigator.deprecatedReplaceInURN` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `api.PaymentRequest.PaymentRequest.secure_payment_confirmation_method` ([#21460](https://github.com/mdn/browser-compat-data/pull/21460))
+- `api.Window.fence` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `browsers.nodejs.releases.17.4.0` ([#21414](https://github.com/mdn/browser-compat-data/pull/21414))
+- `browsers.nodejs.releases.18.16.0` ([#21415](https://github.com/mdn/browser-compat-data/pull/21415))
+- `browsers.nodejs.releases.19.8.0` ([#21415](https://github.com/mdn/browser-compat-data/pull/21415))
+- `css.properties.background-position-x.side-relative_values` ([#21539](https://github.com/mdn/browser-compat-data/pull/21539))
+- `css.properties.background-position-y.side-relative_values` ([#21539](https://github.com/mdn/browser-compat-data/pull/21539))
+- `css.properties.hyphens.language_albanian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_amharic` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_armenian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_assamese` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_basque` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_belarusian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_bengali` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_cyrillic_mongolian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_czechoslovak` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_ethiopic_script_mul` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_ethiopic_script_und` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_finnish` ([#21499](https://github.com/mdn/browser-compat-data/pull/21499))
+- `css.properties.hyphens.language_georgian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_gujarati` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_hindi` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_irish` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_kannada` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_latvian` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_malayalam` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_marathi` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_modern_greek` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_old_slavonic` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_oriya` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_punjabi` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_tamil` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_telugu` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `css.properties.hyphens.language_turkmen` ([#21489](https://github.com/mdn/browser-compat-data/pull/21489))
+- `html.elements.a.target.unfencedTop` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `html.elements.fencedframe` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `http.headers.Content-Security-Policy.fenced-frame-src` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `http.headers.Sec-Fetch-Dest.fencedframe` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `http.headers.Supports-Loading-Mode.credentialed-prerender` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `http.headers.Supports-Loading-Mode.fenced-frames` ([#20294](https://github.com/mdn/browser-compat-data/pull/20294))
+- `webextensions.manifest.omnibox.keyword` ([#21527](https://github.com/mdn/browser-compat-data/pull/21527))
+
+### Statistics
+
+- 13 contributors have changed 275 files with 4,789 additions and 462 deletions in 39 commits ([`v5.4.4...v5.4.5`](https://github.com/mdn/browser-compat-data/compare/v5.4.4...v5.4.5))
+- 15,262 total features
+- 1,054 total contributors
+- 4,666 total stargazers
+
+## [v5.4.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.4)
+
+December 5, 2023
+
+### Removals
+
+- `html.elements.form.autocapitalize` ([#21458](https://github.com/mdn/browser-compat-data/pull/21458))
+
+### Additions
+
+- `http.headers.Origin-Agent-Cluster` ([#21424](https://github.com/mdn/browser-compat-data/pull/21424))
+
+### Statistics
+
+- 7 contributors have changed 17 files with 300 additions and 215 deletions in 13 commits ([`v5.4.3...v5.4.4`](https://github.com/mdn/browser-compat-data/compare/v5.4.3...v5.4.4))
+- 15,216 total features
+- 1,052 total contributors
+- 4,659 total stargazers
+
+## [v5.4.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.3)
+
+December 1, 2023
+
+### Additions
+
+- `browsers.opera_android.releases.75` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.76` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.77` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `browsers.opera_android.releases.78` ([#21390](https://github.com/mdn/browser-compat-data/pull/21390))
+- `css.selectors.closed` ([#21369](https://github.com/mdn/browser-compat-data/pull/21369))
+- `css.selectors.open` ([#21369](https://github.com/mdn/browser-compat-data/pull/21369))
+- `webextensions.api.tabs.Tab.hidden` ([#21392](https://github.com/mdn/browser-compat-data/pull/21392))
+
+### Statistics
+
+- 9 contributors have changed 46 files with 400 additions and 273 deletions in 17 commits ([`v5.4.2...v5.4.3`](https://github.com/mdn/browser-compat-data/compare/v5.4.2...v5.4.3))
+- 15,216 total features
+- 1,051 total contributors
+- 4,660 total stargazers
+
+## [v5.4.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.2)
+
+November 28, 2023
+
+### Removals
+
+- `api.Window.pageXOffset` ([#21348](https://github.com/mdn/browser-compat-data/pull/21348))
+- `api.Window.pageYOffset` ([#21348](https://github.com/mdn/browser-compat-data/pull/21348))
+- `css.properties.grid-column-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+- `css.properties.grid-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+- `css.properties.grid-row-gap` ([#21347](https://github.com/mdn/browser-compat-data/pull/21347))
+
+### Additions
+
+- `api.MediaKeys.getStatusForPolicy` ([#21368](https://github.com/mdn/browser-compat-data/pull/21368))
+- `api.WebTransportBidirectionalStream.readable.returns_WebTransportReceiveStream` ([#21355](https://github.com/mdn/browser-compat-data/pull/21355))
+- `api.WebTransportBidirectionalStream.writable.returns_WebTransportSendStream` ([#21355](https://github.com/mdn/browser-compat-data/pull/21355))
+- `javascript.builtins.Promise.withResolvers` ([#21364](https://github.com/mdn/browser-compat-data/pull/21364))
+- `webextensions.api.webRequest.onBeforeSendHeaders.details.frameAncestors` ([#21356](https://github.com/mdn/browser-compat-data/pull/21356))
+
+### Statistics
+
+- 11 contributors have changed 41 files with 439 additions and 489 deletions in 28 commits ([`v5.4.1...v5.4.2`](https://github.com/mdn/browser-compat-data/compare/v5.4.1...v5.4.2))
+- 15,213 total features
+- 1,049 total contributors
+- 4,659 total stargazers
+
 ## [v5.4.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.4.1)
 
 November 24, 2023
@@ -6143,7 +6288,7 @@ This package may now be directly imported through ESM! On NodeJS v16.15+, Deno a
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 ```
 
-For older NodeJS versions, a separate import has been included called `forLegacyNode` (note this may be removed in a future update). Imports via CommonJS (`require()`) are still available, and there are no plans to deprecate it for the forseeable future.
+For older NodeJS versions, a separate import has been included called `forLegacyNode` (note this may be removed in a future update). Imports via CommonJS (`require()`) are still available, and there are no plans to deprecate it for the foreseeable future.
 
 ```js
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
