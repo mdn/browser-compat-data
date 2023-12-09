@@ -32,7 +32,7 @@ describe('test-browsers-presence', () => {
     data.support['unknownBrowser'] = { version_added: '1' };
 
     test.check(logger, { data, path: { category } });
-    assert.strictEqual(logger.messages.length, 2);
+    assert.equal(logger.messages.length, 2);
   });
 
   it('should log an error if a browser is invalid for the category', () => {
@@ -40,13 +40,13 @@ describe('test-browsers-presence', () => {
     data.support['nodejs'] = { version_added: '1' };
 
     test.check(logger, { data, path: { category } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 
   it('should log an error if a required browser is missing', () => {
     delete data.support['chrome'];
 
     test.check(logger, { data, path: { category } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 });

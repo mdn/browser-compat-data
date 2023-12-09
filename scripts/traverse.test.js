@@ -36,6 +36,6 @@ describe('iterateFeatures', () => {
       iterateFeatures(obj, browsers, values, depth, tag, identifier),
     );
 
-    assert.deepStrictEqual(result, ['feature1', 'feature2']);
+    assert.deepEqual(result, ['feature1', 'feature2']);
   });
 });

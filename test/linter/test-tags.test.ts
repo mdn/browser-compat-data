@@ -23,7 +23,7 @@ describe('test.check', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should not log error when tags are valid', () => {
@@ -34,7 +34,7 @@ describe('test.check', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should log error when tags do not have a namespace', () => {
@@ -45,8 +45,8 @@ describe('test.check', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('Invalid tag found:'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
   });
 
   it('should log error when tags do not use one of the allowed namespaces', () => {
@@ -57,8 +57,8 @@ describe('test.check', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('Invalid tag found:'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
   });
 
   it('should log error when tag name uses characters other than lowercase alphanumeric and hyphen', () => {
@@ -69,7 +69,7 @@ describe('test.check', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('Invalid tag found:'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
   });
 });

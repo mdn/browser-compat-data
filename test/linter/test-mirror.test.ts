@@ -27,12 +27,11 @@ describe('test-mirror', () => {
 
     test.check(logger, { data: { support: supportData }, path: { category } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert.strictEqual(
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
       logger.messages[0].message.includes('can be automatically mirrored'),
-      true,
     );
-    assert.strictEqual(logger.messages[0].fixable, true);
+    assert.equal(logger.messages[0].fixable, true);
   });
 
   describe('Mirroring', () => {
@@ -53,7 +52,7 @@ describe('test-mirror', () => {
     });
 
     it('should not log any errors', () => {
-      assert.strictEqual(logger.messages.length, 0);
+      assert.equal(logger.messages.length, 0);
     });
   });
 
@@ -69,6 +68,6 @@ describe('test-mirror', () => {
     const category = 'webextensions';
 
     test.check(logger, { data: { support: supportData }, path: { category } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 });

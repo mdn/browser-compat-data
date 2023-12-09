@@ -26,7 +26,7 @@ describe('test-multiple-statements', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should log error when multiple statements for the same key exist', () => {
@@ -36,8 +36,8 @@ describe('test-multiple-statements', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('has multiple statements'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('has multiple statements'));
   });
 
   it('should not log error when multiple statements for different keys exist', () => {
@@ -52,7 +52,7 @@ describe('test-multiple-statements', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should ignore statements with partial_implementation, version_removed, or flags', () => {
@@ -68,6 +68,6 @@ describe('test-multiple-statements', () => {
 
     test.check(logger, { data });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 });

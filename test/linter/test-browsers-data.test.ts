@@ -33,7 +33,7 @@ describe('test-browsers-data', () => {
     };
 
     test.check(logger, { data, path: { browser } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 
   it('should log an error if a browser has multiple nightly releases', () => {
@@ -49,7 +49,7 @@ describe('test-browsers-data', () => {
       },
     };
     test.check(logger, { data, path: { browser } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 
   it('should not log an error if a server engine has multiple nightly releases', () => {
@@ -65,7 +65,7 @@ describe('test-browsers-data', () => {
       },
     };
     test.check(logger, { data, path: { browser } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 
   it('should log an error if the upstream for a browser is set to itself', () => {
@@ -80,7 +80,7 @@ describe('test-browsers-data', () => {
     };
 
     test.check(logger, { data, path: { browser } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 
   it('should log an error if the upstream for a browser is an unknown browser', () => {
@@ -95,6 +95,6 @@ describe('test-browsers-data', () => {
     };
 
     test.check(logger, { data, path: { browser } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 });

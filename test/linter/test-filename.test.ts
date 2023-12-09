@@ -19,47 +19,47 @@ describe('test-filename', () => {
   it('should not log an error for valid data and filepath', () => {
     const filepath = 'api/Interface/feature.json';
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should replace ".json" in filepath', () => {
     const filepath = 'api/Interface/feature.json';
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should replace "api/_globals" in filepath', () => {
     const filepath = 'api/_globals/feature.json';
     data = { api: { feature: {} } };
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should replace "api/Console" in filepath', () => {
     const filepath = 'api/Console/feature.json';
     data = { api: { console: { feature: {} } } };
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should replace "html/elements/input/" in filepath', () => {
     const filepath = 'html/elements/input/feature.json';
     data = { html: { elements: { input: { type_feature: {} } } } };
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should replace "javascript/builtins/globals" in filepath', () => {
     const filepath = 'javascript/builtins/globals/feature.json';
     data = { javascript: { builtins: { feature: {} } } };
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should log an error if testFilename fails', () => {
     const filepath = 'api/Interface/feature.json';
     data = { api: { Interface: { feature: {}, other: {} } } };
     test.check(logger, { data, path: { full: filepath } });
-    assert.strictEqual(logger.messages.length, 1);
+    assert.equal(logger.messages.length, 1);
   });
 });

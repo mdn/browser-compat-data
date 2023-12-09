@@ -16,7 +16,7 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 0);
+      assert.equal(errors.length, 0);
     });
 
     it('should check description for constructor', () => {
@@ -27,8 +27,8 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 1);
-      assert.strictEqual(errors[0].ruleName, 'constructor');
+      assert.equal(errors.length, 1);
+      assert.equal(errors[0].ruleName, 'constructor');
     });
 
     it('should check description for event', () => {
@@ -39,8 +39,8 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 1);
-      assert.strictEqual(errors[0].ruleName, 'event');
+      assert.equal(errors.length, 1);
+      assert.equal(errors[0].ruleName, 'event');
     });
 
     it('should check description for permission', () => {
@@ -51,8 +51,8 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 1);
-      assert.strictEqual(errors[0].ruleName, 'permission');
+      assert.equal(errors.length, 1);
+      assert.equal(errors[0].ruleName, 'permission');
     });
 
     it('should check description for secure context required', () => {
@@ -63,8 +63,8 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 1);
-      assert.strictEqual(errors[0].ruleName, 'secure context required');
+      assert.equal(errors.length, 1);
+      assert.equal(errors[0].ruleName, 'secure context required');
     });
 
     it('should check description for worker support', () => {
@@ -75,8 +75,8 @@ describe('test-descriptions', () => {
       };
 
       const errors = processData(data, 'api', path);
-      assert.strictEqual(errors.length, 1);
-      assert.strictEqual(errors[0].ruleName, 'worker');
+      assert.equal(errors.length, 1);
+      assert.equal(errors[0].ruleName, 'worker');
     });
   });
 });

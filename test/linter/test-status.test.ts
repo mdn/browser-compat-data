@@ -19,7 +19,7 @@ describe('checkExperimental', () => {
       support: {},
     };
 
-    assert.strictEqual(checkExperimental(data), true);
+    assert.equal(checkExperimental(data), true);
   });
 
   it('should return true when data is experimental but supported by only one engine', () => {
@@ -41,7 +41,7 @@ describe('checkExperimental', () => {
       },
     };
 
-    assert.strictEqual(checkExperimental(data), true);
+    assert.equal(checkExperimental(data), true);
   });
 
   it('should return false when data is experimental and supported by more than one engine', () => {
@@ -63,7 +63,7 @@ describe('checkExperimental', () => {
       },
     };
 
-    assert.strictEqual(checkExperimental(data), false);
+    assert.equal(checkExperimental(data), false);
   });
 });
 
@@ -82,7 +82,7 @@ describe('checkStatus', () => {
 
     test.check(logger, { data, path: { category: 'api' } });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 
   it('should log error when category is webextensions and status is defined', () => {
@@ -97,8 +97,8 @@ describe('checkStatus', () => {
 
     test.check(logger, { data, path: { category: 'webextensions' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('not allowed'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('not allowed'));
   });
 
   it('should log error when status is both experimental and deprecated', () => {
@@ -113,8 +113,8 @@ describe('checkStatus', () => {
 
     test.check(logger, { data, path: { category: 'api' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('Unexpected simultaneous'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('Unexpected simultaneous'));
   });
 
   it('should log error when status is non-standard but has a spec_url', () => {
@@ -130,8 +130,8 @@ describe('checkStatus', () => {
 
     test.check(logger, { data, path: { category: 'api' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('but has a'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('but has a'));
   });
 
   it('should log error when status is experimental and supported by more than one engine', () => {
@@ -155,7 +155,7 @@ describe('checkStatus', () => {
 
     test.check(logger, { data, path: { category: 'api' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('should be set to'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('should be set to'));
   });
 });

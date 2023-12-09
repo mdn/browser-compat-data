@@ -26,7 +26,7 @@ describe('Order Properties', () => {
       '{\n  "__compat": {\n    "support": {\n      "firefox": {\n        "version_added": "1.5"\n      },\n      "chrome": {\n        "version_added": "1"\n      }\n    },\n    "status": {\n      "experimental": false,\n      "standard_track": true,\n      "deprecated": false\n    }\n  }\n}';
 
     const result = stringifyAndOrderProperties(input);
-    assert.deepStrictEqual(result, expected);
+    assert.deepEqual(result, expected);
   });
 
   it('should correctly order properties for browsers', () => {
@@ -45,6 +45,6 @@ describe('Order Properties', () => {
       '{\n  "browsers": {\n    "firefox": {\n      "releases": {\n        "1": {\n          "release_date": "2008-09-02"\n        },\n        "1.5": {\n          "release_date": "2008-11-14"\n        }\n      }\n    }\n  }\n}';
 
     const result = stringifyAndOrderProperties(input);
-    assert.deepStrictEqual(result, expected);
+    assert.deepEqual(result, expected);
   });
 });

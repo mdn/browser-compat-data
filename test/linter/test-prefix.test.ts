@@ -26,8 +26,8 @@ describe('test-prefix', () => {
 
     test.check(logger, { data, path: { category: 'api', full: 'feature' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
       logger.messages[0].message.includes(
         'Both prefix and alternative name are defined',
       ),
@@ -45,8 +45,8 @@ describe('test-prefix', () => {
 
     test.check(logger, { data, path: { category: 'api', full: 'feature' } });
 
-    assert.strictEqual(logger.messages.length, 1);
-    assert(logger.messages[0].message.includes('which is invalid for'));
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('which is invalid for'));
   });
 
   it('should log error when alternative name should be replaced with prefix', () => {
@@ -63,9 +63,9 @@ describe('test-prefix', () => {
 
     test.check(logger, { data, path: { category: 'api', full: 'feature' } });
 
-    assert.strictEqual(logger.messages.length, 2);
-    assert(logger.messages[0].message.includes('instead of'));
-    assert(logger.messages[1].message.includes('instead of'));
+    assert.equal(logger.messages.length, 2);
+    assert.ok(logger.messages[0].message.includes('instead of'));
+    assert.ok(logger.messages[1].message.includes('instead of'));
   });
 
   it('should not log error when data is valid', () => {
@@ -79,6 +79,6 @@ describe('test-prefix', () => {
 
     test.check(logger, { data, path: { category: 'api', full: 'feature' } });
 
-    assert.strictEqual(logger.messages.length, 0);
+    assert.equal(logger.messages.length, 0);
   });
 });
