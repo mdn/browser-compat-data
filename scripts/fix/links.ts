@@ -11,8 +11,8 @@ import { processData } from '../../test/linter/test-links.js';
  * @param {string} filename The name of the file to fix
  */
 const fixLinks = (filename: string): void => {
-  const errors = processData(filename);
   const original = fs.readFileSync(filename, 'utf-8').trim();
+  const errors = processData(original);
   let data = original;
 
   if (IS_WINDOWS) {

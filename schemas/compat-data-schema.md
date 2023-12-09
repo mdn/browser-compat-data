@@ -26,15 +26,17 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
+- [webassembly/](../webassembly) contains data for [Web Assembly](https://webassembly.org/specs/) features.
+
 ### File and folder breakdown
 
-The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and put into sub folders.
+The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and placed into subfolders.
 
 ## Understanding the schema
 
 ### Feature hierarchies
 
-Each feature is identified by a unique hierarchy of strings, e.g the `text-align` property is identified by `css.properties.text-align`.
+Each feature is identified by a unique hierarchy of strings, e.g. the `text-align` property is identified by `css.properties.text-align`.
 
 In the JSON file it looks like this:
 
@@ -64,7 +66,7 @@ The hierarchy of identifiers is not defined by the schema and is a convention of
 
 A feature is described by an identifier containing the `__compat` property. In other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.
 
-When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.
+When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends on the evolution of the feature over time, both in terms of specifications and of browser support.
 
 #### Sub-features
 
@@ -78,47 +80,58 @@ In BCD, every feature is defined using a `__compat` object, which contains infor
 
 Here is an example of a `__compat` statement, with all of the properties and the common possible support statements.
 
-```js
+```jsonc
 {
   "api": {
     "Document": {
       "fake_event": {
-        "__compat": { // <---
+        // ↓↓↓↓↓↓
+        "__compat": {
           "description": "<code>fake</code> event", // A friendly description of the feature
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fake_event", // The associated MDN article
-          "spec_url": [ // The spec URL(s) for the feature if applicable, may be one or many
+          "spec_url": [
+            // The spec URL(s) for the feature if applicable, may be one or many
             "https://example.com/a-fake-spec#fake-event",
             "https://example.com/a-fake-spec#onfake"
           ],
-          "support": { // The support data for each browser
-            "chrome": { // Supported since Chrome 57 on
+          "support": {
+            // The support data for each browser
+            "chrome": {
+              // Supported since Chrome 57 on
               "version_added": "57"
             },
             "chrome_android": "mirror", // Mirrors from Chrome Desktop, so "57"
-            "edge": {  // Supported since Edge 12, with a note about a difference in behavior
+            "edge": {
+              // Supported since Edge 12, with a note about a difference in behavior
               "version_added": "12",
               "notes": "Before Edge 79, the event interface included additional proprietary properties."
             },
-            "firefox": { // Added in Firefox 59, then removed in Firefox 80 (AKA supported from 59 until 79)
+            "firefox": {
+              // Added in Firefox 59, then removed in Firefox 80 (AKA supported from 59 until 79)
               "version_added": "59",
               "version_removed": "80"
             },
-            "firefox_android": { // Supported in Firefox Android, we just don't know what version it was added in
+            "firefox_android": {
+              // Supported in Firefox Android, we just don't know what version it was added in
               "version_added": true
             },
-            "ie": { // Supported since IE 10, but has a caveat that impacts compatibility
+            "ie": {
+              // Supported since IE 10, but has a caveat that impacts compatibility
               "version_added": "10",
               "partial_implementation": true,
               "notes": "The <code>onfake</code> event handler property is not supported."
             },
             "oculus": "mirror",
-            "opera": { // Not supported at all in Opera
+            "opera": {
+              // Not supported at all in Opera
               "version_added": false
             },
-            "opera_android": { // We don't know if Opera Android supports this or not
+            "opera_android": {
+              // We don't know if Opera Android supports this or not
               "version_added": null
             },
-            "safari": [ // A support statement can be an array of multiple statements to better describe the compatibility story
+            "safari": [
+              // A support statement can be an array of multiple statements to better describe the compatibility story
               {
                 "version_added": "13" // Supported since Safari 13...
               },
@@ -136,7 +149,8 @@ Here is an example of a `__compat` statement, with all of the properties and the
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
-          "status": { // Standards track, deprecation and experimental status
+          "status": {
+            // Standards track, deprecation and experimental status
             "experimental": false,
             "standard_track": true,
             "deprecated": false
@@ -237,7 +251,7 @@ Most of the browsers are derivatives of other browsers, such as mobile counterpa
 
 An example of this would be the following:
 
-```js
+```jsonc
 "support": {
   "chrome": {
     "version_added": "66"
@@ -250,7 +264,7 @@ This also helps with maintaining derivatives with a different release schedule t
 
 ### Compat data in support statements
 
-The `simple_support_statement` object is the core object containing the compatibility information for a browser. It consist of the following properties:
+The `simple_support_statement` object is the core object containing the compatibility information for a browser. It consists of the following properties:
 
 #### `version_added`
 
@@ -461,7 +475,7 @@ The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addi
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note). that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {

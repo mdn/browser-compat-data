@@ -64,7 +64,7 @@ export const updateChromiumReleases = async (options) => {
   // There is a bug in chromestatus: the first 4 characters are erroneous.
   // It isn't a valid JSON file.
   // So we strip these characters and manually parse it.
-  // If one day, the bug is fixed, the next 3 lines can be replaces with:
+  // If one day, the bug is fixed, the next 3 lines can be replaced with:
   // const versions = await googleVersions.json();
   let buffer = await googleVersions.text();
   buffer = buffer.substring(5);

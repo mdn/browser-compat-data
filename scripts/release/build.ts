@@ -110,8 +110,9 @@ export const addVersionLast = (feature: WalkOutput): void => {
  * @returns {CompatData} An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
-  const data = Object.assign({}, bcd);
-  const walker = walk(undefined, data);
+  const { default: bcd } = await import('../../index.js');
+
+  const walker = walk(undefined, bcd);
 
   for (const feature of walker) {
     applyMirroring(feature);
@@ -119,7 +120,7 @@ export const createDataBundle = async (): Promise<CompatData> => {
   }
 
   return {
-    ...data,
+    ...bcd,
     __meta: generateMeta(),
   };
 };
@@ -261,11 +262,13 @@ const main = async () => {
   // Crate a new directory
   await fs.mkdir(targetdir);
 
-  await writeManifest();
-  await writeData();
-  await writeWrapper();
-  await writeTypeScript();
-  await copyFiles();
+  await Promise.all([
+    writeManifest(),
+    writeData(),
+    writeWrapper(),
+    writeTypeScript(),
+    copyFiles(),
+  ]);
 
   console.log('Data bundle is ready');
 };

@@ -75,7 +75,7 @@ const updateReleaseNotesIfArchived = (originalURL) => {
 
 /**
  * getFutureReleaseDate - Read the future release date
- * @param {string} release The release number of the versin
+ * @param {string} release The release number of the version
  * @param {string} releaseScheduleURL The url of the MD file having it
  * @returns {string} The date in the YYYY-MM-DD format
  * Throws a string in case of an error
@@ -99,7 +99,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   }
   const releaseDateText = result[1];
 
-  // Get the date frome the file
+  // Get the date from the file
   const months = [
     'Jan',
     'Feb',
@@ -181,7 +181,7 @@ export const updateEdgeReleases = async (options) => {
   let result = await initReleaseNoteFiles();
 
   //
-  // Get the JSON with the versions from edgereleases
+  // Get the JSON with the versions from edge releases
   //
   const buffer = await fetch(options.edgeupdatesURL);
   const edgeVersions = JSON.parse(await buffer.text());
