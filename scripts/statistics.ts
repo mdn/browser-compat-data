@@ -155,7 +155,9 @@ const getStats = (
     } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
-      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      if (process.env.NODE_ENV !== 'test') {
+        console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      }
       return null;
     }
   } else {
