@@ -6,7 +6,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import bcd from '../index.js';
+import bcdData from '../index.js';
 import {
   BrowserName,
   CompatStatement,
@@ -125,6 +125,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
 const getStats = (
   folder: string,
   allBrowsers: boolean,
+  bcd = bcdData,
 ): VersionStats | null => {
   /** @constant {string[]} */
   const browsers: BrowserName[] = allBrowsers
@@ -154,7 +155,9 @@ const getStats = (
     } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
-      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      if (process.env.NODE_ENV !== 'test') {
+        console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      }
       return null;
     }
   } else {
