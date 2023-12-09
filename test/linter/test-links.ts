@@ -146,28 +146,26 @@ export const processData = (rawData: string): LinkError[] => {
         };
       }
 
-      if (domain == 'bugzil.la') {
-        if (/^bug $/.test(before)) {
+      if (/^bug $/.test(before)) {
+        return {
+          issue: 'Move word "bug" into link text',
+          expected: `<a href='${url}'>${before}${bugId}</a>`,
+          actualLink: `${before}<a href='${url}'>${linkText}</a>`,
+        };
+      } else if (linkText === `Bug ${bugId}`) {
+        if (!/(\. |")$/.test(before)) {
           return {
-            issue: 'Move word "bug" into link text',
-            expected: `<a href='...'>${before}${bugId}</a>`,
-            actualLink: `${before}<a href='...'>${linkText}</a>`,
-          };
-        } else if (linkText === `Bug ${bugId}`) {
-          if (!/(\. |")$/.test(before)) {
-            return {
-              issue: 'Use lowercase "bug" word within sentence',
-              expected: `bug ${bugId}`,
-              actualLink: `Bug ${bugId}`,
-            };
-          }
-        } else if (linkText !== `bug ${bugId}`) {
-          return {
-            issue: 'Use standard link text',
+            issue: 'Use lowercase "bug" word within sentence',
             expected: `bug ${bugId}`,
-            actualLink: linkText,
+            actualLink: `Bug ${bugId}`,
           };
         }
+      } else if (linkText !== `bug ${bugId}`) {
+        return {
+          issue: 'Use standard link text',
+          expected: `bug ${bugId}`,
+          actualLink: linkText,
+        };
       }
 
       return null;
