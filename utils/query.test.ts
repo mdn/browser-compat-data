@@ -13,6 +13,7 @@ describe('query()', () => {
       () => query('api.NonExistentFeature.subFeature'),
       ReferenceError,
     );
+    assert.throws(() => query('foo.'), ReferenceError);
   });
 
   it('should return the expected point in the tree (namespace)', () => {

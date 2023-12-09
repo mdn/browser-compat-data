@@ -192,11 +192,6 @@ const checkVersions = (
       }
 
       if ('version_added' in statement && 'version_removed' in statement) {
-        if (statement.version_added === statement.version_removed) {
-          logger.error(
-            chalk`{bold version_added: "${statement.version_added}"} must not be the same as {bold version_removed} for {bold ${browser}}`,
-          );
-        }
         if (
           typeof statement.version_added === 'string' &&
           typeof statement.version_removed === 'string' &&
