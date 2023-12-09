@@ -69,9 +69,11 @@ export const processData = (rawData: string): LinkError[] => {
   let actual = rawData;
 
   // prevent false positives from git.core.autocrlf on Windows
+  /* c8 ignore start */
   if (IS_WINDOWS) {
     actual = actual.replace(/\r/g, '');
   }
+  /* c8 ignore stop */
 
   processLink(
     // use https://bugzil.la/1000000 instead
