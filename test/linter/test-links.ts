@@ -77,7 +77,7 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://bugzil.la/1000000 instead
     errors,
     actual,
-    String.raw`https?://bugzilla\.mozilla\.org/show_bug\.cgi\?id=(\d+)`,
+    /https?:\/\/bugzilla\.mozilla\.org\/show_bug\.cgi\?id=(\d+)/g,
     (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://bugzil.la/${match[1]}`,
@@ -88,7 +88,7 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://crbug.com/100000 instead
     errors,
     actual,
-    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/chromium/issues/detail\?id=(\d+)`,
+    /https?:\/\/(bugs\.chromium\.org|code\.google\.com)\/p\/chromium\/issues\/detail\?id=(\d+)/g,
     (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crbug.com/${match[2]}`,
@@ -99,7 +99,7 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://crbug.com/category/100000 instead
     errors,
     actual,
-    String.raw`https?://(bugs\.chromium\.org|code\.google\.com)/p/((?!chromium)\w+)/issues/detail\?id=(\d+)`,
+    /https?:\/\/(bugs\.chromium\.org|code\.google\.com)\/p\/((?!chromium)\w+)\/issues\/detail\?id=(\d+)/g,
     (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crbug.com/${match[2]}/${match[3]}`,
@@ -110,7 +110,7 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://crbug.com/category/100000 instead
     errors,
     actual,
-    String.raw`https?://chromium\.googlesource\.com/chromium/src/\+/([\w\d]+)`,
+    /https?:\/\/chromium\.googlesource\.com\/chromium\/src\/\+\/([\w\d]+)/g,
     (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crrev.com/${match[1]}`,
@@ -121,7 +121,7 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://webkit.org/b/100000 instead
     errors,
     actual,
-    String.raw`https?://bugs\.webkit\.org/show_bug\.cgi\?id=(\d+)`,
+    /https?:\/\/bugs\.webkit\.org\/show_bug\.cgi\?id=(\d+)/g,
     (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://webkit.org/b/${match[1]}`,
@@ -132,7 +132,7 @@ export const processData = (rawData: string): LinkError[] => {
     // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the beginning of notes/sentences).
     errors,
     actual,
-    String.raw`(....)<a href='((https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+))'>(.*?)</a>`,
+    /(\w*\s?)<a href='((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))'>(.*?)<\/a>/g,
     (match) => {
       const [, before, url, protocol, domain, bugId, linkText] = match;
 
@@ -175,7 +175,7 @@ export const processData = (rawData: string): LinkError[] => {
   processLink(
     errors,
     actual,
-    String.raw`\b(https?)://((?:[a-z][a-z0-9-]*\.)*)developer.mozilla.org/(.*?)(?=["'\s])`,
+    /(https?):\/\/((?:[a-z][a-z0-9-]*\.)*)?developer.mozilla.org\/(.*?)(?=["'\s])/g,
     (match) => {
       const [, protocol, subdomain, path] = match;
       const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
@@ -238,7 +238,7 @@ export const processData = (rawData: string): LinkError[] => {
   processLink(
     errors,
     actual,
-    String.raw`https?://developer.microsoft.com/(\w\w-\w\w)/(.*?)(?=["'\s])`,
+    /https?:\/\/developer.microsoft.com\/(\w\w-\w\w)\/(.*?)(?=["'\s])/g,
     (match) => ({
       issue: 'Use non-localized Microsoft Developer URL',
       expected: `https://developer.microsoft.com/${match[2]}`,
@@ -248,7 +248,7 @@ export const processData = (rawData: string): LinkError[] => {
   processLink(
     errors,
     actual,
-    String.raw`<a href='([^'>]+)'>((?:.(?!</a>))*.)</a>`,
+    /<a href='([^'>]+)'>((?:.(?<!<\/a>))*.)<\/a>/g,
     (match) => {
       if (new URL(match[1]).hostname === null) {
         return {
