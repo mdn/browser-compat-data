@@ -75,7 +75,7 @@ const processData = (
             `^:?:?${p}(${strippedFeatureName[0].toLowerCase()}|${strippedFeatureName[0].toUpperCase()})${strippedFeatureName.slice(
               1,
             )}$`,
-            'i',
+            'g',
           );
           return statement.alternative_name?.match(regex);
         });
