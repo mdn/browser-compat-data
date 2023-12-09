@@ -15,12 +15,8 @@ export default (path: string, data: DataType = bcd): DataType => {
   const pathElements = path.split('.');
   let lookup = data;
   while (pathElements.length) {
-    const next = pathElements.shift();
-    if (!next) {
-      throw new ReferenceError(
-        `${path} is not a valid tree identifier (failed at '${next}')`,
-      );
-    }
+    // "as string" cast performed because we know that pathElements.length > 0
+    const next = pathElements.shift() as string;
     lookup = lookup[next];
     if (lookup === undefined) {
       throw new ReferenceError(
