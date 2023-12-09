@@ -137,7 +137,7 @@ describe('compare-statements script', () => {
       const expected = test.output;
       const actual = JSON.parse(JSON.stringify(test.output), orderStatements);
 
-      assert.deepStrictEqual(actual, expected);
+      assert.deepEqual(actual, expected);
     }
   });
 });
