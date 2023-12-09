@@ -8,7 +8,7 @@ import { CompatStatement } from '../../types/types.js';
 
 import test from './test-browsers-presence.js';
 
-describe('processData', () => {
+describe('test-browsers-presence', () => {
   let logger: Logger;
   let data: CompatStatement;
   let category: string;

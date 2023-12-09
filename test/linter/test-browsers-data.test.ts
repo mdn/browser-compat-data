@@ -8,7 +8,7 @@ import { BrowserStatement } from '../../types/types.js';
 
 import test from './test-browsers-data.js';
 
-describe('processData', () => {
+describe('test-browsers-data', () => {
   let logger: Logger;
 
   beforeEach(() => {
