@@ -7,7 +7,7 @@ import { Logger } from '../utils.js';
 
 import test from './test-mirror.js';
 
-describe('checkMirroring', () => {
+describe('test-mirror', () => {
   let logger: Logger;
 
   beforeEach(() => {
