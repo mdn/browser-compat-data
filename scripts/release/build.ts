@@ -59,15 +59,14 @@ export const applyMirroring = (feature: WalkOutput): void => {
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
-  const data = Object.assign({}, bcd);
-  const walker = walk(undefined, data);
+  const walker = walk(undefined, bcd);
 
   for (const feature of walker) {
     applyMirroring(feature);
   }
 
   return {
-    ...data,
+    ...bcd,
     __meta: generateMeta(),
   };
 };
@@ -209,11 +208,13 @@ const main = async () => {
   // Crate a new directory
   await fs.mkdir(targetdir);
 
-  await writeManifest();
-  await writeData();
-  await writeWrapper();
-  await writeTypeScript();
-  await copyFiles();
+  await Promise.all([
+    writeManifest(),
+    writeData(),
+    writeWrapper(),
+    writeTypeScript(),
+    copyFiles(),
+  ]);
 
   console.log('Data bundle is ready');
 };
