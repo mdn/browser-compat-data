@@ -14,7 +14,7 @@ const { browsers } = bcd;
  * @param {BrowserStatement} data The browser statement
  * @param {Logger} logger The logger to output errors to
  */
-export const processData = (
+const processData = (
   browser: BrowserName,
   data: BrowserStatement,
   logger: Logger,

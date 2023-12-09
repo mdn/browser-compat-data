@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { Logger } from '../utils.js';
 import { BrowserStatement } from '../../types/types.js';
 
-import { processData } from './test-browsers-data.js';
+import test from './test-browsers-data.js';
 
 describe('processData', () => {
   let logger: Logger;
@@ -32,7 +32,7 @@ describe('processData', () => {
       },
     };
 
-    processData(browser, data, logger);
+    test.check(logger, { data, path: { browser } });
     assert.strictEqual(logger.messages.length, 1);
   });
 
@@ -48,7 +48,7 @@ describe('processData', () => {
         '2': { status: 'nightly' },
       },
     };
-    processData(browser, data, logger);
+    test.check(logger, { data, path: { browser } });
     assert.strictEqual(logger.messages.length, 1);
   });
 
@@ -64,7 +64,7 @@ describe('processData', () => {
         '2': { status: 'nightly' },
       },
     };
-    processData(browser, data, logger);
+    test.check(logger, { data, path: { browser } });
     assert.strictEqual(logger.messages.length, 1);
   });
 
@@ -79,7 +79,7 @@ describe('processData', () => {
       releases: {},
     };
 
-    processData(browser, data, logger);
+    test.check(logger, { data, path: { browser } });
     assert.strictEqual(logger.messages.length, 1);
   });
 
@@ -94,7 +94,7 @@ describe('processData', () => {
       releases: {},
     };
 
-    processData(browser, data, logger);
+    test.check(logger, { data, path: { browser } });
     assert.strictEqual(logger.messages.length, 1);
   });
 });
