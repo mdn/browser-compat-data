@@ -129,7 +129,7 @@ export const processData = (rawData: string): LinkError[] => {
   );
 
   processLink(
-    // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the begin of notes/sentences).
+    // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the beginning of notes/sentences).
     errors,
     actual,
     String.raw`(....)<a href='((https?)://(bugzil\.la|crbug\.com|webkit\.org/b)/(\d+))'>(.*?)</a>`,
