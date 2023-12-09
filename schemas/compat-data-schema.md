@@ -26,11 +26,9 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [webextensions/](../webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.
 
-- [webassembly/](../webassembly) contains data for [Web Assembly](https://webassembly.org/specs/) features.
-
 ### File and folder breakdown
 
-The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and placed into subfolders.
+The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and put into sub folders.
 
 ## Understanding the schema
 
@@ -85,8 +83,8 @@ Here is an example of a `__compat` statement, with all of the properties and the
   "api": {
     "Document": {
       "fake_event": {
-        // ↓↓↓↓↓↓
         "__compat": {
+          // <---
           "description": "<code>fake</code> event", // A friendly description of the feature
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fake_event", // The associated MDN article
           "spec_url": [
