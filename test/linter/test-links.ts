@@ -178,56 +178,33 @@ export const processData = (rawData: string): LinkError[] => {
     /(https?):\/\/((?:[a-z][a-z0-9-]*\.)*)?developer.mozilla.org\/(.*?)(?=["'\s])/g,
     (match) => {
       const [, protocol, subdomain, path] = match;
-      const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
-
-      if (!pathMatch) {
-        return null;
-      }
-
-      const locale = pathMatch[1];
-      let expectedPath = pathMatch[2];
-
-      if (!expectedPath.startsWith('docs/')) {
-        // Convert legacy zone URLs (see https://bugzil.la/1462475):
-        const [zone, index] = ((): [string | null, number | undefined] => {
-          const match = expectedPath.match(
-            /\b(Add-ons|Apps|Archive|Firefox|Learn|Web)\b/,
-          );
-          return match ? [match[1], match.index] : [null, -1];
-        })();
-        if (index && index >= 0) {
-          expectedPath = expectedPath.substring(index);
-          switch (zone) {
-            case 'Add-ons':
-            case 'Firefox':
-              expectedPath = 'Mozilla/' + expectedPath;
-              break;
-            case 'Apps':
-              expectedPath = 'Web/' + expectedPath;
-              break;
-          }
-        }
-        expectedPath = 'docs/' + expectedPath;
-      }
 
       if (protocol !== 'https') {
         return {
           issue: 'Use HTTPS MDN URL',
-          expected: `https://developer.mozilla.org/${expectedPath}`,
+          expected: `https://developer.mozilla.org/${path}`,
         };
       }
 
       if (subdomain) {
         return {
           issue: 'Use correct MDN domain',
-          expected: `https://developer.mozilla.org/${expectedPath}`,
+          expected: `https://developer.mozilla.org/${path}`,
         };
       }
 
-      if (path !== expectedPath) {
+      if (!path.startsWith('/docs/')) {
+        const pathMatch = /^(?:(\w\w(?:-\w\w)?)\/)?(.*)$/.exec(path);
+
+        if (pathMatch) {
+          return {
+            issue: 'Use non-localized MDN URL',
+            expected: `https://developer.mozilla.org/${pathMatch[2]}`,
+          };
+        }
+
         return {
-          issue: `Use ${locale ? 'non-localized' : 'correct'} MDN URL`,
-          expected: `https://developer.mozilla.org/${expectedPath}`,
+          issue: 'MDN URL is invalid',
         };
       }
 
