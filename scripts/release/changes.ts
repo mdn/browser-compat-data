@@ -124,23 +124,21 @@ export const getChanges = async (date: string): Promise<Changes> => {
       continue;
     }
 
-    const { added, removed } = diff;
-
-    changes.added.push(
-      ...added.map((feature) => ({
+    for (const feature of diff.added) {
+      changes.added.push({
         number: pull.number,
         url: pull.url,
         feature,
-      })),
-    );
+      });
+    }
 
-    changes.removed.push(
-      ...removed.map((feature) => ({
+    for (const feature of diff.removed) {
+      changes.removed.push({
         number: pull.number,
         url: pull.url,
         feature,
-      })),
-    );
+      });
+    }
   }
 
   changes.added.sort((a, b) => a.feature.localeCompare(b.feature));
