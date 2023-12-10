@@ -40,10 +40,12 @@ const load = async (...dirs: string[]) => {
         }
 
         extend(result, contents);
+        /* c8 ignore start */
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
       }
+      /* c8 ignore stop */
     }
   }
 
