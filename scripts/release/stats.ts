@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-export type Stats = {
+export interface Stats {
   commits: number;
   changed: number;
   insertions: number;
@@ -13,7 +13,7 @@ export type Stats = {
   stars: number;
   start: string;
   end: string;
-};
+}
 
 type ChangeStats = Pick<
   Stats,
