@@ -12,7 +12,6 @@ import {
   CompatStatement,
   SupportStatement,
   Identifier,
-  CompatData,
 } from '../types/types.js';
 
 import { getRefDate } from './release/utils.js';

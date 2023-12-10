@@ -15,8 +15,8 @@ const parser = new HTMLParser();
 
 /**
  * Recursively test a DOM node for valid elements
- * @param {any} node The DOM node to test
- * @returns {string[]} The errors found during validation
+ * @param node The DOM node to test
+ * @returns The errors found during validation
  */
 const testNode = (node): string[] => {
   const errors: string[] = [];
@@ -63,8 +63,8 @@ const testNode = (node): string[] => {
 
 /**
  * Test a string for valid HTML
- * @param {string} string The string to test
- * @returns {string[]} The errors found during validation
+ * @param string The string to test
+ * @returns The errors found during validation
  */
 export const validateHTML = (string: string): string[] => {
   const errors: string[] = [];

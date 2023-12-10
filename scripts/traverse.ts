@@ -39,8 +39,11 @@ function* iterateFeatures(
             }
           } else {
             const comp = obj[i].__compat?.support;
+            if (!comp) {
+              continue;
+            }
             for (const browser of browsers) {
-              let browserData = comp![browser];
+              let browserData = comp[browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
