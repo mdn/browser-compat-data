@@ -17,22 +17,16 @@ const parser = new HTMLParser();
 /**
  * Recursively test a DOM node for valid elements
  * @param {any} node The DOM node to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @returns {string[]} The errors found during validation
  */
-const testNode = (
-  node,
-  browser: BrowserName,
-  feature: string,
-  logger: Logger,
-): void => {
+const testNode = (node): string[] => {
+  const errors: string[] = [];
   if (node.type == 'TAG') {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag)) {
       // Ensure we're only using select nodes
-      logger.error(
-        chalk`Notes for {bold ${feature}} in {bold ${browser}} have a {bold disallowed HTML element} ({bold <${tag}>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(
+      errors.push(
+        chalk`HTML element {bold <${tag}>} is {bold not allowed}. Allowed HTML elements are: ${VALID_ELEMENTS.join(
           ', ',
         )}`,
       );
@@ -43,65 +37,59 @@ const testNode = (
     if (tag === 'a') {
       if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
-        logger.error(
-          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes other than href} (found {bold ${attrs.join(
-            ', ',
-          )}}). {bold <a>} elements may only have an {bold href} attribute.`,
+        errors.push(
+          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. {bold <${tag}>} elements may only have (and must have) an {bold href} attribute; found {bold ${
+            attrs.length ? attrs.join(', ') : 'no attributes'
+          }}.`,
         );
       }
     } else {
       if (attrs.length > 0) {
         // Ensure nodes (besides 'a') contain no attributes
-        logger.error(
-          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.`,
+        errors.push(
+          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. Elements other than {bold <a>} may {bold not} have any attributes; found {bold ${attrs.join(
+            ', ',
+          )}}.`,
         );
       }
     }
   }
 
   for (const childNode of node.children || []) {
-    testNode(childNode, browser, feature, logger);
+    errors.push(...testNode(childNode));
   }
+
+  return errors;
 };
 
 /**
  * Test a string for valid HTML
  * @param {string} string The string to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @returns {string[]} The errors found during validation
  */
-const validateHTML = (
-  string: string,
-  browser: BrowserName,
-  feature: string,
-  logger: Logger,
-): void => {
+export const validateHTML = (string: string): string[] => {
+  const errors: string[] = [];
   const html = marked.parseInline(string);
   const htmlErrors = HTMLParser.validate(html);
 
   if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    testNode(parser.parse(html), browser, feature, logger);
+    errors.push(...testNode(parser.parse(html)));
   } else {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} have invalid HTML: ${htmlErrors
-        .map((x) => x._message)
-        .flat()}`,
+    errors.push(
+      chalk`Invalid HTML: ${htmlErrors.map((x) => x._message).join(', ')}`,
     );
   }
 
   if (string.includes('  ')) {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} have double-spaces. Notes are required to have single spaces only.`,
-    );
+    errors.push(chalk`Double-spaces are not allowed.`);
   }
 
   if (string.includes('\n')) {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} may not contain newlines.`,
-    );
+    errors.push(chalk`Newlines are not allowed.`);
   }
+
+  return errors;
 };
 
 /**
@@ -117,12 +105,19 @@ const checkNotes = (
   feature: string,
   logger: Logger,
 ): void => {
+  let errors: any = [];
   if (Array.isArray(notes)) {
     for (const note of notes) {
-      validateHTML(note, browser, feature, logger);
+      errors = validateHTML(note);
     }
   } else {
-    validateHTML(notes, browser, feature, logger);
+    errors = validateHTML(notes);
+  }
+
+  if (errors) {
+    for (const error of errors) {
+      logger.error(chalk`Notes for {bold ${browser}} → ${error}`);
+    }
   }
 };
 
