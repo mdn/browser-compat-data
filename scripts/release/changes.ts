@@ -115,6 +115,11 @@ export const getChanges = async (date: string): Promise<Changes> => {
 
   const tasks: ListrTask[] = pulls.map((pull) => ({
     title: `#${pull.number}`,
+    /**
+     * Get the diff from the pull request
+     * @param pull The pull request to test
+     * @param task The Listr task this is run in
+     */
     task: (task: ListrTask) => {
       const diff = getDiff(pull, task);
 

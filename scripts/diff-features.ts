@@ -38,6 +38,7 @@ const main = (opts: {
  * @param opts.ref1 First reference to compare
  * @param opts.ref2 Second reference to compare
  * @param opts.github Whether to obtain artifacts from GitHub
+ * @param opts.quiet If true, don't log to console
  * @returns Diff between two refs
  */
 const diff = (opts: {
@@ -75,8 +76,7 @@ const diff = (opts: {
 /**
  * Enumerate features from GitHub or local checkout
  * @param ref Reference to obtain features for
- * @param skipGitHub Skip fetching artifacts from GitHub
- * @returns Feature list from reference
+ * @param skipGithub Skip fetching artifacts from GitHub
  * @param quiet If true, don't log to console
  * @returns Feature list from reference
  */
