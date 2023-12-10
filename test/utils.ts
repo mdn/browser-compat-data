@@ -8,32 +8,14 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
-/**
- * Get the date exactly two years ago
- * @returns {Date} The date, two years prior to today
- */
-const getTwoYearsAgo = () => {
-  const date = new Date();
-  date.setFullYear(date.getFullYear() - 2);
-  return date;
-};
+const now = new Date();
 
-export const twoYearsAgo = getTwoYearsAgo();
-
-/**
- * @typedef LinterScope
- * @type {('file'|'feature'|'browser'|'tree')}
- */
-
-/**
- * @typedef LoggerLevel
- * @type {('error'|'warning')}
- */
-
-/**
- * @typedef Linter
- * @type {{name: string, description: string,  scope: string,  check: any}}
- */
+/* The date, exactly two years ago */
+export const twoYearsAgo = new Date(
+  now.getFullYear() - 2,
+  now.getMonth(),
+  now.getDate(),
+);
 
 const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
   Object.assign(Object.create(null), {
@@ -51,13 +33,11 @@ const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
 export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
-export const IS_CI =
-  process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+export const IS_CI = process.env.CI?.toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
 export const IS_WINDOWS = platform() === 'win32';
 
-/** @type {string[]} */
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
