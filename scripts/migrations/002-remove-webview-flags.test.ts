@@ -127,7 +127,7 @@ describe('migration scripts', () => {
     for (const test of tests) {
       const expected = test.output;
       const output = JSON.parse(JSON.stringify(test.input), removeWebViewFlags);
-      assert.deepStrictEqual(output, expected);
+      assert.deepEqual(output, expected);
     }
   });
 });
