@@ -44,7 +44,7 @@ describe('test-browsers-presence', () => {
   });
 
   it('should log an error if a required browser is missing', () => {
-    delete data.support['chrome'];
+    delete data.support.chrome;
 
     test.check(logger, { data, path: { category } });
     assert.equal(logger.messages.length, 1);
