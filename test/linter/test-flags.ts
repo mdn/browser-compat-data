@@ -13,10 +13,10 @@ import {
   FlagStatement,
 } from '../../types/types.js';
 
-type FlagError = {
+interface FlagError {
   flagData: FlagStatement[];
   browser: BrowserName;
-};
+}
 
 /**
  * Get the support statement with basic, non-aliased and non-flagged support
