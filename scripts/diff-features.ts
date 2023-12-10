@@ -44,8 +44,9 @@ const diff = (opts: {
   ref1?: string;
   ref2?: string;
   github?: boolean;
+  quiet?: boolean;
 }): { added: string[]; removed: string[] } => {
-  const { ref1, ref2, github } = opts;
+  const { ref1, ref2, github, quiet } = opts;
   let refA, refB;
 
   if (ref1 === undefined && ref2 === undefined) {
@@ -62,8 +63,8 @@ const diff = (opts: {
     refB = `${ref1}`;
   }
 
-  const aSide = enumerate(refA, github === false);
-  const bSide = enumerate(refB, github === false);
+  const aSide = enumerate(refA, github === false, quiet);
+  const bSide = enumerate(refB, github === false, quiet);
 
   return {
     added: [...bSide].filter((feature) => !aSide.has(feature)),
@@ -76,19 +77,27 @@ const diff = (opts: {
  * @param ref Reference to obtain features for
  * @param skipGitHub Skip fetching artifacts from GitHub
  * @returns Feature list from reference
+ * @param quiet If true, don't log to console
+ * @returns Feature list from reference
  */
-const enumerate = (ref: string, skipGitHub: boolean): Set<string> => {
-  if (!skipGitHub) {
+const enumerate = (
+  ref: string,
+  skipGithub: boolean,
+  quiet = false,
+): Set<string> => {
+  if (!skipGithub) {
     try {
       return new Set(getEnumerationFromGithub(ref));
     } catch (e) {
-      console.error(
-        `Fetching artifact from GitHub failed: ${e} Using fallback.`,
-      );
+      if (!quiet) {
+        console.error(
+          `Fetching artifact from GitHub failed: ${e} Using fallback.`,
+        );
+      }
     }
   }
 
-  return new Set(enumerateFeatures(ref));
+  return new Set(enumerateFeatures(ref, quiet));
 };
 
 /**
@@ -145,9 +154,10 @@ const getEnumerationFromGithub = (ref: string): string[] => {
 /**
  * Enumerate features from local checkout
  * @param ref Reference to obtain features for
+ * @param quiet If true, don't log to console
  * @returns Feature list from reference
  */
-const enumerateFeatures = (ref = 'HEAD'): string[] => {
+const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -159,7 +169,9 @@ const enumerateFeatures = (ref = 'HEAD'): string[] => {
 
   const worktree = `__enumerating__${hash}`;
 
-  console.error(`Enumerating features for ${ref} (${hash})`);
+  if (!quiet) {
+    console.error(`Enumerating features for ${ref} (${hash})`);
+  }
 
   try {
     execSync(`git worktree add ${worktree} ${hash}`);

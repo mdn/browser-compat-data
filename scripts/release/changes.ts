@@ -14,6 +14,7 @@ export interface Changes {
 }
 
 import chalk from 'chalk-template';
+import { Listr, ListrTask } from 'listr2';
 
 import diffFeatures from '../diff-features.js';
 
@@ -69,36 +70,31 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
 /**
  * Get the diff from the pull request
  * @param pull The pull request to test
+ * @param task The Listr task this is run in
  * @returns The changes from the pull request
  */
 const getDiff = (
   pull: FeatureChange,
-): { added: string[]; removed: string[] } | null => {
-  process.stdout.write(
-    chalk`{blue - Diffing features for {bold #${pull.number}}...}`,
-  );
-
+  task: ListrTask,
+): { added: string[]; removed: string[] } => {
   let diff;
 
   try {
-    diff = diffFeatures({ ref1: pull.mergeCommit });
+    diff = diffFeatures({ ref1: pull.mergeCommit, quiet: true });
   } catch (e) {
-    console.log(
+    throw new Error(
       chalk`{red ${e}}\n {yellow (Failed to diff features for #${pull.number}, skipping)}`,
     );
-    return null;
   }
 
   if (diff.added.length && diff.removed.length) {
-    console.log(
-      chalk` {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`,
-    );
+    task.title += chalk` - {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`;
   } else if (diff.added.length) {
-    console.log(chalk` {blue ({green ${diff.added.length} added})}`);
+    task.title += chalk` - {blue ({green ${diff.added.length} added})}`;
   } else if (diff.removed.length) {
-    console.log(chalk` {blue ({red ${diff.removed.length} removed})}`);
+    task.title += chalk` - {blue ({red ${diff.removed.length} removed})}`;
   } else {
-    console.log(chalk` {blue (No feature count changes)}`);
+    task.title += chalk` - {blue (No feature count changes)}`;
   }
 
   return diff;
@@ -117,29 +113,41 @@ export const getChanges = async (date: string): Promise<Changes> => {
     removed: [],
   };
 
-  for (const pull of pulls) {
-    const diff = getDiff(pull);
+  const tasks: ListrTask[] = pulls.map((pull) => ({
+    title: `#${pull.number}`,
+    task: (task: ListrTask) => {
+      const diff = getDiff(pull, task);
 
-    if (!diff) {
-      continue;
-    }
+      changes.added.push(
+        ...diff.added.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
 
-    for (const feature of diff.added) {
-      changes.added.push({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      });
-    }
+      changes.removed.push(
+        ...diff.removed.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
+    },
+  }));
 
-    for (const feature of diff.removed) {
-      changes.removed.push({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      });
-    }
-  }
+  // XXX remove verbose renderer when https://github.com/SamVerschueren/listr/issues/150 fixed
+  const runner = new Listr(tasks, {
+    exitOnError: false,
+    renderer: 'verbose',
+    concurrent: 5,
+    rendererOptions: {
+      collapseSkips: false,
+      collapseErrors: false,
+    } as any,
+  });
+
+  runner.run();
 
   changes.added.sort((a, b) => a.feature.localeCompare(b.feature));
   changes.removed.sort((a, b) => a.feature.localeCompare(b.feature));
