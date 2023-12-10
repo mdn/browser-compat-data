@@ -12,19 +12,20 @@ import {
   CompatStatement,
   SupportStatement,
   Identifier,
+  CompatData,
 } from '../types/types.js';
 
 import { getRefDate } from './release/utils.js';
 
-type VersionStatsEntry = {
+interface VersionStatsEntry {
   all: number;
   true: number;
   null: number;
   range: number;
   real: number;
-};
+}
 
-type VersionStats = { [k: string]: VersionStatsEntry };
+type VersionStats = Record<string, VersionStatsEntry>;
 
 const webextensionsBrowsers: BrowserName[] = [
   'chrome',

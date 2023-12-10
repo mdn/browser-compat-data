@@ -13,15 +13,15 @@ import { SupportStatement, Identifier, BrowserName } from '../types/types.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import mirror from './release/mirror.js';
 
-type Contents = {
+interface Contents {
   base: string;
   head: string;
-};
+}
 
-type DiffItem = {
+interface DiffItem {
   name: string;
   description: string;
-};
+}
 
 /**
  * Get contents from base and head commits

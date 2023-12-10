@@ -80,12 +80,12 @@ export const removeRedundantFlags = (
         return keys.length === 1;
       });
 
-      for (let i = 0; i < supportData.length; i++) {
+      for (const support of supportData) {
         let addData = true;
 
-        if (supportData[i].flags) {
+        if (support.flags) {
           const versionToCheck = getEarliestVersion(
-            (supportData[i].version_removed as string) ||
+            (support.version_removed as string) ||
               ((simpleStatement && simpleStatement.version_added) as string),
             (simpleStatement && simpleStatement.version_added) as string,
           );
@@ -99,7 +99,7 @@ export const removeRedundantFlags = (
               releaseDate &&
               (!(simpleStatement && simpleStatement.version_removed) ||
                 compare(
-                  (supportData[i].version_added as string).replace('≤', ''),
+                  (support.version_added as string).replace('≤', ''),
                   (simpleStatement.version_removed as string).replace('≤', ''),
                   '<',
                 ))
@@ -110,7 +110,7 @@ export const removeRedundantFlags = (
         }
 
         if (addData) {
-          result.push(supportData[i]);
+          result.push(support);
         }
       }
 

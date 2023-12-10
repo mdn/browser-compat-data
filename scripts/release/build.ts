@@ -133,7 +133,7 @@ const copyFiles = async () => {
  * @returns A generated package.json for build output
  */
 export const createManifest = (): any => {
-  const minimal: { [index: string]: any } = {
+  const minimal: Record<string, any> = {
     main: 'data.json',
     exports: {
       '.': {

@@ -127,9 +127,10 @@ export const updateFirefoxReleases = async (options) => {
 
   // Replace all old entries with 'retired' or 'esr'
   Object.entries(
-    firefoxBCD.browsers[options.bcdBrowserName].releases as {
-      [version: string]: ReleaseStatement;
-    },
+    firefoxBCD.browsers[options.bcdBrowserName].releases as Record<
+      string,
+      ReleaseStatement
+    >,
   ).forEach(([key, entry]) => {
     if (key === String(esrRelease)) {
       result += updateBrowserEntry(

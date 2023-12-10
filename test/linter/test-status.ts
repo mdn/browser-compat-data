@@ -17,7 +17,7 @@ export const checkExperimental = (data: CompatStatement): boolean => {
   if (data.status?.experimental) {
     // Check if experimental should be false (code copied from migration 007)
 
-    const browserSupport: Set<BrowserName> = new Set();
+    const browserSupport = new Set<BrowserName>();
 
     for (const [browser, support] of Object.entries(data.support)) {
       // Consider only the first part of an array statement.

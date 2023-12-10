@@ -3,11 +3,11 @@
 
 import child_process from 'node:child_process';
 
-type Fields = {
+interface Fields {
   value: string;
   headPath: string;
   basePath: string;
-};
+}
 
 /**
  * Get the git merge base
