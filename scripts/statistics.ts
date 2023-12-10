@@ -12,6 +12,7 @@ import {
   CompatStatement,
   SupportStatement,
   Identifier,
+  CompatData,
 } from '../types/types.js';
 
 import { getRefDate } from './release/utils.js';
@@ -120,6 +121,7 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
  * Get all of the stats
  * @param {string} folder The folder to show statistics for (or all folders if blank)
  * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
+ * @param {CompatData} [bcd] The data to iterate; defaults to BCD
  * @returns {{[key: string]: VersionStats}?} The statistics
  */
 const getStats = (
