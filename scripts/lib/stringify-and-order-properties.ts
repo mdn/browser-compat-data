@@ -62,7 +62,7 @@ const propOrder = {
  */
 const doOrder = <T>(value: T, order: string[]): T => {
   if (value && typeof value === 'object') {
-    return order.reduce((result: { [index: string]: any }, key: string) => {
+    return order.reduce((result: Record<string, any>, key: string) => {
       if (key in value) {
         result[key] = value[key];
       }
@@ -80,9 +80,9 @@ const doOrder = <T>(value: T, order: string[]): T => {
  * @param {any} releases The release data
  * @returns {string} The stringified releases
  */
-export const stringifyReleases = (releases: {
-  [version: string]: ReleaseStatement;
-}): string => {
+export const stringifyReleases = (
+  releases: Record<string, ReleaseStatement>,
+): string => {
   const indentStep = '  '; // Constant with the indent step that sortStringify will use
 
   const sortedKeys = Object.keys(releases).sort(compareVersions);

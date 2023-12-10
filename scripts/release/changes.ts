@@ -1,12 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-export type FeatureChange = {
+export interface FeatureChange {
   mergeCommit?: string;
   number: number;
   url: string;
   feature: string;
-};
+}
 
 export interface Changes {
   added: FeatureChange[];
