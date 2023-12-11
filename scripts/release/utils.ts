@@ -87,7 +87,7 @@ export const getRefDate = (ref: string, querySafe = false): string => {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
-    return rawDateString.replace('+', '%2B');
+    return rawDateString.replaceAll('+', '%2B');
   }
   return rawDateString;
 };
