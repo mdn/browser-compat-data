@@ -8,12 +8,12 @@ import { CompatStatement } from '../../types/types.js';
 
 import { validateHTML } from './test-notes.js';
 
-type DescriptionError = {
+interface DescriptionError {
   path: string;
   ruleName: string;
   actual: string;
   expected: string;
-};
+}
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such

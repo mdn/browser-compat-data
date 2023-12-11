@@ -17,7 +17,7 @@ export const twoYearsAgo = new Date(
   now.getDate(),
 );
 
-const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
+const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
     '\b': '\\b', // ␈ (0x08)
@@ -133,38 +133,38 @@ export const jsonDiff = (actual: string, expected: string): string | null => {
   return null;
 };
 
-export type Linter = {
+export interface Linter {
   name: string;
   description: string;
   scope: LinterScope;
   check: (logger: Logger, options: object) => void;
   exceptions?: string[];
-};
+}
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
 export type LinterMessageLevel = 'error' | 'warning';
 
-export type LinterMessage = {
+export interface LinterMessage {
   level: LinterMessageLevel;
   title: string;
   path: string;
   message: string;
   fixable?: true;
   [k: string]: any;
-};
+}
 
-export type LinterPath = {
+export interface LinterPath {
   full: string;
   category: string;
   browser?: BrowserName;
-};
+}
 
-export type LinterData = {
+export interface LinterData {
   data: DataType;
   rawdata: string;
   path: LinterPath;
-};
+}
 
 /**
  * Linter logger class

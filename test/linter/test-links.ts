@@ -12,13 +12,13 @@ import {
   indexToPosRaw,
 } from '../utils.js';
 
-type LinkError = {
+interface LinkError {
   issue: string;
   pos: [number, number] | [null, null];
   posString: string;
   actual: string;
   expected?: string;
-};
+}
 
 /**
  * Given a RegEx expression, test the link for errors
