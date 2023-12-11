@@ -339,6 +339,7 @@ Note: many data categories no longer allow for `version_removed` to be set to `t
 
 > [!NOTE]
 > This property is automatically generated at build time.
+
 If `version_removed` is present, a `version_last` is automatically generated during build time, which will be set to the version number of the last browser version that supported the feature. For example, assuming the browser version only incremented in whole numbers, if a feature was added in version 20 and supported until 29, then was no longer supported in 30, `version_removed` would be `30` and `version_last` will be `29`:
 
 ```json
