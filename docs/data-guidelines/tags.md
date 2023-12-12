@@ -92,3 +92,28 @@ http.headers.Permissions-Policy.idle-detection
 ### Bulk editing tags
 
 Currently, BCD doesn't provide a command line tool to bulk update tags. We will provide such a tool soon.
+
+## Tagging `web-features` feature groups in browser compat data
+
+### Creating new feature groups (which don't yet exist in `web-features`)
+
+1. Optionally, open a PR to create a feature in `web-features`.
+   Do this if you're unsure whether the feature merits a group or if you think it might conflict or overlap with an existing group, or if you want help to proceed.
+
+   See [TK](https://example.com/) for naming a feature.
+
+1. Tag the features with the name of the feature (as created in the previous step or as seen in [TK](https://example.com) for naming guidelines).
+   For each feature without existing tags, set `tags` to `["web-features:<feature-name>"]`.
+   For each feature with existing tags, add `"web-features:<feature-name>"` to the array of tags, with the most-general features first and the narrowest, specific features last.
+
+   Tag features such that:
+
+   - The set of tagged items represents the functions of that feature as it is known to web developers by that name.
+     For example, `grid` includes features like `display: grid` and `grid-column` but _not_ `display: subgrid` because developers recognize `subgrid` as a distinct albeit closey related feature.
+
+   - The set represents the core, standard functions of the feature as a whole, not an exhaustive set of things that might be plausibly associated with that feature.
+     Do not make an effort to include prefixed, non-standard, deprecated, or otherwise fringe items.
+
+   - The set represents the minimal set of features needed to confirm whether the feature in general is supported in a given browser.
+     Don't include inessential ancestors or cousins to the feature, especially if they're already represented by another related group.
+     For example, `flexbox-gap` doesn't include the `display: flex` feature because it's already covered by `flexbox`.
