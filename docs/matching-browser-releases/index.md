@@ -31,7 +31,7 @@ Given a particular Chrome changeset or revision number, you can look up the vers
 
 For example, given the string `05b49ea1`, the tool first looks for a match among the full commit changeset numbers, finds none, then looks at the prefixed short commits:
 
-![Screenshot of the Chromium project's Find Releases tool](find-releases-tool.png)
+![Screenshot of the Chromium project's Find Releases tool](./find-releases-tool.png)
 
 Here, we see that changeset `05b49ea1` was first landed for Chrome 56, but was then backported to Chrome 55 and was presumably shipped there. This assumes the feature was not backed out at some point, and it's important to check on this.
 
@@ -65,7 +65,7 @@ interface HTMLIFrameElement : HTMLElement
     setter allowPaymentRequest
 ```
 
-This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
+This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
 
 If only an interface line is included in the exclusion list, then the entire interface is unavailable in WebViews.
 
@@ -154,17 +154,17 @@ If you have the bug number corresponding to the bug that implemented the feature
 
 Consider [bug 1435161](https://bugzil.la/1435161). This bug covers implementing the `PaymentResponse.retry()` method. If you look at that bug, you'll see the information you need right there at the top:
 
-![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](bugzilla-fixedin-top.png)
+![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](./bugzilla-fixedin-top.png)
 
 Right below the bug summary, you see the text "RESOLVED FIXED in Firefox 64". This corresponds to the presence of the tracking flag named `firefox45` having the value `fixed`. On older bugs, before the release-numbered tracking flags were added, you might instead find one of these:
 
 - A tracking flag named `relnote-firefox` with the status set to the version of Firefox the feature arrived in. This tracking flag is intended to indicate when a feature needs to be mentioned in the release notes for the browser, but serves just as well to tell us when a feature was added.
 
-  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](bugzilla-relnote-firefox.png)
+  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](./bugzilla-relnote-firefox.png)
 
 - The Target field in the Tracking group in Bugzilla is set to `mozillaN`, where `N` is the version number of Firefox. The trick to watch for is that this is sometimes inaccurate, as it represents when it was hoped to ship, not necessarily when it was actually released. Be sure to review the comments on the bug to ensure that it didn't miss its planned release.
 
-  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](bugzilla-target.png)
+  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](./bugzilla-target.png)
 
 ### From the name of a Web API interface or member
 
@@ -193,14 +193,14 @@ A web API feature change corresponds to adding, removing, or altering the signat
 - A constant defined by an API's specification
 - A data type (enum, typedef, or similar)
 
-The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
+The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](https://developer.mozilla.org/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
 
 1. For a given interface named `InterfaceName`, go to [DXR](https://searchfox.org/mozilla-central/source/) and type <kbd>file:<em>InterfaceName</em>.webidl</kbd> in the search box at the top of the page and pressing <kbd>Enter</kbd>. You will probably have to then click on the name of the file in a list of files (usually only a one-file-long list).
-2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
+2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
 
 Once in the WebIDL file, click the "Blame" link under "VCS Links" in the Navigation box near the top-right corner of the DXR page.
 
-![Screenshot of the DXR Navigation box](dxr-navigation-box.png)
+![Screenshot of the DXR Navigation box](./dxr-navigation-box.png)
 
 Once in the blame view, hover the mouse cursor over the revision number at the left side of the WebIDL on the same line as (or the first revision number found immediately above) the line of WebIDL corresponding to the feature you're interested in. For example, if you're looking for when the `RTCPeerConnection` method `addTrack()` was added to Firefox:
 
