@@ -55,7 +55,7 @@ Most reporters won't do these things on their own, but these are important steps
 - **If there's a live sample or interactive example on MDN that can be used as a test, link to it.**
 - **Ask the reporter if they have a minimal test case** (e.g., on CodePen).
 - If applicable, **comment if a more detailed or specific test is required.** For example, tests often work by checking whether a prototype has a particular member, not the actual behavior of that member.
-- **If there is a bug or commit, link to it.** Bugs can be found using the links provided in the [helpful resources section of the contributing document](contributing.md#helpful-resources).
+- **If there is a bug or commit, link to it.** Bugs can be found using the links provided in the [helpful resources section of the contributing document](./contributing.md#helpful-resources).
 
 ## Propose next steps
 

@@ -6362,8 +6362,8 @@ This change was made in [#16415](https://github.com/mdn/browser-compat-data/pull
 
 ## Older Versions
 
-- [v4.x](release_notes/v4.md)
-- [v3.x](release_notes/v3.md)
-- [v2.x](release_notes/v2.md)
-- [v1.x](release_notes/v1.md)
-- [v0.x](release_notes/v0.md)
+- [v4.x](./release_notes/v4.md)
+- [v3.x](./release_notes/v3.md)
+- [v2.x](./release_notes/v2.md)
+- [v1.x](./release_notes/v1.md)
+- [v0.x](./release_notes/v0.md)
