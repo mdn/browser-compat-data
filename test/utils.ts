@@ -8,34 +8,16 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
-/**
- * Get the date exactly two years ago
- * @returns {Date} The date, two years prior to today
- */
-const getTwoYearsAgo = () => {
-  const date = new Date();
-  date.setFullYear(date.getFullYear() - 2);
-  return date;
-};
+const now = new Date();
 
-export const twoYearsAgo = getTwoYearsAgo();
+/* The date, exactly two years ago */
+export const twoYearsAgo = new Date(
+  now.getFullYear() - 2,
+  now.getMonth(),
+  now.getDate(),
+);
 
-/**
- * @typedef LinterScope
- * @type {('file'|'feature'|'browser'|'tree')}
- */
-
-/**
- * @typedef LoggerLevel
- * @type {('error'|'warning')}
- */
-
-/**
- * @typedef Linter
- * @type {{name: string, description: string,  scope: string,  check: any}}
- */
-
-const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
+const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
     '\b': '\\b', // ␈ (0x08)
@@ -51,13 +33,11 @@ const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
 export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
-export const IS_CI =
-  process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+export const IS_CI = process.env.CI?.toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
 export const IS_WINDOWS = platform() === 'win32';
 
-/** @type {string[]} */
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
@@ -153,38 +133,38 @@ export const jsonDiff = (actual: string, expected: string): string | null => {
   return null;
 };
 
-export type Linter = {
+export interface Linter {
   name: string;
   description: string;
   scope: LinterScope;
   check: (logger: Logger, options: object) => void;
   exceptions?: string[];
-};
+}
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
 export type LinterMessageLevel = 'error' | 'warning';
 
-export type LinterMessage = {
+export interface LinterMessage {
   level: LinterMessageLevel;
   title: string;
   path: string;
   message: string;
   fixable?: true;
   [k: string]: any;
-};
+}
 
-export type LinterPath = {
+export interface LinterPath {
   full: string;
   category: string;
   browser?: BrowserName;
-};
+}
 
-export type LinterData = {
+export interface LinterData {
   data: DataType;
   rawdata: string;
   path: LinterPath;
-};
+}
 
 /**
  * Linter logger class

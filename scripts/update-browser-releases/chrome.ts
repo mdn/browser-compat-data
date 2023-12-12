@@ -64,7 +64,7 @@ export const updateChromiumReleases = async (options) => {
   // There is a bug in chromestatus: the first 4 characters are erroneous.
   // It isn't a valid JSON file.
   // So we strip these characters and manually parse it.
-  // If one day, the bug is fixed, the next 3 lines can be replaces with:
+  // If one day, the bug is fixed, the next 3 lines can be replaced with:
   // const versions = await googleVersions.json();
   let buffer = await googleVersions.text();
   buffer = buffer.substring(5);
@@ -89,48 +89,50 @@ export const updateChromiumReleases = async (options) => {
   for (const [key, value] of channels) {
     // Extract the useful data
     const versionData = versions[value];
-    data[value] = {};
-    data[value].version = versionData.version;
-    data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
+    if (versionData) {
+      data[value] = {};
+      data[value].version = versionData.version;
+      data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
 
-    // Update the JSON in memory
-    let releaseNotesURL;
-    try {
-      releaseNotesURL = await getReleaseNotesURL(
-        versionData.version,
-        data[value].releaseDate,
-        options.releaseNoteCore,
-        value,
-      );
-    } catch (str) {
-      result += str;
-    }
+      // Update the JSON in memory
+      let releaseNotesURL;
+      try {
+        releaseNotesURL = await getReleaseNotesURL(
+          data[value].version,
+          data[value].releaseDate,
+          options.releaseNoteCore,
+          value,
+        );
+      } catch (str) {
+        result += str;
+      }
 
-    if (
-      chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
-    ) {
-      // The entry already exists
-      result += updateBrowserEntry(
-        chromeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        data[value].releaseDate,
-        key,
-        releaseNotesURL,
-        '',
-      );
-    } else {
-      // New entry
-      result += newBrowserEntry(
-        chromeBCD,
-        options.bcdBrowserName,
-        data[value].version,
-        key,
-        options.browserEngine,
-        data[value].releaseDate,
-        releaseNotesURL,
-        data[value].version,
-      );
+      if (
+        chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+      ) {
+        // The entry already exists
+        result += updateBrowserEntry(
+          chromeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          data[value].releaseDate,
+          key,
+          releaseNotesURL,
+          '',
+        );
+      } else {
+        // New entry
+        result += newBrowserEntry(
+          chromeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+          key,
+          options.browserEngine,
+          data[value].releaseDate,
+          releaseNotesURL,
+          data[value].version,
+        );
+      }
     }
   }
 
@@ -165,30 +167,32 @@ export const updateChromiumReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  const plannedVersion = (data[options.nightlyBranch].version + 1).toString();
-  if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
-    result += updateBrowserEntry(
-      chromeBCD,
-      options.bcdBrowserName,
-      plannedVersion,
-      chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
-        .release_date,
-      'planned',
-      '',
-      '',
-    );
-  } else {
-    // New entry
-    result += newBrowserEntry(
-      chromeBCD,
-      options.bcdBrowserName,
-      plannedVersion,
-      'planned',
-      options.browserEngine,
-      '',
-      '',
-      plannedVersion,
-    );
+  if (data[options.nightlyBranch]) {
+    const plannedVersion = (data[options.nightlyBranch].version + 1).toString();
+    if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
+      result += updateBrowserEntry(
+        chromeBCD,
+        options.bcdBrowserName,
+        plannedVersion,
+        chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
+          .release_date,
+        'planned',
+        '',
+        '',
+      );
+    } else {
+      // New entry
+      result += newBrowserEntry(
+        chromeBCD,
+        options.bcdBrowserName,
+        plannedVersion,
+        'planned',
+        options.browserEngine,
+        '',
+        '',
+        plannedVersion,
+      );
+    }
   }
 
   //

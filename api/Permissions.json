@@ -214,6 +214,9 @@
       "permission_clipboard-read": {
         "__compat": {
           "description": "<code>clipboard-read</code> permission",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -634,66 +637,20 @@
           }
         }
       },
-      "permission_speaker-selection": {
-        "__compat": {
-          "description": "<code>speaker-selection</code> permission",
-          "spec_url": "https://w3c.github.io/mediacapture-output/#dfn-speaker-selection",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "92"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "permission_storage-access": {
         "__compat": {
           "description": "<code>storage-access</code> permission",
           "spec_url": "https://privacycg.github.io/storage-access/#permissions-integration",
           "support": {
-            "chrome": [
-              {
-                "version_added": "113",
-                "partial_implementation": true,
-                "notes": "Only available to Google Chrome's <a href='https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/'>first-party sets</a>."
-              },
-              {
-                "version_added": "86",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#storage-access-api",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              }
-            ],
-            "chrome_android": "mirror",
+            "chrome": {
+              "version_added": "119"
+            },
+            "chrome_android": {
+              "version_added": "120"
+            },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "117"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -712,7 +669,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

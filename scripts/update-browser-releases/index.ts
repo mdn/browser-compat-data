@@ -167,6 +167,7 @@ const options = {
     browserName: 'Safari for Desktop',
     bcdFile: './browsers/safari.json',
     bcdBrowserName: 'safari',
+    skippedReleases: [],
     releaseNoteJSON:
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
@@ -175,6 +176,7 @@ const options = {
     browserName: 'Safari for iOS',
     bcdFile: './browsers/safari_ios.json',
     bcdBrowserName: 'safari_ios',
+    skippedReleases: ['12.1', '13.1', '14.1'],
     releaseNoteJSON:
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
