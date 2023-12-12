@@ -13,7 +13,7 @@ import chalk from 'chalk-template';
  * @param {string} releaseDate new release date
  * @param {string} releaseNotesURL url of the release notes
  * @param {string} engineVersion the version of the engine
- * @returns {string} Text describing what has has been added
+ * @returns {string} Text describing what has been added
  */
 export const newBrowserEntry = (
   json,
@@ -25,7 +25,7 @@ export const newBrowserEntry = (
   releaseNotesURL,
   engineVersion,
 ) => {
-  const release = (json.browsers[browser].releases[version] = new Object());
+  const release = (json.browsers[browser].releases[version] = {});
   if (releaseDate) {
     release['release_date'] = releaseDate;
   }
@@ -49,7 +49,7 @@ export const newBrowserEntry = (
  * @param {string} status new status
  * @param {string} releaseNotesURL url of the release notes
  * @param {string} engineVersion the version of the engine
- * @returns {string} Text describing what has has been updated
+ * @returns {string} Text describing what has been updated
  */
 export const updateBrowserEntry = (
   json,

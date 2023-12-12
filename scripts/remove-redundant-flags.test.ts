@@ -417,7 +417,7 @@ describe('remove-redundant-flags', () => {
         2,
       );
 
-      assert.deepStrictEqual(expected, output);
+      assert.deepEqual(expected, output);
     });
 
     i += 1;

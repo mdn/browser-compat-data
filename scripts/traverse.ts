@@ -18,7 +18,7 @@ import bcd from '../index.js';
  * @param {string} identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
-function* iterateFeatures(
+export function* iterateFeatures(
   obj,
   browsers: BrowserName[],
   values: string[],

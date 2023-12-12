@@ -27,9 +27,9 @@ export const removeWebViewFlags = (
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
         const result: SimpleSupportStatement[] = [];
-        for (let i = 0; i < value.support.webview_android.length; i++) {
-          if (value.support.webview_android[i].flags === undefined) {
-            result.push(value.support.webview_android[i]);
+        for (const support of value.support.webview_android) {
+          if (support.flags === undefined) {
+            result.push(support);
           }
         }
 
