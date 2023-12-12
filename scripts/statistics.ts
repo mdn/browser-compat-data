@@ -133,16 +133,16 @@ const getStats = (
   const browsers: BrowserName[] = allBrowsers
     ? (Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[])
     : folder === 'webextensions'
-    ? webextensionsBrowsers
-    : ([
-        'chrome',
-        'chrome_android',
-        'edge',
-        'firefox',
-        'safari',
-        'safari_ios',
-        'webview_android',
-      ] as BrowserName[]);
+      ? webextensionsBrowsers
+      : ([
+          'chrome',
+          'chrome_android',
+          'edge',
+          'firefox',
+          'safari',
+          'safari_ios',
+          'webview_android',
+        ] as BrowserName[]);
 
   const stats: VersionStats = {
     total: { all: 0, true: 0, null: 0, range: 0, real: 0 },

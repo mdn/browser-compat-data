@@ -88,8 +88,8 @@ const generateCompatDataTypes = (): string => {
         t[0] === '__meta'
           ? 'MetaBlock'
           : t[0] === 'browsers'
-          ? 'Browsers'
-          : 'Identifier'
+            ? 'Browsers'
+            : 'Identifier'
       };`,
   );
 

@@ -67,8 +67,8 @@ const main = async () => {
   const versionBump: 'major' | 'minor' | 'patch' = semverBumpPulls.major.length
     ? 'major'
     : semverBumpPulls.minor.length
-    ? 'minor'
-    : 'patch';
+      ? 'minor'
+      : 'patch';
 
   // Perform version bump
   exec(`npm version --no-git-tag-version ${versionBump}`);
