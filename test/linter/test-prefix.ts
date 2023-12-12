@@ -45,7 +45,9 @@ const processData = (
     return;
   }
 
-  const featureName = feature.split('.')[-1];
+  // "as string" cast performed because we know that -1 will always be a valid index
+  const featureName = feature.split('.').at(-1) as string;
+  const strippedFeatureName = featureName.replace(/_(event|static)/, '');
 
   for (const support of Object.values(data.support)) {
     const supportStatements = Array.isArray(support) ? support : [support];
@@ -67,16 +69,21 @@ const processData = (
           chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
         );
       }
-      if (
-        statement.alternative_name &&
-        statement.alternative_name.endsWith(featureName)
-      ) {
-        logger.error(
-          chalk`Use {bold "prefix": "${statement.alternative_name.replace(
-            featureName,
-            '',
-          )}"} instead of {bold "alternative_name": "statement.alternative_name"}`,
-        );
+      if (statement.alternative_name) {
+        const altNameMatchesPrefix = prefixes.find((p) => {
+          const regex = new RegExp(
+            `^:?:?${p}(${strippedFeatureName[0].toLowerCase()}|${strippedFeatureName[0].toUpperCase()})${strippedFeatureName.slice(
+              1,
+            )}$`,
+            'g',
+          );
+          return statement.alternative_name?.match(regex);
+        });
+        if (altNameMatchesPrefix) {
+          logger.error(
+            chalk`Use {bold "prefix": "${altNameMatchesPrefix}"} instead of {bold "alternative_name": "${statement.alternative_name}"}`,
+          );
+        }
       }
     }
   }

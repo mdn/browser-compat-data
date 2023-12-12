@@ -55,7 +55,7 @@ const load = async (...files: string[]): Promise<void> => {
         path.join(file, subfile),
       );
 
-      load(...subFiles);
+      await load(...subFiles);
     }
   }
 };

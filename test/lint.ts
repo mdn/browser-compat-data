@@ -17,10 +17,37 @@ import extend from '../scripts/lib/extend.js';
 import pluralize from '../scripts/lib/pluralize.js';
 import { walk } from '../utils/index.js';
 
-import linters from './linter/index.js';
-import { LinterMessage, LinterMessageLevel, LinterPath } from './utils.js';
+import * as linterModules from './linter/index.js';
+import {
+  Linters,
+  LinterMessage,
+  LinterMessageLevel,
+  LinterPath,
+} from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
+
+const linters = new Linters(Object.values(linterModules));
+/**
+ * Normalize and categorize file path
+ * @param {string} file The file path
+ * @returns {LinterPath} The normalized and categorized file path
+ */
+const normalizeAndCategorizeFilePath = (file: string): LinterPath => {
+  const filePath: LinterPath = {
+    full: path.relative(process.cwd(), file),
+    category: '',
+  };
+  if (path.sep === '\\') {
+    // Normalize file paths for Windows users
+    filePath.full = filePath.full.replace(/\\/g, '/');
+  }
+  if (filePath.full.includes('/')) {
+    filePath.category = filePath.full.split('/')[0];
+  }
+
+  return filePath;
+};
 
 /**
  * Recursively load
@@ -45,17 +72,7 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
-      const filePath: LinterPath = {
-        full: path.relative(process.cwd(), file),
-        category: '',
-      };
-      if (path.sep === '\\') {
-        // Normalize file paths for Windows users
-        filePath.full = filePath.full.replace(/\\/g, '/');
-      }
-      if (filePath.full.includes('/')) {
-        filePath.category = filePath.full.split('/')[0];
-      }
+      const filePath = normalizeAndCategorizeFilePath(file);
 
       try {
         const rawFileData = (await fs.readFile(file, 'utf-8')).trim();

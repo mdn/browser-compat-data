@@ -26,17 +26,17 @@ type ErrorType =
   | 'support_unknown'
   | 'subfeature_earlier_implementation';
 
-type ConsistencyError = {
+interface ConsistencyError {
   path: string[];
   errors: FeatureError[];
-};
+}
 
-type FeatureError = {
+interface FeatureError {
   type: ErrorType;
   browser: BrowserName;
   parentValue: VersionValue;
   subfeatures: [string, VersionValue][];
-};
+}
 
 /**
  * Consistency check.

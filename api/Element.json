@@ -227,6 +227,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animate",
           "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-animatable-animate",
+          "tags": [
+            "web-features:web-animations"
+          ],
           "support": {
             "chrome": {
               "version_added": "36"
@@ -2523,6 +2526,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attachShadow",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-attachshadow①",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -3830,9 +3836,7 @@
             "chrome": {
               "version_added": "1"
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
@@ -4089,13 +4093,16 @@
           "description": "<code>fullscreenchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenchange_event",
           "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenchange",
+          "tags": [
+            "web-features:fullscreen"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "71"
               },
               {
-                "alternative_name": "webkitfullscreenchange",
+                "prefix": "webkit",
                 "version_added": "15"
               }
             ],
@@ -4105,7 +4112,7 @@
                 "version_added": "79"
               },
               {
-                "alternative_name": "webkitfullscreenchange",
+                "prefix": "webkit",
                 "version_added": "12"
               },
               {
@@ -4118,7 +4125,7 @@
                 "version_added": "64"
               },
               {
-                "alternative_name": "mozfullscreenchange",
+                "prefix": "moz",
                 "version_added": "10"
               }
             ],
@@ -4132,7 +4139,7 @@
                 "version_added": "58"
               },
               {
-                "alternative_name": "webkitfullscreenchange",
+                "prefix": "webkit",
                 "version_added": "15"
               },
               {
@@ -4145,7 +4152,7 @@
                 "version_added": "50"
               },
               {
-                "alternative_name": "webkitfullscreenchange",
+                "prefix": "webkit",
                 "version_added": "14"
               },
               {
@@ -4174,7 +4181,7 @@
                 "version_added": "71"
               },
               {
-                "alternative_name": "webkitfullscreenchange",
+                "prefix": "webkit",
                 "version_added": "≤37"
               }
             ]
@@ -4191,13 +4198,16 @@
           "description": "<code>fullscreenerror</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/fullscreenerror_event",
           "spec_url": "https://fullscreen.spec.whatwg.org/#handler-document-onfullscreenerror",
+          "tags": [
+            "web-features:fullscreen"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "71"
               },
               {
-                "alternative_name": "webkitfullscreenerror",
+                "prefix": "webkit",
                 "version_added": "18"
               }
             ],
@@ -4207,7 +4217,7 @@
                 "version_added": "79"
               },
               {
-                "alternative_name": "webkitfullscreenerror",
+                "prefix": "webkit",
                 "version_added": "12"
               },
               {
@@ -4220,7 +4230,7 @@
                 "version_added": "64"
               },
               {
-                "alternative_name": "mozfullscreenerror",
+                "prefix": "moz",
                 "version_added": "10"
               }
             ],
@@ -4234,7 +4244,7 @@
                 "version_added": "58"
               },
               {
-                "alternative_name": "webkitfullscreenerror",
+                "prefix": "webkit",
                 "version_added": "15"
               },
               {
@@ -4247,7 +4257,7 @@
                 "version_added": "50"
               },
               {
-                "alternative_name": "webkitfullscreenerror",
+                "prefix": "webkit",
                 "version_added": "14"
               },
               {
@@ -4276,7 +4286,7 @@
                 "version_added": "71"
               },
               {
-                "alternative_name": "webkitfullscreenerror",
+                "prefix": "webkit",
                 "version_added": "≤37"
               }
             ]
@@ -6404,7 +6414,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointercancel",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6420,7 +6430,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointercancel",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6459,7 +6469,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerdown",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6475,7 +6485,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerdown",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6514,7 +6524,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerenter",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6530,7 +6540,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerenter",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6569,7 +6579,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerleave",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6585,7 +6595,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerleave",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6624,7 +6634,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointermove",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6640,7 +6650,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointermove",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6679,7 +6689,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerout",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6695,7 +6705,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerout",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6734,7 +6744,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerover",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6750,7 +6760,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerover",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -6827,7 +6837,7 @@
                 "version_added": "12"
               },
               {
-                "alternative_name": "mspointerup",
+                "prefix": "ms",
                 "version_added": "12",
                 "version_removed": "79"
               }
@@ -6843,7 +6853,7 @@
                 "version_added": "11"
               },
               {
-                "alternative_name": "mspointerup",
+                "prefix": "ms",
                 "version_added": "10"
               }
             ],
@@ -7355,6 +7365,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestFullscreen",
           "spec_url": "https://fullscreen.spec.whatwg.org/#ref-for-dom-element-requestfullscreen①",
+          "tags": [
+            "web-features:fullscreen"
+          ],
           "support": {
             "chrome": [
               {
@@ -7400,7 +7413,7 @@
               }
             ],
             "ie": {
-              "alternative_name": "msRequestFullscreen",
+              "prefix": "ms",
               "version_added": "11"
             },
             "oculus": "mirror",
@@ -7535,6 +7548,9 @@
         "returns_promise": {
           "__compat": {
             "description": "Returns a <code>Promise</code>",
+            "tags": [
+              "web-features:fullscreen"
+            ],
             "support": {
               "chrome": {
                 "version_added": "71"
@@ -8098,6 +8114,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollintoview",
+          "tags": [
+            "web-features:scrollintoview"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -8168,6 +8187,9 @@
         "options_parameter": {
           "__compat": {
             "description": "<code>options</code> parameter",
+            "tags": [
+              "web-features:scrollintoview"
+            ],
             "support": {
               "chrome": {
                 "version_added": "61",
@@ -8906,6 +8928,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/shadowRoot",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-shadowroot①",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "35"
@@ -9295,7 +9320,7 @@
                 "version_added": "26"
               },
               {
-                "alternative_name": "webkittransitionend",
+                "prefix": "webkit",
                 "version_added": "1"
               }
             ],
@@ -9305,7 +9330,7 @@
                 "version_added": "18"
               },
               {
-                "alternative_name": "webkittransitionend",
+                "prefix": "webkit",
                 "version_added": "79"
               },
               {
@@ -9330,11 +9355,11 @@
                 "version_added": "12.1"
               },
               {
-                "alternative_name": "webkittransitionend",
+                "prefix": "webkit",
                 "version_added": "15"
               },
               {
-                "alternative_name": "otransitionend",
+                "prefix": "o",
                 "version_added": "11.6",
                 "version_removed": "15"
               }
@@ -9344,11 +9369,11 @@
                 "version_added": "12.1"
               },
               {
-                "alternative_name": "webkittransitionend",
+                "prefix": "webkit",
                 "version_added": "14"
               },
               {
-                "alternative_name": "otransitionend",
+                "prefix": "o",
                 "version_added": "12",
                 "version_removed": "14"
               }
@@ -9358,7 +9383,7 @@
                 "version_added": "7"
               },
               {
-                "alternative_name": "webkittransitionend",
+                "prefix": "webkit",
                 "version_added": "4"
               }
             ],
