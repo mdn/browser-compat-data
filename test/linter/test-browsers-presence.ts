@@ -42,7 +42,6 @@ const processData = (
     ).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
-        b !== 'ie' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
 
