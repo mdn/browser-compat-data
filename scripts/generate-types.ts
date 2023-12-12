@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+/* c8 ignore start */
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
@@ -86,8 +88,8 @@ const generateCompatDataTypes = (): string => {
         t[0] === '__meta'
           ? 'MetaBlock'
           : t[0] === 'browsers'
-            ? 'Browsers'
-            : 'Identifier'
+          ? 'Browsers'
+          : 'Identifier'
       };`,
   );
 
@@ -173,3 +175,5 @@ if (esMain(import.meta)) {
 }
 
 export default compile;
+
+/* c8 ignore stop */
