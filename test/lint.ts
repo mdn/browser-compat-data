@@ -30,8 +30,8 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 const linters = new Linters(Object.values(linterModules));
 /**
  * Normalize and categorize file path
- * @param {string} file The file path
- * @returns {LinterPath} The normalized and categorized file path
+ * @param file The file path
+ * @returns The normalized and categorized file path
  */
 const normalizeAndCategorizeFilePath = (file: string): LinterPath => {
   const filePath: LinterPath = {
@@ -51,8 +51,8 @@ const normalizeAndCategorizeFilePath = (file: string): LinterPath => {
 
 /**
  * Recursively load
- * @param {string[]} files The files to test
- * @returns {DataType?} The data from the loaded files
+ * @param files The files to test
+ * @returns The data from the loaded files
  */
 const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
   const data = {};
@@ -108,8 +108,8 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
 
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
- * @param {string[]?} files The file(s) and/or folder(s) to test. Leave undefined for everything.
- * @returns {boolean} Whether there were any errors
+ * @param files The file(s) and/or folder(s) to test. Leave undefined for everything.
+ * @returns Whether there were any errors
  */
 const main = async (
   files = [

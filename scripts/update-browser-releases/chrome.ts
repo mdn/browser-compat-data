@@ -11,11 +11,11 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
- * @param {string} version Version number
- * @param {string} date Date in the format YYYYMMDD
- * @param {string} core The core of the name of the release note
- * @param {string} status The status of the release
- * @returns {string} The URL of the release notes or the empty string if not found
+ * @param version Version number
+ * @param date Date in the format YYYYMMDD
+ * @param core The core of the name of the release note
+ * @param status The status of the release
+ * @returns The URL of the release notes or the empty string if not found
  * Throws a string in case of error
  */
 const getReleaseNotesURL = async (version, date, core, status) => {
@@ -50,8 +50,8 @@ const getReleaseNotesURL = async (version, date, core, status) => {
 
 /**
  * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
- * @param {object} options The list of options for this type of chromiums.
- * @returns {string} The log of what has been generated (empty if nothing)
+ * @param options The list of options for this type of chromiums.
+ * @returns The log of what has been generated (empty if nothing)
  */
 export const updateChromiumReleases = async (options) => {
   let result = '';

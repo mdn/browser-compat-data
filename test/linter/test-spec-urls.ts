@@ -56,8 +56,8 @@ const allowedSpecURLs = [
 
 /**
  * Process the data for spec URL errors
- * @param {CompatStatement} data The data to test
- * @param {Logger} logger The logger to output errors to
+ * @param data The data to test
+ * @param logger The logger to output errors to
  */
 const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
@@ -87,8 +87,9 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);

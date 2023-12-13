@@ -16,9 +16,6 @@ const { browsers } = bcd;
 type Notes = string | string[] | null;
 
 /**
- * @typedef {import('../types').Identifier} Identifier
- * @typedef {import('../types').SupportStatement} SupportStatement
- * @typedef {import('../types').ReleaseStatement} ReleaseStatement
  */
 
 const matchingSafariVersions = new Map([
@@ -42,9 +39,9 @@ const matchingSafariVersions = new Map([
 
 /**
  * Convert a version number to the matching version of the target browser
- * @param {string} targetBrowser The browser to mirror to
- * @param {string} sourceVersion The version from the source browser
- * @returns {ReleaseStatement|boolean} The matching browser version
+ * @param targetBrowser The browser to mirror to
+ * @param sourceVersion The version from the source browser
+ * @returns The matching browser version
  */
 export const getMatchingBrowserVersion = (
   targetBrowser: BrowserName,
@@ -117,11 +114,11 @@ export const getMatchingBrowserVersion = (
 
 /**
  * Update the notes by mirroring the version and replacing the browser name
- * @param {Notes?} notes The notes to update
- * @param {RegExp} regex The regex to check and search
- * @param {string} replace The text to replace with
- * @param {Function} versionMapper - Receives the source browser version and returns the target browser version.
- * @returns {Notes?} The notes with replacement performed
+ * @param notes The notes to update
+ * @param regex The regex to check and search
+ * @param replace The text to replace with
+ * @param versionMapper - Receives the source browser version and returns the target browser version.
+ * @returns The notes with replacement performed
  */
 const updateNotes = (
   notes: Notes | null,
@@ -149,8 +146,8 @@ const updateNotes = (
 
 /**
  * Copy a support statement
- * @param {SimpleSupportStatement} data The data to copied
- * @returns {SimpleSupportStatement} The new copied object
+ * @param data The data to copied
+ * @returns The new copied object
  */
 const copyStatement = (
   data: SimpleSupportStatement,
@@ -165,9 +162,9 @@ const copyStatement = (
 
 /**
  * Perform mirroring of data
- * @param {SupportStatement} sourceData The data to mirror from
- * @param {BrowserName} destination The destination browser
- * @returns {SupportStatement} The mirrored support statement
+ * @param sourceData The data to mirror from
+ * @param destination The destination browser
+ * @returns The mirrored support statement
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
@@ -249,9 +246,9 @@ export const bumpSupport = (
 
 /**
  * Perform mirroring for the target browser
- * @param {BrowserName} destination The browser to mirror to
- * @param {InternalSupportBlock} data The data to mirror with
- * @returns {SupportStatement} The mirrored data
+ * @param destination The browser to mirror to
+ * @param data The data to mirror with
+ * @returns The mirrored data
  */
 const mirrorSupport = (
   destination: BrowserName,
