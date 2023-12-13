@@ -2554,7 +2554,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "From Chrome 110, <code>domain</code> is available by opt-in via `Origin-keyed agent clusters` <a href='https://origin-agent-cluster-demo.dev'></a>. See this <a href='https://chromestatus.com/feature/5428079583297536'>chromestatus entry</a>."
+              "notes": "Since Chrome 115, setting <code>domain</code> has no effect, unless the website has opted into <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin-Agent-Cluster'>origin-keyed agent clusters</a>."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -6160,7 +6160,8 @@
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#dom-document-requeststorageaccessfor",
           "support": {
             "chrome": {
-              "version_added": "119"
+              "version_added": "119",
+              "notes": "Requires the calling top-level page and the embedded document (that the storage access is being requested for) to be part of the same <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API/Related_website_sets'>related website set</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",

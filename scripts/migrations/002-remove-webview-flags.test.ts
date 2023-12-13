@@ -8,7 +8,7 @@ import { Identifier } from '../../types/types.js';
 import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
 /**
- * @constant {{input: Identifier, output: Identifier}[]} Objects of each test, with input and expected output
+ * Objects of each test, with input and expected output
  */
 const tests: { input: Identifier; output: Identifier }[] = [
   {

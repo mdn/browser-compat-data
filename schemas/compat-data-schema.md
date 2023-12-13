@@ -30,7 +30,7 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 ### File and folder breakdown
 
-The JSON files contain [feature identifiers](#feature-identifiers), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and placed into subfolders.
+The JSON files contain [feature identifiers](#features), which are relevant for accessing the data. Except for the top-level directories, the file and sub-folder hierarchies aren't of any meaning for the exports. Compatibility data can be stored in a single large file or might be divided in smaller files and placed into subfolders.
 
 ## Understanding the schema
 
@@ -72,7 +72,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](/docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](./docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -190,7 +190,7 @@ The `__compat` object consists of the following:
 
   - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
 
-  For more information, see the [tagging data guidelines](/docs/data-guidelines/tags.md).
+  For more information, see the [tagging data guidelines](./docs/data-guidelines/tags.md).
 
 #### Browser identifiers
 

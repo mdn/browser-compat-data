@@ -17,7 +17,7 @@ This decision was made in [#3953, under the expectation that most users are like
 
 ### Backported releases
 
-Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Choosing a version number](#choosing-a-version-number) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
 | If the browser and its version is... | then set the version to... |
 | ------------------------------------ | -------------------------- |

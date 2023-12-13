@@ -47,8 +47,8 @@ interface FeatureError {
 export class ConsistencyChecker {
   /**
    * Checks the data for any errors
-   * @param {Identifier} data The data to test
-   * @returns {ConsistencyError[]} Any errors found within the data
+   * @param data The data to test
+   * @returns Any errors found within the data
    */
   check(data: CompatData): ConsistencyError[] {
     return this.checkSubfeatures({ ...data, browsers: undefined });
@@ -56,9 +56,9 @@ export class ConsistencyChecker {
 
   /**
    * Recursively checks the data for any errors
-   * @param {Identifier} data The data to test
-   * @param {string[]} [path] The path of the data
-   * @returns {ConsistencyError[]} Any errors found within the data
+   * @param data The data to test
+   * @param [path] The path of the data
+   * @returns Any errors found within the data
    */
   checkSubfeatures(data: DataType, path: string[] = []): ConsistencyError[] {
     let allErrors: ConsistencyError[] = [];
@@ -91,8 +91,8 @@ export class ConsistencyChecker {
 
   /**
    * Get the subfeatures of an identifier
-   * @param {Identifier} data The identifier
-   * @returns {string[]} The subfeatures
+   * @param data The identifier
+   * @returns The subfeatures
    */
   getSubfeatures(data: Identifier): string[] {
     const subfeatures: string[] = [];
@@ -118,8 +118,8 @@ export class ConsistencyChecker {
 
   /**
    * Checks a specific feature for errors
-   * @param {Identifier} data The data to test
-   * @returns {FeatureError[]} Any errors found within the data
+   * @param data The data to test
+   * @returns Any errors found within the data
    */
   checkFeature(data: Identifier): FeatureError[] {
     const errors: FeatureError[] = [];
@@ -272,8 +272,8 @@ export class ConsistencyChecker {
 
   /**
    * Checks if the data is a feature
-   * @param {Identifier} data The data to test
-   * @returns {boolean} If the data is a feature statement
+   * @param data The data to test
+   * @returns If the data is a feature statement
    */
   isFeature(data: Identifier): boolean {
     return '__compat' in data;
@@ -281,8 +281,8 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the unsupported browsers in a feature
-   * @param {CompatStatement?} compatData The compat data to process
-   * @returns {BrowserName[]} The list of browsers marked as unsupported
+   * @param compatData The compat data to process
+   * @returns The list of browsers marked as unsupported
    */
   extractUnsupportedBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
@@ -296,8 +296,8 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the browsers with unknown support in a feature
-   * @param {CompatStatement?} compatData The compat data to process
-   * @returns {BrowserName[]} The list of browsers with unknown support
+   * @param compatData The compat data to process
+   * @returns The list of browsers with unknown support
    */
   extractSupportUnknownBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
@@ -308,8 +308,8 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the browsers with either unknown or no support in a feature
-   * @param {CompatStatement?} compatData The compat data to process
-   * @returns {BrowserName[]} The list of browsers with non-truthy (false or null) support
+   * @param compatData The compat data to process
+   * @returns The list of browsers with non-truthy (false or null) support
    */
   extractSupportNotTrueBrowsers(compatData?: CompatStatement): BrowserName[] {
     return this.extractBrowsers(
@@ -323,8 +323,8 @@ export class ConsistencyChecker {
   }
   /**
    * Get all of the browsers with a version number in a feature.
-   * @param {CompatStatement?} compatData The compat data to process
-   * @returns {BrowserName[]} The list of browsers with an exact version number
+   * @param compatData The compat data to process
+   * @returns The list of browsers with an exact version number
    */
   extractSupportedBrowsersWithVersion(
     compatData?: CompatStatement,
@@ -337,9 +337,9 @@ export class ConsistencyChecker {
 
   /**
    * Return the earliest recorded version number from a support statement or null.
-   * @param {InternalSupportBlock} supportBlock The compat data to process
-   * @param {BrowserName} browser The browser to get data for
-   * @returns {?string} The earliest version added in the data
+   * @param supportBlock The compat data to process
+   * @param browser The browser to get data for
+   * @returns The earliest version added in the data
    */
   getVersionAdded(
     supportBlock: InternalSupportBlock | undefined,
@@ -363,8 +363,8 @@ export class ConsistencyChecker {
 
     /**
      * A convenience function to squash non-real values and previews into null
-     * @param {SimpleSupportStatement} statement The statement to use
-     * @returns {VersionValue} The version number or 'null'
+     * @param statement The statement to use
+     * @returns The version number or 'null'
      */
     const resolveVersionAddedValue = (
       statement: SimpleSupportStatement,
@@ -419,10 +419,10 @@ export class ConsistencyChecker {
 
   /**
    * Compare two versions and determine if a's version is greater (later) than b's version
-   * @param {InternalSupportBlock} a The first support block to compare
-   * @param {InternalSupportBlock} b The second support block to compare
-   * @param {BrowserName} browser The browser to compare
-   * @returns {boolean} If a's version is greater (later) than b's version
+   * @param a The first support block to compare
+   * @param b The second support block to compare
+   * @param browser The browser to compare
+   * @returns If a's version is greater (later) than b's version
    */
   isVersionAddedGreater(
     a: InternalSupportBlock | undefined,
@@ -460,9 +460,9 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the browsers within the data and pass the data to the callback.
-   * @param {CompatStatement} compatData The compat data to process
-   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to pass the data to
-   * @returns {BrowserName[]} The list of browsers using the callback as a filter
+   * @param compatData The compat data to process
+   * @param callback The function to pass the data to
+   * @returns The list of browsers using the callback as a filter
    */
   extractBrowsers(
     compatData: CompatStatement | undefined,
@@ -496,8 +496,9 @@ export default {
   scope: 'tree',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The browser data
    */
   check: (logger: Logger, { data }: LinterData) => {
     const checker = new ConsistencyChecker();

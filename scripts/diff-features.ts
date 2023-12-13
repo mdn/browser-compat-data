@@ -10,11 +10,11 @@ import { hideBin } from 'yargs/helpers';
 
 /**
  * Compare two references and print diff as Markdown or JSON
- * @param {{ref1: string | undefined, ref2: string | undefined, format: string, github: boolean}} opts Options
- * @param {string} opts.ref1 First reference to compare
- * @param {string} opts.ref2 Second reference to compare
- * @param {string} opts.format Format to export data as (either 'markdown' or 'json', default 'json')
- * @param {boolean} opts.github Whether to obtain artifacts from GitHub
+ * @param opts Options
+ * @param opts.ref1 First reference to compare
+ * @param opts.ref2 Second reference to compare
+ * @param opts.format Format to export data as (either 'markdown' or 'json', default 'json')
+ * @param opts.github Whether to obtain artifacts from GitHub
  */
 const main = (opts: {
   ref1: string | undefined;
@@ -34,12 +34,12 @@ const main = (opts: {
 
 /**
  * Compare two references and get feature diff
- * @param {{ref1: string | null, ref2: string | null, github: boolean, quiet: boolean}} opts Options
- * @param {string?} opts.ref1 First reference to compare
- * @param {string?} opts.ref2 Second reference to compare
- * @param {boolean} opts.github Whether to obtain artifacts from GitHub
- * @param {boolean} opts.quiet If true, don't log to conolse
- * @returns {{added: string[], removed: string[]}} Diff between two refs
+ * @param opts Options
+ * @param opts.ref1 First reference to compare
+ * @param opts.ref2 Second reference to compare
+ * @param opts.github Whether to obtain artifacts from GitHub
+ * @param opts.quiet If true, don't log to console
+ * @returns Diff between two refs
  */
 const diff = (opts: {
   ref1?: string;
@@ -75,10 +75,10 @@ const diff = (opts: {
 
 /**
  * Enumerate features from GitHub or local checkout
- * @param {string} ref Reference to obtain features for
- * @param {boolean} skipGithub Skip fetching artifacts from GitHub
- * @param {boolean} quiet If true, don't log to console
- * @returns {Set<string>} Feature list from reference
+ * @param ref Reference to obtain features for
+ * @param skipGithub Skip fetching artifacts from GitHub
+ * @param quiet If true, don't log to console
+ * @returns Feature list from reference
  */
 const enumerate = (
   ref: string,
@@ -102,8 +102,8 @@ const enumerate = (
 
 /**
  * Enumerate features from GitHub
- * @param {string} ref Reference to obtain features for
- * @returns {string[]} Feature list from reference
+ * @param ref Reference to obtain features for
+ * @returns Feature list from reference
  */
 const getEnumerationFromGithub = (ref: string): string[] => {
   const ENUMERATE_WORKFLOW = '15595228';
@@ -153,9 +153,9 @@ const getEnumerationFromGithub = (ref: string): string[] => {
 
 /**
  * Enumerate features from local checkout
- * @param {string} ref Reference to obtain features for
- * @param {boolean} quiet If true, don't log to console
- * @returns {string[]} Feature list from reference
+ * @param ref Reference to obtain features for
+ * @param quiet If true, don't log to console
+ * @returns Feature list from reference
  */
 const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   // Get the short hash for this ref.
@@ -194,15 +194,15 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
 
 /**
  * Format feature for Markdown printing
- * @param {string} feat Feature
- * @returns {string} Formatted feature
+ * @param feat Feature
+ * @returns Formatted feature
  */
 const fmtFeature = (feat: string) => `- \`${feat}\``;
 
 /**
  * Print feature diff as Markdown
- * @param {Array.<string>} added List of added features
- * @param {Array.<string>} removed List of removed features
+ * @param added List of added features
+ * @param removed List of removed features
  */
 const printMarkdown = (added: string[], removed: string[]): void => {
   if (removed.length) {
