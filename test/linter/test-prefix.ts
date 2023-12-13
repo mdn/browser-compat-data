@@ -4,14 +4,14 @@
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { CompatStatement, Identifier } from '../../types/types.js';
+import { CompatStatement } from '../../types/types.js';
 
 /**
  * Process the data for prefix errors
- * @param {Identifier} data The data to test
- * @param {string} category The category the data belongs to
- * @param {string} feature The full feature path
- * @param {Logger} logger The logger to output errors to
+ * @param data The data to test
+ * @param category The category the data belongs to
+ * @param feature The full feature path
+ * @param logger The logger to output errors to
  */
 const processData = (
   data: CompatStatement,
@@ -45,7 +45,9 @@ const processData = (
     return;
   }
 
-  const featureName = feature.split('.')[-1];
+  // "as string" cast performed because we know that -1 will always be a valid index
+  const featureName = feature.split('.').at(-1) as string;
+  const strippedFeatureName = featureName.replace(/_(event|static)/, '');
 
   for (const support of Object.values(data.support)) {
     const supportStatements = Array.isArray(support) ? support : [support];
@@ -67,16 +69,21 @@ const processData = (
           chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
         );
       }
-      if (
-        statement.alternative_name &&
-        statement.alternative_name.endsWith(featureName)
-      ) {
-        logger.error(
-          chalk`Use {bold "prefix": "${statement.alternative_name.replace(
-            featureName,
-            '',
-          )}"} instead of {bold "alternative_name": "statement.alternative_name"}`,
-        );
+      if (statement.alternative_name) {
+        const altNameMatchesPrefix = prefixes.find((p) => {
+          const regex = new RegExp(
+            `^:?:?${p}(${strippedFeatureName[0].toLowerCase()}|${strippedFeatureName[0].toUpperCase()})${strippedFeatureName.slice(
+              1,
+            )}$`,
+            'g',
+          );
+          return statement.alternative_name?.match(regex);
+        });
+        if (altNameMatchesPrefix) {
+          logger.error(
+            chalk`Use {bold "prefix": "${altNameMatchesPrefix}"} instead of {bold "alternative_name": "${statement.alternative_name}"}`,
+          );
+        }
       }
     }
   }
@@ -88,8 +95,12 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
+   * @param root.path.full The full filepath of the data
    */
   check: (logger: Logger, { data, path: { category, full } }: LinterData) => {
     processData(data, category, full, logger);

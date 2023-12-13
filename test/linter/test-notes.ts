@@ -15,23 +15,17 @@ const parser = new HTMLParser();
 
 /**
  * Recursively test a DOM node for valid elements
- * @param {any} node The DOM node to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param node The DOM node to test
+ * @returns The errors found during validation
  */
-const testNode = (
-  node,
-  browser: BrowserName,
-  feature: string,
-  logger: Logger,
-): void => {
+const testNode = (node): string[] => {
+  const errors: string[] = [];
   if (node.type == 'TAG') {
     const tag = node.tagName?.toLowerCase();
     if (tag && !VALID_ELEMENTS.includes(tag)) {
       // Ensure we're only using select nodes
-      logger.error(
-        chalk`Notes for {bold ${feature}} in {bold ${browser}} have a {bold disallowed HTML element} ({bold <${tag}>}).  Allowed HTML elements are: ${VALID_ELEMENTS.join(
+      errors.push(
+        chalk`HTML element {bold <${tag}>} is {bold not allowed}. Allowed HTML elements are: ${VALID_ELEMENTS.join(
           ', ',
         )}`,
       );
@@ -42,70 +36,66 @@ const testNode = (
     if (tag === 'a') {
       if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
-        logger.error(
-          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes other than href}. {bold <a>} elements may only have an {bold href} attribute.`,
+        errors.push(
+          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. {bold <${tag}>} elements may only have (and must have) an {bold href} attribute; found {bold ${
+            attrs.length ? attrs.join(', ') : 'no attributes'
+          }}.`,
         );
       }
     } else {
       if (attrs.length > 0) {
         // Ensure nodes (besides 'a') contain no attributes
-        logger.error(
-          chalk`Notes for {bold ${feature}} in {bold ${browser}} have an HTML element ({bold <${tag}>}) with {bold attributes}. Elements other than {bold <a>} may {bold not} have any attributes.`,
+        errors.push(
+          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. Elements other than {bold <a>} may {bold not} have any attributes; found {bold ${attrs.join(
+            ', ',
+          )}}.`,
         );
       }
     }
   }
 
   for (const childNode of node.children || []) {
-    testNode(childNode, browser, feature, logger);
+    errors.push(...testNode(childNode));
   }
+
+  return errors;
 };
 
 /**
  * Test a string for valid HTML
- * @param {string} string The string to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param string The string to test
+ * @returns The errors found during validation
  */
-const validateHTML = (
-  string: string,
-  browser: BrowserName,
-  feature: string,
-  logger: Logger,
-): void => {
+export const validateHTML = (string: string): string[] => {
+  const errors: string[] = [];
   const htmlErrors = HTMLParser.validate(string);
 
   if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    testNode(parser.parse(string), browser, feature, logger);
+    errors.push(...testNode(parser.parse(string)));
   } else {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} have invalid HTML: ${htmlErrors
-        .map((x) => x._message)
-        .flat()}`,
+    errors.push(
+      chalk`Invalid HTML: ${htmlErrors.map((x) => x._message).join(', ')}`,
     );
   }
 
   if (string.includes('  ')) {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} have double-spaces. Notes are required to have single spaces only.`,
-    );
+    errors.push(chalk`Double-spaces are not allowed.`);
   }
 
   if (string.includes('\n')) {
-    logger.error(
-      chalk`Notes for {bold ${feature}} in {bold ${browser}} may not contain newlines.`,
-    );
+    errors.push(chalk`Newlines are not allowed.`);
   }
+
+  return errors;
 };
 
 /**
  * Check the notes in the data
- * @param {string|string[]} notes The notes to test
- * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The identifier of the feature
- * @param {logger} logger The logger to output errors to
+ * @param notes The notes to test
+ * @param browser The browser the notes belong to
+ * @param feature The identifier of the feature
+ * @param logger The logger to output errors to
  */
 const checkNotes = (
   notes: string | string[],
@@ -113,20 +103,27 @@ const checkNotes = (
   feature: string,
   logger: Logger,
 ): void => {
+  let errors: any = [];
   if (Array.isArray(notes)) {
     for (const note of notes) {
-      validateHTML(note, browser, feature, logger);
+      errors = validateHTML(note);
     }
   } else {
-    validateHTML(notes, browser, feature, logger);
+    errors = validateHTML(notes);
+  }
+
+  if (errors) {
+    for (const error of errors) {
+      logger.error(chalk`Notes for {bold ${browser}} → ${error}`);
+    }
   }
 };
 
 /**
  * Process the data for notes errors
- * @param {CompatStatement} data The data to test
- * @param {Logger} logger The logger to output errors to
- * @param {string} feature The identifier of the feature
+ * @param data The data to test
+ * @param logger The logger to output errors to
+ * @param feature The identifier of the feature
  */
 const processData = (
   data: CompatStatement,
@@ -157,8 +154,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.full The full filepath of the data
    */
   check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, logger, full);
