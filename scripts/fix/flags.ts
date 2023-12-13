@@ -17,8 +17,8 @@ import walk from '../../utils/walk.js';
 
 /**
  * Removes irrelevant flags from the compatibility data
- * @param {SupportStatement} supportData The compatibility statement to test
- * @returns {SupportStatement} The compatibility statement with all of the flags removed
+ * @param supportData The compatibility statement to test
+ * @returns The compatibility statement with all of the flags removed
  */
 export const removeIrrelevantFlags = (
   supportData: SupportStatement,
@@ -55,7 +55,7 @@ export const removeIrrelevantFlags = (
 
 /**
  * Removes irrelevant flags from the compatibility data of a specified file
- * @param {string} filename The filename containing compatibility info
+ * @param filename The filename containing compatibility info
  */
 const fixFlags = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

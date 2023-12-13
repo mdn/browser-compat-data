@@ -20,8 +20,8 @@ interface FlagError {
 
 /**
  * Get the support statement with basic, non-aliased and non-flagged support
- * @param {SimpleSupportStatement[]} supportData The statements to check
- * @returns {SimpleSupportStatement | undefined} The support statement with basic, non-aliased and non-flagged support
+ * @param supportData The statements to check
+ * @returns The support statement with basic, non-aliased and non-flagged support
  */
 export const getBasicSupportStatement = (
   supportData: SimpleSupportStatement[],
@@ -38,9 +38,9 @@ export const getBasicSupportStatement = (
 
 /**
  * Determines if a support statement is for irrelevant flag data
- * @param {SimpleSupportStatement} statement The statement to check
- * @param {SimpleSupportStatement} basicSupport The support statement for the same browser that has no alt. name, prefix or flag
- * @returns {boolean} Whether the support statement is irrelevant
+ * @param statement The statement to check
+ * @param basicSupport The support statement for the same browser that has no alt. name, prefix or flag
+ * @returns Whether the support statement is irrelevant
  */
 export const isIrrelevantFlagData = (
   statement: SimpleSupportStatement,
@@ -91,8 +91,8 @@ export const isIrrelevantFlagData = (
 };
 /**
  * Process data and check for any irrelevant flag data
- * @param {CompatStatement} data The data to test
- * @returns {FlagError[]} The errors found
+ * @param data The data to test
+ * @returns The errors found
  */
 export const processData = (data: CompatStatement): FlagError[] => {
   const errors: FlagError[] = [];
@@ -142,8 +142,9 @@ export default {
   ],
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The feature data
    */
   check: (logger: Logger, { data }: LinterData) => {
     const errors = processData(data);
