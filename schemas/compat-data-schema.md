@@ -315,25 +315,40 @@ Default values:
 
 Examples:
 
-- Removed in version 10 (added in 3.5):
+- Removed in version 10 (added in 4 and supported up until 9):
 
 ```json
 {
-  "version_added": "3.5",
+  "version_added": "4",
   "version_removed": "10"
 }
 ```
 
-- Removed in some version after 3.5:
+- Removed in some version after 4:
 
 ```json
 {
-  "version_added": "3.5",
+  "version_added": "4",
   "version_removed": true
 }
 ```
 
 Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
+
+#### `version_last`
+
+> [!NOTE]
+> This property is automatically generated at build time.
+
+If `version_removed` is present, a `version_last` is automatically generated during build time, which will be set to the version number of the last browser version that supported the feature. For example, assuming the browser version only incremented in whole numbers, if a feature was added in version 20 and supported until 29, then was no longer supported in 30, `version_removed` would be `30` and `version_last` will be `29`:
+
+```json
+{
+  "version_added": "20",
+  "version_removed": "30",
+  "version_last": "29"
+}
+```
 
 ### Ranged versions (≤)
 
