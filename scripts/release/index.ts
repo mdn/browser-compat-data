@@ -19,8 +19,8 @@ import {
 
 /**
  * Perform the commit and submit a pull request
- * @param {string} thisVersion The current version number
- * @param {boolean} wait Whether to wait for user to update the release notes (used when semver bump is minor or major)
+ * @param thisVersion The current version number
+ * @param wait Whether to wait for user to update the release notes (used when semver bump is minor or major)
  */
 const commitAndPR = async (
   thisVersion: string,
