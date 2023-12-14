@@ -6,27 +6,29 @@ import chalk from 'chalk-template';
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
-type DescriptionError = {
+import { validateHTML } from './test-notes.js';
+
+interface DescriptionError {
   path: string;
   ruleName: string;
   actual: string;
   expected: string;
-};
+}
 
 /**
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
- * @param {string} ruleName The name of the error
- * @param {string} path The feature path
- * @param {CompatStatement} compat The compat data to test
- * @param {string} expected Expected description
- * @param {DescriptionError[]} errors The array of errors to push to
+ * @param ruleName The name of the error
+ * @param path The feature path
+ * @param compat The compat data to test
+ * @param expected Expected description
+ * @param errors The array of errors to push to
  */
 const checkDescription = (
   ruleName: string,
   path: string,
   compat: CompatStatement,
   expected: string,
-  errors: DescriptionError[],
+  errors: (DescriptionError | string)[],
 ): void => {
   const actual = compat.description || '';
   if (actual != expected) {
@@ -41,14 +43,14 @@ const checkDescription = (
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
- * @param {string} path The path of the feature
- * @param {DescriptionError[]} errors The array of errors to push to
+ * @param data The data to test
+ * @param path The path of the feature
+ * @param errors The array of errors to push to
  */
 const processApiData = (
   data: CompatStatement,
   path: string,
-  errors: DescriptionError[],
+  errors: (DescriptionError | string)[],
 ): void => {
   const pathParts = path.split('.');
   const apiName = pathParts[1];
@@ -98,20 +100,24 @@ const processApiData = (
 
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
- * @param {string} category The feature category
- * @param {string} path The path of the feature
- * @returns {DescriptionError[]} The errors caught in the file
+ * @param data The data to test
+ * @param category The feature category
+ * @param path The path of the feature
+ * @returns The errors caught in the file
  */
 export const processData = (
   data: CompatStatement,
   category: string,
   path: string,
-): DescriptionError[] => {
-  const errors: DescriptionError[] = [];
+): (DescriptionError | string)[] => {
+  const errors: (DescriptionError | string)[] = [];
 
   if (category === 'api') {
     processApiData(data, path, errors);
+  }
+
+  if (data.description) {
+    errors.push(...validateHTML(data.description));
   }
 
   return errors;
@@ -123,16 +129,24 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The feature data
+   * @param root.path The path to the feature data
+   * @param root.path.full The full filepath to the feature data
+   * @param root.path.category The category of the feature
    */
   check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
     const errors = processData(data, category, full);
 
     for (const error of errors) {
-      logger.error(chalk`{red → Incorrect ${error.ruleName} description for {bold ${error.path}}
+      if (typeof error === 'string') {
+        logger.error(chalk`Description → ${error}`);
+      } else {
+        logger.error(chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
       Actual: {yellow "${error.actual}"}
       Expected: {green "${error.expected}"}}`);
+      }
     }
   },
 } as Linter;

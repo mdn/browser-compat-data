@@ -8,7 +8,6 @@ import { Linter, Logger, LinterData, twoYearsAgo } from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
-  SupportBlock,
   VersionValue,
 } from '../../types/types.js';
 import {
@@ -18,7 +17,7 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-const browserTips: { [browser: string]: string } = {
+const browserTips: Record<string, string> = {
   nodejs:
     'BCD does not record every individual version of Node.js, only the releases that update V8 engine versions or add a new feature. You may need to add the release to browsers/nodejs.json.',
   safari_ios:
@@ -41,7 +40,7 @@ const realValuesTargetBrowsers = [
   'webview_android',
 ];
 
-const realValuesRequired: { [category: string]: string[] } = {
+const realValuesRequired: Record<string, string[]> = {
   api: realValuesTargetBrowsers,
   css: realValuesTargetBrowsers,
   html: [],
@@ -56,10 +55,10 @@ const realValuesRequired: { [category: string]: string[] } = {
 
 /**
  * Test to see if the browser allows for the specified version
- * @param {BrowserName} browser The browser to check
- * @param {string} category The category of the data
- * @param {VersionValue} version The version to test
- * @returns {boolean} Whether the browser allows that version
+ * @param browser The browser to check
+ * @param category The category of the data
+ * @param version The version to test
+ * @returns Whether the browser allows that version
  */
 const isValidVersion = (
   browser: BrowserName,
@@ -84,8 +83,8 @@ const isValidVersion = (
  * Checks if the version number of version_removed is greater than or equal to
  * that of version_added, assuming they are both version strings. If either one
  * is not a valid version string, return null.
- * @param {SimpleSupportStatement} statement The statement to test
- * @returns {(boolean|null)} Whether the version added was earlier than the version removed
+ * @param statement The statement to test
+ * @returns Whether the version added was earlier than the version removed
  */
 const addedBeforeRemoved = (
   statement: SimpleSupportStatement,
@@ -123,9 +122,9 @@ const addedBeforeRemoved = (
 
 /**
  * Check the data for any errors in provided versions
- * @param {SupportBlock} supportData The data to test
- * @param {string} category The category the data
- * @param {Logger} logger The logger to output errors to
+ * @param supportData The data to test
+ * @param category The category the data
+ * @param logger The logger to output errors to
  */
 const checkVersions = (
   supportData: InternalSupportBlock,
@@ -245,8 +244,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     checkVersions(data.support, category, logger);

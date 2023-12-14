@@ -29,7 +29,7 @@ const verbatimFiles = ['LICENSE', 'README.md'];
 
 /**
  * Generate metadata to embed into BCD builds
- * @returns {any} Metadata to embed into BCD
+ * @returns Metadata to embed into BCD
  */
 export const generateMeta = (): any => ({
   version: packageJson.version,
@@ -38,8 +38,7 @@ export const generateMeta = (): any => ({
 
 /**
  * Apply mirroring to a feature
- * @param {WalkOutput} feature The BCD to perform mirroring on
- * @returns {void}
+ * @param feature The BCD to perform mirroring on
  */
 export const applyMirroring = (feature: WalkOutput): void => {
   for (const [browser, supportData] of Object.entries(
@@ -107,7 +106,7 @@ export const addVersionLast = (feature: WalkOutput): void => {
 
 /**
  * Generate a BCD data bundle
- * @returns {CompatData} An object containing the prepared BCD data
+ * @returns An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
@@ -185,10 +184,10 @@ const copyFiles = async () => {
 
 /**
  * Generate the JSON for a published package.json
- * @returns {any} A generated package.json for build output
+ * @returns A generated package.json for build output
  */
 export const createManifest = (): any => {
-  const minimal: { [index: string]: any } = {
+  const minimal: Record<string, any> = {
     main: 'data.json',
     exports: {
       '.': {
