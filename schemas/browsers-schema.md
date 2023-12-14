@@ -115,7 +115,7 @@ bcd.browsers.firefox.releases['1.5'].status; // "retired"
 ```
 
 ```js
-> const bcd = require('@mdn/browser-compat-data');
-> bcd.browsers.firefox.releases['1.5'].status;
+const bcd = require('@mdn/browser-compat-data');
+bcd.browsers.firefox.releases['1.5'].status;
 // "retired"
 ```
