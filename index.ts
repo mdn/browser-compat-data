@@ -15,10 +15,10 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more directories passed as arguments.
- * @param {string[]} dirs The directories to load
- * @returns {object} All of the browser compatibility data
+ * @param dirs The directories to load
+ * @returns All of the browser compatibility data
  */
-const load = async (...dirs: string[]) => {
+const load = async (...dirs: string[]): Promise<CompatData> => {
   const result = {};
 
   for (const dir of dirs) {
@@ -40,17 +40,19 @@ const load = async (...dirs: string[]) => {
         }
 
         extend(result, contents);
+        /* c8 ignore start */
       } catch (e) {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
       }
+      /* c8 ignore stop */
     }
   }
 
-  return result;
+  return result as CompatData;
 };
 
-export default (await load(
+export default await load(
   'api',
   'browsers',
   'css',
@@ -62,4 +64,4 @@ export default (await load(
   'webassembly',
   'webdriver',
   'webextensions',
-)) as CompatData;
+);
