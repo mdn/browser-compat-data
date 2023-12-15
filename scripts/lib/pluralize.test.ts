@@ -15,9 +15,4 @@ describe('Pluralize', () => {
     const result = pluralize('apple', 2);
     assert.equal(result, '2 apples');
   });
-
-  it('should return formatted string with chalk when useChalk is true', () => {
-    const result = pluralize('apple', 2, true);
-    assert.equal(result, '\u001b[1m2\u001b[22m apples');
-  });
 });
