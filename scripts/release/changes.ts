@@ -1,12 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-export type FeatureChange = {
+export interface FeatureChange {
   mergeCommit?: string;
   number: number;
   url: string;
   feature: string;
-};
+}
 
 export interface Changes {
   added: FeatureChange[];
@@ -14,6 +14,7 @@ export interface Changes {
 }
 
 import chalk from 'chalk-template';
+import { Listr, ListrTask } from 'listr2';
 
 import diffFeatures from '../diff-features.js';
 
@@ -21,16 +22,16 @@ import { queryPRs } from './utils.js';
 
 /**
  * Format a feature change in Markdown
- * @param {FeatureChange} obj The feature change to format
- * @returns {string} The formatted feature change
+ * @param obj The feature change to format
+ * @returns The formatted feature change
  */
 const featureBullet = (obj: FeatureChange) =>
   `- \`${obj.feature}\` ([#${obj.number}](${obj.url}))`;
 
 /**
  * Format all the feature changes in Markdown
- * @param {Changes} changes The changes to format
- * @returns {string} The formatted changes
+ * @param changes The changes to format
+ * @returns The formatted changes
  */
 export const formatChanges = (changes: Changes): string => {
   const output: string[] = [];
@@ -56,8 +57,8 @@ export const formatChanges = (changes: Changes): string => {
 
 /**
  * Get all the pulls that have been merged on GitHub
- * @param {string} fromDate The start date to get merged pulls from
- * @returns {FeatureChange[]} The pull requests that have been merged
+ * @param fromDate The start date to get merged pulls from
+ * @returns The pull requests that have been merged
  */
 const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
   queryPRs({
@@ -68,37 +69,32 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
 
 /**
  * Get the diff from the pull request
- * @param {FeatureChange} pull The pull request to test
- * @returns {{ added: string[]; removed: string[] }} The changes from the pull request
+ * @param pull The pull request to test
+ * @param task The Listr task this is run in
+ * @returns The changes from the pull request
  */
 const getDiff = (
   pull: FeatureChange,
-): { added: string[]; removed: string[] } | null => {
-  process.stdout.write(
-    chalk`{blue - Diffing features for {bold #${pull.number}}...}`,
-  );
-
+  task: ListrTask,
+): { added: string[]; removed: string[] } => {
   let diff;
 
   try {
-    diff = diffFeatures({ ref1: pull.mergeCommit });
+    diff = diffFeatures({ ref1: pull.mergeCommit, quiet: true });
   } catch (e) {
-    console.log(
+    throw new Error(
       chalk`{red ${e}}\n {yellow (Failed to diff features for #${pull.number}, skipping)}`,
     );
-    return null;
   }
 
   if (diff.added.length && diff.removed.length) {
-    console.log(
-      chalk` {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`,
-    );
+    task.title += chalk` - {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`;
   } else if (diff.added.length) {
-    console.log(chalk` {blue ({green ${diff.added.length} added})}`);
+    task.title += chalk` - {blue ({green ${diff.added.length} added})}`;
   } else if (diff.removed.length) {
-    console.log(chalk` {blue ({red ${diff.removed.length} removed})}`);
+    task.title += chalk` - {blue ({red ${diff.removed.length} removed})}`;
   } else {
-    console.log(chalk` {blue (No feature count changes)}`);
+    task.title += chalk` - {blue (No feature count changes)}`;
   }
 
   return diff;
@@ -106,8 +102,8 @@ const getDiff = (
 
 /**
  * Get changes from the pull requests that have been merged since a specified date
- * @param {string} date The starting date to query pull requests from
- * @returns {Changes} The changes from all of the pull requests
+ * @param date The starting date to query pull requests from
+ * @returns The changes from all of the pull requests
  */
 export const getChanges = async (date: string): Promise<Changes> => {
   const pulls = pullsFromGitHub(date);
@@ -117,29 +113,45 @@ export const getChanges = async (date: string): Promise<Changes> => {
     removed: [],
   };
 
-  for (const pull of pulls) {
-    const diff = getDiff(pull);
+  const tasks: ListrTask[] = pulls.map((pull) => ({
+    title: `#${pull.number}`,
+    /**
+     * Get the diff from the pull request
+     * @param task The Listr task this is run in
+     */
+    task: (task: ListrTask) => {
+      const diff = getDiff(pull, task);
 
-    if (!diff) {
-      continue;
-    }
+      changes.added.push(
+        ...diff.added.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
 
-    for (const feature of diff.added) {
-      changes.added.push({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      });
-    }
+      changes.removed.push(
+        ...diff.removed.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
+    },
+  }));
 
-    for (const feature of diff.removed) {
-      changes.removed.push({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      });
-    }
-  }
+  // XXX remove verbose renderer when https://github.com/SamVerschueren/listr/issues/150 fixed
+  const runner = new Listr(tasks, {
+    exitOnError: false,
+    renderer: 'verbose',
+    concurrent: 5,
+    rendererOptions: {
+      collapseSkips: false,
+      collapseErrors: false,
+    } as any,
+  });
+
+  runner.run();
 
   changes.added.sort((a, b) => a.feature.localeCompare(b.feature));
   changes.removed.sort((a, b) => a.feature.localeCompare(b.feature));

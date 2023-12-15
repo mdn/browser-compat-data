@@ -6,7 +6,7 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import bcd from '../index.js';
+import bcdData from '../index.js';
 import {
   BrowserName,
   CompatStatement,
@@ -16,15 +16,15 @@ import {
 
 import { getRefDate } from './release/utils.js';
 
-type VersionStatsEntry = {
+interface VersionStatsEntry {
   all: number;
   true: number;
   null: number;
   range: number;
   real: number;
-};
+}
 
-type VersionStats = { [k: string]: VersionStatsEntry };
+type VersionStats = Record<string, VersionStatsEntry>;
 
 const webextensionsBrowsers: BrowserName[] = [
   'chrome',
@@ -38,9 +38,9 @@ const webextensionsBrowsers: BrowserName[] = [
 
 /**
  * Check whether a support statement is a specified type
- * @param {SupportStatement} supportData The support statement to check
- * @param {string|boolean|null} type What type of support (true, null, ranged)
- * @returns {boolean} If the support statement has the type
+ * @param supportData The support statement to check
+ * @param type What type of support (true, null, ranged)
+ * @returns If the support statement has the type
  */
 const checkSupport = (
   supportData: SupportStatement | undefined,
@@ -67,9 +67,9 @@ const checkSupport = (
 
 /**
  * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
- * @param {CompatStatement} data The data to process and count stats for
- * @param {BrowserName[]} browsers The browsers to test
- * @param {{[key: string]: VersionStats}} stats The stats object to update
+ * @param data The data to process and count stats for
+ * @param browsers The browsers to test
+ * @param stats The stats object to update
  */
 const processData = (
   data: CompatStatement,
@@ -102,14 +102,19 @@ const processData = (
 
 /**
  * Iterate through all of the data and process statistics
- * @param {Identifier} data The compat data to iterate
- * @param {BrowserName[]} browsers The browsers to test
- * @param {{[key: string]: VersionStats}} stats The stats object to update
+ * @param data The compat data to iterate
+ * @param browsers The browsers to test
+ * @param stats The stats object to update
  */
-const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
+const iterateData = (
+  data: Identifier,
+  browsers: BrowserName[],
+  stats: VersionStats,
+) => {
   for (const key in data) {
     if (key === '__compat') {
-      processData(data[key], browsers, stats);
+      // "as CompatStatement" needed because TypeScript doesn't realize key is in data
+      processData(data[key] as CompatStatement, browsers, stats);
     } else {
       iterateData(data[key], browsers, stats);
     }
@@ -118,15 +123,16 @@ const iterateData = (data, browsers: BrowserName[], stats: VersionStats) => {
 
 /**
  * Get all of the stats
- * @param {string} folder The folder to show statistics for (or all folders if blank)
- * @param {boolean} allBrowsers If true, get stats for all browsers, not just main eight
- * @returns {{[key: string]: VersionStats}?} The statistics
+ * @param folder The folder to show statistics for (or all folders if blank)
+ * @param allBrowsers If true, get stats for all browsers, not just main eight
+ * @param bcd The BCD data to use. Defaults to the main BCD data.
+ * @returns The statistics
  */
 const getStats = (
   folder: string,
   allBrowsers: boolean,
+  bcd = bcdData,
 ): VersionStats | null => {
-  /** @constant {string[]} */
   const browsers: BrowserName[] = allBrowsers
     ? (Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[])
     : folder === 'webextensions'
@@ -154,7 +160,9 @@ const getStats = (
     } else if (bcd[folder]) {
       iterateData(bcd[folder], browsers, stats);
     } else {
-      console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      if (process.env.NODE_ENV !== 'test') {
+        console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+      }
       return null;
     }
   } else {
@@ -176,10 +184,10 @@ const getStats = (
 
 /**
  * Get value as either percentage or number as requested
- * @param {VersionStatsEntry} stats The stats object to get data from
- * @param {string} type The type of statistic to obtain
- * @param {boolean} counts Whether to return the integer itself
- * @returns {string} The percentage or count
+ * @param stats The stats object to get data from
+ * @param type The type of statistic to obtain
+ * @param counts Whether to return the integer itself
+ * @returns The percentage or count
  */
 const getStat = (
   stats: VersionStatsEntry,
@@ -190,9 +198,9 @@ const getStat = (
 
 /**
  * Print statistics of BCD
- * @param {VersionStats} stats The stats object to print from
- * @param {string} folder The folder to show statistics for (or all folders if blank)
- * @param {boolean} counts Whether to display a count vs. a percentage
+ * @param stats The stats object to print from
+ * @param folder The folder to show statistics for (or all folders if blank)
+ * @param counts Whether to display a count vs. a percentage
  */
 const printStats = (
   stats: VersionStats | null,
