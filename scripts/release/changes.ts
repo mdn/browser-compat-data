@@ -144,7 +144,7 @@ export const getChanges = async (date: string): Promise<Changes> => {
   const runner = new Listr(tasks, {
     exitOnError: false,
     renderer: 'verbose',
-    concurrent: 5,
+    concurrent: 1,
     rendererOptions: {
       collapseSkips: false,
       collapseErrors: false,
