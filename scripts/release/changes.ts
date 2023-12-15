@@ -70,7 +70,6 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
 /**
  * Get the diff from the pull request
  * @param pull The pull request to test
- * @param task The Listr task this is run in
  * @returns The changes from the pull request
  */
 const getDiff = (
