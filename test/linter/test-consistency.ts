@@ -19,7 +19,7 @@ import {
   InternalSupportStatement,
 } from '../../types/index.js';
 import { query } from '../../utils/index.js';
-import mirrorSupport from '../../scripts/release/mirror.js';
+import mirrorSupport from '../../scripts/build/mirror.js';
 
 type ErrorType =
   | 'unsupported'
