@@ -5,7 +5,12 @@ import assert from 'node:assert/strict';
 
 import { walk } from '../../utils/index.js';
 
-import { generateMeta, applyMirroring, addVersionLast } from './index.js';
+import {
+  generateMeta,
+  applyMirroring,
+  addVersionLast,
+  createManifest,
+} from './index.js';
 
 describe('Build functions', () => {
   it('generateMeta', () => {
@@ -61,10 +66,20 @@ describe('Build functions', () => {
                 version_added: '18',
               },
               {
-                version_added: '15',
-                version_removed: '16',
+                version_added: '1',
+                version_removed: '4',
               },
             ],
+            safari: {
+              version_added: '10',
+              version_removed: 'preview',
+              version_last: 'preview',
+            },
+            edge: {
+              version_added: '12',
+              version_removed: true,
+              version_last: true,
+            },
           },
         },
       },
@@ -80,6 +95,22 @@ describe('Build functions', () => {
       data.feature.__compat.support.firefox[0].version_last,
       undefined,
     );
-    assert.equal(data.feature.__compat.support.firefox[1].version_last, '15');
+    assert.equal(data.feature.__compat.support.firefox[1].version_last, '3.6');
+    assert.equal(data.feature.__compat.support.safari.version_last, 'preview');
+    assert.equal(data.feature.__compat.support.edge.version_last, true);
+  });
+  it('createManifest', () => {
+    const manifest = createManifest();
+    assert.ok(manifest.main);
+    assert.ok(manifest.exports);
+    assert.ok(manifest.types);
+    assert.ok(manifest.name);
+    assert.ok(manifest.description);
+    assert.ok(manifest.repository);
+    assert.ok(manifest.keywords);
+    assert.ok(manifest.author);
+    assert.ok(manifest.license);
+    assert.ok(manifest.bugs);
+    assert.ok(manifest.homepage);
   });
 });
