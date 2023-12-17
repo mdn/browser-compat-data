@@ -153,9 +153,9 @@ export default {
       logger.error(
         chalk`Irrelevant flag data detected for {bold ${
           error.browser
-        }}. Remove statement for ${error.flagData
+        }}. Remove statement with {bold ${error.flagData
           .map((flag) => flag.name)
-          .join(', ')}`,
+          .join(', ')}} flag`,
         { fixable: true },
       );
     }
