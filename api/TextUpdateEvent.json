@@ -1,29 +1,21 @@
 {
   "api": {
-    "ClipboardItem": {
+    "TextUpdateEvent": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem",
-        "spec_url": "https://w3c.github.io/clipboard-apis/#clipboarditem",
+        "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent",
         "tags": [
-          "web-features:async-clipboard"
+          "web-features:edit-context"
         ],
         "support": {
           "chrome": {
-            "version_added": "76"
+            "version_added": "121"
           },
           "chrome_android": {
-            "version_added": "84"
+            "version_added": false
           },
           "edge": "mirror",
           "firefox": {
-            "version_added": "87",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.events.asyncClipboard.clipboardItem",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
@@ -33,174 +25,25 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "13.1"
+            "version_added": false
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "ClipboardItem": {
+      "TextUpdateEvent": {
         "__compat": {
-          "description": "<code>ClipboardItem()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-clipboarditem",
+          "description": "<code>TextUpdateEvent()</code> constructor",
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-constructor",
           "tags": [
-            "web-features:async-clipboard"
+            "web-features:edit-context"
           ],
-          "support": {
-            "chrome": [
-              {
-                "version_added": "98"
-              },
-              {
-                "version_added": "76",
-                "version_removed": "98",
-                "partial_implementation": true,
-                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "98"
-              },
-              {
-                "version_added": "84",
-                "version_removed": "98",
-                "partial_implementation": true,
-                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-              }
-            ],
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "getType": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-gettype",
-          "tags": [
-            "web-features:async-clipboard"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "76"
-            },
-            "chrome_android": {
-              "version_added": "84"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "presentationStyle": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-presentationstyle",
-          "tags": [
-            "web-features:async-clipboard"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "13.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "supports_static": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-supports",
           "support": {
             "chrome": {
               "version_added": "121"
@@ -233,30 +76,22 @@
           }
         }
       },
-      "types": {
+      "selectionEnd": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/types",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-types",
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-selectionend",
           "tags": [
-            "web-features:async-clipboard"
+            "web-features:edit-context"
           ],
           "support": {
             "chrome": {
-              "version_added": "76"
+              "version_added": "121"
             },
             "chrome_android": {
-              "version_added": "84"
+              "version_added": false
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -266,14 +101,166 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "13.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "selectionStart": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-selectionstart",
+          "tags": [
+            "web-features:edit-context"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "text": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-text",
+          "tags": [
+            "web-features:edit-context"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updateRangeEnd": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-updaterangeend",
+          "tags": [
+            "web-features:edit-context"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updateRangeStart": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/edit-context/#dom-textupdateevent-updaterangestart",
+          "tags": [
+            "web-features:edit-context"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
