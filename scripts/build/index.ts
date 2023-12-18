@@ -110,18 +110,26 @@ export const addVersionLast = (feature: WalkOutput): void => {
 };
 
 /**
+ * Applies transforms to the given data.
+ * @param data - The data to apply transforms to.
+ */
+export const applyTransforms = (data): void => {
+  const walker = walk(undefined, data);
+
+  for (const feature of walker) {
+    applyMirroring(feature);
+    addVersionLast(feature);
+  }
+};
+
+/**
  * Generate a BCD data bundle
  * @returns An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
-  const walker = walk(undefined, bcd);
-
-  for (const feature of walker) {
-    applyMirroring(feature);
-    addVersionLast(feature);
-  }
+  applyTransforms(bcd);
 
   return {
     ...bcd,

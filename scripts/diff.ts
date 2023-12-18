@@ -11,7 +11,7 @@ import { query } from '../utils/index.js';
 import { SupportStatement, Identifier, BrowserName } from '../types/types.js';
 
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
-import mirror from './release/mirror.js';
+import mirror from './build/mirror.js';
 
 interface Contents {
   base: string;
