@@ -1,5 +1,77 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.1)
+
+December 19, 2023
+
+### Removals
+
+- `api.Bluetooth.availabilitychanged_event` ([#21643](https://github.com/mdn/browser-compat-data/pull/21643))
+- `css.properties.hyphens.language_czechoslovak` ([#21677](https://github.com/mdn/browser-compat-data/pull/21677))
+- `svg.elements.filter.filterRes` ([#21679](https://github.com/mdn/browser-compat-data/pull/21679))
+- `svg.elements.svg.contentScriptType` ([#21675](https://github.com/mdn/browser-compat-data/pull/21675))
+- `svg.elements.svg.contentStyleType` ([#21675](https://github.com/mdn/browser-compat-data/pull/21675))
+- `svg.elements.switch.allowReorder` ([#21672](https://github.com/mdn/browser-compat-data/pull/21672))
+- `svg.elements.view.viewTarget` ([#21664](https://github.com/mdn/browser-compat-data/pull/21664))
+
+### Additions
+
+- `api.CharacterBoundsUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.CharacterBoundsUpdateEvent.CharacterBoundsUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.CharacterBoundsUpdateEvent.rangeEnd` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.CharacterBoundsUpdateEvent.rangeStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.ClipboardItem.supports_static` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.DevicePosture` ([#21608](https://github.com/mdn/browser-compat-data/pull/21608))
+- `api.DevicePosture.change_event` ([#21608](https://github.com/mdn/browser-compat-data/pull/21608))
+- `api.DevicePosture.type` ([#21608](https://github.com/mdn/browser-compat-data/pull/21608))
+- `api.EditContext` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.attachedElements` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.characterBounds` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.characterBoundsRangeStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.characterboundsupdate_event` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.compositionend_event` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.compositionstart_event` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.EditContext` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.selectionEnd` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.selectionStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.text` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.textformatupdate_event` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.textupdate_event` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.updateCharacterBounds` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.updateControlBounds` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.updateSelection` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.updateSelectionBounds` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.EditContext.updateText` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.HTMLElement.editContext` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.Navigator.devicePosture` ([#21608](https://github.com/mdn/browser-compat-data/pull/21608))
+- `api.TextFormat` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormat.rangeEnd` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormat.rangeStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormat.TextFormat` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormat.underlineStyle` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormat.underlineThickness` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormatUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormatUpdateEvent.getTextFormats` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextFormatUpdateEvent.TextFormatUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.selectionEnd` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.selectionStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.text` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.TextUpdateEvent` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.updateRangeEnd` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `api.TextUpdateEvent.updateRangeStart` ([#21603](https://github.com/mdn/browser-compat-data/pull/21603))
+- `css.at-rules.media.device-posture` ([#21608](https://github.com/mdn/browser-compat-data/pull/21608))
+- `css.properties.hyphens.language_slovak` ([#21677](https://github.com/mdn/browser-compat-data/pull/21677))
+- `html.elements.hr.hr_in_select` ([#21652](https://github.com/mdn/browser-compat-data/pull/21652))
+- `html.elements.select.hr_in_select` ([#21652](https://github.com/mdn/browser-compat-data/pull/21652))
+
+### Statistics
+
+- 7 contributors have changed 92 files with 3,423 additions and 1,803 deletions in 28 commits ([`v5.5.0...v5.5.1`](https://github.com/mdn/browser-compat-data/compare/v5.5.0...v5.5.1))
+- 15,374 total features
+- 1,058 total contributors
+- 4,673 total stargazers
+
 ## [v5.5.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.0)
 
 December 15, 2023
