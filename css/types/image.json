@@ -422,8 +422,7 @@
                 },
                 "firefox": [
                   {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                    "version_added": "16"
                   },
                   {
                     "prefix": "-webkit-",
@@ -647,6 +646,39 @@
                 }
               }
             },
+            "premultiplied_gradients": {
+              "__compat": {
+                "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "support": {
+                  "chrome": {
+                    "version_added": "29"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "36"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "15"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "to": {
               "__compat": {
                 "description": "<code>to</code> keyword",
@@ -759,8 +791,7 @@
                 },
                 "firefox": [
                   {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                    "version_added": "16"
                   },
                   {
                     "prefix": "-webkit-",
@@ -848,54 +879,20 @@
                   "edge": {
                     "version_added": "12"
                   },
-                  "firefox": [
-                    {
-                      "version_added": "16",
-                      "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "49"
-                    },
-                    {
-                      "prefix": "-moz-",
-                      "version_added": "10",
-                      "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
-                    }
-                  ],
-                  "firefox_android": [
-                    {
-                      "version_added": "16"
-                    },
-                    {
-                      "prefix": "-moz-",
-                      "version_added": "10"
-                    }
-                  ],
+                  "firefox": {
+                    "version_added": "10"
+                  },
+                  "firefox_android": "mirror",
                   "ie": {
                     "version_added": "10"
                   },
                   "oculus": "mirror",
-                  "opera": [
-                    {
-                      "version_added": "15"
-                    },
-                    {
-                      "prefix": "-o-",
-                      "version_added": "11.6",
-                      "version_removed": "15"
-                    }
-                  ],
-                  "opera_android": [
-                    {
-                      "version_added": "14"
-                    },
-                    {
-                      "prefix": "-o-",
-                      "version_added": "12",
-                      "version_removed": "14"
-                    }
-                  ],
+                  "opera": {
+                    "version_added": "11.6"
+                  },
+                  "opera_android": {
+                    "version_added": "12"
+                  },
                   "safari": {
                     "version_added": "7"
                   },
@@ -1038,6 +1035,39 @@
                   "opera_android": "mirror",
                   "safari": {
                     "version_added": "7"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "premultiplied_gradients": {
+              "__compat": {
+                "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "support": {
+                  "chrome": {
+                    "version_added": "29"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "36"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "15"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
