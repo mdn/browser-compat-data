@@ -22,10 +22,10 @@ interface LinkError {
 
 /**
  * Given a RegEx expression, test the link for errors
- * @param {LinkError[]} errors The errors object to push the new errors to
- * @param {string} actual The link to test
- * @param {string|RegExp} regexp The regex to test with
- * @param {(match: Array.<?string>) => object?} matchHandler The callback
+ * @param errors The errors object to push the new errors to
+ * @param actual The link to test
+ * @param regexp The regex to test with
+ * @param matchHandler The callback
  */
 const processLink = (
   errors: LinkError[],
@@ -38,7 +38,6 @@ const processLink = (
   } | null,
 ): void => {
   const re = new RegExp(regexp, 'g');
-  /** @type {RegExpExecArray} */
   let match;
   while ((match = re.exec(actual)) !== null) {
     const pos = indexToPosRaw(actual, match.index);
@@ -60,8 +59,8 @@ const processLink = (
 
 /**
  * Process the data for any errors within the links
- * @param {string} rawData The raw contents of the file to test
- * @returns {LinkError[]} A list of errors found in the links
+ * @param rawData The raw contents of the file to test
+ * @returns A list of errors found in the links
  */
 export const processData = (rawData: string): LinkError[] => {
   const errors: LinkError[] = [];
@@ -249,8 +248,9 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.rawdata The raw contents of the file to test
    */
   check: (logger: Logger, { rawdata }: LinterData) => {
     const errors = processData(rawdata);

@@ -5,15 +5,15 @@ import chalk from 'chalk-template';
 
 /**
  * newBrowserEntry - Add a new browser entry in the JSON list
- * @param {object} json json file to update
- * @param {object} browser the entry name where to add it in the bcd file
- * @param {string} version new version to add
- * @param {string} status new status
- * @param {string} engine name of the engine
- * @param {string} releaseDate new release date
- * @param {string} releaseNotesURL url of the release notes
- * @param {string} engineVersion the version of the engine
- * @returns {string} Text describing what has been added
+ * @param json json file to update
+ * @param browser the entry name where to add it in the bcd file
+ * @param version new version to add
+ * @param status new status
+ * @param engine name of the engine
+ * @param releaseDate new release date
+ * @param releaseNotesURL url of the release notes
+ * @param engineVersion the version of the engine
+ * @returns Text describing what has been added
  */
 export const newBrowserEntry = (
   json,
@@ -42,14 +42,14 @@ export const newBrowserEntry = (
 
 /**
  * updateBrowserEntry - Update browser entry in the JSON list
- * @param {object} json json file to update
- * @param {object} browser the entry name where to add it in the bcd file
- * @param {string} version new version to add
- * @param {string} releaseDate new release date
- * @param {string} status new status
- * @param {string} releaseNotesURL url of the release notes
- * @param {string} engineVersion the version of the engine
- * @returns {string} Text describing what has been updated
+ * @param json json file to update
+ * @param browser the entry name where to add it in the bcd file
+ * @param version new version to add
+ * @param releaseDate new release date
+ * @param status new status
+ * @param releaseNotesURL url of the release notes
+ * @param engineVersion the version of the engine
+ * @returns Text describing what has been updated
  */
 export const updateBrowserEntry = (
   json,

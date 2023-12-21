@@ -56,9 +56,9 @@ const propOrder = {
 
 /**
  * Perform property ordering
- * @param {any} value The object to order properties for
- * @param {string[]} order The order to follow
- * @returns {any} The ordered object
+ * @param value The object to order properties for
+ * @param order The order to follow
+ * @returns The ordered object
  */
 const doOrder = <T>(value: T, order: string[]): T => {
   if (value && typeof value === 'object') {
@@ -77,8 +77,8 @@ const doOrder = <T>(value: T, order: string[]): T => {
  * prefix and suffix added, which will be removed after performing JSON
  * stringification. This is important because JavaScript wants to move object
  * entries with a floating point as the key to the very end of the list.
- * @param {any} releases The release data
- * @returns {string} The stringified releases
+ * @param releases The release data
+ * @returns The stringified releases
  */
 export const stringifyReleases = (
   releases: Record<string, ReleaseStatement>,
@@ -111,9 +111,9 @@ export const stringifyReleases = (
  * ordered according to doOrder, and so will be stringified in that
  * order as well. This relies on guaranteed "own" property ordering,
  * which is insertion order for non-integer keys (which is our case).
- * @param {string} key The key in the object
- * @param {any} value The value of the key
- * @returns {any} The new value
+ * @param key The key in the object
+ * @param value The value of the key
+ * @returns The new value
  */
 export const orderProperties = (key: string, value: any): any => {
   if (value instanceof Object) {
@@ -178,8 +178,8 @@ export const orderProperties = (key: string, value: any): any => {
 
 /**
  * Stringify an object in a specific order of properties
- * @param {any} rawdata The object to stringify
- * @returns {string} The stringified object
+ * @param rawdata The object to stringify
+ * @returns The stringified object
  */
 const stringifyAndOrderProperties = (rawdata: any): string => {
   if (rawdata instanceof Object) {

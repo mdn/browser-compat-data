@@ -2554,7 +2554,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "From Chrome 110, <code>domain</code> is available by opt-in via `Origin-keyed agent clusters` <a href='https://origin-agent-cluster-demo.dev'></a>. See this <a href='https://chromestatus.com/feature/5428079583297536'>chromestatus entry</a>."
+              "notes": "Since Chrome 115, setting <code>domain</code> has no effect, unless the website has opted into <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin-Agent-Cluster'>origin-keyed agent clusters</a>."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -3099,12 +3099,19 @@
                 "version_added": "5.1"
               }
             ],
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
@@ -3589,12 +3596,19 @@
                 "version_added": "6"
               }
             ],
-            "safari_ios": {
-              "alternative_name": "webkitIsFullScreen",
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "alternative_name": "webkitIsFullScreen",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
@@ -3695,12 +3709,19 @@
                 "version_added": "5.1"
               }
             ],
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
@@ -3894,12 +3915,19 @@
                 "version_added": "6"
               }
             ],
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3992,12 +4020,19 @@
                 "version_added": "6"
               }
             ],
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
-            },
+            "safari_ios": [
+              {
+                "version_added": "16.4",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "12",
+                "partial_implementation": true,
+                "notes": "Only available on iPad, not on iPhone."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
@@ -4926,48 +4961,6 @@
             },
             "safari": {
               "version_added": "1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "lostpointercapture_event": {
-        "__compat": {
-          "description": "<code>lostpointercapture</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/lostpointercapture_event",
-          "spec_url": [
-            "https://w3c.github.io/pointerevents/#the-lostpointercapture-event",
-            "https://w3c.github.io/pointerevents/#dom-globaleventhandlers-onlostpointercapture"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "57"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "59"
-            },
-            "firefox_android": {
-              "version_added": "79"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "13"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -6160,7 +6153,8 @@
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#dom-document-requeststorageaccessfor",
           "support": {
             "chrome": {
-              "version_added": "119"
+              "version_added": "119",
+              "notes": "Requires the calling top-level page and the embedded document (that the storage access is being requested for) to be part of the same <a href='https://developer.mozilla.org/docs/Web/API/Storage_Access_API/Related_website_sets'>related website set</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",

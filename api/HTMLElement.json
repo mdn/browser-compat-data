@@ -311,76 +311,6 @@
           }
         }
       },
-      "beforeinput_event": {
-        "__compat": {
-          "description": "<code>beforeinput</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/beforeinput_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-beforeinput",
-          "support": {
-            "chrome": {
-              "version_added": "60"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "87"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "beforematch_event": {
-        "__compat": {
-          "description": "<code>beforematch</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/beforematch_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-beforematch",
-          "support": {
-            "chrome": {
-              "version_added": "102"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "beforetoggle_event": {
         "__compat": {
           "description": "<code>beforetoggle</code> event",
@@ -395,16 +325,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1086,6 +1021,44 @@
           }
         }
       },
+      "editContext": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/edit-context/#dom-htmlelement-editcontext",
+          "tags": [
+            "web-features:edit-context"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "enterKeyHint": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/enterKeyHint",
@@ -1334,16 +1307,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1433,63 +1411,6 @@
             "webview_android": {
               "version_added": "1"
             }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "input_event": {
-        "__compat": {
-          "description": "<code>input</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/input_event",
-          "spec_url": [
-            "https://w3c.github.io/uievents/#event-type-input",
-            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput"
-          ],
-          "tags": [
-            "web-features:input-event"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": "mirror",
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "12",
-                "version_removed": "79",
-                "partial_implementation": true,
-                "notes": "Not supported on <code>select</code>, <code>checkbox</code>, or <code>radio</code> inputs."
-              }
-            ],
-            "firefox": {
-              "version_added": "6"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "9",
-              "partial_implementation": true,
-              "notes": "Only supports <code>input</code> of type <code>text</code> and <code>password</code>."
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": "11.6"
-            },
-            "opera_android": {
-              "version_added": "12"
-            },
-            "safari": {
-              "version_added": "3.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1925,16 +1846,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1969,16 +1895,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -2192,16 +2123,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -2236,16 +2172,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -2275,16 +2216,21 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "117",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "117",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.element.popover.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
