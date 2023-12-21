@@ -53,6 +53,12 @@ export const applyMirroring = (feature: WalkOutput): void => {
   }
 };
 
+/**
+ * Retrieves the previous version of a browser.
+ * @param browser The name of the browser.
+ * @param version The current version of the browser.
+ * @returns The previous version of the browser.
+ */
 const getPreviousVersion = (
   browser: BrowserName,
   version: VersionValue,
@@ -72,8 +78,7 @@ const getPreviousVersion = (
 
 /**
  * Add version_last
- * @param {WalkOutput} feature The BCD to transform
- * @returns {void}
+ * @param feature The BCD to transform
  */
 export const addVersionLast = (feature: WalkOutput): void => {
   for (const [browser, supportData] of Object.entries(
@@ -105,18 +110,26 @@ export const addVersionLast = (feature: WalkOutput): void => {
 };
 
 /**
+ * Applies transforms to the given data.
+ * @param data - The data to apply transforms to.
+ */
+export const applyTransforms = (data): void => {
+  const walker = walk(undefined, data);
+
+  for (const feature of walker) {
+    applyMirroring(feature);
+    addVersionLast(feature);
+  }
+};
+
+/**
  * Generate a BCD data bundle
  * @returns An object containing the prepared BCD data
  */
 export const createDataBundle = async (): Promise<CompatData> => {
   const { default: bcd } = await import('../../index.js');
 
-  const walker = walk(undefined, bcd);
-
-  for (const feature of walker) {
-    applyMirroring(feature);
-    addVersionLast(feature);
-  }
+  applyTransforms(bcd);
 
   return {
     ...bcd,
