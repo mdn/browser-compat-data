@@ -405,13 +405,8 @@
               },
               "firefox": {
                 "version_added": "1",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "browser.send_pings",
-                    "value_to_set": "true"
-                  }
-                ]
+                "partial_implementation": true,
+                "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
               },
               "firefox_android": "mirror",
               "ie": {
