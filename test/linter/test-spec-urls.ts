@@ -39,6 +39,7 @@ const specsExceptions = [
   'https://github.com/WebAssembly/tail-call/blob/main/proposals',
   'https://github.com/WebAssembly/threads/blob/main/proposal',
   'https://github.com/WebAssembly/relaxed-simd/blob/main/proposals',
+  'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
 ];
 
 const allowedSpecURLs = [
