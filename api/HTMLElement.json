@@ -246,11 +246,17 @@
                 "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
               }
             ],
-            "firefox": {
-              "version_added": "1",
-              "partial_implementation": true,
-              "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
-            },
+            "firefox": [
+              {
+                "version_added": "110"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "110",
+                "partial_implementation": true,
+                "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
@@ -286,6 +292,7 @@
               },
               {
                 "version_added": "4",
+                "version_removed": "15.4",
                 "partial_implementation": true,
                 "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
               }
