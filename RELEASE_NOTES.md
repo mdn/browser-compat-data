@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.2)
+
+December 22, 2023
+
+### Removals
+
+- `api.Document.lostpointercapture_event` ([#21630](https://github.com/mdn/browser-compat-data/pull/21630))
+- `api.HTMLElement.beforeinput_event` ([#21640](https://github.com/mdn/browser-compat-data/pull/21640))
+- `api.HTMLElement.beforematch_event` ([#21642](https://github.com/mdn/browser-compat-data/pull/21642))
+- `api.HTMLElement.input_event` ([#21640](https://github.com/mdn/browser-compat-data/pull/21640))
+
+### Additions
+
+- `api.Element.beforeinput_event` ([#21640](https://github.com/mdn/browser-compat-data/pull/21640))
+- `api.Element.input_event` ([#21640](https://github.com/mdn/browser-compat-data/pull/21640))
+- `browsers.firefox_android.releases.124` ([#21685](https://github.com/mdn/browser-compat-data/pull/21685))
+- `browsers.firefox.releases.124` ([#21685](https://github.com/mdn/browser-compat-data/pull/21685))
+- `css.types.image.gradient.linear-gradient.premultiplied_gradients` ([#21472](https://github.com/mdn/browser-compat-data/pull/21472))
+- `css.types.image.gradient.radial-gradient.premultiplied_gradients` ([#21472](https://github.com/mdn/browser-compat-data/pull/21472))
+- `html.elements.track.kind.descriptions` ([#21720](https://github.com/mdn/browser-compat-data/pull/21720))
+- `webassembly.multiMemory` ([#21620](https://github.com/mdn/browser-compat-data/pull/21620))
+
+### Statistics
+
+- 15 contributors have changed 55 files with 858 additions and 708 deletions in 40 commits ([`v5.5.1...v5.5.2`](https://github.com/mdn/browser-compat-data/compare/v5.5.1...v5.5.2))
+- 15,376 total features
+- 1,062 total contributors
+- 4,678 total stargazers
+
 ## [v5.5.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.1)
 
 December 19, 2023
