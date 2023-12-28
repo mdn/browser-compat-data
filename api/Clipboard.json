@@ -180,7 +180,7 @@
             },
             "firefox": {
               "version_added": "preview",
-              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only when the contexts have <a href=\"https://developer.mozilla.org/docs/Web/Security/User_activation#transient_activation\">transient activation</a>. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
             },
             "firefox_android": "mirror",
             "ie": {
