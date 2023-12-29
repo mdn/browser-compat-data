@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.3)
+
+December 29, 2023
+
+### Removals
+
+- `api.MediaRecorder.warning_event` ([#21762](https://github.com/mdn/browser-compat-data/pull/21762))
+- `api.MediaStreamTrack.overconstrained_event` ([#21763](https://github.com/mdn/browser-compat-data/pull/21763))
+- `api.RTCRtpSynchronizationSource` ([#21759](https://github.com/mdn/browser-compat-data/pull/21759))
+- `api.RTCRtpSynchronizationSource.voiceActivityFlag` ([#21759](https://github.com/mdn/browser-compat-data/pull/21759))
+
+### Additions
+
+- `webextensions.api.contextualIdentities.move` ([#21702](https://github.com/mdn/browser-compat-data/pull/21702))
+
+### Statistics
+
+- 9 contributors have changed 29 files with 223 additions and 330 deletions in 31 commits ([`v5.5.2...v5.5.3`](https://github.com/mdn/browser-compat-data/compare/v5.5.2...v5.5.3))
+- 15,373 total features
+- 1,062 total contributors
+- 4,682 total stargazers
+
 ## [v5.5.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.2)
 
 December 22, 2023
