@@ -6,10 +6,10 @@ import { Linter, Logger, LinterData } from '../utils.js';
 
 /**
  * Test the filename based on the identifier
- * @param {Identifier} data The identifier
- * @param {string[]} pathParts Parts of the path
- * @param {string} currentPath The current path traversed
- * @returns {string|boolean} A string with the error message if the lint failed, or false if it passed
+ * @param data The identifier
+ * @param pathParts Parts of the path
+ * @param currentPath The current path traversed
+ * @returns A string with the error message if the lint failed, or false if it passed
  */
 const testFilename = (
   data: Identifier,
@@ -36,9 +36,9 @@ const testFilename = (
 
 /**
  * Process the data to make sure it defines the features appropriate to the file's name
- * @param {Identifier} data The raw contents of the file to test
- * @param {string} filepath The file path
- * @param {Logger} logger The logger to output errors to
+ * @param data The raw contents of the file to test
+ * @param filepath The file path
+ * @param logger The logger to output errors to
  */
 const processData = (
   data: Identifier,
@@ -65,8 +65,11 @@ export default {
   scope: 'file',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.full The full filepath of the data
    */
   check: (logger: Logger, { data, path: { full } }: LinterData) => {
     processData(data, full, logger);

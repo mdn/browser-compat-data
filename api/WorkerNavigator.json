@@ -213,6 +213,7 @@
       },
       "deviceMemory": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/deviceMemory",
           "spec_url": "https://www.w3.org/TR/device-memory/#sec-device-memory-js-api",
           "support": {
             "chrome": {
@@ -257,10 +258,12 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "120",
               "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>."
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "ie": {
               "version_added": false
             },
@@ -285,6 +288,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/gpu",
           "spec_url": "https://gpuweb.github.io/gpuweb/#navigator-gpu",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
@@ -490,7 +496,7 @@
       "mediaCapabilities": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/mediaCapabilities",
-          "spec_url": "https://w3c.github.io/media-capabilities/#dom-navigator-mediacapabilities",
+          "spec_url": "https://w3c.github.io/media-capabilities/#dom-workernavigator-mediacapabilities",
           "support": {
             "chrome": {
               "version_added": "76"
@@ -803,6 +809,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/usb",
           "spec_url": "https://wicg.github.io/webusb/#dom-workernavigator-usb",
+          "tags": [
+            "web-features:webusb"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -826,7 +835,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>Chromium bug 933055</a>."
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
             }
           },
           "status": {

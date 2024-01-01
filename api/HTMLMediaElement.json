@@ -2289,11 +2289,16 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "prefix": "webkit",
-              "version_added": "4",
-              "impl_url": "https://webkit.org/b/214922"
-            },
+            "safari": [
+              {
+                "version_added": "17.2"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "4",
+                "impl_url": "https://webkit.org/b/214922"
+              }
+            ],
             "safari_ios": {
               "prefix": "webkit",
               "version_added": "4",
@@ -2449,6 +2454,7 @@
       },
       "remote": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote",
           "spec_url": "https://w3c.github.io/remote-playback/#dom-htmlmediaelement-remote",
           "support": {
             "chrome": {
@@ -2749,7 +2755,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
             },
             "edge": {
               "version_added": "17"
@@ -2759,7 +2765,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android (see <a href='https://bugzil.la/1473346'>bug 1473346</a>)."
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
             },
             "ie": {
               "version_added": false
@@ -2791,7 +2797,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
             },
             "edge": {
               "version_added": "17"
@@ -2801,7 +2807,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android (see <a href='https://bugzil.la/1473346'>bug 1473346</a>)."
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
             },
             "ie": {
               "version_added": false

@@ -956,6 +956,7 @@
       "credentialless": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/credentialless",
+          "spec_url": "https://wicg.github.io/anonymous-iframe/#dom-window-credentialless",
           "support": {
             "chrome": {
               "version_added": "110"
@@ -981,7 +982,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -990,6 +991,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/customElements",
           "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-window-customelements",
+          "tags": [
+            "web-features:custom-elements"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
@@ -1047,7 +1051,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17"
             },
             "safari_ios": {
               "version_added": "4.2"
@@ -1100,7 +1104,7 @@
               "version_added": "12"
             },
             "safari": {
-              "version_added": false
+              "version_added": "17"
             },
             "safari_ios": {
               "version_added": "4.2"
@@ -1129,7 +1133,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "110"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1459,6 +1463,40 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        }
+      },
+      "fence": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/fence",
+          "spec_url": "https://wicg.github.io/fenced-frame/#dom-window-fence",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -2028,6 +2066,7 @@
       },
       "getScreenDetails": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/getScreenDetails",
           "spec_url": "https://w3c.github.io/window-management/#api-window-getScreenDetails-method",
           "support": {
             "chrome": {
@@ -2229,7 +2268,7 @@
             },
             "safari_ios": {
               "version_added": "1",
-              "notes": "This property returns the height of the <a href='https://developer.mozilla.org/docs/Glossary/visual_viewport'>visual viewport</a> instead of the layout viewport. See <a href='https://webkit.org/b/174362'>this bug</a> for details."
+              "notes": "This property returns the height of the <a href='https://developer.mozilla.org/docs/Glossary/visual_viewport'>visual viewport</a> instead of the layout viewport. See <a href='https://webkit.org/b/174362'>bug 174362</a> for details."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -2276,7 +2315,7 @@
             },
             "safari_ios": {
               "version_added": "1",
-              "notes": "This property returns the width of the <a href='https://developer.mozilla.org/docs/Glossary/visual_viewport'>visual viewport</a> instead of the layout viewport. See <a href='https://webkit.org/b/174362'>this bug</a> for details."
+              "notes": "This property returns the width of the <a href='https://developer.mozilla.org/docs/Glossary/visual_viewport'>visual viewport</a> instead of the layout viewport. See <a href='https://webkit.org/b/174362'>bug 174362</a> for details."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -3492,7 +3531,7 @@
               "version_added": "≤14"
             },
             "safari": {
-              "version_added": "16.4"
+              "version_added": false
             },
             "safari_ios": {
               "version_added": "≤3"
@@ -3511,6 +3550,7 @@
       },
       "originAgentCluster": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster",
           "spec_url": "https://html.spec.whatwg.org/multipage/origin.html#origin-keyed-agent-clusters",
           "support": {
             "chrome": {
@@ -3696,86 +3736,6 @@
             "webview_android": {
               "version_added": "≤37"
             }
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pageXOffset": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageXOffset",
-          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-pagexoffset",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "9"
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": "3"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pageYOffset": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageYOffset",
-          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-pageyoffset",
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "9"
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": "3"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -4385,7 +4345,7 @@
         "__compat": {
           "description": "<code>resize</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/resize_event",
-          "spec_url": "https://drafts.csswg.org/cssom-view/#resizing-viewports",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#eventdef-window-resize",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -6037,10 +5997,12 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "version_removed": "120"
             },
             "firefox_android": {
               "version_added": "4",
+              "version_removed": "120",
               "notes": "This method has no effect as a page is always in a tab."
             },
             "ie": {
@@ -6407,7 +6369,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "69"
+              "version_added": "69",
+              "notes": "<code>event.preventDefault()</code> does not prevent Firefox from logging the error message in the console, see <a href='https://bugzil.la/1642147'>bug 1642147</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -6477,7 +6440,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },

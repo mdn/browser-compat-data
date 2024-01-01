@@ -10,11 +10,11 @@ const dirname = new URL('.', import.meta.url);
 
 /**
  * Get the release notes to add
- * @param {string} thisVersion The current version number
- * @param {Changes} changes The changes to format
- * @param {Stats} stats The statistics from the changes
- * @param {string} versionBump Which part of the semver has been bumped
- * @returns {string} The Markdown-formatted release notes
+ * @param thisVersion The current version number
+ * @param changes The changes to format
+ * @param stats The statistics from the changes
+ * @param versionBump Which part of the semver has been bumped
+ * @returns The Markdown-formatted release notes
  */
 export const getNotes = (
   thisVersion: string,
@@ -45,9 +45,9 @@ export const getNotes = (
 
 /**
  * Add new release notes to the file
- * @param {string} notesToAdd The notes to add to the release notes
- * @param {string} versionBump Which part of the semver has been bumped
- * @param {string} lastVersion The previous version number
+ * @param notesToAdd The notes to add to the release notes
+ * @param versionBump Which part of the semver has been bumped
+ * @param lastVersion The previous version number
  */
 export const addNotes = async (
   notesToAdd: string,

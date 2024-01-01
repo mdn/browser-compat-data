@@ -8,34 +8,16 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
-/**
- * Get the date exactly two years ago
- * @returns {Date} The date, two years prior to today
- */
-const getTwoYearsAgo = () => {
-  const date = new Date();
-  date.setFullYear(date.getFullYear() - 2);
-  return date;
-};
+const now = new Date();
 
-export const twoYearsAgo = getTwoYearsAgo();
+/* The date, exactly two years ago */
+export const twoYearsAgo = new Date(
+  now.getFullYear() - 2,
+  now.getMonth(),
+  now.getDate(),
+);
 
-/**
- * @typedef LinterScope
- * @type {('file'|'feature'|'browser'|'tree')}
- */
-
-/**
- * @typedef LoggerLevel
- * @type {('error'|'warning')}
- */
-
-/**
- * @typedef Linter
- * @type {{name: string, description: string,  scope: string,  check: any}}
- */
-
-const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
+const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
     '\b': '\\b', // ␈ (0x08)
@@ -51,19 +33,17 @@ const INVISIBLES_MAP: { readonly [char: string]: string } = Object.freeze(
 export const INVISIBLES_REGEXP = /[\0\x08-\x0D]/g;
 
 /** Used to check if the process is running in a CI environment. */
-export const IS_CI =
-  process.env.CI && String(process.env.CI).toLowerCase() === 'true';
+export const IS_CI = process.env.CI?.toLowerCase() === 'true';
 
 /** Determines if the OS is Windows */
 export const IS_WINDOWS = platform() === 'win32';
 
-/** @type {string[]} */
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
  * Escapes common invisible characters.
- * @param {string} str The string to escape invisibles for
- * @returns {string} The string with invisibles escaped
+ * @param str The string to escape invisibles for
+ * @returns The string with invisibles escaped
  */
 export const escapeInvisibles = (str: string): string =>
   INVISIBLES_REGEXP[Symbol.replace](
@@ -73,9 +53,9 @@ export const escapeInvisibles = (str: string): string =>
 
 /**
  * Gets the row and column matching the index in a string.
- * @param {string} str The string
- * @param {number} index The character index
- * @returns {[number, number] | [null, null]} The position from the index
+ * @param str The string
+ * @param index The character index
+ * @returns The position from the index
  */
 export const indexToPosRaw = (
   str: string,
@@ -117,9 +97,9 @@ export const indexToPosRaw = (
 
 /**
  * Gets the row and column matching the index in a string and formats it.
- * @param {string} str The string
- * @param {number} index The character index
- * @returns {string} The line and column in the form of: `"(Ln <ln>, Col <col>)"`
+ * @param str The string
+ * @param index The character index
+ * @returns The line and column in the form of: `"(Ln <ln>, Col <col>)"`
  */
 export const indexToPos = (str: string, index: number): string => {
   const [line, col] = indexToPosRaw(str, index);
@@ -128,9 +108,9 @@ export const indexToPos = (str: string, index: number): string => {
 
 /**
  * Get the stringified difference between two JSON strings
- * @param {string} actual Actual JSON string
- * @param {string} expected Expected JSON string
- * @returns {string?} Statement explaining the difference in provided JSON strings
+ * @param actual Actual JSON string
+ * @param expected Expected JSON string
+ * @returns Statement explaining the difference in provided JSON strings
  */
 export const jsonDiff = (actual: string, expected: string): string | null => {
   const actualLines = actual.split(/\n/);
@@ -153,38 +133,38 @@ export const jsonDiff = (actual: string, expected: string): string | null => {
   return null;
 };
 
-export type Linter = {
+export interface Linter {
   name: string;
   description: string;
   scope: LinterScope;
   check: (logger: Logger, options: object) => void;
   exceptions?: string[];
-};
+}
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
 export type LinterMessageLevel = 'error' | 'warning';
 
-export type LinterMessage = {
+export interface LinterMessage {
   level: LinterMessageLevel;
   title: string;
   path: string;
   message: string;
   fixable?: true;
   [k: string]: any;
-};
+}
 
-export type LinterPath = {
+export interface LinterPath {
   full: string;
   category: string;
   browser?: BrowserName;
-};
+}
 
-export type LinterData = {
+export interface LinterData {
   data: DataType;
   rawdata: string;
   path: LinterPath;
-};
+}
 
 /**
  * Linter logger class
@@ -196,8 +176,8 @@ export class Logger {
 
   /**
    * Construct the logger
-   * @param {string} title Logger title
-   * @param {string} path The scope path
+   * @param title Logger title
+   * @param path The scope path
    */
   constructor(title: string, path: string) {
     this.title = title;
@@ -207,8 +187,8 @@ export class Logger {
 
   /**
    * Throw an error
-   * @param {string} message Message string
-   * @param {object} options Additional options (ex. actual, expected)
+   * @param message Message string
+   * @param options Additional options (ex. actual, expected)
    */
   error(message: string, options?: object): void {
     this.messages.push({
@@ -222,8 +202,8 @@ export class Logger {
 
   /**
    * Throw a warning
-   * @param {string} message Message string
-   * @param {object} options Additional options (ex. actual, expected)
+   * @param message Message string
+   * @param options Additional options (ex. actual, expected)
    */
   warning(message: string, options?: object): void {
     this.messages.push({
@@ -249,7 +229,7 @@ export class Linters {
 
   /**
    * Construct the linters
-   * @param {Linter[]} linters All the linters
+   * @param linters All the linters
    */
   constructor(linters: Linter[]) {
     this.linters = linters;
@@ -266,8 +246,8 @@ export class Linters {
 
   /**
    * Run the linters for a specific scope
-   * @param {LinterScope} scope The scope to run
-   * @param {LinterData} data The data to lint
+   * @param scope The scope to run
+   * @param data The data to lint
    */
   runScope(scope: LinterScope, data: LinterData): void {
     const linters = this.linters.filter((linter) => linter.scope === scope);

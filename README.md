@@ -4,7 +4,7 @@
 
 The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#Projects-using-the-data).
 
-Read how this project is [governed](GOVERNANCE.md).
+Read how this project is [governed](./GOVERNANCE.md).
 
 Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
@@ -81,9 +81,9 @@ const support = bcd['api']['Document']['body']['__compat'];
 
 ## Package contents
 
-The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 12,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
+The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 15,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
 
-The definitive description of the format used to represent individual features and browsers is the [schema definitions](schemas/).
+The definitive description of the format used to represent individual features and browsers is the [schema definitions](./schemas/).
 
 Apart from the explicitly documented objects below, feature-level support data may change at any time. See [_Semantic versioning policy_](#Semantic-versioning-policy) for details.
 
@@ -96,15 +96,15 @@ An object containing the following package metadata:
 - `version` - the package version
 - `timestamp` - the timestamp of when the package version was built
 
-### [`api`](api)
+### [`api`](./api)
 
 Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.
 
-### [`browsers`](browsers)
+### [`browsers`](./browsers)
 
-Data for browsers and JavaScript runtimes. See the [browser schema](schemas/browsers-schema.md) for details.
+Data for browsers and JavaScript runtimes. See the [browser schema](./schemas/browsers-schema.md) for details.
 
-### [`css`](css)
+### [`css`](./css)
 
 Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, including:
 
@@ -129,7 +129,7 @@ Data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) features, inc
 - `methods` - Request methods
 - `status` - Status codes
 
-### [`javascript`](javascript)
+### [`javascript`](./javascript)
 
 Data for JavaScript language features, including:
 
@@ -140,28 +140,28 @@ Data for JavaScript language features, including:
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
 
-### [`mathml`](mathml)
+### [`mathml`](./mathml)
 
 Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features, including:
 
 - `elements` - Elements
 
-### [`svg`](svg)
+### [`svg`](./svg)
 
 Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, including:
 
 - `attributes` - Attributes
 - `elements` - Elements
 
-### [`webassembly`](webassembly)
+### [`webassembly`](./webassembly)
 
 Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
 
-### [`webdriver`](webdriver)
+### [`webdriver`](./webdriver)
 
 Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
 
-### [`webextensions`](webextensions)
+### [`webextensions`](./webextensions)
 
 Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) features, including:
 
@@ -186,7 +186,7 @@ If you find a problem with the compatibility data (such as incorrect version num
 
 ## Contributing
 
-Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
+Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](./docs/contributing.md) for more information.
 
 ## Projects using the data
 
@@ -200,7 +200,6 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
 - [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
 - [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
-- [Hexo Plugin: hexo-compat-report](https://github.com/TimDaub/hexo-compat-report) - Allows to embed MDN's compatibility table in a hexo blog post.
 
 ## Acknowledgments
 

@@ -19,17 +19,17 @@ const categoriesToCheck = [
   // 'html',
   // 'http',
   // 'javascript',
-  // 'mathml',
+  'mathml',
   // 'svg',
   'webassembly',
   // 'webdriver',
-  // 'webextensions'
+  'webextensions',
 ];
 
 /**
  * Check if feature has never been implemented
- * @param {InternalSupportBlock} support The support statement
- * @returns {boolean} If the feature was never implemented
+ * @param support The support statement
+ * @returns If the feature was never implemented
  */
 export const neverImplemented = (support: InternalSupportBlock): boolean => {
   for (const s in support) {
@@ -53,8 +53,8 @@ warningTime.setFullYear(warningTime.getFullYear() - 2);
 
 /**
  * Check if a feature has been implemented at some point but removed now
- * @param {InternalSupportBlock} support The support statement
- * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
+ * @param support The support statement
+ * @returns Whether the feature should be removed from BCD
  */
 export const implementedAndRemoved = (
   support: InternalSupportBlock,
@@ -109,8 +109,8 @@ export const implementedAndRemoved = (
 
 /**
  * Process and test the data
- * @param {Logger} logger The logger to output errors to
- * @param {CompatStatement} data The data to test
+ * @param logger The logger to output errors to
+ * @param data The data to test
  */
 export const processData = (logger: Logger, data: CompatStatement): void => {
   if (data && data.support) {
@@ -138,8 +138,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     if (categoriesToCheck.includes(category)) {

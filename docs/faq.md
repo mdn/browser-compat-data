@@ -8,7 +8,7 @@ Once a pull request is merged to update BCD, it takes a week or two for a new ve
 
 1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
-   See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
+   See [Publishing a new version of `@mdn/browser-compat-data`](./publishing.md) for details.
 3. MDN staff merge a pull request that updates the BCD version in [Yari](https://github.com/mdn/yari), the MDN engine. This typically happens within a day of the release of the npm package.
 4. Tables are then generated on MDN Web Docs:
 

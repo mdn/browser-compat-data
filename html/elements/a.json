@@ -75,7 +75,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "1"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -372,13 +372,8 @@
               },
               "firefox": {
                 "version_added": "1",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "browser.send_pings",
-                    "value_to_set": "true"
-                  }
-                ]
+                "partial_implementation": true,
+                "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -692,7 +687,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "1"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -753,6 +748,39 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "unfencedTop": {
+            "__compat": {
+              "description": "<code>_unfencedTop</code> value",
+              "support": {
+                "chrome": {
+                  "version_added": "117"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },

@@ -3,7 +3,7 @@
     "URL": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL",
-        "spec_url": "https://url.spec.whatwg.org/#api",
+        "spec_url": "https://url.spec.whatwg.org/#url",
         "support": {
           "chrome": [
             {
@@ -74,7 +74,7 @@
         "__compat": {
           "description": "<code>URL()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/URL",
-          "spec_url": "https://url.spec.whatwg.org/#constructors",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-url",
           "support": {
             "chrome": {
               "version_added": "19"
@@ -115,7 +115,7 @@
               {
                 "version_added": "6",
                 "partial_implementation": true,
-                "notes": "In Safari 14 and earlier, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> causes Safari to throw a <code>TypeError</code>; see <a href='https://webkit.org/b/216841'>WebKit bug 216841</a>."
+                "notes": "Before Safari 14.1, calling the <code>URL</code> constructor with a base URL whose value is <code>undefined</code> caused Safari to throw a <code>TypeError</code>, see <a href='https://webkit.org/b/216841'>bug 216841</a>."
               }
             ],
             "safari_ios": "mirror",
@@ -133,10 +133,10 @@
         "__compat": {
           "description": "<code>canParse()</code> static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URL/canParse_static",
-          "spec_url": "https://url.spec.whatwg.org/#ref-for-dom-url-canparse",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-canparse",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "120"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -150,9 +150,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "20.0.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "19.9.0"
+              },
+              {
+                "version_added": "18.17.0",
+                "version_removed": "19.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",

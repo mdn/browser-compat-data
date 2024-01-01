@@ -12,10 +12,11 @@ permissions:
 
 jobs:
   update:
+    if: github.repository == 'mdn/browser-compat-data'
     name: Update browser releases
     runs-on: ubuntu-latest
     env:
-      RESULT:
+      RESULT: ""
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,6 +42,7 @@ jobs:
           signoff: false
           branch: browser-releases
           delete-branch: true
+          add-paths: browsers/*.json # Only include files in that directory
           title: "Update browser releases"
           body: |
             The output of the `update-browser-releases` script is:
