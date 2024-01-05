@@ -182,7 +182,7 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 ## What isn't tracked?
 
-Now that you know what this project _is_, let's mention what this project _isn't_.  This project is not:
+Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
 
 - An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features), [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data), web frameworks (e.g. React, Vue) or proprietary features.
 - A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
