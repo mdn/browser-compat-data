@@ -188,9 +188,17 @@
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-autocapitalize-dev",
           "support": {
-            "chrome": {
-              "version_added": "66"
-            },
+            "chrome": [
+              {
+                "version_added": "66"
+              },
+              {
+                "version_added": "43",
+                "version_removed": "66",
+                "partial_implementation": true,
+                "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -206,9 +214,17 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "≤3",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "Supported for <code>HTMLButtonElement</code>, <code>HTMLInputElement</code>, <code>HTMLSelectElement</code>, and <code>HTMLTextAreaElement</code>."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
