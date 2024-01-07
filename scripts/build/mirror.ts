@@ -202,11 +202,21 @@ export const bumpSupport = (
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
+  if (!browsers[destination].accepts_flags && newData.flags) {
+    // Remove flag data if the target browser doesn't accept flags
+    return { version_added: false };
+  }
+
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       destination,
       sourceData.version_added,
     );
+  }
+
+  if (newData.version_added === false && sourceData.version_added !== false) {
+    // If the feature is added in an upstream version newer than available in the downstream browser, don't copy notes, etc.
+    return { version_added: false };
   }
 
   if (
@@ -219,6 +229,11 @@ export const bumpSupport = (
     );
   }
 
+  if (newData.version_added === newData.version_removed) {
+    // If version_added and version_removed are the same, feature is unsupported
+    return { version_added: false };
+  }
+
   if (notesRepl && sourceData.notes) {
     const newNotes = updateNotes(
       sourceData.notes,
@@ -229,16 +244,6 @@ export const bumpSupport = (
     if (newNotes) {
       newData.notes = newNotes;
     }
-  }
-
-  if (!browsers[destination].accepts_flags && newData.flags) {
-    // Remove flag data if the target browser doesn't accept flags
-    return { version_added: false };
-  }
-
-  if (newData.version_added === newData.version_removed) {
-    // If version_added and version_removed are the same, feature is unsupported
-    return { version_added: false };
   }
 
   return newData;
