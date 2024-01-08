@@ -70,7 +70,13 @@
               "version_added": "79"
             },
             "firefox": {
-              "version_added": "preview"
+              "version_added": "preview",
+              "notes": [
+                "From version 122, the <code>text/plain</code>, <code>text/html</code> and <code>image/png</code> MIME types are supported.",
+                "From version 122, the paste-prompt on clipboard read is suppressed if the clipboard contains same-origin content",
+                "From version 122, Web extensions require the <code>clipboardRead</code> permission in manifest to read data. With permission the extension does not require transient activation or paste prompt",
+                "Requires transient activation."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -126,7 +132,12 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "preview",
+              "notes": [
+                "From version 122 The paste-prompt on clipboard read is suppressed if the clipboard contains same-origin content",
+                "From version 122, Web extensions require the <code>clipboardRead</code> permission in manifest to read data. With permission the extension does not require transient activation or paste prompt",
+                "Requires transient activation."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -181,8 +192,9 @@
             "firefox": {
               "version_added": "preview",
               "notes": [
-                "Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time.",
-                "From version 122, Firefox supports MIME types: <code>text/plain</code>, <code>text/html</code> and <code>image/png</code>."
+                "From version 122, the <code>text/plain</code>, <code>text/html</code> and <code>image/png</code> MIME types are supported.",
+                "From version 122, Web extensions with the <code>clipboardWrite</code> permission in manifest do not require transient activation.",
+                "Requires transient activation."
               ]
             },
             "firefox_android": "mirror",
@@ -232,7 +244,10 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "63",
-              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+              "notes": [
+                "From version 122, Web extensions with the <code>clipboardWrite</code> permission in manifest do not require transient activation.",
+                "Requires transient activation."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
