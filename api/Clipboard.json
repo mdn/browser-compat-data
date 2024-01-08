@@ -44,58 +44,26 @@
             "web-features:async-clipboard"
           ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "86",
-                "partial_implementation": true,
-                "notes": [
-                  "From version 86, the <code>text/html</code> MIME type is supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              },
-              {
-                "version_added": "76",
-                "partial_implementation": true,
-                "notes": [
-                  "From version 76, the <code>image/png</code> MIME type is supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              },
-              {
-                "version_added": "66",
-                "partial_implementation": true,
-                "notes": [
-                  "Images are not supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "86",
-                "partial_implementation": true,
-                "notes": [
-                  "From version 86, the <code>text/html</code> MIME type is supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              },
-              {
-                "version_added": "84",
-                "partial_implementation": true,
-                "notes": [
-                  "From version 84, the <code>image/png</code> MIME type is supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              },
-              {
-                "version_added": "66",
-                "partial_implementation": true,
-                "notes": [
-                  "Images are not supported.",
-                  "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "66",
+              "partial_implementation": true,
+              "notes": [
+                "From version 86, the <code>text/html</code> MIME type is supported.",
+                "From version 76, the <code>image/png</code> MIME type is supported.",
+                "From version 66, the <code>text/plain</code> MIME type is supported.",
+                "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
+              ]
+            },
+            "chrome_android": {
+              "version_added": "66",
+              "partial_implementation": true,
+              "notes": [
+                "From version 86, the <code>text/html</code> MIME type is supported.",
+                "From version 84, the <code>image/png</code> MIME type is supported.",
+                "From version 66, the <code>text/plain</code> MIME type is supported.",
+                "Requires Permission API <code>clipboard-read</code> permission. Does not require transient activation."
+              ]
+            },
             "edge": {
               "version_added": "79"
             },
