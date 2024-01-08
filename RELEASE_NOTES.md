@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.4)
+
+January 2, 2024
+
+### Removals
+
+- `html.elements.area.accesskey` ([#21811](https://github.com/mdn/browser-compat-data/pull/21811))
+
+### Additions
+
+- `api.Element.checkVisibility.options_checkOpacity_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_checkVisibilityCSS_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_contentVisibilityAuto_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_visibilityProperty_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+
+### Statistics
+
+- 7 contributors have changed 28 files with 249 additions and 114 deletions in 29 commits ([`v5.5.3...v5.5.4`](https://github.com/mdn/browser-compat-data/compare/v5.5.3...v5.5.4))
+- 15,376 total features
+- 1,063 total contributors
+- 4,683 total stargazers
+
 ## [v5.5.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.3)
 
 December 29, 2023
