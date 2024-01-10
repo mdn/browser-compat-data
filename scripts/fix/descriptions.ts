@@ -1,0 +1,63 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import fs from 'node:fs';
+
+import {
+  BrowserName,
+  SupportStatement,
+  SimpleSupportStatement,
+} from '../../types/types.js';
+import { IS_WINDOWS } from '../../test/utils.js';
+import testDescriptions, {
+  processData,
+} from '../../test/linter/test-descriptions.js';
+import walk from '../../utils/walk.js';
+
+/**
+ * Removes irrelevant flags from the compatibility data of a specified file
+ * @param filename The filename containing compatibility info
+ */
+const fixDescriptions = (filename: string): void => {
+  let actual = fs.readFileSync(filename, 'utf-8').trim();
+
+  const data = JSON.parse(actual);
+  const walker = walk(undefined, data);
+
+  for (const feature of walker) {
+    if (testDescriptions.exceptions?.includes(feature.path)) {
+      continue;
+    }
+
+    const errors = processData(
+      feature.data,
+      feature.path.split('.')[0],
+      feature.path,
+    );
+
+    for (const error of errors) {
+      if (typeof error === 'string') {
+        // Ignore HTML validation failures
+        continue;
+      }
+
+      if (error.expected) {
+        feature.compat.description = error.expected;
+      }
+    }
+  }
+
+  let expected = JSON.stringify(data, null, 2);
+
+  if (IS_WINDOWS) {
+    // prevent false positives from git.core.autocrlf on Windows
+    actual = actual.replace(/\r/g, '');
+    expected = expected.replace(/\r/g, '');
+  }
+
+  if (actual !== expected) {
+    fs.writeFileSync(filename, expected + '\n', 'utf-8');
+  }
+};
+
+export default fixDescriptions;
