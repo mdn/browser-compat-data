@@ -3,11 +3,6 @@
 
 import fs from 'node:fs';
 
-import {
-  BrowserName,
-  SupportStatement,
-  SimpleSupportStatement,
-} from '../../types/types.js';
 import { IS_WINDOWS } from '../../test/utils.js';
 import testDescriptions, {
   processData,
