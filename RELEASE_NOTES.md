@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.5)
+
+January 9, 2024
+
+### Removals
+
+- `css.selectors.-webkit-outer-spin-button` ([#21833](https://github.com/mdn/browser-compat-data/pull/21833))
+- `html.elements.form.accept` ([#21831](https://github.com/mdn/browser-compat-data/pull/21831))
+
+### Additions
+
+- `css.types.color.color.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hsl.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hsla.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hwb.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.lab.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.lch.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.oklab.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.oklch.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.rgb.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.rgba.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+
+### Statistics
+
+- 12 contributors have changed 24 files with 944 additions and 165 deletions in 25 commits ([`v5.5.4...v5.5.5`](https://github.com/mdn/browser-compat-data/compare/v5.5.4...v5.5.5))
+- 15,384 total features
+- 1,065 total contributors
+- 4,690 total stargazers
+
 ## [v5.5.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.4)
 
 January 2, 2024
