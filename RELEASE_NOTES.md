@@ -1,5 +1,36 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.6)
+
+January 12, 2024
+
+### Removals
+
+- `css.properties.background-position.4_value_syntax` ([#21882](https://github.com/mdn/browser-compat-data/pull/21882))
+
+### Additions
+
+- `api.RTCStatsReport.type_inbound-rtp.frameHeight` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesDecoded` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesPerSecond` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesReceived` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.frameWidth` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.keyFramesDecoded` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.qpSum` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalDecodeTime` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalInterFrameDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalProcessingDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalSquaredInterFrameDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `browsers.edge.releases.123` ([#21881](https://github.com/mdn/browser-compat-data/pull/21881))
+- `css.properties.background-position.side-relative_values` ([#21882](https://github.com/mdn/browser-compat-data/pull/21882))
+
+### Statistics
+
+- 9 contributors have changed 16 files with 459 additions and 327 deletions in 15 commits ([`v5.5.5...v5.5.6`](https://github.com/mdn/browser-compat-data/compare/v5.5.5...v5.5.6))
+- 15,395 total features
+- 1,065 total contributors
+- 4,694 total stargazers
+
 ## [v5.5.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.5)
 
 January 9, 2024
