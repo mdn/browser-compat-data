@@ -45,6 +45,7 @@
       },
       "cancelVideoFrameCallback": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/cancelVideoFrameCallback",
           "spec_url": "https://wicg.github.io/video-rvfc/#dom-htmlvideoelement-cancelvideoframecallback",
           "support": {
             "chrome": {
@@ -90,13 +91,18 @@
             "edge": "mirror",
             "firefox": [
               {
-                "version_added": "122"
+                "version_added": "122",
+                "partial_implementation": true,
+                "notes": "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
               },
               {
                 "version_added": "116",
                 "version_removed": "122",
                 "partial_implementation": true,
-                "notes": "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+                "notes": [
+                  "This property is undefined, but still has an effect if set to a value.",
+                  "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+                ]
               }
             ],
             "firefox_android": "mirror",
@@ -602,6 +608,7 @@
       },
       "requestVideoFrameCallback": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback",
           "spec_url": "https://wicg.github.io/video-rvfc/#dom-htmlvideoelement-requestvideoframecallback",
           "support": {
             "chrome": {
