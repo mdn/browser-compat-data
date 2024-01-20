@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.7)
+
+January 19, 2024
+
+### Removals
+
+- `api.File.type` ([#21918](https://github.com/mdn/browser-compat-data/pull/21918))
+
+### Additions
+
+- `api.Element.ariaBrailleLabel` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.Element.ariaBrailleRoleDescription` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.ElementInternals.ariaBrailleLabel` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.ElementInternals.ariaBrailleRoleDescription` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `css.properties.accent-color.auto` ([#21926](https://github.com/mdn/browser-compat-data/pull/21926))
+- `css.properties.alignment-baseline.alphabetic` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.baseline` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.central` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.ideographic` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.mathematical` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.middle` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+
+### Statistics
+
+- 8 contributors have changed 31 files with 711 additions and 502 deletions in 26 commits ([`v5.5.6...v5.5.7`](https://github.com/mdn/browser-compat-data/compare/v5.5.6...v5.5.7))
+- 15,405 total features
+- 1,065 total contributors
+- 4,700 total stargazers
+
 ## [v5.5.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.6)
 
 January 12, 2024
