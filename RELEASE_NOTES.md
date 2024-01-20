@@ -1,5 +1,138 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.7)
+
+January 19, 2024
+
+### Removals
+
+- `api.File.type` ([#21918](https://github.com/mdn/browser-compat-data/pull/21918))
+
+### Additions
+
+- `api.Element.ariaBrailleLabel` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.Element.ariaBrailleRoleDescription` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.ElementInternals.ariaBrailleLabel` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `api.ElementInternals.ariaBrailleRoleDescription` ([#21921](https://github.com/mdn/browser-compat-data/pull/21921))
+- `css.properties.accent-color.auto` ([#21926](https://github.com/mdn/browser-compat-data/pull/21926))
+- `css.properties.alignment-baseline.alphabetic` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.baseline` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.central` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.ideographic` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.mathematical` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+- `css.properties.alignment-baseline.middle` ([#21928](https://github.com/mdn/browser-compat-data/pull/21928))
+
+### Statistics
+
+- 8 contributors have changed 31 files with 711 additions and 502 deletions in 26 commits ([`v5.5.6...v5.5.7`](https://github.com/mdn/browser-compat-data/compare/v5.5.6...v5.5.7))
+- 15,405 total features
+- 1,065 total contributors
+- 4,700 total stargazers
+
+## [v5.5.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.6)
+
+January 12, 2024
+
+### Removals
+
+- `css.properties.background-position.4_value_syntax` ([#21882](https://github.com/mdn/browser-compat-data/pull/21882))
+
+### Additions
+
+- `api.RTCStatsReport.type_inbound-rtp.frameHeight` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesDecoded` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesPerSecond` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.framesReceived` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.frameWidth` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.keyFramesDecoded` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.qpSum` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalDecodeTime` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalInterFrameDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalProcessingDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `api.RTCStatsReport.type_inbound-rtp.totalSquaredInterFrameDelay` ([#21890](https://github.com/mdn/browser-compat-data/pull/21890))
+- `browsers.edge.releases.123` ([#21881](https://github.com/mdn/browser-compat-data/pull/21881))
+- `css.properties.background-position.side-relative_values` ([#21882](https://github.com/mdn/browser-compat-data/pull/21882))
+
+### Statistics
+
+- 9 contributors have changed 16 files with 459 additions and 327 deletions in 15 commits ([`v5.5.5...v5.5.6`](https://github.com/mdn/browser-compat-data/compare/v5.5.5...v5.5.6))
+- 15,395 total features
+- 1,065 total contributors
+- 4,694 total stargazers
+
+## [v5.5.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.5)
+
+January 9, 2024
+
+### Removals
+
+- `css.selectors.-webkit-outer-spin-button` ([#21833](https://github.com/mdn/browser-compat-data/pull/21833))
+- `html.elements.form.accept` ([#21831](https://github.com/mdn/browser-compat-data/pull/21831))
+
+### Additions
+
+- `css.types.color.color.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hsl.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hsla.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.hwb.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.lab.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.lch.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.oklab.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.oklch.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.rgb.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+- `css.types.color.rgba.mixed_type_parameters` ([#21420](https://github.com/mdn/browser-compat-data/pull/21420))
+
+### Statistics
+
+- 12 contributors have changed 24 files with 944 additions and 165 deletions in 25 commits ([`v5.5.4...v5.5.5`](https://github.com/mdn/browser-compat-data/compare/v5.5.4...v5.5.5))
+- 15,384 total features
+- 1,065 total contributors
+- 4,690 total stargazers
+
+## [v5.5.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.4)
+
+January 2, 2024
+
+### Removals
+
+- `html.elements.area.accesskey` ([#21811](https://github.com/mdn/browser-compat-data/pull/21811))
+
+### Additions
+
+- `api.Element.checkVisibility.options_checkOpacity_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_checkVisibilityCSS_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_contentVisibilityAuto_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+- `api.Element.checkVisibility.options_visibilityProperty_parameter` ([#21715](https://github.com/mdn/browser-compat-data/pull/21715))
+
+### Statistics
+
+- 7 contributors have changed 28 files with 249 additions and 114 deletions in 29 commits ([`v5.5.3...v5.5.4`](https://github.com/mdn/browser-compat-data/compare/v5.5.3...v5.5.4))
+- 15,376 total features
+- 1,063 total contributors
+- 4,683 total stargazers
+
+## [v5.5.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.3)
+
+December 29, 2023
+
+### Removals
+
+- `api.MediaRecorder.warning_event` ([#21762](https://github.com/mdn/browser-compat-data/pull/21762))
+- `api.MediaStreamTrack.overconstrained_event` ([#21763](https://github.com/mdn/browser-compat-data/pull/21763))
+- `api.RTCRtpSynchronizationSource` ([#21759](https://github.com/mdn/browser-compat-data/pull/21759))
+- `api.RTCRtpSynchronizationSource.voiceActivityFlag` ([#21759](https://github.com/mdn/browser-compat-data/pull/21759))
+
+### Additions
+
+- `webextensions.api.contextualIdentities.move` ([#21702](https://github.com/mdn/browser-compat-data/pull/21702))
+
+### Statistics
+
+- 9 contributors have changed 29 files with 223 additions and 330 deletions in 31 commits ([`v5.5.2...v5.5.3`](https://github.com/mdn/browser-compat-data/compare/v5.5.2...v5.5.3))
+- 15,373 total features
+- 1,062 total contributors
+- 4,682 total stargazers
+
 ## [v5.5.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.2)
 
 December 22, 2023
