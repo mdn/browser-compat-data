@@ -2,62 +2,23 @@
   "webextensions": {
     "api": {
       "proxy": {
-        "onError": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "alternative_name": "onProxyError",
-                  "version_added": "55",
-                  "version_removed": "71"
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "alternative_name": "onProxyError",
-                  "version_added": "55"
-                }
-              ],
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "onRequest": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "60",
-                "notes": "Before version 78, the <code>tabId</code> and <code>windowId</code> filter properties are ignored."
-              },
-              "firefox_android": {
-                "version_added": "60"
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "55",
+              "notes": "An API of the same name is available in Chrome, Edge, and Opera. However, the implementation in those browsers is entirely different and not compatible with the Firefox version."
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror"
           }
         },
         "ProxyInfo": {
@@ -384,6 +345,64 @@
                 },
                 "safari_ios": "mirror"
               }
+            }
+          }
+        },
+        "onError": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "onProxyError",
+                  "version_added": "55",
+                  "version_removed": "71"
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "onProxyError",
+                  "version_added": "55"
+                }
+              ],
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "onRequest": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "60",
+                "notes": "Before version 78, the <code>tabId</code> and <code>windowId</code> filter properties are ignored."
+              },
+              "firefox_android": {
+                "version_added": "60"
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         },
