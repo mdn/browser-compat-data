@@ -1,12 +1,14 @@
 {
   "api": {
-    "IdentityCredential": {
+    "StorageBucketManager": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredential",
-        "spec_url": "https://fedidcg.github.io/FedCM/#browser-api-identity-credential-interface",
+        "spec_url": "https://wicg.github.io/storage-buckets/#storagebucketmanager",
+        "tags": [
+          "web-features:storage-buckets"
+        ],
         "support": {
           "chrome": {
-            "version_added": "108"
+            "version_added": "122"
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -33,10 +35,12 @@
           "deprecated": false
         }
       },
-      "disconnect_static": {
+      "delete": {
         "__compat": {
-          "description": "<code>abort()</code> static method",
-          "spec_url": "https://fedidcg.github.io/FedCM/#dom-identitycredential-disconnect",
+          "spec_url": "https://wicg.github.io/storage-buckets/#dom-storagebucketmanager-delete",
+          "tags": [
+            "web-features:storage-buckets"
+          ],
           "support": {
             "chrome": {
               "version_added": "122"
@@ -67,12 +71,15 @@
           }
         }
       },
-      "isAutoSelected": {
+      "keys": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredential/isAutoSelected",
+          "spec_url": "https://wicg.github.io/storage-buckets/#dom-storagebucketmanager-keys",
+          "tags": [
+            "web-features:storage-buckets"
+          ],
           "support": {
             "chrome": {
-              "version_added": "120"
+              "version_added": "122"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -95,18 +102,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "token": {
+      "open": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredential/token",
-          "spec_url": "https://fedidcg.github.io/FedCM/#dom-identitycredential-token",
+          "spec_url": "https://wicg.github.io/storage-buckets/#dom-storagebucketmanager-open",
+          "tags": [
+            "web-features:storage-buckets"
+          ],
           "support": {
             "chrome": {
-              "version_added": "108"
+              "version_added": "122"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
