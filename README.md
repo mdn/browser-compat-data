@@ -184,8 +184,10 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
 
-- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features), [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data), web frameworks (e.g. React, Vue) or proprietary features.
+- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data).
+- A source for custom features added by web frameworks (e.g. React, Vue) or corporate runtimes (e.g. AWS Lambda, Azure Functions).
 - A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
+- The location where Baseline data is hosted; while Baseline pulls from BCD, the Baseline data is managed by the W3C WebDX Community Group on their own [GitHub repo](https://github.com/web-platform-dx/web-features).
 
 ## Issues?
 
