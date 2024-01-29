@@ -46,7 +46,7 @@
             }
           }
         },
-        "alarm": {
+        "alarms": {
           "__compat": {
             "description": "<code>alarm</code>",
             "support": {
@@ -270,28 +270,6 @@
             }
           }
         },
-        "debugger": {
-          "__compat": {
-            "description": "<code>debugger</code>",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": {
-                "version_added": "79"
-              },
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
         "declarativeNetRequest": {
           "__compat": {
             "description": "<code>declarativeNetRequest</code>",
@@ -377,10 +355,11 @@
         },
         "dns": {
           "__compat": {
-            "description": "<code>dms</code>",
+            "description": "<code>dns</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "The <code>dns</code> API is only available in Chrome Dev."
               },
               "edge": "mirror",
               "firefox": {
@@ -735,7 +714,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": true
               },
               "firefox_android": "mirror",
               "opera": "mirror",
