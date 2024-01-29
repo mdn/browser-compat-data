@@ -1,26 +1,17 @@
 {
   "css": {
     "properties": {
-      "text-decoration-thickness": {
+      "text-wrap-mode": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-decoration-thickness",
-          "spec_url": "https://drafts.csswg.org/css-text-decor-4/#text-decoration-width-property",
+          "spec_url": "https://drafts.csswg.org/css-text-4/#text-wrap-mode",
           "support": {
-            "chrome": [
-              {
-                "version_added": "89"
-              },
-              {
-                "version_added": "87",
-                "version_removed": "89",
-                "partial_implementation": true,
-                "notes": "The <code>text-decoration-thickness</code> property does not work unless either <code>text-underline-offset</code> is set to something other than <code>auto</code> or <code>text-decoration-color</code> is set to something other than <code>currentColor</code>. See <a href='https://crbug.com/1154537'>bug 1154537</a>."
-              }
-            ],
+            "chrome": {
+              "version_added": false
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "70"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -30,29 +21,28 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "12.1"
+              "version_added": "17.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         },
-        "percentage": {
+        "nowrap": {
           "__compat": {
-            "description": "percentage values",
             "support": {
               "chrome": {
-                "version_added": "87"
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "74"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -69,7 +59,39 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "wrap": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
