@@ -8,12 +8,20 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-custom",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": ""
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "121"
+              "version_added": "121",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.customstateset.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
