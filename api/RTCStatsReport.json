@@ -758,7 +758,6 @@
         "priority": {
           "__compat": {
             "description": "<code>priority</code> in 'candidate-pair' stats",
-            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcicecandidatepairstats-priority",
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -782,7 +781,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "11"
+                "version_added": "11",
+                "version_removed": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -790,7 +790,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -2439,6 +2439,177 @@
             }
           }
         },
+        "frameHeight": {
+          "__compat": {
+            "description": "<code>frameHeight</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-frameheight",
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "framesDecoded": {
+          "__compat": {
+            "description": "<code>framesDecoded</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-framesdecoded",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "≤73"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "≤13.1",
+                "version_removed": "15.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "framesPerSecond": {
+          "__compat": {
+            "description": "<code>framesPerSecond</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-framespersecond",
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "framesReceived": {
+          "__compat": {
+            "description": "<code>framesReceived</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-framesreceived",
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "frameWidth": {
+          "__compat": {
+            "description": "<code>frameWidth</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-framewidth",
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "headerBytesReceived": {
           "__compat": {
             "description": "<code>headerBytesReceived</code> in 'inbound-rtp' stats",
@@ -2711,6 +2882,40 @@
             }
           }
         },
+        "keyFramesDecoded": {
+          "__compat": {
+            "description": "<code>keyFramesDecoded</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-keyframesdecoded",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "kind": {
           "__compat": {
             "description": "<code>kind</code> in 'inbound-rtp' stats",
@@ -2784,6 +2989,7 @@
         },
         "mid": {
           "__compat": {
+            "description": "<code>mid</code> in 'inbound-rtp' stats",
             "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-mid",
             "support": {
               "chrome": {
@@ -2802,14 +3008,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -2983,6 +3189,40 @@
             },
             "status": {
               "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "qpSum": {
+          "__compat": {
+            "description": "<code>qpSum</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-qpsum",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -3191,6 +3431,108 @@
             }
           }
         },
+        "totalDecodeTime": {
+          "__compat": {
+            "description": "<code>totalDecodeTime</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-totaldecodetime",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "totalInterFrameDelay": {
+          "__compat": {
+            "description": "<code>totalInterFrameDelay</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-totalinterframedelay",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "totalProcessingDelay": {
+          "__compat": {
+            "description": "<code>totalProcessingDelay</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-totalprocessingdelay",
+            "support": {
+              "chrome": {
+                "version_added": "103"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "totalSamplesDuration": {
           "__compat": {
             "description": "<code>totalSamplesDuration</code> in 'inbound-rtp' stats",
@@ -3247,6 +3589,40 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "14.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "totalSquaredInterFrameDelay": {
+          "__compat": {
+            "description": "<code>totalSquaredInterFrameDelay</code> in 'inbound-rtp' stats",
+            "spec_url": "https://w3c.github.io/webrtc-stats/#dom-rtcinboundrtpstreamstats-totalsquaredinterframedelay",
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "106"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
