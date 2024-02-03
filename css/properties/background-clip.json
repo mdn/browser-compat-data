@@ -165,11 +165,16 @@
           "__compat": {
             "description": "<code>text</code>",
             "support": {
-              "chrome": {
-                "version_added": "3",
-                "partial_implementation": true,
-                "notes": "The <code>text</code> value is only supported by <code>-webkit-background-clip</code> (and not by <code>background-clip</code>; see <a href='https://crbug.com/1339290'>bug 1339290</a>)."
-              },
+              "chrome": [
+                {
+                  "version_added": "120"
+                },
+                {
+                  "version_added": "3",
+                  "partial_implementation": true,
+                  "notes": "The <code>text</code> value is only supported by <code>-webkit-background-clip</code> (and not by <code>background-clip</code>; see <a href='https://crbug.com/1339290'>bug 1339290</a>)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": [
                 {
