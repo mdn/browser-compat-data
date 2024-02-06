@@ -95,38 +95,58 @@
           },
           "vertical_orientation": {
             "__compat": {
-              "description": "Vertically-oriented slider support",
+              "description": "Vertically-oriented range slider support",
               "support": {
-                "chrome": {
-                  "version_added": true,
-                  "notes": "The slider can be oriented vertically by setting the non-standard <code>-webkit-appearance: slider-vertical</code> style on the <code>input</code> element. You shouldn't use this, since it's proprietary, unless you include appropriate fallbacks for users of other browsers."
-                },
+                "chrome": [
+                  {
+                    "version_added": "124",
+                    "notes": "Vertical orientation available via the <code>writing-mode</code> property (see <a href='https://developer.mozilla.org/docs/Web/CSS/CSS_writing_modes/Vertical_controls'>Creating vertical controls</a>)."
+                  },
+                  {
+                    "version_added": true,
+                    "partial_implementation": true,
+                    "notes": "Vertical orientation available by setting the non-standard <code>-webkit-appearance: slider-vertical</code> style on the <code>input</code> element. You shouldn't use this, since it's proprietary, unless you include appropriate fallbacks for users of other browsers."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": {
                   "version_added": "12",
-                  "notes": "The slider can be oriented vertically by setting the <code>writing-mode: bt-lr</code> style on the <code>input</code> element."
+                  "notes": "Vertical orientation available by setting the <code>writing-mode: bt-lr</code> style on the <code>input</code> element."
                 },
-                "firefox": {
-                  "version_added": "≤72",
-                  "impl_url": [
-                    "https://bugzil.la/840820",
-                    "https://bugzil.la/981916"
-                  ],
-                  "partial_implementation": true,
-                  "notes": "Supported using the non-standard <code>orient=\"vertical\"</code> attribute."
-                },
+                "firefox": [
+                  {
+                    "version_added": true,
+                    "notes": "Vertical orientation available via the <code>writing-mode</code> property (see <a href='https://developer.mozilla.org/docs/Web/CSS/CSS_writing_modes/Vertical_controls'>Creating vertical controls</a>)."
+                  },
+                  {
+                    "version_added": "≤72",
+                    "impl_url": [
+                      "https://bugzil.la/840820",
+                      "https://bugzil.la/981916"
+                    ],
+                    "partial_implementation": true,
+                    "notes": "Supported using the non-standard <code>orient=\"vertical\"</code> attribute."
+                  }
+                ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
-                  "notes": "The slider can be oriented vertically by setting the <code>writing-mode: bt-lr</code> style on the <code>input</code> element."
+                  "notes": "Vertical orientation available by setting the <code>writing-mode: bt-lr</code> style on the <code>input</code> element."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": true,
-                  "notes": "The slider can be oriented vertically by setting the non-standard <code>-webkit-appearance: slider-vertical</code> style on the <code>input</code> element. You shouldn't use this, since it's proprietary, unless you include appropriate fallbacks for users of other browsers."
-                },
+                "safari": [
+                  {
+                    "version_added": true,
+                    "notes": "Vertical orientation available via the <code>writing-mode</code> property (see <a href='https://developer.mozilla.org/docs/Web/CSS/CSS_writing_modes/Vertical_controls'>Creating vertical controls</a>)."
+                  },
+                  {
+                    "version_added": true,
+                    "partial_implementation": true,
+                    "notes": "Vertical orientation available by setting the non-standard <code>-webkit-appearance: slider-vertical</code> style on the <code>input</code> element. You shouldn't use this, since it's proprietary, unless you include appropriate fallbacks for users of other browsers."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
                 "webview_android": "mirror"
