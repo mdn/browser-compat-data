@@ -432,7 +432,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&amp;b=false</code>, <code>pathname</code> would return <code>'/x?a=true&amp;b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&amp;b=false'</code> respectively. This has now been fixed."
+              "notes": "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>https://z.com/x?a=true&amp;b=false</code>, <code>pathname</code> would return <code>'/x?a=true&amp;b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&amp;b=false'</code> respectively. This has now been fixed."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -457,6 +457,7 @@
       },
       "ping": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/ping",
           "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#dom-area-ping",
           "support": {
             "chrome": {
@@ -467,7 +468,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -797,7 +800,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>http://z.com/x?a=true&amp;b=false</code>, <code>pathname</code> would return <code>'/x?a=true&amp;b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&amp;b=false'</code> respectively. This has now been fixed."
+              "notes": "Before Firefox 53, the <code>pathname</code> and <code>search</code> <code>HTMLHyperlinkElementUtils</code> properties returned the wrong parts of the URL. For example, for a URL of <code>https://z.com/x?a=true&amp;b=false</code>, <code>pathname</code> would return <code>'/x?a=true&amp;b=false'</code> and <code>search</code> would return '', rather than <code>'/x'</code> and <code>'?a=true&amp;b=false'</code> respectively. This has now been fixed."
             },
             "firefox_android": "mirror",
             "ie": {

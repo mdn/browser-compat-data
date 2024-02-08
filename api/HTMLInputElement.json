@@ -238,6 +238,9 @@
       "capture": {
         "__compat": {
           "spec_url": "https://w3c.github.io/html-media-capture/#dom-htmlinputelement-capture",
+          "tags": [
+            "web-features:html-media-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -317,6 +320,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/checkValidity",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-checkvalidity-dev",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -474,6 +480,7 @@
       },
       "disabled": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/disabled",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-fe-disabled",
           "support": {
             "chrome": {
@@ -878,7 +885,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -928,7 +935,10 @@
         "__compat": {
           "description": "<code>invalid</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/invalid_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-invalid",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-invalid",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid"
+          ],
           "support": {
             "chrome": {
               "version_added": "10"
@@ -1388,22 +1398,30 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetAction",
           "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#dom-popovertargetaction",
+          "tags": [
+            "web-features:popover"
+          ],
           "support": {
             "chrome": {
               "version_added": "114"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1429,22 +1447,30 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/popoverTargetElement",
           "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#dom-popovertargetelement",
+          "tags": [
+            "web-features:popover"
+          ],
           "support": {
             "chrome": {
               "version_added": "114"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.popover.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.element.popover.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1509,6 +1535,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/reportValidity",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-reportvalidity-dev",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
@@ -1868,9 +1897,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/setCustomValidity",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-setcustomvalidity",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
-              "version_added": "4"
+              "version_added": "4",
+              "notes": "This method only updates the validation error popup, not the tooltip that appears when hovering the mouse over the element, see <a href='https://crbug.com/828757'>bug 828757</a>."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2142,7 +2175,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "17.4"
               },
               "safari_ios": {
                 "version_added": false,
@@ -2178,7 +2211,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "17.4"
               },
               "safari_ios": {
                 "version_added": false,
@@ -2239,7 +2272,15 @@
               "firefox": {
                 "version_added": false
               },
-              "firefox_android": "mirror",
+              "firefox_android": [
+                {
+                  "version_added": "121"
+                },
+                {
+                  "version_added": "101",
+                  "version_removed": "112"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -2283,10 +2324,12 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/234009"
+                "version_added": "16"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/261703"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -2309,7 +2352,15 @@
               "firefox": {
                 "version_added": false
               },
-              "firefox_android": "mirror",
+              "firefox_android": [
+                {
+                  "version_added": "121"
+                },
+                {
+                  "version_added": "101",
+                  "version_removed": "112"
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -2547,6 +2598,7 @@
       },
       "type": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-type",
           "support": {
             "chrome": {
@@ -2627,6 +2679,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validationMessage",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-validationmessage-dev",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -2671,6 +2726,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/validity",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api:dom-cva-validity",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -2869,7 +2927,9 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": false
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -2962,6 +3022,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/willValidate",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-cva-willvalidate-dev",
+          "tags": [
+            "web-features:constraint-validation"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"

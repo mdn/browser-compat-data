@@ -17,15 +17,42 @@ import extend from '../scripts/lib/extend.js';
 import pluralize from '../scripts/lib/pluralize.js';
 import { walk } from '../utils/index.js';
 
-import linters from './linter/index.js';
-import { LinterMessage, LinterMessageLevel, LinterPath } from './utils.js';
+import * as linterModules from './linter/index.js';
+import {
+  Linters,
+  LinterMessage,
+  LinterMessageLevel,
+  LinterPath,
+} from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+const linters = new Linters(Object.values(linterModules));
+/**
+ * Normalize and categorize file path
+ * @param file The file path
+ * @returns The normalized and categorized file path
+ */
+const normalizeAndCategorizeFilePath = (file: string): LinterPath => {
+  const filePath: LinterPath = {
+    full: path.relative(process.cwd(), file),
+    category: '',
+  };
+  if (path.sep === '\\') {
+    // Normalize file paths for Windows users
+    filePath.full = filePath.full.replace(/\\/g, '/');
+  }
+  if (filePath.full.includes('/')) {
+    filePath.category = filePath.full.split('/')[0];
+  }
+
+  return filePath;
+};
+
 /**
  * Recursively load
- * @param {string[]} files The files to test
- * @returns {DataType?} The data from the loaded files
+ * @param files The files to test
+ * @returns The data from the loaded files
  */
 const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
   const data = {};
@@ -45,17 +72,7 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
     }
 
     if (fsStats.isFile() && path.extname(file) === '.json') {
-      const filePath: LinterPath = {
-        full: path.relative(process.cwd(), file),
-        category: '',
-      };
-      if (path.sep === '\\') {
-        // Normalize file paths for Windows users
-        filePath.full = filePath.full.replace(/\\/g, '/');
-      }
-      if (filePath.full.includes('/')) {
-        filePath.category = filePath.full.split('/')[0];
-      }
+      const filePath = normalizeAndCategorizeFilePath(file);
 
       try {
         const rawFileData = (await fs.readFile(file, 'utf-8')).trim();
@@ -91,8 +108,8 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
 
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
- * @param {string[]?} files The file(s) and/or folder(s) to test. Leave undefined for everything.
- * @returns {boolean} Whether there were any errors
+ * @param files The file(s) and/or folder(s) to test. Leave undefined for everything.
+ * @returns Whether there were any errors
  */
 const main = async (
   files = [

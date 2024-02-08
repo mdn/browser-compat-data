@@ -11,18 +11,19 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * extractReleaseData - Extract release info from string given by Apple
- * @param {string} str The string with release information
+ * @param str The string with release information
  *            E.g., Released September 18, 2023 — Version 17 (19616.1.27)
- * @returns {object} Data for the release
+ * @returns Data for the release
  */
 const extractReleaseData = (str) => {
   // Note: \s is needed as some spaces in Apple source are non-breaking
-  const result = /Released\s(.*)\s.*\sVersion\s(.*?)\s(beta\s)?\((.*)\)/.exec(
-    str,
-  );
+  const result =
+    /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(\s*beta)?\s*\((.*)\)/.exec(
+      str,
+    );
   if (!result) {
     console.warn(
-      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`,
+      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.}`,
     );
     return null;
   }
@@ -37,8 +38,8 @@ const extractReleaseData = (str) => {
 
 /**
  * updateSafariFile - Update the json file listing the browser version of a safari entry
- * @param {object} options The list of options for this type of Safari.
- * @returns {string} The log of what has been generated (empty if nothing)
+ * @param options The list of options for this type of Safari.
+ * @returns The log of what has been generated (empty if nothing)
  */
 export const updateSafariReleases = async (options) => {
   let result = '';

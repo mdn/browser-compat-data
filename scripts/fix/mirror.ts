@@ -12,7 +12,7 @@ import {
 } from '../../types/index.js';
 import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
-import mirrorSupport from '../release/mirror.js';
+import mirrorSupport from '../build/mirror.js';
 
 const downstreamBrowsers = (
   Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]
@@ -20,9 +20,9 @@ const downstreamBrowsers = (
 
 /**
  * Check to see if the statement is equal to the mirrored statement
- * @param {InternalSupportBlock} support The support statement to test
- * @param {BrowserName} browser The browser to mirror for
- * @returns {boolean} Whether the support statement is equal to mirroring
+ * @param support The support statement to test
+ * @param browser The browser to mirror for
+ * @returns Whether the support statement is equal to mirroring
  */
 export const isMirrorEquivalent = (
   support: InternalSupportBlock,
@@ -42,15 +42,12 @@ export const isMirrorEquivalent = (
     // This can happen with missing engine_version. Don't mirror anything.
     return false;
   }
-  if (stringify(mirrored) !== stringify(original)) {
-    return false;
-  }
-  return true;
+  return stringify(mirrored) === stringify(original);
 };
 
 /**
  * Set the support statement for each browser to mirror if it matches mirroring
- * @param {CompatData} bcd The compat data to update
+ * @param bcd The compat data to update
  */
 export const mirrorIfEquivalent = (bcd: CompatData): void => {
   for (const { compat } of walk(undefined, bcd)) {
@@ -64,7 +61,7 @@ export const mirrorIfEquivalent = (bcd: CompatData): void => {
 
 /**
  * Update compat data to 'mirror' if the statement matches mirroring
- * @param {string} filename The name of the file to fix
+ * @param filename The name of the file to fix
  */
 const fixMirror = (filename: string): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();

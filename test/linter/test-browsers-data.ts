@@ -10,9 +10,9 @@ const { browsers } = bcd;
 
 /**
  * Process and test the data
- * @param {BrowserName} browser The name of the browser
- * @param {BrowserStatement} data The browser statement
- * @param {Logger} logger The logger to output errors to
+ * @param browser The name of the browser
+ * @param data The browser statement
+ * @param logger The logger to output errors to
  */
 const processData = (
   browser: BrowserName,
@@ -57,8 +57,11 @@ export default {
   scope: 'browser',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The browser data
+   * @param root.path The path to the browser data
+   * @param root.path.browser The name of the browser
    */
   check: (logger: Logger, { data, path: { browser } }: LinterData) => {
     processData(browser as BrowserName, data, logger);

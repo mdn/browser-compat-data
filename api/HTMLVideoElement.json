@@ -45,6 +45,7 @@
       },
       "cancelVideoFrameCallback": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/cancelVideoFrameCallback",
           "spec_url": "https://wicg.github.io/video-rvfc/#dom-htmlvideoelement-cancelvideoframecallback",
           "support": {
             "chrome": {
@@ -79,7 +80,7 @@
       "disablePictureInPicture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/disablePictureInPicture",
-          "spec_url": "https://w3c.github.io/picture-in-picture/#disable-pip",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#dom-htmlvideoelement-disablepictureinpicture",
           "support": {
             "chrome": {
               "version_added": "69"
@@ -88,14 +89,22 @@
               "version_added": "105"
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "116",
-              "partial_implementation": true,
-              "notes": [
-                "The property is undefined, but still has an effect if set to a value.",
-                "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "122",
+                "partial_implementation": true,
+                "notes": "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+              },
+              {
+                "version_added": "116",
+                "version_removed": "122",
+                "partial_implementation": true,
+                "notes": [
+                  "This property is undefined, but still has an effect if set to a value.",
+                  "When this property is set to <code>true</code>, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -599,6 +608,7 @@
       },
       "requestVideoFrameCallback": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback",
           "spec_url": "https://wicg.github.io/video-rvfc/#dom-htmlvideoelement-requestvideoframecallback",
           "support": {
             "chrome": {

@@ -10,16 +10,14 @@ const { browsers } = bcd;
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
- * @param {CompatStatement} data The data to test
- * @param {string} category The category the data belongs to.
- * @param {Logger} logger The logger to output errors to.
- * @param {string} [path] The path of the data.
+ * @param data The data to test
+ * @param category The category the data belongs to.
+ * @param logger The logger to output errors to.
  */
 const processData = (
   data: CompatStatement,
   category: string,
   logger: Logger,
-  path = '',
 ): void => {
   if (data.support) {
     const support = data.support;
@@ -52,9 +50,9 @@ const processData = (
     );
     if (undefEntries.length > 0) {
       logger.error(
-        chalk`{red → {bold ${path}} has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
+        chalk`Has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
           ', ',
-        )}}}`,
+        )}}`,
       );
     }
 
@@ -63,7 +61,7 @@ const processData = (
     ).filter((value) => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`{bold ${path}} has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
+        chalk`Has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
           ', ',
         )}}`,
       );
@@ -74,7 +72,7 @@ const processData = (
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`{bold ${path}} is missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
+        chalk`Missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
           ', ',
         )}}`,
       );
@@ -89,10 +87,13 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    processData(data, category || '', logger);
+    processData(data, category, logger);
   },
 } as Linter;

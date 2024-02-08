@@ -288,6 +288,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/gpu",
           "spec_url": "https://gpuweb.github.io/gpuweb/#navigator-gpu",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
@@ -296,6 +299,21 @@
             "chrome_android": {
               "version_added": false
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -493,7 +511,7 @@
       "mediaCapabilities": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/mediaCapabilities",
-          "spec_url": "https://w3c.github.io/media-capabilities/#dom-navigator-mediacapabilities",
+          "spec_url": "https://w3c.github.io/media-capabilities/#dom-workernavigator-mediacapabilities",
           "support": {
             "chrome": {
               "version_added": "76"
@@ -716,9 +734,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -802,10 +818,49 @@
           }
         }
       },
+      "storageBuckets": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/storage-buckets/#dom-navigatorstoragebuckets-storagebuckets",
+          "tags": [
+            "web-features:storage-buckets"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "122"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "usb": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/usb",
           "spec_url": "https://wicg.github.io/webusb/#dom-workernavigator-usb",
+          "tags": [
+            "web-features:webusb"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -829,7 +884,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>Chromium bug 933055</a>."
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
             }
           },
           "status": {
@@ -900,9 +955,7 @@
             },
             "oculus": "mirror",
             "opera": "mirror",
-            "opera_android": {
-              "version_added": false
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },

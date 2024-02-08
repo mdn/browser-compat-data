@@ -23,10 +23,6 @@ const specsExceptions = [
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
 
-  // For the 'shared' flag in WebAssembly.Memory
-  // Remove if this spec will be merged with the main WebAssembly spec
-  'https://webassembly.github.io/threads/js-api/',
-
   // See https://github.com/w3c/browser-specs/issues/305
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
@@ -39,6 +35,7 @@ const specsExceptions = [
   'https://github.com/WebAssembly/tail-call/blob/main/proposals',
   'https://github.com/WebAssembly/threads/blob/main/proposal',
   'https://github.com/WebAssembly/relaxed-simd/blob/main/proposals',
+  'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
 ];
 
 const allowedSpecURLs = [
@@ -46,18 +43,19 @@ const allowedSpecURLs = [
     .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
-      spec.nightly.url,
-      ...spec.nightly.alternateUrls,
+      spec.nightly?.url,
+      ...(spec.nightly ? spec.nightly.alternateUrls : []),
       spec.series.nightlyUrl,
     ])
-    .flat(),
+    .flat()
+    .filter((url) => !!url),
   ...specsExceptions,
 ];
 
 /**
  * Process the data for spec URL errors
- * @param {CompatStatement} data The data to test
- * @param {Logger} logger The logger to output errors to
+ * @param data The data to test
+ * @param logger The logger to output errors to
  */
 const processData = (data: CompatStatement, logger: Logger): void => {
   if (!data.spec_url) {
@@ -87,8 +85,9 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     processData(data, logger);

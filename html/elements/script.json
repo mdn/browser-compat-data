@@ -54,7 +54,7 @@
                 "version_added": "12"
               },
               "firefox": {
-                "version_added": "1"
+                "version_added": "3.6"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -119,7 +119,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1751383"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -129,7 +130,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/267232"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -186,7 +188,7 @@
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Chrome does not defer scripts with the <code>defer</code> attribute when the page is served as XHTML (<code>application/xhtml+xml</code>) - <a href='https://crbug.com/611136'>Chromium Issue #611136</a>, <a href='https://crbug.com/874749'>Chromium Issue #874749</a>"
+                "notes": "Chrome does not defer scripts with the <code>defer</code> attribute when the page is served as XHTML (<code>application/xhtml+xml</code>), see <a href='https://crbug.com/611136'>bug 611136</a> and <a href='https://crbug.com/874749'>bug 874749</a>"
               },
               "chrome_android": "mirror",
               "edge": {
@@ -223,6 +225,9 @@
         "fetchpriority": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-fetchpriority",
+            "tags": [
+              "web-features:fetch-priority"
+            ],
             "support": {
               "chrome": {
                 "version_added": "101"
@@ -292,40 +297,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          }
-        },
-        "language": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": true
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "≤4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
             }
           }
         },
@@ -400,7 +371,6 @@
           },
           "no-referrer-when-downgrade": {
             "__compat": {
-              "description": "no-referrer-when-downgrade",
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -440,7 +410,6 @@
           },
           "origin-when-cross-origin": {
             "__compat": {
-              "description": "origin-when-cross-origin",
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -480,7 +449,6 @@
           },
           "unsafe-url": {
             "__compat": {
-              "description": "unsafe-url",
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -553,40 +521,6 @@
             }
           }
         },
-        "text": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": true
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "≤4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "type": {
           "__compat": {
             "support": {
@@ -622,7 +556,11 @@
           },
           "importmap": {
             "__compat": {
+              "description": "<code>type=\"importmap\"</code>",
               "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#import-map",
+              "tags": [
+                "web-features:import-maps"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "89"
@@ -655,6 +593,7 @@
           },
           "module": {
             "__compat": {
+              "description": "<code>type=\"module\"</code>",
               "support": {
                 "chrome": {
                   "version_added": "61",
@@ -698,6 +637,7 @@
           },
           "speculationrules": {
             "__compat": {
+              "description": "<code>type=\"speculationrules\"</code>",
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
               "support": {
                 "chrome": [

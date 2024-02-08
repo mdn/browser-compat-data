@@ -1,42 +1,21 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Linters } from '../utils.js';
-
-import testBrowsersData from './test-browsers-data.js';
-import testBrowsersPresence from './test-browsers-presence.js';
-import testConsistency from './test-consistency.js';
-import testDescriptions from './test-descriptions.js';
-import testFilename from './test-filename.js';
-import testLinks from './test-links.js';
-import testMirror from './test-mirror.js';
-import testMultipleStatements from './test-multiple-statements.js';
-import testNotes from './test-notes.js';
-import testObsolete from './test-obsolete.js';
-import testPrefix from './test-prefix.js';
-import testSchema from './test-schema.js';
-import testSpecURLs from './test-spec-urls.js';
-import testStatus from './test-status.js';
-import testStyle from './test-style.js';
-import testTags from './test-tags.js';
-import testVersions from './test-versions.js';
-
-export default new Linters([
-  testBrowsersData,
-  testBrowsersPresence,
-  testConsistency,
-  testDescriptions,
-  testFilename,
-  testLinks,
-  testMirror,
-  testMultipleStatements,
-  testNotes,
-  testObsolete,
-  testPrefix,
-  testSchema,
-  testSpecURLs,
-  testStatus,
-  testStyle,
-  testTags,
-  testVersions,
-]);
+export { default as testBrowsersData } from './test-browsers-data.js';
+export { default as testBrowsersPresence } from './test-browsers-presence.js';
+export { default as testConsistency } from './test-consistency.js';
+export { default as testDescriptions } from './test-descriptions.js';
+export { default as testFilename } from './test-filename.js';
+export { default as testFlags } from './test-flags.js';
+export { default as testLinks } from './test-links.js';
+export { default as testMirror } from './test-mirror.js';
+export { default as testMultipleStatements } from './test-multiple-statements.js';
+export { default as testNotes } from './test-notes.js';
+export { default as testObsolete } from './test-obsolete.js';
+export { default as testPrefix } from './test-prefix.js';
+export { default as testSchema } from './test-schema.js';
+export { default as testSpecURLs } from './test-spec-urls.js';
+export { default as testStatus } from './test-status.js';
+export { default as testStyle } from './test-style.js';
+export { default as testTags } from './test-tags.js';
+export { default as testVersions } from './test-versions.js';

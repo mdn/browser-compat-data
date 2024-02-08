@@ -8,7 +8,7 @@ import stringifyAndOrderProperties from '../lib/stringify-and-order-properties.j
 
 /**
  * Fix issues with the property order throughout the BCD files
- * @param {string} filename The name of the file to fix
+ * @param filename The name of the file to fix
  */
 const fixPropertyOrder = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();

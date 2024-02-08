@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/schema",
 
   "definitions": {
     "simple_support_statement": {
@@ -21,6 +21,19 @@
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+            },
+            {
+              "const": true
+            }
+          ],
+          "tsType": "VersionValue"
+        },
+        "version_last": {
+          "description": "A string, indicating the last browser version that supported this feature, or the value true, indicating that the feature was removed in an unknown version. This is automatically generated.",
           "anyOf": [
             {
               "type": "string",

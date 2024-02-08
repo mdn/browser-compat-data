@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-path",
           "spec_url": "https://drafts.fxtf.org/motion/#offset-path-property",
+          "tags": [
+            "web-features:motion-path"
+          ],
           "support": {
             "chrome": [
               {
@@ -65,7 +68,7 @@
             "deprecated": false
           }
         },
-        "basic-shape": {
+        "basic_shape": {
           "__compat": {
             "description": "<code>&lt;basic-shape&gt;</code>",
             "support": {
@@ -75,14 +78,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "116",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path-basic-shapes.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -99,13 +95,13 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "coord-box": {
+        "coord_box": {
           "__compat": {
             "description": "<code>&lt;coord-box&gt;</code>",
             "support": {
@@ -115,14 +111,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "116",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path-coord-box.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -139,7 +128,7 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -148,6 +137,9 @@
         "path": {
           "__compat": {
             "description": "Support for <a href='https://developer.mozilla.org/docs/Web/CSS/path'><code>path()</code></a> function as a value",
+            "tags": [
+              "web-features:motion-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -187,29 +179,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "112",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.motion-path-ray.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "<code>&lt;size&gt;</code> is optional with the default value <code>closest-side</code>."
-                },
-                {
-                  "version_added": "72",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.motion-path-ray.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "122"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -241,14 +213,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "118",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path-url.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {

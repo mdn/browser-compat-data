@@ -4,7 +4,7 @@
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { BrowserName, SupportBlock } from '../../types/types.js';
+import { BrowserName } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -12,9 +12,9 @@ import { isMirrorEquivalent } from '../../scripts/fix/mirror.js';
 
 /**
  * Check the data to ensure all statements that should use `mirror` do
- * @param {SupportBlock} supportData The data to test
- * @param {string} category The category the data
- * @param {Logger} logger The logger to output errors to
+ * @param supportData The data to test
+ * @param category The category the data
+ * @param logger The logger to output errors to
  */
 const checkMirroring = (
   supportData: InternalSupportBlock,
@@ -43,8 +43,11 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
+   * @param root.path The path of the data
+   * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
     checkMirroring(data.support, category, logger);

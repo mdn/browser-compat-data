@@ -9,9 +9,9 @@ import { BrowserName, SupportStatement } from '../../types/types.js';
 /**
  * Process data and check to make sure there aren't multiple support statements without
  * `partial_implementation` or `prefix`/`alternative_name`
- * @param {SupportStatement} data The data to test
- * @param {BrowserName} browser The name of the browser
- * @param {Logger} logger The logger to output errors to
+ * @param data The data to test
+ * @param browser The name of the browser
+ * @param logger The logger to output errors to
  */
 const processData = (
   data: SupportStatement,
@@ -53,8 +53,9 @@ export default {
   scope: 'feature',
   /**
    * Test the data
-   * @param {Logger} logger The logger to output errors to
-   * @param {LinterData} root The data to test
+   * @param logger The logger to output errors to
+   * @param root The data to test
+   * @param root.data The data to test
    */
   check: (logger: Logger, { data }: LinterData) => {
     for (const [browser, support] of Object.entries(data.support)) {
