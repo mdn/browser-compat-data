@@ -1,5 +1,58 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.10)
+
+February 9, 2024
+
+### Removals
+
+- `api.IDBLocaleAwareKeyRange` ([#22100](https://github.com/mdn/browser-compat-data/pull/22100))
+- `html.elements.col.bgcolor` ([#21958](https://github.com/mdn/browser-compat-data/pull/21958))
+- `html.elements.colgroup.bgcolor` ([#21958](https://github.com/mdn/browser-compat-data/pull/21958))
+- `html.elements.link.title` ([#22113](https://github.com/mdn/browser-compat-data/pull/22113))
+- `html.elements.meta.name.scheme` ([#22115](https://github.com/mdn/browser-compat-data/pull/22115))
+- `html.elements.meter.form` ([#22136](https://github.com/mdn/browser-compat-data/pull/22136))
+- `html.elements.script.text` ([#22158](https://github.com/mdn/browser-compat-data/pull/22158))
+- `html.elements.style.title` ([#22113](https://github.com/mdn/browser-compat-data/pull/22113))
+- `javascript.builtins.DataView.buffer.sharedarraybuffer_support` ([#22085](https://github.com/mdn/browser-compat-data/pull/22085))
+
+### Additions
+
+- `api.Document.parseHTMLUnsafe_static` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `api.Element.setHTMLUnsafe` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `api.IDBObjectStore.createIndex.options_locale_parameter` ([#22082](https://github.com/mdn/browser-compat-data/pull/22082))
+- `api.PublicKeyCredential.getClientCapabilities_static` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `api.ShadowRoot.setHTMLUnsafe` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `api.SubtleCrypto.exportKey.ed25519` ([#22033](https://github.com/mdn/browser-compat-data/pull/22033))
+- `api.SubtleCrypto.generateKey.ed25519` ([#22033](https://github.com/mdn/browser-compat-data/pull/22033))
+- `api.SubtleCrypto.importKey.ed25519` ([#22033](https://github.com/mdn/browser-compat-data/pull/22033))
+- `api.SubtleCrypto.sign.ed25519` ([#22033](https://github.com/mdn/browser-compat-data/pull/22033))
+- `api.SubtleCrypto.verify.ed25519` ([#22033](https://github.com/mdn/browser-compat-data/pull/22033))
+- `browsers.chrome.releases.123` ([#22127](https://github.com/mdn/browser-compat-data/pull/22127))
+- `browsers.chrome.releases.124` ([#22127](https://github.com/mdn/browser-compat-data/pull/22127))
+- `css.properties.color-interpolation.linearGradient` ([#21988](https://github.com/mdn/browser-compat-data/pull/21988))
+- `css.properties.color-interpolation.sRGB` ([#21988](https://github.com/mdn/browser-compat-data/pull/21988))
+- `css.properties.text-wrap-mode` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `css.properties.text-wrap-mode.nowrap` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `css.properties.text-wrap-mode.wrap` ([#22101](https://github.com/mdn/browser-compat-data/pull/22101))
+- `css.selectors.state` ([#22083](https://github.com/mdn/browser-compat-data/pull/22083))
+- `html.elements.audio.disableremoteplayback` ([#21902](https://github.com/mdn/browser-compat-data/pull/21902))
+- `html.elements.data.value` ([#22093](https://github.com/mdn/browser-compat-data/pull/22093))
+- `html.elements.link.as` ([#22092](https://github.com/mdn/browser-compat-data/pull/22092))
+- `html.elements.meta.scheme` ([#22115](https://github.com/mdn/browser-compat-data/pull/22115))
+- `html.elements.q.cite` ([#22155](https://github.com/mdn/browser-compat-data/pull/22155))
+- `html.elements.video.disableremoteplayback` ([#21902](https://github.com/mdn/browser-compat-data/pull/21902))
+- `svg.attributes.presentation.color-interpolation.linearGradient` ([#21988](https://github.com/mdn/browser-compat-data/pull/21988))
+- `svg.attributes.presentation.color-interpolation.sRGB` ([#21988](https://github.com/mdn/browser-compat-data/pull/21988))
+- `webextensions.manifest.dictionaries` ([#22171](https://github.com/mdn/browser-compat-data/pull/22171))
+
+### Statistics
+
+- 13 contributors have changed 71 files with 1,321 additions and 596 deletions in 55 commits ([`v5.5.9...v5.5.10`](https://github.com/mdn/browser-compat-data/compare/v5.5.9...v5.5.10))
+- 15,476 total features
+- 1,071 total contributors
+- 4,717 total stargazers
+
 ## [v5.5.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.9)
 
 January 30, 2024
