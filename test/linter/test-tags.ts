@@ -6,7 +6,12 @@ import chalk from 'chalk-template';
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
-const allowedNamespaces = ['web-features', 'web-features-snapshot'];
+const allowedNamespaces = [
+  'web-features',
+  'web-features-snapshot',
+  'web-features-group',
+  'web-features-bundle',
+];
 
 /**
  * Process the data for spec URL errors
