@@ -106,7 +106,7 @@ export const updateChromiumReleases = async (options) => {
     const versionData = versions[value];
     if (versionData) {
       data[value] = {};
-      data[value].version = versionData.version;
+      data[value].version = versionData.version.toString();
       data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
 
       // Update the JSON in memory
