@@ -23,10 +23,6 @@ const specsExceptions = [
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
 
-  // For the 'shared' flag in WebAssembly.Memory
-  // Remove if this spec will be merged with the main WebAssembly spec
-  'https://webassembly.github.io/threads/js-api/',
-
   // See https://github.com/w3c/browser-specs/issues/305
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
@@ -47,11 +43,12 @@ const allowedSpecURLs = [
     .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
-      spec.nightly.url,
-      ...spec.nightly.alternateUrls,
+      spec.nightly?.url,
+      ...(spec.nightly ? spec.nightly.alternateUrls : []),
       spec.series.nightlyUrl,
     ])
-    .flat(),
+    .flat()
+    .filter((url) => !!url),
   ...specsExceptions,
 ];
 
