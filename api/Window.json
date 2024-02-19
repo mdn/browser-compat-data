@@ -1793,14 +1793,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1860,14 +1864,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3380,42 +3388,6 @@
             }
           }
         },
-        "outerwidth_outerheight": {
-          "__compat": {
-            "description": "<code>outerHeight</code> and <code>outerWidth</code> features",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "80"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
         "relative-multi-screen": {
           "__compat": {
             "description": "Opened relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
@@ -4151,6 +4123,9 @@
               "version_added": "49"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.40"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "69"
