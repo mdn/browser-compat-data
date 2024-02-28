@@ -1232,11 +1232,16 @@
               "description": "Relative RGB colors",
               "spec_url": "https://drafts.csswg.org/css-color-5/#relative-RGB",
               "support": {
-                "chrome": {
-                  "version_added": "119",
-                  "partial_implementation": true,
-                  "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 <code>&lt;number&gt;</code> value)."
-                },
+                "chrome": [
+                  {
+                    "version_added": "122"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 <code>&lt;number&gt;</code> value)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
