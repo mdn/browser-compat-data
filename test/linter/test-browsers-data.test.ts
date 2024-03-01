@@ -24,9 +24,11 @@ describe('test-browsers-data', () => {
       accepts_webextensions: false,
       releases: {
         '20.6.0': {
+          release_date: '2023-09-04',
           status: 'current',
         },
         '21.2.0': {
+          release_date: '2023-11-14',
           status: 'current',
         },
       },
