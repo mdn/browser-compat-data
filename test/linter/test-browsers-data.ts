@@ -49,6 +49,24 @@ const processData = (
       );
     }
   }
+
+  // Ensure every retired/current release has a release date.
+  for (const status of ['retired', 'current']) {
+    const releasesWithoutDate = Object.entries(data.releases)
+      .filter(
+        ([, data]) =>
+          data.status == status && typeof data.release_date === 'undefined',
+      )
+      .map(([version]) => version);
+
+    if (releasesWithoutDate.length > 0) {
+      logger.error(
+        chalk`{red {bold ${browser}} has {bold ${status}} releases without release date (${releasesWithoutDate.join(
+          ', ',
+        )}), which is {bold not} allowed.}`,
+      );
+    }
+  }
 };
 
 export default {
