@@ -52,6 +52,10 @@ const processData = (
 
   // Ensure every retired/current release has a release date.
   for (const status of ['retired', 'current']) {
+    if (browser === 'oculus') {
+      // Ignore Oculus Browser, because release dates for versions 5.0 to 15.1 are not publicly documented.
+      continue;
+    }
     const releasesWithoutDate = Object.entries(data.releases)
       .filter(
         ([, data]) =>
