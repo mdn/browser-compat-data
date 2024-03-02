@@ -92,7 +92,7 @@
     "yargs": "~17.7.0"
   },
   "scripts": {
-    "postinstall": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/update-history.ts",
+    "postinstall": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/save-git-history.ts",
     "prepare": "(husky || true) && npm run gentypes && npm run build",
     "diff": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/diff.ts",
     "unittest": "NODE_ENV=test c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
