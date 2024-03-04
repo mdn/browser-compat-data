@@ -8,6 +8,13 @@ import { TagsAddCommand } from  './add-tag.js';
  */
 export const executeTagCommand = (argv) => {
   yargs(argv.splice(1))
+  .option('p', {
+    alias: 'path',
+    demandOption: false,
+    default: './',
+    describe: 'Path to the JSON files',
+    type: 'string'
+  })
   .command({
     command: 'add tag [bcd-id..]',
     /**

@@ -49,9 +49,6 @@ const mergeDeep = (target: object, ...sources: object[]) => {
  * @returns A string with the filename
  */
 const bcdAssociatedFilename = (bcdID: string, path: string): string => {
-  if (!path) {
-    path = '/Users/perrier/Documents/Github_repo/mdn/browser-compat-data/';
-  }
   let [ bcdDomain, top, second, third ] = bcdID.split('.');
 
   if (!bcdDomain || !top || !second) {
@@ -94,7 +91,7 @@ const topBCDIDForFilename = (filename: string, path: string): string => {
 /** Class representing any 'tags XYZ' comnmand. */
 export class TagsCommand {
 
-  path:string;
+  path = './';
   filenames: string[] = [];
 
   /**
