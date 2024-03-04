@@ -16,7 +16,7 @@ export class TagsAddCommand extends TagsCommand {
     const allJSONs = this.readJSONFiles(bcdIDs);
 
     // Add the tag to each bcd ID
-    console.log(chalk`{white \nUpdate tags}`);
+    console.log(chalk`{white \nAdd tags}`);
     for (const bcdID of bcdIDs) {
       console.log(chalk`{yellow Updating: ${bcdID}}`);
       // Find the bcd entry
