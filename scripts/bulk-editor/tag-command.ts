@@ -50,7 +50,7 @@ const mergeDeep = (target: object, ...sources: object[]) => {
  * @returns A string with the filename
  */
 const bcdAssociatedFilename = (bcdID: string, path: string): string => {
-  let [bcdDomain, top, second, third] = bcdID.split('.');
+  const [bcdDomain, top, second, third] = bcdID.split('.');
 
   if (!bcdDomain || !top || !second) {
     console.log(chalk`{red Not a terminal bcd-id.}`);
@@ -58,13 +58,14 @@ const bcdAssociatedFilename = (bcdID: string, path: string): string => {
   }
 
   // Special case for html.elements.input.type_
+  let fixedThird = third;
   if (
     bcdDomain === 'html' &&
     top === 'elements' &&
     second === 'input' &&
     third.startsWith('type_')
   ) {
-    third = third.replace('type_', '');
+    fixedThird = third.replace('type_', '');
   }
 
   // Normal case: Test if the second file does exists
@@ -73,7 +74,7 @@ const bcdAssociatedFilename = (bcdID: string, path: string): string => {
     fsp.stat(filename);
   } catch (e) {
     // This is the special case for JS namespace (Intl, Temporal, …)
-    filename = `${path ? path : ''}${bcdDomain}/${top}/${second}/${third}.json`;
+    filename = `${path ? path : ''}${bcdDomain}/${top}/${second}/${fixedThird}.json`;
   }
   return filename;
 };
@@ -112,7 +113,7 @@ export class TagsCommand {
    * @param bcdIDs Array of BCD IDs that needs to be included
    * @returns A JSON object containing all of them
    */
-  readJSONFiles(bcdIDs) {
+  readJSONFiles(bcdIDs: string[]) {
     //
     // Loop on each bcdid and create the list of files containing all bcdIDs
     //
@@ -155,7 +156,7 @@ export class TagsCommand {
    * @param bcdIDs Array of BCD IDs that needs to be written
    * @param allJSONs The JSON object
    */
-  writeJSONFiles(bcdIDs, allJSONs) {
+  writeJSONFiles(bcdIDs: string[], allJSONs: object) {
     //
     // Write back the modified files
     //
