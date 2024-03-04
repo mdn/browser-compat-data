@@ -9,7 +9,8 @@ import chalk from 'chalk-template';
  * @param item Value to test
  * @returns A boolean saying if it is an object or not
  */
-const isObject = (item: any) => (item && typeof item === 'object' && !Array.isArray(item));
+const isObject = (item: any) =>
+  item && typeof item === 'object' && !Array.isArray(item);
 
 /**
  * mergeDeep - Merge several JSON object
@@ -40,7 +41,7 @@ const mergeDeep = (target: object, ...sources: object[]) => {
   }
 
   return mergeDeep(target, ...sources);
-}
+};
 
 /**
  * bcdAssociatedFilename - Generate the filename containing the bcd ID
@@ -49,7 +50,7 @@ const mergeDeep = (target: object, ...sources: object[]) => {
  * @returns A string with the filename
  */
 const bcdAssociatedFilename = (bcdID: string, path: string): string => {
-  let [ bcdDomain, top, second, third ] = bcdID.split('.');
+  let [bcdDomain, top, second, third] = bcdID.split('.');
 
   if (!bcdDomain || !top || !second) {
     console.log(chalk`{red Not a terminal bcd-id.}`);
@@ -57,20 +58,25 @@ const bcdAssociatedFilename = (bcdID: string, path: string): string => {
   }
 
   // Special case for html.elements.input.type_
-  if ((bcdDomain === 'html') && (top === 'elements') && (second === 'input') && third.startsWith('type_')) {
+  if (
+    bcdDomain === 'html' &&
+    top === 'elements' &&
+    second === 'input' &&
+    third.startsWith('type_')
+  ) {
     third = third.replace('type_', '');
   }
 
   // Normal case: Test if the second file does exists
-  let filename = `${path?path:''}${bcdDomain}/${top}/${second}.json`;
+  let filename = `${path ? path : ''}${bcdDomain}/${top}/${second}.json`;
   try {
     fsp.stat(filename);
   } catch (e) {
     // This is the special case for JS namespace (Intl, Temporal, …)
-    filename = `${path?path:''}${bcdDomain}/${top}/${second}/${third}.json`;
+    filename = `${path ? path : ''}${bcdDomain}/${top}/${second}/${third}.json`;
   }
   return filename;
-}
+};
 
 /**
  * topBCDIDForFilename - Generate the bcd ID associated with a filename
@@ -84,13 +90,12 @@ const topBCDIDForFilename = (filename: string, path: string): string => {
   }
   filename = filename.replace(path, '');
   filename = filename.replace('.json', '');
-  const [bcdDomain, top, second, third ] = filename.split('/');
-  return `${bcdDomain}.${top}.${second}${third?'.'+third:''}`;
-}
+  const [bcdDomain, top, second, third] = filename.split('/');
+  return `${bcdDomain}.${top}.${second}${third ? '.' + third : ''}`;
+};
 
 /** Class representing any 'tags XYZ' comnmand. */
 export class TagsCommand {
-
   path = './';
   filenames: string[] = [];
 
@@ -98,7 +103,7 @@ export class TagsCommand {
    * constructor - Create an object for a tags command
    * @param path The path to JSON files
    */
-  constructor(path:string) {
+  constructor(path: string) {
     this.path = path;
   }
 
@@ -130,8 +135,10 @@ export class TagsCommand {
 
       // Read JSON file
       if (fs.existsSync(filename)) {
-
-        if (path.extname(filename) === '.json' && !filename.endsWith('.schema.json')) {
+        if (
+          path.extname(filename) === '.json' &&
+          !filename.endsWith('.schema.json')
+        ) {
           const file = fs.readFileSync(filename, 'utf-8').trim();
           const json = JSON.parse(file);
 
@@ -171,9 +178,8 @@ export class TagsCommand {
         actualJSON = actualJSON[value];
       }
       result[lastValue] = actualJSON;
-      const fileContent = JSON.stringify(resultJSON, null, 2)
+      const fileContent = JSON.stringify(resultJSON, null, 2);
       fs.writeFileSync(filename, fileContent + '\n', 'utf-8');
     }
   }
 }
-

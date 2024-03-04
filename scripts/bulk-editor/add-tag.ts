@@ -3,17 +3,16 @@
 
 import chalk from 'chalk-template';
 
-import { TagsCommand } from  './tag-command.js';
+import { TagsCommand } from './tag-command.js';
 
 /** Class representing the 'tags add' comnmand. */
-export class TagsAddCommand extends TagsCommand{
+export class TagsAddCommand extends TagsCommand {
   /**
    * addTag - Add an extra tag to a set of bcd IDs
    * @param tag The tag to add
    * @param bcdIDs An array of strings with dot-separated bcd IDs
    */
   addTag(tag: string, bcdIDs: string[]): void {
-
     const allJSONs = this.readJSONFiles(bcdIDs);
 
     // Add the tag to each bcd ID
@@ -42,4 +41,3 @@ export class TagsAddCommand extends TagsCommand{
     this.writeJSONFiles(bcdIDs, allJSONs);
   }
 }
-

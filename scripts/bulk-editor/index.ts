@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 import chalk from 'chalk-template';
 
-import { executeTagCommand } from  './tag-command-factory.js';
+import { executeTagCommand } from './tag-command-factory.js';
 
 const commandName = process.argv[3];
 
