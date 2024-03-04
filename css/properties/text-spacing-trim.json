@@ -1,70 +1,49 @@
 {
   "css": {
-    "selectors": {
-      "backdrop": {
+    "properties": {
+      "text-spacing-trim": {
         "__compat": {
-          "description": "<code>::backdrop</code>",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::backdrop",
-          "spec_url": "https://drafts.csswg.org/css-position-4/#backdrop",
+          "spec_url": "https://drafts.csswg.org/css-text-4/#text-spacing-trim-property",
           "support": {
-            "chrome": [
-              {
-                "version_added": "37"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "32"
-              }
-            ],
+            "chrome": {
+              "version_added": "123"
+            },
             "chrome_android": "mirror",
-            "edge": [
-              {
-                "version_added": "79"
-              },
-              {
-                "prefix": "-ms-",
-                "version_added": "12",
-                "version_removed": "79"
-              }
-            ],
+            "edge": "mirror",
             "firefox": {
-              "version_added": "47"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
-              "prefix": "-ms-",
-              "version_added": "11"
+              "version_added": false
             },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.4"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         },
-        "dialog": {
+        "normal": {
           "__compat": {
-            "description": "Support on <code>dialog</code> elements",
-            "tags": [
-              "web-features:dialog"
-            ],
+            "spec_url": "https://drafts.csswg.org/css-text-4/#valdef-text-spacing-trim-normal",
             "support": {
               "chrome": {
-                "version_added": "32"
+                "version_added": "123"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "98"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -74,70 +53,30 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15.4"
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "fullscreen": {
+        "space-all": {
           "__compat": {
-            "description": "Fullscreen support",
-            "tags": [
-              "web-features:fullscreen"
-            ],
+            "spec_url": "https://drafts.csswg.org/css-text-4/#valdef-text-spacing-trim-space-all",
             "support": {
               "chrome": {
-                "version_added": "69"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "47"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": "11"
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "16.4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "inherit_from_originating_element": {
-          "__compat": {
-            "description": "Backdrop elements inherit their values from its originating element",
-            "support": {
-              "chrome": {
-                "version_added": "122",
-                "impl_url": "https://crbug.com/40569411"
+                "version_added": "123"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "120",
-                "impl_url": "https://bugzil.la/1855668"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -147,47 +86,31 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "17.4",
-                "impl_url": "https://bugzil.la/263834"
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "popover": {
+        "space-first": {
           "__compat": {
-            "description": "Support on popovers",
-            "tags": [
-              "web-features:popover"
-            ],
+            "spec_url": "https://drafts.csswg.org/css-text-4/#valdef-text-spacing-trim-space-first",
             "support": {
               "chrome": {
-                "version_added": "114"
+                "version_added": "123"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "preview"
-                },
-                {
-                  "version_added": "114",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.element.popover.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": false
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -196,14 +119,47 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "17"
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "trim-start": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-text-4/#valdef-text-spacing-trim-trim-start",
+            "support": {
+              "chrome": {
+                "version_added": "123"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
