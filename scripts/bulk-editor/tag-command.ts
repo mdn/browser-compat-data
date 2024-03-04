@@ -89,9 +89,6 @@ const bcdAssociatedFilename = (bcdID: string, path: string): string => {
  * @returns A string with the dot-separated bcdID
  */
 const topBCDIDForFilename = (filename: string, path: string): string => {
-  if (!path) {
-    path = '/Users/perrier/Documents/Github_repo/mdn/browser-compat-data/';
-  }
   filename = filename.replace(path, '');
   filename = filename.replace('.json', '');
   const [bcdDomain, top, second, third] = filename.split('/');
@@ -100,7 +97,7 @@ const topBCDIDForFilename = (filename: string, path: string): string => {
 
 /** Class representing any 'tags XYZ' comnmand. */
 export class TagsCommand {
-  path = './';
+  path = process.env.BCD_DIR;
   filenames: string[] = [];
 
   /**
