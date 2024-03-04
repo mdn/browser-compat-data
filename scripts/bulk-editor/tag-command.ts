@@ -1,3 +1,6 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 import fs from 'node:fs';
