@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.13)
+
+March 2, 2024
+
+### Additions
+
+- `css.properties.font-palette.animation_computed` ([#22276](https://github.com/mdn/browser-compat-data/pull/22276))
+- `html.elements.script.type.speculationrules.eagerness` ([#22262](https://github.com/mdn/browser-compat-data/pull/22262))
+- `html.elements.script.type.speculationrules.expects_no_vary_search` ([#22262](https://github.com/mdn/browser-compat-data/pull/22262))
+- `html.elements.script.type.speculationrules.relative_to` ([#22262](https://github.com/mdn/browser-compat-data/pull/22262))
+- `http.headers.Content-Encoding.zstd` ([#22316](https://github.com/mdn/browser-compat-data/pull/22316))
+- `http.headers.No-Vary-Search` ([#22262](https://github.com/mdn/browser-compat-data/pull/22262))
+- `http.headers.Speculation-Rules` ([#22262](https://github.com/mdn/browser-compat-data/pull/22262))
+
+### Statistics
+
+- 9 contributors have changed 22 files with 409 additions and 105 deletions in 19 commits ([`v5.5.12...v5.5.13`](https://github.com/mdn/browser-compat-data/compare/v5.5.12...v5.5.13))
+- 15,512 total features
+- 1,074 total contributors
+- 4,733 total stargazers
+
 ## [v5.5.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.12)
 
 February 26, 2024
