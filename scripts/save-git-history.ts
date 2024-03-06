@@ -10,6 +10,10 @@ import { getBranchName, getHashOfHEAD } from './lib/git.js';
 const HUSKY_ROOT = '.husky/_/';
 const HISTORY_FILE = HUSKY_ROOT + 'history';
 
-if ('main' === getBranchName() && fs.existsSync(HUSKY_ROOT)) {
+if (
+  'main' === getBranchName() &&
+  fs.existsSync(HUSKY_ROOT) &&
+  process.env['HUSKY'] !== '0'
+) {
   fs.writeFileSync(HISTORY_FILE, getHashOfHEAD());
 }
