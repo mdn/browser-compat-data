@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "5.5.13",
+  "version": "5.5.14",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.ts",
   "type": "module",
@@ -48,7 +48,7 @@
     "@babel/plugin-syntax-import-assertions": "~7.23.3",
     "@desertnet/html-parser": "~1.0.1",
     "@swc/cli": "^0.3.0",
-    "@swc/core": "1.4.2",
+    "@swc/core": "1.4.6",
     "@types/deep-diff": "~1.0.1",
     "@types/mocha": "~10.0.0",
     "@types/node": "~20.11.0",
@@ -87,12 +87,13 @@
     "prettier": "~3.2.4",
     "sinon": "^17.0.0",
     "ts-node": "~10.9.1",
-    "typescript": "~5.3.2",
+    "typescript": "~5.4.2",
     "web-specs": "^3.0.0",
     "yargs": "~17.7.0"
   },
   "scripts": {
-    "postinstall": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/save-git-history.ts",
+    "postinstall": "(git rev-parse --is-inside-work-tree && npm run save-git-history) || echo 'not in Git worktree; skipping save-git-history'",
+    "save-git-history": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/save-git-history.ts",
     "prepare": "(husky || true) && npm run gentypes && npm run build",
     "diff": "node --loader=ts-node/esm --no-warnings=ExperimentalWarning scripts/diff.ts",
     "unittest": "NODE_ENV=test c8 mocha index.test.ts --recursive \"{,!(node_modules)/**}/*.test.ts\"",
