@@ -1,5 +1,76 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.15)
+
+March 12, 2024
+
+### Removals
+
+- `html.global_attributes.contextmenu` ([#22593](https://github.com/mdn/browser-compat-data/pull/22593))
+
+### Additions
+
+- `browsers.edge.releases.125` ([#22567](https://github.com/mdn/browser-compat-data/pull/22567))
+- `webextensions.api.alarms` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.browserSettings` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.browsingData` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.captivePortal` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.clipboard` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.commands` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.contextualIdentities` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.contextualIdentities.ContextualIdentity` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.declarativeNetRequest` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.devtools` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.devtools.inspectedWindow` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.devtools.network` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.devtools.panels` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.downloads` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.events` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.extension` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.extensionTypes` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.find` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.history` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.i18n` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.identity` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.idle` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.management` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.menus` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.notifications` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.omnibox` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.pageAction` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.permissions` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.pkcs11` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.privacy` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.privacy.network` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.privacy.services` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.privacy.websites` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.proxy` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.runtime` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.runtime.onPerformanceWarning` ([#22196](https://github.com/mdn/browser-compat-data/pull/22196))
+- `webextensions.api.search` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.sessions` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.sidebarAction` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.storage` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.tabs` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.tabs.query.queryInfo` ([#22229](https://github.com/mdn/browser-compat-data/pull/22229))
+- `webextensions.api.tabs.query.queryInfo.attention` ([#22229](https://github.com/mdn/browser-compat-data/pull/22229))
+- `webextensions.api.tabs.Tab.attention` ([#22229](https://github.com/mdn/browser-compat-data/pull/22229))
+- `webextensions.api.tabs.Tab.pendingUrl` ([#22229](https://github.com/mdn/browser-compat-data/pull/22229))
+- `webextensions.api.theme` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.topSites` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.types` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.webNavigation` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.webRequest` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.api.windows` ([#22338](https://github.com/mdn/browser-compat-data/pull/22338))
+- `webextensions.manifest.content_scripts.world` ([#22139](https://github.com/mdn/browser-compat-data/pull/22139))
+
+### Statistics
+
+- 12 contributors have changed 125 files with 2,700 additions and 1,328 deletions in 24 commits ([`v5.5.14...v5.5.15`](https://github.com/mdn/browser-compat-data/compare/v5.5.14...v5.5.15))
+- 16,016 total features
+- 1,076 total contributors
+- 4,749 total stargazers
+
 ## [v5.5.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.14)
 
 March 6, 2024
