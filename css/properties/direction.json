@@ -40,6 +40,76 @@
             "deprecated": false
           }
         },
+        "ltr": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-direction-ltr",
+            "support": {
+              "chrome": {
+                "version_added": "2"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "rtl": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-direction-rtl",
+            "support": {
+              "chrome": {
+                "version_added": "2"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "vertical_slider_direction": {
           "__compat": {
             "description": "Control direction of vertical range sliders, meters, and progress bars",
@@ -50,7 +120,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "120",
+                "partial_implementation": true,
+                "notes": "Only supported for vertical range sliders."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -60,14 +132,16 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.5",
+                "partial_implementation": true,
+                "notes": "Only supported for vertical range sliders."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
