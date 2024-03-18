@@ -4,8 +4,8 @@
 import fs from 'node:fs';
 
 import { Identifier } from '../../types/types.js';
-import compareFeatures from '../lib/compare-features.js';
-import { IS_WINDOWS } from '../../test/utils.js';
+import compareFeatures from '../../scripts/lib/compare-features.js';
+import { IS_WINDOWS } from '../utils.js';
 
 /**
  * Return a new feature object whose first-level properties have been

@@ -8,11 +8,11 @@ import {
   SupportStatement,
   SimpleSupportStatement,
 } from '../../types/types.js';
-import { IS_WINDOWS } from '../../test/utils.js';
+import { IS_WINDOWS } from '../utils.js';
 import testFlags, {
   isIrrelevantFlagData,
   getBasicSupportStatement,
-} from '../../test/linter/test-flags.js';
+} from '../linter/test-flags.js';
 import walk from '../../utils/walk.js';
 
 /**
