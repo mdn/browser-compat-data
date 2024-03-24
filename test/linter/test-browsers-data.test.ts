@@ -24,9 +24,11 @@ describe('test-browsers-data', () => {
       accepts_webextensions: false,
       releases: {
         '20.6.0': {
+          release_date: '2023-09-04',
           status: 'current',
         },
         '21.2.0': {
+          release_date: '2023-11-14',
           status: 'current',
         },
       },
@@ -96,5 +98,31 @@ describe('test-browsers-data', () => {
 
     test.check(logger, { data, path: { browser } });
     assert.equal(logger.messages.length, 1);
+  });
+
+  it('should log an error if a retired or current release has no release date', () => {
+    const browser = 'opera';
+    const data: BrowserStatement = {
+      name: 'Opera',
+      type: 'desktop',
+      upstream: 'chrome',
+      pref_url: 'opera://flags',
+      accepts_flags: true,
+      accepts_webextensions: true,
+      releases: {
+        '97': {
+          status: 'retired',
+          engine: 'Blink',
+          engine_version: '111',
+        },
+        '98': {
+          status: 'current',
+          engine: 'Blink',
+          engine_version: '112',
+        },
+      },
+    };
+    test.check(logger, { data, path: { browser } });
+    assert.equal(logger.messages.length, 2);
   });
 });
