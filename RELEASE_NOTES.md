@@ -1,5 +1,37 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.17)
+
+March 26, 2024
+
+### Additions
+
+- `api.NotRestoredReasonDetails` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasonDetails.reason` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasonDetails.toJSON` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.children` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.id` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.name` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.reasons` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.src` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.toJSON` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.NotRestoredReasons.url` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `api.PerformanceNavigationTiming.notRestoredReasons` ([#22710](https://github.com/mdn/browser-compat-data/pull/22710))
+- `browsers.firefox_android.releases.127` ([#22652](https://github.com/mdn/browser-compat-data/pull/22652))
+- `browsers.firefox.releases.127` ([#22652](https://github.com/mdn/browser-compat-data/pull/22652))
+- `javascript.builtins.Intl.RelativeTimeFormat.RelativeTimeFormat.locales_parameter` ([#22570](https://github.com/mdn/browser-compat-data/pull/22570))
+- `javascript.builtins.Intl.RelativeTimeFormat.RelativeTimeFormat.options_parameter.options_localeMatcher_parameter` ([#22570](https://github.com/mdn/browser-compat-data/pull/22570))
+- `javascript.builtins.Intl.RelativeTimeFormat.RelativeTimeFormat.options_parameter.options_numberingSystem_parameter` ([#22570](https://github.com/mdn/browser-compat-data/pull/22570))
+- `javascript.builtins.Intl.RelativeTimeFormat.RelativeTimeFormat.options_parameter.options_numeric_parameter` ([#22570](https://github.com/mdn/browser-compat-data/pull/22570))
+
+### Statistics
+
+- 11 contributors have changed 78 files with 3,748 additions and 1,072 deletions in 36 commits ([`v5.5.16...v5.5.17`](https://github.com/mdn/browser-compat-data/compare/v5.5.16...v5.5.17))
+- 16,127 total features
+- 1,076 total contributors
+- 4,754 total stargazers
+
 ## [v5.5.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.16)
 
 March 15, 2024
