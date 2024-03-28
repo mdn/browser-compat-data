@@ -116,6 +116,12 @@ export const processData = (
     processApiData(data, path, errors);
   }
 
+  if (data.description === `<code>${path.split('.').at(-1)}</code>`) {
+    errors.push(
+      'Description is redundant as it only restates the feature name',
+    );
+  }
+
   if (data.description) {
     errors.push(...validateHTML(data.description));
   }

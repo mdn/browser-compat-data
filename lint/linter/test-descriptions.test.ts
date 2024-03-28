@@ -78,5 +78,16 @@ describe('test-descriptions', () => {
       assert.equal(errors.length, 1);
       assert.equal(errors[0].ruleName, 'worker');
     });
+
+    it('should check for redundant description', () => {
+      const path = 'css.properties.width.auto';
+      const data: CompatStatement = {
+        description: '<code>auto</code>',
+        support: {},
+      };
+
+      const errors = processData(data, 'css', path);
+      assert.equal(errors.length, 1);
+    });
   });
 });
