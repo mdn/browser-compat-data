@@ -23,6 +23,15 @@ yarn add @mdn/browser-compat-data
 Then, you can import BCD into your project with either `import` or `require()`:
 
 ```js
+// ESM with Import Attributes (NodeJS 20+)
+import bcd from '@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  with: { type: 'json' },
+});
+
+// ...or...
+
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
@@ -48,6 +57,19 @@ const bcd = require('@mdn/browser-compat-data');
 You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
+// ESM with Import Attributes (Deno 1.37+)
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    with: { type: 'json' },
+  }
+);
+
+// ...or...
+
+// ESM with Import Assertions (Deno 1.17+)
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
 const { default: bcd } = await import(
@@ -55,6 +77,13 @@ const { default: bcd } = await import(
   {
     assert: { type: 'json' },
   }
+);
+
+// ...or...
+
+// Fetch Method (Deno 1.0+)
+const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
+  (response) => response.json(),
 );
 ```
 

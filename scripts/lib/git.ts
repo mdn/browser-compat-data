@@ -59,4 +59,26 @@ const getFileContent = (commit: string, path: string): string =>
     })
     .trim();
 
-export { getMergeBase, getGitDiffStatuses, getFileContent };
+/**
+ * Get the current branch name
+ * @returns The output from the `git rev-parse --abbrev-ref HEAD` command
+ */
+const getBranchName = (): string =>
+  child_process
+    .execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' })
+    .trim();
+
+/**
+ * Get commit hash of HEAD
+ * @returns The output from the `git rev-parse HEAD` command
+ */
+const getHashOfHEAD = (): string =>
+  child_process.execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
+
+export {
+  getMergeBase,
+  getGitDiffStatuses,
+  getFileContent,
+  getBranchName,
+  getHashOfHEAD,
+};
