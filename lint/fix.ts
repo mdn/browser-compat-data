@@ -9,14 +9,14 @@ import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 import chalk from 'chalk-template';
 
-import fixBrowserOrder from './browser-order.js';
-import fixFeatureOrder from './feature-order.js';
-import fixPropertyOrder from './property-order.js';
-import fixStatementOrder from './statement-order.js';
-import fixFlags from './flags.js';
-import fixLinks from './links.js';
-import fixStatus from './status.js';
-import fixMirror from './mirror.js';
+import fixBrowserOrder from './fixer/browser-order.js';
+import fixFeatureOrder from './fixer/feature-order.js';
+import fixPropertyOrder from './fixer/property-order.js';
+import fixStatementOrder from './fixer/statement-order.js';
+import fixFlags from './fixer/flags.js';
+import fixLinks from './fixer/links.js';
+import fixStatus from './fixer/status.js';
+import fixMirror from './fixer/mirror.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

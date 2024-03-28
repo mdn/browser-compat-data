@@ -6,8 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-columns",
           "spec_url": [
             "https://drafts.csswg.org/css-grid/#track-sizing",
-            "https://drafts.csswg.org/css-grid/#subgrids",
-            "https://drafts.csswg.org/css-grid-3/#masonry-layout"
+            "https://drafts.csswg.org/css-grid/#subgrids"
           ],
           "tags": [
             "web-features:grid"
@@ -91,6 +90,7 @@
         },
         "auto": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-auto",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -172,7 +172,8 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40128480"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -184,7 +185,8 @@
                     "name": "layout.css.grid-template-masonry-value.enabled",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "impl_url": "https://bugzil.la/1757446"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -194,7 +196,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "preview",
+                "impl_url": "https://webkit.org/b/248287"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -209,6 +212,7 @@
         },
         "max-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-max-content",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -241,6 +245,7 @@
         },
         "min-content": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-min-content",
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -315,6 +320,7 @@
         },
         "none": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-rows-none",
             "support": {
               "chrome": {
                 "version_added": "57"

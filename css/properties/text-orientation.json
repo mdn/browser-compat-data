@@ -38,15 +38,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "48"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "≤37"
-              }
-            ]
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -56,6 +48,7 @@
         },
         "mixed": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-text-orientation-mixed",
             "support": {
               "chrome": {
                 "version_added": "≤83"
@@ -88,17 +81,28 @@
         },
         "sideways": {
           "__compat": {
-            "description": "<code>sideways</code>",
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-text-orientation-sideways",
             "support": {
-              "chrome": {
-                "version_added": "25"
-              },
+              "chrome": [
+                {
+                  "version_added": "25"
+                },
+                {
+                  "alternative_name": "sideways-right",
+                  "version_added": "≤83"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "44",
-                "notes": "<code>sideways-right</code> has become an alias of <code>sideways</code>."
-              },
+              "firefox": [
+                {
+                  "version_added": "44"
+                },
+                {
+                  "alternative_name": "sideways-right",
+                  "version_added": "≤72"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -120,40 +124,9 @@
             }
           }
         },
-        "sideways-right": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "≤83"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "≤72"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "upright": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-text-orientation-upright",
             "support": {
               "chrome": {
                 "version_added": "≤83"
