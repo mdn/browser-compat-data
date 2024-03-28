@@ -237,6 +237,40 @@
             }
           }
         },
+        "bluetooth": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/bluetooth",
+            "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#permissions-policy",
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "browsing-topics": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/browsing-topics",
@@ -784,7 +818,9 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": true,
@@ -962,6 +998,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/midi",
             "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-policy-integration",
+            "tags": [
+              "web-features:web-midi"
+            ],
             "support": {
               "chrome": [
                 {
@@ -993,7 +1032,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/107250"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1155,7 +1195,10 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "alternative_name": "Feature-Policy: publickey-credentials-create",
+                "version_added": "123",
+                "partial_implementation": true,
+                "notes": "Header not recognized but policy can be set through the <code>allow</code> attribute on <code>&lt;iframe&gt;</code> elements (see <a href='https://bugzil.la/1870863'>bug 1870863</a>)."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1233,6 +1276,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/screen-wake-lock",
             "spec_url": "https://w3c.github.io/screen-wake-lock/#policy-control",
+            "tags": [
+              "web-features:screen-wake-lock"
+            ],
             "support": {
               "chrome": [
                 {
@@ -1246,7 +1292,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1256,14 +1302,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

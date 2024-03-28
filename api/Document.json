@@ -3103,7 +3103,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3514,6 +3517,7 @@
       "freeze_event": {
         "__compat": {
           "description": "<code>freeze</code> event",
+          "spec_url": "https://wicg.github.io/page-lifecycle/#dom-document-onfreeze",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -3600,7 +3604,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "alternative_name": "webkitIsFullScreen",
@@ -3713,7 +3720,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3825,7 +3835,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3919,7 +3932,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -4024,7 +4040,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -4417,6 +4436,39 @@
           }
         }
       },
+      "hasPrivateToken": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/trust-token-api/#dom-document-hasprivatetoken",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "hasRedemptionRecord": {
         "__compat": {
           "spec_url": "https://wicg.github.io/trust-token-api/#dom-document-hasredemptionrecord",
@@ -4461,7 +4513,9 @@
             "chrome_android": {
               "version_added": "120"
             },
-            "edge": "mirror",
+            "edge": {
+              "version_added": "85"
+            },
             "firefox": {
               "version_added": "65"
             },
@@ -4973,48 +5027,6 @@
           }
         }
       },
-      "lostpointercapture_event": {
-        "__compat": {
-          "description": "<code>lostpointercapture</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/lostpointercapture_event",
-          "spec_url": [
-            "https://w3c.github.io/pointerevents/#the-lostpointercapture-event",
-            "https://w3c.github.io/pointerevents/#dom-globaleventhandlers-onlostpointercapture"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "57"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "17"
-            },
-            "firefox": {
-              "version_added": "59"
-            },
-            "firefox_android": {
-              "version_added": "79"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "13"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "mozSetImageElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/mozSetImageElement",
@@ -5109,6 +5121,40 @@
                 "notes": "Only supported for <a href='https://developer.mozilla.org/docs/Web/API/HTMLDocument'><code>HTMLDocument</code></a>, not all <code>Document</code> objects."
               }
             ],
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "parseHTMLUnsafe_static": {
+        "__compat": {
+          "description": "<code>parseHTMLUnsafe()</code> static method",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-parsehtmlunsafe",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "123"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17.4"
+            },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -6164,7 +6210,9 @@
             "chrome_android": {
               "version_added": "120"
             },
-            "edge": "mirror",
+            "edge": {
+              "version_added": "85"
+            },
             "firefox": {
               "version_added": "65"
             },
@@ -6181,7 +6229,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -6192,6 +6242,7 @@
       },
       "requestStorageAccessFor": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccessFor",
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#dom-document-requeststorageaccessfor",
           "support": {
             "chrome": {
@@ -6215,7 +6266,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -6227,6 +6280,7 @@
       "resume_event": {
         "__compat": {
           "description": "<code>resume</code> event",
+          "spec_url": "https://wicg.github.io/page-lifecycle/#dom-document-onresume",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -6404,7 +6458,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/201556"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -158,7 +158,7 @@ export const updateFirefoxReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  const planned = Number(data[options.nightlyBranch].version) + 1;
+  const planned = String(Number(data[options.nightlyBranch].version) + 1);
   // Get the JSON for the planned version train
   const trainInfo = await fetch(`${options.firefoxScheduleURL}${planned}`);
   const train = await trainInfo.json();

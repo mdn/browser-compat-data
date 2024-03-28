@@ -2,6 +2,31 @@
   "webextensions": {
     "api": {
       "storage": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45",
+              "notes": "The storage API is supported in content scripts from version 48."
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "StorageArea": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea",
@@ -41,7 +66,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the <code>managed</code> storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -69,7 +95,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the <code>managed</code> storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -178,7 +205,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the <code>managed</code> storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -233,7 +261,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the <code>managed</code> storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -415,7 +444,8 @@
                 "notes": "Before version 79, storage quota limits are not enforced."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": true,
+                "notes": "Data isn't synchronized with the user's Mozilla account. See <a href='https://bugzil.la/1625257'>bug 1625257</a>."
               },
               "opera": {
                 "version_added": false
