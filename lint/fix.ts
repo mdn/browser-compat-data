@@ -13,6 +13,7 @@ import fixBrowserOrder from './fixer/browser-order.js';
 import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
+import fixDescriptions from './fixer/descriptions.js';
 import fixFlags from './fixer/flags.js';
 import fixLinks from './fixer/links.js';
 import fixStatus from './fixer/status.js';
@@ -46,6 +47,7 @@ const load = async (...files: string[]): Promise<void> => {
           fixBrowserOrder(file);
           fixFeatureOrder(file);
           fixStatementOrder(file);
+          fixDescriptions(file);
           fixFlags(file);
           fixLinks(file);
           fixStatus(file);
