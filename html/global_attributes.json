@@ -282,44 +282,6 @@
           }
         }
       },
-      "contextmenu": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/contextmenu",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "9",
-              "version_removed": "85"
-            },
-            "firefox_android": {
-              "version_added": "32",
-              "version_removed": "56",
-              "notes": "Support for the <code>contextmenu</code> attribute has been removed from Firefox for Android (See <a href='https://bugzil.la/1424252'>bug 1424252</a>)."
-            },
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "data_attributes": {
         "__compat": {
           "description": "<code>data-*</code> attributes",
@@ -700,6 +662,112 @@
           }
         }
       },
+      "invoketarget": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.invokers.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "InvokerAttributesEnabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "invokeaction": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.invokers.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "InvokerAttributesEnabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "is": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/is",
@@ -1057,104 +1125,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/popover",
           "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute",
-          "tags": [
-            "web-features:popover"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "114"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview"
-              },
-              {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "17"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "popovertarget": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/popovertarget",
-          "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#attr-popovertarget",
-          "tags": [
-            "web-features:popover"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "114"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview"
-              },
-              {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "17"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "popovertargetaction": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/popovertargetaction",
-          "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#attr-popovertargetaction",
           "tags": [
             "web-features:popover"
           ],
