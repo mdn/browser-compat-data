@@ -3,41 +3,30 @@
 
 import chalk from 'chalk-template';
 
-import { TagsCommand } from './utils.js';
+import { updateFeatures } from '../utils.js';
 
-/** Class representing the 'tags add' comnmand. */
-export class TagsAddCommand extends TagsCommand {
+const command = {
+  command: 'add <tag> <bcd-id..>',
+  desc: 'Add the following tag to the BCD features',
   /**
-   * addTag - Add an extra tag to a set of bcd IDs
-   * @param tag The tag to add
-   * @param bcdIDs An array of strings with dot-separated bcd IDs
+   * handler - Action to perform for 'tags add'
+   * @param argv Parameter list
    */
-  addTag(tag: string, bcdIDs: string[]): void {
-    const allJSONs = this.readJSONFiles(bcdIDs);
-
-    // Add the tag to each bcd ID
-    console.log(chalk`{white \nAdd tags}`);
-    for (const bcdID of bcdIDs) {
-      console.log(chalk`{yellow Updating: ${bcdID}}`);
-      // Find the bcd entry
-      const values = bcdID.split('.');
-      let result = allJSONs;
-      for (const value of values) {
-        result = result[value];
-      }
-      result = result['__compat'];
-
+  handler: (argv) => {
+    updateFeatures(argv['bcd-id'], (json) => {
       // If there is no tags entry, create one
-      if (!result['tags']) {
-        result['tags'] = [];
+      if (!json['tags']) {
+        json['tags'] = [];
       }
 
       // Add the tag
-      if (!result['tags'].includes(tag)) {
-        result['tags'].push(tag);
+      if (!json['tags'].includes(argv['tag'])) {
+        json['tags'].push(argv['tag']);
       }
-    }
 
-    this.writeJSONFiles(bcdIDs, allJSONs);
-  }
-}
+      return json;
+    });
+  },
+};
+
+export default command;

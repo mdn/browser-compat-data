@@ -3,45 +3,34 @@
 
 import chalk from 'chalk-template';
 
-import { TagsCommand } from './utils.js';
+import { updateFeatures } from '../utils.js';
 
-/** Class representing the 'tags remove' comnmand. */
-export class TagsRemoveCommand extends TagsCommand {
+const command = {
+  command: 'remove <tag> <bcd-id..>',
+  desc: 'Remove the following tag from the BCD features',
   /**
-   * removeTag - Add an extra tag to a set of bcd IDs
-   * @param tag The tag to add
-   * @param bcdIDs An array of strings with dot-separated bcd IDs
+   * handler - Action to perform for 'tags remove'
+   * @param argv Parameter list
    */
-  removeTag(tag: string, bcdIDs: string[]): void {
-    const allJSONs = this.readJSONFiles(bcdIDs);
-
-    // Remove the tag to each bcd ID
-    console.log(chalk`{white \nRemove tags}`);
-    for (const bcdID of bcdIDs) {
-      console.log(chalk`{yellow Updating: ${bcdID}}`);
-      // Find the bcd entry
-      const values = bcdID.split('.');
-      let result = allJSONs;
-      for (const value of values) {
-        result = result[value];
-      }
-      result = result['__compat'];
-
+  handler: (argv) => {
+    updateFeatures(argv['bcd-id'], (json) => {
       // If there is no tags entry, create one
-      if (result['tags']) {
-        const index = result['tags'].indexOf(tag);
+      if (json['tags']) {
+        const index = json['tags'].indexOf(argv['tag']);
         // Actually remove it if found
         if (index !== -1) {
-          result['tags'].splice(index, 1);
+          json['tags'].splice(index, 1);
         }
 
         // Remove the tags array if empty
-        if (result['tags'].length === 0) {
-          delete result.tags;
+        if (json['tags'].length === 0) {
+          delete json.tags;
         }
       }
-    }
 
-    this.writeJSONFiles(bcdIDs, allJSONs);
-  }
-}
+      return json;
+    });
+  },
+};
+
+export default command;
