@@ -3,7 +3,6 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk-template';
 
 import tags from './tags/index.js';
 

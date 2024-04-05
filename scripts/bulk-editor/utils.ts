@@ -8,45 +8,6 @@ import fs from 'node:fs';
 import chalk from 'chalk-template';
 
 /**
- * isObject - Helper function testing for an object
- * @param item Value to test
- * @returns A boolean saying if it is an object or not
- */
-const isObject = (item: any) =>
-  item && typeof item === 'object' && !Array.isArray(item);
-
-/**
- * mergeDeep - Merge several JSON object
- * @param target The first JSON object
- * @param sources The JSON object to merge to the first one
- * @returns The merged JSON object
- */
-const mergeDeep = (target: object, ...sources: object[]) => {
-  // Assume there is no circular references (or this leads to an infinite loop)
-
-  if (!sources.length) {
-    return target;
-  }
-
-  const source = sources.shift();
-
-  if (isObject(target) && isObject(source)) {
-    for (const key in source) {
-      if (isObject(source[key])) {
-        if (!target[key]) {
-          Object.assign(target, { [key]: {} });
-        }
-        mergeDeep(target[key], source[key]);
-      } else {
-        Object.assign(target, { [key]: source[key] });
-      }
-    }
-  }
-
-  return mergeDeep(target, ...sources);
-};
-
-/**
  * bcdAssociatedFilename - Generate the filename containing the bcd ID
  * @param bcdID The bcd ID we are looking for
  * @param path The path to the JSON files
@@ -82,10 +43,10 @@ const bcdAssociatedFilename = (bcdID: string, path?: string): string => {
   return filename;
 };
 
-function performUpdate(key, json, updater) {
+const performUpdate = (key, json, updater) => {
   const parts = key.split('.');
   if (!(parts[0] in json)) {
-    console.warn(`Key not found in file!`);
+    console.warn('Key not found in file!');
     return json;
   }
   json[parts[0]] =
@@ -93,9 +54,9 @@ function performUpdate(key, json, updater) {
       ? updater(json[parts[0]])
       : performUpdate(parts.slice(1).join('.'), json[parts[0]], updater);
   return json;
-}
+};
 
-export function updateFeatures(featureIDs, updater) {
+export const updateFeatures = (featureIDs, updater) => {
   for (const featureID of featureIDs) {
     // XXX Walk the file tree instead
     const filename = bcdAssociatedFilename(featureID);
@@ -119,4 +80,4 @@ export function updateFeatures(featureIDs, updater) {
       );
     }
   }
-}
+};
