@@ -3,7 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import { TagsCommand } from './tag-command.js';
+import { TagsCommand } from './utils.js';
 
 /** Class representing the 'tags remove' comnmand. */
 export class TagsShowCommand extends TagsCommand {

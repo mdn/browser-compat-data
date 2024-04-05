@@ -3,7 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import { TagsCommand } from './tag-command.js';
+import { TagsCommand } from './utils.js';
 
 /** Class representing the 'tags add' comnmand. */
 export class TagsAddCommand extends TagsCommand {

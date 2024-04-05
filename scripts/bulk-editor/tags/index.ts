@@ -3,9 +3,9 @@
 
 import yargs from 'yargs';
 
-import { TagsAddCommand } from './add-tag.js';
-import { TagsRemoveCommand } from './remove-tag.js';
-import { TagsShowCommand } from './show-tag.js';
+import { TagsAddCommand } from './add.js';
+import { TagsRemoveCommand } from './remove.js';
+import { TagsShowCommand } from './show.js';
 
 /**
  * handler - Action to perform for 'tags XYZ' command

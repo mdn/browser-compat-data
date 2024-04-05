@@ -3,7 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import { executeTagCommand } from './tag-command-factory.js';
+import { executeTagCommand } from './tags/index.js';
 
 const commandName = process.argv[3];
 
