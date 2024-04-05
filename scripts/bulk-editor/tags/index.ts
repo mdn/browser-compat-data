@@ -5,7 +5,6 @@ import yargs from 'yargs';
 
 import { TagsAddCommand } from './add.js';
 import { TagsRemoveCommand } from './remove.js';
-import { TagsShowCommand } from './show.js';
 
 /**
  * handler - Action to perform for 'tags XYZ' command
@@ -13,15 +12,8 @@ import { TagsShowCommand } from './show.js';
  */
 export const executeTagCommand = (argv) => {
   yargs(argv.splice(1))
-    .option('p', {
-      alias: 'path',
-      demandOption: false,
-      default: './',
-      describe: 'Path to the JSON files',
-      type: 'string',
-    })
     .command({
-      command: 'add tag [bcd-id..]',
+      command: 'add <tag> [bcd-id..]',
       /**
        * handler - Action to perform for 'tags add <tag> <bcd-ids>'
        * @param argv Parameter list
@@ -32,7 +24,7 @@ export const executeTagCommand = (argv) => {
       },
     })
     .command({
-      command: 'remove tag [bcd-id..]',
+      command: 'remove <tag> [bcd-id..]',
       /**
        * handler - Action to perform for 'tags remove <tag> <bcd-ids>'
        * @param argv Parameter list
@@ -40,17 +32,6 @@ export const executeTagCommand = (argv) => {
       handler: (argv) => {
         const cmd = new TagsRemoveCommand(argv['path']);
         cmd.removeTag(argv['tag'], argv['bcd-id']);
-      },
-    })
-    .command({
-      command: 'show [bcd-id..]',
-      /**
-       * handler - Action to perform for 'tags show <bcd-ids>'
-       * @param argv Parameter list
-       */
-      handler: (argv) => {
-        const cmd = new TagsShowCommand(argv['path']);
-        cmd.showTag(argv['bcd-id']);
       },
     })
     .demandCommand()
