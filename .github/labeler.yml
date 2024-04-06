@@ -1,46 +1,83 @@
+# This file is used by .github/workflows/labeler.yml to label pull requests based on the files changed in the PR.
+# Object matching syntax: https://github.com/actions/labeler/blob/main/README.md#match-object
 bulk_update :package::
-  - "scripts/migrations/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "scripts/migrations/**"
 data:api :rabbit2::
-  - "api/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "api/**"
 data:browsers :earth_africa::
-  - "browsers/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "browsers/**"
 data:css :art::
-  - "css/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "css/**"
 data:html :page_facing_up::
-  - "html/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "html/**"
 data:http :mountain_cableway::
-  - "http/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "http/**"
 data:js :pager::
-  - "javascript/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "javascript/**"
 data:mathml :heavy_division_sign::
-  - "mathml/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "mathml/**"
 data:svg :paintbrush::
-  - "svg/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "svg/**"
 data:wasm :mechanical_arm::
-  - "webassembly/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "webassembly/**"
 data:webdriver :racing_car::
-  - "webdriver/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "webdriver/**"
 data:webext :game_die::
-  - "webextensions/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "webextensions/**"
 dependencies :chains::
-  - "package-lock.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "package-lock.json"
 docs :writing_hand::
-  - "**/*.md"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
 infra :building_construction::
-  - ".*"
-  - "/*.js"
-  - "*.ts"
-  - "**/*.d.ts"
-  - "/index.js"
-  - "LICENSE"
-  - "package*"
-  - "utils/**"
-  - ".github/**"
-  - ".husky/**"
-  - ".vscode/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".*"
+          - "**/*.js"
+          - "**/*.ts"
+          - "**/*.d.ts"
+          - "LICENSE"
+          - "package*"
+          - "utils/**"
+          - ".github/**"
+          - ".husky/**"
+          - ".vscode/**"
 linter :house_with_garden::
-  - "lint/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "lint/**"
 scripts :scroll::
-  - "scripts/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "scripts/**"
 schema :gear::
-  - "schemas/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "schemas/**"
