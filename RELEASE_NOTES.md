@@ -1,5 +1,52 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.20)
+
+April 9, 2024
+
+### Removals
+
+- `html.global_attributes.itemid` ([#21978](https://github.com/mdn/browser-compat-data/pull/21978))
+- `html.global_attributes.itemprop` ([#21978](https://github.com/mdn/browser-compat-data/pull/21978))
+- `html.global_attributes.itemref` ([#21978](https://github.com/mdn/browser-compat-data/pull/21978))
+- `html.global_attributes.itemscope` ([#21978](https://github.com/mdn/browser-compat-data/pull/21978))
+- `html.global_attributes.itemtype` ([#21978](https://github.com/mdn/browser-compat-data/pull/21978))
+
+### Additions
+
+- `api.console.dir_static.options_colors_parameter` ([#22759](https://github.com/mdn/browser-compat-data/pull/22759))
+- `api.console.dir_static.options_depth_parameter` ([#22759](https://github.com/mdn/browser-compat-data/pull/22759))
+- `api.console.dir_static.options_showHidden_parameter` ([#22759](https://github.com/mdn/browser-compat-data/pull/22759))
+- `api.HTMLTemplateElement.shadowRootClonable` ([#22768](https://github.com/mdn/browser-compat-data/pull/22768))
+- `api.RTCStatsReport.type_media-source.frames` ([#22510](https://github.com/mdn/browser-compat-data/pull/22510))
+- `api.RTCStatsReport.type_media-source.framesPerSecond` ([#22510](https://github.com/mdn/browser-compat-data/pull/22510))
+- `api.RTCStatsReport.type_media-source.height` ([#22510](https://github.com/mdn/browser-compat-data/pull/22510))
+- `api.RTCStatsReport.type_media-source.width` ([#22510](https://github.com/mdn/browser-compat-data/pull/22510))
+- `browsers.deno.releases.1.41` ([#22724](https://github.com/mdn/browser-compat-data/pull/22724))
+- `browsers.deno.releases.1.42` ([#22724](https://github.com/mdn/browser-compat-data/pull/22724))
+- `browsers.edge.releases.126` ([#22760](https://github.com/mdn/browser-compat-data/pull/22760))
+- `browsers.safari_ios.releases.17.5` ([#22760](https://github.com/mdn/browser-compat-data/pull/22760))
+- `browsers.safari.releases.17.5` ([#22760](https://github.com/mdn/browser-compat-data/pull/22760))
+- `html.elements.link.rel.preload.as-fetch` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.link.rel.preload.as-font` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.link.rel.preload.as-image` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.link.rel.preload.as-script` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.link.rel.preload.as-style` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.link.rel.preload.as-track` ([#22728](https://github.com/mdn/browser-compat-data/pull/22728))
+- `html.elements.template.shadowrootclonable` ([#22768](https://github.com/mdn/browser-compat-data/pull/22768))
+- `javascript.builtins.JSON.isRawJSON` ([#22766](https://github.com/mdn/browser-compat-data/pull/22766))
+- `javascript.builtins.JSON.rawJSON` ([#22766](https://github.com/mdn/browser-compat-data/pull/22766))
+- `webextensions.api.devtools.panels.ExtensionSidebarPane.setHeight` ([#22182](https://github.com/mdn/browser-compat-data/pull/22182))
+- `webextensions.api.devtools.panels.ExtensionSidebarPane.setPage` ([#22182](https://github.com/mdn/browser-compat-data/pull/22182))
+- `webextensions.api.windows.onBoundsChanged` ([#22160](https://github.com/mdn/browser-compat-data/pull/22160))
+
+### Statistics
+
+- 14 contributors have changed 292 files with 3,286 additions and 1,024 deletions in 36 commits ([`v5.5.19...v5.5.20`](https://github.com/mdn/browser-compat-data/compare/v5.5.19...v5.5.20))
+- 16,153 total features
+- 1,079 total contributors
+- 4,767 total stargazers
+
 ## [v5.5.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.19)
 
 April 2, 2024
