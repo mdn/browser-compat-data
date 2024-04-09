@@ -1,5 +1,41 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.19)
+
+April 2, 2024
+
+### Statistics
+
+- 3 contributors have changed 7 files with 70 additions and 70 deletions in 10 commits ([`v5.5.18...v5.5.19`](https://github.com/mdn/browser-compat-data/compare/v5.5.18...v5.5.19))
+- 16,138 total features
+- 1,078 total contributors
+- 4,759 total stargazers
+
+## [v5.5.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.18)
+
+March 29, 2024
+
+### Additions
+
+- `api.HTMLIFrameElement.adAuctionHeaders` ([#22581](https://github.com/mdn/browser-compat-data/pull/22581))
+- `api.HTMLIFrameElement.sharedStorageWritable` ([#22681](https://github.com/mdn/browser-compat-data/pull/22681))
+- `api.HTMLImageElement.sharedStorageWritable` ([#22681](https://github.com/mdn/browser-compat-data/pull/22681))
+- `api.HTMLTemplateElement.shadowRootDelegatesFocus` ([#22582](https://github.com/mdn/browser-compat-data/pull/22582))
+- `api.Permissions.permission_bluetooth` ([#22525](https://github.com/mdn/browser-compat-data/pull/22525))
+- `api.Request.targetAddressSpace` ([#22681](https://github.com/mdn/browser-compat-data/pull/22681))
+- `api.RTCIceCandidate.relayProtocol` ([#22681](https://github.com/mdn/browser-compat-data/pull/22681))
+- `api.RTCIceCandidate.url` ([#22681](https://github.com/mdn/browser-compat-data/pull/22681))
+- `css.properties.align-content.block_context` ([#22702](https://github.com/mdn/browser-compat-data/pull/22702))
+- `html.elements.script.type.speculationrules.source_optional` ([#22701](https://github.com/mdn/browser-compat-data/pull/22701))
+- `http.headers.Permissions-Policy.bluetooth` ([#22525](https://github.com/mdn/browser-compat-data/pull/22525))
+
+### Statistics
+
+- 12 contributors have changed 133 files with 544 additions and 179 deletions in 34 commits ([`v5.5.17...v5.5.18`](https://github.com/mdn/browser-compat-data/compare/v5.5.17...v5.5.18))
+- 16,138 total features
+- 1,077 total contributors
+- 4,759 total stargazers
+
 ## [v5.5.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.17)
 
 March 26, 2024
