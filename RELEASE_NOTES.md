@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.21)
+
+April 12, 2024
+
+### Removals
+
+- `api.Headers.lexicographical_sorting` ([#22809](https://github.com/mdn/browser-compat-data/pull/22809))
+
+### Additions
+
+- `api.Headers.iterate_combined_duplicates` ([#22809](https://github.com/mdn/browser-compat-data/pull/22809))
+- `api.Headers.iterate_lexicographically` ([#22809](https://github.com/mdn/browser-compat-data/pull/22809))
+- `webextensions.api.proxy.ProxyInfo.proxyAuthorizationHeader` ([#22668](https://github.com/mdn/browser-compat-data/pull/22668))
+
+### Statistics
+
+- 5 contributors have changed 10 files with 98 additions and 39 deletions in 7 commits ([`v5.5.20...v5.5.21`](https://github.com/mdn/browser-compat-data/compare/v5.5.20...v5.5.21))
+- 16,155 total features
+- 1,079 total contributors
+- 4,769 total stargazers
+
 ## [v5.5.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.20)
 
 April 9, 2024
