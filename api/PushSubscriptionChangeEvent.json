@@ -6,7 +6,8 @@
         "spec_url": "https://w3c.github.io/push-api/#pushsubscriptionchangeevent-interface",
         "support": {
           "chrome": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://crbug.com/41275327"
           },
           "chrome_android": "mirror",
           "edge": {
@@ -14,7 +15,8 @@
             "version_removed": "79"
           },
           "firefox": {
-            "version_added": false
+            "version_added": false,
+            "notes": "The <code>pushsubscriptionchange</code> event is fired but does not have the <code>oldSubscription</code> and <code>newSubscription</code> properties. See <a href='https://bugzil.la/1497429'>bug 1497429</a>."
           },
           "firefox_android": "mirror",
           "ie": {
