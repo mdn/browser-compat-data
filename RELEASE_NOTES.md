@@ -1,5 +1,53 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.22)
+
+April 16, 2024
+
+### Removals
+
+- `css.properties.content-visibility.transitionable` ([#22820](https://github.com/mdn/browser-compat-data/pull/22820))
+- `javascript.builtins.ArrayBuffer.ArrayBuffer.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.DataView.DataView.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Float32Array.Float32Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Float64Array.Float64Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Int16Array.Int16Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Int32Array.Int32Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Int8Array.Int8Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Map.Map.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Set.Set.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.TypedArray.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Uint16Array.Uint16Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Uint32Array.Uint32Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Uint8Array.Uint8Array.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.Uint8ClampedArray.Uint8ClampedArray.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `javascript.builtins.WeakMap.WeakMap.new_required` ([#22825](https://github.com/mdn/browser-compat-data/pull/22825))
+- `webextensions.api.commands.Command.tab` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.details.description` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.details.name` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.details.shortcut` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+
+### Additions
+
+- `api.PerformanceScriptTiming.sourceCharPosition` ([#22758](https://github.com/mdn/browser-compat-data/pull/22758))
+- `api.PerformanceScriptTiming.sourceURL` ([#22758](https://github.com/mdn/browser-compat-data/pull/22758))
+- `css.properties.content-visibility.is_transitionable` ([#22820](https://github.com/mdn/browser-compat-data/pull/22820))
+- `javascript.builtins.JSON.parse.reviver_parameter_context_argument` ([#22800](https://github.com/mdn/browser-compat-data/pull/22800))
+- `javascript.statements.import.import_assertions.type_css` ([#22821](https://github.com/mdn/browser-compat-data/pull/22821))
+- `javascript.statements.import.import_attributes.type_css` ([#22821](https://github.com/mdn/browser-compat-data/pull/22821))
+- `webextensions.api.commands.Command.description` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.Command.shortcut` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.description` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.name` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+- `webextensions.api.commands.update.shortcut` ([#22827](https://github.com/mdn/browser-compat-data/pull/22827))
+
+### Statistics
+
+- 15 contributors have changed 158 files with 2,730 additions and 1,120 deletions in 32 commits ([`v5.5.21...v5.5.22`](https://github.com/mdn/browser-compat-data/compare/v5.5.21...v5.5.22))
+- 16,146 total features
+- 1,081 total contributors
+- 4,774 total stargazers
+
 ## [v5.5.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.21)
 
 April 12, 2024
