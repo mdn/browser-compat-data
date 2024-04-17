@@ -111,6 +111,46 @@
           "description": "<code>ambient-light-sensor</code> permission",
           "support": {
             "chrome": {
+              "version_added": "62",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "permission_background-sync": {
+        "__compat": {
+          "description": "<code>background-sync</code> permission",
+          "support": {
+            "chrome": {
               "version_added": "62"
             },
             "chrome_android": "mirror",
@@ -141,12 +181,12 @@
           }
         }
       },
-      "permission_background-sync": {
+      "permission_bluetooth": {
         "__compat": {
-          "description": "<code>background-sync</code> permission",
+          "description": "<code>bluetooth</code> permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "104"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -466,7 +506,7 @@
           "description": "<code>midi</code> permission",
           "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-integration",
           "tags": [
-            "web-features:midi"
+            "web-features:web-midi"
           ],
           "support": {
             "chrome": {
@@ -521,7 +561,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -626,7 +666,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.5"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

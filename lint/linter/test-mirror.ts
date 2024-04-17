@@ -8,7 +8,7 @@ import { BrowserName } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
-import { isMirrorEquivalent } from '../../scripts/fix/mirror.js';
+import { isMirrorEquivalent } from '../fixer/mirror.js';
 
 /**
  * Check the data to ensure all statements that should use `mirror` do
