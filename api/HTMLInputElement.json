@@ -239,7 +239,7 @@
         "__compat": {
           "spec_url": "https://w3c.github.io/html-media-capture/#dom-htmlinputelement-capture",
           "tags": [
-            "web-features:media-capture"
+            "web-features:html-media-capture"
           ],
           "support": {
             "chrome": {
@@ -404,6 +404,7 @@
       },
       "defaultValue": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/defaultValue",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-defaultvalue",
           "support": {
             "chrome": {
@@ -935,7 +936,10 @@
         "__compat": {
           "description": "<code>invalid</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/invalid_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-invalid",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/indices.html#event-invalid",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid"
+          ],
           "support": {
             "chrome": {
               "version_added": "10"
@@ -1066,6 +1070,7 @@
       },
       "max": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/max",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-max",
           "support": {
             "chrome": {
@@ -1109,6 +1114,7 @@
       },
       "maxLength": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/maxLength",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-maxlength",
           "support": {
             "chrome": {
@@ -1148,6 +1154,7 @@
       },
       "min": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/min",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-min",
           "support": {
             "chrome": {
@@ -1191,6 +1198,7 @@
       },
       "minLength": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/minLength",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-minlength",
           "support": {
             "chrome": {
@@ -1404,21 +1412,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview"
-              },
-              {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "125"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1453,21 +1449,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "preview"
-              },
-              {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "125"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1814,6 +1798,7 @@
       },
       "selectionEnd": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionEnd",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-textarea/input-selectionend",
           "support": {
             "chrome": {
@@ -1853,6 +1838,7 @@
       },
       "selectionStart": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/selectionStart",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#dom-textarea/input-selectionstart",
           "support": {
             "chrome": {
@@ -2018,6 +2004,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/showPicker",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-showpicker",
+          "tags": [
+            "web-features:show-picker-input"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -2050,6 +2039,9 @@
         "autocomplete_input": {
           "__compat": {
             "description": "<code>autocomplete</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2084,6 +2076,9 @@
         "color_input": {
           "__compat": {
             "description": "<code>color</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2119,6 +2114,9 @@
         "datalist_input": {
           "__compat": {
             "description": "<code>datalist</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2155,6 +2153,9 @@
         "date_input": {
           "__compat": {
             "description": "<code>date</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2191,6 +2192,9 @@
         "datetime_local_input": {
           "__compat": {
             "description": "<code>datetime-local</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2227,6 +2231,9 @@
         "file_input": {
           "__compat": {
             "description": "<code>file</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2260,6 +2267,9 @@
         "month_input": {
           "__compat": {
             "description": "<code>month</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2302,6 +2312,9 @@
         "time_input": {
           "__compat": {
             "description": "<code>time</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2323,7 +2336,10 @@
               "safari": {
                 "version_added": "16"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/261703"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -2337,6 +2353,9 @@
         "week_input": {
           "__compat": {
             "description": "<code>week</code> input",
+            "tags": [
+              "web-features:show-picker-input"
+            ],
             "support": {
               "chrome": {
                 "version_added": "99"
@@ -2592,6 +2611,7 @@
       },
       "type": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/type",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-type",
           "support": {
             "chrome": {
@@ -2764,6 +2784,7 @@
       },
       "value": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/value",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-value",
           "support": {
             "chrome": {
