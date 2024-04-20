@@ -183,6 +183,25 @@
             }
           }
         },
+        "match_origin_as_fallback": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "99"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "matches": {
           "__compat": {
             "support": {
@@ -228,6 +247,26 @@
                 "version_added": "15",
                 "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access alert. Additional loads after permission is granted will respect <code>run_at</code>."
               }
+            }
+          }
+        },
+        "world": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "111"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1736575"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         }

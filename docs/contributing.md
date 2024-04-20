@@ -22,11 +22,11 @@ The BCD project welcomes contributors of all kinds, however there are a few requ
 
 ### Guidelines
 
-The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](./CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
+The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](../CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
 
-This project has [a formal governance document](./GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
+This project has [a formal governance document](../GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
 
-The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](./LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
+The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](../LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
 
 ### Prerequisites
 

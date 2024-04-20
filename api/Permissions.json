@@ -111,6 +111,46 @@
           "description": "<code>ambient-light-sensor</code> permission",
           "support": {
             "chrome": {
+              "version_added": "62",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "permission_background-sync": {
+        "__compat": {
+          "description": "<code>background-sync</code> permission",
+          "support": {
+            "chrome": {
               "version_added": "62"
             },
             "chrome_android": "mirror",
@@ -141,12 +181,12 @@
           }
         }
       },
-      "permission_background-sync": {
+      "permission_bluetooth": {
         "__compat": {
-          "description": "<code>background-sync</code> permission",
+          "description": "<code>bluetooth</code> permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "104"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -465,6 +505,9 @@
         "__compat": {
           "description": "<code>midi</code> permission",
           "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-integration",
+          "tags": [
+            "web-features:web-midi"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -482,7 +525,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/107250"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -517,7 +561,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -613,6 +657,45 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "46"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.5"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            }
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "permission_screen-wake-lock": {
+        "__compat": {
+          "description": "<code>screen-wake-lock</code> permission",
+          "spec_url": "https://w3c.github.io/screen-wake-lock/#the-screen-wake-lock-powerful-feature",
+          "tags": [
+            "web-features:screen-wake-lock"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "84"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {

@@ -17,12 +17,13 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
  */
 const extractReleaseData = (str) => {
   // Note: \s is needed as some spaces in Apple source are non-breaking
-  const result = /Released\s(.*)\s.*\sVersion\s(.*?)\s(beta\s)?\((.*)\)/.exec(
-    str,
-  );
+  const result =
+    /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(\s*beta)?\s*\((.*)\)/.exec(
+      str,
+    );
   if (!result) {
     console.warn(
-      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`,
+      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.}`,
     );
     return null;
   }
