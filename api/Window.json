@@ -565,7 +565,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -690,7 +690,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/164193"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1184,11 +1185,11 @@
               "version_added": "11.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "In Safari, the <code>devicePixelRatio</code> does not change when the page is zoomed. See <a href='https://webkit.org/b/124862'>bug 124862</a>."
             },
-            "safari_ios": {
-              "version_added": "1"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1793,14 +1794,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1860,14 +1865,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3031,7 +3040,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1777171"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3377,42 +3387,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          }
-        },
-        "outerwidth_outerheight": {
-          "__compat": {
-            "description": "<code>outerHeight</code> and <code>outerWidth</code> features",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "80"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
             }
           }
         },
@@ -4365,7 +4339,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/164193"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5868,7 +5843,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -6551,6 +6526,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-visualviewport",
+          "tags": [
+            "web-features:visual-viewport"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
