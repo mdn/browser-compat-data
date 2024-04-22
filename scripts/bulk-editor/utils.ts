@@ -61,7 +61,13 @@ export const updateFeatures = (featureIDs, updater) => {
 
       const walker = walk(undefined, contents);
       for (const { path: featureID } of walker) {
-        if (featureIDs.includes(featureID)) {
+        if (
+          featureIDs.any(
+            (fid) =>
+              fid === featureID ||
+              (fid.endsWith('*') && featureID.startsWith(fid.slice(0, -1))),
+          )
+        ) {
           console.log(chalk`{yellow Updating ${featureID}...}`);
           performUpdate(featureID, contents, updater);
           changed = true;
