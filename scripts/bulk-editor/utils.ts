@@ -62,7 +62,7 @@ export const updateFeatures = (featureIDs, updater) => {
       const walker = walk(undefined, contents);
       for (const { path: featureID } of walker) {
         if (
-          featureIDs.any(
+          featureIDs.some(
             (fid) =>
               fid === featureID ||
               (fid.endsWith('*') && featureID.startsWith(fid.slice(0, -1))),
