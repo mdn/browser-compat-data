@@ -75,7 +75,11 @@ export const updateFeatures = (featureIDs, updater) => {
       }
 
       if (changed) {
-        fs.writeFileSync(fp, stringifyAndOrderProperties(contents), 'utf-8');
+        fs.writeFileSync(
+          fp,
+          stringifyAndOrderProperties(contents) + '\n',
+          'utf-8',
+        );
       }
     }
   }
