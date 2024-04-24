@@ -789,9 +789,23 @@
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/expect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-expect",
               "support": {
-                "chrome": {
-                  "version_added": "124"
-                },
+                "chrome": [
+                  {
+                    "version_added": "124",
+                    "impl_url": "https://crbug.com/1507845"
+                  },
+                  {
+                    "version_added": "122",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "viewTransition API for navigations",
+                        "value_to_set": "Enabled"
+                      }
+                    ],
+                    "impl_url": "https://crbug.com/1507845"
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
