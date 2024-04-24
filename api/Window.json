@@ -3793,9 +3793,23 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageswap_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pageswap",
           "support": {
-            "chrome": {
-              "version_added": "124"
-            },
+            "chrome": [
+              {
+                "version_added": "124",
+                "impl_url": "https://crbug.com/41495176"
+              },
+              {
+                "version_added": "123",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "viewTransition API for navigations",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "impl_url": "https://crbug.com/41495176"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
