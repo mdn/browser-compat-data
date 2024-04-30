@@ -1,5 +1,57 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.24)
+
+April 30, 2024
+
+### Removals
+
+- `api.PushManager.worker_support` ([#22885](https://github.com/mdn/browser-compat-data/pull/22885))
+- `css.properties.-webkit-line-clamp` ([#22951](https://github.com/mdn/browser-compat-data/pull/22951))
+- `css.properties.-webkit-line-clamp.none` ([#22951](https://github.com/mdn/browser-compat-data/pull/22951))
+
+### Additions
+
+- `api.CSSStyleSheet.CSSStyleSheet.options_baseURL_parameter` ([#22940](https://github.com/mdn/browser-compat-data/pull/22940))
+- `api.HTMLTemplateElement.shadowRootSerializable` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.PageRevealEvent.PageRevealEvent` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.PageRevealEvent.viewTransition` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.PageSwapEvent` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.PageSwapEvent.activation` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.PageSwapEvent.PageSwapEvent` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.PageSwapEvent.viewTransition` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.ShadowRoot.serializable` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransition.types` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.@@iterator` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.add` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.clear` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.delete` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.entries` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.forEach` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.has` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.keys` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.size` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.ViewTransitionTypeSet.values` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `api.Window.pagereveal_event` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `api.Window.pageswap_event` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `browsers.samsunginternet_android.releases.24.0` ([#22860](https://github.com/mdn/browser-compat-data/pull/22860))
+- `browsers.samsunginternet_android.releases.25.0` ([#22860](https://github.com/mdn/browser-compat-data/pull/22860))
+- `css.at-rules.view-transition` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `css.properties.line-clamp` ([#22951](https://github.com/mdn/browser-compat-data/pull/22951))
+- `css.properties.line-clamp.none` ([#22951](https://github.com/mdn/browser-compat-data/pull/22951))
+- `css.properties.view-transition-class` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `css.properties.view-transition-class.none` ([#22924](https://github.com/mdn/browser-compat-data/pull/22924))
+- `html.elements.link.rel.expect` ([#22638](https://github.com/mdn/browser-compat-data/pull/22638))
+- `html.global_attributes.anchor` ([#22914](https://github.com/mdn/browser-compat-data/pull/22914))
+
+### Statistics
+
+- 10 contributors have changed 73 files with 1,893 additions and 585 deletions in 40 commits ([`v5.5.23...v5.5.24`](https://github.com/mdn/browser-compat-data/compare/v5.5.23...v5.5.24))
+- 16,351 total features
+- 1,081 total contributors
+- 4,793 total stargazers
+
 ## [v5.5.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.23)
 
 April 23, 2024
