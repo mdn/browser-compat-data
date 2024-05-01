@@ -6,8 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-rows",
           "spec_url": [
             "https://drafts.csswg.org/css-grid/#track-sizing",
-            "https://drafts.csswg.org/css-grid/#subgrids",
-            "https://drafts.csswg.org/css-grid-3/#masonry-layout"
+            "https://drafts.csswg.org/css-grid/#subgrids"
           ],
           "tags": [
             "web-features:grid"
@@ -89,6 +88,39 @@
             }
           }
         },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-auto",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "fit-content": {
           "__compat": {
             "description": "<code>fit-content()</code>",
@@ -141,7 +173,8 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40128480"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -153,7 +186,8 @@
                     "name": "layout.css.grid-template-masonry-value.enabled",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "impl_url": "https://bugzil.la/1757446"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -163,7 +197,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "preview",
+                "impl_url": "https://webkit.org/b/248287"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -171,6 +206,72 @@
             },
             "status": {
               "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "max-content": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-max-content",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "min-content": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-min-content",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -209,6 +310,39 @@
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid/#valdef-grid-template-rows-none",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {

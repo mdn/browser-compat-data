@@ -88,7 +88,8 @@
               "notes": "Before Edge 79, query arguments in the base URL argument are removed when calling the <code>URL</code> constructor."
             },
             "firefox": {
-              "version_added": "26"
+              "version_added": "26",
+              "notes": "Before version 122, <code>host</code>, <code>hostname</code>, and <code>port</code> were not parsed for unknown protocols/schemes."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -435,6 +436,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "parse_static": {
+        "__compat": {
+          "description": "<code>parse()</code> static method",
+          "spec_url": "https://url.spec.whatwg.org/#dom-url-parse",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "126"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
