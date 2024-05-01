@@ -7,7 +7,7 @@ import { hideBin } from 'yargs/helpers';
 
 import { BrowserName, Identifier } from '../types/types.js';
 import { InternalSupportStatement } from '../types/index.js';
-import bcd from '../index.js';
+import bcd, { dataFolders } from '../index.js';
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
@@ -135,17 +135,7 @@ const traverseFeatures = (
  * @returns The list of features
  */
 const main = (
-  folders = [
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'webassembly',
-    'webdriver',
-  ],
+  folders = dataFolders.concat('webextensions'),
   browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
