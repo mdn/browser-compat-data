@@ -1,5 +1,62 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.25](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.25)
+
+May 3, 2024
+
+### Additions
+
+- `api.Document.hasUnpartitionedCookieAccess` ([#22978](https://github.com/mdn/browser-compat-data/pull/22978))
+- `api.Document.requestStorageAccess.types_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_all_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_BroadcastChannel_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_caches_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_cookies_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_createObjectURL_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_estimate_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_getDirectory_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_indexedDB_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_localStorage_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_locks_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_revokeObjectURL_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_sessionStorage_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Document.requestStorageAccess.types_parameter.types_SharedWorker_parameter` ([#22990](https://github.com/mdn/browser-compat-data/pull/22990))
+- `api.Permissions.permission_compute-pressure` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.disconnect` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.knownSources_static` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.observe` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.PressureObserver` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.takeRecords` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureObserver.unobserve` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureRecord` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureRecord.source` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureRecord.state` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureRecord.time` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.PressureRecord.toJSON` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+- `api.SharedWorker.SharedWorker.options_sameSiteCookies_parameter` ([#22977](https://github.com/mdn/browser-compat-data/pull/22977))
+- `api.StorageAccessHandle` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.BroadcastChannel` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.caches` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.createObjectURL` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.estimate` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.getDirectory` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.indexedDB` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.localStorage` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.locks` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.revokeObjectURL` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.sessionStorage` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `api.StorageAccessHandle.SharedWorker` ([#22993](https://github.com/mdn/browser-compat-data/pull/22993))
+- `browsers.edge.releases.127` ([#22976](https://github.com/mdn/browser-compat-data/pull/22976))
+- `http.headers.Permissions-Policy.compute-pressure` ([#22687](https://github.com/mdn/browser-compat-data/pull/22687))
+
+### Statistics
+
+- 9 contributors have changed 60 files with 1,658 additions and 251 deletions in 15 commits ([`v5.5.24...v5.5.25`](https://github.com/mdn/browser-compat-data/compare/v5.5.24...v5.5.25))
+- 16,393 total features
+- 1,082 total contributors
+- 4,793 total stargazers
+
 ## [v5.5.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.24)
 
 April 30, 2024
