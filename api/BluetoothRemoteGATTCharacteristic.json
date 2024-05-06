@@ -4,48 +4,30 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic",
         "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothgattcharacteristic-interface",
+        "tags": [
+          "web-features:web-bluetooth"
+        ],
         "support": {
           "chrome": [
             {
-              "version_added": "56",
+              "version_added": "70",
               "partial_implementation": true,
-              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+              "notes": "Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
+              "version_removed": "70",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
             }
           ],
           "chrome_android": {
             "version_added": "56"
           },
-          "edge": [
-            {
-              "version_added": "79",
-              "partial_implementation": true,
-              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
-            }
-          ],
+          "edge": "mirror",
           "firefox": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://bugzil.la/674737"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -55,7 +37,8 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://webkit.org/b/101034"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
@@ -77,6 +60,9 @@
             "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetoothremotegattcharacteristic-characteristicvaluechanged",
             "https://webbluetoothcg.github.io/web-bluetooth/#dom-characteristiceventhandlers-oncharacteristicvaluechanged"
           ],
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -84,7 +70,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -94,7 +81,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -113,6 +101,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptor",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptor",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "57"
@@ -120,7 +111,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -130,7 +122,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -149,6 +142,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/getDescriptors",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-getdescriptors",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "57"
@@ -156,7 +152,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -166,7 +163,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -185,6 +183,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/properties",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-properties",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -192,7 +193,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -202,7 +204,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -221,6 +224,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-readvalue",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -228,7 +234,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -238,7 +245,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -257,6 +265,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/service",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-service",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -264,7 +275,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -274,7 +286,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -293,6 +306,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-startnotifications",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -300,7 +316,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -310,7 +327,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -329,6 +347,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/stopNotifications",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-stopnotifications",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -336,7 +357,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -346,7 +368,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -365,6 +388,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/uuid",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-uuid",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -372,7 +398,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -382,7 +409,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -401,6 +429,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/value",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-value",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -408,7 +439,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -418,7 +450,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -437,6 +470,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValue",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevalue",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -444,7 +480,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -454,7 +491,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -473,6 +511,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithoutResponse",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithoutresponse",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "85"
@@ -480,7 +521,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -490,7 +532,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -509,6 +552,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTCharacteristic/writeValueWithResponse",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattcharacteristic-writevaluewithresponse",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "85"
@@ -516,7 +562,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -526,7 +573,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
