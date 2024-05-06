@@ -23,6 +23,15 @@ yarn add @mdn/browser-compat-data
 Then, you can import BCD into your project with either `import` or `require()`:
 
 ```js
+// ESM with Import Attributes (NodeJS 20+)
+import bcd from '@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  with: { type: 'json' },
+});
+
+// ...or...
+
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
@@ -48,6 +57,19 @@ const bcd = require('@mdn/browser-compat-data');
 You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
+// ESM with Import Attributes (Deno 1.37+)
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    with: { type: 'json' },
+  }
+);
+
+// ...or...
+
+// ESM with Import Assertions (Deno 1.17+)
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
 const { default: bcd } = await import(
@@ -55,6 +77,13 @@ const { default: bcd } = await import(
   {
     assert: { type: 'json' },
   }
+);
+
+// ...or...
+
+// Fetch Method (Deno 1.0+)
+const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
+  (response) => response.json(),
 );
 ```
 
@@ -184,8 +213,10 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
 
-- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features), [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data), web frameworks (e.g. React, Vue) or proprietary features.
+- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data).
+- A source for custom features added by web frameworks (e.g. React, Vue) or corporate runtimes (e.g. AWS Lambda, Azure Functions).
 - A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
+- The location where Baseline data is hosted; while Baseline pulls from BCD, the Baseline data is managed by the W3C WebDX Community Group on their own [GitHub repo](https://github.com/web-platform-dx/web-features).
 
 ## Issues?
 
