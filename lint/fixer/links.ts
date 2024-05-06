@@ -3,8 +3,8 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils.js';
-import { processData } from '../../test/linter/test-links.js';
+import { IS_WINDOWS } from '../utils.js';
+import { processData } from '../linter/test-links.js';
 
 /**
  * Fix issues with links throughout the BCD files

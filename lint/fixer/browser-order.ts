@@ -8,7 +8,7 @@ import {
   CompatStatement,
   SupportBlock,
 } from '../../types/types.js';
-import { IS_WINDOWS } from '../../test/utils.js';
+import { IS_WINDOWS } from '../utils.js';
 
 /**
  * Return a new "support_block" object whose first-level properties

@@ -13,6 +13,20 @@ import { normalizePath, walk } from './utils/index.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
+export const dataFolders = [
+  'api',
+  'browsers',
+  'css',
+  'html',
+  'http',
+  'javascript',
+  'mathml',
+  'svg',
+  'webassembly',
+  'webdriver',
+  'webextensions',
+];
+
 /**
  * Recursively load one or more directories passed as arguments.
  * @param dirs The directories to load
@@ -52,16 +66,4 @@ const load = async (...dirs: string[]): Promise<CompatData> => {
   return result as CompatData;
 };
 
-export default await load(
-  'api',
-  'browsers',
-  'css',
-  'html',
-  'http',
-  'javascript',
-  'mathml',
-  'svg',
-  'webassembly',
-  'webdriver',
-  'webextensions',
-);
+export default await load(...dataFolders);
