@@ -457,6 +457,7 @@
       },
       "ping": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLAreaElement/ping",
           "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#dom-area-ping",
           "support": {
             "chrome": {
@@ -467,7 +468,9 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -625,7 +628,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -659,7 +662,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -693,7 +696,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

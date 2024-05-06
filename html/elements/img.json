@@ -6,16 +6,34 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/img",
           "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element",
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "1"
+              },
+              {
+                "alternative_name": "image",
+                "version_added": "≤37"
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
+            "edge": [
+              {
+                "version_added": "12"
+              },
+              {
+                "alternative_name": "image",
+                "version_added": "15"
+              }
+            ],
+            "firefox": [
+              {
+                "version_added": "1"
+              },
+              {
+                "alternative_name": "image",
+                "version_added": "≤32"
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": true
@@ -23,9 +41,15 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "1"
+              },
+              {
+                "alternative_name": "image",
+                "version_added": "5.1"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -38,6 +62,7 @@
         },
         "align": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-align",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -72,6 +97,7 @@
         },
         "alt": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-alt",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -107,6 +133,9 @@
         "aspect_ratio_computed_from_attributes": {
           "__compat": {
             "description": "Aspect ratio computed from <code>width</code> and <code>height</code> attributes",
+            "tags": [
+              "web-features:aspect-ratio"
+            ],
             "support": {
               "chrome": {
                 "version_added": "79"
@@ -180,6 +209,7 @@
         },
         "border": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-border",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -214,6 +244,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-crossorigin",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -248,8 +279,8 @@
         },
         "decoding": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/decoding",
-            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-decoding",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/img#decoding",
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-decoding",
             "support": {
               "chrome": {
                 "version_added": "65"
@@ -322,6 +353,7 @@
         },
         "height": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-height",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -356,6 +388,7 @@
         },
         "hspace": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-hspace",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -390,6 +423,7 @@
         },
         "ismap": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-ismap",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -424,8 +458,7 @@
         },
         "loading": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Performance/Lazy_loading",
-            "spec_url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes",
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-loading",
             "support": {
               "chrome": {
                 "version_added": "77"
@@ -458,6 +491,7 @@
         },
         "longdesc": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-longdesc",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -492,6 +526,7 @@
         },
         "name": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-name",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -524,42 +559,9 @@
             }
           }
         },
-        "onerror": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "≤79"
-              },
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": null
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
         "referrerpolicy": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-referrerpolicy",
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -702,6 +704,7 @@
         },
         "sizes": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-sizes",
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -736,6 +739,7 @@
         },
         "src": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-src",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -770,6 +774,7 @@
         },
         "srcset": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset",
             "support": {
               "chrome": {
                 "version_added": "34"
@@ -804,6 +809,7 @@
         },
         "usemap": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-hyperlink-usemap",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -873,6 +879,7 @@
         },
         "vspace": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-vspace",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -907,6 +914,7 @@
         },
         "width": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width",
             "support": {
               "chrome": {
                 "version_added": "1"

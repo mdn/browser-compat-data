@@ -36,42 +36,9 @@
             "deprecated": false
           }
         },
-        "accesskey": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": true
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "≤4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": true
-            }
-          }
-        },
         "alt": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-alt",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -106,6 +73,7 @@
         },
         "coords": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-coords",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -140,6 +108,7 @@
         },
         "download": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-download",
             "support": {
               "chrome": {
                 "version_added": "54"
@@ -174,6 +143,7 @@
         },
         "href": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-href",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -247,6 +217,7 @@
         },
         "nohref": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-area-nohref",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -281,6 +252,7 @@
         },
         "ping": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#ping",
             "support": {
               "chrome": {
                 "version_added": "12"
@@ -291,13 +263,8 @@
               },
               "firefox": {
                 "version_added": "1",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "browser.send_pings",
-                    "value_to_set": "true"
-                  }
-                ]
+                "partial_implementation": true,
+                "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -324,6 +291,7 @@
         },
         "referrerpolicy": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-referrerpolicy",
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -341,11 +309,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "11.1"
+                "version_added": "14"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "7.2"
               },
@@ -468,6 +434,7 @@
         },
         "rel": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-rel",
             "support": {
               "chrome": {
                 "version_added": "16"
@@ -501,7 +468,7 @@
           },
           "noopener": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Link_types/noopener",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/noopener",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-noopener",
               "support": {
                 "chrome": {
@@ -536,7 +503,7 @@
           },
           "noreferrer": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Link_types/noreferrer",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/noreferrer",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer",
               "support": {
                 "chrome": {
@@ -577,6 +544,7 @@
         },
         "shape": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/image-maps.html#attr-area-shape",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -645,6 +613,7 @@
         },
         "target": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-target",
             "support": {
               "chrome": {
                 "version_added": "1"
