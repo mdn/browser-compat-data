@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.26)
+
+May 7, 2024
+
+### Additions
+
+- `api.InstallEvent.addRoutes` ([#22870](https://github.com/mdn/browser-compat-data/pull/22870))
+- `browsers.nodejs.releases.22.0.0` ([#22944](https://github.com/mdn/browser-compat-data/pull/22944))
+
+### Statistics
+
+- 12 contributors have changed 22 files with 197 additions and 90 deletions in 16 commits ([`v5.5.25...v5.5.26`](https://github.com/mdn/browser-compat-data/compare/v5.5.25...v5.5.26))
+- 16,394 total features
+- 1,087 total contributors
+- 4,796 total stargazers
+
 ## [v5.5.25](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.25)
 
 May 3, 2024
