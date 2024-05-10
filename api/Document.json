@@ -211,6 +211,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/adoptedStyleSheets",
           "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
+          "tags": [
+            "web-features:constructed-stylesheets"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -3103,7 +3106,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3170,6 +3176,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture",
           "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-document-exitpictureinpicture",
+          "tags": [
+            "web-features:picture-in-picture"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -3208,6 +3217,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/exitPointerLock",
           "spec_url": "https://w3c.github.io/pointerlock/#dom-document-exitpointerlock",
+          "tags": [
+            "web-features:pointer-lock"
+          ],
           "support": {
             "chrome": [
               {
@@ -3498,7 +3510,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/273466"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3601,7 +3614,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "alternative_name": "webkitIsFullScreen",
@@ -3714,7 +3730,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3826,7 +3845,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -3920,7 +3942,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -4025,7 +4050,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -4510,6 +4538,42 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "hasUnpartitionedCookieAccess": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasUnpartitionedCookieAccess",
+          "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-document-hasunpartitionedcookieaccess",
+          "support": {
+            "chrome": {
+              "version_added": "125"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5114,10 +5178,47 @@
           }
         }
       },
+      "parseHTMLUnsafe_static": {
+        "__compat": {
+          "description": "<code>parseHTMLUnsafe()</code> static method",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-parsehtmlunsafe",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "123"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "pictureInPictureElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement",
           "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-documentorshadowroot-pictureinpictureelement①⑤",
+          "tags": [
+            "web-features:picture-in-picture"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -5156,6 +5257,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled",
           "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-document-pictureinpictureenabled",
+          "tags": [
+            "web-features:picture-in-picture"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -5280,6 +5384,9 @@
             "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
             "https://w3c.github.io/pointerlock/#dom-document-onpointerlockchange"
           ],
+          "tags": [
+            "web-features:pointer-lock"
+          ],
           "support": {
             "chrome": [
               {
@@ -5332,6 +5439,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pointerLockElement",
           "spec_url": "https://w3c.github.io/pointerlock/#dom-documentorshadowroot-pointerlockelement",
+          "tags": [
+            "web-features:pointer-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "37"
@@ -5380,6 +5490,9 @@
           "spec_url": [
             "https://w3c.github.io/pointerlock/#pointerlockchange-and-pointerlockerror-events",
             "https://w3c.github.io/pointerlock/#dom-document-onpointerlockerror"
+          ],
+          "tags": [
+            "web-features:pointer-lock"
           ],
           "support": {
             "chrome": [
@@ -6177,12 +6290,546 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "types_parameter": {
+          "__compat": {
+            "description": "<code>types</code> parameter",
+            "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dictdef-storageaccesstypes",
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "types_all_parameter": {
+            "__compat": {
+              "description": "<code>types.all</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-all",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_BroadcastChannel_parameter": {
+            "__compat": {
+              "description": "<code>types.BroadcastChannel</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-broadcastchannel",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_caches_parameter": {
+            "__compat": {
+              "description": "<code>types.caches</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-caches",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_cookies_parameter": {
+            "__compat": {
+              "description": "<code>types.cookies</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-cookies",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_createObjectURL_parameter": {
+            "__compat": {
+              "description": "<code>types.createObjectURL</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-createobjecturl",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_estimate_parameter": {
+            "__compat": {
+              "description": "<code>types.estimate</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-estimate",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_getDirectory_parameter": {
+            "__compat": {
+              "description": "<code>types.getDirectory</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-getdirectory",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_indexedDB_parameter": {
+            "__compat": {
+              "description": "<code>types.indexedDB</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-indexeddb",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_localStorage_parameter": {
+            "__compat": {
+              "description": "<code>types.localStorage</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-localstorage",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_locks_parameter": {
+            "__compat": {
+              "description": "<code>types.locks</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-locks",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_revokeObjectURL_parameter": {
+            "__compat": {
+              "description": "<code>types.revokeObjectURL</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-revokeobjecturl",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_sessionStorage_parameter": {
+            "__compat": {
+              "description": "<code>types.sessionStorage</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-sessionstorage",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "types_SharedWorker_parameter": {
+            "__compat": {
+              "description": "<code>types.SharedWorker</code> parameter",
+              "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-storageaccesstypes-sharedworker",
+              "support": {
+                "chrome": {
+                  "version_added": "125"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
@@ -6212,7 +6859,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -6385,6 +7034,9 @@
             "https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscrollend"
           ],
+          "tags": [
+            "web-features:scrollend"
+          ],
           "support": {
             "chrome": {
               "version_added": "114"
@@ -6402,7 +7054,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/201556"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
