@@ -125,6 +125,42 @@
             }
           }
         },
+        "inherit_from_originating_element": {
+          "__compat": {
+            "description": "Backdrop elements inherit their values from its originating element",
+            "support": {
+              "chrome": {
+                "version_added": "122",
+                "impl_url": "https://crbug.com/40569411"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "120",
+                "impl_url": "https://bugzil.la/1855668"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4",
+                "impl_url": "https://webkit.org/b/263834"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "popover": {
           "__compat": {
             "description": "Support on popovers",
@@ -137,21 +173,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "preview"
-                },
-                {
-                  "version_added": "114",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.element.popover.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "125"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false

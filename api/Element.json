@@ -943,7 +943,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "125"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -953,14 +953,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -976,7 +976,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "125"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -986,14 +986,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1324,7 +1324,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2558,6 +2558,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/assignedSlot",
           "spec_url": "https://dom.spec.whatwg.org/#dom-slotable-assignedslot",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -2630,7 +2633,7 @@
             "spec_url": "https://dom.spec.whatwg.org/#dom-shadowrootinit-clonable",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "124"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -2644,10 +2647,15 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "alternative_name": "cloneable",
-                "version_added": "16.4"
-              },
+              "safari": [
+                {
+                  "version_added": "17.4"
+                },
+                {
+                  "alternative_name": "cloneable",
+                  "version_added": "16.4"
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
@@ -2902,9 +2910,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -3044,6 +3050,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/checkVisibility",
           "spec_url": "https://drafts.csswg.org/cssom-view-1/#dom-element-checkvisibility",
+          "tags": [
+            "web-features:check-visibility"
+          ],
           "support": {
             "chrome": {
               "version_added": "105"
@@ -3061,7 +3070,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "17.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3077,6 +3086,9 @@
           "__compat": {
             "description": "<code>options.checkOpacity</code> parameter",
             "spec_url": "https://drafts.csswg.org/cssom-view-1/#dictdef-checkvisibilityoptions",
+            "tags": [
+              "web-features:check-visibility"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105"
@@ -3111,6 +3123,9 @@
           "__compat": {
             "description": "<code>options.checkVisibilityCSS</code> parameter",
             "spec_url": "https://drafts.csswg.org/cssom-view-1/#dictdef-checkvisibilityoptions",
+            "tags": [
+              "web-features:check-visibility"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105"
@@ -3859,7 +3874,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1278697"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3894,14 +3910,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "110",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.content-visibility.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "124"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3918,7 +3927,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -4045,6 +4054,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "currentCSSZoom": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/currentCSSZoom",
+          "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-currentcsszoom",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "126"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -4340,7 +4383,7 @@
             "edge": {
               "version_added": "12",
               "partial_implementation": true,
-              "notes": "The <code>onfocusout</code> event handler property is not supported. To listen to this event, use <code>element.addEventListener('focusin', function() {});</code>."
+              "notes": "The <code>onfocusout</code> event handler property is not supported. To listen to this event, use <code>element.addEventListener('focusout', function() {});</code>."
             },
             "firefox": {
               "version_added": "52",
@@ -4459,7 +4502,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -4571,7 +4617,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -5290,6 +5339,41 @@
           }
         }
       },
+      "getHTML": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-gethtml",
+          "support": {
+            "chrome": {
+              "version_added": "125"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1886630"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/271343"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "gotpointercapture_event": {
         "__compat": {
           "description": "<code>gotpointercapture</code> event",
@@ -5540,7 +5624,7 @@
       "innerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/innerHTML",
-          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-innerhtml-innerhtml",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-innerhtml",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5691,7 +5775,7 @@
       "insertAdjacentHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/insertAdjacentHTML",
-          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-element-insertadjacenthtml",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#the-insertadjacenthtml()-method",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6628,7 +6712,7 @@
       "outerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/outerHTML",
-          "spec_url": "https://w3c.github.io/DOM-Parsing/#dom-element-outerhtml",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-outerhtml",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -7813,7 +7897,10 @@
               {
                 "version_added": "16.4",
                 "partial_implementation": true,
-                "notes": "Only available on iPad, not on iPhone. Shows an overlay button which can not be disabled."
+                "notes": [
+                  "Only available on iPad, not on iPhone.",
+                  "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+                ]
               },
               {
                 "prefix": "webkit",
@@ -7950,6 +8037,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/requestPointerLock",
           "spec_url": "https://w3c.github.io/pointerlock/#dom-element-requestpointerlock",
+          "tags": [
+            "web-features:pointer-lock"
+          ],
           "support": {
             "chrome": [
               {
@@ -8395,6 +8485,9 @@
             "https://drafts.csswg.org/cssom-view/#eventdef-document-scrollend",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscrollend"
           ],
+          "tags": [
+            "web-features:scrollend"
+          ],
           "support": {
             "chrome": {
               "version_added": "114"
@@ -8412,7 +8505,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/201556"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -8479,7 +8573,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/scrollIntoView",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollintoview",
           "tags": [
-            "web-features:scrollintoview"
+            "web-features:scroll-into-view"
           ],
           "support": {
             "chrome": {
@@ -8552,7 +8646,7 @@
           "__compat": {
             "description": "<code>options</code> parameter",
             "tags": [
-              "web-features:scrollintoview"
+              "web-features:scroll-into-view"
             ],
             "support": {
               "chrome": {
@@ -9242,6 +9336,39 @@
           }
         }
       },
+      "setHTMLUnsafe": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-sethtmlunsafe",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "123"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "setPointerCapture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setPointerCapture",
@@ -9329,6 +9456,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/slot",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-slot①",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
