@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.27)
+
+May 10, 2024
+
+### Additions
+
+- `browsers.chrome_android.releases.126` ([#23040](https://github.com/mdn/browser-compat-data/pull/23040))
+- `browsers.chrome.releases.126` ([#23040](https://github.com/mdn/browser-compat-data/pull/23040))
+- `browsers.opera_android.releases.82` ([#23045](https://github.com/mdn/browser-compat-data/pull/23045))
+- `browsers.opera.releases.111` ([#23046](https://github.com/mdn/browser-compat-data/pull/23046))
+- `browsers.webview_android.releases.126` ([#23040](https://github.com/mdn/browser-compat-data/pull/23040))
+
+### Statistics
+
+- 6 contributors have changed 18 files with 367 additions and 275 deletions in 11 commits ([`v5.5.26...v5.5.27`](https://github.com/mdn/browser-compat-data/compare/v5.5.26...v5.5.27))
+- 16,394 total features
+- 1,087 total contributors
+- 4,798 total stargazers
+
 ## [v5.5.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.26)
 
 May 7, 2024
