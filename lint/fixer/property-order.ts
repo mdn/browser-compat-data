@@ -3,8 +3,8 @@
 
 import fs from 'node:fs';
 
-import { IS_WINDOWS } from '../../test/utils.js';
-import stringifyAndOrderProperties from '../lib/stringify-and-order-properties.js';
+import { IS_WINDOWS } from '../utils.js';
+import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-properties.js';
 
 /**
  * Fix issues with the property order throughout the BCD files

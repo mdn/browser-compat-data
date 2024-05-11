@@ -12,7 +12,7 @@ import {
 } from '../../types/index.js';
 import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
-import mirrorSupport from '../build/mirror.js';
+import mirrorSupport from '../../scripts/build/mirror.js';
 
 const downstreamBrowsers = (
   Object.keys(bcd.browsers) as (keyof typeof bcd.browsers)[]

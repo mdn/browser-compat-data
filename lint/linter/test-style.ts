@@ -11,9 +11,9 @@ import {
   indexToPos,
   jsonDiff,
 } from '../utils.js';
-import { orderSupportBlock } from '../../scripts/fix/browser-order.js';
-import { orderFeatures } from '../../scripts/fix/feature-order.js';
-import { orderStatements } from '../../scripts/fix/statement-order.js';
+import { orderSupportBlock } from '../fixer//browser-order.js';
+import { orderFeatures } from '../fixer//feature-order.js';
+import { orderStatements } from '../fixer//statement-order.js';
 import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-properties.js';
 
 /**

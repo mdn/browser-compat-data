@@ -4,8 +4,8 @@
 import fs from 'node:fs';
 
 import { Identifier } from '../../types/types.js';
-import { checkExperimental } from '../../test/linter/test-status.js';
-import { IS_WINDOWS } from '../../test/utils.js';
+import { checkExperimental } from '../linter/test-status.js';
+import { IS_WINDOWS } from '../utils.js';
 
 /**
  * Fix the status values

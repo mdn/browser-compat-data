@@ -1185,11 +1185,11 @@
               "version_added": "11.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "In Safari, the <code>devicePixelRatio</code> does not change when the page is zoomed. See <a href='https://webkit.org/b/124862'>bug 124862</a>."
             },
-            "safari_ios": {
-              "version_added": "1"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3713,6 +3713,41 @@
           }
         }
       },
+      "pagereveal_event": {
+        "__compat": {
+          "description": "<code>pagereveal</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pagereveal",
+          "support": {
+            "chrome": {
+              "version_added": "123"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "pageshow_event": {
         "__compat": {
           "description": "<code>pageshow</code> event",
@@ -3747,6 +3782,41 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pageswap_event": {
+        "__compat": {
+          "description": "<code>pageswap</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageswap_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pageswap",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -5850,6 +5920,7 @@
       "sharedStorage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sharedStorage",
+          "spec_url": "https://wicg.github.io/shared-storage/#dom-window-sharedstorage",
           "support": {
             "chrome": {
               "version_added": "117"
@@ -6085,7 +6156,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -6526,6 +6599,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-visualviewport",
+          "tags": [
+            "web-features:visual-viewport"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
