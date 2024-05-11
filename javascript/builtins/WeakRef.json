@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef",
           "spec_url": "https://tc39.es/ecma262/multipage/managing-memory.html#sec-weak-ref-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-2021"
+          ],
           "support": {
             "chrome": {
               "version_added": "84"
@@ -21,27 +24,12 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "14.6.0"
-              },
-              {
-                "version_added": "13.0.0",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--harmony-weak-refs"
-                  }
-                ]
-              }
-            ],
+            "nodejs": {
+              "version_added": "14.6.0"
+            },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": {
-              "version_added": false
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "14.1"
             },
@@ -60,6 +48,9 @@
             "description": "<code>WeakRef()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef/WeakRef",
             "spec_url": "https://tc39.es/ecma262/multipage/managing-memory.html#sec-weak-ref-constructor",
+            "tags": [
+              "web-features:snapshot:ecmascript-2021"
+            ],
             "support": {
               "chrome": {
                 "version_added": "84"
@@ -76,27 +67,12 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "14.6.0"
-                },
-                {
-                  "version_added": "13.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony-weak-refs"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "14.6.0"
+              },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "14.1"
               },
@@ -115,6 +91,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakRef/deref",
             "spec_url": "https://tc39.es/ecma262/multipage/managing-memory.html#sec-weak-ref.prototype.deref",
+            "tags": [
+              "web-features:snapshot:ecmascript-2021"
+            ],
             "support": {
               "chrome": {
                 "version_added": "84"
@@ -131,29 +110,56 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "14.6.0"
-                },
-                {
-                  "version_added": "13.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony-weak-refs"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "14.6.0"
+              },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "14.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "symbol_as_target": {
+          "__compat": {
+            "description": "Non-registered symbol as target",
+            "tags": [
+              "web-features:snapshot:ecmascript-2023"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "20.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

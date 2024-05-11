@@ -6,7 +6,8 @@
         "spec_url": "https://drafts.csswg.org/css-font-loading/#FontFaceSet-interface",
         "support": {
           "chrome": {
-            "version_added": "35"
+            "version_added": "35",
+            "notes": "Chrome does not expose the <code>FontFaceSet</code> interface directly, and is only available through <a href='https://developer.mozilla.org/docs/Web/API/Document/fonts'><code>Document.fonts</code></a> or <a href='https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts'><code>WorkerGlobalScope.fonts</code></a>."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -77,7 +78,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "105"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -139,9 +140,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/check",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-check",
           "support": {
-            "chrome": {
-              "version_added": "35"
-            },
+            "chrome": [
+              {
+                "version_added": "120"
+              },
+              {
+                "version_added": "35",
+                "partial_implementation": true,
+                "notes": "Prior to version 120, this method returned <code>false</code> instead of <code>true</code> for nonexistent or locally installed fonts. See <a href='https://crbug.com/40893726'>bug 40893726</a>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -611,6 +619,39 @@
       "values": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/values",
+          "support": {
+            "chrome": {
+              "version_added": "48"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "41"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "10"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "@@iterator": {
+        "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-font-loading/#fontfaceset",
           "support": {
             "chrome": {
               "version_added": "48"

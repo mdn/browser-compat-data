@@ -56,7 +56,8 @@
             "version_added": "7"
           },
           "safari_ios": {
-            "version_added": false
+            "version_added": "16.4",
+            "notes": "Notifications are supported in web apps saved to the home screen."
           },
           "samsunginternet_android": {
             "version_added": "4.0",
@@ -68,7 +69,7 @@
           },
           "webview_android": {
             "version_added": false,
-            "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
+            "impl_url": "https://crbug.com/551446"
           }
         },
         "status": {
@@ -97,8 +98,8 @@
                 "version_added": "22"
               },
               {
-                "version_added": "4",
-                "prefix": "moz"
+                "prefix": "moz",
+                "version_added": "4"
               }
             ],
             "firefox_android": "mirror",
@@ -114,7 +115,8 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -263,16 +265,20 @@
             },
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17",
+              "notes": "Badging is supported for web apps saved to the Dock in Safari 17 on the macOS Sonoma beta"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -308,7 +314,8 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -397,7 +404,8 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -482,7 +490,8 @@
               "version_added": "16"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -526,7 +535,8 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -615,7 +625,8 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -635,7 +646,7 @@
           "spec_url": "https://notifications.spec.whatwg.org/#image-resource",
           "support": {
             "chrome": {
-              "version_added": "53"
+              "version_added": "56"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -697,7 +708,8 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -711,9 +723,10 @@
           }
         }
       },
-      "maxActions": {
+      "maxActions_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/maxActions",
+          "description": "<code>maxActions</code> static property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/maxActions_static",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-maxactions",
           "support": {
             "chrome": {
@@ -749,9 +762,10 @@
           }
         }
       },
-      "permission": {
+      "permission_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/permission",
+          "description": "<code>permission</code> static property",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/permission_static",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-permission",
           "support": {
             "chrome": {
@@ -779,7 +793,8 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -829,9 +844,10 @@
           }
         }
       },
-      "requestPermission": {
+      "requestPermission_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/requestPermission",
+          "description": "<code>requestPermission()</code> static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Notification/requestPermission_static",
           "spec_url": "https://notifications.spec.whatwg.org/#dom-notification-requestpermission",
           "support": {
             "chrome": {
@@ -877,7 +893,8 @@
               }
             ],
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -903,9 +920,23 @@
             "edge": {
               "version_added": "17"
             },
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "117",
+                "partial_implementation": true,
+                "notes": "Only supported on Windows. Behind a flag on other operating systems."
+              },
+              {
+                "version_added": "117",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webnotifications.requireinteraction.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -923,7 +954,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -997,7 +1028,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.6"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1006,7 +1037,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1042,7 +1073,8 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": false,
+              "notes": "This property is exposed but is not implemented. See <a href='https://webkit.org/b/258922'>bug 258922</a>."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -1124,7 +1156,8 @@
               "version_added": "11"
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -1148,7 +1181,7 @@
             },
             "chrome_android": {
               "version_added": "53",
-              "notes": "<a href='https://crbug.com/971422'>Does not work</a> on Android O or later regardless of Chrome version."
+              "notes": "Does not work on Android O or later regardless of Chrome version, see <a href='https://crbug.com/971422'>bug 971422</a>."
             },
             "edge": "mirror",
             "firefox": {
@@ -1160,18 +1193,12 @@
             },
             "oculus": "mirror",
             "opera": "mirror",
-            "opera_android": {
-              "version_added": "41",
-              "notes": "<a href='https://crbug.com/971422'>Does not work</a> on Android O or later regardless of Chrome version."
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": false
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0",
-              "notes": "<a href='https://crbug.com/971422'>Does not work</a> on Android O or later regardless of Chrome version."
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
             }

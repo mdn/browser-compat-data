@@ -53,6 +53,12 @@ For example, although the UI Events specification defines a [`DOM_KEY_LOCATION_S
 
 This guideline was proposed in [#7936](https://github.com/mdn/browser-compat-data/issues/7585), based in part on previous discussion in [#7585](https://github.com/mdn/browser-compat-data/issues/7585).
 
+## Dictionaries and enumerations (enums)
+
+[Dictionaries](https://webidl.spec.whatwg.org/#idl-dictionaries) and [enumerations (enums)](https://webidl.spec.whatwg.org/#idl-enums) in Web IDL are used in specifications to define a set of properties that may be reused across various interfaces. For web developers, they aren't observable directly; they act as helpers for web browser engineers to avoid internally repeating API definitions. Add dictionary members and enum values to the appropriate methods and properties when needed.
+
+For example, [`ScrollToOptions`](https://drafts.csswg.org/cssom-view/#dictdef-scrolltooptions) is a dictionary defined in the CSSOM View specification. The properties of this dictionary are available to an argument of various methods, including `Element.scroll()`, `Element.scrollTo()`, `Window.scrollBy()` and more. These properties are added to each of the members as [parameter object features](./index.md#parameters-and-parameter-object-features).
+
 ## Mixins
 
 [Interface mixins](https://webidl.spec.whatwg.org/#idl-interface-mixins) in Web IDL are used in specifications to define Web APIs. For web developers, they aren't observable directly; they act as helpers for web browser engineers to avoid internally repeating API definitions. Add mixin members directly to the corresponding interface they're exposed on.
@@ -63,11 +69,15 @@ Members of this mixin are available to `HTMLAnchorElement` and `HTMLAreaElement`
 
 This guideline was proposed in [#8929](https://github.com/mdn/browser-compat-data/issues/8929), based in part on previous discussion in [#472](https://github.com/mdn/browser-compat-data/issues/472).
 
+## Namespaces
+
+[Namespaces](https://webidl.spec.whatwg.org/#idl-namespaces) in Web IDL are similar to interfaces. A namespace should only be documented in BCD if it contains properties or functions that would normally be documented. For example, the `console` namespace contains many functions, so it should be documented in BCD. The `GPUBufferUsage` namespace only contains constants, which should not be documented in BCD; thus, the `GPUBufferUsage` namespace should not be documented.
+
 ## Callback interfaces and functions
 
 Don't add unexposed callbacks as features in `api`. If needed, represent callbacks as subfeatures of relevant methods or properties.
 
-Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback inferface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
+Callback [functions](https://webidl.spec.whatwg.org/#idl-callback-functions) and [interfaces](https://webidl.spec.whatwg.org/#idl-callback-interfaces) (denoted by `callback` and `callback interface` in Web IDL) are used in specifications to define Web APIs. Where defined without the `[Exposed]` attribute, they aren't observable directly to web developers.
 
 For example, [`addEventListener()`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) is specified as taking an `EventListener` callback. Since `EventListener` is specified as an unexposed `callback interface EventListener`, it would be represented as a subfeature of `api.EventTarget.addEventListener`.
 
@@ -166,7 +176,7 @@ Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissio
 
 For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
 
-```
+```json
 {
   "api": {
     "Permissions": {
@@ -257,6 +267,28 @@ For example, the `ImageData` API has worker support, recorded like this:
 
 Formerly named `available_in_workers`, this policy was set in [#2362](https://github.com/mdn/browser-compat-data/pull/2362).
 
+## Stringifier attributes (`toString`)
+
+Interfaces may have an attribute with a [`stringifier` keyword](https://webidl.spec.whatwg.org/#idl-stringifiers) in its IDL definition. When the `stringifier` keyword is present on an attribute, a `toString()` method is generated, which returns the value of that attribute. Record both the attribute and the `toString()` method.
+
+For example, the `MediaList` API has a `mediaText` attribute with the `stringifier` keyword (`stringifier attribute [LegacyNullToEmptyString] CSSOMString mediaText;`). Both are recorded like so:
+
+```json
+{
+  "api": {
+    "MediaList": {
+      "__compat": { ... },
+      "mediaText": {
+        "__compat": { ... }
+      },
+      "toString": {
+        "__compat": { ... }
+      }
+    }
+  }
+}
+```
+
 ## APIs moved on the prototype chain
 
 [Web IDL interfaces](https://webidl.spec.whatwg.org/#idl-interface) (and [JavaScript built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)) form prototype chains, with one type inheriting from another. For example, `AudioContext` inherits from `BaseAudioContext`, and `Element` inherits from `Node`.
@@ -291,3 +323,30 @@ For example, some attributes have moved from `Node` to `Attr` and `Element`. The
 See [#9561](https://github.com/mdn/browser-compat-data/pull/9561) for a part of this data being fixed.
 
 This guideline is based on a discussion in [#3463](https://github.com/mdn/browser-compat-data/issues/3463).
+
+### Static API members
+
+Always append the suffix `_static` to static members of an interface and have a description with text in the form of `<code>json()</code> static method`.
+
+For example, the `Response` interface has both, a prototype and static method called `json()`. The static method is represented as `api.Response.json_static`. It has the description `<code>json()</code> static method`. The prototype method is represented as `api.Response.json` without suffix and without description.
+
+```json
+{
+  "api": {
+    "Response": {
+      "__compat": {},
+      "json": {
+        "__compat": {}
+      },
+      "json_static": {
+        "__compat": {
+          "description": "<code>json()</code> static method",
+          "support": {}
+        }
+      }
+    }
+  }
+}
+```
+
+This guideline is based on a discussion in [#16613](https://github.com/mdn/browser-compat-data/issues/16613).

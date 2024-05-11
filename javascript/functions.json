@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions",
         "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-function-definitions",
+        "tags": [
+          "web-features:snapshot:ecmascript-1"
+        ],
         "support": {
           "chrome": {
             "version_added": "1"
@@ -49,6 +52,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments",
           "spec_url": "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-arguments-exotic-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-1"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -94,6 +100,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/callee",
             "spec_url": "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-arguments-exotic-objects",
+            "tags": [
+              "web-features:snapshot:ecmascript-1"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -132,7 +141,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -140,6 +149,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/length",
             "spec_url": "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-arguments-exotic-objects",
+            "tags": [
+              "web-features:snapshot:ecmascript-1"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -189,6 +201,9 @@
               "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-createunmappedargumentsobject",
               "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-createmappedargumentsobject"
             ],
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "52"
@@ -233,6 +248,9 @@
           "description": "Arrow functions",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-arrow-function-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "45"
@@ -255,22 +273,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "4.0.0"
-              },
-              {
-                "version_added": "0.12.0",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--harmony"
-                  }
-                ],
-                "partial_implementation": true,
-                "notes": "The arrow function syntax is supported, but not the correct lexical binding of the <code>this</code> value."
-              }
-            ],
+            "nodejs": {
+              "version_added": "4.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -290,6 +295,9 @@
         "trailing_comma": {
           "__compat": {
             "description": "Trailing comma in parameters",
+            "tags": [
+              "web-features:snapshot:ecmascript-2017"
+            ],
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -332,6 +340,9 @@
       "block_level_functions": {
         "__compat": {
           "description": "Block-level functions",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "49"
@@ -350,20 +361,9 @@
             "ie": {
               "version_added": "11"
             },
-            "nodejs": [
-              {
-                "version_added": "4.0.0"
-              },
-              {
-                "version_added": "0.10.0",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--harmony"
-                  }
-                ]
-              }
-            ],
+            "nodejs": {
+              "version_added": "4.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -386,6 +386,9 @@
           "description": "Default parameters",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Default_parameters",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-function-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "49"
@@ -426,6 +429,9 @@
         "destructured_parameter_with_default_value_assignment": {
           "__compat": {
             "description": "Destructured parameter with default value assignment",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -467,6 +473,9 @@
         "parameters_without_defaults_after_default_parameters": {
           "__compat": {
             "description": "Parameters without defaults after default parameters",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -510,6 +519,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/get",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-method-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-5"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -554,6 +566,9 @@
         "computed_property_names": {
           "__compat": {
             "description": "Computed property names",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "46"
@@ -600,6 +615,9 @@
           "description": "Method definitions",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Method_definitions",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-method-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "39"
@@ -656,20 +674,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "10.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -708,20 +715,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "7.6.0"
-                },
-                {
-                  "version_added": "7.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "7.6.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -786,6 +782,9 @@
           "description": "Rest parameters",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/rest_parameters",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-function-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "47"
@@ -804,20 +803,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "6.0.0"
-              },
-              {
-                "version_added": "4.0.0",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--harmony"
-                  }
-                ]
-              }
-            ],
+            "nodejs": {
+              "version_added": "6.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -837,6 +825,9 @@
         "destructuring": {
           "__compat": {
             "description": "Destructuring rest parameters",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -878,6 +869,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/set",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-method-definitions",
+          "tags": [
+            "web-features:snapshot:ecmascript-5"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -922,6 +916,9 @@
         "computed_property_names": {
           "__compat": {
             "description": "Computed property names",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "46"

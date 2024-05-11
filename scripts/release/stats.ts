@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-export type Stats = {
+export interface Stats {
   commits: number;
   changed: number;
   insertions: number;
@@ -13,7 +13,7 @@ export type Stats = {
   stars: number;
   start: string;
   end: string;
-};
+}
 
 type ChangeStats = Pick<
   Stats,
@@ -22,14 +22,14 @@ type ChangeStats = Pick<
 
 import chalk from 'chalk-template';
 
-import { exec, queryPRs, githubAPI } from './utils.js';
 import { walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
 
+import { exec, queryPRs, githubAPI } from './utils.js';
+
 /**
  * Get stargazers for the repository
- *
- * @returns {number} The number of stargazer
+ * @returns The number of stargazer
  */
 const stargazers = async (): Promise<number> => {
   const json = githubAPI('');
@@ -38,8 +38,7 @@ const stargazers = async (): Promise<number> => {
 
 /**
  * Get the number of contributors that have committed to the repository
- *
- * @returns {number} The number of contributors that have contributed to the repository
+ * @returns The number of contributors that have contributed to the repository
  */
 const contributors = (): number => {
   const data = exec(
@@ -50,9 +49,8 @@ const contributors = (): number => {
 
 /**
  * Get all of the stats for the release
- *
- * @param {string} start The last version number
- * @returns {ChangeStats} The statistics
+ * @param start The last version number
+ * @returns The statistics
  */
 const stats = (start: string): ChangeStats => {
   // Get just the diff stats summary
@@ -87,9 +85,8 @@ const stats = (start: string): ChangeStats => {
 
 /**
  * Get the number of contributors that have committed to this release
- *
- * @param {string} fromDate The date of the last release
- * @returns {Set<string>} The authors of the commits
+ * @param fromDate The date of the last release
+ * @returns The authors of the commits
  */
 const getReleaseContributors = (fromDate: string): Set<string> => {
   const prs = queryPRs({
@@ -101,16 +98,14 @@ const getReleaseContributors = (fromDate: string): Set<string> => {
 
 /**
  * Count the number of features in BCD
- *
- * @returns {number} The number of features
+ * @returns The number of features
  */
 const countFeatures = (): number => [...walk()].length;
 
 /**
  * Format the stats as Markdown
- *
- * @param {Stats} details The stats to format
- * @returns {string} The formatted stats
+ * @param details The stats to format
+ * @returns The formatted stats
  */
 export const formatStats = (details: Stats): string =>
   [
@@ -137,11 +132,10 @@ export const formatStats = (details: Stats): string =>
 
 /**
  * Get the statistics for the release
- *
- * @param {string} start The last release number
- * @param {string} end This release number
- * @param {string} startDate The date of the last release
- * @returns {Stats} The release statistics
+ * @param start The last release number
+ * @param end This release number
+ * @param startDate The date of the last release
+ * @returns The release statistics
  */
 export const getStats = async (
   start: string,

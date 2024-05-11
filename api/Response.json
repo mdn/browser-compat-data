@@ -30,29 +30,9 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": [
-            {
-              "version_added": "18.0.0"
-            },
-            {
-              "version_added": "17.5.0",
-              "flags": [
-                {
-                  "name": "--experimental-fetch",
-                  "type": "runtime_flag"
-                }
-              ]
-            },
-            {
-              "version_added": "16.15.0",
-              "flags": [
-                {
-                  "name": "--experimental-fetch",
-                  "type": "runtime_flag"
-                }
-              ]
-            }
-          ],
+          "nodejs": {
+            "version_added": "18.0.0"
+          },
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -173,7 +153,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "10.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -302,6 +282,42 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "readable_byte_stream": {
+          "__compat": {
+            "description": "<code>body</code> is a readable byte stream",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "102"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "bodyUsed": {
@@ -382,9 +398,10 @@
           }
         }
       },
-      "error": {
+      "error_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/error",
+          "description": "<code>error()</code> static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/error_static",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-response-error①",
           "support": {
             "chrome": {
@@ -543,6 +560,43 @@
           }
         }
       },
+      "json_static": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/json_static",
+          "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-response-json①",
+          "support": {
+            "chrome": {
+              "version_added": "105"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.22"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "115"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "ok": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/ok",
@@ -582,9 +636,10 @@
           }
         }
       },
-      "redirect": {
+      "redirect_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/redirect",
+          "description": "<code>redirect()</code> static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Response/redirect_static",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-response-redirect①",
           "support": {
             "chrome": {

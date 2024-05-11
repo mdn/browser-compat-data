@@ -1,25 +1,23 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatStatement } from '../../types/types.js';
-import { InternalSupportStatement } from '../../types/index.js';
-
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 
-import { IS_WINDOWS } from '../../test/utils.js';
+import { InternalSupportStatement } from '../../types/index.js';
+import { CompatStatement } from '../../types/types.js';
+import { IS_WINDOWS } from '../../lint/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Check to see if the key is __compat and set 'oculus' to 'mirror'
- *
- * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value with 'oculus' set to 'mirror'
+ * @param key The key in the object
+ * @param value The value of the key
+ * @returns The new value with 'oculus' set to 'mirror'
  */
 export const doSetOculusToMirror = (
   key: string,
@@ -37,8 +35,7 @@ export const doSetOculusToMirror = (
  * Set '__compat.support.oculus' to 'mirror' within all the data in a
  * specified file. The function will then automatically write any needed
  * changes back into the file.
- *
- * @param {string} filename The filename to perform migration upon
+ * @param filename The filename to perform migration upon
  */
 export const setOculusToMirror = (filename: string): void => {
   let actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -62,8 +59,7 @@ export const setOculusToMirror = (filename: string): void => {
 /**
  * Recursively load one or more files and/or directories passed as arguments
  * and perform setting '__compat.support.oculus' to 'mirror' for.
- *
- * @param {string[]} files The files to load and perform migration upon
+ * @param files The files to load and perform migration upon
  */
 const load = (...files: string[]): void => {
   for (let file of files) {
@@ -104,6 +100,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
     );
   }

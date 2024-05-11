@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-path",
           "spec_url": "https://drafts.fxtf.org/motion/#offset-path-property",
+          "tags": [
+            "web-features:motion-path"
+          ],
           "support": {
             "chrome": [
               {
@@ -65,17 +68,17 @@
             "deprecated": false
           }
         },
-        "path-support": {
+        "basic_shape": {
           "__compat": {
-            "description": "Supports the <code>path()</code> function as a value",
+            "description": "<code>&lt;basic-shape&gt;</code>",
             "support": {
               "chrome": {
-                "version_added": "64"
+                "version_added": "116"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "72"
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -98,24 +101,17 @@
             }
           }
         },
-        "ray-support": {
+        "coord_box": {
           "__compat": {
-            "description": "Supports the <code>ray()</code> function as a value",
+            "description": "<code>&lt;coord-box&gt;</code>",
             "support": {
               "chrome": {
-                "version_added": "64"
+                "version_added": "116"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "72",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path-ray.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -126,6 +122,108 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "path": {
+          "__compat": {
+            "description": "Support for <a href='https://developer.mozilla.org/docs/Web/CSS/path'><code>path()</code></a> function as a value",
+            "tags": [
+              "web-features:motion-path"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "64"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "72"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "ray": {
+          "__compat": {
+            "description": "Support for <a href='https://developer.mozilla.org/docs/Web/CSS/ray'><code>ray()</code></a> function as a value",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "122"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "url": {
+          "__compat": {
+            "description": "<code>&lt;url&gt;</code>",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "122"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

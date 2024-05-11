@@ -11,8 +11,8 @@
                 "version_added": "25"
               },
               {
-                "version_added": "14",
-                "alternative_name": "X-Webkit-CSP"
+                "alternative_name": "X-Webkit-CSP",
+                "version_added": "14"
               }
             ],
             "chrome_android": {
@@ -26,17 +26,17 @@
                 "version_added": "23"
               },
               {
-                "version_added": "4",
-                "alternative_name": "X-Content-Security-Policy"
+                "alternative_name": "X-Content-Security-Policy",
+                "version_added": "4"
               }
             ],
             "firefox_android": {
               "version_added": "23"
             },
             "ie": {
+              "alternative_name": "X-Content-Security-Policy",
               "version_added": "10",
-              "notes": "Only supporting 'sandbox' directive.",
-              "alternative_name": "X-Content-Security-Policy"
+              "notes": "Only supporting 'sandbox' directive."
             },
             "oculus": "mirror",
             "opera": {
@@ -48,8 +48,8 @@
                 "version_added": "7"
               },
               {
-                "version_added": "6",
-                "alternative_name": "X-Webkit-CSP"
+                "alternative_name": "X-Webkit-CSP",
+                "version_added": "6"
               }
             ],
             "safari_ios": "mirror",
@@ -81,12 +81,8 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": null
-              },
-              "opera_android": {
-                "version_added": null
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -122,9 +118,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -161,9 +155,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": null
               },
@@ -201,9 +193,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -234,10 +224,16 @@
               "edge": {
                 "version_added": "14"
               },
-              "firefox": {
-                "version_added": "23",
-                "notes": "Before Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
-              },
+              "firefox": [
+                {
+                  "version_added": "50"
+                },
+                {
+                  "version_added": "23",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 50, ping attributes of &lt;a&gt; elements weren't covered by connect-src."
+                }
+              ],
               "firefox_android": {
                 "version_added": "23"
               },
@@ -246,9 +242,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -286,9 +280,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -298,6 +290,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "fenced-frame-src": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/fenced-frame-src",
+            "spec_url": "https://wicg.github.io/fenced-frame/#new-csp-directive",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -326,9 +352,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -366,9 +390,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -399,14 +421,26 @@
               "edge": {
                 "version_added": "15"
               },
-              "firefox": {
-                "version_added": "33",
-                "notes": "Before Firefox 58, <code>frame-ancestors</code> is ignored in <code>Content-Security-Policy-Report-Only</code>."
-              },
-              "firefox_android": {
-                "version_added": "33",
-                "notes": "Before Firefox for Android 58, <code>frame-ancestors</code> is ignored in <code>Content-Security-Policy-Report-Only</code>."
-              },
+              "firefox": [
+                {
+                  "version_added": "58"
+                },
+                {
+                  "version_added": "33",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 58, <code>frame-ancestors</code> is ignored in <code>Content-Security-Policy-Report-Only</code>."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "58"
+                },
+                {
+                  "version_added": "33",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox for Android 58, <code>frame-ancestors</code> is ignored in <code>Content-Security-Policy-Report-Only</code>."
+                }
+              ],
               "ie": {
                 "version_added": false
               },
@@ -414,9 +448,7 @@
               "opera": {
                 "version_added": "26"
               },
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -424,9 +456,7 @@
                 "version_added": "9.3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": null
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -458,9 +488,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -498,9 +526,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -536,9 +562,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": false
               },
@@ -576,9 +600,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -628,40 +650,6 @@
             }
           }
         },
-        "navigate-to": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/navigate-to",
-            "spec_url": "https://w3c.github.io/webappsec-csp/#directive-navigate-to",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "object-src": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/object-src",
@@ -685,9 +673,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -727,9 +713,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
               },
@@ -749,17 +733,16 @@
         "prefetch-src": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/prefetch-src",
-            "spec_url": "https://w3c.github.io/webappsec-csp/#directive-prefetch-src",
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/801561'>bug 801561</a>."
+                "impl_url": "https://crbug.com/801561"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1457204'>bug 1457204</a>."
+                "impl_url": "https://bugzil.la/1457204"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -769,17 +752,17 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/185070'>bug 185070</a>."
+                "version_added": "16.3",
+                "impl_url": "https://webkit.org/b/185070"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         },
@@ -802,14 +785,8 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": true,
-                "version_removed": "43"
-              },
-              "opera_android": {
-                "version_added": true,
-                "version_removed": "43"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": false
               },
@@ -826,6 +803,8 @@
         },
         "report-sample": {
           "__compat": {
+            "description": "<code>report-sample</code> source value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#report-sample",
             "support": {
               "chrome": {
                 "version_added": "59"
@@ -835,7 +814,7 @@
                 "version_added": "≤79"
               },
               "firefox": {
-                "version_added": null
+                "version_added": "63"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -876,14 +855,10 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -919,9 +894,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -936,43 +909,13 @@
             }
           }
         },
-        "require-sri-for": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-sri-for",
-            "support": {
-              "chrome": {
-                "version_added": "54"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
         "require-trusted-types-for": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/require-trusted-types-for",
-            "spec_url": "https://w3c.github.io/webappsec-trusted-types/dist/spec/#require-trusted-types-for-csp-directive",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#require-trusted-types-for-csp-directive",
+            "tags": [
+              "web-features:trusted-types"
+            ],
             "support": {
               "chrome": {
                 "version_added": "83"
@@ -1026,9 +969,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -1066,9 +1007,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -1084,7 +1023,8 @@
           },
           "external_scripts": {
             "__compat": {
-              "description": "With external scripts",
+              "description": "External scripts with hash",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#external-hash",
               "support": {
                 "chrome": {
                   "version_added": "59"
@@ -1094,21 +1034,84 @@
                   "version_added": "≤79"
                 },
                 "firefox": {
-                  "version_added": null
+                  "version_added": "116"
                 },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
                 },
                 "oculus": "mirror",
-                "opera": {
-                  "version_added": null
-                },
-                "opera_android": {
-                  "version_added": null
-                },
+                "opera": "mirror",
+                "opera_android": "mirror",
                 "safari": {
-                  "version_added": null
+                  "version_added": "15.6"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "inline-speculation-rules": {
+            "__compat": {
+              "description": "<code>inline-speculation-rules</code> source expression",
+              "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#content-security-policy",
+              "support": {
+                "chrome": {
+                  "version_added": "110"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "wasm-unsafe-eval": {
+            "__compat": {
+              "description": "Source expression allowing WebAssembly execution",
+              "support": {
+                "chrome": {
+                  "version_added": "97"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "102"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1133,8 +1136,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1529337'>bug 1529337</a>."
+                "version_added": "108"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1142,15 +1144,11 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "15.4"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -1172,8 +1170,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1529337'>bug 1529337</a>."
+                "version_added": "108"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1181,15 +1178,11 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "15.4"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -1202,7 +1195,8 @@
         },
         "strict-dynamic": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/script-src#strict-dynamic",
+            "description": "<code>strict-dynamic</code> source value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#strict-dynamic",
             "support": {
               "chrome": {
                 "version_added": "52"
@@ -1258,9 +1252,7 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "7"
               },
@@ -1286,8 +1278,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1529338'>bug 1529338</a>."
+                "version_added": "108"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1295,15 +1286,11 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "15.4"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -1325,8 +1312,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1529338'>bug 1529338</a>."
+                "version_added": "108"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1334,15 +1320,11 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": null
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "15.4"
               },
-              "safari_ios": {
-                "version_added": false
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -1356,7 +1338,10 @@
         "trusted-types": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types",
-            "spec_url": "https://w3c.github.io/webappsec-trusted-types/dist/spec/#trusted-types-csp-directive",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#trusted-types-csp-directive",
+            "tags": [
+              "web-features:trusted-types"
+            ],
             "support": {
               "chrome": {
                 "version_added": "83"
@@ -1391,7 +1376,8 @@
         },
         "unsafe-hashes": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/script-src#unsafe-hashes",
+            "description": "<code>unsafe-hashes</code> source value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/Sources#unsafe-hashes",
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -1399,8 +1385,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1343950'>bug 1343950</a>."
+                "version_added": "109"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1480,12 +1465,8 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": "48"
-              },
-              "opera_android": {
-                "version_added": "45"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "15.5"
               },

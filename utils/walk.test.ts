@@ -4,6 +4,7 @@
 import assert from 'node:assert/strict';
 
 import bcd from '../index.js';
+
 import walk, { lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', () => {
@@ -17,6 +18,7 @@ describe('lowLevelWalk()', () => {
       'javascript',
       'mathml',
       'svg',
+      'webassembly',
       'webdriver',
       'webextensions',
     ];

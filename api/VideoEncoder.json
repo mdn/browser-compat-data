@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder",
         "spec_url": "https://w3c.github.io/webcodecs/#videoencoder-interface",
+        "tags": [
+          "web-features:webcodecs"
+        ],
         "support": {
           "chrome": {
             "version_added": "94"
@@ -11,7 +14,10 @@
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": false
+            "version_added": "preview",
+            "impl_url": "https://bugzil.la/1872733",
+            "partial_implementation": true,
+            "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
           },
           "firefox_android": "mirror",
           "ie": {
@@ -21,14 +27,14 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": "16.4"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
           "deprecated": false
         }
@@ -38,6 +44,9 @@
           "description": "<code>VideoEncoder()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/VideoEncoder",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-videoencoder",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -45,7 +54,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -55,14 +67,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -72,6 +84,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/close",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-close",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -79,7 +94,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -89,14 +107,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -106,6 +124,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/configure",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-configure",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -113,7 +134,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -123,14 +147,54 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "dequeue_event": {
+        "__compat": {
+          "description": "<code>dequeue</code> event",
+          "spec_url": "https://w3c.github.io/webcodecs/#eventdef-videencoder-dequeue",
+          "tags": [
+            "web-features:webcodecs"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "106"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -140,6 +204,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/encode",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-encode",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -147,7 +214,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -157,14 +227,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -174,6 +244,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/encodeQueueSize",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-encodequeuesize",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -181,7 +254,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -191,14 +267,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -207,6 +283,9 @@
       "flush": {
         "__compat": {
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-flush",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -214,7 +293,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -224,22 +306,26 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "isConfigSupported": {
+      "isConfigSupported_static": {
         "__compat": {
+          "description": "<code>isConfigSupported()</code> static method",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-isconfigsupported",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -247,7 +333,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -257,14 +346,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -274,6 +363,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/reset",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-reset",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -281,7 +373,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -291,14 +386,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -308,6 +403,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/VideoEncoder/state",
           "spec_url": "https://w3c.github.io/webcodecs/#dom-videoencoder-state",
+          "tags": [
+            "web-features:webcodecs"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"
@@ -315,7 +413,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1872733",
+              "partial_implementation": true,
+              "notes": "Only supported on Linux, see <a href='https://bugzil.la/1749047'>bug 1749047</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -325,14 +426,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

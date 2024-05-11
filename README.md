@@ -4,7 +4,7 @@
 
 The `browser-compat-data` ("BCD") project contains machine-readable browser (and JavaScript runtime) compatibility data for Web technologies, such as Web APIs, JavaScript features, CSS properties and more. Our goal is to document accurate compatibility data for Web technologies, so web developers may write cross-browser compatible websites easier. BCD is used in web apps and software such as [MDN Web Docs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs), CanIUse, Visual Studio Code, WebStorm and [more](#Projects-using-the-data).
 
-Read how this project is [governed](GOVERNANCE.md).
+Read how this project is [governed](./GOVERNANCE.md).
 
 Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
@@ -23,13 +23,28 @@ yarn add @mdn/browser-compat-data
 Then, you can import BCD into your project with either `import` or `require()`:
 
 ```js
+// ESM with Import Attributes (NodeJS 20+)
+import bcd from '@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  with: { type: 'json' },
+});
+
+// ...or...
+
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  assert: { type: 'json' },
+});
 
 // ...or...
 
 // ESM Wrapper for older NodeJS versions (NodeJS v12+)
 import bcd from '@mdn/browser-compat-data/forLegacyNode';
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data/forLegacyNode');
 
 // ...or...
 
@@ -42,7 +57,34 @@ const bcd = require('@mdn/browser-compat-data');
 You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
+// ESM with Import Attributes (Deno 1.37+)
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    with: { type: 'json' },
+  }
+);
+
+// ...or...
+
+// ESM with Import Assertions (Deno 1.17+)
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    assert: { type: 'json' },
+  }
+);
+
+// ...or...
+
+// Fetch Method (Deno 1.0+)
+const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
+  (response) => response.json(),
+);
 ```
 
 ### Other Languages
@@ -68,9 +110,9 @@ const support = bcd['api']['Document']['body']['__compat'];
 
 ## Package contents
 
-The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 12,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
+The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 15,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
 
-The definitive description of the format used to represent individual features and browsers is the [schema definitions](schemas/).
+The definitive description of the format used to represent individual features and browsers is the [schema definitions](./schemas/).
 
 Apart from the explicitly documented objects below, feature-level support data may change at any time. See [_Semantic versioning policy_](#Semantic-versioning-policy) for details.
 
@@ -83,15 +125,15 @@ An object containing the following package metadata:
 - `version` - the package version
 - `timestamp` - the timestamp of when the package version was built
 
-### [`api`](api)
+### [`api`](./api)
 
 Data for [Web API](https://developer.mozilla.org/en-US/docs/Web/API) features.
 
-### [`browsers`](browsers)
+### [`browsers`](./browsers)
 
-Data for browsers and JavaScript runtimes. See the [browser schema](schemas/browsers-schema.md) for details.
+Data for browsers and JavaScript runtimes. See the [browser schema](./schemas/browsers-schema.md) for details.
 
-### [`css`](css)
+### [`css`](./css)
 
 Data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) features, including:
 
@@ -116,7 +158,7 @@ Data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) features, inc
 - `methods` - Request methods
 - `status` - Status codes
 
-### [`javascript`](javascript)
+### [`javascript`](./javascript)
 
 Data for JavaScript language features, including:
 
@@ -127,24 +169,28 @@ Data for JavaScript language features, including:
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
 
-### [`mathml`](mathml)
+### [`mathml`](./mathml)
 
 Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features, including:
 
 - `elements` - Elements
 
-### [`svg`](svg)
+### [`svg`](./svg)
 
 Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, including:
 
 - `attributes` - Attributes
 - `elements` - Elements
 
-### [`webdriver`](webdriver)
+### [`webassembly`](./webassembly)
+
+Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
+
+### [`webdriver`](./webdriver)
 
 Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
 
-### [`webextensions`](webextensions)
+### [`webextensions`](./webextensions)
 
 Data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) features, including:
 
@@ -163,13 +209,22 @@ The details of browser compatibility change frequently, as browsers ship new fea
 
 You should expect lower-level namespaces, feature data, and browser data to be added, removed, or modified at any time. That said, we strive to communicate changes and preserve backward compatibility; if you rely on a currently undocumented portion of the package and want SemVer to apply to it, please [open an issue](https://github.com/mdn/browser-compat-data/issues).
 
+## What isn't tracked?
+
+Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
+
+- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data).
+- A source for custom features added by web frameworks (e.g. React, Vue) or corporate runtimes (e.g. AWS Lambda, Azure Functions).
+- A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
+- The location where Baseline data is hosted; while Baseline pulls from BCD, the Baseline data is managed by the W3C WebDX Community Group on their own [GitHub repo](https://github.com/web-platform-dx/web-features).
+
 ## Issues?
 
 If you find a problem with the compatibility data (such as incorrect version numbers) or there is a new web feature you think we should document, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
 
 ## Contributing
 
-Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](/docs/contributing.md) for more information.
+Thank you for your interest in contributing to this project! See [Contributing to browser-compat-data](./docs/contributing.md) for more information.
 
 ## Projects using the data
 
@@ -183,7 +238,6 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
 - [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
 - [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
-- [Hexo Plugin: hexo-compat-report](https://github.com/TimDaub/hexo-compat-report) - Allows to embed MDN's compatibility table in a hexo blog post.
 
 ## Acknowledgments
 
@@ -194,7 +248,7 @@ Thanks to:
     <td>
       <img
         src="https://user-images.githubusercontent.com/498917/52569900-852b3080-2e12-11e9-9bd0-f1e256b13e53.png"
-        height="86"
+        height="56"
         alt="BrowserStack"
       />
       <p>
@@ -208,11 +262,23 @@ Thanks to:
     <td>
       <img
         src="https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true"
-        height="86"
+        height="56"
         alt="Testing Powered By Sauce Labs"
       />
       <p>
         <a href="https://opensource.saucelabs.com/">Sauce Labs Open Source</a
+        >
+        for testing services
+      </p>
+    </td>
+    <td>
+      <img
+        src="https://user-images.githubusercontent.com/5179191/203835995-e4cf2b3f-483f-419f-afda-bad1200c04f2.png"
+        height="56"
+        alt="LambdaTest"
+      />
+      <p>
+        <a href="https://www.lambdatest.com/hyperexecute">LambdaTest Open Source</a
         >
         for testing services
       </p>

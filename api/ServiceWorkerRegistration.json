@@ -78,6 +78,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/backgroundFetch",
           "spec_url": "https://wicg.github.io/background-fetch/#dom-serviceworkerregistration-backgroundfetch",
+          "tags": [
+            "web-features:background-fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -112,6 +115,7 @@
       },
       "cookies": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/cookies",
           "spec_url": "https://wicg.github.io/cookie-store/#dom-serviceworkerregistration-cookies",
           "support": {
             "chrome": {
@@ -167,16 +171,16 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/551446'>bug 551446</a>."
+              "impl_url": "https://crbug.com/551446"
             }
           },
           "status": {
@@ -326,7 +330,7 @@
             }
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -392,16 +396,16 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
+              "impl_url": "https://crbug.com/421921"
             }
           },
           "status": {
@@ -471,16 +475,16 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/421921'>bug 421921</a>."
+              "impl_url": "https://crbug.com/421921"
             }
           },
           "status": {
@@ -550,16 +554,19 @@
               },
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17",
+                "notes": "Badging is supported for web apps saved to the Dock in Safari 17 on the macOS Sonoma beta"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "16.4"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
               }
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -720,7 +727,10 @@
               "chrome": {
                 "version_added": "45"
               },
-              "chrome_android": "mirror",
+              "chrome_android": {
+                "version_added": false,
+                "notes": "In Android Oreo and above, setting this parameter has no effect."
+              },
               "edge": {
                 "version_added": "≤79"
               },
@@ -781,7 +791,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

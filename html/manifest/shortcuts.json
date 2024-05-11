@@ -6,18 +6,24 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/Manifest/shortcuts",
           "spec_url": "https://w3c.github.io/manifest/#shortcuts-member",
           "support": {
-            "chrome": {
-              "version_added": "85",
-              "partial_implementation": true,
-              "notes": "Supported on Windows only."
-            },
+            "chrome": [
+              {
+                "version_added": "96"
+              },
+              {
+                "version_added": "85",
+                "version_removed": "96",
+                "partial_implementation": true,
+                "notes": "Supported on Windows only."
+              }
+            ],
             "chrome_android": {
               "version_added": "84"
             },
             "edge": "mirror",
             "firefox": {
               "version_added": false,
-              "notes": "See <a href='https://bugzil.la/1582341'>bug 1582341</a>."
+              "impl_url": "https://bugzil.la/1582341"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -27,15 +33,16 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "notes": "See <a href='https://webkit.org/b/201964'>bug 201964</a>."
+              "version_added": "17.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": false
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

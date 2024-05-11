@@ -4,7 +4,10 @@
       "min-height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/min-height",
-          "spec_url": "https://drafts.csswg.org/css-sizing/#width-height-keywords",
+          "spec_url": [
+            "https://drafts.csswg.org/css-sizing/#width-height-keywords",
+            "https://drafts.csswg.org/css-sizing-4/#sizing-values"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -41,6 +44,43 @@
             "deprecated": false
           }
         },
+        "anchor-size": {
+          "__compat": {
+            "description": "<code>anchor-size()</code>",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "auto": {
           "__compat": {
             "description": "<code>auto</code>",
@@ -69,9 +109,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "37"
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -93,15 +131,18 @@
                   "version_added": "25"
                 }
               ],
-              "chrome_android": {
-                "version_added": "46"
-              },
+              "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "prefix": "-moz-",
-                "version_added": "3",
-                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
-              },
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3",
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -128,15 +169,7 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "46"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ]
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -198,8 +231,8 @@
                   "version_added": "66"
                 },
                 {
-                  "version_added": "3",
-                  "prefix": "-moz-"
+                  "prefix": "-moz-",
+                  "version_added": "3"
                 }
               ],
               "firefox_android": "mirror",
@@ -218,8 +251,8 @@
                   "version_added": "11"
                 },
                 {
-                  "version_added": "9",
-                  "prefix": "-webkit-"
+                  "prefix": "-webkit-",
+                  "version_added": "9"
                 }
               ],
               "safari_ios": "mirror",
@@ -247,8 +280,8 @@
                   "version_added": "66"
                 },
                 {
-                  "version_added": "3",
-                  "prefix": "-moz-"
+                  "prefix": "-moz-",
+                  "version_added": "3"
                 }
               ],
               "firefox_android": "mirror",
@@ -267,8 +300,8 @@
                   "version_added": "11"
                 },
                 {
-                  "version_added": "9",
-                  "prefix": "-webkit-"
+                  "prefix": "-webkit-",
+                  "version_added": "9"
                 }
               ],
               "safari_ios": "mirror",

@@ -8,7 +8,7 @@ Once a pull request is merged to update BCD, it takes a week or two for a new ve
 
 1. A pull request is reviewed and merged to `main`.
 2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
-   See [Publishing a new version of `@mdn/browser-compat-data`](publishing.md) for details.
+   See [Publishing a new version of `@mdn/browser-compat-data`](./publishing.md) for details.
 3. MDN staff merge a pull request that updates the BCD version in [Yari](https://github.com/mdn/yari), the MDN engine. This typically happens within a day of the release of the npm package.
 4. Tables are then generated on MDN Web Docs:
 
@@ -18,7 +18,7 @@ Once a pull request is merged to update BCD, it takes a week or two for a new ve
 
 ## I opened a PR but it hasn't been reviewed yet.
 
-Sorry for the wait. Many outside factors, such as our other projects, may grab our attention and slow BCD PR reviews. If it has been more than a month and there has been no repsonse from a reviewer, please feel free to ping one of us and request a review. You can find a list of peers and owners in the [governance doc](../GOVERNANCE.md).
+Sorry for the wait. Many outside factors, such as our other projects, may grab our attention and slow BCD PR reviews. If it has been more than a month and there has been no response from a reviewer, please feel free to ping one of us and request a review. You can find a list of peers and owners in the [governance doc](../GOVERNANCE.md).
 
 ## My PR was closed due to inactivity, may I reopen it?
 

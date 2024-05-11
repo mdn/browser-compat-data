@@ -4,48 +4,30 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer",
         "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothgattremoteserver-interface",
+        "tags": [
+          "web-features:web-bluetooth"
+        ],
         "support": {
           "chrome": [
             {
-              "version_added": "56",
+              "version_added": "70",
               "partial_implementation": true,
-              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+              "notes": "Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_removed": "70",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
             }
           ],
           "chrome_android": {
             "version_added": "56"
           },
-          "edge": [
-            {
-              "version_added": "79",
-              "partial_implementation": true,
-              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "79",
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled.",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            }
-          ],
+          "edge": "mirror",
           "firefox": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://bugzil.la/674737"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -55,13 +37,14 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://webkit.org/b/101034"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
-            "notes": "See <a href='https://crbug.com/1100993'>bug 1100993</a>."
+            "impl_url": "https://crbug.com/1100993"
           }
         },
         "status": {
@@ -74,6 +57,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/connect",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-connect",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -81,7 +67,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -91,7 +78,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -110,6 +98,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/connected",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-connected",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -117,7 +108,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -127,7 +119,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -146,6 +139,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/device",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-device",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -153,7 +149,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -163,7 +160,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -182,6 +180,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/disconnect",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-disconnect",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -189,7 +190,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -199,7 +201,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -218,6 +221,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/getPrimaryService",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-getprimaryservice",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -225,7 +231,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -235,7 +242,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -254,6 +262,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothRemoteGATTServer/getPrimaryServices",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothremotegattserver-getprimaryservices",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -261,7 +272,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -271,7 +283,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -5,6 +5,10 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map",
           "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map-objects",
+          "tags": [
+            "web-features:map",
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "38"
@@ -23,20 +27,9 @@
             "ie": {
               "version_added": "11"
             },
-            "nodejs": [
-              {
-                "version_added": "0.12.0"
-              },
-              {
-                "version_added": "0.10.0",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--harmony"
-                  }
-                ]
-              }
-            ],
+            "nodejs": {
+              "version_added": "0.12.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -58,6 +51,10 @@
             "description": "<code>Map()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/Map",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map-constructor",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -76,20 +73,9 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": [
-                {
-                  "version_added": "0.12.0"
-                },
-                {
-                  "version_added": "0.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "0.12.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -109,6 +95,10 @@
           "iterable_allowed": {
             "__compat": {
               "description": "<code>new Map(iterable)</code>",
+              "tags": [
+                "web-features:map",
+                "web-features:snapshot:ecmascript-2015"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "38"
@@ -147,9 +137,13 @@
               }
             }
           },
-          "new_required": {
+          "null_allowed": {
             "__compat": {
-              "description": "<code>Map()</code> without <code>new</code> throws",
+              "description": "<code>new Map(null)</code>",
+              "tags": [
+                "web-features:map",
+                "web-features:snapshot:ecmascript-2015"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "38"
@@ -162,7 +156,7 @@
                   "version_added": "12"
                 },
                 "firefox": {
-                  "version_added": "42"
+                  "version_added": "37"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -187,64 +181,16 @@
                 "deprecated": false
               }
             }
-          },
-          "null_allowed": {
-            "__compat": {
-              "description": "<code>new Map(null)</code>",
-              "support": {
-                "chrome": {
-                  "version_added": "38"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.0"
-                },
-                "edge": {
-                  "version_added": "12"
-                },
-                "firefox": {
-                  "version_added": "37"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": "11"
-                },
-                "nodejs": [
-                  {
-                    "version_added": "0.12.0"
-                  },
-                  {
-                    "version_added": "0.10.0",
-                    "flags": [
-                      {
-                        "type": "runtime_flag",
-                        "name": "--harmony"
-                      }
-                    ]
-                  }
-                ],
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "9"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
           }
         },
         "clear": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/clear",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.clear",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -287,6 +233,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/delete",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.delete",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -305,20 +255,9 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": [
-                {
-                  "version_added": "0.12.0"
-                },
-                {
-                  "version_added": "0.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "0.12.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -340,6 +279,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/entries",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.entries",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -382,6 +325,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.foreach",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -424,6 +371,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/get",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.get",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -442,20 +393,9 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": [
-                {
-                  "version_added": "0.12.0"
-                },
-                {
-                  "version_added": "0.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "0.12.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -473,10 +413,64 @@
             }
           }
         },
+        "groupBy": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/groupBy",
+            "spec_url": "https://tc39.es/proposal-array-grouping/#sec-map.groupby",
+            "tags": [
+              "web-features:array-group"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.37"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "119"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "21.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "17.4"
+                },
+                {
+                  "alternative_name": "Array.prototype.groupToMap",
+                  "version_added": "16.4",
+                  "version_removed": "17.4"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "has": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/has",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.has",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -495,20 +489,9 @@
               "ie": {
                 "version_added": "11"
               },
-              "nodejs": [
-                {
-                  "version_added": "0.12.0"
-                },
-                {
-                  "version_added": "0.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "0.12.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -529,6 +512,10 @@
         "key_equality_for_zeros": {
           "__compat": {
             "description": "Key equality for -0 and 0",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -571,6 +558,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/keys",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.keys",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -613,6 +604,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/set",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.set",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -633,20 +628,9 @@
                 "partial_implementation": true,
                 "notes": "Returns 'undefined' instead of the 'Map' object."
               },
-              "nodejs": [
-                {
-                  "version_added": "0.12.0"
-                },
-                {
-                  "version_added": "0.10.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "0.12.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -668,6 +652,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/size",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-map.prototype.size",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -711,6 +699,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/values",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.values",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -753,9 +745,13 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/@@iterator",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype-@@iterator",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
-                "version_added": "43"
+                "version_added": "38"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -809,6 +805,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/@@species",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-get-map-@@species",
+            "tags": [
+              "web-features:map",
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -827,69 +827,14 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "6.5.0"
-                },
-                {
-                  "version_added": "6.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "6.5.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": "10"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "@@toStringTag": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/@@toStringTag",
-            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype-@@tostringtag",
-            "support": {
-              "chrome": {
-                "version_added": "44"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "51"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "6.0.0"
-              },
-              "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
-              "safari": {
-                "version_added": "9.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

@@ -18,35 +18,13 @@
           "firefox": {
             "version_added": "39"
           },
-          "firefox_android": {
-            "version_added": "44"
-          },
+          "firefox_android": "mirror",
           "ie": {
             "version_added": false
           },
-          "nodejs": [
-            {
-              "version_added": "18.0.0"
-            },
-            {
-              "version_added": "17.5.0",
-              "flags": [
-                {
-                  "name": "--experimental-fetch",
-                  "type": "runtime_flag"
-                }
-              ]
-            },
-            {
-              "version_added": "16.15.0",
-              "flags": [
-                {
-                  "name": "--experimental-fetch",
-                  "type": "runtime_flag"
-                }
-              ]
-            }
-          ],
+          "nodejs": {
+            "version_added": "18.0.0"
+          },
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -82,11 +60,12 @@
             "firefox": {
               "version_added": "39"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -123,11 +102,12 @@
             "firefox": {
               "version_added": "39"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -164,11 +144,12 @@
             "firefox": {
               "version_added": "39"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -208,6 +189,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "18.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -244,6 +228,9 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -282,18 +269,58 @@
               "version_added": "39",
               "notes": "Before version 52, <code>get()</code> returns only the first value for the specified header."
             },
-            "firefox_android": {
-              "version_added": "44",
-              "notes": "Before version 52, <code>get()</code> returns only the first value for the specified header."
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "10.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getSetCookie": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Headers/getSetCookie",
+          "spec_url": "https://fetch.spec.whatwg.org/#dom-headers-getsetcookie",
+          "support": {
+            "chrome": {
+              "version_added": "113"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.35"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "112"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": "19.7.0"
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -324,9 +351,86 @@
             "firefox": {
               "version_added": "39"
             },
-            "firefox_android": {
-              "version_added": "44"
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
             },
+            "nodejs": {
+              "version_added": "18.0.0"
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "iterate_combined_duplicates": {
+        "__compat": {
+          "description": "Iteration combines duplicate header names",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "16"
+            },
+            "firefox": {
+              "version_added": "57"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "10.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "iterate_lexicographically": {
+        "__compat": {
+          "description": "Iteration is lexicographically sorted",
+          "support": {
+            "chrome": {
+              "version_added": "57"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "18"
+            },
+            "firefox": {
+              "version_added": "57"
+            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -368,47 +472,14 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "18.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "10.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "lexicographical_sorting": {
-        "__compat": {
-          "description": "Lexicographical sorting, and values from duplicate header names combined when iterated.",
-          "support": {
-            "chrome": {
-              "version_added": "57"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "44"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -439,11 +510,12 @@
             "firefox": {
               "version_added": "39"
             },
-            "firefox_android": {
-              "version_added": "44"
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -483,6 +555,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "18.0.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -519,6 +594,9 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",

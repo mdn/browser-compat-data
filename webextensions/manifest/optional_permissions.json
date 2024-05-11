@@ -29,7 +29,7 @@
             "description": "<code>activeTab</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -43,6 +43,26 @@
               "safari_ios": {
                 "version_added": "15"
               }
+            }
+          }
+        },
+        "alarms": {
+          "__compat": {
+            "description": "<code>alarms</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -117,7 +137,7 @@
             "description": "<code>browsingData</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -250,16 +270,98 @@
             }
           }
         },
-        "debugger": {
+        "declarativeNetRequest": {
           "__compat": {
-            "description": "<code>debugger</code>",
+            "description": "<code>declarativeNetRequest</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": false
               },
-              "edge": {
-                "version_added": "79"
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
               },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "declarativeNetRequestFeedback": {
+          "__compat": {
+            "description": "<code>declarativeNetRequestFeedback</code>",
+            "support": {
+              "chrome": {
+                "version_added": "84",
+                "notes": "Available only to unpacked extensions."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "113"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "declarativeNetRequestWithHostAccess": {
+          "__compat": {
+            "description": "<code>declarativeNetRequestWithHostAccess</code>",
+            "support": {
+              "chrome": {
+                "version_added": "96"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "devtools": {
+          "__compat": {
+            "description": "<code>devtools</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "77"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "dns": {
+          "__compat": {
+            "description": "<code>dns</code>",
+            "support": {
+              "chrome": {
+                "version_added": "preview",
+                "notes": "The <code>dns</code> API is only available in Chrome Dev."
+              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -277,7 +379,7 @@
             "description": "<code>downloads</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -297,7 +399,7 @@
             "description": "<code>downloads.open</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -378,6 +480,26 @@
             }
           }
         },
+        "identity": {
+          "__compat": {
+            "description": "<code>identity</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "idle": {
           "__compat": {
             "description": "<code>idle</code>",
@@ -429,7 +551,7 @@
             "description": "<code>nativeMessaging</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -560,12 +682,55 @@
             }
           }
         },
+        "scripting": {
+          "__compat": {
+            "description": "<code>scripting</code>",
+            "support": {
+              "chrome": {
+                "version_added": "88",
+                "notes": "Available for use in Manifest V3 or later."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "102"
+              },
+              "firefox_android": "mirror",
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "search": {
+          "__compat": {
+            "description": "<code>search</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": true
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "sessions": {
           "__compat": {
             "description": "<code>sessions</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": true
               },
               "edge": "mirror",
               "firefox": {
@@ -574,6 +739,26 @@
               "firefox_android": {
                 "version_added": false
               },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "storage": {
+          "__compat": {
+            "description": "<code>storage</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
                 "version_added": false
@@ -650,6 +835,26 @@
             }
           }
         },
+        "unlimitedStorage": {
+          "__compat": {
+            "description": "<code>unlimitedStorage</code>",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "webNavigation": {
           "__compat": {
             "description": "<code>webNavigation</code>",
@@ -710,6 +915,46 @@
               },
               "firefox": {
                 "version_added": "55"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "webRequestFilterResponse": {
+          "__compat": {
+            "description": "<code>webRequestFilterResponse</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "110"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "webRequestFilterResponse_serviceWorkerScript": {
+          "__compat": {
+            "description": "<code>webRequestFilterResponse.serviceWorkerScript</code>",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "95"
               },
               "firefox_android": "mirror",
               "opera": "mirror",

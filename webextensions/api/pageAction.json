@@ -2,6 +2,30 @@
   "webextensions": {
     "api": {
       "pageAction": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pageAction",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": "50"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "ImageDataType": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/pageAction/ImageDataType",
@@ -16,7 +40,7 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
               "safari": {
@@ -42,8 +66,8 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "notes": "The 'tabId' parameter is ignored: the page action popup is the same for all tabs.",
-                "version_added": "50"
+                "version_added": "50",
+                "notes": "The 'tabId' parameter is ignored: the page action popup is the same for all tabs."
               },
               "opera": "mirror",
               "safari": {
@@ -69,7 +93,7 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
               "safari": {
@@ -78,6 +102,48 @@
               "safari_ios": {
                 "version_added": "15",
                 "notes": "The API exists, but the title not visible in the UI."
+              }
+            }
+          }
+        },
+        "getUserSettings": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/getUserSettings",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          },
+          "returns_userSettings_isOnToolbar_property": {
+            "__compat": {
+              "description": "<code>userSettings.isOnToolbar</code> in returned object",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "116"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }
@@ -96,8 +162,8 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "notes": "Before version 56, the 'tabId' parameter was ignored, and the page action was hidden for all tabs.",
-                "version_added": "50"
+                "version_added": "50",
+                "notes": "Before version 56, the 'tabId' parameter was ignored, and the page action was hidden for all tabs."
               },
               "opera": "mirror",
               "safari": {
@@ -119,7 +185,7 @@
                 "version_added": "59"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
               "safari": {
@@ -213,7 +279,7 @@
                 "version_added": "57"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
               "safari": {
@@ -238,7 +304,7 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": {
                 "version_added": "15"
@@ -313,8 +379,8 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "notes": "The 'tabId' parameter is ignored, and the popup is set for all tabs.",
-                "version_added": "50"
+                "version_added": "50",
+                "notes": "The 'tabId' parameter is ignored, and the popup is set for all tabs."
               },
               "opera": "mirror",
               "safari": {
@@ -364,7 +430,7 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
               "safari": {
@@ -415,8 +481,8 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "notes": "Before version 56, the 'tabId' parameter was ignored, and the page action was shown for all tabs.",
-                "version_added": "50"
+                "version_added": "50",
+                "notes": "Before version 56, the 'tabId' parameter was ignored, and the page action was shown for all tabs."
               },
               "opera": "mirror",
               "safari": {

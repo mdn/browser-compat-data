@@ -7,31 +7,30 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import { query } from '../utils/index.js';
-import mirror from './release/mirror.js';
-
 import { SupportStatement, Identifier, BrowserName } from '../types/types.js';
 
-type Contents = {
+import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
+import mirror from './build/mirror.js';
+
+interface Contents {
   base: string;
   head: string;
-};
+}
 
-type DiffItem = {
+interface DiffItem {
   name: string;
   description: string;
-};
+}
 
 /**
  * Get contents from base and head commits
  * Note: This does not detect renamed files
- *
- * @param {string} baseCommit Base commit
- * @param {string} basePath Base path
- * @param {string} headCommit Head commit
- * @param {string} headPath Head path
- * @returns {Contents} The contents of both commits
+ * @param baseCommit Base commit
+ * @param basePath Base path
+ * @param headCommit Head commit
+ * @param headPath Head path
+ * @returns The contents of both commits
  */
 const getBaseAndHeadContents = (
   baseCommit: string,
@@ -46,25 +45,23 @@ const getBaseAndHeadContents = (
 
 /**
  * Returns a formatted string of before-and-after changes
- *
- * @param {any} lhs Left-hand (before) side
- * @param {any} rhs Right-hand (after) side
- * @returns {string} Formatted string
+ * @param lhs Left-hand (before) side
+ * @param rhs Right-hand (after) side
+ * @returns Formatted string
  */
 const stringifyChange = (lhs: any, rhs: any): string =>
   `${JSON.stringify(lhs)} → ${JSON.stringify(rhs)}`;
 
 /**
  * Perform mirroring on specified diff statement
- *
- * @param {{base: SupportStatement, head: SupportStatement}} diff The diff to perform mirroring on
- * @param {SupportStatement} diff.base The diff to perform mirroring on
- * @param {SupportStatement} diff.head The diff to perform mirroring on
- * @param {{base: Identifier, head: Identifier}} contents The contents to mirror from
- * @param {Identifier} contents.base The contents to mirror from
- * @param {Identifier} contents.head The contents to mirror from
- * @param {Array.<string>} path The feature path to mirror
- * @param {'base' | 'head'} direction Whether to mirror 'base' or 'head'
+ * @param diff The diff to perform mirroring on
+ * @param diff.base The diff to perform mirroring on
+ * @param diff.head The diff to perform mirroring on
+ * @param contents The contents to mirror from
+ * @param contents.base The contents to mirror from
+ * @param contents.head The contents to mirror from
+ * @param path The feature path to mirror
+ * @param direction Whether to mirror 'base' or 'head'
  */
 const doMirror = (
   diff: { base: SupportStatement; head: SupportStatement },
@@ -81,10 +78,9 @@ const doMirror = (
 
 /**
  * Describe the diff in text form (internal function)
- *
- * @param {Diff<string, string>} diffItem The diff to describe
- * @param {Contents} contents The contents of the diff
- * @returns {string} A human-readable diff description
+ * @param diffItem The diff to describe
+ * @param contents The contents of the diff
+ * @returns A human-readable diff description
  */
 const describeByKind = (
   diffItem: Diff<string, string>,
@@ -129,10 +125,9 @@ const describeByKind = (
 
 /**
  * Describe the diff in text form
- *
- * @param {Diff<string, string>} diffItem The diff to describe
- * @param {Contents} contents The contents of the diff
- * @returns {DiffItem} A human-readable diff description
+ * @param diffItem The diff to describe
+ * @param contents The contents of the diff
+ * @returns A human-readable diff description
  */
 const describeDiffItem = (
   diffItem: Diff<string, string>,
@@ -157,9 +152,8 @@ const describeDiffItem = (
 
 /**
  * Merge diff together as a map
- *
- * @param {DiffItem[]} items Diff items to merge
- * @returns {Map<string, string>} A map of the diff items
+ * @param items Diff items to merge
+ * @returns A map of the diff items
  */
 const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
   const map = new Map();
@@ -173,10 +167,9 @@ const mergeAsMap = (items: DiffItem[]): Map<string, string> => {
 
 /**
  * Get the diffs as a map
- *
- * @param {string} base Base ref
- * @param {string} head Head ref
- * @returns {Map<string, string>} A map of the diff items
+ * @param base Base ref
+ * @param head Head ref
+ * @returns A map of the diff items
  */
 const getDiffs = (base: string, head = ''): Map<string, string> => {
   const namedDescriptions: { name: string; description: string }[] = [];

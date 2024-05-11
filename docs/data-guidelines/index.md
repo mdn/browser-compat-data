@@ -1,21 +1,11 @@
 # Data guidelines
 
 This folder contains guidelines to help you record data in a consistent and understandable way. It covers the project's requirements for the way features should be represented, including requirements that are not coded into the linter or schema.
-
-<!-- BEGIN TEMPLATE --
-
-## Short title in sentence case
-
-A description of what to do, preferably in the imperative. If applicable, include an example to illustrate the rule.
-
-If it's helpful to understanding the rule, summarize the rationale. Definitely cite the issue or pull request where this was decided (it may be the PR that merges the policy).
-
--- END TEMPLATE -->
-
 This file contains general guidelines that apply to all features added to BCD. For guidelines that apply to specific categories of data, check out their respective files within this folder.
 
 - [API](./api.md)
 - [Browsers](./browsers.md)
+- [Tagging BCD features](./tags.md)
 
 ## Choosing a version number
 
@@ -27,7 +17,7 @@ This decision was made in [#3953, under the expectation that most users are like
 
 ### Backported releases
 
-Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Choosing a version number](#choosing-a-version-number) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
 | If the browser and its version is... | then set the version to... |
 | ------------------------------------ | -------------------------- |
@@ -78,7 +68,7 @@ See [#3904](https://github.com/mdn/browser-compat-data/pull/3904#issuecomment-48
 
 ## Operating system limitations imply `"partial_implementation"`
 
-If a browser or engine is available on more than one operating system and a feature is only implemented on a subset of those operating systems, then the support statement should set `"partial_implementation": true`. For example, if a browser supports both Windows and Linux, but only implements a feature on Windows, then a support statement for that feature should should set `"partial_implementation": true` (and a [note](#partial_implementation-requires-a-note)).
+If a browser or engine is available on more than one operating system and a feature is only implemented on a subset of those operating systems, then the support statement should set `"partial_implementation": true`. For example, if a browser supports both Windows and Linux, but only implements a feature on Windows, then a support statement for that feature should set `"partial_implementation": true` (and a [note](#partial_implementation-requires-a-note)).
 
 However, this guideline does not apply to features where the browser's expected behavior is conditional on the behavior of the operating system itself. For example, a browser can fully implement a CSS media query even if an underlying operating system can never satisfy the media query's condition because it does not support the requisite hardware.
 
@@ -89,10 +79,11 @@ This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-dat
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
 - a feature was never implemented in any browser.
+- a feature is not available behind a flag in the latest stable browser release.
 - a feature was implemented and has since been removed from all browsers dating back two or more years ago.
 - a feature is unsupported in all releases in the past five years.
 
-This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619) and [#21521](https://github.com/mdn/browser-compat-data/pull/21521).
 
 ## Removal of irrelevant flag data
 
@@ -108,7 +99,7 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Features with no browser support
 
-Browser features that have not been implemented in any browser, or are planned to be implemented, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+Browser features that have not been implemented (or planned to be implemented) in any browser, should not be added to BCD. A feature should not be added if all of the following conditions are met:
 
 - The feature has not been included in a stable browser release.
 - The feature is not implemented behind a current flag (or Chrome origin trial).

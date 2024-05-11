@@ -67,12 +67,52 @@
             "deprecated": false
           }
         },
+        "anchor-center": {
+          "__compat": {
+            "description": "<code>anchor-center</code>",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-center",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "flex_context": {
           "__compat": {
             "description": "Supported in Flex Layout",
             "spec_url": [
               "https://drafts.csswg.org/css-align/#align-self-property",
               "https://drafts.csswg.org/css-flexbox/#align-items-property"
+            ],
+            "tags": [
+              "web-features:flexbox"
             ],
             "support": {
               "chrome": [
@@ -121,6 +161,9 @@
           "baseline": {
             "__compat": {
               "description": "<code>baseline</code>",
+              "tags": [
+                "web-features:flexbox"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "21"
@@ -201,18 +244,10 @@
               "description": "<code>last baseline</code>",
               "support": {
                 "chrome": {
-                  "version_added": "59",
-                  "version_removed": "86",
-                  "partial_implementation": true,
-                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
+                  "version_added": "108"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤79",
-                  "version_removed": "86",
-                  "partial_implementation": true,
-                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "52"
                 },
@@ -221,24 +256,14 @@
                   "version_added": false
                 },
                 "oculus": "mirror",
-                "opera": {
-                  "version_added": "44"
-                },
-                "opera_android": {
-                  "version_added": "43"
-                },
+                "opera": "mirror",
+                "opera_android": "mirror",
                 "safari": {
-                  "version_added": "11",
-                  "partial_implementation": true,
-                  "notes": "This value is recognized, but has no effect. See <a href='https://webkit.org/b/235005'>bug 235005</a>."
+                  "version_added": "16.2"
                 },
                 "safari_ios": "mirror",
-                "samsunginternet_android": {
-                  "version_added": "7.0"
-                },
-                "webview_android": {
-                  "version_added": "57"
-                }
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -252,8 +277,8 @@
               "description": "<code>safe</code> and <code>unsafe</code>",
               "support": {
                 "chrome": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "115",
+                  "notes": "Before version 115, this value is recognized, but has no effect."
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -307,7 +332,7 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -323,6 +348,9 @@
           "stretch": {
             "__compat": {
               "description": "<code>stretch</code>",
+              "tags": [
+                "web-features:flexbox"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "57"
@@ -360,6 +388,9 @@
             "spec_url": [
               "https://drafts.csswg.org/css-align/#align-self-property",
               "https://drafts.csswg.org/css-flexbox/#align-items-property"
+            ],
+            "tags": [
+              "web-features:grid"
             ],
             "support": {
               "chrome": {

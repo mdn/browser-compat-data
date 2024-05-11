@@ -1,6 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import esMain from 'es-main';
+
 import {
   CompatData,
   BrowserName,
@@ -8,14 +14,7 @@ import {
   ReleaseStatement,
   SimpleSupportStatement,
 } from '../../types/types.js';
-
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import esMain from 'es-main';
-
 import { walk } from '../../utils/index.js';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
@@ -23,8 +22,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Fix the experimental status throughout compatibility data
- *
- * @param {CompatData} bcd Parsed BCD object to be updated in place.
+ * @param bcd Parsed BCD object to be updated in place.
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
   for (const { compat } of walk(undefined, bcd)) {
@@ -85,8 +83,7 @@ export const fixExperimental = (bcd: CompatData | Identifier): void => {
 
 /**
  * Fix the experimental status throughout a file
- *
- * @param {string} filename Filename of BCD to be updated in place.
+ * @param filename Filename of BCD to be updated in place.
  */
 const fixExperimentalFile = (filename: string): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -101,8 +98,7 @@ const fixExperimentalFile = (filename: string): void => {
 
 /**
  * Load files and fix experimental status
- *
- * @param {string[]} files The files to fix
+ * @param files The files to fix
  */
 const load = (...files: string[]): void => {
   for (let file of files) {
@@ -143,6 +139,7 @@ if (esMain(import.meta)) {
       'javascript',
       'mathml',
       'test',
+      'webassembly',
       'webdriver',
       'webextensions',
     );

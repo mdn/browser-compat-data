@@ -2,9 +2,170 @@
   "webextensions": {
     "api": {
       "commands": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "Command": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/Command",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          },
+          "description": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "name": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "shortcut": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          }
+        },
+        "getAll": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "onChanged": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/onChanged",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "115"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "onCommand": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/onCommand",
             "support": {
               "chrome": {
                 "version_added": true
@@ -13,7 +174,8 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Before version 63, the <code>onCommand</code> listener was not treated as a <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/User_actions'>handler for a user action</a>."
               },
               "firefox_android": {
                 "version_added": false
@@ -56,71 +218,20 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "86"
+                  "version_added": true
                 },
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "126"
+                },
+                "firefox_android": {
                   "version_added": false
                 },
-                "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
                 "safari_ios": "mirror"
-              }
-            }
-          }
-        },
-        "getAll": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "79"
-              },
-              "firefox": {
-                "version_added": "48"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              }
-            }
-          }
-        },
-        "onCommand": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/onCommand",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "79"
-              },
-              "firefox": {
-                "version_added": "48",
-                "notes": "Before version 63, the <code>onCommand</code> listener was not treated as a <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/User_actions'>handler for a user action</a>."
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
               }
             }
           }
@@ -168,69 +279,67 @@
               "safari_ios": "mirror"
             }
           },
-          "details": {
-            "description": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+          "description": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
-            },
-            "name": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+            }
+          },
+          "name": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
-            },
-            "shortcut": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60",
-                    "notes": "From Firefox 74 can be set as an empty string to clear the shortcut assignment."
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+            }
+          },
+          "shortcut": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60",
+                  "notes": "From Firefox 74 can be set as an empty string to clear the shortcut assignment."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }

@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow",
           "spec_url": "https://drafts.csswg.org/css-overflow/#propdef-overflow",
+          "tags": [
+            "web-features:overflow-shorthand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -34,9 +37,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "37"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -44,9 +45,71 @@
             "deprecated": false
           }
         },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-auto",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "15"
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "100"
+                }
+              ],
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "112"
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "3"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "≤13.1"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "clip": {
           "__compat": {
-            "description": "<code>clip</code> value",
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-clip",
+            "tags": [
+              "web-features:overflow-shorthand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "90"
@@ -69,11 +132,44 @@
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": false
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "hidden": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-hidden",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "3"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -89,6 +185,9 @@
         "multiple_keywords": {
           "__compat": {
             "description": "Multiple keyword syntax for <code>overflow-x</code> and <code>overflow-y</code>",
+            "tags": [
+              "web-features:overflow-shorthand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "68"
@@ -106,7 +205,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "13.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -119,42 +218,73 @@
             }
           }
         },
-        "overlay": {
+        "scroll": {
           "__compat": {
-            "description": "<code>overlay</code> value",
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-scroll",
             "support": {
               "chrome": {
-                "version_added": "15"
+                "version_added": "1"
               },
-              "chrome_android": {
-                "version_added": "100"
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
               },
-              "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "1"
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": false
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": false
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "3"
               },
               "safari_ios": "mirror",
-              "samsunginternet_android": {
-                "version_added": "4.0"
-              },
+              "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": true
+              "deprecated": false
+            }
+          }
+        },
+        "visible": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-visible",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }

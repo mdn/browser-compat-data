@@ -1,0 +1,50 @@
+name: Update browser releases
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 4 * * 1-5"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    if: github.repository == 'mdn/browser-compat-data'
+    name: Update browser releases
+    runs-on: ubuntu-latest
+    env:
+      RESULT: ""
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # get the full repository checkout, not just the inciting commit
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+      - run: npm install -D typescript
+      - run: npm install -D ts-node
+      - name: Run update-browser-releases script
+        id: ubr
+        run: |
+          echo "RESULT<<EOF" >> $GITHUB_ENV
+          npm run update-browser-releases -- --all >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
+          commit-message: Update browser releases
+          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
+          signoff: false
+          branch: browser-releases
+          delete-branch: true
+          add-paths: browsers/*.json # Only include files in that directory
+          title: "Update browser releases"
+          body: |
+            The output of the `update-browser-releases` script is:
+            ${{ env.RESULT }}
+          draft: false

@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement",
         "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#htmlslotelement",
+        "tags": [
+          "web-features:slot"
+        ],
         "support": {
           "chrome": {
             "version_added": "53"
@@ -37,6 +40,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assign",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-slot-assign",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "86"
@@ -54,7 +60,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -71,6 +77,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedElements",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-slot-assignedelements-dev",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "65"
@@ -105,6 +114,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/assignedNodes",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-slot-assignednodes-dev",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -139,6 +151,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/name",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-slot-name-dev",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -174,8 +189,11 @@
           "description": "<code>slotchange</code> event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLSlotElement/slotchange_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#event-slotchange",
+            "https://dom.spec.whatwg.org/#eventdef-htmlslotelement-slotchange",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange"
+          ],
+          "tags": [
+            "web-features:slot"
           ],
           "support": {
             "chrome": {
@@ -193,9 +211,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "The <code>onslotchange</code> event handler property is not supported."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"

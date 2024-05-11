@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp-regular-expression-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-3"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -51,6 +54,9 @@
             "description": "<code>RegExp()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/RegExp",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp-constructor",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -97,6 +103,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/compile",
             "spec_url": "https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-regexp.prototype.compile",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -143,6 +152,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.dotAll",
+            "tags": [
+              "web-features:snapshot:ecmascript-2018"
+            ],
             "support": {
               "chrome": {
                 "version_added": "62"
@@ -159,20 +171,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "8.10.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "8.10.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -194,6 +195,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype.exec",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -240,6 +244,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.flags",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -284,6 +291,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.global",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -371,6 +381,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/hasIndices",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.hasIndices",
+            "tags": [
+              "web-features:snapshot:ecmascript-2022"
+            ],
             "support": {
               "chrome": {
                 "version_added": "90"
@@ -388,7 +401,7 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "16.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -411,6 +424,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.ignorecase",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -498,6 +514,7 @@
           "__compat": {
             "description": "<code>RegExp.input</code> (<code>$_</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/input",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -533,8 +550,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -542,6 +559,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-properties-of-regexp-instances",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -586,8 +606,9 @@
         },
         "lastMatch": {
           "__compat": {
-            "description": "<code>RegExp.lastMatch</code> (<code>$&</code>)",
+            "description": "<code>RegExp.lastMatch</code> (<code>$&amp;</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastMatch",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -627,8 +648,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -636,6 +657,7 @@
           "__compat": {
             "description": "<code>RegExp.lastParen</code> (<code>$+</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastParen",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -675,8 +697,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -684,6 +706,7 @@
           "__compat": {
             "description": "<code>RegExp.leftContext</code> (<code>$`</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/leftContext",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -723,47 +746,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
-            }
-          }
-        },
-        "lookbehind_assertion": {
-          "__compat": {
-            "description": "lookbehind assertions (<code>(?&lt;= )</code> and <code>(?&lt;! )</code>)",
-            "support": {
-              "chrome": {
-                "version_added": "62"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "8.10.0"
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -771,6 +755,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.multiline",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -897,108 +884,7 @@
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "named_capture_groups": {
-          "__compat": {
-            "description": "Named capture groups",
-            "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-patterns",
-            "support": {
-              "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "11.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "property_escapes": {
-          "__compat": {
-            "description": "Unicode property escapes (<code>\\p{...}</code>)",
-            "support": {
-              "chrome": {
-                "version_added": "64"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.0"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "78"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": [
-                {
-                  "version_added": "10.0.0"
-                },
-                {
-                  "version_added": "8.3.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "11.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -1006,6 +892,7 @@
           "__compat": {
             "description": "<code>RegExp.rightContext</code> (<code>$'</code>)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/rightContext",
+            "spec_url": "https://github.com/tc39/proposal-regexp-legacy-features/#additional-properties-of-the-regexp-constructor",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1045,8 +932,8 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": false
+              "standard_track": true,
+              "deprecated": true
             }
           }
         },
@@ -1054,6 +941,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.source",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1349,6 +1239,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype.test",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1395,6 +1288,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype.tostring",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1522,10 +1418,53 @@
             }
           }
         },
+        "unicodeSets": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicodeSets",
+            "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp.prototype.unicodesets",
+            "support": {
+              "chrome": {
+                "version_added": "112"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.32"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "20.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "@@match": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype-@@match",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -1610,6 +1549,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype-@@replace",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -1650,6 +1592,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype-@@search",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -1692,6 +1637,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@species",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-get-regexp-@@species",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -1710,20 +1658,9 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": [
-                {
-                  "version_added": "6.5.0"
-                },
-                {
-                  "version_added": "6.0.0",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--harmony"
-                    }
-                  ]
-                }
-              ],
+              "nodejs": {
+                "version_added": "6.5.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1745,6 +1682,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@split",
             "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#sec-regexp.prototype-@@split",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"

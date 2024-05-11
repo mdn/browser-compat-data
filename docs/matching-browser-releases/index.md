@@ -4,11 +4,13 @@ When contributing to the documentation on the MDN web docs site, you will often 
 
 > **Note:** In this article, the term **feature** is used to refer to anything that might need to be documented on MDN. This includes APIs, HTML elements, new HTML attributes, new CSS properties, new possible values for CSS properties, and so forth. Anything that needs to be documented, from very small to very large.
 
-## Chrome
+## Chromium
+
+### Chrome
 
 There are various ways to locate information about the release of a feature on Chrome. Some of them are quite easy but less likely to provide the details you need, while others take some significant work but are much more likely to provide precise details.
 
-### Useful resources
+#### Useful resources
 
 The following sites and tools are helpful when trying to track down history information for a feature in Chrome:
 
@@ -23,17 +25,19 @@ The following sites and tools are helpful when trying to track down history info
 - [Interfaces not exposed to WebView](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt)
 - [WebKit bugs](https://bugs.webkit.org/)
 
-### Getting the Chrome version for a changeset or revision
+#### Getting the Chrome version for a changeset or revision
 
 Given a particular Chrome changeset or revision number, you can look up the version number of Chrome that first shipped with those changes included using Google's [Find Releases tool](https://storage.googleapis.com/chromium-find-releases-static/index.html). As long as the change happened after the Chrome code moved to `git`, this will return the corresponding version number.
 
 For example, given the string `05b49ea1`, the tool first looks for a match among the full commit changeset numbers, finds none, then looks at the prefixed short commits:
 
-![Screenshot of the Chromium project's Find Releases tool](find-releases-tool.png)
+![Screenshot of the Chromium project's Find Releases tool](./find-releases-tool.png)
 
 Here, we see that changeset `05b49ea1` was first landed for Chrome 56, but was then backported to Chrome 55 and was presumably shipped there. This assumes the feature was not backed out at some point, and it's important to check on this.
 
-### Version numbers for Chrome for Android
+#### Version numbers for Chrome for Android
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 Chrome for Android shares version numbers with the desktop release, although not every desktop Chrome version has a corresponding Android version. The table below will help map features to versions of Chrome for Android
 
@@ -43,37 +47,41 @@ Chrome for Android shares version numbers with the desktop release, although not
 | 19-25                                               | 25 (there were no Chrome for Android versions 19 through 24)    |
 | 26 and higher                                       | The same version as desktop                                     |
 
-### Version numbers for features in Android WebView
+#### Version numbers for features in Android WebView
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 The Android WebView component switched to being based off the latest version of Chrome during the Chrome 37 lifecycle, so any feature that's present in Android WebView _and_ was introduced during or after the Chrome 37 time period should have the same versions as the Chrome release at the same time. For example, if a feature is added to WebView while Chrome 55 is current, then the value of `version_added` is `55`.
 
 If a feature is added to WebView prior to the Chrome 37 time period, and its version number is not known (looking these up is a more difficult process), specify `≤37` as the version. Otherwise, if you do know the WebView component's version number, use that instead.
 
-#### Features excluded from WebView
+##### Features excluded from WebView
 
-One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt) which are not available in a WebView.
+One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromium/chromium/src/+/main:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt;l=53) which are not available in a WebView.
 
-```js
+```webidl
 interface HTMLIFrameElement : HTMLElement
     getter allowPaymentRequest
     setter allowPaymentRequest
 ```
 
-This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
+This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
 
 If only an interface line is included in the exclusion list, then the entire interface is unavailable in WebViews.
 
 Items listed under "`[GLOBAL OBJECT]`" are globals which are not available on WebView.
 
-### View a specific release's code
+#### View a specific release's code
 
 The Chromium source code repository maintains a set of tags, one for each release of Chrome going back to version 10.0.601.0. A [list of links to these tags](https://chromium.googlesource.com/chromium/src.git/+refs) is available. This is helpful when you need to check for the presence of a given feature in a particular release, or to see if a given change was backed out or not prior to the release of a given version of Chrome.
 
-## Edge
+### Edge
 
 Edge is based on Chromium and Microsoft has replaced older versions of the previously EdgeHTML-based browser with the new Chromium-based browser.
 
-### Matching Chrome versions
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
 Edge continuously fetches _upstream_ changes from the Chromium project and its version numbering strategy is the same as Chrome's. Although it can take a few days (or weeks) for a feature that appears in Chrome to also appear in Edge, the feature will ship in both browsers under the same version number.
 
@@ -81,15 +89,37 @@ Indeed, after Edge 18, when Edge adopted Chromium, the version number jumped to 
 
 There may be some exceptions and you should test the feature you are documenting in both browsers. While most features will be the same between all Chromium browsers at the same version number, Edge has its own _downstream_ codebase and may alter, remove, or disable certain Chromium features.
 
-## Opera
+### Opera
 
 After Opera 12.16, Opera adopted the Blink engine and released Opera 15 (skipping 13 and 14), becoming based upon Chromium.
 
-## Matching Chrome versions
+#### Matching Chrome versions
 
-After migrating to the Blink engine, Opera's version became Chrome's/Blink's version minus 13 — that is, Opera 15 used Blink 28 (15+13=28) — until Opera Desktop 69 and Opera Android 43. The browser files within the browser-compat-data project contain a mapping of Opera versions to Chromium/Blink versions; see [browsers/opera.json](../../browsers/opera.json) and [browsers/opera_android.json](../../browsers/opera_android.json).
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+After migrating to the Blink engine, Opera's version became Chrome's/Blink's version minus 13 — that is, Opera 15 used Blink 28 (15+13=28) — until Opera Desktop 69 and Opera Android 43. The browser files contain a mapping of Opera versions to Chromium/Blink versions; see [browsers/opera.json](../../browsers/opera.json) and [browsers/opera_android.json](../../browsers/opera_android.json).
 
 There may be some exceptions and you should test the feature you are documenting in both browsers. While most features will be the same between all Chromium browsers at the same version number, Opera has its own _downstream_ codebase and may alter, remove, or disable certain Chromium features.
+
+### Samsung Internet
+
+Samsung Internet is a Chromium browser specifically tailored for Android devices by Samsung. Its release cycle differs from Chromium. Unlike other forks, however, sometimes Samsung Internet will pull features from newer Chromium versions (ex. Samsung Internet 11.2, which is based on Chromium 75, may include features from Chromium 77).
+
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+Most of the features for Samsung Internet will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occasions, however, Samsung Internet may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
+
+### Quest
+
+The Meta Quest (formerly known as Oculus Quest) browser is based upon the Android build of Chromium. Like Samsung Internet, its release cycle differs from Chromium.
+
+#### Matching Chrome versions
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
+
+Most of the features for the Quest's browser may simply be automatically mirrored from Chrome Android. However, if you need to manually track down version numbers for the browser, we have found that there is very little public documentation and the documentation that is present is severely outdated. Additionally, like Samsung Internet, there is no public repository, but unlike Samsung Internet, older APKs are not available for downloading and installation. We recommend that contributors simply stick with auto-mirroring the data and leave tracking down specific versions to Oculus Browser engineers.
 
 ## Firefox
 
@@ -106,7 +136,7 @@ The specific appearance of the display will vary depending on what tool you're u
 Here, the mouse is pointing at a row with the revision number `199991` beside it. This has opened up a tooltip with details about that revision: It was created for bug 1032835, entitled "addTrack/removeTrack on-top of existing implementation". The tooltip includes several links which can be helpful:
 
 - <40 digit hexadecimal changeset number>
-  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from_a_mercurial_changeset_number) will show you how to track down the version information.
+  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from-a-mercurial-changeset-number) will show you how to track down the version information.
 - Bugzilla bug link
   - : A link back to the bug on Bugzilla that corresponds to this change. You may find useful information in the bug, including potentially the version number the change shipped in, but odds are good that's where you started.
 - Parent changeset revision number
@@ -114,7 +144,7 @@ Here, the mouse is pointing at a row with the revision number `199991` beside it
 - `diff`
   - : A link that will produce a diff showing the differences between the parent changeset and the changeset that introduced the change you're looking at.
 - `changeset`
-  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details.
+  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details.
 
 > **Note:** If you aren't able to find the change because it apparently happens before Firefox was migrated to Mercurial from CVS, try using Mercurial blame on the [Unified Firefox repository](https://hg.mozilla.org/mozilla-unified/), which has tags in place, each representing the code state at specific points in the history of the project, including each beta and each release build.
 
@@ -124,17 +154,17 @@ If you have the bug number corresponding to the bug that implemented the feature
 
 Consider [bug 1435161](https://bugzil.la/1435161). This bug covers implementing the `PaymentResponse.retry()` method. If you look at that bug, you'll see the information you need right there at the top:
 
-![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](bugzilla-fixedin-top.png)
+![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](./bugzilla-fixedin-top.png)
 
 Right below the bug summary, you see the text "RESOLVED FIXED in Firefox 64". This corresponds to the presence of the tracking flag named `firefox45` having the value `fixed`. On older bugs, before the release-numbered tracking flags were added, you might instead find one of these:
 
 - A tracking flag named `relnote-firefox` with the status set to the version of Firefox the feature arrived in. This tracking flag is intended to indicate when a feature needs to be mentioned in the release notes for the browser, but serves just as well to tell us when a feature was added.
 
-  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](bugzilla-relnote-firefox.png)
+  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](./bugzilla-relnote-firefox.png)
 
 - The Target field in the Tracking group in Bugzilla is set to `mozillaN`, where `N` is the version number of Firefox. The trick to watch for is that this is sometimes inaccurate, as it represents when it was hoped to ship, not necessarily when it was actually released. Be sure to review the comments on the bug to ensure that it didn't miss its planned release.
 
-  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](bugzilla-target.png)
+  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](./bugzilla-target.png)
 
 ### From the name of a Web API interface or member
 
@@ -144,11 +174,11 @@ If you're updating compatibility data for a given API interface, or for a proper
 
 A good place to start: do a Bugzilla search for a bug that mentions what you're looking for:
 
-- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting_the_firefox_release_for_a_bug_number) and determine when this interface was added to Firefox.
+- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting-the-firefox-release-for-a-bug-number) and determine when this interface was added to Firefox.
 - If you're looking for a property or method on an interface having been added, try searching for the interface name and the method or property name both, similar to the previous suggestion. You may find that the method was added along with the entire interface or API, so be sure to watch for the addition of the broader area too.
 - If all else fails, just search for the API name, ideally limiting the search to bugs that are also resolved, as in the first suggestion above.
 
-If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting_the_firefox_release_for_a_bug_number) to review how to isolate that compatibility data from the bug's contents.
+If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting-the-firefox-release-for-a-bug-number) to review how to isolate that compatibility data from the bug's contents.
 
 #### Finding the version from the source tree
 
@@ -163,26 +193,26 @@ A web API feature change corresponds to adding, removing, or altering the signat
 - A constant defined by an API's specification
 - A data type (enum, typedef, or similar)
 
-The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
+The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](https://developer.mozilla.org/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
 
 1. For a given interface named `InterfaceName`, go to [DXR](https://searchfox.org/mozilla-central/source/) and type <kbd>file:<em>InterfaceName</em>.webidl</kbd> in the search box at the top of the page and pressing <kbd>Enter</kbd>. You will probably have to then click on the name of the file in a list of files (usually only a one-file-long list).
-2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
+2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
 
 Once in the WebIDL file, click the "Blame" link under "VCS Links" in the Navigation box near the top-right corner of the DXR page.
 
-![Screenshot of the DXR Navigation box](dxr-navigation-box.png)
+![Screenshot of the DXR Navigation box](./dxr-navigation-box.png)
 
 Once in the blame view, hover the mouse cursor over the revision number at the left side of the WebIDL on the same line as (or the first revision number found immediately above) the line of WebIDL corresponding to the feature you're interested in. For example, if you're looking for when the `RTCPeerConnection` method `addTrack()` was added to Firefox:
 
 ![](hg-tooltip-revision.png)
 
-This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details on how to get the version information you need from there.
+This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details on how to get the version information you need from there.
 
 If you can't find the changeset you need just by browsing the blame page, the next thing to try is to look through the revision history. Click on the `revisions` link at the top of the Mercurial blame page, or the "Log" link in the Navigation box on the DXR page. This will present a list of every changeset that altered the file you're looking at. Look for a revision that matches the feature change you're interested in; if you find a promising revision, click the `diff` link next to that revision.
 
 ![](hg-revisions-ontrack.png)
 
-This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from_a_mercurial_changeset_number).
+This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from-a-mercurial-changeset-number).
 
 ##### For HTML elements
 
@@ -195,7 +225,7 @@ If the change is one that can't be determined from changes to WebIDL, you'll hav
 - The first line of the C++ function implementing the feature (or a function that's used only by the implementation of the feature). The existence of this line indicates the feature exists, but you can also look for changes to the parameter list.
 - A `return` operation which changes from returning nothing or `undefined` to some new value, or changes return type.
 
-Locating an appropriate line of code can be tricky, and can take some practice. It's not difficult, but it does mean learning some techniques. a few suggestions:
+Locating an appropriate line of code can be tricky, and can take some practice. It's not difficult, but it does mean learning some techniques. A few suggestions:
 
 - To locate source files related to an element, use the search
 
@@ -229,7 +259,7 @@ Once you've found a representative line of code, the goal is to identify the Fir
 
 ##### For CSS features
 
-CSS changes can be a little bit tricker to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
+CSS changes can be a little bit trickier to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
 
 To determine when support for a given **value** for a property was added, try opening the file [`nsCSSProps.cpp`](https://searchfox.org/mozilla-central/source/layout/style/nsCSSProps.cpp) and looking through the tables of property values found there. These tables are all of type `KTableEntry`; each entry in the tables maps a CSS keyword to a value used to represent it internally. For instance, to determine when Firefox added support for the CSS Scroll Snap type value `proximity`, look through `nsCSSProps.cpp` until you find in the table `nsCSSProps::kScrollSnapTypeKTable`:
 
@@ -242,7 +272,7 @@ const KTableEntry nsCSSProps::kScrollSnapTypeKTable[] = {
 };
 ```
 
-And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using_mercurial_blame).
+And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using-mercurial-blame).
 
 ### From a Mercurial changeset number
 
@@ -275,7 +305,7 @@ At any rate, **the version number next to "first release with" is the number you
 
 ### Checking for platform-specific availability
 
-Most of the time, APIs and other features are present in both the desktop and Android versions of Firefox, or in all desktop versions (Mac, WIndows, and Linux). There are exceptions, however. Here are some tips that will help you identify those exceptions.
+Most of the time, APIs and other features are present in both the desktop and Android versions of Firefox, or in all desktop versions (Mac, Windows, and Linux). There are exceptions, however. Here are some tips that will help you identify those exceptions.
 
 - Find the bug that introduces the change you're looking for, then look at the tests for that bug. See if the test for the feature is disabled by a line that looks something like one of the following:
 
@@ -295,25 +325,44 @@ The [Searchfox](https://searchfox.org/) website provides another method you can 
 
 ## Safari
 
-Fortunately, the WebKit source repository, found in SVN and available on the web using Trac, has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.
+### Finding through entrypoint
 
-You can then compare the WebKit version number to the Safari version history found on Wikipedia, if necessary, to determine exactly which Safari version was shipped with the change in place.
+Fortunately, the [WebKit source repository](https://github.com/WebKit/WebKit) has branches for every WebKit version number, and tags for each Safari version. This makes it actually quite easy to narrow down when a given feature arrives. Find when the entry point for the feature was added, which is often in an IDL file. The WebKit version number at the time is in a `Source/WebCore/Configurations/Version.xcconfig` or `WebCore/Configurations/Version.xcconfig` file. The release branch may have already happened, so go through the branches or tags to verify that it was included.
 
-### Useful links
+You can then compare the WebKit version number to the Safari version history in the [`browsers/safari.json`](../../browsers/safari.json) file, if necessary, to determine exactly which Safari version was shipped with the change in place.
+
+### Finding through revision number
+
+If you have a revision number for a given change (which is usually included in the WebKit bug, or the GitHub PR) and you have the WebKit repository cloned, you can use the following command to get the releases of Safari which include the revision number:
+
+```bash
+git tag --contains <rev> | grep releases/Apple/Safari
+```
+
+For example, you can go to https://bugs.webkit.org/show_bug.cgi?id=171216 to get the commit link of https://commits.webkit.org/256896@main. From there we can get the revision number of `5e2beb55a112f682aff66e5646e77ce9e079054c`, which we can then use in our command:
+
+```bash
+$ git tag --contains 5e2beb55a112f682aff66e5646e77ce9e079054c | grep releases/Apple/Safari
+releases/Apple/Safari-16.4-iOS-16.4
+releases/Apple/Safari-16.4-iOS-16.4-iPadOS
+releases/Apple/Safari-16.4-macOS-13.3
+```
+
+#### Useful links
 
 - [WebKit bug database](https://bugs.webkit.org/)
 - [WebKit feature status catalog](https://webkit.org/status/)
 - [Safari Technology Preview release notes and history](https://developer.apple.com/safari/technology-preview/release-notes/) (Each Safari tech preview release has notes here)
-- [Trac revision timeline](https://trac.webkit.org/)
-- [Browse WebKit source](https://trac.webkit.org/browser)
+- [Browse WebKit source](https://github.com/WebKit/WebKit)
 
-  - [By Apple product release number](https://trac.webkit.org/browser/webkit/releases/Apple) (Safari, iOS, Safari Technology Preview, watchOS, some older macOS releases). This is how we number Safari in our [Browser Compatibility Database](https://github.com/mdn/browser-compat-data).
-  - [By Safari build number](https://trac.webkit.org/browser/webkit/tags) (SVN tags)
-  - [By WebKit build number](https://trac.webkit.org/browser/webkit/branches) (SVN branches)
-  - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history) (list of Safari versions with feature summaries and the corresponding WebKit build number for each)
+  - [By Safari build number](https://github.com/WebKit/WebKit/tags) (Git tags)
+  - [By WebKit build number](https://github.com/WebKit/WebKit/branches) (Git branches)
+  - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history) (list of Safari versions with feature summaries and the corresponding WebKit build number for each -- mirrored from BCD)
 
 > **Warning:** Version numbers listed in the documentation at <https://developer.apple.com/documentation/webkitjs> are inaccurate. Please use other resources to determine the version numbers.
 
-### Safari on iOS/iPadOS
+#### Safari on iOS/iPadOS
+
+_Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Safari desktop._
 
 The entries for Safari on iOS/iPadOS use the OS version number, rather than the Safari version number. Before Safari iOS 6, the versions did not perfectly match the Safari Desktop counterparts. See the relevant [browser JSON](../../browsers/safari-ios.json) for a mapping of Safari to Safari iOS/iPadOS versions.

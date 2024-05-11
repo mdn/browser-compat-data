@@ -6,16 +6,25 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "prettier",
+    "import",
     "jsdoc",
-    "prefer-arrow-functions"
+    "prefer-arrow-functions",
+    "unicorn"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:jsdoc/recommended"
+    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/stylistic",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:jsdoc/recommended-typescript"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -33,6 +42,14 @@
     "curly": "error",
     "default-case": "off",
     "default-case-last": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "parent", "sibling", "index", "type"]
+      }
+    ],
+    "import/no-named-as-default-member": "off",
     "jsdoc/check-param-names": "error",
     "jsdoc/require-description": "warn",
     "jsdoc/require-jsdoc": [
@@ -48,10 +65,7 @@
         }
       }
     ],
-    "jsdoc/require-param-type": "error",
     "jsdoc/require-returns": "error",
-    "jsdoc/require-returns-type": "error",
-    "jsdoc/no-undefined-types": "error",
     "jsdoc/require-yields": "error",
     "linebreak-style": ["error", "unix"],
     "no-console": "off",
@@ -69,7 +83,7 @@
       { "returnStyle": "implicit" }
     ],
     "prefer-const": "error",
-    "prettier/prettier": "error",
-    "quotes": "off"
+    "quotes": "off",
+    "unicorn/prefer-node-protocol": "error"
   }
 }

@@ -2,13 +2,25 @@
   "api": {
     "WebGLTimerQueryEXT": {
       "__compat": {
+        "spec_url": "https://registry.khronos.org/webgl/extensions/EXT_disjoint_timer_query/",
         "support": {
-          "chrome": {
+          "chrome": [
+            {
+              "version_added": "70",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
+            },
+            {
+              "version_added": "47",
+              "version_removed": "65",
+              "notes": "Removed due to the <a href='https://www.vusec.net/projects/glitch/'>GLitch exploit</a>."
+            }
+          ],
+          "chrome_android": {
             "version_added": "47",
             "version_removed": "65",
             "notes": "Removed due to the <a href='https://www.vusec.net/projects/glitch/'>GLitch exploit</a>."
           },
-          "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
             "version_added": "51",

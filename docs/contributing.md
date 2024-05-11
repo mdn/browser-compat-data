@@ -11,7 +11,7 @@ First of all, thank you very much for your interest in contributing to BCD! We'r
 1. [Ways to contribute](#ways-to-contribute)
    1. [Updating the compat data](#updating-the-compat-data)
    1. [Finding browser version numbers for features](#finding-browser-version-numbers-for-features)
-1. [Opening issues and pull requests](#opening-issues-and-pull-requests)
+1. [Opening pull requests](#opening-pull-requests)
    1. [Optional: Generating data using the mdn-bcd-collector project](#optional-generating-data-using-the-mdn-bcd-collector-project)
    1. [Optional: Generating data by mirroring](#optional-generating-data-by-mirroring)
 1. [Getting help](#getting-help)
@@ -22,11 +22,11 @@ The BCD project welcomes contributors of all kinds, however there are a few requ
 
 ### Guidelines
 
-The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](/CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
+The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](../CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
 
-This project has [a formal governance document](/GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
+This project has [a formal governance document](../GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
 
-The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](/LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
+The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](../LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
 
 ### Prerequisites
 
@@ -62,12 +62,12 @@ While contributing to BCD, there are a number of tools and other resources we re
 #### General
 
 - [MDN Web Docs](https://developer.mozilla.org): yes, we use our own documentation regularly to obtain code examples and determine what a feature is meant to do!
-- [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
+- [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com): this tool is designed to test feature compatibility in browsers, and its reports are used to [update our own data](#optional-generating-data-using-the-mdn-bcd-collector-project).
 - [BrowserStack](https://www.browserstack.com), [SauceLabs](https://www.saucelabs.com), [LambdaTest](https://www.lambdatest.com/): these tools offer cloud services to test websites in any browser with virtually any version, which allows us to determine the exact version a feature has been added in. We are very grateful to each and every one of these services for providing us with open source plans.
 
 #### Chromium
 
-These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Samsung Internet, WebView and more.
+These resources are helpful for updating Chromium-based browsers, including Chrome, Edge (79+), Opera, Quest, Samsung Internet, WebView and more.
 
 - [Chrome Platform Status](https://chromestatus.com/features): A list of features that have been added or are planned to be added in Chrome.
 - [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
@@ -77,14 +77,21 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 
 #### Firefox
 
+- [Firefox Releases](https://www.mozilla.org/en-US/firefox/releases/): A list of release notes for different versions of Firefox.
 - [Bugzilla](https://bugzil.la): The bug tracker for Firefox.
 - [Searchfox](https://searchfox.org/): Source code search for Firefox source code. Useful to find specific behavior changes that are hard to test in the browser, and to determine which Firefox version the change was included in.
 
 #### Safari
 
+- [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes): A list of release notes for different versions of Safari.
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
-- [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+- [Backported Releases List](./data-guidelines/index.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+
+#### Edge
+
+- [New Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of release notes for latest Microsoft Edge Stable Channel.
+- [Archived Release Notes](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel): A list of archived release notes for Microsoft Edge Stable Channel.
 
 ## Ways to contribute
 
@@ -92,7 +99,7 @@ There are many ways you can help improve this repository! For example:
 
 - **Fix a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues), or maybe you found your own. We recommend checking out issues labeled as ["good first issue"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue+%3A100%3A%22) or ["help wanted"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted+%3Asos%3A%22) first.
 - **Fix existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
-- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines/index.md) to add new features.
+- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](./data-guidelines/index.md) to add new features.
 - **Review a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls). Let us know if these look good to you.
 
 ### Updating the compat data
@@ -103,9 +110,9 @@ If you're going to submit a pull request modifying the compat data, we highly re
 
 When adding data for a particular feature, you'll often need to find which version of each browser the feature first shipped in. For how-to guidance which will help you do that, see [Matching web features to browser release version numbers](./matching-browser-releases/index.md).
 
-## Opening issues and pull requests
+## Opening pull requests
 
-Before submitting your pull request, [validate your new data against the schema](testing.md).
+Before submitting your pull request, [validate your new data against the schema](./testing.md).
 
 Not everything is enforced or validated by the schema. A few things to pay attention to:
 
@@ -115,7 +122,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
-If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.appspot.com/). See the project's guide on [updating BCD using the results](https://github.com/foolip/mdn-bcd-collector#updating-bcd-using-the-results) for instructions.
+If the feature you're interested in is an API, CSS or JavaScript feature, you can cross-reference data against [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/). See the project's guide on [updating BCD using the results](https://mdn-bcd-collector.gooborg.com/docs/update-bcd.md) for instructions.
 
 ### Optional: Generating data by mirroring
 
@@ -125,4 +132,4 @@ Note: originally, this functionality used to be provided as an executable script
 
 ## Getting help
 
-If you need help with this repository or have any questions, first check the [FAQ](faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
+If you need help with this repository or have any questions, first check the [FAQ](./faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).

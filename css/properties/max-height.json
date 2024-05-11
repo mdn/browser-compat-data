@@ -4,7 +4,10 @@
       "max-height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/max-height",
-          "spec_url": "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
+          "spec_url": [
+            "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
+            "https://drafts.csswg.org/css-sizing-4/#sizing-values"
+          ],
           "support": {
             "chrome": {
               "version_added": "18"
@@ -34,9 +37,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -44,9 +45,46 @@
             "deprecated": false
           }
         },
+        "anchor-size": {
+          "__compat": {
+            "description": "<code>anchor-size()</code>",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "fit-content": {
           "__compat": {
-            "description": "<code>fit-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
             "support": {
               "chrome": [
                 {
@@ -59,12 +97,17 @@
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "partial_implementation": true,
-                "prefix": "-moz-",
-                "version_added": "3",
-                "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
-              },
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3",
+                  "partial_implementation": true,
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -141,7 +184,7 @@
         },
         "max-content": {
           "__compat": {
-            "description": "<code>max-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-max-content",
             "support": {
               "chrome": {
                 "version_added": "46"
@@ -153,8 +196,8 @@
                   "version_added": "66"
                 },
                 {
-                  "version_added": "3",
-                  "prefix": "-moz-"
+                  "prefix": "-moz-",
+                  "version_added": "3"
                 }
               ],
               "firefox_android": "mirror",
@@ -173,8 +216,8 @@
                   "version_added": "11"
                 },
                 {
-                  "version_added": "9",
-                  "prefix": "-webkit-"
+                  "prefix": "-webkit-",
+                  "version_added": "9"
                 }
               ],
               "safari_ios": "mirror",
@@ -190,7 +233,7 @@
         },
         "min-content": {
           "__compat": {
-            "description": "<code>min-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-min-content",
             "support": {
               "chrome": {
                 "version_added": "46"
@@ -202,8 +245,8 @@
                   "version_added": "66"
                 },
                 {
-                  "version_added": "3",
-                  "prefix": "-moz-"
+                  "prefix": "-moz-",
+                  "version_added": "3"
                 }
               ],
               "firefox_android": "mirror",
@@ -222,8 +265,8 @@
                   "version_added": "11"
                 },
                 {
-                  "version_added": "9",
-                  "prefix": "-webkit-"
+                  "prefix": "-webkit-",
+                  "version_added": "9"
                 }
               ],
               "safari_ios": "mirror",
@@ -237,9 +280,42 @@
             }
           }
         },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-max-width-none",
+            "support": {
+              "chrome": {
+                "version_added": "18"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1.3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "stretch": {
           "__compat": {
-            "description": "<code>stretch</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-stretch",
             "support": {
               "chrome": {
                 "alternative_name": "-webkit-fill-available",

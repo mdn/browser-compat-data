@@ -69,7 +69,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -121,6 +121,11 @@
       "backgroundfetchabort_event": {
         "__compat": {
           "description": "<code>backgroundfetchabort</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/backgroundfetchabort_event",
+          "spec_url": "https://wicg.github.io/background-fetch/#dom-serviceworkerglobalscope-onbackgroundfetchabort",
+          "tags": [
+            "web-features:background-fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -156,6 +161,11 @@
       "backgroundfetchclick_event": {
         "__compat": {
           "description": "<code>backgroundfetchclick</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/backgroundfetchclick_event",
+          "spec_url": "https://wicg.github.io/background-fetch/#dom-serviceworkerglobalscope-onbackgroundfetchclick",
+          "tags": [
+            "web-features:background-fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -191,6 +201,11 @@
       "backgroundfetchfail_event": {
         "__compat": {
           "description": "<code>backgroundfetchfail</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/backgroundfetchfail_event",
+          "spec_url": "https://wicg.github.io/background-fetch/#dom-serviceworkerglobalscope-onbackgroundfetchfail",
+          "tags": [
+            "web-features:background-fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -226,6 +241,11 @@
       "backgroundfetchsuccess_event": {
         "__compat": {
           "description": "<code>backgroundfetchsuccess</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/backgroundfetchsuccess_event",
+          "spec_url": "https://wicg.github.io/background-fetch/#dom-serviceworkerglobalscope-onbackgroundfetchsuccess",
+          "tags": [
+            "web-features:background-fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -261,6 +281,8 @@
       "canmakepayment_event": {
         "__compat": {
           "description": "<code>canmakepayment</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/canmakepayment_event",
+          "spec_url": "https://w3c.github.io/payment-handler/#the-canmakepaymentevent",
           "support": {
             "chrome": {
               "version_added": "70"
@@ -373,6 +395,8 @@
       "cookiechange_event": {
         "__compat": {
           "description": "<code>cookiechange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/cookiechange_event",
+          "spec_url": "https://wicg.github.io/cookie-store/#dom-serviceworkerglobalscope-oncookiechange",
           "support": {
             "chrome": {
               "version_added": "87"
@@ -398,13 +422,14 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "cookieStore": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/cookieStore",
           "spec_url": "https://wicg.github.io/cookie-store/#dom-serviceworkerglobalscope-cookiestore",
           "support": {
             "chrome": {
@@ -589,7 +614,7 @@
             "safari": {
               "version_added": "11.1",
               "partial_implementation": true,
-              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/171216'>bug 171216</a>."
+              "notes": "Although the <code>onmessageerror</code> property is supported, the <code>messageerror</code> event is never fired. See <a href='https://webkit.org/b/272967'>bug 272967</a>."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -632,8 +657,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
               "version_added": false
@@ -677,8 +701,7 @@
             },
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
               "version_added": false
@@ -696,6 +719,8 @@
       "paymentrequest_event": {
         "__compat": {
           "description": "<code>paymentrequest</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/paymentrequest_event",
+          "spec_url": "https://w3c.github.io/payment-handler/#the-paymentrequestevent",
           "support": {
             "chrome": {
               "version_added": "70"
@@ -802,11 +827,11 @@
             },
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": false
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -828,7 +853,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/41275327"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -836,10 +862,14 @@
               "version_removed": "79"
             },
             "firefox": {
-              "version_added": "44"
+              "version_added": "44",
+              "partial_implementation": true,
+              "notes": "The event does not have the <code>oldSubscription</code> and <code>newSubscription</code> properties. See <a href='https://bugzil.la/1497429'>bug 1497429</a>."
             },
             "firefox_android": {
-              "version_added": "48"
+              "version_added": "48",
+              "partial_implementation": true,
+              "notes": "The event does not have the <code>oldSubscription</code> and <code>newSubscription</code> properties. See <a href='https://bugzil.la/1497429'>bug 1497429</a>."
             },
             "ie": {
               "version_added": false
@@ -849,8 +879,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
               "version_added": false
@@ -907,6 +936,7 @@
       },
       "serviceWorker": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/serviceWorker",
           "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerglobalscope-serviceworker",
           "support": {
             "chrome": {
@@ -990,7 +1020,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "44"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {

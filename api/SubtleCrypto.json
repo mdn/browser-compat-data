@@ -33,15 +33,13 @@
               "version_added": "11"
             },
             {
+              "prefix": "WebKit",
               "version_added": "7",
-              "version_removed": "11.1",
-              "prefix": "WebKit"
+              "version_removed": "11.1"
             }
           ],
           "safari_ios": "mirror",
-          "samsunginternet_android": {
-            "version_added": "6.0"
-          },
+          "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
         "status": {
@@ -120,9 +118,7 @@
               "version_added": "11"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -188,9 +184,7 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -206,7 +200,7 @@
           "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveBits",
           "support": {
             "chrome": {
-              "version_added": "37"
+              "version_added": "41"
             },
             "chrome_android": "mirror",
             "deno": [
@@ -252,12 +246,10 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "7"
+              "version_added": "11"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -273,7 +265,7 @@
           "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
           "support": {
             "chrome": {
-              "version_added": "37"
+              "version_added": "41"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -314,15 +306,178 @@
               "version_added": "11"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "derivedKeyAlgorithm_option_aes": {
+          "__compat": {
+            "description": "<code>AES</code> as <code>derivedKeyAlgorithm</code> option value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
+            "support": {
+              "chrome": {
+                "version_added": "41"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.15"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "34"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "15.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "derivedKeyAlgorithm_option_hkdf": {
+          "__compat": {
+            "description": "<code>HKDF</code> as <code>derivedKeyAlgorithm</code> option value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
+            "support": {
+              "chrome": {
+                "version_added": "41"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.15"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "119"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "derivedKeyAlgorithm_option_hmac": {
+          "__compat": {
+            "description": "<code>HMAC</code> as <code>derivedKeyAlgorithm</code> option value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
+            "support": {
+              "chrome": {
+                "version_added": "41"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.15"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "34"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "15.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "derivedKeyAlgorithm_option_pbkdf2": {
+          "__compat": {
+            "description": "<code>PBKDF2</code> as <code>derivedKeyAlgorithm</code> option value",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
+            "support": {
+              "chrome": {
+                "version_added": "41"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.15"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "notes": "See <a href='https://bugzil.la/1856679'>bug 1856679</a>"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -368,9 +523,7 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -436,9 +589,7 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -511,15 +662,62 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ed25519": {
+          "__compat": {
+            "description": "<code>Ed25519</code> algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
+            "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.26"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0",
+                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -582,15 +780,63 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ed25519": {
+          "__compat": {
+            "description": "<code>Ed25519</code> algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
+            "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.26"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1804788"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0",
+                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -660,15 +906,62 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ed25519": {
+          "__compat": {
+            "description": "<code>Ed25519</code> algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
+            "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.26"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0",
+                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -715,15 +1008,62 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ed25519": {
+          "__compat": {
+            "description": "<code>Ed25519</code> algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign",
+            "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.26"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0",
+                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -773,9 +1113,7 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -799,8 +1137,8 @@
                 "version_added": "1.14"
               },
               {
-                "version_removed": "1.14",
                 "version_added": "1.12",
+                "version_removed": "1.14",
                 "partial_implementation": true,
                 "notes": "Not supported: ECDSA, HMAC."
               }
@@ -836,15 +1174,62 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ed25519": {
+          "__compat": {
+            "description": "<code>Ed25519</code> algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify",
+            "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
+            "support": {
+              "chrome": {
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.26"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0",
+                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -890,9 +1275,7 @@
               "version_added": "7"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "6.0"
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {

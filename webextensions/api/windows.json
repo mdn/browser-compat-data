@@ -2,6 +2,30 @@
   "webextensions": {
     "api": {
       "windows": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "CreateType": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/CreateType",
@@ -28,58 +52,6 @@
               "safari_ios": {
                 "version_added": "15",
                 "notes": "<code>panel</code> and <code>detached_panel</code> are not supported."
-              }
-            }
-          }
-        },
-        "WINDOW_ID_CURRENT": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WINDOW_ID_CURRENT",
-            "support": {
-              "chrome": {
-                "version_added": "18"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": "45"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              }
-            }
-          }
-        },
-        "WINDOW_ID_NONE": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WINDOW_ID_NONE",
-            "support": {
-              "chrome": {
-                "version_added": true
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": "45"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
               }
             }
           }
@@ -426,6 +398,58 @@
             }
           }
         },
+        "WINDOW_ID_CURRENT": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WINDOW_ID_CURRENT",
+            "support": {
+              "chrome": {
+                "version_added": "18"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "WINDOW_ID_NONE": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WINDOW_ID_NONE",
+            "support": {
+              "chrome": {
+                "version_added": true
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
         "WindowState": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/WindowState",
@@ -648,18 +672,17 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/create",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "<code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> bounds must be at least 50% within visible screen space if specified, otherwise an error is thrown."
               },
-              "edge": {
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": {
+                "version_added": "45",
                 "notes": [
                   "'url' and 'tabId options can't both be set together.",
                   "The returned 'Window' object contains the 'tabs' property only from version 52 onwards.",
                   "From Firefox 86, the <code>focused: false</code> option is ignored."
-                ],
-                "version_added": "45"
+                ]
               },
               "firefox_android": {
                 "version_added": false
@@ -943,8 +966,8 @@
                     "version_added": "14"
                   },
                   "firefox": {
-                    "notes": "'url' does not accept relative paths.",
-                    "version_added": "45"
+                    "version_added": "45",
+                    "notes": "'url' does not accept relative paths."
                   },
                   "firefox_android": {
                     "version_added": false
@@ -1281,6 +1304,27 @@
                   }
                 }
               }
+            }
+          }
+        },
+        "onBoundsChanged": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/windows/onBoundsChanged",
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1762975"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         },

@@ -259,7 +259,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "110"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -407,6 +407,45 @@
             }
           }
         },
+        "device-posture": {
+          "__compat": {
+            "description": "<code>device-posture</code> media feature",
+            "spec_url": "https://w3c.github.io/device-posture/#the-device-posture-media-feature",
+            "tags": [
+              "web-features:device-posture"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": {
+                "version_added": "16.2"
+              },
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "device-width": {
           "__compat": {
             "description": "<code>device-width</code> media feature",
@@ -467,7 +506,11 @@
                 "version_added": "47",
                 "notes": "Firefox 47 and later support <code>display-mode</code> values <code>fullscreen</code> and <code>browser</code>. Firefox 57 added support for <code>minimal-ui</code> and <code>standalone</code> values."
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "47",
+                "partial_implementation": true,
+                "notes": "Only supports the <code>browser</code> value, which always reports <code>true</code>."
+              },
               "ie": {
                 "version_added": false
               },
@@ -487,6 +530,42 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "picture-in-picture": {
+            "__compat": {
+              "description": "<code>picture-in-picture</code> value",
+              "spec_url": "https://drafts.csswg.org/mediaqueries-5/#display-mode-picture-in-picture",
+              "support": {
+                "chrome": {
+                  "version_added": "123"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -534,10 +613,7 @@
               "chrome": {
                 "version_added": "89"
               },
-              "chrome_android": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/970285'>bug 970285</a>."
-              },
+              "chrome_android": "mirror",
               "edge": {
                 "version_added": "79"
               },
@@ -549,14 +625,10 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -683,21 +755,14 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": "28"
-              },
-              "opera_android": {
-                "version_added": "28"
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "9"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "38",
-                "notes": "Before Chrome 41, the implementation was buggy and reported <code>(hover: none)</code> on non-touch-based computers with a mouse/trackpad. See <a href='https://crbug.com/441613'>bug 441613</a>."
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -718,7 +783,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.inverted-colors.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "ie": {
@@ -899,6 +971,40 @@
             }
           }
         },
+        "or_syntax": {
+          "__compat": {
+            "description": "<code>or</code> syntax from Media Queries Level 4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#testing_for_multiple_features_with_or",
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "orientation": {
           "__compat": {
             "description": "<code>orientation</code> media feature",
@@ -949,7 +1055,7 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries/#mf-overflow-block",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "113"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -964,7 +1070,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -984,7 +1090,7 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries/#mf-overflow-inline",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "113"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -999,7 +1105,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1060,6 +1166,9 @@
             "description": "<code>prefers-color-scheme</code> media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme",
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme",
+            "tags": [
+              "web-features:prefers-color-scheme"
+            ],
             "support": {
               "chrome": {
                 "version_added": "76"
@@ -1138,6 +1247,39 @@
                 "deprecated": true
               }
             }
+          },
+          "respects-inherited-scheme": {
+            "__compat": {
+              "description": "Respects <code>color-scheme</code> inherited from parent",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "105"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
           }
         },
         "prefers-contrast": {
@@ -1185,14 +1327,14 @@
             "support": {
               "chrome": {
                 "version_added": "85",
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>.",
                 "flags": [
                   {
                     "type": "preference",
                     "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
-                ]
+                ],
+                "impl_url": "https://crbug.com/1051189"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1213,7 +1355,7 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/1051189'>bug 1051189</a>."
+                "impl_url": "https://crbug.com/1051189"
               }
             },
             "status": {
@@ -1260,32 +1402,82 @@
             }
           }
         },
-        "range_syntax": {
+        "prefers-reduced-transparency": {
           "__compat": {
-            "description": "Range syntax from Media Queries Level 4",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Media_Queries/Using_media_queries#syntax_improvements_in_level_4",
+            "description": "<code>prefers-reduced-transparency</code> media feature",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@media/prefers-reduced-transparency",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#prefers-reduced-transparency",
             "support": {
               "chrome": {
-                "version_added": "104"
+                "version_added": "118"
               },
               "chrome_android": "mirror",
-              "edge": {
-                "version_added": false
-              },
+              "edge": "mirror",
               "firefox": {
-                "version_added": "63"
+                "version_added": "113",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.prefers-reduced-transparency.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/1736914"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/175497"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "range_syntax": {
+          "__compat": {
+            "description": "Range syntax from Media Queries Level 4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_media_queries/Using_media_queries#syntax_improvements_in_level_4",
+            "tags": [
+              "web-features:media-query-range-syntax"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "102"
+                },
+                {
+                  "version_added": "63",
+                  "partial_implementation": true,
+                  "notes": "Only supports range notations where the feature name comes before any value <code>(width &#62; 500px)</code>"
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
                 "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1316,8 +1508,8 @@
                   "version_added": "8"
                 },
                 {
-                  "partial_implementation": true,
                   "version_added": "3.5",
+                  "partial_implementation": true,
                   "notes": "Supports <a href='https://developer.mozilla.org/docs/Web/CSS/integer'><code>&lt;integer&gt;</code></a> values only."
                 }
               ],
@@ -1345,8 +1537,7 @@
                 }
               ],
               "safari": {
-                "version_added": false,
-                "notes": "See <a href='https://webkit.org/b/78087'>bug 78087</a>."
+                "version_added": "16"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1366,28 +1557,22 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#scripting",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "See <a href='https://crbug.com/489957'>bug 489957</a>."
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/1166581'>bug 1166581</a>."
+                "version_added": "113"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1407,7 +1592,7 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries/#update",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "113"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1422,14 +1607,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1442,7 +1627,14 @@
             "spec_url": "https://drafts.csswg.org/mediaqueries-5/#video-dynamic-range",
             "support": {
               "chrome": {
-                "version_added": "98"
+                "version_added": "98",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1457,7 +1649,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "13.1"
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1602,7 +1794,7 @@
               },
               "firefox": {
                 "version_added": "63",
-                "notes": "Implemented as an alias for for <code>-moz-device-pixel-ratio</code>."
+                "notes": "Implemented as an alias for <code>-moz-device-pixel-ratio</code>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1644,7 +1836,7 @@
               },
               "firefox": {
                 "version_added": "63",
-                "notes": "Implemented as an alias for for <code>max--moz-device-pixel-ratio</code>."
+                "notes": "Implemented as an alias for <code>max--moz-device-pixel-ratio</code>."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1686,7 +1878,7 @@
               },
               "firefox": {
                 "version_added": "63",
-                "notes": "Implemented as an alias for for <code>min--moz-device-pixel-ratio</code>."
+                "notes": "Implemented as an alias for <code>min--moz-device-pixel-ratio</code>."
               },
               "firefox_android": "mirror",
               "ie": {

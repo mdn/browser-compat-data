@@ -83,7 +83,7 @@
       "align": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/align",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-align",
+          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-img-align",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -159,6 +159,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "attributionSrc": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/attributionSrc",
+          "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-htmlattributionsrcelementutils-attributionsrc",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -312,7 +346,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "9"
+              "version_added": "9.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -397,16 +431,19 @@
       "fetchPriority": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/fetchPriority",
-          "spec_url": "https://wicg.github.io/priority-hints/#img",
+          "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#dom-img-fetchpriority",
+          "tags": [
+            "web-features:fetch-priority"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "102"
               },
               {
+                "alternative_name": "fetchpriority",
                 "version_added": "101",
-                "version_removed": "102",
-                "alternative_name": "fetchpriority"
+                "version_removed": "102"
               }
             ],
             "chrome_android": "mirror",
@@ -422,14 +459,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -480,7 +517,7 @@
       "hspace": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/hspace",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-hspace",
+          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-img-hspace",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -680,7 +717,7 @@
       "name": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLImageElement/name",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-img-name",
+          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-img-name",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -842,6 +879,141 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "no-referrer-when-downgrade": {
+          "__compat": {
+            "description": "no-referrer-when-downgrade",
+            "support": {
+              "chrome": {
+                "version_added": "52"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "61",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "origin-when-cross-origin": {
+          "__compat": {
+            "description": "origin-when-cross-origin",
+            "support": {
+              "chrome": {
+                "version_added": "52"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "61",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "unsafe-url": {
+          "__compat": {
+            "description": "unsafe-url",
+            "support": {
+              "chrome": {
+                "version_added": "52"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "61",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "sharedStorageWritable": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/shared-storage/#ref-for-dom-htmlsharedstoragewritableelementutils-sharedstoragewritable",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
         }
       },
       "sizes": {
@@ -867,7 +1039,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "9"
+              "version_added": "9.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

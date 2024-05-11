@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/schema",
 
   "definitions": {
     "browser_type": {
@@ -64,6 +64,14 @@
           "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome).",
           "tsType": "BrowserName"
         },
+        "preview_name": {
+          "type": "string",
+          "description": "The name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
+        },
+        "pref_url": {
+          "type": "string",
+          "description": "URL of the page where feature flags can be changed (e.g. 'about:config' for Firefox or 'chrome://flags' for Chrome)."
+        },
         "accepts_flags": {
           "type": "boolean",
           "description": "Whether the browser supports user-toggleable flags that enable or disable features."
@@ -71,14 +79,6 @@
         "accepts_webextensions": {
           "type": "boolean",
           "description": "Whether the browser supports extensions."
-        },
-        "pref_url": {
-          "type": "string",
-          "description": "URL of the page where feature flags can be changed (e.g. 'about:config' for Firefox or 'chrome://flags' for Chrome)."
-        },
-        "preview_name": {
-          "type": "string",
-          "description": "The name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
         },
         "releases": {
           "type": "object",
@@ -111,6 +111,11 @@
           "pattern": "^https://",
           "description": "A link to the release notes or changelog for a given release."
         },
+        "status": {
+          "$ref": "#/definitions/browser_status",
+          "description": "A property indicating where in the lifetime cycle this release is in (e.g. current, retired, beta, nightly).",
+          "tsType": "BrowserStatus"
+        },
         "engine": {
           "$ref": "#/definitions/browser_engine",
           "description": "Name of the browser's underlying engine.",
@@ -119,11 +124,6 @@
         "engine_version": {
           "type": "string",
           "description": "Version of the engine corresponding to the browser version."
-        },
-        "status": {
-          "$ref": "#/definitions/browser_status",
-          "description": "A property indicating where in the lifetime cycle this release is in (e.g. current, retired, beta, nightly).",
-          "tsType": "BrowserStatus"
         }
       },
       "required": ["status"],

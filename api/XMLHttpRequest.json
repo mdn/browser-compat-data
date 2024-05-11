@@ -220,6 +220,43 @@
           }
         }
       },
+      "authorization_removed_cross_origin": {
+        "__compat": {
+          "description": "<code>Authorization</code> header removed from cross-origin redirects",
+          "spec_url": "https://fetch.spec.whatwg.org/#http-redirect-fetch",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "111"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "error_event": {
         "__compat": {
           "description": "<code>error</code> event",
@@ -306,7 +343,7 @@
             "deprecated": false
           }
         },
-        "lowercase": {
+        "header_names_lowercase": {
           "__compat": {
             "description": "Header names returned in all lower case",
             "support": {
@@ -766,9 +803,7 @@
             "safari": {
               "version_added": "5.1"
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "3"
@@ -865,9 +900,7 @@
             "safari": {
               "version_added": "5.1"
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -877,7 +910,7 @@
             "deprecated": false
           }
         },
-        "arraybuffer": {
+        "arraybuffer_value": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType#arraybuffer",
             "support": {
@@ -919,9 +952,7 @@
               "safari": {
                 "version_added": "5.1"
               },
-              "safari_ios": {
-                "version_added": "5"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -932,7 +963,7 @@
             }
           }
         },
-        "blob": {
+        "blob_value": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType#blob",
             "support": {
@@ -974,9 +1005,7 @@
               "safari": {
                 "version_added": "5.1"
               },
-              "safari_ios": {
-                "version_added": "5"
-              },
+              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
@@ -987,7 +1016,7 @@
             }
           }
         },
-        "document": {
+        "document_value": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType#document",
             "support": {
@@ -1040,7 +1069,7 @@
             }
           }
         },
-        "json": {
+        "json_value": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/responseType#json",
             "support": {
@@ -1212,7 +1241,7 @@
             "deprecated": false
           }
         },
-        "ArrayBuffer": {
+        "body_ArrayBuffer_type": {
           "__compat": {
             "description": "ArrayBuffer as parameter to send()",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBuffer",
@@ -1254,7 +1283,7 @@
             }
           }
         },
-        "ArrayBufferView": {
+        "body_ArrayBufferView_type": {
           "__compat": {
             "description": "ArrayBufferView as parameter to send()",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBufferView",
@@ -1294,7 +1323,7 @@
             }
           }
         },
-        "Blob": {
+        "body_Blob_type": {
           "__compat": {
             "description": "Blob as parameter to send()",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#Blob",
@@ -1334,7 +1363,7 @@
             }
           }
         },
-        "FormData": {
+        "body_FormData_type": {
           "__compat": {
             "description": "FormData as parameter to send()",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#FormData",
@@ -1376,7 +1405,7 @@
             }
           }
         },
-        "URLSearchParams": {
+        "body_URLSearchParams_type": {
           "__compat": {
             "description": "URLSearchParams as parameter to send()",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#URLSearchParams",
@@ -1418,6 +1447,73 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "setAttributionReporting": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/setAttributionReporting",
+          "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-xmlhttprequest-setattributionreporting",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setPrivateToken": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/trust-token-api/#dom-xmlhttprequest-setprivatetoken",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -1643,7 +1739,7 @@
           "spec_url": "https://xhr.spec.whatwg.org/#the-upload-attribute",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "2"
             },
             "chrome_android": "mirror",
             "edge": {

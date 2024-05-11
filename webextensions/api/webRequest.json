@@ -2,6 +2,28 @@
   "webextensions": {
     "api": {
       "webRequest": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": "mirror"
+          }
+        },
         "BlockingResponse": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/BlockingResponse",
@@ -52,7 +74,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/628819'>bug 628819</a>."
+                "impl_url": "https://crbug.com/628819"
               },
               "edge": {
                 "version_added": false
@@ -126,23 +148,23 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/RequestFilter",
             "support": {
               "chrome": {
-                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
-                "version_added": true
+                "version_added": true,
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
               },
               "edge": {
-                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
               },
               "firefox": {
+                "version_added": "45",
                 "notes": [
                   "From Firefox 78 onwards, if a filter contains unrecognized values in its <code>types</code> property, then these values are ignored and <code>addListener()</code> proceeds.",
                   "Before Firefox 78, if a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
-                ],
-                "version_added": "45"
+                ]
               },
               "firefox_android": {
-                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception.",
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "If a filter contains unrecognized values in its <code>types</code> property, <code>addListener()</code> throws an exception."
               },
               "opera": "mirror",
               "safari": {
@@ -334,11 +356,53 @@
               }
             }
           },
+          "image": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "imageset": {
             "__compat": {
               "support": {
                 "chrome": {
                   "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "main_frame": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -376,6 +440,27 @@
               }
             }
           },
+          "object": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "object_subrequest": {
             "__compat": {
               "support": {
@@ -388,6 +473,27 @@
                   "notes": "Requests have been reported as <code>object_subrequest</code> before, but the type was missing in the <code>ResourceType</code> object before Firefox 55."
                 },
                 "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "other": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
                 "opera": "mirror",
                 "safari": {
                   "version_added": false
@@ -423,6 +529,27 @@
               }
             }
           },
+          "script": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "speculative": {
             "__compat": {
               "support": {
@@ -434,6 +561,48 @@
                   "version_added": "63"
                 },
                 "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "stylesheet": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "sub_frame": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "44"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
                 "opera": "mirror",
                 "safari": {
                   "version_added": false
@@ -484,7 +653,7 @@
               }
             }
           },
-          "xbl": {
+          "xml_dtd": {
             "__compat": {
               "support": {
                 "chrome": {
@@ -492,8 +661,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "45",
-                  "version_removed": "78"
+                  "version_added": "45"
                 },
                 "firefox_android": {
                   "version_added": "48"
@@ -506,11 +674,11 @@
               }
             }
           },
-          "xml_dtd": {
+          "xmlhttprequest": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "44"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -566,6 +734,367 @@
                 "version_added": false
               },
               "safari_ios": "mirror"
+            }
+          },
+          "certificates": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "certificateTransparencyStatus": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "cipherSuite": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "errorMessage": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "hsts": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "isDomainMismatch": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "isExtendedValidation": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "isNotValidAtThisTime": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "isUntrusted": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "keaGroupName": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "protocolVersion": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "secretKeyLength": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "109"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "signatureSchemeName": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "state": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "usedDelegatedCredentials": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "112"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "usedEch": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "112"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "usedOcsp": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "112"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "usedPrivateDns": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "112"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "weaknessReasons": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
             }
           }
         },
@@ -859,7 +1388,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "See <a href='https://crbug.com/628819'>bug 628819</a>."
+                "impl_url": "https://crbug.com/628819"
               },
               "edge": {
                 "version_added": false
@@ -913,14 +1442,14 @@
                 "version_added": "14"
               },
               "firefox": {
-                "notes": "To handle a request asynchronously, return a Promise from the listener.",
-                "version_added": "54"
+                "version_added": "54",
+                "notes": "To handle a request asynchronously, return a Promise from the listener."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -959,8 +1488,8 @@
                     "version_added": "14"
                   },
                   "firefox": {
-                    "notes": "Before version 57, when authenticating to a proxy server, the <code>challenger.host</code> property contains the hostname for the requested URL rather than the hostname for the proxy.",
-                    "version_added": "54"
+                    "version_added": "54",
+                    "notes": "Before version 57, when authenticating to a proxy server, the <code>challenger.host</code> property contains the hostname for the requested URL rather than the hostname for the proxy."
                   },
                   "firefox_android": "mirror",
                   "opera": "mirror",
@@ -1456,8 +1985,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -1963,25 +2492,25 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeRequest",
             "support": {
               "chrome": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": true
+                "version_added": true,
+                "notes": "Asynchronous event listeners are not supported."
               },
               "edge": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Asynchronous event listeners are not supported."
               },
               "firefox": {
-                "notes": "Asynchronous event listeners are supported from version 52.",
-                "version_added": "46"
+                "version_added": "46",
+                "notes": "Asynchronous event listeners are supported from version 52."
               },
               "firefox_android": {
-                "notes": "Asynchronous event listeners are supported from version 52.",
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Asynchronous event listeners are supported from version 52."
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -2379,25 +2908,25 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onBeforeSendHeaders",
             "support": {
               "chrome": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": true
+                "version_added": true,
+                "notes": "Asynchronous event listeners are not supported."
               },
               "edge": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Asynchronous event listeners are not supported."
               },
               "firefox": {
-                "notes": "Asynchronous event listeners are supported from version 52.",
-                "version_added": "45"
+                "version_added": "45",
+                "notes": "Asynchronous event listeners are supported from version 52."
               },
               "firefox_android": {
-                "notes": "Asynchronous event listeners are supported from version 52.",
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Asynchronous event listeners are supported from version 52."
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -2435,6 +2964,25 @@
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "54"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "frameAncestors": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": true
                   },
                   "firefox_android": "mirror",
                   "opera": "mirror",
@@ -2789,8 +3337,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -3284,8 +3832,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -3716,31 +4264,31 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/webRequest/onHeadersReceived",
             "support": {
               "chrome": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": true
+                "version_added": true,
+                "notes": "Asynchronous event listeners are not supported."
               },
               "edge": {
-                "notes": "Asynchronous event listeners are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Asynchronous event listeners are not supported."
               },
               "firefox": {
+                "version_added": "45",
                 "notes": [
                   "Modification of the 'Content-Type' header is supported from version 51.",
                   "Asynchronous event listeners are supported from version 52."
-                ],
-                "version_added": "45"
+                ]
               },
               "firefox_android": {
+                "version_added": "48",
                 "notes": [
                   "Modification of the 'Content-Type' header is supported from version 51.",
                   "Asynchronous event listeners are supported from version 52."
-                ],
-                "version_added": "48"
+                ]
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -4247,8 +4795,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false
@@ -4738,8 +5286,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "notes": "<code>extraInfoSpec</code> options are not supported.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "<code>extraInfoSpec</code> options are not supported."
               },
               "safari_ios": {
                 "version_added": false

@@ -7,19 +7,17 @@ const formatter = new Intl.NumberFormat('en-US');
 
 /**
  * Format a number using Intl.NumberFormat
- *
- * @param {number} n The number to format
- * @returns {string} The formatted number
+ * @param n The number to format
+ * @returns The formatted number
  */
 const formatNumber = (n: number): string => formatter.format(n);
 
 /**
  * Pluralizes a string
- *
- * @param {string} word Word in singular form
- * @param {number} quantifier The quantifier
- * @param {boolean} useChalk Use chalk formatting
- * @returns {string} The pluralized string
+ * @param word Word in singular form
+ * @param quantifier The quantifier
+ * @param useChalk Use chalk formatting
+ * @returns The pluralized string
  */
 const pluralize = (
   word: string,

@@ -45,6 +45,7 @@
       },
       "async": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/async",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-async",
           "support": {
             "chrome": {
@@ -67,9 +68,7 @@
             "safari": {
               "version_added": "5.1"
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "3"
@@ -77,6 +76,79 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "attributionSrc": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/attributionSrc",
+          "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-htmlattributionsrcelementutils-attributionsrc",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "blocking": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/blocking",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-blocking",
+          "tags": [
+            "web-features:blocking-render"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "105"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1751383"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/267232"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -125,6 +197,7 @@
       },
       "crossOrigin": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/crossOrigin",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-crossorigin",
           "support": {
             "chrome": {
@@ -160,6 +233,7 @@
       },
       "defer": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/defer",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-defer",
           "support": {
             "chrome": {
@@ -239,16 +313,20 @@
       },
       "fetchPriority": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/priority-hints/#script",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/fetchPriority",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-fetchpriority",
+          "tags": [
+            "web-features:fetch-priority"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "102"
               },
               {
+                "alternative_name": "fetchpriority",
                 "version_added": "101",
-                "version_removed": "102",
-                "alternative_name": "fetchpriority"
+                "version_removed": "102"
               }
             ],
             "chrome_android": "mirror",
@@ -264,14 +342,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -316,6 +394,7 @@
       },
       "integrity": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/integrity",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-integrity",
           "support": {
             "chrome": {
@@ -353,6 +432,7 @@
       },
       "noModule": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/noModule",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-nomodule",
           "support": {
             "chrome": {
@@ -418,10 +498,113 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "no-referrer-when-downgrade": {
+          "__compat": {
+            "description": "no-referrer-when-downgrade",
+            "support": {
+              "chrome": {
+                "version_added": "70"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "65",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "origin-when-cross-origin": {
+          "__compat": {
+            "description": "origin-when-cross-origin",
+            "support": {
+              "chrome": {
+                "version_added": "70"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "65",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "unsafe-url": {
+          "__compat": {
+            "description": "unsafe-url",
+            "support": {
+              "chrome": {
+                "version_added": "70"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "65",
+                "version_removed": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "src": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/src",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-src",
           "support": {
             "chrome": {
@@ -461,10 +644,11 @@
           }
         }
       },
-      "supports": {
+      "supports_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports",
-          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-supports",
+          "description": "<code>supports()</code> static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports_static",
+          "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-supports-dev",
           "support": {
             "chrome": {
               "version_added": "96"
@@ -497,6 +681,7 @@
       },
       "text": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/text",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-text-dev",
           "support": {
             "chrome": {
@@ -538,6 +723,7 @@
       },
       "type": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/type",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-type",
           "support": {
             "chrome": {

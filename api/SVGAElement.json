@@ -78,7 +78,7 @@
       },
       "href": {
         "__compat": {
-          "spec_url": "https://html.spec.whatwg.org/multipage/links.html#dom-hyperlink-href",
+          "spec_url": "https://svgwg.org/svg2-draft/types.html#__svg__SVGURIReference__href",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -162,7 +162,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "61"
+              "version_added": "61",
+              "partial_implementation": true,
+              "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -195,7 +197,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "52"
+              "version_added": "61"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -224,7 +226,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/873988'>bug 873988</a>."
+              "impl_url": "https://crbug.com/873988"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -258,7 +260,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/873988'>bug 873988</a>."
+              "impl_url": "https://crbug.com/873988"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -340,7 +342,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "61"
+              "version_added": "61",
+              "version_removed": "125"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -359,7 +362,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },

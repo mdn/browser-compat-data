@@ -4,21 +4,19 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem",
         "spec_url": "https://w3c.github.io/clipboard-apis/#clipboarditem",
+        "tags": [
+          "web-features:async-clipboard"
+        ],
         "support": {
           "chrome": {
-            "version_added": "66"
+            "version_added": "76"
           },
-          "chrome_android": "mirror",
+          "chrome_android": {
+            "version_added": "84"
+          },
           "edge": "mirror",
           "firefox": {
-            "version_added": "87",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.events.asyncClipboard.clipboardItem",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": "preview"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -45,27 +43,35 @@
           "description": "<code>ClipboardItem()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/ClipboardItem",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-clipboarditem",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "66",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
-            "chrome_android": {
-              "version_added": "66",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data. Full implementation would also allow for a string or a Promise which resolves with either a string or blob. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "76",
+                "version_removed": "98",
+                "partial_implementation": true,
+                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "98"
+              },
+              {
+                "version_added": "84",
+                "version_removed": "98",
+                "partial_implementation": true,
+                "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
+              }
+            ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -78,11 +84,7 @@
               "version_added": "13.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "9.0",
-              "partial_implementation": true,
-              "notes": "The <code>ClipboardItem</code> constructor only accepts a blob as the item data, but not strings or Promises that resolve to strings or blobs. See <a href='https://crbug.com/1014310'>bug 1014310</a>."
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
@@ -96,21 +98,19 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/getType",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-gettype",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
           "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "76"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "84"
+            },
             "edge": "mirror",
             "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -137,6 +137,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/presentationStyle",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-presentationstyle",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -144,14 +147,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -174,25 +170,58 @@
           }
         }
       },
+      "supports_static": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-supports",
+          "support": {
+            "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "types": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardItem/types",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboarditem-types",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
           "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "76"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "84"
+            },
             "edge": "mirror",
             "firefox": {
-              "version_added": "87",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.clipboardItem",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {

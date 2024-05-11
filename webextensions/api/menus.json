@@ -2,6 +2,36 @@
   "webextensions": {
     "api": {
       "menus": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus",
+          "support": {
+            "chrome": {
+              "alternative_name": "contextMenus",
+              "version_added": true
+            },
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "55"
+              },
+              {
+                "alternative_name": "contextMenus",
+                "version_added": "48"
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "safari": {
+              "alternative_name": "contextMenus",
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          }
+        },
         "ACTION_MENU_TOP_LEVEL_LIMIT": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ACTION_MENU_TOP_LEVEL_LIMIT",
@@ -10,10 +40,7 @@
                 "alternative_name": "contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -45,14 +72,11 @@
                 "alternative_name": "contextMenus.ContextType",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.ContextType",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
-                  "notes": "'The 'editable' context does not include password fields. Use the 'password' context for this.",
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": "'The 'editable' context does not include password fields. Use the 'password' context for this."
                 },
                 {
                   "alternative_name": "contextMenus.ContextType",
@@ -72,12 +96,33 @@
               }
             }
           },
+          "action": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "109"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "bookmark": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "notes": "See <a href='https://crbug.com/825443'>bug 825443</a>.",
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/825443"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -86,9 +131,7 @@
                 "firefox_android": {
                   "version_added": false
                 },
-                "opera": {
-                  "version_added": false
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
@@ -102,12 +145,10 @@
                 "chrome": {
                   "version_added": true
                 },
-                "edge": {
-                  "version_added": "14"
-                },
+                "edge": "mirror",
                 "firefox": {
-                  "notes": "'The 'editable' context does not include password fields. Use the 'password' context for this.",
-                  "version_added": "53"
+                  "version_added": "53",
+                  "notes": "'The 'editable' context does not include password fields. Use the 'password' context for this."
                 },
                 "firefox_android": {
                   "version_added": false
@@ -128,9 +169,7 @@
                 "chrome": {
                   "version_added": true
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "48"
                 },
@@ -151,9 +190,7 @@
                 "chrome": {
                   "version_added": true
                 },
-                "edge": {
-                  "version_added": "14"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "53"
                 },
@@ -220,8 +257,8 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "notes": "Only available at <code>menus.ContextType</code>, not at <code>contextMenus.ContextType</code>.",
-                  "version_added": "56"
+                  "version_added": "56",
+                  "notes": "Only available at <code>menus.ContextType</code>, not at <code>contextMenus.ContextType</code>."
                 },
                 "firefox_android": {
                   "version_added": false
@@ -243,10 +280,7 @@
                 "alternative_name": "contextMenus.ItemType",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.ItemType",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -278,10 +312,7 @@
                 "alternative_name": "contextMenus.OnClickData",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.OnClickData",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -353,20 +384,14 @@
                   "alternative_name": "contextMenus.OnClickData.frameId",
                   "version_added": "35"
                 },
-                "edge": {
-                  "alternative_name": "contextMenus.OnClickData.frameId",
-                  "version_added": "≤79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "55"
                 },
                 "firefox_android": {
                   "version_added": false
                 },
-                "opera": {
-                  "alternative_name": "contextMenus.OnClickData.frameId",
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "alternative_name": "contextMenus.OnClickData.frameId",
                   "version_added": "14"
@@ -425,19 +450,11 @@
                 "chrome": {
                   "version_added": true
                 },
-                "edge": {
-                  "version_added": "14"
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "48",
+                  "notes": "Between Firefox 59 and Firefox 94, this returns a post-redirect URL rather than the raw value of the <code>src</code> attribute of the clicked element."
                 },
-                "firefox": [
-                  {
-                    "version_added": "48"
-                  },
-                  {
-                    "version_added": "59",
-                    "version_removed": "94",
-                    "notes": "Returns a post-redirect URL rather than the raw value of the <code>src</code> attribute of the clicked element."
-                  }
-                ],
                 "firefox_android": {
                   "version_added": false
                 },
@@ -479,22 +496,18 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.create",
-                "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents.",
-                "version_added": true
+                "version_added": true,
+                "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents."
               },
-              "edge": {
-                "alternative_name": "contextMenus.create",
-                "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents.",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
                 },
                 {
-                  "notes": "Before version 53, items that don't specify 'contexts' do not inherit contexts from their parents.",
                   "alternative_name": "contextMenus.create",
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Before version 53, items that don't specify 'contexts' do not inherit contexts from their parents."
                 }
               ],
               "firefox_android": {
@@ -503,8 +516,8 @@
               "opera": "mirror",
               "safari": {
                 "alternative_name": "contextMenus.create",
-                "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents.",
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents."
               },
               "safari_ios": {
                 "version_added": false
@@ -518,9 +531,7 @@
                 "chrome": {
                   "version_added": true
                 },
-                "edge": {
-                  "version_added": "≤79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "63"
                 },
@@ -529,9 +540,9 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "notes": "Safari removes <code>&amp;</code> from menu items' displayed titles, but does not support invoking menu items via access keys.",
+                  "version_added": "14",
                   "partial_implementation": true,
-                  "version_added": "14"
+                  "notes": "Safari removes <code>&amp;</code> from menu items' displayed titles, but does not support invoking menu items via access keys."
                 },
                 "safari_ios": {
                   "version_added": false
@@ -605,28 +616,6 @@
             }
           }
         },
-        "overrideContext": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/overrideContext",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "64"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
         "getTargetElement": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/getTargetElement",
@@ -657,10 +646,7 @@
                 "alternative_name": "contextMenus.onClicked",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.onClicked",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -740,6 +726,28 @@
             }
           }
         },
+        "overrideContext": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/overrideContext",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "refresh": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/refresh",
@@ -776,10 +784,7 @@
                 "alternative_name": "contextMenus.remove",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.remove",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -811,10 +816,7 @@
                 "alternative_name": "contextMenus.removeAll",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.removeAll",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"
@@ -846,10 +848,7 @@
                 "alternative_name": "contextMenus.update",
                 "version_added": true
               },
-              "edge": {
-                "alternative_name": "contextMenus.update",
-                "version_added": "14"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "55"

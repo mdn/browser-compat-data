@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error",
           "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-3"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -51,6 +54,9 @@
             "description": "<code>Error()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/Error",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error-constructor",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -174,6 +180,9 @@
             "__compat": {
               "description": "<code>options.cause</code> parameter",
               "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause",
+              "tags": [
+                "web-features:snapshot:ecmascript-2022"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "93"
@@ -195,9 +204,7 @@
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
-                "opera_android": {
-                  "version_added": false
-                },
+                "opera_android": "mirror",
                 "safari": {
                   "version_added": "15"
                 },
@@ -216,6 +223,9 @@
         "cause": {
           "__compat": {
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause",
+            "tags": [
+              "web-features:snapshot:ecmascript-2022"
+            ],
             "support": {
               "chrome": {
                 "version_added": "93"
@@ -236,12 +246,8 @@
                 "version_added": "16.9.0"
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
-              "opera_android": {
-                "version_added": false
-              },
+              "opera": "mirror",
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "15"
               },
@@ -253,6 +259,46 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "displayed_in_console": {
+            "__compat": {
+              "description": "Cause is displayed in console",
+              "support": {
+                "chrome": {
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/1211260"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.13"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "91"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "16.9.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         },
@@ -377,6 +423,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/message",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.message",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -423,6 +472,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/name",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.name",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -483,7 +535,8 @@
                 "version_added": "103",
                 "notes": [
                   "Version 103 serialized properties: <code>name</code>, <code>message</code>, <code>cause</code>, <code>fileName</code>, <code>lineNumber</code> and <code>columnNumber</code>.",
-                  "Version 104 additionally supports serialization of <code>stack</code> in <a href='https://developer.mozilla.org/docs/Web/API/Window/postMessage'><code>window.postMessage()</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'><code>structuredClone()</code></a>."
+                  "Version 104 adds serialization of <code>stack</code> in the main thread (<a href='https://developer.mozilla.org/docs/Web/API/Window/postMessage'><code>window.postMessage()</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'><code>structuredClone()</code></a>).",
+                  "Version 110 adds serialization of <code>stack</code> in workers (<a href='https://developer.mozilla.org/docs/Web/API/Worker/postMessage'><code>worker.postMessage()</code></a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'><code>structuredClone()</code></a>)."
                 ]
               },
               "firefox_android": "mirror",
@@ -561,6 +614,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/toString",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.tostring",
+            "tags": [
+              "web-features:snapshot:ecmascript-3"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"

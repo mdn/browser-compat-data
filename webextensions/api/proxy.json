@@ -2,62 +2,23 @@
   "webextensions": {
     "api": {
       "proxy": {
-        "onError": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "alternative_name": "onProxyError",
-                  "version_added": "55",
-                  "version_removed": "71"
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "60"
-                },
-                {
-                  "alternative_name": "onProxyError",
-                  "version_added": "55"
-                }
-              ],
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "onRequest": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "notes": "Before version 78, the <code>tabId</code> and <code>windowId</code> filter properties are ignored.",
-                "version_added": "60"
-              },
-              "firefox_android": {
-                "version_added": "60"
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy",
+          "support": {
+            "chrome": {
+              "version_added": false,
+              "notes": "The <code>proxy</code> namespace exists, but the behavior does not match the MDN documentation. See <a href='https://developer.chrome.com/docs/extensions/reference/api/proxy'>Chrome's proxy documentation</a> instead."
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror"
           }
         },
         "ProxyInfo": {
@@ -77,6 +38,26 @@
                 "version_added": false
               },
               "safari_ios": "mirror"
+            }
+          },
+          "proxyAuthorizationHeader": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60",
+                  "notes": "Support for HTTP proxies (in addition to HTTPS proxies) added in Firefox 125."
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
             }
           }
         },
@@ -387,9 +368,9 @@
             }
           }
         },
-        "register": {
+        "onError": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/register",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onError",
             "support": {
               "chrome": {
                 "version_added": false
@@ -397,16 +378,46 @@
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "56",
-                  "version_removed": "71"
+                  "version_added": "60"
                 },
                 {
-                  "alternative_name": "registerProxyScript",
+                  "alternative_name": "onProxyError",
                   "version_added": "55",
                   "version_removed": "71"
                 }
               ],
-              "firefox_android": "mirror",
+              "firefox_android": [
+                {
+                  "version_added": "60"
+                },
+                {
+                  "alternative_name": "onProxyError",
+                  "version_added": "55"
+                }
+              ],
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "onRequest": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/onRequest",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "60",
+                "notes": "Before version 78, the <code>tabId</code> and <code>windowId</code> filter properties are ignored."
+              },
+              "firefox_android": {
+                "version_added": "60"
+              },
               "opera": "mirror",
               "safari": {
                 "version_added": false
@@ -428,29 +439,10 @@
                 "notes": "From version 88, the <code>ftp</code> setting has no effect because FTP is no longer supported (see <a href='https://bugzil.la/1626365'>bug 1626365</a>)."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1725981",
+                "notes": "The object is defined but any attempt to read or modify the setting throws an exception."
               },
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "unregister": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/proxy/unregister",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "56",
-                "version_removed": "71"
-              },
-              "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
                 "version_added": false

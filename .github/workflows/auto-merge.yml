@@ -1,0 +1,18 @@
+name: auto-merge
+
+on:
+  pull_request_target:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    uses: mdn/workflows/.github/workflows/auto-merge.yml@main
+    with:
+      target-repo: "mdn/browser-compat-data"
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

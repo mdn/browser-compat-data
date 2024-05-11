@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/schema",
 
   "definitions": {
     "simple_support_statement": {
@@ -21,6 +21,19 @@
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+            },
+            {
+              "const": true
+            }
+          ],
+          "tsType": "VersionValue"
+        },
+        "version_last": {
+          "description": "A string, indicating the last browser version that supported this feature, or the value true, indicating that the feature was removed in an unknown version. This is automatically generated.",
           "anyOf": [
             {
               "type": "string",
@@ -187,7 +200,7 @@
     "spec_url_value": {
       "type": "string",
       "format": "uri",
-      "pattern": "(^https://[^#]+#.+)|(^https://www.khronos.org/registry/webgl/extensions/[^/]+/)"
+      "pattern": "(^https://[^#]+#.+)|(^https://github.com/WebAssembly/.+)|(^https://registry.khronos.org/webgl/extensions/[^/]+/)"
     },
 
     "impl_url_value": {
@@ -225,19 +238,23 @@
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
           "tsType": "string | string[]"
         },
+        "tags": {
+          "description": "An optional array of strings allowing to assign tags to the feature.",
+          "type": "array",
+          "minItems": 1,
+          "tsType": "string[]"
+        },
         "source_file": {
           "type": "string",
           "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
         },
         "support": {
           "$ref": "#/definitions/support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
-          "tsType": "SupportBlock"
+          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
         },
         "status": {
           "$ref": "#/definitions/status_block",
-          "description": "An object containing information about the stability of the feature.",
-          "tsType": "StatusBlock"
+          "description": "An object containing information about the stability of the feature."
         }
       },
       "required": ["support"],

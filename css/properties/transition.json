@@ -35,12 +35,13 @@
                 ]
               },
               {
-                "version_added": "49",
-                "prefix": "-webkit-"
+                "prefix": "-webkit-",
+                "version_added": "49"
               },
               {
                 "prefix": "-moz-",
-                "version_added": "4"
+                "version_added": "4",
+                "version_removed": "preview"
               }
             ],
             "firefox_android": "mirror",
@@ -109,9 +110,9 @@
             "deprecated": false
           }
         },
-        "gradients": {
+        "gradients_can_animate": {
           "__compat": {
-            "description": "Gradients",
+            "description": "Gradients can be animated",
             "support": {
               "chrome": {
                 "version_added": false
@@ -132,7 +133,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -140,6 +141,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "transition-behavior": {
+          "__compat": {
+            "description": "<code>transition-behavior</code> value",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "impl_url": "https://bugzil.la/1805727"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

@@ -6,7 +6,7 @@
         "spec_url": "https://html.spec.whatwg.org/multipage/media.html#htmlmediaelement",
         "support": {
           "chrome": {
-            "version_added": "1"
+            "version_added": "3"
           },
           "chrome_android": "mirror",
           "edge": {
@@ -53,7 +53,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -99,8 +99,8 @@
                 "version_added": "23"
               },
               {
-                "version_added": "26",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "26"
               }
             ],
             "chrome_android": "mirror",
@@ -131,8 +131,8 @@
                 "version_added": "4.4"
               },
               {
-                "version_added": "≤37",
-                "prefix": "webkit"
+                "prefix": "webkit",
+                "version_added": "≤37"
               }
             ]
           },
@@ -147,14 +147,17 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/audioTracks",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-audiotracks-dev",
+          "tags": [
+            "web-features:audio-video-tracks"
+          ],
           "support": {
             "chrome": {
               "version_added": "37",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
                 }
               ]
             },
@@ -212,7 +215,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-autoplay",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -259,7 +262,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -473,8 +476,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "15",
-              "prefix": "moz"
+              "prefix": "moz",
+              "version_added": "15"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -509,7 +512,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": false,
-              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
+              "impl_url": "https://bugzil.la/847377"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -538,7 +541,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-controls",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -627,9 +630,9 @@
                 "version_added": "22"
               },
               {
+                "alternative_name": "crossorigin",
                 "version_added": "12",
-                "version_removed": "22",
-                "alternative_name": "crossorigin"
+                "version_removed": "22"
               }
             ],
             "firefox_android": "mirror",
@@ -659,7 +662,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-currentsrc-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -703,7 +706,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-currenttime-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -787,7 +790,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-defaultplaybackrate-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -831,9 +834,11 @@
           "spec_url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute",
           "support": {
             "chrome": {
-              "version_added": "49"
+              "version_added": "121"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -854,7 +859,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/521319'>bug 521319</a>."
+              "impl_url": "https://crbug.com/521319"
             }
           },
           "status": {
@@ -870,7 +875,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-duration-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1050,7 +1055,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-ended-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1142,7 +1147,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-error-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1190,7 +1195,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1230,10 +1235,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-fastseek-dev",
+          "tags": [
+            "web-features:fast-seek"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/648207'>bug 648207</a>."
+              "impl_url": "https://crbug.com/648207"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1300,7 +1308,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-load-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1444,7 +1452,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1536,7 +1544,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": false,
-              "notes": "Firefox doesn't implement this yet. See <a href='https://bugzil.la/847377'>bug 847377</a>."
+              "impl_url": "https://bugzil.la/847377"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1733,7 +1741,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-muted-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1777,7 +1785,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-networkstate-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1824,7 +1832,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-pause-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1916,7 +1924,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-paused-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1960,7 +1968,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-play-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2087,14 +2095,20 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-playbackrate-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "12"
+              "version_added": "12",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "firefox": {
-              "version_added": "20"
+              "version_added": "20",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -2102,10 +2116,14 @@
             },
             "oculus": "mirror",
             "opera": {
-              "version_added": "≤12.1"
+              "version_added": "≤12.1",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "opera_android": {
-              "version_added": "≤12.1"
+              "version_added": "≤12.1",
+              "partial_implementation": true,
+              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
             },
             "safari": {
               "version_added": "3.1"
@@ -2114,9 +2132,7 @@
               "version_added": "3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2131,7 +2147,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-played-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2271,16 +2287,9 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "101"
-              },
-              {
-                "prefix": "moz",
-                "version_added": "20",
-                "notes": "May be removed in a future release, see <a href='https://bugzil.la/1765201'>bug 1765201</a>."
-              }
-            ],
+            "firefox": {
+              "version_added": "101"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -2288,16 +2297,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "prefix": "webkit",
-              "version_added": "4",
-              "notes": "See <a href='https://webkit.org/b/214922'>bug 214922</a>."
-            },
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "4",
-              "notes": "See <a href='https://webkit.org/b/214922'>bug 214922</a>."
-            },
+            "safari": [
+              {
+                "version_added": "17.2"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "4",
+                "impl_url": "https://webkit.org/b/214922"
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -2318,7 +2328,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2408,7 +2418,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-readystate-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2448,12 +2458,15 @@
       },
       "remote": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote",
           "spec_url": "https://w3c.github.io/remote-playback/#dom-htmlmediaelement-remote",
           "support": {
             "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
               "version_added": "56"
             },
-            "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -2472,7 +2485,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "See <a href='https://crbug.com/521319'>bug 521319</a>."
+              "impl_url": "https://crbug.com/521319"
             }
           },
           "status": {
@@ -2491,7 +2504,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2583,7 +2596,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-seeking-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2697,7 +2710,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -2748,22 +2761,18 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not availabe due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
             },
             "edge": {
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "64",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.setsinkid.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "116"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false,
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
+            },
             "ie": {
               "version_added": false
             },
@@ -2792,14 +2801,20 @@
             "chrome": {
               "version_added": "49"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
+            },
             "edge": {
               "version_added": "17"
             },
             "firefox": {
-              "version_added": false
+              "version_added": "116"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false,
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
+            },
             "ie": {
               "version_added": false
             },
@@ -2811,12 +2826,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2828,7 +2841,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-src",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2871,17 +2884,20 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-srcobject-dev",
           "support": {
-            "chrome": {
-              "version_added": "52",
-              "partial_implementation": true,
-              "notes": "Only supports <code>MediaStream</code> objects (see <a href='https://crbug.com/506273'>bug 506273</a>)."
-            },
+            "chrome": [
+              {
+                "version_added": "108",
+                "partial_implementation": true,
+                "notes": "Support added for <code>MediaSourceHandle</code> objects transferred from dedicated workers where they were obtained from <code>MediaSource.handle</code> (see <a href='https://crbug.com/878133'>bug 878133</a>)."
+              },
+              {
+                "version_added": "52",
+                "partial_implementation": true,
+                "notes": "Support added for <code>MediaStream</code> objects (see <a href='https://crbug.com/506273'>bug 506273</a>)."
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "Only supports <code>MediaStream</code> objects (see <a href='https://crbug.com/506273'>bug 506273</a>)."
-            },
+            "edge": "mirror",
             "firefox": [
               {
                 "version_added": "42",
@@ -2889,9 +2905,9 @@
                 "notes": "Only supports <code>MediaStream</code> objects (see <a href='https://bugzil.la/886194'>bug 886194</a>)."
               },
               {
+                "prefix": "moz",
                 "version_added": "18",
-                "version_removed": "58",
-                "prefix": "moz"
+                "version_removed": "58"
               }
             ],
             "firefox_android": "mirror",
@@ -2906,11 +2922,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "52",
-              "partial_implementation": true,
-              "notes": "Only supports <code>MediaStream</code> objects (see <a href='https://crbug.com/506273'>bug 506273</a>."
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3109,14 +3121,17 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/videoTracks",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-videotracks-dev",
+          "tags": [
+            "web-features:audio-video-tracks"
+          ],
           "support": {
             "chrome": {
               "version_added": "37",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
                 }
               ]
             },
@@ -3174,7 +3189,7 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-volume-dev",
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -3224,7 +3239,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -3272,7 +3287,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "3"
             },
             "chrome_android": "mirror",
             "edge": {
