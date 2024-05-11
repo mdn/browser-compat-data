@@ -5,6 +5,7 @@ This file contains general guidelines that apply to all features added to BCD. F
 
 - [API](./api.md)
 - [Browsers](./browsers.md)
+- [Adding new features](./features.md)
 - [Tagging BCD features](./tags.md)
 
 ## Choosing a version number
