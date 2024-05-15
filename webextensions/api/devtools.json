@@ -51,6 +51,92 @@
               }
             }
           },
+          "Resource": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/resource",
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            },
+            "getContent": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true,
+                    "notes": "Only base64 is supported for encoded content."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "setContent": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "url": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": true
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          },
           "eval": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/eval",
@@ -341,92 +427,6 @@
               }
             }
           },
-          "Resource": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/resource",
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "opera": "mirror",
-                "safari": {
-                  "version_added": "16"
-                },
-                "safari_ios": {
-                  "version_added": false
-                }
-              }
-            },
-            "getContent": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": true,
-                    "notes": "Only base64 is supported for encoded content."
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": "mirror",
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": "16"
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  }
-                }
-              }
-            },
-            "setContent": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": "mirror",
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": "16"
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  }
-                }
-              }
-            },
-            "url": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": true
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": false
-                  },
-                  "firefox_android": "mirror",
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": "16"
-                  },
-                  "safari_ios": {
-                    "version_added": false
-                  }
-                }
-              }
-            }
-          },
           "tabId": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/tabId",
@@ -683,7 +683,9 @@
                   "safari": {
                     "version_added": "16"
                   },
-                  "safari_ios": "mirror"
+                  "safari_ios": {
+                    "version_added": false
+                  }
                 }
               }
             },
