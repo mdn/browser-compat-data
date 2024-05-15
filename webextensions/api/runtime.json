@@ -2,6 +2,28 @@
   "webextensions": {
     "api": {
       "runtime": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime",
+          "support": {
+            "chrome": {
+              "version_added": true
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "MessageSender": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/MessageSender",
@@ -119,7 +141,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "126"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -220,6 +242,46 @@
                 "version_added": "15",
                 "notes": "Only supports 'install' and 'update'."
               }
+            }
+          }
+        },
+        "OnPerformanceWarningCategory": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningCategory",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "124"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "OnPerformanceWarningSeverity": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnPerformanceWarningSeverity",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "124"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -471,7 +533,8 @@
                 "version_added": "50"
               },
               "firefox_android": {
-                "version_added": "68"
+                "version_added": false,
+                "notes": "Only available to privileged extensions in <a href='https://mozilla.github.io/geckoview/'>GeckoView</a> 68 and later. See the <a href='https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/web-extensions.html'>GeckoView Docs</a> for additional details."
               },
               "opera": "mirror",
               "safari": {
@@ -970,6 +1033,26 @@
             }
           }
         },
+        "onPerformanceWarning": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onPerformanceWarning",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "124"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "onRestartRequired": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onRestartRequired",
@@ -1218,7 +1301,8 @@
                 "version_added": "50"
               },
               "firefox_android": {
-                "version_added": "68"
+                "version_added": false,
+                "notes": "Only available to privileged extensions in <a href='https://mozilla.github.io/geckoview/'>GeckoView</a> 68 and later. See the <a href='https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/web-extensions.html'>GeckoView Docs</a> for additional details."
               },
               "opera": "mirror",
               "safari": {

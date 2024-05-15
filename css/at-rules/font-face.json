@@ -6,6 +6,9 @@
           "description": "<code>@font-face</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face",
           "spec_url": "https://drafts.csswg.org/css-fonts/#font-face-rule",
+          "tags": [
+            "web-features:font-face"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -112,6 +115,9 @@
         "OpenType_COLRv1": {
           "__compat": {
             "description": "OpenType COLRv1 rendering",
+            "tags": [
+              "web-features:colrv1"
+            ],
             "support": {
               "chrome": {
                 "version_added": "98"
@@ -119,14 +125,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "105",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.font_rendering.colr_v1.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "107"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -259,6 +258,9 @@
             "description": "WOFF",
             "mdn_url": "https://developer.mozilla.org/docs/Web/Guide/WOFF",
             "spec_url": "https://www.w3.org/TR/WOFF/#OverallStructure",
+            "tags": [
+              "web-features:font-face"
+            ],
             "support": {
               "chrome": {
                 "version_added": "6"
@@ -300,6 +302,9 @@
             "description": "WOFF 2",
             "mdn_url": "https://developer.mozilla.org/docs/Web/Guide/WOFF",
             "spec_url": "https://w3c.github.io/woff/woff2/#FileStructure",
+            "tags": [
+              "web-features:font-face"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -443,6 +448,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-family",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-family-desc",
+            "tags": [
+              "web-features:font-face"
+            ],
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -487,7 +495,8 @@
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-rend-desc",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40398871"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -510,7 +519,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "10"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -653,7 +662,8 @@
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-rend-desc",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40398871"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -797,6 +807,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/src",
             "spec_url": "https://drafts.csswg.org/css-fonts/#src-desc",
+            "tags": [
+              "web-features:font-face"
+            ],
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -874,7 +887,7 @@
               "description": "<code>format(keyword)</code>",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "108"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -944,7 +957,7 @@
               "description": "<code>tech(keyword)</code>",
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "108"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",

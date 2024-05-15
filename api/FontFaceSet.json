@@ -140,11 +140,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/check",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-check",
           "support": {
-            "chrome": {
-              "version_added": "35",
-              "partial_implementation": true,
-              "notes": "The method returns <code>false</code> instead of <code>true</code> for nonexistent or locally installed fonts. See <a href='https://crbug.com/591602'>bug 591602</a>."
-            },
+            "chrome": [
+              {
+                "version_added": "120"
+              },
+              {
+                "version_added": "35",
+                "partial_implementation": true,
+                "notes": "Prior to version 120, this method returned <code>false</code> instead of <code>true</code> for nonexistent or locally installed fonts. See <a href='https://crbug.com/40893726'>bug 40893726</a>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -427,7 +432,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -462,7 +467,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -497,7 +502,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

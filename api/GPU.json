@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPU",
         "spec_url": "https://gpuweb.github.io/gpuweb/#gpu-interface",
+        "tags": [
+          "web-features:webgpu"
+        ],
         "support": {
           "chrome": {
             "version_added": "113",
@@ -12,6 +15,21 @@
           "chrome_android": {
             "version_added": false
           },
+          "deno": [
+            {
+              "version_added": "1.39",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-webgpu"
+                }
+              ]
+            },
+            {
+              "version_added": "1.8",
+              "version_removed": "1.32"
+            }
+          ],
           "edge": "mirror",
           "firefox": {
             "version_added": "preview",
@@ -44,12 +62,18 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPU/getPreferredCanvasFormat",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpu-getpreferredcanvasformat",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
               "version_added": false
             },
             "edge": "mirror",
@@ -85,6 +109,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPU/requestAdapter",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpu-requestadapter",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
@@ -93,6 +120,21 @@
             "chrome_android": {
               "version_added": false
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -162,12 +204,18 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPU/wgslLanguageFeatures",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpu-wgsllanguagefeatures",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "115",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
               "version_added": false
             },
             "edge": "mirror",

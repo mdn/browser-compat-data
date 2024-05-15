@@ -440,7 +440,8 @@
             "description": "<code>dns</code>",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "preview",
+                "notes": "The <code>dns</code> API is only available in Chrome Dev."
               },
               "edge": "mirror",
               "firefox": {
@@ -795,6 +796,29 @@
             }
           }
         },
+        "scripting": {
+          "__compat": {
+            "description": "<code>scripting</code>",
+            "support": {
+              "chrome": {
+                "version_added": "88",
+                "notes": "Available for use in Manifest V3 or later."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "102"
+              },
+              "firefox_android": "mirror",
+              "opera": {
+                "version_added": false
+              },
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "search": {
           "__compat": {
             "description": "<code>search</code>",
@@ -1049,12 +1073,33 @@
             }
           }
         },
+        "webRequestAuthProvider": {
+          "__compat": {
+            "description": "<code>webRequestAuthProvider</code>",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "126"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "webRequestBlocking": {
           "__compat": {
             "description": "<code>webRequestBlocking</code>",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "In Manifest V3, no longer available for most extensions (the exception being policy-installed extensions). Use the <code>declarativeNetRequest</code> API instead."
               },
               "edge": {
                 "version_added": "14"

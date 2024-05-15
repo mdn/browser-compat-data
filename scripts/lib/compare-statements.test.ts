@@ -15,6 +15,11 @@ const tests: { input: Identifier; output: Identifier }[] = [
           chrome: [
             { version_added: '20', prefix: 'webkit' },
             {
+              version_added: '18',
+              partial_implementation: true,
+              notes: 'Fries are kind of cold',
+            },
+            {
               version_added: '10',
               version_removed: '18',
               partial_implementation: true,
@@ -46,6 +51,11 @@ const tests: { input: Identifier; output: Identifier }[] = [
           chrome: [
             { version_added: '20' },
             { version_added: '20', prefix: 'webkit' },
+            {
+              version_added: '18',
+              partial_implementation: true,
+              notes: 'Fries are kind of cold',
+            },
             {
               version_added: '12',
               flags: [
@@ -102,9 +112,9 @@ const tests: { input: Identifier; output: Identifier }[] = [
 
 /**
  * Update the order of the statements
- * @param {string} key The key of the object (make sure it's '__compat')
- * @param {CompatStatement} value The compat statement to update
- * @returns {CompatStatement} The updated compat statement
+ * @param key The key of the object (make sure it's '__compat')
+ * @param value The compat statement to update
+ * @returns The updated compat statement
  */
 const orderStatements = (
   key: string,
@@ -127,7 +137,7 @@ describe('compare-statements script', () => {
       const expected = test.output;
       const actual = JSON.parse(JSON.stringify(test.output), orderStatements);
 
-      assert.deepStrictEqual(actual, expected);
+      assert.deepEqual(actual, expected);
     }
   });
 });

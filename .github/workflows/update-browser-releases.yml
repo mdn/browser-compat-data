@@ -3,16 +3,20 @@ name: Update browser releases
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "30 4 * * 1-5"
+
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
   update:
+    if: github.repository == 'mdn/browser-compat-data'
     name: Update browser releases
     runs-on: ubuntu-latest
     env:
-      RESULT:
+      RESULT: ""
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,7 +34,7 @@ jobs:
           npm run update-browser-releases -- --all >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update browser releases
@@ -38,6 +42,7 @@ jobs:
           signoff: false
           branch: browser-releases
           delete-branch: true
+          add-paths: browsers/*.json # Only include files in that directory
           title: "Update browser releases"
           body: |
             The output of the `update-browser-releases` script is:

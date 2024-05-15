@@ -5,9 +5,9 @@ import { execSync } from 'node:child_process';
 
 /**
  * Execute a command
- * @param {string} command The command to execute
- * @param {any} opts The options to pass to execSync
- * @returns {string} The output from the command
+ * @param command The command to execute
+ * @param opts The options to pass to execSync
+ * @returns The output from the command
  */
 export const exec = (command: string, opts?: any): string =>
   execSync(command, { encoding: 'utf8', ...opts }).trim();
@@ -45,16 +45,16 @@ export const requireWriteAccess = () => {
 
 /**
  * Run a query on the GitHub API using the GitHub CLI
- * @param {string} endpoint The API endpoint to query
- * @returns {any} The response from the API
+ * @param endpoint The API endpoint to query
+ * @returns The response from the API
  */
 export const githubAPI = (endpoint: string): any =>
   JSON.parse(exec(`gh api /repos/mdn/browser-compat-data${endpoint}`));
 
 /**
  * Query pull requests
- * @param {string} queryArgs The CLI arguments for the query
- * @returns {any} The response from the API
+ * @param queryArgs The CLI arguments for the query
+ * @returns The response from the API
  */
 export const queryPRs = (queryArgs: any): any => {
   const searchDetails = {
@@ -72,29 +72,29 @@ export const queryPRs = (queryArgs: any): any => {
 
 /**
  * Get the latest Git tag
- * @returns {string} The latest Git tag
+ * @returns The latest Git tag
  */
 export const getLatestTag = (): string =>
   exec('git describe --abbrev=0 --tags');
 
 /**
  * Get the date of a specified ref
- * @param {string} ref The ref to check
- * @param {boolean} querySafe Format the string for HTML
- * @returns {string} The ref date
+ * @param ref The ref to check
+ * @param querySafe Format the string for HTML
+ * @returns The ref date
  */
 export const getRefDate = (ref: string, querySafe = false): string => {
   const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
 
   if (querySafe) {
-    return rawDateString.replace('+', '%2B');
+    return rawDateString.replaceAll('+', '%2B');
   }
   return rawDateString;
 };
 
 /**
  * Wait for a key press
- * @returns {Promise<true>} Once the key is pressed, return
+ * @returns Once the key is pressed, return
  */
 export const keypress = async () => {
   process.stdin.setRawMode(true);

@@ -2,6 +2,30 @@
   "webextensions": {
     "api": {
       "tabs": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs",
+          "support": {
+            "chrome": {
+              "version_added": "5"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": "54"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "MutedInfo": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/MutedInfo",
@@ -555,32 +579,6 @@
             }
           }
         },
-        "TAB_ID_NONE": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/TAB_ID_NONE",
-            "support": {
-              "chrome": {
-                "version_added": "46"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": "45"
-              },
-              "firefox_android": {
-                "version_added": "54"
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              }
-            }
-          }
-        },
         "Tab": {
           "active": {
             "__compat": {
@@ -604,6 +602,28 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "attention": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": "63",
+                  "notes": "While present, always returns <code>false</code>."
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -737,6 +757,25 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "hidden": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "59"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -886,7 +925,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "121"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -946,6 +985,26 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "pendingUrl": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "79"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1620774"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -1159,6 +1218,32 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          }
+        },
+        "TAB_ID_NONE": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/TAB_ID_NONE",
+            "support": {
+              "chrome": {
+                "version_added": "46"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "54"
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
               }
             }
           }
@@ -1762,7 +1847,7 @@
                 "version_added": "45"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "118"
               },
               "opera": "mirror",
               "safari": {
@@ -1892,7 +1977,7 @@
                 "notes": "Available for use in Manifest V2 only."
               },
               "firefox": {
-                "version_added": "43",
+                "version_added": "45",
                 "notes": [
                   "Before version 50, Firefox would pass a single result value into its callback rather than an array, unless 'allFrames' had been set.",
                   "Available for use in Manifest V2 only."
@@ -1921,7 +2006,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "43",
+                  "version_added": "45",
                   "notes": "'allFrames' and 'frameId' can't both be set at the same time."
                 },
                 "firefox_android": {
@@ -1969,7 +2054,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "43"
+                  "version_added": "45"
                 },
                 "firefox_android": {
                   "version_added": "54"
@@ -2222,26 +2307,24 @@
               "safari_ios": "mirror"
             }
           },
-          "highlightInfo": {
-            "populate": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "63"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+          "populate": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "63"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }
@@ -3095,6 +3178,29 @@
             }
           },
           "queryInfo": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "54"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
             "active": {
               "__compat": {
                 "support": {
@@ -3117,6 +3223,27 @@
                   "safari_ios": {
                     "version_added": "15"
                   }
+                }
+              }
+            },
+            "attention": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "63"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
                 }
               }
             },
@@ -3804,7 +3931,7 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror"
             }

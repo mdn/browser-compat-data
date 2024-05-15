@@ -219,7 +219,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/getParameters#degradationpreference",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "83"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -539,7 +539,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "12.1"
+              "version_added": "11"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -596,7 +596,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCRtpSender/setParameters#degradationpreference",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "83"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -648,7 +648,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "12.1"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -658,6 +658,252 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "active": {
+            "__compat": {
+              "description": "<code>parameters.encodings.active</code> parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "110"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "dtx": {
+            "__compat": {
+              "description": "<code>parameters.encodings.dtx</code> parameter",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": true
+              }
+            }
+          },
+          "maxBitrate": {
+            "__compat": {
+              "description": "<code>parameters.encodings.maxBitrate</code> parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpencodingparameters-maxbitrate",
+              "support": {
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "46"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "maxFramerate": {
+            "__compat": {
+              "description": "<code>parameters.encodings.maxFramerate</code> parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpencodingparameters-maxframerate",
+              "support": {
+                "chrome": {
+                  "version_added": "81"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "101",
+                  "partial_implementation": true,
+                  "notes": "Zero is treated as 'no fps limit' (see <a href='https://bugzil.la/1611957'>bug 1611957</a>)."
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "priority": {
+            "__compat": {
+              "description": "<code>parameters.encodings.priority</code> parameter",
+              "spec_url": "https://w3c.github.io/webrtc-priority/#dom-rtcrtpencodingparameters-priority",
+              "support": {
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "≤79"
+                },
+                "firefox": {
+                  "version_added": "46",
+                  "notes": "In version 110 and later the default priority is <code>low</code>."
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "rid": {
+            "__compat": {
+              "description": "<code>parameters.encodings.rid</code> parameter",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "46"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "scaleResolutionDownBy": {
+            "__compat": {
+              "description": "<code>parameters.encodings.scaleResolutionDownBy</code> parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpencodingparameters-scaleresolutiondownby",
+              "support": {
+                "chrome": {
+                  "version_added": "74"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": "46"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "11"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },

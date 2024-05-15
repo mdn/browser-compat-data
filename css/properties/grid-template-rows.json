@@ -6,8 +6,10 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/grid-template-rows",
           "spec_url": [
             "https://drafts.csswg.org/css-grid/#track-sizing",
-            "https://drafts.csswg.org/css-grid/#subgrids",
-            "https://drafts.csswg.org/css-grid-3/#masonry-layout"
+            "https://drafts.csswg.org/css-grid/#subgrids"
+          ],
+          "tags": [
+            "web-features:grid"
           ],
           "support": {
             "chrome": {
@@ -53,6 +55,9 @@
         "animation": {
           "__compat": {
             "description": "Animation of tracks",
+            "tags": [
+              "web-features:grid-animation"
+            ],
             "support": {
               "chrome": {
                 "version_added": "107"
@@ -83,11 +88,47 @@
             }
           }
         },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-auto",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "fit-content": {
           "__compat": {
             "description": "<code>fit-content()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/fit-content",
             "spec_url": "https://drafts.csswg.org/css-sizing-4/#sizing-values",
+            "tags": [
+              "web-features:grid"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -127,9 +168,13 @@
             "description": "<code>masonry</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Masonry_Layout",
             "spec_url": "https://drafts.csswg.org/css-grid-3/#masonry-layout",
+            "tags": [
+              "web-features:masonry"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40128480"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -141,7 +186,8 @@
                     "name": "layout.css.grid-template-masonry-value.enabled",
                     "value_to_set": "true"
                   }
-                ]
+                ],
+                "impl_url": "https://bugzil.la/1757446"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -151,7 +197,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "preview",
+                "impl_url": "https://webkit.org/b/248287"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -164,11 +211,80 @@
             }
           }
         },
+        "max-content": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-max-content",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "min-content": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-2/#valdef-grid-template-columns-min-content",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "minmax": {
           "__compat": {
             "description": "<code>minmax()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/minmax()",
             "spec_url": "https://drafts.csswg.org/css-grid/#valdef-grid-template-columns-minmax",
+            "tags": [
+              "web-features:grid"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -203,11 +319,47 @@
             }
           }
         },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid/#valdef-grid-template-rows-none",
+            "support": {
+              "chrome": {
+                "version_added": "57"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "52"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "repeat": {
           "__compat": {
             "description": "<code>repeat()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/repeat()",
             "spec_url": "https://drafts.csswg.org/css-grid/#repeat-notation",
+            "tags": [
+              "web-features:grid"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"
@@ -261,6 +413,9 @@
             "description": "<code>subgrid</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_Grid_Layout/Subgrid",
             "spec_url": "https://drafts.csswg.org/css-grid/#subgrids",
+            "tags": [
+              "web-features:subgrid"
+            ],
             "support": {
               "chrome": {
                 "version_added": "117"
@@ -270,9 +425,7 @@
               "firefox": {
                 "version_added": "71"
               },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },

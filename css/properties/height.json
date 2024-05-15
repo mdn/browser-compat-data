@@ -4,7 +4,10 @@
       "height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/height",
-          "spec_url": "https://drafts.csswg.org/css-sizing/#preferred-size-properties",
+          "spec_url": [
+            "https://drafts.csswg.org/css-sizing/#preferred-size-properties",
+            "https://drafts.csswg.org/css-sizing-4/#sizing-values"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -40,18 +43,96 @@
             "deprecated": false
           }
         },
+        "anchor-size": {
+          "__compat": {
+            "description": "<code>anchor-size()</code>",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-sizing-3/#preferred-size-properties",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "fit-content": {
           "__compat": {
-            "description": "<code>fit-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
             "support": {
               "chrome": {
                 "version_added": "46"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "94"
-              },
+              "firefox": [
+                {
+                  "version_added": "94"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "41"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -82,6 +163,7 @@
         "fit-content_function": {
           "__compat": {
             "description": "<code>fit-content()</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing/#funcdef-width-fit-content",
             "support": {
               "chrome": {
                 "version_added": false
@@ -120,7 +202,7 @@
         },
         "max-content": {
           "__compat": {
-            "description": "<code>max-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing/#valdef-width-max-content",
             "support": {
               "chrome": {
                 "version_added": "46"
@@ -163,7 +245,7 @@
         },
         "min-content": {
           "__compat": {
-            "description": "<code>min-content</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing/#valdef-width-min-content",
             "support": {
               "chrome": {
                 "version_added": "46"
@@ -206,7 +288,7 @@
         },
         "stretch": {
           "__compat": {
-            "description": "<code>stretch</code>",
+            "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-stretch",
             "support": {
               "chrome": {
                 "alternative_name": "-webkit-fill-available",
