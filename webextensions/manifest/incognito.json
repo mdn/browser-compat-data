@@ -17,7 +17,7 @@
             "firefox_android": "mirror",
             "opera": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "14"
             },
             "safari_ios": "mirror"
           }
@@ -37,7 +37,7 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror"
             }
@@ -58,7 +58,7 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror"
             }
@@ -75,12 +75,16 @@
               },
               "firefox": {
                 "version_added": "127",
+                "impl_url": "https://bugzil.la/1380812",
+                "partial_implementation": true,
                 "notes": "Split mode is not supported in Firefox. Extensions using this value are treated as requesting \"incognito\":\"not_allowed\"."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14",
+                "partial_implementation": true,
+                "notes": "Split mode is not supported in Safari. Extensions using this value are treated as requesting \"incognito\":\"spanning\"."
               },
               "safari_ios": "mirror"
             }
