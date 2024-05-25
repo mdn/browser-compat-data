@@ -43,6 +43,9 @@
         "aspect_ratio_computed_from_attributes": {
           "__compat": {
             "description": "Aspect ratio computed from <code>width</code> and <code>height</code> attributes",
+            "tags": [
+              "web-features:aspect-ratio"
+            ],
             "support": {
               "chrome": {
                 "version_added": "79"
@@ -75,6 +78,7 @@
         },
         "autoplay": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-autoplay",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -114,6 +118,7 @@
         },
         "controls": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-controls",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -150,8 +155,42 @@
             }
           }
         },
+        "controlslist": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/controls-list/#solution-outline",
+            "support": {
+              "chrome": {
+                "version_added": "58"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "crossorigin": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-crossorigin",
             "support": {
               "chrome": {
                 "version_added": "33"
@@ -192,8 +231,96 @@
             }
           }
         },
+        "disablepictureinpicture": {
+          "__compat": {
+            "spec_url": "https://w3c.github.io/picture-in-picture/#dom-htmlvideoelement-disablepictureinpicture",
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": {
+                "version_added": "105"
+              },
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "122",
+                  "partial_implementation": true,
+                  "notes": "When this attribute is set, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+                },
+                {
+                  "version_added": "116",
+                  "version_removed": "122",
+                  "partial_implementation": true,
+                  "notes": "When this attribute is set, the overlay button to disable picture-in-picture (PiP) is hidden, but the user can still enable PiP."
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "13.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "disableremoteplayback": {
+          "__compat": {
+            "spec_url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute",
+            "support": {
+              "chrome": {
+                "version_added": "121"
+              },
+              "chrome_android": {
+                "version_added": "56"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "13.1"
+              },
+              "safari_ios": {
+                "version_added": "13"
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/521319"
+              }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "height": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-height",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -232,6 +359,7 @@
         },
         "loop": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loop",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -270,6 +398,7 @@
         },
         "muted": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-muted",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -306,8 +435,48 @@
             }
           }
         },
+        "playsinline": {
+          "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-video-playsinline",
+            "support": {
+              "chrome": {
+                "version_added": "75"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "10"
+                },
+                {
+                  "alternative_name": "webkit-playsinline",
+                  "version_added": "8"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "poster": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-video-poster",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -346,6 +515,7 @@
         },
         "preload": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-preload",
             "support": {
               "chrome": {
                 "version_added": "3",
@@ -392,6 +562,7 @@
         },
         "src": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-src",
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -430,6 +601,7 @@
         },
         "width": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width",
             "support": {
               "chrome": {
                 "version_added": "3"

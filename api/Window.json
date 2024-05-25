@@ -565,7 +565,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -690,7 +690,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/164193"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -920,6 +921,7 @@
       },
       "cookieStore": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/cookieStore",
           "spec_url": "https://wicg.github.io/cookie-store/#dom-window-cookiestore",
           "support": {
             "chrome": {
@@ -992,7 +994,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/customElements",
           "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-window-customelements",
           "tags": [
-            "web-features:custom-elements"
+            "web-features:autonomous-custom-elements"
           ],
           "support": {
             "chrome": {
@@ -1183,11 +1185,11 @@
               "version_added": "11.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "In Safari, the <code>devicePixelRatio</code> does not change when the page is zoomed. See <a href='https://webkit.org/b/124862'>bug 124862</a>."
             },
-            "safari_ios": {
-              "version_added": "1"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1792,14 +1794,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1859,14 +1865,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
-            },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari": [
+              {
+                "version_added": "16"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://webkit.org/b/223860'>bug 223860</a>."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -3030,7 +3040,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1777171"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3379,42 +3390,6 @@
             }
           }
         },
-        "outerwidth_outerheight": {
-          "__compat": {
-            "description": "<code>outerHeight</code> and <code>outerWidth</code> features",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "1",
-                "version_removed": "80"
-              },
-              "firefox_android": {
-                "version_added": "4"
-              },
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
-        },
         "relative-multi-screen": {
           "__compat": {
             "description": "Opened relative to the <a href='https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin'>Multi-screen origin</a>",
@@ -3738,6 +3713,42 @@
           }
         }
       },
+      "pagereveal_event": {
+        "__compat": {
+          "description": "<code>pagereveal</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pagereveal",
+          "support": {
+            "chrome": {
+              "version_added": "123",
+              "impl_url": "https://crbug.com/40276316"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "pageshow_event": {
         "__compat": {
           "description": "<code>pageshow</code> event",
@@ -3772,6 +3783,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pageswap_event": {
+        "__compat": {
+          "description": "<code>pageswap</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageswap_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pageswap",
+          "support": {
+            "chrome": {
+              "version_added": "124",
+              "impl_url": "https://crbug.com/41495176"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -4150,6 +4197,9 @@
               "version_added": "49"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.40"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "69"
@@ -4361,7 +4411,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/164193"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5864,13 +5915,14 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
       "sharedStorage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sharedStorage",
+          "spec_url": "https://wicg.github.io/shared-storage/#dom-window-sharedstorage",
           "support": {
             "chrome": {
               "version_added": "117"
@@ -6106,7 +6158,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -6547,6 +6601,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-visualviewport",
+          "tags": [
+            "web-features:visual-viewport"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
@@ -6846,7 +6903,8 @@
               ]
             },
             "edge": {
-              "version_added": "15"
+              "version_added": "15",
+              "version_removed": "79"
             },
             "firefox": [
               {
