@@ -51,8 +51,15 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     }
   }
 
-  // After release 54, we have an easier release note
-  url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+  // After release 53, we have new-in-chrome highlight posts
+  if (version > 53) {
+    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+  }
+
+  // After release 123, we have complete release notes
+  if (version > 123) {
+    url = `https://developer.chrome.com/release-notes/${version}`;
+  }
 
   const releaseNote = await fetch(url);
 
