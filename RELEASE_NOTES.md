@@ -1,5 +1,84 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.30)
+
+May 28, 2024
+
+### Removals
+
+- `api.Element.attachShadow.init_clonable_parameter` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `api.Element.attachShadow.init_delegatesFocus_parameter` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+
+### Additions
+
+- `api.Element.attachShadow.options_clonable_parameter` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `api.Element.attachShadow.options_delegatesFocus_parameter` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `api.Element.attachShadow.options_serializable_parameter` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `api.Element.checkVisibility.options_opacityProperty_parameter` ([#23159](https://github.com/mdn/browser-compat-data/pull/23159))
+- `api.Selection.collapse.accepts_nodes_in_shadow_trees` ([#23013](https://github.com/mdn/browser-compat-data/pull/23013))
+- `api.Selection.extend.accepts_nodes_in_shadow_trees` ([#23013](https://github.com/mdn/browser-compat-data/pull/23013))
+- `api.Selection.getComposedRanges.returns_multiple_ranges` ([#23013](https://github.com/mdn/browser-compat-data/pull/23013))
+- `api.Selection.setBaseAndExtent.accepts_nodes_in_shadow_trees` ([#23013](https://github.com/mdn/browser-compat-data/pull/23013))
+- `browsers.nodejs.releases.18.7.0` ([#23120](https://github.com/mdn/browser-compat-data/pull/23120))
+- `browsers.nodejs.releases.19.5.0` ([#23126](https://github.com/mdn/browser-compat-data/pull/23126))
+- `css.properties.place-items.anchor-center` ([#23171](https://github.com/mdn/browser-compat-data/pull/23171))
+- `css.properties.place-self.anchor-center` ([#23171](https://github.com/mdn/browser-compat-data/pull/23171))
+- `css.properties.position-try-options.inset-area` ([#23098](https://github.com/mdn/browser-compat-data/pull/23098))
+- `html.elements.fencedframe.allow` ([#23172](https://github.com/mdn/browser-compat-data/pull/23172))
+- `html.elements.fencedframe.height` ([#23172](https://github.com/mdn/browser-compat-data/pull/23172))
+- `html.elements.fencedframe.width` ([#23172](https://github.com/mdn/browser-compat-data/pull/23172))
+- `html.elements.template.shadowrootdelegatesfocus` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `html.elements.template.shadowrootserializable` ([#23088](https://github.com/mdn/browser-compat-data/pull/23088))
+- `javascript.builtins.DataView.getFloat16` ([#23133](https://github.com/mdn/browser-compat-data/pull/23133))
+- `javascript.builtins.DataView.setFloat16` ([#23133](https://github.com/mdn/browser-compat-data/pull/23133))
+- `javascript.builtins.Float16Array` ([#23133](https://github.com/mdn/browser-compat-data/pull/23133))
+- `javascript.builtins.Float16Array.Float16Array` ([#23133](https://github.com/mdn/browser-compat-data/pull/23133))
+- `javascript.builtins.Math.f16round` ([#23133](https://github.com/mdn/browser-compat-data/pull/23133))
+- `webextensions.api.declarativeNetRequest.getDynamicRules.filter` ([#23114](https://github.com/mdn/browser-compat-data/pull/23114))
+- `webextensions.api.declarativeNetRequest.getSessionRules.filter` ([#23114](https://github.com/mdn/browser-compat-data/pull/23114))
+- `webextensions.api.management.ExtensionInfo.installType` ([#23155](https://github.com/mdn/browser-compat-data/pull/23155))
+
+### Statistics
+
+- 11 contributors have changed 79 files with 1,514 additions and 526 deletions in 33 commits ([`v5.5.29...v5.5.30`](https://github.com/mdn/browser-compat-data/compare/v5.5.29...v5.5.30))
+- 16,423 total features
+- 1,087 total contributors
+- 4,813 total stargazers
+
+## [v5.5.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.29)
+
+May 18, 2024
+
+### Statistics
+
+- 6 contributors have changed 23 files with 154 additions and 263 deletions in 13 commits ([`v5.5.28...v5.5.29`](https://github.com/mdn/browser-compat-data/compare/v5.5.28...v5.5.29))
+- 16,401 total features
+- 1,087 total contributors
+- 4,805 total stargazers
+
+## [v5.5.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.28)
+
+May 14, 2024
+
+### Additions
+
+- `api.Bluetooth.requestDevice.options_exclusionFilters_parameter` ([#22594](https://github.com/mdn/browser-compat-data/pull/22594))
+- `api.Bluetooth.requestDevice.options_filter_manufacturerData_parameter` ([#22594](https://github.com/mdn/browser-compat-data/pull/22594))
+- `api.IDBDatabase.transaction.option_durability_parameter_readwriteflush` ([#23010](https://github.com/mdn/browser-compat-data/pull/23010))
+- `api.RTCRtpTransceiver.getHeaderExtensionsToNegotiate` ([#22872](https://github.com/mdn/browser-compat-data/pull/22872))
+- `api.RTCRtpTransceiver.getNegotiatedHeaderExtensions` ([#22872](https://github.com/mdn/browser-compat-data/pull/22872))
+- `api.RTCRtpTransceiver.setHeaderExtensionsToNegotiate` ([#22872](https://github.com/mdn/browser-compat-data/pull/22872))
+- `browsers.firefox_android.releases.129` ([#23087](https://github.com/mdn/browser-compat-data/pull/23087))
+- `browsers.firefox.releases.129` ([#23087](https://github.com/mdn/browser-compat-data/pull/23087))
+- `css.types.basic-shape.shape` ([#23017](https://github.com/mdn/browser-compat-data/pull/23017))
+
+### Statistics
+
+- 9 contributors have changed 48 files with 385 additions and 112 deletions in 18 commits ([`v5.5.27...v5.5.28`](https://github.com/mdn/browser-compat-data/compare/v5.5.27...v5.5.28))
+- 16,401 total features
+- 1,087 total contributors
+- 4,803 total stargazers
+
 ## [v5.5.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.27)
 
 May 10, 2024
