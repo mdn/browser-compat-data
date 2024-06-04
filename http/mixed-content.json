@@ -2,7 +2,7 @@
   "http": {
     "mixed_content": {
       "__compat": {
-        "description": "Blocks some or all insecure mixed content",
+        "description": "Blocks some or all insecure mixed content.",
         "mdn_url": "https://developer.mozilla.org/docs/Web/Security/Mixed_content",
         "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
         "support": {
@@ -36,7 +36,7 @@
       },
       "allow_file_urls": {
         "__compat": {
-          "description": "Allow mixed content from <code>file:</code> URLs",
+          "description": "Allow mixed content from <code>file:</code> URLs.",
           "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
@@ -104,7 +104,7 @@
       },
       "allow_loopback_url": {
         "__compat": {
-          "description": "Allow mixed content from loopback address (<code>http://127.0.0.1/</code>)",
+          "description": "Allow mixed content from loopback address (<code>http://127.0.0.1/</code>).",
           "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
@@ -138,7 +138,7 @@
       },
       "auto_upgrade_images": {
         "__compat": {
-          "description": "Upgradable image mixed content by default",
+          "description": "Upgradable image mixed content by default.",
           "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
@@ -149,8 +149,8 @@
             "firefox": {
               "version_added": "127",
               "notes": [
-                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content",
-                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content"
+                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content.",
+                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content."
               ]
             },
             "firefox_android": "mirror",
@@ -176,7 +176,7 @@
       },
       "auto_upgrade_video_audio": {
         "__compat": {
-          "description": "Upgrade video and audio content by default",
+          "description": "Upgrade video and audio content by default.",
           "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
@@ -187,8 +187,8 @@
             "firefox": {
               "version_added": "127",
               "notes": [
-                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content",
-                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content"
+                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content.",
+                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content."
               ]
             },
             "firefox_android": "mirror",
@@ -249,18 +249,50 @@
       },
       "block_insecure_downloads": {
         "__compat": {
-          "description": "Block insecure downloads from secure context",
+          "description": "Block insecure downloads from secure context.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#mixed-download",
+          "support": {
+            "chrome": {
+              "version_added": "92"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "90"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "block_mixed_downloads": {
+        "__compat": {
+          "description": "Block mixed downloads.",
           "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
-              "version_added": "84"
+              "version_added": true
             },
-            "chrome_android": {
-              "version_added": "85"
-            },
+            "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "55"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -285,7 +317,7 @@
       },
       "private_network_access": {
         "__compat": {
-          "description": "User permission in private network allows mixed content checks to be skipped",
+          "description": "User permission in private network allows mixed content checks to be skipped.",
           "spec_url": "https://wicg.github.io/private-network-access/#intro",
           "support": {
             "chrome": {
