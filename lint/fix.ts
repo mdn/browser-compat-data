@@ -75,7 +75,6 @@ if (esMain(import.meta)) {
       'svg',
       'javascript',
       'mathml',
-      'test',
       'webassembly',
       'webdriver',
       'webextensions',
