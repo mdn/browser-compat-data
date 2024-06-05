@@ -117,9 +117,12 @@ export const processData = (
   }
 
   if (data.description === `<code>${path.split('.').at(-1)}</code>`) {
-    errors.push(
-      'Description is redundant as it only restates the feature name',
-    );
+    errors.push({
+      ruleName: 'redundant',
+      path,
+      actual: data.description,
+      expected: '',
+    });
   }
 
   if (data.description) {
