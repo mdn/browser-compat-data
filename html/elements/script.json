@@ -45,6 +45,7 @@
         },
         "async": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-async",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -112,6 +113,10 @@
         },
         "blocking": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-blocking",
+            "tags": [
+              "web-features:blocking-render"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105"
@@ -146,6 +151,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-crossorigin",
             "support": {
               "chrome": {
                 "version_added": "19"
@@ -185,6 +191,7 @@
         },
         "defer": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer",
             "support": {
               "chrome": {
                 "version_added": "1",
@@ -302,6 +309,10 @@
         },
         "nomodule": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-nomodule",
+            "tags": [
+              "web-features:js-modules"
+            ],
             "support": {
               "chrome": {
                 "version_added": "61"
@@ -336,6 +347,7 @@
         },
         "referrerpolicy": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-referrerpolicy",
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -489,6 +501,7 @@
         },
         "src": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-src",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -523,6 +536,7 @@
         },
         "type": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-type",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -589,11 +603,51 @@
                 "standard_track": true,
                 "deprecated": false
               }
+            },
+            "integrity": {
+              "__compat": {
+                "description": "<code>integrity</code>",
+                "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#normalizing-a-module-integrity-map",
+                "tags": [
+                  "web-features:import-map-integrity"
+                ],
+                "support": {
+                  "chrome": {
+                    "version_added": "127"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
             }
           },
           "module": {
             "__compat": {
               "description": "<code>type=\"module\"</code>",
+              "tags": [
+                "web-features:js-modules"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "61",

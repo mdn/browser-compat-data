@@ -127,19 +127,7 @@ export default {
   name: 'Flag data',
   description: 'Test the flag data for any irrelevant flags',
   scope: 'feature',
-  exceptions: [
-    'api.Bluetooth',
-    'api.BluetoothCharacteristicProperties',
-    'api.BluetoothDevice',
-    'api.BluetoothRemoteGATTCharacteristic',
-    'api.BluetoothRemoteGATTDescriptor',
-    'api.BluetoothRemoteGATTServer',
-    'api.BluetoothRemoteGATTService',
-    'api.BluetoothUUID',
-    'api.Navigator.bluetooth',
-    'api.Notification.requireInteraction',
-    'api.Window.dump',
-  ],
+  exceptions: ['api.Notification.requireInteraction', 'api.Window.dump'],
   /**
    * Test the data
    * @param logger The logger to output errors to
