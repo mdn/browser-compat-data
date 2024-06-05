@@ -28,7 +28,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 const load = async (...files: string[]): Promise<void> => {
   for (let file of files) {
     if (file.indexOf(dirname) !== 0) {
-      file = path.resolve(dirname, '..', '..', file);
+      file = path.resolve(dirname, '..', file);
     }
 
     let fsStats: Stats;

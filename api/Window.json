@@ -3,7 +3,7 @@
     "Window": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window",
-        "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#the-window-object",
+        "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-window-object",
         "support": {
           "chrome": {
             "version_added": "1"
@@ -788,7 +788,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/close",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-close-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-close-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -833,7 +833,7 @@
       "closed": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/closed",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-closed-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-closed-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -994,7 +994,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/customElements",
           "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-window-customelements",
           "tags": [
-            "web-features:custom-elements"
+            "web-features:autonomous-custom-elements"
           ],
           "support": {
             "chrome": {
@@ -1185,11 +1185,11 @@
               "version_added": "11.1"
             },
             "safari": {
-              "version_added": "3"
+              "version_added": "3",
+              "partial_implementation": true,
+              "notes": "In Safari, the <code>devicePixelRatio</code> does not change when the page is zoomed. See <a href='https://webkit.org/b/124862'>bug 124862</a>."
             },
-            "safari_ios": {
-              "version_added": "1"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -1203,7 +1203,7 @@
       "document": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/document",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-document-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-document-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1675,7 +1675,7 @@
       "frames": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/frames",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-frames-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-frames-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2416,7 +2416,7 @@
       "length": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/length",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-length-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-length-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2600,7 +2600,7 @@
       "locationbar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/locationbar",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-locationbar-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-locationbar-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2680,7 +2680,7 @@
       "menubar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/menubar",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-menubar-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-menubar-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2988,7 +2988,7 @@
       "name": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/name",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-name-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-name-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3243,7 +3243,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/open",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/window-object.html#dom-open-dev",
+            "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-open-dev",
             "https://drafts.csswg.org/cssom-view/#the-features-argument-to-the-open()-method"
           ],
           "support": {
@@ -3559,7 +3559,7 @@
       "originAgentCluster": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/originAgentCluster",
-          "spec_url": "https://html.spec.whatwg.org/multipage/origin.html#origin-keyed-agent-clusters",
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#origin-keyed-agent-clusters",
           "support": {
             "chrome": {
               "version_added": "90"
@@ -3713,6 +3713,42 @@
           }
         }
       },
+      "pagereveal_event": {
+        "__compat": {
+          "description": "<code>pagereveal</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pagereveal_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pagereveal",
+          "support": {
+            "chrome": {
+              "version_added": "123",
+              "impl_url": "https://crbug.com/40276316"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "pageshow_event": {
         "__compat": {
           "description": "<code>pageshow</code> event",
@@ -3747,6 +3783,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "pageswap_event": {
+        "__compat": {
+          "description": "<code>pageswap</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/pageswap_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pageswap",
+          "support": {
+            "chrome": {
+              "version_added": "124",
+              "impl_url": "https://crbug.com/41495176"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -3795,7 +3867,7 @@
       "personalbar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/personalbar",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-personalbar-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-personalbar-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5011,7 +5083,7 @@
       "scrollbars": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollbars",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-scrollbars-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-scrollbars-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5689,7 +5761,7 @@
       "self": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/self",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-self-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-self-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5850,6 +5922,7 @@
       "sharedStorage": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sharedStorage",
+          "spec_url": "https://wicg.github.io/shared-storage/#dom-window-sharedstorage",
           "support": {
             "chrome": {
               "version_added": "117"
@@ -6085,7 +6158,9 @@
             "firefox": {
               "version_added": "49"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "62"
+            },
             "ie": {
               "version_added": false
             },
@@ -6114,7 +6189,7 @@
       "status": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/status",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-status",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-status",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6154,7 +6229,7 @@
       "statusbar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/statusbar",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-statusbar-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-statusbar-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6192,7 +6267,7 @@
       "stop": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/stop",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-stop-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-stop-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6316,7 +6391,7 @@
       "toolbar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/toolbar",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-toolbar-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-toolbar-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6526,6 +6601,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/visualViewport",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-visualviewport",
+          "tags": [
+            "web-features:visual-viewport"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
@@ -6968,7 +7046,7 @@
       "window": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/window",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-window-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-window-dev",
           "support": {
             "chrome": {
               "version_added": "1"
