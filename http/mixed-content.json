@@ -1,19 +1,18 @@
 {
-  "api": {
-    "GamepadHapticActuator": {
+  "http": {
+    "mixed-content": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator",
-        "spec_url": "https://w3c.github.io/gamepad/extensions.html#gamepadhapticactuator-interface",
+        "description": "Blocks some or all insecure mixed content.",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/Security/Mixed_content",
+        "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
         "support": {
           "chrome": {
-            "version_added": "68"
+            "version_added": "≤79"
           },
           "chrome_android": "mirror",
-          "edge": {
-            "version_added": "15"
-          },
+          "edge": "mirror",
           "firefox": {
-            "version_added": "55"
+            "version_added": "≤23"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -23,11 +22,9 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "16.4"
+            "version_added": "≤9.1"
           },
-          "safari_ios": {
-            "version_added": false
-          },
+          "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
         },
@@ -37,24 +34,162 @@
           "deprecated": false
         }
       },
-      "secure_context_required": {
+      "allow_file_urls": {
         "__compat": {
-          "description": "Secure context required",
+          "description": "Allow mixed content from <code>file:</code> URLs.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
           "support": {
             "chrome": {
-              "version_added": "86",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#restrict-gamepad-access",
-                  "value_to_set": "Enabled"
-                }
+              "version_added": true
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "≤23"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "allow_localhost_url": {
+        "__compat": {
+          "description": "Allow mixed content from localhost addresses (<code>http://localhost/</code> and <code>http://*.localhost/</code>).",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
+          "support": {
+            "chrome": {
+              "version_added": "≤79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "84"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "allow_loopback_url": {
+        "__compat": {
+          "description": "Allow mixed content from loopback address (<code>http://127.0.0.1/</code>).",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#intro",
+          "support": {
+            "chrome": {
+              "version_added": "≤79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "55"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "auto_upgrade_images": {
+        "__compat": {
+          "description": "Upgradable image mixed content by default.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#category-upgradeable",
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "127",
+              "notes": [
+                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content.",
+                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content."
               ]
             },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "auto_upgrade_video_audio": {
+        "__compat": {
+          "description": "Upgrade video and audio content by default.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#category-upgradeable",
+          "support": {
+            "chrome": {
+              "version_added": "80"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "91"
+              "version_added": "127",
+              "notes": [
+                "Set <code>security.mixed_content.upgrade_display_content</code> preference to <code>true</code> to allow HTTP fetching and display of upgradable content.",
+                "Set <code>security.mixed_content.block_display_content</code> preference to <code>true</code> to block all mixed content."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -77,126 +212,18 @@
           }
         }
       },
-      "canPlayEffectType": {
+      "block_mixed_downloads": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuator-canplayeffecttype",
+          "description": "Block mixed downloads.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#mixed-download",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "92"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "effects": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-effects",
-          "support": {
-            "chrome": {
-              "version_added": "126"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "playEffect": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-playeffect",
-          "support": {
-            "chrome": {
-              "version_added": "68"
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "15"
-            },
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": {
-              "version_added": false
-            },
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "pulse": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/pulse",
-          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuator-pulse",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": {
-              "version_added": "15",
-              "version_removed": "79"
-            },
-            "firefox": {
-              "version_added": "55"
+              "version_added": "90"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -219,19 +246,19 @@
           }
         }
       },
-      "reset": {
+      "blockable_mixed_content": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-reset",
+          "description": "Block 'blockable' mixed content.",
+          "spec_url": "https://www.w3.org/TR/mixed-content/#category-blockable",
           "support": {
             "chrome": {
-              "version_added": "68"
+              "version_added": "79",
+              "notes": "From version 79 blocks iframes, scripts, and stylesheets."
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "15"
-            },
+            "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "23"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -241,11 +268,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
+              "version_added": true
             },
-            "safari_ios": {
-              "version_added": false
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -256,20 +281,18 @@
           }
         }
       },
-      "type": {
+      "private_network_access": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/type",
-          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuatortype",
+          "description": "User permission in private network allows mixed content checks to be skipped.",
+          "spec_url": "https://wicg.github.io/private-network-access/#intro",
           "support": {
             "chrome": {
-              "version_added": "68"
+              "version_added": "124"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "15"
-            },
+            "edge": "mirror",
             "firefox": {
-              "version_added": "55"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -279,11 +302,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": {
               "version_added": false
             },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
