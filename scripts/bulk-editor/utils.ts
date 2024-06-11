@@ -59,18 +59,27 @@ export const updateFeatures = (featureIDs, updater) => {
       const contents = JSON.parse(rawcontents.toString('utf8'));
       let changed = false;
 
+      const applyToAnyFeatureID = !featureIDs || featureIDs.length === 0;
       const walker = walk(undefined, contents);
       for (const { path: featureID } of walker) {
         if (
+          applyToAnyFeatureID ||
           featureIDs.some(
             (fid) =>
               fid === featureID ||
               (fid.endsWith('*') && featureID.startsWith(fid.slice(0, -1))),
           )
         ) {
-          console.log(chalk`{yellow Updating ${featureID}...}`);
-          performUpdate(featureID, contents, updater);
-          changed = true;
+          const before = JSON.stringify(contents, undefined, 2);
+          const after = JSON.stringify(
+            performUpdate(featureID, contents, updater),
+            undefined,
+            2,
+          );
+          if (before != after) {
+            console.log(chalk`{yellow Updated ${featureID}}`);
+            changed = true;
+          }
         }
       }
 
