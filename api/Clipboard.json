@@ -111,6 +111,41 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "formats_unsanitized_parameter": {
+          "__compat": {
+            "description": "<code>formats.unsanitized</code> parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read#unsanitized",
+            "spec_url": "https://w3c.github.io/clipboard-apis/#dictdef-clipboardunsanitizedformats",
+            "support": {
+              "chrome": {
+                "version_added": "122"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "readText": {
@@ -132,7 +167,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "125",
               "notes": [
                 "From version 122 The paste-prompt on clipboard read is suppressed if the clipboard contains same-origin content",
                 "From version 122, Web extensions require the <code>clipboardRead</code> permission in manifest to read data. With permission the extension does not require transient activation or paste prompt",
