@@ -17,7 +17,7 @@ let archivedReleaseNotesText;
 
 /**
  * initReleaseNoteFiles - Fetch both release notes file and store them
- * @returns {string} Logs (error messages)
+ * @returns Logs (error messages)
  */
 const initReleaseNoteFiles = async () => {
   let result = '';
@@ -51,8 +51,8 @@ const initReleaseNoteFiles = async () => {
 
 /**
  * updateReleaseNotesIfArchived - Return the new release notes URL to use
- * @param {string} originalURL The URL that is currently used
- * @returns {string} The new URL to use (eventually the same)
+ * @param originalURL The URL that is currently used
+ * @returns The new URL to use (eventually the same)
  */
 const updateReleaseNotesIfArchived = (originalURL) => {
   const id = originalURL.split('#')[1];
@@ -75,9 +75,9 @@ const updateReleaseNotesIfArchived = (originalURL) => {
 
 /**
  * getFutureReleaseDate - Read the future release date
- * @param {string} release The release number of the versin
- * @param {string} releaseScheduleURL The url of the MD file having it
- * @returns {string} The date in the YYYY-MM-DD format
+ * @param release The release number of the version
+ * @param releaseScheduleURL The url of the MD file having it
+ * @returns The date in the YYYY-MM-DD format
  * Throws a string in case of an error
  */
 const getFutureReleaseDate = async (release, releaseScheduleURL) => {
@@ -99,7 +99,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   }
   const releaseDateText = result[1];
 
-  // Get the date frome the file
+  // Get the date from the file
   const months = [
     'Jan',
     'Feb',
@@ -125,10 +125,10 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
- * @param {string} status The status of the release
- * @param {string} fullRelease The release of the release
- * @param {string} date The date of the release
- * @returns {string} The URL of the release notes or the empty string if not found
+ * @param status The status of the release
+ * @param fullRelease The release of the release
+ * @param date The date of the release
+ * @returns The URL of the release notes or the empty string if not found
  * Throws a string in case of error
  */
 const getReleaseNotesURL = async (status, fullRelease, date) => {
@@ -171,8 +171,8 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
 
 /**
  * updateEdgeReleases - Update the json file listing the browser releases of an Edge browser
- * @param {object} options The list of options for Edge.
- * @returns {string} The log of what has been generated (empty if nothing)
+ * @param options The list of options for Edge.
+ * @returns The log of what has been generated (empty if nothing)
  */
 export const updateEdgeReleases = async (options) => {
   //
@@ -181,7 +181,7 @@ export const updateEdgeReleases = async (options) => {
   let result = await initReleaseNoteFiles();
 
   //
-  // Get the JSON with the versions from edgereleases
+  // Get the JSON with the versions from edge releases
   //
   const buffer = await fetch(options.edgeupdatesURL);
   const edgeVersions = JSON.parse(await buffer.text());
@@ -361,7 +361,7 @@ export const updateEdgeReleases = async (options) => {
       releaseDate,
       'planned',
       '',
-      '',
+      planned,
     );
   } else {
     // New entry
@@ -373,7 +373,7 @@ export const updateEdgeReleases = async (options) => {
       options.browserEngine,
       releaseDate,
       '',
-      '',
+      planned.toString(),
     );
   }
 

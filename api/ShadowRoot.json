@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot",
         "spec_url": "https://dom.spec.whatwg.org/#interface-shadowroot",
+        "tags": [
+          "web-features:shadow-dom"
+        ],
         "support": {
           "chrome": {
             "version_added": "53"
@@ -71,6 +74,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/adoptedStyleSheets",
           "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
+          "tags": [
+            "web-features:constructed-stylesheets"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -91,6 +97,43 @@
             },
             "safari": {
               "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "clonable": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/clonable",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-clonable",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "123"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -143,7 +186,7 @@
           "support": {
             "chrome": {
               "version_added": "53",
-              "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
+              "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>bug 759947</a>."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -158,10 +201,7 @@
             },
             "oculus": "mirror",
             "opera": "mirror",
-            "opera_android": {
-              "version_added": "41",
-              "notes": "Before Opera Android 47, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": "10.1"
             },
@@ -182,7 +222,7 @@
           "support": {
             "chrome": {
               "version_added": "53",
-              "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>issue 759947</a>."
+              "notes": "Before Chrome 66, this method returned <code>null</code> when the element was a child of a host node. See <a href='https://crbug.com/759947'>bug 759947</a>."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -220,6 +260,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/fullscreenElement",
           "spec_url": "https://fullscreen.spec.whatwg.org/#ref-for-dom-document-fullscreenelement②",
+          "tags": [
+            "web-features:fullscreen"
+          ],
           "support": {
             "chrome": {
               "version_added": "71"
@@ -245,7 +288,14 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4",
+              "partial_implementation": true,
+              "notes": [
+                "Only available on iPad, not on iPhone.",
+                "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+              ]
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -278,6 +328,40 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "14"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getHTML": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-shadowroot-gethtml",
+          "support": {
+            "chrome": {
+              "version_added": "125"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1886630"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "18"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -326,6 +410,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/host",
           "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-host",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -359,7 +446,7 @@
       "innerHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/innerHTML",
-          "spec_url": "https://w3c.github.io/DOM-Parsing/#ref-for-dom-innerhtml-innerhtml-2",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-shadowroot-innerhtml",
           "support": {
             "chrome": {
               "version_added": "53"
@@ -394,6 +481,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/mode",
           "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-mode",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -428,6 +518,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/pictureInPictureElement",
           "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-documentorshadowroot-pictureinpictureelement①⑤",
+          "tags": [
+            "web-features:picture-in-picture"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -437,7 +530,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1463402"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -464,6 +558,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/pointerLockElement",
           "spec_url": "https://w3c.github.io/pointerlock/#dom-documentorshadowroot-pointerlockelement",
+          "tags": [
+            "web-features:pointer-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"
@@ -496,10 +593,82 @@
           }
         }
       },
+      "serializable": {
+        "__compat": {
+          "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-serializable",
+          "support": {
+            "chrome": {
+              "version_added": "125"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "18"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "setHTMLUnsafe": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-shadowroot-sethtmlunsafe",
+          "tags": [
+            "web-features:parse-html-unsafe"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "123"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "17.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "slotAssignment": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/slotAssignment",
           "spec_url": "https://dom.spec.whatwg.org/#dom-shadowroot-slotassignment",
+          "tags": [
+            "web-features:slot-assign"
+          ],
           "support": {
             "chrome": {
               "version_added": "86"

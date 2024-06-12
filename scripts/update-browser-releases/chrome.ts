@@ -11,11 +11,11 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
- * @param {string} version Version number
- * @param {string} date Date in the format YYYYMMDD
- * @param {string} core The core of the name of the release note
- * @param {string} status The status of the release
- * @returns {string} The URL of the release notes or the empty string if not found
+ * @param version Version number
+ * @param date Date in the format YYYYMMDD
+ * @param core The core of the name of the release note
+ * @param status The status of the release
+ * @returns The URL of the release notes or the empty string if not found
  * Throws a string in case of error
  */
 const getReleaseNotesURL = async (version, date, core, status) => {
@@ -23,23 +23,45 @@ const getReleaseNotesURL = async (version, date, core, status) => {
   if (status !== 'stable') {
     return '';
   }
-  const dateObj = new Date(date);
-  const year = dateObj.getUTCFullYear();
-  const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
-  const day = `0${dateObj.getUTCDate()}`.slice(-2);
 
-  // First possibility
-  let url = `https://chromereleases.googleblog.com/${year}/${month}/${core}_${day}.html`;
-  let releaseNote = await fetch(url);
+  let url;
 
-  if (releaseNote.status == 200) {
-    return url;
+  // Before release 54, we guess the release note
+  if (version < 54) {
+    const dateObj = new Date(date);
+    const year = dateObj.getUTCFullYear();
+    const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
+    const day = `0${dateObj.getUTCDate()}`.slice(-2);
+
+    // First possibility
+    url = `https://chromereleases.googleblog.com/${year}/${month}/${core}_${day}.html`;
+    let releaseNote = await fetch(url);
+
+    if (releaseNote.status == 200) {
+      return url;
+    }
+
+    // Second possibility (less reliable)
+    url = `https://chromereleases.googleblog.com/${year}/${month}/${core}.html`;
+
+    releaseNote = await fetch(url);
+
+    if (releaseNote.status !== 200) {
+      throw chalk`{red \nRelease note not found for ${version}}.`;
+    }
   }
 
-  // Second possibility (less reliable)
-  url = `https://chromereleases.googleblog.com/${year}/${month}/${core}.html`;
+  // After release 53, we have new-in-chrome highlight posts
+  if (version > 53) {
+    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+  }
 
-  releaseNote = await fetch(url);
+  // After release 123, we have complete release notes
+  if (version > 123) {
+    url = `https://developer.chrome.com/release-notes/${version}`;
+  }
+
+  const releaseNote = await fetch(url);
 
   if (releaseNote.status !== 200) {
     throw chalk`{red \nRelease note not found for ${version}}.`;
@@ -50,8 +72,8 @@ const getReleaseNotesURL = async (version, date, core, status) => {
 
 /**
  * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
- * @param {object} options The list of options for this type of chromiums.
- * @returns {string} The log of what has been generated (empty if nothing)
+ * @param options The list of options for this type of chromiums.
+ * @returns The log of what has been generated (empty if nothing)
  */
 export const updateChromiumReleases = async (options) => {
   let result = '';
@@ -64,7 +86,7 @@ export const updateChromiumReleases = async (options) => {
   // There is a bug in chromestatus: the first 4 characters are erroneous.
   // It isn't a valid JSON file.
   // So we strip these characters and manually parse it.
-  // If one day, the bug is fixed, the next 3 lines can be replaces with:
+  // If one day, the bug is fixed, the next 3 lines can be replaced with:
   // const versions = await googleVersions.json();
   let buffer = await googleVersions.text();
   buffer = buffer.substring(5);
@@ -91,7 +113,7 @@ export const updateChromiumReleases = async (options) => {
     const versionData = versions[value];
     if (versionData) {
       data[value] = {};
-      data[value].version = versionData.version;
+      data[value].version = versionData.version.toString();
       data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
 
       // Update the JSON in memory

@@ -22,7 +22,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Fix the experimental status throughout compatibility data
- * @param {CompatData} bcd Parsed BCD object to be updated in place.
+ * @param bcd Parsed BCD object to be updated in place.
  */
 export const fixExperimental = (bcd: CompatData | Identifier): void => {
   for (const { compat } of walk(undefined, bcd)) {
@@ -83,7 +83,7 @@ export const fixExperimental = (bcd: CompatData | Identifier): void => {
 
 /**
  * Fix the experimental status throughout a file
- * @param {string} filename Filename of BCD to be updated in place.
+ * @param filename Filename of BCD to be updated in place.
  */
 const fixExperimentalFile = (filename: string): void => {
   const actual = fs.readFileSync(filename, 'utf-8').trim();
@@ -98,7 +98,7 @@ const fixExperimentalFile = (filename: string): void => {
 
 /**
  * Load files and fix experimental status
- * @param {string[]} files The files to fix
+ * @param files The files to fix
  */
 const load = (...files: string[]): void => {
   for (let file of files) {

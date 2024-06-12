@@ -31,9 +31,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            }
+            "webview_android": "mirror"
           },
           "status": {
             "experimental": false,
@@ -111,10 +109,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37",
-                "notes": "Some versions support only experimental gradients prefixed with <code>-webkit</code>."
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -164,6 +159,9 @@
             "description": "<code>image-set()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set()",
             "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "tags": [
+              "web-features:image-set"
+            ],
             "support": {
               "chrome": [
                 {
@@ -171,19 +169,31 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "21"
+                  "version_added": "113"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "20",
+                  "version_removed": "113",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 }
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "88",
-                  "notes": "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  "version_added": "89"
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "90"
+                },
+                {
+                  "version_added": "88",
+                  "version_removed": "89",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
                 }
               ],
               "firefox_android": "mirror",
@@ -195,11 +205,35 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "14"
+                  "version_added": "17"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "17"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "14",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "6",
+                  "version_removed": "14",
                   "partial_implementation": true,
                   "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 }
@@ -243,9 +277,42 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              }
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds/#valdef-background-image-none",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "4"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,
@@ -286,9 +353,7 @@
                 "notes": "Support of SVG in CSS background is incomplete."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              }
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,

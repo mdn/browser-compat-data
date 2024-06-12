@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel",
         "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#broadcasting-to-other-browsing-contexts",
+        "tags": [
+          "web-features:broadcast-channel"
+        ],
         "support": {
           "chrome": {
             "version_added": "54"
@@ -14,7 +17,7 @@
             "flags": [
               {
                 "type": "runtime_flag",
-                "name": "--unstable"
+                "name": "--unstable-broadcast-channel"
               }
             ]
           },
@@ -26,14 +29,19 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": {
-            "alternative_name": "worker_threads.BroadcastChannel",
-            "version_added": "15.4.0",
-            "notes": [
-              "Experimental implementation",
-              "Must be imported using either <code>require('worker_threads')</code> or <code>import * from 'worker_threads'</code>."
-            ]
-          },
+          "nodejs": [
+            {
+              "version_added": "18.0.0"
+            },
+            {
+              "alternative_name": "worker_threads.BroadcastChannel",
+              "version_added": "15.4.0",
+              "notes": [
+                "Experimental implementation",
+                "Must be imported using either <code>require('worker_threads')</code> or <code>import * from 'worker_threads'</code>."
+              ]
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -55,13 +63,22 @@
           "description": "<code>BroadcastChannel()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/BroadcastChannel",
           "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-broadcastchannel-dev",
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -95,13 +112,22 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/close",
           "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-broadcastchannel-close-dev",
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -139,13 +165,22 @@
             "https://html.spec.whatwg.org/multipage/indices.html#event-message",
             "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessage"
           ],
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -183,13 +218,22 @@
             "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
             "https://html.spec.whatwg.org/multipage/web-messaging.html#handler-broadcastchannel-onmessageerror"
           ],
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -225,13 +269,22 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/name",
           "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-broadcastchannel-name-dev",
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -265,13 +318,22 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/postMessage",
           "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-broadcastchannel-postmessage-dev",
+          "tags": [
+            "web-features:broadcast-channel"
+          ],
           "support": {
             "chrome": {
               "version_added": "54"
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {

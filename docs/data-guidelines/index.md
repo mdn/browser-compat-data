@@ -17,7 +17,7 @@ This decision was made in [#3953, under the expectation that most users are like
 
 ### Backported releases
 
-Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Release lines](#release-lines) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
+Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Choosing a version number](#choosing-a-version-number) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
 
 | If the browser and its version is... | then set the version to... |
 | ------------------------------------ | -------------------------- |
@@ -79,14 +79,15 @@ This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-dat
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
 
 - a feature was never implemented in any browser.
+- a feature is not available behind a flag in the latest stable browser release.
 - a feature was implemented and has since been removed from all browsers dating back two or more years ago.
 - a feature is unsupported in all releases in the past five years.
 
-This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619).
+This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-data/pull/6018) and updated in [#10619](https://github.com/mdn/browser-compat-data/pull/10619) and [#21521](https://github.com/mdn/browser-compat-data/pull/21521).
 
 ## Removal of irrelevant flag data
 
-Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet these conditions:
+Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet _any_ of these conditions:
 
 - The browser has supported the feature by default.
 - The feature can no longer be enabled by toggling the flag.
@@ -98,7 +99,7 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Features with no browser support
 
-Browser features that have not been implemented (or planned to be implemented) in any browser, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+Browser features that have not been implemented (or planned to be implemented) in any browser, should not be added to BCD. A feature should not be added if _all_ of the following conditions are met:
 
 - The feature has not been included in a stable browser release.
 - The feature is not implemented behind a current flag (or Chrome origin trial).

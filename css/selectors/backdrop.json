@@ -54,6 +54,9 @@
         "dialog": {
           "__compat": {
             "description": "Support on <code>dialog</code> elements",
+            "tags": [
+              "web-features:dialog"
+            ],
             "support": {
               "chrome": {
                 "version_added": "32"
@@ -87,14 +90,16 @@
         "fullscreen": {
           "__compat": {
             "description": "Fullscreen support",
+            "tags": [
+              "web-features:fullscreen"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "69"
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_added": "12",
-                "version_removed": "79"
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "47"
@@ -107,7 +112,43 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "inherit_from_originating_element": {
+          "__compat": {
+            "description": "Backdrop elements inherit their values from its originating element",
+            "support": {
+              "chrome": {
+                "version_added": "122",
+                "impl_url": "https://crbug.com/40569411"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "120",
+                "impl_url": "https://bugzil.la/1855668"
+              },
+              "firefox_android": "mirror",
+              "ie": {
                 "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4",
+                "impl_url": "https://webkit.org/b/263834"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -123,6 +164,9 @@
         "popover": {
           "__compat": {
             "description": "Support on popovers",
+            "tags": [
+              "web-features:popover"
+            ],
             "support": {
               "chrome": {
                 "version_added": "114"
@@ -130,14 +174,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.popover.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "125"
               },
               "firefox_android": "mirror",
               "ie": {

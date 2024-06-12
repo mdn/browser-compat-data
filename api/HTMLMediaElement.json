@@ -147,6 +147,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/audioTracks",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-audiotracks-dev",
+          "tags": [
+            "web-features:audio-video-tracks"
+          ],
           "support": {
             "chrome": {
               "version_added": "37",
@@ -580,6 +583,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/controlsList",
           "spec_url": "https://wicg.github.io/controls-list/#solution-outline",
+          "tags": [
+            "web-features:controls-list"
+          ],
           "support": {
             "chrome": {
               "version_added": "58"
@@ -831,9 +837,11 @@
           "spec_url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute",
           "support": {
             "chrome": {
-              "version_added": "49"
+              "version_added": "121"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "56"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -1230,6 +1238,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/fastSeek",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-fastseek-dev",
+          "tags": [
+            "web-features:fast-seek"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
@@ -2273,6 +2284,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/preservesPitch",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-preservespitch-dev",
+          "tags": [
+            "web-features:preserves-pitch"
+          ],
           "support": {
             "chrome": {
               "version_added": "86"
@@ -2299,11 +2313,7 @@
                 "impl_url": "https://webkit.org/b/214922"
               }
             ],
-            "safari_ios": {
-              "prefix": "webkit",
-              "version_added": "4",
-              "impl_url": "https://webkit.org/b/214922"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -2454,12 +2464,15 @@
       },
       "remote": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote",
           "spec_url": "https://w3c.github.io/remote-playback/#dom-htmlmediaelement-remote",
           "support": {
             "chrome": {
+              "version_added": "121"
+            },
+            "chrome_android": {
               "version_added": "56"
             },
-            "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -2703,7 +2716,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -2754,7 +2767,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
             },
             "edge": {
               "version_added": "17"
@@ -2764,7 +2777,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android (see <a href='https://bugzil.la/1473346'>bug 1473346</a>)."
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
             },
             "ie": {
               "version_added": false
@@ -2796,7 +2809,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to <a href='https://crbug.com/648286'>a limitation in Android</a>."
+              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
             },
             "edge": {
               "version_added": "17"
@@ -2806,7 +2819,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android (see <a href='https://bugzil.la/1473346'>bug 1473346</a>)."
+              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
             },
             "ie": {
               "version_added": false
@@ -3114,6 +3127,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/videoTracks",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-videotracks-dev",
+          "tags": [
+            "web-features:audio-video-tracks"
+          ],
           "support": {
             "chrome": {
               "version_added": "37",

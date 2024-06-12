@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
           "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015"
+          ],
           "support": {
             "chrome": {
               "version_added": "36"
@@ -47,6 +50,9 @@
             "description": "<code>WeakSet()</code> constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/WeakSet",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset-constructor",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -87,6 +93,9 @@
           "iterable_allowed": {
             "__compat": {
               "description": "<code>new WeakSet(iterable)</code>",
+              "tags": [
+                "web-features:snapshot:ecmascript-2015"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "38"
@@ -128,6 +137,9 @@
           "null_allowed": {
             "__compat": {
               "description": "<code>new WeakSet(null)</code>",
+              "tags": [
+                "web-features:snapshot:ecmascript-2015"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "36"
@@ -171,6 +183,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/add",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset.prototype.add",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -213,6 +228,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/delete",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset.prototype.delete",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -255,6 +273,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakSet/has",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset.prototype.has",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -296,24 +317,28 @@
         "symbol_as_keys": {
           "__compat": {
             "description": "Non-registered symbols as keys",
+            "tags": [
+              "web-features:snapshot:ecmascript-2023"
+            ],
             "support": {
               "chrome": {
-                "version_added": "108"
+                "version_added": "109"
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "1.28"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1710433"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "20.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",

@@ -18,7 +18,7 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": true
+              "version_added": "≤11"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -39,6 +39,8 @@
         "br": {
           "__compat": {
             "description": "<code>br</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Brotli_compression",
+            "spec_url": "https://www.rfc-editor.org/rfc/rfc7932#section-13",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -75,7 +77,42 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "zstd": {
+          "__compat": {
+            "description": "<code>zstd</code>",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Encoding#zstd",
+            "spec_url": "https://www.rfc-editor.org/rfc/rfc8878#name-content-encoding",
+            "support": {
+              "chrome": {
+                "version_added": "123"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "126"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
               "deprecated": false
             }
           }

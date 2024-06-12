@@ -261,6 +261,9 @@
               "description": "<code>conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient",
               "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
+              "tags": [
+                "web-features:conic-gradients"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -293,6 +296,9 @@
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
+                "tags": [
+                  "web-features:conic-gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "72"
@@ -332,10 +338,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -366,10 +385,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -413,8 +445,7 @@
                 },
                 "firefox": [
                   {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                    "version_added": "16"
                   },
                   {
                     "prefix": "-webkit-",
@@ -540,10 +571,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -574,10 +618,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -620,6 +677,39 @@
                   "opera_android": "mirror",
                   "safari": {
                     "version_added": "7"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "premultiplied_gradients": {
+              "__compat": {
+                "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "support": {
+                  "chrome": {
+                    "version_added": "29"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "36"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "15"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -735,8 +825,7 @@
                 },
                 "firefox": [
                   {
-                    "version_added": "16",
-                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                    "version_added": "16"
                   },
                   {
                     "prefix": "-webkit-",
@@ -821,54 +910,20 @@
                   "edge": {
                     "version_added": "12"
                   },
-                  "firefox": [
-                    {
-                      "version_added": "16",
-                      "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
-                    },
-                    {
-                      "prefix": "-webkit-",
-                      "version_added": "49"
-                    },
-                    {
-                      "prefix": "-moz-",
-                      "version_added": "10",
-                      "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
-                    }
-                  ],
-                  "firefox_android": [
-                    {
-                      "version_added": "16"
-                    },
-                    {
-                      "prefix": "-moz-",
-                      "version_added": "10"
-                    }
-                  ],
+                  "firefox": {
+                    "version_added": "10"
+                  },
+                  "firefox_android": "mirror",
                   "ie": {
                     "version_added": "10"
                   },
                   "oculus": "mirror",
-                  "opera": [
-                    {
-                      "version_added": "15"
-                    },
-                    {
-                      "prefix": "-o-",
-                      "version_added": "11.6",
-                      "version_removed": "15"
-                    }
-                  ],
-                  "opera_android": [
-                    {
-                      "version_added": "14"
-                    },
-                    {
-                      "prefix": "-o-",
-                      "version_added": "12",
-                      "version_removed": "14"
-                    }
-                  ],
+                  "opera": {
+                    "version_added": "11.6"
+                  },
+                  "opera_android": {
+                    "version_added": "12"
+                  },
                   "safari": {
                     "version_added": "7"
                   },
@@ -925,10 +980,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -959,10 +1027,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1016,6 +1097,39 @@
                   "deprecated": false
                 }
               }
+            },
+            "premultiplied_gradients": {
+              "__compat": {
+                "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "support": {
+                  "chrome": {
+                    "version_added": "29"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "36"
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "15"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
             }
           },
           "repeating-conic-gradient": {
@@ -1023,6 +1137,9 @@
               "description": "<code>repeating-conic-gradient()</code>",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient",
               "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
+              "tags": [
+                "web-features:conic-gradients"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "69"
@@ -1061,10 +1178,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1095,10 +1225,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1269,10 +1412,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1303,10 +1459,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1659,10 +1828,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1693,10 +1875,23 @@
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
-                  "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1824041"
-                  },
+                  "firefox": [
+                    {
+                      "version_added": "127",
+                      "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                    },
+                    {
+                      "version_added": "121",
+                      "flags": [
+                        {
+                          "type": "preference",
+                          "name": "layout.css.gradient-color-interpolation-method.enabled",
+                          "value_to_set": "true"
+                        }
+                      ],
+                      "impl_url": "https://bugzil.la/1838740"
+                    }
+                  ],
                   "firefox_android": "mirror",
                   "ie": {
                     "version_added": false
@@ -1796,6 +1991,9 @@
             "description": "<code>image-set()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
             "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "tags": [
+              "web-features:image-set"
+            ],
             "support": {
               "chrome": [
                 {
@@ -1803,22 +2001,31 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "21"
+                  "version_added": "113"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "20",
+                  "version_removed": "113",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 }
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "88",
-                  "notes": [
-                    "In <code>cursor</code> and <code>content</code> properties, gradients are not supported as arguments to <code>image-set()</code>. See <a href='https://bugzil.la/1696314'>bug 1696314</a>.",
-                    "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
-                  ]
+                  "version_added": "89"
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "90"
+                },
+                {
+                  "version_added": "88",
+                  "version_removed": "89",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
                 }
               ],
               "firefox_android": "mirror",
@@ -1830,11 +2037,35 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "14"
+                  "version_added": "17"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "17"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "14",
+                  "partial_implementation": true,
+                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "6",
+                  "version_removed": "14",
                   "partial_implementation": true,
                   "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
                 }
@@ -1855,6 +2086,9 @@
             "description": "<code>paint()</code>",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/paint",
             "spec_url": "https://drafts.css-houdini.org/css-paint-api/#paint-notation",
+            "tags": [
+              "web-features:paint"
+            ],
             "support": {
               "chrome": {
                 "version_added": "65"
@@ -1862,7 +2096,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1302328"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1872,7 +2107,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/190217"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -1896,7 +2132,8 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1302328"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -1906,7 +2143,8 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/190217"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
