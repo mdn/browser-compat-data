@@ -310,7 +310,13 @@
             "opera_android": "mirror",
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "16"
+              },
+              {
+                "version_added": "14.1",
+                "version_removed": "16",
+                "partial_implementation": true,
+                "notes": "Parentheses in field initializers can lead to <code>ReferenceError</code>s. See <a href='https://webkit.org/b/236843'>bug 236843</a>."
               },
               {
                 "version_added": "14",
