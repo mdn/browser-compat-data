@@ -23,7 +23,7 @@ const fixDescriptions = (filename: string): void => {
     }
 
     const errors = processData(
-      feature.data,
+      feature.compat,
       feature.path.split('.')[0],
       feature.path,
     );
