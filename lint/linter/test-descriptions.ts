@@ -143,9 +143,12 @@ export default {
       if (typeof error === 'string') {
         logger.error(chalk`Description → ${error}`);
       } else {
-        logger.error(chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
+        logger.error(
+          chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
       Actual: {yellow "${error.actual}"}
-      Expected: {green "${error.expected}"}}`);
+      Expected: {green "${error.expected}"}}`,
+          { fixable: true },
+        );
       }
     }
   },
