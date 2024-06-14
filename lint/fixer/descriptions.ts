@@ -8,7 +8,7 @@ import testDescriptions, { processData } from '../linter/test-descriptions.js';
 import walk from '../../utils/walk.js';
 
 /**
- * Fixes issues with descriptions in API data
+ * Fixes issues with descriptions
  * @param filename The filename containing compatibility info
  */
 const fixDescriptions = (filename: string): void => {
