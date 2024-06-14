@@ -72,7 +72,7 @@ export const getMatchingBrowserVersion = (
       return (range ? '≤' : '') + v;
     }
     if (sourceVersion.replace('≤', '') in browserData.releases) {
-      return (range ? '≤' : '') + sourceVersion;
+      return sourceVersion;
     }
     throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
   }
