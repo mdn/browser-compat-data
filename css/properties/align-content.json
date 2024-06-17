@@ -63,6 +63,40 @@
             "deprecated": false
           }
         },
+        "block_context": {
+          "__compat": {
+            "description": "Supported in Block Layout",
+            "spec_url": "https://drafts.csswg.org/css-align/#align-justify-content",
+            "support": {
+              "chrome": {
+                "version_added": "123"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "125"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "flex_context": {
           "__compat": {
             "description": "Supported in Flex Layout",
@@ -106,7 +140,6 @@
           },
           "baseline": {
             "__compat": {
-              "description": "<code>baseline</code>",
               "support": {
                 "chrome": {
                   "version_added": "57"
@@ -179,18 +212,11 @@
               "description": "<code>last baseline</code>",
               "support": {
                 "chrome": {
-                  "version_added": "59",
-                  "version_removed": "86",
-                  "partial_implementation": true,
-                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/41344054"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤79",
-                  "version_removed": "86",
-                  "partial_implementation": true,
-                  "notes": "This value is recognized, but has no effect. See <a href='https://crbug.com/885175'>bug 885175</a>."
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "52"
                 },
@@ -246,8 +272,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -262,7 +287,6 @@
           },
           "space-evenly": {
             "__compat": {
-              "description": "<code>space-evenly</code>",
               "support": {
                 "chrome": {
                   "version_added": "60"
@@ -334,7 +358,6 @@
           },
           "stretch": {
             "__compat": {
-              "description": "<code>stretch</code>",
               "tags": [
                 "web-features:flexbox"
               ],
@@ -374,7 +397,7 @@
             "description": "Supported in Grid Layout",
             "spec_url": [
               "https://drafts.csswg.org/css-align/#align-justify-content",
-              "https://drafts.csswg.org/css-flexbox/#align-content-property"
+              "https://drafts.csswg.org/css-grid/#grid-align"
             ],
             "tags": [
               "web-features:grid"

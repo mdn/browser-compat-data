@@ -23,7 +23,7 @@
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": true
+              "version_added": "≤11"
             },
             "oculus": "mirror",
             "opera": {
@@ -50,6 +50,7 @@
         },
         "autocomplete": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete",
             "support": {
               "chrome": {
                 "version_added": "66"
@@ -78,10 +79,115 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "new-password": {
+            "__compat": {
+              "description": "<code>new-password</code> value",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "67"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "one-time-code": {
+            "__compat": {
+              "description": "<code>one-time-code</code> value",
+              "support": {
+                "chrome": {
+                  "version_added": "93"
+                },
+                "chrome_android": {
+                  "version_added": "84"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "109"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "webauthn": {
+            "__compat": {
+              "description": "<code>webauthn</code> value",
+              "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill-processing-model:attr-fe-autocomplete-webauthn",
+              "support": {
+                "chrome": {
+                  "version_added": "108"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "cols": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -120,6 +226,10 @@
         },
         "dirname": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-dirname",
+            "tags": [
+              "web-features:dirname"
+            ],
             "support": {
               "chrome": {
                 "version_added": "17"
@@ -198,6 +308,7 @@
         },
         "form": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fae-form",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -237,7 +348,7 @@
         "maxlength": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/maxlength",
-            "spec_url": "https://html.spec.whatwg.org/multipage/input.html#the-maxlength-and-minlength-attributes",
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-maxlength",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -281,7 +392,7 @@
         "minlength": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/minlength",
-            "spec_url": "https://html.spec.whatwg.org/multipage/input.html#the-maxlength-and-minlength-attributes",
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-minlength",
             "support": {
               "chrome": {
                 "version_added": "40"
@@ -316,6 +427,7 @@
         },
         "name": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -354,6 +466,7 @@
         },
         "placeholder": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-placeholder",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -434,7 +547,7 @@
         "readonly": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/readonly",
-            "spec_url": "https://html.spec.whatwg.org/multipage/input.html#the-readonly-attribute",
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-readonly",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -473,6 +586,7 @@
         },
         "required": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-required",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -515,6 +629,7 @@
         },
         "rows": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -566,7 +681,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -587,6 +702,7 @@
         },
         "wrap": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap",
             "support": {
               "chrome": {
                 "version_added": "16"

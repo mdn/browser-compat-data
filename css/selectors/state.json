@@ -7,21 +7,20 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:state",
           "spec_url": "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-custom",
           "support": {
-            "chrome": {
-              "version_added": false,
-              "notes": "From version 90 Chromium supports custom state selection using a dashed-ident (such as <code>:--foo</code>) instead of <code>:state()</code>."
-            },
+            "chrome": [
+              {
+                "version_added": "125"
+              },
+              {
+                "version_added": "90",
+                "partial_implementation": true,
+                "notes": "Uses a dashed-ident (such as <code>:--foo</code>) instead of <code>:state()</code>."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.customstateset.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "126"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -38,7 +37,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
