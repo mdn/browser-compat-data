@@ -42,7 +42,6 @@ const load = async (...files: string[]): Promise<void> => {
 
     if (fsStats.isFile()) {
       if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
-        fixPropertyOrder(file);
         if (!file.includes('/browsers/')) {
           fixBrowserOrder(file);
           fixFeatureOrder(file);
@@ -53,6 +52,7 @@ const load = async (...files: string[]): Promise<void> => {
           fixStatus(file);
           fixMirror(file);
         }
+        fixPropertyOrder(file);
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>
