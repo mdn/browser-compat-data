@@ -5195,9 +5195,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "123"
-            },
+            "firefox": [
+              {
+                "version_added": "128"
+              },
+              {
+                "version_added": "123",
+                "version_removed": "127",
+                "partial_implementation": true,
+                "notes": "Throws error <code>NS_ERROR_UNEXPECTED</code> (<a href='https://bugzil.la/1887817'>bug 1887817</a>.)"
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
