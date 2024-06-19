@@ -26,7 +26,7 @@ const fixMDNURLs = (filename: string): void => {
 
     for (const error of errors) {
       if (error.expected) {
-        feature.compat.description = error.expected;
+        feature.compat.mdn_url = error.expected;
       } else if (error.expected === '') {
         delete feature.compat.mdn_url;
       }
