@@ -49,11 +49,13 @@ const redirects = await fetch(
  * Process the data for MDN URL errors
  * @param data The data to test
  * @param path The path of the feature
+ * @param category The feature category
  * @returns The errors caught in the file
  */
 export const processData = (
   data: CompatStatement,
   path: string,
+  category: string,
 ): MDNURLError[] => {
   const errors: MDNURLError[] = [];
   if (data.mdn_url) {
@@ -61,6 +63,7 @@ export const processData = (
     const redirectURL = '/en-US' + mdnURL.pathname;
     const slug = mdnURL.pathname.replace('/docs/', '');
 
+    /* Replace redirects with the new URL */
     if (redirects.has(redirectURL)) {
       errors.push({
         ruleName: 'mdn_url_redirect',
@@ -69,12 +72,71 @@ export const processData = (
         expected:
           mdnURL.origin + redirects.get(redirectURL)?.replace('/en-US', ''),
       });
+      /* Delete non-existing MDN pages */
     } else if (!slugs.has(slug)) {
       errors.push({
         ruleName: 'mdn_url_404',
         path,
         actual: data.mdn_url,
         expected: '',
+      });
+    }
+  } else {
+    /* Try to find new existing MDN pages at conventional places */
+    let categorySlug = `Web/${path.replaceAll('.', '/')}`;
+    switch (category) {
+      case 'api':
+        categorySlug = `Web/${path}`.replace('api.', 'API/').replace('.', '/');
+        break;
+      case 'css':
+        categorySlug = `Web/${path
+          .replace('css.', 'CSS/')
+          .replace('properties.', '')
+          .replace('selectors.', '')
+          .replace('types.', '')
+          .replaceAll('.', '/')}`;
+        break;
+      case 'html':
+        categorySlug = `Web/${path
+          .replace('html.', 'HTML/')
+          .replace('elements.', 'Elements/')
+          .replace('global_attributes.', 'Global_attributes/')
+          .replace('manifest.', 'Manifest/')
+          .replaceAll('.', '/')}`;
+        break;
+      case 'http':
+        categorySlug = `Web/${path
+          .replace('http.', 'HTTP/')
+          .replace('headers.', 'Headers/')
+          .replace('status.', 'Status/')
+          .replace('method.', 'Method/')
+          .replaceAll('.', '/')}`;
+        break;
+      case 'javascript':
+        categorySlug = `Web/${path
+          .replace('javascript.', 'JavaScript/Reference/')
+          .replace('builtins.', 'Global_Objects/')
+          .replace('operators.', 'Operators/')
+          .replace('statements.', 'Statements/')
+          .replace('functions.', 'Functions/')
+          .replace('classes.', 'Classes/')
+          .replaceAll('.', '/')}`;
+        break;
+      case 'webextensions':
+        categorySlug = `Mozilla/Add-ons/${path
+          .replaceAll('.', '/')
+          .replace('webextensions', 'WebExtensions')
+          .replace('manifest', 'manifest.json')
+          .replace('api', 'API')}`;
+        break;
+    }
+
+    if (slugs.has(categorySlug)) {
+      errors.push({
+        ruleName: 'mdn_url_new_page',
+        path,
+        actual: '',
+        expected: `https://developer.mozilla.org/docs/${categorySlug}`,
       });
     }
   }
@@ -92,19 +154,26 @@ export default {
    * @param root.data The feature data
    * @param root.path The path to the feature data
    * @param root.path.full The full filepath to the feature data
+   * @param root.path.category The category of the feature
    */
-  check: (logger: Logger, { data, path: { full } }: LinterData) => {
-    const errors = processData(data, full);
+  check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
+    const errors = processData(data, full, category);
     for (const error of errors) {
       if (error.expected === '') {
         logger.error(
-          chalk`{red Non-existing MDN URL found:
+          chalk`{red Current mdn_url is a 404:
           {bold ${error.actual}}}`,
+          { fixable: true },
+        );
+      } else if (error.actual === '') {
+        logger.error(
+          chalk`{red New mdn_url to add:
+          {bold ${error.expected}}}`,
           { fixable: true },
         );
       } else {
         logger.error(
-          chalk`{red Issues with mdn_urls found
+          chalk`{red Issues with mdn_url found:
             Actual:   ${error.actual}
             Expected: ${error.expected}}`,
           { fixable: true },
