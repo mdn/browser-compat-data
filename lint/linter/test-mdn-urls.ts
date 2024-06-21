@@ -22,28 +22,7 @@ const slugs = (() => {
   return result;
 })();
 
-/**
- * Get redirects from mdn/content
- * @returns redirectMap
- */
-const redirects = await fetch(
-  'https://raw.githubusercontent.com/mdn/content/main/files/en-us/_redirects.txt',
-)
-  .then((res) => res.text())
-  .then((data) => {
-    const lines = data.split('\n');
-    const redirectLines = lines.filter(
-      (line) => line.startsWith('/') && line.includes('\t'),
-    );
-    const redirectMap = new Map<string, string>();
-    for (const redirectLine of redirectLines) {
-      const [source, target] = redirectLine.split('\t', 2);
-      if (source && target) {
-        redirectMap.set(source, target);
-      }
-    }
-    return redirectMap;
-  });
+const redirects = mdnContentInventory.redirects;
 
 /**
  * Process the data for MDN URL errors
@@ -64,13 +43,12 @@ export const processData = (
     const slug = mdnURL.pathname.replace('/docs/', '');
 
     /* Replace redirects with the new URL */
-    if (redirects.has(redirectURL)) {
+    if (redirectURL in redirects) {
       errors.push({
         ruleName: 'mdn_url_redirect',
         path,
         actual: data.mdn_url,
-        expected:
-          mdnURL.origin + redirects.get(redirectURL)?.replace('/en-US', ''),
+        expected: mdnURL.origin + redirects[redirectURL]?.replace('/en-US', ''),
       });
       /* Delete non-existing MDN pages */
     } else if (!slugs.has(slug)) {
