@@ -116,6 +116,15 @@ export const processData = (
     processApiData(data, path, errors);
   }
 
+  if (data.description === `<code>${path.split('.').at(-1)}</code>`) {
+    errors.push({
+      ruleName: 'redundant',
+      path,
+      actual: data.description,
+      expected: '',
+    });
+  }
+
   if (data.description) {
     errors.push(...validateHTML(data.description));
   }
