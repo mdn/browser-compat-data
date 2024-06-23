@@ -1268,6 +1268,9 @@
         "worker_support": {
           "__compat": {
             "description": "Available in workers",
+            "tags": [
+              "web-features:js-modules-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -1324,7 +1327,8 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": "16.14.0"
+                "version_added": "16.14.0",
+                "version_removed": "22.0.0"
               },
               "oculus": "mirror",
               "opera": {
@@ -1359,7 +1363,8 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1720570"
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -1376,7 +1381,8 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/227967"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1410,7 +1416,8 @@
                 },
                 "nodejs": [
                   {
-                    "version_added": "17.5.0"
+                    "version_added": "17.5.0",
+                    "version_removed": "22.0.0"
                   },
                   {
                     "version_added": "16.15.0",
@@ -1481,6 +1488,9 @@
           "type_css": {
             "__compat": {
               "description": "<code>with {type: 'css'}</code>",
+              "tags": [
+                "web-features:css-modules"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "123"
@@ -1561,6 +1571,9 @@
         "service_worker_support": {
           "__compat": {
             "description": "Available in service workers",
+            "tags": [
+              "web-features:js-modules-service-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": "91"

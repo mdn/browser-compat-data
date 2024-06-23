@@ -140,7 +140,6 @@
           },
           "baseline": {
             "__compat": {
-              "description": "<code>baseline</code>",
               "support": {
                 "chrome": {
                   "version_added": "57"
@@ -213,7 +212,8 @@
               "description": "<code>last baseline</code>",
               "support": {
                 "chrome": {
-                  "version_added": "108"
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/41344054"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -272,8 +272,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
-                  "notes": "This value is recognized, but has no effect."
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -288,7 +287,6 @@
           },
           "space-evenly": {
             "__compat": {
-              "description": "<code>space-evenly</code>",
               "support": {
                 "chrome": {
                   "version_added": "60"
@@ -360,7 +358,6 @@
           },
           "stretch": {
             "__compat": {
-              "description": "<code>stretch</code>",
               "tags": [
                 "web-features:flexbox"
               ],
@@ -437,6 +434,46 @@
               "webview_android": {
                 "version_added": "57"
               }
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "multicol_context": {
+          "__compat": {
+            "description": "Supported in Multi-column Layout",
+            "spec_url": [
+              "https://drafts.csswg.org/css-align/#align-justify-content",
+              "https://drafts.csswg.org/css-multicol/#the-multi-column-model"
+            ],
+            "tags": [
+              "web-features:multicol"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "123"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
             },
             "status": {
               "experimental": false,

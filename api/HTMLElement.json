@@ -122,8 +122,13 @@
           "support": {
             "chrome": {
               "version_added": "preview",
-              "partial_implementation": true,
-              "notes": "Supported on <code>Element</code>, not on <code>HTMLElement</code>"
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -155,6 +160,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/attachInternals",
           "spec_url": "https://html.spec.whatwg.org/multipage/custom-elements.html#dom-attachinternals",
+          "tags": [
+            "web-features:form-associated-custom-elements"
+          ],
           "support": {
             "chrome": {
               "version_added": "77"
@@ -188,6 +196,7 @@
       },
       "attributeStyleMap": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/attributeStyleMap",
           "spec_url": "https://drafts.css-houdini.org/css-typed-om/#dom-elementcssinlinestyle-attributestylemap",
           "support": {
             "chrome": {
@@ -222,11 +231,20 @@
       },
       "autocapitalize": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/autocapitalize",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-autocapitalize-dev",
           "support": {
-            "chrome": {
-              "version_added": "66"
-            },
+            "chrome": [
+              {
+                "version_added": "66"
+              },
+              {
+                "version_added": "43",
+                "version_removed": "66",
+                "partial_implementation": true,
+                "notes": "Supported on <code>HTMLInputElement</code> and <code>HTMLTextAreaElement</code> only."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -242,9 +260,17 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": "10.3"
-            },
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "≤3",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "Supported on <code>HTMLFormElement</code>, <code>HTMLInputElement</code>, and <code>HTMLTextAreaElement</code> only."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -259,6 +285,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "tags": [
+            "web-features:autofocus"
+          ],
           "support": {
             "chrome": [
               {
@@ -1366,6 +1395,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
+          "tags": [
+            "web-features:inert"
+          ],
           "support": {
             "chrome": {
               "version_added": "102"
@@ -2271,6 +2303,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/translate",
           "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-translate",
+          "tags": [
+            "web-features:translate"
+          ],
           "support": {
             "chrome": {
               "version_added": "19"
@@ -2308,6 +2343,39 @@
           "support": {
             "chrome": {
               "version_added": "94"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "writingSuggestions": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-writingsuggestions",
+          "support": {
+            "chrome": {
+              "version_added": "124"
             },
             "chrome_android": "mirror",
             "edge": "mirror",

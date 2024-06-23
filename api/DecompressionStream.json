@@ -3,7 +3,7 @@
     "DecompressionStream": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/DecompressionStream",
-        "spec_url": "https://wicg.github.io/compression/#decompression-stream",
+        "spec_url": "https://compression.spec.whatwg.org//#decompression-stream",
         "tags": [
           "web-features:compression-streams"
         ],
@@ -56,7 +56,7 @@
         "__compat": {
           "description": "<code>DecompressionStream()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DecompressionStream/DecompressionStream",
-          "spec_url": "https://wicg.github.io/compression/#dom-decompressionstream-decompressionstream",
+          "spec_url": "https://compression.spec.whatwg.org//#dom-decompressionstream-decompressionstream",
           "tags": [
             "web-features:compression-streams"
           ],
@@ -98,7 +98,7 @@
         "deflate": {
           "__compat": {
             "description": "\"deflate\" compression",
-            "spec_url": "https://wicg.github.io/compression/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org//#supported-formats",
             "tags": [
               "web-features:compression-streams"
             ],
@@ -140,7 +140,7 @@
         "deflate-raw": {
           "__compat": {
             "description": "\"deflate-raw\" compression",
-            "spec_url": "https://wicg.github.io/compression/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org//#supported-formats",
             "tags": [
               "web-features:compression-streams"
             ],
@@ -160,9 +160,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "21.2.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "21.2.0"
+                },
+                {
+                  "version_added": "20.12.0",
+                  "version_removed": "21.0.0"
+                }
+              ],
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
@@ -182,7 +188,7 @@
         "gzip": {
           "__compat": {
             "description": "\"gzip\" compression",
-            "spec_url": "https://wicg.github.io/compression/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org//#supported-formats",
             "tags": [
               "web-features:compression-streams"
             ],
