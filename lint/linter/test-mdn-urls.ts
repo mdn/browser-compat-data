@@ -15,9 +15,9 @@ interface MDNURLError {
 }
 
 const slugs = (() => {
-  const result = new Set<string>();
+  const result = new Map<string, string>();
   for (const item of mdnContentInventory.inventory) {
-    result.add(item.frontmatter.slug);
+    result.set(item.frontmatter.slug.toLowerCase(), item.frontmatter.slug);
   }
   return result;
 })();
@@ -50,8 +50,22 @@ export const processData = (
         actual: data.mdn_url,
         expected: mdnURL.origin + redirects[redirectURL]?.replace('/en-US', ''),
       });
+
+      /* Check if casing is wrong */
+    } else if (
+      // slugs.values().some(v => v === slug) when https://tc39.es/proposal-iterator-helpers is available
+      !Array.from(slugs.values()).includes(slug) &&
+      Array.from(slugs.keys()).includes(slug.toLowerCase())
+    ) {
+      errors.push({
+        ruleName: 'mdn_url_casing',
+        path,
+        actual: data.mdn_url,
+        expected: `https://developer.mozilla.org/docs/${slugs.get(slug.toLowerCase())}`,
+      });
+
       /* Delete non-existing MDN pages */
-    } else if (!slugs.has(slug)) {
+    } else if (!Array.from(slugs.values()).includes(slug)) {
       errors.push({
         ruleName: 'mdn_url_404',
         path,
