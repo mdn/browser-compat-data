@@ -456,7 +456,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -525,11 +525,11 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14",
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
+                "notes": "See the <a href='https://developer.apple.com/documentation/safariservices/safari_web_extensions/messaging_between_the_app_and_javascript_in_a_safari_web_extension'>Apple Developer Documentation</a> for additional details."
               },
               "safari_ios": {
                 "version_added": "15",
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
+                "notes": "See the <a href='https://developer.apple.com/documentation/safariservices/safari_web_extensions/messaging_between_the_app_and_javascript_in_a_safari_web_extension'>Apple Developer Documentation</a> for additional details."
               }
             }
           }
@@ -570,6 +570,26 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "51"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "getContext": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getContext",
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "127"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -723,7 +743,7 @@
             "support": {
               "chrome": {
                 "version_added": true,
-                "notes": "lastError is not an Error object. Instead, it is a plain Object with the error text as the string value of the 'message' property."
+                "notes": "<code>lastError</code> is not an <code>Error</code> object. Instead, it is a plain <code>Object</code> with the error text as the string value of the <code>message</code> property."
               },
               "edge": "mirror",
               "firefox": {
@@ -802,7 +822,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "15.4",
+                "notes": "Only fired in response to connect from webpages allowed in <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable'><code>externally_connectable</code></a>."
               },
               "safari_ios": "mirror"
             }
@@ -976,24 +997,24 @@
                 {
                   "version_added": "15.4",
                   "partial_implementation": true,
-                  "notes": "Since Safari 15.4, this event is also fired in response to a message from webpages allowed in <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable'><code>externally_connectable</code></a>."
+                  "notes": "Also fired in response to a message from webpages allowed in <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable'><code>externally_connectable</code></a>."
                 },
                 {
                   "version_added": "14",
                   "partial_implementation": true,
-                  "notes": "This event is only fired in response to a message from an extension's containing app, not webpages nor other extensions."
+                  "notes": "Only fired in response to a message from an extension's containing app, not webpages and other extensions."
                 }
               ],
               "safari_ios": [
                 {
                   "version_added": "15.4",
                   "partial_implementation": true,
-                  "notes": "Since Safari 15.4, this event is also fired in response to a message from webpages allowed in <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable'><code>externally_connectable</code></a>."
+                  "notes": "Also fired in response to a message from webpages allowed in <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/externally_connectable'><code>externally_connectable</code></a>."
                 },
                 {
                   "version_added": "15",
                   "partial_implementation": true,
-                  "notes": "This event is only fired in response to a message from an extension's containing app, not webpages nor other extensions."
+                  "notes": "Only fired in response to a message from an extension's containing app, not webpages and other extensions."
                 }
               ]
             }
@@ -1293,11 +1314,11 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14",
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
+                "notes": "See the <a href='https://developer.apple.com/documentation/safariservices/safari_web_extensions/messaging_between_the_app_and_javascript_in_a_safari_web_extension'>Apple Developer Documentation</a> for additional details."
               },
               "safari_ios": {
                 "version_added": "15",
-                "notes": "See the documentation on developer.apple.com about native messaging in Safari."
+                "notes": "See the <a href='https://developer.apple.com/documentation/safariservices/safari_web_extensions/messaging_between_the_app_and_javascript_in_a_safari_web_extension'>Apple Developer Documentation</a> for additional details."
               }
             }
           }
