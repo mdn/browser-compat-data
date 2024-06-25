@@ -82,7 +82,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -267,6 +268,9 @@
       "audioSession": {
         "__compat": {
           "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
+          "tags": [
+            "web-features:audio-session"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -346,43 +350,21 @@
           "support": {
             "chrome": [
               {
-                "version_added": "56",
+                "version_added": "70",
                 "partial_implementation": true,
-                "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+                "notes": "Linux support is not enabled by default."
               },
               {
                 "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported on macOS."
               }
             ],
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "partial_implementation": true,
-                "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-              },
-              {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
-              }
-            ],
+            "edge": "mirror",
             "firefox": {
               "version_added": false,
               "impl_url": "https://bugzil.la/674737"
@@ -527,7 +509,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -569,7 +551,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -998,7 +980,7 @@
       "geolocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/geolocation",
-          "spec_url": "https://w3c.github.io/geolocation-api/#dom-navigator-geolocation",
+          "spec_url": "https://w3c.github.io/geolocation/#dom-navigator-geolocation",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -1452,7 +1434,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -1864,6 +1847,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
           "spec_url": "https://w3c.github.io/web-locks/#dom-navigatorlocks-locks",
+          "tags": [
+            "web-features:web-locks"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -2124,6 +2110,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession",
           "spec_url": "https://w3c.github.io/mediasession/#dom-navigator-mediasession",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -2419,6 +2408,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
           "spec_url": "https://w3c.github.io/permissions/#dom-navigator-permissions",
+          "tags": [
+            "web-features:permissions"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -4355,7 +4347,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -4397,7 +4389,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -4613,6 +4605,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/userActivation",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-navigator-useractivation",
+          "tags": [
+            "web-features:user-activation"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
@@ -4712,7 +4707,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false,
+              "version_added": "119",
               "impl_url": "https://crbug.com/921655"
             }
           },
@@ -4747,7 +4742,7 @@
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": {
-                "version_added": false
+                "version_added": "119"
               }
             },
             "status": {
@@ -4963,7 +4958,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "126"
             },
             "firefox_android": "mirror",
             "ie": {

@@ -10,43 +10,21 @@
         "support": {
           "chrome": [
             {
-              "version_added": "56",
+              "version_added": "70",
               "partial_implementation": true,
-              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+              "notes": "Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
+              "version_removed": "70",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
             }
           ],
           "chrome_android": {
             "version_added": "56"
           },
-          "edge": [
-            {
-              "version_added": "79",
-              "partial_implementation": true,
-              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
-            }
-          ],
+          "edge": "mirror",
           "firefox": {
             "version_added": false,
             "impl_url": "https://bugzil.la/674737"
@@ -200,6 +178,80 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_exclusionFilters_parameter": {
+          "__compat": {
+            "description": "<code>options.exclusionFilters</code> parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/requestDevice",
+            "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-requestdeviceoptions-exclusionfilters",
+            "support": {
+              "chrome": {
+                "version_added": "114"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_filter_manufacturerData_parameter": {
+          "__compat": {
+            "description": "<code>options.filter.manufacturerData</code> parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Bluetooth/requestDevice",
+            "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothlescanfilterinit-manufacturerdata",
+            "support": {
+              "chrome": {
+                "version_added": "92"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              }
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }
