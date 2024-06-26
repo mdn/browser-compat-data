@@ -65,7 +65,7 @@
           },
           "sameSite": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/SameSiteStatus",
               "support": {
                 "chrome": {
                   "version_added": true
@@ -191,7 +191,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/267514"
               },
               "safari_ios": "mirror"
             }
@@ -213,14 +214,26 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "HTTPOnly cookies are not retrieved."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": "HTTPOnly cookies are not retrieved."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "<code>HttpOnly</code> cookies are not retrieved."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "<code>HttpOnly</code> cookies are not retrieved."
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -281,20 +294,32 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": [
-                  "Only the cookies in the default cookie store are retrieved.",
-                  "HTTPOnly cookies are not retrieved."
-                ]
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": [
-                  "Only the cookies in the default cookie store are retrieved.",
-                  "HTTPOnly cookies are not retrieved."
-                ]
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only the cookies in the default cookie store are retrieved.",
+                    "<code>HttpOnly</code> cookies are not retrieved."
+                  ]
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only the cookies in the default cookie store are retrieved.",
+                    "<code>HttpOnly</code> cookies are not retrieved."
+                  ]
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -352,14 +377,26 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "Always returns the same default cookie store with ID 0."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": "Always returns the same default cookie store with ID 0."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Always returns the same default cookie store with ID 0."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Always returns the same default cookie store with ID 0."
+                }
+              ]
             }
           }
         },
@@ -379,9 +416,11 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15"
+              }
             }
           },
           "partitionKey": {
@@ -470,7 +509,7 @@
         },
         "sameSiteStatus": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/SameSiteStatus",
             "support": {
               "chrome": {
                 "version_added": true
@@ -484,12 +523,10 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "14",
-                "notes": "Only supports explicit."
+                "version_added": "14"
               },
               "safari_ios": {
-                "version_added": "15",
-                "notes": "Only supports explicit."
+                "version_added": "15"
               }
             }
           },
@@ -508,9 +545,11 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -530,9 +569,11 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -551,9 +592,11 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -596,12 +639,32 @@
                 "notes": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only sets cookies in the default cookie store.",
+                    "<code>HttpOnly</code> cookies are not set."
+                  ]
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only sets cookies in the default cookie store.",
+                    "<code>HttpOnly</code> cookies are not set."
+                  ]
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -656,12 +719,10 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": "14",
-                  "notes": "Only supports explicit."
+                  "version_added": "14"
                 },
                 "safari_ios": {
-                  "version_added": "15",
-                  "notes": "Only supports explicit."
+                  "version_added": "15"
                 }
               }
             }
