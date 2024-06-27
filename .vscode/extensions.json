@@ -1,7 +1,11 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "editorconfig.editorconfig",
+    "editorconfig.editorconfig"
     "richie5um2.vscode-sort-json"
   ]
 }
+var fn = Function('a', ' /\x2A a \x2A/ b, c /\x2A b \x2A/ //', '/\x2A c \x2A/ ; /\x2A d \x2A/ //');
+var str = 'function anonymous(a, /\x2A a \x2A/ b, c /\x2A b \x2A/ //\n) {\n/\x2A c \x2A/ ; /\x2A d \x2A/ //\n}';
+console.log(fn + '' === str);
+It outputs true when I tested in Safari 17.5. I also tested in Safari 16.6 and it threw a syntax error (SyntaxError: Unexpected token ';'. Expected a ')' or a ',' after a
