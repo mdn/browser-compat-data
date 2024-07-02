@@ -114,6 +114,50 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "requires_muted_audio": {
+            "__compat": {
+              "description": "Autoplay requires <code>muted</code> attribute or no audio track",
+              "support": {
+                "chrome": {
+                  "version_added": "67"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "67"
+                },
+                "firefox_android": [
+                  {
+                    "version_added": "91"
+                  },
+                  {
+                    "version_added": "67",
+                    "version_removed": "79",
+                    "notes": "Between versions 79 and 91, the default behavior was to block videos from autoplaying, regardless of whether audio was muted."
+                  }
+                ],
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": "10"
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
           }
         },
         "controls": {
