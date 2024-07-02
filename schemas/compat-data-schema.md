@@ -278,6 +278,22 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
+- Support in version 79, but possibly supported earlier:
+
+```json
+{
+  "version_added": "≤79"
+}
+```
+
+- Support in latest beta/preview release:
+
+```json
+{
+  "version_added": "preview"
+}
+```
+
 - Supported, but version unknown:
 
 ```json
