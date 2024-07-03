@@ -203,9 +203,16 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": {
-                "version_added": "31"
-              },
+              "firefox": [
+                {
+                  "version_added": "50"
+                },
+                {
+                  "version_added": "31",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 50, setting the <code>src</code> didn't work, though it didn't raise an error."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "10"
@@ -226,42 +233,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          },
-          "settable_src": {
-            "__compat": {
-              "description": "<code>src</code> settable",
-              "support": {
-                "chrome": {
-                  "version_added": null
-                },
-                "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤18"
-                },
-                "firefox": {
-                  "version_added": "50",
-                  "notes": "Before Firefox 50, setting the <code>src</code> didn't work, though it didn't raise an error."
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": null
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": null
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
             }
           }
         },

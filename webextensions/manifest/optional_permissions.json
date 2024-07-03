@@ -26,7 +26,6 @@
         },
         "activeTab": {
           "__compat": {
-            "description": "<code>activeTab</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -48,7 +47,6 @@
         },
         "alarms": {
           "__compat": {
-            "description": "<code>alarms</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -68,7 +66,6 @@
         },
         "background": {
           "__compat": {
-            "description": "<code>background</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -90,7 +87,6 @@
         },
         "bookmarks": {
           "__compat": {
-            "description": "<code>bookmarks</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -114,7 +110,6 @@
         },
         "browserSettings": {
           "__compat": {
-            "description": "<code>browserSettings</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -134,7 +129,6 @@
         },
         "browsingData": {
           "__compat": {
-            "description": "<code>browsingData</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -156,7 +150,6 @@
         },
         "clipboardRead": {
           "__compat": {
-            "description": "<code>clipboardRead</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -178,7 +171,6 @@
         },
         "clipboardWrite": {
           "__compat": {
-            "description": "<code>clipboardWrite</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -202,7 +194,6 @@
         },
         "contentSettings": {
           "__compat": {
-            "description": "<code>contentSettings</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -224,7 +215,6 @@
         },
         "contextMenus": {
           "__compat": {
-            "description": "<code>contextMenus</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -233,12 +223,14 @@
                 "version_added": "79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "55",
+                "notes": "Available as an alias to the <code>menus</code> permission."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": "14"
+                "version_added": "14",
+                "notes": "Available as an alias to the <code>menus</code> permission."
               },
               "safari_ios": {
                 "version_added": false
@@ -248,7 +240,6 @@
         },
         "cookies": {
           "__compat": {
-            "description": "<code>cookies</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -272,7 +263,6 @@
         },
         "declarativeNetRequest": {
           "__compat": {
-            "description": "<code>declarativeNetRequest</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -292,7 +282,6 @@
         },
         "declarativeNetRequestFeedback": {
           "__compat": {
-            "description": "<code>declarativeNetRequestFeedback</code>",
             "support": {
               "chrome": {
                 "version_added": "84",
@@ -313,7 +302,6 @@
         },
         "declarativeNetRequestWithHostAccess": {
           "__compat": {
-            "description": "<code>declarativeNetRequestWithHostAccess</code>",
             "support": {
               "chrome": {
                 "version_added": "96"
@@ -333,7 +321,6 @@
         },
         "devtools": {
           "__compat": {
-            "description": "<code>devtools</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -355,7 +342,6 @@
         },
         "dns": {
           "__compat": {
-            "description": "<code>dns</code>",
             "support": {
               "chrome": {
                 "version_added": "preview",
@@ -376,7 +362,6 @@
         },
         "downloads": {
           "__compat": {
-            "description": "<code>downloads</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -416,7 +401,6 @@
         },
         "find": {
           "__compat": {
-            "description": "<code>find</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -438,7 +422,6 @@
         },
         "geolocation": {
           "__compat": {
-            "description": "<code>geolocation</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -458,7 +441,6 @@
         },
         "history": {
           "__compat": {
-            "description": "<code>history</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -482,7 +464,6 @@
         },
         "identity": {
           "__compat": {
-            "description": "<code>identity</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -502,7 +483,6 @@
         },
         "idle": {
           "__compat": {
-            "description": "<code>idle</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -524,7 +504,6 @@
         },
         "management": {
           "__compat": {
-            "description": "<code>management</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -546,9 +525,33 @@
             }
           }
         },
+        "menus": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "alternative_name": "contextMenus",
+                "version_added": "55"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "alternative_name": "contextMenus",
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": false
+              }
+            }
+          }
+        },
         "nativeMessaging": {
           "__compat": {
-            "description": "<code>nativeMessaging</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -572,7 +575,6 @@
         },
         "notifications": {
           "__compat": {
-            "description": "<code>notifications</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -594,7 +596,6 @@
         },
         "pageCapture": {
           "__compat": {
-            "description": "<code>pageCapture</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -616,7 +617,6 @@
         },
         "pkcs11": {
           "__compat": {
-            "description": "<code>pkcs11</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -638,7 +638,6 @@
         },
         "privacy": {
           "__compat": {
-            "description": "<code>privacy</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -662,7 +661,6 @@
         },
         "proxy": {
           "__compat": {
-            "description": "<code>proxy</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -684,7 +682,6 @@
         },
         "scripting": {
           "__compat": {
-            "description": "<code>scripting</code>",
             "support": {
               "chrome": {
                 "version_added": "88",
@@ -707,7 +704,6 @@
         },
         "search": {
           "__compat": {
-            "description": "<code>search</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -727,7 +723,6 @@
         },
         "sessions": {
           "__compat": {
-            "description": "<code>sessions</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -749,7 +744,6 @@
         },
         "storage": {
           "__compat": {
-            "description": "<code>storage</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -761,15 +755,16 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15"
+              }
             }
           }
         },
         "tabHide": {
           "__compat": {
-            "description": "<code>tabHide</code>",
             "support": {
               "chrome": {
                 "version_added": false
@@ -791,7 +786,6 @@
         },
         "tabs": {
           "__compat": {
-            "description": "<code>tabs</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -815,7 +809,6 @@
         },
         "topSites": {
           "__compat": {
-            "description": "<code>topSites</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -837,7 +830,6 @@
         },
         "unlimitedStorage": {
           "__compat": {
-            "description": "<code>unlimitedStorage</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -848,16 +840,31 @@
               },
               "firefox_android": "mirror",
               "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
+              "safari": [
+                {
+                  "version_added": "16"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Grants a 10 MB storage quota, instead of the standard 5 MB."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "16"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Grants a 10 MB storage quota, instead of the standard 5 MB."
+                }
+              ]
             }
           }
         },
         "webNavigation": {
           "__compat": {
-            "description": "<code>webNavigation</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -881,7 +888,6 @@
         },
         "webRequest": {
           "__compat": {
-            "description": "<code>webRequest</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -905,7 +911,6 @@
         },
         "webRequestBlocking": {
           "__compat": {
-            "description": "<code>webRequestBlocking</code>",
             "support": {
               "chrome": {
                 "version_added": true
@@ -927,7 +932,6 @@
         },
         "webRequestFilterResponse": {
           "__compat": {
-            "description": "<code>webRequestFilterResponse</code>",
             "support": {
               "chrome": {
                 "version_added": false
