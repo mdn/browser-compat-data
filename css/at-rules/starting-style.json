@@ -15,9 +15,26 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview",
+                "impl_url": "https://bugzil.la/1834876",
+                "partial_implementation": true,
+                "notes": "Does not yet support animating from <code>display: none</code>"
+              },
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.starting-style-at-rules.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Does not yet support animating from <code>display: none</code>"
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
