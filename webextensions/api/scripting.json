@@ -67,8 +67,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1736575"
+                  "version_added": "128"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -119,6 +118,26 @@
                 "notes": "Available for use in Manifest V2 or later."
               },
               "safari_ios": "mirror"
+            }
+          },
+          "matchOriginAsFallback": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "119"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "128"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/264829"
+                },
+                "safari_ios": "mirror"
+              }
             }
           },
           "persistAcrossSessions": {
@@ -288,8 +307,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "102",
-                  "notes": "Only supports <code>ISOLATED</code>, not <code>MAIN</code>."
+                  "version_added": "102"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -297,6 +315,44 @@
                   "version_added": "15.4"
                 },
                 "safari_ios": "mirror"
+              }
+            },
+            "ISOLATED": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "95"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "102"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "15.4"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "MAIN": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "95"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "128"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "15.4"
+                  },
+                  "safari_ios": "mirror"
+                }
               }
             }
           }
