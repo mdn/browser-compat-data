@@ -1,16 +1,23 @@
 {
   "css": {
     "properties": {
-      "position-try-options": {
+      "position-try-fallbacks": {
         "__compat": {
-          "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#position-try-options",
+          "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#position-try-fallbacks",
           "tags": [
             "web-features:anchor-positioning"
           ],
           "support": {
-            "chrome": {
-              "version_added": "125"
-            },
+            "chrome": [
+              {
+                "version_added": "128"
+              },
+              {
+                "alternative_name": "position-try-options",
+                "version_added": "125",
+                "version_removed": "127"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -39,7 +46,7 @@
         },
         "flip-block": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-block",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-block",
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -76,7 +83,7 @@
         },
         "flip-inline": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-inline",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-inline",
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -113,7 +120,7 @@
         },
         "flip-start": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-start",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-start",
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -151,7 +158,7 @@
         "inset-area": {
           "__compat": {
             "description": "<code>inset-area()</code> function",
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-inset-area-inset-area",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#propdef-inset-area",
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -187,7 +194,7 @@
         },
         "none": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-none",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-none",
             "tags": [
               "web-features:anchor-positioning"
             ],
