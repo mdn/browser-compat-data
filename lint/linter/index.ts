@@ -8,6 +8,7 @@ export { default as testDescriptions } from './test-descriptions.js';
 export { default as testFilename } from './test-filename.js';
 export { default as testFlags } from './test-flags.js';
 export { default as testLinks } from './test-links.js';
+export { default as testMDNURLs } from './test-mdn-urls.js';
 export { default as testMirror } from './test-mirror.js';
 export { default as testMultipleStatements } from './test-multiple-statements.js';
 export { default as testNotes } from './test-notes.js';
