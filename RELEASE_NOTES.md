@@ -1,5 +1,55 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.37](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.37)
+
+July 5, 2024
+
+### Removals
+
+- `css.properties.-moz-orient.auto` ([#23566](https://github.com/mdn/browser-compat-data/pull/23566))
+- `css.properties.-moz-user-input.disabled` ([#23567](https://github.com/mdn/browser-compat-data/pull/23567))
+- `css.properties.-moz-user-input.enabled` ([#23567](https://github.com/mdn/browser-compat-data/pull/23567))
+- `css.properties.-webkit-mask-attachment` ([#23568](https://github.com/mdn/browser-compat-data/pull/23568))
+- `css.properties.-webkit-overflow-scrolling` ([#23570](https://github.com/mdn/browser-compat-data/pull/23570))
+- `css.properties.align-tracks` ([#23571](https://github.com/mdn/browser-compat-data/pull/23571))
+- `css.properties.hanging-punctuation.force-end` ([#23579](https://github.com/mdn/browser-compat-data/pull/23579))
+- `css.properties.image-orientation.flip_and_angle` ([#23580](https://github.com/mdn/browser-compat-data/pull/23580))
+- `css.properties.initial-letter-align` ([#23574](https://github.com/mdn/browser-compat-data/pull/23574))
+- `css.properties.justify-tracks` ([#23573](https://github.com/mdn/browser-compat-data/pull/23573))
+- `css.properties.outline-color.invert` ([#23581](https://github.com/mdn/browser-compat-data/pull/23581))
+- `css.properties.ruby-position.inter-character` ([#23582](https://github.com/mdn/browser-compat-data/pull/23582))
+- `css.properties.scrollbar-3dlight-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-arrow-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-base-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-darkshadow-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-face-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-highlight-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.scrollbar-shadow-color` ([#23572](https://github.com/mdn/browser-compat-data/pull/23572))
+- `css.properties.touch-action.double-tap-zoom` ([#23576](https://github.com/mdn/browser-compat-data/pull/23576))
+- `css.selectors.-moz-page` ([#23562](https://github.com/mdn/browser-compat-data/pull/23562))
+- `css.selectors.-moz-page-sequence` ([#23562](https://github.com/mdn/browser-compat-data/pull/23562))
+- `css.selectors.-moz-scrolled-page-sequence` ([#23562](https://github.com/mdn/browser-compat-data/pull/23562))
+- `css.selectors.-webkit-details-marker` ([#23569](https://github.com/mdn/browser-compat-data/pull/23569))
+- `webextensions.manifest.theme.colors.tab_background_separator` ([#23494](https://github.com/mdn/browser-compat-data/pull/23494))
+- `webextensions.manifest.theme.colors.toolbar_field_separator` ([#23494](https://github.com/mdn/browser-compat-data/pull/23494))
+
+### Additions
+
+- `api.HTMLBaseElement.href.forbid_special_characters` ([#23615](https://github.com/mdn/browser-compat-data/pull/23615))
+- `api.PerformancePaintTiming.first-contentful-paint` ([#23636](https://github.com/mdn/browser-compat-data/pull/23636))
+- `api.PerformancePaintTiming.first-paint` ([#23636](https://github.com/mdn/browser-compat-data/pull/23636))
+- `webextensions.api.contentScripts` ([#23539](https://github.com/mdn/browser-compat-data/pull/23539))
+- `webextensions.api.contentScripts.register.world` ([#23539](https://github.com/mdn/browser-compat-data/pull/23539))
+- `webextensions.api.scripting.executeScript.world.ISOLATED` ([#23539](https://github.com/mdn/browser-compat-data/pull/23539))
+- `webextensions.api.scripting.executeScript.world.MAIN` ([#23539](https://github.com/mdn/browser-compat-data/pull/23539))
+
+### Statistics
+
+- 11 contributors have changed 73 files with 477 additions and 1,313 deletions in 47 commits ([`v5.5.36...v5.5.37`](https://github.com/mdn/browser-compat-data/compare/v5.5.36...v5.5.37))
+- 16,410 total features
+- 1,093 total contributors
+- 4,847 total stargazers
+
 ## [v5.5.36](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.36)
 
 July 2, 2024
