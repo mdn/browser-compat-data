@@ -46,7 +46,7 @@ const realValuesRequired: Record<string, string[]> = {
   html: [],
   http: [],
   svg: [],
-  javascript: [...realValuesTargetBrowsers, 'nodejs'],
+  javascript: [...realValuesTargetBrowsers, 'nodejs', 'deno'],
   mathml: realValuesTargetBrowsers,
   webassembly: realValuesTargetBrowsers,
   webdriver: realValuesTargetBrowsers,
