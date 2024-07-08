@@ -18,7 +18,7 @@ const categoriesToCheck = [
   // 'css',
   // 'html',
   // 'http',
-  // 'javascript',
+  'javascript',
   'mathml',
   // 'svg',
   'webassembly',
