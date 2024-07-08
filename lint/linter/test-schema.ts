@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import Ajv from 'ajv';
+import { Ajv } from 'ajv';
 import ajvErrors from 'ajv-errors';
 import ajvFormats from 'ajv-formats';
 import betterAjvErrors from 'better-ajv-errors';

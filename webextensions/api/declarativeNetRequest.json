@@ -139,6 +139,26 @@
             }
           }
         },
+        "MAX_NUMBER_OF_DISABLED_STATIC_RULES": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Although this property is not exposed, the limit is enforced and applies to disable static rules across all rulesets."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES",
@@ -443,7 +463,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "15"
                 },
                 "safari_ios": "mirror"
               }
@@ -992,7 +1012,7 @@
               "support": {
                 "chrome": {
                   "version_added": "84",
-                  "notes": "The default value changed from true to false in Chrome 118."
+                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Chrome 118."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1002,7 +1022,7 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": "15",
-                  "notes": "The default value changed from true to false in Safari 16.4."
+                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Safari 16.4."
                 },
                 "safari_ios": "mirror"
               }
