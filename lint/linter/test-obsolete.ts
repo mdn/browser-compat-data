@@ -22,7 +22,7 @@ const categoriesToCheck = [
   'mathml',
   // 'svg',
   'webassembly',
-  // 'webdriver',
+  'webdriver',
   'webextensions',
 ];
 
