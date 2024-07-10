@@ -1,30 +1,32 @@
 {
   "http": {
     "headers": {
-      "ect": {
+      "RTT": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/ECT",
-          "spec_url": "https://wicg.github.io/netinfo/#ect-request-header-field",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/RTT",
+          "spec_url": "https://wicg.github.io/netinfo/#rtt-request-header-field",
           "support": {
             "chrome": {
-              "version_added": "67"
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "≤79"
+              "version_added": "≤79",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": null
+              "version_added": false
             },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": null
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
