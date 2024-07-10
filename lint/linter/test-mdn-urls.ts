@@ -123,7 +123,7 @@ export const processData = (
         break;
     }
 
-    if (slugs.has(categorySlug)) {
+    if (slugs.has(categorySlug.toLowerCase())) {
       errors.push({
         ruleName: 'mdn_url_new_page',
         path,
