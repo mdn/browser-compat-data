@@ -210,7 +210,8 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `webview_android`, WebView, the built-in browser for Android
+- `webview_android`, WebView, the embedded browser for Android applications
+- `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
