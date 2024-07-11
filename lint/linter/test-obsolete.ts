@@ -20,7 +20,7 @@ const categoriesToCheck = [
   // 'http',
   'javascript',
   'mathml',
-  // 'svg',
+  'svg',
   'webassembly',
   'webdriver',
   'webextensions',
