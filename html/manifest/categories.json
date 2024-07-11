@@ -11,9 +11,11 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            // Check with Justin if used by the store/PWABuilder. This, as well as screenshots, description, and others are supplementary fields which may be used when publishing to a store, or in the rich install ui dialog. So need to know for sure.
+            // This member is parsed in Chromium but not used. This, as well as screenshots, description, and others are supplementary members were created for publishing apps to stores,
+            // Some are used by Chrome in the new rich install ui dialog. Edge doens't yet have a rich install dialog.
             // Florian is saying: if a thing is parsed, but doesn't do anything, then better mark as false, with a note saying it's parsed but not used.
-            // Justin is saying: PWABuilder checks for these members, and their docs say that devs should use them. But, Partner Center doesn't use any of them. Devs must re-enter them there.
+            // On the Store side of things, PWABuilder (Microsoft's solution publish PWAs to stores) checks for these members, and the PWABuild docs even say that devs should use them.
+            // But, Partner Center (which is where you upload your packaged PWA to the MS Store) doesn't use any of these members. Devs must re-enter them there (for example by uploading screenshots).
             "firefox": {
               "version_added": null
             },
