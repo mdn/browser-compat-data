@@ -1,5 +1,52 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.38](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.38)
+
+July 9, 2024
+
+### Removals
+
+- `css.properties.position-try-options` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-options.flip-block` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-options.flip-inline` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-options.flip-start` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-options.inset-area` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-options.none` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `html.elements.link.methods` ([#23696](https://github.com/mdn/browser-compat-data/pull/23696))
+- `html.elements.menu.hr_separator` ([#23697](https://github.com/mdn/browser-compat-data/pull/23697))
+- `html.elements.menu.label` ([#23697](https://github.com/mdn/browser-compat-data/pull/23697))
+- `html.elements.menu.type_menu` ([#23697](https://github.com/mdn/browser-compat-data/pull/23697))
+- `svg.elements.feMorphology.HTML_elements` ([#23595](https://github.com/mdn/browser-compat-data/pull/23595))
+
+### Additions
+
+- `api.IntersectionObserver.delay` ([#23684](https://github.com/mdn/browser-compat-data/pull/23684))
+- `api.IntersectionObserver.trackVisibility` ([#23684](https://github.com/mdn/browser-compat-data/pull/23684))
+- `api.IntersectionObserverEntry.isVisible` ([#23685](https://github.com/mdn/browser-compat-data/pull/23685))
+- `api.VTTCue.text.all_html_character_references` ([#23713](https://github.com/mdn/browser-compat-data/pull/23713))
+- `browsers.chrome_android.releases.128` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `browsers.chrome.releases.128` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `browsers.firefox_android.releases.131` ([#23711](https://github.com/mdn/browser-compat-data/pull/23711))
+- `browsers.firefox.releases.131` ([#23711](https://github.com/mdn/browser-compat-data/pull/23711))
+- `browsers.opera_android.releases.83` ([#23715](https://github.com/mdn/browser-compat-data/pull/23715))
+- `browsers.opera.releases.112` ([#23715](https://github.com/mdn/browser-compat-data/pull/23715))
+- `browsers.opera.releases.113` ([#23715](https://github.com/mdn/browser-compat-data/pull/23715))
+- `browsers.webview_android.releases.128` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks.flip-block` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks.flip-inline` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks.flip-start` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks.inset-area` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `css.properties.position-try-fallbacks.none` ([#23667](https://github.com/mdn/browser-compat-data/pull/23667))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_DISABLED_STATIC_RULES` ([#23533](https://github.com/mdn/browser-compat-data/pull/23533))
+
+### Statistics
+
+- 9 contributors have changed 80 files with 594 additions and 418 deletions in 37 commits ([`v5.5.37...v5.5.38`](https://github.com/mdn/browser-compat-data/compare/v5.5.37...v5.5.38))
+- 16,410 total features
+- 1,094 total contributors
+- 4,852 total stargazers
+
 ## [v5.5.37](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.37)
 
 July 5, 2024
