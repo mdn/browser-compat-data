@@ -16,13 +16,13 @@ const { browsers } = bcd;
 const categoriesToCheck = [
   'api',
   // 'css',
-  // 'html',
+  'html',
   // 'http',
-  // 'javascript',
+  'javascript',
   'mathml',
   // 'svg',
   'webassembly',
-  // 'webdriver',
+  'webdriver',
   'webextensions',
 ];
 
@@ -149,14 +149,9 @@ export default {
       processData(logger, data);
     }
   },
-  // XXX Exceptions disabled while the corresponding categories are ignored
-  // exceptions: [
-  // 'http.headers.Cache-Control.stale-if-error',
-  // 'http.headers.Feature-Policy.layout-animations',
-  // 'http.headers.Feature-Policy.legacy-image-formats',
-  // 'http.headers.Feature-Policy.oversized-images',
-  // 'http.headers.Feature-Policy.unoptimized-images',
-  // 'http.headers.Feature-Policy.unsized-media',
-  // 'svg.elements.view.zoomAndPan',
-  // ],
+  exceptions: [
+    'html.elements.track.kind.descriptions',
+    // The following exceptions are disabled while their categories are ignored:
+    // 'http.headers.Cache-Control.stale-if-error',
+  ],
 } as Linter;

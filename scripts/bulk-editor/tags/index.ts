@@ -7,8 +7,10 @@ import removeCommand from './remove.js';
 const command = {
   command: 'tags',
   description: 'Modify tags',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  // Yargs requires a handler method present, regardless if it does anything
+  // eslint-disable-next-line @typescript-eslint/no-empty-function,jsdoc/require-jsdoc
   handler: () => {},
+  // eslint-disable-next-line jsdoc/require-jsdoc
   builder: (yargs) =>
     yargs.command([addCommand, removeCommand]).demandCommand().help(),
 };
