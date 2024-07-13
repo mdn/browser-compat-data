@@ -1,19 +1,22 @@
 {
-  "css": {
-    "properties": {
-      "initial-letter-align": {
+  "http": {
+    "headers": {
+      "Downlink": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/initial-letter-align",
-          "spec_url": "https://drafts.csswg.org/css-inline/#aligning-initial-letter",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Downlink",
+          "spec_url": "https://wicg.github.io/netinfo/#downlink-request-header-field",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "67",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "≤79",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1273021"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {

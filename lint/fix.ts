@@ -16,6 +16,7 @@ import fixStatementOrder from './fixer/statement-order.js';
 import fixDescriptions from './fixer/descriptions.js';
 import fixFlags from './fixer/flags.js';
 import fixLinks from './fixer/links.js';
+import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 
@@ -42,7 +43,6 @@ const load = async (...files: string[]): Promise<void> => {
 
     if (fsStats.isFile()) {
       if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
-        fixPropertyOrder(file);
         if (!file.includes('/browsers/')) {
           fixBrowserOrder(file);
           fixFeatureOrder(file);
@@ -50,9 +50,11 @@ const load = async (...files: string[]): Promise<void> => {
           fixDescriptions(file);
           fixFlags(file);
           fixLinks(file);
+          fixMDNURLs(file);
           fixStatus(file);
           fixMirror(file);
         }
+        fixPropertyOrder(file);
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>

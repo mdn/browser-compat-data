@@ -36,6 +36,8 @@ const fixDescriptions = (filename: string): void => {
 
       if (error.expected) {
         feature.compat.description = error.expected;
+      } else if (error.expected === '') {
+        delete feature.compat.description;
       }
     }
   }
