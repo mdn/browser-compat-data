@@ -158,15 +158,22 @@
         },
         "inset-area": {
           "__compat": {
-            "description": "<code>inset-area()</code> function",
+            "description": "<code>inset-area</code> values",
             "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#propdef-inset-area",
             "tags": [
               "web-features:anchor-positioning"
             ],
             "support": {
-              "chrome": {
-                "version_added": "125"
-              },
+              "chrome": [
+                {
+                  "version_added": "128"
+                },
+                {
+                  "version_added": "125",
+                  "version_removed": "128",
+                  "notes": "<code>inset-area</code> values had to be wrapped inside an <code>inset-area()</code> function."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
