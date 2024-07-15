@@ -1,22 +1,24 @@
 {
   "http": {
     "headers": {
-      "Large-Allocation": {
+      "RTT": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Large-Allocation",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/RTT",
+          "spec_url": "https://wicg.github.io/netinfo/#rtt-request-header-field",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "53",
-              "version_removed": "100"
+            "edge": {
+              "version_added": "≤79",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
-            "firefox_android": {
+            "firefox": {
               "version_added": false
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -31,9 +33,9 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }
