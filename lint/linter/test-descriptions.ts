@@ -66,7 +66,7 @@ const processApiData = (
       'constructor',
       path,
       data,
-      `\`${apiName}()\` constructor`,
+      `<code>${apiName}()</code> constructor`,
       errors,
     );
   } else if (featureName.endsWith('_event')) {
@@ -74,7 +74,7 @@ const processApiData = (
       'event',
       path,
       data,
-      `\`${featureName.replace('_event', '')}\` event`,
+      `<code>${featureName.replace('_event', '')}</code> event`,
       errors,
     );
   } else if (featureName.endsWith('_permission')) {
@@ -82,7 +82,7 @@ const processApiData = (
       'permission',
       path,
       data,
-      `\`${featureName.replace('_permission', '')}\` permission`,
+      `<code>${featureName.replace('_permission', '')}</code> permission`,
       errors,
     );
   } else if (featureName == 'secure_context_required') {
