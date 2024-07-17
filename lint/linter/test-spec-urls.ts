@@ -39,7 +39,7 @@ const specsExceptions = [
 ];
 
 const allowedSpecURLs = [
-  ...specData
+  ...(specData
     .filter((spec) => spec.standing == 'good')
     .map((spec) => [
       spec.url,
@@ -48,7 +48,7 @@ const allowedSpecURLs = [
       spec.series.nightlyUrl,
     ])
     .flat()
-    .filter((url) => !!url),
+    .filter((url) => !!url) as string[]),
   ...specsExceptions,
 ];
 

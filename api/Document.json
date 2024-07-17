@@ -791,7 +791,6 @@
       },
       "captureEvents": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/captureEvents",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-captureevents",
           "support": {
             "chrome": [
@@ -1945,7 +1944,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -2278,7 +2277,7 @@
       "defaultView": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/defaultView",
-          "spec_url": "https://html.spec.whatwg.org/multipage/window-object.html#dom-document-defaultview-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-document-defaultview-dev",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2553,7 +2552,7 @@
       "domain": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/domain",
-          "spec_url": "https://html.spec.whatwg.org/multipage/origin.html#relaxing-the-same-origin-restriction",
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#relaxing-the-same-origin-restriction",
           "support": {
             "chrome": {
               "version_added": "1",
@@ -3188,7 +3187,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1463402"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4516,6 +4516,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/hasStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-hasstorageaccess",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
               "version_added": "119"
@@ -5181,16 +5184,28 @@
       "parseHTMLUnsafe_static": {
         "__compat": {
           "description": "<code>parseHTMLUnsafe()</code> static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/parseHTMLUnsafe_static",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-parsehtmlunsafe",
+          "tags": [
+            "web-features:parse-html-unsafe"
+          ],
           "support": {
             "chrome": {
               "version_added": "124"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "123"
-            },
+            "firefox": [
+              {
+                "version_added": "128"
+              },
+              {
+                "version_added": "123",
+                "version_removed": "127",
+                "partial_implementation": true,
+                "notes": "Throws error <code>NS_ERROR_UNEXPECTED</code> (<a href='https://bugzil.la/1887817'>bug 1887817</a>.)"
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -5228,7 +5243,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1463402"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5269,7 +5285,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1463402"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5731,7 +5748,6 @@
       },
       "queryCommandIndeterm": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandIndeterm",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -5852,7 +5868,6 @@
       },
       "queryCommandValue": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandValue",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6156,7 +6171,6 @@
       },
       "releaseEvents": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/releaseEvents",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-releaseevents",
           "support": {
             "chrome": [
@@ -6264,6 +6278,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccess",
           "spec_url": "https://privacycg.github.io/storage-access/#dom-document-requeststorageaccess",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
               "version_added": "119"
@@ -7238,14 +7255,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -7883,7 +7900,6 @@
       },
       "xmlStandalone": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/xmlStandalone",
           "spec_url": "https://dom.spec.whatwg.org/#dom-document-xmlstandalone",
           "support": {
             "chrome": {

@@ -111,7 +111,8 @@
             ],
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "14.1",
+                "notes": "New audio contexts are suspended until the <code>resume()</code> method is called via user action, such as the <code>click</code> event."
               },
               {
                 "prefix": "webkit",
@@ -446,7 +447,8 @@
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamtracksource",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40500817"
             },
             "chrome_android": "mirror",
             "edge": "mirror",

@@ -4,7 +4,7 @@
 import { updateFeatures } from '../utils.js';
 
 const command = {
-  command: 'remove <tag> <bcd-id..>',
+  command: 'remove <tag> [bcd-id..]',
   desc: 'Remove the following tag from the BCD features',
   /**
    * handler - Action to perform for 'tags remove'

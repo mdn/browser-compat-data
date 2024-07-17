@@ -1,18 +1,22 @@
 {
-  "css": {
-    "selectors": {
-      "-moz-scrolled-page-sequence": {
+  "http": {
+    "headers": {
+      "Downlink": {
         "__compat": {
-          "description": "<code>::-moz-scrolled-page-sequence</code>",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::-moz-scrolled-page-sequence",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Downlink",
+          "spec_url": "https://wicg.github.io/netinfo/#downlink-request-header-field",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "67",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "≤79",
+              "notes": "The value is never greater than 10 Mbps, as a non-standard anti-fingerprinting measure."
+            },
             "firefox": {
-              "version_added": "1.5"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -29,8 +33,8 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }

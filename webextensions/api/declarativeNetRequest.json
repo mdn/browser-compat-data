@@ -139,21 +139,64 @@
             }
           }
         },
+        "MAX_NUMBER_OF_DISABLED_STATIC_RULES": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DISABLED_STATIC_RULES",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "notes": "Although this property is not exposed, the limit is enforced and applies to disable static rules across all rulesets."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES",
             "support": {
               "chrome": {
-                "version_added": "90"
+                "version_added": "90",
+                "notes": "Deprecated in Chrome 120. Use <code>MAX_NUMBER_OF_DYNAMIC_RULES</code> and <code>MAX_NUMBER_OF_SESSION_RULES</code> instead."
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "113"
+                "version_added": "113",
+                "notes": "Deprecated in Firefox 128. Use <code>MAX_NUMBER_OF_DYNAMIC_RULES</code> and <code>MAX_NUMBER_OF_SESSION_RULES</code> instead."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
                 "version_added": "16.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_DYNAMIC_RULES": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_RULES",
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror"
             }
@@ -199,6 +242,26 @@
             }
           }
         },
+        "MAX_NUMBER_OF_SESSION_RULES": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_SESSION_RULES",
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "MAX_NUMBER_OF_STATIC_RULESETS": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_STATIC_RULESETS",
@@ -214,6 +277,44 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "15"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_UNSAFE_DYNAMIC_RULES": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_UNSAFE_SESSION_RULES": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror"
             }
@@ -443,7 +544,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "15"
                 },
                 "safari_ios": "mirror"
               }
@@ -992,7 +1093,7 @@
               "support": {
                 "chrome": {
                   "version_added": "84",
-                  "notes": "The default value changed from true to false in Chrome 118."
+                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Chrome 118."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1002,7 +1103,7 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": "15",
-                  "notes": "The default value changed from true to false in Safari 16.4."
+                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Safari 16.4."
                 },
                 "safari_ios": "mirror"
               }
@@ -1173,6 +1274,26 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "113"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "getDisabledRuleIds": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/getDisabledRuleIds",
+            "support": {
+              "chrome": {
+                "version_added": "111"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -1760,6 +1881,26 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "15.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "updateStaticRules": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/updateStaticRules",
+            "support": {
+              "chrome": {
+                "version_added": "111"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror"
             }
