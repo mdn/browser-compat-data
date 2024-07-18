@@ -23,6 +23,9 @@ const specsExceptions = [
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
 
+  // Remove once tc39/ecma262#3221 is merged
+  'https://github.com/tc39/proposal-regexp-modifiers',
+
   // See https://github.com/w3c/browser-specs/issues/305
   // Features with this URL need to be checked after some time
   // if they have been integrated into a real spec
