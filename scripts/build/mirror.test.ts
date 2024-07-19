@@ -176,6 +176,146 @@ describe('mirror', () => {
       });
     });
 
+    describe('Ranges', () => {
+      it('chrome_android 18', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤10',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        // No range because this is the first release.
+        assert.deepEqual(mirrored, { version_added: '18' });
+      });
+
+      it('chrome_android', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        assert.deepEqual(mirrored, { version_added: '≤100' });
+      });
+
+      it('edge 79', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤10',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        // Uncertain early Chrome support doesn't imply possible EdgeHTML
+        // support, but the range is preserved for simplicity.
+        assert.deepEqual(mirrored, { version_added: '≤79' });
+      });
+
+      it('edge', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        assert.deepEqual(mirrored, { version_added: '≤100' });
+      });
+
+      it('firefox_android', () => {
+        const support: InternalSupportBlock = {
+          firefox: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('firefox_android', support);
+        assert.deepEqual(mirrored, { version_added: '≤100' });
+      });
+
+      it('opera 15', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤10',
+          },
+        };
+
+        const mirrored = mirrorSupport('opera', support);
+        // Uncertain early Chrome support doesn't imply possible Presto
+        // support, but the range is preserved for simplicity.
+        assert.deepEqual(mirrored, { version_added: '≤15' });
+      });
+
+      it('opera', () => {
+        const support: InternalSupportBlock = {
+          chrome: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('opera', support);
+        assert.deepEqual(mirrored, { version_added: '≤86' });
+      });
+
+      it('opera_android', () => {
+        const support: InternalSupportBlock = {
+          chrome_android: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('opera_android', support);
+        assert.deepEqual(mirrored, { version_added: '≤69' });
+      });
+
+      it('safari_ios 1', () => {
+        const support: InternalSupportBlock = {
+          safari: {
+            version_added: '≤2',
+          },
+        };
+
+        const mirrored = mirrorSupport('safari_ios', support);
+        // No range because this is the first release.
+        assert.deepEqual(mirrored, { version_added: '1' });
+      });
+
+      it('safari_ios', () => {
+        const support: InternalSupportBlock = {
+          safari: {
+            version_added: '≤15.4',
+          },
+        };
+
+        const mirrored = mirrorSupport('safari_ios', support);
+        assert.deepEqual(mirrored, { version_added: '≤15.4' });
+      });
+
+      it('samsunginternet_android', () => {
+        const support: InternalSupportBlock = {
+          chrome_android: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('samsunginternet_android', support);
+        assert.deepEqual(mirrored, { version_added: '≤19.0' });
+      });
+
+      it('webview_android', () => {
+        const support: InternalSupportBlock = {
+          chrome_android: {
+            version_added: '≤100',
+          },
+        };
+
+        const mirrored = mirrorSupport('webview_android', support);
+        assert.deepEqual(mirrored, { version_added: '≤100' });
+      });
+    });
+
     describe('Validations', () => {
       it('mirror target must have upstream browser', () => {
         assert.throws(
