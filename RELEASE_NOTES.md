@@ -1,5 +1,56 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.41)
+
+July 19, 2024
+
+### Removals
+
+- `api.PageRevealEvent.PageRevealEvent` ([#23707](https://github.com/mdn/browser-compat-data/pull/23707))
+- `api.PageSwapEvent.PageSwapEvent` ([#23708](https://github.com/mdn/browser-compat-data/pull/23708))
+- `css.at-rules.document.regexp` ([#23565](https://github.com/mdn/browser-compat-data/pull/23565))
+- `css.properties.text-combine-upright.digits` ([#23577](https://github.com/mdn/browser-compat-data/pull/23577))
+
+### Additions
+
+- `api.CSSPageDescriptors` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.margin` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.margin-bottom` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.margin-left` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.margin-right` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.margin-top` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.marginBottom` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.marginLeft` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.marginRight` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.marginTop` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.CSSPageDescriptors.size` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `api.HTMLCanvasElement.toBlob.type_parameter_jpeg` ([#23683](https://github.com/mdn/browser-compat-data/pull/23683))
+- `api.HTMLCanvasElement.toBlob.type_parameter_png` ([#23683](https://github.com/mdn/browser-compat-data/pull/23683))
+- `api.HTMLCanvasElement.toDataURL.type_parameter_jpeg` ([#23683](https://github.com/mdn/browser-compat-data/pull/23683))
+- `api.HTMLCanvasElement.toDataURL.type_parameter_png` ([#23683](https://github.com/mdn/browser-compat-data/pull/23683))
+- `api.HTMLImageElement.sizes.auto` ([#23785](https://github.com/mdn/browser-compat-data/pull/23785))
+- `api.PerformanceResourceTiming.contentType` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
+- `browsers.deno.releases.1.45` ([#23753](https://github.com/mdn/browser-compat-data/pull/23753))
+- `html.elements.img.sizes.auto` ([#23785](https://github.com/mdn/browser-compat-data/pull/23785))
+- `javascript.regular_expressions.modifier` ([#23829](https://github.com/mdn/browser-compat-data/pull/23829))
+- `webdriver.commands.CreateVirtualSensor` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.DeleteVirtualSensor` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.GetVirtualSensorInformation` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.UpdateVirtualSensorReading` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_DYNAMIC_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_SESSION_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_UNSAFE_DYNAMIC_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
+- `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_UNSAFE_SESSION_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
+- `webextensions.api.declarativeNetRequest.RuleCondition.domainType` ([#23639](https://github.com/mdn/browser-compat-data/pull/23639))
+- `webextensions.manifest.optional_host_permissions` ([#23177](https://github.com/mdn/browser-compat-data/pull/23177))
+
+### Statistics
+
+- 13 contributors have changed 198 files with 3,361 additions and 1,799 deletions in 65 commits ([`v5.5.39...v5.5.41`](https://github.com/mdn/browser-compat-data/compare/v5.5.39...v5.5.41))
+- 16,470 total features
+- 1,098 total contributors
+- 4,865 total stargazers
+
 ## [v5.5.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.40)
 
 July 16, 2024
