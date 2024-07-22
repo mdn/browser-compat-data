@@ -2,7 +2,7 @@
 
 ## [v5.5.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.40)
 
-July 16, 2024
+July 19, 2024
 
 ### Removals
 
@@ -32,17 +32,24 @@ July 16, 2024
 - `api.PerformanceResourceTiming.contentType` ([#23730](https://github.com/mdn/browser-compat-data/pull/23730))
 - `browsers.deno.releases.1.45` ([#23753](https://github.com/mdn/browser-compat-data/pull/23753))
 - `html.elements.img.sizes.auto` ([#23785](https://github.com/mdn/browser-compat-data/pull/23785))
+- `javascript.regular_expressions.modifier` ([#23829](https://github.com/mdn/browser-compat-data/pull/23829))
+- `webdriver.commands.CreateVirtualSensor` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.DeleteVirtualSensor` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.GetVirtualSensorInformation` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
+- `webdriver.commands.UpdateVirtualSensorReading` ([#23852](https://github.com/mdn/browser-compat-data/pull/23852))
 - `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_DYNAMIC_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
 - `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_SESSION_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
 - `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_UNSAFE_DYNAMIC_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
 - `webextensions.api.declarativeNetRequest.MAX_NUMBER_OF_UNSAFE_SESSION_RULES` ([#23400](https://github.com/mdn/browser-compat-data/pull/23400))
+- `webextensions.api.declarativeNetRequest.RuleCondition.domainType` ([#23639](https://github.com/mdn/browser-compat-data/pull/23639))
+- `webextensions.manifest.optional_host_permissions` ([#23177](https://github.com/mdn/browser-compat-data/pull/23177))
 
 ### Statistics
 
-- 11 contributors have changed 58 files with 2,324 additions and 1,619 deletions in 38 commits ([`v5.5.39...v5.5.40`](https://github.com/mdn/browser-compat-data/compare/v5.5.39...v5.5.40))
-- 16,463 total features
+- 13 contributors have changed 198 files with 3,412 additions and 1,799 deletions in 66 commits ([`v5.5.39...v5.5.40`](https://github.com/mdn/browser-compat-data/compare/v5.5.39...v5.5.40))
+- 16,470 total features
 - 1,098 total contributors
-- 4,862 total stargazers
+- 4,865 total stargazers
 
 ## [v5.5.39](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.39)
 
