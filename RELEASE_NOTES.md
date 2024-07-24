@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.41)
+
+July 23, 2024
+
+### Removals
+
+- `api.CanvasRenderingContext2D.scrollPathIntoView` ([#23835](https://github.com/mdn/browser-compat-data/pull/23835))
+- `css.selectors.descendant.two_greater_than_syntax` ([#23827](https://github.com/mdn/browser-compat-data/pull/23827))
+
+### Additions
+
+- `javascript.builtins.Intl.Collator.Collator.options_ignorePunctuation_parameter` ([#23686](https://github.com/mdn/browser-compat-data/pull/23686))
+- `javascript.builtins.Intl.Collator.Collator.options_localeMatcher_parameter` ([#23686](https://github.com/mdn/browser-compat-data/pull/23686))
+- `javascript.builtins.Intl.Collator.Collator.options_numeric_parameter` ([#23686](https://github.com/mdn/browser-compat-data/pull/23686))
+- `javascript.builtins.Intl.Collator.Collator.options_sensitivity_parameter` ([#23686](https://github.com/mdn/browser-compat-data/pull/23686))
+- `javascript.builtins.Intl.Collator.Collator.options_usage_parameter` ([#23686](https://github.com/mdn/browser-compat-data/pull/23686))
+
+### Statistics
+
+- 7 contributors have changed 67 files with 702 additions and 781 deletions in 26 commits ([`v5.5.40...v5.5.41`](https://github.com/mdn/browser-compat-data/compare/v5.5.40...v5.5.41))
+- 16,473 total features
+- 1,098 total contributors
+- 4,863 total stargazers
+
 ## [v5.5.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.40)
 
 July 19, 2024
