@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import specData from 'web-specs' assert { type: 'json' };
 
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
@@ -41,19 +40,37 @@ const specsExceptions = [
   'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
 ];
 
-const allowedSpecURLs = [
-  ...(specData
-    .filter((spec) => spec.standing == 'good')
-    .map((spec) => [
-      spec.url,
-      spec.nightly?.url,
-      ...(spec.nightly ? spec.nightly.alternateUrls : []),
-      spec.series.nightlyUrl,
-    ])
-    .flat()
-    .filter((url) => !!url) as string[]),
-  ...specsExceptions,
-];
+/**
+ * Get valid specification URLs from webref ids
+ * @returns array of valid spec urls (including fragment id)
+ */
+const getValidSpecURLs = async (): Promise<string[]> => {
+  const indexFile = await fetch(
+    'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
+  );
+  const index = JSON.parse(await indexFile.text());
+
+  const ids: string[] = [];
+  index.results.forEach((result) => {
+    if (result.ids) {
+      ids.push(result.ids);
+    }
+  });
+
+  const specIDs: string[] = [];
+  await Promise.all(
+    ids.map(async (id) => {
+      const idFile = await fetch(
+        `https://raw.githubusercontent.com/w3c/webref/main/ed/${id}`,
+      );
+      const idResponse = JSON.parse(await idFile.text());
+      specIDs.push(...idResponse.ids);
+    }),
+  );
+  return specIDs;
+};
+
+const validSpecURLs = await getValidSpecURLs();
 
 /**
  * Process the data for spec URL errors
@@ -70,7 +87,10 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
+    if (
+      !validSpecURLs.includes(specURL) &&
+      !specsExceptions.some((host) => specURL.startsWith(host))
+    ) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
          - there is a more current specification URL
