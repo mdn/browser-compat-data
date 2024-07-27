@@ -40,6 +40,13 @@ const specsExceptions = [
   'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
 ];
 
+interface ValidSpecHosts {
+  url: string;
+  alternateUrl: string;
+}
+
+const validSpecHosts: ValidSpecHosts[] = [];
+
 /**
  * Get valid specification URLs from webref ids
  * @returns array of valid spec urls (including fragment id)
@@ -49,28 +56,41 @@ const getValidSpecURLs = async (): Promise<string[]> => {
     'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
   );
   const index = JSON.parse(await indexFile.text());
+  const specIDs: string[] = [];
 
-  const ids: string[] = [];
-  index.results.forEach((result) => {
-    if (result.ids) {
-      ids.push(result.ids);
+  index.results.forEach((spec) => {
+    if (spec.standing === 'good') {
+      if (spec.shortname === 'webnn') {
+        validSpecHosts.push({
+          url: spec.series.releaseUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      } else {
+        validSpecHosts.push({
+          url: spec.series.nightlyUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      }
+      if (spec.ids) {
+        specIDs.push(spec.ids);
+      }
     }
   });
 
-  const specIDs: string[] = [];
+  const specURLsWithFragments: string[] = [];
   await Promise.all(
-    ids.map(async (id) => {
+    specIDs.map(async (id) => {
       const idFile = await fetch(
         `https://raw.githubusercontent.com/w3c/webref/main/ed/${id}`,
       );
       const idResponse = JSON.parse(await idFile.text());
-      specIDs.push(...idResponse.ids);
+      specURLsWithFragments.push(...idResponse.ids);
     }),
   );
-  return specIDs;
+  return specURLsWithFragments;
 };
 
-const validSpecURLs = await getValidSpecURLs();
+const validSpecURLsWithFragments = await getValidSpecURLs();
 
 /**
  * Process the data for spec URL errors
@@ -87,8 +107,31 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    if (
-      !validSpecURLs.includes(specURL) &&
+    if (specURL.includes('#')) {
+      const hasSpec = validSpecURLsWithFragments.includes(encodeURI(specURL));
+
+      const alternateSpecURLs = validSpecHosts.filter(
+        (spec) => spec.url === specURL.split('#')[0],
+      );
+
+      const hasAlternateSpec = alternateSpecURLs.some((altSpecURL) => {
+        const specToLookup = encodeURI(
+          altSpecURL.alternateUrl + '#' + specURL.split('#')[1],
+        );
+        if (validSpecURLsWithFragments.includes(specToLookup)) {
+          return true;
+        }
+        return false;
+      });
+
+      if (!hasSpec && !hasAlternateSpec) {
+        logger.error(
+          chalk`Invalid specification fragment found: {bold ${specURL}}.`,
+        );
+      }
+    } else if (
+      !validSpecHosts.some((host) => specURL.startsWith(host.url)) &&
+      !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl)) &&
       !specsExceptions.some((host) => specURL.startsWith(host))
     ) {
       logger.error(
