@@ -52,7 +52,7 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9",
-              "notes": "In IE 7 and IE 8 of Internet Explorer, this property always behaved like <code>background-clip: padding</code> when <code>overflow</code> was <code>hidden</code>, <code>auto</code>, or <code>scroll</code>."
+              "notes": "In IE 7 and IE 8 of Internet Explorer, this property always behaved like <code>background-clip: padding-box</code> when <code>overflow</code> was <code>hidden</code>, <code>auto</code>, or <code>scroll</code>."
             },
             "oculus": "mirror",
             "opera": [
@@ -102,6 +102,44 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "border": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-border",
+            "tags": [
+              "web-features:background-clip-border"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "border-box": {
@@ -162,7 +200,7 @@
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "9",
-                "notes": "In IE 7 and IE 9 of Internet Explorer, it always behaved like <code>background-clip: padding</code> if <code>overflow: hidden | auto | scroll</code>"
+                "notes": "In IE 7 and IE 9 of Internet Explorer, it always behaved like <code>background-clip: padding-box</code> if <code>overflow: hidden | auto | scroll</code>"
               },
               "oculus": "mirror",
               "opera": {
@@ -266,7 +304,7 @@
               "firefox": {
                 "version_added": "49",
                 "partial_implementation": true,
-                "notes": "Doesn't work with <code>background-attachment:fixed</code>, in multi-layer backgrounds with other values, and in some other special cases: see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1656784'>bug 1656784</a>"
+                "notes": "Does not work with <code>background-attachment:fixed</code>, in multi-layer backgrounds with other values, and in some other special cases: see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1656784'>bug 1656784</a>"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -283,50 +321,6 @@
                   "version_added": "4",
                   "partial_implementation": true,
                   "notes": "The <code>text</code> value is only supported by <code>-webkit-background-clip</code> (and not by <code>background-clip</code>)."
-                }
-              ],
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "border": {
-          "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-border",
-            "tags": [
-              "web-features:background-clip-border"
-            ],
-            "support": {
-              "chrome": [
-                {
-                  "version_added": false
-                }
-              ],
-              "chrome_android": "mirror",
-              "edge": [
-                {
-                  "version_added": false
-                }
-              ],
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": [
-                {
-                  "version_added": false
                 }
               ],
               "safari_ios": "mirror",
