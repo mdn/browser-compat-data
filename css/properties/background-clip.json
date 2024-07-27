@@ -4,7 +4,10 @@
       "background-clip": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/background-clip",
-          "spec_url": "https://drafts.csswg.org/css-backgrounds/#background-clip",
+          "spec_url": [
+            "https://drafts.csswg.org/css-backgrounds/#background-clip",
+            "https://drafts.csswg.org/css-backgrounds-4/#background-clip",
+          ],
           "tags": [
             "web-features:background-clip"
           ],
@@ -224,6 +227,7 @@
         },
         "text": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-text",
             "tags": [
               "web-features:background-clip-text"
             ],
@@ -260,7 +264,9 @@
                 }
               ],
               "firefox": {
-                "version_added": "49"
+                "version_added": "49",
+                "partial_implementation": true,
+                "notes": "Doesn't work with <code>background-attachment:fixed</code>, in multi-layer backgrounds with other values, and in some other special cases: see <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=1656784'>bug 1656784</a>"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -284,7 +290,51 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "border": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-border",
+            "tags": [
+              "web-features:background-clip-border"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": false
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": [
+                {
+                  "version_added": false
+                }
+              ],
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": false
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
