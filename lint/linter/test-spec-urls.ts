@@ -84,7 +84,12 @@ const getValidSpecURLs = async (): Promise<string[]> => {
         `https://raw.githubusercontent.com/w3c/webref/main/ed/${id}`,
       );
       const idResponse = JSON.parse(await idFile.text());
-      specURLsWithFragments.push(...idResponse.ids);
+      specURLsWithFragments.push(
+        ...idResponse.ids.map((id) => {
+          const url = new URL(id);
+          return url.origin + url.pathname + decodeURIComponent(url.hash);
+        }),
+      );
     }),
   );
   return specURLsWithFragments;
@@ -108,16 +113,15 @@ const processData = (data: CompatStatement, logger: Logger): void => {
 
   for (const specURL of featureSpecURLs) {
     if (specURL.includes('#')) {
-      const hasSpec = validSpecURLsWithFragments.includes(encodeURI(specURL));
+      const hasSpec = validSpecURLsWithFragments.includes(specURL);
 
       const alternateSpecURLs = validSpecHosts.filter(
         (spec) => spec.url === specURL.split('#')[0],
       );
 
       const hasAlternateSpec = alternateSpecURLs.some((altSpecURL) => {
-        const specToLookup = encodeURI(
-          altSpecURL.alternateUrl + '#' + specURL.split('#')[1],
-        );
+        const specToLookup =
+          altSpecURL.alternateUrl + '#' + specURL.split('#')[1];
         if (validSpecURLsWithFragments.includes(specToLookup)) {
           return true;
         }
