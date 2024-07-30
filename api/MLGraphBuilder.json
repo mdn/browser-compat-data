@@ -782,7 +782,7 @@
       },
       "constant": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-constant-value-type",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mlgraphbuilder-constant",
           "tags": [
             "web-features:webnn"
           ],
@@ -2469,6 +2469,55 @@
           }
         }
       },
+      "logicalNot": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mlgraphbuilder-logicalnot",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "121",
+              "flags": [
+                {
+                  "name": "#web-machine-learning-neural-network",
+                  "type": "preference",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "Supported on GPUs on Windows."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "lstm": {
         "__compat": {
           "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-lstm",
@@ -2950,55 +2999,6 @@
                 "notes": "Supported on CPUs on Windows."
               }
             ],
-            "chrome_android": {
-              "version_added": false
-            },
-            "deno": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "not": {
-        "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#dom-mlgraphbuilder-not",
-          "tags": [
-            "web-features:webnn"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
             "chrome_android": {
               "version_added": false
             },

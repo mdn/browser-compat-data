@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.42)
+
+July 26, 2024
+
+### Additions
+
+- `api.AudioContext.error_event` ([#23956](https://github.com/mdn/browser-compat-data/pull/23956))
+- `api.CSSPageRule.style.type_CSSPageDescriptors` ([#23912](https://github.com/mdn/browser-compat-data/pull/23912))
+- `api.PageRevealEvent.PageRevealEvent` ([#23956](https://github.com/mdn/browser-compat-data/pull/23956))
+- `api.PageSwapEvent.PageSwapEvent` ([#23956](https://github.com/mdn/browser-compat-data/pull/23956))
+- `api.PointerEvent.persistentDeviceId` ([#23956](https://github.com/mdn/browser-compat-data/pull/23956))
+- `javascript.builtins.Promise.try` ([#23956](https://github.com/mdn/browser-compat-data/pull/23956))
+
+### Statistics
+
+- 7 contributors have changed 27 files with 332 additions and 198 deletions in 16 commits ([`v5.5.41...v5.5.42`](https://github.com/mdn/browser-compat-data/compare/v5.5.41...v5.5.42))
+- 16,479 total features
+- 1,098 total contributors
+- 4,863 total stargazers
+
 ## [v5.5.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.41)
 
 July 23, 2024
