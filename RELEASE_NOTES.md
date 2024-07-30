@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.43)
+
+July 30, 2024
+
+### Removals
+
+- `api.CSSPositionTryDescriptors.inset-area` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.CSSPositionTryDescriptors.insetArea` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.MLActivation` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+- `api.MLGraphBuilder.not` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+- `http.headers.Permissions-Policy.battery` ([#23821](https://github.com/mdn/browser-compat-data/pull/23821))
+
+### Additions
+
+- `api.CSSPositionTryDescriptors.position-area` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.CSSPositionTryDescriptors.positionArea` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.MLGraphBuilder.logicalNot` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+
+### Statistics
+
+- 6 contributors have changed 99 files with 360 additions and 481 deletions in 18 commits ([`v5.5.42...v5.5.43`](https://github.com/mdn/browser-compat-data/compare/v5.5.42...v5.5.43))
+- 16,477 total features
+- 1,100 total contributors
+- 4,865 total stargazers
+
 ## [v5.5.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.42)
 
 July 26, 2024
