@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.44)
+
+August 2, 2024
+
+### Removals
+
+- `api.Element.setHTML` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.getConfiguration` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.getDefaultConfiguration_static` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.sanitize` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.Sanitizer` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `mathml.elements.mstyle.scriptminsize` ([#23962](https://github.com/mdn/browser-compat-data/pull/23962))
+- `mathml.elements.mstyle.scriptsizemultiplier` ([#23962](https://github.com/mdn/browser-compat-data/pull/23962))
+
+### Additions
+
+- `api.MediaCapabilities.decodingInfo.configuration_keySystemConfiguration_parameter` ([#23815](https://github.com/mdn/browser-compat-data/pull/23815))
+
+### Statistics
+
+- 5 contributors have changed 34 files with 307 additions and 609 deletions in 44 commits ([`v5.5.43...v5.5.44`](https://github.com/mdn/browser-compat-data/compare/v5.5.43...v5.5.44))
+- 16,470 total features
+- 1,100 total contributors
+- 4,868 total stargazers
+
 ## [v5.5.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.43)
 
 July 30, 2024
