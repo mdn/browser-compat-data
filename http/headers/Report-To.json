@@ -10,7 +10,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "130",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.reporting.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
