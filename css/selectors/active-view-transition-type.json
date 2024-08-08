@@ -1,12 +1,14 @@
 {
   "css": {
-    "properties": {
-      "scrollbar-highlight-color": {
+    "selectors": {
+      "active-view-transition-type": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scrollbar-highlight-color",
+          "description": "<code>:active-view-transition-type()</code>",
+          "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#the-active-view-transition-type-pseudo",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "125",
+              "impl_url": "https://crbug.com/40276317"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -14,15 +16,9 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": [
-              {
-                "version_added": "5"
-              },
-              {
-                "prefix": "-ms-",
-                "version_added": "8"
-              }
-            ],
+            "ie": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -34,9 +30,9 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }

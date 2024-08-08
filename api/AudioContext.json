@@ -111,7 +111,8 @@
             ],
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "14.1",
+                "notes": "New audio contexts are suspended until the <code>resume()</code> method is called via user action, such as the <code>click</code> event."
               },
               {
                 "prefix": "webkit",
@@ -446,7 +447,8 @@
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamtracksource",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40500817"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -470,6 +472,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "error_event": {
+        "__compat": {
+          "description": "<code>error</code> event",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-onerror",
+          "support": {
+            "chrome": {
+              "version_added": "128"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

@@ -82,7 +82,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -267,6 +268,9 @@
       "audioSession": {
         "__compat": {
           "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
+          "tags": [
+            "web-features:audio-session"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -299,7 +303,6 @@
       },
       "authentication": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/authentication",
           "support": {
             "chrome": {
               "version_added": "67",
@@ -442,7 +445,7 @@
                 "version_added": "93"
               },
               {
-                "version_added": "89",
+                "version_added": "81",
                 "version_removed": "93",
                 "partial_implementation": true,
                 "notes": "Only supported on Windows."
@@ -493,7 +496,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": false
               },
@@ -533,13 +538,13 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "96"
+              "edge": {
+                "version_added": "81"
               },
-              "firefox_android": {
+              "firefox": {
                 "version_added": false
               },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -976,7 +981,7 @@
       "geolocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/geolocation",
-          "spec_url": "https://w3c.github.io/geolocation-api/#dom-navigator-geolocation",
+          "spec_url": "https://w3c.github.io/geolocation/#dom-navigator-geolocation",
           "support": {
             "chrome": {
               "version_added": "5"
@@ -1430,7 +1435,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -1538,7 +1544,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1669,7 +1675,7 @@
       "javaEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-javaenabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-javaenabled",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1842,6 +1848,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
           "spec_url": "https://w3c.github.io/web-locks/#dom-navigatorlocks-locks",
+          "tags": [
+            "web-features:web-locks"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -2102,6 +2111,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession",
           "spec_url": "https://w3c.github.io/mediasession/#dom-navigator-mediasession",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -2138,8 +2150,8 @@
       },
       "mimeTypes": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorPlugins/mimeTypes",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-mimetypes",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mimeTypes",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-mimetypes",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2397,6 +2409,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
           "spec_url": "https://w3c.github.io/permissions/#dom-navigator-permissions",
+          "tags": [
+            "web-features:permissions"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -2479,7 +2494,7 @@
       "plugins": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/plugins",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-plugins",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-plugins",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2928,9 +2943,9 @@
             }
           }
         },
-        "scheme_parameter_etherium": {
+        "scheme_parameter_ethereum": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>etherium</code>",
+            "description": "<code>scheme</code> parameter supports <code>ethereum</code>",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -4268,7 +4283,7 @@
                 "version_added": "93"
               },
               {
-                "version_added": "89",
+                "version_added": "81",
                 "version_removed": "93",
                 "partial_implementation": true,
                 "notes": "Only supported on Windows."
@@ -4321,7 +4336,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": false
               },
@@ -4361,7 +4378,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": "71"
               },
@@ -4591,6 +4610,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/userActivation",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-navigator-useractivation",
+          "tags": [
+            "web-features:user-activation"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
@@ -4690,7 +4712,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false,
+              "version_added": "119",
               "impl_url": "https://crbug.com/921655"
             }
           },
@@ -4725,7 +4747,7 @@
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": {
-                "version_added": false
+                "version_added": "119"
               }
             },
             "status": {
@@ -4829,6 +4851,7 @@
             "firefox": [
               {
                 "version_added": "16",
+                "version_removed": "129",
                 "notes": [
                   "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
                   "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>).",

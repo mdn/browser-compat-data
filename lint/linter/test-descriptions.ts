@@ -116,6 +116,15 @@ export const processData = (
     processApiData(data, path, errors);
   }
 
+  if (data.description === `<code>${path.split('.').at(-1)}</code>`) {
+    errors.push({
+      ruleName: 'redundant',
+      path,
+      actual: data.description,
+      expected: '',
+    });
+  }
+
   if (data.description) {
     errors.push(...validateHTML(data.description));
   }
@@ -143,9 +152,12 @@ export default {
       if (typeof error === 'string') {
         logger.error(chalk`Description → ${error}`);
       } else {
-        logger.error(chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
+        logger.error(
+          chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
       Actual: {yellow "${error.actual}"}
-      Expected: {green "${error.expected}"}}`);
+      Expected: {green "${error.expected}"}}`,
+          { fixable: true },
+        );
       }
     }
   },

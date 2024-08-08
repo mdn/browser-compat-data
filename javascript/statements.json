@@ -1268,6 +1268,9 @@
         "worker_support": {
           "__compat": {
             "description": "Available in workers",
+            "tags": [
+              "web-features:js-modules-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -1485,6 +1488,9 @@
           "type_css": {
             "__compat": {
               "description": "<code>with {type: 'css'}</code>",
+              "tags": [
+                "web-features:css-modules"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "123"
@@ -1565,6 +1571,9 @@
         "service_worker_support": {
           "__compat": {
             "description": "Available in service workers",
+            "tags": [
+              "web-features:js-modules-service-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": "91"
@@ -1575,7 +1584,8 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "114"
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1360870"
               },
               "firefox_android": "mirror",
               "ie": {

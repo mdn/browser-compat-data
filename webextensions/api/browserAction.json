@@ -2,12 +2,42 @@
   "webextensions": {
     "api": {
       "browserAction": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction",
+          "support": {
+            "chrome": {
+              "version_added": true,
+              "notes": "Available for use in Manifest V2 only."
+            },
+            "edge": {
+              "version_added": "14",
+              "notes": "Available for use in Manifest V2 only."
+            },
+            "firefox": {
+              "version_added": "45",
+              "notes": "Available for use in Manifest V2 only."
+            },
+            "firefox_android": {
+              "version_added": "55",
+              "notes": "Available for use in Manifest V2 only."
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14",
+              "notes": "Available for use in Manifest V2 only."
+            },
+            "safari_ios": {
+              "version_added": "15",
+              "notes": "Available for use in Manifest V2 only."
+            }
+          }
+        },
         "ColorArray": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/ColorArray",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -33,7 +63,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/ImageDataType",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -59,7 +89,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/disable",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -85,7 +115,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/enable",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -111,7 +141,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/getBadgeBackgroundColor",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -151,7 +181,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -163,7 +193,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/getBadgeText",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -199,7 +229,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -233,11 +263,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/getPopup",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -269,7 +297,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -281,7 +309,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/getTitle",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "15"
@@ -297,9 +325,7 @@
                 "version_added": "14"
               },
               "safari_ios": {
-                "version_added": "15",
-                "partial_implementation": true,
-                "notes": "The API exists, but the title not visible in the UI."
+                "version_added": "15"
               }
             }
           },
@@ -319,7 +345,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -342,9 +368,11 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15"
+              }
             }
           },
           "details_windowId_parameter": {
@@ -363,7 +391,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -375,7 +403,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/onClicked",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -418,7 +446,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤78"
                 },
                 "edge": {
                   "version_added": "14"
@@ -478,7 +506,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/setBadgeBackgroundColor",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -499,13 +527,15 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14",
+                "impl_url": "https://webkit.org/b/267662",
                 "partial_implementation": true,
-                "notes": "The API exists, but has no effect."
+                "notes": "API exists, but has no effect."
               },
               "safari_ios": {
                 "version_added": "15",
+                "impl_url": "https://webkit.org/b/267662",
                 "partial_implementation": true,
-                "notes": "The API exists, but has no effect."
+                "notes": "API exists, but has no effect."
               }
             }
           },
@@ -525,7 +555,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -547,7 +577,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -558,11 +588,9 @@
               "description": "The <code>color</code> property of the <code>details</code> parameter can be set to a string.",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤63"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": true,
                   "notes": "Before Firefox 59, invalid color strings behaved as <code>null</code>."
@@ -584,7 +612,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/setBadgeText",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -627,7 +655,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -649,7 +677,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -683,7 +711,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/setIcon",
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤23",
                 "notes": "Before Chrome 23, <code>path</code> couldn't specify multiple icon files, but had to be a string specifying a single icon path."
               },
               "edge": {
@@ -718,30 +746,9 @@
               }
             }
           },
-          "details_windowId_parameter": {
+          "details_imageData_parameter": {
             "__compat": {
-              "description": "<code>details.windowId</code> parameter",
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "62"
-                },
-                "firefox_android": {
-                  "version_added": "79"
-                },
-                "opera": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror"
-              }
-            }
-          },
-          "imageData": {
-            "__compat": {
+              "description": "<code>details.imageData</code> parameter",
               "support": {
                 "chrome": {
                   "version_added": "23"
@@ -763,6 +770,28 @@
               }
             }
           },
+          "details_windowId_parameter": {
+            "__compat": {
+              "description": "<code>details.windowId</code> parameter",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62"
+                },
+                "firefox_android": {
+                  "version_added": "79"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "18"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "null": {
             "__compat": {
               "description": "The <code>path</code> and <code>imageData</code> properties of the <code>details</code> parameter can be set to <code>null</code>.",
@@ -779,11 +808,9 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "14"
+                  "version_added": "18"
                 },
-                "safari_ios": {
-                  "version_added": "15"
-                }
+                "safari_ios": "mirror"
               }
             }
           }
@@ -793,7 +820,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/setPopup",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -843,7 +870,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -865,11 +892,9 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "14"
+                  "version_added": "18"
                 },
-                "safari_ios": {
-                  "version_added": "15"
-                }
+                "safari_ios": "mirror"
               }
             }
           }
@@ -879,7 +904,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/setTitle",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "15"
@@ -931,7 +956,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -953,11 +978,9 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "14"
+                  "version_added": "18"
                 },
-                "safari_ios": {
-                  "version_added": "15"
-                }
+                "safari_ios": "mirror"
               }
             }
           }
