@@ -4,7 +4,10 @@
       "background-clip": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/background-clip",
-          "spec_url": "https://drafts.csswg.org/css-backgrounds/#background-clip",
+          "spec_url": [
+            "https://drafts.csswg.org/css-backgrounds/#background-clip",
+            "https://drafts.csswg.org/css-backgrounds-4/#background-clip"
+          ],
           "tags": [
             "web-features:background-clip"
           ],
@@ -49,7 +52,7 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9",
-              "notes": "In IE 7 and IE 8 of Internet Explorer, this property always behaved like <code>background-clip: padding</code> when <code>overflow</code> was <code>hidden</code>, <code>auto</code>, or <code>scroll</code>."
+              "notes": "In IE 7 and IE 8 of Internet Explorer, this property always behaved like <code>background-clip: padding-box</code> when <code>overflow</code> was <code>hidden</code>, <code>auto</code>, or <code>scroll</code>."
             },
             "oculus": "mirror",
             "opera": [
@@ -99,6 +102,42 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "border": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-border",
+            "tags": [
+              "web-features:background-clip-border"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "border-box": {
@@ -159,7 +198,7 @@
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "9",
-                "notes": "In IE 7 and IE 9 of Internet Explorer, it always behaved like <code>background-clip: padding</code> if <code>overflow: hidden | auto | scroll</code>"
+                "notes": "In IE 7 and IE 9 of Internet Explorer, it always behaved like <code>background-clip: padding-box</code> if <code>overflow: hidden | auto | scroll</code>"
               },
               "oculus": "mirror",
               "opera": {
@@ -224,6 +263,7 @@
         },
         "text": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#valdef-background-clip-text",
             "tags": [
               "web-features:background-clip-text"
             ],
@@ -260,7 +300,9 @@
                 }
               ],
               "firefox": {
-                "version_added": "49"
+                "version_added": "49",
+                "partial_implementation": true,
+                "notes": "Does not work with <code>background-attachment:fixed</code>, in multi-layer backgrounds with other values, and in some other special cases: see <a href='https://bugzil.la/1656784'>bug 1656784</a>"
               },
               "firefox_android": "mirror",
               "ie": {
