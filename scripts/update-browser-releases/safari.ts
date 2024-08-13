@@ -107,7 +107,10 @@ export const updateSafariReleases = async (options) => {
   //
   const dates: string[] = [];
   releaseData.forEach((release) => {
-    if (release.channel !== 'beta') {
+    if (
+      release.channel !== 'beta' &&
+      !options.skippedReleases.includes(release.version)
+    ) {
       dates.push(release.date);
     }
   });

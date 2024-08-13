@@ -1,22 +1,20 @@
 {
-  "http": {
-    "headers": {
-      "Large-Allocation": {
+  "webdriver": {
+    "commands": {
+      "GetVirtualSensorInformation": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Large-Allocation",
+          "spec_url": "https://w3c.github.io/sensors/#get-virtual-sensor-information-command",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "120",
+              "notes": "To enable Chromium support, include <code>{\"goog:chromeOptions\": {\"w3c\": true}}</code> in the <a href=https://developer.mozilla.org/docs/Web/WebDriver/Capabilities>capabilities</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "53",
-              "version_removed": "100"
-            },
-            "firefox_android": {
               "version_added": false
             },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -32,8 +30,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }
