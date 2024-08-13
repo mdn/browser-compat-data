@@ -47,6 +47,15 @@ export function* iterateFeatures(
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
+                  // Web extensions only allows specific browsers
+                  if (
+                    !(
+                      identifier.startsWith('webextensions.') &&
+                      bcd.browsers[browser].accepts_webextensions
+                    )
+                  ) {
+                    continue;
+                  }
                   yield `${identifier}${i}`;
                 }
                 continue;
@@ -136,7 +145,9 @@ const traverseFeatures = (
  */
 const main = (
   folders = dataFolders.concat('webextensions'),
-  browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
+  browsers: BrowserName[] = Object.keys(bcd.browsers).filter(
+    (b) => bcd.browsers[b].type !== 'server',
+  ) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
   tag = '',
@@ -176,7 +187,9 @@ if (esMain(import.meta)) {
           describe: 'Filter by a browser. May repeat.',
           type: 'array',
           nargs: 1,
-          default: Object.keys(bcd.browsers),
+          default: Object.keys(bcd.browsers).filter(
+            (b) => bcd.browsers[b].type !== 'server',
+          ),
         })
         .option('filter', {
           alias: 'f',
