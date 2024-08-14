@@ -222,6 +222,12 @@ if (esMain(import.meta)) {
           nargs: 1,
           default: 10,
         })
+        .option('show-count', {
+          alias: 'c',
+          describe: 'Show the count of features traversed at the end',
+          type: 'boolean',
+          default: process.stdout.isTTY,
+        })
         .example(
           'npm run traverse -- --browser=safari -n',
           'Find all features containing non-real Safari entries',
@@ -255,7 +261,9 @@ if (esMain(import.meta)) {
     argv.tag,
   );
   console.log(features.join('\n'));
-  console.log(features.length);
+  if (argv.showCount) {
+    console.log(features.length);
+  }
 }
 
 export default main;
