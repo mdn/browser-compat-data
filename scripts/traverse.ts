@@ -261,7 +261,9 @@ if (esMain(import.meta)) {
     argv.tag,
   );
   console.log(features.join('\n'));
-  if (argv.showCount) console.log(features.length);
+  if (argv.showCount) {
+    console.log(features.length);
+  }
 }
 
 export default main;
