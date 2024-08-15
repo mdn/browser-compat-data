@@ -1,5 +1,33 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.46)
+
+August 13, 2024
+
+### Removals
+
+- `css.properties.masonry-auto-flow` ([#24009](https://github.com/mdn/browser-compat-data/pull/24009))
+
+### Additions
+
+- `api.SubtleCrypto.deriveBits.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.deriveKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.exportKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.generateKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.importKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `browsers.edge.releases.130` ([#24063](https://github.com/mdn/browser-compat-data/pull/24063))
+- `browsers.firefox_android.releases.132` ([#24046](https://github.com/mdn/browser-compat-data/pull/24046))
+- `browsers.firefox.releases.132` ([#24046](https://github.com/mdn/browser-compat-data/pull/24046))
+- `http.headers.Reporting-Endpoints` ([#24047](https://github.com/mdn/browser-compat-data/pull/24047))
+- `webextensions.api.webRequest.getSecurityInfo.options` ([#24056](https://github.com/mdn/browser-compat-data/pull/24056))
+
+### Statistics
+
+- 7 contributors have changed 128 files with 1,741 additions and 1,804 deletions in 38 commits ([`v5.5.45...v5.5.46`](https://github.com/mdn/browser-compat-data/compare/v5.5.45...v5.5.46))
+- 16,476 total features
+- 1,100 total contributors
+- 4,876 total stargazers
+
 ## [v5.5.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.45)
 
 August 6, 2024
