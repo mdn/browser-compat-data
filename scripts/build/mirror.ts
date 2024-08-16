@@ -89,6 +89,8 @@ export const getMatchingBrowserVersion = (
     );
   }
 
+  let lastRelease;
+
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
     if (
@@ -105,8 +107,15 @@ export const getMatchingBrowserVersion = (
       sourceRelease.engine_version &&
       compare(release.engine_version, sourceRelease.engine_version, '>=')
     ) {
+      if (range && lastRelease?.engine == sourceRelease.engine) {
+        // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
+        return `≤${r}`;
+      }
+
       return r;
     }
+
+    lastRelease = release;
   }
 
   return false;
