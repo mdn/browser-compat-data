@@ -510,9 +510,9 @@ The mandatory status property contains information about stability of the featur
 
 - `experimental`: a `boolean` value.
 
-  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
 
-  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
 
 - `standard_track`: a `boolean` value.
 

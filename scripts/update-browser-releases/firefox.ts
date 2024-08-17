@@ -133,7 +133,7 @@ export const updateFirefoxReleases = async (options) => {
     >,
   ).forEach(([key, entry]) => {
     if (key === String(esrRelease)) {
-      if (entry.status === 'current') {
+      if (key === String(stableRelease)) {
         // If the current release is also considered the ESR release, "current" status takes priority
         return;
       }

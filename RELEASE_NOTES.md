@@ -1,5 +1,95 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.46](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.46)
+
+August 13, 2024
+
+### Removals
+
+- `css.properties.masonry-auto-flow` ([#24009](https://github.com/mdn/browser-compat-data/pull/24009))
+
+### Additions
+
+- `api.SubtleCrypto.deriveBits.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.deriveKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.exportKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.generateKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `api.SubtleCrypto.importKey.x25519` ([#23925](https://github.com/mdn/browser-compat-data/pull/23925))
+- `browsers.edge.releases.130` ([#24063](https://github.com/mdn/browser-compat-data/pull/24063))
+- `browsers.firefox_android.releases.132` ([#24046](https://github.com/mdn/browser-compat-data/pull/24046))
+- `browsers.firefox.releases.132` ([#24046](https://github.com/mdn/browser-compat-data/pull/24046))
+- `http.headers.Reporting-Endpoints` ([#24047](https://github.com/mdn/browser-compat-data/pull/24047))
+- `webextensions.api.webRequest.getSecurityInfo.options` ([#24056](https://github.com/mdn/browser-compat-data/pull/24056))
+
+### Statistics
+
+- 7 contributors have changed 128 files with 1,741 additions and 1,804 deletions in 38 commits ([`v5.5.45...v5.5.46`](https://github.com/mdn/browser-compat-data/compare/v5.5.45...v5.5.46))
+- 16,476 total features
+- 1,100 total contributors
+- 4,876 total stargazers
+
+## [v5.5.45](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.45)
+
+August 6, 2024
+
+### Statistics
+
+- 2 contributors have changed 9 files with 208 additions and 162 deletions in 12 commits ([`v5.5.44...v5.5.45`](https://github.com/mdn/browser-compat-data/compare/v5.5.44...v5.5.45))
+- 16,470 total features
+- 1,100 total contributors
+- 4,877 total stargazers
+
+## [v5.5.44](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.44)
+
+August 2, 2024
+
+### Removals
+
+- `api.Element.setHTML` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.getConfiguration` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.getDefaultConfiguration_static` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.sanitize` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `api.Sanitizer.Sanitizer` ([#23989](https://github.com/mdn/browser-compat-data/pull/23989))
+- `mathml.elements.mstyle.scriptminsize` ([#23962](https://github.com/mdn/browser-compat-data/pull/23962))
+- `mathml.elements.mstyle.scriptsizemultiplier` ([#23962](https://github.com/mdn/browser-compat-data/pull/23962))
+
+### Additions
+
+- `api.MediaCapabilities.decodingInfo.configuration_keySystemConfiguration_parameter` ([#23815](https://github.com/mdn/browser-compat-data/pull/23815))
+
+### Statistics
+
+- 5 contributors have changed 34 files with 307 additions and 609 deletions in 44 commits ([`v5.5.43...v5.5.44`](https://github.com/mdn/browser-compat-data/compare/v5.5.43...v5.5.44))
+- 16,470 total features
+- 1,100 total contributors
+- 4,868 total stargazers
+
+## [v5.5.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.43)
+
+July 30, 2024
+
+### Removals
+
+- `api.CSSPositionTryDescriptors.inset-area` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.CSSPositionTryDescriptors.insetArea` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.MLActivation` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+- `api.MLGraphBuilder.not` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+- `http.headers.Permissions-Policy.battery` ([#23821](https://github.com/mdn/browser-compat-data/pull/23821))
+
+### Additions
+
+- `api.CSSPositionTryDescriptors.position-area` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.CSSPositionTryDescriptors.positionArea` ([#23981](https://github.com/mdn/browser-compat-data/pull/23981))
+- `api.MLGraphBuilder.logicalNot` ([#23983](https://github.com/mdn/browser-compat-data/pull/23983))
+
+### Statistics
+
+- 6 contributors have changed 99 files with 360 additions and 481 deletions in 18 commits ([`v5.5.42...v5.5.43`](https://github.com/mdn/browser-compat-data/compare/v5.5.42...v5.5.43))
+- 16,477 total features
+- 1,100 total contributors
+- 4,865 total stargazers
+
 ## [v5.5.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.42)
 
 July 26, 2024
