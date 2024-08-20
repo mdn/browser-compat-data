@@ -47,6 +47,15 @@ export function* iterateFeatures(
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
+                  // Web extensions only allows specific browsers
+                  if (
+                    !(
+                      identifier.startsWith('webextensions.') &&
+                      bcd.browsers[browser].accepts_webextensions
+                    )
+                  ) {
+                    continue;
+                  }
                   yield `${identifier}${i}`;
                 }
                 continue;
@@ -136,7 +145,9 @@ const traverseFeatures = (
  */
 const main = (
   folders = dataFolders.concat('webextensions'),
-  browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
+  browsers: BrowserName[] = Object.keys(bcd.browsers).filter(
+    (b) => bcd.browsers[b].type !== 'server',
+  ) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
   tag = '',
@@ -176,7 +187,9 @@ if (esMain(import.meta)) {
           describe: 'Filter by a browser. May repeat.',
           type: 'array',
           nargs: 1,
-          default: Object.keys(bcd.browsers),
+          default: Object.keys(bcd.browsers).filter(
+            (b) => bcd.browsers[b].type !== 'server',
+          ),
         })
         .option('filter', {
           alias: 'f',
@@ -208,6 +221,12 @@ if (esMain(import.meta)) {
           type: 'number',
           nargs: 1,
           default: 10,
+        })
+        .option('show-count', {
+          alias: 'c',
+          describe: 'Show the count of features traversed at the end',
+          type: 'boolean',
+          default: process.stdout.isTTY,
         })
         .example(
           'npm run traverse -- --browser=safari -n',
@@ -242,7 +261,9 @@ if (esMain(import.meta)) {
     argv.tag,
   );
   console.log(features.join('\n'));
-  console.log(features.length);
+  if (argv.showCount) {
+    console.log(features.length);
+  }
 }
 
 export default main;

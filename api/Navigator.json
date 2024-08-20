@@ -700,6 +700,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
           "spec_url": "https://w3c.github.io/contact-picker/#dom-navigator-contacts",
+          "tags": [
+            "web-features:contact-picker"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -1544,7 +1547,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1675,7 +1678,7 @@
       "javaEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-javaenabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-javaenabled",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1716,6 +1719,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/keyboard",
           "spec_url": "https://wicg.github.io/keyboard-lock/#h-navigator-keyboard",
+          "tags": [
+            "web-features:keyboard-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "68"
@@ -2151,7 +2157,7 @@
       "mimeTypes": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mimeTypes",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-mimetypes",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-mimetypes",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2494,7 +2500,7 @@
       "plugins": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/plugins",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-plugins",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-plugins",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2581,6 +2587,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/presentation",
           "spec_url": "https://w3c.github.io/presentation-api/#dom-navigator-presentation",
+          "tags": [
+            "web-features:presentation-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "47"
@@ -4851,6 +4860,7 @@
             "firefox": [
               {
                 "version_added": "16",
+                "version_removed": "129",
                 "notes": [
                   "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
                   "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>).",
