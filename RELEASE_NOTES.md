@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.48](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.48)
+
+August 24, 2024
+
+### Removals
+
+- `css.properties.-webkit-initial-letter` ([#24201](https://github.com/mdn/browser-compat-data/pull/24201))
+- `javascript.builtins.Intl.RelativeTimeFormat.resolvedOptions.numberingSystem` ([#24181](https://github.com/mdn/browser-compat-data/pull/24181))
+- `javascript.builtins.String.toLocaleLowerCase.locale` ([#24181](https://github.com/mdn/browser-compat-data/pull/24181))
+- `javascript.builtins.String.toLocaleUpperCase.locale` ([#24181](https://github.com/mdn/browser-compat-data/pull/24181))
+
+### Additions
+
+- `javascript.builtins.String.toLocaleLowerCase.locales_parameter` ([#24181](https://github.com/mdn/browser-compat-data/pull/24181))
+- `javascript.builtins.String.toLocaleUpperCase.locales_parameter` ([#24181](https://github.com/mdn/browser-compat-data/pull/24181))
+
+### Statistics
+
+- 6 contributors have changed 13 files with 49 additions and 400 deletions in 14 commits ([`v5.5.47...v5.5.48`](https://github.com/mdn/browser-compat-data/compare/v5.5.47...v5.5.48))
+- 16,472 total features
+- 1,103 total contributors
+- 4,879 total stargazers
+
 ## [v5.5.47](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.47)
 
 August 20, 2024
