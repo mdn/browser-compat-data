@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.49](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.49)
+
+August 27, 2024
+
+### Removals
+
+- `css.types.color.transparent` ([#24209](https://github.com/mdn/browser-compat-data/pull/24209))
+
+### Additions
+
+- `api.WebSocket.WebSocket.url_parameter_http_https_relative` ([#24218](https://github.com/mdn/browser-compat-data/pull/24218))
+- `css.properties.interpolate-size` ([#24210](https://github.com/mdn/browser-compat-data/pull/24210))
+- `css.properties.interpolate-size.allow-keywords` ([#24210](https://github.com/mdn/browser-compat-data/pull/24210))
+- `css.properties.interpolate-size.numeric-only` ([#24210](https://github.com/mdn/browser-compat-data/pull/24210))
+- `css.types.calc-size` ([#24210](https://github.com/mdn/browser-compat-data/pull/24210))
+- `css.types.color.named-color.transparent` ([#24209](https://github.com/mdn/browser-compat-data/pull/24209))
+
+### Statistics
+
+- 6 contributors have changed 22 files with 491 additions and 267 deletions in 14 commits ([`v5.5.48...v5.5.49`](https://github.com/mdn/browser-compat-data/compare/v5.5.48...v5.5.49))
+- 16,477 total features
+- 1,103 total contributors
+- 4,882 total stargazers
+
 ## [v5.5.48](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.48)
 
 August 24, 2024
