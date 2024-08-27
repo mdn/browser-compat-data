@@ -152,7 +152,6 @@ export default {
   exceptions: [
     'html.elements.track.kind.descriptions',
     'http.headers.Cache-Control.stale-if-error',
-    'http.headers.Permissions-Policy.battery',
     'http.headers.X-XSS-Protection',
   ],
 } as Linter;
