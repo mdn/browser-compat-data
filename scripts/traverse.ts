@@ -148,7 +148,7 @@ const main = (
   browsers: BrowserName[] = Object.keys(bcd.browsers).filter(
     (b) => bcd.browsers[b].type !== 'server',
   ) as BrowserName[],
-  values = ['null', 'true'],
+  values = [],
   depth = 100,
   tag = '',
 ): string[] => {
@@ -207,13 +207,6 @@ if (esMain(import.meta)) {
           nargs: 1,
           default: '',
         })
-        .option('non-real', {
-          alias: 'n',
-          describe:
-            'Filter to features with non-real values. Alias for "-f true -f null"',
-          type: 'boolean',
-          nargs: 0,
-        })
         .option('depth', {
           alias: 'd',
           describe:
@@ -229,12 +222,8 @@ if (esMain(import.meta)) {
           default: process.stdout.isTTY,
         })
         .example(
-          'npm run traverse -- --browser=safari -n',
-          'Find all features containing non-real Safari entries',
-        )
-        .example(
-          'npm run traverse -- -b webview_android -f true',
-          'Find all features marked as true for WebView',
+          'npm run traverse -- -b webview_android -f ≤37',
+          'Find all features marked as ≤37 for WebView',
         )
         .example(
           'npm run traverse -- -b firefox -f 10',
@@ -251,12 +240,10 @@ if (esMain(import.meta)) {
     },
   );
 
-  const filter = [...argv.filter, ...(argv.nonReal ? ['true', 'null'] : [])];
-
   const features = main(
     argv.folder,
     argv.browser,
-    filter,
+    argv.filter,
     argv.depth,
     argv.tag,
   );
