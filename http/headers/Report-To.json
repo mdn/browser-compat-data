@@ -3,6 +3,7 @@
     "headers": {
       "Report-To": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Report-To",
           "support": {
             "chrome": {
               "version_added": "70"
@@ -10,7 +11,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "130",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.reporting.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -32,8 +40,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       }
