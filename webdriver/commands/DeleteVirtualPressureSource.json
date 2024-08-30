@@ -1,11 +1,13 @@
 {
-  "css": {
-    "properties": {
-      "-webkit-initial-letter": {
+  "webdriver": {
+    "commands": {
+      "DeleteVirtualPressureSource": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/compute-pressure/#delete-virtual-pressure-source",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "129",
+              "notes": "To enable Chromium support, include <code>{\"goog:chromeOptions\": {\"w3c\": true}}</code> in the <a href=https://developer.mozilla.org/docs/Web/WebDriver/Capabilities>capabilities</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -20,15 +22,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
