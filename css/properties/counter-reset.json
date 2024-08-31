@@ -49,7 +49,9 @@
             "spec_url": "https://drafts.csswg.org/css-lists-3/#valdef-counter-increment-list-item",
             "support": {
               "chrome": {
-                "version_added": "≤83"
+                "version_added": "≤83",
+                "partial_implementation": true,
+                "notes": "The <code>list-item</code> counter is <em>not</em> used when generating the default marker string on list items; see <a href='https://issues.chromium.org/issues/338233131'>bug 338233131</a>."
               },
               "chrome_android": "mirror",
               "edge": {
@@ -68,7 +70,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "≤13.1",
+                "partial_implementation": true,
+                "notes": "The <code>list-item</code> counter is <em>not</em> used correctly when generating content, as it is <em>not</em> fully implemented; see <a href='https://bugs.webkit.org/show_bug.cgi?id=260436'>bug 260436</a>."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
