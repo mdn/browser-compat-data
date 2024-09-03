@@ -393,52 +393,6 @@
               }
             }
           },
-          "secure_context_required": {
-            "__compat": {
-              "description": "Secure context required",
-              "support": {
-                "chrome": {
-                  "version_added": "80"
-                },
-                "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "86"
-                },
-                "firefox": {
-                  "version_added": "69",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "network.cookie.sameSite.noneRequiresSecure",
-                      "value_to_set": "true"
-                    }
-                  ]
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": {
-                  "version_added": "71"
-                },
-                "opera_android": {
-                  "version_added": "60"
-                },
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
           "schemeful": {
             "__compat": {
               "description": "URL scheme-aware (\"schemeful\")",
@@ -473,6 +427,45 @@
                 "webview_android": {
                   "version_added": false
                 }
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "secure_required_if_none": {
+            "__compat": {
+              "description": "Secure attribute required if <code>SameSite=None</code>",
+              "support": {
+                "chrome": {
+                  "version_added": "80"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "86"
+                },
+                "firefox": {
+                  "version_added": "131"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "71"
+                },
+                "opera_android": {
+                  "version_added": "60"
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
               },
               "status": {
                 "experimental": false,
