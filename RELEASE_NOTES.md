@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.50](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.50)
+
+September 3, 2024
+
+### Additions
+
+- `api.Notification.requestPermission_static.returns_promise` ([#23911](https://github.com/mdn/browser-compat-data/pull/23911))
+- `browsers.firefox_android.releases.133` ([#24282](https://github.com/mdn/browser-compat-data/pull/24282))
+- `browsers.firefox.releases.133` ([#24282](https://github.com/mdn/browser-compat-data/pull/24282))
+- `webdriver.commands.CreateVirtualPressureSource` ([#24211](https://github.com/mdn/browser-compat-data/pull/24211))
+- `webdriver.commands.DeleteVirtualPressureSource` ([#24211](https://github.com/mdn/browser-compat-data/pull/24211))
+- `webdriver.commands.UpdateVirtualPressureSource` ([#24211](https://github.com/mdn/browser-compat-data/pull/24211))
+
+### Statistics
+
+- 7 contributors have changed 41 files with 387 additions and 134 deletions in 29 commits ([`v5.5.49...v5.5.50`](https://github.com/mdn/browser-compat-data/compare/v5.5.49...v5.5.50))
+- 16,481 total features
+- 1,103 total contributors
+- 4,889 total stargazers
+
 ## [v5.5.49](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.49)
 
 August 27, 2024
