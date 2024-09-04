@@ -78,6 +78,13 @@ export function* iterateFeatures(
                   if (values.length == 0 || values.includes('null')) {
                     yield `${identifier}${i}`;
                   }
+                } else if (values.includes('≤') || values.includes('ranged')) {
+                  if (
+                    String(browserData[range].version_added).startsWith('≤') ||
+                    String(browserData[range].version_removed).startsWith('≤')
+                  ) {
+                    yield `${identifier}${i}`;
+                  }
                 } else if (
                   values.length == 0 ||
                   values.includes(String(browserData[range].version_added)) ||
@@ -194,7 +201,7 @@ if (esMain(import.meta)) {
         .option('filter', {
           alias: 'f',
           describe:
-            'Filter by version value. May repeat. Set to "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
+            'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
           type: 'array',
           string: true,
           nargs: 1,
