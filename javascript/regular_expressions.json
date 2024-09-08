@@ -7,7 +7,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Backreference",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-DecimalEscape",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -57,7 +58,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Capturing_group",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Atom",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -107,7 +109,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Character_class",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-CharacterClass",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -157,7 +160,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Character_class_escape",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-CharacterClassEscape",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -207,7 +211,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Character_escape",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-CharacterEscape",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -253,6 +258,9 @@
         "unicode": {
           "__compat": {
             "description": "Unicode character escape: <code>\\u{...}</code>",
+            "tags": [
+              "web-features:regexp"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -298,7 +306,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Disjunction",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Disjunction",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -348,7 +357,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Input_boundary_assertion",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Assertion",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -398,7 +408,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Literal_character",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-PatternCharacter",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -448,7 +459,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Lookahead_assertion",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Assertion",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -497,6 +509,9 @@
           "description": "Lookbehind assertion: <code>(?&lt;=...)</code>, <code>(?&lt;!...)</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Lookbehind_assertion",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Assertion",
+          "tags": [
+            "web-features:regexp"
+          ],
           "support": {
             "chrome": {
               "version_added": "62"
@@ -533,11 +548,66 @@
           }
         }
       },
+      "modifier": {
+        "__compat": {
+          "description": "Modifier: <code>(?ims-ims:...)</code>",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Modifier",
+          "spec_url": "https://github.com/tc39/proposal-regexp-modifiers#syntax",
+          "tags": [
+            "web-features:regexp"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "125"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.regexp_modifiers",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1899813"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "named_backreference": {
         "__compat": {
           "description": "Named backreference: <code>\\k&lt;name&gt;</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Named_backreference",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-AtomEscape",
+          "tags": [
+            "web-features:regexp"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -579,6 +649,9 @@
           "description": "Named capture group: <code>(?&lt;name&gt;...)</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Named_capturing_group",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Atom",
+          "tags": [
+            "web-features:regexp"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -617,10 +690,12 @@
         "duplicate_named_capturing_groups": {
           "__compat": {
             "description": "Duplicate names in different disjunction alternatives are allowed",
+            "tags": [
+              "web-features:regexp"
+            ],
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/v8/13173"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -628,8 +703,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1773135"
+                "version_added": "129"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -642,14 +716,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -662,7 +736,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Non-capturing_group",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Atom",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -712,7 +787,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Quantifier",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Quantifier",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -761,6 +837,9 @@
           "description": "Unicode character class escape: <code>\\p{...}</code>, <code>\\P{...}</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Unicode_character_class_escape",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-CharacterClassEscape",
+          "tags": [
+            "web-features:regexp"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -803,7 +882,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Wildcard",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Atom",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {
@@ -853,7 +933,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Regular_expressions/Word_boundary_assertion",
           "spec_url": "https://tc39.es/ecma262/multipage/text-processing.html#prod-Assertion",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:regexp"
           ],
           "support": {
             "chrome": {

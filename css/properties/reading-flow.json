@@ -1,11 +1,20 @@
 {
   "css": {
     "properties": {
-      "-webkit-initial-letter": {
+      "reading-flow": {
         "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-display-4/#reading-flow",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "128",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.reading-flow.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://crbug.com/40932006"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -20,7 +29,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -28,7 +37,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
