@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
         "spec_url": "https://webaudio.github.io/web-audio-api/#AudioContext",
+        "tags": [
+          "web-features:web-audio"
+        ],
         "support": {
           "chrome": [
             {
@@ -54,6 +57,9 @@
           "description": "<code>AudioContext()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-audiocontext",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": [
               {
@@ -111,7 +117,8 @@
             ],
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "14.1",
+                "notes": "New audio contexts are suspended until the <code>resume()</code> method is called via user action, such as the <code>click</code> event."
               },
               {
                 "prefix": "webkit",
@@ -261,6 +268,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-baselatency",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "58"
@@ -295,6 +305,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-close",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "42"
@@ -331,6 +344,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediaelementsource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "15"
@@ -370,6 +386,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamdestination",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -406,6 +425,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamsource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
@@ -444,9 +466,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamtracksource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40500817"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -475,10 +501,47 @@
           }
         }
       },
+      "error_event": {
+        "__compat": {
+          "description": "<code>error</code> event",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-onerror",
+          "support": {
+            "chrome": {
+              "version_added": "128"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "getOutputTimestamp": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-getoutputtimestamp",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "57"
@@ -513,6 +576,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-outputlatency",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "102"
@@ -547,6 +613,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/resume",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-resume",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -686,6 +755,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-suspend",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"

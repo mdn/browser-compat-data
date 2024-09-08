@@ -1083,7 +1083,9 @@
           "spec_url": "https://w3c.github.io/uievents/#dom-keyboardevent-repeat",
           "support": {
             "chrome": {
-              "version_added": "32"
+              "version_added": "32",
+              "partial_implementation": true,
+              "notes": "On Windows and Linux, if multiple keys are held down, a <code>keydown</code> event for the most recently pressed key will trigger with <code>repeat</code> incorrectly set to <code>false</code>. See <a href='https://crbug.com/40940886'>bug 40940886</a>."
             },
             "chrome_android": "mirror",
             "edge": {
