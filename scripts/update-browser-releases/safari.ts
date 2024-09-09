@@ -9,20 +9,29 @@ import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
+interface Release {
+  version: string;
+  engineVersion: string;
+  channel: 'current' | 'beta' | 'retired';
+  date: string;
+  releaseNote: string;
+}
+
 /**
  * extractReleaseData - Extract release info from string given by Apple
- * @param {string} str The string with release information
+ * @param str The string with release information
  *            E.g., Released September 18, 2023 — Version 17 (19616.1.27)
- * @returns {object} Data for the release
+ * @returns Data for the release
  */
-const extractReleaseData = (str) => {
+const extractReleaseData = (str): Release | null => {
   // Note: \s is needed as some spaces in Apple source are non-breaking
-  const result = /Released\s(.*)\s.*\sVersion\s(.*?)\s(beta\s)?\((.*)\)/.exec(
-    str,
-  );
+  const result =
+    /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(\s*beta)?\s*\((.*)\)/.exec(
+      str,
+    );
   if (!result) {
     console.warn(
-      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.`,
+      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.}`,
     );
     return null;
   }
@@ -37,8 +46,8 @@ const extractReleaseData = (str) => {
 
 /**
  * updateSafariFile - Update the json file listing the browser version of a safari entry
- * @param {object} options The list of options for this type of Safari.
- * @returns {string} The log of what has been generated (empty if nothing)
+ * @param options The list of options for this type of Safari.
+ * @returns The log of what has been generated (empty if nothing)
  */
 export const updateSafariReleases = async (options) => {
   let result = '';
@@ -64,7 +73,7 @@ export const updateSafariReleases = async (options) => {
   //
   // Collect release data from JSON
   //
-  const releaseData = [];
+  const releaseData: Release[] = [];
   for (const id in releases) {
     // Filter out data from "Technologies" overview page
     if (releases[id].kind !== 'article') {
@@ -96,9 +105,12 @@ export const updateSafariReleases = async (options) => {
   //
   // Find current release
   //
-  const dates = [];
+  const dates: string[] = [];
   releaseData.forEach((release) => {
-    if (release.channel !== 'beta') {
+    if (
+      release.channel !== 'beta' &&
+      !options.skippedReleases.includes(release.version)
+    ) {
       dates.push(release.date);
     }
   });

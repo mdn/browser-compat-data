@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext",
         "spec_url": "https://webaudio.github.io/web-audio-api/#OfflineAudioContext",
+        "tags": [
+          "web-features:offline-audio-context"
+        ],
         "support": {
           "chrome": [
             {
@@ -54,6 +57,9 @@
           "description": "<code>OfflineAudioContext()</code> constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/OfflineAudioContext",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-offlineaudiocontext",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": [
               {
@@ -99,9 +105,9 @@
             "deprecated": false
           }
         },
-        "parameters_accepted_in_an_object": {
+        "options_parameter": {
           "__compat": {
-            "description": "Parameters accepted as a single object, as well as being passed in individually",
+            "description": "<code>options</code> parameter (accepts all parameters as a single dictionary)",
             "support": {
               "chrome": {
                 "version_added": "62"
@@ -143,6 +149,9 @@
             "https://webaudio.github.io/web-audio-api/#OfflineAudioCompletionEvent",
             "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-oncomplete"
           ],
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -179,6 +188,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-length",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "51"
@@ -215,6 +227,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-resume",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -224,7 +239,9 @@
               "version_added": "14"
             },
             "firefox": {
-              "version_added": "40"
+              "version_added": "40",
+              "partial_implementation": true,
+              "notes": "The method exists but always rejects with <code>NotSupportedError</code>. See <a href='https://bugzil.la/1265406'>bug 1265406</a>."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -251,6 +268,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-startrendering",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -322,6 +342,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-suspend",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"

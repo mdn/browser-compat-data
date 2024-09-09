@@ -22,11 +22,11 @@ The BCD project welcomes contributors of all kinds, however there are a few requ
 
 ### Guidelines
 
-The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](/CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
+The project requires that all contributors follow [Mozilla's code of conduct and etiquette guidelines](../CODE_OF_CONDUCT.md). Violations of these guidelines may result in exclusion from all MDN Web Docs projects.
 
-This project has [a formal governance document](/GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
+This project has [a formal governance document](../GOVERNANCE.md), which describes how various types of contributors work within the project and how decisions are made.
 
-The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](/LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
+The repository is licensed under the [Creative Commons CC0 Public Domain Dedication](../LICENSE) license. Any contributions must be compatible with its terms. If you are contributing for a company or other organization, please ask your employer.
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 - [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes): A list of release notes for different versions of Safari.
 - [WebKit Bugzilla](https://bugs.webkit.org/): The bug tracker for Safari/WebKit.
 - [WebKit Repo](https://github.com/WebKit/WebKit): The source code repository for WebKit, the engine for Safari. Useful to find specific behavior changes that are hard to test in the browser.
-- [Backported Releases List](issue-triage-checklist.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
+- [Backported Releases List](./data-guidelines/index.md#backported-releases): A list of Safari releases that were backports of newer versions and should be ignored.
 
 #### Edge
 
@@ -99,7 +99,7 @@ There are many ways you can help improve this repository! For example:
 
 - **Fix a bug:** we have a list of [issues](https://github.com/mdn/browser-compat-data/issues), or maybe you found your own. We recommend checking out issues labeled as ["good first issue"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue+%3A100%3A%22) or ["help wanted"](https://github.com/mdn/browser-compat-data/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted+%3Asos%3A%22) first.
 - **Fix existing compat data**: maybe a browser now supports a certain feature. Yay! If you open a PR to fix a browser's data, it would be most helpful if you include a link to a bug report or similar so that we can double-check the good news.
-- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](data-guidelines/index.md) to add new features.
+- **Add new compat data**: familiarize yourself with the [compat data schema](../schemas/compat-data-schema.md) and [data guidelines](./data-guidelines/index.md) to add new features.
 - **Review a pull request:** there is a list of [PRs](https://github.com/mdn/browser-compat-data/pulls). Let us know if these look good to you.
 
 ### Updating the compat data
@@ -112,7 +112,7 @@ When adding data for a particular feature, you'll often need to find which versi
 
 ## Opening pull requests
 
-Before submitting your pull request, [validate your new data against the schema](testing.md).
+Before submitting your pull request, [validate your new data against the schema](./testing.md).
 
 Not everything is enforced or validated by the schema. A few things to pay attention to:
 
@@ -132,4 +132,4 @@ Note: originally, this functionality used to be provided as an executable script
 
 ## Getting help
 
-If you need help with this repository or have any questions, first check the [FAQ](faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
+If you need help with this repository or have any questions, first check the [FAQ](./faq.md) to see if your question has been answered. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).

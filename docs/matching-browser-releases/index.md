@@ -31,7 +31,7 @@ Given a particular Chrome changeset or revision number, you can look up the vers
 
 For example, given the string `05b49ea1`, the tool first looks for a match among the full commit changeset numbers, finds none, then looks at the prefixed short commits:
 
-![Screenshot of the Chromium project's Find Releases tool](find-releases-tool.png)
+![Screenshot of the Chromium project's Find Releases tool](./find-releases-tool.png)
 
 Here, we see that changeset `05b49ea1` was first landed for Chrome 56, but was then backported to Chrome 55 and was presumably shipped there. This assumes the feature was not backed out at some point, and it's important to check on this.
 
@@ -57,15 +57,15 @@ If a feature is added to WebView prior to the Chrome 37 time period, and its ver
 
 ##### Features excluded from WebView
 
-One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt) which are not available in a WebView.
+One useful resource is [this file which lists the interfaces and/or interface members](https://source.chromium.org/chromium/chromium/src/+/main:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt;l=53) which are not available in a WebView.
 
-```js
+```webidl
 interface HTMLIFrameElement : HTMLElement
     getter allowPaymentRequest
     setter allowPaymentRequest
 ```
 
-This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
+This indicates that for the `HTMLIFrameElement` interface (representing the members of an `iframe` element), the `allowPaymentRequest` property's value can be neither read not set, essentially meaning the property is not available. This property is part of the [Payment Request API](https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API), which is not yet supported in WebViews.
 
 If only an interface line is included in the exclusion list, then the entire interface is unavailable in WebViews.
 
@@ -136,7 +136,7 @@ The specific appearance of the display will vary depending on what tool you're u
 Here, the mouse is pointing at a row with the revision number `199991` beside it. This has opened up a tooltip with details about that revision: It was created for bug 1032835, entitled "addTrack/removeTrack on-top of existing implementation". The tooltip includes several links which can be helpful:
 
 - <40 digit hexadecimal changeset number>
-  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from_a_mercurial_changeset_number) will show you how to track down the version information.
+  - : The changeset number is the first thing shown in the tooltip. This link will take you to a page describing this file as it pertains to the changeset, with the changes highlighted. On the single-file view within a changeset, clicking the `changeset` link at the top of the page will take you to the changeset's overview. From there, the information under [From a Mercurial changeset number](#from-a-mercurial-changeset-number) will show you how to track down the version information.
 - Bugzilla bug link
   - : A link back to the bug on Bugzilla that corresponds to this change. You may find useful information in the bug, including potentially the version number the change shipped in, but odds are good that's where you started.
 - Parent changeset revision number
@@ -144,7 +144,7 @@ Here, the mouse is pointing at a row with the revision number `199991` beside it
 - `diff`
   - : A link that will produce a diff showing the differences between the parent changeset and the changeset that introduced the change you're looking at.
 - `changeset`
-  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details.
+  - : A link to the overview page for the entire changeset that includes the changes made to this line of code. This page should give you the information you require; see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details.
 
 > **Note:** If you aren't able to find the change because it apparently happens before Firefox was migrated to Mercurial from CVS, try using Mercurial blame on the [Unified Firefox repository](https://hg.mozilla.org/mozilla-unified/), which has tags in place, each representing the code state at specific points in the history of the project, including each beta and each release build.
 
@@ -154,17 +154,17 @@ If you have the bug number corresponding to the bug that implemented the feature
 
 Consider [bug 1435161](https://bugzil.la/1435161). This bug covers implementing the `PaymentResponse.retry()` method. If you look at that bug, you'll see the information you need right there at the top:
 
-![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](bugzilla-fixedin-top.png)
+![Screenshot showing "RESOLVED FIXED in Firefox 64" at the top of the Bugzilla screen](./bugzilla-fixedin-top.png)
 
 Right below the bug summary, you see the text "RESOLVED FIXED in Firefox 64". This corresponds to the presence of the tracking flag named `firefox45` having the value `fixed`. On older bugs, before the release-numbered tracking flags were added, you might instead find one of these:
 
 - A tracking flag named `relnote-firefox` with the status set to the version of Firefox the feature arrived in. This tracking flag is intended to indicate when a feature needs to be mentioned in the release notes for the browser, but serves just as well to tell us when a feature was added.
 
-  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](bugzilla-relnote-firefox.png)
+  ![Screenshot showing the relnote-firefox tracking flag used to indicate a version number](./bugzilla-relnote-firefox.png)
 
 - The Target field in the Tracking group in Bugzilla is set to `mozillaN`, where `N` is the version number of Firefox. The trick to watch for is that this is sometimes inaccurate, as it represents when it was hoped to ship, not necessarily when it was actually released. Be sure to review the comments on the bug to ensure that it didn't miss its planned release.
 
-  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](bugzilla-target.png)
+  ![Screenshot showing the Bugzilla Target field indicating a release target of "mozilla15" or Firefox 15](./bugzilla-target.png)
 
 ### From the name of a Web API interface or member
 
@@ -174,11 +174,11 @@ If you're updating compatibility data for a given API interface, or for a proper
 
 A good place to start: do a Bugzilla search for a bug that mentions what you're looking for:
 
-- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting_the_firefox_release_for_a_bug_number) and determine when this interface was added to Firefox.
+- If you're looking for the addition of an entire interface, try searching for the name of that interface or, failing that, the name of the API that includes the interface within the summary of the bug and whose status is `RESOLVED`. For example, if looking for information about when `CustomEvent` might have arrived, [this would be the search](https://bugzilla.mozilla.org/buglist.cgi?list_id=14565782&short_desc_type=allwordssubstr&short_desc=CustomEvent&classification=Client%20Software&classification=Components&query_format=advanced&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED). This returns a few results, the second of which is the one we're looking for: [bug 427537](https://bugzil.la/427537), "Implement CustomEvent DOM3 specification". Armed with that bug number, we can go back to the [previous section](#getting-the-firefox-release-for-a-bug-number) and determine when this interface was added to Firefox.
 - If you're looking for a property or method on an interface having been added, try searching for the interface name and the method or property name both, similar to the previous suggestion. You may find that the method was added along with the entire interface or API, so be sure to watch for the addition of the broader area too.
 - If all else fails, just search for the API name, ideally limiting the search to bugs that are also resolved, as in the first suggestion above.
 
-If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting_the_firefox_release_for_a_bug_number) to review how to isolate that compatibility data from the bug's contents.
+If you find a bug that corresponds to the feature you need compatibility information for, you can then go to [Getting the Firefox release for a bug number](#getting-the-firefox-release-for-a-bug-number) to review how to isolate that compatibility data from the bug's contents.
 
 #### Finding the version from the source tree
 
@@ -193,26 +193,26 @@ A web API feature change corresponds to adding, removing, or altering the signat
 - A constant defined by an API's specification
 - A data type (enum, typedef, or similar)
 
-The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
+The easiest way to identify the compatibility of a feature is to look for when the feature was added to or altered to match the compatibility point you're looking for within the [WebIDL](https://developer.mozilla.org/en-US/docs/Glossary/WebIDL) file that describes the corresponding interface. There are a few ways you can locate this file, depending on how the API is implemented and how old it is. From most to least likely to work, here they are:
 
 1. For a given interface named `InterfaceName`, go to [DXR](https://searchfox.org/mozilla-central/source/) and type <kbd>file:<em>InterfaceName</em>.webidl</kbd> in the search box at the top of the page and pressing <kbd>Enter</kbd>. You will probably have to then click on the name of the file in a list of files (usually only a one-file-long list).
-2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
+2. If the interface isn't found, then search for it by looking for the main interface in the API. For example, a large number of the interfaces, types, and so on for [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) are located in the file `RTCPeerConnection.webidl` in the Firefox source code, so if you don't find a WebRTC interface by its name, look in that file instead.
 
 Once in the WebIDL file, click the "Blame" link under "VCS Links" in the Navigation box near the top-right corner of the DXR page.
 
-![Screenshot of the DXR Navigation box](dxr-navigation-box.png)
+![Screenshot of the DXR Navigation box](./dxr-navigation-box.png)
 
 Once in the blame view, hover the mouse cursor over the revision number at the left side of the WebIDL on the same line as (or the first revision number found immediately above) the line of WebIDL corresponding to the feature you're interested in. For example, if you're looking for when the `RTCPeerConnection` method `addTrack()` was added to Firefox:
 
 ![](hg-tooltip-revision.png)
 
-This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from_a_mercurial_changeset_number) for details on how to get the version information you need from there.
+This shows you information about the changeset; if the information shown is what you're looking for, click the `changeset` link in the tooltip popup, then see [From a Mercurial changeset number](#from-a-mercurial-changeset-number) for details on how to get the version information you need from there.
 
 If you can't find the changeset you need just by browsing the blame page, the next thing to try is to look through the revision history. Click on the `revisions` link at the top of the Mercurial blame page, or the "Log" link in the Navigation box on the DXR page. This will present a list of every changeset that altered the file you're looking at. Look for a revision that matches the feature change you're interested in; if you find a promising revision, click the `diff` link next to that revision.
 
 ![](hg-revisions-ontrack.png)
 
-This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from_a_mercurial_changeset_number).
+This takes you to the changeset details page. From here, you can collect the information you need as covered in [From a Mercurial changeset number](#from-a-mercurial-changeset-number).
 
 ##### For HTML elements
 
@@ -259,7 +259,7 @@ Once you've found a representative line of code, the goal is to identify the Fir
 
 ##### For CSS features
 
-CSS changes can be a little bit tricker to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
+CSS changes can be a little bit trickier to nail down. The Firefox repositories don't track history of any files that record the availability of given properties, for example.
 
 To determine when support for a given **value** for a property was added, try opening the file [`nsCSSProps.cpp`](https://searchfox.org/mozilla-central/source/layout/style/nsCSSProps.cpp) and looking through the tables of property values found there. These tables are all of type `KTableEntry`; each entry in the tables maps a CSS keyword to a value used to represent it internally. For instance, to determine when Firefox added support for the CSS Scroll Snap type value `proximity`, look through `nsCSSProps.cpp` until you find in the table `nsCSSProps::kScrollSnapTypeKTable`:
 
@@ -272,7 +272,7 @@ const KTableEntry nsCSSProps::kScrollSnapTypeKTable[] = {
 };
 ```
 
-And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using_mercurial_blame).
+And there it is. From here, it's back to the same blame and/or revision list technique covered under [Using Mercurial blame](#using-mercurial-blame).
 
 ### From a Mercurial changeset number
 

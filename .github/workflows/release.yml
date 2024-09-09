@@ -26,6 +26,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+        env:
+          FORCE_COLOR: 3
       - run: npm run build
       - run: npm publish build/ --access public
         env:

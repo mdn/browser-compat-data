@@ -6,6 +6,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat",
             "spec_url": "https://tc39.es/ecma402/#datetimeformat-objects",
+            "tags": [
+              "web-features:intl"
+            ],
             "support": {
               "chrome": {
                 "version_added": "24"
@@ -51,6 +54,9 @@
               "description": "<code>DateTimeFormat()</code> constructor",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat",
               "spec_url": "https://tc39.es/ecma402/#sec-intl-datetimeformat-constructor",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -100,6 +106,8 @@
             "IntlLegacyConstructedSymbol": {
               "__compat": {
                 "description": "Supports normative optional <code>ChainDateTimeFormat</code> behavior",
+                "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#return_value",
+                "spec_url": "https://tc39.es/ecma402/#sec-chaindatetimeformat",
                 "support": {
                   "chrome": [
                     {
@@ -112,6 +120,9 @@
                     }
                   ],
                   "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.8"
+                  },
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "54"
@@ -152,6 +163,9 @@
             "locales_parameter": {
               "__compat": {
                 "description": "<code>locales</code> parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -202,6 +216,9 @@
             "options_parameter": {
               "__compat": {
                 "description": "<code>options</code> parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -244,11 +261,17 @@
               "options_calendar_parameter": {
                 "__compat": {
                   "description": "<code>options.calendar</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "80"
                     },
                     "chrome_android": "mirror",
+                    "deno": {
+                      "version_added": "1.8"
+                    },
                     "edge": "mirror",
                     "firefox": {
                       "version_added": "76"
@@ -280,6 +303,9 @@
               "options_dateStyle_parameter": {
                 "__compat": {
                   "description": "<code>options.dateStyle</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "76"
@@ -319,6 +345,9 @@
               "options_dayPeriod_parameter": {
                 "__compat": {
                   "description": "<code>options.dayPeriod</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "92"
@@ -360,6 +389,9 @@
               "options_fractionalSecondDigits_parameter": {
                 "__compat": {
                   "description": "<code>options.fractionalSecondDigits</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "84"
@@ -399,6 +431,9 @@
               "options_hourCycle_parameter": {
                 "__compat": {
                   "description": "<code>options.hourCycle</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "73"
@@ -440,11 +475,17 @@
               "options_numberingSystem_parameter": {
                 "__compat": {
                   "description": "<code>options.numberingSystem</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "80"
                     },
                     "chrome_android": "mirror",
+                    "deno": {
+                      "version_added": "1.8"
+                    },
                     "edge": "mirror",
                     "firefox": {
                       "version_added": "76"
@@ -476,6 +517,9 @@
               "options_timeStyle_parameter": {
                 "__compat": {
                   "description": "<code>options.timeStyle</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "76"
@@ -515,6 +559,9 @@
               "options_timeZone_parameter": {
                 "__compat": {
                   "description": "<code>options.timeZone</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "24"
@@ -554,9 +601,12 @@
                     "deprecated": false
                   }
                 },
-                "options_timeZone_parameter_iana": {
+                "iana_time_zones": {
                   "__compat": {
                     "description": "IANA time zone names in <code>options.timeZone</code> option",
+                    "tags": [
+                      "web-features:intl"
+                    ],
                     "support": {
                       "chrome": {
                         "version_added": "24"
@@ -603,6 +653,9 @@
               "options_timeZoneName_parameter": {
                 "__compat": {
                   "description": "<code>options.timeZoneName</code> parameter",
+                  "tags": [
+                    "web-features:intl"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "24"
@@ -642,12 +695,15 @@
                     "deprecated": false
                   }
                 },
-                "options_timeZoneName_parameter_iana": {
+                "extended_values": {
                   "__compat": {
-                    "description": "IANA time zone names in <code>options.timeZoneName</code> option",
+                    "description": "<code>shortGeneric</code>/<code>longGeneric</code>/<code>shortOffset</code>/<code>longOffset</code> as <code>options.timeZoneName</code> option",
+                    "tags": [
+                      "web-features:intl"
+                    ],
                     "support": {
                       "chrome": {
-                        "version_added": false
+                        "version_added": "95"
                       },
                       "chrome_android": "mirror",
                       "deno": {
@@ -662,7 +718,7 @@
                         "version_added": false
                       },
                       "nodejs": {
-                        "version_added": false
+                        "version_added": "17.0.0"
                       },
                       "oculus": "mirror",
                       "opera": "mirror",
@@ -688,6 +744,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/format",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.datetimeformat.prototype.format",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -733,6 +792,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatRange",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.datetimeformat.prototype.formatRange",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "76"
@@ -774,6 +836,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatRangeToParts",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.DateTimeFormat.prototype.formatRangeToParts",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "76"
@@ -815,10 +880,13 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.DateTimeFormat.prototype.formatToParts",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "57",
-                  "notes": "Before version 71, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 71 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>."
+                  "notes": "Before version 71, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 71 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>bug 865351</a>."
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -839,18 +907,18 @@
                 "nodejs": {
                   "version_added": "8.0.0",
                   "notes": [
-                    "Before version 12.0.0, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 12.0.0 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>.",
+                    "Before version 12.0.0, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 12.0.0 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>bug 865351</a>.",
                     "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat'>the <code>DateTimeFormat()</code> constructor</a> for more details."
                   ]
                 },
                 "oculus": "mirror",
                 "opera": {
                   "version_added": "44",
-                  "notes": "Before version 58, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 58 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>."
+                  "notes": "Before version 58, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 58 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>bug 865351</a>."
                 },
                 "opera_android": {
                   "version_added": "43",
-                  "notes": "Before version 50, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 50 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>."
+                  "notes": "Before version 50, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 50 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>bug 865351</a>."
                 },
                 "safari": {
                   "version_added": "11"
@@ -858,7 +926,7 @@
                 "safari_ios": "mirror",
                 "samsunginternet_android": {
                   "version_added": "7.0",
-                  "notes": "Before version 71, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 71 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>Chromium bug 865351</a>."
+                  "notes": "Before version 71, <code>formatToParts()</code> returned an object with an incorrectly cased type key of <code>dayperiod</code>. Version 71 and later use the specification defined <code>dayPeriod</code>. See <a href='https://crbug.com/865351'>bug 865351</a>."
                 },
                 "webview_android": "mirror"
               },
@@ -873,6 +941,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/resolvedOptions",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.datetimeformat.prototype.resolvedoptions",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -916,6 +987,9 @@
             "computed_timezone": {
               "__compat": {
                 "description": "computed <code>timeZone</code>",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "35"
@@ -963,6 +1037,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/supportedLocalesOf",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.datetimeformat.supportedlocalesof",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"

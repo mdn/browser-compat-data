@@ -56,7 +56,7 @@ There are a few guidelines for naming `web-features` groups:
   - 👍 Recommended: `web-features:grid`
   - 👎 Not recommended: `web-features:display-grid` (as in `display: grid`)
 
-- Prefer shorter identifiers to longer identifiers, as long as they're unique and unamibguous.
+- Prefer shorter identifiers to longer identifiers, as long as they're unique and unambiguous.
 
   - 👍 Recommended: `web-features:has`
   - 👎 Not recommended: `web-features:has-pseudo-class`
@@ -71,7 +71,7 @@ In order to comply with these guidelines, BCD provides some tooling to help you 
 
 To see all features tagged with `"web-features:idle-detection"`, you can use BCD's `traverse` script like this:
 
-```js
+```bash
 npm run traverse -- -t web-features:idle-detection
 ```
 

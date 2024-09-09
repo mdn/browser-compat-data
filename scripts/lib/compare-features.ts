@@ -9,9 +9,9 @@
  * 4. 'worker_support'
  * 5. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
  * 6. All other features
- * @param {string} a - The name of the first object to perform comparison with
- * @param {string} b - The name of the second object to perform comparison with
- * @returns {number} Result of localeCompare
+ * @param a - The name of the first object to perform comparison with
+ * @param b - The name of the second object to perform comparison with
+ * @returns Result of localeCompare
  */
 const compareFeatures = (a: string, b: string): number => {
   if (a == '__compat') {

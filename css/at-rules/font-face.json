@@ -7,7 +7,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face",
           "spec_url": "https://drafts.csswg.org/css-fonts/#font-face-rule",
           "tags": [
-            "web-features:fonts"
+            "web-features:font-face"
           ],
           "support": {
             "chrome": {
@@ -115,6 +115,9 @@
         "OpenType_COLRv1": {
           "__compat": {
             "description": "OpenType COLRv1 rendering",
+            "tags": [
+              "web-features:colrv1"
+            ],
             "support": {
               "chrome": {
                 "version_added": "98"
@@ -122,14 +125,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "105",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "gfx.font_rendering.colr_v1.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "107"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -260,10 +256,10 @@
         "WOFF": {
           "__compat": {
             "description": "WOFF",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Guide/WOFF",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_fonts/WOFF",
             "spec_url": "https://www.w3.org/TR/WOFF/#OverallStructure",
             "tags": [
-              "web-features:fonts"
+              "web-features:font-face"
             ],
             "support": {
               "chrome": {
@@ -304,10 +300,10 @@
         "WOFF_2": {
           "__compat": {
             "description": "WOFF 2",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Guide/WOFF",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/CSS_fonts/WOFF",
             "spec_url": "https://w3c.github.io/woff/woff2/#FileStructure",
             "tags": [
-              "web-features:fonts"
+              "web-features:font-face"
             ],
             "support": {
               "chrome": {
@@ -416,6 +412,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-display-desc",
+            "tags": [
+              "web-features:font-display"
+            ],
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -453,7 +452,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-family",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-family-desc",
             "tags": [
-              "web-features:fonts"
+              "web-features:font-face"
             ],
             "support": {
               "chrome": {
@@ -497,16 +496,20 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-feature-settings",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-rend-desc",
+            "tags": [
+              "web-features:font-feature-settings"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40398871"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "34",
-                  "notes": "The <a href='https://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition' >ISO/IEC CD 14496-22 3rd edition</a> suggests using the <code>ssty</code> feature to provide glyph variants more suitable for use in scripts (for example primes used as superscripts). Starting with Firefox 29, this is done automatically by the <a href='https://developer.mozilla.org/docs/Web/MathML'>MathML</a> rendering engine. The ISO/IEC CD 14496-22 3rd edition also suggests applying the <code>dtls</code> feature to letters when placing mathematical accents to get dotless forms (for example dotless i, j with a hat). Starting with Firefox 35, this is done automatically by the MathML rendering engine. You can override the default values determined by the MathML rendering engine with CSS."
+                  "notes": "The <a href='https://mpeg.chiariglione.org/standards/mpeg-4/open-font-format/text-isoiec-cd-14496-22-3rd-edition'>ISO/IEC CD 14496-22 3rd edition</a> suggests using the <code>ssty</code> feature to provide glyph variants more suitable for use in scripts (for example primes used as superscripts). Starting with Firefox 29, this is done automatically by the <a href='https://developer.mozilla.org/docs/Web/MathML'>MathML</a> rendering engine. The ISO/IEC CD 14496-22 3rd edition also suggests applying the <code>dtls</code> feature to letters when placing mathematical accents to get dotless forms (for example dotless i, j with a hat). Starting with Firefox 35, this is done automatically by the MathML rendering engine. You can override the default values determined by the MathML rendering engine with CSS."
                 },
                 {
                   "prefix": "-moz-",
@@ -619,8 +622,11 @@
         },
         "font-variant": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-variant",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-variant-prop",
+            "tags": [
+              "web-features:font-variant"
+            ],
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -663,9 +669,13 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/font-variation-settings",
             "spec_url": "https://drafts.csswg.org/css-fonts/#font-rend-desc",
+            "tags": [
+              "web-features:font-variation-settings"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/40398871"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -810,7 +820,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/src",
             "spec_url": "https://drafts.csswg.org/css-fonts/#src-desc",
             "tags": [
-              "web-features:fonts"
+              "web-features:font-face"
             ],
             "support": {
               "chrome": {
@@ -963,21 +973,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "preview"
-                  },
-                  {
-                    "version_added": "105",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.font-tech.enabled",
-                        "value_to_set": "true"
-                      }
-                    ]
-                  }
-                ],
+                "firefox": {
+                  "version_added": "107"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1004,6 +1002,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@font-face/unicode-range",
             "spec_url": "https://drafts.csswg.org/css-fonts/#unicode-range-desc",
+            "tags": [
+              "web-features:font-face"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"

@@ -6,6 +6,9 @@
           "description": "<code>@import</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@import",
           "spec_url": "https://drafts.csswg.org/css-cascade-5/#at-import",
+          "tags": [
+            "web-features:import"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -45,7 +48,8 @@
         },
         "layer": {
           "__compat": {
-            "description": "<code>layer(<layer-name>)</code>",
+            "description": "<code>layer(&lt;layer-name&gt;)</code>",
+            "spec_url": "https://drafts.csswg.org/css-cascade-5/#ref-for-typedef-layer-name",
             "tags": [
               "web-features:cascade-layers"
             ],
@@ -81,11 +85,15 @@
         },
         "supports": {
           "__compat": {
-            "description": "<code>supports() as import condition</code>",
+            "description": "<code>supports()</code> as import condition",
             "spec_url": "https://drafts.csswg.org/css-cascade-5/#typedef-import-conditions",
+            "tags": [
+              "web-features:supports"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "122",
+                "impl_url": "https://crbug.com/40244647"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -100,14 +108,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

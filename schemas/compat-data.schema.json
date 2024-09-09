@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/schema#",
+  "$schema": "http://json-schema.org/schema",
 
   "definitions": {
     "simple_support_statement": {
@@ -21,6 +21,19 @@
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+            },
+            {
+              "const": true
+            }
+          ],
+          "tsType": "VersionValue"
+        },
+        "version_last": {
+          "description": "A string, indicating the last browser version that supported this feature, or the value true, indicating that the feature was removed in an unknown version. This is automatically generated.",
           "anyOf": [
             {
               "type": "string",
@@ -142,7 +155,7 @@
       "properties": {
         "experimental": {
           "type": "boolean",
-          "description": "A boolean value that indicates whether this functionality is intended to be an addition to the Web platform. Set to false, it means the functionality is mature, and no significant incompatible changes are expected in the future."
+          "description": "A boolean value that indicates the general stability of this feature. This value will be true if the feature was implemented in one browser engine recently. This value will be false if the feature was implemented in multiple browser engines, or if the feature had been implemented over two years ago in any one browser engine."
         },
         "standard_track": {
           "type": "boolean",

@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/datalist",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element",
+          "tags": [
+            "web-features:datalist"
+          ],
           "support": {
             "chrome": {
               "version_added": "20"
@@ -15,14 +18,22 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "4",
-              "partial_implementation": true,
-              "notes": [
-                "Firefox does not display a downwards-pointing arrow or any other UI change to indicate a dropdown is present. The user will have to double-click on the input to show the dropdown.",
-                "The <code>&lt;datalist&gt;</code> element will only create a dropdown for textual types, such as <code>text</code>, <code>search</code>, <code>url</code>, <code>tel</code>, <code>email</code> and <code>number</code>. The <code>date</code>, <code>time</code>, <code>range</code> and <code>color</code> types are not supported."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "110",
+                "partial_implementation": true,
+                "notes": [
+                  "Firefox does not display a downwards-pointing arrow or any other UI change to indicate a dropdown is present. The user will have to double-click on the input to show the dropdown.",
+                  "The <code>date</code> and <code>time</code> input types are not supported."
+                ]
+              },
+              {
+                "version_added": "4",
+                "version_removed": "110",
+                "partial_implementation": true,
+                "notes": "The <code>&lt;datalist&gt;</code> element will only create a dropdown for textual types, such as <code>text</code>, <code>search</code>, <code>url</code>, <code>tel</code>, <code>email</code> and <code>number</code>. The <code>date</code>, <code>time</code>, <code>range</code> and <code>color</code> types are not supported."
+              }
+            ],
             "firefox_android": [
               {
                 "version_added": "79",

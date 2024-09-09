@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices",
         "spec_url": "https://w3c.github.io/mediacapture-main/#mediadevices",
+        "tags": [
+          "web-features:media-capture"
+        ],
         "support": {
           "chrome": {
             "version_added": "47"
@@ -70,9 +73,7 @@
             "opera": {
               "version_added": "34"
             },
-            "opera_android": {
-              "version_added": "43"
-            },
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
@@ -91,6 +92,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/enumerateDevices",
           "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-enumeratedevices",
+          "tags": [
+            "web-features:media-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": "47"
@@ -197,15 +201,12 @@
             "support": {
               "chrome": {
                 "version_added": "74",
-                "notes": "On Windows and ChromeOS the entire system audio can be captured, but on Linux and macOS only the audio of a tab can be captured."
+                "notes": "On Windows and ChromeOS, the entire system audio can be captured when sharing an entire screen. On Linux and macOS, only the audio of a tab can be captured."
               },
               "chrome_android": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "≤79",
-                "notes": "On Windows, the entire system audio can be captured, but on Linux and macOS only the audio of a tab can be captured."
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -214,10 +215,7 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": "62",
-                "notes": "On Windows, the entire system audio can be captured, but on Linux and macOS only the audio of a tab can be captured."
-              },
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": false
@@ -240,6 +238,43 @@
             "support": {
               "chrome": {
                 "version_added": "109"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "monitorTypeSurfaces_option": {
+          "__compat": {
+            "description": "<code>monitorTypeSurfaces</code> option",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-monitortypesurfaces",
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Default value = <code>include</code>"
               },
               "chrome_android": {
                 "version_added": false
@@ -470,6 +505,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia",
           "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediadevices-getusermedia",
+          "tags": [
+            "web-features:media-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": "53",

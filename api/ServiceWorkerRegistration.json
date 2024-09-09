@@ -115,6 +115,7 @@
       },
       "cookies": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/cookies",
           "spec_url": "https://wicg.github.io/cookie-store/#dom-serviceworkerregistration-cookies",
           "support": {
             "chrome": {
@@ -170,11 +171,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -373,6 +374,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/pushManager",
           "spec_url": "https://w3c.github.io/push-api/#dom-serviceworkerregistration-pushmanager",
+          "tags": [
+            "web-features:push"
+          ],
           "support": {
             "chrome": {
               "version_added": "40"
@@ -395,11 +399,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -474,11 +478,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -764,6 +768,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/sync",
           "spec_url": "https://wicg.github.io/background-sync/spec/#dom-serviceworkerregistration-sync",
+          "tags": [
+            "web-features:background-sync"
+          ],
           "support": {
             "chrome": {
               "version_added": "49"
@@ -790,7 +797,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

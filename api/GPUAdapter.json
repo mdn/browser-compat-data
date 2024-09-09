@@ -4,14 +4,32 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter",
         "spec_url": "https://gpuweb.github.io/gpuweb/#gpu-adapter",
+        "tags": [
+          "web-features:webgpu"
+        ],
         "support": {
           "chrome": {
             "version_added": "113",
             "notes": "Currently supported on ChromeOS, macOS, and Windows only."
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": "121"
           },
+          "deno": [
+            {
+              "version_added": "1.39",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-webgpu"
+                }
+              ]
+            },
+            {
+              "version_added": "1.8",
+              "version_removed": "1.32"
+            }
+          ],
           "edge": "mirror",
           "firefox": {
             "version_added": "preview",
@@ -28,7 +46,7 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": "preview"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
@@ -44,14 +62,32 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter/features",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-features",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -68,7 +104,43 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
+              "version_added": "preview"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "info": {
+        "__compat": {
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-info",
+          "support": {
+            "chrome": {
+              "version_added": "127",
+              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            },
+            "chrome_android": {
+              "version_added": "127"
+            },
+            "edge": "mirror",
+            "firefox": {
               "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -85,12 +157,18 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter/isFallbackAdapter",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-isfallbackadapter",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
+              "version_added": "121"
+            },
+            "deno": {
               "version_added": false
             },
             "edge": "mirror",
@@ -109,7 +187,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -126,14 +204,32 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter/limits",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-limits",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -150,7 +246,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -166,15 +262,29 @@
       "requestAdapterInfo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestAdapterInfo",
-          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-requestadapterinfo",
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -198,9 +308,9 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -208,13 +318,16 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUAdapter/requestDevice",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuadapter-requestdevice",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
             "edge": "mirror",
             "firefox": {
@@ -232,7 +345,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -252,8 +365,23 @@
                 "version_added": "116"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "121"
               },
+              "deno": [
+                {
+                  "version_added": "1.39",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--unstable-webgpu"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "1.8",
+                  "version_removed": "1.32"
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -266,7 +394,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

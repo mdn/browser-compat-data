@@ -3,7 +3,7 @@
     "api": {
       "scripting": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting/",
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/scripting",
           "support": {
             "chrome": {
               "version_added": "88",
@@ -67,7 +67,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "128"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -120,6 +120,26 @@
               "safari_ios": "mirror"
             }
           },
+          "matchOriginAsFallback": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "119"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "128"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/264829"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "persistAcrossSessions": {
             "__compat": {
               "support": {
@@ -157,7 +177,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "16.4"
                 },
                 "safari_ios": "mirror"
               }
@@ -196,8 +216,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false,
-                  "notes": "Safari returns an array with the results, instead of an array of InjectionResults."
+                  "version_added": "17"
                 },
                 "safari_ios": "mirror"
               }
@@ -207,7 +226,7 @@
                 "support": {
                   "chrome": {
                     "version_added": false,
-                    "notes": "See <a href='https://crbug.com/1271527'>Issue 1271527: Propagate errors from scripting.executeScript to InjectionResult</a>."
+                    "impl_url": "https://crbug.com/1271527"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -216,7 +235,7 @@
                   "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "17.4"
                   },
                   "safari_ios": "mirror"
                 }
@@ -235,7 +254,7 @@
                   "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "17"
                   },
                   "safari_ios": "mirror"
                 }
@@ -254,7 +273,7 @@
                   "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "17"
                   },
                   "safari_ios": "mirror"
                 }
@@ -288,8 +307,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "102",
-                  "notes": "Only supports <code>ISOLATED</code>, not <code>MAIN</code>."
+                  "version_added": "102"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -297,6 +315,44 @@
                   "version_added": "15.4"
                 },
                 "safari_ios": "mirror"
+              }
+            },
+            "ISOLATED": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "95"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "102"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "15.4"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "MAIN": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "95"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "128"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "15.4"
+                  },
+                  "safari_ios": "mirror"
+                }
               }
             }
           }
@@ -354,7 +410,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }
@@ -414,7 +470,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror"
               }

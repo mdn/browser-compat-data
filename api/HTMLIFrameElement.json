@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement",
         "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#htmliframeelement",
+        "tags": [
+          "web-features:iframe"
+        ],
         "support": {
           "chrome": {
             "version_added": "1"
@@ -43,9 +46,41 @@
           "deprecated": false
         }
       },
+      "adAuctionHeaders": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/turtledove/#dom-htmliframeelement-adauctionheaders",
+          "support": {
+            "chrome": {
+              "version_added": "122"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "align": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/align",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-align",
           "support": {
             "chrome": {
@@ -87,7 +122,11 @@
       },
       "allow": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-allow",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -120,6 +159,7 @@
       },
       "allowFullscreen": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allowFullscreen",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-allowfullscreen",
           "tags": [
             "web-features:fullscreen"
@@ -155,7 +195,10 @@
             "safari_ios": {
               "version_added": "12",
               "partial_implementation": true,
-              "notes": "Only available on iPad, not on iPhone."
+              "notes": [
+                "Only available on iPad, not on iPhone.",
+                "Shows an overlay button which can not be disabled. Swiping down exits fullscreen mode, making it unsuitable for some use cases like games."
+              ]
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -244,6 +287,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentDocument",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-contentdocument",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -286,6 +332,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/contentWindow",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-contentwindow",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -319,6 +368,43 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "credentialless": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/credentialless",
+          "spec_url": "https://wicg.github.io/anonymous-iframe/#dom-htmliframeelement-credentialless",
+          "tags": [
+            "web-features:iframe-credentialless"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "110"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -400,7 +486,6 @@
       },
       "frameBorder": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/frameBorder",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-frameborder",
           "support": {
             "chrome": {
@@ -443,6 +528,9 @@
       "getSVGDocument": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#dom-media-getsvgdocument-dev",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -485,6 +573,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/height",
           "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#dom-dim-height",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -525,7 +616,11 @@
       },
       "loading": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/loading",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-loading",
+          "tags": [
+            "web-features:loading-lazy"
+          ],
           "support": {
             "chrome": {
               "version_added": "77"
@@ -560,7 +655,6 @@
       },
       "longDesc": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/longDesc",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-longdesc",
           "support": {
             "chrome": {
@@ -602,7 +696,6 @@
       },
       "marginHeight": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/marginHeight",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-marginheight",
           "support": {
             "chrome": {
@@ -644,7 +737,6 @@
       },
       "marginWidth": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/marginWidth",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-marginwidth",
           "support": {
             "chrome": {
@@ -688,6 +780,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/name",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-name",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -763,6 +858,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/referrerPolicy",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-referrerpolicy",
+          "tags": [
+            "web-features:referrer-policy"
+          ],
           "support": {
             "chrome": [
               {
@@ -820,7 +918,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -854,7 +952,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -888,7 +986,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -904,6 +1002,7 @@
       },
       "sandbox": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/sandbox",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-sandbox",
           "support": {
             "chrome": {
@@ -946,7 +1045,6 @@
       },
       "scrolling": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/scrolling",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-iframe-scrolling",
           "support": {
             "chrome": {
@@ -986,10 +1084,46 @@
           }
         }
       },
+      "sharedStorageWritable": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/shared-storage/#ref-for-dom-htmlsharedstoragewritableelementutils-sharedstoragewritable",
+          "support": {
+            "chrome": {
+              "version_added": "124"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "src": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/src",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-src",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1032,6 +1166,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/srcdoc",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-srcdoc",
+          "tags": [
+            "web-features:iframe-srcdoc"
+          ],
           "support": {
             "chrome": {
               "version_added": "20"
@@ -1066,6 +1203,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/width",
           "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#dom-dim-width",
+          "tags": [
+            "web-features:iframe"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"

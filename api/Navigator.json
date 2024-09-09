@@ -82,7 +82,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -267,6 +268,9 @@
       "audioSession": {
         "__compat": {
           "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
+          "tags": [
+            "web-features:audio-session"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -299,7 +303,6 @@
       },
       "authentication": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/authentication",
           "support": {
             "chrome": {
               "version_added": "67",
@@ -340,48 +343,30 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/bluetooth",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-navigator-bluetooth",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "56",
+                "version_added": "70",
                 "partial_implementation": true,
-                "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+                "notes": "Linux support is not enabled by default."
               },
               {
                 "version_added": "56",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported on macOS."
               }
             ],
             "chrome_android": {
               "version_added": "56"
             },
-            "edge": [
-              {
-                "version_added": "79",
-                "partial_implementation": true,
-                "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-              },
-              {
-                "version_added": "79",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ],
-                "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
-              }
-            ],
+            "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -391,7 +376,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -459,7 +445,7 @@
                 "version_added": "93"
               },
               {
-                "version_added": "89",
+                "version_added": "81",
                 "version_removed": "93",
                 "partial_implementation": true,
                 "notes": "Only supported on Windows."
@@ -510,7 +496,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": false
               },
@@ -522,7 +510,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -550,13 +538,13 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "96"
+              "edge": {
+                "version_added": "81"
               },
-              "firefox_android": {
+              "firefox": {
                 "version_added": false
               },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
@@ -564,7 +552,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -613,7 +601,8 @@
               "notes": "Badging is supported for installed web apps on macOS Sonoma and higher."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Badging is supported for web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -701,7 +690,7 @@
             }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -711,6 +700,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/contacts",
           "spec_url": "https://w3c.github.io/contact-picker/#dom-navigator-contacts",
+          "tags": [
+            "web-features:contact-picker"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -720,7 +712,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1756767"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -802,6 +795,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/credentials",
           "spec_url": "https://w3c.github.io/webappsec-credential-management/#framework-credential-management",
+          "tags": [
+            "web-features:credential-management"
+          ],
           "support": {
             "chrome": {
               "version_added": "51"
@@ -829,6 +825,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "deprecatedReplaceInURN": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deprecatedReplaceInURN",
+          "spec_url": "https://wicg.github.io/fenced-frame/#dom-navigator-deprecatedreplaceinurn",
+          "support": {
+            "chrome": {
+              "version_added": "117"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -863,6 +893,44 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "devicePosture": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/device-posture/#dom-navigator-deviceposture",
+          "tags": [
+            "web-features:device-posture"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": {
+              "version_added": "16.2"
+            },
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -919,7 +987,10 @@
       "geolocation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/geolocation",
-          "spec_url": "https://w3c.github.io/geolocation-api/#dom-navigator-geolocation",
+          "spec_url": "https://w3c.github.io/geolocation/#dom-navigator-geolocation",
+          "tags": [
+            "web-features:geolocation"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -962,6 +1033,9 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "tags": [
+              "web-features:geolocation"
+            ],
             "support": {
               "chrome": {
                 "version_added": "47"
@@ -1373,7 +1447,8 @@
               }
             ],
             "firefox_android": {
-              "version_added": "55"
+              "version_added": "55",
+              "version_removed": "98"
             },
             "ie": {
               "version_added": false
@@ -1439,6 +1514,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/gpu",
           "spec_url": "https://gpuweb.github.io/gpuweb/#navigator-gpu",
+          "tags": [
+            "web-features:webgpu"
+          ],
           "support": {
             "chrome": {
               "version_added": "113",
@@ -1447,6 +1525,21 @@
             "chrome_android": {
               "version_added": false
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -1463,7 +1556,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1594,7 +1687,7 @@
       "javaEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-javaenabled",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-javaenabled",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1635,6 +1728,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/keyboard",
           "spec_url": "https://wicg.github.io/keyboard-lock/#h-navigator-keyboard",
+          "tags": [
+            "web-features:keyboard-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "68"
@@ -1767,6 +1863,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/locks",
           "spec_url": "https://w3c.github.io/web-locks/#dom-navigatorlocks-locks",
+          "tags": [
+            "web-features:web-locks"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1799,7 +1898,8 @@
       },
       "login": {
         "__compat": {
-          "spec_url": "https://fedidcg.github.io/FedCM/#dom-navigator-login",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/login",
+          "spec_url": "https://w3c-fedid.github.io/FedCM/#dom-navigator-login",
           "support": {
             "chrome": {
               "version_added": "120"
@@ -1821,7 +1921,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -2024,6 +2126,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mediaSession",
           "spec_url": "https://w3c.github.io/mediasession/#dom-navigator-mediasession",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -2060,8 +2165,8 @@
       },
       "mimeTypes": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigatorPlugins/mimeTypes",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-mimetypes",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/mimeTypes",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-mimetypes",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2144,6 +2249,55 @@
           }
         }
       },
+      "ml": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-navigator-ml",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "112",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#web-machine-learning-neural-network",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "Currently supported on ChromeOS and Windows only."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "onLine": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/onLine",
@@ -2151,7 +2305,7 @@
           "support": {
             "chrome": {
               "version_added": "2",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>crbug.com/7469</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>bug 7469</a>."
             },
             "chrome_android": {
               "version_added": "18"
@@ -2270,6 +2424,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/permissions",
           "spec_url": "https://w3c.github.io/permissions/#dom-navigator-permissions",
+          "tags": [
+            "web-features:permissions"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -2352,7 +2509,7 @@
       "plugins": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/plugins",
-          "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-navigator-plugins",
+          "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-plugins",
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2439,6 +2596,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/presentation",
           "spec_url": "https://w3c.github.io/presentation-api/#dom-navigator-presentation",
+          "tags": [
+            "web-features:presentation-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "47"
@@ -2801,9 +2961,9 @@
             }
           }
         },
-        "scheme_parameter_etherium": {
+        "scheme_parameter_ethereum": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>etherium</code>",
+            "description": "<code>scheme</code> parameter supports <code>ethereum</code>",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3855,6 +4015,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/requestMIDIAccess",
           "spec_url": "https://webaudio.github.io/web-midi-api/#dom-navigator-requestmidiaccess",
+          "tags": [
+            "web-features:web-midi"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -3875,7 +4038,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/107250"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3966,11 +4130,11 @@
           "support": {
             "chrome": {
               "version_added": "39",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
             },
             "chrome_android": {
               "version_added": "42",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
             },
             "edge": {
               "version_added": "14"
@@ -3983,25 +4147,16 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "26",
-              "notes": "Starting in Opera 46, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
-            },
-            "opera_android": {
-              "version_added": "26",
-              "notes": "Starting in Opera 46, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "4.0",
-              "notes": "Starting in Samsung Internet 7.0, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
-            },
+            "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "40",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information see <a href='https://crbug.com/720283'>Chrome bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
             }
           },
           "status": {
@@ -4112,10 +4267,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "17",
-              "notes": "Badging is supported for web apps saved to the Dock in Safari 17 on the macOS Sonoma beta"
+              "notes": "Badging is supported for installed web apps on macOS Sonoma and higher."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Badging is supported for web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -4145,7 +4301,7 @@
                 "version_added": "93"
               },
               {
-                "version_added": "89",
+                "version_added": "81",
                 "version_removed": "93",
                 "partial_implementation": true,
                 "notes": "Only supported on Windows."
@@ -4198,7 +4354,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": false
               },
@@ -4210,7 +4368,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -4238,7 +4396,9 @@
               "chrome_android": {
                 "version_added": "76"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "81"
+              },
               "firefox": {
                 "version_added": "71"
               },
@@ -4252,7 +4412,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "14"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
@@ -4299,6 +4459,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "storageBuckets": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/storage-buckets/#dom-navigatorstoragebuckets-storagebuckets",
+          "tags": [
+            "web-features:storage-buckets"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "122"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -4418,7 +4614,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>Chromium bug 933055</a>."
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
             }
           },
           "status": {
@@ -4432,6 +4628,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/userActivation",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-navigator-useractivation",
+          "tags": [
+            "web-features:user-activation"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
@@ -4531,7 +4730,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false,
+              "version_added": "119",
               "impl_url": "https://crbug.com/921655"
             }
           },
@@ -4566,7 +4765,7 @@
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": {
-                "version_added": false
+                "version_added": "119"
               }
             },
             "status": {
@@ -4670,6 +4869,7 @@
             "firefox": [
               {
                 "version_added": "16",
+                "version_removed": "129",
                 "notes": [
                   "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning <code>false</code> (<a href='https://bugzil.la/884935'>bug 884935</a>).",
                   "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns <code>true</code> but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>).",
@@ -4772,6 +4972,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/wakeLock",
           "spec_url": "https://w3c.github.io/screen-wake-lock/#extensions-to-the-navigator-interface",
+          "tags": [
+            "web-features:screen-wake-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "84"
@@ -4779,7 +4982,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "126"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4791,7 +4994,11 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4",
+              "partial_implementation": true,
+              "notes": "Does not work in standalone Home Screen Web Apps. See <a href='https://webkit.org/b/254545#c32'>bug 254545</a>."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -4806,6 +5013,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/webdriver",
           "spec_url": "https://w3c.github.io/webdriver/#dfn-webdriver",
+          "tags": [
+            "web-features:webdriver"
+          ],
           "support": {
             "chrome": {
               "version_added": "63"

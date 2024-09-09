@@ -2,11 +2,11 @@
   "api": {
     "PushSubscriptionChangeEvent": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushSubscriptionChangeEvent",
         "spec_url": "https://w3c.github.io/push-api/#pushsubscriptionchangeevent-interface",
         "support": {
           "chrome": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://crbug.com/41275327"
           },
           "chrome_android": "mirror",
           "edge": {
@@ -14,7 +14,8 @@
             "version_removed": "79"
           },
           "firefox": {
-            "version_added": false
+            "version_added": false,
+            "notes": "The <code>pushsubscriptionchange</code> event is fired but does not have the <code>oldSubscription</code> and <code>newSubscription</code> properties. See <a href='https://bugzil.la/1497429'>bug 1497429</a>."
           },
           "firefox_android": "mirror",
           "ie": {
@@ -25,11 +26,11 @@
           "opera_android": "mirror",
           "safari": {
             "version_added": "16",
-            "partial_implementation": true,
-            "notes": "Supported on macOS 13 and later"
+            "notes": "Notifications are supported on macOS Ventura and later."
           },
           "safari_ios": {
-            "version_added": "16.4"
+            "version_added": "16.4",
+            "notes": "Notifications are supported in web apps saved to the home screen."
           },
           "samsunginternet_android": "mirror",
           "webview_android": "mirror"
@@ -67,7 +68,8 @@
               "version_added": "16.1"
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -81,7 +83,6 @@
       },
       "newSubscription": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushSubscriptionChangeEvent/newSubscription",
           "spec_url": "https://w3c.github.io/push-api/#dom-pushsubscriptionchangeevent-newsubscription",
           "support": {
             "chrome": {
@@ -104,11 +105,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
@@ -122,7 +123,6 @@
       },
       "oldSubscription": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PushSubscriptionChangeEvent/oldSubscription",
           "spec_url": "https://w3c.github.io/push-api/#dom-pushsubscriptionchangeevent-oldsubscription",
           "support": {
             "chrome": {
@@ -145,11 +145,11 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supported on macOS 13 and later"
+              "notes": "Notifications are supported on macOS Ventura and later."
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "Notifications are supported in web apps saved to the home screen."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"

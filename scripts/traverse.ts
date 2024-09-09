@@ -6,20 +6,21 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { BrowserName, Identifier } from '../types/types.js';
-import bcd from '../index.js';
+import { InternalSupportStatement } from '../types/index.js';
+import bcd, { dataFolders } from '../index.js';
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {BrowserName[]} browsers The browsers to test for
- * @param {string[]} values The values to test for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @param {string} identifier The identifier of the current object
+ * @param obj The compat data to traverse through
+ * @param browsers The browsers to test for
+ * @param values The values to test for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @param identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
-function* iterateFeatures(
-  obj,
+export function* iterateFeatures(
+  obj: Identifier,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -32,17 +33,29 @@ function* iterateFeatures(
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
           if (tag) {
-            const tags = obj[i].__compat.tags;
-            if (tags && tags.includes(tag)) {
+            const tags = obj[i].__compat?.tags;
+            if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
               yield `${identifier}${i}`;
             }
           } else {
-            const comp = obj[i].__compat.support;
+            const comp = obj[i].__compat?.support;
+            if (!comp) {
+              continue;
+            }
             for (const browser of browsers) {
               let browserData = comp[browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
+                  // Web extensions only allows specific browsers
+                  if (
+                    !(
+                      identifier.startsWith('webextensions.') &&
+                      bcd.browsers[browser].accepts_webextensions
+                    )
+                  ) {
+                    continue;
+                  }
                   yield `${identifier}${i}`;
                 }
                 continue;
@@ -52,7 +65,9 @@ function* iterateFeatures(
               }
 
               for (const range in browserData) {
-                if (browserData[range] === 'mirror') {
+                if (
+                  (browserData[range] as InternalSupportStatement) === 'mirror'
+                ) {
                   if (values.includes('mirror')) {
                     yield `${identifier}${i}`;
                   }
@@ -61,6 +76,13 @@ function* iterateFeatures(
                   yield `${identifier}${i}`;
                 } else if (browserData[range] === undefined) {
                   if (values.length == 0 || values.includes('null')) {
+                    yield `${identifier}${i}`;
+                  }
+                } else if (values.includes('≤') || values.includes('ranged')) {
+                  if (
+                    String(browserData[range].version_added).startsWith('≤') ||
+                    String(browserData[range].version_removed).startsWith('≤')
+                  ) {
                     yield `${identifier}${i}`;
                   }
                 } else if (
@@ -96,16 +118,16 @@ function* iterateFeatures(
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {string[]} browsers The browsers to traverse for
- * @param {string[]} values The version values to traverse for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @param {string} identifier The identifier of the current object
- * @returns {string[]} An array of the features
+ * @param obj The compat data to traverse through
+ * @param browsers The browsers to traverse for
+ * @param values The version values to traverse for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @param identifier The identifier of the current object
+ * @returns An array of the features
  */
 const traverseFeatures = (
-  obj,
+  obj: Identifier,
   browsers: BrowserName[],
   values: string[],
   depth: number,
@@ -121,26 +143,18 @@ const traverseFeatures = (
 
 /**
  * Traverse the features within BCD
- * @param {string[]} folders The folders to traverse
- * @param {BrowserName[]} browsers The browsers to traverse for
- * @param {string[]} values The version values to traverse for
- * @param {number} depth The depth to traverse
- * @param {string} tag The tag to filter results with
- * @returns {string[]} The list of features
+ * @param folders The folders to traverse
+ * @param browsers The browsers to traverse for
+ * @param values The version values to traverse for
+ * @param depth The depth to traverse
+ * @param tag The tag to filter results with
+ * @returns The list of features
  */
 const main = (
-  folders = [
-    'api',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'mathml',
-    'webassembly',
-    'webdriver',
-  ],
-  browsers: BrowserName[] = Object.keys(bcd.browsers) as BrowserName[],
+  folders = dataFolders.concat('webextensions'),
+  browsers: BrowserName[] = Object.keys(bcd.browsers).filter(
+    (b) => bcd.browsers[b].type !== 'server',
+  ) as BrowserName[],
   values = ['null', 'true'],
   depth = 100,
   tag = '',
@@ -180,12 +194,14 @@ if (esMain(import.meta)) {
           describe: 'Filter by a browser. May repeat.',
           type: 'array',
           nargs: 1,
-          default: Object.keys(bcd.browsers),
+          default: Object.keys(bcd.browsers).filter(
+            (b) => bcd.browsers[b].type !== 'server',
+          ),
         })
         .option('filter', {
           alias: 'f',
           describe:
-            'Filter by version value. May repeat. Set to "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
+            'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
           type: 'array',
           string: true,
           nargs: 1,
@@ -193,7 +209,8 @@ if (esMain(import.meta)) {
         })
         .option('tag', {
           alias: 't',
-          describe: 'Filter by tag value.',
+          describe:
+            'Filter by tag value. Set to `false` to search for features with no tags.',
           type: 'string',
           nargs: 1,
           default: '',
@@ -212,6 +229,12 @@ if (esMain(import.meta)) {
           type: 'number',
           nargs: 1,
           default: 10,
+        })
+        .option('show-count', {
+          alias: 'c',
+          describe: 'Show the count of features traversed at the end',
+          type: 'boolean',
+          default: process.stdout.isTTY,
         })
         .example(
           'npm run traverse -- --browser=safari -n',
@@ -232,6 +255,10 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -t web-features:idle-detection',
           'Find all features tagged with web-features:idle-detection.',
+        )
+        .example(
+          'npm run traverse -- -t false',
+          'Find all features with no tags.',
         );
     },
   );
@@ -246,7 +273,9 @@ if (esMain(import.meta)) {
     argv.tag,
   );
   console.log(features.join('\n'));
-  console.log(features.length);
+  if (argv.showCount) {
+    console.log(features.length);
+  }
 }
 
 export default main;
