@@ -34,7 +34,7 @@ export function* iterateFeatures(
         if (obj[i].__compat) {
           if (tag) {
             const tags = obj[i].__compat?.tags;
-            if (tags && tags.includes(tag)) {
+            if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
               yield `${identifier}${i}`;
             }
           } else {
@@ -209,7 +209,8 @@ if (esMain(import.meta)) {
         })
         .option('tag', {
           alias: 't',
-          describe: 'Filter by tag value.',
+          describe:
+            'Filter by tag value. Set to `false` to search for features with no tags.',
           type: 'string',
           nargs: 1,
           default: '',
@@ -254,6 +255,10 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -t web-features:idle-detection',
           'Find all features tagged with web-features:idle-detection.',
+        )
+        .example(
+          'npm run traverse -- -t false',
+          'Find all features with no tags.',
         );
     },
   );

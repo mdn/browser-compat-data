@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.5.51](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.51)
+
+September 6, 2024
+
+### Removals
+
+- `api.IDBFactory.open.options_parameter` ([#24360](https://github.com/mdn/browser-compat-data/pull/24360))
+
+### Additions
+
+- `api.FileSystemFileHandle.createSyncAccessHandle.mode` ([#24038](https://github.com/mdn/browser-compat-data/pull/24038))
+- `api.FileSystemFileHandle.createWritable.mode` ([#24038](https://github.com/mdn/browser-compat-data/pull/24038))
+- `browsers.edge.releases.131` ([#24341](https://github.com/mdn/browser-compat-data/pull/24341))
+- `browsers.samsunginternet_android.releases.26.0` ([#24255](https://github.com/mdn/browser-compat-data/pull/24255))
+- `browsers.samsunginternet_android.releases.27.0` ([#24255](https://github.com/mdn/browser-compat-data/pull/24255))
+- `http.headers.Refresh` ([#24273](https://github.com/mdn/browser-compat-data/pull/24273))
+
+### Statistics
+
+- 10 contributors have changed 35 files with 211 additions and 106 deletions in 26 commits ([`v5.5.50...v5.5.51`](https://github.com/mdn/browser-compat-data/compare/v5.5.50...v5.5.51))
+- 16,483 total features
+- 1,104 total contributors
+- 4,892 total stargazers
+
 ## [v5.5.50](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.50)
 
 September 3, 2024
