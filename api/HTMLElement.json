@@ -565,6 +565,60 @@
           }
         }
       },
+      "command_event": {
+        "__compat": {
+          "description": "<code>command</code> event",
+          "support": {
+            "chrome": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "enable-experimental-web-platform-features",
+                  "value_to_set": "enabled"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.element.invokers.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "InvokerAttributesEnabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "contentEditable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/contentEditable",
@@ -1540,60 +1594,6 @@
           }
         }
       },
-      "invoke_event": {
-        "__compat": {
-          "description": "<code>invoke</code> event",
-          "support": {
-            "chrome": {
-              "version_added": "preview",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "preview",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.element.invokers.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "preview",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "InvokerAttributesEnabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "isContentEditable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/isContentEditable",
@@ -1998,7 +1998,11 @@
             "safari": {
               "version_added": "17"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "17",
+              "partial_implementation": true,
+              "notes": "On iOS and iPadOS, popovers are not dismissed when the user taps outside of the popover area, see <a href='https://webkit.org/b/267688'>bug 267688</a>."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror"
           },
@@ -2406,6 +2410,9 @@
       "writingSuggestions": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-writingsuggestions",
+          "tags": [
+            "web-features:writingsuggestions"
+          ],
           "support": {
             "chrome": {
               "version_added": "124"
