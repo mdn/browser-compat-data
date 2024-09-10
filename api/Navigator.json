@@ -794,9 +794,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "18"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "18",
+                "partial_implementation": true,
+                "notes": "Returns <code>true</code> even if the browser is set to block cookies if <code>navigator.cookieEnabled</code> is invoked inside a third-party <code>iframe</code>)"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
