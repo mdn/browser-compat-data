@@ -2,13 +2,43 @@
   "webextensions": {
     "api": {
       "menus": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus",
+          "support": {
+            "chrome": {
+              "alternative_name": "contextMenus",
+              "version_added": true
+            },
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "55"
+              },
+              {
+                "alternative_name": "contextMenus",
+                "version_added": "48"
+              }
+            ],
+            "firefox_android": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "safari": {
+              "alternative_name": "contextMenus",
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": false
+            }
+          }
+        },
         "ACTION_MENU_TOP_LEVEL_LIMIT": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/ACTION_MENU_TOP_LEVEL_LIMIT",
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT",
-                "version_added": true
+                "version_added": "≤53"
               },
               "edge": "mirror",
               "firefox": [
@@ -40,7 +70,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ContextType",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
@@ -70,20 +100,25 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": true,
+                  "notes": "Available for use in Manifest V3 or later."
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "109"
+                  "version_added": "109",
+                  "notes": "Available for use in Manifest V3 or later."
                 },
                 "firefox_android": {
                   "version_added": false
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "15.4",
+                  "notes": "Available for use in Manifest V3 or later."
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": false
+                }
               }
             }
           },
@@ -113,19 +148,24 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58",
+                  "notes": "Available for use in Manifest V2 only."
                 },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "53",
-                  "notes": "'The 'editable' context does not include password fields. Use the 'password' context for this."
+                  "notes": [
+                    "Available for use in Manifest V2 only.",
+                    "'The <code>editable</code> context does not include password fields. Use the <code>password</code> context for this."
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "14"
+                  "version_added": "14",
+                  "notes": "Available for use in Manifest V2 only."
                 },
                 "safari_ios": {
                   "version_added": false
@@ -137,7 +177,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -158,7 +198,8 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58",
+                  "notes": "Available for use in Manifest V2 only."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -169,7 +210,8 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "14"
+                  "version_added": "14",
+                  "notes": "Available for use in Manifest V2 only."
                 },
                 "safari_ios": {
                   "version_added": false
@@ -213,9 +255,11 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": false
+                }
               }
             }
           },
@@ -248,7 +292,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.ItemType",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
@@ -280,7 +324,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.OnClickData",
-                "version_added": true
+                "version_added": "≤23"
               },
               "edge": "mirror",
               "firefox": [
@@ -387,9 +431,11 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": false
+                }
               }
             }
           },
@@ -418,7 +464,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤95"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -466,7 +512,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.create",
-                "version_added": true,
+                "version_added": "≤58",
                 "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents."
               },
               "edge": "mirror",
@@ -499,7 +545,7 @@
               "description": "<code>&amp;</code> in <code>title</code> sets access key",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤69"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -535,9 +581,11 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": false
+                }
               }
             }
           },
@@ -556,9 +604,11 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": false
+                }
               }
             }
           },
@@ -583,28 +633,6 @@
                   "version_added": false
                 }
               }
-            }
-          }
-        },
-        "overrideContext": {
-          "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/overrideContext",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "64"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
             }
           }
         },
@@ -636,7 +664,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.onClicked",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
@@ -718,6 +746,28 @@
             }
           }
         },
+        "overrideContext": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/overrideContext",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "64"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "refresh": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/menus/refresh",
@@ -752,7 +802,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.remove",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
@@ -784,7 +834,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.removeAll",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
@@ -816,7 +866,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.update",
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": [
