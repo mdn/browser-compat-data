@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_action",
           "support": {
             "chrome": {
-              "version_added": true,
+              "version_added": "≤54",
               "notes": [
                 "Available for use in Manifest V2 only.",
                 "If an extension defines a browser action, it is not allowed to define a page action as well."
@@ -87,7 +87,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤58",
                 "notes": "SVG icons are not supported."
               },
               "edge": {
@@ -102,17 +102,37 @@
                 "version_added": "48"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "SVG icons are not supported. Grayscale images will be treated as template icons and processed with the system accent color and system appearance."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": "SVG icons are not supported. Grayscale images will be treated as template icons and processed with the system accent color and system appearance."
-              }
+              "safari": [
+                {
+                  "version_added": "16.4",
+                  "notes": "Grayscale images are treated as template icons and processed with the system accent color and system appearance."
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": [
+                    "SVG icons are not supported.",
+                    "Grayscale images are treated as template icons and processed with the system accent color and system appearance."
+                  ]
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "16.4",
+                  "notes": "Grayscale images are treated as template icons and processed with the system accent color and system appearance."
+                },
+                {
+                  "version_added": "15.4",
+                  "partial_implementation": true,
+                  "notes": [
+                    "SVG icons are not supported.",
+                    "Grayscale images are treated as template icons and processed with the system accent color and system appearance."
+                  ]
+                }
+              ]
             }
           }
         },
@@ -120,7 +140,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -145,7 +165,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"

@@ -87,7 +87,7 @@ This guideline was proposed in [#6018](https://github.com/mdn/browser-compat-dat
 
 ## Removal of irrelevant flag data
 
-Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet these conditions:
+Flag data is helpful for developers who may wish to test features before they are included in a stable release. However, once a feature has landed in a stable browser release, the flag data quickly becomes irrelevant and may be removed from BCD. To be considered irrelevant, the flag support statement must meet _any_ of these conditions:
 
 - The browser has supported the feature by default.
 - The feature can no longer be enabled by toggling the flag.
@@ -99,7 +99,7 @@ This guideline was proposed in [#6670](https://github.com/mdn/browser-compat-dat
 
 ## Features with no browser support
 
-Browser features that have not been implemented (or planned to be implemented) in any browser, should not be added to BCD. A feature should not be added if all of the following conditions are met:
+Browser features that have not been implemented (or planned to be implemented) in any browser, should not be added to BCD. A feature should not be added if _all_ of the following conditions are met:
 
 - The feature has not been included in a stable browser release.
 - The feature is not implemented behind a current flag (or Chrome origin trial).

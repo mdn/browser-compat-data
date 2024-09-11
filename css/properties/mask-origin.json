@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/mask-origin",
           "spec_url": "https://drafts.fxtf.org/css-masking/#the-mask-origin",
+          "tags": [
+            "web-features:masks"
+          ],
           "support": {
             "chrome": [
               {
@@ -41,7 +44,8 @@
             "webview_android": {
               "prefix": "-webkit-",
               "version_added": "2"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -49,43 +53,8 @@
             "deprecated": false
           }
         },
-        "fill-box": {
+        "border": {
           "__compat": {
-            "description": "<code>fill-box</code>",
-            "support": {
-              "chrome": {
-                "version_added": "120"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "53"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/137293"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "non_standard_values": {
-          "__compat": {
-            "description": "Non-standard values <code>content</code>, <code>padding</code>, <code>border</code>",
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
@@ -117,7 +86,128 @@
               "webview_android": {
                 "prefix": "-webkit-",
                 "version_added": "2"
-              }
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "content": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "prefix": "-webkit-",
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "15.4"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "4"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": "2"
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "fill-box": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "53"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/137293"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "padding": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "prefix": "-webkit-",
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "15.4"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "4"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "prefix": "-webkit-",
+                "version_added": "2"
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -128,7 +218,6 @@
         },
         "stroke-box": {
           "__compat": {
-            "description": "<code>stroke-box</code>",
             "support": {
               "chrome": {
                 "version_added": "120"
@@ -151,7 +240,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -162,7 +252,6 @@
         },
         "view-box": {
           "__compat": {
-            "description": "<code>view-box</code>",
             "support": {
               "chrome": {
                 "version_added": "120"
@@ -185,7 +274,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

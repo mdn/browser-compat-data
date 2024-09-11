@@ -4,48 +4,30 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice",
         "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#bluetoothdevice-interface",
+        "tags": [
+          "web-features:web-bluetooth"
+        ],
         "support": {
           "chrome": [
             {
-              "version_added": "56",
+              "version_added": "70",
               "partial_implementation": true,
-              "notes": "Before Chrome 70, this feature was only supported in macOS. In Chrome 70, support was added for Windows 10. Linux support is not enabled by default."
+              "notes": "Linux support is not enabled by default."
             },
             {
               "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
+              "version_removed": "70",
+              "partial_implementation": true,
+              "notes": "Only supported on macOS."
             }
           ],
           "chrome_android": {
             "version_added": "56"
           },
-          "edge": [
-            {
-              "version_added": "79",
-              "partial_implementation": true,
-              "notes": "Supported by default only on macOS and Windows 10. Linux support is not enabled by default."
-            },
-            {
-              "version_added": "79",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ],
-              "notes": "In Linux and versions of Windows earlier than 10, this flag must be enabled."
-            }
-          ],
+          "edge": "mirror",
           "firefox": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://bugzil.la/674737"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -55,14 +37,16 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://webkit.org/b/101034"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
             "impl_url": "https://crbug.com/1100993"
-          }
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -74,6 +58,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice/gatt",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-gatt",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -81,7 +68,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -91,13 +79,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -109,9 +99,9 @@
       "gattserverdisconnected_event": {
         "__compat": {
           "description": "<code>gattserverdisconnected</code> event",
-          "spec_url": [
-            "https://webbluetoothcg.github.io/web-bluetooth/#eventdef-bluetoothdevice-gattserverdisconnected",
-            "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdeviceeventhandlers-ongattserverdisconnected"
+          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdeviceeventhandlers-ongattserverdisconnected",
+          "tags": [
+            "web-features:web-bluetooth"
           ],
           "support": {
             "chrome": {
@@ -120,7 +110,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -130,13 +121,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -149,6 +142,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice/id",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-id",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -156,7 +152,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -166,13 +163,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -185,6 +184,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BluetoothDevice/name",
           "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-bluetoothdevice-name",
+          "tags": [
+            "web-features:web-bluetooth"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -192,7 +194,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -202,13 +205,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/101034"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

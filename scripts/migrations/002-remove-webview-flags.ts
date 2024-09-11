@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 
 import { CompatStatement, SimpleSupportStatement } from '../../types/types.js';
-import { IS_WINDOWS } from '../../test/utils.js';
+import { IS_WINDOWS } from '../../lint/utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
