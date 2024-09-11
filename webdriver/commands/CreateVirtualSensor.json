@@ -1,23 +1,18 @@
 {
-  "css": {
-    "properties": {
-      "masonry-auto-flow": {
+  "webdriver": {
+    "commands": {
+      "CreateVirtualSensor": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/masonry-auto-flow",
-          "spec_url": "https://drafts.csswg.org/css-grid-3/#masonry-auto-flow",
-          "tags": [
-            "web-features:masonry"
-          ],
+          "spec_url": "https://w3c.github.io/sensors/#create-virtual-sensor-command",
           "support": {
             "chrome": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/40128480"
+              "version_added": "120",
+              "notes": "To enable Chromium support, include <code>{\"goog:chromeOptions\": {\"w3c\": true}}</code> in the <a href=https://developer.mozilla.org/docs/Web/WebDriver/Capabilities>capabilities</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1757446"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -27,15 +22,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview",
-              "impl_url": "https://webkit.org/b/248287"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

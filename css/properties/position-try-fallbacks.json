@@ -1,17 +1,24 @@
 {
   "css": {
     "properties": {
-      "position-try-options": {
+      "position-try-fallbacks": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/position-try-options",
-          "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#position-try-options",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/position-try-fallbacks",
+          "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#position-try-fallbacks",
           "tags": [
             "web-features:anchor-positioning"
           ],
           "support": {
-            "chrome": {
-              "version_added": "125"
-            },
+            "chrome": [
+              {
+                "version_added": "128"
+              },
+              {
+                "alternative_name": "position-try-options",
+                "version_added": "125",
+                "version_removed": "128"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -30,7 +37,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -40,13 +48,13 @@
         },
         "flip-block": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-block",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-block",
             "tags": [
               "web-features:anchor-positioning"
             ],
             "support": {
               "chrome": {
-                "version_added": "125"
+                "version_added": "128"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -66,7 +74,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -77,13 +86,13 @@
         },
         "flip-inline": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-inline",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-inline",
             "tags": [
               "web-features:anchor-positioning"
             ],
             "support": {
               "chrome": {
-                "version_added": "125"
+                "version_added": "128"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -103,7 +112,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -114,13 +124,13 @@
         },
         "flip-start": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-flip-start",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-flip-start",
             "tags": [
               "web-features:anchor-positioning"
             ],
             "support": {
               "chrome": {
-                "version_added": "125"
+                "version_added": "128"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -140,45 +150,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "inset-area": {
-          "__compat": {
-            "description": "<code>inset-area()</code> function",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/inset-area_function",
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-inset-area-inset-area",
-            "tags": [
-              "web-features:anchor-positioning"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "125"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -189,13 +162,13 @@
         },
         "none": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-options-none",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-none",
             "tags": [
               "web-features:anchor-positioning"
             ],
             "support": {
               "chrome": {
-                "version_added": "125"
+                "version_added": "128"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -215,7 +188,53 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "position-area": {
+          "__compat": {
+            "description": "<code>position-area</code> values",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-try-fallbacks-position-area",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "128"
+                },
+                {
+                  "version_added": "125",
+                  "version_removed": "128",
+                  "notes": "<code>inset-area</code> values had to be wrapped inside an <code>inset-area()</code> function."
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,

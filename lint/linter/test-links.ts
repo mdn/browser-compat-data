@@ -89,6 +89,17 @@ export const processData = (rawData: string): LinkError[] => {
     // use https://crbug.com/100000 instead
     errors,
     actual,
+    /https?:\/\/(issues\.chromium\.org)\/issues\/(\d+)/g,
+    (match) => ({
+      issue: 'Use shortenable URL',
+      expected: `https://crbug.com/${match[2]}`,
+    }),
+  );
+
+  processLink(
+    // use https://crbug.com/100000 instead
+    errors,
+    actual,
     /https?:\/\/(bugs\.chromium\.org|code\.google\.com)\/p\/chromium\/issues\/detail\?id=(\d+)/g,
     (match) => ({
       issue: 'Use shortenable URL',

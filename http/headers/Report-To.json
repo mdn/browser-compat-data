@@ -11,7 +11,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "130",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.reporting.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -29,12 +36,13 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       }

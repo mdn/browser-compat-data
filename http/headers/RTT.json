@@ -1,20 +1,20 @@
 {
-  "css": {
-    "properties": {
-      "justify-tracks": {
+  "http": {
+    "headers": {
+      "RTT": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/justify-tracks",
-          "spec_url": "https://drafts.csswg.org/css-grid-3/#tracks-alignment",
-          "tags": [
-            "web-features:masonry"
-          ],
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/RTT",
+          "spec_url": "https://wicg.github.io/netinfo/#rtt-request-header-field",
           "support": {
             "chrome": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/40128480"
+              "version_added": "67",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "≤79",
+              "notes": "The value is never greater than 3000 ms, as a non-standard anti-fingerprinting measure."
+            },
             "firefox": {
               "version_added": false
             },
@@ -26,12 +26,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/248287"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
