@@ -1,11 +1,13 @@
 {
-  "css": {
-    "properties": {
-      "scrollbar-3dlight-color": {
+  "webdriver": {
+    "commands": {
+      "CreateVirtualSensor": {
         "__compat": {
+          "spec_url": "https://w3c.github.io/sensors/#create-virtual-sensor-command",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "120",
+              "notes": "To enable Chromium support, include <code>{\"goog:chromeOptions\": {\"w3c\": true}}</code> in the <a href=https://developer.mozilla.org/docs/Web/WebDriver/Capabilities>capabilities</a>."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -13,15 +15,9 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": [
-              {
-                "version_added": "5"
-              },
-              {
-                "prefix": "-ms-",
-                "version_added": "8"
-              }
-            ],
+            "ie": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -30,12 +26,13 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }
