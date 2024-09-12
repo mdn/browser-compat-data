@@ -361,7 +361,7 @@ export const updateEdgeReleases = async (options) => {
       releaseDate,
       'planned',
       '',
-      '',
+      planned,
     );
   } else {
     // New entry
@@ -373,7 +373,7 @@ export const updateEdgeReleases = async (options) => {
       options.browserEngine,
       releaseDate,
       '',
-      '',
+      planned.toString(),
     );
   }
 
