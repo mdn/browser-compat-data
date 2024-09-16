@@ -167,7 +167,7 @@ const options = {
     browserName: 'Safari for Desktop',
     bcdFile: './browsers/safari.json',
     bcdBrowserName: 'safari',
-    skippedReleases: ['17.6'],
+    skippedReleases: [],
     releaseNoteJSON:
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
@@ -176,7 +176,16 @@ const options = {
     browserName: 'Safari for iOS',
     bcdFile: './browsers/safari_ios.json',
     bcdBrowserName: 'safari_ios',
-    skippedReleases: ['12.1', '13.1', '14.1', '17.6'],
+    skippedReleases: ['12.1', '13.1', '14.1'],
+    releaseNoteJSON:
+      'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteURLBase: 'https://developer.apple.com',
+  },
+  webview_ios: {
+    browserName: 'WKWebView for iOS',
+    bcdFile: './browsers/webview_ios.json',
+    bcdBrowserName: 'webview_ios',
+    skippedReleases: ['12.1', '13.1', '14.1'],
     releaseNoteJSON:
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
@@ -222,6 +231,11 @@ if (updateSafari && updateDesktop) {
 
 if (updateSafari && updateMobile) {
   const add = await updateSafariReleases(options.safari_ios);
+  result += (result && add ? '\n' : '') + add;
+}
+
+if (updateSafari && updateMobile) {
+  const add = await updateSafariReleases(options.webview_ios);
   result += (result && add ? '\n' : '') + add;
 }
 

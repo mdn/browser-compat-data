@@ -34,7 +34,7 @@ export function* iterateFeatures(
         if (obj[i].__compat) {
           if (tag) {
             const tags = obj[i].__compat?.tags;
-            if (tags && tags.includes(tag)) {
+            if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
               yield `${identifier}${i}`;
             }
           } else {
@@ -76,6 +76,13 @@ export function* iterateFeatures(
                   yield `${identifier}${i}`;
                 } else if (browserData[range] === undefined) {
                   if (values.length == 0 || values.includes('null')) {
+                    yield `${identifier}${i}`;
+                  }
+                } else if (values.includes('≤') || values.includes('ranged')) {
+                  if (
+                    String(browserData[range].version_added).startsWith('≤') ||
+                    String(browserData[range].version_removed).startsWith('≤')
+                  ) {
                     yield `${identifier}${i}`;
                   }
                 } else if (
@@ -194,7 +201,7 @@ if (esMain(import.meta)) {
         .option('filter', {
           alias: 'f',
           describe:
-            'Filter by version value. May repeat. Set to "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
+            'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
           type: 'array',
           string: true,
           nargs: 1,
@@ -202,7 +209,8 @@ if (esMain(import.meta)) {
         })
         .option('tag', {
           alias: 't',
-          describe: 'Filter by tag value.',
+          describe:
+            'Filter by tag value. Set to `false` to search for features with no tags.',
           type: 'string',
           nargs: 1,
           default: '',
@@ -221,6 +229,12 @@ if (esMain(import.meta)) {
           type: 'number',
           nargs: 1,
           default: 10,
+        })
+        .option('show-count', {
+          alias: 'c',
+          describe: 'Show the count of features traversed at the end',
+          type: 'boolean',
+          default: process.stdout.isTTY,
         })
         .example(
           'npm run traverse -- --browser=safari -n',
@@ -241,6 +255,10 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -t web-features:idle-detection',
           'Find all features tagged with web-features:idle-detection.',
+        )
+        .example(
+          'npm run traverse -- -t false',
+          'Find all features with no tags.',
         );
     },
   );
@@ -255,7 +273,9 @@ if (esMain(import.meta)) {
     argv.tag,
   );
   console.log(features.join('\n'));
-  console.log(features.length);
+  if (argv.showCount) {
+    console.log(features.length);
+  }
 }
 
 export default main;
