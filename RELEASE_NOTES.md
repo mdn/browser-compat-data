@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.1)
+
+September 18, 2024
+
+### Removals
+
+- `browsers.safari_ios.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+- `browsers.safari.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+- `browsers.webview_ios.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+
+### Additions
+
+- `browsers.safari_ios.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+- `browsers.safari.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+- `browsers.webview_ios.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+
+### Statistics
+
+- 3 contributors have changed 10 files with 48 additions and 34 deletions in 4 commits ([`v5.6.0...v5.6.1`](https://github.com/mdn/browser-compat-data/compare/v5.6.0...v5.6.1))
+- 16,479 total features
+- 1,104 total contributors
+- 4,905 total stargazers
+
 ## [v5.6.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.0)
 
 September 17, 2024
