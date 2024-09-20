@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.2)
+
+September 20, 2024
+
+### Removals
+
+- `html.elements.area.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+- `html.elements.object.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+
+### Additions
+
+- `webextensions.api.declarativeNetRequest.RuleCondition.initiatorDomains` ([#24384](https://github.com/mdn/browser-compat-data/pull/24384))
+- `webextensions.api.tabs.onUpdated.changeInfo.openerTabId` ([#24069](https://github.com/mdn/browser-compat-data/pull/24069))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 78 additions and 89 deletions in 10 commits ([`v5.6.1...v5.6.2`](https://github.com/mdn/browser-compat-data/compare/v5.6.1...v5.6.2))
+- 16,479 total features
+- 1,104 total contributors
+- 4,905 total stargazers
+
 ## [v5.6.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.1)
 
 September 18, 2024
