@@ -208,9 +208,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "15"
-            },
+            "safari": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "If the source image is an <code>ImageData</code> object, then Safari does not respect the <code>premultiplyAlpha</code> option. See <a href='https://webkit.org/b/237082'>bug 237082</a>."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
