@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.3)
+
+September 24, 2024
+
+### Additions
+
+- `css.properties.ruby-overhang` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.auto` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.none` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `webextensions.manifest.theme.colors.tab_background_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+- `webextensions.manifest.theme.colors.toolbar_field_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+
+### Statistics
+
+- 6 contributors have changed 158 files with 1,492 additions and 95 deletions in 17 commits ([`v5.6.2...v5.6.3`](https://github.com/mdn/browser-compat-data/compare/v5.6.2...v5.6.3))
+- 16,484 total features
+- 1,104 total contributors
+- 4,910 total stargazers
+
 ## [v5.6.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.2)
 
 September 20, 2024
