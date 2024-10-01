@@ -1,28 +1,16 @@
 {
   "api": {
-    "Scheduler": {
+    "SnapEvent": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Scheduler",
-        "spec_url": "https://wicg.github.io/scheduling-apis/#scheduler",
-        "tags": [
-          "web-features:scheduler"
-        ],
+        "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#snapevent-interface",
         "support": {
           "chrome": {
-            "version_added": "94"
+            "version_added": "129"
           },
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": "101",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.enable_web_task_scheduling",
-                "value_to_set": "true"
-              }
-            ],
-            "impl_url": "https://bugzil.la/1795625"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "ie": {
@@ -40,33 +28,23 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "postTask": {
+      "SnapEvent": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Scheduler/postTask",
-          "spec_url": "https://wicg.github.io/scheduling-apis/#dom-scheduler-posttask",
-          "tags": [
-            "web-features:scheduler"
-          ],
+          "description": "<code>SnapEvent()</code> constructor",
+          "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#dom-snapevent-snapevent",
           "support": {
             "chrome": {
-              "version_added": "94"
+              "version_added": "129"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "101",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.enable_web_task_scheduling",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -84,19 +62,49 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "yield": {
+      "snapTargetBlock": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Scheduler/yield",
-          "spec_url": "https://wicg.github.io/scheduling-apis/#dom-scheduler-yield",
-          "tags": [
-            "web-features:scheduler"
-          ],
+          "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#dom-snapevent-snaptargetblock",
+          "support": {
+            "chrome": {
+              "version_added": "129"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "snapTargetInline": {
+        "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#dom-snapevent-snaptargetinline",
           "support": {
             "chrome": {
               "version_added": "129"
