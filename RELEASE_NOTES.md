@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.4)
+
+September 27, 2024
+
+### Removals
+
+- `mathml.elements.mo.moveablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+
+### Additions
+
+- `mathml.elements.mo.movablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+- `webextensions.api.contentScriptGlobalScope` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.cloneInto` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.exportFunction` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 257 additions and 106 deletions in 16 commits ([`v5.6.3...v5.6.4`](https://github.com/mdn/browser-compat-data/compare/v5.6.3...v5.6.4))
+- 16,487 total features
+- 1,104 total contributors
+- 4,916 total stargazers
+
 ## [v5.6.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.3)
 
 September 24, 2024
