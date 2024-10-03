@@ -43,10 +43,18 @@
         "__compat": {
           "description": "Available in workers",
           "support": {
-            "chrome": {
-              "version_added": "131",
-              "notes": "Dedicated and service workers only."
-            },
+            "chrome": [
+              {
+                "version_added": "131",
+                "partial_implementation": true,
+                "notes": "Dedicated workers and WebExtension service workers only."
+              },
+              {
+                "version_added": "117",
+                "partial_implementation": true,
+                "notes": "WebExtension service workers only."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
