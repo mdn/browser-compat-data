@@ -1,5 +1,209 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.4)
+
+September 27, 2024
+
+### Removals
+
+- `mathml.elements.mo.moveablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+
+### Additions
+
+- `mathml.elements.mo.movablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+- `webextensions.api.contentScriptGlobalScope` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.cloneInto` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.exportFunction` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 257 additions and 106 deletions in 16 commits ([`v5.6.3...v5.6.4`](https://github.com/mdn/browser-compat-data/compare/v5.6.3...v5.6.4))
+- 16,487 total features
+- 1,104 total contributors
+- 4,916 total stargazers
+
+## [v5.6.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.3)
+
+September 24, 2024
+
+### Additions
+
+- `css.properties.ruby-overhang` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.auto` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.none` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `webextensions.manifest.theme.colors.tab_background_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+- `webextensions.manifest.theme.colors.toolbar_field_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+
+### Statistics
+
+- 6 contributors have changed 158 files with 1,492 additions and 95 deletions in 17 commits ([`v5.6.2...v5.6.3`](https://github.com/mdn/browser-compat-data/compare/v5.6.2...v5.6.3))
+- 16,484 total features
+- 1,104 total contributors
+- 4,910 total stargazers
+
+## [v5.6.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.2)
+
+September 20, 2024
+
+### Removals
+
+- `html.elements.area.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+- `html.elements.object.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+
+### Additions
+
+- `webextensions.api.declarativeNetRequest.RuleCondition.initiatorDomains` ([#24384](https://github.com/mdn/browser-compat-data/pull/24384))
+- `webextensions.api.tabs.onUpdated.changeInfo.openerTabId` ([#24069](https://github.com/mdn/browser-compat-data/pull/24069))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 78 additions and 89 deletions in 10 commits ([`v5.6.1...v5.6.2`](https://github.com/mdn/browser-compat-data/compare/v5.6.1...v5.6.2))
+- 16,479 total features
+- 1,104 total contributors
+- 4,905 total stargazers
+
+## [v5.6.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.1)
+
+September 18, 2024
+
+### Removals
+
+- `browsers.safari_ios.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+- `browsers.safari.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+- `browsers.webview_ios.releases.18.0` ([#24456](https://github.com/mdn/browser-compat-data/pull/24456))
+
+### Additions
+
+- `browsers.safari_ios.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+- `browsers.safari.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+- `browsers.webview_ios.releases.18.1` ([#24463](https://github.com/mdn/browser-compat-data/pull/24463))
+
+### Statistics
+
+- 3 contributors have changed 10 files with 48 additions and 34 deletions in 4 commits ([`v5.6.0...v5.6.1`](https://github.com/mdn/browser-compat-data/compare/v5.6.0...v5.6.1))
+- 16,479 total features
+- 1,104 total contributors
+- 4,905 total stargazers
+
+## [v5.6.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.0)
+
+September 17, 2024
+
+### Notable changes
+
+#### WebView iOS
+
+BCD now tracks data for WebView on iOS, also known as WKWebView!
+
+### Removals
+
+- `api.ApplicationCache` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.abort` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.cached_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.checking_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.downloading_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.error_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.noupdate_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.obsolete_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.progress_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.status` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.swapCache` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.update` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.ApplicationCache.updateready_event` ([#24426](https://github.com/mdn/browser-compat-data/pull/24426))
+- `api.HTMLButtonElement.invokeaction` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.HTMLButtonElement.invoketarget` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.HTMLElement.invoke_event` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.InvokeEvent` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.InvokeEvent.action` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.InvokeEvent.InvokeEvent` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.InvokeEvent.invoker` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `css.properties.user-select.contain` ([#23575](https://github.com/mdn/browser-compat-data/pull/23575))
+- `html.global_attributes.invokeaction` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `html.global_attributes.invoketarget` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+
+### Additions
+
+- `api.CommandEvent` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.CommandEvent.command` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.CommandEvent.CommandEvent` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.CommandEvent.source` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.Document.caretPositionFromPoint.options_parameter` ([#24405](https://github.com/mdn/browser-compat-data/pull/24405))
+- `api.HTMLButtonElement.command` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.HTMLButtonElement.commandfor` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.HTMLElement.command_event` ([#24362](https://github.com/mdn/browser-compat-data/pull/24362))
+- `api.PointerEvent.PointerEvent.options_altitudeAngle_parameter` ([#24393](https://github.com/mdn/browser-compat-data/pull/24393))
+- `api.PointerEvent.PointerEvent.options_azimuthAngle_parameter` ([#24393](https://github.com/mdn/browser-compat-data/pull/24393))
+- `api.Scheduler.yield` ([#24439](https://github.com/mdn/browser-compat-data/pull/24439))
+- `browsers.chrome_android.releases.130` ([#24423](https://github.com/mdn/browser-compat-data/pull/24423))
+- `browsers.chrome.releases.130` ([#24423](https://github.com/mdn/browser-compat-data/pull/24423))
+- `browsers.opera_android.releases.84` ([#24422](https://github.com/mdn/browser-compat-data/pull/24422))
+- `browsers.opera.releases.114` ([#24421](https://github.com/mdn/browser-compat-data/pull/24421))
+- `browsers.opera.releases.115` ([#24421](https://github.com/mdn/browser-compat-data/pull/24421))
+- `browsers.safari_ios.releases.18.0` ([#24452](https://github.com/mdn/browser-compat-data/pull/24452))
+- `browsers.safari.releases.18.0` ([#24452](https://github.com/mdn/browser-compat-data/pull/24452))
+- `browsers.webview_android.releases.130` ([#24423](https://github.com/mdn/browser-compat-data/pull/24423))
+- `browsers.webview_ios` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.1` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.10` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.10.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.11` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.11.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.12` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.12.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.13` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.13.4` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.14` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.14.5` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.1` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.4` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.5` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.15.6` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.1` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.4` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.5` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.16.6` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.1` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.4` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.5` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.17.6` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.18` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.18.0` ([#24452](https://github.com/mdn/browser-compat-data/pull/24452))
+- `browsers.webview_ios.releases.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.3.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.4` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.4.2` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.5` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.6` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.7` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.8` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.9` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `browsers.webview_ios.releases.9.3` ([#23747](https://github.com/mdn/browser-compat-data/pull/23747))
+- `css.at-rules.custom-media` ([#24338](https://github.com/mdn/browser-compat-data/pull/24338))
+- `css.properties.background-clip.border-area` ([#24333](https://github.com/mdn/browser-compat-data/pull/24333))
+- `css.properties.caption-side.bottom` ([#24157](https://github.com/mdn/browser-compat-data/pull/24157))
+- `css.properties.caption-side.top` ([#24157](https://github.com/mdn/browser-compat-data/pull/24157))
+- `css.properties.color-scheme.dark` ([#24163](https://github.com/mdn/browser-compat-data/pull/24163))
+- `css.properties.color-scheme.light` ([#24163](https://github.com/mdn/browser-compat-data/pull/24163))
+- `css.properties.color-scheme.normal` ([#24163](https://github.com/mdn/browser-compat-data/pull/24163))
+- `css.properties.display.table-caption` ([#24385](https://github.com/mdn/browser-compat-data/pull/24385))
+
+### Statistics
+
+- 12 contributors have changed 2,507 files with 36,150 additions and 16,632 deletions in 68 commits ([`v5.5.51...v5.6.0`](https://github.com/mdn/browser-compat-data/compare/v5.5.51...v5.6.0))
+- 16,479 total features
+- 1,104 total contributors
+- 4,904 total stargazers
+
 ## [v5.5.51](https://github.com/mdn/browser-compat-data/releases/tag/v5.5.51)
 
 September 6, 2024
