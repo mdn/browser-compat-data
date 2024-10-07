@@ -86,6 +86,9 @@ export const updateSafariReleases = async (options) => {
         chalk`{yellow Release string from Apple not understandable (${releases[id].abstract[0].text})}`,
       );
       continue;
+    } else if (/^\d+\.\d+\.\d+$/.test(releaseDataEntry.version)) {
+      // Ignore patch version (e.g. "18.0.1").
+      continue;
     }
 
     // Compute release note
