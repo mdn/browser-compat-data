@@ -1,5 +1,67 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.4)
+
+September 27, 2024
+
+### Removals
+
+- `mathml.elements.mo.moveablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+
+### Additions
+
+- `mathml.elements.mo.movablelimits` ([#24506](https://github.com/mdn/browser-compat-data/pull/24506))
+- `webextensions.api.contentScriptGlobalScope` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.cloneInto` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+- `webextensions.api.contentScriptGlobalScope.exportFunction` ([#22767](https://github.com/mdn/browser-compat-data/pull/22767))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 257 additions and 106 deletions in 16 commits ([`v5.6.3...v5.6.4`](https://github.com/mdn/browser-compat-data/compare/v5.6.3...v5.6.4))
+- 16,487 total features
+- 1,104 total contributors
+- 4,916 total stargazers
+
+## [v5.6.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.3)
+
+September 24, 2024
+
+### Additions
+
+- `css.properties.ruby-overhang` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.auto` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `css.properties.ruby-overhang.none` ([#24436](https://github.com/mdn/browser-compat-data/pull/24436))
+- `webextensions.manifest.theme.colors.tab_background_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+- `webextensions.manifest.theme.colors.toolbar_field_separator` ([#24487](https://github.com/mdn/browser-compat-data/pull/24487))
+
+### Statistics
+
+- 6 contributors have changed 158 files with 1,492 additions and 95 deletions in 17 commits ([`v5.6.2...v5.6.3`](https://github.com/mdn/browser-compat-data/compare/v5.6.2...v5.6.3))
+- 16,484 total features
+- 1,104 total contributors
+- 4,910 total stargazers
+
+## [v5.6.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.2)
+
+September 20, 2024
+
+### Removals
+
+- `html.elements.area.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+- `html.elements.object.tabindex` ([#24430](https://github.com/mdn/browser-compat-data/pull/24430))
+
+### Additions
+
+- `webextensions.api.declarativeNetRequest.RuleCondition.initiatorDomains` ([#24384](https://github.com/mdn/browser-compat-data/pull/24384))
+- `webextensions.api.tabs.onUpdated.changeInfo.openerTabId` ([#24069](https://github.com/mdn/browser-compat-data/pull/24069))
+
+### Statistics
+
+- 6 contributors have changed 11 files with 78 additions and 89 deletions in 10 commits ([`v5.6.1...v5.6.2`](https://github.com/mdn/browser-compat-data/compare/v5.6.1...v5.6.2))
+- 16,479 total features
+- 1,104 total contributors
+- 4,905 total stargazers
+
 ## [v5.6.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.1)
 
 September 18, 2024
