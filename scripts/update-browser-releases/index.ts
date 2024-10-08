@@ -85,7 +85,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'stable-channel-update-for-desktop',
     firstRelease: 1,
     skippedReleases: [82], // 82 was skipped during COVID
@@ -98,7 +98,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 25,
     skippedReleases: [82], // 82 was skipped during COVID
@@ -111,7 +111,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 37,
     skippedReleases: [82], // 82 was skipped during COVID
