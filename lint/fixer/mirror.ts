@@ -58,9 +58,12 @@ export const isMirrorRequired = (
   const current = bcd.browsers[browser];
   const upstream: BrowserName | undefined = current.upstream;
 
+  if (!upstream || !supportData[browser] || !supportData[upstream]) {
+    return false;
+  }
+
   if (
     supportData[browser].version_added === false &&
-    upstream &&
     supportData[upstream].version_added === 'preview' &&
     !current.preview_name
   ) {
