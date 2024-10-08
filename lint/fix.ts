@@ -7,6 +7,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
 
 import fixBrowserOrder from './fixer/browser-order.js';
@@ -66,11 +68,27 @@ const load = async (...files: string[]): Promise<void> => {
   }
 };
 
+/**
+ * Fix any errors in specified file(s) and/or folder(s), or all of BCD
+ * @param files The file(s) and/or folder(s) to fix. Leave undefined for everything.
+ */
+const main = async (files: string[]) => {
+  load(...files);
+};
+
 if (esMain(import.meta)) {
-  if (process.argv[2]) {
-    await load(process.argv[2]);
-  } else {
-    await load(
+  const { argv } = yargs(hideBin(process.argv)).command(
+    '$0 [files..]',
+    false,
+    (yargs) =>
+      yargs.positional('files...', {
+        description: 'The files to fix (leave blank to test everything)',
+        type: 'string',
+      }),
+  );
+
+  const {
+    files = [
       'api',
       'browsers',
       'css',
@@ -82,8 +100,10 @@ if (esMain(import.meta)) {
       'webassembly',
       'webdriver',
       'webextensions',
-    );
-  }
+    ],
+  } = argv as any;
+
+  await main(files);
 }
 
 export default load;
