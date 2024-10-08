@@ -939,10 +939,18 @@
             "web-features:webusb"
           ],
           "support": {
-            "chrome": {
-              "version_added": "70",
-              "notes": "Not available in Shared Workers and Service Workers (Except for WebExtension Service Workers)."
-            },
+            "chrome": [
+              {
+                "version_added": "118",
+                "partial_implementation": true,
+                "notes": "Dedicated workers and WebExtension service workers only."
+              },
+              {
+                "version_added": "70",
+                "partial_implementation": true,
+                "notes": "Dedicated workers only."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
