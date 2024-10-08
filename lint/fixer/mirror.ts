@@ -46,6 +46,34 @@ export const isMirrorEquivalent = (
 };
 
 /**
+ * Check to see if mirroring is required
+ * @param supportData The support statement to test
+ * @param browser The browser to mirror for
+ * @returns Whether mirroring is required
+ */
+export const isMirrorRequired = (
+  supportData: Partial<Record<BrowserName, any>>,
+  browser: string,
+): boolean => {
+  const current = bcd.browsers[browser];
+  const upstream: BrowserName | undefined = current.upstream;
+
+  if (
+    supportData[browser].version_added === false &&
+    upstream &&
+    supportData[upstream].version_added === 'preview' &&
+    !current.preview_name
+  ) {
+    // Allow `"version_added": false` if
+    // - upstream only has preview support, and
+    // - target does not have preview versions.
+    return false;
+  }
+
+  return true;
+};
+
+/**
  * Set the support statement for each browser to mirror if it matches mirroring
  * @param bcd The compat data to update
  */
