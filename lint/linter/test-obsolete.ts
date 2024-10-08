@@ -17,7 +17,7 @@ const categoriesToCheck = [
   'api',
   // 'css',
   'html',
-  // 'http',
+  'http',
   'javascript',
   'mathml',
   'svg',
@@ -151,7 +151,7 @@ export default {
   },
   exceptions: [
     'html.elements.track.kind.descriptions',
-    // The following exceptions are disabled while their categories are ignored:
-    // 'http.headers.Cache-Control.stale-if-error',
+    'http.headers.Cache-Control.stale-if-error',
+    'http.headers.X-XSS-Protection',
   ],
 } as Linter;

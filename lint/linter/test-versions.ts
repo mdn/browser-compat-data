@@ -43,8 +43,8 @@ const realValuesTargetBrowsers = [
 const realValuesRequired: Record<string, string[]> = {
   api: realValuesTargetBrowsers,
   css: realValuesTargetBrowsers,
-  html: [],
-  http: [],
+  html: realValuesTargetBrowsers,
+  http: realValuesTargetBrowsers,
   svg: realValuesTargetBrowsers,
   javascript: [...realValuesTargetBrowsers, 'nodejs', 'deno'],
   mathml: realValuesTargetBrowsers,

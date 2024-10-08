@@ -5,7 +5,7 @@
         "__compat": {
           "description": "<code>@container</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@container",
-          "spec_url": "https://drafts.csswg.org/css-contain-3/#container-rule",
+          "spec_url": "https://drafts.csswg.org/css-conditional-5/#container-rule",
           "tags": [
             "web-features:container-queries"
           ],
@@ -30,7 +30,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -42,7 +43,7 @@
           "__compat": {
             "description": "Style queries for custom properties",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@container",
-            "spec_url": "https://drafts.csswg.org/css-contain-3/#style-container",
+            "spec_url": "https://drafts.csswg.org/css-conditional-5/#style-container",
             "tags": [
               "web-features:container-style-queries"
             ],
@@ -65,11 +66,13 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "18"
+                "version_added": "18",
+                "notes": "The document element cannot be a container. See <a href='https://webkit.org/b/271040'>bug 271040</a>."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
