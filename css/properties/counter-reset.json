@@ -36,7 +36,8 @@
               "version_added": "1"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -49,7 +50,9 @@
             "spec_url": "https://drafts.csswg.org/css-lists-3/#valdef-counter-increment-list-item",
             "support": {
               "chrome": {
-                "version_added": "≤83"
+                "version_added": "≤83",
+                "partial_implementation": true,
+                "notes": "Overriding the initial value of the implicit <code>list-item</code> counter has <em>no</em> effect when the default marker string for list items (<code>::marker</code>) is generated; see <a href='https://crbug.com/338233131'>bug 338233131</a>."
               },
               "chrome_android": "mirror",
               "edge": {
@@ -68,11 +71,14 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "≤13.1",
+                "partial_implementation": true,
+                "notes": "Overriding the initial value of the implicit <code>list-item</code> counter results in incorrect values for the <code>counter()</code> function used to generate content, as it is <em>not</em> fully implemented; see <a href='https://webkit.org/b/260436'>bug 260436</a>."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -109,7 +115,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -141,7 +148,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -175,7 +183,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
