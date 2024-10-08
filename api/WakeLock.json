@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WakeLock",
         "spec_url": "https://w3c.github.io/screen-wake-lock/#the-wakelock-interface",
+        "tags": [
+          "web-features:screen-wake-lock"
+        ],
         "support": {
           "chrome": {
             "version_added": "84"
@@ -11,7 +14,7 @@
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": "preview"
+            "version_added": "126"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -23,9 +26,14 @@
           "safari": {
             "version_added": "16.4"
           },
-          "safari_ios": "mirror",
+          "safari_ios": {
+            "version_added": "16.4",
+            "partial_implementation": true,
+            "notes": "Does not work in standalone Home Screen Web Apps. See <a href='https://webkit.org/b/254545#c32'>bug 254545</a>."
+          },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -37,6 +45,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WakeLock/request",
           "spec_url": "https://w3c.github.io/screen-wake-lock/#the-request-method",
+          "tags": [
+            "web-features:screen-wake-lock"
+          ],
           "support": {
             "chrome": {
               "version_added": "84"
@@ -44,7 +55,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "126"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -56,9 +67,14 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4",
+              "partial_implementation": true,
+              "notes": "Does not work in standalone Home Screen Web Apps. See <a href='https://webkit.org/b/254545#c32'>bug 254545</a>."
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

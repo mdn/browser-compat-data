@@ -92,73 +92,73 @@ Here is an example of a `__compat` statement, with all of the properties and the
           "spec_url": [
             // The spec URL(s) for the feature if applicable, may be one or many
             "https://example.com/a-fake-spec#fake-event",
-            "https://example.com/a-fake-spec#onfake"
+            "https://example.com/a-fake-spec#onfake",
           ],
           "support": {
             // The support data for each browser
             "chrome": {
               // Supported since Chrome 57 on
-              "version_added": "57"
+              "version_added": "57",
             },
             "chrome_android": "mirror", // Mirrors from Chrome Desktop, so "57"
             "edge": {
               // Supported since Edge 12, with a note about a difference in behavior
               "version_added": "12",
-              "notes": "Before Edge 79, the event interface included additional proprietary properties."
+              "notes": "Before Edge 79, the event interface included additional proprietary properties.",
             },
             "firefox": {
               // Added in Firefox 59, then removed in Firefox 80 (AKA supported from 59 until 79)
               "version_added": "59",
-              "version_removed": "80"
+              "version_removed": "80",
             },
             "firefox_android": {
               // Supported in Firefox Android, we just don't know what version it was added in
-              "version_added": true
+              "version_added": true,
             },
             "ie": {
               // Supported since IE 10, but has a caveat that impacts compatibility
               "version_added": "10",
               "partial_implementation": true,
-              "notes": "The <code>onfake</code> event handler property is not supported."
+              "notes": "The <code>onfake</code> event handler property is not supported.",
             },
             "oculus": "mirror",
             "opera": {
               // Not supported at all in Opera
-              "version_added": false
+              "version_added": false,
             },
             "opera_android": {
               // We don't know if Opera Android supports this or not
-              "version_added": null
+              "version_added": null,
             },
             "safari": [
               // A support statement can be an array of multiple statements to better describe the compatibility story
               {
-                "version_added": "13" // Supported since Safari 13...
+                "version_added": "13", // Supported since Safari 13...
               },
               {
                 "version_added": "10.1", // ...but also supported since Safari 10.1 with the "webkit" prefix (AKA "webkitfake")...
-                "prefix": "webkit"
+                "prefix": "webkit",
               },
               {
                 "version_added": "4", // ...and supported between Safari 4 (inclusive) and 10.1 (exclusive) as "webkitnonreal"
                 "version_removed": "10.1",
-                "alternative_name": "webkitnonreal"
-              }
+                "alternative_name": "webkitnonreal",
+              },
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
           },
           "status": {
             // Standards track, deprecation and experimental status
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      }
-    }
-  }
+            "deprecated": false,
+          },
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -210,7 +210,8 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `webview_android`, WebView, the built-in browser for Android
+- `webview_android`, WebView, the embedded browser for Android applications
+- `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
@@ -275,6 +276,22 @@ This is the only mandatory property and it contains a string with the version nu
 ```json
 {
   "version_added": "3.5"
+}
+```
+
+- Support in version 79, but possibly supported earlier:
+
+```json
+{
+  "version_added": "≤79"
+}
+```
+
+- Support in latest beta/preview release:
+
+```json
+{
+  "version_added": "preview"
 }
 ```
 
@@ -494,9 +511,9 @@ The mandatory status property contains information about stability of the featur
 
 - `experimental`: a `boolean` value.
 
-  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
 
-  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
 
 - `standard_track`: a `boolean` value.
 

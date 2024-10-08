@@ -6,6 +6,9 @@
           "description": "<code>ray()</code>",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/ray",
           "spec_url": "https://drafts.fxtf.org/motion/#ray-function",
+          "tags": [
+            "web-features:motion-path"
+          ],
           "support": {
             "chrome": {
               "version_added": "116"
@@ -13,14 +16,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "72",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.motion-path-ray.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "122"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -30,14 +26,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "16"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -45,6 +42,9 @@
         "position": {
           "__compat": {
             "description": "<code>at &lt;position&gt;</code>",
+            "tags": [
+              "web-features:motion-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "116"
@@ -52,15 +52,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "116",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.motion-path-ray.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "<code>&lt;at-position&gt;</code> is optional. If omitted, the <code>offset-position</code> of the element is used."
+                "version_added": "122"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -70,14 +62,15 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -86,36 +79,18 @@
         "size": {
           "__compat": {
             "description": "<code>&lt;size&gt;</code>",
+            "tags": [
+              "web-features:motion-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "116"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "112",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.motion-path-ray.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "<code>&lt;size&gt;</code> is optional. If omitted, the value <code>closest-side</code> is used."
-                },
-                {
-                  "version_added": "72",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.motion-path-ray.enabled",
-                      "value_to_set": "true"
-                    }
-                  ],
-                  "notes": "<code>&lt;size&gt;</code> is required."
-                }
-              ],
+              "firefox": {
+                "version_added": "122"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -124,14 +99,15 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

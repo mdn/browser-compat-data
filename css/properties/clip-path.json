@@ -8,6 +8,9 @@
             "https://drafts.fxtf.org/css-masking/#the-clip-path",
             "https://drafts.csswg.org/css-shapes/#supported-basic-shapes"
           ],
+          "tags": [
+            "web-features:clip-path"
+          ],
           "support": {
             "chrome": [
               {
@@ -52,7 +55,8 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -60,42 +64,12 @@
             "deprecated": false
           }
         },
-        "animations": {
-          "__compat": {
-            "description": "Animations",
-            "support": {
-              "chrome": {
-                "version_added": "55"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "49"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "basic_shape": {
           "__compat": {
             "description": "<code>&lt;basic-shape&gt;</code>",
+            "tags": [
+              "web-features:clip-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -117,7 +91,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -126,9 +101,12 @@
             }
           }
         },
-        "fill_and_stroke_box": {
+        "fill-box": {
           "__compat": {
-            "description": "<code>fill-box</code> and <code>stroke-box</code>",
+            "spec_url": "https://drafts.fxtf.org/css-masking/#valdef-clip-path-fill-box",
+            "tags": [
+              "web-features:clip-path-boxes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "119"
@@ -151,7 +129,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -160,9 +139,12 @@
             }
           }
         },
-        "html": {
+        "html_elements": {
           "__compat": {
             "description": "On HTML elements",
+            "tags": [
+              "web-features:clip-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -184,7 +166,45 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "is_animatable": {
+          "__compat": {
+            "description": "Is animatable",
+            "tags": [
+              "web-features:clip-path-animatable"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "55"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "49"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -196,6 +216,9 @@
         "path": {
           "__compat": {
             "description": "<code>path()</code>",
+            "tags": [
+              "web-features:clip-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "88"
@@ -231,7 +254,8 @@
                 }
               ],
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -240,9 +264,50 @@
             }
           }
         },
-        "svg": {
+        "stroke-box": {
+          "__compat": {
+            "spec_url": "https://drafts.fxtf.org/css-masking/#valdef-clip-path-stroke-box",
+            "tags": [
+              "web-features:clip-path-boxes"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "51",
+                "notes": "This value was supported before Firefox 51, but as an alias to <code>border-box</code>."
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "13.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "svg_elements": {
           "__compat": {
             "description": "On SVG elements",
+            "tags": [
+              "web-features:clip-path"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -266,7 +331,45 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "view-box": {
+          "__compat": {
+            "spec_url": "https://drafts.fxtf.org/css-masking/#valdef-clip-path-view-box",
+            "tags": [
+              "web-features:clip-path-boxes"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "≤72"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "≤13.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

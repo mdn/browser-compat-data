@@ -59,6 +59,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Chris David Mills (@chrisdavidmills)
+- Daniel Beck (@ddbeck)
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Jean-Yves Perrier (@teoli2003), Open Web Docs
 - Joe Medley (@jpmedley), Google
