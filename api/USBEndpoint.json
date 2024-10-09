@@ -82,9 +82,6 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
-          "tags": [
-            "web-features:webusb"
-          ],
           "support": {
             "chrome": [
               {
@@ -94,6 +91,7 @@
               },
               {
                 "version_added": "70",
+                "version_removed": "118",
                 "partial_implementation": true,
                 "notes": "Available in dedicated workers, not available in shared workers and service workers."
               }
@@ -117,7 +115,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes this interface, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
+              "notes": "WebView exposes this interface, but does not support WebUSB.",
+              "impl_url": "https://crbug.com/933055"
             },
             "webview_ios": "mirror"
           },
