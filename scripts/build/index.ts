@@ -2,6 +2,8 @@
  * See LICENSE file for more information. */
 
 import fs from 'node:fs/promises';
+import { relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
@@ -26,6 +28,14 @@ const packageJson = JSON.parse(
 const targetdir = new URL('./build/', rootdir);
 
 const verbatimFiles = ['LICENSE', 'README.md'];
+
+function logWrite(url: URL, description: string = '') {
+  if (description) {
+    description = ` (${description})`;
+  }
+  const path = relative(fileURLToPath(rootdir), fileURLToPath(url));
+  console.log(`Wrote: ${path}${description}`);
+}
 
 /**
  * Generate metadata to embed into BCD builds
@@ -146,6 +156,7 @@ const writeData = async () => {
   const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
   await fs.writeFile(dest, stringify(data));
+  logWrite(dest, 'data');
 };
 
 /**
@@ -159,6 +170,7 @@ const bcd = JSON.parse(fs.readFileSync(new URL('./data.json', import.meta.url)))
 export default bcd;
 `;
   await fs.writeFile(dest, content);
+  logWrite(dest, 'wrapper for old NodeJS versions');
 };
 
 /**
@@ -167,6 +179,7 @@ export default bcd;
 const writeTypeScript = async () => {
   const destRequire = new URL('require.d.ts', targetdir);
   const destImport = new URL('import.d.mts', targetdir);
+  const destTypes = new URL('types.d.ts', targetdir);
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
@@ -177,9 +190,13 @@ export default bcd;
 export * from "./types.js";`;
 
   await fs.writeFile(destRequire, content);
-  await fs.writeFile(destImport, content);
+  logWrite(destRequire, 'CommonJS types');
 
-  await compileTS(new URL('types.d.ts', targetdir));
+  await fs.writeFile(destImport, content);
+  logWrite(destImport, 'ESM types');
+
+  await compileTS(destTypes);
+  logWrite(destTypes, 'data types');
 };
 
 /**
@@ -190,6 +207,7 @@ const copyFiles = async () => {
     const src = new URL(file, rootdir);
     const dest = new URL(file, targetdir);
     await fs.copyFile(src, dest);
+    logWrite(dest);
   }
 };
 
@@ -252,6 +270,7 @@ const writeManifest = async () => {
   const dest = new URL('package.json', targetdir);
   const manifest = createManifest();
   await fs.writeFile(dest, JSON.stringify(manifest, null, 2));
+  logWrite(dest, 'manifest');
 };
 
 /**
