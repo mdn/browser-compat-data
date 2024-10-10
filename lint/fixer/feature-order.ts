@@ -35,6 +35,10 @@ export const orderFeatures = (_: string, value: Identifier): Identifier => {
  * @param filename The filename to perform fix upon
  */
 const fixFeatureOrder = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 

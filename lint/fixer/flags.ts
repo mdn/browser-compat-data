@@ -58,6 +58,10 @@ export const removeIrrelevantFlags = (
  * @param filename The filename containing compatibility info
  */
 const fixFlags = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
 
   const data = JSON.parse(actual);
