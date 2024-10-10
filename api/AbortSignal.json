@@ -396,9 +396,16 @@
             "web-features:aborting"
           ],
           "support": {
-            "chrome": {
-              "version_added": "103"
-            },
+            "chrome": [
+              {
+                "version_added": "124"
+              },
+              {
+                "version_added": "103",
+                "version_removed": "124",
+                "notes": "Always aborts with an <code>AbortError</code> on timeout, not a <code>TimeoutError</code>."
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.20"
