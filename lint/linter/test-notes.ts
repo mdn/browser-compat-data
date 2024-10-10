@@ -3,6 +3,7 @@
 
 import chalk from 'chalk-template';
 import HTMLParser from '@desertnet/html-parser';
+import { marked } from 'marked';
 
 import { Linter, Logger, LinterData, VALID_ELEMENTS } from '../utils.js';
 import {
@@ -68,11 +69,12 @@ const testNode = (node): string[] => {
  */
 export const validateHTML = (string: string): string[] => {
   const errors: string[] = [];
-  const htmlErrors = HTMLParser.validate(string);
+  const html = marked.parseInline(string);
+  const htmlErrors = HTMLParser.validate(html);
 
   if (htmlErrors.length === 0) {
     // If HTML is valid, ensure we're only using valid elements
-    errors.push(...testNode(parser.parse(string)));
+    errors.push(...testNode(parser.parse(html)));
   } else {
     errors.push(
       chalk`Invalid HTML: ${htmlErrors.map((x) => x._message).join(', ')}`,
