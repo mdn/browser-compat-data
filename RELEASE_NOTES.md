@@ -1,5 +1,54 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.6)
+
+October 11, 2024
+
+### Removals
+
+- `api.FetchEvent.replacesClientId` ([#24443](https://github.com/mdn/browser-compat-data/pull/24443))
+- `api.IDBDatabase.transaction.option_durability_parameter_readwriteflush` ([#23592](https://github.com/mdn/browser-compat-data/pull/23592))
+
+### Additions
+
+- `api.HID.worker_support` ([#24538](https://github.com/mdn/browser-compat-data/pull/24538))
+- `api.HIDConnectionEvent.worker_support` ([#24538](https://github.com/mdn/browser-compat-data/pull/24538))
+- `api.HIDDevice.worker_support` ([#24538](https://github.com/mdn/browser-compat-data/pull/24538))
+- `api.HIDInputReportEvent.worker_support` ([#24538](https://github.com/mdn/browser-compat-data/pull/24538))
+- `api.IDBDatabase.transaction.mode_parameter_readwriteflush` ([#23592](https://github.com/mdn/browser-compat-data/pull/23592))
+- `api.USB.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBAlternateInterface.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBConfiguration.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBConnectionEvent.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBDevice.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBEndpoint.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBInterface.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBInTransferResult.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBIsochronousInTransferPacket.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBIsochronousInTransferResult.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBIsochronousOutTransferPacket.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBIsochronousOutTransferResult.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.USBOutTransferResult.worker_support` ([#24639](https://github.com/mdn/browser-compat-data/pull/24639))
+- `api.WorkerNavigator.hid` ([#24538](https://github.com/mdn/browser-compat-data/pull/24538))
+- `browsers.chrome_android.releases.133` ([#24691](https://github.com/mdn/browser-compat-data/pull/24691))
+- `browsers.chrome.releases.133` ([#24691](https://github.com/mdn/browser-compat-data/pull/24691))
+- `browsers.webview_android.releases.133` ([#24691](https://github.com/mdn/browser-compat-data/pull/24691))
+- `css.properties.border-collapse.collapse` ([#24156](https://github.com/mdn/browser-compat-data/pull/24156))
+- `css.properties.border-collapse.separate` ([#24156](https://github.com/mdn/browser-compat-data/pull/24156))
+- `css.properties.clip.auto` ([#24158](https://github.com/mdn/browser-compat-data/pull/24158))
+- `css.properties.column-width.auto` ([#24164](https://github.com/mdn/browser-compat-data/pull/24164))
+- `css.properties.object-position.applies_to_iframe_elements` ([#23631](https://github.com/mdn/browser-compat-data/pull/23631))
+- `css.properties.text-emphasis-position.auto` ([#24670](https://github.com/mdn/browser-compat-data/pull/24670))
+- `css.properties.white-space-collapse.preserve-spaces` ([#24154](https://github.com/mdn/browser-compat-data/pull/24154))
+- `http.headers.Cross-Origin-Opener-Policy.noopener-allow-popups` ([#24660](https://github.com/mdn/browser-compat-data/pull/24660))
+
+### Statistics
+
+- 10 contributors have changed 63 files with 1,373 additions and 310 deletions in 46 commits ([`v5.6.5...v5.6.6`](https://github.com/mdn/browser-compat-data/compare/v5.6.5...v5.6.6))
+- 16,572 total features
+- 1,109 total contributors
+- 4,939 total stargazers
+
 ## [v5.6.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.5)
 
 October 8, 2024
