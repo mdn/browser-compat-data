@@ -124,7 +124,7 @@ export const addVersionLast = (feature: WalkOutput): void => {
 
 /**
  * Convert descriptions and notes from Markdown to HTML
- * @param {WalkOutput} feature The BCD to perform mirroring on
+ * @param {WalkOutput} feature The BCD to perform note conversion on
  * @returns {void}
  */
 export const transformMD = (feature: WalkOutput): void => {
