@@ -16,6 +16,9 @@ import bcd, { dataFolders } from '../index.js';
  * @param values The values to test for
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
+ * @param deprecated Whether to filter by deprecation status
+ * @param standard_track Whether to filter by standard track status
+ * @param experimental Whether to filter by experimental status
  * @param identifier The identifier of the current object
  * @yields {string} The feature identifier
  */
@@ -25,6 +28,9 @@ export function* iterateFeatures(
   values: string[],
   depth: number,
   tag: string,
+  deprecated: boolean | undefined,
+  standard_track: boolean | undefined,
+  experimental: boolean | undefined,
   identifier: string,
 ): IterableIterator<string> {
   depth--;
@@ -32,6 +38,21 @@ export function* iterateFeatures(
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
+          if (typeof deprecated === 'boolean') {
+            if (deprecated !== obj[i].__compat.status?.deprecated) {
+              continue;
+            }
+          }
+          if (typeof standard_track === 'boolean') {
+            if (standard_track !== obj[i].__compat.status?.standard_track) {
+              continue;
+            }
+          }
+          if (typeof experimental === 'boolean') {
+            if (experimental !== obj[i].__compat.status?.experimental) {
+              continue;
+            }
+          }
           if (tag) {
             const tags = obj[i].__compat?.tags;
             if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
@@ -109,6 +130,9 @@ export function* iterateFeatures(
           values,
           depth,
           tag,
+          deprecated,
+          standard_track,
+          experimental,
           identifier + i + '.',
         );
       }
@@ -123,6 +147,9 @@ export function* iterateFeatures(
  * @param values The version values to traverse for
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
+ * @param deprecated Whether to filter by deprecation status
+ * @param standard_track Whether to filter by standard track status
+ * @param experimental Whether to filter by experimental status
  * @param identifier The identifier of the current object
  * @returns An array of the features
  */
@@ -132,10 +159,23 @@ const traverseFeatures = (
   values: string[],
   depth: number,
   tag: string,
+  deprecated: boolean | undefined,
+  standard_track: boolean | undefined,
+  experimental: boolean | undefined,
   identifier: string,
 ): string[] => {
   const features = Array.from(
-    iterateFeatures(obj, browsers, values, depth, tag, identifier),
+    iterateFeatures(
+      obj,
+      browsers,
+      values,
+      depth,
+      tag,
+      deprecated,
+      standard_track,
+      experimental,
+      identifier,
+    ),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
@@ -148,6 +188,9 @@ const traverseFeatures = (
  * @param values The version values to traverse for
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
+ * @param deprecated Whether to filter by deprecation status
+ * @param standard_track Whether to filter by standard track status
+ * @param experimental Whether to filter by experimental status
  * @returns The list of features
  */
 const main = (
@@ -158,6 +201,9 @@ const main = (
   values = ['null', 'true'],
   depth = 100,
   tag = '',
+  deprecated = undefined,
+  standard_track = undefined,
+  experimental = undefined,
 ): string[] => {
   const features: string[] = [];
 
@@ -169,6 +215,9 @@ const main = (
         values,
         depth,
         tag,
+        deprecated,
+        standard_track,
+        experimental,
         folders[folder] + '.',
       ),
     );
@@ -236,6 +285,27 @@ if (esMain(import.meta)) {
           type: 'boolean',
           default: process.stdout.isTTY,
         })
+        .option('deprecated', {
+          alias: 'x',
+          describe:
+            'Filter features by deprecation status. Set to `true` to only show deprecated features or `false` to only show non-deprecated features.',
+          type: 'boolean',
+          default: undefined,
+        })
+        .option('standard_track', {
+          alias: 's',
+          describe:
+            'Filter features by standard_track status. Set to `true` to only show standards track features or `false` to only show non-standards track features.',
+          type: 'boolean',
+          default: undefined,
+        })
+        .option('experimental', {
+          alias: 'e',
+          describe:
+            'Filter features by experimental status. Set to `true` to only show experimental features or `false` to only show non-experimental features.',
+          type: 'boolean',
+          default: undefined,
+        })
         .example(
           'npm run traverse -- --browser=safari -n',
           'Find all features containing non-real Safari entries',
@@ -259,6 +329,22 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -t false',
           'Find all features with no tags.',
+        )
+        .example(
+          'npm run traverse -- --deprecated',
+          'Find all features that are deprecated.',
+        )
+        .example(
+          'npm run traverse -- --no-deprecated',
+          'Omit all features that are deprecated.',
+        )
+        .example(
+          'npm run traverse -- --standard_track',
+          'Find all features that are on the standard track.',
+        )
+        .example(
+          'npm run traverse -- --experimental',
+          'Omit all features that are deprecated.',
         );
     },
   );
@@ -271,6 +357,9 @@ if (esMain(import.meta)) {
     filter,
     argv.depth,
     argv.tag,
+    argv.deprecated,
+    argv.standard_track,
+    argv.experimental,
   );
   console.log(features.join('\n'));
   if (argv.showCount) {
