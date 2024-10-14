@@ -131,6 +131,8 @@ export function* iterateFeatures(
           depth,
           tag,
           deprecated,
+          standard_track,
+          experimental,
           identifier + i + '.',
         );
       }
