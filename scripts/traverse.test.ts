@@ -3,12 +3,11 @@
 
 import assert from 'node:assert/strict';
 
-import { BrowserName } from '../types/types.js';
-
 import { iterateFeatures } from './traverse.js';
 
 describe('iterateFeatures', () => {
   let obj: any;
+  let options: any;
   beforeEach(() => {
     obj = {
       feature1: {
@@ -33,30 +32,35 @@ describe('iterateFeatures', () => {
           status: {
             experimental: false,
             standard_track: true,
-            deprecated: true,
+            deprecated: false,
           },
         },
       },
     };
+    options = {
+      browsers: ['chrome', 'firefox'],
+      values: ['1.0', 'null'],
+      depth: 2,
+      tag: '',
+      identifier: '',
+      deprecated: undefined,
+      standard_track: undefined,
+      experimental: undefined,
+    };
   });
 
   it('should yield correct identifiers for given object', () => {
-    const browsers: BrowserName[] = ['chrome', 'firefox'];
-    const values = ['1.0', 'null'];
-    const depth = 2;
-    const tag = '';
-    const identifier = '';
-    const deprecated = undefined;
-
     const result = Array.from(
       iterateFeatures(
         obj,
-        browsers,
-        values,
-        depth,
-        tag,
-        deprecated,
-        identifier,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
       ),
     );
 
@@ -64,22 +68,19 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out deprecated', () => {
-    const browsers: BrowserName[] = ['chrome', 'firefox'];
-    const values = ['1.0', 'null'];
-    const depth = 2;
-    const tag = '';
-    const identifier = '';
-    const deprecated = false;
-
+    options.deprecated = false;
+    obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
         obj,
-        browsers,
-        values,
-        depth,
-        tag,
-        deprecated,
-        identifier,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
       ),
     );
 
@@ -87,25 +88,102 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out non-deprecated', () => {
-    const browsers: BrowserName[] = ['chrome', 'firefox'];
-    const values = ['1.0', 'null'];
-    const depth = 2;
-    const tag = '';
-    const identifier = '';
-    const deprecated = true;
-
+    options.deprecated = true;
+    obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
         obj,
-        browsers,
-        values,
-        depth,
-        tag,
-        deprecated,
-        identifier,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
       ),
     );
 
     assert.deepEqual(result, ['feature2']);
+  });
+
+  it('should filter out non-experimental', () => {
+    obj.feature2.__compat.status.experimental = true;
+    options.experimental = true;
+    const result = Array.from(
+      iterateFeatures(
+        obj,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
+      ),
+    );
+
+    assert.deepEqual(result, ['feature2']);
+  });
+
+  it('should filter out experimental', () => {
+    obj.feature2.__compat.status.experimental = true;
+    options.experimental = false;
+    const result = Array.from(
+      iterateFeatures(
+        obj,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
+      ),
+    );
+
+    assert.deepEqual(result, ['feature1']);
+  });
+
+  it('should filter out non-standard track', () => {
+    obj.feature1.__compat.status.standard_track = false;
+    options.standard_track = true;
+    const result = Array.from(
+      iterateFeatures(
+        obj,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
+      ),
+    );
+
+    assert.deepEqual(result, ['feature2']);
+  });
+
+  it('should filter out standard track', () => {
+    obj.feature1.__compat.status.standard_track = false;
+    options.standard_track = false;
+    const result = Array.from(
+      iterateFeatures(
+        obj,
+        options.browsers,
+        options.values,
+        options.depth,
+        options.tag,
+        options.deprecated,
+        options.standard_track,
+        options.experimental,
+        options.identifier,
+      ),
+    );
+
+    assert.deepEqual(result, ['feature1']);
   });
 });
