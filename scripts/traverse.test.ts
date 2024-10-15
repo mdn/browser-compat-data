@@ -43,7 +43,7 @@ describe('iterateFeatures', () => {
       depth: 2,
       tag: '',
       identifier: '',
-      support: {
+      status: {
         deprecated: undefined,
         standard_track: undefined,
         experimental: undefined,
@@ -67,7 +67,7 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out deprecated', () => {
-    options.support.deprecated = false;
+    options.status.deprecated = false;
     obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
@@ -77,7 +77,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
@@ -85,7 +85,7 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out non-deprecated', () => {
-    options.support.deprecated = true;
+    options.status.deprecated = true;
     obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
@@ -95,7 +95,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
@@ -104,7 +104,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out non-experimental', () => {
     obj.feature2.__compat.status.experimental = true;
-    options.support.experimental = true;
+    options.status.experimental = true;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -113,7 +113,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
@@ -122,7 +122,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out experimental', () => {
     obj.feature2.__compat.status.experimental = true;
-    options.support.experimental = false;
+    options.status.experimental = false;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -131,7 +131,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
@@ -140,7 +140,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out non-standard track', () => {
     obj.feature1.__compat.status.standard_track = false;
-    options.support.standard_track = true;
+    options.status.standard_track = true;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -149,7 +149,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
@@ -158,7 +158,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out standard track', () => {
     obj.feature1.__compat.status.standard_track = false;
-    options.support.standard_track = false;
+    options.status.standard_track = false;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -167,7 +167,7 @@ describe('iterateFeatures', () => {
         options.depth,
         options.tag,
         options.identifier,
-        options.support,
+        options.status,
       ),
     );
 
