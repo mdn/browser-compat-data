@@ -37,6 +37,10 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
  * @param filename The name of the file to fix
  */
 const fixStatusFromFile = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
 

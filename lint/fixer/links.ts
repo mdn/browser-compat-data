@@ -11,6 +11,10 @@ import { processData } from '../linter/test-links.js';
  * @param filename The name of the file to fix
  */
 const fixLinks = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   const original = fs.readFileSync(filename, 'utf-8').trim();
   const errors = processData(original);
   let data = original;
