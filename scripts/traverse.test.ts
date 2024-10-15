@@ -43,9 +43,11 @@ describe('iterateFeatures', () => {
       depth: 2,
       tag: '',
       identifier: '',
-      deprecated: undefined,
-      standard_track: undefined,
-      experimental: undefined,
+      support: {
+        deprecated: undefined,
+        standard_track: undefined,
+        experimental: undefined,
+      },
     };
   });
 
@@ -57,9 +59,6 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
       ),
     );
@@ -68,7 +67,7 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out deprecated', () => {
-    options.deprecated = false;
+    options.support.deprecated = false;
     obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
@@ -77,10 +76,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
@@ -88,7 +85,7 @@ describe('iterateFeatures', () => {
   });
 
   it('should filter out non-deprecated', () => {
-    options.deprecated = true;
+    options.support.deprecated = true;
     obj.feature2.__compat.status.deprecated = true;
     const result = Array.from(
       iterateFeatures(
@@ -97,10 +94,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
@@ -109,7 +104,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out non-experimental', () => {
     obj.feature2.__compat.status.experimental = true;
-    options.experimental = true;
+    options.support.experimental = true;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -117,10 +112,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
@@ -129,7 +122,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out experimental', () => {
     obj.feature2.__compat.status.experimental = true;
-    options.experimental = false;
+    options.support.experimental = false;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -137,10 +130,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
@@ -149,7 +140,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out non-standard track', () => {
     obj.feature1.__compat.status.standard_track = false;
-    options.standard_track = true;
+    options.support.standard_track = true;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -157,10 +148,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
@@ -169,7 +158,7 @@ describe('iterateFeatures', () => {
 
   it('should filter out standard track', () => {
     obj.feature1.__compat.status.standard_track = false;
-    options.standard_track = false;
+    options.support.standard_track = false;
     const result = Array.from(
       iterateFeatures(
         obj,
@@ -177,10 +166,8 @@ describe('iterateFeatures', () => {
         options.values,
         options.depth,
         options.tag,
-        options.deprecated,
-        options.standard_track,
-        options.experimental,
         options.identifier,
+        options.support,
       ),
     );
 
