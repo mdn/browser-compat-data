@@ -1,0 +1,55 @@
+name: Update MDN urls
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 4 * * 1-5"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    if: github.repository == 'mdn/browser-compat-data'
+    name: Update MDN urls
+    runs-on: ubuntu-latest
+    env:
+      RESULT: ""
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Fix
+        run: |
+          echo "RESULT<<EOF" >> $GITHUB_ENV
+          npm run lint:fix -- --only=mdn_urls >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
+          commit-message: Update MDN urls
+          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
+          signoff: false
+          branch: mdn-urls
+          delete-branch: true
+          add-paths: "*.json"
+          title: "Update MDN urls"
+          body: |
+            ```
+            $ npm run lint:fix -- --only=mdn_urls
+            ${{ env.RESULT }}
+            ```
+          draft: false
