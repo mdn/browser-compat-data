@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.7)
+
+October 15, 2024
+
+### Additions
+
+- `api.GPUCanvasContext.configure.toneMapping` ([#24701](https://github.com/mdn/browser-compat-data/pull/24701))
+- `api.GPUCanvasContext.getConfiguration` ([#24701](https://github.com/mdn/browser-compat-data/pull/24701))
+- `api.ProgressEvent.worker_support` ([#24620](https://github.com/mdn/browser-compat-data/pull/24620))
+- `css.properties.display.none.option_is_hidden` ([#24392](https://github.com/mdn/browser-compat-data/pull/24392))
+- `css.properties.ruby-position.inter-character` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+- `css.properties.ruby-position.over` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+- `css.properties.ruby-position.under` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+
+### Statistics
+
+- 8 contributors have changed 45 files with 711 additions and 84 deletions in 19 commits ([`v5.6.6...v5.6.7`](https://github.com/mdn/browser-compat-data/compare/v5.6.6...v5.6.7))
+- 16,579 total features
+- 1,111 total contributors
+- 4,946 total stargazers
+
 ## [v5.6.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.6)
 
 October 11, 2024
