@@ -69,7 +69,8 @@ export const getMatchingBrowserVersion = (
     // and then assume if the versions are identical it's also a match.
     const v = matchingSafariVersions.get(sourceVersion.replace('≤', ''));
     if (v) {
-      return (range ? '≤' : '') + v;
+      const firstRelease = v === '1';
+      return range && !firstRelease ? `≤${v}` : v;
     }
     if (sourceVersion.replace('≤', '') in browserData.releases) {
       return sourceVersion;
@@ -77,8 +78,8 @@ export const getMatchingBrowserVersion = (
     throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
   }
 
-  const releaseKeys = Object.keys(browserData.releases);
-  releaseKeys.sort(compareVersions);
+  const versions = Object.keys(browserData.releases);
+  versions.sort(compareVersions);
 
   const sourceRelease =
     browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
@@ -89,24 +90,24 @@ export const getMatchingBrowserVersion = (
     );
   }
 
-  for (const r of releaseKeys) {
-    const release = browserData.releases[r];
+  let firstRelease = true;
+  for (const v of versions) {
+    const release = browserData.releases[v];
     if (
-      ['chrome', 'chrome_android'].includes(browserData.upstream) &&
-      targetBrowser !== 'chrome_android' &&
-      release.engine == 'Blink' &&
-      sourceRelease.engine == 'WebKit'
+      // Handle Chromium forks when upstream version is pre-Blink
+      (['chrome', 'chrome_android'].includes(browserData.upstream) &&
+        targetBrowser !== 'chrome_android' &&
+        release.engine == 'Blink' &&
+        sourceRelease.engine == 'WebKit') ||
+      // Match same or newer engine version
+      (release.engine == sourceRelease.engine &&
+        release.engine_version &&
+        sourceRelease.engine_version &&
+        compare(release.engine_version, sourceRelease.engine_version, '>='))
     ) {
-      // Handle mirroring for Chromium forks when upstream version is pre-Blink
-      return range ? `≤${r}` : r;
-    } else if (
-      release.engine == sourceRelease.engine &&
-      release.engine_version &&
-      sourceRelease.engine_version &&
-      compare(release.engine_version, sourceRelease.engine_version, '>=')
-    ) {
-      return r;
+      return range && !firstRelease ? `≤${v}` : v;
     }
+    firstRelease = false;
   }
 
   return false;
