@@ -17,11 +17,9 @@
             "firefox": {
               "prefix": "-moz-",
               "version_added": "1",
+              "version_removed": "132",
               "partial_implementation": true,
-              "notes": [
-                "While the CSS property is parsed and accepted, it does not have any effect.",
-                "Scheduled for removal (see <a href='https://bugzil.la/1388910'>bug 1388910</a>)."
-              ]
+              "notes": "While the CSS property is parsed and accepted, it does not have any effect."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -88,7 +86,9 @@
               "webview_android": {
                 "version_added": "37"
               },
-              "webview_ios": "mirror"
+              "webview_ios": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": false,
