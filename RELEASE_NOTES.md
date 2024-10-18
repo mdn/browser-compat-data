@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.8)
+
+October 18, 2024
+
+### Removals
+
+- `css.properties.column-fill.balance-all` ([#23578](https://github.com/mdn/browser-compat-data/pull/23578))
+
+### Additions
+
+- `api.Worker.worker_support` ([#24610](https://github.com/mdn/browser-compat-data/pull/24610))
+- `html.elements.video.autoplay.requires_muted_audio` ([#23635](https://github.com/mdn/browser-compat-data/pull/23635))
+
+### Statistics
+
+- 8 contributors have changed 46 files with 252 additions and 168 deletions in 24 commits ([`v5.6.7...v5.6.8`](https://github.com/mdn/browser-compat-data/compare/v5.6.7...v5.6.8))
+- 16,580 total features
+- 1,111 total contributors
+- 4,947 total stargazers
+
 ## [v5.6.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.7)
 
 October 15, 2024
