@@ -57,6 +57,35 @@ const processLink = async (
   }
 };
 
+const CRBUG_CACHE = new Map<string, string>();
+
+/**
+ * Resolves legacy Chrome bugs from the Monorail era.
+ * @param oldId the old bug id.
+ * @returns the new bug id.
+ */
+const resolveCrbug = async (oldId: string): Promise<string> => {
+  if (oldId.length >= 8) {
+    // This isn't an old id.
+    return oldId;
+  }
+
+  let newId = CRBUG_CACHE.get(oldId);
+  if (newId) {
+    return newId;
+  }
+
+  const res = await fetch(`https://crbug.com/${oldId}`);
+  const text = await res.text();
+  const match = text.match(/https:\/\/issues.chromium.org\/(\d{8,})/);
+
+  newId = match ? match[1] : oldId;
+
+  CRBUG_CACHE.set(oldId, newId);
+
+  return newId;
+};
+
 /**
  * Process the data for any errors within the links
  * @param rawData The raw contents of the file to test
@@ -126,6 +155,17 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     async (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crrev.com/${match[1]}`,
+    }),
+  );
+
+  await processLink(
+    // use https://crbug.com/400000000 instead
+    errors,
+    actual,
+    /https?:\/\/crbug.com\/(\d{1,7})/g,
+    async (match) => ({
+      issue: 'Use new Google Issue ID',
+      expected: `https://crbug.com/${await resolveCrbug(match[1])}`,
     }),
   );
 
