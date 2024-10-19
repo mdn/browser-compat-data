@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { processData } from './test-links.js';
 
 describe('test-links', () => {
-  it('should process Bugzilla links correctly', () => {
+  it('should process Bugzilla bug links correctly', () => {
     const rawData = 'https://bugzilla.mozilla.org/show_bug.cgi?id=12345';
     const errors = processData(rawData);
 
@@ -15,7 +15,16 @@ describe('test-links', () => {
     assert.equal(errors[0].expected, 'https://bugzil.la/12345');
   });
 
-  it('should process Chromium links correctly', () => {
+  it('should process new Chromium bug links correctly', () => {
+    const rawData = 'https://issues.chromium.org/issues/12345';
+    const errors = processData(rawData);
+
+    assert.equal(errors.length, 1);
+    assert.equal(errors[0].issue, 'Use shortenable URL');
+    assert.equal(errors[0].expected, 'https://crbug.com/12345');
+  });
+
+  it('should process old Chromium bug links correctly', () => {
     const rawData =
       'https://bugs.chromium.org/p/chromium/issues/detail?id=12345';
     const errors = processData(rawData);
@@ -25,7 +34,7 @@ describe('test-links', () => {
     assert.equal(errors[0].expected, 'https://crbug.com/12345');
   });
 
-  it('should process Chromium category links correctly', () => {
+  it('should process old Chromium bug links with categories correctly', () => {
     const rawData =
       'https://bugs.chromium.org/p/category/issues/detail?id=12345';
     const errors = processData(rawData);

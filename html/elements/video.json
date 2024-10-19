@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/video",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#the-video-element",
+          "tags": [
+            "web-features:video"
+          ],
           "support": {
             "chrome": {
               "version_added": "3"
@@ -32,7 +35,8 @@
               "version_added": "3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -67,7 +71,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -79,6 +84,9 @@
         "autoplay": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-autoplay",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -103,22 +111,69 @@
                 "version_added": "3.1"
               },
               "safari_ios": {
-                "version_added": "10",
-                "notes": "Only available for videos that have <a href='https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html'>no sound or have the audio track disabled</a>."
+                "version_added": "10"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "requires_muted_audio": {
+            "__compat": {
+              "description": "Autoplay requires <code>muted</code> attribute or no audio track",
+              "support": {
+                "chrome": {
+                  "version_added": "67"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "67"
+                },
+                "firefox_android": [
+                  {
+                    "version_added": "91"
+                  },
+                  {
+                    "version_added": "67",
+                    "version_removed": "79",
+                    "notes": "Between versions 79 and 91, the default behavior was to block videos from autoplaying, regardless of whether audio was muted."
+                  }
+                ],
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": "10"
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
           }
         },
         "controls": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-controls",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -146,7 +201,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -182,7 +238,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -194,6 +251,9 @@
         "crossorigin": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-crossorigin",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "33"
@@ -215,7 +275,7 @@
               ],
               "firefox_android": "mirror",
               "ie": {
-                "version_added": null
+                "version_added": false
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -225,7 +285,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -237,6 +298,9 @@
         "disablepictureinpicture": {
           "__compat": {
             "spec_url": "https://w3c.github.io/picture-in-picture/#dom-htmlvideoelement-disablepictureinpicture",
+            "tags": [
+              "web-features:picture-in-picture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -272,7 +336,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -312,7 +377,8 @@
               "webview_android": {
                 "version_added": false,
                 "impl_url": "https://crbug.com/521319"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -324,6 +390,9 @@
         "height": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-height",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -351,7 +420,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -363,6 +433,9 @@
         "loop": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loop",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -390,7 +463,8 @@
                 "version_added": "6"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -402,6 +476,9 @@
         "muted": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-muted",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -425,7 +502,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -464,7 +542,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -476,6 +555,9 @@
         "poster": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-video-poster",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -503,7 +585,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -515,6 +598,9 @@
         "preload": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-preload",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3",
@@ -541,7 +627,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -553,6 +640,9 @@
         "src": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-src",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -580,7 +670,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -592,6 +683,9 @@
         "width": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#attr-dim-width",
+            "tags": [
+              "web-features:video"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -619,7 +713,8 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

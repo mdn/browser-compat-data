@@ -16,13 +16,12 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Updates the specified key in the given JSON object using the provided updater function.
- *
  * @param key The key to update in dot notation (e.g., 'api.foobar').
  * @param json The JSON object to update.
  * @param updater The function to apply to the '__compat' property of the value corresponding to the key.
  * @returns The updated JSON object.
  */
-const performUpdate = (key, json, updater) => {
+const performUpdate = (key: string, json: any, updater: (any) => any): any => {
   const parts = key.split('.');
   if (!(parts[0] in json)) {
     console.warn('Key not found in file!');
@@ -42,11 +41,10 @@ const performUpdate = (key, json, updater) => {
 
 /**
  * Updates features in multiple JSON files based on the provided feature IDs and updater function.
- *
- * @param {string[]} featureIDs An array of feature IDs to update.
- * @param {Function} updater The updater function to apply to each matching feature.
+ * @param featureIDs An array of feature IDs to update.
+ * @param updater The updater function to apply to each matching feature.
  */
-export const updateFeatures = (featureIDs, updater) => {
+export const updateFeatures = (featureIDs: string[], updater: (any) => any) => {
   for (const dir of dataFolders) {
     const paths = new fdir()
       .withBasePath()

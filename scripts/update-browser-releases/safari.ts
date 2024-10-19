@@ -9,13 +9,21 @@ import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
+interface Release {
+  version: string;
+  engineVersion: string;
+  channel: 'current' | 'beta' | 'retired';
+  date: string;
+  releaseNote: string;
+}
+
 /**
  * extractReleaseData - Extract release info from string given by Apple
  * @param str The string with release information
  *            E.g., Released September 18, 2023 — Version 17 (19616.1.27)
  * @returns Data for the release
  */
-const extractReleaseData = (str) => {
+const extractReleaseData = (str): Release | null => {
   // Note: \s is needed as some spaces in Apple source are non-breaking
   const result =
     /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(\s*beta)?\s*\((.*)\)/.exec(
@@ -29,7 +37,7 @@ const extractReleaseData = (str) => {
   }
   return {
     date: new Date(`${result[1]} UTC`).toISOString().substring(0, 10),
-    version: result[2],
+    version: result[2].replace(/\.0$/, ''),
     channel: result[3] ? 'beta' : 'retired',
     engineVersion: result[4].substring(2),
     releaseNote: '',
@@ -65,7 +73,7 @@ export const updateSafariReleases = async (options) => {
   //
   // Collect release data from JSON
   //
-  const releaseData = [];
+  const releaseData: Release[] = [];
   for (const id in releases) {
     // Filter out data from "Technologies" overview page
     if (releases[id].kind !== 'article') {
@@ -77,6 +85,9 @@ export const updateSafariReleases = async (options) => {
       console.warn(
         chalk`{yellow Release string from Apple not understandable (${releases[id].abstract[0].text})}`,
       );
+      continue;
+    } else if (/^\d+\.\d+\.\d+$/.test(releaseDataEntry.version)) {
+      // Ignore patch version (e.g. "18.0.1").
       continue;
     }
 
@@ -97,9 +108,12 @@ export const updateSafariReleases = async (options) => {
   //
   // Find current release
   //
-  const dates = [];
+  const dates: string[] = [];
   releaseData.forEach((release) => {
-    if (release.channel !== 'beta') {
+    if (
+      release.channel !== 'beta' &&
+      !options.skippedReleases.includes(release.version)
+    ) {
       dates.push(release.date);
     }
   });

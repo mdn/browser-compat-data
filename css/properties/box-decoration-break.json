@@ -6,11 +6,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/box-decoration-break",
           "spec_url": "https://drafts.csswg.org/css-break/#break-decoration",
           "support": {
-            "chrome": {
-              "prefix": "-webkit-",
-              "version_added": "22",
-              "notes": "This property is only supported for inline elements."
-            },
+            "chrome": [
+              {
+                "version_added": "130"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "22",
+                "notes": "This property was only supported for inline elements."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -48,7 +53,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -60,9 +66,16 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-break/#valdef-box-decoration-break-clone",
             "support": {
-              "chrome": {
-                "version_added": "22"
-              },
+              "chrome": [
+                {
+                  "version_added": "130"
+                },
+                {
+                  "version_added": "22",
+                  "partial_implementation": true,
+                  "notes": "This value was only supported with the -webkit- prefix."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -80,7 +93,10 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": false,
@@ -93,9 +109,16 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-break/#valdef-box-decoration-break-slice",
             "support": {
-              "chrome": {
-                "version_added": "22"
-              },
+              "chrome": [
+                {
+                  "version_added": "130"
+                },
+                {
+                  "version_added": "22",
+                  "partial_implementation": true,
+                  "notes": "This value was only supported with the -webkit- prefix."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -113,7 +136,10 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": false,
