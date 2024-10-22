@@ -1,5 +1,47 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.9)
+
+October 22, 2024
+
+### Additions
+
+- `api.CSSMarginRule` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.CSSMarginRule.name` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.CSSMarginRule.style` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.Request.duplex` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-center` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-left` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-left-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-right` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-right-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-bottom` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-middle` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-top` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-bottom` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-middle` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-top` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-center` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-left` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-left-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-right` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-right-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope.all` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope.none` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.emoji` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.normal` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.text` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.unicode` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.selectors.details-content` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+
+### Statistics
+
+- 6 contributors have changed 53 files with 1,275 additions and 114 deletions in 10 commits ([`v5.6.8...v5.6.9`](https://github.com/mdn/browser-compat-data/compare/v5.6.8...v5.6.9))
+- 16,608 total features
+- 1,111 total contributors
+- 4,949 total stargazers
+
 ## [v5.6.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.8)
 
 October 18, 2024
