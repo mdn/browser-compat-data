@@ -10,11 +10,10 @@ import walk from '../../utils/walk.js';
 
 /**
  * Fix the status values
- * @param key The key of the object
  * @param value The value to update
  * @returns The updated value
  */
-const fixStatus = (key: string, value: Identifier): Identifier => {
+export const fixStatus = (value: Identifier): Identifier => {
   const compat = value?.__compat;
   if (compat?.status) {
     if (compat.status.experimental && compat.status.deprecated) {
@@ -52,7 +51,11 @@ const fixStatusFromFile = (filename: string): void => {
   }
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
+  let expected = JSON.stringify(
+    JSON.parse(actual, (_key: string, value: Identifier) => fixStatus(value)),
+    null,
+    2,
+  );
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
