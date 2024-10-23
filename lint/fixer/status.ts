@@ -13,7 +13,7 @@ import walk from '../../utils/walk.js';
  * @param value The value to update
  * @returns The updated value
  */
-export const fixStatus = (value: Identifier): Identifier => {
+export const fixStatusValue = (value: Identifier): Identifier => {
   const compat = value?.__compat;
   if (compat?.status) {
     if (compat.status.experimental && compat.status.deprecated) {
@@ -52,7 +52,9 @@ const fixStatusFromFile = (filename: string): void => {
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(
-    JSON.parse(actual, (_key: string, value: Identifier) => fixStatus(value)),
+    JSON.parse(actual, (_key: string, value: Identifier) =>
+      fixStatusValue(value),
+    ),
     null,
     2,
   );

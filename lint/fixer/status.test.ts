@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 import { CompatStatement, Identifier } from '../../types/types.js';
 
-import { fixStatus } from './status.js';
+import { fixStatusValue } from './status.js';
 
 type TestValue = Record<string, Identifier | CompatStatement>;
 
@@ -143,7 +143,7 @@ const tests: { name: string; input: TestValue; output: TestValue }[] = [
 describe('fixStatus', () => {
   for (const test of tests) {
     it(test.name, () => {
-      const result = fixStatus(test.input as Identifier);
+      const result = fixStatusValue(test.input as Identifier);
 
       assert.deepStrictEqual(result, test.output);
     });
