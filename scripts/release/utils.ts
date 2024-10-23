@@ -3,6 +3,7 @@
 
 import {
   execSync,
+  ExecSyncOptionsWithStringEncoding,
   spawnSync,
   SpawnSyncOptionsWithStringEncoding,
 } from 'node:child_process';
@@ -13,8 +14,10 @@ import {
  * @param opts The options to pass to execSync
  * @returns The output from the command
  */
-export const exec = (command: string, opts?: any): string =>
-  execSync(command, { encoding: 'utf8', ...opts }).trim();
+export const exec = (
+  command: string,
+  opts?: ExecSyncOptionsWithStringEncoding,
+): string => execSync(command, { encoding: 'utf8', ...opts }).trim();
 
 /**
  * Execute a command
