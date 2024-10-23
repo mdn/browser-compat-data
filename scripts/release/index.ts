@@ -76,7 +76,7 @@ const commitAndPR = async (
   });
 
   exec(`
-    git switch main
+    git switch -
     git branch -d ${branch}
   `);
 };
