@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import { Identifier } from '../../types/types.js';
 import { checkExperimental } from '../linter/test-status.js';
 import { IS_WINDOWS } from '../utils.js';
+import walk from '../../utils/walk.js';
 
 /**
  * Fix the status values
@@ -26,6 +27,15 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
     if (!checkExperimental(compat)) {
       compat.status.experimental = false;
+    }
+
+    if (compat.status.deprecated) {
+      // All sub-features are also deprecated
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.deprecated = true;
+        }
+      }
     }
   }
 
