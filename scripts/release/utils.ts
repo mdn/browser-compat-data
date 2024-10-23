@@ -1,7 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { execSync } from 'node:child_process';
+import {
+  execSync,
+  spawnSync,
+  SpawnSyncOptionsWithStringEncoding,
+} from 'node:child_process';
 
 /**
  * Execute a command
@@ -11,6 +15,31 @@ import { execSync } from 'node:child_process';
  */
 export const exec = (command: string, opts?: any): string =>
   execSync(command, { encoding: 'utf8', ...opts }).trim();
+
+/**
+ * Execute a command
+ * @param command The command to execute
+ * @param args The arguments to pass
+ * @param opts The options to pass to spawnSync
+ * @returns The output from the command
+ */
+export const spawn = (
+  command: string,
+  args: readonly string[],
+  opts?: SpawnSyncOptionsWithStringEncoding,
+): string => {
+  const result = spawnSync(command, args, { encoding: 'utf8', ...opts });
+
+  if (result.error) {
+    throw result.error;
+  }
+
+  if (result.stderr) {
+    throw new Error(result.stderr);
+  }
+
+  return result.stdout.trim();
+};
 
 /**
  * Check for GitHub CLI and exit the program if it's not existent
