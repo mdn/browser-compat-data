@@ -67,11 +67,11 @@ const commitAndPR = async (
   exec(`git push --force --set-upstream origin ${branch}`);
 
   await temporaryWriteTask(pr.body, (bodyFile) => {
-    const args = ['--title', pr.title, '--body-file', bodyFile];
+    const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
     try {
-      spawn('gh pr edit', args);
+      spawn('gh', ['pr', 'edit', ...commonArgs]);
     } catch (e) {
-      spawn('gh pr create', args);
+      spawn('gh', ['pr', 'create', ...commonArgs]);
     }
   });
 
