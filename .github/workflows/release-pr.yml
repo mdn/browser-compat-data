@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - automated-release-pr
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -20,6 +21,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          ref: prepare-release-script-for-automation
 
       - name: Setup Node
         uses: actions/setup-node@v4
