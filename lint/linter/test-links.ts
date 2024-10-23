@@ -162,7 +162,7 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     // use https://crbug.com/400000000 instead
     errors,
     actual,
-    /https?:\/\/crbug.com\/(\d{1,7})/g,
+    /https?:\/\/crbug.com\/(\d{1,7})(?!\d)/g,
     async (match) => ({
       issue: 'Use new Google Issue ID',
       expected: `https://crbug.com/${await resolveCrbug(match[1])}`,
