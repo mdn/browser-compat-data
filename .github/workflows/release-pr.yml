@@ -10,6 +10,9 @@ on:
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+concurrency:
+  group: ${{ github.workflow }}
+
 jobs:
   manage-release-pr:
     name: Manage release PR
