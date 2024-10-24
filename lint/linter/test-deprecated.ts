@@ -9,7 +9,6 @@ import walk from '../../utils/walk.js';
 
 /**
  * Checks for correct inheritance of deprecated status.
- *
  * @param data The data to test
  * @param logger The logger to output errors to
  */
