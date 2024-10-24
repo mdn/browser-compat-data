@@ -1,22 +1,20 @@
 name: Update MDN urls
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - "dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-*"
+      - "update-mdn-*"
 
-  schedule:
-    - cron: "30 4 * * 1-5"
-
-permissions:
-  contents: write
-  pull-requests: write
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   update-mdn-urls:
     if: github.repository == 'mdn/browser-compat-data'
     name: Update MDN urls
     runs-on: ubuntu-latest
-    env:
-      RESULT: ""
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,29 +25,17 @@ jobs:
           node-version-file: ".nvmrc"
           cache: npm
 
+      - name: "Setup git"
+        run: |
+          git remote set-url origin https://mdn-bot:$GH_TOKEN@github.com/${{ github.repository }}.git
+          git config user.email 108879845+mdn-bot@users.noreply.github.com
+          git config user.name mdn-bot
+
       - name: Install
         run: npm ci
 
       - name: Fix
         run: |
-          echo "RESULT<<EOF" >> $GITHUB_ENV
-          npm run lint:fix -- --only=mdn_urls >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
-          commit-message: Update MDN urls
-          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
-          signoff: false
-          branch: mdn-urls
-          delete-branch: true
-          add-paths: "*.json"
-          title: "Update MDN urls"
-          body: |
-            ```
-            $ npm run lint:fix -- --only=mdn_urls
-            ${{ env.RESULT }}
-            ```
-          draft: false
+          npm run lint:fix -- --only=mdn_urls
+          git commit -m 'chore: run `npm run lint:fix --only=mdn_urls`' .
+          git push
