@@ -8,7 +8,7 @@ import { BrowserName } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
-import { isMirrorEquivalent } from '../fixer/mirror.js';
+import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
 
 /**
  * Check the data to ensure all statements that should use `mirror` do
@@ -28,7 +28,10 @@ const checkMirroring = (
     .filter((b) => browsers[b].upstream) as BrowserName[];
 
   for (const browser of browsersToCheck) {
-    if (isMirrorEquivalent(supportData, browser)) {
+    if (
+      isMirrorRequired(supportData, browser) &&
+      isMirrorEquivalent(supportData, browser)
+    ) {
       logger.error(
         chalk`Data for {bold ${browser}} can be automatically mirrored, use {bold "${browser}": "mirror"} instead`,
         { fixable: true },
