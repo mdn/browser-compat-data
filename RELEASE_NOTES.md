@@ -1,5 +1,16 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.10)
+
+October 23, 2024
+
+### Statistics
+
+- 4 contributors have changed 11 files with 49 additions and 40 deletions in 7 commits ([`v5.6.9...v5.6.10`](https://github.com/mdn/browser-compat-data/compare/v5.6.9...v5.6.10))
+- 16,608 total features
+- 1,111 total contributors
+- 4,949 total stargazers
+
 ## [v5.6.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.9)
 
 October 22, 2024
