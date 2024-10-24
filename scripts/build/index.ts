@@ -17,6 +17,7 @@ import { WalkOutput } from '../../utils/walk.js';
 import bcd from '../../index.js';
 
 import mirrorSupport from './mirror.js';
+import getStatus from './status.js';
 
 const dirname = new URL('.', import.meta.url);
 const rootdir = new URL('../../', dirname);
@@ -120,6 +121,17 @@ export const addVersionLast = (feature: WalkOutput): void => {
 };
 
 /**
+ * Add status block
+ * @param feature The BCD to transform
+ */
+export const addStatus = (feature: WalkOutput): void => {
+  const status = getStatus(feature.path, feature.compat);
+  if (status) {
+    (feature.data as any).__compat.status = status;
+  }
+};
+
+/**
  * Applies transforms to the given data.
  * @param data - The data to apply transforms to.
  */
@@ -129,6 +141,7 @@ export const applyTransforms = (data): void => {
   for (const feature of walker) {
     applyMirroring(feature);
     addVersionLast(feature);
+    addStatus(feature);
   }
 };
 
