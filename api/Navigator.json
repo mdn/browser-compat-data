@@ -1641,10 +1641,16 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "version_removed": "11"
-            },
+            "safari": [
+              {
+                "version_added": "15.4",
+                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See <a href='https://webkit.org/b/233381'>bug 233381</a>."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "11"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
