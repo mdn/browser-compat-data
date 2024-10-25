@@ -6,14 +6,14 @@ import fs from 'node:fs';
 import { Identifier } from '../../types/types.js';
 import { checkExperimental } from '../linter/test-status.js';
 import { IS_WINDOWS } from '../utils.js';
+import walk from '../../utils/walk.js';
 
 /**
  * Fix the status values
- * @param key The key of the object
  * @param value The value to update
  * @returns The updated value
  */
-const fixStatus = (key: string, value: Identifier): Identifier => {
+export const fixStatusValue = (value: Identifier): Identifier => {
   const compat = value?.__compat;
   if (compat?.status) {
     if (compat.status.experimental && compat.status.deprecated) {
@@ -26,6 +26,15 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
 
     if (!checkExperimental(compat)) {
       compat.status.experimental = false;
+    }
+
+    if (compat.status.deprecated) {
+      // All sub-features are also deprecated
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.deprecated = true;
+        }
+      }
     }
   }
 
@@ -42,7 +51,13 @@ const fixStatusFromFile = (filename: string): void => {
   }
 
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
+  let expected = JSON.stringify(
+    JSON.parse(actual, (_key: string, value: Identifier) =>
+      fixStatusValue(value),
+    ),
+    null,
+    2,
+  );
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows
