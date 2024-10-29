@@ -1,5 +1,153 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.10)
+
+October 25, 2024
+
+### Removals
+
+- `api.NavigateEvent.canTransition` ([#24792](https://github.com/mdn/browser-compat-data/pull/24792))
+- `api.Permissions.permission_bluetooth` ([#24769](https://github.com/mdn/browser-compat-data/pull/24769))
+- `api.ServiceWorkerContainer.error_event` ([#24820](https://github.com/mdn/browser-compat-data/pull/24820))
+- `mathml.elements.maction.actiontype.statusline` ([#24820](https://github.com/mdn/browser-compat-data/pull/24820))
+
+### Additions
+
+- `api.PaymentManager.secure_context_required` ([#24812](https://github.com/mdn/browser-compat-data/pull/24812))
+- `api.PaymentRequestUpdateEvent.secure_context_required` ([#24812](https://github.com/mdn/browser-compat-data/pull/24812))
+- `api.Request.Request.init_keepalive_parameter` ([#24656](https://github.com/mdn/browser-compat-data/pull/24656))
+- `css.properties.align-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `css.properties.justify-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `css.properties.place-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `html.elements.iframe.allow.accelerometer` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.ambient-light-sensor` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.attribution-reporting` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.autoplay` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.bluetooth` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.browsing-topics` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.camera` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.compute-pressure` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.cross-origin-isolated` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.display-capture` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.document-domain` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.encrypted-media` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.fullscreen` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.gamepad` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.geolocation` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.gyroscope` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.hid` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.identity-credentials-get` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.idle-detection` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.local-fonts` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.magnetometer` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.microphone` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.midi` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.otp-credentials` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.payment` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.picture-in-picture` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.publickey-credentials-create` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.publickey-credentials-get` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.screen-wake-lock` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.serial` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.speaker-selection` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.storage-access` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.usb` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.web-share` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.wildcards` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.window-management` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.xr-spatial-tracking` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `http.headers.Clear-Site-Data.wildcard` ([#24822](https://github.com/mdn/browser-compat-data/pull/24822))
+
+### Statistics
+
+- 9 contributors have changed 50 files with 1,999 additions and 241 deletions in 29 commits ([`v5.6.9...v5.6.10`](https://github.com/mdn/browser-compat-data/compare/v5.6.9...v5.6.10))
+- 16,648 total features
+- 1,111 total contributors
+- 4,950 total stargazers
+
+## [v5.6.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.9)
+
+October 22, 2024
+
+### Additions
+
+- `api.CSSMarginRule` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.CSSMarginRule.name` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.CSSMarginRule.style` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `api.Request.duplex` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-center` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-left` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-left-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-right` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.bottom-right-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-bottom` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-middle` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.left-top` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-bottom` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-middle` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.right-top` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-center` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-left` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-left-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-right` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.at-rules.page.top-right-corner` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope.all` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.anchor-scope.none` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.emoji` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.normal` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.text` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.properties.font-variant-emoji.unicode` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+- `css.selectors.details-content` ([#24778](https://github.com/mdn/browser-compat-data/pull/24778))
+
+### Statistics
+
+- 6 contributors have changed 53 files with 1,275 additions and 114 deletions in 10 commits ([`v5.6.8...v5.6.9`](https://github.com/mdn/browser-compat-data/compare/v5.6.8...v5.6.9))
+- 16,608 total features
+- 1,111 total contributors
+- 4,949 total stargazers
+
+## [v5.6.8](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.8)
+
+October 18, 2024
+
+### Removals
+
+- `css.properties.column-fill.balance-all` ([#23578](https://github.com/mdn/browser-compat-data/pull/23578))
+
+### Additions
+
+- `api.Worker.worker_support` ([#24610](https://github.com/mdn/browser-compat-data/pull/24610))
+- `html.elements.video.autoplay.requires_muted_audio` ([#23635](https://github.com/mdn/browser-compat-data/pull/23635))
+
+### Statistics
+
+- 8 contributors have changed 46 files with 252 additions and 168 deletions in 24 commits ([`v5.6.7...v5.6.8`](https://github.com/mdn/browser-compat-data/compare/v5.6.7...v5.6.8))
+- 16,580 total features
+- 1,111 total contributors
+- 4,947 total stargazers
+
+## [v5.6.7](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.7)
+
+October 15, 2024
+
+### Additions
+
+- `api.GPUCanvasContext.configure.toneMapping` ([#24701](https://github.com/mdn/browser-compat-data/pull/24701))
+- `api.GPUCanvasContext.getConfiguration` ([#24701](https://github.com/mdn/browser-compat-data/pull/24701))
+- `api.ProgressEvent.worker_support` ([#24620](https://github.com/mdn/browser-compat-data/pull/24620))
+- `css.properties.display.none.option_is_hidden` ([#24392](https://github.com/mdn/browser-compat-data/pull/24392))
+- `css.properties.ruby-position.inter-character` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+- `css.properties.ruby-position.over` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+- `css.properties.ruby-position.under` ([#24153](https://github.com/mdn/browser-compat-data/pull/24153))
+
+### Statistics
+
+- 8 contributors have changed 45 files with 711 additions and 84 deletions in 19 commits ([`v5.6.6...v5.6.7`](https://github.com/mdn/browser-compat-data/compare/v5.6.6...v5.6.7))
+- 16,579 total features
+- 1,111 total contributors
+- 4,946 total stargazers
+
 ## [v5.6.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.6)
 
 October 11, 2024

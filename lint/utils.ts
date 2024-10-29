@@ -8,6 +8,10 @@ import chalk from 'chalk-template';
 import { DataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
+export interface LintOptions {
+  only?: string[];
+}
+
 const now = new Date();
 
 /* The date, exactly two years ago */
