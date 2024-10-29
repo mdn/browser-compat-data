@@ -1,5 +1,52 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.11)
+
+October 29, 2024
+
+### Removals
+
+- `api.InkPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `css.properties.align-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.justify-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+
+### Additions
+
+- `api.DelegatedInkTrailPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.GPUDevice.createRenderPipeline.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.GPUDevice.createRenderPipelineAsync.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.HTMLAnchorElement.hrefTranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `api.SharedStorage.createWorklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.get` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.run` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.selectURL` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.worklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `css.properties.align-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.display.contents.focusable_elements` ([#24766](https://github.com/mdn/browser-compat-data/pull/24766))
+- `css.properties.justify-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `html.elements.a.hreftranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `javascript.builtins.Uint8Array.fromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.fromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+
+### Statistics
+
+- 9 contributors have changed 38 files with 801 additions and 165 deletions in 22 commits ([`v5.6.10...v5.6.11`](https://github.com/mdn/browser-compat-data/compare/v5.6.10...v5.6.11))
+- 16,664 total features
+- 1,111 total contributors
+- 4,957 total stargazers
+
 ## [v5.6.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.10)
 
 October 25, 2024
