@@ -36,6 +36,24 @@ export const fixStatusValue = (value: Identifier): Identifier => {
         }
       }
     }
+
+    if (compat.status.experimental) {
+      // All sub-features are also experimental
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.experimental = true;
+        }
+      }
+    }
+
+    if (compat.status.standard_track === false) {
+      // All sub-features are also experimental
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.standard_track = false;
+        }
+      }
+    }
   }
 
   return value;
