@@ -1,5 +1,117 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.11)
+
+October 29, 2024
+
+### Removals
+
+- `api.InkPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `css.properties.align-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.justify-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+
+### Additions
+
+- `api.DelegatedInkTrailPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.GPUDevice.createRenderPipeline.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.GPUDevice.createRenderPipelineAsync.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.HTMLAnchorElement.hrefTranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `api.SharedStorage.createWorklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.get` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.run` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.selectURL` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.worklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `css.properties.align-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.display.contents.focusable_elements` ([#24766](https://github.com/mdn/browser-compat-data/pull/24766))
+- `css.properties.justify-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `html.elements.a.hreftranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `javascript.builtins.Uint8Array.fromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.fromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+
+### Statistics
+
+- 9 contributors have changed 38 files with 801 additions and 165 deletions in 22 commits ([`v5.6.10...v5.6.11`](https://github.com/mdn/browser-compat-data/compare/v5.6.10...v5.6.11))
+- 16,664 total features
+- 1,111 total contributors
+- 4,957 total stargazers
+
+## [v5.6.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.10)
+
+October 25, 2024
+
+### Removals
+
+- `api.NavigateEvent.canTransition` ([#24792](https://github.com/mdn/browser-compat-data/pull/24792))
+- `api.Permissions.permission_bluetooth` ([#24769](https://github.com/mdn/browser-compat-data/pull/24769))
+- `api.ServiceWorkerContainer.error_event` ([#24820](https://github.com/mdn/browser-compat-data/pull/24820))
+- `mathml.elements.maction.actiontype.statusline` ([#24820](https://github.com/mdn/browser-compat-data/pull/24820))
+
+### Additions
+
+- `api.PaymentManager.secure_context_required` ([#24812](https://github.com/mdn/browser-compat-data/pull/24812))
+- `api.PaymentRequestUpdateEvent.secure_context_required` ([#24812](https://github.com/mdn/browser-compat-data/pull/24812))
+- `api.Request.Request.init_keepalive_parameter` ([#24656](https://github.com/mdn/browser-compat-data/pull/24656))
+- `css.properties.align-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `css.properties.justify-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `css.properties.place-self.positioned_boxes` ([#24789](https://github.com/mdn/browser-compat-data/pull/24789))
+- `html.elements.iframe.allow.accelerometer` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.ambient-light-sensor` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.attribution-reporting` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.autoplay` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.bluetooth` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.browsing-topics` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.camera` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.compute-pressure` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.cross-origin-isolated` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.display-capture` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.document-domain` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.encrypted-media` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.fullscreen` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.gamepad` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.geolocation` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.gyroscope` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.hid` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.identity-credentials-get` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.idle-detection` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.local-fonts` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.magnetometer` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.microphone` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.midi` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.otp-credentials` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.payment` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.picture-in-picture` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.publickey-credentials-create` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.publickey-credentials-get` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.screen-wake-lock` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.serial` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.speaker-selection` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.storage-access` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.usb` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.web-share` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.wildcards` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.window-management` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `html.elements.iframe.allow.xr-spatial-tracking` ([#23487](https://github.com/mdn/browser-compat-data/pull/23487))
+- `http.headers.Clear-Site-Data.wildcard` ([#24822](https://github.com/mdn/browser-compat-data/pull/24822))
+
+### Statistics
+
+- 9 contributors have changed 50 files with 1,999 additions and 241 deletions in 29 commits ([`v5.6.9...v5.6.10`](https://github.com/mdn/browser-compat-data/compare/v5.6.9...v5.6.10))
+- 16,648 total features
+- 1,111 total contributors
+- 4,950 total stargazers
+
 ## [v5.6.9](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.9)
 
 October 22, 2024

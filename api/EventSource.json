@@ -149,9 +149,17 @@
               "version_added": "1.38"
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "53"
-            },
+            "firefox": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "133",
+                "partial_implementation": true,
+                "notes": "Not supported in service workers."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
