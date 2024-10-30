@@ -25,10 +25,13 @@ const checkStatusInheritance = (data: CompatData, logger: Logger) => {
         }
       }
     }
-    // If a feature is experimental, all sub-features are also experimental.
+    // If a feature is experimental, all sub-features are also experimental, unless they are deprecated.
     if (feature.compat.status?.experimental === true) {
       for (const subfeature of walk(undefined, feature.data)) {
-        if (subfeature.compat.status?.experimental === false) {
+        if (
+          subfeature.compat.status?.experimental === false &&
+          subfeature.compat.status?.deprecated === false
+        ) {
           logger.error(
             chalk`{red Feature {italic ${feature.path}} is {bold experimental}, but subfeature {italic ${subfeature.path}} is {bold not experimental}.}`,
             { fixable: true },

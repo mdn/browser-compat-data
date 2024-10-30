@@ -29,7 +29,7 @@ export const fixStatusValue = (value: Identifier): Identifier => {
     }
 
     if (compat.status.deprecated) {
-      // All sub-features are also deprecated
+      // All sub-features are also deprecated.
       for (const subfeature of walk(undefined, value)) {
         if (subfeature.compat.status) {
           subfeature.compat.status.deprecated = true;
@@ -38,9 +38,9 @@ export const fixStatusValue = (value: Identifier): Identifier => {
     }
 
     if (compat.status.experimental) {
-      // All sub-features are also experimental
+      // All sub-features are also experimental, unless they are deprecated.
       for (const subfeature of walk(undefined, value)) {
-        if (subfeature.compat.status) {
+        if (subfeature.compat.status && !subfeature.compat.status.deprecated) {
           subfeature.compat.status.experimental = true;
         }
       }
