@@ -372,10 +372,16 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "version_removed": "11"
-            },
+            "safari": [
+              {
+                "version_added": "15.4",
+                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See <a href='https://webkit.org/b/233381'>bug 233381</a>."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "11"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -400,7 +406,8 @@
               "version_added": "131"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40628009"
             },
             "edge": "mirror",
             "firefox": {
@@ -418,7 +425,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40163407"
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -711,7 +721,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "133"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -851,7 +861,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40740509"
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -873,7 +886,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "133"
             },
             "firefox_android": "mirror",
             "ie": {

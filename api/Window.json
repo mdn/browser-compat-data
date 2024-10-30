@@ -3374,7 +3374,11 @@
             "safari": {
               "version_added": "1"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "This method will not function if the <code>target</code> parameter is unspecified or set to <code>_blank</code>."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -3841,7 +3845,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1860854"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3918,7 +3923,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1881438"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4283,7 +4289,8 @@
               "version_added": "103"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40840834"
             },
             "edge": "mirror",
             "firefox": {
