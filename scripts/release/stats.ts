@@ -50,11 +50,12 @@ const contributors = (): number => {
 /**
  * Get all of the stats for the release
  * @param start The last version number
+ * @param end The reference that refers to the current commit
  * @returns The statistics
  */
-const stats = (start: string): ChangeStats => {
+const stats = (start: string, end = 'HEAD'): ChangeStats => {
   // Get just the diff stats summary
-  const diff = exec(`git diff --shortstat ${start}...main`);
+  const diff = exec(`git diff --shortstat ${start}...${end}`);
   if (diff === '') {
     console.error(chalk`{red No changes for which to generate statistics.}`);
     process.exit(1);
@@ -73,7 +74,7 @@ const stats = (start: string): ChangeStats => {
   const { changed, insertions, deletions } = match.groups as any;
 
   // Get the number of commits
-  const commits = exec(`git rev-list --count ${start}...main`);
+  const commits = exec(`git rev-list --count ${start}...${end}`);
 
   return {
     commits: Number(commits),
