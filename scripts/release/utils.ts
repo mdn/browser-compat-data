@@ -37,8 +37,10 @@ export const spawn = (
     throw result.error;
   }
 
-  if (result.stderr) {
-    throw new Error(result.stderr);
+  if (result.status !== 0) {
+    throw new Error(
+      `The command '${command}' returned non-zero exit status ${result.status}: ${result.stderr}`,
+    );
   }
 
   return result.stdout.trim();
