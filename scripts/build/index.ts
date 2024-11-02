@@ -56,7 +56,8 @@ const mdToHtml = (markdown: string): string => {
   // "as string" cast because TS thinks response could be a promise
   return (marked.parseInline(markdown) as string)
     .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"');
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;([\w#]+);/g, '&$1;');
 };
 
 /**
