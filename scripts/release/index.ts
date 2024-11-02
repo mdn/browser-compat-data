@@ -55,7 +55,7 @@ const commitAndPR = async (
 
   exec(`
     git stash
-    git switch -C ${branch}
+    git switch -C ${branch} main
     git stash pop
     git add package.json package-lock.json RELEASE_NOTES.md
   `);
