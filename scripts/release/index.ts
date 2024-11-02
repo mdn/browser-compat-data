@@ -17,6 +17,7 @@ import {
   getRefDate,
   keypress,
   spawn,
+  fetchMain,
 } from './utils.js';
 
 /**
@@ -89,6 +90,8 @@ const commitAndPR = async (
 const main = async () => {
   requireGitHubCLI();
   requireWriteAccess();
+
+  fetchMain();
 
   console.log(chalk`{blue Getting last version...}`);
   const lastVersion = getLatestTag();

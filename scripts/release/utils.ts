@@ -105,6 +105,13 @@ export const queryPRs = (queryArgs: any): any => {
 };
 
 /**
+ * Ensures main is fetched.
+ */
+export const fetchMain = (): void => {
+  exec('git fetch origin main');
+};
+
+/**
  * Get the latest Git tag
  * @returns The latest Git tag
  */
