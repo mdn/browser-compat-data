@@ -69,9 +69,12 @@ const commitAndPR = async (
   await temporaryWriteTask(pr.body, (bodyFile) => {
     const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
     try {
-      spawn('gh', ['pr', 'edit', ...commonArgs]);
+      const stdout = spawn('gh', ['pr', 'edit', ...commonArgs]);
+      console.log(stdout);
     } catch (e) {
-      spawn('gh', ['pr', 'create', ...commonArgs]);
+      console.warn(e);
+      const stdout = spawn('gh', ['pr', 'create', ...commonArgs]);
+      console.log(stdout);
     }
   });
 
