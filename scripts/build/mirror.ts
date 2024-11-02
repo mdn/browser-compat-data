@@ -199,20 +199,6 @@ export const bumpSupport = (
     }
   }
 
-  let notesRepl: [RegExp, string] | undefined;
-  if (destination === 'edge') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Edge'];
-  } else if (destination.includes('opera')) {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Opera'];
-  } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Samsung Internet'];
-  } else {
-    notesRepl = [
-      new RegExp(`(${browsers[sourceBrowser].name})`, 'g'),
-      browsers[destination].name,
-    ];
-  }
-
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
   if (typeof sourceData.version_added === 'string') {
@@ -232,11 +218,16 @@ export const bumpSupport = (
     );
   }
 
-  if (notesRepl && sourceData.notes) {
+  if (sourceData.notes) {
     const newNotes = updateNotes(
       sourceData.notes,
-      notesRepl[0],
-      notesRepl[1],
+      new RegExp(
+        sourceBrowser === 'chrome'
+          ? '(Google )?Chrome(?!OS)'
+          : `(${browsers[sourceBrowser].name})`,
+        'g',
+      ),
+      browsers[destination].name,
       (v: string) => getMatchingBrowserVersion(destination, v),
     );
     if (newNotes) {
