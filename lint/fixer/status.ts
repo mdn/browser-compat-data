@@ -5,19 +5,32 @@ import fs from 'node:fs';
 
 import { Identifier } from '../../types/types.js';
 import { IS_WINDOWS } from '../utils.js';
+import walk from '../../utils/walk.js';
 
 /**
  * Fix the status values
- * @param key The key of the object
  * @param value The value to update
  * @returns The updated value
  */
-const fixStatus = (key: string, value: Identifier): Identifier => {
-  if (value?.__compat?.status?.experimental) {
-    delete (value.__compat.status as any).experimental;
-  }
-  if (value?.__compat?.status?.standard_track) {
-    delete (value.__compat.status as any).standard_track;
+export const fixStatusValue = (value: Identifier): Identifier => {
+  
+  const compat = value?.__compat;
+  if (compat?.status) {
+    if (compat.status.experimental) {
+      delete (value.__compat.status as any).experimental;
+    }
+    if (compat.status.standard_track) {
+      delete (value.__compat.status as any).standard_track;
+    }
+
+    if (compat.status.deprecated) {
+      // All sub-features are also deprecated
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.deprecated = true;
+        }
+      }
+    }
   }
 
   return value;
@@ -28,8 +41,18 @@ const fixStatus = (key: string, value: Identifier): Identifier => {
  * @param filename The name of the file to fix
  */
 const fixStatusFromFile = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, fixStatus), null, 2);
+  let expected = JSON.stringify(
+    JSON.parse(actual, (_key: string, value: Identifier) =>
+      fixStatusValue(value),
+    ),
+    null,
+    2,
+  );
 
   if (IS_WINDOWS) {
     // prevent false positives from git.core.autocrlf on Windows

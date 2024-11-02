@@ -42,16 +42,22 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "prefix": "-webkit-",
-              "version_added": "7",
-              "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
-            },
+            "safari": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "7",
+                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "14.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -61,7 +67,6 @@
         },
         "alternate": {
           "__compat": {
-            "description": "<code>alternate</code>",
             "support": {
               "chrome": {
                 "version_added": false,
@@ -84,7 +89,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -95,17 +101,48 @@
         },
         "inter-character": {
           "__compat": {
-            "description": "<code>inter-character</code>",
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/1258284"
+                "version_added": "84",
+                "partial_implementation": true,
+                "notes": "This value is only supported with the prefixed version of the property."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1055672"
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "7"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "over": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "84"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "≤72"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -122,7 +159,39 @@
               "webview_android": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "under": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "84"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "≤72"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror"
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

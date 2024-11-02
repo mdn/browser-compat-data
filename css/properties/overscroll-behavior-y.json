@@ -11,9 +11,7 @@
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "18",
-              "partial_implementation": true,
-              "notes": "Currently the <code>none</code> value incorrectly behaves as <code>contain</code> (allowing for the elastic bounce effect)."
+              "version_added": "18"
             },
             "firefox": {
               "version_added": "59"
@@ -30,7 +28,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -62,7 +61,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -95,7 +95,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -112,7 +113,17 @@
                 "version_added": "≤83"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "The <code>none</code> value incorrectly behaves as <code>contain</code> (allowing for the elastic bounce effect)."
+                }
+              ],
               "firefox": {
                 "version_added": "59"
               },
@@ -128,7 +139,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

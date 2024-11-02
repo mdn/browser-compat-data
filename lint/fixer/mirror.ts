@@ -64,6 +64,10 @@ export const mirrorIfEquivalent = (bcd: CompatData): void => {
  * @param filename The name of the file to fix
  */
 const fixMirror = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
   mirrorIfEquivalent(bcd);

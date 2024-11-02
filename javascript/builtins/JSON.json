@@ -5,6 +5,10 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON",
           "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json-object",
+          "tags": [
+            "web-features:snapshot:ecmascript-5",
+            "web-features:json"
+          ],
           "support": {
             "chrome": {
               "version_added": "3"
@@ -42,7 +46,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -50,10 +55,58 @@
             "deprecated": false
           }
         },
+        "isRawJSON": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/isRawJSON",
+            "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-json.israwjson",
+            "tags": [
+              "web-features:json-raw"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "114"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.33"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "21.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "json_superset": {
           "__compat": {
             "description": "JavaScript is a superset of JSON",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON#JavaScript_and_JSON_differences",
+            "tags": [
+              "web-features:snapshot:ecmascript-2019",
+              "web-features:json"
+            ],
             "support": {
               "chrome": {
                 "version_added": "66"
@@ -81,7 +134,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -94,6 +148,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse",
             "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.parse",
+            "tags": [
+              "web-features:snapshot:ecmascript-5",
+              "web-features:json"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -131,7 +189,97 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "reviver_parameter_context_argument": {
+            "__compat": {
+              "description": "Reviver has <code>context</code> parameter",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse#the_reviver_parameter",
+              "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-internalizejsonproperty",
+              "tags": [
+                "web-features:json-raw"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "114"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "1.33"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "nodejs": {
+                  "version_added": "21.0.0"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
               }
+            }
+          }
+        },
+        "rawJSON": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/rawJSON",
+            "spec_url": "https://tc39.es/proposal-json-parse-with-source/#sec-json.rawjson",
+            "tags": [
+              "web-features:json-raw"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "114"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.33"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "21.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -144,6 +292,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify",
             "spec_url": "https://tc39.es/ecma262/multipage/structured-data.html#sec-json.stringify",
+            "tags": [
+              "web-features:snapshot:ecmascript-5",
+              "web-features:json"
+            ],
             "support": {
               "chrome": {
                 "version_added": "3"
@@ -181,7 +333,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -192,6 +345,10 @@
           "well_formed_stringify": {
             "__compat": {
               "description": "Strings are escaped to well-formed UTF-8",
+              "tags": [
+                "web-features:snapshot:ecmascript-2019",
+                "web-features:json"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "72"
@@ -221,7 +378,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,

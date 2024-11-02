@@ -7,12 +7,13 @@
           "spec_url": "https://w3c.github.io/manifest/#display-member",
           "support": {
             "chrome": {
-              "version_added": "39"
+              "version_added": "39",
+              "notes": "<code>display</code> and/or <code>display_override</code> are required for a web app to be installable."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": null
+              "version_added": false
             },
             "firefox_android": {
               "version_added": "47"
@@ -21,14 +22,12 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": null
-            },
-            "opera_android": {
-              "version_added": null
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
-              "version_added": null
+              "version_added": "17",
+              "partial_implementation": true,
+              "notes": "Does not support <code>fullscreen</code> or <code>minimal-ui</code>."
             },
             "safari_ios": {
               "version_added": "11.3",
@@ -36,9 +35,8 @@
               "notes": "Does not support <code>fullscreen</code> or <code>minimal-ui</code>."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": true
-            }
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
