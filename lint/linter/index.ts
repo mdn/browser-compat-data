@@ -4,6 +4,7 @@
 export { default as testBrowsersData } from './test-browsers-data.js';
 export { default as testBrowsersPresence } from './test-browsers-presence.js';
 export { default as testConsistency } from './test-consistency.js';
+export { default as testDeprecated } from './test-deprecated.js';
 export { default as testDescriptions } from './test-descriptions.js';
 export { default as testFilename } from './test-filename.js';
 export { default as testFlags } from './test-flags.js';
