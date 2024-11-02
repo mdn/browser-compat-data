@@ -66,22 +66,16 @@ const commitAndPR = async (
 
   exec(`git push --force --set-upstream origin ${branch}`);
 
-  console.log('BEFORE');
   await temporaryWriteTask(pr.body, (bodyFile) => {
-    console.log('BEGIN');
     const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
     try {
-      console.log('creating PR');
       const stdout = spawn('gh', ['pr', 'create', ...commonArgs]);
-      console.log('created PR', { stdout });
+      console.log(stdout);
     } catch (e) {
-      console.log('editing PR', { e });
       const stdout = spawn('gh', ['pr', 'edit', ...commonArgs]);
-      console.log('edited PR', { stdout });
+      console.log(stdout);
     }
-    console.log('END');
   });
-  console.log('AFTER');
 
   exec(`
     git switch -
