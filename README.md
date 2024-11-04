@@ -230,14 +230,16 @@ Thank you for your interest in contributing to this project! See [Contributing t
 
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/@mdn/browser-compat-data) or directly:
 
-- [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
-- [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
-- [CanIUse Embed](https://caniuse.bitsofco.de/) - Thanks to the inclusion of MDN BCD data in caniuse, this embed tool allows for embedding BCD data into any project.
-- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
-- [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
-- [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
-- [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
-- [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
+- [Add-ons Linter](https://github.com/mozilla/addons-linter) - NPM package that checks that an add-on only uses features that are supporte by the targeted Firefox version. Used by [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool.
+- [BCD Watch](https://bcd-watch.igalia.com/) - Website that shows a weekly report of BCD changes.
+- [caniuse](https://caniuse.com/) - Website that shows browser support tables based on caniuse and BCD data.
+- [caniuse-lite](https://github.com/browserslist/caniuse-lite) - NPM package that republishes BCD data in the caniuse format.
+- [CanIUse Embed](https://caniuse.bitsofco.de/) - Service that allows embedding caniuse (including BCD data) into any website.
+- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows BCD data for the current site in the developer tools.
+- [compat-tester](https://github.com/SphinxKnight/compat-tester) - NPM package that scans HTML, CSS and JS files for compatibility issues.
+- [Visual Studio Code](https://code.visualstudio.com) - IDE that uses BCD to show compatibility information for [CSS features](https://github.com/microsoft/vscode-custom-data/blob/c008a80baa3c6ea9d6757d2640eaab215b28f9a6/web-data/css/generateData.js#L349) (see [VSCode 1.25 release notes](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data)), and to [extract MDN urls for HTML elements](https://github.com/microsoft/vscode-custom-data/blob/c008a80baa3c6ea9d6757d2640eaab215b28f9a6/web-data/html/generateData.js#L53-L67).
+- [`webhint.io`](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Tool that uses BCD to checks CSS and HTML for unsupported features (see [`@hint/utils-compat-data` package](https://github.com/webhintio/hint/tree/main/packages/utils-compat-data)).
+- [WebStorm](https://www.jetbrains.com/webstorm/) - IDE that uses BCD to [check browser support of used CSS properties](https://www.jetbrains.com/guide/javascript/tips/browser-compatibility-css/) (see [2019.1 releasenotes](https://web.archive.org/web/20190524063428/http://www.jetbrains.com/webstorm/whatsnew/#:~:text=Browser%20compatibility%20check%20for%20CSS)).
 
 ## Acknowledgments
 
