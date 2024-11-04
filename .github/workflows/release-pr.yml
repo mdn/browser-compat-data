@@ -12,6 +12,10 @@ env:
 concurrency:
   group: ${{ github.workflow }}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   manage-release-pr:
     name: Manage release PR
