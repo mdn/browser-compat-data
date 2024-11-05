@@ -27,22 +27,22 @@ interface LinkError {
  * @param regexp The regex to test with
  * @param matchHandler The callback
  */
-const processLink = async (
+const processLink = (
   errors: LinkError[],
   actual: string,
   regexp: string | RegExp,
-  matchHandler: (match: RegExpMatchArray) => Promise<{
+  matchHandler: (match: RegExpMatchArray) => {
     issue: string;
     expected?: string;
     actualLink?: string;
-  } | null>,
-): Promise<void> => {
+  } | null,
+): void => {
   const re = new RegExp(regexp, 'g');
   let match;
   while ((match = re.exec(actual)) !== null) {
     const pos = indexToPosRaw(actual, match.index);
     const posString = indexToPos(actual, match.index);
-    const result = await matchHandler(match);
+    const result = matchHandler(match);
 
     if (result) {
       const { issue, expected, actualLink = match[0] } = result;
@@ -57,41 +57,12 @@ const processLink = async (
   }
 };
 
-const CRBUG_CACHE = new Map<string, string>();
-
-/**
- * Resolves legacy Chrome bugs from the Monorail era.
- * @param oldId the old bug id.
- * @returns the new bug id.
- */
-const resolveCrbug = async (oldId: string): Promise<string> => {
-  if (oldId.length >= 8) {
-    // This isn't an old id.
-    return oldId;
-  }
-
-  let newId = CRBUG_CACHE.get(oldId);
-  if (newId) {
-    return newId;
-  }
-
-  const res = await fetch(`https://crbug.com/${oldId}`);
-  const text = await res.text();
-  const match = text.match(/https:\/\/issues.chromium.org\/(\d{8,})/);
-
-  newId = match ? match[1] : oldId;
-
-  CRBUG_CACHE.set(oldId, newId);
-
-  return newId;
-};
-
 /**
  * Process the data for any errors within the links
  * @param rawData The raw contents of the file to test
  * @returns A list of errors found in the links
  */
-export const processData = async (rawData: string): Promise<LinkError[]> => {
+export const processData = (rawData: string): LinkError[] => {
   const errors: LinkError[] = [];
 
   let actual = rawData;
@@ -103,89 +74,78 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
   }
   /* c8 ignore stop */
 
-  await processLink(
+  processLink(
     // use https://bugzil.la/1000000 instead
     errors,
     actual,
     /https?:\/\/bugzilla\.mozilla\.org\/show_bug\.cgi\?id=(\d+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://bugzil.la/${match[1]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     // use https://crbug.com/100000 instead
     errors,
     actual,
     /https?:\/\/(issues\.chromium\.org)\/issues\/(\d+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crbug.com/${match[2]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     // use https://crbug.com/100000 instead
     errors,
     actual,
     /https?:\/\/(bugs\.chromium\.org|code\.google\.com)\/p\/chromium\/issues\/detail\?id=(\d+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crbug.com/${match[2]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     // use https://crbug.com/category/100000 instead
     errors,
     actual,
     /https?:\/\/(bugs\.chromium\.org|code\.google\.com)\/p\/((?!chromium)\w+)\/issues\/detail\?id=(\d+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crbug.com/${match[2]}/${match[3]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     // use https://crbug.com/category/100000 instead
     errors,
     actual,
     /https?:\/\/chromium\.googlesource\.com\/chromium\/src\/\+\/([\w\d]+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://crrev.com/${match[1]}`,
     }),
   );
 
-  await processLink(
-    // use https://crbug.com/400000000 instead
-    errors,
-    actual,
-    /https?:\/\/crbug.com\/(\d{1,7})(?!\d)(?:#c(\d+))?/g,
-    async (match) => ({
-      issue: 'Use new Google Issue ID',
-      expected: `https://crbug.com/${await resolveCrbug(match[1])}${match[2] ? `#comment${Number(match[2]) + 1}` : ''}`,
-    }),
-  );
-
-  await processLink(
+  processLink(
     // use https://webkit.org/b/100000 instead
     errors,
     actual,
     /https?:\/\/bugs\.webkit\.org\/show_bug\.cgi\?id=(\d+)/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use shortenable URL',
       expected: `https://webkit.org/b/${match[1]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the beginning of notes/sentences).
     errors,
     actual,
     /(\w*\s?)<a href='((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))'>(.*?)<\/a>/g,
-    async (match) => {
+    (match) => {
       const [, before, url, protocol, domain, bugId, linkText] = match;
 
       if (protocol !== 'https') {
@@ -222,11 +182,11 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     },
   );
 
-  await processLink(
+  processLink(
     errors,
     actual,
     /(https?):\/\/((?:[a-z][a-z0-9-]*\.)*)?developer.mozilla.org\/(.*?)(?=["'\s])/g,
-    async (match) => {
+    (match) => {
       const [, protocol, subdomain, path] = match;
 
       if (protocol !== 'https') {
@@ -262,21 +222,21 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     },
   );
 
-  await processLink(
+  processLink(
     errors,
     actual,
     /https?:\/\/developer.microsoft.com\/(\w\w-\w\w)\/(.*?)(?=["'\s])/g,
-    async (match) => ({
+    (match) => ({
       issue: 'Use non-localized Microsoft Developer URL',
       expected: `https://developer.microsoft.com/${match[2]}`,
     }),
   );
 
-  await processLink(
+  processLink(
     errors,
     actual,
     /<a href='([^'>]+)'>((?:.(?<!<\/a>))*.)<\/a>/g,
-    async (match) => {
+    (match) => {
       if (new URL(match[1]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
@@ -303,8 +263,8 @@ export default {
    * @param root The data to test
    * @param root.rawdata The raw contents of the file to test
    */
-  check: async (logger: Logger, { rawdata }: LinterData) => {
-    const errors = await processData(rawdata);
+  check: (logger: Logger, { rawdata }: LinterData) => {
+    const errors = processData(rawdata);
 
     for (const error of errors) {
       logger.error(

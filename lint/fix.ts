@@ -67,9 +67,7 @@ const load = async (
 
     if (fsStats.isFile()) {
       if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
-        for (const fix of fixes) {
-          await fix(file);
-        }
+        fixes.forEach((fix) => fix(file));
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>
