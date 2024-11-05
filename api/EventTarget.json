@@ -22,9 +22,17 @@
           "ie": {
             "version_added": "6"
           },
-          "nodejs": {
-            "version_added": "14.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "15.0.0"
+            },
+            {
+              "version_added": "14.5.0",
+              "version_removed": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance."
+            }
+          ],
           "oculus": "mirror",
           "opera": {
             "version_added": "7"
@@ -73,17 +81,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "15.0.0"
-              },
-              {
-                "version_added": "14.5.0",
-                "version_removed": "15.0.0",
-                "partial_implementation": true,
-                "notes": "Only available from the <code>events</code> module"
-              }
-            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",

@@ -22,9 +22,17 @@
           "ie": {
             "version_added": "6"
           },
-          "nodejs": {
-            "version_added": "14.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "15.0.0"
+            },
+            {
+              "version_added": "14.5.0",
+              "version_removed": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance."
+            }
+          ],
           "oculus": "mirror",
           "opera": {
             "version_added": "4"
@@ -71,17 +79,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "15.0.0"
-              },
-              {
-                "version_added": "14.5.0",
-                "version_removed": "15.0.0",
-                "partial_implementation": true,
-                "notes": "Only available from the <code>events</code> module"
-              }
-            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "11.6"
@@ -343,7 +343,10 @@
             },
             "nodejs": {
               "version_added": "14.5.0",
-              "notes": "Returns an array with either the event itself or no contents."
+              "notes": [
+                "Returns an array with either the event itself or empty.",
+                "This is not used in Node.js and is provided purely for completeness."
+              ]
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -638,8 +641,7 @@
               "notes": "In Internet Explorer, all events are trusted except those that are created with the <code>createEvent()</code> method."
             },
             "nodejs": {
-              "version_added": "14.5.0",
-              "notes": "This is not used in Node.js and is provided purely for completeness."
+              "version_added": "14.5.0"
             },
             "oculus": "mirror",
             "opera": {
