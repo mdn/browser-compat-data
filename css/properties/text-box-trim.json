@@ -1,81 +1,50 @@
 {
   "css": {
     "properties": {
-      "ruby-position": {
+      "text-box-trim": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/ruby-position",
-          "spec_url": "https://drafts.csswg.org/css-ruby/#rubypos",
+          "spec_url": "https://drafts.csswg.org/css-inline-3/#text-box-trim",
           "support": {
-            "chrome": [
-              {
-                "version_added": "84"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "1",
-                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
-              }
-            ],
+            "chrome": {
+              "version_added": false
+            },
             "chrome_android": "mirror",
-            "edge": [
-              {
-                "version_added": "84"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "79",
-                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
-              },
-              {
-                "version_added": "12",
-                "version_removed": "79"
-              }
-            ],
+            "edge": "mirror",
             "firefox": {
-              "version_added": "38"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": false,
-              "notes": "Internet Explorer 9 and later support an old draft values: <code>inline</code> (equivalent of having <code>display: inline</code> on the ruby), and <code>above</code> (synonym of the modern <code>over</code>)."
+              "version_added": false
             },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": [
-              {
-                "version_added": "18.2"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "7",
-                "notes": "Implemented as a non-standard, prefixed, version of <code>ruby-position</code>, <code>-webkit-ruby-position</code>: it has two properties: <code>before</code> and <code>after</code> (both equivalent, for ltr and rtl scripts to the standard <code>over</code> value used with <code>ruby-align: start</code>)."
-              }
-            ],
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "14.0"
+            "safari": {
+              "version_added": "18.2"
             },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         },
-        "alternate": {
+        "none": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-inline-3/#valdef-text-box-trim-none",
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/40174517"
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "88"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -85,7 +54,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "18.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -99,13 +68,12 @@
             }
           }
         },
-        "inter-character": {
+        "trim-both": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-inline-3/#valdef-text-box-trim-trim-both",
             "support": {
               "chrome": {
-                "version_added": "84",
-                "partial_implementation": true,
-                "notes": "This value is only supported with the prefixed version of the property."
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -124,25 +92,27 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "over": {
+        "trim-end": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-inline-3/#valdef-text-box-trim-trim-end",
             "support": {
               "chrome": {
-                "version_added": "84"
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "≤72"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -156,25 +126,27 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
           }
         },
-        "under": {
+        "trim-start": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-inline-3/#valdef-text-box-trim-trim-start",
             "support": {
               "chrome": {
-                "version_added": "84"
+                "version_added": false
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "≤72"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -188,10 +160,11 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": false,
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
