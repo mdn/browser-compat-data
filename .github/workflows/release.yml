@@ -29,7 +29,7 @@ jobs:
 
       - name: Create release
         run: |
-          VERSION=$(jq -r '.version' package.json)
+          VERSION=v$(jq -r '.version' package.json)
           awk '/^## /{if (p) exit; p=1; next} p' RELEASE_NOTES.md >> CURRENT_RELEASE_NOTES.md
           gh release create $VERSION --target $GITHUB_SHA --notes-file CURRENT_RELEASE_NOTES.md --draft
 
