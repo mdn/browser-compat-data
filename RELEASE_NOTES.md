@@ -1,5 +1,33 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.12)
+
+November 1, 2024
+
+### Removals
+
+- `css.properties.-webkit-text-decoration-skip` ([#24884](https://github.com/mdn/browser-compat-data/pull/24884))
+- `css.properties.-webkit-user-modify` ([#24885](https://github.com/mdn/browser-compat-data/pull/24885))
+
+### Additions
+
+- `browsers.edge.releases.133` ([#24890](https://github.com/mdn/browser-compat-data/pull/24890))
+- `browsers.firefox_android.releases.135` ([#24871](https://github.com/mdn/browser-compat-data/pull/24871))
+- `browsers.firefox.releases.135` ([#24871](https://github.com/mdn/browser-compat-data/pull/24871))
+- `browsers.nodejs.releases.18.13.0` ([#24797](https://github.com/mdn/browser-compat-data/pull/24797))
+- `browsers.nodejs.releases.19.2.0` ([#24797](https://github.com/mdn/browser-compat-data/pull/24797))
+- `browsers.safari_ios.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `browsers.safari.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `browsers.webview_ios.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `svg.global_attributes.autofocus` ([#24574](https://github.com/mdn/browser-compat-data/pull/24574))
+
+### Statistics
+
+- 9 contributors have changed 57 files with 330 additions and 206 deletions in 32 commits ([`v5.6.11...v5.6.12`](https://github.com/mdn/browser-compat-data/compare/v5.6.11...v5.6.12))
+- 16,663 total features
+- 1,112 total contributors
+- 4,956 total stargazers
+
 ## [v5.6.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.11)
 
 October 29, 2024
