@@ -24,12 +24,21 @@
           },
           "nodejs": [
             {
-              "version_added": "14.7.0"
+              "version_added": "15.0.0"
+            },
+            {
+              "version_added": "14.7.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the <code>worker_threads</code> module."
             },
             {
               "version_added": "10.5.0",
               "version_removed": "14.7.0",
-              "notes": "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>."
+              "partial_implementation": true,
+              "notes": [
+                "Available as a part of the <code>worker_threads</code> module.",
+                "Inherits from Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>."
+              ]
             }
           ],
           "oculus": "mirror",
@@ -125,17 +134,9 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": [
-              {
-                "version_added": "14.7.0"
-              },
-              {
-                "version_added": "10.5.0",
-                "version_removed": "14.7.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
-              }
-            ],
+            "nodejs": {
+              "version_added": "10.5.0"
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -255,6 +256,12 @@
               {
                 "version_added": "14.5.0",
                 "version_removed": "14.7.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+              },
+              {
+                "version_added": "12.19.0",
+                "version_removed": "13.0.0",
                 "partial_implementation": true,
                 "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
               }
