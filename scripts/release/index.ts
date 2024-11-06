@@ -161,7 +161,7 @@ const main = async ({ dryRun }: { dryRun: boolean }) => {
 if (esMain(import.meta)) {
   const { argv }: { argv } = yargs(hideBin(process.argv)).command(
     '$0',
-    'Prepares a release by determining changes since the last release, and creating/updating a relase PR',
+    'Prepares a release by determining changes since the last release, and creating/updating a release PR',
     (yargs) =>
       yargs.option('dry-run', {
         alias: 'n',
