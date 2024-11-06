@@ -240,7 +240,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [csstype](https://www.npmjs.com/package/csstype) - NPM package that publishes strict TypeScript/Flow types for CSS.
 - [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows BCD data for the current site in the developer tools.
 - [compat-tester](https://github.com/SphinxKnight/compat-tester) - NPM package that scans HTML, CSS and JS files for compatibility issues.
-- [JetBrains](https://www.jetbrains.com/) - IDE vendor that uses BCD data to [generate feature lists with support data](https://github.com/JetBrains/intellij-community/blob/master/xml/xml-psi-impl/mdn-doc-gen/src/GenerateMdnDocumentation.kt).
+- [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) - IDE that uses BCD data to [check browser support of used CSS properties](https://www.jetbrains.com/guide/javascript/tips/browser-compatibility-css/) (see [2019.1 releasenotes](https://web.archive.org/web/20190524063428/http://www.jetbrains.com/webstorm/whatsnew/#:~:text=Browser%20compatibility%20check%20for%20CSS)) by [generating feature lists with support data](https://github.com/JetBrains/intellij-community/blob/master/xml/xml-psi-impl/mdn-doc-gen/src/GenerateMdnDocumentation.kt).
 - [JSR](https://jsr.io/) - Package registry that uses BCD data to [generate a list of web builtins](https://github.com/jsr-io/jsr/blob/main/tools/generate_web_symbols.ts).
 - [Mozilla Firefox](https://www.mozilla.org/firefox/) - Web browser that uses BCD data in the DevTools to show [CSS property compatibility data](https://searchfox.org/mozilla-central/source/devtools/shared/compatibility/README.md) mapped against a [list of non-retired browsers](https://github.com/firefox-devtools/remote-settings-mdn-browser-compat-data/).
 - [TypeScript](https://www.typescriptlang.org/) - Programming language that uses BCD data to [generate DOM typings](https://github.com/microsoft/TypeScript-DOM-lib-generator).
@@ -248,7 +248,6 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [web-features](https://www.npmjs.com/package/web-features) - NPM package that publishes web feature groups with Baseline statuses based on BCD data.
 - [web-features-explorer](https://web-platform-dx.github.io/web-features-explorer/) - Website that visualizes web features by Baseline status and month.
 - [`webhint.io`](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Tool that uses BCD to checks CSS and HTML for unsupported features (see [`@hint/utils-compat-data` package](https://github.com/webhintio/hint/tree/main/packages/utils-compat-data)).
-- [WebStorm](https://www.jetbrains.com/webstorm/) - IDE that uses BCD to [check browser support of used CSS properties](https://www.jetbrains.com/guide/javascript/tips/browser-compatibility-css/) (see [2019.1 releasenotes](https://web.archive.org/web/20190524063428/http://www.jetbrains.com/webstorm/whatsnew/#:~:text=Browser%20compatibility%20check%20for%20CSS)).
 
 ## Acknowledgments
 
