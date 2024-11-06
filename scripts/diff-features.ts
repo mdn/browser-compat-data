@@ -128,7 +128,7 @@ const getEnumerationFromGithub = (ref: string): string[] => {
     encoding: 'utf-8',
   }).trim();
   const workflowRun = execSync(
-    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?per_page=100 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
+    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
     {
       encoding: 'utf-8',
     },
