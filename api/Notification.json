@@ -15,7 +15,7 @@
           "chrome_android": {
             "version_added": "42",
             "partial_implementation": true,
-            "notes": "Notifications in Chrome for Android are only available through service workers. To show notifications on Android, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>."
+            "notes": "A notification can only be sent from a service worker. To show a notification, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>."
           },
           "edge": {
             "version_added": "14"
@@ -55,7 +55,10 @@
           "safari_ios": {
             "version_added": "16.4",
             "partial_implementation": true,
-            "notes": "Notifications in Safari on iOS are only supported in web apps saved to the home screen, using a non-default display mode, and only available through service workers. To show notifications on iOS, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>."
+            "notes": [
+              "The <code>Notification</code> interface is undefined, unless the page is a web app saved to the home screen. The app's manifest must have a non-default <code>display</code> value.",
+              "A notification can only be sent from a service worker. To show a notification, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>."
+            ]
           },
           "samsunginternet_android": {
             "version_added": "4.0",
@@ -92,8 +95,8 @@
               "version_added": "42",
               "partial_implementation": true,
               "notes": [
-                "Notifications in Chrome for Android are only available through service workers. To show notifications on Android, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>.",
-                "This constructor throws a <code>TypeError</code> exception."
+                "A notification can only be sent from a service worker. To show a notification, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>.",
+                "This constructor always throws a <code>TypeError</code> exception."
               ]
             },
             "edge": {
@@ -124,8 +127,8 @@
               "version_added": "16.4",
               "partial_implementation": true,
               "notes": [
-                "Notifications in Safari on iOS are only supported in web apps saved to the home screen, using a non-default display mode, and only available through service workers. To show notifications on iOS, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>.",
-                "This constructor throws a <code>ReferenceError</code> exception when used in a web app that's not saved to the home screen."
+                "This constructor throws a <code>ReferenceError</code> exception, unless the page is a web app saved to the home screen. The app's manifest must have a non-default <code>display</code> value.",
+                "A notification can only be sent from a service worker. To show a notification, see <a href='https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/showNotification'><code>ServiceWorkerRegistration.showNotification()</code></a>."
               ]
             },
             "samsunginternet_android": "mirror",
@@ -846,7 +849,9 @@
               "version_added": "7"
             },
             "safari_ios": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "partial_implementation": true,
+              "notes": "The parent <code>Notification</code> interface is undefined unless the page is a web app saved to the home screen. The app's manifest must have a non-default <code>display</code> value."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -955,7 +960,7 @@
             "safari_ios": {
               "version_added": "16.4",
               "partial_implementation": true,
-              "notes": "The <code>requestPermission()</code> is only supported in web apps saved to the home screen, and using a non-default display mode."
+              "notes": "The parent <code>Notification</code> interface is undefined unless the page is a web app saved to the home screen. The app's manifest must have a non-default <code>display</code> value."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
