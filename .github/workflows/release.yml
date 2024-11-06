@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   create-release:
-    if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Release v')
+    if: github.repository == 'mdn/browser-compat-data' && github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Release v')
     name: Create release
     runs-on: ubuntu-latest
 
