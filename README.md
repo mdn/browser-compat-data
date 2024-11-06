@@ -230,7 +230,7 @@ Thank you for your interest in contributing to this project! See [Contributing t
 
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/@mdn/browser-compat-data) or directly:
 
-- [Add-ons Linter](https://github.com/mozilla/addons-linter) - NPM package that checks that an add-on only uses features that are supporte by the targeted Firefox version. Used by [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool.
+- [Add-ons Linter](https://github.com/mozilla/addons-linter) - NPM package that checks add-ons for features that aren't supported by the targeted Firefox version. Used by [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool.
 - [ast-metadata-inferer](https://www.npmjs.com/package/ast-metadata-inferer) - NPM package that annotates JavaScript AST nodes with metadata derived from BCD data. Used by [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat).
 - [BCD Watch](https://bcd-watch.igalia.com/) - Website that shows a weekly report of BCD changes.
 - [caniuse](https://caniuse.com/) - Website that shows browser support tables based on caniuse and BCD data.
