@@ -1,5 +1,150 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.13)
+
+November 5, 2024
+
+### Removals
+
+- `api.HTMLButtonElement.commandfor` ([#24917](https://github.com/mdn/browser-compat-data/pull/24917))
+- `http.headers.Permissions-Policy.gamepad` ([#23470](https://github.com/mdn/browser-compat-data/pull/23470))
+- `http.headers.Permissions-Policy.speaker-selection` ([#23470](https://github.com/mdn/browser-compat-data/pull/23470))
+
+### Additions
+
+- `api.CredentialsContainer.create.publicKey_option.attestation` ([#24236](https://github.com/mdn/browser-compat-data/pull/24236))
+- `api.CredentialsContainer.create.publicKey_option.attestation.direct` ([#24236](https://github.com/mdn/browser-compat-data/pull/24236))
+- `api.CredentialsContainer.create.publicKey_option.attestation.enterprise` ([#24236](https://github.com/mdn/browser-compat-data/pull/24236))
+- `api.CredentialsContainer.create.publicKey_option.attestation.indirect` ([#24236](https://github.com/mdn/browser-compat-data/pull/24236))
+- `api.CredentialsContainer.create.publicKey_option.attestation.none` ([#24236](https://github.com/mdn/browser-compat-data/pull/24236))
+- `api.GPUCommandEncoder.beginComputePass.timestampWrites` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUCommandEncoder.beginRenderPass.depthSlice_option` ([#24905](https://github.com/mdn/browser-compat-data/pull/24905))
+- `api.GPUCommandEncoder.beginRenderPass.timestampWrites` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUDevice.createComputePipeline.optional_entryPoint` ([#24924](https://github.com/mdn/browser-compat-data/pull/24924))
+- `api.GPUDevice.createComputePipelineAsync.optional_entryPoint` ([#24924](https://github.com/mdn/browser-compat-data/pull/24924))
+- `api.GPUDevice.createQuerySet.timestamp` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUDevice.createRenderPipeline.dual-source-blending` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUDevice.createRenderPipeline.optional_entryPoint` ([#24924](https://github.com/mdn/browser-compat-data/pull/24924))
+- `api.GPUDevice.createRenderPipelineAsync.dual-source-blending` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUDevice.createRenderPipelineAsync.optional_entryPoint` ([#24924](https://github.com/mdn/browser-compat-data/pull/24924))
+- `api.GPUQuerySet.type.timestamp` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUQueue.copyExternalImageToTexture.htmlimageelement_imagedata_source` ([#24926](https://github.com/mdn/browser-compat-data/pull/24926))
+- `api.GPUQueue.submit.validates_command_buffer_uniqueness` ([#24881](https://github.com/mdn/browser-compat-data/pull/24881))
+- `api.GPUSupportedFeatures.feature_bgra8unorm-storage` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_clip-distances` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_depth-clip-control` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_depth32float-stencil8` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_dual-source-blending` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_float32-blendable` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_float32-filterable` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_indirect-first-instance` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_rg11b10ufloat-renderable` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_shader-f16` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_texture-compression-astc` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_texture-compression-bc` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_texture-compression-etc2` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.GPUSupportedFeatures.feature_timestamp-query` ([#24760](https://github.com/mdn/browser-compat-data/pull/24760))
+- `api.HTMLButtonElement.commandForElement` ([#24917](https://github.com/mdn/browser-compat-data/pull/24917))
+- `api.ReadableStreamBYOBReader.read.options_min_parameter` ([#24923](https://github.com/mdn/browser-compat-data/pull/24923))
+- `browsers.nodejs.releases.12.19.0` ([#24906](https://github.com/mdn/browser-compat-data/pull/24906))
+- `browsers.nodejs.releases.14.17.0` ([#24900](https://github.com/mdn/browser-compat-data/pull/24900))
+- `browsers.nodejs.releases.20.17.0` ([#24923](https://github.com/mdn/browser-compat-data/pull/24923))
+- `browsers.nodejs.releases.21.7.0` ([#24923](https://github.com/mdn/browser-compat-data/pull/24923))
+- `css.properties.text-box` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-edge` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-edge.auto` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-trim` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-trim.none` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-trim.trim-both` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-trim.trim-end` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box-trim.trim-start` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `css.properties.text-box.normal` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+- `html.elements.button.command` ([#24917](https://github.com/mdn/browser-compat-data/pull/24917))
+- `html.elements.button.commandfor` ([#24917](https://github.com/mdn/browser-compat-data/pull/24917))
+- `javascript.builtins.RegExp.escape` ([#24939](https://github.com/mdn/browser-compat-data/pull/24939))
+
+### Statistics
+
+- 12 contributors have changed 222 files with 3,253 additions and 1,424 deletions in 38 commits ([`v5.6.12...v5.6.13`](https://github.com/mdn/browser-compat-data/compare/v5.6.12...v5.6.13))
+- 16,706 total features
+- 1,113 total contributors
+- 4,961 total stargazers
+
+## [v5.6.12](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.12)
+
+November 1, 2024
+
+### Removals
+
+- `css.properties.-webkit-text-decoration-skip` ([#24884](https://github.com/mdn/browser-compat-data/pull/24884))
+- `css.properties.-webkit-user-modify` ([#24885](https://github.com/mdn/browser-compat-data/pull/24885))
+
+### Additions
+
+- `browsers.edge.releases.133` ([#24890](https://github.com/mdn/browser-compat-data/pull/24890))
+- `browsers.firefox_android.releases.135` ([#24871](https://github.com/mdn/browser-compat-data/pull/24871))
+- `browsers.firefox.releases.135` ([#24871](https://github.com/mdn/browser-compat-data/pull/24871))
+- `browsers.nodejs.releases.18.13.0` ([#24797](https://github.com/mdn/browser-compat-data/pull/24797))
+- `browsers.nodejs.releases.19.2.0` ([#24797](https://github.com/mdn/browser-compat-data/pull/24797))
+- `browsers.safari_ios.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `browsers.safari.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `browsers.webview_ios.releases.18.2` ([#24901](https://github.com/mdn/browser-compat-data/pull/24901))
+- `svg.global_attributes.autofocus` ([#24574](https://github.com/mdn/browser-compat-data/pull/24574))
+
+### Statistics
+
+- 9 contributors have changed 57 files with 330 additions and 206 deletions in 32 commits ([`v5.6.11...v5.6.12`](https://github.com/mdn/browser-compat-data/compare/v5.6.11...v5.6.12))
+- 16,663 total features
+- 1,112 total contributors
+- 4,956 total stargazers
+
+## [v5.6.11](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.11)
+
+October 29, 2024
+
+### Removals
+
+- `api.InkPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.InkPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `css.properties.align-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.justify-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.positioned_boxes` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+
+### Additions
+
+- `api.DelegatedInkTrailPresenter` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.expectedImprovement` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.presentationArea` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.DelegatedInkTrailPresenter.updateInkTrailStartPoint` ([#24856](https://github.com/mdn/browser-compat-data/pull/24856))
+- `api.GPUDevice.createRenderPipeline.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.GPUDevice.createRenderPipelineAsync.validates_depth_bias_for_line_and_point_topologies` ([#24811](https://github.com/mdn/browser-compat-data/pull/24811))
+- `api.HTMLAnchorElement.hrefTranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `api.SharedStorage.createWorklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.get` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.run` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.selectURL` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `api.SharedStorage.worklet` ([#24855](https://github.com/mdn/browser-compat-data/pull/24855))
+- `css.properties.align-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.display.contents.focusable_elements` ([#24766](https://github.com/mdn/browser-compat-data/pull/24766))
+- `css.properties.justify-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `css.properties.place-self.position_absolute_context` ([#24865](https://github.com/mdn/browser-compat-data/pull/24865))
+- `html.elements.a.hreftranslate` ([#24861](https://github.com/mdn/browser-compat-data/pull/24861))
+- `javascript.builtins.Uint8Array.fromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.fromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.setFromHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toBase64` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+- `javascript.builtins.Uint8Array.toHex` ([#24863](https://github.com/mdn/browser-compat-data/pull/24863))
+
+### Statistics
+
+- 9 contributors have changed 38 files with 801 additions and 165 deletions in 22 commits ([`v5.6.10...v5.6.11`](https://github.com/mdn/browser-compat-data/compare/v5.6.10...v5.6.11))
+- 16,664 total features
+- 1,111 total contributors
+- 4,957 total stargazers
+
 ## [v5.6.10](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.10)
 
 October 25, 2024

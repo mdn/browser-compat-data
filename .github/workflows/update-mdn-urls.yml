@@ -2,16 +2,12 @@ name: Update MDN urls
 
 on:
   pull_request_target:
-    types:
-      - opened
     paths:
-      - "package.json"
-    paths-ignore:
-      - "**/*.json"
+      - "package-lock.json"
 
 jobs:
   update-mdn-urls:
-    if: github.repository == 'mdn/browser-compat-data' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
+    if: github.repository == 'mdn/browser-compat-data' && github.actor == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
     name: Update MDN urls
     runs-on: ubuntu-latest
 
