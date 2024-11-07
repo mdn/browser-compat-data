@@ -1558,28 +1558,14 @@
             "web-features:inert"
           ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "124"
-              },
-              {
-                "version_added": "102",
-                "version_removed": "124",
-                "notes": "Find-in-page can find the text inside of the inert element."
-              }
-            ],
+            "chrome": {
+              "version_added": "102"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "124"
-              },
-              {
-                "version_added": "112",
-                "version_removed": "124",
-                "notes": "Find-in-page can find the text inside of the inert element."
-              }
-            ],
+            "firefox": {
+              "version_added": "112"
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -1588,8 +1574,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.5",
-              "notes": "Find-in-page can find the text inside of the inert element."
+              "version_added": "15.5"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1600,6 +1585,45 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ignores_find_in_page": {
+          "__compat": {
+            "description": "Find-in-page can find the text inside of the inert element.",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
+            "tags": [
+              "web-features:inert"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "124"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "124"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
