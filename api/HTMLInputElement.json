@@ -3011,11 +3011,17 @@
             "chrome": {
               "version_added": "7"
             },
-            "chrome_android": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/40248532",
-              "notes": "The property can be set, but has no effect."
-            },
+            "chrome_android": [
+              {
+                "version_added": "132"
+              },
+              {
+                "version_added": false,
+                "version_removed": "132",
+                "impl_url": "https://crbug.com/40248532",
+                "notes": "Before Chrome 131, the property could be set, but had no effect. In Chrome 131, the property could be set, but choosing a directory crashed the browser."
+              }
+            ],
             "edge": {
               "version_added": "13"
             },
