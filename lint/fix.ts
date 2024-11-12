@@ -88,7 +88,7 @@ const load = async (
  * @returns Promise<void>
  */
 const main = async (files: string[], options: LintOptions) => {
-  await load(options, ...files);
+  load(options, ...files);
 };
 
 if (esMain(import.meta)) {

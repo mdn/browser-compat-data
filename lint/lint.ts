@@ -78,7 +78,7 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
         const rawFileData = (await fs.readFile(file, 'utf-8')).trim();
         const fileData = JSON.parse(rawFileData);
 
-        await linters.runScope('file', {
+        linters.runScope('file', {
           data: fileData,
           rawdata: rawFileData,
           path: filePath,
@@ -133,7 +133,7 @@ const main = async (
 
   console.log(chalk`{cyan Testing browser data...}`);
   for (const browser in data?.browsers) {
-    await linters.runScope('browser', {
+    linters.runScope('browser', {
       data: data.browsers[browser],
       rawdata: '',
       path: {
@@ -147,7 +147,7 @@ const main = async (
   console.log(chalk`{cyan Testing feature data...}`);
   const walker = walk(undefined, data);
   for (const feature of walker) {
-    await linters.runScope('feature', {
+    linters.runScope('feature', {
       data: feature.compat,
       rawdata: '',
       path: {
@@ -158,7 +158,7 @@ const main = async (
   }
 
   console.log(chalk`{cyan Testing all features together...}`);
-  await linters.runScope('tree', {
+  linters.runScope('tree', {
     data,
     rawdata: '',
     path: {
