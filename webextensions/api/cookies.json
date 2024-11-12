@@ -207,7 +207,10 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                "notes": [
+                  "Provides access to cookies from private browsing mode and container tabs since version 52.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                ]
               },
               "firefox_android": {
                 "version_added": "48"
@@ -287,7 +290,10 @@
               },
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                "notes": [
+                  "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                ]
               },
               "firefox_android": {
                 "version_added": "48"
@@ -452,11 +458,17 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                ]
               },
               "firefox_android": {
                 "version_added": "48",
-                "notes": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                ]
               },
               "opera": "mirror",
               "safari": {
@@ -631,11 +643,17 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                ]
               },
               "firefox_android": {
                 "version_added": "48",
-                "notes": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                ]
               },
               "opera": "mirror",
               "safari": [
