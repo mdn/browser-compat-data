@@ -4,7 +4,6 @@
 import fs from 'node:fs';
 
 import { Identifier } from '../../types/types.js';
-import { checkExperimental } from '../linter/test-status.js';
 import { IS_WINDOWS } from '../utils.js';
 import walk from '../../utils/walk.js';
 
@@ -14,18 +13,14 @@ import walk from '../../utils/walk.js';
  * @returns The updated value
  */
 export const fixStatusValue = (value: Identifier): Identifier => {
+  
   const compat = value?.__compat;
   if (compat?.status) {
-    if (compat.status.experimental && compat.status.deprecated) {
-      compat.status.experimental = false;
+    if (compat.status.experimental) {
+      delete (value.__compat.status as any).experimental;
     }
-
-    if (compat.spec_url && compat.status.standard_track === false) {
-      compat.status.standard_track = true;
-    }
-
-    if (!checkExperimental(compat)) {
-      compat.status.experimental = false;
+    if (compat.status.standard_track) {
+      delete (value.__compat.status as any).standard_track;
     }
 
     if (compat.status.deprecated) {
