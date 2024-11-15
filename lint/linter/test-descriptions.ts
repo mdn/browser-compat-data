@@ -150,7 +150,7 @@ export default {
 
     for (const error of errors) {
       if (typeof error === 'string') {
-        logger.error(chalk`Description → ${error}`);
+        logger.error(chalk`{red ${error}}`);
       } else {
         logger.error(
           chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
