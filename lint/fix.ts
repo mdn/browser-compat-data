@@ -67,7 +67,9 @@ const load = async (
 
     if (fsStats.isFile()) {
       if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
-        fixes.forEach((fix) => fix(file));
+        for (const fix of fixes) {
+          await fix(file);
+        }
       }
     } else {
       const subFiles = (await fs.readdir(file)).map((subfile) =>
@@ -86,7 +88,7 @@ const load = async (
  * @returns Promise<void>
  */
 const main = async (files: string[], options: LintOptions) => {
-  load(options, ...files);
+  await load(options, ...files);
 };
 
 if (esMain(import.meta)) {

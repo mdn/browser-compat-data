@@ -3,7 +3,7 @@ name: Update MDN urls
 on:
   pull_request_target:
     paths:
-      - "package.json"
+      - "package-lock.json"
 
 jobs:
   update-mdn-urls:
@@ -15,6 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Node.js
@@ -38,5 +39,5 @@ jobs:
             echo "No changes."
           else
             git commit -m 'chore: fix mdn urls' .
-            git push
+            git push origin ${{ github.head_ref }}
           fi

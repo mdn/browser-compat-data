@@ -10,13 +10,13 @@ import { processData } from '../linter/test-links.js';
  * Fix issues with links throughout the BCD files
  * @param filename The name of the file to fix
  */
-const fixLinks = (filename: string): void => {
+const fixLinks = async (filename: string): Promise<void> => {
   if (filename.includes('/browsers/')) {
     return;
   }
 
   const original = fs.readFileSync(filename, 'utf-8').trim();
-  const errors = processData(original);
+  const errors = await processData(original);
   let data = original;
 
   if (IS_WINDOWS) {

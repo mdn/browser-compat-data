@@ -18,6 +18,7 @@ permissions:
 
 jobs:
   manage-release-pr:
+    if: github.repository == 'mdn/browser-compat-data'
     name: Manage release PR
     runs-on: ubuntu-latest
 
