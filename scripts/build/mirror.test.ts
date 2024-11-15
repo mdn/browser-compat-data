@@ -159,6 +159,21 @@ describe('mirror', () => {
         });
       });
 
+      it('Firefox -> Firefox Android', () => {
+        const support = {
+          firefox: {
+            version_added: '70',
+            notes: 'Firefox 73 added support for this thing.',
+          },
+        };
+
+        const mirrored = mirrorSupport('firefox_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '79',
+          notes: 'Firefox for Android 79 added support for this thing.',
+        });
+      });
+
       it('ChromeOS is not renamed to EdgeOS, OperaOS, etc.', () => {
         const support = {
           chrome: {
