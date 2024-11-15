@@ -6371,7 +6371,8 @@
               "version_added": "11.2"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40652382"
             },
             "webview_ios": "mirror"
           },
@@ -7204,7 +7205,11 @@
             "firefox": {
               "version_added": "51"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "51",
+              "partial_implementation": true,
+              "notes": "Textures from video elements are not supported. See <a href='https://bugzil.la/1884282'>bug 1884282</a>."
+            },
             "ie": {
               "version_added": false
             },
@@ -7487,7 +7492,11 @@
             "firefox": {
               "version_added": "51"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "51",
+              "partial_implementation": true,
+              "notes": "Textures from video elements are not supported. See <a href='https://bugzil.la/1884282'>bug 1884282</a>."
+            },
             "ie": {
               "version_added": false
             },
@@ -9291,6 +9300,7 @@
       },
       "unpackColorSpace": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebGL2RenderingContext/unpackColorSpace",
           "spec_url": "https://registry.khronos.org/webgl/specs/latest/1.0/#DOM-WebGLRenderingContext-unpackColorSpace",
           "tags": [
             "web-features:webgl2-color-management"

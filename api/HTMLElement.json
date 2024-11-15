@@ -90,7 +90,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "impl_url": "https://crbug.com/393466"
+              "impl_url": "https://crbug.com/41119923"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -290,6 +290,7 @@
       },
       "autocorrect": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/autocorrect",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-autocorrect",
           "support": {
             "chrome": {
@@ -308,9 +309,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "14.1",
-              "partial_implementation": true,
-              "notes": "Values are <code>true</code>/<code>false</code> (instead of <code>on</code>/<code>off</code>)."
+              "version_added": "14.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -595,14 +594,8 @@
               "version_added": "6"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "1.0",
-              "notes": "Before Samsung Internet 1.5, <code>click()</code> is only defined on buttons and inputs."
-            },
-            "webview_android": {
-              "version_added": "4.4",
-              "notes": "Before Android WebView 4.4, <code>click()</code> is only defined on buttons and inputs."
-            },
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -615,6 +608,7 @@
       "command_event": {
         "__compat": {
           "description": "<code>command</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event",
           "support": {
             "chrome": {
               "version_added": "preview",
@@ -731,7 +725,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "5.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1245,7 +1239,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1904161"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1255,7 +1250,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/269922"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1376,7 +1372,8 @@
               "version_added": "3"
             },
             "safari_ios": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "If there's no hardware keyboard connected and the user has not yet interacted with the page, then calling <code>focus()</code> on an <code>&lt;input&gt;</code> element has no effect (for example, the element does not match the <code>:focus</code> selector)."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1431,7 +1428,7 @@
               },
               "chrome_android": {
                 "version_added": false,
-                "impl_url": "https://crbug.com/953169"
+                "impl_url": "https://crbug.com/41453122"
               },
               "edge": {
                 "version_added": "17"
@@ -1583,6 +1580,46 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ignores_find_in_page": {
+          "__compat": {
+            "description": "Element is ignored for the purposes of find-in-page.",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
+            "tags": [
+              "web-features:inert"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "124"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "120"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/269909"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -2475,7 +2512,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1730568"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -2485,7 +2523,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/230225"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

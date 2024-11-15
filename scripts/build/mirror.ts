@@ -168,6 +168,7 @@ const copyStatement = (
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
+  sourceBrowser: BrowserName,
   destination: BrowserName,
 ): SupportStatement => {
   if (Array.isArray(sourceData)) {
@@ -176,7 +177,14 @@ export const bumpSupport = (
     // version_added (enforced by the lint) so there can be no notes or similar
     // to preserve from such statements.
     const newData = sourceData
-      .map((data) => bumpSupport(data, destination) as SimpleSupportStatement)
+      .map(
+        (data) =>
+          bumpSupport(
+            data,
+            sourceBrowser,
+            destination,
+          ) as SimpleSupportStatement,
+      )
       .filter((item) => item.version_added);
 
     switch (newData.length) {
@@ -189,15 +197,6 @@ export const bumpSupport = (
       default:
         return newData;
     }
-  }
-
-  let notesRepl: [RegExp, string] | undefined;
-  if (destination === 'edge') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Edge'];
-  } else if (destination.includes('opera')) {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Opera'];
-  } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Samsung Internet'];
   }
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
@@ -234,11 +233,16 @@ export const bumpSupport = (
     return { version_added: false };
   }
 
-  if (notesRepl && sourceData.notes) {
+  if (sourceData.notes) {
     const newNotes = updateNotes(
       sourceData.notes,
-      notesRepl[0],
-      notesRepl[1],
+      new RegExp(
+        sourceBrowser === 'chrome'
+          ? '(Google )?Chrome(?!OS)'
+          : `(${browsers[sourceBrowser].name})`,
+        'g',
+      ),
+      browsers[destination].name,
       (v: string) => getMatchingBrowserVersion(destination, v),
     );
     if (newNotes) {
@@ -279,7 +283,7 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  return bumpSupport(upstreamData, destination);
+  return bumpSupport(upstreamData, upstream, destination);
 };
 
 export default mirrorSupport;

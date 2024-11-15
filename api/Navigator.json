@@ -391,7 +391,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/1100993"
+              "impl_url": "https://crbug.com/40703318"
             },
             "webview_ios": "mirror"
           },
@@ -445,7 +445,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
             },
             "chrome_android": {
               "version_added": "75"
@@ -486,7 +486,8 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40540400"
             },
             "webview_ios": "mirror"
           },
@@ -938,7 +939,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "132"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1601,7 +1602,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "18.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1609,7 +1610,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1640,10 +1641,16 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1",
-              "version_removed": "11"
-            },
+            "safari": [
+              {
+                "version_added": "15.4",
+                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See <a href='https://webkit.org/b/233381'>bug 233381</a>."
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "11"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1668,7 +1675,8 @@
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40628009"
             },
             "edge": "mirror",
             "firefox": {
@@ -1686,7 +1694,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40163407"
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -2213,7 +2224,8 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40611412"
             },
             "webview_ios": "mirror"
           },
@@ -2369,7 +2381,7 @@
           "support": {
             "chrome": {
               "version_added": "2",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>bug 7469</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/40530968'>bug 40530968</a>."
             },
             "chrome_android": {
               "version_added": "18"
@@ -2405,7 +2417,7 @@
             "webview_android": {
               "version_added": "≤37",
               "partial_implementation": true,
-              "notes": "Can incorrectly return true, see <a href='https://crbug.com/811122'>bug 811122</a>."
+              "notes": "Can incorrectly return true, see <a href='https://crbug.com/41369933'>bug 41369933</a>."
             },
             "webview_ios": "mirror"
           },
@@ -2517,7 +2529,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/490120"
+              "impl_url": "https://crbug.com/40418964"
             },
             "webview_ios": "mirror"
           },
@@ -2687,13 +2699,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/149168"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/521319"
+              "impl_url": "https://crbug.com/234081017"
             },
             "webview_ios": "mirror"
           },
@@ -2791,7 +2804,8 @@
               "notes": "From Chrome 77, the URL parameter only accepts <code>http</code> or <code>https</code> URLs."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40964464"
             },
             "edge": {
               "version_added": "79"
@@ -4136,7 +4150,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "108",
-              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'>Permission Policy: <code>midi</code></a>."
+              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'><code>Permission Policy: midi</code></a>."
             },
             "firefox_android": {
               "version_added": false
@@ -4243,11 +4257,11 @@
           "support": {
             "chrome": {
               "version_added": "39",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "chrome_android": {
               "version_added": "42",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "edge": {
               "version_added": "14"
@@ -4269,7 +4283,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "40",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "webview_ios": "mirror"
           },
@@ -4307,7 +4321,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40740509"
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -4419,7 +4436,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
             },
             "chrome_android": {
               "version_added": "61"
@@ -4462,7 +4479,8 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40540400"
             },
             "webview_ios": "mirror"
           },
@@ -4683,7 +4701,8 @@
               "version_added": "38"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40964464"
             },
             "edge": "mirror",
             "firefox": {
@@ -4749,7 +4768,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/41441927'>bug 41441927</a>."
             },
             "webview_ios": "mirror"
           },
@@ -4869,7 +4888,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "119",
-              "impl_url": "https://crbug.com/921655"
+              "impl_url": "https://crbug.com/40609350"
             },
             "webview_ios": "mirror"
           },
@@ -5088,7 +5107,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1730568"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5098,7 +5118,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/230225"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5220,7 +5241,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/257782"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5262,7 +5284,8 @@
               "version_added": "11.2"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40652382"
             },
             "webview_ios": "mirror"
           },

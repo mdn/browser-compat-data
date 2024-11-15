@@ -960,8 +960,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1475599"
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1489,17 +1488,7 @@
                 "version_removed": "102"
               }
             ],
-            "firefox_android": [
-              {
-                "version_added": "4",
-                "notes": "From Firefox for Android 79 <code>AddSearchProvider()</code> does nothing, as the specification requires."
-              },
-              {
-                "alternative_name": "sidebar",
-                "version_added": "4",
-                "version_removed": "102"
-              }
-            ],
+            "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
             },
@@ -1816,17 +1805,17 @@
             "chrome": {
               "version_added": "35",
               "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "chrome_android": {
               "version_added": "37",
               "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "edge": {
               "version_added": "≤18",
               "partial_implementation": true,
-              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepadconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "firefox": [
               {
@@ -1888,17 +1877,17 @@
             "chrome": {
               "version_added": "35",
               "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "chrome_android": {
               "version_added": "37",
               "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "edge": {
               "version_added": "≤18",
               "partial_implementation": true,
-              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/1192878'>bug 1192878</a>."
+              "notes": "The <code>ongamepaddisconnected</code> event handler property is not supported. See <a href='https://crbug.com/40175074'>bug 40175074</a>."
             },
             "firefox": [
               {
@@ -2878,8 +2867,7 @@
               "version_added": "47"
             },
             "safari": {
-              "version_added": "16.4",
-              "impl_url": "https://webkit.org/b/171216"
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3375,7 +3363,11 @@
             "safari": {
               "version_added": "1"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "This method will not function if the <code>target</code> parameter is unspecified or set to <code>_blank</code>."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -3836,13 +3828,13 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pagereveal",
           "support": {
             "chrome": {
-              "version_added": "123",
-              "impl_url": "https://crbug.com/40276316"
+              "version_added": "123"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1860854"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3852,7 +3844,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3860,7 +3852,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3913,13 +3905,13 @@
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-pageswap",
           "support": {
             "chrome": {
-              "version_added": "124",
-              "impl_url": "https://crbug.com/41495176"
+              "version_added": "124"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1881438"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -3929,7 +3921,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3937,7 +3929,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -4284,7 +4276,8 @@
               "version_added": "103"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40840834"
             },
             "edge": "mirror",
             "firefox": {
@@ -5561,6 +5554,7 @@
       "scrollsnapchange_event": {
         "__compat": {
           "description": "<code>scrollsnapchange</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollsnapchange_event",
           "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#scrollsnapchange",
           "support": {
             "chrome": {
@@ -5569,7 +5563,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1843961"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5596,6 +5591,7 @@
       "scrollsnapchanging_event": {
         "__compat": {
           "description": "<code>scrollsnapchanging</code> event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/scrollsnapchanging_event",
           "spec_url": "https://drafts.csswg.org/css-scroll-snap-2/#scrollsnapchanging",
           "support": {
             "chrome": {
@@ -5604,7 +5600,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1843961"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -6212,7 +6209,7 @@
               "version_added": "86"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "132"
             },
             "edge": "mirror",
             "firefox": {
@@ -6297,7 +6294,7 @@
               "version_added": "86"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "132"
             },
             "edge": "mirror",
             "firefox": {
@@ -6337,7 +6334,7 @@
               "version_added": "86"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "132"
             },
             "edge": "mirror",
             "firefox": {
@@ -6440,7 +6437,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/487255"
+              "impl_url": "https://crbug.com/40417848"
             },
             "webview_ios": "mirror"
           },

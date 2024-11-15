@@ -118,6 +118,7 @@
       },
       "autocorrect": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/autocorrect",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#attr-autocorrect",
           "support": {
             "chrome": {
@@ -236,7 +237,10 @@
                 "notes": "Supported for the <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, and <code>&lt;textarea&gt;</code> elements."
               }
             ],
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "16.4",
+              "notes": "If there's no hardware keyboard connected, then the <code>autofocus</code> attribute has no effect (for example, the <code>focus</code> event doesn't fire and the element does not match the <code>:focus</code> selector)."
+            },
             "samsunginternet_android": "mirror",
             "webview_android": [
               {
@@ -345,7 +349,7 @@
                 "version_added": "≤79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1078,7 +1082,10 @@
       "style": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/style",
-          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute",
+            "https://drafts.csswg.org/css-style-attr/#style-attribute"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1274,7 +1281,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1730568"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1284,7 +1292,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/230225"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
