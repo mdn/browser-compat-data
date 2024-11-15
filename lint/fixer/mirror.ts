@@ -83,7 +83,10 @@ export const isMirrorRequired = (
 export const mirrorIfEquivalent = (bcd: CompatData): void => {
   for (const { compat } of walk(undefined, bcd)) {
     for (const browser of downstreamBrowsers) {
-      if (isMirrorEquivalent(compat.support, browser)) {
+      if (
+        isMirrorRequired(compat.support, browser) &&
+        isMirrorEquivalent(compat.support, browser)
+      ) {
         (compat.support[browser] as InternalSupportStatement) = 'mirror';
       }
     }
