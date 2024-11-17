@@ -89,7 +89,7 @@ export const getMatchingBrowserVersion = (
     );
   }
 
-  let lastRelease;
+  let previousReleaseEngine;
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
