@@ -115,7 +115,7 @@ export const getMatchingBrowserVersion = (
       return r;
     }
 
-    lastRelease = release;
+    previousReleaseEngine = release.engine;
   }
 
   return false;
