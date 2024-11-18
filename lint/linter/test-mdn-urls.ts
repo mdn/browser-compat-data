@@ -25,18 +25,18 @@ const slugs = (() => {
 const redirects = mdnContentInventory.redirects;
 
 /**
- * Process the data for MDN URL errors
+ * Process the data for MDN URL issues
  * @param data The data to test
  * @param path The path of the feature
  * @param category The feature category
- * @returns The errors caught in the file
+ * @returns The issues caught in the file
  */
 export const processData = (
   data: CompatStatement,
   path: string,
   category: string,
 ): MDNURLError[] => {
-  const errors: MDNURLError[] = [];
+  const issues: MDNURLError[] = [];
   if (data.mdn_url) {
     const mdnURL = new URL(data.mdn_url);
     const redirectURL = '/en-US' + mdnURL.pathname;
@@ -44,7 +44,7 @@ export const processData = (
 
     /* Replace redirects with the new URL */
     if (redirectURL in redirects) {
-      errors.push({
+      issues.push({
         ruleName: 'mdn_url_redirect',
         path,
         actual: data.mdn_url,
@@ -57,7 +57,7 @@ export const processData = (
       !Array.from(slugs.values()).includes(slug) &&
       Array.from(slugs.keys()).includes(slug.toLowerCase())
     ) {
-      errors.push({
+      issues.push({
         ruleName: 'mdn_url_casing',
         path,
         actual: data.mdn_url,
@@ -66,7 +66,7 @@ export const processData = (
 
       /* Delete non-existing MDN pages */
     } else if (!Array.from(slugs.values()).includes(slug)) {
-      errors.push({
+      issues.push({
         ruleName: 'mdn_url_404',
         path,
         actual: data.mdn_url,
@@ -124,7 +124,7 @@ export const processData = (
     }
 
     if (slugs.has(categorySlug.toLowerCase())) {
-      errors.push({
+      issues.push({
         ruleName: 'mdn_url_new_page',
         path,
         actual: '',
@@ -132,7 +132,7 @@ export const processData = (
       });
     }
   }
-  return errors;
+  return issues;
 };
 
 export default {
@@ -149,25 +149,25 @@ export default {
    * @param root.path.category The category of the feature
    */
   check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
-    const errors = processData(data, full, category);
-    for (const error of errors) {
-      if (error.expected === '') {
-        logger.error(
+    const issues = processData(data, full, category);
+    for (const issue of issues) {
+      if (issue.expected === '') {
+        logger.warning(
           chalk`{red Current mdn_url is a 404:
-          {bold ${error.actual}}}`,
+          {bold ${issue.actual}}}`,
           { fixable: true },
         );
-      } else if (error.actual === '') {
-        logger.error(
+      } else if (issue.actual === '') {
+        logger.warning(
           chalk`{red New mdn_url to add:
-          {bold ${error.expected}}}`,
+          {bold ${issue.expected}}}`,
           { fixable: true },
         );
       } else {
-        logger.error(
+        logger.warning(
           chalk`{red Issues with mdn_url found:
-            Actual:   ${error.actual}
-            Expected: ${error.expected}}`,
+            Actual:   ${issue.actual}
+            Expected: ${issue.expected}}`,
           { fixable: true },
         );
       }
