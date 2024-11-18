@@ -143,7 +143,7 @@ describe('mirror', () => {
           chrome: {
             version_added: '65',
             notes: [
-              'Before Chrome 70, this method always returned <code>true</code> even if the webcam was not connected. Since version 70, this method correctly returns the webcam state.',
+              'Before Chrome 70, this method always returned `true` even if the webcam was not connected. Since version 70, this method correctly returns the webcam state.',
               'Google Chrome will always use the default webcam.',
             ],
           },
@@ -153,7 +153,7 @@ describe('mirror', () => {
         assert.deepEqual(mirrored, {
           version_added: '52',
           notes: [
-            'Before Opera 57, this method always returned <code>true</code> even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
+            'Before Opera 57, this method always returned `true` even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
             'Opera will always use the default webcam.',
           ],
         });
@@ -287,6 +287,23 @@ describe('mirror', () => {
 
         const mirrored = mirrorSupport('edge', support);
         assert.deepEqual(mirrored, { version_added: false });
+      });
+
+      it('link with Chrome in hash', () => {
+        const support = {
+          chrome: {
+            version_added: '35',
+            notes:
+              '[Non-standard exceptions in Chrome](https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome)',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '35',
+          notes:
+            '[Non-standard exceptions in Chrome Android](https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome)',
+        });
       });
     });
   });

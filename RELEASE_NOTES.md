@@ -1,5 +1,39 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.16)
+
+November 18, 2024
+
+### Removals
+
+- `api.HTMLDetailsElement.toggle_event` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `webextensions.api.runtime.getContext` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Additions
+
+- `api.AbortController.abort.reason_parameter` ([#25068](https://github.com/mdn/browser-compat-data/pull/25068))
+- `api.GPUComputePassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderBundleEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderPassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.HTMLElement.beforetoggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.beforetoggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.inert.ignores_find_in_page` ([#24925](https://github.com/mdn/browser-compat-data/pull/24925))
+- `api.HTMLElement.toggle_event.details_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.PublicKeyCredential.signalAllAcceptedCredentials_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalCurrentUserDetails_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalUnknownCredential_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `browsers.nodejs.releases.20.8.0` ([#25020](https://github.com/mdn/browser-compat-data/pull/25020))
+- `webextensions.api.runtime.getContexts` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Statistics
+
+- 14 contributors have changed 109 files with 1,688 additions and 1,079 deletions in 39 commits ([`v5.6.15...v5.6.16`](https://github.com/mdn/browser-compat-data/compare/v5.6.15...v5.6.16))
+- 16,716 total features
+- 1,116 total contributors
+- 4,986 total stargazers
+
 ## [v5.6.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.15)
 
 November 12, 2024
