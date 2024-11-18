@@ -7,7 +7,6 @@ import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 
-import { InternalSupportStatement } from '../../types/index.js';
 import { CompatStatement } from '../../types/types.js';
 import { IS_WINDOWS } from '../../lint/utils.js';
 
