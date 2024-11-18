@@ -184,7 +184,7 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the beginning of notes/sentences).
     errors,
     actual,
-    /(\w*\s?)\[([^\[\]]*)\]\(((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))\)/g,
+    /(\w*\s?)\[([^[\]]*)\]\(((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))\)/g,
     async (match) => {
       const [, before, linkText, url, protocol, domain, bugId] = match;
 
