@@ -11,6 +11,10 @@ import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-p
  * @param filename The name of the file to fix
  */
 const fixPropertyOrder = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = stringifyAndOrderProperties(actual);
 
