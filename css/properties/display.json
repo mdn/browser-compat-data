@@ -83,6 +83,7 @@
         },
         "contents": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-contents",
             "support": {
               "chrome": {
                 "version_added": "65"
@@ -115,7 +116,7 @@
           },
           "contents_unusual": {
             "__compat": {
-              "description": "Specific behavior of unusual elements when <code>display: contents</code> is applied to them",
+              "description": "Specific behavior of unusual elements when `display: contents` is applied to them",
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -142,6 +143,46 @@
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "focusable_elements": {
+            "__compat": {
+              "description": "Elements with `display: contents` are focusable",
+              "support": {
+                "chrome": {
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/40866683"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": [
+                    "https://bugzil.la/1791648",
+                    "https://bugzil.la/1553549"
+                  ]
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/255149"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -546,7 +587,7 @@
         },
         "is_transitionable": {
           "__compat": {
-            "description": "Transitionable when setting <code>transition-behavior: allow-discrete</code>",
+            "description": "Transitionable when setting `transition-behavior: allow-discrete`",
             "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
             "tags": [
               "web-features:display-animation"
@@ -584,7 +625,7 @@
         },
         "keyframe_animatable": {
           "__compat": {
-            "description": "<code>@keyframe</code> animatable",
+            "description": "`@keyframe` animatable",
             "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
             "tags": [
               "web-features:display-animation"
@@ -660,7 +701,7 @@
           },
           "legend-support": {
             "__compat": {
-              "description": "Supported on <code>&lt;legend&gt;</code>",
+              "description": "Supported on `&lt;legend&gt;`",
               "support": {
                 "chrome": {
                   "version_added": "71"
@@ -806,6 +847,39 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "option_is_hidden": {
+            "__compat": {
+              "description": "Setting `display: none` on an `&lt;option&gt;` element hides it from the dropdown.",
+              "support": {
+                "chrome": {
+                  "version_added": "1"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "1"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         },

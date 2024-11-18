@@ -1248,7 +1248,7 @@
         },
         "pixels_param_accepts_SharedArrayBuffer": {
           "__compat": {
-            "description": "<code>pixels</code> parameter accepts <code>SharedArrayBuffer</code> type",
+            "description": "`pixels` parameter accepts `SharedArrayBuffer` type",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -2496,12 +2496,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "127",
-              "version_removed": "130",
-              "partial_implementation": true,
-              "notes": "Accidental early exposure with no functionality."
-            },
+            "firefox": [
+              {
+                "version_added": "132"
+              },
+              {
+                "version_added": "127",
+                "version_removed": "130",
+                "partial_implementation": true,
+                "notes": "Accidental early exposure with no functionality."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -4857,7 +4862,8 @@
               "version_added": "11.2"
             },
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40652382"
             },
             "webview_ios": "mirror"
           },
@@ -5548,7 +5554,11 @@
             "firefox": {
               "version_added": "4"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "Textures from video elements are not supported. See <a href='https://bugzil.la/1884282'>bug 1884282</a>."
+            },
             "ie": {
               "version_added": "11"
             },
@@ -5707,7 +5717,11 @@
             "firefox": {
               "version_added": "4"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "4",
+              "partial_implementation": true,
+              "notes": "Textures from video elements are not supported. See <a href='https://bugzil.la/1884282'>bug 1884282</a>."
+            },
             "ie": {
               "version_added": "11"
             },
@@ -6701,7 +6715,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "132"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -6719,7 +6733,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -6926,7 +6940,7 @@
         },
         "value_param_accepts_SharedArrayBuffer": {
           "__compat": {
-            "description": "<code>value</code> parameter accepts <code>SharedArrayBuffer</code> type",
+            "description": "`value` parameter accepts `SharedArrayBuffer` type",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -7062,7 +7076,7 @@
         },
         "value_param_accepts_SharedArrayBuffer": {
           "__compat": {
-            "description": "<code>value</code> parameter accepts <code>SharedArrayBuffer</code> type",
+            "description": "`value` parameter accepts `SharedArrayBuffer` type",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -7198,7 +7212,7 @@
         },
         "value_param_accepts_SharedArrayBuffer": {
           "__compat": {
-            "description": "<code>value</code> parameter accepts <code>SharedArrayBuffer</code> type",
+            "description": "`value` parameter accepts `SharedArrayBuffer` type",
             "support": {
               "chrome": {
                 "version_added": "60"
@@ -7334,7 +7348,7 @@
         },
         "value_param_accepts_SharedArrayBuffer": {
           "__compat": {
-            "description": "<code>value</code> parameter accepts <code>SharedArrayBuffer</code> type",
+            "description": "`value` parameter accepts `SharedArrayBuffer` type",
             "support": {
               "chrome": {
                 "version_added": "60"

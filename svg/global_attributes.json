@@ -1,6 +1,50 @@
 {
   "svg": {
     "global_attributes": {
+      "autofocus": {
+        "__compat": {
+          "spec_url": "https://svgwg.org/svg2-draft/struct.html#autofocusattribute",
+          "tags": [
+            "web-features:autofocus"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": [
+              {
+                "version_added": "110"
+              },
+              {
+                "version_added": "78",
+                "partial_implementation": true,
+                "notes": "Only supported on <code>SVGGraphicsElement</code>."
+              }
+            ],
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "15.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "id": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/id",
@@ -186,8 +230,9 @@
           }
         }
       },
-      "data": {
+      "data_attributes": {
         "__compat": {
+          "description": "`data-*` attributes",
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/data-*",
           "spec_url": "https://svgwg.org/svg2-draft/struct.html#DataAttributes",
           "support": {
@@ -227,6 +272,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/paint-order",
           "spec_url": "https://svgwg.org/svg2-draft/painting.html#PaintOrder",
+          "tags": [
+            "web-features:paint-order"
+          ],
           "support": {
             "chrome": {
               "version_added": "≤73"
@@ -566,6 +614,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/clip-path",
           "spec_url": "https://drafts.fxtf.org/css-masking/#the-clip-path",
+          "tags": [
+            "web-features:clip-path"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -958,8 +1009,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/dominant-baseline",
           "spec_url": [
-            "https://svgwg.org/svg2-draft/text.html#DominantBaselineProperty",
-            "https://drafts.csswg.org/css-inline/#dominant-baseline-property"
+            "https://drafts.csswg.org/css-inline/#dominant-baseline-property",
+            "https://svgwg.org/svg2-draft/text.html#DominantBaselineProperty"
           ],
           "support": {
             "chrome": {
@@ -996,6 +1047,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/fill-opacity",
           "spec_url": "https://svgwg.org/svg2-draft/painting.html#FillOpacity",
+          "tags": [
+            "web-features:opacity-svg"
+          ],
           "support": {
             "chrome": {
               "version_added": "≤80"
@@ -1474,7 +1528,7 @@
       "glyph-orientation-horizontal": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/glyph-orientation-horizontal",
-          "spec_url": "https://www.w3.org/TR/SVG11/text.html#GlyphOrientationHorizontalProperty",
+          "spec_url": "https://svgwg.org/svg2-draft/text.html#GlyphOrientationHorizontalProperty",
           "support": {
             "chrome": {
               "version_added": false
@@ -1509,7 +1563,7 @@
       "glyph-orientation-vertical": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/glyph-orientation-vertical",
-          "spec_url": "https://www.w3.org/TR/SVG11/text.html#GlyphOrientationVerticalProperty",
+          "spec_url": "https://svgwg.org/svg2-draft/text.html#GlyphOrientationVerticalProperty",
           "support": {
             "chrome": {
               "version_added": false
@@ -1880,6 +1934,9 @@
             "https://drafts.csswg.org/css-color/#transparency",
             "https://svgwg.org/svg2-draft/render.html#ObjectAndGroupOpacityProperties"
           ],
+          "tags": [
+            "web-features:opacity"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2121,7 +2178,7 @@
         },
         "context-stroke": {
           "__compat": {
-            "description": "<code>context-stroke</code> value",
+            "description": "`context-stroke` value",
             "spec_url": "https://svgwg.org/svg2-draft/painting.html#SpecifyingPaint",
             "support": {
               "chrome": {
@@ -2338,6 +2395,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/stroke-opacity",
           "spec_url": "https://svgwg.org/svg2-draft/painting.html#StrokeOpacity",
+          "tags": [
+            "web-features:opacity-svg"
+          ],
           "support": {
             "chrome": {
               "version_added": "≤80"
@@ -2491,6 +2551,10 @@
       },
       "text-overflow": {
         "__compat": {
+          "spec_url": [
+            "https://drafts.csswg.org/css-overflow-3/#text-overflow",
+            "https://svgwg.org/svg2-draft/text.html#TextOverflowProperty"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -2558,7 +2622,7 @@
               "version_added": "4",
               "notes": [
                 "This property is only supported on Windows and Linux.",
-                "Initial versions had bugs on Windows and Linux that broke font substitution, small-caps, letter-spacing or caused text to overlap. See <a href='https://crbug.com/114719'>bug 114719</a>, <a href='https://crbug.com/51973'>bug 51973</a>, <a href='https://crbug.com/55458'>bug 55458</a>, <a href='https://crbug.com/149548'>bug 149548</a>."
+                "Initial versions had bugs on Windows and Linux that broke font substitution, small-caps, letter-spacing or caused text to overlap. See <a href='https://crbug.com/40156511'>bug 40156511</a>, <a href='https://crbug.com/40430936'>bug 40430936</a>, <a href='https://crbug.com/40444347'>bug 40444347</a>, <a href='https://crbug.com/40286561'>bug 40286561</a>."
               ]
             },
             "chrome_android": "mirror",
@@ -2901,6 +2965,7 @@
       },
       "white-space": {
         "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-text-3/#white-space-property",
           "tags": [
             "web-features:white-space"
           ],

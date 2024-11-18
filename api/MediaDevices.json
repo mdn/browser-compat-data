@@ -47,7 +47,7 @@
       },
       "devicechange_event": {
         "__compat": {
-          "description": "<code>devicechange</code> event",
+          "description": "`devicechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/devicechange_event",
           "spec_url": [
             "https://w3c.github.io/mediacapture-main/#event-mediadevices-devicechange",
@@ -140,7 +140,7 @@
       },
       "getDisplayMedia": {
         "__compat": {
-          "description": "<code>getDisplayMedia()</code>",
+          "description": "`getDisplayMedia()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia",
           "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-mediadevices-getdisplaymedia",
           "support": {
@@ -149,7 +149,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "From Chrome Android 72 to 88, this method was exposed, but always failed with <code>NotAllowedError</code>. See <a href='https://crbug.com/487935'>bug 487935</a>."
+              "notes": "From Chrome Android 72 to 88, this method was exposed, but always failed with <code>NotAllowedError</code>. See <a href='https://crbug.com/40418135'>bug 40418135</a>."
             },
             "edge": [
               {
@@ -169,7 +169,7 @@
               {
                 "version_added": "33",
                 "version_removed": "66",
-                "notes": "Since Firefox 33 you can capture screen data using <code><a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>getUserMedia()</a></code>, with a <code>video</code> constraint called <code>mediaSource</code>. Before 52 it relied on a client-configurable list of allowed sites."
+                "notes": "Since Firefox 33 you can capture screen data using <a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'><code>getUserMedia()</code></a>, with a <code>video</code> constraint called <code>mediaSource</code>. Before 52 it relied on a client-configurable list of allowed sites."
               }
             ],
             "firefox_android": {
@@ -238,7 +238,7 @@
         },
         "controller_option": {
           "__compat": {
-            "description": "<code>controller</code> option",
+            "description": "`controller` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-controller",
             "support": {
               "chrome": {
@@ -275,7 +275,7 @@
         },
         "monitorTypeSurfaces_option": {
           "__compat": {
-            "description": "<code>monitorTypeSurfaces</code> option",
+            "description": "`monitorTypeSurfaces` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-monitortypesurfaces",
             "support": {
               "chrome": {
@@ -313,7 +313,7 @@
         },
         "preferCurrentTab_option": {
           "__compat": {
-            "description": "<code>preferCurrentTab</code> option",
+            "description": "`preferCurrentTab` option",
             "support": {
               "chrome": {
                 "version_added": "94",
@@ -350,7 +350,7 @@
         },
         "selfBrowserSurface_option": {
           "__compat": {
-            "description": "<code>selfBrowserSurface</code> option",
+            "description": "`selfBrowserSurface` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-selfbrowsersurface",
             "support": {
               "chrome": [
@@ -395,7 +395,7 @@
         },
         "surfaceSwitching_option": {
           "__compat": {
-            "description": "<code>surfaceSwitching</code> option",
+            "description": "`surfaceSwitching` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-surfaceswitching",
             "support": {
               "chrome": {
@@ -433,7 +433,7 @@
         },
         "systemAudio_option": {
           "__compat": {
-            "description": "<code>systemAudio</code> option",
+            "description": "`systemAudio` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-systemaudio",
             "support": {
               "chrome": {
@@ -604,7 +604,8 @@
           "spec_url": "https://w3c.github.io/mediacapture-output/#dom-mediadevices-selectaudiooutput",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/372214870"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -621,7 +622,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/216641"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

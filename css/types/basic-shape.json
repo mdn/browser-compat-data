@@ -3,9 +3,12 @@
     "types": {
       "basic-shape": {
         "__compat": {
-          "description": "<code>&lt;basic-shape&gt;</code>",
+          "description": "`&lt;basic-shape&gt;`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape",
           "spec_url": "https://drafts.csswg.org/css-shapes/#basic-shape-functions",
+          "tags": [
+            "web-features:shapes"
+          ],
           "support": {
             "chrome": {
               "version_added": "37"
@@ -40,6 +43,9 @@
           "__compat": {
             "description": "Animation",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape#Interpolation_of_basic_shapes",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -73,9 +79,12 @@
         },
         "circle": {
           "__compat": {
-            "description": "<code>circle()</code>",
+            "description": "`circle()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/circle",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-circle",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -109,9 +118,12 @@
         },
         "ellipse": {
           "__compat": {
-            "description": "<code>ellipse()</code>",
+            "description": "`ellipse()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/ellipse",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-ellipse",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -145,9 +157,12 @@
         },
         "inset": {
           "__compat": {
-            "description": "<code>inset()</code>",
+            "description": "`inset()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/inset",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-inset",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -181,41 +196,18 @@
         },
         "path": {
           "__compat": {
-            "description": "<code>path()</code>",
+            "description": "`path()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/path",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-path",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "88",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>d</code> SVG presentation attribute and the <code>clip-path</code> and <code>offset-path</code> properties."
-                },
-                {
-                  "version_added": "56",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>d</code> SVG presentation attribute and the <code>offset-path</code> property."
-                },
-                {
-                  "version_added": "52",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>d</code> SVG presentation attribute."
-                }
-              ],
+              "chrome": {
+                "version_added": "52"
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "97",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>d</code> SVG presentation attribute and the <code>clip-path</code> and <code>offset-path</code> CSS properties. Not supported on the <code>shape-outside</code> CSS property."
-                },
-                {
-                  "version_added": "72",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> and <code>offset-path</code> properties."
-                }
-              ],
+              "firefox": {
+                "version_added": "72"
+              },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -225,33 +217,20 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "16",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>offset-path</code> and <code>clip-path</code> properties."
-                },
-                {
-                  "version_added": "13.1",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> property."
+                  "version_added": "13.1"
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "10.1",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> property."
+                  "version_added": "10.1"
                 }
               ],
               "safari_ios": [
                 {
-                  "version_added": "13",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> property."
+                  "version_added": "13"
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "10.3",
-                  "partial_implementation": true,
-                  "notes": "Only supported on the <code>clip-path</code> property."
+                  "version_added": "10.3"
                 }
               ],
               "samsunginternet_android": "mirror",
@@ -266,7 +245,7 @@
           },
           "clip-path": {
             "__compat": {
-              "description": "In <code>clip-path</code>",
+              "description": "In `clip-path`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/clip-path",
               "spec_url": [
                 "https://drafts.fxtf.org/css-masking/#the-clip-path",
@@ -319,7 +298,7 @@
           },
           "d": {
             "__compat": {
-              "description": "In <code>d</code> as CSS property",
+              "description": "In `d` as CSS property",
               "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/d#using_d_as_a_css_property",
               "spec_url": "https://svgwg.org/svg2-draft/paths.html#DProperty",
               "support": {
@@ -359,7 +338,7 @@
           },
           "offset-path": {
             "__compat": {
-              "description": "In <code>offset-path</code>",
+              "description": "In `offset-path`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-path",
               "spec_url": "https://drafts.fxtf.org/motion/#offset-path-property",
               "support": {
@@ -395,7 +374,7 @@
           },
           "shape-outside": {
             "__compat": {
-              "description": "In <code>shape-outside</code>",
+              "description": "In `shape-outside`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/shape-outside",
               "spec_url": "https://drafts.csswg.org/css-shapes/#shape-outside-property",
               "support": {
@@ -432,9 +411,12 @@
         },
         "polygon": {
           "__compat": {
-            "description": "<code>polygon()</code>",
+            "description": "`polygon()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/polygon",
             "spec_url": "https://drafts.csswg.org/css-shapes/#funcdef-basic-shape-polygon",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "37"
@@ -468,9 +450,12 @@
         },
         "rect": {
           "__compat": {
-            "description": "<code>rect()</code>",
+            "description": "`rect()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/rect",
             "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-rect",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "116",
@@ -506,7 +491,7 @@
         },
         "shape": {
           "__compat": {
-            "description": "<code>shape()</code>",
+            "description": "`shape()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/shape",
             "spec_url": "https://drafts.csswg.org/css-shapes-2/#shape-function",
             "support": {
@@ -538,7 +523,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -554,9 +539,12 @@
         },
         "xywh": {
           "__compat": {
-            "description": "<code>xywh()</code>",
+            "description": "`xywh()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/basic-shape/xywh",
             "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-xywh",
+            "tags": [
+              "web-features:shapes"
+            ],
             "support": {
               "chrome": {
                 "version_added": "116",

@@ -67,7 +67,7 @@
       },
       "Worker": {
         "__compat": {
-          "description": "<code>Worker()</code> constructor",
+          "description": "`Worker()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/Worker",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-dev",
           "support": {
@@ -178,7 +178,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "impl_url": "https://crbug.com/794548"
+                "impl_url": "https://crbug.com/40554522"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -215,7 +215,7 @@
         },
         "options_name_parameter": {
           "__compat": {
-            "description": "<code>options.name</code> parameter",
+            "description": "`options.name` parameter",
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -257,7 +257,7 @@
         },
         "options_type_parameter": {
           "__compat": {
-            "description": "<code>options.type</code> parameter",
+            "description": "`options.type` parameter",
             "tags": [
               "web-features:js-modules-workers"
             ],
@@ -300,9 +300,47 @@
           }
         }
       },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": {
+              "version_added": "69",
+              "partial_implementation": true,
+              "notes": "Not available in Shared Workers. See <a href='https://crbug.com/40695450'>bug 40695450</a>."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "34"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4",
+              "partial_implementation": true,
+              "notes": "Not available in Shared Workers. See <a href='https://webkit.org/b/265263'>bug 265263</a>."
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
           "support": {
@@ -349,7 +387,7 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/message_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
           "support": {
@@ -408,7 +446,7 @@
       },
       "messageerror_event": {
         "__compat": {
-          "description": "<code>messageerror</code> event",
+          "description": "`messageerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
           "support": {
@@ -437,8 +475,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4",
-              "impl_url": "https://webkit.org/b/171216"
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -25,9 +25,16 @@
           "ie": {
             "version_added": "11"
           },
-          "nodejs": {
-            "version_added": "15.0.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "19.0.0"
+            },
+            {
+              "version_added": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the <code>crypto</code> module."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -272,7 +279,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -386,7 +393,7 @@
         },
         "derivedKeyAlgorithm_option_aes": {
           "__compat": {
-            "description": "<code>AES</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`AES` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -415,7 +422,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -431,7 +438,7 @@
         },
         "derivedKeyAlgorithm_option_hkdf": {
           "__compat": {
-            "description": "<code>HKDF</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`HKDF` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -460,7 +467,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -476,7 +483,7 @@
         },
         "derivedKeyAlgorithm_option_hmac": {
           "__compat": {
-            "description": "<code>HMAC</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`HMAC` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -505,7 +512,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -521,7 +528,7 @@
         },
         "derivedKeyAlgorithm_option_pbkdf2": {
           "__compat": {
-            "description": "<code>PBKDF2</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`PBKDF2` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -550,7 +557,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "≤13.1"
+                "version_added": "11"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -566,7 +573,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -822,7 +829,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -875,7 +882,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -1001,7 +1008,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1055,7 +1062,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -1188,7 +1195,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1241,7 +1248,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -1351,7 +1358,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1388,7 +1395,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "17"
+                "version_added": "17",
+                "notes": "Generates randomized signatures as per <a href='https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/'>draft-irtf-cfrg-det-sigs-with-noise</a>, instead of deterministic signatures as per <a href='https://www.rfc-editor.org/rfc/rfc8032'>RFC 8032</a>."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1529,7 +1537,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
