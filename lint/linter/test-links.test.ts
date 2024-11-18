@@ -76,7 +76,7 @@ describe('test-links', () => {
   });
 
   it('should process bug links correctly', async () => {
-    const rawData = "<a href='http://bugzil.la/12345'>Bug 12345</a>";
+    const rawData = '[Bug 12345](http://bugzil.la/12345)';
     const errors = await processData(rawData);
 
     assert.equal(errors.length, 1);
@@ -85,19 +85,16 @@ describe('test-links', () => {
   });
 
   it('should process bug links with "bug" word outside correctly', async () => {
-    const rawData = "bug <a href='https://bugzil.la/12345'>12345</a>";
+    const rawData = 'bug [12345](https://bugzil.la/12345)';
     const errors = await processData(rawData);
 
     assert.equal(errors.length, 1);
     assert.equal(errors[0].issue, 'Move word "bug" into link text');
-    assert.equal(
-      errors[0].expected,
-      "<a href='https://bugzil.la/12345'>bug 12345</a>",
-    );
+    assert.equal(errors[0].expected, '[bug 12345](https://bugzil.la/12345)');
   });
 
   it('should process bug links with capital "Bug"', async () => {
-    const rawData = "<a href='https://bugzil.la/12345'>Bug 12345</a>";
+    const rawData = '[Bug 12345](https://bugzil.la/12345)';
     const errors = await processData(rawData);
 
     assert.equal(errors.length, 1);
@@ -106,8 +103,7 @@ describe('test-links', () => {
   });
 
   it('should process bug links with non-standard bug text', async () => {
-    const rawData =
-      "see <a href='https://crbug.com/40067890'>Chrome bug 40067890</a>.";
+    const rawData = 'see [Chrome bug 40067890](https://crbug.com/40067890).';
     const errors = await processData(rawData);
 
     assert.equal(errors.length, 1);
