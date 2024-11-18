@@ -4,7 +4,6 @@
       "Temporal": {
         "Instant": {
           "__compat": {
-            "description": "Temporal.Instant interface",
             "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal-instant-objects",
             "tags": [
               "web-features:temporal"
@@ -12,7 +11,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "impl_url": "https://crbug.com/v8/11544"
+                "impl_url": "https://crbug.com/42201538"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -45,7 +44,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -55,15 +55,15 @@
           },
           "Instant": {
             "__compat": {
-              "description": "Temporal.Instant constructor",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal-instant-objects",
+              "description": "`Instant()` constructor",
+              "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal-instant-constructor",
               "tags": [
                 "web-features:temporal"
               ],
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -96,7 +96,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -107,7 +108,6 @@
           },
           "add": {
             "__compat": {
-              "description": "Temporal.Instant.add()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.add",
               "tags": [
                 "web-features:temporal"
@@ -115,7 +115,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -148,7 +148,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -159,7 +160,6 @@
           },
           "compare": {
             "__compat": {
-              "description": "Temporal.Instant.compare()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.compare",
               "tags": [
                 "web-features:temporal"
@@ -167,7 +167,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -200,59 +200,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "epochMicroseconds": {
-            "__compat": {
-              "description": "Temporal.Instant.epochMicroseconds",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.epochmicroseconds",
-              "tags": [
-                "web-features:temporal"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.40",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--unstable-temporal"
-                    }
-                  ]
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1519167"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "preview",
-                  "impl_url": "https://webkit.org/b/223166"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -263,7 +212,6 @@
           },
           "epochMilliseconds": {
             "__compat": {
-              "description": "Temporal.Instant.epochMilliseconds",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.epochmilliseconds",
               "tags": [
                 "web-features:temporal"
@@ -271,7 +219,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -304,7 +252,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -315,7 +264,6 @@
           },
           "epochNanoseconds": {
             "__compat": {
-              "description": "Temporal.Instant.epochNanoseconds",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.epochnanoseconds",
               "tags": [
                 "web-features:temporal"
@@ -323,7 +271,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -356,59 +304,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "epochSeconds": {
-            "__compat": {
-              "description": "Temporal.Instant.epochSeconds",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-get-temporal.zoneddatetime.prototype.epochseconds",
-              "tags": [
-                "web-features:temporal"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.40",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--unstable-temporal"
-                    }
-                  ]
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1519167"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "preview",
-                  "impl_url": "https://webkit.org/b/223166"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -419,7 +316,6 @@
           },
           "equals": {
             "__compat": {
-              "description": "Temporal.Instant.equals()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.equals",
               "tags": [
                 "web-features:temporal"
@@ -427,7 +323,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -460,7 +356,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -471,7 +368,6 @@
           },
           "from": {
             "__compat": {
-              "description": "Temporal.Instant.from()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.from",
               "tags": [
                 "web-features:temporal"
@@ -479,7 +375,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -512,59 +408,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "fromEpochMicroseconds": {
-            "__compat": {
-              "description": "Temporal.Instant.fromEpochMicroseconds()",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.fromepochseconds",
-              "tags": [
-                "web-features:temporal"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.40",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--unstable-temporal"
-                    }
-                  ]
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1519167"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "preview",
-                  "impl_url": "https://webkit.org/b/223166"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -575,7 +420,6 @@
           },
           "fromEpochMilliseconds": {
             "__compat": {
-              "description": "Temporal.Instant.fromEpochMilliseconds()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.fromepochmilliseconds",
               "tags": [
                 "web-features:temporal"
@@ -583,7 +427,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -616,7 +460,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -627,7 +472,6 @@
           },
           "fromEpochNanoseconds": {
             "__compat": {
-              "description": "Temporal.Instant.fromEpochNanoseconds()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.fromepochnanoseconds",
               "tags": [
                 "web-features:temporal"
@@ -635,7 +479,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -668,59 +512,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "fromEpochSeconds": {
-            "__compat": {
-              "description": "Temporal.Instant.fromEpochSeconds()",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.fromepochseconds",
-              "tags": [
-                "web-features:temporal"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.40",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--unstable-temporal"
-                    }
-                  ]
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1519167"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "preview",
-                  "impl_url": "https://webkit.org/b/223166"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -731,7 +524,6 @@
           },
           "round": {
             "__compat": {
-              "description": "Temporal.Instant.round()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.round",
               "tags": [
                 "web-features:temporal"
@@ -739,7 +531,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -772,7 +564,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -783,7 +576,6 @@
           },
           "since": {
             "__compat": {
-              "description": "Temporal.Instant.since()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.since",
               "tags": [
                 "web-features:temporal"
@@ -791,7 +583,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -824,7 +616,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -835,7 +628,6 @@
           },
           "subtract": {
             "__compat": {
-              "description": "Temporal.Instant.subtract()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.subtract",
               "tags": [
                 "web-features:temporal"
@@ -843,7 +635,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -876,7 +668,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -887,7 +680,6 @@
           },
           "toJSON": {
             "__compat": {
-              "description": "Temporal.Instant.toJSON()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.tojson",
               "tags": [
                 "web-features:temporal"
@@ -895,7 +687,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -928,7 +720,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -939,7 +732,6 @@
           },
           "toLocaleString": {
             "__compat": {
-              "description": "Temporal.Instant.toLocaleString()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.tolocalestring",
               "tags": [
                 "web-features:temporal"
@@ -947,7 +739,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -980,7 +772,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -991,7 +784,6 @@
           },
           "toString": {
             "__compat": {
-              "description": "Temporal.Instant.toString()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.tostring",
               "tags": [
                 "web-features:temporal"
@@ -999,7 +791,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -1032,59 +824,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "toZonedDateTime": {
-            "__compat": {
-              "description": "Temporal.Instant.toZonedDateTime()",
-              "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.tozoneddatetime",
-              "tags": [
-                "web-features:temporal"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.40",
-                  "flags": [
-                    {
-                      "type": "runtime_flag",
-                      "name": "--unstable-temporal"
-                    }
-                  ]
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1519167"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": false
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false,
-                  "impl_url": "https://webkit.org/b/223166"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -1095,7 +836,6 @@
           },
           "toZonedDateTimeISO": {
             "__compat": {
-              "description": "Temporal.Instant.toZonedDateTimeISO()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.tozoneddatetimeiso",
               "tags": [
                 "web-features:temporal"
@@ -1103,7 +843,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -1136,7 +876,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -1147,7 +888,6 @@
           },
           "until": {
             "__compat": {
-              "description": "Temporal.Instant.until()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.until",
               "tags": [
                 "web-features:temporal"
@@ -1155,7 +895,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -1188,7 +928,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -1199,7 +940,6 @@
           },
           "valueOf": {
             "__compat": {
-              "description": "Temporal.Instant.valueOf()",
               "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal.instant.prototype.valueof",
               "tags": [
                 "web-features:temporal"
@@ -1207,7 +947,7 @@
               "support": {
                 "chrome": {
                   "version_added": false,
-                  "impl_url": "https://crbug.com/v8/11544"
+                  "impl_url": "https://crbug.com/42201538"
                 },
                 "chrome_android": "mirror",
                 "deno": {
@@ -1240,7 +980,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,

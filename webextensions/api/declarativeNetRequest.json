@@ -141,6 +141,7 @@
         },
         "MAX_NUMBER_OF_DISABLED_STATIC_RULES": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DISABLED_STATIC_RULES",
             "support": {
               "chrome": {
                 "version_added": false,
@@ -164,16 +165,38 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_AND_SESSION_RULES",
             "support": {
               "chrome": {
-                "version_added": "90"
+                "version_added": "90",
+                "notes": "Deprecated in Chrome 120. Use `MAX_NUMBER_OF_DYNAMIC_RULES` and `MAX_NUMBER_OF_SESSION_RULES` instead."
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "113"
+                "version_added": "113",
+                "notes": "Deprecated in Firefox 128. Use `MAX_NUMBER_OF_DYNAMIC_RULES` and `MAX_NUMBER_OF_SESSION_RULES` instead."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
                 "version_added": "16.4"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_DYNAMIC_RULES": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_DYNAMIC_RULES",
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror"
             }
@@ -219,6 +242,26 @@
             }
           }
         },
+        "MAX_NUMBER_OF_SESSION_RULES": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_SESSION_RULES",
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "MAX_NUMBER_OF_STATIC_RULESETS": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/declarativeNetRequest/MAX_NUMBER_OF_STATIC_RULESETS",
@@ -234,6 +277,44 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "15"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_UNSAFE_DYNAMIC_RULES": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "MAX_NUMBER_OF_UNSAFE_SESSION_RULES": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror"
             }
@@ -368,7 +449,7 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": false,
-                  "notes": "Use <code>image</code> instead."
+                  "notes": "Use `image` instead."
                 },
                 "safari_ios": "mirror"
               }
@@ -779,7 +860,7 @@
                 "support": {
                   "chrome": {
                     "version_added": "86",
-                    "notes": "The <code>&quot;append&quot;</code> operation is supported from Chrome 108."
+                    "notes": "The `&quot;append&quot;` operation is supported from Chrome 108."
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -915,11 +996,30 @@
               "support": {
                 "chrome": {
                   "version_added": "84",
-                  "notes": "Deprecated in Chrome 101, use <code>initiatorDomains</code> instead."
+                  "notes": "Deprecated in Chrome 101, use `initiatorDomains` instead."
                 },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "15"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "domainType": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "84"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "128"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -935,7 +1035,7 @@
               "support": {
                 "chrome": {
                   "version_added": "84",
-                  "notes": "Deprecated in Chrome 101, use <code>excludedInitiatorDomains</code> instead."
+                  "notes": "Deprecated in Chrome 101, use `excludedInitiatorDomains` instead."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1007,12 +1107,110 @@
               }
             }
           },
+          "excludedResponseHeaders": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "128"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "excludedValues": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "header": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "values": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "initiatorDomains": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "101"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "113"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "isUrlFilterCaseSensitive": {
             "__compat": {
               "support": {
                 "chrome": {
                   "version_added": "84",
-                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Chrome 118."
+                  "notes": "The default value changed from `true` to `false` in Chrome 118."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1022,7 +1220,7 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": "15",
-                  "notes": "The default value changed from <code>true</code> to <code>false</code> in Safari 16.4."
+                  "notes": "The default value changed from `true` to `false` in Safari 16.4."
                 },
                 "safari_ios": "mirror"
               }
@@ -1063,6 +1261,85 @@
                   "version_added": false
                 },
                 "safari_ios": "mirror"
+              }
+            }
+          },
+          "responseHeaders": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "128"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "excludedValues": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "header": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "values": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "128",
+                    "notes": "From Chrome 121 until Chrome 127, this condition was recognized but not applied."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
               }
             }
           },

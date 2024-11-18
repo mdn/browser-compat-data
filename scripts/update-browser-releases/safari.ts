@@ -37,7 +37,7 @@ const extractReleaseData = (str): Release | null => {
   }
   return {
     date: new Date(`${result[1]} UTC`).toISOString().substring(0, 10),
-    version: result[2],
+    version: result[2].replace(/\.0$/, ''),
     channel: result[3] ? 'beta' : 'retired',
     engineVersion: result[4].substring(2),
     releaseNote: '',
@@ -86,6 +86,9 @@ export const updateSafariReleases = async (options) => {
         chalk`{yellow Release string from Apple not understandable (${releases[id].abstract[0].text})}`,
       );
       continue;
+    } else if (/^\d+\.\d+\.\d+$/.test(releaseDataEntry.version)) {
+      // Ignore patch version (e.g. "18.0.1").
+      continue;
     }
 
     // Compute release note
@@ -107,7 +110,10 @@ export const updateSafariReleases = async (options) => {
   //
   const dates: string[] = [];
   releaseData.forEach((release) => {
-    if (release.channel !== 'beta') {
+    if (
+      release.channel !== 'beta' &&
+      !options.skippedReleases.includes(release.version)
+    ) {
       dates.push(release.date);
     }
   });

@@ -9,7 +9,7 @@
             "version_added": "1.0"
           },
           "chrome": {
-            "version_added": "78"
+            "version_added": "43"
           },
           "chrome_android": "mirror",
           "deno": [
@@ -20,7 +20,7 @@
               "version_added": "1.0",
               "version_removed": "1.7",
               "partial_implementation": true,
-              "notes": "<code>ReadableStreamDefaultReader</code> is not exposed on the global scope."
+              "notes": "`ReadableStreamDefaultReader` is not exposed on the global scope."
             }
           ],
           "edge": "mirror",
@@ -37,22 +37,20 @@
             },
             {
               "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
             }
           ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "≤13.1"
+            "version_added": "10"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -62,7 +60,7 @@
       },
       "ReadableStreamDefaultReader": {
         "__compat": {
-          "description": "<code>ReadableStreamDefaultReader()</code> constructor",
+          "description": "`ReadableStreamDefaultReader()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/ReadableStreamDefaultReader",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-reader-constructor①",
           "support": {
@@ -92,7 +90,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -110,7 +109,7 @@
               "version_added": "1.0"
             },
             "chrome": {
-              "version_added": "78"
+              "version_added": "43"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -131,11 +130,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -153,7 +153,7 @@
               "version_added": "1.0"
             },
             "chrome": {
-              "version_added": "78"
+              "version_added": "43"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -174,11 +174,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -196,7 +197,7 @@
               "version_added": "1.0"
             },
             "chrome": {
-              "version_added": "78"
+              "version_added": "43"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -217,11 +218,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -239,7 +241,7 @@
               "version_added": "1.0"
             },
             "chrome": {
-              "version_added": "78"
+              "version_added": "43"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -260,11 +262,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": "10"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -277,7 +280,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "<code>releaseLock()</code> throws if there are pending read requests (rather than pending read requests being rejected)."
+                "notes": "`releaseLock()` throws if there are pending read requests (rather than pending read requests being rejected)."
               },
               "chrome_android": "mirror",
               "deno": {
@@ -302,7 +305,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,

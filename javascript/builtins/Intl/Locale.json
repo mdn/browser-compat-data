@@ -6,6 +6,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale",
             "spec_url": "https://tc39.es/ecma402/#locale-objects",
+            "tags": [
+              "web-features:intl-locale"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -36,7 +39,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -46,9 +50,12 @@
           },
           "Locale": {
             "__compat": {
-              "description": "<code>Locale()</code> constructor",
+              "description": "`Locale()` constructor",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/Locale",
               "spec_url": "https://tc39.es/ecma402/#sec-intl-locale-constructor",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -79,7 +86,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -92,6 +100,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/baseName",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.baseName",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -122,7 +133,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -135,6 +147,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.calendar",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -165,7 +180,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -178,6 +194,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/caseFirst",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.caseFirst",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -208,7 +227,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -221,6 +241,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/collation",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.collation",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -251,7 +274,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -264,15 +288,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getCalendars",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getCalendars",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "calendars",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "calendars",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -306,7 +338,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -319,15 +352,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getCollations",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getCollations",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "collations",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "collations",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -361,7 +402,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -374,15 +416,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getHourCycles",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getHourCycles",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "hourCycles",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "hourCycles",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -416,7 +466,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -429,15 +480,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getNumberingSystems",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getNumberingSystems",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "numberingSystems",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "numberingSystems",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -471,7 +530,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -484,15 +544,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTextInfo",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getTextInfo",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "textInfo",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "textInfo",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "alternative_name": "textInfo",
@@ -528,7 +596,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -541,15 +610,23 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTimeZones",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getTimeZones",
+              "tags": [
+                "web-features:intl-locale-info"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "timeZones",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "timeZones",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -583,7 +660,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -600,11 +678,16 @@
                 "bun": {
                   "version_added": "1.0"
                 },
-                "chrome": {
-                  "alternative_name": "weekInfo",
-                  "version_added": "99",
-                  "notes": "Implemented as an accessor property."
-                },
+                "chrome": [
+                  {
+                    "version_added": "130"
+                  },
+                  {
+                    "alternative_name": "weekInfo",
+                    "version_added": "99",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.19"
@@ -638,7 +721,8 @@
                 ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -651,6 +735,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.hourCycle",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -681,7 +768,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -694,6 +782,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/language",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.language",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -724,7 +815,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -737,6 +829,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/maximize",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.maximize",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -767,7 +862,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -780,6 +876,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/minimize",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.minimize",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -810,7 +909,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -823,6 +923,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/numberingSystem",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.numberingSystem",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -853,7 +956,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -866,6 +970,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/numeric",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.numeric",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -896,7 +1003,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -909,6 +1017,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/region",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.region",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -939,7 +1050,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -952,6 +1064,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/script",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.script",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -982,7 +1097,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -995,6 +1111,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/toString",
               "spec_url": "https://tc39.es/ecma402/#sec-Intl.Locale.prototype.toString",
+              "tags": [
+                "web-features:intl-locale"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -1025,7 +1144,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,

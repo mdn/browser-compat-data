@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext",
         "spec_url": "https://webaudio.github.io/web-audio-api/#AudioContext",
+        "tags": [
+          "web-features:web-audio"
+        ],
         "support": {
           "chrome": [
             {
@@ -41,7 +44,8 @@
           ],
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -51,16 +55,19 @@
       },
       "AudioContext": {
         "__compat": {
-          "description": "<code>AudioContext()</code> constructor",
+          "description": "`AudioContext()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-audiocontext",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "35",
                 "notes": [
-                  "Before Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                  "If <code>latencyHint</code> isn't valid, Chrome throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+                  "Before Chrome 66, each tab is limited to 6 audio contexts in Chrome; attempting to create more will throw a `DOMException`. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "If `latencyHint` isn't valid, Chrome throws a `TypeError` exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
               {
@@ -85,8 +92,8 @@
               {
                 "version_added": "22",
                 "notes": [
-                  "Before Opera 53, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                  "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+                  "Before Opera 53, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a `DOMException`. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "If `latencyHint` isn't valid, Opera throws a `TypeError` exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
               {
@@ -99,8 +106,8 @@
               {
                 "version_added": "22",
                 "notes": [
-                  "Before Opera Android 47, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                  "If <code>latencyHint</code> isn't valid, Opera throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+                  "Before Opera Android 47, each tab is limited to 6 audio contexts in Opera; attempting to create more will throw a `DOMException`. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "If `latencyHint` isn't valid, Opera throws a `TypeError` exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
               {
@@ -111,7 +118,8 @@
             ],
             "safari": [
               {
-                "version_added": "14.1"
+                "version_added": "14.1",
+                "notes": "New audio contexts are suspended until the `resume()` method is called via user action, such as the `click` event."
               },
               {
                 "prefix": "webkit",
@@ -123,8 +131,8 @@
               {
                 "version_added": "3.0",
                 "notes": [
-                  "Before Samsung Internet 9.0, each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                  "If <code>latencyHint</code> isn't valid, Samsung Internet throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+                  "Before Samsung Internet 9.0, each tab is limited to 6 audio contexts in Samsung Internet; attempting to create more will throw a `DOMException`. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "If `latencyHint` isn't valid, Samsung Internet throws a `TypeError` exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
               {
@@ -137,8 +145,8 @@
               {
                 "version_added": "37",
                 "notes": [
-                  "Before WebView 66, each tab is limited to 6 audio contexts in WebView; attempting to create more will throw a <code>DOMException</code>. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
-                  "If <code>latencyHint</code> isn't valid, WebView throws a <code>TypeError</code> exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
+                  "Before WebView 66, each tab is limited to 6 audio contexts in WebView; attempting to create more will throw a `DOMException`. For details see <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Per-tab_audio_context_limitation_in_Chrome'>Per-tab audio context limitation in Chrome</a>.",
+                  "If `latencyHint` isn't valid, WebView throws a `TypeError` exception. See <a href='https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome'>Non-standard exceptions in Chrome</a> for details."
                 ]
               },
               {
@@ -146,7 +154,8 @@
                 "version_added": "≤37",
                 "version_removed": "57"
               }
-            ]
+            ],
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -156,7 +165,7 @@
         },
         "options_latencyHint_parameter": {
           "__compat": {
-            "description": "<code>options.latencyHint</code> parameter",
+            "description": "`options.latencyHint` parameter",
             "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-latencyhint",
             "support": {
               "chrome": {
@@ -179,7 +188,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -190,7 +200,7 @@
         },
         "options_sampleRate_parameter": {
           "__compat": {
-            "description": "<code>options.sampleRate</code> parameter",
+            "description": "`options.sampleRate` parameter",
             "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-samplerate",
             "support": {
               "chrome": {
@@ -213,7 +223,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -224,7 +235,7 @@
         },
         "options_sinkId_parameter": {
           "__compat": {
-            "description": "<code>options.sinkId</code> parameter",
+            "description": "`options.sinkId` parameter",
             "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontextoptions-sinkid",
             "support": {
               "chrome": {
@@ -247,7 +258,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -261,6 +273,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/baseLatency",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-baselatency",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "58"
@@ -282,7 +297,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -295,6 +311,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/close",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-close",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "42"
@@ -318,7 +337,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -331,6 +351,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaElementSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediaelementsource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "15"
@@ -357,7 +380,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -370,6 +394,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamDestination",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamdestination",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -393,7 +420,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -406,6 +434,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamsource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"
@@ -431,7 +462,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -444,6 +476,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/createMediaStreamTrackSource",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-createmediastreamtracksource",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
@@ -467,10 +502,46 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "error_event": {
+        "__compat": {
+          "description": "`error` event",
+          "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-onerror",
+          "support": {
+            "chrome": {
+              "version_added": "128"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -480,6 +551,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/getOutputTimestamp",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-getoutputtimestamp",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "57"
@@ -501,7 +575,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -514,6 +589,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/outputLatency",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-outputlatency",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "102"
@@ -535,7 +613,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -548,6 +627,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/resume",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-resume",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -571,7 +653,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -605,7 +688,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -616,7 +700,7 @@
       },
       "sinkchange_event": {
         "__compat": {
-          "description": "<code>sinkchange</code> event",
+          "description": "`sinkchange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/sinkchange_event",
           "spec_url": "https://webaudio.github.io/web-audio-api/#eventdef-audiocontext-sinkchange",
           "support": {
@@ -640,7 +724,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -674,7 +759,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -687,6 +773,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AudioContext/suspend",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-audiocontext-suspend",
+          "tags": [
+            "web-features:web-audio"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -710,7 +799,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

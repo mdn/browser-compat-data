@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/script",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#the-script-element",
+          "tags": [
+            "web-features:script"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -15,7 +18,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Starting in Firefox 4, inserting &lt;script&gt; elements that have been created by calling <code>document.createElement(\"script\")</code> no longer enforces execution in insertion order. This change lets Firefox properly abide by the specification. To make script-inserted external scripts execute in their insertion order, set <code>.async=false</code> on them."
+              "notes": "Starting in Firefox 4, inserting &lt;script&gt; elements that have been created by calling `document.createElement(\"script\")` no longer enforces execution in insertion order. This change lets Firefox properly abide by the specification. To make script-inserted external scripts execute in their insertion order, set `.async=false` on them."
             },
             "firefox_android": {
               "version_added": "4"
@@ -35,7 +38,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -46,6 +50,9 @@
         "async": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-async",
+            "tags": [
+              "web-features:script"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -69,7 +76,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -102,7 +110,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -135,15 +144,15 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/267232"
+                "version_added": "18.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -152,6 +161,9 @@
         "crossorigin": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-crossorigin",
+            "tags": [
+              "web-features:script"
+            ],
             "support": {
               "chrome": {
                 "version_added": "19"
@@ -176,11 +188,12 @@
               },
               "safari": {
                 "version_added": "6",
-                "notes": "The <code>crossorigin</code> attribute was implemented in WebKit in WebKit <a href='https://webkit.org/b/81438'>bug 81438</a>."
+                "notes": "The `crossorigin` attribute was implemented in WebKit in WebKit <a href='https://webkit.org/b/81438'>bug 81438</a>."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -192,10 +205,13 @@
         "defer": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer",
+            "tags": [
+              "web-features:script"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Chrome does not defer scripts with the <code>defer</code> attribute when the page is served as XHTML (<code>application/xhtml+xml</code>), see <a href='https://crbug.com/611136'>bug 611136</a> and <a href='https://crbug.com/874749'>bug 874749</a>"
+                "notes": "Chrome does not defer scripts with the `defer` attribute when the page is served as XHTML (`application/xhtml+xml`), see <a href='https://crbug.com/41253514'>bug 41253514</a> and <a href='https://crbug.com/41408348'>bug 41408348</a>"
               },
               "chrome_android": "mirror",
               "edge": {
@@ -203,14 +219,14 @@
               },
               "firefox": {
                 "version_added": "3.5",
-                "notes": "Since Firefox 3.6, the <code>defer</code> attribute is ignored on scripts that don't have the <code>src</code> attribute. However, in Firefox 3.5 even inline scripts are deferred if the <code>defer</code> attribute is set."
+                "notes": "Since Firefox 3.6, the `defer` attribute is ignored on scripts that don't have the `src` attribute. However, in Firefox 3.5 even inline scripts are deferred if the `defer` attribute is set."
               },
               "firefox_android": {
                 "version_added": "4"
               },
               "ie": {
                 "version_added": "10",
-                "notes": "Before version 10, Internet Explorer implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
+                "notes": "Before version 10, Internet Explorer implemented `defer` by a proprietary specification. Since version 10 it conforms to the W3C specification."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -220,7 +236,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -242,23 +259,23 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "132",
+                "impl_url": "https://bugzil.la/1797715"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": {
-                "version_added": false
-              },
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": "17.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -270,8 +287,11 @@
         "integrity": {
           "__compat": {
             "spec_url": [
-              "https://html.spec.whatwg.org/multipage/semantics.html#attr-script-integrity",
+              "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-integrity",
               "https://w3c.github.io/webappsec-subresource-integrity/#the-integrity-attribute"
+            ],
+            "tags": [
+              "web-features:script"
             ],
             "support": {
               "chrome": {
@@ -296,7 +316,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -334,7 +355,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -346,6 +368,9 @@
         "referrerpolicy": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-referrerpolicy",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -369,7 +394,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -403,7 +429,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -438,7 +465,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -473,7 +501,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -486,6 +515,9 @@
         "src": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-src",
+            "tags": [
+              "web-features:script"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -509,7 +541,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -521,6 +554,9 @@
         "type": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-type",
+            "tags": [
+              "web-features:script"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -544,7 +580,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -554,7 +591,7 @@
           },
           "importmap": {
             "__compat": {
-              "description": "<code>type=\"importmap\"</code>",
+              "description": "`type=\"importmap\"`",
               "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#import-map",
               "tags": [
                 "web-features:import-maps"
@@ -580,7 +617,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -615,7 +653,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -627,20 +666,20 @@
           },
           "module": {
             "__compat": {
-              "description": "<code>type=\"module\"</code>",
+              "description": "`type=\"module\"`",
               "tags": [
                 "web-features:js-modules"
               ],
               "support": {
                 "chrome": {
                   "version_added": "61",
-                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
+                  "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See <a href='https://crbug.com/40518469'>bug 40518469</a>."
                 },
                 "chrome_android": "mirror",
                 "edge": [
                   {
                     "version_added": "79",
-                    "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
+                    "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See <a href='https://crbug.com/40518469'>bug 40518469</a>."
                   },
                   {
                     "version_added": "16",
@@ -659,11 +698,12 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "10.1",
-                  "notes": "Module scripts do not load when the page is served as XHTML (<code>application/xhtml+xml</code>)."
+                  "notes": "Module scripts do not load when the page is served as XHTML (`application/xhtml+xml`)."
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -674,7 +714,7 @@
           },
           "speculationrules": {
             "__compat": {
-              "description": "<code>type=\"speculationrules\"</code>",
+              "description": "`type=\"speculationrules\"`",
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
               "support": {
                 "chrome": [
@@ -713,7 +753,10 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": {
+                  "version_added": false
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -723,7 +766,7 @@
             },
             "eagerness": {
               "__compat": {
-                "description": "<code>eagerness</code> key",
+                "description": "`eagerness` key",
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -745,7 +788,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -756,12 +802,12 @@
             },
             "expects_no_vary_search": {
               "__compat": {
-                "description": "<code>expects_no_vary_search</code> key",
+                "description": "`expects_no_vary_search` key",
                 "support": {
                   "chrome": {
                     "version_added": "121",
                     "partial_implementation": true,
-                    "notes": "Supported for <code>prefetch</code> only."
+                    "notes": "Supported for `prefetch` only."
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
@@ -780,7 +826,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -791,7 +840,7 @@
             },
             "prefetch": {
               "__compat": {
-                "description": "<code>prefetch</code> key",
+                "description": "`prefetch` key",
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -815,7 +864,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -826,7 +878,7 @@
             },
             "prerender": {
               "__compat": {
-                "description": "<code>prerender</code> key",
+                "description": "`prerender` key",
                 "support": {
                   "chrome": {
                     "version_added": "105"
@@ -850,7 +902,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -861,7 +916,7 @@
             },
             "referrer_policy": {
               "__compat": {
-                "description": "<code>referrer_policy</code> key",
+                "description": "`referrer_policy` key",
                 "support": {
                   "chrome": {
                     "version_added": "111"
@@ -883,7 +938,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -894,7 +952,7 @@
             },
             "relative_to": {
               "__compat": {
-                "description": "<code>relative_to</code> key",
+                "description": "`relative_to` key",
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -916,7 +974,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -927,7 +988,7 @@
             },
             "requires": {
               "__compat": {
-                "description": "<code>requires</code> key",
+                "description": "`requires` key",
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -951,7 +1012,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -961,7 +1025,7 @@
               },
               "anonymous-client-ip-when-cross-origin": {
                 "__compat": {
-                  "description": "<code>anonymous-client-ip-when-cross-origin</code> value",
+                  "description": "`anonymous-client-ip-when-cross-origin` value",
                   "support": {
                     "chrome": {
                       "version_added": "110"
@@ -993,7 +1057,10 @@
                     "samsunginternet_android": {
                       "version_added": false
                     },
-                    "webview_android": "mirror"
+                    "webview_android": {
+                      "version_added": false
+                    },
+                    "webview_ios": "mirror"
                   },
                   "status": {
                     "experimental": true,
@@ -1005,7 +1072,7 @@
             },
             "source_optional": {
               "__compat": {
-                "description": "<code>source</code> key is optional",
+                "description": "`source` key is optional",
                 "support": {
                   "chrome": {
                     "version_added": "122"
@@ -1027,7 +1094,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -1038,7 +1108,7 @@
             },
             "urls": {
               "__compat": {
-                "description": "<code>urls</code> key",
+                "description": "`urls` key",
                 "support": {
                   "chrome": {
                     "version_added": "109"
@@ -1062,7 +1132,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,
@@ -1073,7 +1146,7 @@
             },
             "where": {
               "__compat": {
-                "description": "<code>where</code> key",
+                "description": "`where` key",
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -1095,7 +1168,10 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": {
+                    "version_added": false
+                  },
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": true,

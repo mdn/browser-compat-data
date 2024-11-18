@@ -28,7 +28,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -38,7 +39,7 @@
       },
       "OffscreenCanvas": {
         "__compat": {
-          "description": "<code>OffscreenCanvas()</code> constructor",
+          "description": "`OffscreenCanvas()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/OffscreenCanvas",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-offscreencanvas-dev",
           "tags": [
@@ -65,7 +66,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -76,7 +78,7 @@
       },
       "contextlost_event": {
         "__compat": {
-          "description": "<code>contextlost</code> event",
+          "description": "`contextlost` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextlost_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-contextlost",
@@ -106,7 +108,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -117,7 +120,7 @@
       },
       "contextrestored_event": {
         "__compat": {
-          "description": "<code>contextrestored</code> event",
+          "description": "`contextrestored` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OffscreenCanvas/contextrestored_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-contextrestored",
@@ -147,7 +150,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -190,7 +194,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -200,7 +205,7 @@
         },
         "option_type_parameter_webp": {
           "__compat": {
-            "description": "<code>option.type</code> parameter supports <code>\"image/webp\"</code>",
+            "description": "`option.type` parameter supports `\"image/webp\"`",
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -224,7 +229,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -262,7 +268,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -272,7 +279,10 @@
         },
         "bitmaprenderer_context": {
           "__compat": {
-            "description": "<code>bitmaprenderer</code> context",
+            "description": "`bitmaprenderer` context",
+            "tags": [
+              "web-features:offscreen-canvas"
+            ],
             "support": {
               "chrome": {
                 "version_added": "76"
@@ -296,7 +306,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -307,7 +318,7 @@
         },
         "webgl_context": {
           "__compat": {
-            "description": "<code>webgl</code> context",
+            "description": "`webgl` context",
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -331,7 +342,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -342,7 +354,7 @@
         },
         "webgl2_context": {
           "__compat": {
-            "description": "<code>webgl2</code> context",
+            "description": "`webgl2` context",
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -366,7 +378,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -377,7 +390,7 @@
         },
         "webgpu_context": {
           "__compat": {
-            "description": "<code>webgpu</code> context",
+            "description": "`webgpu` context",
             "spec_url": "https://gpuweb.github.io/gpuweb/#canvas-getcontext",
             "tags": [
               "web-features:webgpu"
@@ -392,7 +405,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
+                "version_added": "105",
                 "partial_implementation": true,
                 "notes": "Currently supported on Linux and Windows only."
               },
@@ -406,14 +419,15 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -421,7 +435,10 @@
         },
         "2d_context": {
           "__compat": {
-            "description": "<code>2d</code> context",
+            "description": "`2d` context",
+            "tags": [
+              "web-features:offscreen-canvas"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -445,7 +462,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -483,7 +501,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -520,7 +539,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -557,7 +577,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

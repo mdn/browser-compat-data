@@ -44,7 +44,7 @@
               "safari": {
                 "version_added": "14",
                 "partial_implementation": true,
-                "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
+                "notes": "`reason` and `extensionId` will not be populated."
               },
               "safari_ios": {
                 "version_added": false
@@ -617,7 +617,7 @@
                 },
                 "firefox_android": {
                   "version_added": "63",
-                  "notes": "While present, always returns <code>false</code>."
+                  "notes": "While present, always returns `false`."
                 },
                 "opera": "mirror",
                 "safari": {
@@ -957,7 +957,7 @@
                 "safari": {
                   "version_added": "14",
                   "partial_implementation": true,
-                  "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
+                  "notes": "`reason` and `extensionId` will not be populated."
                 },
                 "safari_ios": {
                   "version_added": false
@@ -1283,7 +1283,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/WindowType",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -1475,7 +1475,7 @@
               },
               "firefox": {
                 "version_added": "47",
-                "notes": "In Firefox 125 and earlier, only available with the <code>&lt;all_urls&gt;</code> permission. From Firefox 126, available with either the <code>&lt;all_urls&gt;</code> or <code>activeTab</code> permissions."
+                "notes": "In Firefox 125 and earlier, only available with the `&lt;all_urls&gt;` permission. From Firefox 126, available with either the `&lt;all_urls&gt;` or `activeTab` permissions."
               },
               "firefox_android": {
                 "version_added": "54"
@@ -1485,14 +1485,14 @@
                 "version_added": "14",
                 "notes": [
                   "The default file format is 'jpeg'.",
-                  "<code>&lt;all_urls&gt;</code> permission is optional."
+                  "`&lt;all_urls&gt;` permission is optional."
                 ]
               },
               "safari_ios": {
                 "version_added": "15",
                 "notes": [
                   "The default file format is 'jpeg'.",
-                  "<code>&lt;all_urls&gt;</code> permission is optional."
+                  "`&lt;all_urls&gt;` permission is optional."
                 ]
               }
             }
@@ -1539,12 +1539,12 @@
                   "safari": {
                     "version_added": "14",
                     "partial_implementation": true,
-                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not."
+                    "notes": "`name` is supported, but `frameId` is not."
                   },
                   "safari_ios": {
                     "version_added": "15",
                     "partial_implementation": true,
-                    "notes": "<code>name</code> is supported, but <code>frameId</code> is not."
+                    "notes": "`name` is supported, but `frameId` is not."
                   }
                 }
               }
@@ -1862,7 +1862,7 @@
               "safari": {
                 "version_added": "14",
                 "notes": [
-                  "Returns <code>und</code> (undefined language) for macOS versions before 11.",
+                  "Returns `und` (undefined language) for macOS versions before 11.",
                   "Locale identifier will include the country code more often."
                 ]
               },
@@ -1881,8 +1881,8 @@
                 "notes": [
                   "Only accepts a single tab ID as a parameter, not an array.",
                   "The tab ID argument is optional: if it is omitted, the browser discards the least important tab.",
-                  "The callback is passed a <code>Tab</code> object representing the tab that was discarded.",
-                  "Tabs whose document contains a <a href='https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent'><code>beforeunload</code></a> listener that displays a prompt will be discarded."
+                  "The callback is passed a `Tab` object representing the tab that was discarded.",
+                  "Tabs whose document contains a <a href='https://developer.mozilla.org/docs/Web/API/BeforeUnloadEvent'>`beforeunload`</a> listener that displays a prompt will be discarded."
                 ]
               },
               "edge": {
@@ -2160,11 +2160,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/getSelected",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -2186,11 +2184,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/getZoom",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -2300,11 +2296,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/highlight",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "63"
               },
@@ -2347,7 +2341,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/insertCSS",
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤20",
                 "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
@@ -2362,7 +2356,10 @@
                 "version_added": "54",
                 "notes": "Available for use in Manifest V2 only."
               },
-              "opera": "mirror",
+              "opera": {
+                "version_added": "15",
+                "notes": "Available for use in Manifest V2 only."
+              },
               "safari": {
                 "version_added": "14",
                 "notes": "Available for use in Manifest V2 only."
@@ -2467,11 +2464,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/move",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "46"
               },
@@ -2513,7 +2508,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onActivated",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -2539,11 +2534,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onActiveChanged",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -2563,7 +2556,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onAttached",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "15"
@@ -2589,7 +2582,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onCreated",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -2615,7 +2608,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onDetached",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "15"
@@ -2641,11 +2634,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onHighlightChanged",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -2665,11 +2656,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onHighlighted",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": [
                 {
                   "version_added": "63"
@@ -2677,12 +2666,12 @@
                 {
                   "version_added": "45",
                   "version_removed": "62",
-                  "notes": "Implemented as an alias for <code>onActivated</code>."
+                  "notes": "Implemented as an alias for `onActivated`."
                 }
               ],
               "firefox_android": {
                 "version_added": "54",
-                "notes": "Implemented as an alias for <code>onActivated</code>."
+                "notes": "Implemented as an alias for `onActivated`."
               },
               "opera": {
                 "version_added": false
@@ -2701,11 +2690,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onMoved",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -2727,7 +2714,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onRemoved",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -2753,11 +2740,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onReplaced",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -2777,11 +2762,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onSelectionChanged",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -2801,7 +2784,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onUpdated",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤54"
               },
               "edge": {
                 "version_added": "14"
@@ -2826,7 +2809,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2872,7 +2855,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2896,7 +2879,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2919,7 +2902,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2934,7 +2917,7 @@
                   "safari": {
                     "version_added": "14",
                     "partial_implementation": true,
-                    "notes": "<code>reason</code> and <code>extensionId</code> will not be populated."
+                    "notes": "`reason` and `extensionId` will not be populated."
                   },
                   "safari_ios": {
                     "version_added": false
@@ -2942,11 +2925,30 @@
                 }
               }
             },
+            "openerTabId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "131"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
             "pinned": {
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2972,7 +2974,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -2997,7 +2999,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤58"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3024,7 +3026,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3056,7 +3058,8 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "61"
+                  "version_added": "61",
+                  "notes": "Support for `openTabID` in `properties` added in Firefox 131."
                 },
                 "firefox_android": {
                   "version_added": false
@@ -3105,11 +3108,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onZoomChange",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -3173,11 +3174,11 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/query",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14",
-                "notes": "The <code>panel</code>, <code>app</code>, <code>devtools</code> and <code>popup</code> values for <code>WindowType</code> are not supported."
+                "notes": "The `panel`, `app`, `devtools` and `popup` values for `WindowType` are not supported."
               },
               "firefox": {
                 "version_added": "45"
@@ -3185,7 +3186,9 @@
               "firefox_android": {
                 "version_added": "54"
               },
-              "opera": "mirror",
+              "opera": {
+                "version_added": "15"
+              },
               "safari": {
                 "version_added": "14"
               },
@@ -3198,7 +3201,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤19"
                 },
                 "edge": {
                   "version_added": "14"
@@ -3209,7 +3212,9 @@
                 "firefox_android": {
                   "version_added": "54"
                 },
-                "opera": "mirror",
+                "opera": {
+                  "version_added": "15"
+                },
                 "safari": {
                   "version_added": "14"
                 },
@@ -3222,7 +3227,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3388,25 +3393,23 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
-                  "edge": {
-                    "version_added": "79"
-                  },
+                  "edge": "mirror",
                   "firefox": {
                     "version_added": "60",
-                    "notes": "Treated as an alias for <code>queryInfo.active</code>."
+                    "notes": "Treated as an alias for `queryInfo.active`."
                   },
                   "firefox_android": [
                     {
                       "version_added": "61",
                       "version_removed": "79",
-                      "notes": "Treated as an alias for <code>queryInfo.active</code>."
+                      "notes": "Treated as an alias for `queryInfo.active`."
                     },
                     {
                       "version_added": "60",
                       "version_removed": "61",
-                      "notes": "Treated as an alias for <code>queryInfo.active</code> except when an extension has a popup open. In this situation, <code>queryInfo.highlighted</code> will return the popup, while <code>queryInfo.active</code> will return the tab that was selected before the popup opened."
+                      "notes": "Treated as an alias for `queryInfo.active` except when an extension has a popup open. In this situation, `queryInfo.highlighted` will return the popup, while `queryInfo.active` will return the tab that was selected before the popup opened."
                     }
                   ],
                   "opera": "mirror",
@@ -3496,11 +3499,9 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
-                  "edge": {
-                    "version_added": "79"
-                  },
+                  "edge": "mirror",
                   "firefox": {
                     "version_added": "57"
                   },
@@ -3521,11 +3522,9 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
-                  "edge": {
-                    "version_added": "79"
-                  },
+                  "edge": "mirror",
                   "firefox": {
                     "version_added": "45"
                   },
@@ -3547,7 +3546,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3572,7 +3571,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3597,7 +3596,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3605,14 +3604,14 @@
                   "firefox": {
                     "version_added": "45",
                     "notes": [
-                      "Fails if the extension doesn't have the <code>tabs</code> permission.",
+                      "Fails if the extension doesn't have the `tabs` permission.",
                       "Before Firefox 56, moz-extension:// URLs were not allowed."
                     ]
                   },
                   "firefox_android": {
                     "version_added": "54",
                     "notes": [
-                      "Fails if the extension doesn't have the <code>tabs</code> permission.",
+                      "Fails if the extension doesn't have the `tabs` permission.",
                       "Before Firefox 56, moz-extension:// URLs were not allowed."
                     ]
                   },
@@ -3630,7 +3629,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3655,7 +3654,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "≤61"
                   },
                   "edge": {
                     "version_added": "14"
@@ -3683,7 +3682,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/reload",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "17"
@@ -3709,7 +3708,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/remove",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -3793,11 +3792,11 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendMessage",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤41"
               },
               "edge": {
                 "version_added": "14",
-                "notes": "No response is sent after the receiving tab is refreshed if there is no <code>runtime.onMessage</code> listener."
+                "notes": "No response is sent after the receiving tab is refreshed if there is no `runtime.onMessage` listener."
               },
               "firefox": {
                 "version_added": "45"
@@ -3845,11 +3844,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/sendRequest",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -3869,11 +3866,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/setZoom",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -3895,11 +3890,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/setZoomSettings",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -3961,7 +3954,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/update",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "18"
               },
               "edge": {
                 "version_added": "14"
@@ -3981,12 +3974,12 @@
               }
             }
           },
-          "active_value": {
+          "updateProperties_active_parameter": {
             "__compat": {
-              "description": "<code>active</code> value",
+              "description": "`updateProperties.active` parameter",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤61"
                 },
                 "edge": {
                   "version_added": "14"
@@ -4007,9 +4000,9 @@
               }
             }
           },
-          "autoDiscardable_value": {
+          "updateProperties_autoDiscardable_parameter": {
             "__compat": {
-              "description": "<code>autoDiscardable</code> value",
+              "description": "`updateProperties.autoDiscardable` parameter",
               "support": {
                 "chrome": {
                   "version_added": "54"
@@ -4029,16 +4022,14 @@
               }
             }
           },
-          "highlighted_value": {
+          "updateProperties_highlighted_parameter": {
             "__compat": {
-              "description": "<code>highlighted</code> value",
+              "description": "`updateProperties.highlighted` parameter",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "63"
                 },
@@ -4055,9 +4046,9 @@
               }
             }
           },
-          "loadReplace_value": {
+          "updateProperties_loadReplace_parameter": {
             "__compat": {
-              "description": "<code>loadReplace</code> value",
+              "description": "`updateProperties.loadReplace` parameter",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -4077,9 +4068,9 @@
               }
             }
           },
-          "muted_value": {
+          "updateProperties_muted_parameter": {
             "__compat": {
-              "description": "<code>muted</code> value",
+              "description": "`updateProperties.muted` parameter",
               "support": {
                 "chrome": {
                   "version_added": "45"
@@ -4101,17 +4092,24 @@
               }
             }
           },
-          "openerTabId_value": {
+          "updateProperties_openerTabId_parameter": {
             "__compat": {
-              "description": "<code>openerTabId</code> value",
+              "description": "`updateProperties.openerTabId` parameter",
               "support": {
                 "chrome": {
                   "version_added": "18"
                 },
                 "edge": "mirror",
-                "firefox": {
-                  "version_added": "57"
-                },
+                "firefox": [
+                  {
+                    "version_added": "131",
+                    "notes": "Set to -1 to clear `openerTabId`."
+                  },
+                  {
+                    "version_added": "57",
+                    "version_removed": "131"
+                  }
+                ],
                 "firefox_android": {
                   "version_added": false
                 },
@@ -4125,16 +4123,14 @@
               }
             }
           },
-          "pinned_value": {
+          "updateProperties_pinned_parameter": {
             "__compat": {
-              "description": "<code>pinned</code> value",
+              "description": "`updateProperties.pinned` parameter",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "45"
                 },
@@ -4152,16 +4148,14 @@
               }
             }
           },
-          "selected_value": {
+          "updateProperties_selected_parameter": {
             "__compat": {
-              "description": "<code>selected</code> value",
+              "description": "`updateProperties.selected` parameter",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -4176,12 +4170,12 @@
               }
             }
           },
-          "url_value": {
+          "updateProperties_url_parameter": {
             "__compat": {
-              "description": "<code>url</code> value",
+              "description": "`updateProperties.url` parameter",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤61"
                 },
                 "edge": {
                   "version_added": "14"

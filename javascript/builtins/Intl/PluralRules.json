@@ -6,6 +6,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules",
             "spec_url": "https://tc39.es/ecma402/#pluralrules-objects",
+            "tags": [
+              "web-features:intl-plural-rules"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -29,7 +32,7 @@
               },
               "nodejs": {
                 "version_added": "10.0.0",
-                "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the <code>PluralRules()</code> constructor</a> for more details."
+                "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the `PluralRules()` constructor</a> for more details."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -39,7 +42,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -49,9 +53,12 @@
           },
           "PluralRules": {
             "__compat": {
-              "description": "<code>PluralRules()</code> constructor",
+              "description": "`PluralRules()` constructor",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules",
               "spec_url": "https://tc39.es/ecma402/#sec-intl-pluralrules-constructor",
+              "tags": [
+                "web-features:intl-plural-rules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -80,7 +87,7 @@
                   {
                     "version_added": "10.0.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>PluralRules</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the `PluralRules` instance silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the `--with-intl` option</a> and how to provide the data."
                   }
                 ],
                 "oculus": "mirror",
@@ -91,7 +98,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -101,7 +109,10 @@
             },
             "options_parameter": {
               "__compat": {
-                "description": "<code>options</code> parameter",
+                "description": "`options` parameter",
+                "tags": [
+                  "web-features:intl-plural-rules"
+                ],
                 "support": {
                   "bun": {
                     "version_added": "1.0"
@@ -127,11 +138,12 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "15.4"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -141,7 +153,10 @@
               },
               "options_roundingIncrement_parameter": {
                 "__compat": {
-                  "description": "<code>options.roundingIncrement</code> parameter",
+                  "description": "`options.roundingIncrement` parameter",
+                  "tags": [
+                    "web-features:intl-plural-rules"
+                  ],
                   "support": {
                     "bun": {
                       "version_added": "1.0"
@@ -167,14 +182,15 @@
                     "opera": "mirror",
                     "opera_android": "mirror",
                     "safari": {
-                      "version_added": false
+                      "version_added": "17.2"
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
-                    "webview_android": "mirror"
+                    "webview_android": "mirror",
+                    "webview_ios": "mirror"
                   },
                   "status": {
-                    "experimental": true,
+                    "experimental": false,
                     "standard_track": true,
                     "deprecated": false
                   }
@@ -182,7 +198,10 @@
               },
               "options_roundingMode_parameter": {
                 "__compat": {
-                  "description": "<code>options.roundingMode</code> parameter",
+                  "description": "`options.roundingMode` parameter",
+                  "tags": [
+                    "web-features:intl-plural-rules"
+                  ],
                   "support": {
                     "bun": {
                       "version_added": "1.0"
@@ -208,11 +227,12 @@
                     "opera": "mirror",
                     "opera_android": "mirror",
                     "safari": {
-                      "version_added": false
+                      "version_added": "17.2"
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
-                    "webview_android": "mirror"
+                    "webview_android": "mirror",
+                    "webview_ios": "mirror"
                   },
                   "status": {
                     "experimental": false,
@@ -223,7 +243,10 @@
               },
               "options_roundingPriority_parameter": {
                 "__compat": {
-                  "description": "<code>options.roundingPriority</code> parameter",
+                  "description": "`options.roundingPriority` parameter",
+                  "tags": [
+                    "web-features:intl-plural-rules"
+                  ],
                   "support": {
                     "bun": {
                       "version_added": "1.0"
@@ -249,11 +272,12 @@
                     "opera": "mirror",
                     "opera_android": "mirror",
                     "safari": {
-                      "version_added": false
+                      "version_added": "15.4"
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
-                    "webview_android": "mirror"
+                    "webview_android": "mirror",
+                    "webview_ios": "mirror"
                   },
                   "status": {
                     "experimental": false,
@@ -264,7 +288,10 @@
               },
               "options_trailingZeroDisplay_parameter": {
                 "__compat": {
-                  "description": "<code>options.trailingZeroDisplay</code> parameter",
+                  "description": "`options.trailingZeroDisplay` parameter",
+                  "tags": [
+                    "web-features:intl-plural-rules"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": false
@@ -291,7 +318,8 @@
                     },
                     "safari_ios": "mirror",
                     "samsunginternet_android": "mirror",
-                    "webview_android": "mirror"
+                    "webview_android": "mirror",
+                    "webview_ios": "mirror"
                   },
                   "status": {
                     "experimental": true,
@@ -306,6 +334,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/resolvedOptions",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.pluralrules.prototype.resolvedoptions",
+              "tags": [
+                "web-features:intl-plural-rules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -329,7 +360,7 @@
                 },
                 "nodejs": {
                   "version_added": "10.0.0",
-                  "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the <code>PluralRules()</code> constructor</a> for more details."
+                  "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the `PluralRules()` constructor</a> for more details."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -339,7 +370,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -352,6 +384,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/select",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.pluralrules.prototype.select",
+              "tags": [
+                "web-features:intl-plural-rules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -375,7 +410,7 @@
                 },
                 "nodejs": {
                   "version_added": "10.0.0",
-                  "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the <code>PluralRules()</code> constructor</a> for more details."
+                  "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the `PluralRules()` constructor</a> for more details."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -385,7 +420,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -398,6 +434,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/selectRange",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.pluralrules.prototype.selectrange",
+              "tags": [
+                "web-features:intl-plural-rules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -428,7 +467,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -441,6 +481,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/supportedLocalesOf",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.pluralrules.supportedlocalesof",
+              "tags": [
+                "web-features:intl-plural-rules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.0"
@@ -464,7 +507,7 @@
                 },
                 "nodejs": {
                   "version_added": "10.0.0",
-                  "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the <code>PluralRules()</code> constructor</a> for more details."
+                  "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/PluralRules/PluralRules'>the `PluralRules()` constructor</a> for more details."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -474,7 +517,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,

@@ -2,7 +2,7 @@
   "api": {
     "structuredClone": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/structuredClone",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/structuredClone",
         "spec_url": "https://html.spec.whatwg.org/multipage/structured-data.html#dom-structuredclone",
         "tags": [
           "web-features:structured-clone"
@@ -18,15 +18,15 @@
           "deno": [
             {
               "version_added": "1.14",
-              "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+              "notes": "The `message` parameter does not support cloning `Blob` values."
             },
             {
               "version_added": "1.13",
               "version_removed": "1.14",
               "partial_implementation": true,
               "notes": [
-                "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
-                "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                "The `message` parameter does not support cloning `Blob` values.",
+                "The `transfer` parameter does not accept `ArrayBuffer` items. Passing an `ArrayBuffer` results in an error being thrown."
               ]
             }
           ],
@@ -49,7 +49,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
