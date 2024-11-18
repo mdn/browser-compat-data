@@ -98,20 +98,20 @@ export const getMatchingBrowserVersion = (
     const rangeDelimiter =
       range && previousReleaseEngine == sourceRelease.engine;
 
-    if (
+    // Handle mirroring for Chromium forks when upstream version is pre-Blink
+    const isChromeWebKitToBlink =
       ['chrome', 'chrome_android'].includes(browserData.upstream) &&
       targetBrowser !== 'chrome_android' &&
       release.engine == 'Blink' &&
-      sourceRelease.engine == 'WebKit'
-    ) {
-      // Handle mirroring for Chromium forks when upstream version is pre-Blink
-      return rangeDelimiter ? `≤${r}` : r;
-    } else if (
+      sourceRelease.engine == 'WebKit';
+
+    const isMatchingVersion =
       release.engine == sourceRelease.engine &&
       release.engine_version &&
       sourceRelease.engine_version &&
-      compare(release.engine_version, sourceRelease.engine_version, '>=')
-    ) {
+      compare(release.engine_version, sourceRelease.engine_version, '>=');
+
+    if (isChromeWebKitToBlink || isMatchingVersion) {
       return rangeDelimiter ? `≤${r}` : r;
     }
 
