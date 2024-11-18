@@ -93,6 +93,11 @@ export const getMatchingBrowserVersion = (
 
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
+
+    // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
+    const rangeDelimiter =
+      range && previousReleaseEngine == sourceRelease.engine;
+
     if (
       ['chrome', 'chrome_android'].includes(browserData.upstream) &&
       targetBrowser !== 'chrome_android' &&
@@ -100,19 +105,14 @@ export const getMatchingBrowserVersion = (
       sourceRelease.engine == 'WebKit'
     ) {
       // Handle mirroring for Chromium forks when upstream version is pre-Blink
-      return range ? `≤${r}` : r;
+      return rangeDelimiter ? `≤${r}` : r;
     } else if (
       release.engine == sourceRelease.engine &&
       release.engine_version &&
       sourceRelease.engine_version &&
       compare(release.engine_version, sourceRelease.engine_version, '>=')
     ) {
-      if (range && previousReleaseEngine == sourceRelease.engine) {
-        // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
-        return `≤${r}`;
-      }
-
-      return r;
+      return rangeDelimiter ? `≤${r}` : r;
     }
 
     previousReleaseEngine = release.engine;
