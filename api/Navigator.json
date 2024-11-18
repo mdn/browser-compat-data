@@ -391,7 +391,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/1100993"
+              "impl_url": "https://crbug.com/40703318"
             },
             "webview_ios": "mirror"
           },
@@ -445,7 +445,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
             },
             "chrome_android": {
               "version_added": "75"
@@ -499,7 +499,7 @@
         },
         "data_files_parameter": {
           "__compat": {
-            "description": "<code>data.files</code> parameter",
+            "description": "`data.files` parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-files",
             "support": {
               "chrome": {
@@ -542,7 +542,7 @@
         },
         "data_text_parameter": {
           "__compat": {
-            "description": "<code>data.text</code> parameter",
+            "description": "`data.text` parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-text",
             "support": {
               "chrome": {
@@ -939,7 +939,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "132"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1602,7 +1602,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "18.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1610,7 +1610,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2381,7 +2381,7 @@
           "support": {
             "chrome": {
               "version_added": "2",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/7469'>bug 7469</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns <code>true</code>. For history, see <a href='https://crbug.com/40530968'>bug 40530968</a>."
             },
             "chrome_android": {
               "version_added": "18"
@@ -2417,7 +2417,7 @@
             "webview_android": {
               "version_added": "≤37",
               "partial_implementation": true,
-              "notes": "Can incorrectly return true, see <a href='https://crbug.com/811122'>bug 811122</a>."
+              "notes": "Can incorrectly return true, see <a href='https://crbug.com/41369933'>bug 41369933</a>."
             },
             "webview_ios": "mirror"
           },
@@ -2529,7 +2529,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/490120"
+              "impl_url": "https://crbug.com/40418964"
             },
             "webview_ios": "mirror"
           },
@@ -2878,7 +2878,7 @@
         },
         "scheme_parameter_bitcoin": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>bitcoin</code>",
+            "description": "`scheme` parameter supports `bitcoin`",
             "support": {
               "chrome": {
                 "version_added": "28"
@@ -2914,7 +2914,7 @@
         },
         "scheme_parameter_cabal": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>cabal</code>",
+            "description": "`scheme` parameter supports `cabal`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -2950,7 +2950,7 @@
         },
         "scheme_parameter_dat": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>dat</code>",
+            "description": "`scheme` parameter supports `dat`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -2986,7 +2986,7 @@
         },
         "scheme_parameter_did": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>did</code>",
+            "description": "`scheme` parameter supports `did`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3022,7 +3022,7 @@
         },
         "scheme_parameter_dweb": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>dweb</code>",
+            "description": "`scheme` parameter supports `dweb`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3058,7 +3058,7 @@
         },
         "scheme_parameter_ethereum": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ethereum</code>",
+            "description": "`scheme` parameter supports `ethereum`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3094,7 +3094,7 @@
         },
         "scheme_parameter_ftp": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ftp</code>",
+            "description": "`scheme` parameter supports `ftp`",
             "support": {
               "chrome": {
                 "version_added": false
@@ -3128,7 +3128,7 @@
         },
         "scheme_parameter_ftps": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ftps</code>",
+            "description": "`scheme` parameter supports `ftps`",
             "support": {
               "chrome": {
                 "version_added": false
@@ -3162,7 +3162,7 @@
         },
         "scheme_parameter_geo": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>geo</code>",
+            "description": "`scheme` parameter supports `geo`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -3198,7 +3198,7 @@
         },
         "scheme_parameter_hyper": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>hyper</code>",
+            "description": "`scheme` parameter supports `hyper`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3234,7 +3234,7 @@
         },
         "scheme_parameter_im": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>im</code>",
+            "description": "`scheme` parameter supports `im`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -3270,7 +3270,7 @@
         },
         "scheme_parameter_ipfs": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ipfs</code>",
+            "description": "`scheme` parameter supports `ipfs`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3306,7 +3306,7 @@
         },
         "scheme_parameter_ipns": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ipns</code>",
+            "description": "`scheme` parameter supports `ipns`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3342,7 +3342,7 @@
         },
         "scheme_parameter_irc": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>irc</code>",
+            "description": "`scheme` parameter supports `irc`",
             "support": {
               "chrome": {
                 "version_added": "15"
@@ -3380,7 +3380,7 @@
         },
         "scheme_parameter_ircs": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ircs</code>",
+            "description": "`scheme` parameter supports `ircs`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -3416,7 +3416,7 @@
         },
         "scheme_parameter_magnet": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>magnet</code>",
+            "description": "`scheme` parameter supports `magnet`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -3452,7 +3452,7 @@
         },
         "scheme_parameter_mailto": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>mailto</code>",
+            "description": "`scheme` parameter supports `mailto`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3490,7 +3490,7 @@
         },
         "scheme_parameter_matrix": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>matrix</code>",
+            "description": "`scheme` parameter supports `matrix`",
             "support": {
               "chrome": {
                 "version_added": "92"
@@ -3526,7 +3526,7 @@
         },
         "scheme_parameter_mms": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>mms</code>",
+            "description": "`scheme` parameter supports `mms`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3564,7 +3564,7 @@
         },
         "scheme_parameter_news": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>news</code>",
+            "description": "`scheme` parameter supports `news`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3602,7 +3602,7 @@
         },
         "scheme_parameter_nntp": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>nntp</code>",
+            "description": "`scheme` parameter supports `nntp`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3640,7 +3640,7 @@
         },
         "scheme_parameter_openpgp4fpr": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>openpgp4fpr</code>",
+            "description": "`scheme` parameter supports `openpgp4fpr`",
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -3676,7 +3676,7 @@
         },
         "scheme_parameter_sftp": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>sftp</code>",
+            "description": "`scheme` parameter supports `sftp`",
             "support": {
               "chrome": {
                 "version_added": false
@@ -3710,7 +3710,7 @@
         },
         "scheme_parameter_sip": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>sip</code>",
+            "description": "`scheme` parameter supports `sip`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -3746,7 +3746,7 @@
         },
         "scheme_parameter_sms": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>sms</code>",
+            "description": "`scheme` parameter supports `sms`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3784,7 +3784,7 @@
         },
         "scheme_parameter_smsto": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>smsto</code>",
+            "description": "`scheme` parameter supports `smsto`",
             "support": {
               "chrome": {
                 "version_added": "26"
@@ -3820,7 +3820,7 @@
         },
         "scheme_parameter_ssb": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ssb</code>",
+            "description": "`scheme` parameter supports `ssb`",
             "support": {
               "chrome": {
                 "version_added": "86"
@@ -3856,7 +3856,7 @@
         },
         "scheme_parameter_ssh": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>ssh</code>",
+            "description": "`scheme` parameter supports `ssh`",
             "support": {
               "chrome": {
                 "version_added": "41"
@@ -3892,7 +3892,7 @@
         },
         "scheme_parameter_tel": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>tel</code>",
+            "description": "`scheme` parameter supports `tel`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3930,7 +3930,7 @@
         },
         "scheme_parameter_urn": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>urn</code>",
+            "description": "`scheme` parameter supports `urn`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -3968,7 +3968,7 @@
         },
         "scheme_parameter_webcal": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>webcal</code>",
+            "description": "`scheme` parameter supports `webcal`",
             "support": {
               "chrome": {
                 "version_added": "13"
@@ -4006,7 +4006,7 @@
         },
         "scheme_parameter_wtai": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>wtai</code>",
+            "description": "`scheme` parameter supports `wtai`",
             "support": {
               "chrome": {
                 "version_added": "31"
@@ -4042,7 +4042,7 @@
         },
         "scheme_parameter_xmpp": {
           "__compat": {
-            "description": "<code>scheme</code> parameter supports <code>xmpp</code>",
+            "description": "`scheme` parameter supports `xmpp`",
             "support": {
               "chrome": {
                 "version_added": "30"
@@ -4150,7 +4150,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "108",
-              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'>Permission Policy: <code>midi</code></a>."
+              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'><code>Permission Policy: midi</code></a>."
             },
             "firefox_android": {
               "version_added": false
@@ -4257,11 +4257,11 @@
           "support": {
             "chrome": {
               "version_added": "39",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "chrome_android": {
               "version_added": "42",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "edge": {
               "version_added": "14"
@@ -4283,7 +4283,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "40",
-              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/720283'>bug 720283</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a <code>Blob</code> whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
             },
             "webview_ios": "mirror"
           },
@@ -4436,7 +4436,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/770595'>bug 770595</a> and <a href='https://crbug.com/1144920'>bug 1144920</a>."
+              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
             },
             "chrome_android": {
               "version_added": "61"
@@ -4492,7 +4492,7 @@
         },
         "data_files_parameter": {
           "__compat": {
-            "description": "<code>data.files</code> parameter",
+            "description": "`data.files` parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-files",
             "support": {
               "chrome": {
@@ -4535,7 +4535,7 @@
         },
         "data_text_parameter": {
           "__compat": {
-            "description": "<code>data.text</code> parameter",
+            "description": "`data.text` parameter",
             "spec_url": "https://w3c.github.io/web-share/#dom-sharedata-text",
             "support": {
               "chrome": {
@@ -4627,7 +4627,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1594740"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4768,7 +4769,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
+              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB. See <a href='https://crbug.com/41441927'>bug 41441927</a>."
             },
             "webview_ios": "mirror"
           },
@@ -4888,7 +4889,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "119",
-              "impl_url": "https://crbug.com/921655"
+              "impl_url": "https://crbug.com/40609350"
             },
             "webview_ios": "mirror"
           },

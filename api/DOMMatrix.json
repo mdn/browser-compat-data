@@ -130,7 +130,7 @@
       },
       "DOMMatrix": {
         "__compat": {
-          "description": "<code>DOMMatrix()</code> constructor",
+          "description": "`DOMMatrix()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/DOMMatrix/DOMMatrix",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-dommatrix",
           "support": {
@@ -504,7 +504,7 @@
       },
       "fromFloat32Array_static": {
         "__compat": {
-          "description": "<code>fromFloat32Array()</code> static method",
+          "description": "`fromFloat32Array()` static method",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-fromfloat32array",
           "support": {
             "chrome": {
@@ -539,7 +539,7 @@
       },
       "fromFloat64Array_static": {
         "__compat": {
-          "description": "<code>fromFloat64Array()</code> static method",
+          "description": "`fromFloat64Array()` static method",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-fromfloat64array",
           "support": {
             "chrome": {
@@ -574,7 +574,7 @@
       },
       "fromMatrix_static": {
         "__compat": {
-          "description": "<code>fromMatrix()</code> static method",
+          "description": "`fromMatrix()` static method",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-frommatrix",
           "support": {
             "chrome": {
@@ -1373,7 +1373,7 @@
       },
       "scale3dSelf": {
         "__compat": {
-          "description": "<code>scale3dSelf()</code>",
+          "description": "`scale3dSelf()`",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-scale3dself",
           "support": {
             "chrome": {
@@ -1385,10 +1385,7 @@
               "version_added": "33",
               "notes": "Starting in Firefox 69, the first parameter (<code>scale</code>) is now optional with a default value of 1, per the specification. Previously it was required."
             },
-            "firefox_android": {
-              "version_added": "33",
-              "notes": "Firefox for Android requires the first parameter (<code>scale</code>)."
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
@@ -1412,7 +1409,7 @@
       },
       "scaleSelf": {
         "__compat": {
-          "description": "<code>scaleSelf()</code>",
+          "description": "`scaleSelf()`",
           "spec_url": "https://drafts.fxtf.org/geometry/#dom-dommatrix-scaleself",
           "support": {
             "chrome": {
@@ -1422,13 +1419,9 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "33",
-              "notes": "Firefox 69 introduced support for the modern six-parameter syntax for <code>scaleSelf()</code>. Previously, it only supported the older three-parameter syntax: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>."
+              "notes": "Firefox 69 introduced support for the modern six-parameter syntax for <code>scaleSelf()</code>. Previously, it only supported the older three-parameter syntax: <code>scale(scaleX[, originX][, originY]]])</code>."
             },
-            "firefox_android": {
-              "version_added": "33",
-              "partial_implementation": true,
-              "notes": "Firefox for Android only supports the older three-parameter syntax for <code>scaleSelf()</code>: <code>scale(<em>scaleX</em>[, <em>originX</em>][, <em>originY</em>]]])</code>, and not the six-parameter syntax."
-            },
+            "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
