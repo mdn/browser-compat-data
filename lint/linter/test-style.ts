@@ -98,16 +98,6 @@ const processData = (
       { fixable: true },
     );
   }
-
-  const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
-  if (hrefDoubleQuoteIndex >= 0) {
-    logger.error(
-      chalk`${indexToPos(
-        actual,
-        hrefDoubleQuoteIndex,
-      )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
-    );
-  }
 };
 
 export default {
