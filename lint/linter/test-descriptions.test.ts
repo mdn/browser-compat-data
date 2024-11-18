@@ -82,7 +82,7 @@ describe('test-descriptions', () => {
     it('should check for redundant description', () => {
       const path = 'css.properties.width.auto';
       const data: CompatStatement = {
-        description: '<code>auto</code>',
+        description: '`auto`',
         support: {},
       };
 
