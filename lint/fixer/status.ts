@@ -29,10 +29,28 @@ export const fixStatusValue = (value: Identifier): Identifier => {
     }
 
     if (compat.status.deprecated) {
-      // All sub-features are also deprecated
+      // All sub-features are also deprecated.
       for (const subfeature of walk(undefined, value)) {
         if (subfeature.compat.status) {
           subfeature.compat.status.deprecated = true;
+        }
+      }
+    }
+
+    if (compat.status.experimental) {
+      // All sub-features are also experimental, unless they are deprecated.
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status && !subfeature.compat.status.deprecated) {
+          subfeature.compat.status.experimental = true;
+        }
+      }
+    }
+
+    if (compat.status.standard_track === false) {
+      // All sub-features are also experimental
+      for (const subfeature of walk(undefined, value)) {
+        if (subfeature.compat.status) {
+          subfeature.compat.status.standard_track = false;
         }
       }
     }
