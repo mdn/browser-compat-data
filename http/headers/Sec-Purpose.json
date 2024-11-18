@@ -42,19 +42,19 @@
         },
         "prefetch": {
           "__compat": {
-            "description": "<code>Sec-Purpose</code> for <code>&lt;link rel=\"prefetch\"&gt;</code> prefetch",
+            "description": "`Sec-Purpose` for `&lt;link rel=\"prefetch\"&gt;` prefetch",
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "Doesn't support <code>Sec-Purpose</code> for <code>&lt;link rel=\"prefetch\"&gt;</code>. In Chrome, the legacy <code>Purpose: prefetch</code> header is used to indicate a <code>link</code> request is a prefetch. See <a href='https://crbug.com/1358419'>bug 1358419</a>."
+                "notes": "Doesn't support `Sec-Purpose` for `&lt;link rel=\"prefetch\"&gt;`. In Chrome, the legacy `Purpose: prefetch` header is used to indicate a `link` request is a prefetch. See [bug 40236973](https://crbug.com/40236973)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "115",
                 "notes": [
-                  "<code>Sec-Purpose: prefetch</code> replaces the non-standard <code>X-moz: prefetch</code> header that was used to indicate a <code>link</code> prefetch request in earlier versions.",
-                  "Prefetch requests should also include the header <code>Accept</code> header string for navigations, but <code>Accept: */*</code> is sent instead."
+                  "`Sec-Purpose: prefetch` replaces the non-standard `X-moz: prefetch` header that was used to indicate a `link` prefetch request in earlier versions.",
+                  "Prefetch requests should also include the header `Accept` header string for navigations, but `Accept: */*` is sent instead."
                 ]
               },
               "firefox_android": "mirror",
@@ -83,7 +83,7 @@
         },
         "speculationrules": {
           "__compat": {
-            "description": "<code>Sec-Purpose</code> for <code>&lt;script type=\"speculationrules\"&gt;</code> prefetch",
+            "description": "`Sec-Purpose` for `&lt;script type=\"speculationrules\"&gt;` prefetch",
             "support": {
               "chrome": {
                 "version_added": "110"

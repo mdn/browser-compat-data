@@ -26,11 +26,8 @@
             },
             {
               "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
             }
           ],
           "oculus": "mirror",
@@ -52,7 +49,7 @@
       },
       "ReadableStreamBYOBReader": {
         "__compat": {
-          "description": "<code>ReadableStreamBYOBReader()</code> constructor",
+          "description": "`ReadableStreamBYOBReader()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/ReadableStreamBYOBReader",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-byob-reader-constructor①",
           "support": {
@@ -213,6 +210,55 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "options_min_parameter": {
+          "__compat": {
+            "description": "`options.min` parameter",
+            "spec_url": "https://streams.spec.whatwg.org/#dom-readablestreambyobreaderreadoptions-min",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/40942083"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "21.7.0"
+                },
+                {
+                  "version_added": "20.17.0",
+                  "version_removed": "21.0.0"
+                }
+              ],
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/264731"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "releaseLock": {
@@ -260,7 +306,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "<code>releaseLock()</code> throws if there are pending read requests (rather than pending read requests being rejected)."
+                "notes": "`releaseLock()` throws if there are pending read requests (rather than pending read requests being rejected)."
               },
               "chrome_android": "mirror",
               "deno": {

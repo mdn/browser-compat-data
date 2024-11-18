@@ -17,7 +17,7 @@
               "version_added": "1.0",
               "version_removed": "1.11",
               "partial_implementation": true,
-              "notes": "<code>ReadableByteStreamController</code> is not exposed on the global scope."
+              "notes": "`ReadableByteStreamController` is not exposed on the global scope."
             }
           ],
           "edge": "mirror",
@@ -30,15 +30,13 @@
           },
           "nodejs": [
             {
-              "version_added": "18.0.0"
+              "version_added": "18.0.0",
+              "notes": "Before 18.10.0, handling a BYOB pull request from a released reader is not supported."
             },
             {
               "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
             }
           ],
           "oculus": "mirror",
