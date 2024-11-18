@@ -6,6 +6,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator",
             "spec_url": "https://tc39.es/ecma402/#collator-objects",
+            "tags": [
+              "web-features:intl"
+            ],
             "support": {
               "chrome": {
                 "version_added": "24"
@@ -28,7 +31,7 @@
               },
               "nodejs": {
                 "version_added": "0.12.0",
-                "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the <code>Collator()</code> constructor</a> for more details."
+                "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the `Collator()` constructor</a> for more details."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -38,7 +41,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -48,9 +52,12 @@
           },
           "Collator": {
             "__compat": {
-              "description": "<code>Collator()</code> constructor",
+              "description": "`Collator()` constructor",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator",
               "spec_url": "https://tc39.es/ecma402/#sec-the-intl-collator-constructor",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -78,7 +85,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. When other locales are specified, the <code>Collator</code> instance silently falls back to <code>en-US</code>. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the `Collator` instance silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the `--with-intl` option</a> and how to provide the data."
                   }
                 ],
                 "oculus": "mirror",
@@ -89,7 +96,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -99,7 +107,10 @@
             },
             "options_caseFirst_parameter": {
               "__compat": {
-                "description": "<code>options.caseFirst</code> parameter",
+                "description": "`options.caseFirst` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -131,7 +142,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -142,7 +154,10 @@
             },
             "options_collation_parameter": {
               "__compat": {
-                "description": "<code>options.collation</code> parameter",
+                "description": "`options.collation` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "86"
@@ -164,15 +179,14 @@
                   },
                   "oculus": "mirror",
                   "opera": "mirror",
-                  "opera_android": {
-                    "version_added": false
-                  },
+                  "opera_android": "mirror",
                   "safari": {
                     "version_added": "14.1"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -183,7 +197,10 @@
             },
             "options_ignorePunctuation_parameter": {
               "__compat": {
-                "description": "<code>options.ignorePunctuation</code> parameter",
+                "description": "`options.ignorePunctuation` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -213,7 +230,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -224,7 +242,10 @@
             },
             "options_localeMatcher_parameter": {
               "__compat": {
-                "description": "<code>options.localeMatcher</code> parameter",
+                "description": "`options.localeMatcher` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -254,7 +275,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -265,7 +287,10 @@
             },
             "options_numeric_parameter": {
               "__compat": {
-                "description": "<code>options.numeric</code> parameter",
+                "description": "`options.numeric` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -295,7 +320,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -306,7 +332,10 @@
             },
             "options_sensitivity_parameter": {
               "__compat": {
-                "description": "<code>options.sensitivity</code> parameter",
+                "description": "`options.sensitivity` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -336,7 +365,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -347,7 +377,10 @@
             },
             "options_usage_parameter": {
               "__compat": {
-                "description": "<code>options.usage</code> parameter",
+                "description": "`options.usage` parameter",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "24"
@@ -377,7 +410,8 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": "mirror"
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
                 },
                 "status": {
                   "experimental": false,
@@ -391,6 +425,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/compare",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.collator.prototype.compare",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -413,7 +450,7 @@
                 },
                 "nodejs": {
                   "version_added": "0.12.0",
-                  "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the <code>Collator()</code> constructor</a> for more details."
+                  "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the `Collator()` constructor</a> for more details."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -423,7 +460,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -436,6 +474,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/resolvedOptions",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.collator.prototype.resolvedoptions",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -458,7 +499,7 @@
                 },
                 "nodejs": {
                   "version_added": "0.12.0",
-                  "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the <code>Collator()</code> constructor</a> for more details."
+                  "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. See <a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator'>the `Collator()` constructor</a> for more details."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -468,7 +509,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -481,6 +523,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/supportedLocalesOf",
               "spec_url": "https://tc39.es/ecma402/#sec-intl.collator.supportedlocalesof",
+              "tags": [
+                "web-features:intl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "24"
@@ -508,7 +553,7 @@
                   {
                     "version_added": "0.12.0",
                     "partial_implementation": true,
-                    "notes": "Before version 13.0.0, only the locale data for <code>en-US</code> is available by default. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the <code>--with-intl</code> option</a> and how to provide the data."
+                    "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. To make full ICU (locale) data available before version 13, see <a href='https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js'>Node.js documentation on the `--with-intl` option</a> and how to provide the data."
                   }
                 ],
                 "oculus": "mirror",
@@ -519,7 +564,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
