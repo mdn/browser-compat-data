@@ -143,7 +143,7 @@ describe('mirror', () => {
           chrome: {
             version_added: '65',
             notes: [
-              'Before Chrome 70, this method always returned <code>true</code> even if the webcam was not connected. Since version 70, this method correctly returns the webcam state.',
+              'Before Chrome 70, this method always returned `true` even if the webcam was not connected. Since version 70, this method correctly returns the webcam state.',
               'Google Chrome will always use the default webcam.',
             ],
           },
@@ -153,9 +153,24 @@ describe('mirror', () => {
         assert.deepEqual(mirrored, {
           version_added: '52',
           notes: [
-            'Before Opera 57, this method always returned <code>true</code> even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
+            'Before Opera 57, this method always returned `true` even if the webcam was not connected. Since version 57, this method correctly returns the webcam state.',
             'Opera will always use the default webcam.',
           ],
+        });
+      });
+
+      it('Firefox -> Firefox Android', () => {
+        const support = {
+          firefox: {
+            version_added: '70',
+            notes: 'Firefox 73 added support for this thing.',
+          },
+        };
+
+        const mirrored = mirrorSupport('firefox_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '79',
+          notes: 'Firefox for Android 79 added support for this thing.',
         });
       });
 

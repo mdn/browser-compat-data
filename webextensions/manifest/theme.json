@@ -425,6 +425,28 @@
               }
             }
           },
+          "tab_background_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62",
+                  "notes": "Deprecated in Firefox 89. For details, see the <a href='https://blog.mozilla.org/addons/2021/04/19/changes-to-themeable-areas-of-firefox-in-version-89/'>Changes to themeable areas of Firefox in version 89</a> blog post ."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "tab_background_text": {
             "__compat": {
               "support": {
@@ -718,6 +740,36 @@
               }
             }
           },
+          "toolbar_field_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "59",
+                    "notes": "Deprecated in Firefox 89. For details, see the <a href='https://blog.mozilla.org/addons/2021/04/19/changes-to-themeable-areas-of-firefox-in-version-89/'>Changes to themeable areas of Firefox in version 89</a> blog post ."
+                  },
+                  {
+                    "alternative_name": "toolbar_vertical_separator",
+                    "version_added": "58",
+                    "version_removed": "59",
+                    "notes": "Before version 59, the RGB array form was not supported for this property."
+                  }
+                ],
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "toolbar_field_text": {
             "__compat": {
               "support": {
@@ -820,7 +872,7 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "58",
-                  "notes": "Before version 59, this had the same meaning as <code>toolbar_field_separator</code>."
+                  "notes": "Before version 59, this had the same meaning as `toolbar_field_separator`."
                 },
                 "firefox_android": {
                   "version_added": false

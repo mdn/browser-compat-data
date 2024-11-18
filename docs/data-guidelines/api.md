@@ -73,9 +73,9 @@ This guideline is based on a discussion in [#11518](https://github.com/mdn/brows
 
 ## Constructors
 
-Name a constructor for an API feature the same as the parent feature (unless the constructor doesn't share the name of its parent feature) and have a description with text in the form of `<code>Name()</code> constructor`.
+Name a constructor for an API feature the same as the parent feature (unless the constructor doesn't share the name of its parent feature) and have a description with text in the form of `` `Name()` constructor ``.
 
-For example, the `ImageData` constructor, `ImageData()`, is represented as `api.ImageData.ImageData`. It has the description `<code>ImageData()</code> constructor`, like this:
+For example, the `ImageData` constructor, `ImageData()`, is represented as `api.ImageData.ImageData`. It has the description `` `ImageData()` constructor ``, like this:
 
 ```json
 {
@@ -84,7 +84,7 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
       "__compat": {},
       "ImageData": {
         "__compat": {
-          "description": "<code>ImageData()</code> constructor",
+          "description": "`ImageData()` constructor",
           "support": {}
         }
       }
@@ -95,9 +95,9 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
 
 ## DOM events (`eventname_event`)
 
-Add DOM events as features of their target interfaces, using the name _eventname_\_event with the description text set to `<code>eventname</code> event`. If an event can be sent to multiple interfaces, add the event as a feature of each interface that can receive it.
+Add DOM events as features of their target interfaces, using the name _eventname_\_event with the description text set to `` `eventname` event ``. If an event can be sent to multiple interfaces, add the event as a feature of each interface that can receive it.
 
-For example, the feature for a `focus` event targeting the `Element` interface would be named `focus_event` with the description text `<code>focus</code> event`, like this:
+For example, the feature for a `focus` event targeting the `Element` interface would be named `focus_event` with the description text `` `focus` event ``, like this:
 
 ```json
 {
@@ -106,7 +106,7 @@ For example, the feature for a `focus` event targeting the `Element` interface w
       "__compat": {},
       "focus_event": {
         "__compat": {
-          "description": "<code>focus</code> event",
+          "description": "`focus` event",
           "support": {}
         }
       }
@@ -115,7 +115,7 @@ For example, the feature for a `focus` event targeting the `Element` interface w
 }
 ```
 
-The event handler `onfocus` is represented by the `focus_event` entry. Don't create features for `on` event handler properties. If an implementation doesn't support the event handler property, use `partial_implementation` with the note `"The <code>onfocus</code> event handler property is not supported."`. If only the `on` event handler property is supported and not the event itself, use `"version_added": false`.
+The event handler `onfocus` is represented by the `focus_event` entry. Don't create features for `on` event handler properties. If an implementation doesn't support the event handler property, use `partial_implementation` with the note ``"The `onfocus` event handler property is not supported."``. If only the `on` event handler property is supported and not the event itself, use `"version_added": false`.
 
 If a specification has two sections (the event handler property and the event name), add both specification links.
 
@@ -129,9 +129,9 @@ This practice emerged through several discussions:
 
 ## Permissions API permissions (`permissionname_permission`)
 
-Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) permissions as subfeatures of [`api.Permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions) using the name _permissionname_\_permission with the description text set to `<code>permissionname</code> permission`.
+Add [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) permissions as subfeatures of [`api.Permissions`](https://developer.mozilla.org/en-US/docs/Web/API/Permissions) using the name _permissionname_\_permission with the description text set to `` `permissionname` permission ``.
 
-For example, the Geolocation permission is named `geolocation_permission` with the description text `<code>geolocation</code> permission`, like this:
+For example, the Geolocation permission is named `geolocation_permission` with the description text `` `geolocation` permission ``, like this:
 
 ```json
 {
@@ -140,7 +140,7 @@ For example, the Geolocation permission is named `geolocation_permission` with t
       "__compat": { ... },
       "geolocation_permission": {
         "__compat": {
-          "description": "<code>geolocation</code> permission",
+          "description": "`geolocation` permission",
           "support": { ... }
         }
       }
@@ -153,7 +153,7 @@ This guideline was proposed in [#6156](https://github.com/mdn/browser-compat-dat
 
 ## Methods returning promises (`returns_promise`)
 
-When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `Returns a <code>Promise</code>` to record when the method returns a promise.
+When a method returns a promise in some (but not all) browser releases, use a subfeature named `returns_promise` with description text `` Returns a `Promise` `` to record when the method returns a promise.
 
 For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded like this:
 
@@ -166,7 +166,7 @@ For example, `HTMLMediaElement`'s `play()` method returns a promise, recorded li
         "__compat": {},
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
             "support": {}
           }
         }
@@ -283,9 +283,9 @@ This guideline is based on a discussion in [#3463](https://github.com/mdn/browse
 
 ### Static API members
 
-Always append the suffix `_static` to static members of an interface and have a description with text in the form of `<code>json()</code> static method`.
+Always append the suffix `_static` to static members of an interface and have a description with text in the form of `` `json()` static method ``.
 
-For example, the `Response` interface has both, a prototype and static method called `json()`. The static method is represented as `api.Response.json_static`. It has the description `<code>json()</code> static method`. The prototype method is represented as `api.Response.json` without suffix and without description.
+For example, the `Response` interface has both, a prototype and static method called `json()`. The static method is represented as `api.Response.json_static`. It has the description `` `json()` static method ``. The prototype method is represented as `api.Response.json` without suffix and without description.
 
 ```json
 {
@@ -297,7 +297,7 @@ For example, the `Response` interface has both, a prototype and static method ca
       },
       "json_static": {
         "__compat": {
-          "description": "<code>json()</code> static method",
+          "description": "`json()` static method",
           "support": {}
         }
       }
