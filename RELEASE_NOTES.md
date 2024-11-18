@@ -1,5 +1,90 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.16)
+
+November 18, 2024
+
+### Removals
+
+- `api.HTMLDetailsElement.toggle_event` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `webextensions.api.runtime.getContext` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Additions
+
+- `api.AbortController.abort.reason_parameter` ([#25068](https://github.com/mdn/browser-compat-data/pull/25068))
+- `api.GPUComputePassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderBundleEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderPassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.HTMLElement.beforetoggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.beforetoggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.inert.ignores_find_in_page` ([#24925](https://github.com/mdn/browser-compat-data/pull/24925))
+- `api.HTMLElement.toggle_event.details_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.PublicKeyCredential.signalAllAcceptedCredentials_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalCurrentUserDetails_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalUnknownCredential_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `browsers.nodejs.releases.20.8.0` ([#25020](https://github.com/mdn/browser-compat-data/pull/25020))
+- `webextensions.api.runtime.getContexts` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Statistics
+
+- 14 contributors have changed 109 files with 1,688 additions and 1,079 deletions in 39 commits ([`v5.6.15...v5.6.16`](https://github.com/mdn/browser-compat-data/compare/v5.6.15...v5.6.16))
+- 16,716 total features
+- 1,116 total contributors
+- 4,986 total stargazers
+
+## [v5.6.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.15)
+
+November 12, 2024
+
+### Removals
+
+- `css.selectors.blank` ([#24976](https://github.com/mdn/browser-compat-data/pull/24976))
+- `css.selectors.column` ([#24976](https://github.com/mdn/browser-compat-data/pull/24976))
+- `http.headers.Sec-CH-Save-Data` ([#25043](https://github.com/mdn/browser-compat-data/pull/25043))
+
+### Additions
+
+- `api.ServiceWorkerContainer.worker_support` ([#24993](https://github.com/mdn/browser-compat-data/pull/24993))
+- `browsers.nodejs.releases.22.1.0` ([#25050](https://github.com/mdn/browser-compat-data/pull/25050))
+
+### Statistics
+
+- 10 contributors have changed 44 files with 247 additions and 315 deletions in 25 commits ([`v5.6.14...v5.6.15`](https://github.com/mdn/browser-compat-data/compare/v5.6.14...v5.6.15))
+- 16,704 total features
+- 1,115 total contributors
+- 4,975 total stargazers
+
+## [v5.6.14](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.14)
+
+November 8, 2024
+
+### Removals
+
+- `css.types.frequency` ([#24969](https://github.com/mdn/browser-compat-data/pull/24969))
+- `css.types.frequency-percentage` ([#24969](https://github.com/mdn/browser-compat-data/pull/24969))
+- `css.types.frequency.hz` ([#24969](https://github.com/mdn/browser-compat-data/pull/24969))
+- `css.types.frequency.khz` ([#24969](https://github.com/mdn/browser-compat-data/pull/24969))
+
+### Additions
+
+- `browsers.chrome_android.releases.134` ([#24995](https://github.com/mdn/browser-compat-data/pull/24995))
+- `browsers.chrome.releases.134` ([#24995](https://github.com/mdn/browser-compat-data/pull/24995))
+- `browsers.nodejs.releases.23.0.0` ([#24953](https://github.com/mdn/browser-compat-data/pull/24953))
+- `browsers.webview_android.releases.134` ([#24995](https://github.com/mdn/browser-compat-data/pull/24995))
+- `html.manifest.display.browser` ([#24970](https://github.com/mdn/browser-compat-data/pull/24970))
+- `html.manifest.display.fullscreen` ([#24970](https://github.com/mdn/browser-compat-data/pull/24970))
+- `html.manifest.display.minimal-ui` ([#24970](https://github.com/mdn/browser-compat-data/pull/24970))
+- `html.manifest.display.standalone` ([#24970](https://github.com/mdn/browser-compat-data/pull/24970))
+
+### Statistics
+
+- 8 contributors have changed 42 files with 362 additions and 308 deletions in 21 commits ([`v5.6.13...v5.6.14`](https://github.com/mdn/browser-compat-data/compare/v5.6.13...v5.6.14))
+- 16,706 total features
+- 1,115 total contributors
+- 4,963 total stargazers
+
 ## [v5.6.13](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.13)
 
 November 5, 2024
