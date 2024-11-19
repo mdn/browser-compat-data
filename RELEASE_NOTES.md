@@ -1,5 +1,43 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.17)
+
+November 19, 2024
+
+### Removals
+
+- `api.MLOperand.dataType` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLOperand.shape` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `css.at-rules.custom-media` ([#25125](https://github.com/mdn/browser-compat-data/pull/25125))
+- `css.properties.word-wrap` ([#25097](https://github.com/mdn/browser-compat-data/pull/25097))
+- `css.types.time-percentage` ([#25126](https://github.com/mdn/browser-compat-data/pull/25126))
+- `mathml.elements.ms.lquote_rquote_attributes` ([#25108](https://github.com/mdn/browser-compat-data/pull/25108))
+
+### Additions
+
+- `api.MLContext.dispatch` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLContext.opSupportLimits` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.cumulativeSum` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.dequantizeLinear` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.gatherElements` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.gatherND` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalAnd` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalOr` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalXor` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.quantizeLinear` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.scatterElements` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.scatterND` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.sign` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.tile` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLOperand.MLNumber` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+
+### Statistics
+
+- 10 contributors have changed 1,365 files with 9,391 additions and 7,288 deletions in 32 commits ([`v5.6.16...v5.6.17`](https://github.com/mdn/browser-compat-data/compare/v5.6.16...v5.6.17))
+- 16,725 total features
+- 1,116 total contributors
+- 4,989 total stargazers
+
 ## [v5.6.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.16)
 
 November 18, 2024
