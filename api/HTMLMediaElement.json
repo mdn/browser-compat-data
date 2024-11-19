@@ -3569,9 +3569,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "52"
-            },
+            "firefox": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "52",
+                "version_removed": "133",
+                "partial_implementation": true,
+                "notes": "`onwaitingforkey` content attribute not implemented."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
