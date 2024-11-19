@@ -16,6 +16,7 @@ jobs:
           sync-labels: true
 
   label-by-size:
+    if: github.actor != 'dependabot[bot]'
     needs: label-py-path
     runs-on: ubuntu-latest
     steps:
