@@ -76,7 +76,7 @@ const commitAndPR = async (
       git fetch origin ${branch} || true
       git reset --hard origin/release || true
       git merge origin/main --strategy-option theirs
-      git cherry-pick HEAD@{1} --strategy-option theirs || true
+      git cherry-pick HEAD@{1} --strategy-option theirs || git cherry-pick --abort
     `);
 
     console.log(chalk`{blue Pushing release branch...}`);
