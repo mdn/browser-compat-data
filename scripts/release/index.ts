@@ -69,12 +69,14 @@ const commitAndPR = async (
     exec(`git commit --file ${commitFile}`),
   );
 
+  const commit = exec('git rev-parse HEAD');
+
   console.log(chalk`{blue Cherry-picking onto remote ${branch} branch...}`);
   exec(`
     git fetch origin ${branch} || true
     git reset --hard origin/${branch} || true
     git merge origin/main --strategy-option theirs
-    git cherry-pick HEAD@{1} --strategy-option theirs || git cherry-pick --abort
+    git cherry-pick ${commit} --strategy-option theirs || git cherry-pick --abort
   `);
 
   console.log(chalk`{blue Pushing ${branch} branch...}`);
