@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.18)
+
+November 20, 2024
+
+### Removals
+
+- `svg.global_attributes.stop-color` ([#25130](https://github.com/mdn/browser-compat-data/pull/25130))
+
+### Statistics
+
+- 4 contributors have changed 43 files with 515 additions and 528 deletions in 5 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,724 total features
+- 1,116 total contributors
+- 4,992 total stargazers
+
 ## [v5.6.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.17)
 
 November 19, 2024
