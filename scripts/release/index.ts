@@ -56,27 +56,25 @@ const commitAndPR = async (
     console.log('');
   }
 
-  console.log(chalk`{blue Preparing temporary branch...}`);
-  const tmp = 'tmp';
+  console.log(chalk`{blue Preparing release branch...}`);
   exec(`
     git stash
-    git switch -C ${tmp} origin/main
+    git switch -C ${branch} origin/main
     git stash pop
     git add package.json package-lock.json RELEASE_NOTES.md
   `);
 
-  console.log(chalk`{blue Committing on temporary branch...}`);
+  console.log(chalk`{blue Committing changes...}`);
   await temporaryWriteTask(message, (commitFile) =>
     exec(`git commit --file ${commitFile}`),
   );
 
-  console.log(chalk`{blue Cherry-picking into release branch...}`);
+  console.log(chalk`{blue Cherry-picking onto remote release branch...}`);
   exec(`
     git fetch origin ${branch} || true
-    git switch -C ${branch} origin/release || git switch -C ${branch} origin/main
+    git reset --hard origin/release || true
     git merge origin/main --strategy-option theirs
-    git cherry-pick ${tmp} --strategy-option theirs
-    git branch -D ${tmp}
+    git cherry-pick HEAD@{1} --strategy-option theirs
   `);
 
   console.log(chalk`{blue Pushing release branch...}`);
@@ -95,7 +93,7 @@ const commitAndPR = async (
   });
 
   exec(`
-    git switch @{-2}
+    git switch -
     git branch -d ${branch}
   `);
 };
