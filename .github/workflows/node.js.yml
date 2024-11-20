@@ -3,7 +3,8 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-  pull_request:
+  pull_request_target:
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -23,22 +24,22 @@ jobs:
         env:
           FORCE_COLOR: 3
 
-      - name: Apply fixes
-        if: failure()
+      - name: Reviewdog - Apply fixes
+        if: failure() && github.event_name == 'pull_request_target'
         run: |
           npm run fix
           if [[ -n $(git diff) ]]; then
             echo "HAS_FIXES=true" >> $GITHUB_ENV
           fi
 
-      - name: Setup reviewdog
-        if: failure() && env.HAS_FIXES == 'true'
+      - name: Reviewdog - Setup
+        if: failure() && github.event_name == 'pull_request_target' && env.HAS_FIXES == 'true'
         uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
 
-      - name: Suggest changes with reviewdog
-        if: failure() && env.HAS_FIXES == 'true'
+      - name: Reviewdog - Suggest changes
+        if: failure() && github.event_name == 'pull_request_target' && env.HAS_FIXES == 'true'
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
