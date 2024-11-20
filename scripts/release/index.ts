@@ -56,49 +56,46 @@ const commitAndPR = async (
     console.log('');
   }
 
-  const current = exec('git rev-parse --abbrev-ref HEAD');
-  try {
-    console.log(chalk`{blue Preparing release branch...}`);
-    exec(`
-      git stash
-      git switch -C ${branch} origin/main
-      git stash pop
-      git add package.json package-lock.json RELEASE_NOTES.md
-    `);
+  console.log(chalk`{blue Preparing release branch...}`);
+  exec(`
+    git stash
+    git switch -C ${branch} origin/main
+    git stash pop
+    git add package.json package-lock.json RELEASE_NOTES.md
+  `);
 
-    console.log(chalk`{blue Committing changes...}`);
-    await temporaryWriteTask(message, (commitFile) =>
-      exec(`git commit --file ${commitFile}`),
-    );
+  console.log(chalk`{blue Committing changes...}`);
+  await temporaryWriteTask(message, (commitFile) =>
+    exec(`git commit --file ${commitFile}`),
+  );
 
-    console.log(chalk`{blue Cherry-picking onto remote release branch...}`);
-    exec(`
-      git fetch origin ${branch} || true
-      git reset --hard origin/release || true
-      git merge origin/main --strategy-option theirs
-      git cherry-pick HEAD@{1} --strategy-option theirs || git cherry-pick --abort
-    `);
+  console.log(chalk`{blue Cherry-picking onto remote release branch...}`);
+  exec(`
+    git fetch origin ${branch} || true
+    git reset --hard origin/release || true
+    git merge origin/main --strategy-option theirs
+    git cherry-pick HEAD@{1} --strategy-option theirs || git cherry-pick --abort
+  `);
 
-    console.log(chalk`{blue Pushing release branch...}`);
-    exec(`git push --set-upstream origin ${branch}`);
+  console.log(chalk`{blue Pushing release branch...}`);
+  exec(`git push --set-upstream origin ${branch}`);
 
-    console.log(chalk`{blue Creating/editing pull request...}`);
-    await temporaryWriteTask(pr.body, (bodyFile) => {
-      const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
-      try {
-        const stdout = spawn('gh', ['pr', 'create', '--draft', ...commonArgs]);
-        console.log(stdout);
-      } catch (e) {
-        const stdout = spawn('gh', ['pr', 'edit', ...commonArgs]);
-        console.log(stdout);
-      }
-    });
-  } finally {
-    exec(`
-      git switch ${current}
-      git branch -d ${branch}
-    `);
-  }
+  console.log(chalk`{blue Creating/editing pull request...}`);
+  await temporaryWriteTask(pr.body, (bodyFile) => {
+    const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
+    try {
+      const stdout = spawn('gh', ['pr', 'create', '--draft', ...commonArgs]);
+      console.log(stdout);
+    } catch (e) {
+      const stdout = spawn('gh', ['pr', 'edit', ...commonArgs]);
+      console.log(stdout);
+    }
+  });
+
+  exec(`
+    git switch -
+    git branch -d ${branch}
+  `);
 };
 
 /**
