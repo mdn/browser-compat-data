@@ -22,3 +22,29 @@ jobs:
       - run: npm test
         env:
           FORCE_COLOR: 3
+
+      - name: Apply fixes
+        if: failure()
+        run: |
+          npm run fix
+          if [[ -n $(git diff) ]]; then
+            echo "HAS_FIXES=true" >> $GITHUB_ENV
+          fi
+
+      - name: Setup reviewdog
+        if: failure() && env.HAS_FIXES == 'true'
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
+      - name: Suggest changes with reviewdog
+        if: failure() && env.HAS_FIXES == 'true'
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git diff | reviewdog \
+            -name="bcd-linter" \
+            -f=diff \
+            -f.diff.strip=1 \
+            -filter-mode=diff_context \
+            -reporter=github-pr-review
