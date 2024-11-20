@@ -3011,13 +3011,18 @@
             "chrome": {
               "version_added": "7"
             },
-            "chrome_android": {
-              "version_added": "132",
-              "notes": [
-                "In Chrome 131, the property could be set, but choosing a directory crashed the browser.",
-                "Before Chrome 131, the property could be set, but had no effect."
-              ]
-            },
+            "chrome_android": [
+              {
+                "version_added": "131",
+                "notes": "In Chrome for Android 131, choosing a directory crashes the browser."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "impl_url": "https://crbug.com/40248532",
+                "notes": "The property can be set, but has no behavior."
+              }
+            ],
             "edge": {
               "version_added": "13"
             },
