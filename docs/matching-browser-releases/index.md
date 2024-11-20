@@ -20,14 +20,14 @@ The following sites and tools are helpful when trying to track down history info
 - [Chromium source code by release version number](https://chromium.googlesource.com/chromium/src.git/+refs)
 - [Google Chrome Platform Status](https://chromestatus.com/features)
 - [Chromium Code Search](https://source.chromium.org/chromium)
-- [Find Releases Tool](https://storage.googleapis.com/chromium-find-releases-static/index.html)
+- [ChromiumDash tool](https://chromiumdash.appspot.com/commits)
 - [List of everything exposed to the Web in Chrome](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/global-interface-listing-expected.txt?g=0)
 - [Interfaces not exposed to WebView](https://source.chromium.org/chromiumchromium/src/android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt)
 - [WebKit bugs](https://bugs.webkit.org/)
 
 #### Getting the Chrome version for a changeset or revision
 
-Given a particular Chrome changeset or revision number, you can look up the version number of Chrome that first shipped with those changes included using Google's [Find Releases tool](https://storage.googleapis.com/chromium-find-releases-static/index.html). As long as the change happened after the Chrome code moved to `git`, this will return the corresponding version number.
+Given a particular Chrome changeset or revision number, you can look up the version number of Chrome that first shipped with those changes included using Google's [ChromiumDash tool](https://chromiumdash.appspot.com/commits). As long as the change happened after the Chrome code moved to `git`, this will return the corresponding version number.
 
 For example, given the string `05b49ea1`, the tool first looks for a match among the full commit changeset numbers, finds none, then looks at the prefixed short commits:
 

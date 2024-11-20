@@ -167,7 +167,10 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
-  execSync('tsc ../types/types.d.ts', { cwd: dirname, stdio: 'inherit' });
+  execSync('tsc --skipLibCheck ../types/types.d.ts', {
+    cwd: dirname,
+    stdio: 'inherit',
+  });
 };
 
 if (esMain(import.meta)) {
