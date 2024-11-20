@@ -6,12 +6,17 @@ November 20, 2024
 
 ### Removals
 
+- `css.properties.-webkit-mask-box-image-outset` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-repeat` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-slice` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-source` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-width` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
 - `svg.global_attributes.stop-color` ([#25130](https://github.com/mdn/browser-compat-data/pull/25130))
 
 ### Statistics
 
-- 6 contributors have changed 50 files with 586 additions and 544 deletions in 13 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,724 total features
+- 7 contributors have changed 55 files with 586 additions and 739 deletions in 14 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,719 total features
 - 1,116 total contributors
 - 4,992 total stargazers
 
