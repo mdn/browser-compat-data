@@ -69,6 +69,6 @@ After we've collected all of the required information, make a plan for what to d
 
   Or, if you're not sure what the next step is, ask for ideas, input, or help.
 
-- If applicable, **set labels seeking help**. Use the [_good first issue:100:_](https://github.com/mdn/browser-compat-data/labels/good%20first%20issue) or [_help wanted_](https://github.com/mdn/browser-compat-data/labels/help%20wanted) labels.
+- If applicable, **set labels seeking help**. Use the [_good first issue_](https://github.com/mdn/browser-compat-data/labels/good%20first%20issue) or [_help wanted_](https://github.com/mdn/browser-compat-data/labels/help%20wanted) labels.
 
 - **Thank the reporter.**
