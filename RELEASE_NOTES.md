@@ -19,6 +19,7 @@ November 21, 2024
 - `api.GPUDevice.createRenderPipeline.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipelineAsync.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createTexture.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.importExternalTexture.color_space_display-p3` ([#25156](https://github.com/mdn/browser-compat-data/pull/25156))
 - `api.GPUTexture.createView.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUTexture.format.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.MessageEvent.userActivation` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
@@ -28,8 +29,8 @@ November 21, 2024
 
 ### Statistics
 
-- 12 contributors have changed 72 files with 1,188 additions and 871 deletions in 28 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,729 total features
+- 12 contributors have changed 72 files with 1,231 additions and 871 deletions in 29 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,730 total features
 - 1,116 total contributors
 - 4,992 total stargazers
 
