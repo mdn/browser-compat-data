@@ -21,11 +21,15 @@ November 21, 2024
 - `api.GPUDevice.createTexture.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUTexture.createView.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUTexture.format.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.MessageEvent.userActivation` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.MessagePort.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 
 ### Statistics
 
-- 12 contributors have changed 68 files with 1,029 additions and 871 deletions in 27 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,725 total features
+- 12 contributors have changed 72 files with 1,188 additions and 871 deletions in 28 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,729 total features
 - 1,116 total contributors
 - 4,992 total stargazers
 
