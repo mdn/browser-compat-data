@@ -2,7 +2,7 @@
 
 ## [v5.6.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.18)
 
-November 20, 2024
+November 21, 2024
 
 ### Removals
 
@@ -15,7 +15,7 @@ November 20, 2024
 
 ### Statistics
 
-- 8 contributors have changed 56 files with 604 additions and 748 deletions in 15 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 9 contributors have changed 57 files with 606 additions and 749 deletions in 16 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
 - 16,719 total features
 - 1,116 total contributors
 - 4,992 total stargazers
