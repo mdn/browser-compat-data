@@ -184,9 +184,9 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
     // Bug links should use HTTPS and have "bug ###" as link text ("Bug ###" only at the beginning of notes/sentences).
     errors,
     actual,
-    /(\w*\s?)<a href='((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))'>(.*?)<\/a>/g,
+    /(\w*\s?)\[([^[\]]*)\]\(((https?):\/\/(bugzil\.la|crbug\.com|webkit\.org\/b)\/(\d+))\)/g,
     async (match) => {
-      const [, before, url, protocol, domain, bugId, linkText] = match;
+      const [, before, linkText, url, protocol, domain, bugId] = match;
 
       if (protocol !== 'https') {
         return {
@@ -199,8 +199,8 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
       if (/^bug $/.test(before)) {
         return {
           issue: 'Move word "bug" into link text',
-          expected: `<a href='${url}'>${before}${bugId}</a>`,
-          actualLink: `${before}<a href='${url}'>${linkText}</a>`,
+          expected: `[${before}${bugId}](${url})`,
+          actualLink: `${before}[${linkText}](${url})`,
         };
       } else if (linkText === `Bug ${bugId}`) {
         if (!/(\. |")$/.test(before)) {
@@ -275,13 +275,13 @@ export const processData = async (rawData: string): Promise<LinkError[]> => {
   await processLink(
     errors,
     actual,
-    /<a href='([^'>]+)'>((?:.(?<!<\/a>))*.)<\/a>/g,
+    /\[((?:.(?<!\]))*.)\]\(([^)]+)\)/g,
     async (match) => {
-      if (new URL(match[1]).hostname === null) {
+      if (new URL(match[2]).hostname === null) {
         return {
           issue: 'Include hostname in URL',
-          actualLink: match[1],
-          expected: `https://developer.mozilla.org/${match[1]}`,
+          actualLink: match[2],
+          expected: `https://developer.mozilla.org/${match[2]}`,
         };
       }
 
