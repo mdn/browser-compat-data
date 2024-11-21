@@ -1,5 +1,77 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.17)
+
+November 19, 2024
+
+### Removals
+
+- `api.MLOperand.dataType` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLOperand.shape` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `css.at-rules.custom-media` ([#25125](https://github.com/mdn/browser-compat-data/pull/25125))
+- `css.properties.word-wrap` ([#25097](https://github.com/mdn/browser-compat-data/pull/25097))
+- `css.types.time-percentage` ([#25126](https://github.com/mdn/browser-compat-data/pull/25126))
+- `mathml.elements.ms.lquote_rquote_attributes` ([#25108](https://github.com/mdn/browser-compat-data/pull/25108))
+
+### Additions
+
+- `api.MLContext.dispatch` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLContext.opSupportLimits` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.cumulativeSum` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.dequantizeLinear` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.gatherElements` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.gatherND` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalAnd` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalOr` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.logicalXor` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.quantizeLinear` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.scatterElements` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.scatterND` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.sign` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLGraphBuilder.tile` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+- `api.MLOperand.MLNumber` ([#25065](https://github.com/mdn/browser-compat-data/pull/25065))
+
+### Statistics
+
+- 10 contributors have changed 1,365 files with 9,391 additions and 7,288 deletions in 32 commits ([`v5.6.16...v5.6.17`](https://github.com/mdn/browser-compat-data/compare/v5.6.16...v5.6.17))
+- 16,725 total features
+- 1,116 total contributors
+- 4,989 total stargazers
+
+## [v5.6.16](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.16)
+
+November 18, 2024
+
+### Removals
+
+- `api.HTMLDetailsElement.toggle_event` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `webextensions.api.runtime.getContext` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Additions
+
+- `api.AbortController.abort.reason_parameter` ([#25068](https://github.com/mdn/browser-compat-data/pull/25068))
+- `api.GPUComputePassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderBundleEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.GPURenderPassEncoder.setBindGroup.unset_bind_group` ([#24936](https://github.com/mdn/browser-compat-data/pull/24936))
+- `api.HTMLElement.beforetoggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.beforetoggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.inert.ignores_find_in_page` ([#24925](https://github.com/mdn/browser-compat-data/pull/24925))
+- `api.HTMLElement.toggle_event.details_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.dialog_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.HTMLElement.toggle_event.popover_elements` ([#24927](https://github.com/mdn/browser-compat-data/pull/24927))
+- `api.PublicKeyCredential.signalAllAcceptedCredentials_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalCurrentUserDetails_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `api.PublicKeyCredential.signalUnknownCredential_static` ([#25070](https://github.com/mdn/browser-compat-data/pull/25070))
+- `browsers.nodejs.releases.20.8.0` ([#25020](https://github.com/mdn/browser-compat-data/pull/25020))
+- `webextensions.api.runtime.getContexts` ([#25078](https://github.com/mdn/browser-compat-data/pull/25078))
+
+### Statistics
+
+- 14 contributors have changed 109 files with 1,688 additions and 1,079 deletions in 39 commits ([`v5.6.15...v5.6.16`](https://github.com/mdn/browser-compat-data/compare/v5.6.15...v5.6.16))
+- 16,716 total features
+- 1,116 total contributors
+- 4,986 total stargazers
+
 ## [v5.6.15](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.15)
 
 November 12, 2024
