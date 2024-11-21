@@ -234,14 +234,13 @@ export const bumpSupport = (
   }
 
   if (sourceData.notes) {
+    const sourceBrowserName =
+      sourceBrowser === 'chrome'
+        ? '(Google )?Chrome'
+        : `(${browsers[sourceBrowser].name})`;
     const newNotes = updateNotes(
       sourceData.notes,
-      new RegExp(
-        sourceBrowser === 'chrome'
-          ? '(Google )?Chrome(?!OS)'
-          : `(${browsers[sourceBrowser].name})`,
-        'g',
-      ),
+      new RegExp(`\\b${sourceBrowserName}\\b`, 'g'),
       browsers[destination].name,
       (v: string) => getMatchingBrowserVersion(destination, v),
     );
