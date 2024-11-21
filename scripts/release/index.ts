@@ -56,7 +56,7 @@ const commitAndPR = async (
     console.log('');
   }
 
-  console.log(chalk`{blue Preparing release branch...}`);
+  console.log(chalk`{blue Preparing ${branch} branch...}`);
   exec(`
     git stash
     git switch -C ${branch} origin/main
@@ -69,8 +69,18 @@ const commitAndPR = async (
     exec(`git commit --file ${commitFile}`),
   );
 
-  console.log(chalk`{blue Pushing release branch...}`);
-  exec(`git push --force --set-upstream origin ${branch}`);
+  const commit = exec('git rev-parse HEAD');
+
+  console.log(chalk`{blue Cherry-picking onto remote ${branch} branch...}`);
+  exec(`
+    git fetch origin ${branch} || true
+    git reset --hard origin/${branch} || true
+    git merge origin/main --strategy-option theirs
+    git cherry-pick ${commit} --strategy-option theirs || git cherry-pick --abort
+  `);
+
+  console.log(chalk`{blue Pushing ${branch} branch...}`);
+  exec(`git push --set-upstream origin ${branch}`);
 
   console.log(chalk`{blue Creating/editing pull request...}`);
   await temporaryWriteTask(pr.body, (bodyFile) => {
