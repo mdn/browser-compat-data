@@ -44,6 +44,10 @@ export const orderSupportBlock = (
  * @param filename The path to the file to fix in-place
  */
 const fixBrowserOrder = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderSupportBlock), null, 2);
 
