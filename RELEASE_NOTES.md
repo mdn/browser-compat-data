@@ -18,8 +18,10 @@ November 22, 2024
 - `api.GPUCommandEncoder.beginRenderPass.separate_depth_stencil_read-only` ([#25157](https://github.com/mdn/browser-compat-data/pull/25157))
 - `api.GPUDevice.createBindGroupLayout.storageTexture_access_read-write_read-only` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.GPUDevice.createBindGroupLayout.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.createRenderPipeline.optional_depthcompare_depthwriteenabled` ([#25158](https://github.com/mdn/browser-compat-data/pull/25158))
 - `api.GPUDevice.createRenderPipeline.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipeline.vertex_unorm10-10-10-2` ([#25153](https://github.com/mdn/browser-compat-data/pull/25153))
+- `api.GPUDevice.createRenderPipelineAsync.optional_depthcompare_depthwriteenabled` ([#25158](https://github.com/mdn/browser-compat-data/pull/25158))
 - `api.GPUDevice.createRenderPipelineAsync.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipelineAsync.vertex_unorm10-10-10-2` ([#25153](https://github.com/mdn/browser-compat-data/pull/25153))
 - `api.GPUDevice.createTexture.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
@@ -43,8 +45,8 @@ November 22, 2024
 
 ### Statistics
 
-- 16 contributors have changed 92 files with 1,808 additions and 841 deletions in 45 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,744 total features
+- 16 contributors have changed 92 files with 1,904 additions and 846 deletions in 46 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,746 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
