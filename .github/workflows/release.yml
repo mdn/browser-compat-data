@@ -1,19 +1,40 @@
 name: Release package
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - "RELEASE_NOTES.md"
   release:
     types:
       - published
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 permissions:
   contents: write
   issues: write
 
 jobs:
-  build:
+  create-release:
+    if: github.repository == 'mdn/browser-compat-data' && github.event_name == 'push' && startsWith(github.event.head_commit.message, 'Release v')
+    name: Create release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (BCD)
+        uses: actions/checkout@v4
+
+      - name: Create release
+        run: |
+          VERSION=v$(jq -r '.version' package.json)
+          awk '/^## /{if (p) exit; p=1; next} p' RELEASE_NOTES.md | tail -n +4 >> CURRENT_RELEASE_NOTES.md
+          gh release create $VERSION --title=$VERSION --target $GITHUB_SHA --notes-file CURRENT_RELEASE_NOTES.md --latest
+
+  publish-release:
+    if: github.event_name == 'release'
     name: Publish release
     runs-on: ubuntu-latest
 
