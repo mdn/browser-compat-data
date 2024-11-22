@@ -1,0 +1,46 @@
+name: Release PR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+concurrency:
+  group: ${{ github.workflow }}
+
+jobs:
+  manage-release-pr:
+    if: github.repository == 'mdn/browser-compat-data' && github.actor != 'dependabot[bot]' && !startsWith(github.event.head_commit.message, 'Release v')
+    name: Manage release PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org/"
+          cache: npm
+
+      - name: "Setup git"
+        run: |
+          git config user.email 108879845+mdn-bot@users.noreply.github.com
+          git config user.name mdn-bot
+
+      - name: Install
+        run: npm ci
+
+      - name: Release
+        run: npm run release

@@ -18,7 +18,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Starting with Firefox 41, &lt;a&gt; without <code>href</code> attribute is no longer classified as interactive content: clicking it inside &lt;label&gt; will activate labelled content (<a href='https://bugzil.la/1167816'>bug 1167816</a>)."
+              "notes": "Starting with Firefox 41, &lt;a&gt; without `href` attribute is no longer classified as interactive content: clicking it inside &lt;label&gt; will activate labelled content ([bug 1167816](https://bugzil.la/1167816))."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -32,7 +32,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -64,7 +65,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -78,7 +80,7 @@
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-a-attributionsrc",
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -97,7 +99,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -132,7 +135,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -153,7 +157,7 @@
               "firefox": {
                 "version_added": "1",
                 "version_removed": "58",
-                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region - <code>coords</code> and <code>shape</code> attribute support removed."
+                "notes": "You can no longer nest an `&lt;a&gt;` element inside a `&lt;map&gt;` element to create a hotspot region - `coords` and `shape` attribute support removed."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -167,7 +171,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -182,20 +187,20 @@
             "support": {
               "chrome": {
                 "version_added": "14",
-                "notes": "Starting in Chrome 65, cross-origin downloads are not supported on the <code>&lt;a&gt;</code> element."
+                "notes": "Starting in Chrome 65, cross-origin downloads are not supported on the `&lt;a&gt;` element."
               },
               "chrome_android": "mirror",
               "edge": [
                 {
                   "version_added": "18",
-                  "notes": "Starting in Edge 79, cross-origin downloads are not supported on the <code>&lt;a&gt;</code> element."
+                  "notes": "Starting in Edge 79, cross-origin downloads are not supported on the `&lt;a&gt;` element."
                 },
                 {
                   "version_added": "13",
                   "partial_implementation": true,
                   "notes": [
-                    "Until Edge 14 (build 14357), attempting to download data URIs caused Edge to crash (<a href='https://developer.microsoft.com/microsoft-edge/platform/issues/7160092/'>bug 7160092</a>).",
-                    "Edge 17 or older didn't follow the attributes' value to determine filename (<a href='https://developer.microsoft.com/microsoft-edge/platform/issues/7260192/'>bug 7260192</a>)."
+                    "Until Edge 14 (build 14357), attempting to download data URIs caused Edge to crash ([bug 7160092](https://developer.microsoft.com/microsoft-edge/platform/issues/7160092/)).",
+                    "Edge 17 or older didn't follow the attributes' value to determine filename ([bug 7260192](https://developer.microsoft.com/microsoft-edge/platform/issues/7260192/))."
                   ]
                 }
               ],
@@ -216,7 +221,8 @@
                 "version_added": "13"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -254,7 +260,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -264,7 +271,7 @@
           },
           "href_sms": {
             "__compat": {
-              "description": "<code>href = 'sms:'</code>",
+              "description": "`href = 'sms:'`",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -286,7 +293,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -297,7 +305,7 @@
           },
           "href_top": {
             "__compat": {
-              "description": "<code>href = '#top'</code>",
+              "description": "`href = '#top'`",
               "support": {
                 "chrome": {
                   "version_added": "1"
@@ -321,7 +329,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -360,7 +369,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -369,9 +379,44 @@
             }
           }
         },
+        "hreftranslate": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "81"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "implicit_noopener": {
           "__compat": {
-            "description": "<code>target=\"_blank\"</code> implies <code>rel=\"noopener\"</code> behavior",
+            "description": "`target=\"_blank\"` implies `rel=\"noopener\"` behavior",
             "support": {
               "chrome": {
                 "version_added": "88"
@@ -393,7 +438,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -428,7 +474,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -451,7 +498,7 @@
               "firefox": {
                 "version_added": "1",
                 "partial_implementation": true,
-                "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
+                "notes": "This property is exposed but has no effect if the `browser.send_pings` preference is not set to `true`. See [bug 951104](https://bugzil.la/951104)."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -467,7 +514,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -505,7 +553,8 @@
               "samsunginternet_android": {
                 "version_added": "7.2"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -540,7 +589,8 @@
                 "samsunginternet_android": {
                   "version_added": "7.2"
                 },
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -576,7 +626,8 @@
                 "samsunginternet_android": {
                   "version_added": "7.2"
                 },
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -612,7 +663,8 @@
                 "samsunginternet_android": {
                   "version_added": "7.2"
                 },
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -651,7 +703,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -674,7 +727,7 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "52",
-                  "notes": "Before Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
+                  "notes": "Before Firefox 63, `rel=\"noopener\"` created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
                 },
                 "firefox_android": "mirror",
                 "ie": {
@@ -688,7 +741,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -731,7 +785,8 @@
                 "samsunginternet_android": {
                   "version_added": "1.5"
                 },
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -767,7 +822,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -788,7 +844,7 @@
               "firefox": {
                 "version_added": "1",
                 "version_removed": "58",
-                "notes": "You can no longer nest an <code>&lt;a&gt;</code> element inside a <code>&lt;map&gt;</code> element to create a hotspot region - <code>coords</code> and <code>shape</code> attribute support removed."
+                "notes": "You can no longer nest an `&lt;a&gt;` element inside a `&lt;map&gt;` element to create a hotspot region - `coords` and `shape` attribute support removed."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -802,7 +858,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -840,7 +897,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -850,7 +908,7 @@
           },
           "unfencedTop": {
             "__compat": {
-              "description": "<code>_unfencedTop</code> value",
+              "description": "`_unfencedTop` value",
               "support": {
                 "chrome": {
                   "version_added": "117"
@@ -872,7 +930,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
@@ -892,8 +951,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1753933"
+                "version_added": "131"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -907,7 +965,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -945,7 +1004,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

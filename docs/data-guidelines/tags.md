@@ -20,11 +20,11 @@ This document governs the list of allowed namespaces in BCD tags.
 
 The currently allowed namespaces are:
 
-- `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md). This is an experimental namespace and it might change in breaking ways. Don't rely on it yet.
+- `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/features/README.md). This is an experimental namespace and it might change in breaking ways. Don't rely on it yet.
 
 ### The `web-features` namespace
 
-The `web-features` namespace is reserved to tag BCD features that belong to a particular [web platform feature group](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
+The `web-features` namespace is reserved to tag BCD features that belong to a particular [web platform feature group](https://github.com/web-platform-dx/web-features/blob/main/features/README.md).
 
 The [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features) project is importing web platform feature groups using this BCD tag. If you want to create a group of BCD features and don't want it to be exported to the web-platform-dx/web-features project, don't use the `web-features` namespace.
 

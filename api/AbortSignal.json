@@ -26,7 +26,7 @@
             "version_added": false
           },
           "nodejs": {
-            "version_added": "15.0.0"
+            "version_added": "14.17.0"
           },
           "oculus": "mirror",
           "opera": "mirror",
@@ -36,7 +36,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -46,7 +47,7 @@
       },
       "abort_event": {
         "__compat": {
-          "description": "<code>abort</code> event",
+          "description": "`abort` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_event",
           "spec_url": [
             "https://dom.spec.whatwg.org/#eventdef-abortsignal-abort",
@@ -74,7 +75,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "14.17.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -84,7 +85,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -95,9 +97,12 @@
       },
       "abort_static": {
         "__compat": {
-          "description": "<code>abort()</code> static method",
+          "description": "`abort()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/abort_static",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-abortsignal-abort①",
+          "tags": [
+            "web-features:aborting"
+          ],
           "support": {
             "chrome": {
               "version_added": "93"
@@ -114,9 +119,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.12.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.12.0"
+              },
+              {
+                "version_added": "14.17.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -125,7 +136,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -135,8 +147,11 @@
         },
         "reason_parameter": {
           "__compat": {
-            "description": "<code>reason</code> parameter",
+            "description": "`reason` parameter",
             "spec_url": "https://dom.spec.whatwg.org/#abortsignal-abort-reason",
+            "tags": [
+              "web-features:aborting"
+            ],
             "support": {
               "chrome": {
                 "version_added": "98"
@@ -170,7 +185,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -206,7 +222,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "14.17.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -216,7 +232,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -227,7 +244,7 @@
       },
       "any_static": {
         "__compat": {
-          "description": "<code>any()</code> static method",
+          "description": "`any()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/any_static",
           "spec_url": "https://dom.spec.whatwg.org/#dom-abortsignal-any",
           "tags": [
@@ -266,7 +283,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -279,6 +297,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/reason",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-abortsignal-reason①",
+          "tags": [
+            "web-features:aborting"
+          ],
           "support": {
             "chrome": {
               "version_added": "98"
@@ -312,7 +333,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -325,6 +347,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/throwIfAborted",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-abortsignal-throwifaborted①",
+          "tags": [
+            "web-features:aborting"
+          ],
           "support": {
             "chrome": {
               "version_added": "100"
@@ -358,7 +383,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -369,13 +395,24 @@
       },
       "timeout_static": {
         "__compat": {
-          "description": "<code>timeout()</code> static method",
+          "description": "`timeout()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortSignal/timeout_static",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-abortsignal-timeout①",
+          "tags": [
+            "web-features:aborting"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "103"
-            },
+            "chrome": [
+              {
+                "version_added": "124"
+              },
+              {
+                "version_added": "103",
+                "version_removed": "124",
+                "partial_implementation": true,
+                "notes": "Always aborts with an `AbortError` on timeout, not a `TimeoutError`."
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.20"
@@ -405,7 +442,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
