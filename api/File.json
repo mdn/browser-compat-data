@@ -29,6 +29,23 @@
           "ie": {
             "version_added": "10"
           },
+          "nodejs": [
+            {
+              "version_added": "20.0.0",
+              "notes": "Before 23.0.0, `File` instance cannot be cloned."
+            },
+            {
+              "version_added": "19.2.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
+            },
+            {
+              "version_added": "18.13.0",
+              "version_removed": "19.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
+            }
+          ],
           "oculus": "mirror",
           "opera": {
             "version_added": "11.5"
@@ -54,7 +71,7 @@
       },
       "File": {
         "__compat": {
-          "description": "<code>File()</code> constructor",
+          "description": "`File()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/File/File",
           "spec_url": "https://w3c.github.io/FileAPI/#file-constructor",
           "support": {
@@ -73,6 +90,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "19.2.0"
+              },
+              {
+                "version_added": "18.13.0",
+                "version_removed": "19.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -113,6 +139,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "19.2.0"
+              },
+              {
+                "version_added": "18.13.0",
+                "version_removed": "19.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "≤15"
@@ -208,6 +243,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "19.2.0"
+              },
+              {
+                "version_added": "18.13.0",
+                "version_removed": "19.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "≤15"

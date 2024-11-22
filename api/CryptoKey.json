@@ -25,9 +25,16 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": {
-            "version_added": "15.0.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "19.0.0"
+            },
+            {
+              "version_added": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `crypto` module."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -110,7 +117,7 @@
               {
                 "version_added": "1.12",
                 "partial_implementation": true,
-                "notes": "The only supported value for this property is <code>true</code>."
+                "notes": "The only supported value for this property is `true`."
               }
             ],
             "edge": {

@@ -75,7 +75,7 @@
         },
         "cache": {
           "__compat": {
-            "description": "<code>&quot;cache&quot;</code>",
+            "description": "`&quot;cache&quot;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#cache",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-cache",
             "support": {
@@ -88,7 +88,8 @@
               },
               "firefox": {
                 "version_added": "63",
-                "version_removed": "94"
+                "version_removed": "94",
+                "impl_url": "https://bugzil.la/1838506"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -98,7 +99,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -106,7 +107,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -114,7 +115,7 @@
         },
         "clientHints": {
           "__compat": {
-            "description": "<code>&quot;clientHints&quot;</code>",
+            "description": "`&quot;clientHints&quot;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#clientHints",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-clienthints",
             "support": {
@@ -150,7 +151,7 @@
         },
         "cookies": {
           "__compat": {
-            "description": "<code>&quot;cookies&quot;</code>",
+            "description": "`&quot;cookies&quot;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#cookies",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-cookies",
             "support": {
@@ -172,7 +173,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -188,19 +189,20 @@
         },
         "executionContexts": {
           "__compat": {
-            "description": "<code>&quot;executionContexts&quot;</code>",
+            "description": "`&quot;executionContexts&quot;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#executionContexts",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-executioncontexts",
             "support": {
               "chrome": {
                 "version_added": false,
-                "impl_url": "https://crbug.com/898503"
+                "impl_url": "https://crbug.com/40599527"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "63",
-                "version_removed": "68"
+                "version_removed": "68",
+                "impl_url": "https://bugzil.la/1635189"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -226,7 +228,7 @@
         },
         "storage": {
           "__compat": {
-            "description": "<code>&quot;storage&quot;</code>",
+            "description": "`&quot;storage&quot;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#storage",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-storage",
             "support": {
@@ -248,7 +250,43 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "wildcard": {
+          "__compat": {
+            "description": "`&quot;*&quot;` (wildcard)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#sect4",
+            "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": "mirror",
+              "ie": {
                 "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

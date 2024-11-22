@@ -1,19 +1,28 @@
 {
   "css": {
-    "properties": {
-      "word-wrap": {
+    "selectors": {
+      "has-slotted": {
         "__compat": {
-          "spec_url": "https://drafts.csswg.org/css-text-4/#overflow-wrap-property",
+          "description": "`:has-slotted`",
+          "spec_url": "https://drafts.csswg.org/css-scoping/#the-has-slotted-pseudo",
+          "tags": [
+            "web-features:slot"
+          ],
           "support": {
             "chrome": {
-              "version_added": "≤80"
+              "version_added": false
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "≤80"
-            },
+            "edge": "mirror",
             "firefox": {
-              "version_added": "≤72"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.has-slotted-selector.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -23,7 +32,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -31,7 +40,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
