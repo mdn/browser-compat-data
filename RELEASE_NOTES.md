@@ -4,12 +4,17 @@
 
 November 22, 2024
 
+### Additions
+
+- `webextensions.manifest.chrome_settings_overrides.search_provider.search_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
+- `webextensions.manifest.chrome_settings_overrides.search_provider.suggest_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
+
 ### Statistics
 
-- 2 contributors have changed 1 file with 26 additions and 26 deletions in 1 commit ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
-- 16,748 total features
+- 3 contributors have changed 2 files with 68 additions and 26 deletions in 2 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,750 total features
 - 1,116 total contributors
-- 4,993 total stargazers
+- 4,994 total stargazers
 
 ## [v5.6.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.18)
 
