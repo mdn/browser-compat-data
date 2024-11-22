@@ -30,8 +30,9 @@
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
-            "notes": "WebView exposes this interface, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
-          }
+            "notes": "WebView exposes this interface, but does not support WebUSB. See [bug 41441927](https://crbug.com/41441927)."
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -41,8 +42,7 @@
       },
       "USBInterface": {
         "__compat": {
-          "description": "<code>USBInterface()</code> constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBInterface/USBInterface",
+          "description": "`USBInterface()` constructor",
           "tags": [
             "web-features:webusb"
           ],
@@ -69,7 +69,56 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "support": {
+            "chrome": [
+              {
+                "version_added": "118",
+                "partial_implementation": true,
+                "notes": "Available in dedicated workers and WebExtension service workers, not available in shared workers and normal service workers."
+              },
+              {
+                "version_added": "70",
+                "version_removed": "118",
+                "partial_implementation": true,
+                "notes": "Available in dedicated workers, not available in shared workers and service workers."
+              }
+            ],
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/41441927",
+              "notes": "WebView exposes this interface, but does not support WebUSB."
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -80,7 +129,6 @@
       },
       "alternate": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBInterface/alternate",
           "spec_url": "https://wicg.github.io/webusb/#dom-usbinterface-alternate",
           "tags": [
             "web-features:webusb"
@@ -108,7 +156,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -119,7 +168,6 @@
       },
       "alternates": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBInterface/alternates",
           "spec_url": "https://wicg.github.io/webusb/#dom-usbinterface-alternates",
           "tags": [
             "web-features:webusb"
@@ -147,7 +195,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -158,7 +207,6 @@
       },
       "claimed": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBInterface/claimed",
           "spec_url": "https://wicg.github.io/webusb/#dom-usbinterface-claimed",
           "tags": [
             "web-features:webusb"
@@ -186,7 +234,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -197,7 +246,6 @@
       },
       "interfaceNumber": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBInterface/interfaceNumber",
           "spec_url": "https://wicg.github.io/webusb/#dom-usbinterface-interfacenumber",
           "tags": [
             "web-features:webusb"
@@ -225,7 +273,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

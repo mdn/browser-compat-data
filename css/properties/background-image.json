@@ -15,7 +15,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "If the <code>browser.display.use_document_colors</code> user preference in <code>about:config</code> is set to <code>false</code>, background images will not be displayed."
+              "notes": "If the `browser.display.use_document_colors` user preference in `about:config` is set to `false`, background images will not be displayed."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -31,7 +31,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -41,8 +42,8 @@
         },
         "element": {
           "__compat": {
-            "description": "<code>element()</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element()",
+            "description": "`element()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
             "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
             "support": {
               "chrome": {
@@ -66,7 +67,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -80,13 +82,10 @@
             "description": "Gradients",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
             "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
-            "tags": [
-              "web-features:background-gradients"
-            ],
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Some versions support only experimental gradients prefixed with <code>-webkit</code>."
+                "notes": "Some versions support only experimental gradients prefixed with `-webkit`."
               },
               "chrome_android": "mirror",
               "edge": {
@@ -94,7 +93,7 @@
               },
               "firefox": {
                 "version_added": "3.6",
-                "notes": "Some versions support only experimental gradients prefixed with <code>-moz</code>."
+                "notes": "Some versions support only experimental gradients prefixed with `-moz`."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -103,16 +102,17 @@
               "oculus": "mirror",
               "opera": {
                 "version_added": "11",
-                "notes": "Some versions support only experimental gradients prefixed with <code>-o</code>."
+                "notes": "Some versions support only experimental gradients prefixed with `-o`."
               },
               "opera_android": "mirror",
               "safari": {
                 "version_added": "4",
-                "notes": "Some versions support only experimental gradients prefixed with <code>-webkit</code>."
+                "notes": "Some versions support only experimental gradients prefixed with `-webkit`."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -123,7 +123,7 @@
         },
         "image-rect": {
           "__compat": {
-            "description": "<code>image-rect()</code>",
+            "description": "`image-rect()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/-moz-image-rect",
             "support": {
               "chrome": {
@@ -148,7 +148,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -159,9 +160,12 @@
         },
         "image-set": {
           "__compat": {
-            "description": "<code>image-set()</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image-set()",
+            "description": "`image-set()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image-set",
             "spec_url": "https://drafts.csswg.org/css-images-4/#image-set-notation",
+            "tags": [
+              "web-features:image-set"
+            ],
             "support": {
               "chrome": [
                 {
@@ -169,19 +173,31 @@
                 },
                 {
                   "prefix": "-webkit-",
-                  "version_added": "21"
+                  "version_added": "113"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "20",
+                  "version_removed": "113",
+                  "partial_implementation": true,
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 }
               ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "88",
-                  "notes": "Before Firefox 89, the <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  "version_added": "89"
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "90"
+                },
+                {
+                  "version_added": "88",
+                  "version_removed": "89",
+                  "partial_implementation": true,
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
                 }
               ],
               "firefox_android": "mirror",
@@ -193,18 +209,43 @@
               "opera_android": "mirror",
               "safari": [
                 {
-                  "version_added": "14"
+                  "version_added": "17"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "17"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "version_removed": "17",
+                  "partial_implementation": true,
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
+                },
+                {
+                  "version_added": "10.1",
+                  "version_removed": "14",
+                  "partial_implementation": true,
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "6",
+                  "version_removed": "14",
                   "partial_implementation": true,
-                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 }
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -241,7 +282,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -276,7 +318,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -317,7 +360,8 @@
                 "notes": "Support of SVG in CSS background is incomplete."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

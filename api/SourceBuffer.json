@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer",
         "spec_url": "https://w3c.github.io/media-source/#sourcebuffer",
+        "tags": [
+          "web-features:media-source"
+        ],
         "support": {
           "chrome": [
             {
@@ -35,6 +38,7 @@
           },
           "safari_ios": {
             "version_added": "13",
+            "impl_url": "https://webkit.org/b/200147",
             "partial_implementation": true,
             "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
           },
@@ -48,7 +52,10 @@
               "version_removed": "3.0"
             }
           ],
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": {
+            "version_added": false
+          }
         },
         "status": {
           "experimental": false,
@@ -92,6 +99,9 @@
             },
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -124,7 +134,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -136,8 +147,7 @@
       },
       "abort_event": {
         "__compat": {
-          "description": "<code>abort</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/abort_event",
+          "description": "`abort` event",
           "spec_url": [
             "https://w3c.github.io/media-source/#dfn-abort",
             "https://w3c.github.io/media-source/#dom-sourcebuffer-onabort"
@@ -151,7 +161,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onabort</code> event handler property is not supported."
+                "notes": "The `onabort` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -163,7 +173,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onabort</code> event handler property is not supported."
+                "notes": "The `onabort` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -185,7 +195,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onabort</code> event handler property is not supported."
+                "notes": "The `onabort` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -194,7 +204,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -226,7 +239,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -274,7 +288,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -306,7 +323,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -347,7 +365,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -394,7 +413,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -426,7 +448,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -474,7 +497,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -506,7 +532,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -568,7 +595,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -589,7 +619,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior (see <a href='https://crbug.com/487288#c24'>bug 487288</a>)."
+                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior (see [bug 487288](https://crbug.com/40417861#comment25))."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -608,7 +638,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -656,7 +687,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -688,7 +722,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -727,7 +762,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -759,7 +797,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -771,8 +810,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/error_event",
+          "description": "`error` event",
           "spec_url": [
             "https://w3c.github.io/media-source/#dfn-error",
             "https://w3c.github.io/media-source/#dom-sourcebuffer-onerror"
@@ -786,7 +824,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onerror</code> event handler property is not supported."
+                "notes": "The `onerror` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -798,7 +836,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onerror</code> event handler property is not supported."
+                "notes": "The `onerror` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -820,7 +858,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onerror</code> event handler property is not supported."
+                "notes": "The `onerror` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -829,7 +867,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -861,7 +902,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -909,7 +951,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -941,7 +986,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -989,7 +1035,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1021,7 +1070,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1062,7 +1112,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1100,7 +1151,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": true,
@@ -1147,7 +1201,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1179,7 +1236,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1191,8 +1249,7 @@
       },
       "update_event": {
         "__compat": {
-          "description": "<code>update</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/update_event",
+          "description": "`update` event",
           "spec_url": [
             "https://w3c.github.io/media-source/#dfn-update",
             "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdate"
@@ -1206,7 +1263,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onupdate</code> event handler property is not supported."
+                "notes": "The `onupdate` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -1218,7 +1275,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onupdate</code> event handler property is not supported."
+                "notes": "The `onupdate` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -1240,7 +1297,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onupdate</code> event handler property is not supported."
+                "notes": "The `onupdate` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -1249,7 +1306,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1281,7 +1341,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1293,8 +1354,7 @@
       },
       "updateend_event": {
         "__compat": {
-          "description": "<code>updateend</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updateend_event",
+          "description": "`updateend` event",
           "spec_url": [
             "https://w3c.github.io/media-source/#dfn-updateend",
             "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdateend"
@@ -1308,7 +1368,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onupdateend</code> event handler property is not supported."
+                "notes": "The `onupdateend` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -1320,7 +1380,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onupdateend</code> event handler property is not supported."
+                "notes": "The `onupdateend` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -1342,7 +1402,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onupdateend</code> event handler property is not supported."
+                "notes": "The `onupdateend` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -1351,7 +1411,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1383,7 +1446,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1395,8 +1459,7 @@
       },
       "updatestart_event": {
         "__compat": {
-          "description": "<code>updatestart</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SourceBuffer/updatestart_event",
+          "description": "`updatestart` event",
           "spec_url": [
             "https://w3c.github.io/media-source/#dfn-updatestart",
             "https://w3c.github.io/media-source/#dom-sourcebuffer-onupdatestart"
@@ -1410,7 +1473,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+                "notes": "The `onupdatestart` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -1422,7 +1485,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+                "notes": "The `onupdatestart` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -1444,7 +1507,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onupdatestart</code> event handler property is not supported."
+                "notes": "The `onupdatestart` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -1453,7 +1516,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1485,7 +1551,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1533,7 +1600,10 @@
             "samsunginternet_android": {
               "version_added": "3.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1565,7 +1635,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -1627,7 +1698,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -1648,7 +1722,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior (see <a href='https://crbug.com/487288#c24'>bug 487288</a>)."
+                "notes": "Currently doesn't work, even with the flag set. If invoked from a dedicated worker, Chromium crashes the renderer to avoid undesirable behavior (see [bug 487288](https://crbug.com/40417861#comment25))."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1667,7 +1741,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,

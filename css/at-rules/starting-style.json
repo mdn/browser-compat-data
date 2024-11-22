@@ -3,9 +3,12 @@
     "at-rules": {
       "starting-style": {
         "__compat": {
-          "description": "<code>@starting-style</code>",
+          "description": "`@starting-style`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/@starting-style",
           "spec_url": "https://drafts.csswg.org/css-transitions-2/#defining-before-change-style",
+          "tags": [
+            "web-features:starting-style"
+          ],
           "support": {
             "chrome": {
               "version_added": "117"
@@ -13,7 +16,10 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "129",
+              "impl_url": "https://bugzil.la/1834877",
+              "partial_implementation": true,
+              "notes": "Does not yet support animating from `display: none`"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -23,14 +29,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17.5"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

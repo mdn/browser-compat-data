@@ -2,7 +2,7 @@
   "api": {
     "createImageBitmap": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/createImageBitmap",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/createImageBitmap",
         "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-createimagebitmap-dev",
         "support": {
           "chrome": {
@@ -29,7 +29,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -39,7 +40,7 @@
       },
       "options_colorSpaceConversion_parameter": {
         "__compat": {
-          "description": "<code>options.colorSpaceConversion</code> parameter",
+          "description": "`options.colorSpaceConversion` parameter",
           "support": {
             "chrome": {
               "version_added": "58"
@@ -64,7 +65,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -75,7 +77,7 @@
       },
       "options_imageOrientation_parameter": {
         "__compat": {
-          "description": "<code>options.imageOrientation</code> parameter",
+          "description": "`options.imageOrientation` parameter",
           "support": {
             "chrome": {
               "version_added": "52"
@@ -100,18 +102,93 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "from-image": {
+          "__compat": {
+            "description": "Value `from-image`",
+            "support": {
+              "chrome": {
+                "version_added": "112"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.40"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "111"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "none": {
+          "__compat": {
+            "description": "Value `none`",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.40"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
         }
       },
       "options_premultiplyAlpha_parameter": {
         "__compat": {
-          "description": "<code>options.premultiplyAlpha</code> parameter",
+          "description": "`options.premultiplyAlpha` parameter",
           "support": {
             "chrome": {
               "version_added": "52"
@@ -131,12 +208,21 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "15"
-            },
+            "safari": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "15",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "If the source image is an `ImageData` object, then the `premultiplyAlpha` option does nothing. See [bug 237082](https://webkit.org/b/237082)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -147,7 +233,7 @@
       },
       "options_resizeHeight_parameter": {
         "__compat": {
-          "description": "<code>options.resizeHeight</code> parameter",
+          "description": "`options.resizeHeight` parameter",
           "support": {
             "chrome": {
               "version_added": "54"
@@ -172,7 +258,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -183,7 +270,7 @@
       },
       "options_resizeQuality_parameter": {
         "__compat": {
-          "description": "<code>options.resizeQuality</code> parameter",
+          "description": "`options.resizeQuality` parameter",
           "support": {
             "chrome": {
               "version_added": "54"
@@ -208,7 +295,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -219,7 +307,7 @@
       },
       "options_resizeWidth_parameter": {
         "__compat": {
-          "description": "<code>options.resizeWidth</code> parameter",
+          "description": "`options.resizeWidth` parameter",
           "support": {
             "chrome": {
               "version_added": "54"
@@ -244,7 +332,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -255,7 +344,7 @@
       },
       "svgimageelement_as_source_image": {
         "__compat": {
-          "description": "<code>SVGImageElement</code> as source image",
+          "description": "`SVGImageElement` as source image",
           "support": {
             "chrome": {
               "version_added": "59"
@@ -276,11 +365,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

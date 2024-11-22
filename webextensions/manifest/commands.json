@@ -6,11 +6,9 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/commands",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "≤54"
             },
-            "edge": {
-              "version_added": "79"
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": "48"
             },
@@ -55,16 +53,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "57",
                 "notes": [
-                  "macOS support requires the <code>global</code> command feature which isn't supported yet. See <a href='https://bugzil.la/1251795#c11'>Bug 1251795</a>.",
-                  "Can only register one Media* command at a time. See <a href='https://bugzil.la/1251795#c13'>Bug 1251795</a>."
+                  "macOS support requires the `global` command feature which isn't supported yet. See [Bug 1251795](https://bugzil.la/1251795#c11).",
+                  "Can only register one Media* command at a time. See [Bug 1251795](https://bugzil.la/1251795#c13)."
                 ]
               },
               "firefox_android": {
@@ -82,16 +78,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "57",
                 "notes": [
-                  "macOS support requires the <code>global</code> command feature which isn't supported yet. See <a href='https://bugzil.la/1251795#c11'>Bug 1251795</a>.",
-                  "Can only register one Media* command at a time. See <a href='https://bugzil.la/1251795#c13'>Bug 1251795</a>."
+                  "macOS support requires the `global` command feature which isn't supported yet. See [Bug 1251795](https://bugzil.la/1251795#c11).",
+                  "Can only register one Media* command at a time. See [Bug 1251795](https://bugzil.la/1251795#c13)."
                 ]
               },
               "firefox_android": {
@@ -109,16 +103,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "57",
                 "notes": [
-                  "macOS support requires the <code>global</code> command feature which isn't supported yet. See <a href='https://bugzil.la/1251795#c11'>Bug 1251795</a>.",
-                  "Can only register one Media* command at a time. See <a href='https://bugzil.la/1251795#c13'>Bug 1251795</a>."
+                  "macOS support requires the `global` command feature which isn't supported yet. See [Bug 1251795](https://bugzil.la/1251795#c11).",
+                  "Can only register one Media* command at a time. See [Bug 1251795](https://bugzil.la/1251795#c13)."
                 ]
               },
               "firefox_android": {
@@ -136,16 +128,14 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "57",
                 "notes": [
-                  "macOS support requires the <code>global</code> command feature which isn't supported yet. See <a href='https://bugzil.la/1251795#c11'>Bug 1251795</a>.",
-                  "Can only register one Media* command at a time. See <a href='https://bugzil.la/1251795#c13'>Bug 1251795</a>."
+                  "macOS support requires the `global` command feature which isn't supported yet. See [Bug 1251795](https://bugzil.la/1251795#c11).",
+                  "Can only register one Media* command at a time. See [Bug 1251795](https://bugzil.la/1251795#c13)."
                 ]
               },
               "firefox_android": {
@@ -187,11 +177,9 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -208,18 +196,21 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": "88"
+                "version_added": "88",
+                "notes": "Available for use in Manifest V3 or later."
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": true
+                "version_added": "91",
+                "notes": "Available for use in Manifest V3 or later."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "15.4",
+                "notes": "Available for use in Manifest V3 or later."
               },
               "safari_ios": "mirror"
             }
@@ -229,20 +220,26 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": true,
+                "notes": "Available for use in Manifest V2 only."
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "52"
+                "version_added": "52",
+                "notes": "Available for use in Manifest V2 only."
               },
               "firefox_android": {
                 "version_added": false
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14",
+                "notes": "Available for use in Manifest V2 only."
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "Available for use in Manifest V2 only."
+              }
             }
           }
         },
@@ -262,9 +259,13 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14",
+                "notes": "Available for use in Manifest V2 only."
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15",
+                "notes": "Available for use in Manifest V2 only."
+              }
             }
           }
         },

@@ -29,14 +29,16 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": {
-            "alternative_name": "worker_threads.BroadcastChannel",
-            "version_added": "15.4.0",
-            "notes": [
-              "Experimental implementation",
-              "Must be imported using either <code>require('worker_threads')</code> or <code>import * from 'worker_threads'</code>."
-            ]
-          },
+          "nodejs": [
+            {
+              "version_added": "18.0.0"
+            },
+            {
+              "version_added": "15.4.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `worker_threads` module."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -45,7 +47,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -55,7 +58,7 @@
       },
       "BroadcastChannel": {
         "__compat": {
-          "description": "<code>BroadcastChannel()</code> constructor",
+          "description": "`BroadcastChannel()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/BroadcastChannel",
           "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-broadcastchannel-dev",
           "tags": [
@@ -67,7 +70,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -88,7 +97,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -110,7 +120,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -131,7 +147,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -142,7 +159,7 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/message_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-message",
@@ -157,7 +174,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -178,7 +201,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -189,7 +213,7 @@
       },
       "messageerror_event": {
         "__compat": {
-          "description": "<code>messageerror</code> event",
+          "description": "`messageerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/BroadcastChannel/messageerror_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
@@ -204,7 +228,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -227,7 +257,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -249,7 +280,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -270,7 +307,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -292,7 +330,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "1.11"
+              "version_added": "1.11",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-broadcast-channel"
+                }
+              ]
             },
             "edge": "mirror",
             "firefox": {
@@ -313,7 +357,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

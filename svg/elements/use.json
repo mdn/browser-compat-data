@@ -15,11 +15,11 @@
             },
             "firefox": {
               "version_added": "1.5",
-              "notes": "Before version 56, Firefox does not completely follow the <code>use</code> cascading rules (see <a href='https://bugzil.la/265894'>bug 265894</a>). A fix is <a href='https://stackoverflow.com/questions/27866893/svg-fill-not-being-applied-in-firefox/27872310#27872310'>documented by Amelia Bellamy-Royds on StackOverflow</a>."
+              "notes": "Before version 56, Firefox does not completely follow the `use` cascading rules (see [bug 265894](https://bugzil.la/265894)). A fix is [documented by Amelia Bellamy-Royds on StackOverflow](https://stackoverflow.com/questions/27866893/svg-fill-not-being-applied-in-firefox/27872310#27872310)."
             },
             "firefox_android": "mirror",
             "ie": {
-              "version_added": true
+              "version_added": "≤11"
             },
             "oculus": "mirror",
             "opera": {
@@ -35,7 +35,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -45,7 +46,7 @@
         },
         "data_uri": {
           "__compat": {
-            "description": "Load from <code>data:</code> URI",
+            "description": "Load from `data:` URI",
             "support": {
               "chrome": {
                 "version_added": "22",
@@ -77,7 +78,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "4"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -116,7 +118,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -140,7 +143,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -150,7 +153,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -161,6 +165,7 @@
         },
         "href": {
           "__compat": {
+            "spec_url": "https://svgwg.org/svg2-draft/struct.html#UseElementHrefAttribute",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -174,7 +179,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -184,7 +189,51 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "systemLanguage": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/systemLanguage",
+            "spec_url": "https://svgwg.org/svg2-draft/types.html#__svg__SVGTests__systemLanguage",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "12"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "9"
+              },
+              "oculus": "mirror",
+              "opera": {
+                "version_added": "11.5"
+              },
+              "opera_android": {
+                "version_added": "11.5"
+              },
+              "safari": {
+                "version_added": "3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "4"
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -208,7 +257,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -218,7 +267,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -242,7 +292,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -252,7 +302,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -263,7 +314,7 @@
         },
         "xlink_href": {
           "__compat": {
-            "description": "<code>xlink:href</code>",
+            "description": "`xlink:href`",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -277,7 +328,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -287,7 +338,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -311,7 +363,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -321,7 +373,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

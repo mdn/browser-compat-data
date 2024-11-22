@@ -2,16 +2,36 @@
   "webextensions": {
     "api": {
       "extension": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension",
+          "support": {
+            "chrome": {
+              "version_added": "≤58"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "ViewType": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/ViewType",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "45"
               },
@@ -54,7 +74,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getBackgroundPage",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -80,11 +100,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getExtensionTabs",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -104,7 +122,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getURL",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -130,7 +148,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -156,7 +174,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤93"
                 },
                 "edge": {
                   "version_added": "14"
@@ -171,14 +189,26 @@
                   "notes": "The property is recognized, but the filter has no effect."
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14",
-                  "notes": "Filtering by <code>windowId</code> won't work when a tab is moved from one window to another."
-                },
-                "safari_ios": {
-                  "version_added": "15",
-                  "notes": "Filtering by <code>windowId</code> won't work when a tab is moved from one window to another."
-                }
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "14",
+                    "partial_implementation": true,
+                    "notes": "Filtering by `windowId` doesn't work when a tab is moved from one window to another."
+                  }
+                ],
+                "safari_ios": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "15",
+                    "partial_implementation": true,
+                    "notes": "Filtering by `windowId` doesn't work when a tab is moved from one window to another."
+                  }
+                ]
               }
             }
           }
@@ -188,7 +218,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/inIncognitoContext",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "17"
@@ -200,16 +230,26 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "partial_implementation": true,
-                "notes": "Always returns false."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "partial_implementation": true,
-                "notes": "Always returns false."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Always returns `false`."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Always returns `false`."
+                }
+              ]
             }
           }
         },
@@ -218,11 +258,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "48"
               },
@@ -231,12 +269,12 @@
               "safari": {
                 "version_added": "14",
                 "partial_implementation": true,
-                "notes": "Always returns false."
+                "notes": "Always returns `false`."
               },
               "safari_ios": {
                 "version_added": "15",
                 "partial_implementation": true,
-                "notes": "Always returns false."
+                "notes": "Always returns `false`."
               }
             }
           }
@@ -246,7 +284,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "17"
@@ -256,16 +294,26 @@
               },
               "firefox_android": "mirror",
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "partial_implementation": true,
-                "notes": "Always returns true."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "partial_implementation": true,
-                "notes": "Always returns true."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Always returns `true`."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Always returns `true`."
+                }
+              ]
             }
           }
         },
@@ -274,11 +322,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/lastError",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "47"
               },
@@ -298,11 +344,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequest",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -320,11 +364,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequestExternal",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -342,11 +384,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/sendRequest",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -366,11 +406,9 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/setUpdateUrlData",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },

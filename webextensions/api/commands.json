@@ -2,12 +2,34 @@
   "webextensions": {
     "api": {
       "commands": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands",
+          "support": {
+            "chrome": {
+              "version_added": "≤58"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "48"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "Command": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/Command",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": {
@@ -25,7 +47,7 @@
               }
             }
           },
-          "name": {
+          "description": {
             "__compat": {
               "support": {
                 "chrome": {
@@ -48,25 +70,49 @@
               }
             }
           },
-          "tab": {
+          "name": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "86"
+                  "version_added": "≤96"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1843866"
+                  "version_added": "48"
                 },
                 "firefox_android": {
                   "version_added": false
                 },
                 "opera": "mirror",
                 "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "shortcut": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": true
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "48"
+                },
+                "firefox_android": {
                   "version_added": false
                 },
-                "safari_ios": "mirror"
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           }
@@ -76,7 +122,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": {
@@ -122,14 +168,12 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/commands/onCommand",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "48",
-                "notes": "Before version 63, the <code>onCommand</code> listener was not treated as a <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/User_actions'>handler for a user action</a>."
+                "notes": "Before version 63, the `onCommand` listener was not treated as a [handler for a user action](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/User_actions)."
               },
               "firefox_android": {
                 "version_added": false
@@ -176,8 +220,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1843866"
+                  "version_added": "126"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -234,69 +277,67 @@
               "safari_ios": "mirror"
             }
           },
-          "details": {
-            "description": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+          "description": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
-            },
-            "name": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60"
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+            }
+          },
+          "name": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
-            },
-            "shortcut": {
-              "__compat": {
-                "support": {
-                  "chrome": {
-                    "version_added": false
-                  },
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "60",
-                    "notes": "From Firefox 74 can be set as an empty string to clear the shortcut assignment."
-                  },
-                  "firefox_android": {
-                    "version_added": false
-                  },
-                  "opera": "mirror",
-                  "safari": {
-                    "version_added": false
-                  },
-                  "safari_ios": "mirror"
-                }
+            }
+          },
+          "shortcut": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "60",
+                  "notes": "From Firefox 74 can be set as an empty string to clear the shortcut assignment."
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }

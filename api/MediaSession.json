@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession",
         "spec_url": "https://w3c.github.io/mediasession/#the-mediasession-interface",
+        "tags": [
+          "web-features:media-session"
+        ],
         "support": {
           "chrome": {
             "version_added": "73"
@@ -32,8 +35,10 @@
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
-            "version_added": false
-          }
+            "version_added": false,
+            "impl_url": "https://crbug.com/40611412"
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -45,6 +50,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/metadata",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-metadata",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -74,7 +82,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -87,6 +96,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/playbackState",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-playbackstate",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -116,7 +128,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -127,9 +140,12 @@
       },
       "setActionHandler": {
         "__compat": {
-          "description": "<code>setActionHandler()</code>",
+          "description": "`setActionHandler()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setActionHandler",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setactionhandler",
+          "tags": [
+            "web-features:media-session"
+          ],
           "support": {
             "chrome": {
               "version_added": "73"
@@ -139,9 +155,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "82",
-              "partial_implementation": true,
-              "notes": "Firefox does not support the <code>togglemicrophone</code>, <code>togglecamera</code>, and <code>hangup</code> action types."
+              "version_added": "82"
             },
             "firefox_android": {
               "version_added": "82",
@@ -155,15 +169,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15",
-              "partial_implementation": true,
-              "notes": "Safari does not support for the <code>togglemicrophone</code>, <code>togglecamera</code>, and <code>hangup</code> action types."
+              "version_added": "15"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -173,10 +186,10 @@
         },
         "hangup_type": {
           "__compat": {
-            "description": "<code>\"hangup\"</code> type",
+            "description": "`\"hangup\"` type",
             "support": {
               "chrome": {
-                "version_added": "92"
+                "version_added": "93"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -197,7 +210,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -208,7 +222,7 @@
         },
         "nextslide_type": {
           "__compat": {
-            "description": "<code>\"nextslide\"</code> type",
+            "description": "`\"nextslide\"` type",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -232,7 +246,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -243,7 +258,10 @@
         },
         "nexttrack_type": {
           "__compat": {
-            "description": "<code>\"nexttrack\"</code> type",
+            "description": "`\"nexttrack\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -269,7 +287,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -280,7 +299,10 @@
         },
         "pause_type": {
           "__compat": {
-            "description": "<code>\"pause\"</code> type",
+            "description": "`\"pause\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -306,7 +328,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -317,7 +340,10 @@
         },
         "play_type": {
           "__compat": {
-            "description": "<code>\"play\"</code> type",
+            "description": "`\"play\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -343,7 +369,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -354,7 +381,7 @@
         },
         "previousslide_type": {
           "__compat": {
-            "description": "<code>\"previousslide\"</code> type",
+            "description": "`\"previousslide\"` type",
             "support": {
               "chrome": {
                 "version_added": "111"
@@ -378,7 +405,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -389,7 +417,10 @@
         },
         "previoustrack_type": {
           "__compat": {
-            "description": "<code>\"previoustrack\"</code> type",
+            "description": "`\"previoustrack\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -415,7 +446,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -426,7 +458,10 @@
         },
         "seekbackward_type": {
           "__compat": {
-            "description": "<code>\"seekbackward\"</code> type",
+            "description": "`\"seekbackward\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -452,7 +487,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -463,7 +499,10 @@
         },
         "seekforward_type": {
           "__compat": {
-            "description": "<code>\"seekforward\"</code> type",
+            "description": "`\"seekforward\"` type",
+            "tags": [
+              "web-features:media-session"
+            ],
             "support": {
               "chrome": {
                 "version_added": "73"
@@ -489,7 +528,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -500,7 +540,7 @@
         },
         "seekto_type": {
           "__compat": {
-            "description": "<code>\"seekto\"</code> type",
+            "description": "`\"seekto\"` type",
             "support": {
               "chrome": {
                 "version_added": "78"
@@ -524,7 +564,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -535,10 +576,10 @@
         },
         "skipad_type": {
           "__compat": {
-            "description": "<code>\"skipad\"</code> type",
+            "description": "`\"skipad\"` type",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "128"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -557,7 +598,10 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -568,7 +612,7 @@
         },
         "stop_type": {
           "__compat": {
-            "description": "<code>\"stop\"</code> type",
+            "description": "`\"stop\"` type",
             "support": {
               "chrome": {
                 "version_added": "77"
@@ -592,7 +636,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -603,10 +648,10 @@
         },
         "togglecamera_type": {
           "__compat": {
-            "description": "<code>\"togglecamera\"</code> type",
+            "description": "`\"togglecamera\"` type",
             "support": {
               "chrome": {
-                "version_added": "92"
+                "version_added": "93"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -627,7 +672,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -638,10 +684,10 @@
         },
         "togglemicrophone_type": {
           "__compat": {
-            "description": "<code>\"togglemicrophone\"</code> type",
+            "description": "`\"togglemicrophone\"` type",
             "support": {
               "chrome": {
-                "version_added": "92"
+                "version_added": "93"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -662,7 +708,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -674,7 +721,7 @@
       },
       "setCameraActive": {
         "__compat": {
-          "description": "<code>setCameraActive()</code>",
+          "description": "`setCameraActive()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setCameraActive",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setcameraactive",
           "support": {
@@ -700,7 +747,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -711,7 +759,7 @@
       },
       "setMicrophoneActive": {
         "__compat": {
-          "description": "<code>setMicrophoneActive()</code>",
+          "description": "`setMicrophoneActive()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setMicrophoneActive",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setmicrophoneactive",
           "support": {
@@ -737,7 +785,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -748,7 +797,7 @@
       },
       "setPositionState": {
         "__compat": {
-          "description": "<code>setPositionState()</code>",
+          "description": "`setPositionState()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSession/setPositionState",
           "spec_url": "https://w3c.github.io/mediasession/#dom-mediasession-setpositionstate",
           "support": {
@@ -780,7 +829,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

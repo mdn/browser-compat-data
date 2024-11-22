@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext",
         "spec_url": "https://webaudio.github.io/web-audio-api/#OfflineAudioContext",
+        "tags": [
+          "web-features:offline-audio-context"
+        ],
         "support": {
           "chrome": [
             {
@@ -41,7 +44,8 @@
           ],
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -51,9 +55,12 @@
       },
       "OfflineAudioContext": {
         "__compat": {
-          "description": "<code>OfflineAudioContext()</code> constructor",
+          "description": "`OfflineAudioContext()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/OfflineAudioContext",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-offlineaudiocontext",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": [
               {
@@ -91,7 +98,8 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -101,7 +109,7 @@
         },
         "options_parameter": {
           "__compat": {
-            "description": "<code>options</code> parameter (accepts all parameters as a single dictionary)",
+            "description": "`options` parameter (accepts all parameters as a single dictionary)",
             "support": {
               "chrome": {
                 "version_added": "62"
@@ -125,7 +133,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -137,11 +146,14 @@
       },
       "complete_event": {
         "__compat": {
-          "description": "<code>complete</code> event",
+          "description": "`complete` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/complete_event",
           "spec_url": [
             "https://webaudio.github.io/web-audio-api/#OfflineAudioCompletionEvent",
             "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-oncomplete"
+          ],
+          "tags": [
+            "web-features:offline-audio-context"
           ],
           "support": {
             "chrome": {
@@ -166,7 +178,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -179,6 +192,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/length",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-length",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "51"
@@ -202,7 +218,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -215,6 +232,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/resume",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-resume",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -224,7 +244,9 @@
               "version_added": "14"
             },
             "firefox": {
-              "version_added": "40"
+              "version_added": "40",
+              "partial_implementation": true,
+              "notes": "The method exists but always rejects with `NotSupportedError`. See [bug 1265406](https://bugzil.la/1265406)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -238,7 +260,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -251,6 +274,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/startRendering",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-startrendering",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -274,7 +300,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -284,7 +311,7 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -308,7 +335,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -322,6 +350,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/OfflineAudioContext/suspend",
           "spec_url": "https://webaudio.github.io/web-audio-api/#dom-offlineaudiocontext-suspend",
+          "tags": [
+            "web-features:offline-audio-context"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -346,7 +377,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

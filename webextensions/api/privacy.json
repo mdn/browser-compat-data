@@ -2,7 +2,43 @@
   "webextensions": {
     "api": {
       "privacy": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy",
+          "support": {
+            "chrome": {
+              "version_added": "18"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "54"
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror"
+          }
+        },
         "network": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/network",
+            "support": {
+              "chrome": {
+                "version_added": "18"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "54"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          },
           "globalPrivacyControl": {
             "__compat": {
               "support": {
@@ -22,15 +58,32 @@
               }
             }
           },
+          "httpsOnlyMode": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "84"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "networkPredictionEnabled": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤61"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "54"
                 },
@@ -66,14 +119,12 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤61"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "54",
-                  "notes": "Starting in Firefox 70, a value of <code>disable_non_proxied_udp</code> requires a proxy if one is configured, but allows connections to go through if no proxy is set up. Previously, in this mode WebRTC could only be used if a proxy was configured and TURN over TCP was available; this behavior is now exposed as <code>proxy_only</code>."
+                  "notes": "Starting in Firefox 70, a value of `disable_non_proxied_udp` requires a proxy if one is configured, but allows connections to go through if no proxy is set up. Previously, in this mode WebRTC could only be used if a proxy was configured and TURN over TCP was available; this behavior is now exposed as `proxy_only`."
                 },
                 "firefox_android": {
                   "version_added": "54"
@@ -85,16 +136,36 @@
                 "safari_ios": "mirror"
               }
             }
+          }
+        },
+        "services": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/services",
+            "support": {
+              "chrome": {
+                "version_added": "18"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "56"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
           },
-          "httpsOnlyMode": {
+          "alternateErrorPagesEnabled": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "84"
+                  "version_added": false
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -104,9 +175,7 @@
                 "safari_ios": "mirror"
               }
             }
-          }
-        },
-        "services": {
+          },
           "autofillAddressEnabled": {
             "__compat": {
               "support": {
@@ -118,9 +187,7 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "opera": {
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
@@ -139,9 +206,7 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "opera": {
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
@@ -153,32 +218,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "18"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "opera": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror"
-              }
-            }
-          },
-          "alternateErrorPagesEnabled": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": true
-                },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -202,9 +244,7 @@
                   "version_added": "56"
                 },
                 "firefox_android": "mirror",
-                "opera": {
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
@@ -216,11 +256,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤77"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -244,9 +282,7 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "opera": {
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": false
                 },
@@ -258,11 +294,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤77"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -279,11 +313,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤77"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -300,11 +332,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤77"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -319,6 +349,24 @@
           }
         },
         "websites": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/privacy/websites",
+            "support": {
+              "chrome": {
+                "version_added": "18"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "54"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          },
           "cookieConfig": {
             "__compat": {
               "support": {
@@ -329,13 +377,13 @@
                 "firefox": {
                   "version_added": "59",
                   "notes": [
-                    "The <code>behavior</code> property value \"reject_trackers_and_partition_foreign\" was introduced in version 78.",
-                    "The <code>behavior</code> property value \"reject_trackers\" was introduced in version 64."
+                    "The `behavior` property value \"reject_trackers_and_partition_foreign\" was introduced in version 78.",
+                    "The `behavior` property value \"reject_trackers\" was introduced in version 64."
                   ]
                 },
                 "firefox_android": {
                   "version_added": "59",
-                  "notes": "The <code>behavior</code> property value \"reject_trackers\" was introduced in version 64."
+                  "notes": "The `behavior` property value \"reject_trackers\" was introduced in version 64."
                 },
                 "opera": "mirror",
                 "safari": {
@@ -406,11 +454,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤59"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "54"
                 },
@@ -427,11 +473,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },
@@ -448,11 +492,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "56"
                 },
@@ -488,11 +530,9 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "≤58"
                 },
-                "edge": {
-                  "version_added": "79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": false
                 },

@@ -22,7 +22,7 @@
             },
             "ie": {
               "version_added": "4",
-              "notes": "In Internet Explorer 11, when <code>cursor</code> is applied to an element and this element is underneath an open <a href='https://developer.mozilla.org/docs/Web/HTML/Element/select'><code>&lt;select&gt;</code></a> menu and the user hovers over a <a href='https://developer.mozilla.org/docs/Web/HTML/Element/select'><code>&lt;select&gt;</code></a> menu item that's on top of said element, the cursor for said element will be displayed rather than the <a href='https://developer.mozilla.org/docs/Web/HTML/Element/select'><code>&lt;select&gt;</code></a>'s normal cursor. See <a href='https://developer.microsoft.com/microsoft-edge/platform/issues/817822/'>bug 817822</a>."
+              "notes": "In Internet Explorer 11, when `cursor` is applied to an element and this element is underneath an open [`&lt;select&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/select) menu and the user hovers over a [`&lt;select&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/select) menu item that's on top of said element, the cursor for said element will be displayed rather than the [`&lt;select&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/select)'s normal cursor. See [bug 817822](https://developer.microsoft.com/microsoft-edge/platform/issues/817822/)."
             },
             "oculus": "mirror",
             "opera": {
@@ -32,9 +32,16 @@
             "safari": {
               "version_added": "1.2"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "13.4",
+              "notes": [
+                "This property is only supported on iPads with an external pointing device.",
+                "Unsupported values use the `default` pointer as a fallback."
+              ]
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -71,10 +78,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -112,10 +121,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -152,9 +163,12 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "13.4"
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -192,10 +206,11 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": "13.4"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -233,10 +248,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -276,10 +293,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -317,10 +336,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -357,9 +378,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -396,9 +421,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -435,9 +464,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -475,10 +508,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -489,7 +524,7 @@
         },
         "grab": {
           "__compat": {
-            "description": "Grab cursors (<code>grab</code> and <code>grabbing</code>)",
+            "description": "Grab cursors (`grab` and `grabbing`)",
             "support": {
               "chrome": [
                 {
@@ -554,7 +589,8 @@
                 }
               ],
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": [
                 {
@@ -565,7 +601,8 @@
                   "version_added": "1.0"
                 }
               ],
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -598,9 +635,13 @@
               "safari": {
                 "version_added": "≤13.1"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -637,48 +678,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "inherit": {
-          "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-ui/#valdef-cursor-inherit",
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "1"
-              },
-              "firefox_android": {
-                "version_added": "95"
-              },
-              "ie": {
-                "version_added": "8"
-              },
-              "oculus": "mirror",
-              "opera": {
-                "version_added": "9"
-              },
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "1.2"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -715,9 +721,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -754,9 +764,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -793,9 +807,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -833,10 +851,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -874,10 +894,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -912,9 +934,13 @@
               "safari": {
                 "version_added": "5"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -952,10 +978,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -993,10 +1021,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1033,9 +1063,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1073,10 +1107,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1113,9 +1149,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1152,9 +1192,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1192,10 +1236,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1232,9 +1278,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1271,9 +1321,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1310,9 +1364,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1349,9 +1407,12 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "13.4"
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1362,7 +1423,7 @@
         },
         "url": {
           "__compat": {
-            "description": "<code>url()</code>",
+            "description": "`url()`",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1388,10 +1449,11 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": "13.4"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1402,7 +1464,7 @@
         },
         "url_positioning_syntax": {
           "__compat": {
-            "description": "<code>url()</code> positioning syntax",
+            "description": "`url()` positioning syntax",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1426,10 +1488,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1467,10 +1531,12 @@
                 "version_added": "3"
               },
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1507,9 +1573,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1546,9 +1616,13 @@
               "safari": {
                 "version_added": "1.2"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1620,10 +1694,12 @@
                 }
               ],
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1695,10 +1771,12 @@
                 }
               ],
               "safari_ios": {
-                "version_added": "1"
+                "version_added": false,
+                "notes": "If this value is used, the iPad will display the `default` pointer instead."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

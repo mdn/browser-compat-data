@@ -7,7 +7,7 @@
         "support": {
           "chrome": {
             "version_added": "35",
-            "notes": "Chrome does not expose the <code>FontFaceSet</code> interface directly, and is only available through <a href='https://developer.mozilla.org/docs/Web/API/Document/fonts'><code>Document.fonts</code></a> or <a href='https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts'><code>WorkerGlobalScope.fonts</code></a>."
+            "notes": "Chrome does not expose the `FontFaceSet` interface directly, and is only available through [`Document.fonts`](https://developer.mozilla.org/docs/Web/API/Document/fonts) or [`WorkerGlobalScope.fonts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts)."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -26,7 +26,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -36,11 +37,11 @@
       },
       "FontFaceSet": {
         "__compat": {
-          "description": "<code>FontFaceSet()</code> constructor",
-          "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-fontfaceset",
+          "description": "`FontFaceSet()` constructor",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40287940"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -55,16 +56,18 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "10"
+              "version_added": "10",
+              "notes": "Will be removed, see [bug 276794](https://webkit.org/b/276794)"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
@@ -92,7 +95,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -126,7 +130,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -147,7 +152,7 @@
               {
                 "version_added": "35",
                 "partial_implementation": true,
-                "notes": "Prior to version 120, this method returned <code>false</code> instead of <code>true</code> for nonexistent or locally installed fonts. See <a href='https://crbug.com/40893726'>bug 40893726</a>."
+                "notes": "Prior to version 120, this method returned `false` instead of `true` for nonexistent or locally installed fonts. See [bug 40893726](https://crbug.com/40893726)."
               }
             ],
             "chrome_android": "mirror",
@@ -167,7 +172,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -201,7 +207,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -235,7 +242,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -268,7 +276,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -301,7 +310,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -334,7 +344,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -367,7 +378,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -401,7 +413,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -412,7 +425,7 @@
       },
       "loading_event": {
         "__compat": {
-          "description": "<code>loading</code> event",
+          "description": "`loading` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loading_event",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloading",
           "support": {
@@ -436,7 +449,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -447,7 +461,7 @@
       },
       "loadingdone_event": {
         "__compat": {
-          "description": "<code>loadingdone</code> event",
+          "description": "`loadingdone` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingdone_event",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloadingdone",
           "support": {
@@ -471,7 +485,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -482,7 +497,7 @@
       },
       "loadingerror_event": {
         "__compat": {
-          "description": "<code>loadingerror</code> event",
+          "description": "`loadingerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FontFaceSet/loadingerror_event",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-onloadingerror",
           "support": {
@@ -506,7 +521,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -540,7 +556,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -573,7 +590,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -607,7 +625,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -640,7 +659,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -651,6 +671,7 @@
       },
       "@@iterator": {
         "__compat": {
+          "description": "[Symbol.iterator]",
           "spec_url": "https://drafts.csswg.org/css-font-loading/#fontfaceset",
           "support": {
             "chrome": {
@@ -673,7 +694,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

@@ -4,16 +4,29 @@
       "Temporal": {
         "__compat": {
           "description": "Temporal API",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Temporal",
           "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal-intro",
+          "tags": [
+            "web-features:temporal"
+          ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/42201538"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.40",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-temporal"
+                }
+              ]
+            },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1519167"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -33,13 +46,15 @@
                   "value_to_set": "1",
                   "type": "runtime_flag"
                 }
-              ]
+              ],
+              "impl_url": "https://webkit.org/b/223166"
             },
             "safari_ios": {
               "version_added": false
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

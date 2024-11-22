@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/background",
           "support": {
             "chrome": {
-              "version_added": true
+              "version_added": "≤54"
             },
             "edge": {
               "version_added": "14"
@@ -28,7 +28,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤72",
                 "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
@@ -54,7 +54,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤58",
                 "notes": "Available for use in Manifest V2 only."
               },
               "edge": {
@@ -70,7 +70,7 @@
                   "Available for use in Manifest V2 only.",
                   "From Firefox 106, persistent and non-persistent pages are supported for Manifest V2.",
                   "To Firefox 105, only persistent pages are supported.",
-                  "Before version 66, Firefox would log a warning even if the value was set to <code>true</code>."
+                  "Before version 66, Firefox would log a warning even if the value was set to `true`."
                 ]
               },
               "firefox_android": "mirror",
@@ -78,7 +78,7 @@
               "safari": [
                 {
                   "version_added": "14.1",
-                  "notes": "Non-persistent pages are supported, through <code>persistent: false</code>."
+                  "notes": "Available for use in Manifest V2 only."
                 },
                 {
                   "version_added": "14",
@@ -90,14 +90,33 @@
                 {
                   "version_added": "15.4",
                   "partial_implementation": true,
-                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code> or <code>service_worker</code>."
+                  "notes": "Only non-persistent pages are supported. Requires `persistent: false` or `service_worker`."
                 },
                 {
                   "version_added": "15",
                   "partial_implementation": true,
-                  "notes": "Only non-persistent pages are supported. Requires <code>persistent: false</code>."
+                  "notes": "Only non-persistent pages are supported. Requires `persistent: false`."
                 }
               ]
+            }
+          }
+        },
+        "preferred_environment": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "18"
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -105,7 +124,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true,
+                "version_added": "≤72",
                 "notes": "Available for use in Manifest V2 only."
               },
               "edge": {

@@ -22,7 +22,7 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4",
-              "notes": "From version 4 to 6, Internet Explorer enlarges an element with <code>visible</code> (default value) to fit the content inside it."
+              "notes": "From version 4 to 6, Internet Explorer enlarges an element with `visible` (default value) to fit the content inside it."
             },
             "oculus": "mirror",
             "opera": {
@@ -36,7 +36,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -46,7 +47,6 @@
         },
         "clip": {
           "__compat": {
-            "description": "<code>clip</code>",
             "tags": [
               "web-features:overflow-shorthand"
             ],
@@ -80,7 +80,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -91,7 +92,6 @@
         },
         "overlay": {
           "__compat": {
-            "description": "<code>overlay</code>",
             "support": {
               "chrome": {
                 "version_added": "15"
@@ -113,18 +113,19 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": false
+                "version_added": "≤13.1"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "4.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         }
