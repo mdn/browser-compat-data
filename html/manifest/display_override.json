@@ -7,7 +7,8 @@
           "spec_url": "https://wicg.github.io/manifest-incubations/#display_override-member",
           "support": {
             "chrome": {
-              "version_added": "89"
+              "version_added": "89",
+              "notes": "`display_override` and/or `display` are required for a web app to be installable."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -28,7 +29,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -38,7 +40,7 @@
         },
         "tabbed": {
           "__compat": {
-            "description": "<code>tabbed</code> display mode",
+            "description": "`tabbed` display mode",
             "spec_url": "https://wicg.github.io/manifest-incubations/#dfn-tabbed",
             "support": {
               "chrome": {
@@ -63,7 +65,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -74,8 +77,11 @@
         },
         "window-controls-overlay": {
           "__compat": {
-            "description": "<code>window-controls-overlay</code> display mode",
+            "description": "`window-controls-overlay` display mode",
             "spec_url": "https://wicg.github.io/window-controls-overlay/#addition-of-new-window-controls-overlay-display-mode",
+            "tags": [
+              "web-features:window-controls-overlay"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105"
@@ -99,7 +105,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": false
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
