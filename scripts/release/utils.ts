@@ -1,7 +1,12 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { execSync } from 'node:child_process';
+import {
+  execSync,
+  ExecSyncOptionsWithStringEncoding,
+  spawnSync,
+  SpawnSyncOptionsWithStringEncoding,
+} from 'node:child_process';
 
 /**
  * Execute a command
@@ -9,8 +14,37 @@ import { execSync } from 'node:child_process';
  * @param opts The options to pass to execSync
  * @returns The output from the command
  */
-export const exec = (command: string, opts?: any): string =>
-  execSync(command, { encoding: 'utf8', ...opts }).trim();
+export const exec = (
+  command: string,
+  opts?: ExecSyncOptionsWithStringEncoding,
+): string => execSync(command, { encoding: 'utf8', ...opts }).trim();
+
+/**
+ * Execute a command
+ * @param command The command to execute
+ * @param args The arguments to pass
+ * @param opts The options to pass to spawnSync
+ * @returns The output from the command
+ */
+export const spawn = (
+  command: string,
+  args: readonly string[],
+  opts?: SpawnSyncOptionsWithStringEncoding,
+): string => {
+  const result = spawnSync(command, args, { encoding: 'utf8', ...opts });
+
+  if (result.error) {
+    throw result.error;
+  }
+
+  if (result.status !== 0) {
+    throw new Error(
+      `The command '${command}' returned non-zero exit status ${result.status}: ${result.stderr}`,
+    );
+  }
+
+  return result.stdout.trim();
+};
 
 /**
  * Check for GitHub CLI and exit the program if it's not existent
@@ -68,6 +102,13 @@ export const queryPRs = (queryArgs: any): any => {
   const command = `gh pr list ${args}`;
 
   return JSON.parse(exec(command));
+};
+
+/**
+ * Ensures main is fetched.
+ */
+export const fetchMain = (): void => {
+  exec('git fetch origin main');
 };
 
 /**
