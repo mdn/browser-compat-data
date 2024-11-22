@@ -18,17 +18,17 @@
             },
             "firefox": {
               "version_added": "3",
-              "notes": "CSS 2.1 leaves the behavior of <code>min-height</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Firefox supports applying <code>min-height</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `min-height` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Firefox supports applying `min-height` to `table` elements."
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": "7",
-              "notes": "In Internet Explorer 10 and 11, a <code>min-height</code> declaration on a column-direction flex container doesn't apply to the container's flex items. See <a href='https://github.com/philipwalton/flexbugs#3-min-height-on-a-column-flex-container-wont-apply-to-its-flex-items'>Flexbug #3</a> for more info."
+              "notes": "In Internet Explorer 10 and 11, a `min-height` declaration on a column-direction flex container doesn't apply to the container's flex items. See [Flexbug #3](https://github.com/philipwalton/flexbugs#3-min-height-on-a-column-flex-container-wont-apply-to-its-flex-items) for more info."
             },
             "oculus": "mirror",
             "opera": {
               "version_added": "4",
-              "notes": "CSS 2.1 leaves the behavior of <code>min-height</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>min-height</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `min-height` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Opera supports applying `min-height` to `table` elements."
             },
             "opera_android": "mirror",
             "safari": {
@@ -36,7 +36,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -46,7 +47,7 @@
         },
         "anchor-size": {
           "__compat": {
-            "description": "<code>anchor-size()</code>",
+            "description": "`anchor-size()`",
             "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
             "tags": [
               "web-features:anchor-positioning"
@@ -73,7 +74,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -89,12 +91,19 @@
                 "version_added": "21"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "16",
-                "version_removed": "22",
-                "notes": "Firefox 18 and later used <code>auto</code> as the initial value for <code>min-height</code>."
+              "edge": {
+                "version_added": "12"
               },
+              "firefox": [
+                {
+                  "version_added": "34"
+                },
+                {
+                  "version_added": "16",
+                  "version_removed": "22",
+                  "notes": "Firefox 18 and later used `auto` as the initial value for `min-height`."
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -109,7 +118,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -139,7 +149,7 @@
                 {
                   "prefix": "-moz-",
                   "version_added": "3",
-                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines `available` and not `fit-available`. Also, the definition of `fit-content` is simpler than in CSS3 Sizing."
                 }
               ],
               "firefox_android": "mirror",
@@ -168,7 +178,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -179,7 +190,7 @@
         },
         "fit-content_function": {
           "__compat": {
-            "description": "<code>fit-content()</code>",
+            "description": "`fit-content()`",
             "support": {
               "chrome": {
                 "version_added": false
@@ -207,7 +218,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -255,7 +267,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -303,7 +316,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -337,7 +351,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
