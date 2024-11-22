@@ -9,6 +9,12 @@ import { BrowserName, Identifier } from '../types/types.js';
 import { InternalSupportStatement } from '../types/index.js';
 import bcd, { dataFolders } from '../index.js';
 
+interface StatusFilters {
+  deprecated: boolean | undefined;
+  standard_track: boolean | undefined;
+  experimental: boolean | undefined;
+}
+
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
  * @param obj The compat data to traverse through
@@ -17,6 +23,7 @@ import bcd, { dataFolders } from '../index.js';
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
  * @param identifier The identifier of the current object
+ * @param status Whether to filter by status flags
  * @yields {string} The feature identifier
  */
 export function* iterateFeatures(
@@ -26,15 +33,32 @@ export function* iterateFeatures(
   depth: number,
   tag: string,
   identifier: string,
+  status: StatusFilters | null = null,
 ): IterableIterator<string> {
+  const { deprecated, standard_track, experimental } = status ?? {};
   depth--;
   if (depth >= 0) {
     for (const i in obj) {
       if (!!obj[i] && typeof obj[i] == 'object' && i !== '__compat') {
         if (obj[i].__compat) {
+          if (typeof deprecated === 'boolean') {
+            if (deprecated !== obj[i].__compat.status?.deprecated) {
+              continue;
+            }
+          }
+          if (typeof standard_track === 'boolean') {
+            if (standard_track !== obj[i].__compat.status?.standard_track) {
+              continue;
+            }
+          }
+          if (typeof experimental === 'boolean') {
+            if (experimental !== obj[i].__compat.status?.experimental) {
+              continue;
+            }
+          }
           if (tag) {
             const tags = obj[i].__compat?.tags;
-            if (tags && tags.includes(tag)) {
+            if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
               yield `${identifier}${i}`;
             }
           } else {
@@ -78,6 +102,13 @@ export function* iterateFeatures(
                   if (values.length == 0 || values.includes('null')) {
                     yield `${identifier}${i}`;
                   }
+                } else if (values.includes('≤') || values.includes('ranged')) {
+                  if (
+                    String(browserData[range].version_added).startsWith('≤') ||
+                    String(browserData[range].version_removed).startsWith('≤')
+                  ) {
+                    yield `${identifier}${i}`;
+                  }
                 } else if (
                   values.length == 0 ||
                   values.includes(String(browserData[range].version_added)) ||
@@ -103,6 +134,7 @@ export function* iterateFeatures(
           depth,
           tag,
           identifier + i + '.',
+          status,
         );
       }
     }
@@ -117,6 +149,7 @@ export function* iterateFeatures(
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
  * @param identifier The identifier of the current object
+ * @param status Whether to filter by status flags
  * @returns An array of the features
  */
 const traverseFeatures = (
@@ -126,9 +159,10 @@ const traverseFeatures = (
   depth: number,
   tag: string,
   identifier: string,
+  status: StatusFilters,
 ): string[] => {
   const features = Array.from(
-    iterateFeatures(obj, browsers, values, depth, tag, identifier),
+    iterateFeatures(obj, browsers, values, depth, tag, identifier, status),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
@@ -141,6 +175,7 @@ const traverseFeatures = (
  * @param values The version values to traverse for
  * @param depth The depth to traverse
  * @param tag The tag to filter results with
+ * @param status Whether to filter by status flags
  * @returns The list of features
  */
 const main = (
@@ -151,6 +186,7 @@ const main = (
   values = ['null', 'true'],
   depth = 100,
   tag = '',
+  status = {} as StatusFilters,
 ): string[] => {
   const features: string[] = [];
 
@@ -163,6 +199,7 @@ const main = (
         depth,
         tag,
         folders[folder] + '.',
+        status,
       ),
     );
   }
@@ -194,7 +231,7 @@ if (esMain(import.meta)) {
         .option('filter', {
           alias: 'f',
           describe:
-            'Filter by version value. May repeat. Set to "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
+            'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
           type: 'array',
           string: true,
           nargs: 1,
@@ -202,7 +239,8 @@ if (esMain(import.meta)) {
         })
         .option('tag', {
           alias: 't',
-          describe: 'Filter by tag value.',
+          describe:
+            'Filter by tag value. Set to `false` to search for features with no tags.',
           type: 'string',
           nargs: 1,
           default: '',
@@ -228,6 +266,27 @@ if (esMain(import.meta)) {
           type: 'boolean',
           default: process.stdout.isTTY,
         })
+        .option('status.deprecated', {
+          alias: 'x',
+          describe:
+            'Filter features by deprecation status. Set to `true` to only show deprecated features or `false` to only show non-deprecated features.',
+          type: 'boolean',
+          default: undefined,
+        })
+        .option('status.standard_track', {
+          alias: 's',
+          describe:
+            'Filter features by standard_track status. Set to `true` to only show standards track features or `false` to only show non-standards track features.',
+          type: 'boolean',
+          default: undefined,
+        })
+        .option('status.experimental', {
+          alias: 'e',
+          describe:
+            'Filter features by experimental status. Set to `true` to only show experimental features or `false` to only show non-experimental features.',
+          type: 'boolean',
+          default: undefined,
+        })
         .example(
           'npm run traverse -- --browser=safari -n',
           'Find all features containing non-real Safari entries',
@@ -247,6 +306,26 @@ if (esMain(import.meta)) {
         .example(
           'npm run traverse -- -t web-features:idle-detection',
           'Find all features tagged with web-features:idle-detection.',
+        )
+        .example(
+          'npm run traverse -- -t false',
+          'Find all features with no tags.',
+        )
+        .example(
+          'npm run traverse -- --status.deprecated',
+          'Find all features that are deprecated.',
+        )
+        .example(
+          'npm run traverse -- --no-status.deprecated',
+          'Omit all features that are deprecated.',
+        )
+        .example(
+          'npm run traverse -- --status.standard_track',
+          'Find all features that are on the standard track.',
+        )
+        .example(
+          'npm run traverse -- --status.experimental',
+          'Find all features that are experimental.',
         );
     },
   );
@@ -259,6 +338,7 @@ if (esMain(import.meta)) {
     filter,
     argv.depth,
     argv.tag,
+    argv.status,
   );
   console.log(features.join('\n'));
   if (argv.showCount) {
