@@ -190,7 +190,9 @@ export const updateChromiumReleases = async (options) => {
   // Add a planned version entry
   //
   if (data[options.nightlyBranch]) {
-    const plannedVersion = (data[options.nightlyBranch].version + 1).toString();
+    const plannedVersion = (
+      Number(data[options.nightlyBranch].version) + 1
+    ).toString();
     if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
       result += updateBrowserEntry(
         chromeBCD,
