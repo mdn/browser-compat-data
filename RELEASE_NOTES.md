@@ -28,11 +28,12 @@ November 22, 2024
 - `api.MessagePort.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `http.headers.Server-Timing.trailer` ([#25141](https://github.com/mdn/browser-compat-data/pull/25141))
 
 ### Statistics
 
-- 14 contributors have changed 77 files with 1,331 additions and 882 deletions in 34 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,732 total features
+- 14 contributors have changed 79 files with 1,374 additions and 889 deletions in 35 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,733 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
