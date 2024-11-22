@@ -59,10 +59,10 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Chris David Mills (@chrisdavidmills)
+- Claas Augner (@caugner), Mozilla
 - Daniel Beck (@ddbeck)
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
-- Jean-Yves Perrier (@teoli2003), Open Web Docs
-- Joe Medley (@jpmedley), Google
+- Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
 - Richard Bloor (@rebloor)
@@ -173,6 +173,8 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 
 - Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
+- Jean-Yves Perrier (@teoli2003) (Peer)
+- Joe Medley (@jpmedley) (Peer)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
 - Rachel Andrew (@rachelandrew) (Peer)
