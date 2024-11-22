@@ -15,6 +15,8 @@ November 22, 2024
 
 ### Additions
 
+- `api.DocumentPictureInPicture.requestWindow.option_disallowReturnToOpener` ([#25173](https://github.com/mdn/browser-compat-data/pull/25173))
+- `api.DocumentPictureInPicture.requestWindow.option_preferInitialWindowPlacement` ([#25173](https://github.com/mdn/browser-compat-data/pull/25173))
 - `api.GPUCommandEncoder.beginRenderPass.separate_depth_stencil_read-only` ([#25157](https://github.com/mdn/browser-compat-data/pull/25157))
 - `api.GPUDevice.createBindGroupLayout.storageTexture_access_read-write_read-only` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.GPUDevice.createBindGroupLayout.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
@@ -45,8 +47,8 @@ November 22, 2024
 
 ### Statistics
 
-- 16 contributors have changed 92 files with 1,904 additions and 846 deletions in 46 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,746 total features
+- 16 contributors have changed 93 files with 1,984 additions and 846 deletions in 47 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,748 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
