@@ -8,17 +8,14 @@ on:
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 concurrency:
   group: ${{ github.workflow }}
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   manage-release-pr:
-    if: github.repository == 'mdn/browser-compat-data'
+    if: github.repository == 'mdn/browser-compat-data' && github.actor != 'dependabot[bot]' && !startsWith(github.event.head_commit.message, 'Release v')
     name: Manage release PR
     runs-on: ubuntu-latest
 
@@ -28,6 +25,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -38,7 +36,6 @@ jobs:
 
       - name: "Setup git"
         run: |
-          git remote set-url origin https://mdn-bot:$GH_TOKEN@github.com/${{ github.repository }}.git
           git config user.email 108879845+mdn-bot@users.noreply.github.com
           git config user.name mdn-bot
 

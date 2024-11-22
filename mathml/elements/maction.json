@@ -8,13 +8,13 @@
           "support": {
             "chrome": {
               "version_added": "109",
-              "notes": "This follows MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
+              "notes": "This follows MathML Core: Only the first child is rendered while the others have their `display` set to `none`. `actiontype` and `selection` attributes are ignored."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "1",
-              "notes": "Firefox 106 and later versions follow MathML Core: Only the first child is rendered while the others have their <code>display</code> set to <code>none</code>. <code>actiontype</code> and <code>selection</code> attributes are ignored."
+              "notes": "Firefox 106 and later versions follow MathML Core: Only the first child is rendered while the others have their `display` set to `none`. `actiontype` and `selection` attributes are ignored."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -72,6 +72,7 @@
           },
           "toggle": {
             "__compat": {
+              "description": "`actiontype=\"toggle\"`",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -117,8 +118,8 @@
                 "version_added": "1",
                 "version_removed": "106",
                 "notes": [
-                  "In Firefox 15, the <code>selection</code> attribute is now ignored for actiontype other than <code>toggle</code>.",
-                  "In Firefox 16, the <code>selection</code> attribute is taken into account again when an unknown <code>actiontype</code> is specified."
+                  "In Firefox 15, the `selection` attribute is now ignored for actiontype other than `toggle`.",
+                  "In Firefox 16, the `selection` attribute is taken into account again when an unknown `actiontype` is specified."
                 ]
               },
               "firefox_android": "mirror",
