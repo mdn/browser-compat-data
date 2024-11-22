@@ -5,6 +5,10 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
           "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-objects",
+          "tags": [
+            "web-features:snapshot:ecmascript-2015",
+            "web-features:weakmap"
+          ],
           "support": {
             "chrome": {
               "version_added": "36"
@@ -34,7 +38,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -44,9 +49,13 @@
         },
         "WeakMap": {
           "__compat": {
-            "description": "<code>WeakMap()</code> constructor",
+            "description": "`WeakMap()` constructor",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/WeakMap",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -76,7 +85,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -86,7 +96,11 @@
           },
           "iterable_allowed": {
             "__compat": {
-              "description": "<code>new WeakMap(iterable)</code>",
+              "description": "`new WeakMap(iterable)`",
+              "tags": [
+                "web-features:snapshot:ecmascript-2015",
+                "web-features:weakmap"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "38"
@@ -116,48 +130,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "new_required": {
-            "__compat": {
-              "description": "<code>WeakMap()</code> without <code>new</code> throws",
-              "support": {
-                "chrome": {
-                  "version_added": "36"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.0"
-                },
-                "edge": {
-                  "version_added": "12"
-                },
-                "firefox": {
-                  "version_added": "42"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": "11"
-                },
-                "nodejs": {
-                  "version_added": "0.12.0"
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "9"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -168,7 +142,11 @@
           },
           "null_allowed": {
             "__compat": {
-              "description": "<code>new WeakMap(null)</code>",
+              "description": "`new WeakMap(null)`",
+              "tags": [
+                "web-features:snapshot:ecmascript-2015",
+                "web-features:weakmap"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "36"
@@ -198,7 +176,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -212,6 +191,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/delete",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.delete",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -225,7 +208,7 @@
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a `TypeError` when the key parameter was not an object. This has been fixed in version 38 and later to return `false` as per the ES2015 standard."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -242,7 +225,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -255,6 +239,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/get",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.get",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -268,7 +256,7 @@
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. However, the ES2015 specification specifies to return <code>undefined</code> instead. Furthermore, <code>WeakMap.prototype.get</code> accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
+                "notes": "Before Firefox 38, this method threw a `TypeError` when the key parameter was not an object. However, the ES2015 specification specifies to return `undefined` instead. Furthermore, `WeakMap.prototype.get` accepted an optional second argument as a fallback value, which is not part of the standard. Both non-standard behaviors are removed in version 38 and higher."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -285,7 +273,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -298,6 +287,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/has",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.has",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -311,7 +304,7 @@
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a `TypeError` when the key parameter was not an object. This has been fixed in version 38 and later to return `false` as per the ES2015 standard."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -328,7 +321,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -341,6 +335,10 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/set",
             "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.set",
+            "tags": [
+              "web-features:snapshot:ecmascript-2015",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
                 "version_added": "36"
@@ -354,7 +352,7 @@
               },
               "firefox": {
                 "version_added": "6",
-                "notes": "Before Firefox 38, this method threw a <code>TypeError</code> when the key parameter was not an object. This has been fixed in version 38 and later to return <code>false</code> as per the ES2015 standard."
+                "notes": "Before Firefox 38, this method threw a `TypeError` when the key parameter was not an object. This has been fixed in version 38 and later to return `false` as per the ES2015 standard."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -373,7 +371,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -385,24 +384,29 @@
         "symbol_as_keys": {
           "__compat": {
             "description": "Non-registered symbols as keys",
+            "tags": [
+              "web-features:snapshot:ecmascript-2023",
+              "web-features:weakmap"
+            ],
             "support": {
               "chrome": {
-                "version_added": "108"
+                "version_added": "109"
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "1.28"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1710433"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "20.1.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -412,7 +416,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

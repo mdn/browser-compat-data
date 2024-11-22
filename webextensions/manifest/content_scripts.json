@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts",
           "support": {
             "chrome": {
-              "version_added": true,
+              "version_added": "≤54",
               "notes": "Content scripts are not applied to tabs already open when the extension is loaded."
             },
             "edge": {
@@ -31,7 +31,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -54,7 +54,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -73,11 +73,30 @@
             }
           }
         },
+        "css_origin": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "18"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "exclude_globs": {
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -88,7 +107,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/246492"
               },
               "safari_ios": "mirror"
             }
@@ -98,7 +118,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -121,7 +141,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -132,7 +152,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/246492"
               },
               "safari_ios": "mirror"
             }
@@ -142,7 +163,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -165,7 +186,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": {
                 "version_added": "14"
@@ -177,7 +198,28 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/275622"
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "match_origin_as_fallback": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "99"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/264829"
               },
               "safari_ios": "mirror"
             }
@@ -187,7 +229,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -210,7 +252,7 @@
           "__compat": {
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤72"
               },
               "edge": {
                 "version_added": "14"
@@ -222,12 +264,31 @@
               "opera": "mirror",
               "safari": {
                 "version_added": "14",
-                "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access popover in the toolbar. Additional loads after permission is granted will respect <code>run_at</code>."
+                "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access popover in the toolbar. Additional loads after permission is granted will respect `run_at`."
               },
               "safari_ios": {
                 "version_added": "15",
-                "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access alert. Additional loads after permission is granted will respect <code>run_at</code>."
+                "notes": "Content scripts are not applied to tabs until the user grants permission via the extension's access alert. Additional loads after permission is granted will respect `run_at`."
               }
+            }
+          }
+        },
+        "world": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "111"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "128"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "18"
+              },
+              "safari_ios": "mirror"
             }
           }
         }

@@ -34,16 +34,17 @@
           },
           "safari": {
             "version_added": "1",
-            "notes": "<code>window.EventTarget</code> did not exist on versions of Safari before 10.1."
+            "notes": "`window.EventTarget` did not exist on versions of Safari before 10.1."
           },
           "safari_ios": {
             "version_added": "1",
-            "notes": "<code>window.EventTarget</code> did not exist on versions of Safari iOS before 10.3."
+            "notes": "`window.EventTarget` did not exist on versions of Safari iOS before 10.3."
           },
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": "≤37"
-          }
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -53,7 +54,7 @@
       },
       "EventTarget": {
         "__compat": {
-          "description": "<code>EventTarget()</code> constructor",
+          "description": "`EventTarget()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventTarget/EventTarget",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-eventtarget-eventtarget①",
           "support": {
@@ -80,7 +81,7 @@
                 "version_added": "14.5.0",
                 "version_removed": "15.0.0",
                 "partial_implementation": true,
-                "notes": "Only available from the <code>events</code> module"
+                "notes": "Only available from the `events` module"
               }
             ],
             "oculus": "mirror",
@@ -91,7 +92,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -107,7 +109,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
+              "notes": "Before Chrome 49, the `type` and `listener` parameters were optional."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -128,7 +130,7 @@
                 "alternative_name": "attachEvent",
                 "version_added": "6",
                 "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.attachEvent()</code> method."
+                "notes": "Older versions of IE supported an equivalent, proprietary `EventTarget.attachEvent()` method."
               }
             ],
             "nodejs": {
@@ -148,8 +150,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "1",
-              "notes": "Before Chrome 49, the <code>type</code> and <code>listener</code> parameters were optional."
-            }
+              "notes": "Before Chrome 49, the `type` and `listener` parameters were optional."
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -159,7 +162,7 @@
         },
         "options_parameter": {
           "__compat": {
-            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "description": "Form with `options` object supported (third parameter can be either options or a `Boolean`, for backwards compatibility)",
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -189,7 +192,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -199,7 +203,7 @@
           },
           "options_capture_parameter": {
             "__compat": {
-              "description": "<code>options.capture</code> parameter",
+              "description": "`options.capture` parameter",
               "spec_url": "https://dom.spec.whatwg.org/#dom-eventlisteneroptions-capture",
               "support": {
                 "chrome": {
@@ -230,7 +234,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -241,7 +246,7 @@
           },
           "options_once_parameter": {
             "__compat": {
-              "description": "<code>options.once</code> parameter",
+              "description": "`options.once` parameter",
               "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-once",
               "support": {
                 "chrome": {
@@ -272,7 +277,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -283,7 +289,7 @@
           },
           "options_passive_parameter": {
             "__compat": {
-              "description": "<code>options.passive</code> parameter",
+              "description": "`options.passive` parameter",
               "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-passive",
               "support": {
                 "chrome": {
@@ -314,7 +320,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -325,24 +332,18 @@
           },
           "options_passive_parameter_default_true_touch": {
             "__compat": {
-              "description": "<code>options.passive</code> parameter defaults to <code>true</code> for <code>touchstart</code> and <code>touchmove</code> events",
+              "description": "`options.passive` parameter defaults to `true` for `touchstart` and `touchmove` events",
               "support": {
                 "chrome": {
                   "version_added": "55"
                 },
                 "chrome_android": "mirror",
-                "deno": {
-                  "version_added": null
-                },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "61"
                 },
                 "firefox_android": "mirror",
                 "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
                   "version_added": false
                 },
                 "oculus": "mirror",
@@ -353,7 +354,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -364,14 +366,14 @@
           },
           "options_passive_parameter_default_true_wheel": {
             "__compat": {
-              "description": "<code>options.passive</code> parameter defaults to <code>true</code> for <code>wheel</code> and <code>mousewheel</code> events",
+              "description": "`options.passive` parameter defaults to `true` for `wheel` and `mousewheel` events",
               "support": {
                 "chrome": {
                   "version_added": "73"
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": null
+                  "version_added": false
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -392,7 +394,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -403,7 +406,7 @@
           },
           "options_signal_parameter": {
             "__compat": {
-              "description": "<code>options.signal</code> parameter",
+              "description": "`options.signal` parameter",
               "spec_url": "https://dom.spec.whatwg.org/#dom-addeventlisteneroptions-signal",
               "support": {
                 "chrome": {
@@ -426,15 +429,14 @@
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
-                "opera_android": {
-                  "version_added": false
-                },
+                "opera_android": "mirror",
                 "safari": {
                   "version_added": "15"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -446,7 +448,7 @@
         },
         "useCapture_parameter_optional": {
           "__compat": {
-            "description": "<code>useCapture</code> parameter is optional",
+            "description": "`useCapture` parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -480,7 +482,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -517,7 +520,7 @@
                 "alternative_name": "fireEvent",
                 "version_added": "6",
                 "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.fireEvent()</code> method."
+                "notes": "Older versions of IE supported an equivalent, proprietary `EventTarget.fireEvent()` method."
               }
             ],
             "nodejs": {
@@ -539,7 +542,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -575,7 +579,7 @@
                 "alternative_name": "detachEvent",
                 "version_added": "6",
                 "version_removed": "11",
-                "notes": "Older versions of IE supported an equivalent, proprietary <code>EventTarget.detachEvent()</code> method."
+                "notes": "Older versions of IE supported an equivalent, proprietary `EventTarget.detachEvent()` method."
               }
             ],
             "nodejs": {
@@ -593,7 +597,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -603,7 +608,7 @@
         },
         "options_parameter": {
           "__compat": {
-            "description": "Form with <code>options</code> object supported (third parameter can be either options or a <code>Boolean</code>, for backwards compatibility)",
+            "description": "Form with `options` object supported (third parameter can be either options or a `Boolean`, for backwards compatibility)",
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -633,7 +638,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -644,7 +650,7 @@
         },
         "useCapture_parameter_optional": {
           "__compat": {
-            "description": "<code>useCapture</code> parameter is optional",
+            "description": "`useCapture` parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -678,7 +684,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

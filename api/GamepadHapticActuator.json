@@ -3,7 +3,7 @@
     "GamepadHapticActuator": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator",
-        "spec_url": "https://w3c.github.io/gamepad/extensions.html#gamepadhapticactuator-interface",
+        "spec_url": "https://w3c.github.io/gamepad/#gamepadhapticactuator-interface",
         "support": {
           "chrome": {
             "version_added": "68"
@@ -25,9 +25,12 @@
           "safari": {
             "version_added": "16.4"
           },
-          "safari_ios": "mirror",
+          "safari_ios": {
+            "version_added": false
+          },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -66,7 +69,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -77,7 +81,6 @@
       },
       "canPlayEffectType": {
         "__compat": {
-          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuator-canplayeffecttype",
           "support": {
             "chrome": {
               "version_added": false
@@ -97,19 +100,94 @@
             "safari": {
               "version_added": "16.4"
             },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
+          }
+        }
+      },
+      "effects": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/effects",
+          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-effects",
+          "support": {
+            "chrome": {
+              "version_added": "126"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "type_trigger-rumble": {
+          "__compat": {
+            "description": "`trigger-rumble` effect type",
+            "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticeffecttype-trigger-rumble",
+            "support": {
+              "chrome": {
+                "version_added": "126"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "playEffect": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/playEffect",
+          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-playeffect",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -131,14 +209,122 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": false
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
+          }
+        },
+        "params_leftTrigger_parameter": {
+          "__compat": {
+            "description": "`params.leftTrigger` parameter",
+            "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadeffectparameters-lefttrigger",
+            "support": {
+              "chrome": {
+                "version_added": "126"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "params_rightTrigger_parameter": {
+          "__compat": {
+            "description": "`params.rightTrigger` parameter",
+            "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadeffectparameters-righttrigger",
+            "support": {
+              "chrome": {
+                "version_added": "126"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "type_trigger-rumble": {
+          "__compat": {
+            "description": "`trigger-rumble` effect type",
+            "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticeffecttype-trigger-rumble",
+            "support": {
+              "chrome": {
+                "version_added": "126"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -170,7 +356,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -181,6 +368,8 @@
       },
       "reset": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/reset",
+          "spec_url": "https://w3c.github.io/gamepad/#dom-gamepadhapticactuator-reset",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -202,13 +391,16 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": false
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -216,7 +408,6 @@
       "type": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GamepadHapticActuator/type",
-          "spec_url": "https://w3c.github.io/gamepad/extensions.html#dom-gamepadhapticactuatortype",
           "support": {
             "chrome": {
               "version_added": "68"
@@ -238,14 +429,17 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": false
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "standard_track": false,
+            "deprecated": true
           }
         }
       }

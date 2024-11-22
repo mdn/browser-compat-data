@@ -13,8 +13,23 @@
             "notes": "Currently supported on ChromeOS, macOS, and Windows only."
           },
           "chrome_android": {
-            "version_added": false
+            "version_added": "121"
           },
+          "deno": [
+            {
+              "version_added": "1.39",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-webgpu"
+                }
+              ]
+            },
+            {
+              "version_added": "1.8",
+              "version_removed": "1.32"
+            }
+          ],
           "edge": "mirror",
           "firefox": {
             "version_added": "preview",
@@ -31,11 +46,12 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false
+            "version_added": "preview"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -56,8 +72,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -74,11 +105,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -100,8 +132,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -118,16 +165,102 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "storageTexture_access_read-write_read-only": {
+          "__compat": {
+            "description": "<code>read-write</code> and <code>read-only</code> <code>storageTexture.access</code>",
+            "spec_url": "https://gpuweb.github.io/gpuweb/wgsl/#memory-access-mode",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "124"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "texture_rgb10a2uint": {
+          "__compat": {
+            "description": "<code>rgb10a2uint</code> texture format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -144,8 +277,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -162,11 +310,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -188,8 +337,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -206,11 +370,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -232,8 +397,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -250,16 +430,58 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "optional_entryPoint": {
+          "__compat": {
+            "description": "`entryPoint` properties are optional for determined default compute shader entry points.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -276,8 +498,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -294,16 +531,58 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "optional_entryPoint": {
+          "__compat": {
+            "description": "`entryPoint` properties are optional for determined default compute shader entry points.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -320,8 +599,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -338,11 +632,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -364,8 +659,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -378,16 +688,61 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "timestamp": {
+          "__compat": {
+            "description": "Create `timestamp` queryset types",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuquerytype-timestamp",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -404,8 +759,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -422,11 +792,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -448,8 +819,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -466,16 +852,274 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "dual-source-blending": {
+          "__compat": {
+            "description": "Dual-source blending: `src1`, `one-minus-src1`, `src1-alpha`, and `one-minus-src1-alpha` blend factors.",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpufeaturename-dual-source-blending",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "130",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "130"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "optional_depthcompare_depthwriteenabled": {
+          "__compat": {
+            "description": "`depthCompare` and `depthWriteEnabled` properties are optional when not needed (for example, formats without depth).",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "120",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "optional_entryPoint": {
+          "__compat": {
+            "description": "`entryPoint` properties are optional for determined default fragment and vertex shader entry points.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "texture_rgb10a2uint": {
+          "__compat": {
+            "description": "<code>rgb10a2uint</code> texture format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "validates_depth_bias_for_line_and_point_topologies": {
+          "__compat": {
+            "description": "Validates that `depthBias`, `depthBiasSlopeScale`, and `depthBiasClamp` must be `0` for line and point topologies.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "131",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "vertex_unorm10-10-10-2": {
+          "__compat": {
+            "description": "<code>unorm10-10-10-2</code> vertex format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuvertexformat-unorm10-10-10-2",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -492,8 +1136,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -510,16 +1169,274 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "dual-source-blending": {
+          "__compat": {
+            "description": "Dual-source blending: `src1`, `one-minus-src1`, `src1-alpha`, and `one-minus-src1-alpha` blend factors.",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpufeaturename-dual-source-blending",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "130",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "130"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "optional_depthcompare_depthwriteenabled": {
+          "__compat": {
+            "description": "`depthCompare` and `depthWriteEnabled` properties are optional when not needed (for example, formats without depth).",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "120",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "optional_entryPoint": {
+          "__compat": {
+            "description": "`entryPoint` properties are optional for determined default fragment and vertex shader entry points.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "texture_rgb10a2uint": {
+          "__compat": {
+            "description": "<code>rgb10a2uint</code> texture format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "validates_depth_bias_for_line_and_point_topologies": {
+          "__compat": {
+            "description": "Validates that `depthBias`, `depthBiasSlopeScale`, and `depthBiasClamp` must be `0` for line and point topologies.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "131",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "vertex_unorm10-10-10-2": {
+          "__compat": {
+            "description": "<code>unorm10-10-10-2</code> vertex format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpuvertexformat-unorm10-10-10-2",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -536,8 +1453,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -554,11 +1486,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -580,8 +1513,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -598,11 +1546,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -624,8 +1573,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -642,16 +1606,61 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "texture_rgb10a2uint": {
+          "__compat": {
+            "description": "<code>rgb10a2uint</code> texture format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -668,8 +1677,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -686,11 +1710,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -712,8 +1737,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -730,11 +1770,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -756,6 +1797,9 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
+              "version_added": "121"
+            },
+            "deno": {
               "version_added": false
             },
             "edge": "mirror",
@@ -774,11 +1818,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -786,14 +1831,21 @@
             "deprecated": false
           }
         },
-        "videoframe_source": {
+        "color_space_display-p3": {
           "__compat": {
-            "description": "<code>VideoFrame</code> object as source",
+            "description": "<code>display-p3</code> color space",
+            "tags": [
+              "web-features:webgpu"
+            ],
             "support": {
               "chrome": {
-                "version_added": "116"
+                "version_added": "121",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
                 "version_added": false
               },
               "edge": "mirror",
@@ -812,7 +1864,51 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "videoframe_source": {
+          "__compat": {
+            "description": "`VideoFrame` object as source",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "116",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -835,8 +1931,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -853,11 +1964,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -879,8 +1991,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -897,11 +2024,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -923,8 +2051,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -941,11 +2084,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -967,8 +2111,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -985,11 +2144,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1011,8 +2171,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -1029,11 +2204,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1055,8 +2231,23 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
@@ -1073,11 +2264,12 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1088,7 +2280,7 @@
       },
       "uncapturederror_event": {
         "__compat": {
-          "description": "<code>uncapturederror</code> event",
+          "description": "`uncapturederror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUDevice/uncapturederror_event",
           "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpudevice-onuncapturederror",
           "tags": [
@@ -1100,6 +2292,9 @@
               "notes": "Currently supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
+              "version_added": "121"
+            },
+            "deno": {
               "version_added": false
             },
             "edge": "mirror",
@@ -1122,7 +2317,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

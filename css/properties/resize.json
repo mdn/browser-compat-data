@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/resize",
           "spec_url": "https://drafts.csswg.org/css-ui/#resize",
+          "tags": [
+            "web-features:resize"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -27,12 +30,14 @@
               "version_added": "3"
             },
             "safari_ios": {
-              "version_added": "1"
+              "version_added": false,
+              "notes": "The value is recognized, but has no effect."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -40,45 +45,11 @@
             "deprecated": false
           }
         },
-        "block_level_support": {
+        "block": {
           "__compat": {
-            "description": "Support on block level, replaced, table cell, or inline block elements",
-            "support": {
-              "chrome": {
-                "version_added": "4"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "5",
-                "notes": "<code>resize</code> doesn't have any effect on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/iframe'><code>&lt;iframe&gt;</code></a>. See <a href='https://bugzil.la/680823'>bug 680823</a>)"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "flow_relative_support": {
-          "__compat": {
-            "description": "Support for flow-relative values <code>block</code> and <code>inline</code>",
+            "tags": [
+              "web-features:resize"
+            ],
             "support": {
               "chrome": {
                 "version_added": "118"
@@ -98,9 +69,92 @@
               "safari": {
                 "version_added": "16"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false
+              },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "block_level_support": {
+          "__compat": {
+            "description": "Support on block level, replaced, table cell, or inline block elements",
+            "tags": [
+              "web-features:resize"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "4"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "5",
+                "notes": "`resize` doesn't have any effect on [`&lt;iframe&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/iframe). See [bug 680823](https://bugzil.la/680823))"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "37"
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "inline": {
+          "__compat": {
+            "tags": [
+              "web-features:resize"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "118"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

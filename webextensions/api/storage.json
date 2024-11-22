@@ -2,12 +2,39 @@
   "webextensions": {
     "api": {
       "storage": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage",
+          "support": {
+            "chrome": {
+              "version_added": "19"
+            },
+            "edge": {
+              "version_added": "14"
+            },
+            "firefox": {
+              "version_added": "45",
+              "notes": "The storage API is supported in content scripts from version 48."
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": {
+              "version_added": "≤33"
+            },
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "StorageArea": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "19"
               },
               "edge": {
                 "version_added": "14"
@@ -18,7 +45,9 @@
               "firefox_android": {
                 "version_added": "48"
               },
-              "opera": "mirror",
+              "opera": {
+                "version_added": "≤33"
+              },
               "safari": {
                 "version_added": "14"
               },
@@ -32,7 +61,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "19"
                 },
                 "edge": {
                   "version_added": "14"
@@ -41,7 +70,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the `managed` storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -60,7 +90,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "19"
                 },
                 "edge": {
                   "version_added": "14"
@@ -69,7 +99,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the `managed` storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -87,7 +118,7 @@
                 "description": "Supports empty key",
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "19"
                   },
                   "edge": {
                     "version_added": "14"
@@ -114,14 +145,17 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "19"
                 },
                 "edge": {
                   "version_added": "14"
                 },
                 "firefox": {
                   "version_added": "78",
-                  "notes": "Only supported by the <code>sync</code> storage area."
+                  "notes": [
+                    "Supported by the `sync` and, from Firefox 131, `session` storage areas.",
+                    "Not implemented in `local`, see [bug 138583](https://bugzil.la/138583)"
+                  ]
                 },
                 "firefox_android": {
                   "version_added": false
@@ -145,16 +179,12 @@
                 "chrome": {
                   "version_added": "73"
                 },
-                "edge": {
-                  "version_added": true
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "101"
                 },
                 "firefox_android": "mirror",
-                "opera": {
-                  "version_added": true
-                },
+                "opera": "mirror",
                 "safari": {
                   "version_added": "14"
                 },
@@ -169,7 +199,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "19"
                 },
                 "edge": {
                   "version_added": "14"
@@ -178,7 +208,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the `managed` storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -196,7 +227,7 @@
                 "description": "Supports empty key",
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "19"
                   },
                   "edge": {
                     "version_added": "14"
@@ -223,7 +254,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "19"
                 },
                 "edge": {
                   "version_added": "14",
@@ -233,7 +264,8 @@
                   "version_added": "45"
                 },
                 "firefox_android": {
-                  "version_added": "48"
+                  "version_added": "48",
+                  "notes": "Doesn't support the `managed` storage area."
                 },
                 "opera": {
                   "version_added": "33"
@@ -274,7 +306,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageChange",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "19"
               },
               "edge": {
                 "version_added": "14"
@@ -300,7 +332,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/local",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "19"
               },
               "edge": {
                 "version_added": "14"
@@ -320,6 +352,208 @@
                 "version_added": "15"
               }
             }
+          },
+          "clear": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "get": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": {
+                    "version_added": "14"
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "48"
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "getBytesInUse": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1385832"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "onChanged": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged",
+              "support": {
+                "chrome": {
+                  "version_added": "73"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "101"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "remove": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": {
+                    "version_added": "14"
+                  },
+                  "firefox": {
+                    "version_added": "45"
+                  },
+                  "firefox_android": {
+                    "version_added": "48"
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "set": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "14",
+                  "notes": "storage is limited to 1MB per value."
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "48"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
           }
         },
         "managed": {
@@ -327,17 +561,15 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/managed",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "33"
               },
-              "edge": {
-                "version_added": "79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "57",
                 "notes": [
                   "Platform-specific storage backends, such as Windows registry keys, are not supported.",
                   "Enforcement of extension-provided storage schemas is not supported.",
-                  "The <code>onChanged</code> event is not supported."
+                  "The `onChanged` event is not supported."
                 ]
               },
               "firefox_android": {
@@ -351,6 +583,149 @@
               },
               "safari_ios": "mirror"
             }
+          },
+          "clear": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear",
+              "support": {
+                "chrome": {
+                  "version_added": "33"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "get": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get",
+              "support": {
+                "chrome": {
+                  "version_added": "33"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "getBytesInUse": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse",
+              "support": {
+                "chrome": {
+                  "version_added": "33",
+                  "notes": "Always resolves with a value of 0."
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "onChanged": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged",
+              "support": {
+                "chrome": {
+                  "version_added": "73"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "101"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "remove": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove",
+              "support": {
+                "chrome": {
+                  "version_added": "33"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "set": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set",
+              "support": {
+                "chrome": {
+                  "version_added": "33"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
           }
         },
         "onChanged": {
@@ -358,7 +733,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/onChanged",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "19"
               },
               "edge": {
                 "version_added": "14"
@@ -398,6 +773,206 @@
               },
               "safari_ios": "mirror"
             }
+          },
+          "QUOTA_BYTES": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/session/QUOTA_BYTES",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "131"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "clear": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "get": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "102"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "115"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "getBytesInUse": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "131"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "onChanged": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "remove": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "102"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "115"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "set": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "setAccessLevel": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/setAccessLevel",
+              "support": {
+                "chrome": {
+                  "version_added": "102"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "115"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
           }
         },
         "sync": {
@@ -405,7 +980,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/sync",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "19"
               },
               "edge": {
                 "version_added": "15"
@@ -415,7 +990,11 @@
                 "notes": "Before version 79, storage quota limits are not enforced."
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "53",
+                "notes": [
+                  "Data isn't synchronized with the user's Mozilla account. See [bug 1625257](https://bugzil.la/1625257).",
+                  "Storage quota limits are not enforced."
+                ]
               },
               "opera": {
                 "version_added": false
@@ -424,17 +1003,220 @@
                 "version_added": "14",
                 "partial_implementation": true,
                 "notes": [
-                  "Safari does not sync items saved in the <code>sync</code> storage area, i.e. it behaves the same as the <code>local</code> storage area.",
-                  "Safari 15 and 15.1 erroneously store sync items in the <code>local</code> storage area. If unable to locate sync items, check for sync items in the <code>local</code> storage area and do a one-time migration to the <code>sync</code> storage area."
+                  "Safari does not sync items saved in the `sync` storage area, i.e. it behaves the same as the `local` storage area.",
+                  "Safari 15 and 15.1 erroneously store sync items in the `local` storage area. If unable to locate sync items, check for sync items in the `local` storage area and do a one-time migration to the `sync` storage area."
                 ]
               },
               "safari_ios": {
                 "version_added": "15",
                 "partial_implementation": true,
                 "notes": [
-                  "Safari does not sync items saved in the <code>sync</code> storage area, i.e. it behaves the same as the <code>local</code> storage area.",
-                  "Safari 15 and 15.1 erroneously store sync items in the <code>local</code> storage area. If unable to locate sync items, check for sync items in the <code>local</code> storage area and do a one-time migration to the <code>sync</code> storage area."
+                  "Safari does not sync items saved in the `sync` storage area, i.e. it behaves the same as the `local` storage area.",
+                  "Safari 15 and 15.1 erroneously store sync items in the `local` storage area. If unable to locate sync items, check for sync items in the `local` storage area and do a one-time migration to the `sync` storage area."
                 ]
+              }
+            }
+          },
+          "clear": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/clear",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "15"
+                },
+                "firefox": {
+                  "version_added": "53"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "get": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/get",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "15"
+                },
+                "firefox": {
+                  "version_added": "53"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": {
+                    "version_added": "15"
+                  },
+                  "firefox": {
+                    "version_added": "53"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "getBytesInUse": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getBytesInUse",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "15"
+                },
+                "firefox": {
+                  "version_added": "78"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "onChanged": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/onChanged",
+              "support": {
+                "chrome": {
+                  "version_added": "73"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "101"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            }
+          },
+          "remove": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "15"
+                },
+                "firefox": {
+                  "version_added": "53"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
+            "empty_key": {
+              "__compat": {
+                "description": "Supports empty key",
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": {
+                    "version_added": "15"
+                  },
+                  "firefox": {
+                    "version_added": "53"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": {
+                    "version_added": false
+                  },
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "set": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/set",
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": {
+                  "version_added": "15",
+                  "notes": "storage is limited to 1MB per value."
+                },
+                "firefox": {
+                  "version_added": "53"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           }

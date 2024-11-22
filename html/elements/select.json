@@ -5,10 +5,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/select",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element",
+          "tags": [
+            "web-features:select"
+          ],
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -16,14 +19,14 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the <code>&lt;option&gt;</code> element to the parent <code>&lt;select&gt;</code> element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the <code>&lt;select&gt;</code> element is displayed as a drop-down list. The behavior is unchanged if the <code>&lt;select&gt;</code> is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching <code>&lt;option&gt;</code> elements for events, you should watch for change events on <code>&lt;select&gt;</code>. See <a href='https://bugzil.la/1090602'>bug 1090602</a> for details."
+              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `&lt;option&gt;` element to the parent `&lt;select&gt;` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the `&lt;select&gt;` element is displayed as a drop-down list. The behavior is unchanged if the `&lt;select&gt;` is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching `&lt;option&gt;` elements for events, you should watch for change events on `&lt;select&gt;`. See [bug 1090602](https://bugzil.la/1090602) for details."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Firefox for Android, by default, sets a <code>background-image</code> gradient on all <code>&lt;select multiple&gt;</code> elements. This can be disabled using <code>background-image: none</code>."
+              "notes": "Firefox for Android, by default, sets a `background-image` gradient on all `&lt;select multiple&gt;` elements. This can be disabled using `background-image: none`."
             },
             "ie": {
-              "version_added": true
+              "version_added": "≤11"
             },
             "oculus": "mirror",
             "opera": {
@@ -34,17 +37,18 @@
             },
             "safari": {
               "version_added": "1",
-              "notes": "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37",
               "notes": [
-                "In the Browser app for Android 4.1 (and possibly later versions), there is a bug where the menu indicator triangle on the side of a <code>&lt;select&gt;</code> will not be displayed if a <code>background</code>, <code>border</code>, or <code>border-radius</code> style is applied to the <code>&lt;select&gt;</code>.",
-                "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+                "In the Browser app for Android 4.1 (and possibly later versions), there is a bug where the menu indicator triangle on the side of a `&lt;select&gt;` will not be displayed if a `background`, `border`, or `border-radius` style is applied to the `&lt;select&gt;`.",
+                "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
               ]
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -52,10 +56,64 @@
             "deprecated": false
           }
         },
+        "autocomplete": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/select#autocomplete",
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete",
+            "support": {
+              "chrome": {
+                "version_added": "66"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": [
+                {
+                  "version_added": "53"
+                },
+                {
+                  "version_added": "≤12.1",
+                  "version_removed": "15"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "47"
+                },
+                {
+                  "version_added": "≤12.1",
+                  "version_removed": "14"
+                }
+              ],
+              "safari": {
+                "version_added": "9.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "disabled": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/disabled",
             "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -69,7 +127,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -79,7 +137,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -90,6 +149,10 @@
         },
         "form": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fae-form",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -103,7 +166,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -113,7 +176,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -124,26 +188,27 @@
         },
         "hr_in_select": {
           "__compat": {
-            "description": "<code>&lt;hr&gt;</code> in <code>&lt;select&gt;</code>",
+            "description": "`&lt;hr&gt;` in `&lt;select&gt;`",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "119",
                 "partial_implementation": true,
                 "notes": [
-                  "Only exposes the <code>&lt;hr&gt;</code> visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
-                  "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                  "Only exposes the `&lt;hr&gt;` visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
+                  "Does not expose the `&lt;hr&gt;` within the accessibility tree."
                 ]
               },
               "chrome_android": {
-                "version_added": "119",
-                "partial_implementation": true,
-                "notes": "Exposes the <code>&lt;hr&gt;</code> as its own empty selectable option and not as a horizontal rule."
+                "version_added": false
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "122",
                 "partial_implementation": true,
-                "notes": "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -155,13 +220,16 @@
               "safari": {
                 "version_added": "17",
                 "partial_implementation": true,
-                "notes": "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "17.4",
+                "partial_implementation": true,
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -174,6 +242,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/multiple",
             "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-multiple",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -187,7 +258,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -197,7 +268,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -208,6 +280,10 @@
         },
         "name": {
           "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-name",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -221,7 +297,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -231,7 +307,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -244,6 +321,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/required",
             "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-required",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "10"
@@ -267,7 +347,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -280,6 +361,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/size",
             "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-select-size",
+            "tags": [
+              "web-features:select"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -295,7 +379,7 @@
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": true
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -307,7 +391,8 @@
                 "version_added": false
               },
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

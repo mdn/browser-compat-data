@@ -87,78 +87,78 @@ Here is an example of a `__compat` statement, with all of the properties and the
       "fake_event": {
         // ↓↓↓↓↓↓
         "__compat": {
-          "description": "<code>fake</code> event", // A friendly description of the feature
+          "description": "`fake` event", // A friendly description of the feature
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fake_event", // The associated MDN article
           "spec_url": [
             // The spec URL(s) for the feature if applicable, may be one or many
             "https://example.com/a-fake-spec#fake-event",
-            "https://example.com/a-fake-spec#onfake"
+            "https://example.com/a-fake-spec#onfake",
           ],
           "support": {
             // The support data for each browser
             "chrome": {
               // Supported since Chrome 57 on
-              "version_added": "57"
+              "version_added": "57",
             },
             "chrome_android": "mirror", // Mirrors from Chrome Desktop, so "57"
             "edge": {
               // Supported since Edge 12, with a note about a difference in behavior
               "version_added": "12",
-              "notes": "Before Edge 79, the event interface included additional proprietary properties."
+              "notes": "Before Edge 79, the event interface included additional proprietary properties.",
             },
             "firefox": {
               // Added in Firefox 59, then removed in Firefox 80 (AKA supported from 59 until 79)
               "version_added": "59",
-              "version_removed": "80"
+              "version_removed": "80",
             },
             "firefox_android": {
               // Supported in Firefox Android, we just don't know what version it was added in
-              "version_added": true
+              "version_added": true,
             },
             "ie": {
               // Supported since IE 10, but has a caveat that impacts compatibility
               "version_added": "10",
               "partial_implementation": true,
-              "notes": "The <code>onfake</code> event handler property is not supported."
+              "notes": "The `onfake` event handler property is not supported.",
             },
             "oculus": "mirror",
             "opera": {
               // Not supported at all in Opera
-              "version_added": false
+              "version_added": false,
             },
             "opera_android": {
               // We don't know if Opera Android supports this or not
-              "version_added": null
+              "version_added": null,
             },
             "safari": [
               // A support statement can be an array of multiple statements to better describe the compatibility story
               {
-                "version_added": "13" // Supported since Safari 13...
+                "version_added": "13", // Supported since Safari 13...
               },
               {
                 "version_added": "10.1", // ...but also supported since Safari 10.1 with the "webkit" prefix (AKA "webkitfake")...
-                "prefix": "webkit"
+                "prefix": "webkit",
               },
               {
                 "version_added": "4", // ...and supported between Safari 4 (inclusive) and 10.1 (exclusive) as "webkitnonreal"
                 "version_removed": "10.1",
-                "alternative_name": "webkitnonreal"
-              }
+                "alternative_name": "webkitnonreal",
+              },
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
           },
           "status": {
             // Standards track, deprecation and experimental status
             "experimental": false,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      }
-    }
-  }
+            "deprecated": false,
+          },
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -174,7 +174,7 @@ The `__compat` object consists of the following:
 - An optional `description` property to **describe the feature**.
   A string containing a human-readable description of the feature.
   It is intended to be used as a caption or title and should be kept short.
-  The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used.
+  This property may be formatted using Markdown, see the rules for `notes`.
 
 - An automated `source_file` property containing the path to the source file containing the feature. This is used to create links to the repository source (in the form of `https://github.com/mdn/browser-compat-data/blob/main/<source_file>`). For example, `api.History.forward` will contain a `source_file` property of `api/History.json` since the feature is defined in that file.
 
@@ -188,7 +188,7 @@ The `__compat` object consists of the following:
 - An optional `tags` property which is an array of strings allowing to assign tags to the feature.
   Each tag in the array must be namespaced. The currently allowed namespaces are:
 
-  - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/feature-group-definitions/README.md).
+  - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/features/README.md).
 
   For more information, see the [tagging data guidelines](../docs/data-guidelines/tags.md).
 
@@ -210,7 +210,8 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
-- `webview_android`, WebView, the built-in browser for Android
+- `webview_android`, WebView, the embedded browser for Android applications
+- `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 
@@ -275,6 +276,22 @@ This is the only mandatory property and it contains a string with the version nu
 ```json
 {
   "version_added": "3.5"
+}
+```
+
+- Support in version 79, but possibly supported earlier:
+
+```json
+{
+  "version_added": "≤79"
+}
+```
+
+- Support in latest beta/preview release:
+
+```json
+{
+  "version_added": "preview"
 }
 ```
 
@@ -413,7 +430,7 @@ An optional array of objects describing flags that must be configured for this b
   - `preference` a flag the user can set (like in `about:config` in Firefox).
   - `runtime_flag` a flag to be set before starting the browser.
 - `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
-- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in `<code>` tags.
+- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in backticks.
 
 Example for one flag required:
 
@@ -469,12 +486,12 @@ Example:
   "version_added": "3.5",
   "notes": [
     "Does not work on ::first-letter pseudo-elements.",
-    "Has not been updated to the latest specification, see <a href='https://bugzil.la/1234567'>bug 1234567</a>."
+    "Has not been updated to the latest specification, see [bug 1234567](https://bugzil.la/1234567)."
   ]
 }
 ```
 
-The `<code>`, `<kbd>`, `<em>`, and `<strong>` HTML elements may be used. In addition, `<a>` tags may be used, such as to link to a browser's bug report, or MDN documentation. Do not format `notes` as Markdown.
+Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `<kbd>` may be used. Headers, tables and other Markdown features or HTML elements may not be used.
 
 #### `partial_implementation`
 
@@ -494,9 +511,9 @@ The mandatory status property contains information about stability of the featur
 
 - `experimental`: a `boolean` value.
 
-  If `experimental` is `true`, it means that Web developers should experiment with this feature and provide feedback to browser vendors and standards authors about this feature. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
 
-  If `experimental` is `false`, it means the functionality is mature and no significant changes are expected in the future.
+  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
 
 - `standard_track`: a `boolean` value.
 

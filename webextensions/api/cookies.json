@@ -7,7 +7,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/Cookie",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -48,7 +48,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -65,10 +65,9 @@
           },
           "sameSite": {
             "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -79,12 +78,10 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": "14",
-                  "notes": "Only supports explicit."
+                  "version_added": "14"
                 },
                 "safari_ios": {
-                  "version_added": "15",
-                  "notes": "Only supports explicit."
+                  "version_added": "15"
                 }
               }
             }
@@ -95,7 +92,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/CookieStore",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -117,7 +114,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "6"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -159,7 +156,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "6"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -182,7 +179,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/OnChangedCause",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "≤58"
               },
               "edge": "mirror",
               "firefox": {
@@ -193,7 +190,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/267514"
               },
               "safari_ios": "mirror"
             }
@@ -204,25 +202,40 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Provides access to cookies from private browsing mode and container tabs since version 52."
+                "notes": [
+                  "Provides access to cookies from private browsing mode and container tabs since version 52.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                ]
               },
               "firefox_android": {
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "HTTPOnly cookies are not retrieved."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": "HTTPOnly cookies are not retrieved."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "`HttpOnly` cookies are not retrieved."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "`HttpOnly` cookies are not retrieved."
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -248,7 +261,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -269,7 +282,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": {
                 "version_added": "79",
@@ -277,26 +290,41 @@
               },
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs."
+                "notes": [
+                  "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                ]
               },
               "firefox_android": {
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": [
-                  "Only the cookies in the default cookie store are retrieved.",
-                  "HTTPOnly cookies are not retrieved."
-                ]
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": [
-                  "Only the cookies in the default cookie store are retrieved.",
-                  "HTTPOnly cookies are not retrieved."
-                ]
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only the cookies in the default cookie store are retrieved.",
+                    "`HttpOnly` cookies are not retrieved."
+                  ]
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only the cookies in the default cookie store are retrieved.",
+                    "`HttpOnly` cookies are not retrieved."
+                  ]
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -322,7 +350,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -343,7 +371,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -354,14 +382,26 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "Always returns the same default cookie store with ID 0."
-              },
-              "safari_ios": {
-                "version_added": "15",
-                "notes": "Always returns the same default cookie store with ID 0."
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "Always returns the same default cookie store with ID 0."
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "Always returns the same default cookie store with ID 0."
+                }
+              ]
             }
           }
         },
@@ -370,7 +410,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -381,16 +421,18 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15"
+              }
             }
           },
           "partitionKey": {
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -411,16 +453,22 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                ]
               },
               "firefox_android": {
                 "version_added": "48",
-                "notes": "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                ]
               },
               "opera": "mirror",
               "safari": {
@@ -454,7 +502,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -472,10 +520,10 @@
         },
         "sameSiteStatus": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/sameSiteStatus",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/SameSiteStatus",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "51"
               },
               "edge": "mirror",
               "firefox": {
@@ -486,12 +534,10 @@
                 "version_added": false
               },
               "safari": {
-                "version_added": "14",
-                "notes": "Only supports explicit."
+                "version_added": "14"
               },
               "safari_ios": {
-                "version_added": "15",
-                "notes": "Only supports explicit."
+                "version_added": "15"
               }
             }
           },
@@ -499,7 +545,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -510,9 +556,11 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -520,21 +568,23 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "63",
-                  "notes": "Represents a cookie without a <code>SameSite</code> attribute."
+                  "notes": "Represents a cookie without a `SameSite` attribute."
                 },
                 "firefox_android": "mirror",
                 "opera": {
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -542,7 +592,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -553,9 +603,11 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -563,7 +615,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "76"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -586,24 +638,50 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set",
             "support": {
               "chrome": {
-                "version_added": true
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
-                "notes": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                ]
               },
               "firefox_android": {
                 "version_added": "48",
-                "notes": "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed."
+                "notes": [
+                  "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                ]
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
-              "safari_ios": {
-                "version_added": "15"
-              }
+              "safari": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only sets cookies in the default cookie store.",
+                    "`HttpOnly` cookies are not set."
+                  ]
+                }
+              ],
+              "safari_ios": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Only sets cookies in the default cookie store.",
+                    "`HttpOnly` cookies are not set."
+                  ]
+                }
+              ]
             }
           },
           "firstPartyDomain": {
@@ -629,7 +707,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "119"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -639,7 +717,8 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": false
-                }
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -647,7 +726,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -658,12 +737,10 @@
                   "version_added": false
                 },
                 "safari": {
-                  "version_added": "14",
-                  "notes": "Only supports explicit."
+                  "version_added": "14"
                 },
                 "safari_ios": {
-                  "version_added": "15",
-                  "notes": "Only supports explicit."
+                  "version_added": "15"
                 }
               }
             }

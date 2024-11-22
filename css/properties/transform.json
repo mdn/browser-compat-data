@@ -8,6 +8,9 @@
             "https://drafts.csswg.org/css-transforms-2/#transform-functions",
             "https://drafts.csswg.org/css-transforms/#transform-property"
           ],
+          "tags": [
+            "web-features:transforms2d"
+          ],
           "support": {
             "chrome": [
               {
@@ -46,7 +49,7 @@
             "ie": [
               {
                 "version_added": "10",
-                "notes": "Internet Explorer does not support the global values <code>initial</code> and <code>unset</code>."
+                "notes": "Internet Explorer does not support the global values `initial` and `unset`."
               },
               {
                 "prefix": "-webkit-",
@@ -55,7 +58,7 @@
               {
                 "prefix": "-ms-",
                 "version_added": "9",
-                "notes": "Internet Explorer 5.5 or later supports a proprietary <a href='https://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx'>Matrix Filter</a> which can be used to achieve a similar effect."
+                "notes": "Internet Explorer 5.5 or later supports a proprietary [Matrix Filter](https://msdn.microsoft.com/en-us/library/ms533014(VS.85,loband).aspx) which can be used to achieve a similar effect."
               }
             ],
             "oculus": "mirror",
@@ -121,9 +124,10 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "2",
-                "notes": "Android 2.3 has a bug where input forms will \"jump\" when typing, if any container element has a <code>-webkit-transform</code>."
+                "notes": "Android 2.3 has a bug where input forms will \"jump\" when typing, if any container element has a `-webkit-transform`."
               }
-            ]
+            ],
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -134,6 +138,9 @@
         "3d": {
           "__compat": {
             "description": "3D support",
+            "tags": [
+              "web-features:transforms3d"
+            ],
             "support": {
               "chrome": {
                 "version_added": "12"
@@ -157,7 +164,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

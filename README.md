@@ -23,6 +23,15 @@ yarn add @mdn/browser-compat-data
 Then, you can import BCD into your project with either `import` or `require()`:
 
 ```js
+// ESM with Import Attributes (NodeJS 20+)
+import bcd from '@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import('@mdn/browser-compat-data', {
+  with: { type: 'json' },
+});
+
+// ...or...
+
 // ESM with Import Assertions (NodeJS 16+)
 import bcd from '@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
@@ -48,6 +57,19 @@ const bcd = require('@mdn/browser-compat-data');
 You can import `@mdn/browser-compat-data` using a CDN.
 
 ```js
+// ESM with Import Attributes (Deno 1.37+)
+import bcd from 'https://unpkg.com/@mdn/browser-compat-data' with { type: 'json' };
+// ...or...
+const { default: bcd } = await import(
+  'https://unpkg.com/@mdn/browser-compat-data',
+  {
+    with: { type: 'json' },
+  }
+);
+
+// ...or...
+
+// ESM with Import Assertions (Deno 1.17+)
 import bcd from 'https://unpkg.com/@mdn/browser-compat-data' assert { type: 'json' };
 // ...or...
 const { default: bcd } = await import(
@@ -55,6 +77,13 @@ const { default: bcd } = await import(
   {
     assert: { type: 'json' },
   }
+);
+
+// ...or...
+
+// Fetch Method (Deno 1.0+)
+const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
+  (response) => response.json(),
 );
 ```
 
@@ -180,6 +209,15 @@ The details of browser compatibility change frequently, as browsers ship new fea
 
 You should expect lower-level namespaces, feature data, and browser data to be added, removed, or modified at any time. That said, we strive to communicate changes and preserve backward compatibility; if you rely on a currently undocumented portion of the package and want SemVer to apply to it, please [open an issue](https://github.com/mdn/browser-compat-data/issues).
 
+## What isn't tracked?
+
+Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
+
+- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data).
+- A source for custom features added by web frameworks (e.g. React, Vue) or corporate runtimes (e.g. AWS Lambda, Azure Functions).
+- A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
+- The location where Baseline data is hosted; while Baseline pulls from BCD, the Baseline data is managed by the W3C WebDX Community Group on their own [GitHub repo](https://github.com/web-platform-dx/web-features).
+
 ## Issues?
 
 If you find a problem with the compatibility data (such as incorrect version numbers) or there is a new web feature you think we should document, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).
@@ -192,14 +230,24 @@ Thank you for your interest in contributing to this project! See [Contributing t
 
 Here are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/@mdn/browser-compat-data) or directly:
 
-- [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.
-- [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.
-- [CanIUse Embed](https://caniuse.bitsofco.de/) - Thanks to the inclusion of MDN BCD data in caniuse, this embed tool allows for embedding BCD data into any project.
-- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.
-- [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.
-- [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).
-- [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.
-- [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.
+- [Add-ons Linter](https://github.com/mozilla/addons-linter) - NPM package that checks add-ons for features that aren't supported by the targeted Firefox version. Used by [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool.
+- [ast-metadata-inferer](https://www.npmjs.com/package/ast-metadata-inferer) - NPM package that annotates JavaScript AST nodes with metadata derived from BCD data. Used by [eslint-plugin-compat](https://www.npmjs.com/package/eslint-plugin-compat).
+- [BCD Watch](https://bcd-watch.igalia.com/) - Website that shows a weekly report of BCD changes.
+- [caniuse](https://caniuse.com/) - Website that shows browser support tables based on caniuse and BCD data.
+- [caniuse-lite](https://github.com/browserslist/caniuse-lite) - NPM package that republishes BCD data in the caniuse format.
+- [CanIUse Embed](https://caniuse.bitsofco.de/) - Service that allows embedding caniuse (including BCD data) into any website.
+- [css-declaration-sorter](https://www.npmjs.com/package/css-declaration-sorter) - NPM package that sorts CSS properties alphabetically.
+- [csstype](https://www.npmjs.com/package/csstype) - NPM package that publishes strict TypeScript/Flow types for CSS.
+- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows BCD data for the current site in the developer tools.
+- [compat-tester](https://github.com/SphinxKnight/compat-tester) - NPM package that scans HTML, CSS and JS files for compatibility issues.
+- [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) - IDE that uses BCD data to [check browser support of used CSS properties](https://www.jetbrains.com/guide/javascript/tips/browser-compatibility-css/) (see [2019.1 releasenotes](https://web.archive.org/web/20190524063428/http://www.jetbrains.com/webstorm/whatsnew/#:~:text=Browser%20compatibility%20check%20for%20CSS)) by [generating feature lists with support data](https://github.com/JetBrains/intellij-community/blob/master/xml/xml-psi-impl/mdn-doc-gen/src/GenerateMdnDocumentation.kt).
+- [JSR](https://jsr.io/) - Package registry that uses BCD data to [generate a list of web builtins](https://github.com/jsr-io/jsr/blob/main/tools/generate_web_symbols.ts).
+- [Mozilla Firefox](https://www.mozilla.org/firefox/) - Web browser that uses BCD data in the DevTools to show [CSS property compatibility data](https://searchfox.org/mozilla-central/source/devtools/shared/compatibility/README.md) mapped against a [list of non-retired browsers](https://github.com/firefox-devtools/remote-settings-mdn-browser-compat-data/).
+- [TypeScript](https://www.typescriptlang.org/) - Programming language that uses BCD data to [generate DOM typings](https://github.com/microsoft/TypeScript-DOM-lib-generator).
+- [Visual Studio Code](https://code.visualstudio.com) - IDE that uses BCD to show compatibility information for [CSS features](https://github.com/microsoft/vscode-custom-data/blob/c008a80baa3c6ea9d6757d2640eaab215b28f9a6/web-data/css/generateData.js#L349) (see [VSCode 1.25 release notes](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data)), and to [extract MDN urls for HTML elements](https://github.com/microsoft/vscode-custom-data/blob/c008a80baa3c6ea9d6757d2640eaab215b28f9a6/web-data/html/generateData.js#L53-L67).
+- [web-features](https://www.npmjs.com/package/web-features) - NPM package that publishes web feature groups with Baseline statuses based on BCD data.
+- [web-features-explorer](https://web-platform-dx.github.io/web-features-explorer/) - Website that visualizes web features by Baseline status and month.
+- [`webhint.io`](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Tool that uses BCD to checks CSS and HTML for unsupported features (see [`@hint/utils-compat-data` package](https://github.com/webhintio/hint/tree/main/packages/utils-compat-data)).
 
 ## Acknowledgments
 

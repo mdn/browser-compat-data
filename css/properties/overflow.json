@@ -18,14 +18,14 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "After Firefox 3.6, the <code>overflow</code> property is correctly applied to table group elements (<code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>)."
+              "notes": "After Firefox 3.6, the `overflow` property is correctly applied to table group elements (`&lt;thead&gt;`, `&lt;tbody&gt;`, `&lt;tfoot&gt;`)."
             },
             "firefox_android": {
               "version_added": "4"
             },
             "ie": {
               "version_added": "4",
-              "notes": "From version 4 to 6, Internet Explorer enlarges an element with <code>overflow: visible</code> (default value) to fit the content inside it. <code>height</code> and <code>width</code> behave like <code>min-height</code> and <code>min-width</code>, respectively."
+              "notes": "From version 4 to 6, Internet Explorer enlarges an element with `overflow: visible` (default value) to fit the content inside it. `height` and `width` behave like `min-height` and `min-width`, respectively."
             },
             "oculus": "mirror",
             "opera": {
@@ -37,9 +37,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "37"
-            }
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -47,9 +46,71 @@
             "deprecated": false
           }
         },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-auto",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "15"
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "18"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "100"
+                }
+              ],
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": [
+                {
+                  "version_added": "1"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "112"
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "3"
+                },
+                {
+                  "alternative_name": "overlay",
+                  "version_added": "≤13.1"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "clip": {
           "__compat": {
-            "description": "<code>clip</code> value",
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-clip",
             "tags": [
               "web-features:overflow-shorthand"
             ],
@@ -81,7 +142,44 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "hidden": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-hidden",
+            "support": {
+              "chrome": {
+                "version_added": "1"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -92,7 +190,7 @@
         },
         "multiple_keywords": {
           "__compat": {
-            "description": "Multiple keyword syntax for <code>overflow-x</code> and <code>overflow-y</code>",
+            "description": "Multiple keyword syntax for `overflow-x` and `overflow-y`",
             "tags": [
               "web-features:overflow-shorthand"
             ],
@@ -117,7 +215,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -126,37 +225,70 @@
             }
           }
         },
-        "overlay": {
+        "scroll": {
           "__compat": {
-            "description": "<code>overlay</code> value",
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-scroll",
             "support": {
               "chrome": {
-                "version_added": "15"
+                "version_added": "1"
               },
-              "chrome_android": {
-                "version_added": "100"
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
               },
-              "edge": "mirror",
               "firefox": {
-                "version_added": "112"
+                "version_added": "1"
               },
               "firefox_android": "mirror",
               "ie": {
-                "version_added": false
+                "version_added": "≤11"
               },
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": false
-              },
+              "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "3"
               },
               "safari_ios": "mirror",
-              "samsunginternet_android": {
-                "version_added": "4.0"
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "visible": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-visible",
+            "support": {
+              "chrome": {
+                "version_added": "1"
               },
-              "webview_android": "mirror"
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "1"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "≤11"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,

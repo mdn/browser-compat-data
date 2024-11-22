@@ -27,7 +27,10 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": {
+            "version_added": false
+          }
         },
         "status": {
           "experimental": false,
@@ -38,14 +41,15 @@
       "ecmascript_modules": {
         "__compat": {
           "description": "Support for ECMAScript modules",
+          "tags": [
+            "web-features:js-modules-service-workers"
+          ],
           "support": {
             "chrome": {
               "version_added": "91"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": false
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -57,14 +61,21 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "15",
+              "notes": [
+                "Nested workers support was introduced in Safari 15.5.",
+                "Script loading in nested workers was introduced in Safari 16.4."
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -72,7 +83,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorker/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
           "support": {
@@ -98,7 +109,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -137,7 +151,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -173,7 +190,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -209,7 +229,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -220,7 +243,7 @@
       },
       "statechange_event": {
         "__compat": {
-          "description": "<code>statechange</code> event",
+          "description": "`statechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorker/statechange_event",
           "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworker-onstatechange",
           "support": {
@@ -246,7 +269,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,

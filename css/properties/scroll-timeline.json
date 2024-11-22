@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/scroll-timeline",
           "spec_url": "https://drafts.csswg.org/scroll-animations/#scroll-timeline-shorthand",
+          "tags": [
+            "web-features:scroll-driven-animations"
+          ],
           "support": {
             "chrome": {
               "version_added": "115"
@@ -22,8 +25,8 @@
               ],
               "notes": [
                 "The syntax of the shorthand property uses the fixed order of name and then the axis.",
-                "Supports the deprecated <code>horizontal</code> and <code>vertical</code> axis values, and not the <code>x</code> and <code>y</code> values.",
-                "The <code>@scroll-timeline</code> at-rule is replaced with the longhand properties <code>scroll-timeline-name</code> and <code>scroll-timeline-axis</code> and the shorthand property <code>scroll-timeline</code>."
+                "Supports the deprecated `horizontal` and `vertical` axis values, and not the `x` and `y` values.",
+                "The `@scroll-timeline` at-rule is replaced with the longhand properties `scroll-timeline-name` and `scroll-timeline-axis` and the shorthand property `scroll-timeline`."
               ]
             },
             "firefox_android": "mirror",
@@ -34,11 +37,13 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/222295"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

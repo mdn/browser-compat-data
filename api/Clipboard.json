@@ -28,7 +28,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -44,108 +45,19 @@
             "web-features:async-clipboard"
           ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "86",
-                "partial_implementation": true,
-                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
-              },
-              {
-                "version_added": "76",
-                "partial_implementation": true,
-                "notes": "From version 76, the <code>image/png</code> MIME type is supported."
-              },
-              {
-                "version_added": "66",
-                "partial_implementation": true,
-                "notes": "Images are not supported."
-              }
-            ],
-            "chrome_android": [
-              {
-                "version_added": "86",
-                "partial_implementation": true,
-                "notes": "From version 86, the <code>text/html</code> MIME type is supported."
-              },
-              {
-                "version_added": "84",
-                "partial_implementation": true,
-                "notes": "From version 84, the <code>image/png</code> MIME type is supported."
-              },
-              {
-                "version_added": "66",
-                "partial_implementation": true,
-                "notes": "Images are not supported."
-              }
-            ],
-            "edge": {
-              "version_added": "79"
-            },
-            "firefox": {
-              "version_added": "90",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.events.asyncClipboard.read",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": "63"
-            },
-            "opera_android": {
-              "version_added": "54"
-            },
-            "safari": {
-              "version_added": "13.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": [
-              {
-                "version_added": "84",
-                "partial_implementation": true,
-                "notes": "From version 84, the <code>image/png</code> MIME type is supported."
-              },
-              {
-                "version_added": "66",
-                "partial_implementation": true,
-                "notes": "Images are not supported."
-              }
-            ]
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "readText": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/readText",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-readtext",
-          "tags": [
-            "web-features:async-clipboard"
-          ],
-          "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "76",
+              "notes": "The user must grant the `clipboard-read` permission."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "notes": "Firefox only supports reading the clipboard in browser extensions, using the <code>\"clipboardRead\"</code> extension permission."
+              "version_added": "127",
+              "notes": [
+                "This method must be called within user gesture event handlers.",
+                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -159,7 +71,202 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "formats_unsanitized_parameter": {
+          "__compat": {
+            "description": "`formats.unsanitized` parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/read#unsanitized",
+            "spec_url": "https://w3c.github.io/clipboard-apis/#dictdef-clipboardunsanitizedformats",
+            "tags": [
+              "web-features:clipboard-unsanitized-formats"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "122"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "readText": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/readText",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboard-readtext",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "66",
+              "notes": "The user must grant the `clipboard-read` permission."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "125",
+              "notes": [
+                "This method must be called within user gesture event handlers.",
+                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "type_image-png": {
+        "__compat": {
+          "description": "Supports `image/png` MIME type",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "76"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "127"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "type_text-html": {
+        "__compat": {
+          "description": "Supports `text/html` MIME type",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "86"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "127"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "type_text-plain": {
+        "__compat": {
+          "description": "Supports `text/plain` MIME type",
+          "tags": [
+            "web-features:async-clipboard"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "76"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "127"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "13.1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -177,63 +284,38 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "66",
-              "notes": "From version 76, the <code>image/png</code> MIME type is supported."
+              "version_added": "76",
+              "notes": [
+                "From version 107, this method must be called within user gesture event handlers, or the user must grant the `clipboard-write` permission.",
+                "Before version 107, the user must grant the `clipboard-write` permission."
+              ]
             },
-            "chrome_android": {
-              "version_added": "66",
-              "notes": "From version 84, the <code>image/png</code> MIME type is supported."
-            },
+            "chrome_android": "mirror",
             "edge": {
               "version_added": "79"
             },
-            "firefox": [
-              {
-                "version_added": "87",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.clipboardItem",
-                    "value_to_set": "true"
-                  }
-                ],
-                "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
-              },
-              {
-                "version_added": "63",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.events.asyncClipboard.dataTransfer",
-                    "value_to_set": "true"
-                  }
-                ],
-                "partial_implementation": true,
-                "notes": [
-                  "This method accepts a <code>DataTransfer</code> object instead of an array of <code>ClipboardItem</code> objects.",
-                  "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "127",
+              "notes": [
+                "This method must be called within user gesture event handlers.",
+                "Web extensions require the `clipboardWrite` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+              ]
+            },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": "63"
-            },
-            "opera_android": {
-              "version_added": "54"
-            },
+            "opera": "mirror",
+            "opera_android": "mirror",
             "safari": {
               "version_added": "13.1"
             },
             "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "12.0"
-            },
-            "webview_android": "mirror"
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -251,13 +333,21 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "66"
+              "version_added": "66",
+              "notes": [
+                "From version 107, this method must be called within user gesture event handlers, or the user must grant the `clipboard-write` permission.",
+                "Before version 107, the user must grant the `clipboard-write` permission."
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "63",
-              "notes": "Writing to the clipboard is available without permission in secure contexts and browser extensions, but only from user-initiated event callbacks. Browser extensions with the <code>\"clipboardWrite\"</code> permission can write to the clipboard at any time."
+              "notes": [
+                "This method must be called within user gesture event handlers.",
+                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -268,11 +358,12 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "13.1",
-              "notes": "Must be called within user gesture event handlers such as <code>pointerdown</code> or <code>pointerup</code>."
+              "notes": "This method must be called within user gesture event handlers."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

@@ -11,9 +11,7 @@
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "18",
-              "partial_implementation": true,
-              "notes": "Currently the <code>none</code> value incorrectly behaves as <code>contain</code> (allowing for the elastic bounce effect)."
+              "version_added": "18"
             },
             "firefox": {
               "version_added": "59"
@@ -30,12 +28,125 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "auto": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-auto",
+            "support": {
+              "chrome": {
+                "version_added": "63"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "contain": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-contain",
+            "support": {
+              "chrome": {
+                "version_added": "≤83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-none",
+            "support": {
+              "chrome": {
+                "version_added": "≤83"
+              },
+              "chrome_android": "mirror",
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "The `none` value incorrectly behaves as `contain` (allowing for the elastic bounce effect)."
+                }
+              ],
+              "firefox": {
+                "version_added": "59"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }
