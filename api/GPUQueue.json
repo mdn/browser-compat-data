@@ -118,9 +118,54 @@
             "deprecated": false
           }
         },
+        "htmlimageelement_imagedata_source": {
+          "__compat": {
+            "description": "`HTMLImageElement` and `ImageData` objects as `source`",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "118"
+              },
+              "chrome_android": {
+                "version_added": "121"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "videoframe_source": {
           "__compat": {
-            "description": "<code>VideoFrame</code> object as source",
+            "description": "`VideoFrame` object as `source`",
+            "tags": [
+              "web-features:webgpu"
+            ],
             "support": {
               "chrome": {
                 "version_added": "116"
@@ -343,6 +388,47 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "validates_command_buffer_uniqueness": {
+          "__compat": {
+            "description": "Validates that submitted command buffers are unique.",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "126",
+                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

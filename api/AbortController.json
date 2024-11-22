@@ -26,7 +26,7 @@
             "version_added": false
           },
           "nodejs": {
-            "version_added": "15.0.0"
+            "version_added": "14.17.0"
           },
           "oculus": "mirror",
           "opera": "mirror",
@@ -38,7 +38,7 @@
             {
               "version_added": "11.1",
               "partial_implementation": true,
-              "notes": "Even though <code>window.AbortController</code> is defined, it doesn't really abort <code>fetch</code> requests. See <a href='https://webkit.org/b/174980'>bug 174980</a>."
+              "notes": "Even though `window.AbortController` is defined, it doesn't really abort `fetch` requests. See [bug 174980](https://webkit.org/b/174980)."
             }
           ],
           "safari_ios": "mirror",
@@ -54,7 +54,7 @@
       },
       "AbortController": {
         "__compat": {
-          "description": "<code>AbortController()</code> constructor",
+          "description": "`AbortController()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AbortController/AbortController",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-abortcontroller-abortcontroller①",
           "tags": [
@@ -79,7 +79,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "14.17.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -91,7 +91,7 @@
               {
                 "version_added": "11.1",
                 "partial_implementation": true,
-                "notes": "Even though <code>window.AbortController</code> is defined, it doesn't really abort <code>fetch</code> requests. See <a href='https://webkit.org/b/174980'>bug 174980</a>."
+                "notes": "Even though `window.AbortController` is defined, it doesn't really abort `fetch` requests. See [bug 174980](https://webkit.org/b/174980)."
               }
             ],
             "safari_ios": "mirror",
@@ -131,9 +131,27 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.0.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "17.2.0"
+              },
+              {
+                "version_added": "17.0.0",
+                "version_removed": "17.2.0",
+                "partial_implementation": true,
+                "notes": "The optional `reason` argument is not supported."
+              },
+              {
+                "version_added": "16.14.0",
+                "version_removed": "17.0.0"
+              },
+              {
+                "version_added": "14.17.0",
+                "version_removed": "16.14.0",
+                "partial_implementation": true,
+                "notes": "The optional `reason` argument is not supported."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -144,7 +162,7 @@
               {
                 "version_added": "11.1",
                 "partial_implementation": true,
-                "notes": "Even though <code>window.AbortController</code> is defined, it doesn't really abort <code>fetch</code> requests. See <a href='https://webkit.org/b/174980'>bug 174980</a>."
+                "notes": "Even though `window.AbortController` is defined, it doesn't really abort `fetch` requests. See [bug 174980](https://webkit.org/b/174980)."
               }
             ],
             "safari_ios": "mirror",
@@ -156,6 +174,56 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "reason_parameter": {
+          "__compat": {
+            "description": "`reason` parameter",
+            "spec_url": "https://dom.spec.whatwg.org/#abortsignal-abort-reason",
+            "tags": [
+              "web-features:aborting"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "98"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.16"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "97"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "17.2.0"
+                },
+                {
+                  "version_added": "16.14.0",
+                  "version_removed": "17.0.0"
+                }
+              ],
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -185,7 +253,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "14.17.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -197,7 +265,7 @@
               {
                 "version_added": "11.1",
                 "partial_implementation": true,
-                "notes": "Even though <code>window.AbortController</code> is defined, it doesn't really abort <code>fetch</code> requests. See <a href='https://webkit.org/b/174980'>bug 174980</a>."
+                "notes": "Even though `window.AbortController` is defined, it doesn't really abort `fetch` requests. See [bug 174980](https://webkit.org/b/174980)."
               }
             ],
             "safari_ios": "mirror",

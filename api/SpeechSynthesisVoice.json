@@ -17,7 +17,7 @@
           },
           "firefox": {
             "version_added": "49",
-            "notes": "In Firefox, speech synthesis voices do not start loading until after the first call to <code>window.speechSynthesis.getVoices()</code>. A way to mitigate this issue is to call the method at the beginning of page load, then wait a few seconds before calling the method again. Voices will remain loaded until all tabs that have called this method have been closed."
+            "notes": "In Firefox, speech synthesis voices do not start loading until after the first call to `window.speechSynthesis.getVoices()`. A way to mitigate this issue is to call the method at the beginning of page load, then wait a few seconds before calling the method again. Voices will remain loaded until all tabs that have called this method have been closed."
           },
           "firefox_android": {
             "version_added": "62"
@@ -41,7 +41,7 @@
           },
           "webview_android": {
             "version_added": false,
-            "impl_url": "https://crbug.com/487255"
+            "impl_url": "https://crbug.com/40417848"
           },
           "webview_ios": "mirror"
         },

@@ -17,7 +17,7 @@
               "version_added": "1.0",
               "version_removed": "1.7",
               "partial_implementation": true,
-              "notes": "<code>ReadableStreamDefaultReader</code> is not exposed on the global scope."
+              "notes": "`ReadableStreamDefaultReader` is not exposed on the global scope."
             }
           ],
           "edge": "mirror",
@@ -34,11 +34,8 @@
             },
             {
               "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
             }
           ],
           "oculus": "mirror",
@@ -60,7 +57,7 @@
       },
       "ReadableStreamDefaultReader": {
         "__compat": {
-          "description": "<code>ReadableStreamDefaultReader()</code> constructor",
+          "description": "`ReadableStreamDefaultReader()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/ReadableStreamDefaultReader",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-reader-constructor①",
           "support": {
@@ -268,7 +265,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "notes": "<code>releaseLock()</code> throws if there are pending read requests (rather than pending read requests being rejected)."
+                "notes": "`releaseLock()` throws if there are pending read requests (rather than pending read requests being rejected)."
               },
               "chrome_android": "mirror",
               "deno": {
