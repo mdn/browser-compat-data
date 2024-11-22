@@ -12,6 +12,10 @@ import walk from '../../utils/walk.js';
  * @param filename The filename containing compatibility info
  */
 const fixMDNURLs = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
 
   const data = JSON.parse(actual);
