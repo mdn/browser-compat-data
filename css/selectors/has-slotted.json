@@ -1,25 +1,28 @@
 {
   "css": {
     "selectors": {
-      "highlight": {
+      "has-slotted": {
         "__compat": {
-          "description": "`::highlight()`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::highlight",
-          "spec_url": "https://drafts.csswg.org/css-highlight-api/#custom-highlight-pseudo",
+          "description": "`:has-slotted`",
+          "spec_url": "https://drafts.csswg.org/css-scoping/#the-has-slotted-pseudo",
           "tags": [
-            "web-features:highlight"
+            "web-features:slot"
           ],
           "support": {
             "chrome": {
-              "version_added": "105"
+              "version_added": false
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "preview",
-              "impl_url": "https://bugzil.la/1703961",
-              "partial_implementation": true,
-              "notes": "Cannot yet be used with `text-decoration` and `text-shadow`."
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.has-slotted-selector.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "ie": {
@@ -29,8 +32,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "17.2",
-              "notes": "The style is ignored when combined with `user-select: none`. See [bug 278455](https://webkit.org/b/278455)."
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -38,7 +40,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
