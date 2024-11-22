@@ -28,6 +28,7 @@ November 22, 2024
 - `api.GPUTexture.format.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.MessageEvent.userActivation` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.MessagePort.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.WGSLLanguageFeatures.extension_packed_4x8_integer_dot_product` ([#25170](https://github.com/mdn/browser-compat-data/pull/25170))
 - `api.WGSLLanguageFeatures.extension_readonly_and_readwrite_storage_textures` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
@@ -41,8 +42,8 @@ November 22, 2024
 
 ### Statistics
 
-- 16 contributors have changed 92 files with 1,717 additions and 834 deletions in 43 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,742 total features
+- 16 contributors have changed 92 files with 1,755 additions and 834 deletions in 44 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,743 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
