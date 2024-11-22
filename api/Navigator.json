@@ -445,7 +445,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
+              "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
             },
             "chrome_android": {
               "version_added": "75"
@@ -1457,7 +1457,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "Available on all platforms behind a flag, but currently only works on desktop in an <a href='https://webvr.info/get-chrome/'>experimental version of Chrome</a> (other builds won't return any devices when `Navigator.getVRDisplays()` is invoked)."
+              "notes": "Available on all platforms behind a flag, but currently only works on desktop in an [experimental version of Chrome](https://webvr.info/get-chrome/) (other builds won't return any devices when `Navigator.getVRDisplays()` is invoked)."
             },
             "chrome_android": {
               "version_added": "79",
@@ -1602,7 +1602,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "18.2"
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1610,7 +1610,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1644,7 +1644,7 @@
             "safari": [
               {
                 "version_added": "15.4",
-                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See <a href='https://webkit.org/b/233381'>bug 233381</a>."
+                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See [bug 233381](https://webkit.org/b/233381)."
               },
               {
                 "version_added": "10.1",
@@ -1840,7 +1840,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by `navigator.userAgent`. Starting in Firefox 5, this property's value is based on the value of the `Accept-Language` <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
+              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by `navigator.userAgent`. Starting in Firefox 5, this property's value is based on the value of the `Accept-Language` [HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers)."
             },
             "firefox_android": {
               "version_added": "4"
@@ -2339,8 +2339,7 @@
                   "name": "#web-machine-learning-neural-network",
                   "value_to_set": "Enabled"
                 }
-              ],
-              "notes": "Currently supported on ChromeOS and Windows only."
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -2381,7 +2380,7 @@
           "support": {
             "chrome": {
               "version_added": "2",
-              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns `true`. For history, see <a href='https://crbug.com/40530968'>bug 40530968</a>."
+              "notes": "Earlier versions of Chrome incorrectly return true when a tab is first opened, but it starts reporting the correct connectivity status after the first network event. Windows: 11, macOS: 14, ChromeOS: 13, Linux: Always returns `true`. For history, see [bug 40530968](https://crbug.com/40530968)."
             },
             "chrome_android": {
               "version_added": "18"
@@ -2417,7 +2416,7 @@
             "webview_android": {
               "version_added": "≤37",
               "partial_implementation": true,
-              "notes": "Can incorrectly return true, see <a href='https://crbug.com/41369933'>bug 41369933</a>."
+              "notes": "Can incorrectly return true, see [bug 41369933](https://crbug.com/41369933)."
             },
             "webview_ios": "mirror"
           },
@@ -4150,7 +4149,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "108",
-              "notes": "API access is gated by installation of a <a href='https://support.mozilla.org/en-US/kb/site-permission-add-ons'>site permission add-on</a> (user prompt), secure context, and <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi'>`Permission Policy: midi`</a>."
+              "notes": "API access is gated by installation of a [site permission add-on](https://support.mozilla.org/en-US/kb/site-permission-add-ons) (user prompt), secure context, and [`Permission Policy: midi`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Feature-Policy/midi)."
             },
             "firefox_android": {
               "version_added": false
@@ -4257,11 +4256,11 @@
           "support": {
             "chrome": {
               "version_added": "39",
-              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see [bug 40087600](https://crbug.com/40087600)."
             },
             "chrome_android": {
               "version_added": "42",
-              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see [bug 40087600](https://crbug.com/40087600)."
             },
             "edge": {
               "version_added": "14"
@@ -4283,7 +4282,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "40",
-              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see <a href='https://crbug.com/40087600'>bug 40087600</a>."
+              "notes": "Starting in Chrome 59, this method cannot send a `Blob` whose type is not CORS safelisted. This is a temporary change until a mitigation can be found for the security issues that this creates. For more information, see [bug 40087600](https://crbug.com/40087600)."
             },
             "webview_ios": "mirror"
           },
@@ -4348,7 +4347,7 @@
             },
             "firefox": {
               "version_added": "44",
-              "notes": "In Firefox private windows, the `serviceWorker` object is `undefined`. See <a href='https://bugzil.la/1320796'>bug 1320796</a>."
+              "notes": "In Firefox private windows, the `serviceWorker` object is `undefined`. See [bug 1320796](https://bugzil.la/1320796)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -4436,7 +4435,7 @@
             "chrome": {
               "version_added": "89",
               "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see <a href='https://crbug.com/40542648'>bug 40542648</a> and <a href='https://crbug.com/40729163'>bug 40729163</a>."
+              "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
             },
             "chrome_android": {
               "version_added": "61"
@@ -4769,7 +4768,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "notes": "WebView exposes `navigator.usb`, but does not support WebUSB. See <a href='https://crbug.com/41441927'>bug 41441927</a>."
+              "notes": "WebView exposes `navigator.usb`, but does not support WebUSB. See [bug 41441927](https://crbug.com/41441927)."
             },
             "webview_ios": "mirror"
           },
@@ -5033,8 +5032,8 @@
                 "version_added": "16",
                 "version_removed": "129",
                 "notes": [
-                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning `false` (<a href='https://bugzil.la/884935'>bug 884935</a>).",
-                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns `true` but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>).",
+                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning `false` ([bug 884935](https://bugzil.la/884935)).",
+                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns `true` but truncates the pattern ([bug 1014581](https://bugzil.la/1014581)).",
                   "Beginning in Firefox 72, this is not supported in cross-origin iframes."
                 ]
               },
@@ -5048,14 +5047,14 @@
               {
                 "version_added": "79",
                 "partial_implementation": true,
-                "notes": "Vibration is disabled. If the window is visible, then `navigator.vibrate()` returns `true`, but no vibration takes place (regardless of hardware support). Originally, the intent was to disable it for cross-origin frames only (<a href='https://bugzil.la/1591113'>bug 1591113</a>), but the feature was not re-enabled due to abuse concerns (<a href='https://bugzil.la/1653318'>bug 1653318</a>)."
+                "notes": "Vibration is disabled. If the window is visible, then `navigator.vibrate()` returns `true`, but no vibration takes place (regardless of hardware support). Originally, the intent was to disable it for cross-origin frames only ([bug 1591113](https://bugzil.la/1591113)), but the feature was not re-enabled due to abuse concerns ([bug 1653318](https://bugzil.la/1653318))."
               },
               {
                 "version_added": "16",
                 "version_removed": "79",
                 "notes": [
-                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning `false` (<a href='https://bugzil.la/884935'>bug 884935</a>).",
-                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns `true` but truncates the pattern (<a href='https://bugzil.la/1014581'>bug 1014581</a>)."
+                  "Until Firefox 26 included, when the vibration pattern was too long or any of its elements too large, Firefox threw an exception instead of returning `false` ([bug 884935](https://bugzil.la/884935)).",
+                  "From Firefox 32 onwards, when the vibration pattern is too long or any of its elements too large, it returns `true` but truncates the pattern ([bug 1014581](https://bugzil.la/1014581))."
                 ]
               },
               {
@@ -5163,7 +5162,7 @@
             "safari_ios": {
               "version_added": "16.4",
               "partial_implementation": true,
-              "notes": "Does not work in standalone Home Screen Web Apps. See <a href='https://webkit.org/b/254545#c32'>bug 254545</a>."
+              "notes": "Does not work in standalone Home Screen Web Apps. See [bug 254545](https://webkit.org/b/254545#c32)."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

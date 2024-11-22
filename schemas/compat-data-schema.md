@@ -486,7 +486,7 @@ Example:
   "version_added": "3.5",
   "notes": [
     "Does not work on ::first-letter pseudo-elements.",
-    "Has not been updated to the latest specification, see <a href='https://bugzil.la/1234567'>bug 1234567</a>."
+    "Has not been updated to the latest specification, see [bug 1234567](https://bugzil.la/1234567)."
   ]
 }
 ```
