@@ -15,6 +15,7 @@ November 22, 2024
 
 ### Additions
 
+- `api.GPUDevice.createBindGroupLayout.storageTexture_access_read-write_read-only` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.GPUDevice.createBindGroupLayout.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipeline.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipeline.vertex_unorm10-10-10-2` ([#25153](https://github.com/mdn/browser-compat-data/pull/25153))
@@ -26,6 +27,7 @@ November 22, 2024
 - `api.GPUTexture.format.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.MessageEvent.userActivation` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.MessagePort.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.WGSLLanguageFeatures.extension_readonly_and_readwrite_storage_textures` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `css.selectors.has-slotted` ([#25129](https://github.com/mdn/browser-compat-data/pull/25129))
@@ -38,8 +40,8 @@ November 22, 2024
 
 ### Statistics
 
-- 16 contributors have changed 91 files with 1,586 additions and 825 deletions in 40 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,739 total features
+- 16 contributors have changed 91 files with 1,672 additions and 832 deletions in 41 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,741 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
