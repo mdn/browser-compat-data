@@ -3,14 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import {
-  Linter,
-  Logger,
-  LinterData,
-  IS_WINDOWS,
-  indexToPos,
-  jsonDiff,
-} from '../utils.js';
+import { Linter, Logger, LinterData, IS_WINDOWS, jsonDiff } from '../utils.js';
 import { orderSupportBlock } from '../fixer//browser-order.js';
 import { orderFeatures } from '../fixer//feature-order.js';
 import { orderStatements } from '../fixer//statement-order.js';
@@ -96,16 +89,6 @@ const processData = (
         expectedStatementSorting,
       )}`,
       { fixable: true },
-    );
-  }
-
-  const hrefDoubleQuoteIndex = actual.indexOf('href=\\"');
-  if (hrefDoubleQuoteIndex >= 0) {
-    logger.error(
-      chalk`${indexToPos(
-        actual,
-        hrefDoubleQuoteIndex,
-      )} - Found {yellow \\"}, but expected {green \'} for <a href>.`,
     );
   }
 };
