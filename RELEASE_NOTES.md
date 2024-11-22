@@ -29,12 +29,17 @@ November 22, 2024
 - `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
 - `css.selectors.has-slotted` ([#25129](https://github.com/mdn/browser-compat-data/pull/25129))
+- `http.headers.Sec-WebSocket-Accept` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Extensions` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Key` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Protocol` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Version` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
 - `http.headers.Server-Timing.trailer` ([#25141](https://github.com/mdn/browser-compat-data/pull/25141))
 
 ### Statistics
 
-- 16 contributors have changed 89 files with 1,451 additions and 915 deletions in 39 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,734 total features
+- 16 contributors have changed 91 files with 1,586 additions and 825 deletions in 40 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,739 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
