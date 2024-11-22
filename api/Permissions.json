@@ -30,8 +30,9 @@
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
-            "impl_url": "https://crbug.com/490120"
-          }
+            "impl_url": "https://crbug.com/40418964"
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -41,7 +42,7 @@
       },
       "permission_accelerometer": {
         "__compat": {
-          "description": "<code>accelerometer</code> permission",
+          "description": "`accelerometer` permission",
           "tags": [
             "web-features:accelerometer"
           ],
@@ -68,7 +69,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -79,7 +81,7 @@
       },
       "permission_accessibility-events": {
         "__compat": {
-          "description": "<code>accessibility-events</code> permission",
+          "description": "`accessibility-events` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -103,7 +105,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -114,7 +117,7 @@
       },
       "permission_ambient-light-sensor": {
         "__compat": {
-          "description": "<code>ambient-light-sensor</code> permission",
+          "description": "`ambient-light-sensor` permission",
           "support": {
             "chrome": {
               "version_added": "62",
@@ -143,7 +146,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -154,7 +158,7 @@
       },
       "permission_background-sync": {
         "__compat": {
-          "description": "<code>background-sync</code> permission",
+          "description": "`background-sync` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -172,48 +176,15 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/182565"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "permission_bluetooth": {
-        "__compat": {
-          "description": "<code>bluetooth</code> permission",
-          "support": {
-            "chrome": {
-              "version_added": "104"
             },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -224,7 +195,7 @@
       },
       "permission_camera": {
         "__compat": {
-          "description": "<code>camera</code> permission",
+          "description": "`camera` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -248,6 +219,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -259,7 +233,7 @@
       },
       "permission_clipboard-read": {
         "__compat": {
-          "description": "<code>clipboard-read</code> permission",
+          "description": "`clipboard-read` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -283,7 +257,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -294,7 +269,7 @@
       },
       "permission_clipboard-write": {
         "__compat": {
-          "description": "<code>clipboard-write</code> permission",
+          "description": "`clipboard-write` permission",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-permissionname-clipboard-write",
           "tags": [
             "web-features:async-clipboard"
@@ -322,7 +297,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -333,7 +309,7 @@
       },
       "permission_compute-pressure": {
         "__compat": {
-          "description": "<code>compute-pressure</code> permission",
+          "description": "`compute-pressure` permission",
           "spec_url": "https://w3c.github.io/compute-pressure/#policy-control",
           "tags": [
             "web-features:compute-pressure"
@@ -361,7 +337,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -372,7 +349,7 @@
       },
       "permission_geolocation": {
         "__compat": {
-          "description": "<code>geolocation</code> permission",
+          "description": "`geolocation` permission",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -396,6 +373,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -407,7 +387,7 @@
       },
       "permission_gyroscope": {
         "__compat": {
-          "description": "<code>gyroscope</code> permission",
+          "description": "`gyroscope` permission",
           "tags": [
             "web-features:gyroscope"
           ],
@@ -434,7 +414,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -445,13 +426,14 @@
       },
       "permission_local-fonts": {
         "__compat": {
-          "description": "<code>local-fonts</code> permission",
+          "description": "`local-fonts` permission",
           "support": {
             "chrome": {
               "version_added": "103"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40840834"
             },
             "edge": "mirror",
             "firefox": {
@@ -471,7 +453,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -482,7 +465,7 @@
       },
       "permission_magnetometer": {
         "__compat": {
-          "description": "<code>magnetometer</code> permission",
+          "description": "`magnetometer` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -506,7 +489,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -517,7 +501,7 @@
       },
       "permission_microphone": {
         "__compat": {
-          "description": "<code>microphone</code> permission",
+          "description": "`microphone` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -541,6 +525,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -552,7 +539,7 @@
       },
       "permission_midi": {
         "__compat": {
-          "description": "<code>midi</code> permission",
+          "description": "`midi` permission",
           "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-integration",
           "tags": [
             "web-features:web-midi"
@@ -581,7 +568,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -592,7 +580,7 @@
       },
       "permission_notifications": {
         "__compat": {
-          "description": "<code>notifications</code> permission",
+          "description": "`notifications` permission",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -600,7 +588,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "46"
+              "version_added": "46",
+              "notes": "Alias for the `push` permission (returns the same value)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -615,6 +604,10 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40443309"
+            },
+            "webview_ios": {
               "version_added": false
             }
           },
@@ -627,7 +620,7 @@
       },
       "permission_payment-handler": {
         "__compat": {
-          "description": "<code>payment-handler</code> permission",
+          "description": "`payment-handler` permission",
           "support": {
             "chrome": {
               "version_added": "66"
@@ -635,7 +628,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1465682"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -651,7 +645,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -662,7 +657,7 @@
       },
       "permission_persistent-storage": {
         "__compat": {
-          "description": "<code>persistent-storage</code> permission",
+          "description": "`persistent-storage` permission",
           "support": {
             "chrome": {
               "version_added": "71"
@@ -686,7 +681,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -697,7 +693,7 @@
       },
       "permission_push": {
         "__compat": {
-          "description": "<code>push</code> permission",
+          "description": "`push` permission",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -705,7 +701,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "46"
+              "version_added": "46",
+              "notes": "Alias for the `notifications` permission (returns the same value)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -721,6 +718,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -732,7 +732,7 @@
       },
       "permission_screen-wake-lock": {
         "__compat": {
-          "description": "<code>screen-wake-lock</code> permission",
+          "description": "`screen-wake-lock` permission",
           "spec_url": "https://w3c.github.io/screen-wake-lock/#the-screen-wake-lock-powerful-feature",
           "tags": [
             "web-features:screen-wake-lock"
@@ -760,7 +760,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -771,7 +772,7 @@
       },
       "permission_storage-access": {
         "__compat": {
-          "description": "<code>storage-access</code> permission",
+          "description": "`storage-access` permission",
           "spec_url": "https://privacycg.github.io/storage-access/#permissions-integration",
           "support": {
             "chrome": {
@@ -800,7 +801,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -811,7 +813,7 @@
       },
       "permission_top-level-storage-access": {
         "__compat": {
-          "description": "<code>top-level-storage-access</code> permission",
+          "description": "`top-level-storage-access` permission",
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#permissions-integration",
           "support": {
             "chrome": {
@@ -838,7 +840,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -849,7 +852,7 @@
       },
       "permission_window-management": {
         "__compat": {
-          "description": "<code>window-management</code> permission",
+          "description": "`window-management` permission",
           "spec_url": "https://w3c.github.io/window-management/#api-permission-api-integration",
           "support": {
             "chrome": {
@@ -874,7 +877,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -913,7 +917,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -953,7 +958,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -992,7 +998,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1046,7 +1053,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

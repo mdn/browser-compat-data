@@ -32,7 +32,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -70,7 +71,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -81,6 +83,7 @@
         },
         "contents": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-contents",
             "support": {
               "chrome": {
                 "version_added": "65"
@@ -102,7 +105,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -112,7 +116,7 @@
           },
           "contents_unusual": {
             "__compat": {
-              "description": "Specific behavior of unusual elements when <code>display: contents</code> is applied to them",
+              "description": "Specific behavior of unusual elements when `display: contents` is applied to them",
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -134,10 +138,51 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "focusable_elements": {
+            "__compat": {
+              "description": "Elements with `display: contents` are focusable",
+              "support": {
+                "chrome": {
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/40866683"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": [
+                    "https://bugzil.la/1791648",
+                    "https://bugzil.la/1553549"
+                  ]
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/255149"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -172,13 +217,13 @@
                 {
                   "version_added": "11",
                   "partial_implementation": true,
-                  "notes": "IE incorrectly positions inline block content inside flex containers. See the <a href='https://answers.microsoft.com/en-us/ie/forum/ie11-iewindows_10/inline-block-content-in-a-flex-container-not/deea64e2-933b-4bd2-a98c-62be16d04b57'>discussion on Microsoft Answers</a>."
+                  "notes": "IE incorrectly positions inline block content inside flex containers. See the [discussion on Microsoft Answers](https://answers.microsoft.com/en-us/ie/forum/ie11-iewindows_10/inline-block-content-in-a-flex-container-not/deea64e2-933b-4bd2-a98c-62be16d04b57)."
                 },
                 {
                   "alternative_name": "-ms-flexbox",
                   "version_added": "8",
                   "partial_implementation": true,
-                  "notes": "IE incorrectly positions inline block content inside flex containers. See the <a href='https://answers.microsoft.com/en-us/ie/forum/ie11-iewindows_10/inline-block-content-in-a-flex-container-not/deea64e2-933b-4bd2-a98c-62be16d04b57'>discussion on Microsoft Answers</a>."
+                  "notes": "IE incorrectly positions inline block content inside flex containers. See the [discussion on Microsoft Answers](https://answers.microsoft.com/en-us/ie/forum/ie11-iewindows_10/inline-block-content-in-a-flex-container-not/deea64e2-933b-4bd2-a98c-62be16d04b57)."
                 }
               ],
               "oculus": "mirror",
@@ -219,7 +264,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -283,7 +329,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -332,7 +379,8 @@
                 "version_added": "6.0",
                 "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate."
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -371,7 +419,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -401,7 +450,7 @@
                 {
                   "version_added": "6",
                   "partial_implementation": true,
-                  "notes": "Until Internet Explorer 8, <code>inline-block</code> is only for natural inline elements."
+                  "notes": "Until Internet Explorer 8, `inline-block` is only for natural inline elements."
                 }
               ],
               "oculus": "mirror",
@@ -414,7 +463,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -470,7 +520,8 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -519,7 +570,8 @@
                 "version_added": "6.0",
                 "notes": "Samsung Internet added this earlier than the corresponding Chrome version would indicate."
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -555,7 +607,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -566,7 +619,7 @@
         },
         "is_transitionable": {
           "__compat": {
-            "description": "Transitionable when setting <code>transition-behavior: allow-discrete</code>",
+            "description": "Transitionable when setting `transition-behavior: allow-discrete`",
             "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
             "tags": [
               "web-features:display-animation"
@@ -592,7 +645,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -603,7 +657,7 @@
         },
         "keyframe_animatable": {
           "__compat": {
-            "description": "<code>@keyframe</code> animatable",
+            "description": "`@keyframe` animatable",
             "spec_url": "https://drafts.csswg.org/css-display-4/#display-animation",
             "tags": [
               "web-features:display-animation"
@@ -629,7 +683,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -667,7 +722,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -677,7 +733,7 @@
           },
           "legend-support": {
             "__compat": {
-              "description": "Supported on <code>&lt;legend&gt;</code>",
+              "description": "Supported on `&lt;legend&gt;`",
               "support": {
                 "chrome": {
                   "version_added": "71"
@@ -699,7 +755,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -732,7 +789,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": true,
@@ -768,7 +826,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -779,10 +838,11 @@
         },
         "none": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-none",
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Chrome 65 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
+                "notes": "Chrome 65 stopped creating layout objects for elements inside an `&lt;iframe&gt;` with `display:none` applied."
               },
               "chrome_android": "mirror",
               "edge": {
@@ -798,11 +858,11 @@
               "oculus": "mirror",
               "opera": {
                 "version_added": "7",
-                "notes": "Opera 52 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
+                "notes": "Opera 52 stopped creating layout objects for elements inside an `&lt;iframe&gt;` with `display:none` applied."
               },
               "opera_android": {
                 "version_added": "10.1",
-                "notes": "Opera Android 47 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
+                "notes": "Opera Android 47 stopped creating layout objects for elements inside an `&lt;iframe&gt;` with `display:none` applied."
               },
               "safari": {
                 "version_added": "1"
@@ -810,14 +870,48 @@
               "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "1.0",
-                "notes": "Chrome 65 stopped creating layout objects for elements inside an <code>&lt;iframe&gt;</code> with <code>display:none</code> applied."
+                "notes": "Chrome 65 stopped creating layout objects for elements inside an `&lt;iframe&gt;` with `display:none` applied."
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "option_is_hidden": {
+            "__compat": {
+              "description": "Setting `display: none` on an `&lt;option&gt;` element hides it from the dropdown.",
+              "support": {
+                "chrome": {
+                  "version_added": "1"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "1"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         },
@@ -847,7 +941,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -882,7 +977,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -917,7 +1013,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -952,7 +1049,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -987,7 +1085,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1023,7 +1122,41 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "table-caption": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "≤80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "≤72"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "≤13.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1059,7 +1192,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1095,7 +1229,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1131,7 +1266,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1167,7 +1303,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1203,7 +1340,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1239,7 +1377,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1275,7 +1414,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
