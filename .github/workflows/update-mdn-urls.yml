@@ -1,0 +1,45 @@
+name: Update MDN urls
+
+on:
+  pull_request_target:
+    paths:
+      - "package-lock.json"
+
+jobs:
+  update-mdn-urls:
+    if: github.repository == 'mdn/browser-compat-data' && github.actor == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
+    name: Update MDN urls
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: "Setup git"
+        run: |
+          git config user.email 108879845+mdn-bot@users.noreply.github.com
+          git config user.name mdn-bot
+
+      - name: Install
+        run: npm ci
+
+      - name: Update
+        env:
+          REF: ${{ github.head_ref }}
+        run: |
+          npm run lint:fix -- --only=mdn_urls
+          if git diff --exit-code; then
+            echo "No changes."
+          else
+            git commit -m 'chore: fix mdn urls' .
+            git push origin "$REF"
+          fi
