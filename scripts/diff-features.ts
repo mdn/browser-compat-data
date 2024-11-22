@@ -1,12 +1,26 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { execSync } from 'node:child_process';
+import { exec, execSync } from 'node:child_process';
 import fs from 'node:fs';
+import { promisify } from 'node:util';
+import path from 'node:path';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import { temporaryDirectoryTask } from 'tempy';
+
+/**
+ * Executes a command asynchronously.
+ * @param command The command to execute asynchronously.
+ * @returns The output of the command.
+ */
+const execAsync = async (command: string): Promise<string> => {
+  const result = await promisify(exec)(command, { encoding: 'utf-8' });
+
+  return result.stdout.trim();
+};
 
 /**
  * Compare two references and print diff as Markdown or JSON
@@ -16,14 +30,14 @@ import { hideBin } from 'yargs/helpers';
  * @param opts.format Format to export data as (either 'markdown' or 'json', default 'json')
  * @param opts.github Whether to obtain artifacts from GitHub
  */
-const main = (opts: {
+const main = async (opts: {
   ref1: string | undefined;
   ref2: string | undefined;
   format?: string;
   github?: boolean;
-}): void => {
+}): Promise<void> => {
   const { ref1, ref2, format, github } = opts;
-  const results = diff({ ref1, ref2, github });
+  const results = await diff({ ref1, ref2, github });
 
   if (format === 'markdown') {
     printMarkdown(results.added, results.removed);
@@ -41,12 +55,12 @@ const main = (opts: {
  * @param opts.quiet If true, don't log to console
  * @returns Diff between two refs
  */
-const diff = (opts: {
+const diff = async (opts: {
   ref1?: string;
   ref2?: string;
   github?: boolean;
   quiet?: boolean;
-}): { added: string[]; removed: string[] } => {
+}): Promise<{ added: string[]; removed: string[] }> => {
   const { ref1, ref2, github, quiet } = opts;
   let refA, refB;
 
@@ -64,8 +78,8 @@ const diff = (opts: {
     refB = `${ref1}`;
   }
 
-  const aSide = enumerate(refA, github === false, quiet);
-  const bSide = enumerate(refB, github === false, quiet);
+  const aSide = await enumerate(refA, github === false, quiet);
+  const bSide = await enumerate(refB, github === false, quiet);
 
   return {
     added: [...bSide].filter((feature) => !aSide.has(feature)),
@@ -80,14 +94,14 @@ const diff = (opts: {
  * @param quiet If true, don't log to console
  * @returns Feature list from reference
  */
-const enumerate = (
+const enumerate = async (
   ref: string,
   skipGithub: boolean,
   quiet = false,
-): Set<string> => {
+): Promise<Set<string>> => {
   if (!skipGithub) {
     try {
-      return new Set(getEnumerationFromGithub(ref));
+      return new Set(await getEnumerationFromGithub(ref));
     } catch (e) {
       if (!quiet) {
         console.error(
@@ -105,50 +119,28 @@ const enumerate = (
  * @param ref Reference to obtain features for
  * @returns Feature list from reference
  */
-const getEnumerationFromGithub = (ref: string): string[] => {
+const getEnumerationFromGithub = async (ref: string): Promise<string[]> => {
   const ENUMERATE_WORKFLOW = '15595228';
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
-  /**
-   * Unlinks the workflow file
-   */
-  const unlinkFile = () => {
-    try {
-      fs.unlinkSync(ENUMERATE_WORKFLOW_FILE);
-    } catch (err: any) {
-      if (err.code == 'ENOENT') {
-        return;
-      }
-      throw err;
-    }
-  };
-
-  const hash = execSync(`git rev-parse ${ref}`, {
-    encoding: 'utf-8',
-  }).trim();
-  const workflowRun = execSync(
-    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?per_page=100 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
-    {
-      encoding: 'utf-8',
-    },
-  ).trim();
+  const hash = await execAsync(`git rev-parse ${ref}`);
+  const workflowRun = await execAsync(
+    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
+  );
 
   if (!workflowRun) {
     throw Error('No workflow run found for commit.');
   }
 
-  try {
-    unlinkFile();
-    execSync(
-      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT}`,
+  return await temporaryDirectoryTask(async (tempdir) => {
+    await execAsync(
+      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT} --dir ${tempdir}`,
     );
-    return JSON.parse(
-      fs.readFileSync(ENUMERATE_WORKFLOW_FILE, { encoding: 'utf-8' }),
-    );
-  } finally {
-    unlinkFile();
-  }
+    const file = path.join(tempdir, ENUMERATE_WORKFLOW_FILE);
+
+    return JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
+  });
 };
 
 /**
@@ -249,7 +241,7 @@ if (esMain(import.meta)) {
     },
   );
 
-  main(argv as any);
+  await main(argv as any);
 }
 
 export default diff;

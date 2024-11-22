@@ -35,6 +35,10 @@ export const orderStatements = (
  * @param filename The name of the file to fix
  */
 const fixStatementOrder = (filename: string): void => {
+  if (filename.includes('/browsers/')) {
+    return;
+  }
+
   let actual = fs.readFileSync(filename, 'utf-8').trim();
   let expected = JSON.stringify(JSON.parse(actual, orderStatements), null, 2);
 
