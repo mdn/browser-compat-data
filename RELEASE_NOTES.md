@@ -15,6 +15,7 @@ November 22, 2024
 
 ### Additions
 
+- `api.GPUCommandEncoder.beginRenderPass.separate_depth_stencil_read-only` ([#25157](https://github.com/mdn/browser-compat-data/pull/25157))
 - `api.GPUDevice.createBindGroupLayout.storageTexture_access_read-write_read-only` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
 - `api.GPUDevice.createBindGroupLayout.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
 - `api.GPUDevice.createRenderPipeline.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
@@ -40,8 +41,8 @@ November 22, 2024
 
 ### Statistics
 
-- 16 contributors have changed 92 files with 1,674 additions and 834 deletions in 42 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
-- 16,741 total features
+- 16 contributors have changed 92 files with 1,717 additions and 834 deletions in 43 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,742 total features
 - 1,116 total contributors
 - 4,993 total stargazers
 
