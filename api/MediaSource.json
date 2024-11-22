@@ -39,11 +39,15 @@
           },
           "safari_ios": {
             "version_added": "13",
+            "impl_url": "https://webkit.org/b/200147",
             "partial_implementation": true,
             "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
           },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": {
+            "version_added": false
+          }
         },
         "status": {
           "experimental": false,
@@ -53,7 +57,7 @@
       },
       "MediaSource": {
         "__compat": {
-          "description": "<code>MediaSource()</code> constructor",
+          "description": "`MediaSource()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/MediaSource",
           "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-constructor",
           "support": {
@@ -99,7 +103,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -132,7 +139,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -177,6 +185,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -222,6 +233,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -233,7 +247,7 @@
       },
       "canConstructInDedicatedWorker_static": {
         "__compat": {
-          "description": "<code>canConstructInDedicatedWorker</code> static property",
+          "description": "`canConstructInDedicatedWorker` static property",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/canConstructInDedicatedWorker_static",
           "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-canconstructindedicatedworker",
           "support": {
@@ -257,7 +271,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -297,7 +314,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -342,6 +362,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -387,6 +410,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -421,7 +447,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -432,32 +461,32 @@
       },
       "isTypeSupported_static": {
         "__compat": {
-          "description": "<code>isTypeSupported()</code> static method",
+          "description": "`isTypeSupported()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaSource/isTypeSupported_static",
           "spec_url": "https://w3c.github.io/media-source/#dom-mediasource-istypesupported",
           "support": {
             "chrome": {
               "version_added": "23",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "firefox": {
               "version_added": "42",
-              "notes": "Before Firefox 101, <code>isTypeSupported()</code> ignored <code>codecs</code> parameter options for <code>av01</code> codecs (treating them as <code>av1</code>)."
+              "notes": "Before Firefox 101, `isTypeSupported()` ignored `codecs` parameter options for `av01` codecs (treating them as `av1`)."
             },
             "firefox_android": {
               "version_added": "41",
-              "notes": "Before Firefox 101, <code>isTypeSupported()</code> ignored <code>codecs</code> parameter options for <code>av01</code> codecs (treating them as <code>av1</code>)."
+              "notes": "Before Firefox 101, `isTypeSupported()` ignored `codecs` parameter options for `av01` codecs (treating them as `av1`)."
             },
             "ie": {
               "version_added": "11",
@@ -478,9 +507,12 @@
             "webview_android": {
               "version_added": "4.4.3",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -528,7 +560,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -573,6 +608,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -613,7 +651,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -658,6 +699,9 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4.3"
+            },
+            "webview_ios": {
+              "version_added": false
             }
           },
           "status": {
@@ -669,7 +713,7 @@
       },
       "sourceclose_event": {
         "__compat": {
-          "description": "<code>sourceclose</code> event",
+          "description": "`sourceclose` event",
           "spec_url": "https://w3c.github.io/media-source/#dfn-sourceclose",
           "support": {
             "chrome": [
@@ -680,7 +724,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -692,7 +736,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
             ],
             "firefox": [
@@ -703,7 +747,7 @@
                 "version_added": "42",
                 "version_removed": "87",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
             ],
             "firefox_android": [
@@ -714,7 +758,7 @@
                 "version_added": "41",
                 "version_removed": "87",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
             ],
             "ie": {
@@ -732,7 +776,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -741,7 +785,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -752,7 +799,7 @@
       },
       "sourceended_event": {
         "__compat": {
-          "description": "<code>sourceended</code> event",
+          "description": "`sourceended` event",
           "spec_url": "https://w3c.github.io/media-source/#dfn-sourceended",
           "support": {
             "chrome": [
@@ -763,7 +810,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
+                "notes": "The `onsourceended` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -775,7 +822,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
+                "notes": "The `onsourceended` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -799,7 +846,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceended</code> event handler property is not supported."
+                "notes": "The `onsourceended` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -816,9 +863,12 @@
                 "version_added": "4.4.3",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceclose</code> event handler property is not supported."
+                "notes": "The `onsourceclose` event handler property is not supported."
               }
-            ]
+            ],
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,
@@ -829,7 +879,7 @@
       },
       "sourceopen_event": {
         "__compat": {
-          "description": "<code>sourceopen</code> event",
+          "description": "`sourceopen` event",
           "spec_url": "https://w3c.github.io/media-source/#dfn-sourceopen",
           "support": {
             "chrome": [
@@ -840,7 +890,7 @@
                 "version_added": "31",
                 "version_removed": "53",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
+                "notes": "The `onsourceopen` event handler property is not supported."
               }
             ],
             "chrome_android": "mirror",
@@ -852,7 +902,7 @@
                 "version_added": "12",
                 "version_removed": "17",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
+                "notes": "The `onsourceopen` event handler property is not supported."
               }
             ],
             "firefox": {
@@ -876,7 +926,7 @@
                 "version_added": "8",
                 "version_removed": "10.1",
                 "partial_implementation": true,
-                "notes": "The <code>onsourceopen</code> event handler property is not supported."
+                "notes": "The `onsourceopen` event handler property is not supported."
               }
             ],
             "safari_ios": {
@@ -885,7 +935,10 @@
               "notes": "Exposed in Mobile Safari on iPad but not on iPhone."
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
             "experimental": false,

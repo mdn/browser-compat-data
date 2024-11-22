@@ -17,6 +17,7 @@ export { default as testPrefix } from './test-prefix.js';
 export { default as testSchema } from './test-schema.js';
 export { default as testSpecURLs } from './test-spec-urls.js';
 export { default as testStatus } from './test-status.js';
+export { default as testStatusInheritance } from './test-status-inheritance.js';
 export { default as testStyle } from './test-style.js';
 export { default as testTags } from './test-tags.js';
 export { default as testVersions } from './test-versions.js';
