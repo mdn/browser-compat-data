@@ -72,13 +72,13 @@ const pullsFromGitHub = (fromDate: string): FeatureChange[] =>
  * @param pull The pull request to test
  * @returns The changes from the pull request
  */
-const getDiff = (
+const getDiff = async (
   pull: FeatureChange,
-): { added: string[]; removed: string[] } => {
+): Promise<{ added: string[]; removed: string[] }> => {
   let diff;
 
   try {
-    diff = diffFeatures({ ref1: pull.mergeCommit, quiet: true });
+    diff = await diffFeatures({ ref1: pull.mergeCommit, quiet: true });
   } catch (e) {
     throw new Error(
       chalk`{red ${e}}\n {yellow (Failed to diff features for #${pull.number}, skipping)}`,
@@ -123,27 +123,29 @@ export const getChanges = async (date: string): Promise<Changes> => {
 
   progressBar.start(pulls.length, 0);
 
-  for (const pull of pulls) {
-    const diff = getDiff(pull);
+  await Promise.all(
+    pulls.map(async (pull) => {
+      const diff = await getDiff(pull);
 
-    changes.added.push(
-      ...diff.added.map((feature) => ({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      })),
-    );
+      changes.added.push(
+        ...diff.added.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
 
-    changes.removed.push(
-      ...diff.removed.map((feature) => ({
-        number: pull.number,
-        url: pull.url,
-        feature,
-      })),
-    );
+      changes.removed.push(
+        ...diff.removed.map((feature) => ({
+          number: pull.number,
+          url: pull.url,
+          feature,
+        })),
+      );
 
-    progressBar.increment();
-  }
+      progressBar.increment();
+    }),
+  );
 
   progressBar.stop();
   console.log('\n');
