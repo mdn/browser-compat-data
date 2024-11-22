@@ -85,7 +85,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'stable-channel-update-for-desktop',
     firstRelease: 1,
     skippedReleases: [82], // 82 was skipped during COVID
@@ -98,7 +98,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 25,
     skippedReleases: [82], // 82 was skipped during COVID
@@ -111,7 +111,7 @@ const options = {
     browserEngine: 'Blink',
     releaseBranch: 'stable',
     betaBranch: 'beta',
-    nightlyBranch: 'canary',
+    nightlyBranch: 'dev',
     releaseNoteCore: 'chrome-for-android-update',
     firstRelease: 37,
     skippedReleases: [82], // 82 was skipped during COVID
@@ -181,6 +181,15 @@ const options = {
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
   },
+  webview_ios: {
+    browserName: 'WKWebView for iOS',
+    bcdFile: './browsers/webview_ios.json',
+    bcdBrowserName: 'webview_ios',
+    skippedReleases: ['12.1', '13.1', '14.1'],
+    releaseNoteJSON:
+      'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
+    releaseNoteURLBase: 'https://developer.apple.com',
+  },
 };
 
 let result = '';
@@ -222,6 +231,11 @@ if (updateSafari && updateDesktop) {
 
 if (updateSafari && updateMobile) {
   const add = await updateSafariReleases(options.safari_ios);
+  result += (result && add ? '\n' : '') + add;
+}
+
+if (updateSafari && updateMobile) {
+  const add = await updateSafariReleases(options.webview_ios);
   result += (result && add ? '\n' : '') + add;
 }
 
