@@ -535,7 +535,10 @@
             "nodejs": {
               "version_added": "11.7.0",
               "partial_implementation": true,
-              "notes": "Only support `transferList` parameter as an optional array of objects."
+              "notes": [
+                "Only support passing the second parameter as an optional array of objects, not support passing the second parameter as an options object.",
+                "Only support transferring `ArrayBuffer` and `MessagePort` objects."
+              ]
             },
             "oculus": "mirror",
             "opera": {
