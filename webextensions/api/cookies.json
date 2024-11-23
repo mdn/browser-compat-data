@@ -7,7 +7,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/Cookie",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -67,7 +67,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "≤72"
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -92,7 +92,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/CookieStore",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -114,7 +114,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "6"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -156,7 +156,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "6"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -202,14 +202,14 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/get",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
                 "notes": [
                   "Provides access to cookies from private browsing mode and container tabs since version 52.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is returned; previously, the earliest created cookie was returned."
                 ]
               },
               "firefox_android": {
@@ -223,7 +223,7 @@
                 {
                   "version_added": "14",
                   "partial_implementation": true,
-                  "notes": "<code>HttpOnly</code> cookies are not retrieved."
+                  "notes": "`HttpOnly` cookies are not retrieved."
                 }
               ],
               "safari_ios": [
@@ -233,7 +233,7 @@
                 {
                   "version_added": "15",
                   "partial_implementation": true,
-                  "notes": "<code>HttpOnly</code> cookies are not retrieved."
+                  "notes": "`HttpOnly` cookies are not retrieved."
                 }
               ]
             }
@@ -282,7 +282,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAll",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": {
                 "version_added": "79",
@@ -292,7 +292,7 @@
                 "version_added": "45",
                 "notes": [
                   "Before version 52, the 'tabIds' list was empty and only cookies from the default cookie store were returned. From version 52 onwards, this has been fixed and the result includes cookies from private browsing mode and container tabs.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is returned first: previously, the earliest created cookie was returned first."
                 ]
               },
               "firefox_android": {
@@ -308,7 +308,7 @@
                   "partial_implementation": true,
                   "notes": [
                     "Only the cookies in the default cookie store are retrieved.",
-                    "<code>HttpOnly</code> cookies are not retrieved."
+                    "`HttpOnly` cookies are not retrieved."
                   ]
                 }
               ],
@@ -321,7 +321,7 @@
                   "partial_implementation": true,
                   "notes": [
                     "Only the cookies in the default cookie store are retrieved.",
-                    "<code>HttpOnly</code> cookies are not retrieved."
+                    "`HttpOnly` cookies are not retrieved."
                   ]
                 }
               ]
@@ -371,7 +371,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/getAllCookieStores",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -410,7 +410,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/onChanged",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
@@ -453,21 +453,21 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/remove",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
                 "notes": [
                   "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
                 ]
               },
               "firefox_android": {
                 "version_added": "48",
                 "notes": [
                   "Before version 56, this function did not remove cookies from private browsing mode. From version 56 onwards this is fixed.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie with the longest matching path is deleted: previously, the earliest created cookie was deleted."
                 ]
               },
               "opera": "mirror",
@@ -523,7 +523,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/SameSiteStatus",
             "support": {
               "chrome": {
-                "version_added": "≤72"
+                "version_added": "51"
               },
               "edge": "mirror",
               "firefox": {
@@ -545,7 +545,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -568,12 +568,12 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "63",
-                  "notes": "Represents a cookie without a <code>SameSite</code> attribute."
+                  "notes": "Represents a cookie without a `SameSite` attribute."
                 },
                 "firefox_android": "mirror",
                 "opera": {
@@ -592,7 +592,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -615,7 +615,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": true
+                  "version_added": "76"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -638,21 +638,21 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/set",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "45",
                 "notes": [
                   "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
                 ]
               },
               "firefox_android": {
                 "version_added": "48",
                 "notes": [
                   "Before version 56, this function did not modify cookies in private browsing mode. From version 56 onwards this is fixed.",
-                  "From Firefox 133, sorts cookies according to <a href='https://datatracker.ietf.org/doc/html/rfc6265#section-5.4'>RFC 6265, section 5.4</a>. This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
+                  "From Firefox 133, sorts cookies according to [RFC 6265, section 5.4](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4). This means the cookie returned by the promise is the one with the longest matching path: previously, the earliest created cookie was returned."
                 ]
               },
               "opera": "mirror",
@@ -665,7 +665,7 @@
                   "partial_implementation": true,
                   "notes": [
                     "Only sets cookies in the default cookie store.",
-                    "<code>HttpOnly</code> cookies are not set."
+                    "`HttpOnly` cookies are not set."
                   ]
                 }
               ],
@@ -678,7 +678,7 @@
                   "partial_implementation": true,
                   "notes": [
                     "Only sets cookies in the default cookie store.",
-                    "<code>HttpOnly</code> cookies are not set."
+                    "`HttpOnly` cookies are not set."
                   ]
                 }
               ]
@@ -726,7 +726,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "≤72"
+                  "version_added": "51"
                 },
                 "edge": "mirror",
                 "firefox": {
