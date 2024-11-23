@@ -3014,13 +3014,13 @@
             "chrome_android": [
               {
                 "version_added": "131",
-                "notes": "In Chrome for Android 131, choosing a directory crashes the browser."
+                "partial_implementation": true,
+                "notes": "In Chrome for Android 131, if a user chooses a directory then the browser crashes (see [bug](https://crbug.com/376834374))."
               },
               {
                 "version_added": "18",
-                "impl_url": "https://crbug.com/40248532",
                 "partial_implementation": true,
-                "notes": "The property can be set, but has no behavior."
+                "notes": "The property reflects the attribute but users cannot choose a directory, only individual files (see [bug 40248532](https://crbug.com/40248532)."
               }
             ],
             "edge": {
