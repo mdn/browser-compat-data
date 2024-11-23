@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
+import { marked } from 'marked';
 
 import { InternalSupportStatement } from '../../types/index.js';
 import { BrowserName, CompatData, VersionValue } from '../../types/types.js';
@@ -45,6 +46,19 @@ export const generateMeta = (): any => ({
   version: packageJson.version,
   timestamp: new Date(),
 });
+
+/**
+ * Converts Markdown to HTML and sanitizes output
+ * @param {string | string[]} markdown The Markdown to convert
+ * @returns {string | string[]} The HTML output
+ */
+const mdToHtml = (markdown: string): string => {
+  // "as string" cast because TS thinks response could be a promise
+  return (marked.parseInline(markdown) as string)
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;([\w#]+);/g, '&$1;');
+};
 
 /**
  * Apply mirroring to a feature
@@ -120,6 +134,44 @@ export const addVersionLast = (feature: WalkOutput): void => {
 };
 
 /**
+ * Convert descriptions and notes from Markdown to HTML
+ * @param {WalkOutput} feature The BCD to perform note conversion on
+ * @returns {void}
+ */
+export const transformMD = (feature: WalkOutput): void => {
+  if ('description' in feature.data.__compat) {
+    feature.data.__compat.description = mdToHtml(
+      feature.data.__compat.description,
+    );
+  }
+
+  for (const [browser, supportData] of Object.entries(
+    feature.compat.support as InternalSupportStatement,
+  )) {
+    if (!supportData) continue;
+
+    if (Array.isArray(supportData)) {
+      for (let i = 0; i < supportData.length; i++) {
+        if ('notes' in supportData[i]) {
+          (feature.data as any).__compat.support[browser][i].notes =
+            Array.isArray(supportData[i].notes)
+              ? supportData[i].notes.map((md) => mdToHtml(md))
+              : mdToHtml(supportData[i].notes);
+        }
+      }
+    } else if (typeof supportData === 'object') {
+      if ('notes' in supportData) {
+        (feature.data as any).__compat.support[browser].notes = Array.isArray(
+          (supportData as any).notes,
+        )
+          ? (supportData as any).notes.map((md) => mdToHtml(md))
+          : mdToHtml((supportData as any).notes);
+      }
+    }
+  }
+};
+
+/**
  * Applies transforms to the given data.
  * @param data - The data to apply transforms to.
  */
@@ -129,6 +181,7 @@ export const applyTransforms = (data): void => {
   for (const feature of walker) {
     applyMirroring(feature);
     addVersionLast(feature);
+    transformMD(feature);
   }
 };
 

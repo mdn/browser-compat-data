@@ -3,16 +3,36 @@ on:
   pull_request_target:
 
 permissions:
-  contents: read
+  contents: read # to determine modified files
+  issues: write # pr-size-labeler uses the issues API until https://github.com/CodelyTV/pr-size-labeler/pull/89 is merged
+  pull-requests: write # to add labels to PRs
 
 jobs:
-  triage:
-    permissions:
-      contents: read # for actions/labeler to determine modified files
-      pull-requests: write # for actions/labeler to add labels to PRs
+  label-py-path:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           sync-labels: true
+
+  label-by-size:
+    if: github.actor != 'dependabot[bot]' && !startsWith(github.event.pull_request.title, 'Release v')
+    needs: label-py-path
+    runs-on: ubuntu-latest
+    steps:
+      - uses: codelytv/pr-size-labeler@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_api_url: "https://api.github.com"
+          xs_label: "size:xs"
+          xs_max_size: "6"
+          s_label: "size:s"
+          s_max_size: "24"
+          m_label: "size:m"
+          m_max_size: "100"
+          l_label: "size:l"
+          l_max_size: "1000"
+          xl_label: "size:xl"
+          fail_if_xl: "false"
+          message_if_xl: ""
