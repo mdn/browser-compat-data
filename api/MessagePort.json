@@ -29,15 +29,15 @@
             {
               "version_added": "14.7.0",
               "partial_implementation": true,
-              "notes": "Available as a part of the <code>worker_threads</code> module."
+              "notes": "Available as a part of the `worker_threads` module."
             },
             {
               "version_added": "11.7.0",
               "version_removed": "14.7.0",
               "partial_implementation": true,
               "notes": [
-                "Available as a part of the <code>worker_threads</code> module.",
-                "Inherits from Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>."
+                "Available as a part of the `worker_threads` module.",
+                "Inherits from Node `EventEmitter` instead of DOM `EventTarget`."
               ]
             }
           ],
@@ -161,7 +161,7 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/message_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-message",
@@ -193,7 +193,7 @@
                 "version_added": "11.7.0",
                 "version_removed": "14.7.0",
                 "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+                "notes": "Supports the event, but only via Node `EventEmitter`."
               }
             ],
             "oculus": "mirror",
@@ -222,7 +222,7 @@
       },
       "messageerror_event": {
         "__compat": {
-          "description": "<code>messageerror</code> event",
+          "description": "`messageerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MessagePort/messageerror_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
@@ -257,13 +257,13 @@
                 "version_added": "14.5.0",
                 "version_removed": "14.7.0",
                 "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+                "notes": "Supports the event, but only via Node `EventEmitter`."
               },
               {
                 "version_added": "12.19.0",
                 "version_removed": "13.0.0",
                 "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+                "notes": "Supports the event, but only via Node `EventEmitter`."
               }
             ],
             "oculus": "mirror",
@@ -298,15 +298,15 @@
             "deno": [
               {
                 "version_added": "1.14",
-                "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+                "notes": "The `message` parameter does not support cloning `Blob` values."
               },
               {
                 "version_added": "1.12",
                 "version_removed": "1.14",
                 "partial_implementation": true,
                 "notes": [
-                  "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
-                  "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                  "The `message` parameter does not support cloning `Blob` values.",
+                  "The `transfer` parameter does not accept `ArrayBuffer` items. Passing an `ArrayBuffer` results in an error being thrown."
                 ]
               }
             ],
@@ -342,6 +342,46 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_includeUserActivation_parameter": {
+          "__compat": {
+            "description": "`options.includeUserActivation` parameter",
+            "support": {
+              "chrome": {
+                "version_added": "72"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
           }
         }
       },
