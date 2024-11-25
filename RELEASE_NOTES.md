@@ -4,6 +4,10 @@
 
 November 25, 2024
 
+### Removals
+
+- `css.types.image.image` ([#25190](https://github.com/mdn/browser-compat-data/pull/25190))
+
 ### Additions
 
 - `webextensions.manifest.chrome_settings_overrides.search_provider.search_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
@@ -11,8 +15,8 @@ November 25, 2024
 
 ### Statistics
 
-- 6 contributors have changed 15 files with 223 additions and 143 deletions in 18 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
-- 16,750 total features
+- 6 contributors have changed 16 files with 223 additions and 180 deletions in 19 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,749 total features
 - 1,116 total contributors
 - 5,006 total stargazers
 
