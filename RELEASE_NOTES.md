@@ -15,7 +15,7 @@ November 25, 2024
 
 ### Statistics
 
-- 6 contributors have changed 17 files with 226 additions and 183 deletions in 21 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 6 contributors have changed 18 files with 228 additions and 185 deletions in 22 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
 - 16,749 total features
 - 1,116 total contributors
 - 5,006 total stargazers
