@@ -172,6 +172,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/connection",
           "spec_url": "https://wicg.github.io/netinfo/#connection-attribute",
+          "tags": [
+            "web-features:network-information"
+          ],
           "support": {
             "chrome": {
               "version_added": "61"
@@ -265,7 +268,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "120",
-              "notes": "Opt-in to GPC by setting the preference <code>privacy.globalprivacycontrol.enabled</code> to <code>true</code>."
+              "notes": "Opt-in to GPC by setting the preference `privacy.globalprivacycontrol.enabled` to `true`."
             },
             "firefox_android": {
               "version_added": false
@@ -333,7 +336,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "18.2"
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -341,7 +344,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -351,6 +354,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/hardwareConcurrency",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-navigator-hardwareconcurrency-dev",
+          "tags": [
+            "web-features:hardware-concurrency"
+          ],
           "support": {
             "chrome": {
               "version_added": "37"
@@ -375,7 +381,7 @@
             "safari": [
               {
                 "version_added": "15.4",
-                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See <a href='https://webkit.org/b/233381'>bug 233381</a>."
+                "notes": "The value of this property is clamped to 4 or 8 cores, to prevent device fingerprinting. See [bug 233381](https://webkit.org/b/233381)."
               },
               {
                 "version_added": "10.1",
@@ -442,6 +448,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/language",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-language-dev",
+          "tags": [
+            "web-features:language"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -452,14 +461,14 @@
             },
             "firefox": {
               "version_added": "3.5",
-              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by <code>navigator.userAgent</code>. Starting in Firefox 5, this property's value is based on the value of the <code>Accept-Language</code> <a href='https://developer.mozilla.org/docs/Web/HTTP/Headers'>HTTP header</a>."
+              "notes": "Before Firefox 4, this property's value was also part of the user agent string, as reported by `navigator.userAgent`. Starting in Firefox 5, this property's value is based on the value of the `Accept-Language` [HTTP header](https://developer.mozilla.org/docs/Web/HTTP/Headers)."
             },
             "firefox_android": {
               "version_added": "4"
             },
             "ie": {
               "version_added": "11",
-              "notes": "Closest available (non-standard) properties are <code>userLanguage</code> and <code>browserLanguage</code>."
+              "notes": "Closest available (non-standard) properties are `userLanguage` and `browserLanguage`."
             },
             "oculus": "mirror",
             "opera": {
@@ -487,10 +496,13 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/languages",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-languages-dev",
+          "tags": [
+            "web-features:language"
+          ],
           "support": {
             "chrome": {
               "version_added": "37",
-              "notes": "Before Chrome 65, <code>navigator.languages[0]</code> is not guaranteed to equal <code>navigator.language</code>."
+              "notes": "Before Chrome 65, `navigator.languages[0]` is not guaranteed to equal `navigator.language`."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -498,12 +510,12 @@
             },
             "firefox": {
               "version_added": "32",
-              "notes": "In Firefox, the <code>navigator.languages</code> property's value is taken from the <code>intl.accept_languages</code> preference."
+              "notes": "In Firefox, the `navigator.languages` property's value is taken from the `intl.accept_languages` preference."
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false,
-              "notes": "Closest available (non-standard) properties are <code>userLanguage</code> and <code>browserLanguage</code>."
+              "notes": "Closest available (non-standard) properties are `userLanguage` and `browserLanguage`."
             },
             "oculus": "mirror",
             "opera": {
@@ -521,7 +533,7 @@
             },
             "webview_android": {
               "version_added": "37",
-              "notes": "Before version 65, <code>navigator.languages[0]</code> is not guaranteed to equal <code>navigator.language</code>."
+              "notes": "Before version 65, `navigator.languages[0]` is not guaranteed to equal `navigator.language`."
             },
             "webview_ios": "mirror"
           },
@@ -623,8 +635,7 @@
                   "name": "#web-machine-learning-neural-network",
                   "value_to_set": "Enabled"
                 }
-              ],
-              "notes": "Currently supported on ChromeOS and Windows only."
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -662,6 +673,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/onLine",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-online-dev",
+          "tags": [
+            "web-features:online"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -672,7 +686,7 @@
             },
             "firefox": {
               "version_added": "3.5",
-              "notes": "Since Firefox 4 the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity. Since Firefox 41, on OS X and Windows, the returned values follow the actual network connectivity, unless 'Work offline' mode is selected (where it will always return <code>false</code>)."
+              "notes": "Since Firefox 4 the browser returns `true` when 'Work Offline' mode is disabled and `false` when it is enabled, regardless of actual connectivity. Since Firefox 41, on OS X and Windows, the returned values follow the actual network connectivity, unless 'Work offline' mode is selected (where it will always return `false`)."
             },
             "firefox_android": {
               "version_added": "4"
@@ -683,11 +697,11 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6",
-              "notes": "From Opera 11.1 until Opera 12.1, the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity."
+              "notes": "From Opera 11.1 until Opera 12.1, the browser returns `true` when 'Work Offline' mode is disabled and `false` when it is enabled, regardless of actual connectivity."
             },
             "opera_android": {
               "version_added": "11",
-              "notes": "From Opera 11.1 until Opera 12.1, the browser returns <code>true</code> when 'Work Offline' mode is disabled and <code>false</code> when it is enabled, regardless of actual connectivity."
+              "notes": "From Opera 11.1 until Opera 12.1, the browser returns `true` when 'Work Offline' mode is disabled and `false` when it is enabled, regardless of actual connectivity."
             },
             "safari": {
               "version_added": "4"
@@ -699,7 +713,7 @@
             "webview_android": {
               "version_added": "4.4",
               "partial_implementation": true,
-              "notes": "Can incorrectly return true, see <a href='https://crbug.com/41369933'>bug 41369933</a>."
+              "notes": "Can incorrectly return true, see [bug 41369933](https://crbug.com/41369933)."
             },
             "webview_ios": "mirror"
           },
@@ -763,8 +777,8 @@
             "firefox": {
               "version_added": "3.5",
               "notes": [
-                "Before Firefox 69, <code>platform</code> would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
-                "You can override the value returned by <code>platform</code> by setting the preference <code>general.platform.override</code> to the string you wish to be returned instead."
+                "Before Firefox 69, `platform` would report running on a 32-bit CPU if running the 32-bit version of Firefox on a 64-bit system.",
+                "You can override the value returned by `platform` by setting the preference `general.platform.override` to the string you wish to be returned instead."
               ]
             },
             "firefox_android": {
@@ -838,6 +852,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serial",
           "spec_url": "https://wicg.github.io/serial/#dom-workernavigator-serial",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -916,6 +933,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/storage",
           "spec_url": "https://storage.spec.whatwg.org/#dom-navigatorstorage-storage",
+          "tags": [
+            "web-features:storage-manager"
+          ],
           "support": {
             "chrome": {
               "version_added": "55"
@@ -1026,7 +1046,7 @@
             "webview_android": {
               "version_added": false,
               "impl_url": "https://crbug.com/41441927",
-              "notes": "WebView exposes <code>navigator.usb</code>, but does not support WebUSB."
+              "notes": "WebView exposes `navigator.usb`, but does not support WebUSB."
             },
             "webview_ios": "mirror"
           },
@@ -1041,6 +1061,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/userAgent",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-useragent-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -1084,6 +1107,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/userAgentData",
           "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatorua-useragentdata",
+          "tags": [
+            "web-features:ua-client-hints"
+          ],
           "support": {
             "chrome": {
               "version_added": "90"

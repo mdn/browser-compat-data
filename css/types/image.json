@@ -6,6 +6,9 @@
           "description": "`&lt;image&gt;`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image",
           "spec_url": "https://drafts.csswg.org/css-images/#image-values",
+          "tags": [
+            "web-features:gradients"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -47,13 +50,16 @@
             "description": "`cross-fade()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/cross-fade",
             "spec_url": "https://drafts.csswg.org/css-images-4/#cross-fade-function",
+            "tags": [
+              "web-features:cross-fade"
+            ],
             "support": {
               "chrome": {
                 "prefix": "-webkit-",
                 "version_added": "17",
                 "notes": [
                   "Supports the original dual-image with percentage implementation only.",
-                  "See <a href='https://crbug.com/40470742'>bug 40470742</a> for supporting the unprefixed <code>cross-fade()</code> function."
+                  "See [bug 40470742](https://crbug.com/40470742) for supporting the unprefixed `cross-fade()` function."
                 ]
               },
               "chrome_android": "mirror",
@@ -107,6 +113,9 @@
             "description": "`element()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/element",
             "spec_url": "https://drafts.csswg.org/css-images-4/#element-notation",
+            "tags": [
+              "web-features:element"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -123,14 +132,14 @@
                   "version_added": "29",
                   "version_removed": "57",
                   "partial_implementation": true,
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
+                  "notes": "`-moz-element()` is limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image), [`background`](https://developer.mozilla.org/docs/Web/CSS/background), [`border-image`](https://developer.mozilla.org/docs/Web/CSS/border-image) and [`border-image-source`](https://developer.mozilla.org/docs/Web/CSS/border-image-source)."
                 },
                 {
                   "prefix": "-moz-",
                   "version_added": "4",
                   "version_removed": "29",
                   "partial_implementation": true,
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
+                  "notes": "`-moz-element()` is limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image) and [`background`](https://developer.mozilla.org/docs/Web/CSS/background)."
                 }
               ],
               "firefox_android": [
@@ -143,14 +152,14 @@
                   "version_added": "29",
                   "version_removed": "60",
                   "partial_implementation": true,
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/border-image-source'><code>border-image-source</code></a>."
+                  "notes": "`-moz-element()` is limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image), [`background`](https://developer.mozilla.org/docs/Web/CSS/background), [`border-image`](https://developer.mozilla.org/docs/Web/CSS/border-image) and [`border-image-source`](https://developer.mozilla.org/docs/Web/CSS/border-image-source)."
                 },
                 {
                   "prefix": "-moz-",
                   "version_added": "4",
                   "version_removed": "29",
                   "partial_implementation": true,
-                  "notes": "<code>-moz-element()</code> is limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a> and <a href='https://developer.mozilla.org/docs/Web/CSS/background'><code>background</code></a>."
+                  "notes": "`-moz-element()` is limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image) and [`background`](https://developer.mozilla.org/docs/Web/CSS/background)."
                 }
               ],
               "ie": {
@@ -179,6 +188,9 @@
             "description": "`&lt;gradient&gt;`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
             "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
+            "tags": [
+              "web-features:gradients"
+            ],
             "support": {
               "chrome": [
                 {
@@ -195,7 +207,7 @@
               },
               "firefox": {
                 "version_added": "3.6",
-                "notes": "Gradients are limited to <a href='https://developer.mozilla.org/docs/Web/CSS/background-image'><code>background-image</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/border-image'><code>border-image</code></a>, and <a href='https://developer.mozilla.org/docs/Web/CSS/mask-image'><code>mask-image</code></a>."
+                "notes": "Gradients are limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image), [`border-image`](https://developer.mozilla.org/docs/Web/CSS/border-image), and [`mask-image`](https://developer.mozilla.org/docs/Web/CSS/mask-image)."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -442,6 +454,9 @@
               "description": "`linear-gradient()`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient",
               "spec_url": "https://drafts.csswg.org/css-images-4/#linear-gradients",
+              "tags": [
+                "web-features:gradients"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -468,15 +483,15 @@
                     "prefix": "-moz-",
                     "version_added": "3.6",
                     "notes": [
-                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
+                      "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                     ]
                   }
                 ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
-                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'><code>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</code></a>."
+                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
                 },
                 "oculus": "mirror",
                 "opera": [
@@ -486,13 +501,13 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "15",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   },
                   {
                     "prefix": "-o-",
                     "version_added": "11",
                     "version_removed": "15",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   }
                 ],
                 "opera_android": [
@@ -502,13 +517,13 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "14",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   },
                   {
                     "prefix": "-o-",
                     "version_added": "11",
                     "version_removed": "14",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   }
                 ],
                 "safari": [
@@ -519,8 +534,8 @@
                     "prefix": "-webkit-",
                     "version_added": "5.1",
                     "notes": [
-                      "Safari 4 was supporting an experimental <a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'><code>-webkit-gradient(linear,…)</code></a> function. It is more limited than the later standard version: you cannot specify both a position and an angle like in <code>linear-gradient()</code>. This old outdated syntax is still supported for compatibility purposes.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                      "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
+                      "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                     ]
                   }
                 ],
@@ -546,6 +561,9 @@
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "71"
@@ -682,6 +700,9 @@
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "40"
@@ -716,6 +737,9 @@
             "premultiplied_gradients": {
               "__compat": {
                 "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "29"
@@ -750,6 +774,9 @@
             "to": {
               "__compat": {
                 "description": "`to` keyword",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -788,6 +815,9 @@
             "unitless_0_angle": {
               "__compat": {
                 "description": "Unitless `0` for &lt;angle&gt;",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -803,7 +833,7 @@
                     {
                       "version_added": "46",
                       "partial_implementation": true,
-                      "notes": "Accepted only in <code>-webkit-linear-gradient()</code> and <code>-moz-linear-gradient()</code>, not <code>linear-gradient()</code>."
+                      "notes": "Accepted only in `-webkit-linear-gradient()` and `-moz-linear-gradient()`, not `linear-gradient()`."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -836,6 +866,9 @@
               "description": "`radial-gradient()`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient",
               "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
+              "tags": [
+                "web-features:gradients"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -861,13 +894,13 @@
                   {
                     "prefix": "-moz-",
                     "version_added": "3.6",
-                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
                   }
                 ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
-                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'><code>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</code></a>."
+                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
                 },
                 "oculus": "mirror",
                 "opera": [
@@ -905,7 +938,7 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "5.1",
-                    "notes": "Safari 4 was supporting an experimental <a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'><code>-webkit-gradient(radial,…)</code></a> function. This old outdated syntax is still supported for compatibility purposes."
+                    "notes": "Safari 4 was supporting an experimental [`-webkit-gradient(radial,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. This old outdated syntax is still supported for compatibility purposes."
                   }
                 ],
                 "safari_ios": "mirror",
@@ -930,6 +963,9 @@
             "at": {
               "__compat": {
                 "description": "`at` syntax",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -970,6 +1006,9 @@
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "71"
@@ -1106,6 +1145,9 @@
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "40"
@@ -1140,6 +1182,9 @@
             "premultiplied_gradients": {
               "__compat": {
                 "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "29"
@@ -1318,6 +1363,9 @@
               "description": "`repeating-linear-gradient()`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient",
               "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "tags": [
+                "web-features:gradients"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -1345,15 +1393,15 @@
                     "prefix": "-moz-",
                     "version_added": "3.6",
                     "notes": [
-                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                      "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
+                      "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                     ]
                   }
                 ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": "10",
-                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: <a href='https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient'><code>-ms-filter: progid:DXImageTransform.Microsoft.Gradient()</code></a>."
+                  "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
                 },
                 "oculus": "mirror",
                 "opera": [
@@ -1363,13 +1411,13 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "15",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   },
                   {
                     "prefix": "-o-",
                     "version_added": "11",
                     "version_removed": "15",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   }
                 ],
                 "opera_android": [
@@ -1379,13 +1427,13 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "14",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   },
                   {
                     "prefix": "-o-",
                     "version_added": "11",
                     "version_removed": "14",
-                    "notes": "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                    "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   }
                 ],
                 "safari": [
@@ -1396,8 +1444,8 @@
                     "prefix": "-webkit-",
                     "version_added": "5.1",
                     "notes": [
-                      "Safari 4 was supporting an experimental <a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'><code>-webkit-gradient(linear,…)</code></a> function. It is more limited than the later standard version: you cannot specify both a position and an angle like in <code>repeating-linear-gradient()</code>. This old outdated syntax is still supported for compatibility purposes.",
-                      "Considers <code>&lt;angle&gt;</code> to start to the right, instead of the top. I.e. it considered an angle of <code>0deg</code> as a direction indicator pointing to the right."
+                      "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `repeating-linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
+                      "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                     ]
                   }
                 ],
@@ -1423,6 +1471,9 @@
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "71"
@@ -1559,6 +1610,9 @@
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "40"
@@ -1593,6 +1647,9 @@
             "to": {
               "__compat": {
                 "description": "`to` keyword",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -1631,6 +1688,9 @@
             "unitless_0_angle": {
               "__compat": {
                 "description": "Unitless `0` for &lt;angle&gt;",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -1646,7 +1706,7 @@
                     {
                       "version_added": "46",
                       "partial_implementation": true,
-                      "notes": "Accepted only in <code>-webkit-repeating-linear-gradient()</code> and <code>-moz-repeating-linear-gradient()</code>, not <code>repeating-linear-gradient()</code>."
+                      "notes": "Accepted only in `-webkit-repeating-linear-gradient()` and `-moz-repeating-linear-gradient()`, not `repeating-linear-gradient()`."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1679,6 +1739,9 @@
               "description": "`repeating-radial-gradient()`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient",
               "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+              "tags": [
+                "web-features:gradients"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -1705,7 +1768,7 @@
                   {
                     "prefix": "-moz-",
                     "version_added": "3.6",
-                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
                   }
                 ],
                 "firefox_android": [
@@ -1720,7 +1783,7 @@
                   {
                     "prefix": "-moz-",
                     "version_added": "10",
-                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
                   }
                 ],
                 "ie": {
@@ -1762,7 +1825,7 @@
                   {
                     "prefix": "-webkit-",
                     "version_added": "5.1",
-                    "notes": "Safari 4 was supporting an experimental <a href='https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html'><code>-webkit-gradient(radial,…)</code></a> function. This old outdated syntax is still supported for compatibility purposes."
+                    "notes": "Safari 4 was supporting an experimental [`-webkit-gradient(radial,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. This old outdated syntax is still supported for compatibility purposes."
                   }
                 ],
                 "safari_ios": "mirror",
@@ -1787,6 +1850,9 @@
             "at": {
               "__compat": {
                 "description": "`at` syntax",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "26"
@@ -1807,7 +1873,7 @@
                     {
                       "prefix": "-moz-",
                       "version_added": "10",
-                      "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting <code>layout.css.prefixes.gradients</code> to <code>false</code>."
+                      "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1853,6 +1919,9 @@
             "doubleposition": {
               "__compat": {
                 "description": "Double-position color stops",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "71"
@@ -1989,6 +2058,9 @@
             "interpolation_hints": {
               "__compat": {
                 "description": "Interpolation Hints / Gradient Midpoints",
+                "tags": [
+                  "web-features:gradients"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "40"
@@ -2024,43 +2096,6 @@
             }
           }
         },
-        "image": {
-          "__compat": {
-            "description": "`image()`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/image/image",
-            "spec_url": "https://drafts.csswg.org/css-images-4/#image-notation",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false,
-                "notes": "See <a href='https://bugzil.la/703217'>bug 703217</a>."
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "image-set": {
           "__compat": {
             "description": "`image-set()`",
@@ -2083,7 +2118,7 @@
                   "version_added": "20",
                   "version_removed": "113",
                   "partial_implementation": true,
-                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 }
               ],
               "chrome_android": "mirror",
@@ -2100,7 +2135,7 @@
                   "version_added": "88",
                   "version_removed": "89",
                   "partial_implementation": true,
-                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
                 }
               ],
               "firefox_android": "mirror",
@@ -2122,27 +2157,27 @@
                   "version_added": "14",
                   "version_removed": "17",
                   "partial_implementation": true,
-                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "14",
                   "version_removed": "17",
                   "partial_implementation": true,
-                  "notes": "The <code>type()</code> function is not supported as an argument to <code>image-set()</code>."
+                  "notes": "The `type()` function is not supported as an argument to `image-set()`."
                 },
                 {
                   "version_added": "10.1",
                   "version_removed": "14",
                   "partial_implementation": true,
-                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 },
                 {
                   "prefix": "-webkit-",
                   "version_added": "6",
                   "version_removed": "14",
                   "partial_implementation": true,
-                  "notes": "Support for <code>url</code> images only and <code>x</code> is the only supported resolution unit."
+                  "notes": "Support for `url` images only and `x` is the only supported resolution unit."
                 }
               ],
               "safari_ios": "mirror",
@@ -2202,6 +2237,9 @@
           "additional_parameters": {
             "__compat": {
               "description": "Supports additional parameters to pass to the `paintWorklet`",
+              "tags": [
+                "web-features:paint"
+              ],
               "support": {
                 "chrome": {
                   "version_added": false
