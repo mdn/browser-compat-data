@@ -3155,11 +3155,18 @@
             "chrome": {
               "version_added": "7"
             },
-            "chrome_android": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/40248532",
-              "notes": "The property can be set, but has no effect."
-            },
+            "chrome_android": [
+              {
+                "version_added": "131",
+                "partial_implementation": true,
+                "notes": "In Chrome for Android 131, if a user selects a directory, the browser crashes (see [bug 376834374](https://crbug.com/376834374))."
+              },
+              {
+                "version_added": "18",
+                "partial_implementation": true,
+                "notes": "The property reflects the attribute, but users cannot choose a directory, only individual files (see [bug 40248532](https://crbug.com/40248532)."
+              }
+            ],
             "edge": {
               "version_added": "13"
             },
