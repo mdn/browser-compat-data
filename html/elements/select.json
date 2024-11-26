@@ -11,7 +11,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -19,11 +19,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the <code>&lt;option&gt;</code> element to the parent <code>&lt;select&gt;</code> element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the <code>&lt;select&gt;</code> element is displayed as a drop-down list. The behavior is unchanged if the <code>&lt;select&gt;</code> is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching <code>&lt;option&gt;</code> elements for events, you should watch for change events on <code>&lt;select&gt;</code>. See <a href='https://bugzil.la/1090602'>bug 1090602</a> for details."
+              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `&lt;option&gt;` element to the parent `&lt;select&gt;` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the `&lt;select&gt;` element is displayed as a drop-down list. The behavior is unchanged if the `&lt;select&gt;` is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching `&lt;option&gt;` elements for events, you should watch for change events on `&lt;select&gt;`. See [bug 1090602](https://bugzil.la/1090602) for details."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Firefox for Android, by default, sets a <code>background-image</code> gradient on all <code>&lt;select multiple&gt;</code> elements. This can be disabled using <code>background-image: none</code>."
+              "notes": "Firefox for Android, by default, sets a `background-image` gradient on all `&lt;select multiple&gt;` elements. This can be disabled using `background-image: none`."
             },
             "ie": {
               "version_added": "≤11"
@@ -37,15 +37,15 @@
             },
             "safari": {
               "version_added": "1",
-              "notes": "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37",
               "notes": [
-                "In the Browser app for Android 4.1 (and possibly later versions), there is a bug where the menu indicator triangle on the side of a <code>&lt;select&gt;</code> will not be displayed if a <code>background</code>, <code>border</code>, or <code>border-radius</code> style is applied to the <code>&lt;select&gt;</code>.",
-                "<code>border-radius</code> on <code>&lt;select&gt;</code> elements is ignored unless <code>-webkit-appearance</code> is overridden to an appropriate value."
+                "In the Browser app for Android 4.1 (and possibly later versions), there is a bug where the menu indicator triangle on the side of a `&lt;select&gt;` will not be displayed if a `background`, `border`, or `border-radius` style is applied to the `&lt;select&gt;`.",
+                "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
               ]
             },
             "webview_ios": "mirror"
@@ -188,7 +188,7 @@
         },
         "hr_in_select": {
           "__compat": {
-            "description": "<code>&lt;hr&gt;</code> in <code>&lt;select&gt;</code>",
+            "description": "`&lt;hr&gt;` in `&lt;select&gt;`",
             "tags": [
               "web-features:select"
             ],
@@ -197,8 +197,8 @@
                 "version_added": "119",
                 "partial_implementation": true,
                 "notes": [
-                  "Only exposes the <code>&lt;hr&gt;</code> visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
-                  "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                  "Only exposes the `&lt;hr&gt;` visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
+                  "Does not expose the `&lt;hr&gt;` within the accessibility tree."
                 ]
               },
               "chrome_android": {
@@ -208,7 +208,7 @@
               "firefox": {
                 "version_added": "122",
                 "partial_implementation": true,
-                "notes": "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -220,12 +220,12 @@
               "safari": {
                 "version_added": "17",
                 "partial_implementation": true,
-                "notes": "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "safari_ios": {
                 "version_added": "17.4",
                 "partial_implementation": true,
-                "notes": "Does not expose the <code>&lt;hr&gt;</code> within the accessibility tree."
+                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
               },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",

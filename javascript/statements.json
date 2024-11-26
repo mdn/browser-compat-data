@@ -3,7 +3,7 @@
     "statements": {
       "async_function": {
         "__compat": {
-          "description": "<code>async function</code> statement",
+          "description": "`async function` statement",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-async-function-definitions",
           "tags": [
@@ -50,7 +50,7 @@
       },
       "async_generator_function": {
         "__compat": {
-          "description": "<code>async function*</code> statement",
+          "description": "`async function*` statement",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function*",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-async-generator-function-definitions",
           "tags": [
@@ -98,7 +98,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/block",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-block",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -148,7 +149,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/break",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-break-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -268,8 +270,8 @@
             "firefox": {
               "version_added": "36",
               "notes": [
-                "Before Firefox 13, <code>const</code> is implemented, but re-assignment is not failing.",
-                "Before Firefox 46, a <code>TypeError</code> was thrown on redeclaration instead of a <code>SyntaxError</code>."
+                "Before Firefox 13, `const` is implemented, but re-assignment is not failing.",
+                "Before Firefox 46, a `TypeError` was thrown on redeclaration instead of a `SyntaxError`."
               ]
             },
             "firefox_android": "mirror",
@@ -306,7 +308,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/continue",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-continue-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -355,6 +358,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/debugger",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-debugger-statement",
+          "tags": [
+            "web-features:javascript"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -400,11 +406,12 @@
       },
       "do_while": {
         "__compat": {
-          "description": "<code>do...while</code>",
+          "description": "`do...while`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/do...while",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-do-while-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -451,11 +458,12 @@
       },
       "empty": {
         "__compat": {
-          "description": "Empty statement (<code>;</code>)",
+          "description": "Empty statement (`;`)",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/Empty",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-empty-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -527,7 +535,7 @@
             },
             "nodejs": {
               "version_added": "13.2.0",
-              "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+              "notes": "Modules must either have a filename ending in `.mjs`, or the nearest parent `package.json` file must contain `\"type\": \"module\"`. See Node's [ECMAScript Modules documentation](https://nodejs.org/api/esm.html#esm_enabling) for more details."
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -548,7 +556,7 @@
         },
         "default": {
           "__compat": {
-            "description": "<code>default</code> keyword with <code>export</code>",
+            "description": "`default` keyword with `export`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export",
             "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-exports",
             "tags": [
@@ -574,7 +582,7 @@
               },
               "nodejs": {
                 "version_added": "13.2.0",
-                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Modules must either have a filename ending in `.mjs`, or the nearest parent `package.json` file must contain `\"type\": \"module\"`. See Node's [ECMAScript Modules documentation](https://nodejs.org/api/esm.html#esm_enabling) for more details."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -596,7 +604,7 @@
         },
         "namespace": {
           "__compat": {
-            "description": "<code>export * as namespace</code>",
+            "description": "`export * as namespace`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export",
             "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-exports",
             "support": {
@@ -617,7 +625,7 @@
               },
               "nodejs": {
                 "version_added": "13.2.0",
-                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Modules must either have a filename ending in `.mjs`, or the nearest parent `package.json` file must contain `\"type\": \"module\"`. See Node's [ECMAScript Modules documentation](https://nodejs.org/api/esm.html#esm_enabling) for more details."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -643,7 +651,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -690,11 +699,12 @@
       },
       "for_await_of": {
         "__compat": {
-          "description": "<code>for await...of</code>",
+          "description": "`for await...of`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for-await...of",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements",
           "tags": [
-            "web-features:snapshot:ecmascript-2018"
+            "web-features:snapshot:ecmascript-2018",
+            "web-features:async-iterators"
           ],
           "support": {
             "chrome": {
@@ -735,11 +745,12 @@
       },
       "for_in": {
         "__compat": {
-          "description": "<code>for...in</code>",
+          "description": "`for...in`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...in",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -786,11 +797,12 @@
       },
       "for_of": {
         "__compat": {
-          "description": "<code>for...of</code>",
+          "description": "`for...of`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements",
           "tags": [
-            "web-features:snapshot:ecmascript-2015"
+            "web-features:snapshot:ecmascript-2015",
+            "web-features:iterators"
           ],
           "support": {
             "chrome": {
@@ -805,7 +817,7 @@
             },
             "firefox": {
               "version_added": "13",
-              "notes": "Before Firefox 51, using the <code>for...of</code> loop construct with the <code>const</code> keyword threw a <code>SyntaxError</code> (\"missing = in const declaration\")."
+              "notes": "Before Firefox 51, using the `for...of` loop construct with the `const` keyword threw a `SyntaxError` (\"missing = in const declaration\")."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -835,7 +847,8 @@
           "__compat": {
             "description": "async iterators",
             "tags": [
-              "web-features:snapshot:ecmascript-2018"
+              "web-features:snapshot:ecmascript-2018",
+              "web-features:async-iterators"
             ],
             "support": {
               "chrome": {
@@ -879,6 +892,9 @@
         "closing_iterators": {
           "__compat": {
             "description": "Closing iterators",
+            "tags": [
+              "web-features:iterators"
+            ],
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -921,7 +937,7 @@
       },
       "function": {
         "__compat": {
-          "description": "<code>function</code> statement",
+          "description": "`function` statement",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-function-definitions",
           "tags": [
@@ -1018,7 +1034,7 @@
       },
       "generator_function": {
         "__compat": {
-          "description": "<code>function*</code> statement",
+          "description": "`function*` statement",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function*",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-generator-function-definitions",
           "tags": [
@@ -1065,7 +1081,7 @@
         },
         "IteratorResult_object": {
           "__compat": {
-            "description": "<code>IteratorResult</code> object instead of throwing",
+            "description": "`IteratorResult` object instead of throwing",
             "tags": [
               "web-features:snapshot:ecmascript-2016",
               "web-features:generators"
@@ -1111,7 +1127,7 @@
         },
         "not_constructable_with_new": {
           "__compat": {
-            "description": "Not constructable with <code>new</code> (ES2016)",
+            "description": "Not constructable with `new` (ES2016)",
             "tags": [
               "web-features:snapshot:ecmascript-2016",
               "web-features:generators"
@@ -1203,11 +1219,12 @@
       },
       "if_else": {
         "__compat": {
-          "description": "<code>if...else</code>",
+          "description": "`if...else`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/if...else",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-if-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -1280,12 +1297,12 @@
             "nodejs": [
               {
                 "version_added": "13.2.0",
-                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Modules must either have a filename ending in `.mjs`, or the nearest parent `package.json` file must contain `\"type\": \"module\"`. See Node's [ECMAScript Modules documentation](https://nodejs.org/api/esm.html#esm_enabling) for more details."
               },
               {
                 "version_added": "12.17.0",
                 "version_removed": "13.0.0",
-                "notes": "Modules must either have a filename ending in <code>.mjs</code>, or the nearest parent <code>package.json</code> file must contain <code>\"type\": \"module\"</code>. See Node's <a href='https://nodejs.org/api/esm.html#esm_enabling'>ECMAScript Modules documentation</a> for more details."
+                "notes": "Modules must either have a filename ending in `.mjs`, or the nearest parent `package.json` file must contain `\"type\": \"module\"`. See Node's [ECMAScript Modules documentation](https://nodejs.org/api/esm.html#esm_enabling) for more details."
               }
             ],
             "oculus": "mirror",
@@ -1350,7 +1367,7 @@
         },
         "import_assertions": {
           "__compat": {
-            "description": "Import attributes with <code>assert</code> syntax (formerly import assertions)",
+            "description": "Import attributes with `assert` syntax (formerly import assertions)",
             "support": {
               "chrome": {
                 "version_added": "91",
@@ -1395,7 +1412,7 @@
           },
           "type_css": {
             "__compat": {
-              "description": "<code>assert {type: 'css'}</code>",
+              "description": "`assert {type: 'css'}`",
               "support": {
                 "chrome": {
                   "version_added": "93",
@@ -1442,7 +1459,7 @@
           },
           "type_json": {
             "__compat": {
-              "description": "<code>assert {type: 'json'}</code>",
+              "description": "`assert {type: 'json'}`",
               "support": {
                 "chrome": {
                   "version_added": "91",
@@ -1495,7 +1512,7 @@
         },
         "import_attributes": {
           "__compat": {
-            "description": "Import attributes (<code>with</code> syntax)",
+            "description": "Import attributes (`with` syntax)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with",
             "spec_url": "https://tc39.es/proposal-import-attributes/#prod-WithClause",
             "support": {
@@ -1543,7 +1560,7 @@
           },
           "type_css": {
             "__compat": {
-              "description": "<code>with {type: 'css'}</code>",
+              "description": "`with {type: 'css'}`",
               "tags": [
                 "web-features:css-modules"
               ],
@@ -1586,7 +1603,7 @@
           },
           "type_json": {
             "__compat": {
-              "description": "<code>with {type: 'json'}</code>",
+              "description": "`with {type: 'json'}`",
               "tags": [
                 "web-features:json-modules"
               ],
@@ -1725,7 +1742,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/label",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-labelled-statements",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -1786,7 +1804,7 @@
                 "version_added": "41",
                 "version_removed": "49",
                 "partial_implementation": true,
-                "notes": "<a href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode'>Strict mode</a> is required."
+                "notes": "[Strict mode](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Strict_mode) is required."
               }
             ],
             "chrome_android": "mirror",
@@ -1801,22 +1819,22 @@
                 "version_added": "12",
                 "version_removed": "14",
                 "partial_implementation": true,
-                "notes": "In Edge 12 and 13, <code>let</code> within a <code>for</code> loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the <code>let</code> immediately before the loop."
+                "notes": "In Edge 12 and 13, `let` within a `for` loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the `let` immediately before the loop."
               }
             ],
             "firefox": {
               "version_added": "44",
               "notes": [
-                "Before Firefox 44, <code>let</code> is only available to code blocks in HTML wrapped in a <code>&lt;script type=\"application/javascript;version=1.7\"&gt;</code> block (or higher version) and has different semantics (e.g. no temporal dead zone).",
-                "Before Firefox 46, a <code>TypeError</code> is thrown on redeclaration instead of a <code>SyntaxError</code>.",
-                "Firefox 54 adds support of <code>let</code> in workers."
+                "Before Firefox 44, `let` is only available to code blocks in HTML wrapped in a `&lt;script type=\"application/javascript;version=1.7\"&gt;` block (or higher version) and has different semantics (e.g. no temporal dead zone).",
+                "Before Firefox 46, a `TypeError` is thrown on redeclaration instead of a `SyntaxError`.",
+                "Firefox 54 adds support of `let` in workers."
               ]
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "In Internet Explorer, <code>let</code> within a <code>for</code> loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the <code>let</code> immediately before the loop."
+              "notes": "In Internet Explorer, `let` within a `for` loop initializer does not create a separate variable for each loop iteration as defined by ES2015. Instead, it behaves as though the loop were wrapped in a scoping block with the `let` immediately before the loop."
             },
             "nodejs": {
               "version_added": "6.0.0"
@@ -1848,7 +1866,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/return",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-return-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -1897,6 +1916,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/switch",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-switch-statement",
+          "tags": [
+            "web-features:javascript"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1945,7 +1967,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/throw",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-throw-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -1992,11 +2015,12 @@
       },
       "try_catch": {
         "__compat": {
-          "description": "<code>try...catch</code>",
+          "description": "`try...catch`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-try-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -2086,7 +2110,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/var",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-variable-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {
@@ -2136,7 +2161,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/while",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-while-statement",
           "tags": [
-            "web-features:snapshot:ecmascript-1"
+            "web-features:snapshot:ecmascript-1",
+            "web-features:javascript"
           ],
           "support": {
             "chrome": {

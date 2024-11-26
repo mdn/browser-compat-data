@@ -32,7 +32,7 @@
             {
               "version_added": "15.0.0",
               "partial_implementation": true,
-              "notes": "Available as a part of the <code>crypto</code> module."
+              "notes": "Available as a part of the `crypto` module."
             }
           ],
           "oculus": "mirror",
@@ -62,6 +62,9 @@
       "secure_context_required": {
         "__compat": {
           "description": "Secure context required",
+          "tags": [
+            "web-features:web-cryptography"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -102,6 +105,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:web-cryptography"
+          ],
           "support": {
             "chrome": {
               "version_added": "37"
@@ -186,7 +192,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0"
@@ -279,7 +285,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveBits",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -310,7 +316,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -393,7 +399,7 @@
         },
         "derivedKeyAlgorithm_option_aes": {
           "__compat": {
-            "description": "<code>AES</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`AES` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -438,7 +444,7 @@
         },
         "derivedKeyAlgorithm_option_hkdf": {
           "__compat": {
-            "description": "<code>HKDF</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`HKDF` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -483,7 +489,7 @@
         },
         "derivedKeyAlgorithm_option_hmac": {
           "__compat": {
-            "description": "<code>HMAC</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`HMAC` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -528,7 +534,7 @@
         },
         "derivedKeyAlgorithm_option_pbkdf2": {
           "__compat": {
-            "description": "<code>PBKDF2</code> as <code>derivedKeyAlgorithm</code> option value",
+            "description": "`PBKDF2` as `derivedKeyAlgorithm` option value",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://w3c.github.io/webcrypto/#SubtleCrypto-method-deriveKey",
             "tags": [
@@ -573,7 +579,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/deriveKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -604,7 +610,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -658,7 +664,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0"
@@ -728,7 +734,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0"
@@ -800,7 +806,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -829,7 +835,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -860,7 +866,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -882,7 +888,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/exportKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -913,7 +919,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -980,7 +986,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -1008,7 +1014,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1040,7 +1046,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1062,7 +1068,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/generateKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -1093,7 +1099,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1166,7 +1172,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -1195,7 +1201,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1226,7 +1232,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1248,7 +1254,7 @@
         },
         "x25519": {
           "__compat": {
-            "description": "<code>X25519</code> algorithm",
+            "description": "`X25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#x25519",
             "tags": [
@@ -1279,7 +1285,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1333,7 +1339,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -1358,7 +1364,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/sign",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1389,14 +1395,14 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": "17",
-                "notes": "Generates randomized signatures as per <a href='https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/'>draft-irtf-cfrg-det-sigs-with-noise</a>, instead of deterministic signatures as per <a href='https://www.rfc-editor.org/rfc/rfc8032'>RFC 8032</a>."
+                "notes": "Generates randomized signatures as per [draft-irtf-cfrg-det-sigs-with-noise](https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/), instead of deterministic signatures as per [RFC 8032](https://www.rfc-editor.org/rfc/rfc8032)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1444,7 +1450,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -1512,7 +1518,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>CryptoOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0",
@@ -1537,7 +1543,7 @@
         },
         "ed25519": {
           "__compat": {
-            "description": "<code>Ed25519</code> algorithm",
+            "description": "`Ed25519` algorithm",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/verify",
             "spec_url": "https://wicg.github.io/webcrypto-secure-curves/#ed25519",
             "tags": [
@@ -1568,7 +1574,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1622,7 +1628,7 @@
             "ie": {
               "version_added": "11",
               "partial_implementation": true,
-              "notes": "Returns <code>KeyOperation</code> instead of <code>Promise</code>"
+              "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
               "version_added": "15.0.0"

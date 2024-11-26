@@ -3,9 +3,12 @@
     "selectors": {
       "scope": {
         "__compat": {
-          "description": "<code>:scope</code>",
+          "description": "`:scope`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:scope",
           "spec_url": "https://drafts.csswg.org/selectors/#the-scope-pseudo",
+          "tags": [
+            "web-features:scope-pseudo"
+          ],
           "support": {
             "chrome": {
               "version_added": "27"
@@ -14,7 +17,7 @@
             "edge": "mirror",
             "firefox": {
               "version_added": "32",
-              "notes": "Firefox 55 removes support for <code>&lt;style scoped&gt;</code> but not for the <code>:scope</code> pseudo-class, which is still supported. <code>&lt;style scoped&gt;</code> made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
+              "notes": "Firefox 55 removes support for `&lt;style scoped&gt;` but not for the `:scope` pseudo-class, which is still supported. `&lt;style scoped&gt;` made it possible to explicitly set up element scopes, but ongoing discussions about the design of this feature as well as lack of other implementations resulted in the decision to remove it."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -39,7 +42,10 @@
         },
         "dom_api": {
           "__compat": {
-            "description": "Support in DOM API such as in <code>querySelector()</code> and <code>querySelectorAll()</code>",
+            "description": "Support in DOM API such as in `querySelector()` and `querySelectorAll()`",
+            "tags": [
+              "web-features:scope-pseudo"
+            ],
             "support": {
               "chrome": {
                 "version_added": "27"

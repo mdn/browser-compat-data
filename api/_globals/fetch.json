@@ -14,7 +14,7 @@
           "chrome_android": "mirror",
           "deno": {
             "version_added": "1.0",
-            "notes": "Fetching with a <code>\"manual\"</code> redirect mode does not result in a <code>\"opaqueredirect\"</code> response, but a regular response."
+            "notes": "Fetching with a `\"manual\"` redirect mode does not result in a `\"opaqueredirect\"` response, but a regular response."
           },
           "edge": {
             "version_added": "14"
@@ -48,8 +48,11 @@
       },
       "authorization_removed_cross_origin": {
         "__compat": {
-          "description": "<code>Authorization</code> header removed from cross-origin redirects",
+          "description": "`Authorization` header removed from cross-origin redirects",
           "spec_url": "https://fetch.spec.whatwg.org/#http-redirect-fetch",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -87,6 +90,9 @@
       "blob_data_support": {
         "__compat": {
           "description": "Support for blob: and data:",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "48"
@@ -125,11 +131,14 @@
       },
       "init_attributionReporting_parameter": {
         "__compat": {
-          "description": "<code>init.attributionReporting</code> parameter",
+          "description": "`init.attributionReporting` parameter",
           "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-requestinit-attributionreporting",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
-              "version_added": "117"
+              "version_added": "125"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -160,7 +169,7 @@
       },
       "init_browsingTopics_parameter": {
         "__compat": {
-          "description": "<code>init.browsingTopics</code> parameter",
+          "description": "`init.browsingTopics` parameter",
           "support": {
             "chrome": {
               "version_added": "115"
@@ -194,7 +203,10 @@
       },
       "init_keepalive_parameter": {
         "__compat": {
-          "description": "<code>init.keepalive</code> parameter",
+          "description": "`init.keepalive` parameter",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "66"
@@ -207,7 +219,7 @@
               "version_added": "15"
             },
             "firefox": {
-              "version_added": "preview"
+              "version_added": "133"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -236,7 +248,7 @@
       },
       "init_priority_parameter": {
         "__compat": {
-          "description": "<code>init.priority</code> parameter",
+          "description": "`init.priority` parameter",
           "tags": [
             "web-features:fetch-priority"
           ],
@@ -276,7 +288,10 @@
       },
       "init_referrerPolicy_parameter": {
         "__compat": {
-          "description": "<code>init.referrerPolicy</code> parameter",
+          "description": "`init.referrerPolicy` parameter",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "52"
@@ -315,7 +330,7 @@
       },
       "init_signal_parameter": {
         "__compat": {
-          "description": "<code>init.signal</code> parameter",
+          "description": "`init.signal` parameter",
           "tags": [
             "web-features:abortable-fetch"
           ],

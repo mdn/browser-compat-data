@@ -15,8 +15,7 @@
                 "type": "preference",
                 "value_to_set": "Enabled"
               }
-            ],
-            "notes": "Currently supported on ChromeOS and Windows only."
+            ]
           },
           "chrome_android": {
             "version_added": false
@@ -51,7 +50,7 @@
       },
       "MLGraphBuilder": {
         "__compat": {
-          "description": "<code>MLGraphBuilder()</code> constructor",
+          "description": "`MLGraphBuilder()` constructor",
           "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-constructor",
           "tags": [
             "web-features:webnn"
@@ -65,8 +64,7 @@
                   "type": "preference",
                   "value_to_set": "Enabled"
                 }
-              ],
-              "notes": "Currently supported on ChromeOS and Windows only."
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -109,7 +107,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -117,7 +115,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -128,7 +126,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -139,7 +137,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -191,7 +189,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -202,7 +200,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -213,7 +211,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -255,17 +253,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on CPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -305,17 +327,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on CPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -357,7 +403,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -365,7 +411,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -376,7 +422,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -387,7 +433,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -429,17 +475,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on CPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -528,17 +598,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on CPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "124",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -580,7 +674,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -588,7 +682,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -599,7 +693,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -610,7 +704,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -654,7 +748,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "124",
+                "version_added": "125",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -662,7 +756,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -673,7 +767,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -684,7 +778,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -728,7 +822,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "125",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -736,7 +830,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "120",
@@ -747,7 +841,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "113",
@@ -758,7 +852,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -802,7 +896,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "112",
+                "version_added": "123",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -810,7 +904,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "112",
@@ -821,7 +915,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "112",
@@ -832,7 +926,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -876,7 +970,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "125",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -884,7 +978,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -895,7 +989,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -906,7 +1000,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -950,6 +1044,28 @@
           "support": {
             "chrome": [
               {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "121",
                 "flags": [
                   {
@@ -958,18 +1074,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
-              },
-              {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "name": "#web-machine-learning-neural-network",
-                    "type": "preference",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -1013,6 +1118,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "123",
                 "flags": [
                   {
@@ -1021,7 +1137,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "121",
@@ -1032,7 +1148,144 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "cumulativeSum": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "dequantizeLinear": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -1076,7 +1329,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -1084,7 +1337,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -1095,7 +1348,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -1106,7 +1359,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -1150,7 +1403,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -1158,7 +1411,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -1169,7 +1422,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "115",
@@ -1180,7 +1433,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -1222,17 +1475,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1272,17 +1549,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1324,6 +1625,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "123",
                 "flags": [
                   {
@@ -1332,7 +1644,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "121",
@@ -1343,7 +1655,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -1385,17 +1697,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1437,7 +1773,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -1445,7 +1781,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -1456,7 +1792,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -1467,7 +1803,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -1509,17 +1845,189 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
             },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "gatherElements": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "gatherND": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1561,7 +2069,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "124",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -1569,7 +2077,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -1580,7 +2088,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -1591,7 +2099,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -1633,17 +2141,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1683,17 +2215,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1733,17 +2289,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "129",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1783,17 +2363,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "129",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1833,17 +2437,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "123",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "123",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -1885,7 +2513,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -1893,7 +2521,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "123",
@@ -1904,7 +2532,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -1915,7 +2543,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -1957,17 +2585,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2009,7 +2661,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -2017,7 +2669,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -2028,7 +2680,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -2039,7 +2691,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -2081,17 +2733,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2131,17 +2807,30 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "123",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "123",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2181,17 +2870,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "129",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2233,7 +2946,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -2241,7 +2954,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -2252,7 +2965,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "113",
@@ -2263,7 +2976,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -2305,17 +3018,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2355,17 +3092,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2405,17 +3166,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2457,6 +3242,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "123",
                 "flags": [
                   {
@@ -2465,7 +3261,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "121",
@@ -2476,7 +3272,81 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "logicalAnd": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -2518,17 +3388,189 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
             },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "logicalOr": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "logicalXor": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2568,17 +3610,30 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "129",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2618,17 +3673,30 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "129",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2668,17 +3736,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -2720,7 +3812,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -2728,7 +3820,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -2739,7 +3831,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -2750,7 +3842,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -2794,6 +3886,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "122",
                 "flags": [
                   {
@@ -2802,7 +3905,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "119",
@@ -2813,18 +3916,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
-              },
-              {
-                "version_added": "112",
-                "flags": [
-                  {
-                    "name": "#web-machine-learning-neural-network",
-                    "type": "preference",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -2868,7 +3960,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -2876,7 +3968,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -2887,7 +3979,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -2898,7 +3990,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -2942,7 +4034,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -2950,7 +4042,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -2961,7 +4053,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -2972,7 +4064,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -3016,7 +4108,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "127",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -3024,7 +4116,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -3035,7 +4127,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -3046,7 +4138,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -3090,7 +4182,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "129",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -3098,7 +4190,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "120",
@@ -3109,7 +4201,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "114",
@@ -3120,7 +4212,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -3164,6 +4256,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "124",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "122",
                 "flags": [
                   {
@@ -3172,7 +4275,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "119",
@@ -3183,7 +4286,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -3235,7 +4338,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "115",
@@ -3246,7 +4349,81 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "quantizeLinear": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -3288,17 +4465,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3338,17 +4539,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3388,17 +4613,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3438,17 +4687,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3488,17 +4761,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3538,17 +4835,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3588,17 +4909,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              },
+              {
+                "version_added": "120",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3638,17 +4983,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3688,17 +5057,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3738,17 +5131,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3788,17 +5205,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -3840,7 +5281,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "125",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -3848,7 +5289,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -3859,7 +5300,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -3870,7 +5311,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -3914,7 +5355,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "124",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -3922,7 +5363,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -3933,7 +5374,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -3944,7 +5385,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -3988,7 +5429,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -3996,10 +5437,10 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
-                "version_added": "121",
+                "version_added": "119",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4007,7 +5448,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -4018,7 +5459,155 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scatterElements": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "scatterND": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -4062,7 +5651,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "126",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4070,7 +5659,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "121",
@@ -4081,7 +5670,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -4092,7 +5681,70 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sign": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "130",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "130",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -4136,6 +5788,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "123",
                 "flags": [
                   {
@@ -4144,7 +5807,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               },
               {
                 "version_added": "121",
@@ -4155,7 +5818,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -4199,6 +5862,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "120",
                 "flags": [
                   {
@@ -4207,7 +5881,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -4218,7 +5892,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -4262,7 +5936,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "127",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4270,7 +5944,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -4281,7 +5955,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -4292,7 +5966,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -4334,17 +6008,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -4384,17 +6082,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "123",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "127",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "125",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "123",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -4436,6 +6158,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "130",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "120",
                 "flags": [
                   {
@@ -4444,7 +6177,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -4455,7 +6188,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -4499,7 +6232,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "127",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4507,7 +6240,18 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "122",
@@ -4518,18 +6262,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
-              },
-              {
-                "version_added": "121",
-                "flags": [
-                  {
-                    "name": "#web-machine-learning-neural-network",
-                    "type": "preference",
-                    "value_to_set": "Enabled"
-                  }
-                ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -4573,7 +6306,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "122",
+                "version_added": "124",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4581,7 +6314,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "119",
@@ -4592,7 +6325,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "112",
@@ -4603,7 +6336,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -4645,17 +6378,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "121",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "121",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -4697,6 +6454,17 @@
           "support": {
             "chrome": [
               {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
                 "version_added": "121",
                 "flags": [
                   {
@@ -4705,7 +6473,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "116",
@@ -4716,7 +6484,81 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              }
+            ],
+            "chrome_android": {
+              "version_added": false
+            },
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "tile": {
+        "__compat": {
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mlgraphbuilder-cast",
+          "tags": [
+            "web-features:webnn"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "131",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "130",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
               }
             ],
             "chrome_android": {
@@ -4760,7 +6602,7 @@
           "support": {
             "chrome": [
               {
-                "version_added": "123",
+                "version_added": "125",
                 "flags": [
                   {
                     "name": "#web-machine-learning-neural-network",
@@ -4768,7 +6610,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on ChromeOS."
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
               },
               {
                 "version_added": "120",
@@ -4779,7 +6621,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on GPUs on Windows."
+                "notes": "Supported on GPUs and NPUs on Windows."
               },
               {
                 "version_added": "113",
@@ -4790,7 +6632,7 @@
                     "value_to_set": "Enabled"
                   }
                 ],
-                "notes": "Supported on CPUs on Windows."
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
               }
             ],
             "chrome_android": {
@@ -4832,17 +6674,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "132",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "128",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },
@@ -4882,17 +6748,41 @@
             "web-features:webnn"
           ],
           "support": {
-            "chrome": {
-              "version_added": "122",
-              "flags": [
-                {
-                  "name": "#web-machine-learning-neural-network",
-                  "type": "preference",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "Supported on GPUs on Windows."
-            },
+            "chrome": [
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs on Windows, ChromeOS and Linux."
+              },
+              {
+                "version_added": "126",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on CPUs, GPUs and NPUs on macOS."
+              },
+              {
+                "version_added": "122",
+                "flags": [
+                  {
+                    "name": "#web-machine-learning-neural-network",
+                    "type": "preference",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "Supported on GPUs and NPUs on Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": false
             },

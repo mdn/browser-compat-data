@@ -8,6 +8,9 @@
             "https://drafts.csswg.org/css-sizing-4/#width-height-keywords",
             "https://drafts.csswg.org/css-sizing-4/#sizing-values"
           ],
+          "tags": [
+            "web-features:min-max-width-height"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -18,7 +21,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "CSS 2.1 leaves the behavior of <code>max-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Firefox supports applying <code>max-width</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Firefox supports applying `max-width` to `table` elements."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -27,7 +30,7 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "4",
-              "notes": "CSS 2.1 leaves the behavior of <code>max-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>max-width</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Opera supports applying `max-width` to `table` elements."
             },
             "opera_android": "mirror",
             "safari": {
@@ -46,7 +49,7 @@
         },
         "anchor-size": {
           "__compat": {
-            "description": "<code>anchor-size()</code>",
+            "description": "`anchor-size()`",
             "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
             "tags": [
               "web-features:anchor-positioning"
@@ -86,6 +89,9 @@
         "fit-content": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content",
+            "tags": [
+              "web-features:fit-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -106,7 +112,7 @@
                   "prefix": "-moz-",
                   "version_added": "3",
                   "partial_implementation": true,
-                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines `available` and not `fit-available`. Also, the definition of `fit-content` is simpler than in CSS3 Sizing."
                 }
               ],
               "firefox_android": "mirror",
@@ -147,7 +153,10 @@
         },
         "fit-content_function": {
           "__compat": {
-            "description": "<code>fit-content()</code>",
+            "description": "`fit-content()`",
+            "tags": [
+              "web-features:fit-content-function"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -188,6 +197,9 @@
         "max-content": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-max-content",
+            "tags": [
+              "web-features:min-max-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -256,6 +268,9 @@
         "min-content": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-width-min-content",
+            "tags": [
+              "web-features:min-max-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -316,6 +331,9 @@
         "none": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-sizing-3/#valdef-max-width-none",
+            "tags": [
+              "web-features:min-max-width-height"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -352,6 +370,9 @@
         "stretch": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-sizing-4/#valdef-width-stretch",
+            "tags": [
+              "web-features:stretch"
+            ],
             "support": {
               "chrome": {
                 "alternative_name": "-webkit-fill-available",

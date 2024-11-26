@@ -214,12 +214,12 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "In Chrome and other Blink-based browsers, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "In Chrome and other Blink-based browsers, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
-              "notes": "Since Edge 79, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "Since Edge 79, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "firefox": {
               "version_added": "1"
@@ -231,11 +231,11 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "≤12.1",
-              "notes": "In Chrome and other Blink-based browsers, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "In Chrome and other Blink-based browsers, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "opera_android": {
               "version_added": "≤12.1",
-              "notes": "In Chrome and other Blink-based browsers, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "In Chrome and other Blink-based browsers, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "safari": {
               "version_added": "1"
@@ -243,11 +243,11 @@
             "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.0",
-              "notes": "In Chrome and other Blink-based browsers, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "In Chrome and other Blink-based browsers, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "webview_android": {
               "version_added": "1",
-              "notes": "In Chrome and other Blink-based browsers, adding the <code>disabled</code> attribute using JavaScript does not remove the stylesheet from <code>document.styleSheets</code>."
+              "notes": "In Chrome and other Blink-based browsers, adding the `disabled` attribute using JavaScript does not remove the stylesheet from `document.styleSheets`."
             },
             "webview_ios": "mirror"
           },
@@ -590,6 +590,9 @@
         "no-referrer-when-downgrade": {
           "__compat": {
             "description": "no-referrer-when-downgrade",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -625,6 +628,9 @@
         "origin-when-cross-origin": {
           "__compat": {
             "description": "origin-when-cross-origin",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -660,6 +666,9 @@
         "unsafe-url": {
           "__compat": {
             "description": "unsafe-url",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -821,6 +830,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLLinkElement/sheet",
           "spec_url": "https://drafts.csswg.org/cssom/#dom-linkstyle-sheet",
+          "tags": [
+            "web-features:css-object-model"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -863,7 +875,7 @@
           "support": {
             "chrome": {
               "version_added": "15",
-              "notes": "Before Chrome 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
+              "notes": "Before Chrome 50, this property returned the deprecated child `DOMSettableTokenList` instead of `DOMTokenList`."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -886,7 +898,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "4.4",
-              "notes": "Before WebView 50, this property returned the deprecated child <code>DOMSettableTokenList</code> instead of <code>DOMTokenList</code>."
+              "notes": "Before WebView 50, this property returned the deprecated child `DOMSettableTokenList` instead of `DOMTokenList`."
             },
             "webview_ios": "mirror"
           },

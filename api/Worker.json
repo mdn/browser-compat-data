@@ -27,18 +27,18 @@
               "version_added": "12.17.0",
               "partial_implementation": true,
               "notes": [
-                "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>.",
+                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
                 "Worker script environment expects CommonJS modules or ECMAScript modules.",
-                "Must be imported from the <code>worker_threads</code> module."
+                "Must be imported from the `worker_threads` module."
               ]
             },
             {
               "version_added": "11.7.0",
               "partial_implementation": true,
               "notes": [
-                "Is a Node <code>EventEmitter</code> instead of DOM <code>EventTarget</code>.",
+                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
                 "Worker script environment expects CommonJS modules.",
-                "Must be imported from the <code>worker_threads</code> module."
+                "Must be imported from the `worker_threads` module."
               ]
             }
           ],
@@ -67,7 +67,7 @@
       },
       "Worker": {
         "__compat": {
-          "description": "<code>Worker()</code> constructor",
+          "description": "`Worker()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/Worker",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-dev",
           "support": {
@@ -148,7 +148,7 @@
               "nodejs": {
                 "version_added": "12.17.0",
                 "partial_implementation": true,
-                "notes": "ECMAScript modules are enabled for files ending with <code>.mjs</code> and for files ending with <code>.js</code> when the nearest parent <code>package.json</code> file contains a top-level field <code>\"type\"</code> with a value of <code>\"module\"</code>."
+                "notes": "ECMAScript modules are enabled for files ending with `.mjs` and for files ending with `.js` when the nearest parent `package.json` file contains a top-level field `\"type\"` with a value of `\"module\"`."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -215,7 +215,7 @@
         },
         "options_name_parameter": {
           "__compat": {
-            "description": "<code>options.name</code> parameter",
+            "description": "`options.name` parameter",
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -257,7 +257,7 @@
         },
         "options_type_parameter": {
           "__compat": {
-            "description": "<code>options.type</code> parameter",
+            "description": "`options.type` parameter",
             "tags": [
               "web-features:js-modules-workers"
             ],
@@ -268,7 +268,7 @@
               "chrome_android": "mirror",
               "deno": {
                 "version_added": "1.0",
-                "notes": "Only supports <code>module</code>"
+                "notes": "Only supports `module`"
               },
               "edge": "mirror",
               "firefox": {
@@ -307,7 +307,7 @@
             "chrome": {
               "version_added": "69",
               "partial_implementation": true,
-              "notes": "Not available in Shared Workers. See <a href='https://crbug.com/40695450'>bug 40695450</a>."
+              "notes": "Not available in Shared Workers. See [bug 40695450](https://crbug.com/40695450)."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -324,7 +324,7 @@
             "safari": {
               "version_added": "16.4",
               "partial_implementation": true,
-              "notes": "Not available in Shared Workers. See <a href='https://webkit.org/b/265263'>bug 265263</a>."
+              "notes": "Not available in Shared Workers. See [bug 265263](https://webkit.org/b/265263)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -340,7 +340,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
           "support": {
@@ -387,9 +387,12 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/message_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-message",
+          "tags": [
+            "web-features:postmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -412,12 +415,12 @@
               {
                 "version_added": "12.17.0",
                 "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+                "notes": "Supports the event, but only via Node `EventEmitter`."
               },
               {
                 "version_added": "11.7.0",
                 "partial_implementation": true,
-                "notes": "Supports the event, but only via Node <code>EventEmitter</code>."
+                "notes": "Supports the event, but only via Node `EventEmitter`."
               }
             ],
             "oculus": "mirror",
@@ -446,7 +449,7 @@
       },
       "messageerror_event": {
         "__compat": {
-          "description": "<code>messageerror</code> event",
+          "description": "`messageerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
           "support": {
@@ -493,6 +496,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/postMessage",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage-dev",
+          "tags": [
+            "web-features:postmessage"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -501,15 +507,15 @@
             "deno": [
               {
                 "version_added": "1.14",
-                "notes": "The <code>message</code> parameter does not support cloning <code>Blob</code> values."
+                "notes": "The `message` parameter does not support cloning `Blob` values."
               },
               {
                 "version_added": "1.12",
                 "version_removed": "1.14",
                 "partial_implementation": true,
                 "notes": [
-                  "The <code>message</code> parameter does not support cloning <code>Blob</code> values.",
-                  "The <code>transfer</code> parameter does not accept <code>ArrayBuffer</code> items. Passing an <code>ArrayBuffer</code> results in an error being thrown."
+                  "The `message` parameter does not support cloning `Blob` values.",
+                  "The `transfer` parameter does not accept `ArrayBuffer` items. Passing an `ArrayBuffer` results in an error being thrown."
                 ]
               },
               {
@@ -517,8 +523,8 @@
                 "version_removed": "1.12",
                 "partial_implementation": true,
                 "notes": [
-                  "The <code>message</code> parameter does not support <code>SharedArrayBuffer</code>.",
-                  "The <code>transfer</code> parameter is not supported, and results in an error being thrown."
+                  "The `message` parameter does not support `SharedArrayBuffer`.",
+                  "The `transfer` parameter is not supported, and results in an error being thrown."
                 ]
               },
               {
@@ -526,8 +532,8 @@
                 "version_removed": "1.10",
                 "partial_implementation": true,
                 "notes": [
-                  "Data passed in the <code>message</code> parameter is serialized with JSON, not the structured clone algorithm.",
-                  "The <code>transfer</code> parameter is not supported, and results in an error being thrown."
+                  "Data passed in the `message` parameter is serialized with JSON, not the structured clone algorithm.",
+                  "The `transfer` parameter is not supported, and results in an error being thrown."
                 ]
               }
             ],
@@ -540,18 +546,18 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
-              "notes": "Internet Explorer does not support <code>Transferable</code> objects."
+              "notes": "Internet Explorer does not support `Transferable` objects."
             },
             "nodejs": [
               {
                 "version_added": "12.17.0",
                 "partial_implementation": true,
-                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects"
+                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
               },
               {
                 "version_added": "11.7.0",
                 "partial_implementation": true,
-                "notes": "Supports <code>transferList</code> argument for transferring <code>ArrayBuffer</code> and <code>MessagePort</code> objects"
+                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
               }
             ],
             "oculus": "mirror",
@@ -575,6 +581,46 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_includeUserActivation_parameter": {
+          "__compat": {
+            "description": "`options.includeUserActivation` parameter",
+            "support": {
+              "chrome": {
+                "version_added": "72"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
           }
         }
       },
