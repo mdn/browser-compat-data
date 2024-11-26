@@ -6,6 +6,7 @@ November 26, 2024
 
 ### Removals
 
+- `css.selectors.target-within` ([#25188](https://github.com/mdn/browser-compat-data/pull/25188))
 - `css.types.image.image` ([#25190](https://github.com/mdn/browser-compat-data/pull/25190))
 
 ### Additions
@@ -15,8 +16,8 @@ November 26, 2024
 
 ### Statistics
 
-- 7 contributors have changed 1,261 files with 17,248 additions and 460 deletions in 26 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
-- 16,749 total features
+- 7 contributors have changed 1,261 files with 17,245 additions and 502 deletions in 27 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,748 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
