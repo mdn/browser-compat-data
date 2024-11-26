@@ -6,6 +6,8 @@ November 26, 2024
 
 ### Removals
 
+- `api.NavigateEvent.restoreScroll` ([#25229](https://github.com/mdn/browser-compat-data/pull/25229))
+- `api.NavigateEvent.transitionWhile` ([#25229](https://github.com/mdn/browser-compat-data/pull/25229))
 - `css.selectors.target-within` ([#25188](https://github.com/mdn/browser-compat-data/pull/25188))
 - `css.types.image.gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
 - `css.types.image.gradient.conic-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
@@ -90,8 +92,8 @@ November 26, 2024
 
 ### Statistics
 
-- 9 contributors have changed 1,266 files with 19,165 additions and 2,384 deletions in 38 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
-- 16,748 total features
+- 9 contributors have changed 1,266 files with 19,185 additions and 2,462 deletions in 39 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,746 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
