@@ -47,6 +47,8 @@ November 26, 2024
 
 ### Additions
 
+- `browsers.firefox_android.releases.136` ([#25211](https://github.com/mdn/browser-compat-data/pull/25211))
+- `browsers.firefox.releases.136` ([#25211](https://github.com/mdn/browser-compat-data/pull/25211))
 - `css.types.gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
 - `css.types.gradient.conic-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
 - `css.types.gradient.conic-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
@@ -88,7 +90,7 @@ November 26, 2024
 
 ### Statistics
 
-- 9 contributors have changed 1,263 files with 19,142 additions and 2,375 deletions in 37 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 9 contributors have changed 1,266 files with 19,165 additions and 2,384 deletions in 38 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
 - 16,748 total features
 - 1,116 total contributors
 - 5,007 total stargazers
