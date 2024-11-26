@@ -87,14 +87,15 @@ November 26, 2024
 - `css.types.gradient.repeating-radial-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
 - `css.types.gradient.repeating-radial-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
 - `css.types.gradient.repeating-radial-gradient.interpolation_hints` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `html.elements.input.webkitdirectory` ([#25036](https://github.com/mdn/browser-compat-data/pull/25036))
 - `webassembly.memory64` ([#25230](https://github.com/mdn/browser-compat-data/pull/25230))
 - `webextensions.manifest.chrome_settings_overrides.search_provider.search_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
 - `webextensions.manifest.chrome_settings_overrides.search_provider.suggest_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
 
 ### Statistics
 
-- 9 contributors have changed 1,270 files with 19,237 additions and 2,475 deletions in 40 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
-- 16,747 total features
+- 10 contributors have changed 1,270 files with 19,301 additions and 2,480 deletions in 41 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,748 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
