@@ -195,7 +195,7 @@
         },
         "implicit_noopener": {
           "__compat": {
-            "description": "<code>target=\"_blank\"</code> implies <code>rel=\"noopener\"</code> behavior",
+            "description": "`target=\"_blank\"` implies `rel=\"noopener\"` behavior",
             "tags": [
               "web-features:image-maps"
             ],
@@ -282,7 +282,7 @@
               "firefox": {
                 "version_added": "1",
                 "partial_implementation": true,
-                "notes": "This property is exposed but has no effect if the <code>browser.send_pings</code> preference is not set to <code>true</code>. See <a href='https://bugzil.la/951104'>bug 951104</a>."
+                "notes": "This property is exposed but has no effect if the `browser.send_pings` preference is not set to `true`. See [bug 951104](https://bugzil.la/951104)."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -349,6 +349,9 @@
           "no-referrer-when-downgrade": {
             "__compat": {
               "description": "no-referrer-when-downgrade",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -386,6 +389,9 @@
           "origin-when-cross-origin": {
             "__compat": {
               "description": "origin-when-cross-origin",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -423,6 +429,9 @@
           "unsafe-url": {
             "__compat": {
               "description": "unsafe-url",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -511,7 +520,7 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "52",
-                  "notes": "Before Firefox 63, <code>rel=\"noopener\"</code> created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
+                  "notes": "Before Firefox 63, `rel=\"noopener\"` created windows with all features disabled by default. Starting with Firefox 63, these windows have the same features enabled by default as any other window."
                 },
                 "firefox_android": "mirror",
                 "ie": {

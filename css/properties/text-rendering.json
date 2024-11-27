@@ -5,12 +5,15 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/text-rendering",
           "spec_url": "https://svgwg.org/svg2-draft/painting.html#TextRenderingProperty",
+          "tags": [
+            "web-features:svg"
+          ],
           "support": {
             "chrome": {
               "version_added": "4",
               "notes": [
                 "This property is only supported on Windows and Linux.",
-                "Initial versions had bugs on Windows and Linux that broke font substitution, small-caps, letter-spacing or caused text to overlap. See <a href='https://crbug.com/114719'>bug 114719</a>, <a href='https://crbug.com/51973'>bug 51973</a>, <a href='https://crbug.com/55458'>bug 55458</a>, <a href='https://crbug.com/149548'>bug 149548</a>."
+                "Initial versions had bugs on Windows and Linux that broke font substitution, small-caps, letter-spacing or caused text to overlap. See [bug 40156511](https://crbug.com/40156511), [bug 40430936](https://crbug.com/40430936), [bug 40444347](https://crbug.com/40444347), [bug 40286561](https://crbug.com/40286561)."
               ]
             },
             "chrome_android": "mirror",
@@ -19,7 +22,7 @@
               "version_added": "1",
               "notes": [
                 "This property is only supported on Windows and Linux.",
-                "The <code>optimizeSpeed</code> option has no effect on Firefox 4 because the standard code for text rendering is already fast and there is not a faster code path at this time. See <a href='https://bugzil.la/595688'>bug 595688</a> for details."
+                "The `optimizeSpeed` option has no effect on Firefox 4 because the standard code for text rendering is already fast and there is not a faster code path at this time. See [bug 595688](https://bugzil.la/595688) for details."
               ]
             },
             "firefox_android": {
@@ -45,7 +48,7 @@
             },
             "webview_android": {
               "version_added": "3",
-              "notes": "From version 3 to 4.3, there is a serious bug where <code>text-rendering: optimizeLegibility</code> causes custom web fonts to not render. This was fixed in version 4.4."
+              "notes": "From version 3 to 4.3, there is a serious bug where `text-rendering: optimizeLegibility` causes custom web fonts to not render. This was fixed in version 4.4."
             },
             "webview_ios": "mirror"
           },
@@ -60,17 +63,17 @@
             "support": {
               "chrome": {
                 "version_added": "4",
-                "notes": "Chrome treats <code>auto</code> as <code>optimizeSpeed</code>."
+                "notes": "Chrome treats `auto` as `optimizeSpeed`."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
                 "version_added": "1",
-                "notes": "If the font size is 20 pixels or higher, Firefox treats <code>auto</code> as <code>optimizeLegibility</code>. For smaller text, Firefox treats <code>auto</code> as <code>optimizeSpeed</code>. The 20-pixel threshold can be changed with the <code>browser.display.auto_quality_min_font_size</code> preference."
+                "notes": "If the font size is 20 pixels or higher, Firefox treats `auto` as `optimizeLegibility`. For smaller text, Firefox treats `auto` as `optimizeSpeed`. The 20-pixel threshold can be changed with the `browser.display.auto_quality_min_font_size` preference."
               },
               "firefox_android": {
                 "version_added": "46",
-                "notes": "If the font size is 20 pixels or higher, Firefox treats <code>auto</code> as <code>optimizeLegibility</code>. For smaller text, Firefox treats <code>auto</code> as <code>optimizeSpeed</code>. The 20-pixel threshold can be changed with the <code>browser.display.auto_quality_min_font_size</code> preference."
+                "notes": "If the font size is 20 pixels or higher, Firefox treats `auto` as `optimizeLegibility`. For smaller text, Firefox treats `auto` as `optimizeSpeed`. The 20-pixel threshold can be changed with the `browser.display.auto_quality_min_font_size` preference."
               },
               "ie": {
                 "version_added": false
@@ -80,7 +83,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "5",
-                "notes": "Safari treats <code>auto</code> as <code>optimizeSpeed</code>. See <a href='https://webkit.org/b/41363'>bug 41363</a>."
+                "notes": "Safari treats `auto` as `optimizeSpeed`. See [bug 41363](https://webkit.org/b/41363)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -89,7 +92,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -105,11 +108,11 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "1",
-                "notes": "Firefox treats <code>geometricPrecision</code> the same as <code>optimizeLegibility</code>."
+                "notes": "Firefox treats `geometricPrecision` the same as `optimizeLegibility`."
               },
               "firefox_android": {
                 "version_added": "46",
-                "notes": "Firefox treats <code>geometricPrecision</code> the same as <code>optimizeLegibility</code>."
+                "notes": "Firefox treats `geometricPrecision` the same as `optimizeLegibility`."
               },
               "ie": {
                 "version_added": false
@@ -127,7 +130,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }

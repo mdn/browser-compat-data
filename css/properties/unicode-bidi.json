@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/unicode-bidi",
           "spec_url": "https://drafts.csswg.org/css-writing-modes/#unicode-bidi",
+          "tags": [
+            "web-features:layout-direction-override"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -44,6 +47,9 @@
         "bidi-override": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-bidi-override",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": {
                 "version_added": "2"
@@ -80,6 +86,9 @@
         "embed": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-embed",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": {
                 "version_added": "2"
@@ -116,6 +125,9 @@
         "isolate": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-isolate",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": [
                 {
@@ -125,8 +137,8 @@
                   "prefix": "-webkit-",
                   "version_added": "16",
                   "notes": [
-                    "Avoiding using <code>-webkit-isolate</code>. It can lock up older versions of Safari (up to version 9) and Chrome (up to version 47).",
-                    "Since Chrome 19, the syntax from a previous version of the specification, where the <code>isolate</code> keyword could be used together with <code>bidi-override</code>, is allowed."
+                    "Before Chrome 47, `-webkit-isolate` could lock up the browser.",
+                    "Since Chrome 19, the syntax from a previous version of the specification, where the `isolate` keyword could be used together with `bidi-override`, is allowed."
                   ]
                 }
               ],
@@ -150,7 +162,7 @@
                   "prefix": "-moz-",
                   "version_added": "10",
                   "version_removed": "54",
-                  "notes": "From Firefox 10 to Firefox 16 (inclusive), the <code>isolate</code> keyword could be used together with <code>bidi-override</code>, which was the syntax from a previous version of the specification. From Firefox 17, only one value is allowed. Use <code>isolate-override</code> instead the previous <code>isolate bidi-override</code>."
+                  "notes": "From Firefox 10 to Firefox 16 (inclusive), the `isolate` keyword could be used together with `bidi-override`, which was the syntax from a previous version of the specification. From Firefox 17, only one value is allowed. Use `isolate-override` instead the previous `isolate bidi-override`."
                 }
               ],
               "firefox_android": "mirror",
@@ -158,19 +170,7 @@
                 "version_added": false
               },
               "oculus": "mirror",
-              "opera": [
-                {
-                  "version_added": "35"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "15",
-                  "notes": [
-                    "Avoiding using <code>-webkit-isolate</code>. It can lock up older versions of Opera (up to version 34).",
-                    "The syntax from a previous version of the specification, where the <code>isolate</code> keyword could be used together with <code>bidi-override</code>, is allowed."
-                  ]
-                }
-              ],
+              "opera": "mirror",
               "opera_android": "mirror",
               "safari": [
                 {
@@ -179,7 +179,7 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "6",
-                  "notes": "Avoiding using <code>-webkit-isolate</code>. It can lock up older versions of Safari (up to version 9) and Chrome (up to version 47)."
+                  "notes": "Before Safari 9, `-webkit-isolate` could lock up the browser."
                 }
               ],
               "safari_ios": "mirror",
@@ -197,6 +197,9 @@
         "isolate-override": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-isolate-override",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": {
                 "version_added": "48"
@@ -244,6 +247,9 @@
         "normal": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-normal",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": {
                 "version_added": "2"
@@ -280,6 +286,9 @@
         "plaintext": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-unicode-bidi-plaintext",
+            "tags": [
+              "web-features:layout-direction-override"
+            ],
             "support": {
               "chrome": {
                 "version_added": "48"
@@ -295,8 +304,8 @@
                   "version_added": "10",
                   "version_removed": "54",
                   "notes": [
-                    "Before Firefox 50, the <code>plaintext</code> value was ignored for vertical writing modes (<a href='https://bugzil.la/1302734'>bug 1302734</a>).",
-                    "Before Firefox 15, <code>plaintext</code> didn't do anything to an inline element. The specification changed and the implementation was changed in Firefox 15."
+                    "Before Firefox 50, the `plaintext` value was ignored for vertical writing modes ([bug 1302734](https://bugzil.la/1302734)).",
+                    "Before Firefox 15, `plaintext` didn't do anything to an inline element. The specification changed and the implementation was changed in Firefox 15."
                   ]
                 }
               ],

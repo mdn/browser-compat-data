@@ -20,7 +20,7 @@
               "version_added": "1.0",
               "version_removed": "1.11",
               "partial_implementation": true,
-              "notes": "<code>Crypto</code> is not a concrete interface, but its methods are available on <code>Window.crypto</code>."
+              "notes": "`Crypto` is not a concrete interface, but its methods are available on `Window.crypto`."
             }
           ],
           "edge": {
@@ -36,14 +36,14 @@
           "nodejs": [
             {
               "version_added": "19.0.0",
-              "notes": "<code>Crypto</code> is not a concrete interface, but its methods are available on the global <code>crypto</code> object."
+              "notes": "`Crypto` is not a concrete interface, but its methods are available on the global `crypto` object."
             },
             {
               "alternative_name": "crypto.webcrypto",
               "version_added": "15.0.0",
               "version_removed": "19.0.0",
               "partial_implementation": true,
-              "notes": "<code>Crypto</code> is not a concrete interface, but calling <code>require('crypto').webcrypto</code> returns an instance of the <code>Crypto</code> class."
+              "notes": "`Crypto` is not a concrete interface, but calling `require('crypto').webcrypto` returns an instance of the `Crypto` class."
             }
           ],
           "oculus": "mirror",
@@ -69,7 +69,7 @@
       },
       "getRandomValues": {
         "__compat": {
-          "description": "<code>getRandomValues()</code>",
+          "description": "`getRandomValues()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Crypto/getRandomValues",
           "spec_url": "https://w3c.github.io/webcrypto/#Crypto-method-getRandomValues",
           "tags": [
@@ -120,7 +120,7 @@
       },
       "randomUUID": {
         "__compat": {
-          "description": "<code>randomUUID()</code>",
+          "description": "`randomUUID()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Crypto/randomUUID",
           "spec_url": "https://w3c.github.io/webcrypto/#Crypto-method-randomUUID",
           "tags": [
@@ -149,7 +149,7 @@
               {
                 "version_added": "16.7.0",
                 "version_removed": "19.0.0",
-                "notes": "From version 14.17.0, a similar method is available as <a href='https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto'><code>crypto.randomUUID()</code></a>."
+                "notes": "From version 14.17.0, a similar method is available as [`crypto.randomUUID()`](https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto)."
               }
             ],
             "oculus": "mirror",
@@ -225,6 +225,9 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "tags": [
+              "web-features:web-cryptography"
+            ],
             "support": {
               "chrome": {
                 "version_added": "60"

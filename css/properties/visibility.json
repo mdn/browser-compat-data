@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/visibility",
           "spec_url": "https://drafts.csswg.org/css-display/#visibility",
+          "tags": [
+            "web-features:visibility"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -20,9 +23,9 @@
             "ie": {
               "version_added": "4",
               "notes": [
-                "Internet Explorer doesn't support <code>visibility: initial</code>.",
-                "Internet Explorer doesn't support <code>visibility: unset</code>.",
-                "Up to Internet Explorer 7, descendants of <code>hidden</code> elements will still be invisible even if they have <code>visibility</code> set to <code>visible</code>."
+                "Internet Explorer doesn't support `visibility: initial`.",
+                "Internet Explorer doesn't support `visibility: unset`.",
+                "Up to Internet Explorer 7, descendants of `hidden` elements will still be invisible even if they have `visibility` set to `visible`."
               ]
             },
             "oculus": "mirror",
@@ -49,12 +52,15 @@
         "collapse": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-display/#valdef-visibility-collapse",
+            "tags": [
+              "web-features:visibility"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1",
                 "notes": [
-                  "Chrome treats <code>visibility: collapse</code> like <code>hidden</code>, leaving a white gap.",
-                  "Chrome supports the <code>collapse</code> value only on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tbody'><code>&lt;tbody&gt;</code></a>, and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a>, but not on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements."
+                  "Chrome treats `visibility: collapse` like `hidden`, leaving a white gap.",
+                  "Chrome supports the `collapse` value only on [`&lt;tr&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tr), [`&lt;thead&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/thead), [`&lt;tbody&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody), and [`&lt;tfoot&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot), but not on [`&lt;col&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/col) and [`&lt;colgroup&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements."
                 ]
               },
               "chrome_android": "mirror",
@@ -64,8 +70,8 @@
               "firefox": {
                 "version_added": "1",
                 "notes": [
-                  "Firefox doesn't hide borders when hiding <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements if <code>border-collapse: collapse</code> is set.",
-                  "Before Firefox 88, <code>collapse</code> is not supported on ruby annotations."
+                  "Firefox doesn't hide borders when hiding [`&lt;col&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/col) and [`&lt;colgroup&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements if `border-collapse: collapse` is set.",
+                  "Before Firefox 88, `collapse` is not supported on ruby annotations."
                 ]
               },
               "firefox_android": "mirror",
@@ -76,22 +82,22 @@
               "opera": {
                 "version_added": "4",
                 "notes": [
-                  "Opera treats <code>visibility: collapse</code> like <code>hidden</code>, leaving a white gap.",
-                  "Opera supports the <code>collapse</code> value only on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tbody'><code>&lt;tbody&gt;</code></a>, and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a>, but not on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements."
+                  "Opera treats `visibility: collapse` like `hidden`, leaving a white gap.",
+                  "Opera supports the `collapse` value only on [`&lt;tr&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tr), [`&lt;thead&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/thead), [`&lt;tbody&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody), and [`&lt;tfoot&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot), but not on [`&lt;col&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/col) and [`&lt;colgroup&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements."
                 ]
               },
               "opera_android": {
                 "version_added": "10.1",
                 "notes": [
-                  "Opera treats <code>visibility: collapse</code> like <code>hidden</code>, leaving a white gap.",
-                  "Opera supports the <code>collapse</code> value only on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tbody'><code>&lt;tbody&gt;</code></a>, and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a>, but not on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements."
+                  "Opera treats `visibility: collapse` like `hidden`, leaving a white gap.",
+                  "Opera supports the `collapse` value only on [`&lt;tr&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tr), [`&lt;thead&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/thead), [`&lt;tbody&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody), and [`&lt;tfoot&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot), but not on [`&lt;col&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/col) and [`&lt;colgroup&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements."
                 ]
               },
               "safari": {
                 "version_added": "1.3",
                 "notes": [
-                  "Safari treats <code>visibility: collapse</code> like <code>hidden</code>, leaving a white gap.",
-                  "Safari supports the collapse value only on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tr'><code>&lt;tr&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/thead'><code>&lt;thead&gt;</code></a>, <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tbody'><code>&lt;tbody&gt;</code></a>, and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/tfoot'><code>&lt;tfoot&gt;</code></a>, but not on <a href='https://developer.mozilla.org/docs/Web/HTML/Element/col'><code>&lt;col&gt;</code></a> and <a href='https://developer.mozilla.org/docs/Web/HTML/Element/colgroup'><code>&lt;colgroup&gt;</code></a> elements."
+                  "Safari treats `visibility: collapse` like `hidden`, leaving a white gap.",
+                  "Safari supports the collapse value only on [`&lt;tr&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tr), [`&lt;thead&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/thead), [`&lt;tbody&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tbody), and [`&lt;tfoot&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/tfoot), but not on [`&lt;col&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/col) and [`&lt;colgroup&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/colgroup) elements."
                 ]
               },
               "safari_ios": "mirror",
@@ -109,6 +115,9 @@
         "hidden": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-display/#valdef-visibility-hidden",
+            "tags": [
+              "web-features:visibility"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -145,6 +154,9 @@
         "visible": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-display/#valdef-visibility-visible",
+            "tags": [
+              "web-features:visibility"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"

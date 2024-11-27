@@ -216,7 +216,7 @@
             "chrome_android": {
               "version_added": "18",
               "partial_implementation": true,
-              "notes": "This sets the target volume at the specified time, but it doesn’t ramp to it, causing this function to behave like <code>setValueAtTime()</code>."
+              "notes": "This sets the target volume at the specified time, but it doesn’t ramp to it, causing this function to behave like `setValueAtTime()`."
             },
             "edge": {
               "version_added": "12"
@@ -224,7 +224,7 @@
             "firefox": {
               "version_added": "25",
               "partial_implementation": true,
-              "notes": "Does not work (see <a href='https://bugzil.la/1171438'>bug 1171438</a> and <a href='https://bugzil.la/1567777'>bug 1567777</a>)."
+              "notes": "Does not work (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -268,7 +268,7 @@
             "chrome_android": {
               "version_added": "18",
               "partial_implementation": true,
-              "notes": "This sets the target volume at the specified time, but it doesn’t ramp to it, causing this function to behave like <code>setValueAtTime()</code>."
+              "notes": "This sets the target volume at the specified time, but it doesn’t ramp to it, causing this function to behave like `setValueAtTime()`."
             },
             "edge": {
               "version_added": "12"
@@ -276,7 +276,7 @@
             "firefox": {
               "version_added": "25",
               "partial_implementation": true,
-              "notes": "Does not work (see <a href='https://bugzil.la/1171438'>bug 1171438</a> and <a href='https://bugzil.la/1567777'>bug 1567777</a>)."
+              "notes": "Does not work (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -517,7 +517,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "14"
+              "version_added": "14",
+              "notes": "Before version 66, the gain value of a `GainNode` would perform a smooth interpolation to prevent dezippering (instead of changing instantly)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -525,7 +526,10 @@
             },
             "firefox": {
               "version_added": "25",
-              "notes": "Before Firefox 69, <code>value</code> did not take into account scheduled or gradiated changes to the parameter's value; instead, only explicitly set values were returned."
+              "notes": [
+                "Before Firefox 134, setting `value` was ignored when done at the same time as scheduled automation events.",
+                "Before Firefox 69, `value` did not take into account scheduled or gradiated changes to the parameter's value; instead, only explicitly set values were returned."
+              ]
             },
             "firefox_android": {
               "version_added": "25",

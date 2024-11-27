@@ -33,8 +33,8 @@
                 "version_added": "20",
                 "notes": [
                   "Since Firefox 28, multi-line flexbox is supported.",
-                  "Before Firefox 32, Firefox wasn't able to animate values starting or stopping at <code>0</code>.",
-                  "Until Firefox 61, flex items that are sized according to their content are sized using <a href='https://drafts.csswg.org/css-sizing-3/#column-sizing'><code>fit-content</code>, not <code>max-content</code></a>."
+                  "Before Firefox 32, Firefox wasn't able to animate values starting or stopping at `0`.",
+                  "Until Firefox 61, flex items that are sized according to their content are sized using [`fit-content`, not `max-content`](https://drafts.csswg.org/css-sizing-3/#column-sizing)."
                 ]
               },
               {
@@ -47,16 +47,16 @@
               {
                 "version_added": "11",
                 "notes": [
-                  "Internet Explorer 11 ignores uses of <a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> in the <code>flex-basis</code> part of the <code>flex</code> syntax. This can be worked around by using the longhand properties instead of the shorthand. See <a href='https://github.com/philipwalton/flexbugs#8-flex-basis-doesnt-support-calc'>Flexbug #8</a> for more info.",
-                  "Internet Explorer 11 considers a unitless value in the <code>flex-basis</code> part to be syntactically invalid (and will thus be ignored). A workaround is to always include a unit in the <code>flex-basis</code> part of the <code>flex</code> shorthand value. See <a href='https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored'>Flexbug #4</a> for more info."
+                  "Internet Explorer 11 ignores uses of [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc) in the `flex-basis` part of the `flex` syntax. This can be worked around by using the longhand properties instead of the shorthand. See [Flexbug #8](https://github.com/philipwalton/flexbugs#8-flex-basis-doesnt-support-calc) for more info.",
+                  "Internet Explorer 11 considers a unitless value in the `flex-basis` part to be syntactically invalid (and will thus be ignored). A workaround is to always include a unit in the `flex-basis` part of the `flex` shorthand value. See [Flexbug #4](https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored) for more info."
                 ]
               },
               {
                 "prefix": "-ms-",
                 "version_added": "10",
                 "notes": [
-                  "Internet Explorer 10 and 11 ignore uses of <a href='https://developer.mozilla.org/docs/Web/CSS/calc'><code>calc()</code></a> in the <code>flex-basis</code> part of the <code>flex</code> syntax. This can be worked around by using the longhand properties instead of the shorthand. See <a href='https://github.com/philipwalton/flexbugs#8-flex-basis-doesnt-support-calc'>Flexbug #8</a> for more info.",
-                  "Internet Explorer 10 and 11 consider a unitless value in the <code>flex-basis</code> part to be syntactically invalid (and will thus be ignored). A workaround is to always include a unit in the <code>flex-basis</code> part of the <code>flex</code> shorthand value. See <a href='https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored'>Flexbug #4</a> for more info."
+                  "Internet Explorer 10 and 11 ignore uses of [`calc()`](https://developer.mozilla.org/docs/Web/CSS/calc) in the `flex-basis` part of the `flex` syntax. This can be worked around by using the longhand properties instead of the shorthand. See [Flexbug #8](https://github.com/philipwalton/flexbugs#8-flex-basis-doesnt-support-calc) for more info.",
+                  "Internet Explorer 10 and 11 consider a unitless value in the `flex-basis` part to be syntactically invalid (and will thus be ignored). A workaround is to always include a unit in the `flex-basis` part of the `flex` shorthand value. See [Flexbug #4](https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored) for more info."
                 ]
               }
             ],
@@ -90,6 +90,9 @@
         "none": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-flexbox/#valdef-flex-none",
+            "tags": [
+              "web-features:flexbox"
+            ],
             "support": {
               "chrome": {
                 "version_added": "21"

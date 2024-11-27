@@ -798,7 +798,7 @@
       },
       "select_event": {
         "__compat": {
-          "description": "<code>select</code> event",
+          "description": "`select` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/select_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-select",
@@ -846,16 +846,19 @@
       },
       "selectionchange_event": {
         "__compat": {
-          "description": "<code>selectionchange</code> event",
+          "description": "`selectionchange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLTextAreaElement/selectionchange_event",
           "spec_url": [
             "https://w3c.github.io/selection-api/#selectionchange-event",
             "https://w3c.github.io/selection-api/#dom-globaleventhandlers-onselectionchange"
           ],
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
-              "notes": "A <code>selectionchange</code> event is fired on <code>Document</code>, see <a href='https://developer.mozilla.org/docs/Web/API/Document/selectionchange_event'><code>Document</code>'s <code>selectionchange</code> event</a>. See <a href='https://crbug.com/1327098'>bug 1327098</a> for firing the event on <code>&lt;textarea&gt;</code> elements."
+              "notes": "A `selectionchange` event is fired on `Document`, see [`Document`'s `selectionchange` event](https://developer.mozilla.org/docs/Web/API/Document/selectionchange_event). See [bug 40840956](https://crbug.com/40840956) for firing the event on `&lt;textarea&gt;` elements."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1025,7 +1028,7 @@
           "support": {
             "chrome": {
               "version_added": "4",
-              "notes": "This method only updates the validation error popup, not the tooltip that appears when hovering the mouse over the element, see <a href='https://crbug.com/828757'>bug 828757</a>."
+              "notes": "This method only updates the validation error popup, not the tooltip that appears when hovering the mouse over the element, see [bug 41380670](https://crbug.com/41380670)."
             },
             "chrome_android": "mirror",
             "edge": {

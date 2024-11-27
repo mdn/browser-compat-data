@@ -7,6 +7,9 @@
           "https://w3c.github.io/ServiceWorker/#serviceworkerregistration-interface",
           "https://w3c.github.io/push-api/#extensions-to-the-serviceworkerregistration-interface"
         ],
+        "tags": [
+          "web-features:push"
+        ],
         "support": {
           "chrome": {
             "version_added": "40"
@@ -188,7 +191,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/551446"
+              "impl_url": "https://crbug.com/40443309"
             },
             "webview_ios": {
               "version_added": false,
@@ -323,6 +326,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/paymentManager",
           "spec_url": "https://w3c.github.io/payment-handler/#dom-serviceworkerregistration-paymentmanager",
+          "tags": [
+            "web-features:payment-handler"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -330,7 +336,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1465682"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -381,7 +388,10 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40151529"
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -428,8 +438,7 @@
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/421921"
+              "version_added": false
             },
             "webview_ios": {
               "version_added": false,
@@ -515,7 +524,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/421921"
+              "impl_url": "https://crbug.com/40443309"
             },
             "webview_ios": {
               "version_added": false,
@@ -530,7 +539,7 @@
         },
         "options_actions_parameter": {
           "__compat": {
-            "description": "<code>options.actions</code> parameter",
+            "description": "`options.actions` parameter",
             "support": {
               "chrome": {
                 "version_added": "48"
@@ -568,7 +577,7 @@
         },
         "options_badge_parameter": {
           "__compat": {
-            "description": "<code>options.badge</code> parameter",
+            "description": "`options.badge` parameter",
             "support": {
               "chrome": {
                 "version_added": "53"
@@ -613,7 +622,7 @@
         },
         "options_data_parameter": {
           "__compat": {
-            "description": "<code>options.data</code> parameter",
+            "description": "`options.data` parameter",
             "support": {
               "chrome": {
                 "version_added": "44"
@@ -651,7 +660,7 @@
         },
         "options_image_parameter": {
           "__compat": {
-            "description": "<code>options.image</code> parameter",
+            "description": "`options.image` parameter",
             "support": {
               "chrome": {
                 "version_added": "56"
@@ -689,7 +698,7 @@
         },
         "options_renotify_parameter": {
           "__compat": {
-            "description": "<code>options.renotify</code> parameter",
+            "description": "`options.renotify` parameter",
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -727,7 +736,7 @@
         },
         "options_requireInteraction_parameter": {
           "__compat": {
-            "description": "<code>options.requireInteraction</code> parameter",
+            "description": "`options.requireInteraction` parameter",
             "support": {
               "chrome": {
                 "version_added": "47"
@@ -765,14 +774,14 @@
         },
         "options_vibrate_parameter": {
           "__compat": {
-            "description": "<code>options.vibrate</code> parameter",
+            "description": "`options.vibrate` parameter",
             "support": {
               "chrome": {
                 "version_added": "45"
               },
               "chrome_android": {
                 "version_added": false,
-                "notes": "In Android Oreo and above, setting this parameter has no effect."
+                "notes": "In Android Oreo and above, regardless of Chrome version, this parameter has no effect. See <a href='https://crbug.com/40630890'>bug 40630890</a>."
               },
               "edge": {
                 "version_added": "≤79"
@@ -829,7 +838,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/182565"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": {
@@ -935,7 +945,7 @@
       },
       "updatefound_event": {
         "__compat": {
-          "description": "<code>updatefound</code> event",
+          "description": "`updatefound` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerRegistration/updatefound_event",
           "spec_url": "https://w3c.github.io/ServiceWorker/#dom-serviceworkerregistration-onupdatefound",
           "support": {

@@ -49,7 +49,7 @@
       },
       "abort_event": {
         "__compat": {
-          "description": "<code>abort</code> event",
+          "description": "`abort` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/abort_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-abort",
@@ -275,7 +275,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/buffered",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#dom-media-buffered-dev",
-            "https://w3c.github.io/media-source/#htmlmediaelement-extensions"
+            "https://w3c.github.io/media-source/#htmlmediaelement-extensions-buffered"
           ],
           "tags": [
             "web-features:video"
@@ -323,7 +323,7 @@
       },
       "canplay_event": {
         "__compat": {
-          "description": "<code>canplay</code> event",
+          "description": "`canplay` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canplay_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-canplay",
@@ -375,7 +375,7 @@
       },
       "canplaythrough_event": {
         "__compat": {
-          "description": "<code>canplaythrough</code> event",
+          "description": "`canplaythrough` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canplaythrough_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-canplaythrough",
@@ -427,7 +427,7 @@
       },
       "canPlayType": {
         "__compat": {
-          "description": "<code>canPlayType()</code>",
+          "description": "`canPlayType()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/canPlayType",
           "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-navigator-canplaytype-dev",
           "tags": [
@@ -437,23 +437,23 @@
             "chrome": {
               "version_added": "3",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "firefox": {
               "version_added": "3.5",
               "notes": [
-                "Before Firefox 28, <code>canPlayType()</code> returned <code>probably</code> when asked about WebM audio or video files without the <code>codecs</code> parameter. Since multiple codecs are supported, this is not enough information to determine if a file can be played, so <code>maybe</code> is now correctly returned.",
-                "Before Firefox 101, <code>canPlayType()</code> ignored <code>codecs</code> parameter options for <code>av01</code> codecs (treating them as <code>av1</code>)."
+                "Before Firefox 28, `canPlayType()` returned `probably` when asked about WebM audio or video files without the `codecs` parameter. Since multiple codecs are supported, this is not enough information to determine if a file can be played, so `maybe` is now correctly returned.",
+                "Before Firefox 101, `canPlayType()` ignored `codecs` parameter options for `av01` codecs (treating them as `av1`)."
               ]
             },
             "firefox_android": "mirror",
@@ -464,15 +464,15 @@
             "opera": {
               "version_added": "≤12.1",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "opera_android": {
               "version_added": "≤12.1",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "safari": {
@@ -485,8 +485,8 @@
             "webview_android": {
               "version_added": "≤37",
               "notes": [
-                "<code>codecs</code> string can contain any subset of optional parameters (should be all or none).",
-                "Errors if <code>codecs</code> string contains unexpected characters (should evaluate string up to character)."
+                "`codecs` string can contain any subset of optional parameters (should be all or none).",
+                "Errors if `codecs` string contains unexpected characters (should evaluate string up to character)."
               ]
             },
             "webview_ios": "mirror"
@@ -502,6 +502,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/captureStream",
           "spec_url": "https://w3c.github.io/mediacapture-fromelement/#dom-htmlmediaelement-capturestream",
+          "tags": [
+            "web-features:capture-stream-audio-video"
+          ],
           "support": {
             "chrome": {
               "version_added": "62"
@@ -895,6 +898,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/disableRemotePlayback",
           "spec_url": "https://w3c.github.io/remote-playback/#the-disableremoteplayback-attribute",
+          "tags": [
+            "web-features:remote-playback"
+          ],
           "support": {
             "chrome": {
               "version_added": "121"
@@ -922,7 +928,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/521319"
+              "impl_url": "https://crbug.com/234081017"
             },
             "webview_ios": "mirror"
           },
@@ -983,7 +989,7 @@
       },
       "durationchange_event": {
         "__compat": {
-          "description": "<code>durationchange</code> event",
+          "description": "`durationchange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/durationchange_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-durationchange",
@@ -1035,7 +1041,7 @@
       },
       "emptied_event": {
         "__compat": {
-          "description": "<code>emptied</code> event",
+          "description": "`emptied` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/emptied_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-emptied",
@@ -1087,7 +1093,7 @@
       },
       "encrypted_event": {
         "__compat": {
-          "description": "<code>encrypted</code> event",
+          "description": "`encrypted` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/encrypted_event",
           "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onencrypted",
           "support": {
@@ -1173,7 +1179,7 @@
       },
       "ended_event": {
         "__compat": {
-          "description": "<code>ended</code> event",
+          "description": "`ended` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ended_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-ended",
@@ -1273,7 +1279,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/error_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-error",
@@ -1331,7 +1337,7 @@
           "support": {
             "chrome": {
               "version_added": false,
-              "impl_url": "https://crbug.com/648207"
+              "impl_url": "https://crbug.com/41276303"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1444,7 +1450,7 @@
       },
       "loadeddata_event": {
         "__compat": {
-          "description": "<code>loadeddata</code> event",
+          "description": "`loadeddata` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadeddata_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-loadeddata",
@@ -1496,7 +1502,7 @@
       },
       "loadedmetadata_event": {
         "__compat": {
-          "description": "<code>loadedmetadata</code> event",
+          "description": "`loadedmetadata` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadedmetadata_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-loadedmetadata",
@@ -1548,7 +1554,7 @@
       },
       "loadstart_event": {
         "__compat": {
-          "description": "<code>loadstart</code> event",
+          "description": "`loadstart` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/loadstart_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-loadstart",
@@ -1914,7 +1920,7 @@
             },
             "firefox": {
               "version_added": "3.5",
-              "notes": "The <code>NETWORK_LOADED</code> state was removed to align with the HTML spec in Firefox 4."
+              "notes": "The `NETWORK_LOADED` state was removed to align with the HTML spec in Firefox 4."
             },
             "firefox_android": {
               "version_added": "4"
@@ -1998,7 +2004,7 @@
       },
       "pause_event": {
         "__compat": {
-          "description": "<code>pause</code> event",
+          "description": "`pause` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/pause_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-pause",
@@ -2145,7 +2151,7 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
             "tags": [
               "web-features:video"
             ],
@@ -2185,7 +2191,7 @@
       },
       "play_event": {
         "__compat": {
-          "description": "<code>play</code> event",
+          "description": "`play` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/play_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-play",
@@ -2246,18 +2252,18 @@
             "chrome": {
               "version_added": "3",
               "partial_implementation": true,
-              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
+              "notes": "Setting the `playbackRate` to a negative value will throw an error."
             },
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12",
               "partial_implementation": true,
-              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
+              "notes": "Setting the `playbackRate` to a negative value will throw an error."
             },
             "firefox": {
               "version_added": "20",
               "partial_implementation": true,
-              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
+              "notes": "Setting the `playbackRate` to a negative value will throw an error."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -2267,12 +2273,12 @@
             "opera": {
               "version_added": "≤12.1",
               "partial_implementation": true,
-              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
+              "notes": "Setting the `playbackRate` to a negative value will throw an error."
             },
             "opera_android": {
               "version_added": "≤12.1",
               "partial_implementation": true,
-              "notes": "Setting the <code>playbackRate</code> to a negative value will throw an error."
+              "notes": "Setting the `playbackRate` to a negative value will throw an error."
             },
             "safari": {
               "version_added": "3.1"
@@ -2340,7 +2346,7 @@
       },
       "playing_event": {
         "__compat": {
-          "description": "<code>playing</code> event",
+          "description": "`playing` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/playing_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-playing",
@@ -2485,7 +2491,7 @@
       },
       "progress_event": {
         "__compat": {
-          "description": "<code>progress</code> event",
+          "description": "`progress` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/progress_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-progress",
@@ -2535,7 +2541,7 @@
       },
       "ratechange_event": {
         "__compat": {
-          "description": "<code>ratechange</code> event",
+          "description": "`ratechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/ratechange_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-ratechange",
@@ -2637,6 +2643,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/remote",
           "spec_url": "https://w3c.github.io/remote-playback/#dom-htmlmediaelement-remote",
+          "tags": [
+            "web-features:remote-playback"
+          ],
           "support": {
             "chrome": {
               "version_added": "121"
@@ -2662,7 +2671,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false,
-              "impl_url": "https://crbug.com/521319"
+              "impl_url": "https://crbug.com/234081017"
             },
             "webview_ios": "mirror"
           },
@@ -2678,7 +2687,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekable",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#dom-media-seekable-dev",
-            "https://w3c.github.io/media-source/#htmlmediaelement-extensions"
+            "https://w3c.github.io/media-source/#htmlmediaelement-extensions-seekable"
           ],
           "tags": [
             "web-features:video"
@@ -2726,7 +2735,7 @@
       },
       "seeked_event": {
         "__compat": {
-          "description": "<code>seeked</code> event",
+          "description": "`seeked` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeked_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-seeked",
@@ -2825,7 +2834,7 @@
       },
       "seeking_event": {
         "__compat": {
-          "description": "<code>seeking</code> event",
+          "description": "`seeking` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seeking_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-seeking",
@@ -2957,7 +2966,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
+              "notes": "Not available due to a limitation in Android, see [bug 41276355](https://crbug.com/41276355)."
             },
             "edge": {
               "version_added": "17"
@@ -2967,7 +2976,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
+              "notes": "Not available due to a limitation in Android, see [bug 1473346](https://bugzil.la/1473346)."
             },
             "ie": {
               "version_added": false
@@ -2976,7 +2985,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/216641"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3000,7 +3010,7 @@
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android, see <a href='https://crbug.com/648286'>bug 648286</a>."
+              "notes": "Not available due to a limitation in Android, see [bug 41276355](https://crbug.com/41276355)."
             },
             "edge": {
               "version_added": "17"
@@ -3010,7 +3020,7 @@
             },
             "firefox_android": {
               "version_added": false,
-              "notes": "Not available due to a limitation in Android, see <a href='https://bugzil.la/1473346'>bug 1473346</a>."
+              "notes": "Not available due to a limitation in Android, see [bug 1473346](https://bugzil.la/1473346)."
             },
             "ie": {
               "version_added": false
@@ -3019,7 +3029,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/216641"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3084,18 +3095,21 @@
       "srcObject": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/srcObject",
-          "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-srcobject-dev",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/media.html#dom-media-srcobject-dev",
+            "https://w3c.github.io/media-source/#htmlmediaelement-extensions-srcobject"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "108",
                 "partial_implementation": true,
-                "notes": "Support added for <code>MediaSourceHandle</code> objects transferred from dedicated workers where they were obtained from <code>MediaSource.handle</code> (see <a href='https://crbug.com/878133'>bug 878133</a>)."
+                "notes": "Support added for `MediaSourceHandle` objects transferred from dedicated workers where they were obtained from `MediaSource.handle` (see [bug 40591101](https://crbug.com/40591101))."
               },
               {
                 "version_added": "52",
                 "partial_implementation": true,
-                "notes": "Support added for <code>MediaStream</code> objects (see <a href='https://crbug.com/506273'>bug 506273</a>)."
+                "notes": "Support added for `MediaStream` objects (see [bug 41186131](https://crbug.com/41186131))."
               }
             ],
             "chrome_android": "mirror",
@@ -3104,7 +3118,7 @@
               {
                 "version_added": "42",
                 "partial_implementation": true,
-                "notes": "Only supports <code>MediaStream</code> objects (see <a href='https://bugzil.la/886194'>bug 886194</a>)."
+                "notes": "Only supports `MediaStream` objects (see [bug 886194](https://bugzil.la/886194))."
               },
               {
                 "prefix": "moz",
@@ -3136,7 +3150,7 @@
       },
       "stalled_event": {
         "__compat": {
-          "description": "<code>stalled</code> event",
+          "description": "`stalled` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/stalled_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-stalled",
@@ -3188,7 +3202,7 @@
       },
       "suspend_event": {
         "__compat": {
-          "description": "<code>suspend</code> event",
+          "description": "`suspend` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/suspend_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-suspend",
@@ -3283,7 +3297,7 @@
       },
       "timeupdate_event": {
         "__compat": {
-          "description": "<code>timeupdate</code> event",
+          "description": "`timeupdate` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/timeupdate_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-timeupdate",
@@ -3435,7 +3449,7 @@
             "safari_ios": {
               "version_added": "3",
               "partial_implementation": true,
-              "notes": "<code>volume</code> returns a value and is writable; however, the value is always 1, and setting a value has no effect on the volume of the media object."
+              "notes": "`volume` returns a value and is writable; however, the value is always 1, and setting a value has no effect on the volume of the media object."
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
@@ -3452,7 +3466,7 @@
       },
       "volumechange_event": {
         "__compat": {
-          "description": "<code>volumechange</code> event",
+          "description": "`volumechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/volumechange_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-volumechange",
@@ -3504,7 +3518,7 @@
       },
       "waiting_event": {
         "__compat": {
-          "description": "<code>waiting</code> event",
+          "description": "`waiting` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waiting_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/media.html#event-media-waiting",
@@ -3556,7 +3570,8 @@
       },
       "waitingforkey_event": {
         "__compat": {
-          "description": "<code>waitingforkey</code> event",
+          "description": "`waitingforkey` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/waitingforkey_event",
           "spec_url": "https://w3c.github.io/encrypted-media/#dom-htmlmediaelement-onwaitingforkey",
           "support": {
             "chrome": {
@@ -3564,9 +3579,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "52"
-            },
+            "firefox": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "52",
+                "version_removed": "133",
+                "partial_implementation": true,
+                "notes": "The `onwaitingforkey` event handler property is not supported."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false

@@ -95,7 +95,7 @@
           "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-htmlattributionsrcelementutils-attributionsrc",
           "support": {
             "chrome": {
-              "version_added": "117"
+              "version_added": "125"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -149,8 +149,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/267232"
+              "version_added": "18.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -158,7 +157,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -267,7 +266,7 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
-              "notes": "Before Internet Explorer 10, it implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
+              "notes": "Before Internet Explorer 10, it implemented `defer` by a proprietary specification. Since version 10 it conforms to the W3C specification."
             },
             "oculus": "mirror",
             "opera": {
@@ -534,6 +533,9 @@
         "no-referrer-when-downgrade": {
           "__compat": {
             "description": "no-referrer-when-downgrade",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -569,6 +571,9 @@
         "origin-when-cross-origin": {
           "__compat": {
             "description": "origin-when-cross-origin",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -604,6 +609,9 @@
         "unsafe-url": {
           "__compat": {
             "description": "unsafe-url",
+            "tags": [
+              "web-features:referrer-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -685,7 +693,7 @@
       },
       "supports_static": {
         "__compat": {
-          "description": "<code>supports()</code> static method",
+          "description": "`supports()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLScriptElement/supports_static",
           "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#dom-script-supports-dev",
           "tags": [

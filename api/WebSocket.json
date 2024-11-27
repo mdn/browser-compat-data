@@ -26,7 +26,7 @@
               "prefix": "Moz",
               "version_added": "7",
               "version_removed": "11",
-              "notes": "Message size limited to 16 MB (see <a href='https://bugzil.la/711205'>bug 711205</a>)."
+              "notes": "Message size limited to 16 MB (see [bug 711205](https://bugzil.la/711205))."
             }
           ],
           "firefox_android": "mirror",
@@ -59,7 +59,7 @@
       },
       "WebSocket": {
         "__compat": {
-          "description": "<code>WebSocket()</code> constructor",
+          "description": "`WebSocket()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/WebSocket",
           "spec_url": "https://websockets.spec.whatwg.org/#ref-for-dom-websocket-websocket①",
           "tags": [
@@ -116,7 +116,10 @@
         },
         "url_parameter_http_https_relative": {
           "__compat": {
-            "description": "<code>url</code> parameter allows <code>https</code>, <code>http</code>, and relative URLs",
+            "description": "`url` parameter allows `https`, `http`, and relative URLs",
+            "tags": [
+              "web-features:websockets"
+            ],
             "support": {
               "chrome": {
                 "version_added": "125"
@@ -360,7 +363,7 @@
       },
       "close_event": {
         "__compat": {
-          "description": "<code>close</code> event",
+          "description": "`close` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/close_event",
           "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onclose",
           "tags": [
@@ -413,7 +416,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/error_event",
           "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onerror",
           "tags": [
@@ -516,7 +519,7 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/message_event",
           "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onmessage",
           "tags": [
@@ -569,7 +572,7 @@
       },
       "open_event": {
         "__compat": {
-          "description": "<code>open</code> event",
+          "description": "`open` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebSocket/open_event",
           "spec_url": "https://websockets.spec.whatwg.org/#dom-websocket-onopen",
           "tags": [
@@ -673,6 +676,9 @@
       "protocol_rfc_6455": {
         "__compat": {
           "description": "Supports protocol as specified by RFC 6455",
+          "tags": [
+            "web-features:websockets"
+          ],
           "support": {
             "chrome": {
               "version_added": "16"
@@ -790,17 +796,17 @@
               {
                 "version_added": "11",
                 "version_removed": "18",
-                "notes": "Only parameter of type <code>ArrayBuffer</code> and <code>String</code> supported."
+                "notes": "Only parameter of type `ArrayBuffer` and `String` supported."
               },
               {
                 "version_added": "8",
                 "version_removed": "11",
-                "notes": "Only parameter of type <code>String</code> supported."
+                "notes": "Only parameter of type `String` supported."
               },
               {
                 "version_added": "7",
                 "version_removed": "8",
-                "notes": "Only parameter of type <code>String</code> supported. Returns <code>boolean</code>."
+                "notes": "Only parameter of type `String` supported. Returns `boolean`."
               }
             ],
             "firefox_android": "mirror",

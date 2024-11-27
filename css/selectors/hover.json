@@ -3,11 +3,14 @@
     "selectors": {
       "hover": {
         "__compat": {
-          "description": "<code>:hover</code>",
+          "description": "`:hover`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:hover",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-hover",
             "https://drafts.csswg.org/selectors/#the-hover-pseudo"
+          ],
+          "tags": [
+            "web-features:user-action-pseudos"
           ],
           "support": {
             "chrome": {
@@ -36,7 +39,7 @@
             },
             "safari_ios": {
               "version_added": "1",
-              "notes": "As of Safari for iOS 7.1.2, tapping a <a href='https://developer.mozilla.org/docs/Web/Events/click#Safari_Mobile'>clickable element</a> causes the element to enter the <code>:hover</code> state. The element will remain in the <code>:hover</code> state until a different element has entered the <code>:hover</code> state."
+              "notes": "As of Safari for iOS 7.1.2, tapping a [clickable element](https://developer.mozilla.org/docs/Web/Events/click#Safari_Mobile) causes the element to enter the `:hover` state. The element will remain in the `:hover` state until a different element has entered the `:hover` state."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -50,7 +53,7 @@
         },
         "a_elements": {
           "__compat": {
-            "description": "<code>&lt;a&gt;</code> element support",
+            "description": "`&lt;a&gt;` element support",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -100,7 +103,7 @@
               "chrome_android": "mirror",
               "edge": {
                 "version_added": "12",
-                "notes": "In Edge, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the <code>:hover</code> state until the pointer is moved. See <a href='https://developer.microsoft.com/microsoft-edge/platform/issues/5381673/'>bug 5381673</a>."
+                "notes": "In Edge, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the `:hover` state until the pointer is moved. See [bug 5381673](https://developer.microsoft.com/microsoft-edge/platform/issues/5381673/)."
               },
               "firefox": {
                 "version_added": "1"
@@ -109,8 +112,8 @@
               "ie": {
                 "version_added": "7",
                 "notes": [
-                  "In Internet Explorer 8 to Internet Explorer 11, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the <code>:hover</code> state until the pointer is moved. See <a href='https://connect.microsoft.com/IE/feedbackdetail/view/926665'>bug 926665</a>.",
-                  "In Internet Explorer 9 (and possibly earlier), if a <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>&lt;table&gt;</code></a> has a parent with a non-<code>auto</code> <a href='https://developer.mozilla.org/docs/Web/CSS/width'><code>width</code></a>, <a href='https://developer.mozilla.org/docs/Web/CSS/overflow-x'><code>overflow-x</code></a><code>: auto;</code>, the <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>&lt;table&gt;</code></a> has enough content to horizontally overflow its parent, and there are <a href='https://developer.mozilla.org/docs/Web/CSS/:hover'><code>:hover</code></a> styles set on elements within the table, then hovering over said elements will cause the <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>&lt;table&gt;</code></a>'s height to increase. See <a href='https://output.jsbin.com/diwiqe'>a live demo that triggers the bug</a>. One workaround for the bug is to set <code>min-height: 0%;</code> (the <code>%</code> unit must be specified, since unitless and <code>px</code> don't work) on the <code>&lt;table&gt;</code>'s parent element."
+                  "In Internet Explorer 8 to Internet Explorer 11, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the `:hover` state until the pointer is moved. See [bug 926665](https://connect.microsoft.com/IE/feedbackdetail/view/926665).",
+                  "In Internet Explorer 9 (and possibly earlier), if a [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table) has a parent with a non-`auto` [`width`](https://developer.mozilla.org/docs/Web/CSS/width), [`overflow-x`](https://developer.mozilla.org/docs/Web/CSS/overflow-x)`: auto;`, the [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table) has enough content to horizontally overflow its parent, and there are [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) styles set on elements within the table, then hovering over said elements will cause the [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table)'s height to increase. See [a live demo that triggers the bug](https://output.jsbin.com/diwiqe). One workaround for the bug is to set `min-height: 0%;` (the `%` unit must be specified, since unitless and `px` don't work) on the `&lt;table&gt;`'s parent element."
                 ]
               },
               "oculus": "mirror",

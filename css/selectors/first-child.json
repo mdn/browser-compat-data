@@ -3,9 +3,12 @@
     "selectors": {
       "first-child": {
         "__compat": {
-          "description": "<code>:first-child</code>",
+          "description": "`:first-child`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:first-child",
           "spec_url": "https://drafts.csswg.org/selectors/#first-child-pseudo",
+          "tags": [
+            "web-features:nth-child"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -21,8 +24,8 @@
             "ie": {
               "version_added": "7",
               "notes": [
-                "Internet Explorer 7 doesn't update <code>:first-child</code> styles when elements are added dynamically.",
-                "In Internet Explorer 8, if an element is inserted dynamically by clicking on a link, then the <code>:first-child</code> style isn't applied until the link loses focus."
+                "Internet Explorer 7 doesn't update `:first-child` styles when elements are added dynamically.",
+                "In Internet Explorer 8, if an element is inserted dynamically by clicking on a link, then the `:first-child` style isn't applied until the link loses focus."
               ]
             },
             "oculus": "mirror",
@@ -53,6 +56,9 @@
         "no_parent_required": {
           "__compat": {
             "description": "Matches elements with no parent",
+            "tags": [
+              "web-features:nth-child"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57"

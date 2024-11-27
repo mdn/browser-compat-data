@@ -50,9 +50,12 @@
       },
       "ProgressEvent": {
         "__compat": {
-          "description": "<code>ProgressEvent()</code> constructor",
+          "description": "`ProgressEvent()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ProgressEvent/ProgressEvent",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-progressevent-progressevent",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "16"
@@ -96,11 +99,14 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "47",
               "partial_implementation": true,
-              "notes": "Available in dedicated workers and shared workers, not available in service workers. See <a href='https://crbug.com/332663431'>bug 332663431</a>."
+              "notes": "Available in dedicated workers and shared workers, not available in service workers. See [bug 332663431](https://crbug.com/332663431)."
             },
             "chrome_android": "mirror",
             "edge": "mirror",

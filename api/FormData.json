@@ -20,7 +20,7 @@
           },
           "firefox": {
             "version_added": "4",
-            "notes": "Before Firefox 7, specifying a <a href='https://developer.mozilla.org/docs/Web/API/Blob'><code>Blob</code></a> as the data to append to the object, the filename reported in the <code>Content-Disposition</code> HTTP header was an empty string, resulting in errors on some servers. Starting with Firefox 7, the filename <code>blob</code> is sent."
+            "notes": "Before Firefox 7, specifying a [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) as the data to append to the object, the filename reported in the `Content-Disposition` HTTP header was an empty string, resulting in errors on some servers. Starting with Firefox 7, the filename `blob` is sent."
           },
           "firefox_android": "mirror",
           "ie": {
@@ -45,7 +45,7 @@
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": "3",
-            "notes": "XHR in Android 4.0 sends empty content for <code>FormData</code> with <code>blob</code>."
+            "notes": "XHR in Android 4.0 sends empty content for `FormData` with `blob`."
           },
           "webview_ios": "mirror"
         },
@@ -57,7 +57,7 @@
       },
       "FormData": {
         "__compat": {
-          "description": "<code>FormData()</code> constructor",
+          "description": "`FormData()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/FormData",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata",
           "tags": [
@@ -111,7 +111,10 @@
         },
         "submitter": {
           "__compat": {
-            "description": "<code>submitter</code> parameter",
+            "description": "`submitter` parameter",
+            "tags": [
+              "web-features:xhr"
+            ],
             "support": {
               "chrome": {
                 "version_added": "112"
@@ -150,6 +153,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -165,6 +171,9 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "18.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -204,12 +213,12 @@
             },
             "firefox": {
               "version_added": "4",
-              "notes": "Before Firefox 7, specifying a <a href='https://developer.mozilla.org/docs/Web/API/Blob'><code>Blob</code></a> as the data to append to the object, the filename reported in the <code>Content-Disposition</code> HTTP header was an empty string, resulting in errors on some servers. Starting with Firefox 7, the filename <code>blob</code> is sent."
+              "notes": "Before Firefox 7, specifying a [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) as the data to append to the object, the filename reported in the `Content-Disposition` HTTP header was an empty string, resulting in errors on some servers. Starting with Firefox 7, the filename `blob` is sent."
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": "10",
-              "notes": "With the \"Include local directory pass when uploading files to a server\" option enabled, IE will change the filename inside the <a href='https://developer.mozilla.org/docs/Web/API/Blob'><code>Blob</code></a> on the fly. To have direct control of the sent filename, the developer should send the filename as the third parameter value, i.e. <code>formData.append(name, value, filename)</code>."
+              "notes": "With the \"Include local directory pass when uploading files to a server\" option enabled, IE will change the filename inside the [`Blob`](https://developer.mozilla.org/docs/Web/API/Blob) on the fly. To have direct control of the sent filename, the developer should send the filename as the third parameter value, i.e. `formData.append(name, value, filename)`."
             },
             "nodejs": {
               "version_added": "18.0.0"
@@ -230,7 +239,7 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "3",
-              "notes": "XHR in Android 4.0 sends empty content for <code>FormData</code> with <code>blob</code>."
+              "notes": "XHR in Android 4.0 sends empty content for `FormData` with `blob`."
             },
             "webview_ios": "mirror"
           },
@@ -242,7 +251,7 @@
         },
         "filename_parameter": {
           "__compat": {
-            "description": "<code>filename</code> parameter",
+            "description": "`filename` parameter",
             "tags": [
               "web-features:xhr"
             ],
@@ -291,6 +300,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/delete",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-delete",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -333,6 +345,9 @@
       "entries": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/entries",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -374,6 +389,9 @@
       },
       "forEach": {
         "__compat": {
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -417,6 +435,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/get",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-get",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -460,6 +481,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/getAll",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-getall",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -503,6 +527,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/has",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-has",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -545,6 +572,9 @@
       "keys": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/keys",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -588,6 +618,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/set",
           "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-set",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -630,6 +663,9 @@
       "values": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/values",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"
@@ -672,6 +708,9 @@
       "@@iterator": {
         "__compat": {
           "description": "[Symbol.iterator]",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": "50"

@@ -8,6 +8,9 @@
             "https://drafts.csswg.org/css-sizing/#min-size-properties",
             "https://drafts.csswg.org/css-sizing-4/#sizing-values"
           ],
+          "tags": [
+            "web-features:min-max-width-height"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -18,7 +21,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "CSS 2.1 leaves the behavior of <code>min-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Firefox supports applying <code>min-width</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `min-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Firefox supports applying `min-width` to `table` elements."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -27,7 +30,7 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "4",
-              "notes": "CSS 2.1 leaves the behavior of <code>min-width</code> with <a href='https://developer.mozilla.org/docs/Web/HTML/Element/table'><code>table</code></a> undefined. Opera supports applying <code>min-width</code> to <code>table</code> elements."
+              "notes": "CSS 2.1 leaves the behavior of `min-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Opera supports applying `min-width` to `table` elements."
             },
             "opera_android": {
               "version_added": "10.1"
@@ -48,7 +51,7 @@
         },
         "anchor-size": {
           "__compat": {
-            "description": "<code>anchor-size()</code>",
+            "description": "`anchor-size()`",
             "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#anchor-size-fn",
             "tags": [
               "web-features:anchor-positioning"
@@ -87,15 +90,18 @@
         },
         "auto": {
           "__compat": {
+            "tags": [
+              "web-features:min-max-width-height"
+            ],
             "support": {
               "chrome": {
                 "version_added": "21",
-                "notes": "Chrome uses <code>auto</code> as the initial value for <code>min-width</code>."
+                "notes": "Chrome uses `auto` as the initial value for `min-width`."
               },
               "chrome_android": "mirror",
               "edge": {
                 "version_added": "12",
-                "notes": "Edge uses <code>auto</code> as the initial value for <code>min-width</code>."
+                "notes": "Edge uses `auto` as the initial value for `min-width`."
               },
               "firefox": [
                 {
@@ -104,7 +110,7 @@
                 {
                   "version_added": "16",
                   "version_removed": "22",
-                  "notes": "Firefox 18 and later (until the value was removed), used <code>auto</code> as the initial value for <code>min-width</code>."
+                  "notes": "Firefox 18 and later (until the value was removed), used `auto` as the initial value for `min-width`."
                 }
               ],
               "firefox_android": "mirror",
@@ -114,7 +120,7 @@
               "oculus": "mirror",
               "opera": {
                 "version_added": "12.1",
-                "notes": "Opera uses <code>auto</code> as the initial value for <code>min-width</code>."
+                "notes": "Opera uses `auto` as the initial value for `min-width`."
               },
               "opera_android": "mirror",
               "safari": {
@@ -134,6 +140,9 @@
         },
         "fit-content": {
           "__compat": {
+            "tags": [
+              "web-features:fit-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -153,7 +162,7 @@
                 {
                   "prefix": "-moz-",
                   "version_added": "3",
-                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines <code>available</code> and not <code>fit-available</code>. Also, the definition of <code>fit-content</code> is simpler than in CSS3 Sizing."
+                  "notes": "Firefox implements the definitions given in CSS3 Basic Box. This defines `available` and not `fit-available`. Also, the definition of `fit-content` is simpler than in CSS3 Sizing."
                 }
               ],
               "firefox_android": "mirror",
@@ -189,7 +198,10 @@
         },
         "fit-content_function": {
           "__compat": {
-            "description": "<code>fit-content()</code>",
+            "description": "`fit-content()`",
+            "tags": [
+              "web-features:fit-content-function"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -229,6 +241,9 @@
         },
         "max-content": {
           "__compat": {
+            "tags": [
+              "web-features:min-max-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -280,6 +295,9 @@
         },
         "min-content": {
           "__compat": {
+            "tags": [
+              "web-features:min-max-content"
+            ],
             "support": {
               "chrome": [
                 {
@@ -362,6 +380,9 @@
         },
         "stretch": {
           "__compat": {
+            "tags": [
+              "web-features:stretch"
+            ],
             "support": {
               "chrome": {
                 "alternative_name": "-webkit-fill-available",

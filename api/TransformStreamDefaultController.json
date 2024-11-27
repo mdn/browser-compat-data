@@ -17,7 +17,7 @@
               "version_added": "1.0",
               "version_removed": "1.11",
               "partial_implementation": true,
-              "notes": "<code>TransformStreamDefaultController</code> is not exposed on the global scope."
+              "notes": "`TransformStreamDefaultController` is not exposed on the global scope."
             }
           ],
           "edge": "mirror",
@@ -28,9 +28,16 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": {
-            "version_added": "16.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "18.0.0"
+            },
+            {
+              "version_added": "16.5.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",

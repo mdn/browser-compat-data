@@ -30,7 +30,7 @@
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
-            "impl_url": "https://crbug.com/490120"
+            "impl_url": "https://crbug.com/40418964"
           },
           "webview_ios": "mirror"
         },
@@ -42,7 +42,7 @@
       },
       "permission_accelerometer": {
         "__compat": {
-          "description": "<code>accelerometer</code> permission",
+          "description": "`accelerometer` permission",
           "tags": [
             "web-features:accelerometer"
           ],
@@ -81,7 +81,7 @@
       },
       "permission_accessibility-events": {
         "__compat": {
-          "description": "<code>accessibility-events</code> permission",
+          "description": "`accessibility-events` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -117,7 +117,7 @@
       },
       "permission_ambient-light-sensor": {
         "__compat": {
-          "description": "<code>ambient-light-sensor</code> permission",
+          "description": "`ambient-light-sensor` permission",
           "support": {
             "chrome": {
               "version_added": "62",
@@ -158,7 +158,7 @@
       },
       "permission_background-sync": {
         "__compat": {
-          "description": "<code>background-sync</code> permission",
+          "description": "`background-sync` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -176,43 +176,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            },
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "permission_bluetooth": {
-        "__compat": {
-          "description": "<code>bluetooth</code> permission",
-          "support": {
-            "chrome": {
-              "version_added": "104"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/182565"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -230,7 +195,7 @@
       },
       "permission_camera": {
         "__compat": {
-          "description": "<code>camera</code> permission",
+          "description": "`camera` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -268,7 +233,7 @@
       },
       "permission_clipboard-read": {
         "__compat": {
-          "description": "<code>clipboard-read</code> permission",
+          "description": "`clipboard-read` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -304,7 +269,7 @@
       },
       "permission_clipboard-write": {
         "__compat": {
-          "description": "<code>clipboard-write</code> permission",
+          "description": "`clipboard-write` permission",
           "spec_url": "https://w3c.github.io/clipboard-apis/#dom-permissionname-clipboard-write",
           "tags": [
             "web-features:async-clipboard"
@@ -344,7 +309,7 @@
       },
       "permission_compute-pressure": {
         "__compat": {
-          "description": "<code>compute-pressure</code> permission",
+          "description": "`compute-pressure` permission",
           "spec_url": "https://w3c.github.io/compute-pressure/#policy-control",
           "tags": [
             "web-features:compute-pressure"
@@ -384,7 +349,7 @@
       },
       "permission_geolocation": {
         "__compat": {
-          "description": "<code>geolocation</code> permission",
+          "description": "`geolocation` permission",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -422,7 +387,7 @@
       },
       "permission_gyroscope": {
         "__compat": {
-          "description": "<code>gyroscope</code> permission",
+          "description": "`gyroscope` permission",
           "tags": [
             "web-features:gyroscope"
           ],
@@ -461,13 +426,14 @@
       },
       "permission_local-fonts": {
         "__compat": {
-          "description": "<code>local-fonts</code> permission",
+          "description": "`local-fonts` permission",
           "support": {
             "chrome": {
               "version_added": "103"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40840834"
             },
             "edge": "mirror",
             "firefox": {
@@ -499,7 +465,7 @@
       },
       "permission_magnetometer": {
         "__compat": {
-          "description": "<code>magnetometer</code> permission",
+          "description": "`magnetometer` permission",
           "support": {
             "chrome": {
               "version_added": "62"
@@ -535,7 +501,7 @@
       },
       "permission_microphone": {
         "__compat": {
-          "description": "<code>microphone</code> permission",
+          "description": "`microphone` permission",
           "support": {
             "chrome": {
               "version_added": "64"
@@ -573,7 +539,7 @@
       },
       "permission_midi": {
         "__compat": {
-          "description": "<code>midi</code> permission",
+          "description": "`midi` permission",
           "spec_url": "https://webaudio.github.io/web-midi-api/#permissions-integration",
           "tags": [
             "web-features:web-midi"
@@ -614,7 +580,7 @@
       },
       "permission_notifications": {
         "__compat": {
-          "description": "<code>notifications</code> permission",
+          "description": "`notifications` permission",
           "support": {
             "chrome": {
               "version_added": "43"
@@ -638,7 +604,8 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/40443309"
             },
             "webview_ios": {
               "version_added": false
@@ -653,7 +620,10 @@
       },
       "permission_payment-handler": {
         "__compat": {
-          "description": "<code>payment-handler</code> permission",
+          "description": "`payment-handler` permission",
+          "tags": [
+            "web-features:payment-handler"
+          ],
           "support": {
             "chrome": {
               "version_added": "66"
@@ -661,7 +631,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1465682"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -689,7 +660,7 @@
       },
       "permission_persistent-storage": {
         "__compat": {
-          "description": "<code>persistent-storage</code> permission",
+          "description": "`persistent-storage` permission",
           "support": {
             "chrome": {
               "version_added": "71"
@@ -725,7 +696,10 @@
       },
       "permission_push": {
         "__compat": {
-          "description": "<code>push</code> permission",
+          "description": "`push` permission",
+          "tags": [
+            "web-features:push"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -764,7 +738,7 @@
       },
       "permission_screen-wake-lock": {
         "__compat": {
-          "description": "<code>screen-wake-lock</code> permission",
+          "description": "`screen-wake-lock` permission",
           "spec_url": "https://w3c.github.io/screen-wake-lock/#the-screen-wake-lock-powerful-feature",
           "tags": [
             "web-features:screen-wake-lock"
@@ -804,8 +778,11 @@
       },
       "permission_storage-access": {
         "__compat": {
-          "description": "<code>storage-access</code> permission",
+          "description": "`storage-access` permission",
           "spec_url": "https://privacycg.github.io/storage-access/#permissions-integration",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
               "version_added": "119"
@@ -845,8 +822,11 @@
       },
       "permission_top-level-storage-access": {
         "__compat": {
-          "description": "<code>top-level-storage-access</code> permission",
+          "description": "`top-level-storage-access` permission",
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#permissions-integration",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -884,8 +864,11 @@
       },
       "permission_window-management": {
         "__compat": {
-          "description": "<code>window-management</code> permission",
+          "description": "`window-management` permission",
           "spec_url": "https://w3c.github.io/window-management/#api-permission-api-integration",
+          "tags": [
+            "web-features:window-management"
+          ],
           "support": {
             "chrome": {
               "version_added": "111"

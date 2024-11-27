@@ -18,7 +18,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Starting in Firefox 4, inserting &lt;script&gt; elements that have been created by calling <code>document.createElement(\"script\")</code> no longer enforces execution in insertion order. This change lets Firefox properly abide by the specification. To make script-inserted external scripts execute in their insertion order, set <code>.async=false</code> on them."
+              "notes": "Starting in Firefox 4, inserting &lt;script&gt; elements that have been created by calling `document.createElement(\"script\")` no longer enforces execution in insertion order. This change lets Firefox properly abide by the specification. To make script-inserted external scripts execute in their insertion order, set `.async=false` on them."
             },
             "firefox_android": {
               "version_added": "4"
@@ -91,7 +91,7 @@
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-script-attributionsrc",
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -144,8 +144,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/267232"
+                "version_added": "18.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -153,7 +152,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -189,7 +188,7 @@
               },
               "safari": {
                 "version_added": "6",
-                "notes": "The <code>crossorigin</code> attribute was implemented in WebKit in WebKit <a href='https://webkit.org/b/81438'>bug 81438</a>."
+                "notes": "The `crossorigin` attribute was implemented in WebKit in WebKit [bug 81438](https://webkit.org/b/81438)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -212,7 +211,7 @@
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Chrome does not defer scripts with the <code>defer</code> attribute when the page is served as XHTML (<code>application/xhtml+xml</code>), see <a href='https://crbug.com/611136'>bug 611136</a> and <a href='https://crbug.com/874749'>bug 874749</a>"
+                "notes": "Chrome does not defer scripts with the `defer` attribute when the page is served as XHTML (`application/xhtml+xml`), see [bug 41253514](https://crbug.com/41253514) and [bug 41408348](https://crbug.com/41408348)"
               },
               "chrome_android": "mirror",
               "edge": {
@@ -220,14 +219,14 @@
               },
               "firefox": {
                 "version_added": "3.5",
-                "notes": "Since Firefox 3.6, the <code>defer</code> attribute is ignored on scripts that don't have the <code>src</code> attribute. However, in Firefox 3.5 even inline scripts are deferred if the <code>defer</code> attribute is set."
+                "notes": "Since Firefox 3.6, the `defer` attribute is ignored on scripts that don't have the `src` attribute. However, in Firefox 3.5 even inline scripts are deferred if the `defer` attribute is set."
               },
               "firefox_android": {
                 "version_added": "4"
               },
               "ie": {
                 "version_added": "10",
-                "notes": "Before version 10, Internet Explorer implemented <code>defer</code> by a proprietary specification. Since version 10 it conforms to the W3C specification."
+                "notes": "Before version 10, Internet Explorer implemented `defer` by a proprietary specification. Since version 10 it conforms to the W3C specification."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -406,6 +405,9 @@
           },
           "no-referrer-when-downgrade": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -442,6 +444,9 @@
           },
           "origin-when-cross-origin": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -478,6 +483,9 @@
           },
           "unsafe-url": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -592,7 +600,7 @@
           },
           "importmap": {
             "__compat": {
-              "description": "<code>type=\"importmap\"</code>",
+              "description": "`type=\"importmap\"`",
               "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#import-map",
               "tags": [
                 "web-features:import-maps"
@@ -667,20 +675,20 @@
           },
           "module": {
             "__compat": {
-              "description": "<code>type=\"module\"</code>",
+              "description": "`type=\"module\"`",
               "tags": [
                 "web-features:js-modules"
               ],
               "support": {
                 "chrome": {
                   "version_added": "61",
-                  "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
+                  "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See [bug 40518469](https://crbug.com/40518469)."
                 },
                 "chrome_android": "mirror",
                 "edge": [
                   {
                     "version_added": "79",
-                    "notes": "Module scripts without the <code>async</code> attribute do not load when the page is served as XHTML (<code>application/xhtml+xml</code>). See <a href='https://crbug.com/717643'>bug 717643</a>."
+                    "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See [bug 40518469](https://crbug.com/40518469)."
                   },
                   {
                     "version_added": "16",
@@ -699,7 +707,7 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "10.1",
-                  "notes": "Module scripts do not load when the page is served as XHTML (<code>application/xhtml+xml</code>)."
+                  "notes": "Module scripts do not load when the page is served as XHTML (`application/xhtml+xml`)."
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -715,8 +723,11 @@
           },
           "speculationrules": {
             "__compat": {
-              "description": "<code>type=\"speculationrules\"</code>",
+              "description": "`type=\"speculationrules\"`",
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
+              "tags": [
+                "web-features:speculation-rules"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -767,7 +778,10 @@
             },
             "eagerness": {
               "__compat": {
-                "description": "<code>eagerness</code> key",
+                "description": "`eagerness` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -803,12 +817,15 @@
             },
             "expects_no_vary_search": {
               "__compat": {
-                "description": "<code>expects_no_vary_search</code> key",
+                "description": "`expects_no_vary_search` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121",
                     "partial_implementation": true,
-                    "notes": "Supported for <code>prefetch</code> only."
+                    "notes": "Supported for `prefetch` only."
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
@@ -841,7 +858,10 @@
             },
             "prefetch": {
               "__compat": {
-                "description": "<code>prefetch</code> key",
+                "description": "`prefetch` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -879,7 +899,10 @@
             },
             "prerender": {
               "__compat": {
-                "description": "<code>prerender</code> key",
+                "description": "`prerender` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "105"
@@ -917,7 +940,10 @@
             },
             "referrer_policy": {
               "__compat": {
-                "description": "<code>referrer_policy</code> key",
+                "description": "`referrer_policy` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "111"
@@ -953,7 +979,10 @@
             },
             "relative_to": {
               "__compat": {
-                "description": "<code>relative_to</code> key",
+                "description": "`relative_to` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -989,7 +1018,10 @@
             },
             "requires": {
               "__compat": {
-                "description": "<code>requires</code> key",
+                "description": "`requires` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -1026,7 +1058,10 @@
               },
               "anonymous-client-ip-when-cross-origin": {
                 "__compat": {
-                  "description": "<code>anonymous-client-ip-when-cross-origin</code> value",
+                  "description": "`anonymous-client-ip-when-cross-origin` value",
+                  "tags": [
+                    "web-features:speculation-rules"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "110"
@@ -1073,7 +1108,10 @@
             },
             "source_optional": {
               "__compat": {
-                "description": "<code>source</code> key is optional",
+                "description": "`source` key is optional",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "122"
@@ -1109,7 +1147,10 @@
             },
             "urls": {
               "__compat": {
-                "description": "<code>urls</code> key",
+                "description": "`urls` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "109"
@@ -1147,7 +1188,10 @@
             },
             "where": {
               "__compat": {
-                "description": "<code>where</code> key",
+                "description": "`where` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"

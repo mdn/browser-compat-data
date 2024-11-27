@@ -8,6 +8,9 @@
             "https://drafts.csswg.org/css-sizing/#column-sizing",
             "https://drafts.csswg.org/css-multicol/#cw"
           ],
+          "tags": [
+            "web-features:multi-column"
+          ],
           "support": {
             "chrome": [
               {
@@ -36,7 +39,7 @@
                 "prefix": "-moz-",
                 "version_added": "1.5",
                 "version_removed": "74",
-                "notes": "Before version 37, multiple columns didn't work with <code>display: table-caption</code> elements."
+                "notes": "Before version 37, multiple columns didn't work with `display: table-caption` elements."
               }
             ],
             "firefox_android": [
@@ -46,7 +49,7 @@
               {
                 "prefix": "-moz-",
                 "version_added": "4",
-                "notes": "Before version 37, multiple columns didn't work with <code>display: table-caption</code> elements."
+                "notes": "Before version 37, multiple columns didn't work with `display: table-caption` elements."
               }
             ],
             "ie": {
@@ -101,12 +104,17 @@
         },
         "auto": {
           "__compat": {
+            "tags": [
+              "web-features:multi-column"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
               "firefox": {
                 "version_added": "1.5"
               },

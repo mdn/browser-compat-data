@@ -31,11 +31,8 @@
             },
             {
               "version_added": "16.5.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Must be imported using either <code>require('stream/web')</code> or <code>import * from 'stream/web'</code>.",
-                "Experimental implementation."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `stream/web` module."
             }
           ],
           "oculus": "mirror",
@@ -57,7 +54,7 @@
       },
       "ReadableStream": {
         "__compat": {
-          "description": "<code>ReadableStream()</code> constructor",
+          "description": "`ReadableStream()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/ReadableStream",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-constructor⑤",
           "tags": [
@@ -148,7 +145,7 @@
       },
       "from_static": {
         "__compat": {
-          "description": "<code>from()</code> static method",
+          "description": "`from()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStream/from_static",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-rs-from",
           "support": {
@@ -392,7 +389,8 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "16.5.0"
+              "version_added": "16.5.0",
+              "notes": "Before 18.10.0 or 16.18.0, teeing a readable byte stream is not supported."
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -433,7 +431,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "16.5.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -524,7 +522,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/194379"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

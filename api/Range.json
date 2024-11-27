@@ -8,6 +8,9 @@
           "https://w3c.github.io/DOM-Parsing/#extensions-to-the-range-interface",
           "https://drafts.csswg.org/cssom-view/#extensions-to-the-range-interface"
         ],
+        "tags": [
+          "web-features:selection-api"
+        ],
         "support": {
           "chrome": {
             "version_added": "1"
@@ -18,7 +21,7 @@
           },
           "firefox": {
             "version_added": "1",
-            "notes": "Starting with Firefox 13, the <code>Range</code> object throws a <code>DOMException</code> as defined in DOM 4, instead of a <code>RangeException</code> defined in prior specifications."
+            "notes": "Starting with Firefox 13, the `Range` object throws a `DOMException` as defined in DOM 4, instead of a `RangeException` defined in prior specifications."
           },
           "firefox_android": "mirror",
           "ie": {
@@ -47,9 +50,12 @@
       },
       "Range": {
         "__compat": {
-          "description": "<code>Range()</code> constructor",
+          "description": "`Range()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/Range",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-range②",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "29"
@@ -87,6 +93,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/cloneContents",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-clonecontents",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -128,6 +137,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/cloneRange",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-clonerange",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -169,6 +181,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/collapse",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-collapse",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -207,7 +222,7 @@
         },
         "toStart_parameter_optional": {
           "__compat": {
-            "description": "<code>toStart</code> parameter is optional",
+            "description": "`toStart` parameter is optional",
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -222,7 +237,7 @@
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false,
-                "notes": "Optional but defaults to <code>true</code>."
+                "notes": "Optional but defaults to `true`."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -247,6 +262,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/collapsed",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-collapsed①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -288,6 +306,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/commonAncestorContainer",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-commonancestorcontainer②",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -329,6 +350,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/compareBoundaryPoints",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-compareboundarypoints",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -408,6 +432,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/comparePoint",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-comparepoint①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -451,6 +478,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/createContextualFragment",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-range-createcontextualfragment",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -492,6 +522,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/deleteContents",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-deletecontents",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -533,6 +566,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/detach",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-detach",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1",
@@ -562,7 +598,7 @@
             },
             "safari": {
               "version_added": "1",
-              "notes": "Starting in Safari 10, this method is a no-op and has no effect, see <a href='https://webkit.org/b/148454'>bug 148454</a>."
+              "notes": "Starting in Safari 10, this method is a no-op and has no effect, see [bug 148454](https://webkit.org/b/148454)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -580,6 +616,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/endContainer",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-endcontainer①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -621,6 +660,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/endOffset",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-endoffset①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -662,6 +704,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/extractContents",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-extractcontents",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -793,6 +838,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/insertNode",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-insertnode",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -834,6 +882,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/intersectsNode",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-intersectsnode①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -879,6 +930,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/isPointInRange",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-ispointinrange",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -922,6 +976,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/selectNode",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-selectnode",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -963,6 +1020,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/selectNodeContents",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-selectnodecontents",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1004,6 +1064,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setEnd",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setend",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1045,6 +1108,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setEndAfter",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setendafter",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1086,6 +1152,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setEndBefore",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setendbefore",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1127,6 +1196,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setStart",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setstart",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1168,6 +1240,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setStartAfter",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setstartafter",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1209,6 +1284,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/setStartBefore",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-setstartbefore",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1250,6 +1328,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/startContainer",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-startcontainer①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1291,6 +1372,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/startOffset",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-range-startoffset①",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1332,6 +1416,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/surroundContents",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-surroundcontents",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1373,6 +1460,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Range/toString",
           "spec_url": "https://dom.spec.whatwg.org/#dom-range-stringifier",
+          "tags": [
+            "web-features:selection-api"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"

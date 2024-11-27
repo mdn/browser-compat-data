@@ -63,7 +63,7 @@
       },
       "SharedWorker": {
         "__compat": {
-          "description": "<code>SharedWorker()</code> constructor",
+          "description": "`SharedWorker()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworker-dev",
           "support": {
@@ -149,7 +149,7 @@
               "nodejs": {
                 "version_added": "12.17.0",
                 "partial_implementation": true,
-                "notes": "ECMAScript modules are enabled for files ending with <code>.mjs</code> and for files ending with <code>.js</code> when the nearest parent <code>package.json</code> file contains a top-level field <code>\"type\"</code> with a value of <code>\"module\"</code>."
+                "notes": "ECMAScript modules are enabled for files ending with `.mjs` and for files ending with `.js` when the nearest parent `package.json` file contains a top-level field `\"type\"` with a value of `\"module\"`."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -179,7 +179,7 @@
             "support": {
               "chrome": {
                 "version_added": false,
-                "impl_url": "https://crbug.com/794548"
+                "impl_url": "https://crbug.com/40554522"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -210,7 +210,7 @@
         },
         "options_name_parameter": {
           "__compat": {
-            "description": "<code>options.name</code> parameter",
+            "description": "`options.name` parameter",
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -246,8 +246,11 @@
         },
         "options_sameSiteCookies_parameter": {
           "__compat": {
-            "description": "<code>options.sameSiteCookies</code> parameter",
+            "description": "`options.sameSiteCookies` parameter",
             "spec_url": "https://privacycg.github.io/saa-non-cookie-storage/#dom-sharedworkeroptions-samesitecookies",
+            "tags": [
+              "web-features:non-cookie-storage-access"
+            ],
             "support": {
               "chrome": {
                 "version_added": "125"
@@ -285,7 +288,7 @@
         },
         "options_type_parameter": {
           "__compat": {
-            "description": "<code>options.type</code> parameter",
+            "description": "`options.type` parameter",
             "tags": [
               "web-features:js-modules-shared-workers"
             ],
@@ -298,7 +301,7 @@
               },
               "deno": {
                 "version_added": "1.0",
-                "notes": "Only supports <code>module</code>"
+                "notes": "Only supports `module`"
               },
               "edge": "mirror",
               "firefox": {
@@ -332,7 +335,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SharedWorker/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
           "support": {
