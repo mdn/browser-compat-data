@@ -41,6 +41,7 @@ const specsExceptions = [
   'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
   'https://github.com/WebAssembly/memory64/blob/main/proposals/memory64/Overview.md',
   'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
+  'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
 ];
 
 const allowedSpecURLs = [
