@@ -9,13 +9,16 @@ November 28, 2024
 - `api.BrowserCaptureMediaStreamTrack.restrictTo` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
 - `api.RestrictionTarget` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
 - `api.RestrictionTarget.fromElement_static` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
+- `api.Serial.requestPort.allowedBluetoothServiceClassIds_option` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
+- `api.Serial.requestPort.filters_bluetoothServiceClassId` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
 - `api.SerialPort.connect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
 - `api.SerialPort.disconnect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
+- `api.SerialPort.getInfo.bluetoothServiceClassId` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
 
 ### Statistics
 
-- 6 contributors have changed 27 files with 375 additions and 181 deletions in 33 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
-- 16,753 total features
+- 6 contributors have changed 28 files with 495 additions and 181 deletions in 34 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
+- 16,756 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
