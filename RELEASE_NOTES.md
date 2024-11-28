@@ -14,11 +14,13 @@ November 28, 2024
 - `api.SerialPort.connect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
 - `api.SerialPort.disconnect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
 - `api.SerialPort.getInfo.bluetoothServiceClassId` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
+- `css.selectors.xr-overlay` ([#25253](https://github.com/mdn/browser-compat-data/pull/25253))
+- `css.types.transform-function.perspective.none` ([#25255](https://github.com/mdn/browser-compat-data/pull/25255))
 
 ### Statistics
 
-- 6 contributors have changed 28 files with 495 additions and 181 deletions in 34 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
-- 16,756 total features
+- 6 contributors have changed 30 files with 579 additions and 181 deletions in 36 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
+- 16,757 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
