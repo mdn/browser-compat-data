@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.20)
+
+November 29, 2024
+
+### Removals
+
+- `svg.elements.feFlood.flood-color` ([#25259](https://github.com/mdn/browser-compat-data/pull/25259))
+- `svg.elements.feFlood.flood-opacity` ([#25259](https://github.com/mdn/browser-compat-data/pull/25259))
+
+### Additions
+
+- `api.BrowserCaptureMediaStreamTrack.restrictTo` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
+- `api.RestrictionTarget` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
+- `api.RestrictionTarget.fromElement_static` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
+- `api.Serial.requestPort.allowedBluetoothServiceClassIds_option` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
+- `api.Serial.requestPort.filters_bluetoothServiceClassId` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
+- `api.SerialPort.connect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
+- `api.SerialPort.disconnect_event.bluetooth_rfcomm` ([#25234](https://github.com/mdn/browser-compat-data/pull/25234))
+- `api.SerialPort.getInfo.bluetoothServiceClassId` ([#25256](https://github.com/mdn/browser-compat-data/pull/25256))
+- `css.selectors.xr-overlay` ([#25253](https://github.com/mdn/browser-compat-data/pull/25253))
+- `css.types.transform-function.perspective.none` ([#25255](https://github.com/mdn/browser-compat-data/pull/25255))
+
+### Statistics
+
+- 8 contributors have changed 46 files with 713 additions and 315 deletions in 42 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
+- 16,756 total features
+- 1,116 total contributors
+- 5,007 total stargazers
+
 ## [v5.6.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.19)
 
 November 26, 2024
