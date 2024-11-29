@@ -1,5 +1,123 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.19](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.19)
+
+November 26, 2024
+
+### Removals
+
+- `api.NavigateEvent.restoreScroll` ([#25229](https://github.com/mdn/browser-compat-data/pull/25229))
+- `api.NavigateEvent.transitionWhile` ([#25229](https://github.com/mdn/browser-compat-data/pull/25229))
+- `css.selectors.target-within` ([#25188](https://github.com/mdn/browser-compat-data/pull/25188))
+- `css.types.image.image` ([#25190](https://github.com/mdn/browser-compat-data/pull/25190))
+
+### Additions
+
+- `browsers.firefox_android.releases.136` ([#25211](https://github.com/mdn/browser-compat-data/pull/25211))
+- `browsers.firefox.releases.136` ([#25211](https://github.com/mdn/browser-compat-data/pull/25211))
+- `html.elements.input.webkitdirectory` ([#25036](https://github.com/mdn/browser-compat-data/pull/25036))
+- `webassembly.memory64` ([#25230](https://github.com/mdn/browser-compat-data/pull/25230))
+- `webextensions.manifest.chrome_settings_overrides.search_provider.search_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
+- `webextensions.manifest.chrome_settings_overrides.search_provider.suggest_url_get_params` ([#25160](https://github.com/mdn/browser-compat-data/pull/25160))
+
+### Renamings
+
+- `css.types.image.gradient` to `css.types.gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.conic-gradient` to `css.types.gradient.conic-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.conic-gradient.doubleposition` to `css.types.gradient.conic-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.conic-gradient.hue_interpolation_method` to `css.types.gradient.conic-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.conic-gradient.interpolation_color_space` to `css.types.gradient.conic-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient` to `css.types.gradient.linear-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.doubleposition` to `css.types.gradient.linear-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.hue_interpolation_method` to `css.types.gradient.linear-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.interpolation_color_space` to `css.types.gradient.linear-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.interpolation_hints` to `css.types.gradient.linear-gradient.interpolation_hints` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.premultiplied_gradients` to `css.types.gradient.linear-gradient.premultiplied_gradients` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.to` to `css.types.gradient.linear-gradient.to` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.linear-gradient.unitless_0_angle` to `css.types.gradient.linear-gradient.unitless_0_angle` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient` to `css.types.gradient.radial-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.at` to `css.types.gradient.radial-gradient.at` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.doubleposition` to `css.types.gradient.radial-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.hue_interpolation_method` to `css.types.gradient.radial-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.interpolation_color_space` to `css.types.gradient.radial-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.interpolation_hints` to `css.types.gradient.radial-gradient.interpolation_hints` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.radial-gradient.premultiplied_gradients` to `css.types.gradient.radial-gradient.premultiplied_gradients` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-conic-gradient` to `css.types.gradient.repeating-conic-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-conic-gradient.hue_interpolation_method` to `css.types.gradient.repeating-conic-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-conic-gradient.interpolation_color_space` to `css.types.gradient.repeating-conic-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient` to `css.types.gradient.repeating-linear-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.doubleposition` to `css.types.gradient.repeating-linear-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.hue_interpolation_method` to `css.types.gradient.repeating-linear-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.interpolation_color_space` to `css.types.gradient.repeating-linear-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.interpolation_hints` to `css.types.gradient.repeating-linear-gradient.interpolation_hints` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.to` to `css.types.gradient.repeating-linear-gradient.to` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-linear-gradient.unitless_0_angle` to `css.types.gradient.repeating-linear-gradient.unitless_0_angle` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient` to `css.types.gradient.repeating-radial-gradient` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient.at` to `css.types.gradient.repeating-radial-gradient.at` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient.doubleposition` to `css.types.gradient.repeating-radial-gradient.doubleposition` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient.hue_interpolation_method` to `css.types.gradient.repeating-radial-gradient.hue_interpolation_method` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient.interpolation_color_space` to `css.types.gradient.repeating-radial-gradient.interpolation_color_space` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+- `css.types.image.gradient.repeating-radial-gradient.interpolation_hints` to `css.types.gradient.repeating-radial-gradient.interpolation_hints` ([#25191](https://github.com/mdn/browser-compat-data/pull/25191))
+
+### Statistics
+
+- 10 contributors have changed 1,270 files with 19,301 additions and 2,480 deletions in 41 commits ([`v5.6.18...v5.6.19`](https://github.com/mdn/browser-compat-data/compare/v5.6.18...v5.6.19))
+- 16,748 total features
+- 1,116 total contributors
+- 5,007 total stargazers
+
+## [v5.6.18](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.18)
+
+November 22, 2024
+
+### Removals
+
+- `css.properties.-webkit-mask-box-image-outset` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-repeat` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-slice` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-source` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `css.properties.-webkit-mask-box-image-width` ([#25155](https://github.com/mdn/browser-compat-data/pull/25155))
+- `svg.global_attributes.stop-color` ([#25130](https://github.com/mdn/browser-compat-data/pull/25130))
+
+### Additions
+
+- `api.DocumentPictureInPicture.requestWindow.option_disallowReturnToOpener` ([#25173](https://github.com/mdn/browser-compat-data/pull/25173))
+- `api.DocumentPictureInPicture.requestWindow.option_preferInitialWindowPlacement` ([#25173](https://github.com/mdn/browser-compat-data/pull/25173))
+- `api.GPUCommandEncoder.beginRenderPass.separate_depth_stencil_read-only` ([#25157](https://github.com/mdn/browser-compat-data/pull/25157))
+- `api.GPUDevice.createBindGroupLayout.storageTexture_access_read-write_read-only` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
+- `api.GPUDevice.createBindGroupLayout.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.createRenderPipeline.optional_depthcompare_depthwriteenabled` ([#25158](https://github.com/mdn/browser-compat-data/pull/25158))
+- `api.GPUDevice.createRenderPipeline.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.createRenderPipeline.vertex_unorm10-10-10-2` ([#25153](https://github.com/mdn/browser-compat-data/pull/25153))
+- `api.GPUDevice.createRenderPipelineAsync.optional_depthcompare_depthwriteenabled` ([#25158](https://github.com/mdn/browser-compat-data/pull/25158))
+- `api.GPUDevice.createRenderPipelineAsync.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.createRenderPipelineAsync.vertex_unorm10-10-10-2` ([#25153](https://github.com/mdn/browser-compat-data/pull/25153))
+- `api.GPUDevice.createTexture.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUDevice.importExternalTexture.color_space_display-p3` ([#25156](https://github.com/mdn/browser-compat-data/pull/25156))
+- `api.GPUTexture.createView.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.GPUTexture.format.texture_rgb10a2uint` ([#25149](https://github.com/mdn/browser-compat-data/pull/25149))
+- `api.MessageEvent.userActivation` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.MessagePort.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.WGSLLanguageFeatures.extension_packed_4x8_integer_dot_product` ([#25170](https://github.com/mdn/browser-compat-data/pull/25170))
+- `api.WGSLLanguageFeatures.extension_readonly_and_readwrite_storage_textures` ([#25137](https://github.com/mdn/browser-compat-data/pull/25137))
+- `api.WGSLLanguageFeatures.extension_unrestricted_pointer_parameters` ([#25171](https://github.com/mdn/browser-compat-data/pull/25171))
+- `api.Window.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `api.Worker.postMessage.options_includeUserActivation_parameter` ([#25162](https://github.com/mdn/browser-compat-data/pull/25162))
+- `css.selectors.has-slotted` ([#25129](https://github.com/mdn/browser-compat-data/pull/25129))
+- `http.headers.Sec-WebSocket-Accept` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Extensions` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Key` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Protocol` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Sec-WebSocket-Version` ([#25115](https://github.com/mdn/browser-compat-data/pull/25115))
+- `http.headers.Server-Timing.trailer` ([#25141](https://github.com/mdn/browser-compat-data/pull/25141))
+
+### Statistics
+
+- 16 contributors have changed 96 files with 2,020 additions and 882 deletions in 50 commits ([`v5.6.17...v5.6.18`](https://github.com/mdn/browser-compat-data/compare/v5.6.17...v5.6.18))
+- 16,748 total features
+- 1,116 total contributors
+- 4,993 total stargazers
+
 ## [v5.6.17](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.17)
 
 November 19, 2024
