@@ -28,6 +28,7 @@ jobs:
       - name: Upload diff
         uses: actions/upload-artifact@v4
         with:
+          name: diff
           path: diff.patch
 
   suggest:
@@ -42,6 +43,8 @@ jobs:
 
       - name: Download diff
         uses: actions/download-artifact@v4
+        with:
+          name: diff
 
       - name: Setup
         uses: reviewdog/action-setup@v1
