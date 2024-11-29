@@ -4,8 +4,8 @@
 import { queryPRs } from './utils.js';
 
 const releaseNotesLabels = {
-  major: 'semver-major-bump 🚨',
-  minor: 'semver-minor-bump ➕',
+  major: 'semver-major-bump',
+  minor: 'semver-minor-bump',
 };
 
 /**
