@@ -4,6 +4,11 @@
 
 November 29, 2024
 
+### Removals
+
+- `svg.elements.feFlood.flood-color` ([#25259](https://github.com/mdn/browser-compat-data/pull/25259))
+- `svg.elements.feFlood.flood-opacity` ([#25259](https://github.com/mdn/browser-compat-data/pull/25259))
+
 ### Additions
 
 - `api.BrowserCaptureMediaStreamTrack.restrictTo` ([#25232](https://github.com/mdn/browser-compat-data/pull/25232))
@@ -19,8 +24,8 @@ November 29, 2024
 
 ### Statistics
 
-- 7 contributors have changed 44 files with 700 additions and 228 deletions in 40 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
-- 16,758 total features
+- 8 contributors have changed 45 files with 700 additions and 302 deletions in 41 commits ([`v5.6.19...v5.6.20`](https://github.com/mdn/browser-compat-data/compare/v5.6.19...v5.6.20))
+- 16,756 total features
 - 1,116 total contributors
 - 5,007 total stargazers
 
