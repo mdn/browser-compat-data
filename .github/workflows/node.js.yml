@@ -3,8 +3,7 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-  pull_request_target:
-    branches: ["main"]
+  pull_request:
 
 permissions:
   contents: read
@@ -15,68 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: npm
-
       - run: npm ci
-
       - run: npm test
         env:
           FORCE_COLOR: 3
-
-      - name: Reviewdog - Apply fixes and generate diff
-        if: failure()
-        run: |
-          npm run fix
-          git diff > diff.patch
-
-      - name: Upload Diff
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: diff
-          path: diff.patch
-
-  reviewdog:
-    if: github.event_name == 'pull_request_target'
-    name: Reviewdog - Suggest changes
-    needs: test
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-
-    steps:
-      - name: Download diff
-        uses: actions/download-artifact@v4
-        with:
-          name: diff
-
-      - name: Check diff
-        id: check_artifact
-        run: |
-          if [ ! -f diff.patch ]; then
-            echo "artifact_exists=false" >> $GITHUB_ENV
-          else
-            echo "artifact_exists=true" >> $GITHUB_ENV
-          fi
-
-      - name: Reviewdog - Setup
-        if: env.artifact_exists == 'true'
-        uses: reviewdog/action-setup@v1
-        with:
-          reviewdog_version: latest
-
-      - name: Reviewdog - Suggest changes
-        if: env.artifact_exists == 'true'
-        env:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cat diff.patch | reviewdog \
-            -name="bcd-linter" \
-            -f=diff \
-            -f.diff.strip=1 \
-            -filter-mode=diff_context \
-            -reporter=github-pr-review
