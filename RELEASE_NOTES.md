@@ -11,11 +11,13 @@ December 1, 2024
 ### Additions
 
 - `browsers.nodejs.releases.21.1.0` ([#24988](https://github.com/mdn/browser-compat-data/pull/24988))
+- `webassembly.exceptionsFinal` ([#25252](https://github.com/mdn/browser-compat-data/pull/25252))
+- `webassembly.typedFunctionReferences` ([#25252](https://github.com/mdn/browser-compat-data/pull/25252))
 
 ### Statistics
 
-- 3 contributors have changed 15 files with 490 additions and 117 deletions in 4 commits ([`v5.6.20...v5.6.21`](https://github.com/mdn/browser-compat-data/compare/v5.6.20...v5.6.21))
-- 16,756 total features
+- 4 contributors have changed 19 files with 571 additions and 118 deletions in 5 commits ([`v5.6.20...v5.6.21`](https://github.com/mdn/browser-compat-data/compare/v5.6.20...v5.6.21))
+- 16,758 total features
 - 1,116 total contributors
 - 5,011 total stargazers
 
