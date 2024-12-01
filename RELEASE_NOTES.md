@@ -4,9 +4,13 @@
 
 December 1, 2024
 
+### Additions
+
+- `browsers.nodejs.releases.21.1.0` ([#24988](https://github.com/mdn/browser-compat-data/pull/24988))
+
 ### Statistics
 
-- 3 contributors have changed 3 files with 87 additions and 92 deletions in 2 commits ([`v5.6.20...v5.6.21`](https://github.com/mdn/browser-compat-data/compare/v5.6.20...v5.6.21))
+- 3 contributors have changed 5 files with 472 additions and 92 deletions in 3 commits ([`v5.6.20...v5.6.21`](https://github.com/mdn/browser-compat-data/compare/v5.6.20...v5.6.21))
 - 16,756 total features
 - 1,116 total contributors
 - 5,011 total stargazers
