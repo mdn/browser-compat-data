@@ -99,9 +99,16 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getExtensionTabs",
             "support": {
-              "chrome": {
-                "version_added": "5"
-              },
+              "chrome": [
+                {
+                  "version_added": "5"
+                },
+                {
+                  "alternative_name": "getTabContentses",
+                  "version_added": "4",
+                  "version_removed": "19"
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -217,9 +224,17 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/inIncognitoContext",
             "support": {
-              "chrome": {
-                "version_added": "7"
-              },
+              "chrome": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "alternative_name": "inIncognitoTab",
+                  "version_added": "5",
+                  "version_removed": "67",
+                  "notes": "Only supported in manifest v1."
+                }
+              ],
               "edge": {
                 "version_added": "17"
               },
