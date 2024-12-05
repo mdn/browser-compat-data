@@ -2,21 +2,22 @@
 
 ## [v5.6.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.22)
 
-December 4, 2024
+December 5, 2024
 
 ### Additions
 
 - `api.HTMLInputElement.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `api.HTMLInputElement.colorSpace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
 - `html.elements.input.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `html.elements.input.colorspace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 
 ### Statistics
 
-- 8 contributors have changed 48 files with 416 additions and 351 deletions in 13 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
+- 8 contributors have changed 49 files with 424 additions and 353 deletions in 14 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
 - 16,762 total features
 - 1,116 total contributors
-- 5,017 total stargazers
+- 5,021 total stargazers
 
 ## [v5.6.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.21)
 
