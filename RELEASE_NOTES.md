@@ -4,6 +4,11 @@
 
 December 5, 2024
 
+### Removals
+
+- `svg.elements.stop.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.elements.stop.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+
 ### Additions
 
 - `api.HTMLInputElement.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
@@ -11,10 +16,12 @@ December 5, 2024
 - `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
 - `html.elements.input.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `html.elements.input.colorspace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `svg.global_attributes.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.global_attributes.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
 
 ### Statistics
 
-- 8 contributors have changed 50 files with 426 additions and 355 deletions in 15 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
+- 9 contributors have changed 51 files with 572 additions and 501 deletions in 16 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
 - 16,762 total features
 - 1,116 total contributors
 - 5,021 total stargazers
