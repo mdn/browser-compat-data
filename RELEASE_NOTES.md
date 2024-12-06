@@ -4,10 +4,10 @@
 
 December 6, 2024
 
-### Removals
+### Renamings
 
-- `svg.elements.stop.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
-- `svg.elements.stop.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.elements.stop.stop-color` to `svg.global_attributes.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.elements.stop.stop-opacity` to `svg.global_attributes.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
 
 ### Additions
 
@@ -17,8 +17,6 @@ December 6, 2024
 - `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
 - `html.elements.input.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `html.elements.input.colorspace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
-- `svg.global_attributes.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
-- `svg.global_attributes.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
 
 ### Statistics
 
