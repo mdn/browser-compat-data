@@ -11,6 +11,7 @@ December 6, 2024
 
 ### Additions
 
+- `api.HTMLFencedFrameElement.sandbox` ([#25227](https://github.com/mdn/browser-compat-data/pull/25227))
 - `api.HTMLInputElement.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `api.HTMLInputElement.colorSpace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
 - `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
@@ -21,8 +22,8 @@ December 6, 2024
 
 ### Statistics
 
-- 10 contributors have changed 55 files with 680 additions and 578 deletions in 21 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
-- 16,762 total features
+- 11 contributors have changed 64 files with 737 additions and 598 deletions in 22 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
+- 16,763 total features
 - 1,116 total contributors
 - 5,023 total stargazers
 
