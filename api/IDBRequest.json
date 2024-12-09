@@ -182,6 +182,50 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "improved_reporting_large_value_read_failures": {
+            "__compat": {
+              "description": "Improved reporting for large value read failures",
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "132",
+                    "notes": "Throws a `NotReadableError` for unrecoverable large value read failures, and an `UnknownError` for transient large value read failures, with improved error messages."
+                  },
+                  {
+                    "version_added": "130",
+                    "partial_implementation": true,
+                    "notes": "Throws a `NotFoundError` for unrecoverable large value read failures, and a `DataError` for transient large value read failures."
+                  }
+                ],
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": false
+                },
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
