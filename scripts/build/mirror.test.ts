@@ -306,5 +306,29 @@ describe('mirror', () => {
         });
       });
     });
+
+    describe('ranges are preserved', () => {
+      it('direct', () => {
+        const support = {
+          chrome: {
+            version_added: '≤80',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        assert.deepEqual(mirrored, { version_added: '≤80' });
+      });
+
+      it('range is before first version of downstream browser', () => {
+        const support = {
+          chrome: {
+            version_added: '≤24',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        assert.deepEqual(mirrored, { version_added: '79' });
+      });
+    });
   });
 });
