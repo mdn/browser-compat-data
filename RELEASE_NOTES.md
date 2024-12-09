@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.22)
+
+December 6, 2024
+
+### Renamings
+
+- `svg.elements.stop.stop-color` to `svg.global_attributes.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.elements.stop.stop-opacity` to `svg.global_attributes.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+
+### Additions
+
+- `api.HTMLFencedFrameElement.sandbox` ([#25227](https://github.com/mdn/browser-compat-data/pull/25227))
+- `api.HTMLInputElement.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `api.HTMLInputElement.colorSpace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
+- `html.elements.input.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `html.elements.input.colorspace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+
+### Statistics
+
+- 13 contributors have changed 70 files with 756 additions and 617 deletions in 29 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
+- 16,763 total features
+- 1,116 total contributors
+- 5,022 total stargazers
+
 ## [v5.6.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.21)
 
 December 3, 2024
