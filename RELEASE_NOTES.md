@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.23)
+
+December 9, 2024
+
+### Removals
+
+- `css.properties.object-position.applies_to_iframe_elements` ([#25354](https://github.com/mdn/browser-compat-data/pull/25354))
+
+### Statistics
+
+- 3 contributors have changed 5 files with 53 additions and 83 deletions in 3 commits ([`v5.6.22...v5.6.23`](https://github.com/mdn/browser-compat-data/compare/v5.6.22...v5.6.23))
+- 16,762 total features
+- 1,116 total contributors
+- 5,024 total stargazers
+
 ## [v5.6.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.22)
 
 December 6, 2024
