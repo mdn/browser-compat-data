@@ -2,11 +2,12 @@
 
 ## [v5.6.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.23)
 
-December 9, 2024
+December 10, 2024
 
 ### Removals
 
 - `css.properties.object-position.applies_to_iframe_elements` ([#25354](https://github.com/mdn/browser-compat-data/pull/25354))
+- `css.types.color.color-contrast` ([#25305](https://github.com/mdn/browser-compat-data/pull/25305))
 
 ### Additions
 
@@ -15,8 +16,8 @@ December 9, 2024
 
 ### Statistics
 
-- 5 contributors have changed 16 files with 101 additions and 99 deletions in 5 commits ([`v5.6.22...v5.6.23`](https://github.com/mdn/browser-compat-data/compare/v5.6.22...v5.6.23))
-- 16,764 total features
+- 5 contributors have changed 17 files with 101 additions and 141 deletions in 6 commits ([`v5.6.22...v5.6.23`](https://github.com/mdn/browser-compat-data/compare/v5.6.22...v5.6.23))
+- 16,763 total features
 - 1,117 total contributors
 - 5,025 total stargazers
 
