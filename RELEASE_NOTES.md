@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.23)
+
+December 10, 2024
+
+### Removals
+
+- `css.properties.object-position.applies_to_iframe_elements` ([#25354](https://github.com/mdn/browser-compat-data/pull/25354))
+- `css.types.color.color-contrast` ([#25305](https://github.com/mdn/browser-compat-data/pull/25305))
+
+### Additions
+
+- `browsers.opera_android.releases.85` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera_android.releases.86` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera.releases.116` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera.releases.117` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `webextensions.api.action.onUserSettingsChanged` ([#25343](https://github.com/mdn/browser-compat-data/pull/25343))
+- `webextensions.api.action.UserSettingsChange` ([#25343](https://github.com/mdn/browser-compat-data/pull/25343))
+
+### Statistics
+
+- 8 contributors have changed 44 files with 250 additions and 258 deletions in 25 commits ([`v5.6.22...v5.6.23`](https://github.com/mdn/browser-compat-data/compare/v5.6.22...v5.6.23))
+- 16,763 total features
+- 1,118 total contributors
+- 5,027 total stargazers
+
 ## [v5.6.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.22)
 
 December 6, 2024
