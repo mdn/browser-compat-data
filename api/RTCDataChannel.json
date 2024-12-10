@@ -30,7 +30,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -42,6 +43,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/binaryType",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-binarytype",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -65,7 +69,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -75,7 +80,10 @@
         },
         "arraybuffer_value": {
           "__compat": {
-            "description": "<code>ArrayBuffer</code> value",
+            "description": "`ArrayBuffer` value",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "24"
@@ -99,7 +107,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -110,11 +119,13 @@
         },
         "blob_value": {
           "__compat": {
-            "description": "<code>Blob</code> value",
+            "description": "`Blob` value",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/webrtc/2276"
+                "version_added": "129"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -135,7 +146,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -149,6 +161,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmount",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-bufferedamount",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -172,7 +187,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -183,16 +199,19 @@
       },
       "bufferedamountlow_event": {
         "__compat": {
-          "description": "<code>bufferedamountlow</code> event",
+          "description": "`bufferedamountlow` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedamountlow_event",
           "spec_url": [
             "https://w3c.github.io/webrtc-pc/#event-datachannel-bufferedamountlow",
             "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onbufferedamountlow"
           ],
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "57",
-              "notes": "The default for <code>rtcpMuxPolicy</code> is <code>require</code>."
+              "notes": "The default for `rtcpMuxPolicy` is `require`."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -211,7 +230,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -224,6 +244,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-bufferedamountlowthreshold",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "46"
@@ -245,7 +268,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -258,45 +282,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-close",
-          "support": {
-            "chrome": {
-              "version_added": "24"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "22"
-            },
-            "firefox_android": {
-              "version_added": "24"
-            },
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "11"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "close_event": {
-        "__compat": {
-          "description": "<code>close</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event",
-          "spec_url": [
-            "https://w3c.github.io/webrtc-pc/#event-datachannel-close",
-            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclose"
+          "tags": [
+            "web-features:webrtc"
           ],
           "support": {
             "chrome": {
@@ -321,7 +308,52 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "close_event": {
+        "__compat": {
+          "description": "`close` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/close_event",
+          "spec_url": [
+            "https://w3c.github.io/webrtc-pc/#event-datachannel-close",
+            "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclose"
+          ],
+          "tags": [
+            "web-features:webrtc"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "24"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "22"
+            },
+            "firefox_android": {
+              "version_added": "24"
+            },
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "11"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -332,11 +364,14 @@
       },
       "closing_event": {
         "__compat": {
-          "description": "<code>closing</code> event",
+          "description": "`closing` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/closing_event",
           "spec_url": [
             "https://w3c.github.io/webrtc-pc/#event-datachannel-closing",
             "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onclosing"
+          ],
+          "tags": [
+            "web-features:webrtc"
           ],
           "support": {
             "chrome": {
@@ -359,7 +394,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -370,11 +406,14 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/error_event",
           "spec_url": [
             "https://w3c.github.io/webrtc-pc/#event-datachannel-error",
             "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onerror"
+          ],
+          "tags": [
+            "web-features:webrtc"
           ],
           "support": {
             "chrome": {
@@ -399,7 +438,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -412,6 +452,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/id",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-id",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -435,7 +478,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -448,6 +492,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/label",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-label",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -471,7 +518,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -484,6 +532,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxPacketLifeTime",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-maxpacketlifetime",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "56"
@@ -505,7 +556,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -518,6 +570,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/maxRetransmits",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-maxretransmits",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -539,7 +594,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -550,11 +606,14 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/message_event",
           "spec_url": [
             "https://w3c.github.io/webrtc-pc/#event-datachannel-message",
             "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onmessage"
+          ],
+          "tags": [
+            "web-features:webrtc"
           ],
           "support": {
             "chrome": {
@@ -579,7 +638,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -592,6 +652,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/negotiated",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-negotiated",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -613,7 +676,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -624,11 +688,14 @@
       },
       "open_event": {
         "__compat": {
-          "description": "<code>open</code> event",
+          "description": "`open` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/open_event",
           "spec_url": [
             "https://w3c.github.io/webrtc-pc/#event-datachannel-open",
             "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-onopen"
+          ],
+          "tags": [
+            "web-features:webrtc"
           ],
           "support": {
             "chrome": {
@@ -653,7 +720,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -666,6 +734,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/ordered",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-ordered",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -689,7 +760,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -722,7 +794,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -735,6 +808,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/protocol",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-protocol",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "30"
@@ -758,7 +834,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -771,6 +848,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/readyState",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-datachannel-readystate",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -794,7 +874,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -829,7 +910,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -841,6 +923,9 @@
       "sctp_sdp_21": {
         "__compat": {
           "description": "Support for sctp-sdp-21 format",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "58"
@@ -862,7 +947,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -875,6 +961,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCDataChannel/send",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcdatachannel-send",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -898,7 +987,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -911,10 +1001,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Web_Workers_API/Transferable_objects",
           "spec_url": "https://w3c.github.io/webrtc-extensions/#rtcdatachannel-extensions",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
-              "version_added": false,
-              "impl_url": "https://crbug.com/1244165"
+              "version_added": "130"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -934,7 +1026,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

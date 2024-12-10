@@ -56,7 +56,8 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -66,14 +67,17 @@
       },
       "RTCPeerConnection": {
         "__compat": {
-          "description": "<code>RTCPeerConnection()</code> constructor",
+          "description": "`RTCPeerConnection()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/RTCPeerConnection",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": [
               {
                 "version_added": "56",
-                "notes": "Before Chrome 63, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
+                "notes": "Before Chrome 63, the default value for the `configuration.rtcpMuxPolicy` parameter is `&quot;negotiate&quot;` instead of `&quot;required&quot;`."
               },
               {
                 "prefix": "webkit",
@@ -113,22 +117,14 @@
             },
             "oculus": "mirror",
             "opera": "mirror",
-            "opera_android": [
-              {
-                "version_added": "43",
-                "notes": "Before Opera Android 46, the default value for the <code>configuration.rtcpMuxPolicy</code> parameter is <code>&quot;negotiate&quot;</code> instead of <code>&quot;required&quot;</code>."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "14"
-              }
-            ],
+            "opera_android": "mirror",
             "safari": {
               "version_added": "11"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -138,8 +134,11 @@
         },
         "configuration_bundlePolicy_parameter": {
           "__compat": {
-            "description": "<code>configuration.bundlePolicy</code> parameter",
+            "description": "`configuration.bundlePolicy` parameter",
             "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-bundlepolicy",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -165,7 +164,8 @@
               "samsunginternet_android": {
                 "version_added": "7.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -176,8 +176,11 @@
         },
         "configuration_certificates_parameter": {
           "__compat": {
-            "description": "<code>configuration.certificates</code> parameter",
+            "description": "`configuration.certificates` parameter",
             "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-certificates",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -203,7 +206,8 @@
               "samsunginternet_android": {
                 "version_added": "7.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -214,7 +218,10 @@
         },
         "configuration_iceCandidatePoolSize_parameter": {
           "__compat": {
-            "description": "<code>configuration.iceCandidatePoolSize</code> parameter",
+            "description": "`configuration.iceCandidatePoolSize` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -242,7 +249,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -253,8 +261,11 @@
         },
         "configuration_iceServers_parameter": {
           "__compat": {
-            "description": "<code>configuration.iceServers</code> parameter",
+            "description": "`configuration.iceServers` parameter",
             "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-iceservers",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -282,7 +293,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -292,8 +304,11 @@
           },
           "credential_parameter": {
             "__compat": {
-              "description": "<code>configuration.iceServers.credential</code> parameter",
+              "description": "`configuration.iceServers.credential` parameter",
               "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtciceserver-credential",
+              "tags": [
+                "web-features:webrtc"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "23"
@@ -323,7 +338,8 @@
                 "samsunginternet_android": "mirror",
                 "webview_android": {
                   "version_added": false
-                }
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -334,7 +350,7 @@
           },
           "credentialType_parameter": {
             "__compat": {
-              "description": "<code>configuration.iceServers.credentialType</code> parameter",
+              "description": "`configuration.iceServers.credentialType` parameter",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -360,7 +376,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -371,7 +388,7 @@
           },
           "url_parameter": {
             "__compat": {
-              "description": "<code>configuration.iceServers.url</code> parameter",
+              "description": "`configuration.iceServers.url` parameter",
               "support": {
                 "chrome": {
                   "version_added": "25"
@@ -401,7 +418,8 @@
                 "samsunginternet_android": "mirror",
                 "webview_android": {
                   "version_added": false
-                }
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -412,8 +430,11 @@
           },
           "urls_parameter": {
             "__compat": {
-              "description": "<code>configuration.iceServers.urls</code> parameter",
+              "description": "`configuration.iceServers.urls` parameter",
               "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtciceserver-urls",
+              "tags": [
+                "web-features:webrtc"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "34"
@@ -441,7 +462,8 @@
                 "samsunginternet_android": "mirror",
                 "webview_android": {
                   "version_added": false
-                }
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -452,8 +474,11 @@
           },
           "username_parameter": {
             "__compat": {
-              "description": "<code>configuration.iceServers.username</code> parameter",
+              "description": "`configuration.iceServers.username` parameter",
               "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtciceserver-username",
+              "tags": [
+                "web-features:webrtc"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "29"
@@ -483,7 +508,8 @@
                 "samsunginternet_android": "mirror",
                 "webview_android": {
                   "version_added": false
-                }
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -495,8 +521,11 @@
         },
         "configuration_iceTransportPolicy_parameter": {
           "__compat": {
-            "description": "<code>configuration.iceTransportPolicy</code> parameter",
+            "description": "`configuration.iceTransportPolicy` parameter",
             "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcconfiguration-icetransportpolicy",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "23"
@@ -524,7 +553,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -535,7 +565,10 @@
         },
         "configuration_peerIdentity_parameter": {
           "__compat": {
-            "description": "<code>configuration.peerIdentity</code> parameter",
+            "description": "`configuration.peerIdentity` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -557,7 +590,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -568,18 +602,21 @@
         },
         "configuration_rtcpMuxPolicy_parameter": {
           "__compat": {
-            "description": "<code>configuration.rtcpMuxPolicy</code> parameter",
+            "description": "`configuration.rtcpMuxPolicy` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "57",
-                "notes": "Default for <code>rtcpMuxPolicy</code> is <code>require</code>"
+                "notes": "Default for `rtcpMuxPolicy` is `require`"
               },
               "chrome_android": {
                 "version_added": "57"
               },
               "edge": {
                 "version_added": "≤79",
-                "notes": "Default for <code>rtcpMuxPolicy</code> is <code>require</code>"
+                "notes": "Default for `rtcpMuxPolicy` is `require`"
               },
               "firefox": {
                 "version_added": false
@@ -598,7 +635,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -612,6 +650,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addIceCandidate",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-addicecandidate",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -622,11 +663,11 @@
             },
             "firefox": {
               "version_added": "22",
-              "notes": "Starting in Firefox 68, the <code>candidate</code> parameter is optional when calling <code>addIceCandidate()</code>. A <code>null</code> value for <code>candidate</code> indicates no more candidates will be sent, while an empty <code>candidate</code> string indicates that no more candidates will be sent for the current generation of candidates."
+              "notes": "Starting in Firefox 68, the `candidate` parameter is optional when calling `addIceCandidate()`. A `null` value for `candidate` indicates no more candidates will be sent, while an empty `candidate` string indicates that no more candidates will be sent for the current generation of candidates."
             },
             "firefox_android": {
               "version_added": "24",
-              "notes": "Starting in Firefox 68, the <code>candidate</code> parameter is optional when calling <code>addIceCandidate()</code>. A <code>null</code> value for <code>candidate</code> indicates no more candidates will be sent, while an empty <code>candidate</code> string indicates that no more candidates will be sent for the current generation of candidates."
+              "notes": "Starting in Firefox 68, the `candidate` parameter is optional when calling `addIceCandidate()`. A `null` value for `candidate` indicates no more candidates will be sent, while an empty `candidate` string indicates that no more candidates will be sent for the current generation of candidates."
             },
             "ie": {
               "version_added": false
@@ -639,7 +680,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -649,7 +691,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -657,7 +702,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -671,7 +716,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -687,7 +733,7 @@
           "support": {
             "chrome": {
               "version_added": "24",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -719,7 +765,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -730,12 +777,12 @@
       },
       "addstream_event": {
         "__compat": {
-          "description": "<code>addstream</code> event",
+          "description": "`addstream` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addstream_event",
           "support": {
             "chrome": {
               "version_added": "24",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -766,7 +813,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -779,6 +827,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTrack",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-addtrack",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -802,7 +853,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -815,6 +867,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/addTransceiver",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-addtransceiver",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -836,7 +891,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -846,7 +902,10 @@
         },
         "init_direction_parameter": {
           "__compat": {
-            "description": "<code>init.direction</code> parameter",
+            "description": "`init.direction` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -868,7 +927,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -879,7 +939,10 @@
         },
         "init_sendEncodings_parameter": {
           "__compat": {
-            "description": "<code>init.sendEncodings</code> parameter",
+            "description": "`init.sendEncodings` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -901,7 +964,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -912,7 +976,10 @@
         },
         "init_streams_parameter": {
           "__compat": {
-            "description": "<code>init.streams</code> parameter",
+            "description": "`init.streams` parameter",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -934,7 +1001,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -948,6 +1016,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/canTrickleIceCandidates",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-cantrickleicecandidates",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "83"
@@ -977,7 +1048,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -990,6 +1062,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/close",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-close",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -1015,7 +1090,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1028,6 +1104,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionState",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-connection-state",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
@@ -1049,7 +1128,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1060,9 +1140,12 @@
       },
       "connectionstatechange_event": {
         "__compat": {
-          "description": "<code>connectionstatechange</code> event",
+          "description": "`connectionstatechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/connectionstatechange_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onconnectionstatechange",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
@@ -1084,7 +1167,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1097,6 +1181,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createAnswer",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-createanswer",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -1122,7 +1209,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1132,7 +1220,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -1140,7 +1231,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1160,7 +1251,8 @@
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1174,6 +1266,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDataChannel",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-createdatachannel",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -1197,7 +1292,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1208,6 +1304,7 @@
       },
       "createDTMFSender": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createDTMFSender",
           "support": {
             "chrome": {
               "version_added": "27"
@@ -1229,11 +1326,12 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -1242,6 +1340,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/createOffer",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-createoffer",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -1267,7 +1368,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1277,7 +1379,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -1285,7 +1390,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1305,7 +1410,8 @@
               "samsunginternet_android": {
                 "version_added": "6.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1319,6 +1425,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentLocalDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-currentlocaldesc",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -1342,7 +1451,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1355,6 +1465,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/currentRemoteDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-currentremotedesc",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -1376,7 +1489,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1387,9 +1501,12 @@
       },
       "datachannel_event": {
         "__compat": {
-          "description": "<code>datachannel</code> event",
+          "description": "`datachannel` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/datachannel_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-ondatachannel",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -1413,7 +1530,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1424,9 +1542,12 @@
       },
       "generateCertificate_static": {
         "__compat": {
-          "description": "<code>generateCertificate()</code> static method",
+          "description": "`generateCertificate()` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/generateCertificate_static",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-generatecertificate",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "48"
@@ -1452,7 +1573,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1465,6 +1587,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getConfiguration",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-getconfiguration",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -1490,7 +1615,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1527,7 +1653,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1542,7 +1669,7 @@
           "support": {
             "chrome": {
               "version_added": "27",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1572,7 +1699,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1585,6 +1713,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getReceivers",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-getreceivers",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "59"
@@ -1608,7 +1739,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1619,6 +1751,9 @@
         "stopped_transceivers_removed": {
           "__compat": {
             "description": "Receivers for stopped transceivers not returned",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "88"
@@ -1640,7 +1775,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1656,7 +1792,7 @@
           "support": {
             "chrome": {
               "version_added": "27",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1686,7 +1822,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1699,6 +1836,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getSenders",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-getsenders",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -1722,7 +1862,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1733,6 +1874,9 @@
         "stopped_transceivers_removed": {
           "__compat": {
             "description": "Senders for stopped transceivers not returned",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "88"
@@ -1754,7 +1898,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1768,6 +1913,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getStats",
           "spec_url": "https://w3c.github.io/webrtc-pc/#widl-RTCPeerConnection-getStats-Promise-RTCStatsReport--MediaStreamTrack-selector",
+          "tags": [
+            "web-features:webrtc-stats"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -1791,7 +1939,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1801,7 +1950,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc-stats"
+            ],
             "support": {
               "chrome": {
                 "version_added": "58"
@@ -1809,7 +1961,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1823,7 +1975,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1834,7 +1987,10 @@
         },
         "selector_parameter": {
           "__compat": {
-            "description": "<code>selector</code> parameter",
+            "description": "`selector` parameter",
+            "tags": [
+              "web-features:webrtc-stats"
+            ],
             "support": {
               "chrome": {
                 "version_added": "67"
@@ -1858,7 +2014,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1872,6 +2029,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/getTransceivers",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-gettranseceivers",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1895,7 +2055,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "79"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1906,6 +2067,9 @@
         "stopped_transceivers_removed": {
           "__compat": {
             "description": "Stopped transcievers not returned",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "88"
@@ -1927,7 +2091,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1939,9 +2104,12 @@
       },
       "icecandidate_event": {
         "__compat": {
-          "description": "<code>icecandidate</code> event",
+          "description": "`icecandidate` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidate_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onicecandidate",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -1967,7 +2135,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -1978,9 +2147,12 @@
       },
       "icecandidateerror_event": {
         "__compat": {
-          "description": "<code>icecandidateerror</code> event",
+          "description": "`icecandidateerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icecandidateerror_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onicecandidateerror",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "77"
@@ -2003,7 +2175,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2016,6 +2189,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceConnectionState",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-ice-connection-state",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "26"
@@ -2039,7 +2215,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2050,9 +2227,12 @@
       },
       "iceconnectionstatechange_event": {
         "__compat": {
-          "description": "<code>iceconnectionstatechange</code> event",
+          "description": "`iceconnectionstatechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceconnectionstatechange_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-oniceconnectionstatechange",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "28"
@@ -2076,7 +2256,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2089,6 +2270,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/iceGatheringState",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-ice-gathering-state",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "25"
@@ -2114,7 +2298,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2125,9 +2310,12 @@
       },
       "icegatheringstatechange_event": {
         "__compat": {
-          "description": "<code>icegatheringstatechange</code> event",
+          "description": "`icegatheringstatechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/icegatheringstatechange_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onicegatheringstatechange",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "59"
@@ -2153,7 +2341,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2186,7 +2375,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2199,6 +2389,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/localDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-localdescription",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -2224,7 +2417,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2235,9 +2429,12 @@
       },
       "negotiationneeded_event": {
         "__compat": {
-          "description": "<code>negotiationneeded</code> event",
+          "description": "`negotiationneeded` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/negotiationneeded_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-onnegotiationneeded",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -2254,7 +2451,7 @@
                 "version_added": "24",
                 "version_removed": "38",
                 "partial_implementation": true,
-                "notes": "Although the <code>onnegotiationneeded</code> property is supported, the <code>negotiationneeded</code> event is never fired."
+                "notes": "Although the `onnegotiationneeded` property is supported, the `negotiationneeded` event is never fired."
               }
             ],
             "firefox_android": "mirror",
@@ -2269,7 +2466,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2306,7 +2504,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2319,6 +2518,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingLocalDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-pendinglocaldesc",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -2342,7 +2544,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2355,6 +2558,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/pendingRemoteDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-pendingremotedesc",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "70"
@@ -2378,7 +2584,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2391,6 +2598,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/remoteDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-remotedescription",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -2416,7 +2626,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2431,7 +2642,7 @@
           "support": {
             "chrome": {
               "version_added": "24",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2465,7 +2676,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2476,12 +2688,12 @@
       },
       "removestream_event": {
         "__compat": {
-          "description": "<code>removestream</code> event",
+          "description": "`removestream` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removestream_event",
           "support": {
             "chrome": {
               "version_added": "24",
-              "impl_url": "https://crbug.com/697059"
+              "impl_url": "https://crbug.com/40508568"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2514,7 +2726,8 @@
             },
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2527,6 +2740,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/removeTrack",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-removetrack",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -2552,7 +2768,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2563,9 +2780,12 @@
       },
       "restartIce": {
         "__compat": {
-          "description": "<code>restartIce()</code> method",
+          "description": "`restartIce()` method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/restartIce",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-restartice",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "77"
@@ -2587,7 +2807,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2624,7 +2845,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2637,6 +2859,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setConfiguration",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcpeerconnection-setconfiguration",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "48"
@@ -2660,7 +2885,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2697,7 +2923,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2708,9 +2935,12 @@
       },
       "setLocalDescription": {
         "__compat": {
-          "description": "<code>setLocalDescription()</code>",
+          "description": "`setLocalDescription()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setLocalDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-setlocaldescription",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -2721,11 +2951,11 @@
             },
             "firefox": {
               "version_added": "22",
-              "notes": "Firefox does not support descriptions of type <code>pranswer</code>."
+              "notes": "Firefox does not support descriptions of type `pranswer`."
             },
             "firefox_android": {
               "version_added": "24",
-              "notes": "Firefox does not support descriptions of type <code>pranswer</code>."
+              "notes": "Firefox does not support descriptions of type `pranswer`."
             },
             "ie": {
               "version_added": false
@@ -2738,7 +2968,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2748,7 +2979,10 @@
         },
         "description_parameter_optional": {
           "__compat": {
-            "description": "<code>description</code> parameter is optional",
+            "description": "`description` parameter is optional",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -2774,7 +3008,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -2785,7 +3020,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -2793,7 +3031,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2807,7 +3045,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -2819,9 +3058,12 @@
       },
       "setRemoteDescription": {
         "__compat": {
-          "description": "<code>setRemoteDescription()</code>",
+          "description": "`setRemoteDescription()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/setRemoteDescription",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-setremotedescription",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "24"
@@ -2847,7 +3089,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2858,6 +3101,9 @@
         "implicit_rollback": {
           "__compat": {
             "description": "Implicit rollback",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "80"
@@ -2881,7 +3127,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -2892,7 +3139,10 @@
         },
         "returns_promise": {
           "__compat": {
-            "description": "Returns a <code>Promise</code>",
+            "description": "Returns a `Promise`",
+            "tags": [
+              "web-features:webrtc"
+            ],
             "support": {
               "chrome": {
                 "version_added": "50"
@@ -2900,7 +3150,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "66"
+                "version_added": "37"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -2914,7 +3164,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -2928,6 +3179,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingState",
           "spec_url": "https://w3c.github.io/webrtc-pc/#dom-peerconnection-signaling-state",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "26"
@@ -2951,7 +3205,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -2962,9 +3217,12 @@
       },
       "signalingstatechange_event": {
         "__compat": {
-          "description": "<code>signalingstatechange</code> event",
+          "description": "`signalingstatechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/signalingstatechange_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#event-signalingstatechange",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "28"
@@ -2981,7 +3239,7 @@
                 "version_added": "24",
                 "version_removed": "36",
                 "partial_implementation": true,
-                "notes": "Although the <code>onsignalingstatechange</code> property is supported, the <code>signalingstatechange</code> event is not fired as an <code>Event</code> object. See <a href='https://bugzil.la/1075133'>bug 1075133</a>."
+                "notes": "Although the `onsignalingstatechange` property is supported, the `signalingstatechange` event is not fired as an `Event` object. See [bug 1075133](https://bugzil.la/1075133)."
               }
             ],
             "firefox_android": "mirror",
@@ -2996,7 +3254,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -3007,9 +3266,12 @@
       },
       "track_event": {
         "__compat": {
-          "description": "<code>track</code> event",
+          "description": "`track` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/RTCPeerConnection/track_event",
           "spec_url": "https://w3c.github.io/webrtc-pc/#event-track",
+          "tags": [
+            "web-features:webrtc"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -3039,7 +3301,8 @@
             "samsunginternet_android": {
               "version_added": "6.0"
             },
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

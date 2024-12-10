@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource",
         "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface",
+        "tags": [
+          "web-features:server-sent-events"
+        ],
         "support": {
           "chrome": {
             "version_added": "6"
@@ -36,7 +39,8 @@
             "version_added": "5"
           },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -46,9 +50,12 @@
       },
       "EventSource": {
         "__compat": {
-          "description": "<code>EventSource()</code> constructor",
+          "description": "`EventSource()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/EventSource",
           "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#dom-eventsource-dev",
+          "tags": [
+            "web-features:server-sent-events"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -81,7 +88,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -91,7 +99,7 @@
         },
         "options_withCredentials_parameter": {
           "__compat": {
-            "description": "<code>options.withCredentials</code> parameter",
+            "description": "`options.withCredentials` parameter",
             "support": {
               "chrome": {
                 "version_added": "26"
@@ -124,7 +132,8 @@
               "samsunginternet_android": {
                 "version_added": "2.0"
               },
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -146,9 +155,17 @@
               "version_added": "1.38"
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "53"
-            },
+            "firefox": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "53",
+                "version_removed": "133",
+                "partial_implementation": true,
+                "notes": "Not supported in service workers."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -169,7 +186,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -182,6 +200,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/close",
           "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#dom-eventsource-close-dev",
+          "tags": [
+            "web-features:server-sent-events"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -214,7 +235,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -225,11 +247,14 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/error_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-error",
             "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onerror"
+          ],
+          "tags": [
+            "web-features:server-sent-events"
           ],
           "support": {
             "chrome": {
@@ -263,7 +288,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -274,11 +300,14 @@
       },
       "message_event": {
         "__compat": {
-          "description": "<code>message</code> event",
+          "description": "`message` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/message_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-message",
             "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onmessage"
+          ],
+          "tags": [
+            "web-features:server-sent-events"
           ],
           "support": {
             "chrome": {
@@ -312,7 +341,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -323,11 +353,14 @@
       },
       "open_event": {
         "__compat": {
-          "description": "<code>open</code> event",
+          "description": "`open` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/open_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-open",
             "https://html.spec.whatwg.org/multipage/server-sent-events.html#handler-eventsource-onopen"
+          ],
+          "tags": [
+            "web-features:server-sent-events"
           ],
           "support": {
             "chrome": {
@@ -361,7 +394,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -374,6 +408,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/readyState",
           "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#dom-eventsource-readystate-dev",
+          "tags": [
+            "web-features:server-sent-events"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -406,7 +443,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -419,6 +457,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/url",
           "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#dom-eventsource-url-dev",
+          "tags": [
+            "web-features:server-sent-events"
+          ],
           "support": {
             "chrome": {
               "version_added": "18"
@@ -449,7 +490,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -462,6 +504,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/EventSource/withCredentials",
           "spec_url": "https://html.spec.whatwg.org/multipage/server-sent-events.html#dom-eventsource-withcredentials-dev",
+          "tags": [
+            "web-features:server-sent-events"
+          ],
           "support": {
             "chrome": {
               "version_added": "26"
@@ -492,7 +537,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

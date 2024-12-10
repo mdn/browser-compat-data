@@ -30,8 +30,9 @@
           "samsunginternet_android": "mirror",
           "webview_android": {
             "version_added": false,
-            "notes": "WebView exposes this interface, but does not support WebUSB. See <a href='https://crbug.com/933055'>bug 933055</a>."
-          }
+            "notes": "WebView exposes this interface, but does not support WebUSB. See [bug 41441927](https://crbug.com/41441927)."
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -41,7 +42,7 @@
       },
       "USBConfiguration": {
         "__compat": {
-          "description": "<code>USBConfiguration()</code> constructor",
+          "description": "`USBConfiguration()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/USBConfiguration/USBConfiguration",
           "spec_url": "https://wicg.github.io/webusb/#dom-usbconfiguration-usbconfiguration",
           "tags": [
@@ -70,7 +71,59 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "worker_support": {
+        "__compat": {
+          "description": "Available in workers",
+          "tags": [
+            "web-features:webusb"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "118",
+                "partial_implementation": true,
+                "notes": "Available in dedicated workers and WebExtension service workers, not available in shared workers and normal service workers."
+              },
+              {
+                "version_added": "70",
+                "version_removed": "118",
+                "partial_implementation": true,
+                "notes": "Available in dedicated workers, not available in shared workers and service workers."
+              }
+            ],
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/41441927",
+              "notes": "WebView exposes this interface, but does not support WebUSB."
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -109,7 +162,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -148,7 +202,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -187,7 +242,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

@@ -36,7 +36,8 @@
             "version_added": "5"
           },
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": "mirror",
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": false,
@@ -73,7 +74,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -84,7 +86,7 @@
       },
       "error_event": {
         "__compat": {
-          "description": "<code>error</code> event",
+          "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onerror",
           "support": {
@@ -117,7 +119,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -151,7 +154,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -196,7 +200,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -206,7 +211,7 @@
         },
         "mime_checks": {
           "__compat": {
-            "description": "Strict MIME type checks for <code>importScripts()</code>",
+            "description": "Strict MIME type checks for `importScripts()`",
             "support": {
               "chrome": {
                 "version_added": "71"
@@ -231,7 +236,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -243,11 +249,14 @@
       },
       "languagechange_event": {
         "__compat": {
-          "description": "<code>languagechange</code> event",
+          "description": "`languagechange` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/languagechange_event",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/indices.html#event-languagechange",
             "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onlanguagechange"
+          ],
+          "tags": [
+            "web-features:language"
           ],
           "support": {
             "chrome": {
@@ -273,13 +282,12 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": "≤37"
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -322,7 +330,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -365,7 +374,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -376,13 +386,16 @@
       },
       "offline_event": {
         "__compat": {
-          "description": "<code>offline</code> event",
+          "description": "`offline` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/offline_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onoffline",
+          "tags": [
+            "web-features:online"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
-              "impl_url": "https://crbug.com/114475"
+              "impl_url": "https://crbug.com/40155587"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -404,7 +417,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -415,13 +429,16 @@
       },
       "online_event": {
         "__compat": {
-          "description": "<code>online</code> event",
+          "description": "`online` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/online_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-ononline",
+          "tags": [
+            "web-features:online"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
-              "impl_url": "https://crbug.com/114475"
+              "impl_url": "https://crbug.com/40155587"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -443,7 +460,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -454,7 +472,7 @@
       },
       "rejectionhandled_event": {
         "__compat": {
-          "description": "<code>rejectionhandled</code> event",
+          "description": "`rejectionhandled` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/rejectionhandled_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onrejectionhandled",
           "support": {
@@ -478,7 +496,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -489,9 +508,12 @@
       },
       "securitypolicyviolation_event": {
         "__compat": {
-          "description": "<code>securitypolicyviolation</code> event",
+          "description": "`securitypolicyviolation` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/securitypolicyviolation_event",
           "spec_url": "https://w3c.github.io/webappsec-csp/#eventdef-globaleventhandlers-securitypolicyviolation",
+          "tags": [
+            "web-features:csp"
+          ],
           "support": {
             "chrome": {
               "version_added": "41"
@@ -515,7 +537,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -560,7 +583,8 @@
               "version_added": "5"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -571,7 +595,7 @@
       },
       "unhandledrejection_event": {
         "__compat": {
-          "description": "<code>unhandledrejection</code> event",
+          "description": "`unhandledrejection` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/unhandledrejection_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-workerglobalscope-onunhandledrejection",
           "support": {
@@ -595,7 +619,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,

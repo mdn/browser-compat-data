@@ -3,7 +3,7 @@
     "types": {
       "color": {
         "__compat": {
-          "description": "<code>&lt;color&gt;</code>",
+          "description": "`&lt;color&gt;`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value",
           "spec_url": "https://drafts.csswg.org/css-color/#color-syntax",
           "support": {
@@ -33,7 +33,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -43,7 +44,7 @@
         },
         "color": {
           "__compat": {
-            "description": "<code>color()</code> (Profiled color values)",
+            "description": "`color()` (Profiled color values)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color",
             "spec_url": "https://drafts.csswg.org/css-color/#color-function",
             "tags": [
@@ -73,12 +74,13 @@
                   "version_added": "10.1",
                   "version_removed": "15",
                   "partial_implementation": true,
-                  "notes": "Only supports <code>display-p3</code> and <code>srgb</code> predefined color profiles."
+                  "notes": "Only supports `display-p3` and `srgb` predefined color profiles."
                 }
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -88,7 +90,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
               "tags": [
                 "web-features:color-function"
               ],
@@ -113,7 +115,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -124,7 +127,7 @@
           },
           "relative_syntax": {
             "__compat": {
-              "description": "Relative <code>color()</code> syntax",
+              "description": "Relative `color()` syntax",
               "spec_url": "https://drafts.csswg.org/css-color-5/#relative-color-function",
               "tags": [
                 "web-features:relative-color"
@@ -145,14 +148,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified as percentages with units (<code>%</code>)."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified as percentages with units (`%`)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -162,50 +171,9 @@
             }
           }
         },
-        "color-contrast": {
-          "__compat": {
-            "description": "<code>color-contrast()</code>",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-contrast",
-            "spec_url": "https://drafts.csswg.org/css-color-6/#colorcontrast",
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "15",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "CSS color-contrast()"
-                  }
-                ]
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "color-mix": {
           "__compat": {
-            "description": "<code>color-mix()</code>",
+            "description": "`color-mix()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/color-mix",
             "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
             "tags": [
@@ -232,7 +200,10 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": {
+                "version_added": false
+              }
             },
             "status": {
               "experimental": false,
@@ -243,9 +214,12 @@
         },
         "currentcolor": {
           "__compat": {
-            "description": "<code>currentcolor</code> keyword",
+            "description": "`currentcolor` keyword",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#currentcolor",
             "spec_url": "https://drafts.csswg.org/css-color/#currentcolor-color",
+            "tags": [
+              "web-features:currentcolor"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -273,7 +247,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -284,9 +259,12 @@
         },
         "hsl": {
           "__compat": {
-            "description": "<code>hsl()</code> (HSL color model)",
+            "description": "`hsl()` (HSL color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hsl",
             "spec_url": "https://drafts.csswg.org/css-color/#the-hsl-notation",
+            "tags": [
+              "web-features:hsl"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -316,7 +294,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -327,6 +306,9 @@
           "alpha_parameter": {
             "__compat": {
               "description": "Alpha parameter",
+              "tags": [
+                "web-features:hsl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -348,7 +330,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -359,7 +342,10 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "tags": [
+                "web-features:hsl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "121"
@@ -377,11 +363,12 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -398,11 +385,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119",
-                  "partial_implementation": true,
-                  "notes": "<code>s</code> and <code>l</code> channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require <code>s</code> and <code>l</code> values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
-                },
+                "chrome": [
+                  {
+                    "version_added": "125"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`s` and `l` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `s` and `l` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
@@ -415,14 +407,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified with units (<code>deg</code> for <code>h</code>, <code>%</code> for <code>s</code> and <code>l</code>)."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified with units (`deg` for `h`, `%` for `s` and `l`)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -434,6 +432,9 @@
           "space_separated_parameters": {
             "__compat": {
               "description": "Space-separated parameters",
+              "tags": [
+                "web-features:hsl"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -455,7 +456,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -467,9 +469,12 @@
         },
         "hwb": {
           "__compat": {
-            "description": "<code>hwb()</code> (HWB color model)",
+            "description": "`hwb()` (HWB color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/hwb",
             "spec_url": "https://drafts.csswg.org/css-color/#the-hwb-notation",
+            "tags": [
+              "web-features:hwb"
+            ],
             "support": {
               "chrome": {
                 "version_added": "101"
@@ -491,7 +496,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -501,7 +507,10 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "tags": [
+                "web-features:hwb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "121"
@@ -519,11 +528,12 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -540,11 +550,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119",
-                  "partial_implementation": true,
-                  "notes": "<code>w</code> and <code>b</code> channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require <code>w</code> and <code>b</code> values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
-                },
+                "chrome": [
+                  {
+                    "version_added": "125"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`w` and `b` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `w` and `b` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
@@ -557,14 +572,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified with units (<code>deg</code> for <code>h</code>, <code>%</code> for <code>w</code> and <code>b</code>)."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, calculations with channel values do not work correctly, requiring values to be specified with units (`deg` for `h`, `%` for `w` and `b`)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -576,7 +597,7 @@
         },
         "lab": {
           "__compat": {
-            "description": "<code>lab()</code> (Lab color model)",
+            "description": "`lab()` (Lab color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lab",
             "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
             "tags": [
@@ -603,7 +624,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -613,7 +635,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
               "tags": [
                 "web-features:lab"
               ],
@@ -638,7 +660,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -675,7 +698,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -687,7 +711,7 @@
         },
         "lch": {
           "__compat": {
-            "description": "<code>lch()</code> (LCH color model)",
+            "description": "`lch()` (LCH color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/lch",
             "spec_url": "https://drafts.csswg.org/css-color/#lab-colors",
             "tags": [
@@ -714,7 +738,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -724,7 +749,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
               "tags": [
                 "web-features:lab"
               ],
@@ -749,7 +774,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -781,14 +807,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, calculations with <code>h</code> channel values do not work correctly, requiring values to be specified with units (<code>deg</code>)."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, calculations with `h` channel values do not work correctly, requiring values to be specified with units (`deg`)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -800,7 +832,7 @@
         },
         "light-dark": {
           "__compat": {
-            "description": "<code>light-dark()</code>",
+            "description": "`light-dark()`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/light-dark",
             "spec_url": "https://drafts.csswg.org/css-color-5/#light-dark",
             "tags": [
@@ -809,7 +841,7 @@
             "support": {
               "chrome": {
                 "version_added": "123",
-                "impl_url": "https://crbug.com/1490618"
+                "impl_url": "https://crbug.com/40284803"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -829,7 +861,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -843,6 +876,9 @@
             "description": "Named colors",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color",
             "spec_url": "https://drafts.csswg.org/css-color/#named-colors",
+            "tags": [
+              "web-features:named-color"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -857,7 +893,7 @@
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "3",
-                "notes": "Internet Explorer 8 and later support gray color keywords spelled with an <em>e</em> (<code>grey</code>, <code>darkgrey</code>, <code>darkslategrey</code>, <code>dimgrey</code>, <code>lightgrey</code>, and <code>lightslategrey</code>). Internet Explorer 3 to Internet Explorer 7 only support the keywords spelled with <em>a</em> (<code>gray</code>, <code>darkgray</code>, <code>darkslategray</code>, <code>dimgray</code>, <code>lightgray</code>, and <code>lightslategray</code>)."
+                "notes": "Internet Explorer 8 and later support gray color keywords spelled with an _e_ (`grey`, `darkgrey`, `darkslategrey`, `dimgrey`, `lightgrey`, and `lightslategrey`). Internet Explorer 3 to Internet Explorer 7 only support the keywords spelled with _a_ (`gray`, `darkgray`, `darkslategray`, `dimgray`, `lightgray`, and `lightslategray`)."
               },
               "oculus": "mirror",
               "opera": {
@@ -873,7 +909,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -883,6 +920,9 @@
           },
           "rebeccapurple": {
             "__compat": {
+              "tags": [
+                "web-features:named-color"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "38"
@@ -908,7 +948,54 @@
                   "version_added": "8"
                 },
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "transparent": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color#transparent",
+              "spec_url": "https://drafts.csswg.org/css-color/#transparent-color",
+              "tags": [
+                "web-features:named-color"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "1"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "3"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": "9"
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "10"
+                },
+                "opera_android": {
+                  "version_added": "10.1"
+                },
+                "safari": {
+                  "version_added": "3.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": "37"
+                },
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -920,7 +1007,7 @@
         },
         "oklab": {
           "__compat": {
-            "description": "<code>oklab()</code> (Oklab color model)",
+            "description": "`oklab()` (Oklab color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/oklab",
             "spec_url": "https://drafts.csswg.org/css-color/#ok-lab",
             "tags": [
@@ -947,7 +1034,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -957,7 +1045,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
               "tags": [
                 "web-features:oklab"
               ],
@@ -982,7 +1070,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1019,7 +1108,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1031,7 +1121,7 @@
         },
         "oklch": {
           "__compat": {
-            "description": "<code>oklch()</code> (OKLCH color model)",
+            "description": "`oklch()` (OKLCH color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/oklch",
             "spec_url": "https://drafts.csswg.org/css-color/#ok-lab",
             "tags": [
@@ -1058,7 +1148,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1068,7 +1159,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
               "tags": [
                 "web-features:oklab"
               ],
@@ -1093,7 +1184,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1125,14 +1217,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, calculations with <code>h</code> channel values do not work correctly, requiring values to be specified with units (<code>deg</code>)."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, calculations with `h` channel values do not work correctly, requiring values to be specified with units (`deg`)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1144,9 +1242,12 @@
         },
         "rgb": {
           "__compat": {
-            "description": "<code>rgb()</code> (RGB color model)",
+            "description": "`rgb()` (RGB color model)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value/rgb",
             "spec_url": "https://drafts.csswg.org/css-color/#rgb-functions",
+            "tags": [
+              "web-features:rgb"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1176,7 +1277,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1187,6 +1289,9 @@
           "alpha_parameter": {
             "__compat": {
               "description": "Alpha parameter",
+              "tags": [
+                "web-features:rgb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -1208,7 +1313,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1220,6 +1326,9 @@
           "float_values": {
             "__compat": {
               "description": "Float values in parameters",
+              "tags": [
+                "web-features:rgb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "66"
@@ -1241,7 +1350,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1252,7 +1362,10 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix <code>&lt;percentage&gt;</code> and <code>&lt;number&gt;</code> in parameters",
+              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "tags": [
+                "web-features:rgb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "122"
@@ -1270,11 +1383,12 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1298,7 +1412,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 <code>&lt;number&gt;</code> value). See <a href='https://crbug.com/41490327'>bug 41490327</a>."
+                    "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 `&lt;number&gt;` value). See [bug 41490327](https://crbug.com/41490327)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -1313,14 +1427,20 @@
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
-                "safari": {
-                  "version_added": "16.4",
-                  "partial_implementation": true,
-                  "notes": "Implementation based on older spec version. As a result, channel value calculations do not work correctly, requiring values to be specified as percentages with units (e.g. 30%, which would be equivalent to a 76.5 <code>&lt;number&gt;</code> value). See <a href='https://webkit.org/b/267647'>bug 267647</a>."
-                },
+                "safari": [
+                  {
+                    "version_added": "18"
+                  },
+                  {
+                    "version_added": "16.4",
+                    "partial_implementation": true,
+                    "notes": "Implementation based on older spec version. As a result, channel value calculations do not work correctly, requiring values to be specified as percentages with units (e.g. 30%, which would be equivalent to a 76.5 `&lt;number&gt;` value). See [bug 267647](https://webkit.org/b/267647)."
+                  }
+                ],
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1332,6 +1452,9 @@
           "space_separated_parameters": {
             "__compat": {
               "description": "Space-separated rgb() parameters",
+              "tags": [
+                "web-features:rgb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "65"
@@ -1353,7 +1476,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1365,9 +1489,12 @@
         },
         "rgb_hexadecimal_notation": {
           "__compat": {
-            "description": "RGB hexadecimal notation (<code>#RRGGBB</code>, <code>#RGB</code>, …)",
+            "description": "RGB hexadecimal notation (`#RRGGBB`, `#RGB`, …)",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/hex-color",
             "spec_url": "https://drafts.csswg.org/css-color/#hex-notation",
+            "tags": [
+              "web-features:rgb"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1397,7 +1524,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1407,7 +1535,10 @@
           },
           "alpha_hexadecimal_notation": {
             "__compat": {
-              "description": "RGBA hexadecimal notation (<code>#RRGGBBAA</code>, <code>#RGBA</code>)",
+              "description": "RGBA hexadecimal notation (`#RRGGBBAA`, `#RGBA`)",
+              "tags": [
+                "web-features:rgb"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "62"
@@ -1433,7 +1564,8 @@
                   "version_added": "9.3"
                 },
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1448,6 +1580,9 @@
             "description": "System colors",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/system-color",
             "spec_url": "https://drafts.csswg.org/css-color/#css-system-colors",
+            "tags": [
+              "web-features:system-color"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -1477,7 +1612,8 @@
               "samsunginternet_android": "mirror",
               "webview_android": {
                 "version_added": "≤37"
-              }
+              },
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -1487,10 +1623,13 @@
           },
           "accentcolor_accentcolortext": {
             "__compat": {
-              "description": "<code>AccentColor</code> and <code>AccentColorText</code>",
+              "description": "`AccentColor` and `AccentColorText`",
               "spec_url": [
                 "https://drafts.csswg.org/css-color/#valdef-color-accentcolor",
                 "https://drafts.csswg.org/css-color/#valdef-color-accentcolortext"
+              ],
+              "tags": [
+                "web-features:system-color"
               ],
               "support": {
                 "chrome": {
@@ -1521,7 +1660,8 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": false,
@@ -1537,6 +1677,9 @@
                 "https://drafts.csswg.org/css-color/#valdef-color-mark",
                 "https://drafts.csswg.org/css-color/#valdef-color-marktext",
                 "https://drafts.csswg.org/css-color/#valdef-color-buttonborder"
+              ],
+              "tags": [
+                "web-features:system-color"
               ],
               "support": {
                 "chrome": {
@@ -1559,56 +1702,14 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror"
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
               },
               "status": {
                 "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
-            }
-          }
-        },
-        "transparent": {
-          "__compat": {
-            "description": "<code>transparent</code> keyword",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color#transparent",
-            "spec_url": "https://drafts.csswg.org/css-color/#transparent-color",
-            "support": {
-              "chrome": {
-                "version_added": "1"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
-              "firefox": {
-                "version_added": "3"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": "9"
-              },
-              "oculus": "mirror",
-              "opera": {
-                "version_added": "10"
-              },
-              "opera_android": {
-                "version_added": "10.1"
-              },
-              "safari": {
-                "version_added": "3.1"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "37"
-              }
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
             }
           }
         }

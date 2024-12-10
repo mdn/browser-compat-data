@@ -13,7 +13,7 @@
               "version_added": "55"
             },
             "firefox_android": {
-              "version_added": true
+              "version_added": false
             },
             "opera": {
               "version_added": false
@@ -36,7 +36,7 @@
                 "version_added": "55"
               },
               "firefox_android": {
-                "version_added": "65"
+                "version_added": false
               },
               "opera": {
                 "version_added": false
@@ -127,7 +127,7 @@
                   "notes": "Before version 59, the CSS color form was not supported for this property."
                 },
                 "firefox_android": {
-                  "version_added": true
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": false
@@ -413,6 +413,28 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "60"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "tab_background_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "62",
+                  "notes": "Deprecated in Firefox 89. For details, see the [Changes to themeable areas of Firefox in version 89](https://blog.mozilla.org/addons/2021/04/19/changes-to-themeable-areas-of-firefox-in-version-89/) blog post ."
                 },
                 "firefox_android": {
                   "version_added": false
@@ -718,6 +740,36 @@
               }
             }
           },
+          "toolbar_field_separator": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "59",
+                    "notes": "Deprecated in Firefox 89. For details, see the [Changes to themeable areas of Firefox in version 89](https://blog.mozilla.org/addons/2021/04/19/changes-to-themeable-areas-of-firefox-in-version-89/) blog post ."
+                  },
+                  {
+                    "alternative_name": "toolbar_vertical_separator",
+                    "version_added": "58",
+                    "version_removed": "59",
+                    "notes": "Before version 59, the RGB array form was not supported for this property."
+                  }
+                ],
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "toolbar_field_text": {
             "__compat": {
               "support": {
@@ -820,7 +872,7 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "58",
-                  "notes": "Before version 59, this had the same meaning as <code>toolbar_field_separator</code>."
+                  "notes": "Before version 59, this had the same meaning as `toolbar_field_separator`."
                 },
                 "firefox_android": {
                   "version_added": false
@@ -846,7 +898,9 @@
                 "version_added": "55",
                 "notes": "Before Firefox 60, this property was required."
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": false
+              },
               "opera": {
                 "version_added": false
               },
@@ -888,8 +942,7 @@
                   "version_added": "55"
                 },
                 "firefox_android": {
-                  "version_added": "55",
-                  "notes": "This property is required."
+                  "version_added": false
                 },
                 "opera": {
                   "version_added": false

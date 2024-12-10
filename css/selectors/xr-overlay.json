@@ -1,11 +1,16 @@
 {
   "css": {
-    "properties": {
-      "-webkit-user-modify": {
+    "selectors": {
+      "xr-overlay": {
         "__compat": {
+          "description": "`:xr-overlay`",
+          "spec_url": "https://immersive-web.github.io/dom-overlays/#selectordef-xr-overlay",
+          "tags": [
+            "web-features:webxr-dom-overlays"
+          ],
           "support": {
             "chrome": {
-              "version_added": "≤80"
+              "version_added": "83"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -20,15 +25,18 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "≤13.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }

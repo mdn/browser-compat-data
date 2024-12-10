@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort",
         "spec_url": "https://wicg.github.io/serial/#dom-serialport",
+        "tags": [
+          "web-features:serial"
+        ],
         "support": {
           "chrome": {
             "version_added": "89"
@@ -27,7 +30,11 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": "mirror"
+          "webview_android": {
+            "version_added": false,
+            "impl_url": "https://crbug.com/40740509"
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -39,6 +46,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/close",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-close",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -62,7 +72,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -73,11 +84,14 @@
       },
       "connect_event": {
         "__compat": {
-          "description": "<code>connect</code> event",
+          "description": "`connect` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/connect_event",
           "spec_url": [
             "https://wicg.github.io/serial/#dfn-connect",
             "https://wicg.github.io/serial/#dom-serialport-onconnect"
+          ],
+          "tags": [
+            "web-features:serial"
           ],
           "support": {
             "chrome": {
@@ -102,7 +116,87 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "bluetooth_rfcomm": {
+          "__compat": {
+            "description": "Bluetooth RFCOMM serial ports dispatch `connect` events",
+            "tags": [
+              "web-features:serial"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "130"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        }
+      },
+      "connected": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/connected",
+          "spec_url": "https://wicg.github.io/serial/#dom-serialport-connected",
+          "tags": [
+            "web-features:serial"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "130"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -113,11 +207,14 @@
       },
       "disconnect_event": {
         "__compat": {
-          "description": "<code>disconnect</code> event",
+          "description": "`disconnect` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/disconnect_event",
           "spec_url": [
             "https://wicg.github.io/serial/#dfn-disconnect",
             "https://wicg.github.io/serial/#dom-serialport-ondisconnect"
+          ],
+          "tags": [
+            "web-features:serial"
           ],
           "support": {
             "chrome": {
@@ -142,12 +239,52 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "bluetooth_rfcomm": {
+          "__compat": {
+            "description": "Bluetooth RFCOMM serial ports dispatch `disconnect` events",
+            "tags": [
+              "web-features:serial"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "130"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -155,6 +292,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/forget",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-forget",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "103"
@@ -178,7 +318,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -191,6 +332,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getInfo",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-getinfo",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -214,12 +358,53 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "bluetoothServiceClassId": {
+          "__compat": {
+            "description": "`bluetoothServiceClassId` return value property",
+            "spec_url": "https://wicg.github.io/serial/#dom-serialportinfo-bluetoothserviceclassid",
+            "tags": [
+              "web-features:serial"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -227,6 +412,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-getsignals",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -250,7 +438,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -263,6 +452,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/open",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-open",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -286,7 +478,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -299,6 +492,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/readable",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-readable",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -322,7 +518,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -335,6 +532,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-setsignals",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -358,7 +558,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -371,6 +572,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/writable",
           "spec_url": "https://wicg.github.io/serial/#dom-serialport-writable",
+          "tags": [
+            "web-features:serial"
+          ],
           "support": {
             "chrome": {
               "version_added": "89"
@@ -394,7 +598,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

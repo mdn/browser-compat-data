@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession",
         "spec_url": "https://immersive-web.github.io/webxr/#xrsession-interface",
+        "tags": [
+          "web-features:webxr-device"
+        ],
         "support": {
           "chrome": {
             "version_added": "79"
@@ -28,8 +31,10 @@
             "version_added": "11.2"
           },
           "webview_android": {
-            "version_added": false
-          }
+            "version_added": false,
+            "impl_url": "https://crbug.com/40652382"
+          },
+          "webview_ios": "mirror"
         },
         "status": {
           "experimental": true,
@@ -39,232 +44,11 @@
       },
       "cancelAnimationFrame": {
         "__compat": {
-          "description": "<code>cancelAnimationFrame()</code>",
+          "description": "`cancelAnimationFrame()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/cancelAnimationFrame",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-cancelanimationframe",
-          "support": {
-            "chrome": {
-              "version_added": "79"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "11.2"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "depthDataFormat": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/depthDataFormat",
-          "spec_url": "https://immersive-web.github.io/depth-sensing/#dom-xrsession-depthdataformat",
-          "support": {
-            "chrome": {
-              "version_added": "90"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "depthUsage": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/depthUsage",
-          "spec_url": "https://immersive-web.github.io/depth-sensing/#dom-xrsession-depthusage",
-          "support": {
-            "chrome": {
-              "version_added": "90"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "domOverlayState": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/domOverlayState",
-          "spec_url": "https://immersive-web.github.io/dom-overlays/#dom-xrsession-domoverlaystate",
-          "support": {
-            "chrome": {
-              "version_added": "83"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "enabledFeatures": {
-        "__compat": {
-          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-enabledfeatures",
-          "support": {
-            "chrome": {
-              "version_added": "111"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "end": {
-        "__compat": {
-          "description": "<code>end()</code>",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/end",
-          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-end",
-          "support": {
-            "chrome": {
-              "version_added": "79"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "11.2"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "end_event": {
-        "__compat": {
-          "description": "<code>end</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/end_event",
-          "spec_url": [
-            "https://immersive-web.github.io/webxr/#eventdef-xrsession-end",
-            "https://immersive-web.github.io/webxr/#dom-xrsession-onend"
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -291,7 +75,256 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "depthDataFormat": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/depthDataFormat",
+          "spec_url": "https://immersive-web.github.io/depth-sensing/#dom-xrsession-depthdataformat",
+          "tags": [
+            "web-features:webxr-depth-sensing"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "90"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "depthUsage": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/depthUsage",
+          "spec_url": "https://immersive-web.github.io/depth-sensing/#dom-xrsession-depthusage",
+          "tags": [
+            "web-features:webxr-depth-sensing"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "90"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "domOverlayState": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/domOverlayState",
+          "spec_url": "https://immersive-web.github.io/dom-overlays/#dom-xrsession-domoverlaystate",
+          "tags": [
+            "web-features:webxr-dom-overlays"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "83"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "enabledFeatures": {
+        "__compat": {
+          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-enabledfeatures",
+          "tags": [
+            "web-features:webxr-device"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "111"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "end": {
+        "__compat": {
+          "description": "`end()`",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/end",
+          "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-end",
+          "tags": [
+            "web-features:webxr-device"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": {
+              "version_added": "11.2"
+            },
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "end_event": {
+        "__compat": {
+          "description": "`end` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/end_event",
+          "spec_url": [
+            "https://immersive-web.github.io/webxr/#eventdef-xrsession-end",
+            "https://immersive-web.github.io/webxr/#dom-xrsession-onend"
+          ],
+          "tags": [
+            "web-features:webxr-device"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": {
+              "version_added": "11.2"
+            },
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -304,6 +337,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/environmentBlendMode",
           "spec_url": "https://immersive-web.github.io/webxr-ar-module/#dom-xrsession-environmentblendmode",
+          "tags": [
+            "web-features:webxr-ar"
+          ],
           "support": {
             "chrome": {
               "version_added": "81"
@@ -329,7 +365,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -342,47 +379,8 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/inputSources",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-inputsources",
-          "support": {
-            "chrome": {
-              "version_added": "79"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "11.2"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "inputsourceschange_event": {
-        "__compat": {
-          "description": "<code>inputsourceschange</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/inputsourceschange_event",
-          "spec_url": [
-            "https://immersive-web.github.io/webxr/#eventdef-xrsession-inputsourceschange",
-            "https://immersive-web.github.io/webxr/#dom-xrsession-oninputsourceschange"
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -409,7 +407,54 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "inputsourceschange_event": {
+        "__compat": {
+          "description": "`inputsourceschange` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/inputsourceschange_event",
+          "spec_url": [
+            "https://immersive-web.github.io/webxr/#eventdef-xrsession-inputsourceschange",
+            "https://immersive-web.github.io/webxr/#dom-xrsession-oninputsourceschange"
+          ],
+          "tags": [
+            "web-features:webxr-device"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": {
+              "version_added": "11.2"
+            },
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -422,6 +467,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/interactionMode",
           "spec_url": "https://immersive-web.github.io/webxr-ar-module/#dom-xrsession-interactionmode",
+          "tags": [
+            "web-features:webxr-ar"
+          ],
           "support": {
             "chrome": {
               "version_added": "84"
@@ -445,7 +493,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -458,6 +507,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/preferredReflectionFormat",
           "spec_url": "https://immersive-web.github.io/lighting-estimation/#dom-xrsession-preferredreflectionformat",
+          "tags": [
+            "web-features:webxr-lighting-estimation"
+          ],
           "support": {
             "chrome": {
               "version_added": "90"
@@ -481,7 +533,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -494,6 +547,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/renderState",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-renderstate",
+          "tags": [
+            "web-features:webxr-device"
+          ],
           "support": {
             "chrome": {
               "version_added": "79"
@@ -519,7 +575,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -530,9 +587,12 @@
       },
       "requestAnimationFrame": {
         "__compat": {
-          "description": "<code>requestAnimationFrame()</code>",
+          "description": "`requestAnimationFrame()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/requestAnimationFrame",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-requestanimationframe",
+          "tags": [
+            "web-features:webxr-device"
+          ],
           "support": {
             "chrome": {
               "version_added": "79"
@@ -558,7 +618,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -571,6 +632,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/requestHitTestSource",
           "spec_url": "https://immersive-web.github.io/hit-test/#dom-xrsession-requesthittestsource",
+          "tags": [
+            "web-features:webxr-hit-test"
+          ],
           "support": {
             "chrome": {
               "version_added": "81"
@@ -596,7 +660,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -609,6 +674,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/requestHitTestSourceForTransientInput",
           "spec_url": "https://immersive-web.github.io/hit-test/#dom-xrsession-requesthittestsourcefortransientinput",
+          "tags": [
+            "web-features:webxr-hit-test"
+          ],
           "support": {
             "chrome": {
               "version_added": "81"
@@ -632,7 +700,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -645,6 +714,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/requestLightProbe",
           "spec_url": "https://immersive-web.github.io/lighting-estimation/#dom-xrsession-requestlightprobe",
+          "tags": [
+            "web-features:webxr-lighting-estimation"
+          ],
           "support": {
             "chrome": {
               "version_added": "90"
@@ -668,7 +740,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -679,9 +752,12 @@
       },
       "requestReferenceSpace": {
         "__compat": {
-          "description": "<code>requestReferenceSpace()</code>",
+          "description": "`requestReferenceSpace()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/requestReferenceSpace",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-requestreferencespace",
+          "tags": [
+            "web-features:webxr-device"
+          ],
           "support": {
             "chrome": {
               "version_added": "79"
@@ -707,7 +783,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -718,11 +795,14 @@
       },
       "select_event": {
         "__compat": {
-          "description": "<code>select</code> event",
+          "description": "`select` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/select_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-select",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onselect"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -749,7 +829,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -760,11 +841,14 @@
       },
       "selectend_event": {
         "__compat": {
-          "description": "<code>selectend</code> event",
+          "description": "`selectend` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/selectend_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-selectend",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onselectend"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -791,7 +875,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -802,11 +887,14 @@
       },
       "selectstart_event": {
         "__compat": {
-          "description": "<code>selectstart</code> event",
+          "description": "`selectstart` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/selectstart_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-selectstart",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onselectstart"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -833,7 +921,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -844,11 +933,14 @@
       },
       "squeeze_event": {
         "__compat": {
-          "description": "<code>squeeze</code> event",
+          "description": "`squeeze` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/squeeze_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-squeeze",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onsqueeze"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -873,7 +965,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -884,11 +977,14 @@
       },
       "squeezeend_event": {
         "__compat": {
-          "description": "<code>squeezeend</code> event",
+          "description": "`squeezeend` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/squeezeend_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-squeezeend",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onsqueezeend"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -913,7 +1009,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -924,11 +1021,14 @@
       },
       "squeezestart_event": {
         "__compat": {
-          "description": "<code>squeezestart</code> event",
+          "description": "`squeezestart` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/squeezestart_event",
           "spec_url": [
             "https://immersive-web.github.io/webxr/#eventdef-xrsession-squeezestart",
             "https://immersive-web.github.io/webxr/#dom-xrsession-onsqueezestart"
+          ],
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -953,7 +1053,8 @@
             "samsunginternet_android": "mirror",
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -964,50 +1065,11 @@
       },
       "updateRenderState": {
         "__compat": {
-          "description": "<code>updateRenderState()</code>",
+          "description": "`updateRenderState()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/updateRenderState",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-updaterenderstate",
-          "support": {
-            "chrome": {
-              "version_added": "79"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": {
-              "version_added": "11.2"
-            },
-            "webview_android": {
-              "version_added": false
-            }
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "visibilitychange_event": {
-        "__compat": {
-          "description": "<code>visibilitychange</code> event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/visibilitychange_event",
-          "spec_url": [
-            "https://immersive-web.github.io/webxr/#eventdef-xrsession-visibilitychange",
-            "https://immersive-web.github.io/webxr/#dom-xrsession-onvisibilitychange"
+          "tags": [
+            "web-features:webxr-device"
           ],
           "support": {
             "chrome": {
@@ -1034,7 +1096,54 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "visibilitychange_event": {
+        "__compat": {
+          "description": "`visibilitychange` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/visibilitychange_event",
+          "spec_url": [
+            "https://immersive-web.github.io/webxr/#eventdef-xrsession-visibilitychange",
+            "https://immersive-web.github.io/webxr/#dom-xrsession-onvisibilitychange"
+          ],
+          "tags": [
+            "web-features:webxr-device"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "79"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": {
+              "version_added": "11.2"
+            },
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,
@@ -1047,6 +1156,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XRSession/visibilityState",
           "spec_url": "https://immersive-web.github.io/webxr/#dom-xrsession-visibilitystate",
+          "tags": [
+            "web-features:webxr-device"
+          ],
           "support": {
             "chrome": {
               "version_added": "79"
@@ -1072,7 +1184,8 @@
             },
             "webview_android": {
               "version_added": false
-            }
+            },
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": true,

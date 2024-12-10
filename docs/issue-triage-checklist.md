@@ -6,11 +6,11 @@ Helping process and understand new issues is a great way to help the project. To
 
 Avoid wasting time on issues which are not relevant to the repository by closing them quickly.
 
-- **Is it obvious spam?** Close it without comment and label it [_spam :wastebasket:_](https://github.com/mdn/browser-compat-data/labels/spam%20%3Awastebasket%3A).
-- **Is the issue template wholly incomplete?** Close it and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
-- **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
-- **Is the issue a duplicate of another issue?** Close it with a comment stating it is a duplicate, mentioning the original issue number, and label it [_duplicate :dancing_women:_](https://github.com/mdn/browser-compat-data/labels/duplicate%20%3Adancing_women%3A).
-- **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it [_invalid :no_entry_sign:_](https://github.com/mdn/browser-compat-data/labels/invalid%20%3Ano_entry_sign%3A).
+- **Is it obvious spam?** Close it without comment and label it [_spam_](https://github.com/mdn/browser-compat-data/labels/spam).
+- **Is the issue template wholly incomplete?** Close it and label it [_invalid_](https://github.com/mdn/browser-compat-data/labels/invalid).
+- **Is the issue template largely incomplete?** Close it with a suggestion to reopen with more details and label it [_invalid_](https://github.com/mdn/browser-compat-data/labels/invalid).
+- **Is the issue a duplicate of another issue?** Close it with a comment stating it is a duplicate, mentioning the original issue number, and label it [_duplicate_](https://github.com/mdn/browser-compat-data/labels/duplicate).
+- **Is the issue a request for web development or other unrelated help?** Close it with a brief explanation of what the repository is for and label it [_invalid_](https://github.com/mdn/browser-compat-data/labels/invalid).
 
 ## Confirm the title, description, and metadata
 
@@ -39,7 +39,7 @@ Make sure the issue is connected to other relevant information.
 
   1. Copy any new information into the original issue.
   2. Comment to thank the reporter and link to the original issue.
-  3. Label the issue [_duplicate :dancing_women:_](https://github.com/mdn/browser-compat-data/labels/duplicate%20%3Adancing_women%3A).
+  3. Label the issue [_duplicate_](https://github.com/mdn/browser-compat-data/labels/duplicate).
   4. Close the issue.
 
 - **If there are related issues, link to them.** Comment or edit the issue description.
@@ -69,6 +69,6 @@ After we've collected all of the required information, make a plan for what to d
 
   Or, if you're not sure what the next step is, ask for ideas, input, or help.
 
-- If applicable, **set labels seeking help**. Use the [_good first issue:100:_](https://github.com/mdn/browser-compat-data/labels/good%20first%20issue%20%3A100%3A) or [_help wanted :sos:_](https://github.com/mdn/browser-compat-data/labels/help%20wanted%20%3Asos%3A) labels.
+- If applicable, **set labels seeking help**. Use the [_good first issue_](https://github.com/mdn/browser-compat-data/labels/good%20first%20issue) or [_help wanted_](https://github.com/mdn/browser-compat-data/labels/help%20wanted) labels.
 
 - **Thank the reporter.**

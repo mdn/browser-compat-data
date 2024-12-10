@@ -89,24 +89,33 @@ export const getMatchingBrowserVersion = (
     );
   }
 
+  let previousReleaseEngine;
+
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
-    if (
+
+    // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
+    const rangeDelimiter =
+      range && previousReleaseEngine == sourceRelease.engine;
+
+    // Handle mirroring for Chromium forks when upstream version is pre-Blink
+    const isChromeWebKitToBlink =
       ['chrome', 'chrome_android'].includes(browserData.upstream) &&
       targetBrowser !== 'chrome_android' &&
       release.engine == 'Blink' &&
-      sourceRelease.engine == 'WebKit'
-    ) {
-      // Handle mirroring for Chromium forks when upstream version is pre-Blink
-      return range ? `≤${r}` : r;
-    } else if (
+      sourceRelease.engine == 'WebKit';
+
+    const isMatchingVersion =
       release.engine == sourceRelease.engine &&
       release.engine_version &&
       sourceRelease.engine_version &&
-      compare(release.engine_version, sourceRelease.engine_version, '>=')
-    ) {
-      return r;
+      compare(release.engine_version, sourceRelease.engine_version, '>=');
+
+    if (isChromeWebKitToBlink || isMatchingVersion) {
+      return rangeDelimiter ? `≤${r}` : r;
     }
+
+    previousReleaseEngine = release.engine;
   }
 
   return false;
@@ -168,6 +177,7 @@ const copyStatement = (
  */
 export const bumpSupport = (
   sourceData: SupportStatement,
+  sourceBrowser: BrowserName,
   destination: BrowserName,
 ): SupportStatement => {
   if (Array.isArray(sourceData)) {
@@ -176,7 +186,14 @@ export const bumpSupport = (
     // version_added (enforced by the lint) so there can be no notes or similar
     // to preserve from such statements.
     const newData = sourceData
-      .map((data) => bumpSupport(data, destination) as SimpleSupportStatement)
+      .map(
+        (data) =>
+          bumpSupport(
+            data,
+            sourceBrowser,
+            destination,
+          ) as SimpleSupportStatement,
+      )
       .filter((item) => item.version_added);
 
     switch (newData.length) {
@@ -191,22 +208,23 @@ export const bumpSupport = (
     }
   }
 
-  let notesRepl: [RegExp, string] | undefined;
-  if (destination === 'edge') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Edge'];
-  } else if (destination.includes('opera')) {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Opera'];
-  } else if (destination === 'samsunginternet_android') {
-    notesRepl = [/(Google )?Chrome(?!OS)/g, 'Samsung Internet'];
-  }
-
   const newData: SimpleSupportStatement = copyStatement(sourceData);
+
+  if (!browsers[destination].accepts_flags && newData.flags) {
+    // Remove flag data if the target browser doesn't accept flags
+    return { version_added: false };
+  }
 
   if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       destination,
       sourceData.version_added,
     );
+  }
+
+  if (newData.version_added === false && sourceData.version_added !== false) {
+    // If the feature is added in an upstream version newer than available in the downstream browser, don't copy notes, etc.
+    return { version_added: false };
   }
 
   if (
@@ -219,26 +237,25 @@ export const bumpSupport = (
     );
   }
 
-  if (notesRepl && sourceData.notes) {
+  if (newData.version_added === newData.version_removed) {
+    // If version_added and version_removed are the same, feature is unsupported
+    return { version_added: false };
+  }
+
+  if (sourceData.notes) {
+    const sourceBrowserName =
+      sourceBrowser === 'chrome'
+        ? '(Google )?Chrome'
+        : `(${browsers[sourceBrowser].name})`;
     const newNotes = updateNotes(
       sourceData.notes,
-      notesRepl[0],
-      notesRepl[1],
+      new RegExp(`\\b${sourceBrowserName}\\b`, 'g'),
+      browsers[destination].name,
       (v: string) => getMatchingBrowserVersion(destination, v),
     );
     if (newNotes) {
       newData.notes = newNotes;
     }
-  }
-
-  if (!browsers[destination].accepts_flags && newData.flags) {
-    // Remove flag data if the target browser doesn't accept flags
-    return { version_added: false };
-  }
-
-  if (newData.version_added === newData.version_removed) {
-    // If version_added and version_removed are the same, feature is unsupported
-    return { version_added: false };
   }
 
   return newData;
@@ -274,7 +291,7 @@ const mirrorSupport = (
     upstreamData = mirrorSupport(upstream, data);
   }
 
-  return bumpSupport(upstreamData, destination);
+  return bumpSupport(upstreamData, upstream, destination);
 };
 
 export default mirrorSupport;

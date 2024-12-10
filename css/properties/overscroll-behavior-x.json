@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior-x",
           "spec_url": "https://drafts.csswg.org/css-overscroll/#overscroll-behavior-longhands-physical",
+          "tags": [
+            "web-features:overscroll-behavior"
+          ],
           "support": {
             "chrome": {
               "version_added": "63"
@@ -28,7 +31,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -39,6 +43,9 @@
         "auto": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-auto",
+            "tags": [
+              "web-features:overscroll-behavior"
+            ],
             "support": {
               "chrome": {
                 "version_added": "63"
@@ -62,7 +69,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -74,6 +82,9 @@
         "contain": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-contain",
+            "tags": [
+              "web-features:overscroll-behavior"
+            ],
             "support": {
               "chrome": {
                 "version_added": "63"
@@ -97,7 +108,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -109,15 +121,25 @@
         "none": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-overscroll/#valdef-overscroll-behavior-none",
+            "tags": [
+              "web-features:overscroll-behavior"
+            ],
             "support": {
               "chrome": {
                 "version_added": "63"
               },
               "chrome_android": "mirror",
-              "edge": {
-                "version_added": "18",
-                "notes": "Before Edge 79, the <code>none</code> value incorrectly behaved as <code>contain</code> (allowing for the elastic bounce effect)."
-              },
+              "edge": [
+                {
+                  "version_added": "79"
+                },
+                {
+                  "version_added": "18",
+                  "version_removed": "79",
+                  "partial_implementation": true,
+                  "notes": "The `none` value incorrectly behaves as `contain` (allowing for the elastic bounce effect)."
+                }
+              ],
               "firefox": {
                 "version_added": "59"
               },
@@ -133,7 +155,8 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror"
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
