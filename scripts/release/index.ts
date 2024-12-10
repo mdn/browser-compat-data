@@ -56,7 +56,7 @@ const commitAndPR = async (
     console.log('');
   }
 
-  console.log(chalk`{blue Preparing release branch...}`);
+  console.log(chalk`{blue Preparing ${branch} branch...}`);
   exec(`
     git stash
     git switch -C ${branch} origin/main
@@ -69,7 +69,7 @@ const commitAndPR = async (
     exec(`git commit --file ${commitFile}`),
   );
 
-  console.log(chalk`{blue Pushing release branch...}`);
+  console.log(chalk`{blue Pushing ${branch} branch...}`);
   exec(`git push --force --set-upstream origin ${branch}`);
 
   console.log(chalk`{blue Creating/editing pull request...}`);
