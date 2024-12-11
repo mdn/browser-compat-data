@@ -183,19 +183,20 @@
               "deprecated": false
             }
           },
-          "improved_reporting_large_value_read_failures": {
+          "read_errors": {
             "__compat": {
-              "description": "Improved reporting for large value read failures",
+              "description": "Improved reporting for read errors",
+              "spec_url": "https://w3c.github.io/IndexedDB/#:~:text=NotReadableError",
               "support": {
                 "chrome": [
                   {
                     "version_added": "132",
-                    "notes": "Throws a `NotReadableError` for unrecoverable large value read failures, and an `UnknownError` for transient large value read failures, with improved error messages."
+                    "notes": "Returns a `NotReadableError` for unrecoverable read errors, and an `UnknownError` for transient read errors."
                   },
                   {
                     "version_added": "130",
                     "partial_implementation": true,
-                    "notes": "Throws a `NotFoundError` for unrecoverable large value read failures, and a `DataError` for transient large value read failures."
+                    "notes": "Returns a `NotFoundError` for unrecoverable read errors, and a `DataError` for transient read errors."
                   }
                 ],
                 "chrome_android": "mirror",
