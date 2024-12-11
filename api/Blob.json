@@ -27,13 +27,15 @@
               "version_added": "18.0.0"
             },
             {
-              "alternative_name": "buffer.Blob",
               "version_added": "15.7.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Experimental implementation.",
-                "Must be imported using `require('buffer').Blob` or `import { Blob } from 'buffer'`."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
+            },
+            {
+              "version_added": "14.18.0",
+              "version_removed": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
             }
           ],
           "oculus": "mirror",
@@ -82,9 +84,16 @@
               "version_added": "10",
               "notes": "IE10 throws `InvalidStateError` with a `TypedArray` argument. Consider using `MSBuilder` as an alternative."
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0",
+                "notes": "Before v16.7.0, the `endings` option was not supported."
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "12"
@@ -128,9 +137,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -171,6 +186,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "22.3.0"
+              },
+              {
+                "version_added": "20.16.0",
+                "version_removed": "21.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -211,9 +235,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "11"
@@ -274,9 +304,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "12"
@@ -328,7 +364,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.7.0"
+              "version_added": "16.7.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -369,9 +405,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -414,9 +456,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "11"
