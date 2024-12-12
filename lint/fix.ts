@@ -26,16 +26,16 @@ import { LintOptions } from './utils.js';
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const FIXES = Object.freeze({
-  browser_order: fixBrowserOrder,
-  feature_order: fixFeatureOrder,
-  property_order: fixPropertyOrder,
-  statement_order: fixStatementOrder,
   descriptions: fixDescriptions,
   flags: fixFlags,
   links: fixLinks,
   mdn_urls: fixMDNURLs,
   status: fixStatus,
   mirror: fixMirror,
+  browser_order: fixBrowserOrder,
+  feature_order: fixFeatureOrder,
+  property_order: fixPropertyOrder,
+  statement_order: fixStatementOrder,
 });
 
 /**

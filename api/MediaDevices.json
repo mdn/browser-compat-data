@@ -143,13 +143,16 @@
           "description": "`getDisplayMedia()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaDevices/getDisplayMedia",
           "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-mediadevices-getdisplaymedia",
+          "tags": [
+            "web-features:screen-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": "72"
             },
             "chrome_android": {
               "version_added": false,
-              "notes": "From Chrome Android 72 to 88, this method was exposed, but always failed with `NotAllowedError`. See <a href='https://crbug.com/40418135'>bug 40418135</a>."
+              "notes": "From Chrome Android 72 to 88, this method was exposed, but always failed with `NotAllowedError`. See [bug 40418135](https://crbug.com/40418135)."
             },
             "edge": [
               {
@@ -169,7 +172,7 @@
               {
                 "version_added": "33",
                 "version_removed": "66",
-                "notes": "Since Firefox 33 you can capture screen data using <a href='https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia'>`getUserMedia()`</a>, with a `video` constraint called `mediaSource`. Before 52 it relied on a client-configurable list of allowed sites."
+                "notes": "Since Firefox 33 you can capture screen data using [`getUserMedia()`](https://developer.mozilla.org/docs/Web/API/MediaDevices/getUserMedia), with a `video` constraint called `mediaSource`. Before 52 it relied on a client-configurable list of allowed sites."
               }
             ],
             "firefox_android": {
@@ -202,6 +205,9 @@
           "__compat": {
             "description": "Audio capture support",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/Screen_Capture_API/Using_Screen_Capture#Capturing_shared_audio",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "74",
@@ -240,6 +246,9 @@
           "__compat": {
             "description": "`controller` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-controller",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "109"
@@ -277,6 +286,9 @@
           "__compat": {
             "description": "`monitorTypeSurfaces` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-monitortypesurfaces",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "119",
@@ -352,6 +364,9 @@
           "__compat": {
             "description": "`selfBrowserSurface` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-selfbrowsersurface",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": [
                 {
@@ -397,6 +412,9 @@
           "__compat": {
             "description": "`surfaceSwitching` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-surfaceswitching",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "107",
@@ -435,6 +453,9 @@
           "__compat": {
             "description": "`systemAudio` option",
             "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-displaymediastreamoptions-systemaudio",
+            "tags": [
+              "web-features:screen-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105",
@@ -523,7 +544,7 @@
           "support": {
             "chrome": {
               "version_added": "53",
-              "notes": "If you need this capability before version 53, refer to `navigator.webkitGetUserMedia`, a prefixed form of the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'>`navigator.getUserMedia`</a> API."
+              "notes": "If you need this capability before version 53, refer to `navigator.webkitGetUserMedia`, a prefixed form of the deprecated [`navigator.getUserMedia`](https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia) API."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -532,7 +553,7 @@
             "firefox": {
               "version_added": "36",
               "notes": [
-                "If you need this capability before version 36, refer to `navigator.mozGetUserMedia`, a prefixed form of the deprecated <a href='https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia'>`navigator.getUserMedia`</a> API.",
+                "If you need this capability before version 36, refer to `navigator.mozGetUserMedia`, a prefixed form of the deprecated [`navigator.getUserMedia`](https://developer.mozilla.org/docs/Web/API/Navigator/getUserMedia) API.",
                 "Before Firefox 55, `getUserMedia()` incorrectly returns `NotSupportedError` when the list of constraints specified is empty, or has all constraints set to `false`. Starting in Firefox 55, this situation now correctly calls the failure handler with a `TypeError`.",
                 "When using the Firefox-specific `video` constraint called `mediaSource` to request display capture, Firefox 66 and later consider values of `screen` and `window` to both cause a list of screens _and_ windows to be shown.",
                 "Starting in Firefox 66, `getUserMedia()` can no longer be used in sandboxed `&lt;iframe&gt;`s or `data` URLs entered in the address bar by the user."

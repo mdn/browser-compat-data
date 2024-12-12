@@ -91,7 +91,7 @@
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-script-attributionsrc",
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -188,7 +188,7 @@
               },
               "safari": {
                 "version_added": "6",
-                "notes": "The `crossorigin` attribute was implemented in WebKit in WebKit <a href='https://webkit.org/b/81438'>bug 81438</a>."
+                "notes": "The `crossorigin` attribute was implemented in WebKit in WebKit [bug 81438](https://webkit.org/b/81438)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -211,7 +211,7 @@
             "support": {
               "chrome": {
                 "version_added": "1",
-                "notes": "Chrome does not defer scripts with the `defer` attribute when the page is served as XHTML (`application/xhtml+xml`), see <a href='https://crbug.com/41253514'>bug 41253514</a> and <a href='https://crbug.com/41408348'>bug 41408348</a>"
+                "notes": "Chrome does not defer scripts with the `defer` attribute when the page is served as XHTML (`application/xhtml+xml`), see [bug 41253514](https://crbug.com/41253514) and [bug 41408348](https://crbug.com/41408348)"
               },
               "chrome_android": "mirror",
               "edge": {
@@ -405,6 +405,9 @@
           },
           "no-referrer-when-downgrade": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -441,6 +444,9 @@
           },
           "origin-when-cross-origin": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -477,6 +483,9 @@
           },
           "unsafe-url": {
             "__compat": {
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "70"
@@ -673,13 +682,13 @@
               "support": {
                 "chrome": {
                   "version_added": "61",
-                  "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See <a href='https://crbug.com/40518469'>bug 40518469</a>."
+                  "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See [bug 40518469](https://crbug.com/40518469)."
                 },
                 "chrome_android": "mirror",
                 "edge": [
                   {
                     "version_added": "79",
-                    "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See <a href='https://crbug.com/40518469'>bug 40518469</a>."
+                    "notes": "Module scripts without the `async` attribute do not load when the page is served as XHTML (`application/xhtml+xml`). See [bug 40518469](https://crbug.com/40518469)."
                   },
                   {
                     "version_added": "16",
@@ -716,6 +725,9 @@
             "__compat": {
               "description": "`type=\"speculationrules\"`",
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
+              "tags": [
+                "web-features:speculation-rules"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -767,6 +779,9 @@
             "eagerness": {
               "__compat": {
                 "description": "`eagerness` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -803,6 +818,9 @@
             "expects_no_vary_search": {
               "__compat": {
                 "description": "`expects_no_vary_search` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121",
@@ -841,6 +859,9 @@
             "prefetch": {
               "__compat": {
                 "description": "`prefetch` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -879,6 +900,9 @@
             "prerender": {
               "__compat": {
                 "description": "`prerender` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "105"
@@ -917,6 +941,9 @@
             "referrer_policy": {
               "__compat": {
                 "description": "`referrer_policy` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "111"
@@ -953,6 +980,9 @@
             "relative_to": {
               "__compat": {
                 "description": "`relative_to` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"
@@ -989,6 +1019,9 @@
             "requires": {
               "__compat": {
                 "description": "`requires` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "110"
@@ -1026,6 +1059,9 @@
               "anonymous-client-ip-when-cross-origin": {
                 "__compat": {
                   "description": "`anonymous-client-ip-when-cross-origin` value",
+                  "tags": [
+                    "web-features:speculation-rules"
+                  ],
                   "support": {
                     "chrome": {
                       "version_added": "110"
@@ -1073,6 +1109,9 @@
             "source_optional": {
               "__compat": {
                 "description": "`source` key is optional",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "122"
@@ -1109,6 +1148,9 @@
             "urls": {
               "__compat": {
                 "description": "`urls` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "109"
@@ -1147,6 +1189,9 @@
             "where": {
               "__compat": {
                 "description": "`where` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "121"

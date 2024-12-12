@@ -288,6 +288,47 @@ describe('mirror', () => {
         const mirrored = mirrorSupport('edge', support);
         assert.deepEqual(mirrored, { version_added: false });
       });
+
+      it('link with Chrome in hash', () => {
+        const support = {
+          chrome: {
+            version_added: '35',
+            notes:
+              '[Non-standard exceptions in Chrome](https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome)',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '35',
+          notes:
+            '[Non-standard exceptions in Chrome Android](https://developer.mozilla.org/docs/Web/API/AudioContext/AudioContext#Non-standard_exceptions_in_Chrome)',
+        });
+      });
+    });
+
+    describe('ranges are preserved', () => {
+      it('direct', () => {
+        const support = {
+          chrome: {
+            version_added: '≤80',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        assert.deepEqual(mirrored, { version_added: '≤80' });
+      });
+
+      it('range is before first version of downstream browser', () => {
+        const support = {
+          chrome: {
+            version_added: '≤24',
+          },
+        };
+
+        const mirrored = mirrorSupport('edge', support);
+        assert.deepEqual(mirrored, { version_added: '79' });
+      });
     });
   });
 });
