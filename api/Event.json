@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event",
         "spec_url": "https://dom.spec.whatwg.org/#interface-event",
+        "tags": [
+          "web-features:events"
+        ],
         "support": {
           "chrome": {
             "version_added": "1"
@@ -22,9 +25,17 @@
           "ie": {
             "version_added": "6"
           },
-          "nodejs": {
-            "version_added": "14.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "15.0.0"
+            },
+            {
+              "version_added": "14.5.0",
+              "version_removed": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance."
+            }
+          ],
           "oculus": "mirror",
           "opera": {
             "version_added": "4"
@@ -53,6 +64,9 @@
           "description": "`Event()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/Event",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-event",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "15"
@@ -71,17 +85,9 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "15.0.0"
-              },
-              {
-                "version_added": "14.5.0",
-                "version_removed": "15.0.0",
-                "partial_implementation": true,
-                "notes": "Only available from the `events` module"
-              }
-            ],
+            "nodejs": {
+              "version_added": "14.5.0"
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "11.6"
@@ -108,6 +114,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/bubbles",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-bubbles③",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -158,6 +167,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/cancelable",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-cancelable②",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -343,7 +355,10 @@
             },
             "nodejs": {
               "version_added": "14.5.0",
-              "notes": "Returns an array with either the event itself or no contents."
+              "notes": [
+                "Returns an array with either the event itself or empty.",
+                "This is not used in Node.js and is provided purely for completeness."
+              ]
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -367,6 +382,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/currentTarget",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-currenttarget②",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -422,6 +440,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/defaultPrevented",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-defaultprevented①",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -473,6 +494,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/eventPhase",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-eventphase③",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -617,6 +641,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/isTrusted",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-istrusted①",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "46",
@@ -638,8 +665,7 @@
               "notes": "In Internet Explorer, all events are trusted except those that are created with the `createEvent()` method."
             },
             "nodejs": {
-              "version_added": "14.5.0",
-              "notes": "This is not used in Node.js and is provided purely for completeness."
+              "version_added": "14.5.0"
             },
             "oculus": "mirror",
             "opera": {
@@ -712,6 +738,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/preventDefault",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-preventdefault③",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -859,6 +888,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/stopImmediatePropagation",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-stopimmediatepropagation①",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "5"
@@ -910,6 +942,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/stopPropagation",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-stoppropagation①",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -958,6 +993,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/target",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-target③",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1005,6 +1043,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/timeStamp",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-timestamp①",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1",
@@ -1061,6 +1102,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Event/type",
           "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-event-type④",
+          "tags": [
+            "web-features:events"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
