@@ -238,9 +238,21 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "8"
-            },
+            "safari": [
+              {
+                "version_added": "15"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "15",
+                "partial_implementation": true,
+                "notes": "In some releases of Safari 14, the first `indexedDB.open()` call hangs forever, see [bug 226547](https://webkit.org/b/226547)."
+              },
+              {
+                "version_added": "8",
+                "version_removed": "14"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

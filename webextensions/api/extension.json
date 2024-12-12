@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension",
           "support": {
             "chrome": {
-              "version_added": "≤58"
+              "version_added": "4"
             },
             "edge": {
               "version_added": "14"
@@ -29,7 +29,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/ViewType",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "44"
               },
               "edge": "mirror",
               "firefox": {
@@ -74,7 +74,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getBackgroundPage",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "4"
               },
               "edge": {
                 "version_added": "14"
@@ -99,9 +99,16 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getExtensionTabs",
             "support": {
-              "chrome": {
-                "version_added": "≤58"
-              },
+              "chrome": [
+                {
+                  "version_added": "5"
+                },
+                {
+                  "alternative_name": "getTabContentses",
+                  "version_added": "4",
+                  "version_removed": "19"
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -122,7 +129,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getURL",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "4"
               },
               "edge": {
                 "version_added": "14"
@@ -148,7 +155,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/getViews",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "4"
               },
               "edge": {
                 "version_added": "14"
@@ -174,7 +181,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "≤93"
+                  "version_added": "5"
                 },
                 "edge": {
                   "version_added": "14"
@@ -217,9 +224,17 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/inIncognitoContext",
             "support": {
-              "chrome": {
-                "version_added": "≤58"
-              },
+              "chrome": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "alternative_name": "inIncognitoTab",
+                  "version_added": "5",
+                  "version_removed": "67",
+                  "notes": "Only supported in manifest v1."
+                }
+              ],
               "edge": {
                 "version_added": "17"
               },
@@ -258,7 +273,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedFileSchemeAccess",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "12"
               },
               "edge": "mirror",
               "firefox": {
@@ -284,7 +299,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/isAllowedIncognitoAccess",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "12"
               },
               "edge": {
                 "version_added": "17"
@@ -322,7 +337,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/lastError",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "4"
               },
               "edge": "mirror",
               "firefox": {
@@ -344,7 +359,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequest",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "5"
               },
               "edge": "mirror",
               "firefox": {
@@ -364,7 +379,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/onRequestExternal",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "5"
               },
               "edge": "mirror",
               "firefox": {
@@ -384,7 +399,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/sendRequest",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "5"
               },
               "edge": "mirror",
               "firefox": {
@@ -406,7 +421,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/extension/setUpdateUrlData",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "9"
               },
               "edge": "mirror",
               "firefox": {
