@@ -1,0 +1,1919 @@
+{
+  "css": {
+    "types": {
+      "gradient": {
+        "__compat": {
+          "description": "`&lt;gradient&gt;`",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
+          "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
+          "tags": [
+            "web-features:gradients"
+          ],
+          "support": {
+            "chrome": [
+              {
+                "version_added": "26"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "10"
+              }
+            ],
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "3.6",
+              "notes": "Gradients are limited to [`background-image`](https://developer.mozilla.org/docs/Web/CSS/background-image), [`border-image`](https://developer.mozilla.org/docs/Web/CSS/border-image), and [`mask-image`](https://developer.mozilla.org/docs/Web/CSS/mask-image)."
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "prefix": "-ms-",
+              "version_added": "10"
+            },
+            "oculus": "mirror",
+            "opera": [
+              {
+                "version_added": "12.1"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "15"
+              },
+              {
+                "prefix": "-o-",
+                "version_added": "11",
+                "version_removed": "15"
+              }
+            ],
+            "opera_android": [
+              {
+                "version_added": "12.1"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "14"
+              },
+              {
+                "prefix": "-o-",
+                "version_added": "11",
+                "version_removed": "14"
+              }
+            ],
+            "safari": [
+              {
+                "version_added": "7"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "5.1"
+              }
+            ],
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": [
+              {
+                "version_added": "≤37"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "≤37"
+              }
+            ],
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "conic-gradient": {
+          "__compat": {
+            "description": "`conic-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/conic-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#conic-gradients",
+            "tags": [
+              "web-features:conic-gradients"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "83"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "doubleposition": {
+            "__compat": {
+              "description": "Double-position color stops",
+              "tags": [
+                "web-features:conic-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "72"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "83"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "linear-gradient": {
+          "__compat": {
+            "description": "`linear-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/linear-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#linear-gradients",
+            "tags": [
+              "web-features:gradients"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "10"
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": [
+                {
+                  "version_added": "16"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3.6",
+                  "notes": [
+                    "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
+                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "10",
+                "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
+              },
+              "oculus": "mirror",
+              "opera": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "15",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "15",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "14",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                }
+              ],
+              "safari": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5.1",
+                  "notes": [
+                    "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
+                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  ]
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": [
+                {
+                  "version_added": "≤37"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤37"
+                }
+              ],
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "doubleposition": {
+            "__compat": {
+              "description": "Double-position color stops",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "71"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "64"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_hints": {
+            "__compat": {
+              "description": "Interpolation Hints / Gradient Midpoints",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "40"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "premultiplied_gradients": {
+            "__compat": {
+              "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "29"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "15"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "to": {
+            "__compat": {
+              "description": "`to` keyword",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "10"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": "10"
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "12.1"
+                },
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "unitless_0_angle": {
+            "__compat": {
+              "description": "Unitless `0` for &lt;angle&gt;",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": [
+                  {
+                    "version_added": "55"
+                  },
+                  {
+                    "version_added": "46",
+                    "partial_implementation": true,
+                    "notes": "Accepted only in `-webkit-linear-gradient()` and `-moz-linear-gradient()`, not `linear-gradient()`."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "16"
+                },
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "radial-gradient": {
+          "__compat": {
+            "description": "`radial-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/radial-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images/#radial-gradients",
+            "tags": [
+              "web-features:gradients"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "13"
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": [
+                {
+                  "version_added": "16"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3.6",
+                  "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "10",
+                "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
+              },
+              "oculus": "mirror",
+              "opera": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "15"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11.6",
+                  "version_removed": "15"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "12",
+                  "version_removed": "14"
+                }
+              ],
+              "safari": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5.1",
+                  "notes": "Safari 4 was supporting an experimental [`-webkit-gradient(radial,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. This old outdated syntax is still supported for compatibility purposes."
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": [
+                {
+                  "version_added": "≤37"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤37"
+                }
+              ],
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "at": {
+            "__compat": {
+              "description": "`at` syntax",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "10"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": "10"
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "11.6"
+                },
+                "opera_android": {
+                  "version_added": "12"
+                },
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "doubleposition": {
+            "__compat": {
+              "description": "Double-position color stops",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "71"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "64"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_hints": {
+            "__compat": {
+              "description": "Interpolation Hints / Gradient Midpoints",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "40"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "premultiplied_gradients": {
+            "__compat": {
+              "description": "Gradients applied to pre-multiplied color space (prevents grays from appearing in gradients with transparency)",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "29"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "15"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "repeating-conic-gradient": {
+          "__compat": {
+            "description": "`repeating-conic-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-conic-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images-4/#repeating-gradients",
+            "tags": [
+              "web-features:conic-gradients"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "69"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "83"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "12.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "repeating-linear-gradient": {
+          "__compat": {
+            "description": "`repeating-linear-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-linear-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+            "tags": [
+              "web-features:gradients"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "10"
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": [
+                {
+                  "version_added": "16",
+                  "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3.6",
+                  "notes": [
+                    "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
+                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": "10",
+                "notes": "Internet Explorer 5.5 through 9.0 supported gradients via a proprietary filter: [`-ms-filter: progid:DXImageTransform.Microsoft.Gradient()`](https://developer.mozilla.org/docs/Web/CSS/-ms-filter#Gradient)."
+              },
+              "oculus": "mirror",
+              "opera": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "15",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "15",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "11",
+                  "version_removed": "14",
+                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                }
+              ],
+              "safari": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5.1",
+                  "notes": [
+                    "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `repeating-linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
+                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  ]
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": [
+                {
+                  "version_added": "≤37"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤37"
+                }
+              ],
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "doubleposition": {
+            "__compat": {
+              "description": "Double-position color stops",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "71"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "64"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_hints": {
+            "__compat": {
+              "description": "Interpolation Hints / Gradient Midpoints",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "40"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "to": {
+            "__compat": {
+              "description": "`to` keyword",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": {
+                  "version_added": "10"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": "10"
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "12.1"
+                },
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "unitless_0_angle": {
+            "__compat": {
+              "description": "Unitless `0` for &lt;angle&gt;",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": [
+                  {
+                    "version_added": "55"
+                  },
+                  {
+                    "version_added": "46",
+                    "partial_implementation": true,
+                    "notes": "Accepted only in `-webkit-repeating-linear-gradient()` and `-moz-repeating-linear-gradient()`, not `repeating-linear-gradient()`."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": "16"
+                },
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "repeating-radial-gradient": {
+          "__compat": {
+            "description": "`repeating-radial-gradient()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient/repeating-radial-gradient",
+            "spec_url": "https://drafts.csswg.org/css-images/#repeating-gradients",
+            "tags": [
+              "web-features:gradients"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "10"
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": [
+                {
+                  "version_added": "16",
+                  "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "3.6",
+                  "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
+                }
+              ],
+              "firefox_android": [
+                {
+                  "version_added": "16",
+                  "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "49"
+                },
+                {
+                  "prefix": "-moz-",
+                  "version_added": "10",
+                  "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
+                }
+              ],
+              "ie": {
+                "version_added": "10"
+              },
+              "oculus": "mirror",
+              "opera": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "15"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "12",
+                  "version_removed": "15"
+                }
+              ],
+              "opera_android": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "14"
+                },
+                {
+                  "prefix": "-o-",
+                  "version_added": "12",
+                  "version_removed": "14"
+                }
+              ],
+              "safari": [
+                {
+                  "version_added": "7"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "5.1",
+                  "notes": "Safari 4 was supporting an experimental [`-webkit-gradient(radial,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. This old outdated syntax is still supported for compatibility purposes."
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": [
+                {
+                  "version_added": "4.4"
+                },
+                {
+                  "prefix": "-webkit-",
+                  "version_added": "≤37"
+                }
+              ],
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "at": {
+            "__compat": {
+              "description": "`at` syntax",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "26"
+                },
+                "chrome_android": "mirror",
+                "edge": {
+                  "version_added": "12"
+                },
+                "firefox": [
+                  {
+                    "version_added": "16",
+                    "notes": "Before Firefox 36, gradients weren't applied on the pre-multiplied color space, leading to shades of grey unexpectedly appearing when used with transparency."
+                  },
+                  {
+                    "prefix": "-webkit-",
+                    "version_added": "49"
+                  },
+                  {
+                    "prefix": "-moz-",
+                    "version_added": "10",
+                    "notes": "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": "10"
+                },
+                "oculus": "mirror",
+                "opera": [
+                  {
+                    "version_added": "15"
+                  },
+                  {
+                    "prefix": "-o-",
+                    "version_added": "12",
+                    "version_removed": "15"
+                  }
+                ],
+                "opera_android": [
+                  {
+                    "version_added": "14"
+                  },
+                  {
+                    "prefix": "-o-",
+                    "version_added": "12",
+                    "version_removed": "14"
+                  }
+                ],
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "doubleposition": {
+            "__compat": {
+              "description": "Double-position color stops",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "71"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "64"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "12.1"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "hue_interpolation_method": {
+            "__compat": {
+              "description": "Hue interpolation method",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_color_space": {
+            "__compat": {
+              "description": "Interpolation color space",
+              "tags": [
+                "web-features:gradient-interpolation"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "111"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "127",
+                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
+                  },
+                  {
+                    "version_added": "121",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "layout.css.gradient-color-interpolation-method.enabled",
+                        "value_to_set": "true"
+                      }
+                    ],
+                    "impl_url": "https://bugzil.la/1838740"
+                  }
+                ],
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "interpolation_hints": {
+            "__compat": {
+              "description": "Interpolation Hints / Gradient Midpoints",
+              "tags": [
+                "web-features:gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "40"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "36"
+                },
+                "firefox_android": {
+                  "version_added": "46"
+                },
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
