@@ -2,7 +2,7 @@
 
 Some labels act as special-use flags. Use the following labels according to these guidelines.
 
-## not ready ⛔
+## not ready
 
 | Pulls | Issues | Blocker |
 | ----- | ------ | ------- |
@@ -14,7 +14,7 @@ Set this label on any issue or PR that cannot proceed without some additional ac
 
 For example, if a pull request cannot be merged without another issue being resolved first, then set the label and leave a comment linking to the blocking issue.
 
-## needs content update 📝
+## needs content update
 
 | Pulls | Issues | Blocker |
 | ----- | ------ | ------- |
@@ -32,7 +32,7 @@ When in doubt, set the label. Better to find that content changes are unnecessar
 
 Remove this label after a pull request, which makes the required content changes, has been opened. A content change in progress is sufficient to merge compat data changes.
 
-## semver-minor-bump ➕
+## semver-minor-bump
 
 | Pulls | Issues | Blocker |
 | ----- | ------ | ------- |
@@ -55,7 +55,7 @@ Do not set this label on a pull request when it:
 
 Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](./publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).
 
-## semver-major-bump 🚨
+## semver-major-bump
 
 | Pulls | Issues | Blocker |
 | ----- | ------ | ------- |
