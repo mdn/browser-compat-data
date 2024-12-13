@@ -1,5 +1,120 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.24)
+
+December 13, 2024
+
+### Renamings
+
+- `css.types.calc-constant` to `css.types.calc-keyword` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.e` to `css.types.calc-keyword.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.infinity` to `css.types.calc-keyword.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.NaN` to `css.types.calc-keyword.NaN`([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.pi` to `css.types.calc-keyword.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+
+### Removals
+
+- `css.properties.offset-path.coord_box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+
+### Additions
+
+- `css.properties.offset-anchor.bottom` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.center` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.left` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.right` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.top` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.border-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.content-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.fill-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.margin-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.none` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.padding-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.stroke-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.view-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.bottom` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.center` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.left` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.right` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.top` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+
+### Statistics
+
+- 12 contributors have changed 22 files with 775 additions and 97 deletions in 21 commits ([`v5.6.23...v5.6.24`](https://github.com/mdn/browser-compat-data/compare/v5.6.23...v5.6.24))
+- 16,780 total features
+- 1,119 total contributors
+- 5,031 total stargazers
+
+## [v5.6.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.23)
+
+December 10, 2024
+
+### Removals
+
+- `css.properties.object-position.applies_to_iframe_elements` ([#25354](https://github.com/mdn/browser-compat-data/pull/25354))
+- `css.types.color.color-contrast` ([#25305](https://github.com/mdn/browser-compat-data/pull/25305))
+
+### Additions
+
+- `browsers.opera_android.releases.85` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera_android.releases.86` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera.releases.116` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `browsers.opera.releases.117` ([#25347](https://github.com/mdn/browser-compat-data/pull/25347))
+- `webextensions.api.action.onUserSettingsChanged` ([#25343](https://github.com/mdn/browser-compat-data/pull/25343))
+- `webextensions.api.action.UserSettingsChange` ([#25343](https://github.com/mdn/browser-compat-data/pull/25343))
+
+### Statistics
+
+- 8 contributors have changed 44 files with 250 additions and 258 deletions in 25 commits ([`v5.6.22...v5.6.23`](https://github.com/mdn/browser-compat-data/compare/v5.6.22...v5.6.23))
+- 16,763 total features
+- 1,118 total contributors
+- 5,027 total stargazers
+
+## [v5.6.22](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.22)
+
+December 6, 2024
+
+### Renamings
+
+- `svg.elements.stop.stop-color` to `svg.global_attributes.stop-color` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+- `svg.elements.stop.stop-opacity` to `svg.global_attributes.stop-opacity` ([#25272](https://github.com/mdn/browser-compat-data/pull/25272))
+
+### Additions
+
+- `api.HTMLFencedFrameElement.sandbox` ([#25227](https://github.com/mdn/browser-compat-data/pull/25227))
+- `api.HTMLInputElement.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `api.HTMLInputElement.colorSpace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `browsers.edge.releases.134` ([#25322](https://github.com/mdn/browser-compat-data/pull/25322))
+- `html.elements.input.alpha` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+- `html.elements.input.colorspace` ([#25270](https://github.com/mdn/browser-compat-data/pull/25270))
+
+### Statistics
+
+- 13 contributors have changed 70 files with 756 additions and 617 deletions in 29 commits ([`v5.6.21...v5.6.22`](https://github.com/mdn/browser-compat-data/compare/v5.6.21...v5.6.22))
+- 16,763 total features
+- 1,116 total contributors
+- 5,022 total stargazers
+
+## [v5.6.21](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.21)
+
+December 3, 2024
+
+### Removals
+
+- `browsers.nodejs.releases.10.5.0` ([#25014](https://github.com/mdn/browser-compat-data/pull/25014))
+
+### Additions
+
+- `browsers.nodejs.releases.21.1.0` ([#24988](https://github.com/mdn/browser-compat-data/pull/24988))
+- `webassembly.exceptionsFinal` ([#25252](https://github.com/mdn/browser-compat-data/pull/25252))
+- `webassembly.typedFunctionReferences` ([#25252](https://github.com/mdn/browser-compat-data/pull/25252))
+
+### Statistics
+
+- 6 contributors have changed 47 files with 741 additions and 310 deletions in 21 commits ([`v5.6.20...v5.6.21`](https://github.com/mdn/browser-compat-data/compare/v5.6.20...v5.6.21))
+- 16,758 total features
+- 1,116 total contributors
+- 5,013 total stargazers
+
 ## [v5.6.20](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.20)
 
 November 29, 2024
