@@ -4,14 +4,17 @@
 
 December 13, 2024
 
+### Renamings
+
+- `css.types.calc-constant` to `css.types.calc-keyword` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.e` to `css.types.calc-keyword.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.infinity` to `css.types.calc-keyword.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.NaN` to `css.types.calc-keyword.NaN`([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.pi` to `css.types.calc-keyword.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+
 ### Removals
 
 - `css.properties.offset-path.coord_box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
-- `css.types.calc-constant` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-constant.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-constant.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-constant.NaN` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-constant.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
 
 ### Additions
 
@@ -33,11 +36,6 @@ December 13, 2024
 - `css.properties.offset-position.left` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
 - `css.properties.offset-position.right` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
 - `css.properties.offset-position.top` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
-- `css.types.calc-keyword` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-keyword.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-keyword.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-keyword.NaN` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
-- `css.types.calc-keyword.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
 
 ### Statistics
 
