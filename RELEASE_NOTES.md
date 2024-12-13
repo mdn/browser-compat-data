@@ -1,5 +1,51 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.24)
+
+December 13, 2024
+
+### Removals
+
+- `css.properties.offset-path.coord_box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.types.calc-constant` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.NaN` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-constant.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+
+### Additions
+
+- `css.properties.offset-anchor.bottom` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.center` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.left` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.right` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-anchor.top` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.border-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.content-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.fill-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.margin-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.none` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.padding-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.stroke-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-path.view-box` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.bottom` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.center` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.left` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.right` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.properties.offset-position.top` ([#25385](https://github.com/mdn/browser-compat-data/pull/25385))
+- `css.types.calc-keyword` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-keyword.e` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-keyword.infinity` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-keyword.NaN` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+- `css.types.calc-keyword.pi` ([#25395](https://github.com/mdn/browser-compat-data/pull/25395))
+
+### Statistics
+
+- 12 contributors have changed 22 files with 775 additions and 97 deletions in 21 commits ([`v5.6.23...v5.6.24`](https://github.com/mdn/browser-compat-data/compare/v5.6.23...v5.6.24))
+- 16,780 total features
+- 1,119 total contributors
+- 5,031 total stargazers
+
 ## [v5.6.23](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.23)
 
 December 10, 2024
