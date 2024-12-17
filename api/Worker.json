@@ -26,7 +26,7 @@
             "version_added": "11.7.0",
             "partial_implementation": true,
             "notes": [
-              "Inherit from a Node `EventEmitter` instead of DOM `EventTarget`.",
+              "Inherits from a Node `EventEmitter` instead of DOM `EventTarget`.",
               "Also supports CommonJS modules, enabled for files ending with `.cjs` and for files ending with `.js` when the nearest parent `package.json` file contains a top-level field `\"type\"` with a value not of `\"commonjs\"`.",
               "Available as a part of the `worker_threads` module."
             ]
@@ -542,8 +542,8 @@
               "version_added": "11.7.0",
               "partial_implementation": true,
               "notes": [
-                "Only support passing the second parameter as an optional array of objects, not support passing the second parameter as an options object.",
-                "Only support transferring `ArrayBuffer` and `MessagePort` objects."
+                "The options parameter is not supported; the second parameter may only be an array of objects to transfer.",
+                "Only supports transferring `ArrayBuffer` and `MessagePort` objects."
               ]
             },
             "oculus": "mirror",
