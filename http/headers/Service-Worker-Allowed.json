@@ -1,16 +1,20 @@
 {
-  "css": {
-    "properties": {
-      "-webkit-app-region": {
+  "http": {
+    "headers": {
+      "Service-Worker-Allowed": {
         "__compat": {
+          "description": "`Service-Worker-Allowed` response header to broaden path restrictions for a service worker's default scope.",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker-allowed",
           "support": {
             "chrome": {
-              "version_added": "24"
+              "version_added": "42"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "16"
+            },
             "firefox": {
-              "version_added": false
+              "version_added": "40"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -20,7 +24,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "11.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -28,8 +32,8 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
