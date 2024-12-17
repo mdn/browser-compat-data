@@ -1,5 +1,79 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.25](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.25)
+
+December 17, 2024
+
+### Removals
+
+- `javascript.builtins.Temporal.Calendar` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.Calendar` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.dateAdd` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.dateFromFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.dateUntil` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.day` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.dayOfWeek` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.dayOfYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.daysInMonth` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.daysInWeek` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.daysInYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.era` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.eraYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.fields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.from` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.id` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.inLeapYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.mergeFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.month` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.monthCode` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.monthDayFromFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.monthsInYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.toJSON` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.toString` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.weekOfYear` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.year` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.Calendar.yearMonthFromFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.PlainDate.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.PlainDateTime.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.PlainMonthDay.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.PlainTime.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.PlainYearMonth.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.from` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.getInstantFor` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.getOffsetNanosecondsFor` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.getOffsetStringFor` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.getPlainDateTimeFor` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.getPossibleInstantsFor` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.id` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.TimeZone` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.toJSON` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.TimeZone.toString` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+- `javascript.builtins.Temporal.ZonedDateTime.getISOFields` ([#25415](https://github.com/mdn/browser-compat-data/pull/25415))
+
+### Additions
+
+- `browsers.nodejs.releases.14.18.0` ([#24886](https://github.com/mdn/browser-compat-data/pull/24886))
+- `browsers.nodejs.releases.20.16.0` ([#24886](https://github.com/mdn/browser-compat-data/pull/24886))
+- `browsers.nodejs.releases.22.3.0` ([#24886](https://github.com/mdn/browser-compat-data/pull/24886))
+- `browsers.nodejs.releases.6.13.0` ([#24997](https://github.com/mdn/browser-compat-data/pull/24997))
+- `browsers.nodejs.releases.7.3.0` ([#24997](https://github.com/mdn/browser-compat-data/pull/24997))
+- `http.headers.Service-Worker` ([#25422](https://github.com/mdn/browser-compat-data/pull/25422))
+- `http.headers.Service-Worker-Allowed` ([#25421](https://github.com/mdn/browser-compat-data/pull/25421))
+- `webassembly.api.compile_static.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+- `webassembly.api.compileStreaming_static.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+- `webassembly.api.instantiate_static.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+- `webassembly.api.instantiateStreaming_static.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+- `webassembly.api.Module.Module.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+- `webassembly.api.validate_static.compile_options` ([#25391](https://github.com/mdn/browser-compat-data/pull/25391))
+
+### Statistics
+
+- 9 contributors have changed 36 files with 556 additions and 2,416 deletions in 21 commits ([`v5.6.24...v5.6.25`](https://github.com/mdn/browser-compat-data/compare/v5.6.24...v5.6.25))
+- 16,744 total features
+- 1,120 total contributors
+- 5,032 total stargazers
+
 ## [v5.6.24](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.24)
 
 December 13, 2024
