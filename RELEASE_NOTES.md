@@ -1,5 +1,66 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.26)
+
+December 19, 2024
+
+### Removals
+
+- `api.MLContext.compute` ([#25449](https://github.com/mdn/browser-compat-data/pull/25449))
+- `api.SharedStorageOperation` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.SharedStorageRunOperation` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.SharedStorageRunOperation.run` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.SharedStorageSelectURLOperation` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.SharedStorageSelectURLOperation.run` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WindowSharedStorage` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WindowSharedStorage.run` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WindowSharedStorage.selectURL` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WindowSharedStorage.worklet` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.@@asyncIterator` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.context` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.entries` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.get` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.keys` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.length` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+- `api.WorkletSharedStorage.remainingBudget` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
+
+### Additions
+
+- `browsers.safari_ios.releases.18.3` ([#25452](https://github.com/mdn/browser-compat-data/pull/25452))
+- `browsers.safari.releases.18.3` ([#25452](https://github.com/mdn/browser-compat-data/pull/25452))
+- `browsers.webview_ios.releases.18.3` ([#25452](https://github.com/mdn/browser-compat-data/pull/25452))
+- `css.properties.bottom.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-block-end.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-block-start.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-block.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-inline-end.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-inline-start.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset-inline.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.inset.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.left.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-block-end.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-block-start.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-block.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-bottom.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-inline-end.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-inline-start.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-inline.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-left.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-right.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin-top.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.margin.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.right.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.properties.top.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+- `css.types.anchor-size.inset_margin` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
+
+### Statistics
+
+- 8 contributors have changed 49 files with 943 additions and 745 deletions in 20 commits ([`v5.6.25...v5.6.26`](https://github.com/mdn/browser-compat-data/compare/v5.6.25...v5.6.26))
+- 16,749 total features
+- 1,120 total contributors
+- 5,035 total stargazers
+
 ## [v5.6.25](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.25)
 
 December 17, 2024
