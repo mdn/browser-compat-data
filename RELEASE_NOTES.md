@@ -4,6 +4,10 @@
 
 December 20, 2024
 
+### Renamings
+
+- `html.global_attributes.hidden.until-found_value` to `html.global_attributes.hidden.until-found` ([#25471](https://github.com/mdn/browser-compat-data/pull/25471))
+
 ### Removals
 
 - `api.MLContext.compute` ([#25449](https://github.com/mdn/browser-compat-data/pull/25449))
@@ -24,7 +28,6 @@ December 20, 2024
 - `api.WorkletSharedStorage.keys` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
 - `api.WorkletSharedStorage.length` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
 - `api.WorkletSharedStorage.remainingBudget` ([#25450](https://github.com/mdn/browser-compat-data/pull/25450))
-- `html.global_attributes.hidden.until-found_value` ([#25471](https://github.com/mdn/browser-compat-data/pull/25471))
 
 ### Additions
 
@@ -55,7 +58,6 @@ December 20, 2024
 - `css.properties.right.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
 - `css.properties.top.anchor-size` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
 - `css.types.anchor-size.inset_margin` ([#25443](https://github.com/mdn/browser-compat-data/pull/25443))
-- `html.global_attributes.hidden.until-found` ([#25471](https://github.com/mdn/browser-compat-data/pull/25471))
 
 ### Statistics
 
