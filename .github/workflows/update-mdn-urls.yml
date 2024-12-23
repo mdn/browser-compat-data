@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-mdn-urls:
-    if: github.repository == 'mdn/browser-compat-data' && github.actor == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
+    if: github.repository == 'mdn/browser-compat-data' && github.event.pull_request.user.login == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
     name: Update MDN urls
     runs-on: ubuntu-latest
 
