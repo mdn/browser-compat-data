@@ -264,15 +264,10 @@
           "__compat": {
             "description": "`releaseLock()` rejects pending read requests",
             "support": {
-              "chrome": [
-                {
-                  "version_added": "105"
-                },
-                {
-                  "version_added": false,
-                  "notes": "`releaseLock()` throws if there are pending read requests (rather than pending read requests being rejected)."
-                }
-              ],
+              "chrome": {
+                "version_added": "105",
+                "notes": "Before version 105, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              },
               "chrome_android": "mirror",
               "deno": {
                 "version_added": "1.18"
