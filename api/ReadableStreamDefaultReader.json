@@ -225,30 +225,65 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamDefaultReader/releaseLock",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-default-reader-release-lock②",
           "support": {
-            "chrome": {
-              "version_added": "43"
-            },
+            "chrome": [
+              {
+                "version_added": "105"
+              },
+              {
+                "version_added": "43",
+                "partial_implementation": true,
+                "notes": "Before version 105, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              }
+            ],
             "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
+            "deno": [
+              {
+                "version_added": "1.18"
+              },
+              {
+                "version_added": "1.0",
+                "partial_implementation": true,
+                "notes": "Before version 1.18, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              }
+            ],
             "edge": "mirror",
-            "firefox": {
-              "version_added": "65"
-            },
+            "firefox": [
+              {
+                "version_added": "102"
+              },
+              {
+                "version_added": "65",
+                "partial_implementation": true,
+                "notes": "Before version 102, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "16.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "18.9.0"
+              },
+              {
+                "version_added": "16.5.0",
+                "partial_implementation": true,
+                "notes": "Before version 18.9.0, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10"
-            },
+            "safari": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "10",
+                "partial_implementation": true,
+                "notes": "Before version 17, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -258,47 +293,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "reject_pending_read_request": {
-          "__compat": {
-            "description": "`releaseLock()` rejects pending read requests",
-            "support": {
-              "chrome": {
-                "version_added": "105",
-                "notes": "Before version 105, `releaseLock()` would throw if there are pending read requests (rather than pending read requests being rejected)."
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.18"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "102"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": "18.9.0"
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "17"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       }
