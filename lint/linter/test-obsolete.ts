@@ -151,6 +151,5 @@ export default {
   },
   exceptions: [
     'html.elements.track.kind.descriptions',
-    'http.headers.Cache-Control.stale-if-error',
   ],
 } as Linter;
