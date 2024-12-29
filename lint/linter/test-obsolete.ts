@@ -149,7 +149,5 @@ export default {
       processData(logger, data);
     }
   },
-  exceptions: [
-    'html.elements.track.kind.descriptions',
-  ],
+  exceptions: ['html.elements.track.kind.descriptions'],
 } as Linter;
