@@ -22,6 +22,34 @@ const slugs = (() => {
   return result;
 })();
 
+const slugByPath = (() => {
+  const slugsByPath = new Map<string, string[]>();
+  for (const item of mdnContentInventory.inventory) {
+    if (!('browser-compat' in item.frontmatter)) {
+      continue;
+    }
+
+    const path = item.frontmatter['browser-compat'];
+    if (typeof path !== 'string') {
+      // Ignore pages with multiple keys.
+      continue;
+    }
+
+    if (!slugsByPath.has(path)) {
+      slugsByPath.set(path, []);
+    }
+    slugsByPath.get(path)?.push(item.frontmatter.slug);
+  }
+
+  const slugByPath = new Map<string, string>();
+  slugsByPath.forEach((values, key) => {
+    if (values.length === 1) {
+      slugByPath.set(key, values[0]);
+    }
+  });
+  return slugByPath;
+})();
+
 const redirects = mdnContentInventory.redirects;
 
 /**
@@ -73,6 +101,13 @@ export const processData = (
         expected: '',
       });
     }
+  } else if (slugByPath.has(path)) {
+    issues.push({
+      ruleName: 'mdn_url_new_page',
+      path,
+      actual: '',
+      expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+    });
   } else {
     /* Try to find new existing MDN pages at conventional places */
     let categorySlug = `Web/${path.replaceAll('.', '/')}`;
