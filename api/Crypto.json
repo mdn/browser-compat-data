@@ -35,15 +35,12 @@
           },
           "nodejs": [
             {
-              "version_added": "19.0.0",
-              "notes": "`Crypto` is not a concrete interface, but its methods are available on the global `crypto` object."
+              "version_added": "19.0.0"
             },
             {
-              "alternative_name": "crypto.webcrypto",
               "version_added": "15.0.0",
-              "version_removed": "19.0.0",
               "partial_implementation": true,
-              "notes": "`Crypto` is not a concrete interface, but calling `require('crypto').webcrypto` returns an instance of the `Crypto` class."
+              "notes": "Available as a part of the `crypto` module."
             }
           ],
           "oculus": "mirror",
@@ -94,7 +91,8 @@
               "version_added": "11"
             },
             "nodejs": {
-              "version_added": "17.4.0"
+              "version_added": "15.0.0",
+              "notes": "Since v17.4.0, a similar method is available via the `crypto` module."
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -142,16 +140,10 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": [
-              {
-                "version_added": "19.0.0"
-              },
-              {
-                "version_added": "16.7.0",
-                "version_removed": "19.0.0",
-                "notes": "From version 14.17.0, a similar method is available as [`crypto.randomUUID()`](https://nodejs.org/docs/latest-v14.x/api/crypto.html#crypto_crypto)."
-              }
-            ],
+            "nodejs": {
+              "version_added": "16.7.0",
+              "notes": "Since 14.17.0 and 15.6.0, a similar method is available via the `crypto` module."
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
