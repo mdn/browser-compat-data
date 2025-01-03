@@ -29,26 +29,25 @@ const slugByPath = (() => {
       continue;
     }
 
-    const path = item.frontmatter['browser-compat'];
-    if (typeof path !== 'string') {
-      // Ignore pages with multiple keys.
-      continue;
-    }
+    const value = item.frontmatter['browser-compat'];
+    const paths = Array.isArray(value) ? value : [value];
 
     const slug = item.frontmatter.slug;
 
-    const slugTail = slug.split('/').at(-1);
-    const pathTail = path.split('.').at(-1);
+    for (const path of paths) {
+      const slugTail = slug.split('/').at(-1);
+      const pathTail = path.split('.').at(-1);
 
-    if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
-      // Ignore unrelated pages/features.
-      continue;
-    }
+      if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
+        // Ignore unrelated pages/features.
+        continue;
+      }
 
-    if (!slugsByPath.has(path)) {
-      slugsByPath.set(path, []);
+      if (!slugsByPath.has(path)) {
+        slugsByPath.set(path, []);
+      }
+      slugsByPath.get(path)?.push(item.frontmatter.slug);
     }
-    slugsByPath.get(path)?.push(item.frontmatter.slug);
   }
 
   const slugByPath = new Map<string, string>();
