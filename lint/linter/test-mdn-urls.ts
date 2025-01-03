@@ -35,6 +35,16 @@ const slugByPath = (() => {
       continue;
     }
 
+    const slug = item.frontmatter.slug;
+
+    const slugTail = slug.split('/').at(-1);
+    const pathTail = path.split('.').at(-1);
+
+    if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
+      // Ignore unrelated pages/features.
+      continue;
+    }
+
     if (!slugsByPath.has(path)) {
       slugsByPath.set(path, []);
     }
