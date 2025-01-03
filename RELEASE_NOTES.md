@@ -1,5 +1,40 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.27)
+
+January 3, 2025
+
+### Removals
+
+- `http.headers.Cache-Control.stale-if-error` ([#25527](https://github.com/mdn/browser-compat-data/pull/25527))
+
+### Additions
+
+- `api.Navigator.adAuctionComponents` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.canLoadAdAuctionFencedFrame` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.clearOriginJoinedAdInterestGroups` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.createAuctionNonce` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.deprecatedRunAdAuctionEnforcesKAnonymity` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.joinAdInterestGroup` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.leaveAdInterestGroup` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.protectedAudience` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.runAdAuction` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.Navigator.updateAdInterestGroups` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.ProtectedAudience` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.ProtectedAudience.queryFeatureSupport` ([#25228](https://github.com/mdn/browser-compat-data/pull/25228))
+- `api.TransformStream.TransformStream.transformer_cancel` ([#25519](https://github.com/mdn/browser-compat-data/pull/25519))
+- `browsers.deno.releases.1.46` ([#25515](https://github.com/mdn/browser-compat-data/pull/25515))
+- `browsers.nodejs.releases.19.3.0` ([#25487](https://github.com/mdn/browser-compat-data/pull/25487))
+- `browsers.nodejs.releases.20.14.0` ([#25519](https://github.com/mdn/browser-compat-data/pull/25519))
+- `browsers.nodejs.releases.21.5.0` ([#25519](https://github.com/mdn/browser-compat-data/pull/25519))
+
+### Statistics
+
+- 11 contributors have changed 94 files with 838 additions and 240 deletions in 45 commits ([`v5.6.26...v5.6.27`](https://github.com/mdn/browser-compat-data/compare/v5.6.26...v5.6.27))
+- 16,762 total features
+- 1,123 total contributors
+- 5,048 total stargazers
+
 ## [v5.6.26](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.26)
 
 December 20, 2024
