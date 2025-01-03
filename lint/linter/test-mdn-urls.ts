@@ -109,6 +109,16 @@ export const processData = (
         actual: data.mdn_url,
         expected: '',
       });
+    } else if (slugByPath.has(path)) {
+      const expected = `https://developer.mozilla.org/docs/${slugByPath.get(path)}`;
+      if (expected != data.mdn_url) {
+        issues.push({
+          ruleName: 'mdn_url_other_page',
+          path,
+          actual: data.mdn_url,
+          expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+        });
+      }
     }
   } else if (slugByPath.has(path)) {
     issues.push({
