@@ -82,6 +82,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/canIntercept",
           "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-canintercept-dev",
+          "tags": [
+            "web-features:navigation"
+          ],
           "support": {
             "chrome": [
               {
@@ -274,6 +277,9 @@
       "hasUAVisualTransition": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-hasuavisualtransition",
+          "tags": [
+            "web-features:navigation"
+          ],
           "support": {
             "chrome": {
               "version_added": "118"
@@ -347,10 +353,20 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/intercept",
           "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-intercept-dev",
+          "tags": [
+            "web-features:navigation"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "105"
-            },
+            "chrome": [
+              {
+                "version_added": "105"
+              },
+              {
+                "alternative_name": "transitionWhile",
+                "version_added": "102",
+                "version_removed": "108"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -416,50 +432,24 @@
           }
         }
       },
-      "restoreScroll": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "102",
-              "version_removed": "108"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
-          }
-        }
-      },
       "scroll": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/NavigateEvent/scroll",
           "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-navigateevent-scroll-dev",
+          "tags": [
+            "web-features:navigation"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "105"
-            },
+            "chrome": [
+              {
+                "version_added": "105"
+              },
+              {
+                "alternative_name": "restoreScroll",
+                "version_added": "102",
+                "version_removed": "108"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -522,42 +512,6 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "transitionWhile": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "102",
-              "version_removed": "108"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },

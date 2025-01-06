@@ -89,24 +89,33 @@ export const getMatchingBrowserVersion = (
     );
   }
 
+  let previousReleaseEngine;
+
   for (const r of releaseKeys) {
     const release = browserData.releases[r];
-    if (
+
+    // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
+    const rangeDelimiter =
+      range && previousReleaseEngine == sourceRelease.engine;
+
+    // Handle mirroring for Chromium forks when upstream version is pre-Blink
+    const isChromeWebKitToBlink =
       ['chrome', 'chrome_android'].includes(browserData.upstream) &&
       targetBrowser !== 'chrome_android' &&
       release.engine == 'Blink' &&
-      sourceRelease.engine == 'WebKit'
-    ) {
-      // Handle mirroring for Chromium forks when upstream version is pre-Blink
-      return range ? `≤${r}` : r;
-    } else if (
+      sourceRelease.engine == 'WebKit';
+
+    const isMatchingVersion =
       release.engine == sourceRelease.engine &&
       release.engine_version &&
       sourceRelease.engine_version &&
-      compare(release.engine_version, sourceRelease.engine_version, '>=')
-    ) {
-      return r;
+      compare(release.engine_version, sourceRelease.engine_version, '>=');
+
+    if (isChromeWebKitToBlink || isMatchingVersion) {
+      return rangeDelimiter ? `≤${r}` : r;
     }
+
+    previousReleaseEngine = release.engine;
   }
 
   return false;

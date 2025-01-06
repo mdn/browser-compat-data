@@ -1,19 +1,21 @@
 {
-  "css": {
-    "selectors": {
-      "target-within": {
+  "http": {
+    "headers": {
+      "Service-Worker": {
         "__compat": {
-          "description": "`:target-within`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:target-within",
-          "spec_url": "https://drafts.csswg.org/selectors/#the-target-within-pseudo",
+          "description": "`Service-Worker` request header for logging service worker script resource requests.",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Service-Worker",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "38"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "16"
+            },
             "firefox": {
-              "version_added": false
+              "version_added": "44"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -23,7 +25,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "11.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -31,7 +33,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
