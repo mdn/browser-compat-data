@@ -16,9 +16,9 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "spam"
-          # lock: "spam"
+          lock: "spam"
           comment: |
-            This issue has been identified as spam and has been automatically closed.
+            This issue has been identified as spam and has been automatically closed and locked.  Do not use this repository for posting spam.
           normalize-newlines: true
           body-is-blank: true
       - uses: queengooborg/invalid-issue-closer@v1.5.4
