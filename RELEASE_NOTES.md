@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.28](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.28)
+
+January 7, 2025
+
+### Additions
+
+- `browsers.nodejs.releases.18.6.0` ([#25010](https://github.com/mdn/browser-compat-data/pull/25010))
+- `browsers.nodejs.releases.22.2.0` ([#25010](https://github.com/mdn/browser-compat-data/pull/25010))
+
+### Statistics
+
+- 4 contributors have changed 13 files with 390 additions and 63 deletions in 9 commits ([`v5.6.27...v5.6.28`](https://github.com/mdn/browser-compat-data/compare/v5.6.27...v5.6.28))
+- 16,762 total features
+- 1,123 total contributors
+- 5,054 total stargazers
+
 ## [v5.6.27](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.27)
 
 January 3, 2025
