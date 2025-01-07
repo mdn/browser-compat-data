@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import specData from 'web-specs' assert { type: 'json' };
+import specData from 'web-specs' with { type: 'json' };
 
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
