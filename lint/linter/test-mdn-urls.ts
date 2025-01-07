@@ -65,13 +65,11 @@ const redirects = mdnContentInventory.redirects;
  * Process the data for MDN URL issues
  * @param data The data to test
  * @param path The path of the feature
- * @param category The feature category
  * @returns The issues caught in the file
  */
 export const processData = (
   data: CompatStatement,
   path: string,
-  category: string,
 ): MDNURLError[] => {
   const issues: MDNURLError[] = [];
   if (data.mdn_url) {
@@ -128,64 +126,6 @@ export const processData = (
       actual: '',
       expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
     });
-  } else {
-    /* Try to find new existing MDN pages at conventional places */
-    let categorySlug = `Web/${path.replaceAll('.', '/')}`;
-    switch (category) {
-      case 'api':
-        categorySlug = `Web/${path}`.replace('api.', 'API/').replace('.', '/');
-        break;
-      case 'css':
-        categorySlug = `Web/${path
-          .replace('css.', 'CSS/')
-          .replace('properties.', '')
-          .replace('selectors.', '')
-          .replace('types.', '')
-          .replaceAll('.', '/')}`;
-        break;
-      case 'html':
-        categorySlug = `Web/${path
-          .replace('html.', 'HTML/')
-          .replace('elements.', 'Elements/')
-          .replace('global_attributes.', 'Global_attributes/')
-          .replace('manifest.', 'Manifest/')
-          .replaceAll('.', '/')}`;
-        break;
-      case 'http':
-        categorySlug = `Web/${path
-          .replace('http.', 'HTTP/')
-          .replace('headers.', 'Headers/')
-          .replace('status.', 'Status/')
-          .replace('method.', 'Method/')
-          .replaceAll('.', '/')}`;
-        break;
-      case 'javascript':
-        categorySlug = `Web/${path
-          .replace('javascript.', 'JavaScript/Reference/')
-          .replace('builtins.', 'Global_Objects/')
-          .replace('operators.', 'Operators/')
-          .replace('statements.', 'Statements/')
-          .replace('functions.', 'Functions/')
-          .replace('classes.', 'Classes/')
-          .replaceAll('.', '/')}`;
-        break;
-      case 'webextensions':
-        categorySlug = `Mozilla/Add-ons/${path
-          .replaceAll('.', '/')
-          .replace('webextensions', 'WebExtensions')
-          .replace('manifest', 'manifest.json')
-          .replace('api', 'API')}`;
-        break;
-    }
-
-    if (slugs.has(categorySlug.toLowerCase())) {
-      issues.push({
-        ruleName: 'mdn_url_new_page',
-        path,
-        actual: '',
-        expected: `https://developer.mozilla.org/docs/${categorySlug}`,
-      });
-    }
   }
   return issues;
 };
@@ -201,10 +141,9 @@ export default {
    * @param root.data The feature data
    * @param root.path The path to the feature data
    * @param root.path.full The full filepath to the feature data
-   * @param root.path.category The category of the feature
    */
-  check: (logger: Logger, { data, path: { full, category } }: LinterData) => {
-    const issues = processData(data, full, category);
+  check: (logger: Logger, { data, path: { full } }: LinterData) => {
+    const issues = processData(data, full);
     for (const issue of issues) {
       if (issue.expected === '') {
         logger.warning(
