@@ -109,7 +109,8 @@ export const processData = (
         actual: data.mdn_url,
         expected: '',
       });
-    } else if (slugByPath.has(path)) {
+    } else if (slugByPath.has(path) && !data.mdn_url?.includes('#')) {
+      // Overwrite url, unless it has a fragment.
       const expected = `https://developer.mozilla.org/docs/${slugByPath.get(path)}`;
       if (expected != data.mdn_url) {
         issues.push({
