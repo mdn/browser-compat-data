@@ -26,11 +26,7 @@ const fixMDNURLs = (filename: string): void => {
       continue;
     }
 
-    const errors = processData(
-      feature.compat,
-      feature.path,
-      feature.path.split('.')[0],
-    );
+    const errors = processData(feature.compat, feature.path);
 
     for (const error of errors) {
       if (error.expected) {
