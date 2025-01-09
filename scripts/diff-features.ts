@@ -174,9 +174,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(
-      `npx tsx --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts --data-from=${worktree}`,
-    );
+    execSync(`npx tsx ./scripts/enumerate-features.ts --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
