@@ -149,9 +149,5 @@ export default {
       processData(logger, data);
     }
   },
-  exceptions: [
-    'html.elements.track.kind.descriptions',
-    'http.headers.Cache-Control.stale-if-error',
-    'http.headers.X-XSS-Protection',
-  ],
+  exceptions: ['html.elements.track.kind.descriptions'],
 } as Linter;

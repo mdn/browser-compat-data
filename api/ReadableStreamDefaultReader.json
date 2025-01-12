@@ -262,14 +262,15 @@
         },
         "reject_pending_read_request": {
           "__compat": {
+            "description": "`releaseLock()` rejects pending read requests",
             "support": {
               "chrome": {
-                "version_added": false,
-                "notes": "`releaseLock()` throws if there are pending read requests (rather than pending read requests being rejected)."
+                "version_added": "105",
+                "notes": "Before version 105, `releaseLock()` throws instead of rejecting."
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "1.18"
               },
               "edge": "mirror",
               "firefox": {
@@ -280,13 +281,13 @@
                 "version_added": false
               },
               "nodejs": {
-                "version_added": false
+                "version_added": "18.9.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -294,7 +295,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

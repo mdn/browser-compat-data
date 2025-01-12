@@ -11,7 +11,18 @@ jobs:
   close-issues-if-invalid:
     runs-on: ubuntu-latest
     steps:
-      - uses: queengooborg/invalid-issue-closer@v1.5.0
+      - uses: queengooborg/invalid-issue-closer@v1.5.4
+        id: spam-check
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels: "spam"
+          lock: "spam"
+          comment: |
+            This issue has been identified as spam and has been automatically closed and locked.  Do not use this repository for posting spam.
+          normalize-newlines: true
+          body-is-blank: true
+      - uses: queengooborg/invalid-issue-closer@v1.5.4
+        if: steps.spam-check.outputs.was-closed == 'false'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "invalid"

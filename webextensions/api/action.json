@@ -60,6 +60,25 @@
             }
           }
         },
+        "UserSettingsChange": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "130"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "disable": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/disable",
@@ -187,7 +206,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/getBadgeTextColor",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "109"
               },
               "edge": "mirror",
               "firefox": {
@@ -329,7 +348,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/isEnabled",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "108"
               },
               "edge": "mirror",
               "firefox": {
@@ -422,14 +441,39 @@
             }
           }
         },
+        "onUserSettingsChanged": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "130"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "openPopup": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/openPopup",
             "support": {
-              "chrome": {
-                "version_added": "118",
-                "notes": "Is only available to policy installed extensions and dev builds (e.g., Canary)."
-              },
+              "chrome": [
+                {
+                  "version_added": "127"
+                },
+                {
+                  "version_added": "118",
+                  "version_removed": "127",
+                  "notes": "Is only available to policy installed extensions and dev builds (e.g., Canary)."
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": "109",
@@ -592,7 +636,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/setBadgeTextColor",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "109"
               },
               "edge": "mirror",
               "firefox": {

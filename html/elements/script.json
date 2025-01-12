@@ -160,6 +160,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin",
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-crossorigin",
             "tags": [
               "web-features:script"
@@ -562,6 +563,7 @@
         },
         "type": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/script/type",
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-type",
             "tags": [
               "web-features:script"
@@ -601,6 +603,7 @@
           "importmap": {
             "__compat": {
               "description": "`type=\"importmap\"`",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/script/type/importmap",
               "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#import-map",
               "tags": [
                 "web-features:import-maps"
@@ -638,9 +641,6 @@
             "integrity": {
               "__compat": {
                 "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#normalizing-a-module-integrity-map",
-                "tags": [
-                  "web-features:import-map-integrity"
-                ],
                 "support": {
                   "chrome": {
                     "version_added": "127"
@@ -724,6 +724,7 @@
           "speculationrules": {
             "__compat": {
               "description": "`type=\"speculationrules\"`",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/script/type/speculationrules",
               "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
               "tags": [
                 "web-features:speculation-rules"
@@ -822,11 +823,16 @@
                   "web-features:speculation-rules"
                 ],
                 "support": {
-                  "chrome": {
-                    "version_added": "121",
-                    "partial_implementation": true,
-                    "notes": "Supported for `prefetch` only."
-                  },
+                  "chrome": [
+                    {
+                      "version_added": "127"
+                    },
+                    {
+                      "version_added": "121",
+                      "partial_implementation": true,
+                      "notes": "Supported for `prefetch` only."
+                    }
+                  ],
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {

@@ -1,17 +1,21 @@
 {
-  "css": {
-    "properties": {
-      "-webkit-hyphenate-limit-lines": {
+  "http": {
+    "headers": {
+      "Service-Worker": {
         "__compat": {
+          "description": "`Service-Worker` request header for logging service worker script resource requests.",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Service-Worker",
+          "spec_url": "https://w3c.github.io/ServiceWorker/#service-worker",
           "support": {
             "chrome": {
-              "version_added": "16",
-              "version_removed": "30"
+              "version_added": "38"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": "16"
+            },
             "firefox": {
-              "version_added": false
+              "version_added": "44"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -21,7 +25,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "6"
+              "version_added": "11.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -29,8 +33,8 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": false,
+            "experimental": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
