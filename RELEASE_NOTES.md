@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.30)
+
+January 14, 2025
+
+### Additions
+
+- `api.fetch.body_readablestream` ([#25636](https://github.com/mdn/browser-compat-data/pull/25636))
+
+### Statistics
+
+- 4 contributors have changed 44 files with 230 additions and 93 deletions in 12 commits ([`v5.6.29...v5.6.30`](https://github.com/mdn/browser-compat-data/compare/v5.6.29...v5.6.30))
+- 16,765 total features
+- 1,123 total contributors
+- 5,059 total stargazers
+
 ## [v5.6.29](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.29)
 
 January 10, 2025
