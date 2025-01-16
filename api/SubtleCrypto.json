@@ -639,9 +639,17 @@
             "web-features:web-cryptography"
           ],
           "support": {
-            "chrome": {
-              "version_added": "37"
-            },
+            "chrome": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "37",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "Before version 41, Chrome expected the `algorithm` parameter to be an object."
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.11"
