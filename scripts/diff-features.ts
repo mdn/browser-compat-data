@@ -155,24 +155,9 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   // However, if `ref` is already checked out, then `git worktree add` fails. As
   // long as you haven't checked out a detached HEAD for `ref`, then
   // `git worktree add` for the hash succeeds.
-  const hash = (() => {
-    try {
-      return execSync(`git rev-parse --short ${ref}`, {
-        encoding: 'utf-8',
-      }).trim();
-    } catch (e) {
-      // See: https://github.com/mdn/browser-compat-data/issues/25678
-      if (process.env.GITHUB_ACTIONS === 'true') {
-        console.error(`::error::${e}`);
-      }
-
-      execSync(`git fetch origin ${ref}`);
-
-      return execSync(`git rev-parse --short ${ref}`, {
-        encoding: 'utf-8',
-      }).trim();
-    }
-  })();
+  const hash = execSync(`git rev-parse --short ${ref}`, {
+    encoding: 'utf-8',
+  }).trim();
 
   const worktree = `__enumerating__${hash}`;
 
