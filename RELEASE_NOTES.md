@@ -1,5 +1,37 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.31](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.31)
+
+January 17, 2025
+
+### Additions
+
+- `api.Animation.overallProgress` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.Document.moveBefore` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.DocumentFragment.moveBefore` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.Element.moveBefore` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.FileSystemObserver` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.FileSystemObserver.disconnect` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.FileSystemObserver.FileSystemObserver` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.FileSystemObserver.observe` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.GPUDevice.adapterInfo` ([#25671](https://github.com/mdn/browser-compat-data/pull/25671))
+- `api.HTMLAreaElement.attributionSrc` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `api.IdentityProvider.resolve_static` ([#25671](https://github.com/mdn/browser-compat-data/pull/25671))
+- `api.Navigator.getInterestGroupAdAuctionData` ([#25671](https://github.com/mdn/browser-compat-data/pull/25671))
+- `api.PerformanceResourceTiming.finalResponseHeadersStart` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `css.properties.container-type.scroll-state` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `css.properties.scroll-initial-target` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `css.properties.scroll-initial-target.nearest` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `css.properties.scroll-initial-target.none` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+- `javascript.builtins.Atomics.pause` ([#25674](https://github.com/mdn/browser-compat-data/pull/25674))
+
+### Statistics
+
+- 6 contributors have changed 42 files with 810 additions and 141 deletions in 22 commits ([`v5.6.30...v5.6.31`](https://github.com/mdn/browser-compat-data/compare/v5.6.30...v5.6.31))
+- 16,783 total features
+- 1,123 total contributors
+- 5,058 total stargazers
+
 ## [v5.6.30](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.30)
 
 January 14, 2025
