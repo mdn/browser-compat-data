@@ -159,13 +159,22 @@
             "web-features:largest-contentful-paint"
           ],
           "support": {
-            "chrome": {
-              "version_added": "77"
-            },
+            "chrome": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "77",
+                "partial_implementation": true,
+                "notes": "Returns 0 for cross-origin media."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "122"
+              "version_added": "122",
+              "partial_implementation": true,
+              "notes": "Returns 0 for cross-origin media."
             },
             "firefox_android": "mirror",
             "ie": {

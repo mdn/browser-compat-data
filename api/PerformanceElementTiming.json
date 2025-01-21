@@ -311,9 +311,16 @@
             "web-features:element-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "77"
-            },
+            "chrome": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "77",
+                "partial_implementation": true,
+                "notes": "Returns 0 for cross-origin media."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
