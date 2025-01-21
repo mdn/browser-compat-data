@@ -590,7 +590,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1811291"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1000,9 +1001,19 @@
             "web-features:resource-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "43"
-            },
+            "chrome": [
+              {
+                "version_added": "133"
+              },
+              {
+                "version_added": "85"
+              },
+              {
+                "version_added": "115",
+                "partial_implementation": true,
+                "notes": "Changed to 103 Early Hints timing ([chromestatus](https://chromestatus.com/feature/5158830722514944))."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
