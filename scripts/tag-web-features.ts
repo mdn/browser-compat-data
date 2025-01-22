@@ -27,7 +27,6 @@ for (const [feature, { compat_features }] of Object.entries(features)) {
   }
 }
 
-
 // FixMe: The idea of scripts/bulk-editor is to have utilities for bulk updating BCD files programmatically. It also features an implementation to update tags which is not used here as the bulk-editor scripts aren't used and/or maintained properly at the moment.
 
 const main = async () => {
