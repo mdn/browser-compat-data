@@ -792,10 +792,17 @@
                 "edge": {
                   "version_added": "≤79"
                 },
-                "firefox": {
-                  "version_added": "3",
-                  "notes": "Before Firefox 127, only HTTP pages were supported."
-                },
+                "firefox": [
+                  {
+                    "version_added": "127"
+                  },
+                  {
+                    "version_added": "3",
+                    "version_removed": "127",
+                    "partial_implementation": true,
+                    "notes": "Only HTTP pages were supported."
+                  }
+                ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
