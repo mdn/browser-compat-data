@@ -3,6 +3,7 @@
 
 import chalk from 'chalk-template';
 import esMain from 'es-main';
+import { markdownTable } from 'markdown-table';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -225,17 +226,19 @@ const printStats = (
     }}: \n`,
   );
 
-  let table = `| browser | real values | ranged values | \`true\` values | \`null\` values |
-| --- | --- | --- | --- | --- |
-`;
+  const header = ['browser', 'real', 'ranged', '`true`', '`null`'];
+  const rows = Object.keys(stats).map((entry) =>
+    [
+      entry,
+      getStat(stats[entry], 'real', counts),
+      getStat(stats[entry], 'range', counts),
+      getStat(stats[entry], 'true', counts),
+      getStat(stats[entry], 'null', counts),
+    ].map(String),
+  );
 
-  Object.keys(stats).forEach((entry) => {
-    table += `| ${entry.replace('_', ' ')} | `;
-    table += `${getStat(stats[entry], 'real', counts)} | `;
-    table += `${getStat(stats[entry], 'range', counts)} | `;
-    table += `${getStat(stats[entry], 'true', counts)} | `;
-    table += `${getStat(stats[entry], 'null', counts)} |
-`;
+  const table = markdownTable([header, ...rows], {
+    align: ['l', ...header.slice(1).map(() => 'r')],
   });
 
   console.log(table);
