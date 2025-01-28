@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.34)
+
+January 28, 2025
+
+### Additions
+
+- `api.fetch.init_duplex_parameter` ([#25488](https://github.com/mdn/browser-compat-data/pull/25488))
+- `api.Request.Request.init_duplex_parameter` ([#25488](https://github.com/mdn/browser-compat-data/pull/25488))
+- `browsers.nodejs.releases.19.1.0` ([#25488](https://github.com/mdn/browser-compat-data/pull/25488))
+- `webextensions.api.webRequest.onAuthRequired.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onBeforeRedirect.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onBeforeRequest.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onBeforeSendHeaders.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onCompleted.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onErrorOccurred.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onHeadersReceived.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onResponseStarted.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+- `webextensions.api.webRequest.onSendHeaders.details` ([#25770](https://github.com/mdn/browser-compat-data/pull/25770))
+
+### Statistics
+
+- 9 contributors have changed 35 files with 565 additions and 229 deletions in 20 commits ([`v5.6.33...v5.6.34`](https://github.com/mdn/browser-compat-data/compare/v5.6.33...v5.6.34))
+- 16,832 total features
+- 1,126 total contributors
+- 5,068 total stargazers
+
 ## [v5.6.33](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.33)
 
 January 24, 2025
