@@ -9,6 +9,8 @@ import esMain from 'es-main';
 import { fdir } from 'fdir';
 import { features } from 'web-features';
 
+import stringifyAndOrderProperties from '../scripts/lib/stringify-and-order-properties.js';
+
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 // Map from api.CoolThing.something to cool-thing
@@ -29,6 +31,9 @@ for (const [feature, { compat_features }] of Object.entries(features)) {
 
 // FixMe: The idea of scripts/bulk-editor is to have utilities for bulk updating BCD files programmatically. It also features an implementation to update tags which is not used here as the bulk-editor scripts aren't used and/or maintained properly at the moment.
 
+/**
+ * Add web-feature tags to BCD keys
+ */
 const main = async () => {
   const bcdJsons = new fdir()
     .withBasePath()
@@ -42,6 +47,12 @@ const main = async () => {
     .crawl(path.resolve(dirname, '..'))
     .sync();
 
+  /**
+   * Lookup data at a specified key
+   * @param root JSON object
+   * @param key BCD key
+   * @returns BCD data at the specified key
+   */
   const lookup = (root, key) => {
     const parts = key.split('.');
     let node = root;
@@ -99,8 +110,9 @@ const main = async () => {
       updated = true;
     }
     if (updated) {
-      const src = JSON.stringify(data, null, '  ') + '\n';
-      await fs.writeFile(fp, src, { encoding: 'utf-8' });
+      await fs.writeFile(fp, stringifyAndOrderProperties(data) + '\n', {
+        encoding: 'utf-8',
+      });
     }
   }
 
