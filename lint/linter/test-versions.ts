@@ -4,7 +4,13 @@
 import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData, twoYearsAgo } from '../utils.js';
+import {
+  Linter,
+  Logger,
+  LinterData,
+  twoYearsAgo,
+  LinterPath,
+} from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -123,16 +129,22 @@ const addedBeforeRemoved = (
 /**
  * Check the data for any errors in provided versions
  * @param supportData The data to test
- * @param category The category the data
+ * @param path The path of the data
  * @param logger The logger to output errors to
  */
 const checkVersions = (
   supportData: InternalSupportBlock,
-  category: string,
+  path: LinterPath,
   logger: Logger,
 ): void => {
+  const { category } = path;
+
   const browsersToCheck = Object.keys(browsers).filter((b) =>
-    category === 'webextensions' ? browsers[b].accepts_webextensions : !!b,
+    category === 'webextensions'
+      ? browsers[b].accepts_webextensions
+      : path.full?.startsWith('webdriver.bidi.')
+        ? browsers[b].implements_webdriver_bidi
+        : !!b,
   ) as BrowserName[];
 
   for (const browser of browsersToCheck) {
@@ -248,9 +260,8 @@ export default {
    * @param root The data to test
    * @param root.data The data to test
    * @param root.path The path of the data
-   * @param root.path.category The category the data belongs to
    */
-  check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    checkVersions(data.support, category, logger);
+  check: (logger: Logger, { data, path }: LinterData) => {
+    checkVersions(data.support, path, logger);
   },
 } as Linter;
