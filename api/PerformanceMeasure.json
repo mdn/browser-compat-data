@@ -25,9 +25,22 @@
           "ie": {
             "version_added": "10"
           },
-          "nodejs": {
-            "version_added": "8.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "19.0.0"
+            },
+            {
+              "version_added": "16.7.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `perf_hooks` module."
+            },
+            {
+              "version_added": "16.0.0",
+              "version_removed": "16.7.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance, but can be accessed via getting performance entries."
+            }
+          ],
           "oculus": "mirror",
           "opera": {
             "version_added": "33"

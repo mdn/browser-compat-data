@@ -163,6 +163,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin",
             "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-crossorigin",
             "tags": [
               "web-features:link"
@@ -783,6 +784,9 @@
               "description": "rel=dns-prefetch",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/dns-prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch",
+              "tags": [
+                "web-features:link-rel-dns-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -791,9 +795,17 @@
                 "edge": {
                   "version_added": "≤79"
                 },
-                "firefox": {
-                  "version_added": "3"
-                },
+                "firefox": [
+                  {
+                    "version_added": "127"
+                  },
+                  {
+                    "version_added": "3",
+                    "version_removed": "127",
+                    "partial_implementation": true,
+                    "notes": "Only HTTP pages were supported."
+                  }
+                ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -820,6 +832,9 @@
             "__compat": {
               "description": "rel=expect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-expect",
+              "tags": [
+                "web-features:link-rel-expect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "124",
@@ -1000,6 +1015,9 @@
               "description": "rel=preconnect",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preconnect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect",
+              "tags": [
+                "web-features:link-rel-preconnect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -1039,6 +1057,9 @@
               "description": "rel=prefetch",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch",
+              "tags": [
+                "web-features:link-rel-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "8",
@@ -1089,6 +1110,9 @@
               "description": "rel=preload",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preload",
+              "tags": [
+                "web-features:link-rel-preload"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "50"
@@ -1132,6 +1156,9 @@
             "as-fetch": {
               "__compat": {
                 "description": "`as=fetch`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1176,6 +1203,9 @@
             "as-font": {
               "__compat": {
                 "description": "`as=font`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1220,6 +1250,9 @@
             "as-image": {
               "__compat": {
                 "description": "`as=image`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1264,6 +1297,9 @@
             "as-script": {
               "__compat": {
                 "description": "`as=script`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1308,6 +1344,9 @@
             "as-style": {
               "__compat": {
                 "description": "`as=style`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1352,6 +1391,9 @@
             "as-track": {
               "__compat": {
                 "description": "`as=track`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"

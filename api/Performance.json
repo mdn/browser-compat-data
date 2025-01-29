@@ -32,12 +32,13 @@
           },
           "nodejs": [
             {
-              "version_added": "16.0.0"
+              "version_added": "18.8.0"
             },
             {
               "version_added": "8.5.0",
+              "version_removed": "18.8.0",
               "partial_implementation": true,
-              "notes": "Exported from the `perf_hooks` module"
+              "notes": "Only available as an internal instance."
             }
           ],
           "oculus": "mirror",
@@ -827,6 +828,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/navigation",
           "spec_url": "https://w3c.github.io/navigation-timing/#dom-performance-navigation",
+          "tags": [
+            "web-features:performancetiming"
+          ],
           "support": {
             "chrome": {
               "version_added": "10"
@@ -1085,6 +1089,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Performance/timing",
           "spec_url": "https://w3c.github.io/navigation-timing/#dom-performance-timing",
+          "tags": [
+            "web-features:performancetiming"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"

@@ -1,62 +1,62 @@
 # This file is used by .github/workflows/labeler.yml to label pull requests based on the files changed in the PR.
 # Object matching syntax: https://github.com/actions/labeler/blob/main/README.md#match-object
-bulk_update :package::
+bulk_update:
   - changed-files:
       - any-glob-to-any-file:
           - "scripts/migrations/**"
-data:api :rabbit2::
+data:api:
   - changed-files:
       - any-glob-to-any-file:
           - "api/**"
-data:browsers :earth_africa::
+data:browsers:
   - changed-files:
       - any-glob-to-any-file:
           - "browsers/**"
-data:css :art::
+data:css:
   - changed-files:
       - any-glob-to-any-file:
           - "css/**"
-data:html :page_facing_up::
+data:html:
   - changed-files:
       - any-glob-to-any-file:
           - "html/**"
-data:http :mountain_cableway::
+data:http:
   - changed-files:
       - any-glob-to-any-file:
           - "http/**"
-data:js :pager::
+data:js:
   - changed-files:
       - any-glob-to-any-file:
           - "javascript/**"
-data:mathml :heavy_division_sign::
+data:mathml:
   - changed-files:
       - any-glob-to-any-file:
           - "mathml/**"
-data:svg :paintbrush::
+data:svg:
   - changed-files:
       - any-glob-to-any-file:
           - "svg/**"
-data:wasm :mechanical_arm::
+data:wasm:
   - changed-files:
       - any-glob-to-any-file:
           - "webassembly/**"
-data:webdriver :racing_car::
+data:webdriver:
   - changed-files:
       - any-glob-to-any-file:
           - "webdriver/**"
-data:webext :game_die::
+data:webext:
   - changed-files:
       - any-glob-to-any-file:
           - "webextensions/**"
-dependencies :chains::
+dependencies:
   - changed-files:
       - any-glob-to-any-file:
           - "package-lock.json"
-docs :writing_hand::
+docs:
   - changed-files:
       - any-glob-to-any-file:
           - "**/*.md"
-infra :building_construction::
+infra:
   - changed-files:
       - any-glob-to-any-file:
           - ".*"
@@ -69,15 +69,15 @@ infra :building_construction::
           - ".github/**"
           - ".husky/**"
           - ".vscode/**"
-linter :house_with_garden::
+linter:
   - changed-files:
       - any-glob-to-any-file:
           - "lint/**"
-scripts :scroll::
+scripts:
   - changed-files:
       - any-glob-to-any-file:
           - "scripts/**"
-schema :gear::
+schema:
   - changed-files:
       - any-glob-to-any-file:
           - "schemas/**"

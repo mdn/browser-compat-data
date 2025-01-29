@@ -3,6 +3,7 @@
 
 import chalk from 'chalk-template';
 import esMain from 'es-main';
+import { markdownTable } from 'markdown-table';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -214,16 +215,17 @@ const printStats = (
     }}: \n`,
   );
 
-  let table = `| browser | real values | ranged values |
-| --- | --- | --- |
-`;
+  const header = ['browser', 'real', 'ranged'];
+  const align = ['l', 'r', 'r'];
+  const rows = Object.keys(stats).map((entry) =>
+    [
+      entry,
+      getStat(stats[entry], 'real', counts),
+      getStat(stats[entry], 'range', counts),
+    ].map(String),
+  );
 
-  Object.keys(stats).forEach((entry) => {
-    table += `| ${entry.replace('_', ' ')} | `;
-    table += `${getStat(stats[entry], 'real', counts)} | `;
-    table += `${getStat(stats[entry], 'range', counts)} | `;
-    table += '\n';
-  });
+  const table = markdownTable([header, ...rows], { align });
 
   console.log(table);
 };
