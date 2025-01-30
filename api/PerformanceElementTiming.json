@@ -311,16 +311,9 @@
             "web-features:element-timing"
           ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "133"
-              },
-              {
-                "version_added": "77",
-                "partial_implementation": true,
-                "notes": "Returns 0 for cross-origin media."
-              }
-            ],
+            "chrome": {
+              "version_added": "77"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -345,6 +338,43 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "cross-origin": {
+          "__compat": {
+            "description": "Cross-origin",
+            "tags": [
+              "web-features:element-timing"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
