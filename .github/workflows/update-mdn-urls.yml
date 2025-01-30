@@ -5,6 +5,10 @@ on:
     paths:
       - "package-lock.json"
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
   update-mdn-urls:
     if: github.repository == 'mdn/browser-compat-data' && github.event.pull_request.user.login == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
