@@ -20,6 +20,7 @@ import { getRefDate } from './release/utils.js';
 interface VersionStatsEntry {
   all: number;
   true: number;
+  false: number;
   null: number;
   range: number;
   real: number;
@@ -90,6 +91,9 @@ const processData = (
       } else if (checkSupport(data.support[browser], true)) {
         stats[browser].true++;
         stats.total.true++;
+      } else if (checkSupport(data.support[browser], false)) {
+        stats[browser].false++;
+        stats.total.false++;
       } else if (checkSupport(data.support[browser], '≤')) {
         stats[browser].range++;
         stats.total.range++;
@@ -149,10 +153,10 @@ const getStats = (
         ] as BrowserName[]);
 
   const stats: VersionStats = {
-    total: { all: 0, true: 0, null: 0, range: 0, real: 0 },
+    total: { all: 0, true: 0, false: 0, null: 0, range: 0, real: 0 },
   };
   browsers.forEach((browser) => {
-    stats[browser] = { all: 0, true: 0, null: 0, range: 0, real: 0 };
+    stats[browser] = { all: 0, true: 0, false: 0, null: 0, range: 0, real: 0 };
   });
 
   if (folder) {
@@ -226,13 +230,14 @@ const printStats = (
     }}: \n`,
   );
 
-  const header = ['browser', 'real', 'ranged', '`true`', '`null`'];
+  const header = ['browser', 'real', 'ranged', '`true`', '`false`', '`null`'];
   const rows = Object.keys(stats).map((entry) =>
     [
       entry,
       getStat(stats[entry], 'real', counts),
       getStat(stats[entry], 'range', counts),
       getStat(stats[entry], 'true', counts),
+      getStat(stats[entry], 'false', counts),
       getStat(stats[entry], 'null', counts),
     ].map(String),
   );
