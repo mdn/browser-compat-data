@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.35](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.35)
+
+January 31, 2025
+
+### Removals
+
+- `api.HTMLPortalElement` ([#25805](https://github.com/mdn/browser-compat-data/pull/25805))
+- `html.elements.portal` ([#25805](https://github.com/mdn/browser-compat-data/pull/25805))
+
+### Additions
+
+- `browsers.chrome_android.releases.136` ([#25817](https://github.com/mdn/browser-compat-data/pull/25817))
+- `browsers.chrome.releases.136` ([#25817](https://github.com/mdn/browser-compat-data/pull/25817))
+- `browsers.opera_android.releases.87` ([#25821](https://github.com/mdn/browser-compat-data/pull/25821))
+- `browsers.opera.releases.118` ([#25821](https://github.com/mdn/browser-compat-data/pull/25821))
+- `browsers.webview_android.releases.136` ([#25817](https://github.com/mdn/browser-compat-data/pull/25817))
+- `html.elements.meta.name.application-title` ([#25792](https://github.com/mdn/browser-compat-data/pull/25792))
+- `html.elements.script.type.importmap.multiple_import_maps` ([#25801](https://github.com/mdn/browser-compat-data/pull/25801))
+
+### Statistics
+
+- 10 contributors have changed 63 files with 2,525 additions and 755 deletions in 19 commits ([`v5.6.34...v5.6.35`](https://github.com/mdn/browser-compat-data/compare/v5.6.34...v5.6.35))
+- 16,832 total features
+- 1,126 total contributors
+- 5,072 total stargazers
+
 ## [v5.6.34](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.34)
 
 January 28, 2025
