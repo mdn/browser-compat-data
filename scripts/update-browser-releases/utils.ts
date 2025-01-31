@@ -95,15 +95,16 @@ export const updateBrowserEntry = (
 };
 
 /**
- *
- * @param json
- * @param browser
- * @param version
- * @param status
- * @param engine
- * @param engineVersion
- * @param releaseDate
- * @param releaseNotesURL
+ * Creates or updates a browser entry, depending on whether it already exists.
+ * @param json json file to update
+ * @param browser the entry name where to add it in the bcd file
+ * @param version the version to add
+ * @param status the status
+ * @param engine the name of the negine
+ * @param engineVersion the version of the engine
+ * @param releaseDate the release date
+ * @param releaseNotesURL url of the release notes
+ * @returns Text describing what has been updated
  */
 export const createOrUpdateBrowserEntry = (
   json,
