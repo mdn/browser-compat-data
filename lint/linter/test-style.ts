@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import fs from 'node:fs';
+
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData, IS_WINDOWS, jsonDiff } from '../utils.js';
@@ -22,6 +24,9 @@ const processData = (
 ): void => {
   let actual = rawData;
   let expectedPropertySorting = stringifyAndOrderProperties(rawData);
+
+  fs.writeFileSync('actual.json', actual);
+  fs.writeFileSync('expected.json', expectedPropertySorting);
 
   // prevent false positives from git.core.autocrlf on Windows
   if (IS_WINDOWS) {

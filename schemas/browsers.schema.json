@@ -74,7 +74,9 @@
         },
         "accepts": {
           "type": "array",
-          "additionalProperties": { "$ref": "#/definitions/accepts_value" },
+          "items": {
+            "$ref": "#/definitions/accepts_value"
+          },
           "description": "The additional features the browser supports.",
           "tsType": "AcceptsValue[]"
         },
@@ -90,21 +92,8 @@
     },
 
     "accepts_value": {
-      "type": "array",
-      "items": {
-        "oneOf": [
-          {
-            "const": "flags",
-            "description": "User-toggleable flags that enable or disable features."
-          },
-          {
-            "const": "webextensions",
-            "description": "Extensions."
-          }
-        ]
-      },
-      "uniqueItems": true,
-      "tsType": "\"flags\" | \"webextensions\""
+      "type": "string",
+      "enum": ["flags", "webextensions"]
     },
 
     "release_statement": {
