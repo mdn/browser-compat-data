@@ -210,7 +210,7 @@ export const bumpSupport = (
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
-  if (!browsers[destination].accepts_flags && newData.flags) {
+  if (!browsers[destination].accepts?.includes('flags') && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
     return { version_added: false };
   }

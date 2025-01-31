@@ -19,8 +19,7 @@ const propOrder = {
       'upstream',
       'preview_name',
       'pref_url',
-      'accepts_flags',
-      'accepts_webextensions',
+      'accepts',
       'releases',
     ],
     release: [
