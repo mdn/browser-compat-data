@@ -1,5 +1,22 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.36](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.36)
+
+February 5, 2025
+
+### Additions
+
+- `browsers.firefox_android.releases.138` ([#25845](https://github.com/mdn/browser-compat-data/pull/25845))
+- `browsers.firefox.releases.138` ([#25845](https://github.com/mdn/browser-compat-data/pull/25845))
+- `html.elements.area.attributionsrc` ([#25846](https://github.com/mdn/browser-compat-data/pull/25846))
+
+### Statistics
+
+- 6 contributors have changed 80 files with 437 additions and 141 deletions in 13 commits ([`v5.6.35...v5.6.36`](https://github.com/mdn/browser-compat-data/compare/v5.6.35...v5.6.36))
+- 16,833 total features
+- 1,126 total contributors
+- 5,079 total stargazers
+
 ## [v5.6.35](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.35)
 
 January 31, 2025
