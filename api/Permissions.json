@@ -472,7 +472,14 @@
           "description": "`magnetometer` permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "62",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-generic-sensor-extra-classes",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -491,9 +498,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
