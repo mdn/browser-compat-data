@@ -16,8 +16,7 @@ Below is an example of the browser data:
       "type": "desktop",
       "preview_name": "Nightly",
       "pref_url": "about:config",
-      "accepts_flags": true,
-      "accepts_webextensions": true,
+      "accepts" ["flags", "webextensions"],
       "releases": {
         "1.5": {
           "release_date": "2005-11-29",
@@ -46,13 +45,14 @@ The `type` string is a required property which indicates the platform category t
 
 The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are any browser defined in the data.
 
-### `accepts_flags`
+### `accepts`
 
-An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
+An optional array indicating which additional features the browser supports. Possible items are:
 
-### `accepts_webextensions`
+- `flags` - if the browser supports flags.
+- `webextensions` - if the browser supports web extensions.
 
-An optional boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
+The value is used to determine if support data for this feature can be added for the browser.
 
 ### `pref_url`
 
