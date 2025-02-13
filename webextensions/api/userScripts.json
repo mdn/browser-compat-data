@@ -2,16 +2,35 @@
   "webextensions": {
     "api": {
       "userScripts": {
-        "RegisteredUserScript": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts",
+          "support": {
+            "chrome": {
+              "version_added": "115",
+              "notes": "Available for use with Manifest V3 only."
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "136",
+              "notes": "Available for use with Manifest V3 only."
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror"
+          }
+        },
+        "ExecutionWorld": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/RegisteredUserScript",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "115"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "68"
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -20,38 +39,132 @@
               },
               "safari_ios": "mirror"
             }
-          },
-          "unregister": {
-            "__compat": {
-              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/RegisteredUserScript/unregister",
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "68"
-                },
-                "firefox_android": "mirror",
-                "opera": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror"
-              }
-            }
           }
         },
-        "onBeforeScript": {
+        "RegisteredUserScript": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/onBeforeScript",
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/RegisteredUserScript",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "115"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "68"
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "ScriptSource": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "UserScriptFilter": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "WorldProperties": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "configureWorld": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "getScripts": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "getWorldConfigurations": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -67,11 +180,11 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts/register",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "115"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "68"
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -80,24 +193,62 @@
               },
               "safari_ios": "mirror"
             }
-          },
-          "cookieStoreId": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": false
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "98"
-                },
-                "firefox_android": "mirror",
-                "opera": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror"
-              }
+          }
+        },
+        "resetWorldConfiguration": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "unregister": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "update": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         }
