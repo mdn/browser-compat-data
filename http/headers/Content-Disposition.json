@@ -8,9 +8,13 @@
             "https://httpwg.org/specs/rfc6266.html#header.field.definition",
             "https://www.rfc-editor.org/rfc/rfc7578#section-4.2"
           ],
+          "tags": [
+            "web-features:http11"
+          ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "When saving documents, the document title is used instead of the `filename` parameter if the disposition type is `inline`. See [bug 352093465](https://crbug.com/352093465)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -18,7 +22,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "From version 82, if an `&lt;a&gt;` element's `download` attribute is set (for a same-origin URL) then the `inline` directive is ignored. Earlier versions did not match the specification and respected the header directive over the attribute. See <a href='https://bugzil.la/1658877'>bug 1658877</a>."
+              "notes": "From version 82, if an `&lt;a&gt;` element's `download` attribute is set (for a same-origin URL) then the `inline` directive is ignored. Earlier versions did not match the specification and respected the header directive over the attribute. See [bug 1658877](https://bugzil.la/1658877)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -28,7 +32,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "When saving documents, the document title is used instead of the `filename` parameter if the disposition type is `inline`. See [bug 18384](https://webkit.org/b/18384)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

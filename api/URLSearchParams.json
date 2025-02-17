@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams",
         "spec_url": "https://url.spec.whatwg.org/#urlsearchparams",
+        "tags": [
+          "web-features:url"
+        ],
         "support": {
           "bun": {
             "version_added": "1.0"
@@ -20,7 +23,7 @@
           },
           "firefox": {
             "version_added": "29",
-            "notes": "Before version 57 single quotes in URLs were escaped (see <a href='https://bugzil.la/1386683'>bug 1386683</a>)."
+            "notes": "Before version 57 single quotes in URLs were escaped (see [bug 1386683](https://bugzil.la/1386683))."
           },
           "firefox_android": "mirror",
           "ie": {
@@ -32,9 +35,20 @@
             },
             {
               "version_added": "7.5.0",
-              "version_removed": "10.0.0",
               "partial_implementation": true,
-              "notes": "Only available implicitly or as import from the `URL` module."
+              "notes": "Available as a part of the `url` module."
+            },
+            {
+              "version_added": "7.0.0",
+              "version_removed": "7.5.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance, but can be accessed via the `searchParams` property of the `URL` interface."
+            },
+            {
+              "version_added": "6.13.0",
+              "version_removed": "7.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `url` module."
             }
           ],
           "oculus": "mirror",
@@ -59,6 +73,9 @@
           "description": "`URLSearchParams()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/URLSearchParams",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -81,7 +98,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -103,6 +120,9 @@
         "USVString": {
           "__compat": {
             "description": "`USVString` for `init` object",
+            "tags": [
+              "web-features:url"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -124,9 +144,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "7.5.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "7.5.0"
+                },
+                {
+                  "version_added": "6.13.0",
+                  "version_removed": "7.0.0"
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -148,6 +174,9 @@
         "record": {
           "__compat": {
             "description": "record for `init` object",
+            "tags": [
+              "web-features:url"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -193,6 +222,9 @@
         "sequence": {
           "__compat": {
             "description": "sequence for `init` object",
+            "tags": [
+              "web-features:url"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -242,6 +274,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/append",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-append",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -264,7 +299,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -288,6 +323,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/delete",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-delete",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -310,7 +348,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -322,7 +360,7 @@
               {
                 "version_added": "10.1",
                 "partial_implementation": true,
-                "notes": "Removing a non-existent query parameter doesn't remove `?` from the URL. See <a href='https://webkit.org/b/193022'>bug 193022</a>."
+                "notes": "Removing a non-existent query parameter doesn't remove `?` from the URL. See [bug 193022](https://webkit.org/b/193022)."
               }
             ],
             "safari_ios": "mirror",
@@ -339,6 +377,9 @@
         "value_parameter": {
           "__compat": {
             "description": "`value` parameter",
+            "tags": [
+              "web-features:url"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -358,9 +399,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "20.2.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "20.2.0"
+                },
+                {
+                  "version_added": "18.18.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -384,6 +431,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/entries",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -405,9 +455,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.3.0"
+              },
+              {
+                "version_added": "6.13.0",
+                "version_removed": "7.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -430,6 +486,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/forEach",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -451,9 +510,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.3.0"
+              },
+              {
+                "version_added": "6.13.0",
+                "version_removed": "7.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -476,6 +541,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/get",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-get",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -498,7 +566,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -522,6 +590,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/getAll",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-getall",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -544,7 +615,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -568,6 +639,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/has",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-has",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -590,7 +664,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -612,6 +686,9 @@
         "value_parameter": {
           "__compat": {
             "description": "`value` parameter",
+            "tags": [
+              "web-features:url"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.0"
@@ -631,9 +708,15 @@
               "ie": {
                 "version_added": false
               },
-              "nodejs": {
-                "version_added": "20.2.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "20.2.0"
+                },
+                {
+                  "version_added": "18.18.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -657,6 +740,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/keys",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -678,9 +764,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.3.0"
+              },
+              {
+                "version_added": "6.13.0",
+                "version_removed": "7.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -703,6 +795,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/set",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-set",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -725,7 +820,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -749,6 +844,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/size",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-size",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -799,6 +897,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/sort",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-sort",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -820,9 +921,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.7.0"
+              },
+              {
+                "version_added": "6.13.0",
+                "version_removed": "7.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -845,6 +952,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/toString",
           "spec_url": "https://url.spec.whatwg.org/#urlsearchparams-stringification-behavior",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -867,7 +977,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -891,6 +1001,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/URLSearchParams/values",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -912,9 +1025,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "7.5.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "7.3.0"
+              },
+              {
+                "version_added": "6.13.0",
+                "version_removed": "7.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -937,6 +1056,9 @@
         "__compat": {
           "description": "[Symbol.iterator]",
           "spec_url": "https://url.spec.whatwg.org/#dom-urlsearchparams-urlsearchparams",
+          "tags": [
+            "web-features:url"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -959,7 +1081,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "7.5.0"
+              "version_added": "6.13.0"
             },
             "oculus": "mirror",
             "opera": "mirror",

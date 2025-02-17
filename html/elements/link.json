@@ -163,6 +163,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin",
             "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-crossorigin",
             "tags": [
               "web-features:link"
@@ -572,6 +573,9 @@
           "no-referrer-when-downgrade": {
             "__compat": {
               "description": "no-referrer-when-downgrade",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -609,6 +613,9 @@
           "origin-when-cross-origin": {
             "__compat": {
               "description": "origin-when-cross-origin",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -646,6 +653,9 @@
           "unsafe-url": {
             "__compat": {
               "description": "unsafe-url",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -734,6 +744,9 @@
                 "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-default-style",
                 "https://drafts.csswg.org/cssom/#css-style-sheet-collections"
               ],
+              "tags": [
+                "web-features:alternative-style-sheets"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "1",
@@ -771,6 +784,9 @@
               "description": "rel=dns-prefetch",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/dns-prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch",
+              "tags": [
+                "web-features:link-rel-dns-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -779,9 +795,17 @@
                 "edge": {
                   "version_added": "≤79"
                 },
-                "firefox": {
-                  "version_added": "3"
-                },
+                "firefox": [
+                  {
+                    "version_added": "127"
+                  },
+                  {
+                    "version_added": "3",
+                    "version_removed": "127",
+                    "partial_implementation": true,
+                    "notes": "Only HTTP pages were supported."
+                  }
+                ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -808,6 +832,9 @@
             "__compat": {
               "description": "rel=expect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-expect",
+              "tags": [
+                "web-features:link-rel-expect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "124",
@@ -859,7 +886,7 @@
                   "version_added": "2",
                   "notes": [
                     "Before Firefox 83, the `crossorigin` attribute is not supported for `rel=\"icon\"`.",
-                    "The `media` attribute is not supported for `rel=\"icon\"`, see <a href='https://bugzil.la/1603885'>bug 1603885</a>."
+                    "The `media` attribute is not supported for `rel=\"icon\"`, see [bug 1603885](https://bugzil.la/1603885)."
                   ]
                 },
                 "firefox_android": {
@@ -904,6 +931,9 @@
               "description": "rel=manifest",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/manifest",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-manifest",
+              "tags": [
+                "web-features:manifest"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "39"
@@ -985,6 +1015,9 @@
               "description": "rel=preconnect",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preconnect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect",
+              "tags": [
+                "web-features:link-rel-preconnect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -1024,6 +1057,9 @@
               "description": "rel=prefetch",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch",
+              "tags": [
+                "web-features:link-rel-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "8",
@@ -1074,6 +1110,9 @@
               "description": "rel=preload",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preload",
+              "tags": [
+                "web-features:link-rel-preload"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "50"
@@ -1090,7 +1129,7 @@
                     "version_added": "56",
                     "version_removed": "57",
                     "partial_implementation": true,
-                    "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                    "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                   }
                 ],
                 "firefox_android": "mirror",
@@ -1117,6 +1156,9 @@
             "as-fetch": {
               "__compat": {
                 "description": "`as=fetch`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1133,7 +1175,7 @@
                       "version_added": "56",
                       "version_removed": "57",
                       "partial_implementation": true,
-                      "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                      "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1161,6 +1203,9 @@
             "as-font": {
               "__compat": {
                 "description": "`as=font`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1177,7 +1222,7 @@
                       "version_added": "56",
                       "version_removed": "57",
                       "partial_implementation": true,
-                      "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                      "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1205,6 +1250,9 @@
             "as-image": {
               "__compat": {
                 "description": "`as=image`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1221,7 +1269,7 @@
                       "version_added": "56",
                       "version_removed": "57",
                       "partial_implementation": true,
-                      "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                      "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1249,6 +1297,9 @@
             "as-script": {
               "__compat": {
                 "description": "`as=script`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1265,7 +1316,7 @@
                       "version_added": "56",
                       "version_removed": "57",
                       "partial_implementation": true,
-                      "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                      "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1293,6 +1344,9 @@
             "as-style": {
               "__compat": {
                 "description": "`as=style`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1309,7 +1363,7 @@
                       "version_added": "56",
                       "version_removed": "57",
                       "partial_implementation": true,
-                      "notes": "Disabled due to various web compatibility issues (e.g. <a href='https://bugzil.la/1405761'>bug 1405761</a>)."
+                      "notes": "Disabled due to various web compatibility issues (e.g. [bug 1405761](https://bugzil.la/1405761))."
                     }
                   ],
                   "firefox_android": "mirror",
@@ -1337,6 +1391,9 @@
             "as-track": {
               "__compat": {
                 "description": "`as=track`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"

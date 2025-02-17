@@ -1,23 +1,19 @@
 {
-  "api": {
-    "HTMLPortalElement": {
+  "webassembly": {
+    "memory64": {
       "__compat": {
+        "spec_url": "https://github.com/WebAssembly/memory64/blob/main/proposals/memory64/Overview.md",
+        "tags": [
+          "web-features:wasm-memory64"
+        ],
         "support": {
           "chrome": {
-            "version_added": "85",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "#enable-portals",
-                "value_to_set": "enabled"
-              }
-            ],
-            "notes": "See <a href='https://www.chromestatus.com/feature/4828882419056640'>Chrome Platform Status</a>."
+            "version_added": "133"
           },
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": false
+            "version_added": "134"
           },
           "firefox_android": "mirror",
           "ie": {
@@ -35,8 +31,8 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": true,
-          "standard_track": false,
+          "experimental": false,
+          "standard_track": true,
           "deprecated": false
         }
       }

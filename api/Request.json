@@ -114,6 +114,9 @@
         "cross_origin_stripped": {
           "__compat": {
             "description": "cross-origin `referrer` stripped out and `navigate` mode converted to `same-origin` when constructor created from existing `Request` object.",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "69"
@@ -154,17 +157,26 @@
           "__compat": {
             "description": "`init.attributionReporting` parameter",
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-requestinit-attributionreporting",
+            "tags": [
+              "web-features:attribution-reporting"
+            ],
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
+                "version_added": false
+              },
+              "nodejs": {
                 "version_added": false
               },
               "oculus": "mirror",
@@ -193,12 +205,18 @@
                 "version_added": "115"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
+                "version_added": false
+              },
+              "nodejs": {
                 "version_added": false
               },
               "oculus": "mirror",
@@ -219,13 +237,63 @@
             }
           }
         },
+        "init_duplex_parameter": {
+          "__compat": {
+            "description": "`init.duplex` parameter",
+            "spec_url": "https://fetch.spec.whatwg.org/#dom-requestinit-duplex",
+            "support": {
+              "chrome": {
+                "version_added": "105"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1792434"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "19.1.0"
+                },
+                {
+                  "version_added": "18.13.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/245671"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "init_keepalive_parameter": {
           "__compat": {
             "description": "`init.keepalive` parameter",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/keepalive",
             "spec_url": "https://fetch.spec.whatwg.org/#dom-requestinit-keepalive",
             "tags": [
-              "web-features:fetch-keepalive"
+              "web-features:fetch"
             ],
             "support": {
               "chrome": {
@@ -311,6 +379,9 @@
           "__compat": {
             "description": "`init.referrer` parameter",
             "spec_url": "https://fetch.spec.whatwg.org/#dom-requestinit-referrer",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "47"
@@ -350,6 +421,9 @@
         "request_body_readablestream": {
           "__compat": {
             "description": "Send `ReadableStream` in request body",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "105"
@@ -360,11 +434,15 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1387483"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
+              },
+              "nodejs": {
+                "version_added": "18.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -387,6 +465,9 @@
         "response_body_readablestream": {
           "__compat": {
             "description": "Consume `ReadableStream` as a response body",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "43"
@@ -530,6 +611,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/body",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-body-body①",
+          "tags": [
+            "web-features:fetch-request-streams"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -625,6 +709,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/bytes",
           "spec_url": "https://fetch.spec.whatwg.org/#dom-body-bytes",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.1"
@@ -644,6 +731,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "22.3.0"
+              },
+              {
+                "version_added": "20.16.0",
+                "version_removed": "21.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -666,6 +762,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/cache",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-cache②",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -709,6 +808,9 @@
         },
         "only-if-cached": {
           "__compat": {
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -849,6 +951,9 @@
         "default_same-origin": {
           "__compat": {
             "description": "Default value `same-origin`",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "72"
@@ -897,6 +1002,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/destination",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-destination①",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -942,6 +1050,9 @@
       "duplex": {
         "__compat": {
           "spec_url": "https://fetch.spec.whatwg.org/#dom-request-duplex",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "131"
@@ -949,21 +1060,33 @@
             "chrome_android": {
               "version_added": false
             },
-            "edge": {
+            "deno": {
               "version_added": false
             },
+            "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1792434"
             },
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "19.3.0"
+              },
+              {
+                "version_added": "18.13.0",
+                "version_removed": "19.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/245671"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -981,6 +1104,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/formData",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-body-formdata①",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -1013,7 +1139,7 @@
               {
                 "version_added": "11.1",
                 "partial_implementation": true,
-                "notes": "The method exists but always rejects with `NotSupportedError`. See <a href='https://webkit.org/b/215671'>bug 215671</a>."
+                "notes": "The method exists but always rejects with `NotSupportedError`. See [bug 215671](https://webkit.org/b/215671)."
               }
             ],
             "safari_ios": "mirror",
@@ -1081,6 +1207,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/integrity",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-integrity②",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -1127,6 +1256,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/isHistoryNavigation",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-ishistorynavigation①",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1218,7 +1350,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/keepalive",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-keepalive②",
           "tags": [
-            "web-features:fetch-keepalive"
+            "web-features:fetch"
           ],
           "support": {
             "chrome": {
@@ -1359,6 +1491,9 @@
         "navigate_mode": {
           "__compat": {
             "description": "`navigate` mode",
+            "tags": [
+              "web-features:fetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"
@@ -1377,6 +1512,9 @@
                 "version_added": false
               },
               "ie": {
+                "version_added": false
+              },
+              "nodejs": {
                 "version_added": false
               },
               "oculus": "mirror",
@@ -1406,6 +1544,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/redirect",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-redirect②",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -1453,6 +1594,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/referrer",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-referrer①",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -1499,6 +1643,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/referrerPolicy",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-request-referrerpolicy②",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -1595,17 +1742,26 @@
       "targetAddressSpace": {
         "__compat": {
           "spec_url": "https://wicg.github.io/private-network-access/#dom-request-targetaddressspace",
+          "tags": [
+            "web-features:private-network-access"
+          ],
           "support": {
             "chrome": {
               "version_added": "124"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",

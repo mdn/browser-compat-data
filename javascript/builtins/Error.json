@@ -6,7 +6,8 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error",
           "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error-objects",
           "tags": [
-            "web-features:snapshot:ecmascript-3"
+            "web-features:snapshot:ecmascript-3",
+            "web-features:javascript"
           ],
           "support": {
             "bun": {
@@ -59,7 +60,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/Error",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error-constructor",
             "tags": [
-              "web-features:snapshot:ecmascript-3"
+              "web-features:snapshot:ecmascript-3",
+              "web-features:javascript"
             ],
             "support": {
               "bun": {
@@ -191,7 +193,8 @@
               "description": "`options.cause` parameter",
               "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause",
               "tags": [
-                "web-features:snapshot:ecmascript-2022"
+                "web-features:snapshot:ecmascript-2022",
+                "web-features:error-cause"
               ],
               "support": {
                 "bun": {
@@ -234,12 +237,60 @@
             }
           }
         },
+        "captureStackTrace": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "3"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.experimental.error_capture_stack_trace",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/1886820"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "cause": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/cause",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-installerrorcause",
             "tags": [
-              "web-features:snapshot:ecmascript-2022"
+              "web-features:snapshot:ecmascript-2022",
+              "web-features:error-cause"
             ],
             "support": {
               "bun": {
@@ -446,7 +497,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/message",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.message",
             "tags": [
-              "web-features:snapshot:ecmascript-3"
+              "web-features:snapshot:ecmascript-3",
+              "web-features:javascript"
             ],
             "support": {
               "bun": {
@@ -499,7 +551,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/name",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.name",
             "tags": [
-              "web-features:snapshot:ecmascript-3"
+              "web-features:snapshot:ecmascript-3",
+              "web-features:javascript"
             ],
             "support": {
               "bun": {
@@ -568,8 +621,8 @@
                 "version_added": "103",
                 "notes": [
                   "Version 103 serialized properties: `name`, `message`, `cause`, `fileName`, `lineNumber` and `columnNumber`.",
-                  "Version 104 adds serialization of `stack` in the main thread (<a href='https://developer.mozilla.org/docs/Web/API/Window/postMessage'>`window.postMessage()`</a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'>`structuredClone()`</a>).",
-                  "Version 110 adds serialization of `stack` in workers (<a href='https://developer.mozilla.org/docs/Web/API/Worker/postMessage'>`worker.postMessage()`</a> and <a href='https://developer.mozilla.org/docs/Web/API/structuredClone'>`structuredClone()`</a>)."
+                  "Version 104 adds serialization of `stack` in the main thread ([`window.postMessage()`](https://developer.mozilla.org/docs/Web/API/Window/postMessage) and [`structuredClone()`](https://developer.mozilla.org/docs/Web/API/structuredClone)).",
+                  "Version 110 adds serialization of `stack` in workers ([`worker.postMessage()`](https://developer.mozilla.org/docs/Web/API/Worker/postMessage) and [`structuredClone()`](https://developer.mozilla.org/docs/Web/API/structuredClone))."
                 ]
               },
               "firefox_android": "mirror",
@@ -648,12 +701,52 @@
             }
           }
         },
+        "stackTraceLimit": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "3"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "toString": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/toString",
             "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.prototype.tostring",
             "tags": [
-              "web-features:snapshot:ecmascript-3"
+              "web-features:snapshot:ecmascript-3",
+              "web-features:javascript"
             ],
             "support": {
               "bun": {

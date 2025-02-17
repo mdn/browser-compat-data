@@ -38,7 +38,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "15.2",
-              "notes": "Before Safari 16.4, `Atomics` is gated behind COOP/COEP. For more detail, read <a href='https://web.dev/coop-coep/'>Making your website \"cross-origin isolated\" using COOP and COEP</a>."
+              "notes": "Before Safari 16.4, `Atomics` is gated behind COOP/COEP. For more detail, read [Making your website \"cross-origin isolated\" using COOP and COEP](https://web.dev/coop-coep/)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -55,7 +55,8 @@
           "__compat": {
             "description": "Atomic operations on non-shared `ArrayBuffer` objects",
             "tags": [
-              "web-features:snapshot:ecmascript-2021"
+              "web-features:snapshot:ecmascript-2021",
+              "web-features:shared-memory"
             ],
             "support": {
               "chrome": {
@@ -489,6 +490,50 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "pause": {
+          "__compat": {
+            "spec_url": "https://tc39.es/proposal-atomics-microwait/#Atomics.pause",
+            "tags": [
+              "web-features:atomics-pause"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "impl_url": "https://bugzil.la/1937805"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

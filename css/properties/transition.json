@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/transition",
           "spec_url": "https://drafts.csswg.org/css-transitions/#transition-shorthand-property",
+          "tags": [
+            "web-features:transitions"
+          ],
           "support": {
             "chrome": [
               {
@@ -29,9 +32,9 @@
               {
                 "version_added": "16",
                 "notes": [
-                  "Before Firefox 57, transitions do not work when transitioning from a <a href='https://developer.mozilla.org/docs/Web/CSS/text-shadow'>`text-shadow`</a> with a color specified to a `text-shadow` without a color specified (see <a href='https://bugzil.la/726550'>bug 726550</a>).",
-                  "Before Firefox 57, cancelling a filling animation (for example, with `animation-fill-mode: forwards` set) can trigger a transition set on the same element, although only once (see <a href='https://bugzil.la/1192592'>bug 1192592</a> and <a href='https://bug1192592.bmoattachments.org/attachment.cgi?id=8843824'>these test cases</a> for more information).",
-                  "Before Firefox 57, the <a href='https://developer.mozilla.org/docs/Web/CSS/background-position'>`background-position`</a> property can't be transitioned between two values containing different numbers of <a href='https://developer.mozilla.org/docs/Web/CSS/position_value'>`&lt;position&gt;`</a> values, for example `background-position: 10px 10px;` and `background-position: 20px 20px, 30px 30px;` (see <a href='https://bugzil.la/1390446'>bug 1390446</a>)."
+                  "Before Firefox 57, transitions do not work when transitioning from a [`text-shadow`](https://developer.mozilla.org/docs/Web/CSS/text-shadow) with a color specified to a `text-shadow` without a color specified (see [bug 726550](https://bugzil.la/726550)).",
+                  "Before Firefox 57, cancelling a filling animation (for example, with `animation-fill-mode: forwards` set) can trigger a transition set on the same element, although only once (see [bug 1192592](https://bugzil.la/1192592) and [these test cases](https://bug1192592.bmoattachments.org/attachment.cgi?id=8843824) for more information).",
+                  "Before Firefox 57, the [`background-position`](https://developer.mozilla.org/docs/Web/CSS/background-position) property can't be transitioned between two values containing different numbers of [`&lt;position&gt;`](https://developer.mozilla.org/docs/Web/CSS/position_value) values, for example `background-position: 10px 10px;` and `background-position: 20px 20px, 30px 30px;` (see [bug 1390446](https://bugzil.la/1390446))."
                 ]
               },
               {
@@ -114,6 +117,9 @@
         "gradients_can_animate": {
           "__compat": {
             "description": "Gradients can be animated",
+            "tags": [
+              "web-features:transitions"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -151,6 +157,9 @@
         "transition-behavior": {
           "__compat": {
             "description": "`transition-behavior` value",
+            "tags": [
+              "web-features:transition-behavior"
+            ],
             "support": {
               "chrome": {
                 "version_added": "117"

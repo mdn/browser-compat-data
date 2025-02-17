@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie",
           "spec_url": "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
+          "tags": [
+            "web-features:cookies"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -41,6 +44,9 @@
         },
         "HttpOnly": {
           "__compat": {
+            "tags": [
+              "web-features:cookies"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -80,6 +86,9 @@
         },
         "Max-Age": {
           "__compat": {
+            "tags": [
+              "web-features:cookies"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -117,6 +126,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie#partitioned",
             "spec_url": "https://datatracker.ietf.org/doc/html/draft-cutler-httpbis-partitioned-cookies#section-2.1",
+            "tags": [
+              "web-features:partitioned-cookies"
+            ],
             "support": {
               "chrome": {
                 "version_added": "114"
@@ -124,7 +136,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "131"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "ie": {
@@ -157,6 +169,9 @@
               "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
               "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute"
             ],
+            "tags": [
+              "web-features:cookies"
+            ],
             "support": {
               "chrome": {
                 "version_added": "51"
@@ -185,7 +200,7 @@
                 {
                   "version_added": "12",
                   "partial_implementation": true,
-                  "notes": "Treats `SameSite=None` and invalid values as `Strict` in macOS before 10.15 Catalina. See <a href='https://webkit.org/b/198181'>bug 198181</a>."
+                  "notes": "Treats `SameSite=None` and invalid values as `Strict` in macOS before 10.15 Catalina. See [bug 198181](https://webkit.org/b/198181)."
                 }
               ],
               "safari_ios": [
@@ -195,7 +210,7 @@
                 {
                   "version_added": "12.2",
                   "partial_implementation": true,
-                  "notes": "Treats `SameSite=None` and invalid values as `Strict` in iOS before 13. See <a href='https://webkit.org/b/198181'>bug 198181</a>."
+                  "notes": "Treats `SameSite=None` and invalid values as `Strict` in iOS before 13. See [bug 198181](https://webkit.org/b/198181)."
                 }
               ],
               "samsunginternet_android": "mirror",
@@ -211,6 +226,9 @@
           "Lax": {
             "__compat": {
               "description": "`SameSite=Lax`",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -251,6 +269,9 @@
           "Lax_default": {
             "__compat": {
               "description": "Defaults to `Lax`",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "80"
@@ -298,6 +319,9 @@
           "None": {
             "__compat": {
               "description": "`SameSite=None`",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -307,7 +331,7 @@
                     "version_added": "51",
                     "version_removed": "67",
                     "partial_implementation": true,
-                    "notes": "Rejects cookies with `SameSite=None`. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                    "notes": "Rejects cookies with `SameSite=None`. See [SameSite=None: Known Incompatible Clients](https://www.chromium.org/updates/same-site/incompatible-clients)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -330,7 +354,7 @@
                     "version_added": "51",
                     "version_removed": "54",
                     "partial_implementation": true,
-                    "notes": "Rejects cookies with `SameSite=None`. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                    "notes": "Rejects cookies with `SameSite=None`. See [SameSite=None: Known Incompatible Clients](https://www.chromium.org/updates/same-site/incompatible-clients)."
                   }
                 ],
                 "opera_android": "mirror",
@@ -349,7 +373,7 @@
                     "version_added": "5.4",
                     "version_removed": "9.4",
                     "partial_implementation": true,
-                    "notes": "Rejects cookies with `SameSite=None`. See <a href='https://www.chromium.org/updates/same-site/incompatible-clients'>SameSite=None: Known Incompatible Clients</a>."
+                    "notes": "Rejects cookies with `SameSite=None`. See [SameSite=None: Known Incompatible Clients](https://www.chromium.org/updates/same-site/incompatible-clients)."
                   }
                 ],
                 "webview_android": "mirror",
@@ -365,6 +389,9 @@
           "Strict": {
             "__compat": {
               "description": "`SameSite=Strict`",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -405,6 +432,9 @@
           "none_requires_secure": {
             "__compat": {
               "description": "Secure attribute required if `SameSite=None`",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "80"
@@ -447,6 +477,9 @@
           "schemeful": {
             "__compat": {
               "description": "URL scheme-aware (\"schemeful\")",
+              "tags": [
+                "web-features:cookies"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "91"
@@ -489,6 +522,9 @@
         "cookie_prefixes": {
           "__compat": {
             "description": "Cookie prefixes",
+            "tags": [
+              "web-features:cookies"
+            ],
             "support": {
               "chrome": {
                 "version_added": "49"

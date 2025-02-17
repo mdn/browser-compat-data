@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools",
           "support": {
             "chrome": {
-              "version_added": "≤58"
+              "version_added": "4"
             },
             "edge": "mirror",
             "firefox": {
@@ -31,7 +31,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "18"
               },
               "edge": "mirror",
               "firefox": {
@@ -49,12 +49,98 @@
               }
             }
           },
+          "Resource": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            },
+            "getContent": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18",
+                    "notes": "Only base64 is supported for encoded content."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "setContent": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18",
+                    "notes": "Only resources with type \"text\" are supported."
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "url": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          },
           "eval": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/eval",
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -69,6 +155,29 @@
                 },
                 "safari_ios": {
                   "version_added": false
+                }
+              }
+            },
+            "expression": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "55"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
                 }
               }
             },
@@ -103,15 +212,101 @@
                   },
                   "edge": "mirror",
                   "firefox": {
+                    "version_added": "54"
+                  },
+                  "firefox_android": {
                     "version_added": false
                   },
-                  "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
                     "version_added": "16"
                   },
                   "safari_ios": {
                     "version_added": false
+                  }
+                }
+              },
+              "contextSecurityOrigin": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": "45"
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": false
+                    },
+                    "firefox_android": "mirror",
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": "16"
+                    },
+                    "safari_ios": {
+                      "version_added": false
+                    }
+                  }
+                }
+              },
+              "frameURL": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": "45"
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": false
+                    },
+                    "firefox_android": "mirror",
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": "16"
+                    },
+                    "safari_ios": {
+                      "version_added": false
+                    }
+                  }
+                }
+              },
+              "scriptExecutionContext": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": "107"
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": false
+                    },
+                    "firefox_android": "mirror",
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": "16"
+                    },
+                    "safari_ios": {
+                      "version_added": false
+                    }
+                  }
+                }
+              },
+              "useContentScriptContext": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": "45"
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": false
+                    },
+                    "firefox_android": "mirror",
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": "16"
+                    },
+                    "safari_ios": {
+                      "version_added": false
+                    }
                   }
                 }
               }
@@ -140,12 +335,75 @@
               }
             }
           },
+          "getResources": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "onResourceAdded": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "onResourceContentCommitted": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "reload": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/reload",
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -169,7 +427,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/inspectedWindow/tabId",
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -194,7 +452,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/network",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "18"
               },
               "edge": "mirror",
               "firefox": {
@@ -217,7 +475,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/network/getHAR",
               "support": {
                 "chrome": {
-                  "version_added": "≤64"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -240,7 +498,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/network/onNavigated",
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -264,7 +522,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/network/onRequestFinished",
               "support": {
                 "chrome": {
-                  "version_added": "≤64"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": [
@@ -294,7 +552,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "18"
               },
               "edge": "mirror",
               "firefox": {
@@ -314,13 +572,54 @@
               }
             }
           },
+          "Button": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
           "ElementsPanel": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ElementsPanel",
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "56"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            },
             "createSidebarPane": {
               "__compat": {
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ElementsPanel/createSidebarPane",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -342,7 +641,7 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ElementsPanel/onSelectionChanged",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -361,11 +660,54 @@
             }
           },
           "ExtensionPanel": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionPanel",
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "54"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            },
+            "createStatusBarButton": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
             "onHidden": {
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -388,7 +730,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": "≤59"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -407,7 +749,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -433,12 +775,12 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionSidebarPane/onHidden",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "57",
-                    "notes": "This event is only fired when the user switches between sidebar panes, not when the user switches between devtools panels. See <a href='https://bugzil.la/1412317'>bug 1412317</a>."
+                    "notes": "This event is only fired when the user switches between sidebar panes, not when the user switches between devtools panels. See [bug 1412317](https://bugzil.la/1412317)."
                   },
                   "firefox_android": {
                     "version_added": false
@@ -456,12 +798,12 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionSidebarPane/onShown",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61"
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "57",
-                    "notes": "This event is only fired when the user switches between sidebar panes, not when the user switches between devtools panels. See <a href='https://bugzil.la/1412317'>bug 1412317</a>."
+                    "notes": "This event is only fired when the user switches between sidebar panes, not when the user switches between devtools panels. See [bug 1412317](https://bugzil.la/1412317)."
                   },
                   "firefox_android": {
                     "version_added": false
@@ -479,13 +821,13 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionSidebarPane/setExpression",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61",
+                    "version_added": "18",
                     "notes": "The expression must evaluate to a JavaScript object or a DOM node, or nothing is shown in the sidebar."
                   },
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "57",
-                    "notes": "Before Firefox 60, the expression must evaluate to an object that can be serialized to JSON, or nothing was shown in the sidebar. In particular, JavaScript cyclic objects and DOM nodes were not supported. See <a href='https://bugzil.la/1403130'>bug 1403130</a>."
+                    "notes": "Before Firefox 60, the expression must evaluate to an object that can be serialized to JSON, or nothing was shown in the sidebar. In particular, JavaScript cyclic objects and DOM nodes were not supported. See [bug 1403130](https://bugzil.la/1403130)."
                   },
                   "firefox_android": {
                     "version_added": false
@@ -502,7 +844,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -522,13 +864,13 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionSidebarPane/setObject",
                 "support": {
                   "chrome": {
-                    "version_added": "≤61",
+                    "version_added": "18",
                     "notes": "If the `jsonObject` parameter is a string, it is not displayed."
                   },
                   "edge": "mirror",
                   "firefox": {
                     "version_added": "57",
-                    "notes": "If the `jsonObject` is a string, then `rootTitle` must also be given, or `jsonObject` will not be displayed. See <a href='https://bugzil.la/1412310'>bug 1412310</a>."
+                    "notes": "If the `jsonObject` is a string, then `rootTitle` must also be given, or `jsonObject` will not be displayed. See [bug 1412310](https://bugzil.la/1412310)."
                   },
                   "firefox_android": {
                     "version_added": false
@@ -546,7 +888,7 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/ExtensionSidebarPane/setPage",
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -564,12 +906,76 @@
               }
             }
           },
+          "SourcesPanel": {
+            "__compat": {
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "38"
+                  },
+                  {
+                    "alternative_name": "ScriptsPanel",
+                    "version_added": "18",
+                    "version_removed": "38"
+                  }
+                ],
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "createSidebarPane": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "onSelectionChanged": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "18"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
           "create": {
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/create",
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -591,7 +997,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true,
+                    "version_added": "18",
                     "notes": "URL always resolved as absolute."
                   },
                   "edge": "mirror",
@@ -617,7 +1023,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true,
+                    "version_added": "18",
                     "notes": "URL always resolved as absolute."
                   },
                   "edge": "mirror",
@@ -643,7 +1049,7 @@
               "__compat": {
                 "support": {
                   "chrome": {
-                    "version_added": true
+                    "version_added": "18"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -668,7 +1074,7 @@
               "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/devtools/panels/elements",
               "support": {
                 "chrome": {
-                  "version_added": "≤61"
+                  "version_added": "18"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -701,6 +1107,139 @@
                 "firefox_android": {
                   "version_added": false
                 },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "openResource": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "45"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            },
+            "columnNumber": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "114"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "lineNumber": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "45"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            },
+            "url": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "45"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "16"
+                  },
+                  "safari_ios": {
+                    "version_added": false
+                  }
+                }
+              }
+            }
+          },
+          "setOpenResourceHandler": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "18"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "16"
+                },
+                "safari_ios": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "sources": {
+            "__compat": {
+              "support": {
+                "chrome": [
+                  {
+                    "version_added": "38"
+                  },
+                  {
+                    "alternative_name": "scripts",
+                    "version_added": "18",
+                    "version_removed": "38"
+                  }
+                ],
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
                   "version_added": "16"

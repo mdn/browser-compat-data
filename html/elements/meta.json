@@ -209,6 +209,9 @@
             "__compat": {
               "description": "http-equiv=\"content-security-policy\"",
               "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-keyword-content-security-policy",
+              "tags": [
+                "web-features:csp"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "≤59"
@@ -372,6 +375,39 @@
               "deprecated": false
             }
           },
+          "application-title": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "134"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
           "color-scheme": {
             "__compat": {
               "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#meta-color-scheme",
@@ -434,7 +470,7 @@
                 "ie": {
                   "version_added": "11",
                   "partial_implementation": true,
-                  "notes": "Browsers initially supported an <a href='https://wiki.whatwg.org/wiki/Meta_referrer'>early draft</a> of the specification which can only use a meta tag and is only compatible with the `origin` value from the new spec."
+                  "notes": "Browsers initially supported an [early draft](https://wiki.whatwg.org/wiki/Meta_referrer) of the specification which can only use a meta tag and is only compatible with the `origin` value from the new spec."
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -460,6 +496,9 @@
             "__compat": {
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/meta/name/theme-color",
               "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color",
+              "tags": [
+                "web-features:meta-theme-color"
+              ],
               "support": {
                 "chrome": [
                   {
@@ -469,15 +508,22 @@
                   },
                   {
                     "version_added": "39",
-                    "version_removed": "72",
+                    "version_removed": "73",
                     "partial_implementation": true,
                     "notes": "Chrome reports support, but does not actually use the color anywhere."
                   }
                 ],
-                "chrome_android": {
-                  "version_added": "80",
-                  "notes": "Chrome for Android does not use the color on devices with native dark mode enabled."
-                },
+                "chrome_android": [
+                  {
+                    "version_added": "92"
+                  },
+                  {
+                    "version_added": "39",
+                    "version_removed": "92",
+                    "partial_implementation": true,
+                    "notes": "Chrome for Android does not use the color on devices with native dark mode enabled unless it's an installed progressive web app or a trusted web activity."
+                  }
+                ],
                 "edge": "mirror",
                 "firefox": {
                   "version_added": false

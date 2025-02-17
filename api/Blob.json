@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob",
         "spec_url": "https://w3c.github.io/FileAPI/#blob-section",
+        "tags": [
+          "web-features:file"
+        ],
         "support": {
           "bun": {
             "version_added": "1.0"
@@ -30,13 +33,15 @@
               "version_added": "18.0.0"
             },
             {
-              "alternative_name": "buffer.Blob",
               "version_added": "15.7.0",
-              "version_removed": "18.0.0",
-              "notes": [
-                "Experimental implementation.",
-                "Must be imported using `require('buffer').Blob` or `import { Blob } from 'buffer'`."
-              ]
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
+            },
+            {
+              "version_added": "14.18.0",
+              "version_removed": "15.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `buffer` module."
             }
           ],
           "oculus": "mirror",
@@ -65,6 +70,9 @@
           "description": "`Blob()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/Blob",
           "spec_url": "https://w3c.github.io/FileAPI/#constructorBlob",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -88,9 +96,16 @@
               "version_added": "10",
               "notes": "IE10 throws `InvalidStateError` with a `TypedArray` argument. Consider using `MSBuilder` as an alternative."
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0",
+                "notes": "Before v16.7.0, the `endings` option was not supported."
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "12"
@@ -118,6 +133,9 @@
           "description": "`arrayBuffer()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/arrayBuffer",
           "spec_url": "https://w3c.github.io/FileAPI/#dom-blob-arraybuffer",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -137,9 +155,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -164,6 +188,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/bytes",
           "spec_url": "https://w3c.github.io/FileAPI/#dom-blob-bytes",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.1"
@@ -183,6 +210,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "22.3.0"
+              },
+              {
+                "version_added": "20.16.0",
+                "version_removed": "21.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -205,6 +241,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/size",
           "spec_url": "https://w3c.github.io/FileAPI/#dfn-size",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -226,9 +265,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "11"
@@ -256,6 +301,9 @@
           "description": "`slice()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/slice",
           "spec_url": "https://w3c.github.io/FileAPI/#dfn-slice",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -292,9 +340,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "12"
@@ -329,6 +383,9 @@
           "description": "`stream()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/stream",
           "spec_url": "https://w3c.github.io/FileAPI/#dom-blob-stream",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -349,7 +406,7 @@
               "version_added": false
             },
             "nodejs": {
-              "version_added": "15.7.0"
+              "version_added": "16.7.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -374,6 +431,9 @@
           "description": "`text()`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/text",
           "spec_url": "https://w3c.github.io/FileAPI/#dom-blob-text",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -393,9 +453,15 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -420,6 +486,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Blob/type",
           "spec_url": "https://w3c.github.io/FileAPI/#dfn-type",
+          "tags": [
+            "web-features:file"
+          ],
           "support": {
             "bun": {
               "version_added": "1.0"
@@ -441,9 +510,15 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": {
-              "version_added": "15.7.0"
-            },
+            "nodejs": [
+              {
+                "version_added": "15.7.0"
+              },
+              {
+                "version_added": "14.18.0",
+                "version_removed": "15.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "11"

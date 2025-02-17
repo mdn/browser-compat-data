@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest",
         "spec_url": "https://w3c.github.io/IndexedDB/#request-api",
+        "tags": [
+          "web-features:indexeddb"
+        ],
         "support": {
           "chrome": [
             {
@@ -77,6 +80,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -114,6 +120,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/error",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbrequest-error①",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -151,6 +160,9 @@
         "DOMException": {
           "__compat": {
             "description": "`DOMException` value instead of `DOMError`",
+            "tags": [
+              "web-features:indexeddb"
+            ],
             "support": {
               "chrome": {
                 "version_added": "48"
@@ -183,6 +195,53 @@
               "deprecated": false
             }
           }
+        },
+        "transient_unrecoverable_read_errors": {
+          "__compat": {
+            "description": "Transient and unrecoverable read errors",
+            "spec_url": "https://w3c.github.io/IndexedDB/#:~:text=NotReadableError",
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "132",
+                  "notes": "Returns a `NotReadableError` exception for unrecoverable read errors, and an `UnknownError` for transient read errors."
+                },
+                {
+                  "version_added": "130",
+                  "partial_implementation": true,
+                  "notes": "Returns a `NotFoundError` exception for unrecoverable read errors, and a `DataError` for transient read errors."
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "14"
+              },
+              "firefox_android": {
+                "version_added": "22"
+              },
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "8"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "error_event": {
@@ -190,6 +249,9 @@
           "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/error_event",
           "spec_url": "https://w3c.github.io/IndexedDB/#eventdef-idbrequest-error",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -229,6 +291,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/readyState",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbrequest-readystate①",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -268,6 +333,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/result",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbrequest-result①",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -307,6 +375,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/source",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbrequest-source①",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -347,6 +418,9 @@
           "description": "`success` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/success_event",
           "spec_url": "https://w3c.github.io/IndexedDB/#eventdef-idbrequest-success",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"
@@ -386,6 +460,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/IDBRequest/transaction",
           "spec_url": "https://w3c.github.io/IndexedDB/#ref-for-dom-idbrequest-transaction①",
+          "tags": [
+            "web-features:indexeddb"
+          ],
           "support": {
             "chrome": {
               "version_added": "23"

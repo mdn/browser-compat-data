@@ -187,10 +187,11 @@
       },
       "elementFromPoint": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/elementFromPoint",
           "support": {
             "chrome": {
               "version_added": "53",
-              "notes": "Before Chrome 66, this method returned `null` when the element was a child of a host node. See <a href='https://crbug.com/40537452'>bug 40537452</a>."
+              "notes": "Before Chrome 66, this method returned `null` when the element was a child of a host node. See [bug 40537452](https://crbug.com/40537452)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -223,10 +224,11 @@
       },
       "elementsFromPoint": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/elementsFromPoint",
           "support": {
             "chrome": {
               "version_added": "53",
-              "notes": "Before Chrome 66, this method returned `null` when the element was a child of a host node. See <a href='https://crbug.com/40537452'>bug 40537452</a>."
+              "notes": "Before Chrome 66, this method returned `null` when the element was a child of a host node. See [bug 40537452](https://crbug.com/40537452)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -316,6 +318,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/getAnimations",
           "spec_url": "https://drafts.csswg.org/web-animations-1/#dom-documentorshadowroot-getanimations",
+          "tags": [
+            "web-features:web-animations"
+          ],
           "support": {
             "chrome": {
               "version_added": "84"
@@ -351,6 +356,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/getHTML",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-shadowroot-gethtml",
+          "tags": [
+            "web-features:gethtml"
+          ],
           "support": {
             "chrome": {
               "version_added": "125"
@@ -485,6 +493,51 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Can be set with a `TrustedHTML` instance",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -722,6 +775,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/styleSheets",
           "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-stylesheets",
+          "tags": [
+            "web-features:css-object-model"
+          ],
           "support": {
             "chrome": {
               "version_added": "53"

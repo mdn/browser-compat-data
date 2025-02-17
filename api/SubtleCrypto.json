@@ -65,6 +65,9 @@
       "secure_context_required": {
         "__compat": {
           "description": "Secure context required",
+          "tags": [
+            "web-features:web-cryptography"
+          ],
           "support": {
             "chrome": {
               "version_added": "60"
@@ -105,6 +108,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:web-cryptography"
+          ],
           "support": {
             "chrome": {
               "version_added": "37"
@@ -296,14 +302,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "133"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -319,7 +318,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -605,14 +604,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "133"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -628,7 +620,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -660,9 +652,17 @@
             "bun": {
               "version_added": "1.0"
             },
-            "chrome": {
-              "version_added": "37"
-            },
+            "chrome": [
+              {
+                "version_added": "41"
+              },
+              {
+                "version_added": "37",
+                "version_removed": "41",
+                "partial_implementation": true,
+                "notes": "Before version 41, Chrome expected the `algorithm` parameter to be an object."
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.11"
@@ -893,7 +893,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -923,14 +923,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "133"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -946,7 +939,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1076,7 +1069,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1106,14 +1099,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "133"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -1129,7 +1115,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1265,7 +1251,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1295,14 +1281,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "113",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "133"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -1318,7 +1297,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1431,14 +1410,14 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
                 "version_added": "17",
-                "notes": "Generates randomized signatures as per <a href='https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/'>draft-irtf-cfrg-det-sigs-with-noise</a>, instead of deterministic signatures as per <a href='https://www.rfc-editor.org/rfc/rfc8032'>RFC 8032</a>."
+                "notes": "Generates randomized signatures as per [draft-irtf-cfrg-det-sigs-with-noise](https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/), instead of deterministic signatures as per [RFC 8032](https://www.rfc-editor.org/rfc/rfc8032)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1616,7 +1595,7 @@
               },
               "nodejs": {
                 "version_added": "16.17.0",
-                "notes": "Marked as <a href='https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs'>'Stability 1' - Experimental</a>."
+                "notes": "Marked as ['Stability 1' - Experimental](https://nodejs.org/dist/latest-v16.x/docs/api/webcrypto.html#ed25519ed448x25519x448-key-pairs)."
               },
               "oculus": "mirror",
               "opera": "mirror",

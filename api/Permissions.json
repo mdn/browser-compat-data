@@ -84,7 +84,8 @@
           "description": "`accessibility-events` permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "62",
+              "version_removed": "131"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -109,15 +110,18 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "permission_ambient-light-sensor": {
         "__compat": {
           "description": "`ambient-light-sensor` permission",
+          "tags": [
+            "web-features:ambient-light"
+          ],
           "support": {
             "chrome": {
               "version_added": "62",
@@ -203,7 +207,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "132"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -468,7 +472,14 @@
           "description": "`magnetometer` permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "62",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-generic-sensor-extra-classes",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -487,9 +498,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -509,7 +518,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "132"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -621,6 +630,9 @@
       "permission_payment-handler": {
         "__compat": {
           "description": "`payment-handler` permission",
+          "tags": [
+            "web-features:payment-handler"
+          ],
           "support": {
             "chrome": {
               "version_added": "66"
@@ -694,6 +706,9 @@
       "permission_push": {
         "__compat": {
           "description": "`push` permission",
+          "tags": [
+            "web-features:push"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -774,6 +789,9 @@
         "__compat": {
           "description": "`storage-access` permission",
           "spec_url": "https://privacycg.github.io/storage-access/#permissions-integration",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
               "version_added": "119"
@@ -815,9 +833,12 @@
         "__compat": {
           "description": "`top-level-storage-access` permission",
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#permissions-integration",
+          "tags": [
+            "web-features:storage-access"
+          ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "113"
             },
             "chrome_android": {
               "version_added": "120"
@@ -854,6 +875,9 @@
         "__compat": {
           "description": "`window-management` permission",
           "spec_url": "https://w3c.github.io/window-management/#api-permission-api-integration",
+          "tags": [
+            "web-features:window-management"
+          ],
           "support": {
             "chrome": {
               "version_added": "111"
@@ -930,6 +954,9 @@
       "request": {
         "__compat": {
           "spec_url": "https://wicg.github.io/permissions-request/#dom-permissions-request",
+          "tags": [
+            "web-features:permissions"
+          ],
           "support": {
             "chrome": {
               "version_added": "46",

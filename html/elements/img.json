@@ -169,7 +169,7 @@
                   "version_added": "14",
                   "version_removed": "15",
                   "partial_implementation": true,
-                  "notes": "Safari doesn't preserve space for images without a valid `src`, which may disrupt layouts that rely on lazy loading (see <a href='https://webkit.org/b/224197'>bug 224197</a>)."
+                  "notes": "Safari doesn't preserve space for images without a valid `src`, which may disrupt layouts that rely on lazy loading (see [bug 224197](https://webkit.org/b/224197))."
                 }
               ],
               "safari_ios": "mirror",
@@ -187,9 +187,12 @@
         "attributionsrc": {
           "__compat": {
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-img-attributionsrc",
+            "tags": [
+              "web-features:attribution-reporting"
+            ],
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "125"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -256,6 +259,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin",
             "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-crossorigin",
             "tags": [
               "web-features:img"
@@ -635,6 +639,9 @@
           "no-referrer-when-downgrade": {
             "__compat": {
               "description": "no-referrer-when-downgrade",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -672,6 +679,9 @@
           "origin-when-cross-origin": {
             "__compat": {
               "description": "origin-when-cross-origin",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -709,6 +719,9 @@
           "unsafe-url": {
             "__compat": {
               "description": "unsafe-url",
+              "tags": [
+                "web-features:referrer-policy"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "51"
@@ -747,6 +760,9 @@
         "sizes": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-sizes",
+            "tags": [
+              "web-features:srcset"
+            ],
             "support": {
               "chrome": {
                 "version_added": "38"
@@ -860,13 +876,16 @@
         "srcset": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset",
+            "tags": [
+              "web-features:srcset"
+            ],
             "support": {
               "chrome": {
                 "version_added": "34"
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_added": "≤18"
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "38"

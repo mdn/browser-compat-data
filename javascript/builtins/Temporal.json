@@ -4,6 +4,7 @@
       "Temporal": {
         "__compat": {
           "description": "Temporal API",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Temporal",
           "spec_url": "https://tc39.es/proposal-temporal/#sec-temporal-intro",
           "tags": [
             "web-features:temporal"
@@ -25,8 +26,15 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1519167"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "javascript.options.experimental.temporal",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1912511"
             },
             "firefox_android": "mirror",
             "ie": {
