@@ -109,6 +109,48 @@
           }
         }
       },
+      "204": {
+        "__compat": {
+          "description": "204 (No Content)",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Status/204",
+          "spec_url": "https://httpwg.org/specs/rfc9110.html#status.204",
+          "support": {
+            "chrome": {
+              "version_added": "1",
+              "notes": "This status code describes a HTTP response with no body. If a server erroneously includes data after the headers, Chrome tolerates up to 4 bytes of invalid data. See [Chromium issue 1934](https://codereview.chromium.org/1934)."
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "1"
+            },
+            "firefox": {
+              "version_added": "1",
+              "notes": "This status code describes a HTTP response with no body. If a server erroneously includes data after the headers, Firefox tolerates in excess of a kilobyte of invalid data. See [Bug 1356614](https://bugzil.la/1356614"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "4"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "2"
+            },
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "1"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "308": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Status/308",
