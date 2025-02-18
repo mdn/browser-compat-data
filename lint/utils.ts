@@ -12,15 +12,6 @@ export interface LintOptions {
   only?: string[];
 }
 
-const now = new Date();
-
-/* The date, exactly two years ago */
-export const twoYearsAgo = new Date(
-  now.getFullYear() - 2,
-  now.getMonth(),
-  now.getDate(),
-);
-
 const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
