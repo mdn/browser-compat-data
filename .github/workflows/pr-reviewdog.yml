@@ -4,6 +4,10 @@ on:
   pull_request_target:
     branches: ["main"]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   fix:
     name: Fix
@@ -47,7 +51,7 @@ jobs:
           name: diff
 
       - name: Setup
-        uses: reviewdog/action-setup@v1
+        uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
         with:
           reviewdog_version: latest
 
