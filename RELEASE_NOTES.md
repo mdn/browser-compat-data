@@ -1,5 +1,45 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.40)
+
+February 18, 2025
+
+### Additions
+
+- `css.at-rules.container.scroll-state_queries` ([#25941](https://github.com/mdn/browser-compat-data/pull/25941))
+- `css.at-rules.container.scroll-state_queries.scrollable` ([#25941](https://github.com/mdn/browser-compat-data/pull/25941))
+- `css.at-rules.container.scroll-state_queries.snapped` ([#25941](https://github.com/mdn/browser-compat-data/pull/25941))
+- `css.at-rules.container.scroll-state_queries.stuck` ([#25941](https://github.com/mdn/browser-compat-data/pull/25941))
+- `http.headers.Sec-CH-UA-Form-Factors` ([#25949](https://github.com/mdn/browser-compat-data/pull/25949))
+- `http.headers.Sec-CH-UA-WoW64` ([#25949](https://github.com/mdn/browser-compat-data/pull/25949))
+- `javascript.builtins.AsyncDisposableStack` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.adopt` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.AsyncDisposableStack` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.defer` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.disposeAsync` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.disposed` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.move` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.AsyncDisposableStack.use` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.adopt` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.defer` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.DisposableStack` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.dispose` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.disposed` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.move` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.DisposableStack.use` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.SuppressedError` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.SuppressedError.SuppressedError` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.Symbol.asyncDispose` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+- `javascript.builtins.Symbol.dispose` ([#25942](https://github.com/mdn/browser-compat-data/pull/25942))
+
+### Statistics
+
+- 8 contributors have changed 19 files with 3,155 additions and 2,719 deletions in 13 commits ([`v5.6.39...v5.6.40`](https://github.com/mdn/browser-compat-data/compare/v5.6.39...v5.6.40))
+- 16,933 total features
+- 1,130 total contributors
+- 5,104 total stargazers
+
 ## [v5.6.39](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.39)
 
 February 14, 2025
