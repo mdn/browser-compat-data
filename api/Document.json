@@ -8901,6 +8901,54 @@
             "standard_track": true,
             "deprecated": true
           }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": [
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document-write-steps",
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#:~:text=if%20value%20is%20a%20trustedhtml%20object"
+            ],
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
         }
       },
       "writeln": {
@@ -8984,6 +9032,51 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
