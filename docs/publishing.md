@@ -13,13 +13,13 @@ The release itself is triggered manually, to help ensure that as many ready pull
 
 Any project owner (or release designee) can complete the following steps to publish a new version.
 
-A release is performed by merging the automated release pull request titled `Release vX.Y.Z`:
+To publish a release:
 
 1. _If this is a major or minor release_: Align with project owners on the release notes entries, i.e. "Breaking changes" for major releases, and "Notable changes" for major/minor releases.
-2. Mark the release PR as ready for review.
-3. Ensure that the release PR is up-to-date, i.e. that all checks have passed on the latest `main` commit, and that no other PR is merged right before.
+2. Mark the release pull request (titled `Release vX.Y.Z`) as ready for review.
+3. Ensure that the pull request is up-to-date, i.e. that all checks have passed on the latest `main` commit, and that no other pull request is merged right before.
 4. _If this is a major or minor release_: Add the release notes entries manually to the `RELEASE_NOTES.md` on the `release` branch (_below_ the release date).
-5. Merge the release PR.
+5. Merge the pull request.
 
 ## Behind the scenes
 
@@ -29,13 +29,13 @@ The [release script](https://github.com/mdn/browser-compat-data/tree/main/script
 
 1. Fetches the latest `main` branch.
 2. Determines the previous release version.
-3. Determines whether a major or minor version bump is needed, based on PRs with the `semver-major-bump` or `semver-minor-bump` label merged since the previous release.
+3. Determines whether a major or minor version bump is needed, based on pull requests with the `semver-major-bump` or `semver-minor-bump` label merged since the previous release.
 4. Updates the `package.json` by running `npm version`.
 5. Updates the `RELEASE_NOTES.md` by determining release notes based on the following input:
    - Release and repository statistics.
    - List of added and removed features, determined by iterating over all merged pull requests since the previous release, and enumerating all features before and after the merge commit.
 6. Commits and pushes the changes to the `release` branch.
-7. Creates or updates the release PR accordingly.
+7. Creates or updates the release pull request accordingly.
 
 Merging the release pull request yields the following result:
 
