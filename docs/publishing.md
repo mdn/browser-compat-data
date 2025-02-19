@@ -9,7 +9,7 @@ The release process is mostly automated using two GitHub workflows:
 
 ## Performing a release
 
-A release is usually performed simply by merging the pull request managed by the `release-pr` workflow:
+A release is usually performed by merging the pull request managed by the `release-pr` workflow:
 
 1. The merge commit will trigger the `create-release` job of the `release` workflow.
 2. The `create-release` job publishes a [GitHub release](https://github.com/mdn/browser-compat-data/releases) and [tag](https://github.com/mdn/browser-compat-data/tags) based on the updated `package.json` and release notes.
