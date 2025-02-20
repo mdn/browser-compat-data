@@ -244,9 +244,18 @@
               "partial_implementation": true,
               "notes": "Always throws `NotSupportedError`."
             },
-            "firefox_android": {
-              "version_added": "43"
-            },
+            "firefox_android": [
+              {
+                "version_added": "79",
+                "version_removed": "97",
+                "partial_implementation": true,
+                "notes": "The API exists but returns `NS_ERROR_UNEXPECTED`."
+              },
+              {
+                "version_added": "43",
+                "version_removed": "79"
+              }
+            ],
             "ie": {
               "version_added": false
             },

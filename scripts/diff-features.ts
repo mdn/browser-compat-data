@@ -150,6 +150,12 @@ const getEnumerationFromGithub = async (ref: string): Promise<string[]> => {
  * @returns Feature list from reference
  */
 const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
+  // GitHub API returns wrong merge commit for https://github.com/mdn/browser-compat-data/pull/25668.
+  ref = ref.replace(
+    '19d8ce0fd1016c3cd1cb6f7b98f72e99ae2f3f16',
+    '3af3a24bdf71f5393893f3724bc47acdd23acfe0',
+  );
+
   // Get the short hash for this ref.
   // Most of the time, you check out named references (a branch or a tag).
   // However, if `ref` is already checked out, then `git worktree add` fails. As
@@ -174,9 +180,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(
-      `node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts --data-from=${worktree}`,
-    );
+    execSync(`npx tsx ./scripts/enumerate-features.ts --data-from=${worktree}`);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {

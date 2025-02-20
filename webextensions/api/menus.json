@@ -464,7 +464,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "≤95"
+                  "version_added": "7"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -512,7 +512,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.create",
-                "version_added": "≤58",
+                "version_added": "6",
                 "notes": "Items that don't specify 'contexts' do not inherit contexts from their parents."
               },
               "edge": "mirror",
@@ -664,7 +664,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.onClicked",
-                "version_added": "≤58"
+                "version_added": "≤21"
               },
               "edge": "mirror",
               "firefox": [
@@ -802,12 +802,13 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.remove",
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": "From Firefox 136, an error message is returned when the menu item doesn't exist. Previously, the error was ignored and the promise fulfilled."
                 },
                 {
                   "alternative_name": "contextMenus.remove",
@@ -834,7 +835,7 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.removeAll",
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": [
@@ -866,12 +867,13 @@
             "support": {
               "chrome": {
                 "alternative_name": "contextMenus.update",
-                "version_added": "≤58"
+                "version_added": "6"
               },
               "edge": "mirror",
               "firefox": [
                 {
-                  "version_added": "55"
+                  "version_added": "55",
+                  "notes": "From Firefox 136, an error message is returned when the menu item doesn't exist. Previously, the error was ignored and the promise fulfilled."
                 },
                 {
                   "alternative_name": "contextMenus.update",

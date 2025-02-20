@@ -4,17 +4,32 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor",
         "spec_url": "https://w3c.github.io/ambient-light/#ambient-light-sensor-interface",
+        "tags": [
+          "web-features:ambient-light"
+        ],
         "support": {
-          "chrome": {
-            "version_added": "56",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "#enable-experimental-web-platform-features",
-                "value_to_set": "Enabled"
-              }
-            ]
-          },
+          "chrome": [
+            {
+              "version_added": "67",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-generic-sensor-extra-classes",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            {
+              "version_added": "56",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
@@ -46,17 +61,32 @@
           "description": "`AmbientLightSensor()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor/AmbientLightSensor",
           "spec_url": "https://w3c.github.io/ambient-light/#dom-ambientlightsensor-ambientlightsensor",
+          "tags": [
+            "web-features:ambient-light"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "67",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-generic-sensor-extra-classes",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -88,18 +118,34 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/AmbientLightSensor/illuminance",
           "spec_url": "https://w3c.github.io/ambient-light/#ambient-light-sensor-reading-attribute",
+          "tags": [
+            "web-features:ambient-light"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "56",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ],
-              "notes": "In Chrome 79, this method stopped returning floats and returned integers to avoid fingerprinting."
-            },
+            "chrome": [
+              {
+                "version_added": "67",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-generic-sensor-extra-classes",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "In Chrome 79, this method stopped returning floats and returned integers to avoid fingerprinting."
+              },
+              {
+                "version_added": "56",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "notes": "In Chrome 79, this method stopped returning floats and returned integers to avoid fingerprinting."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {

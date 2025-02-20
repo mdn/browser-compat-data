@@ -19,8 +19,8 @@ jobs:
           node-version-file: ".nvmrc"
           cache: npm
       - run: npm ci
-      - run: node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/enumerate-features.ts features.json
-      - run: node --loader=ts-node/esm --no-warnings=ExperimentalWarning ./scripts/diff-features.ts --no-github --format=json > features.diff.json
+      - run: npx tsx ./scripts/enumerate-features.ts features.json
+      - run: npx tsx ./scripts/diff-features.ts --no-github --format=json > features.diff.json
       - uses: actions/upload-artifact@v4
         with:
           name: enumerate-features

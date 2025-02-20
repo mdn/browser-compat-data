@@ -2,11 +2,13 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
+import { features } from 'web-features';
 
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 
 const allowedNamespaces = ['web-features'];
+const validFeatureIDs = Object.keys(features);
 
 /**
  * Process the data for spec URL errors
@@ -20,18 +22,28 @@ const processData = (data: CompatStatement, logger: Logger): void => {
 
   for (const tag of data.tags) {
     if (
-      !allowedNamespaces.some(
-        (namespace) =>
-          tag.startsWith(namespace + ':') &&
-          tag.split(':')[1].match(/^[a-z0-9-]*$/),
-      )
+      !allowedNamespaces.some((namespace) => tag.startsWith(namespace + ':'))
     ) {
       logger.error(
         chalk`Invalid tag found: {bold ${tag}}. Check if:
-         - tag tag has a namespace
-         - the tag uses one of the allowed namespaces: {bold ${allowedNamespaces}}
-         - the tag name (after the namespace) uses only lowercase alphanumeric characters (a-z and 0-9) plus the - character (hyphen or minus sign)`,
+         - the tag has a namespace
+         - the tag uses one of the allowed namespaces: {bold ${allowedNamespaces}}`,
       );
+    }
+
+    if (tag.startsWith('web-features')) {
+      const featureID = tag.split(':').pop() as string;
+
+      if (
+        !tag.includes(':snapshot:') && // ignore web-feature snapshots for now
+        !validFeatureIDs.includes(featureID)
+      ) {
+        logger.error(
+          chalk`Non-registered web-features ID found: {bold ${featureID}}.
+          - New web-feature IDs need to be present in https://github.com/web-platform-dx/web-features first.
+          - Check for typos or remove tag. Tagging will be taken care of by web-features maintainers.`,
+        );
+      }
     }
   }
 };

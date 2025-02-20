@@ -170,6 +170,9 @@
           "description": "xml:lang",
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/xml:lang",
           "spec_url": "https://svgwg.org/svg2-draft/struct.html#LangSpaceAttrs",
+          "tags": [
+            "web-features:svg-discouraged"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -208,6 +211,9 @@
           "description": "xml:space",
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/xml:space",
           "spec_url": "https://svgwg.org/svg2-draft/struct.html#WhitespaceProcessingXMLSpaceAttribute",
+          "tags": [
+            "web-features:svg-discouraged"
+          ],
           "support": {
             "chrome": {
               "version_added": "6"
@@ -556,6 +562,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/clip",
           "spec_url": "https://drafts.fxtf.org/css-masking/#clip-property",
+          "tags": [
+            "web-features:svg-discouraged"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -676,7 +685,10 @@
       "color": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/color",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#ColorProperty",
+          "spec_url": [
+            "https://drafts.csswg.org/css-color/#the-color-property",
+            "https://svgwg.org/svg2-draft/painting.html#ColorProperty"
+          ],
           "tags": [
             "web-features:svg"
           ],
@@ -720,7 +732,7 @@
       "color-interpolation": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/color-interpolation",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#ColorInterpolation",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#ColorInterpolationProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -968,7 +980,10 @@
       "display": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/display",
-          "spec_url": "https://svgwg.org/svg2-draft/render.html#VisibilityControl",
+          "spec_url": [
+            "https://drafts.csswg.org/css-display/#the-display-properties",
+            "https://svgwg.org/svg2-draft/render.html#VisibilityControl"
+          ],
           "tags": [
             "web-features:svg"
           ],
@@ -1471,7 +1486,10 @@
       "font-variant": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/font-variant",
-          "spec_url": "https://drafts.csswg.org/css-fonts/#font-variant-prop",
+          "spec_url": [
+            "https://drafts.csswg.org/css-fonts/#font-variant-prop",
+            "https://svgwg.org/svg2-draft/text.html#FontVariantProperty"
+          ],
           "tags": [
             "web-features:font-variant"
           ],
@@ -1561,6 +1579,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/glyph-orientation-horizontal",
           "spec_url": "https://svgwg.org/svg2-draft/text.html#GlyphOrientationHorizontalProperty",
+          "tags": [
+            "web-features:svg-discouraged"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -1596,6 +1617,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/glyph-orientation-vertical",
           "spec_url": "https://svgwg.org/svg2-draft/text.html#GlyphOrientationVerticalProperty",
+          "tags": [
+            "web-features:svg-discouraged"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -1673,7 +1697,10 @@
       "letter-spacing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/letter-spacing",
-          "spec_url": "https://drafts.csswg.org/css-text/#letter-spacing-property",
+          "spec_url": [
+            "https://drafts.csswg.org/css-text/#letter-spacing-property",
+            "https://svgwg.org/svg2-draft/text.html#LetterSpacingProperty"
+          ],
           "tags": [
             "web-features:letter-spacing"
           ],
@@ -1757,7 +1784,7 @@
       "marker-end": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/marker-end",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#VertexMarkerProperties",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#MarkerEndProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -1795,7 +1822,7 @@
       "marker-mid": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/marker-mid",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#VertexMarkerProperties",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#MarkerMidProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -1833,7 +1860,7 @@
       "marker-start": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/marker-start",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#VertexMarkerProperties",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#MarkerStartProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -1978,7 +2005,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/opacity",
           "spec_url": [
-            "https://drafts.csswg.org/css-color/#transparency",
+            "https://drafts.csswg.org/css-color/#propdef-opacity",
             "https://svgwg.org/svg2-draft/render.html#ObjectAndGroupOpacityProperties"
           ],
           "tags": [
@@ -2038,7 +2065,10 @@
       "overflow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/overflow",
-          "spec_url": "https://svgwg.org/svg2-draft/render.html#OverflowAndClipProperties",
+          "spec_url": [
+            "https://drafts.csswg.org/css-overflow/#propdef-overflow",
+            "https://svgwg.org/svg2-draft/render.html#OverflowAndClipProperties"
+          ],
           "tags": [
             "web-features:svg"
           ],
@@ -2080,7 +2110,7 @@
       "paint-order": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/paint-order",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#PaintOrder",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#PaintOrderProperty",
           "tags": [
             "web-features:paint-order"
           ],
@@ -2124,7 +2154,7 @@
       "pointer-events": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/pointer-events",
-          "spec_url": "https://svgwg.org/svg2-draft/interact.html#PointerEventsProp",
+          "spec_url": "https://svgwg.org/svg2-draft/interact.html#PointerEventsProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -2650,7 +2680,7 @@
       "text-anchor": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/text-anchor",
-          "spec_url": "https://svgwg.org/svg2-draft/text.html#TextAnchoringProperties",
+          "spec_url": "https://svgwg.org/svg2-draft/text.html#TextAnchorProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -2735,7 +2765,7 @@
       "text-overflow": {
         "__compat": {
           "spec_url": [
-            "https://drafts.csswg.org/css-overflow-3/#text-overflow",
+            "https://drafts.csswg.org/css-overflow/#text-overflow",
             "https://svgwg.org/svg2-draft/text.html#TextOverflowProperty"
           ],
           "tags": [
@@ -2802,7 +2832,7 @@
       "text-rendering": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/text-rendering",
-          "spec_url": "https://svgwg.org/svg2-draft/painting.html#TextRendering",
+          "spec_url": "https://svgwg.org/svg2-draft/painting.html#TextRenderingProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -3081,7 +3111,7 @@
       "vector-effect": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/vector-effect",
-          "spec_url": "https://svgwg.org/svg2-draft/coords.html#VectorEffects",
+          "spec_url": "https://svgwg.org/svg2-draft/coords.html#VectorEffectProperty",
           "tags": [
             "web-features:svg"
           ],
@@ -3119,7 +3149,10 @@
       "visibility": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/visibility",
-          "spec_url": "https://svgwg.org/svg2-draft/render.html#VisibilityControl",
+          "spec_url": [
+            "https://drafts.csswg.org/css-display/#visibility",
+            "https://svgwg.org/svg2-draft/render.html#VisibilityControl"
+          ],
           "tags": [
             "web-features:svg"
           ],
@@ -3167,7 +3200,10 @@
       },
       "white-space": {
         "__compat": {
-          "spec_url": "https://drafts.csswg.org/css-text-3/#white-space-property",
+          "spec_url": [
+            "https://drafts.csswg.org/css-text-4/#white-space-property",
+            "https://svgwg.org/svg2-draft/text.html#TextWhiteSpace"
+          ],
           "tags": [
             "web-features:white-space"
           ],
@@ -3211,7 +3247,10 @@
       "word-spacing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Attribute/word-spacing",
-          "spec_url": "https://drafts.csswg.org/css-text/#word-spacing-property",
+          "spec_url": [
+            "https://drafts.csswg.org/css-text/#word-spacing-property",
+            "https://svgwg.org/svg2-draft/text.html#WordSpacingProperty"
+          ],
           "tags": [
             "web-features:word-spacing"
           ],

@@ -20,9 +20,22 @@
           "ie": {
             "version_added": false
           },
-          "nodejs": {
-            "version_added": "8.5.0"
-          },
+          "nodejs": [
+            {
+              "version_added": "19.0.0"
+            },
+            {
+              "version_added": "16.7.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `perf_hooks` module."
+            },
+            {
+              "version_added": "8.5.0",
+              "version_removed": "16.7.0",
+              "partial_implementation": true,
+              "notes": "Only available as an internal instance, but can be accessed via the first parameter of the `PerformanceObserver` constructor."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",

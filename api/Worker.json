@@ -22,26 +22,15 @@
           "ie": {
             "version_added": "10"
           },
-          "nodejs": [
-            {
-              "version_added": "12.17.0",
-              "partial_implementation": true,
-              "notes": [
-                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
-                "Worker script environment expects CommonJS modules or ECMAScript modules.",
-                "Must be imported from the `worker_threads` module."
-              ]
-            },
-            {
-              "version_added": "11.7.0",
-              "partial_implementation": true,
-              "notes": [
-                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
-                "Worker script environment expects CommonJS modules.",
-                "Must be imported from the `worker_threads` module."
-              ]
-            }
-          ],
+          "nodejs": {
+            "version_added": "11.7.0",
+            "partial_implementation": true,
+            "notes": [
+              "Inherits from a Node `EventEmitter` instead of DOM `EventTarget`.",
+              "Also supports CommonJS modules, enabled for files ending with `.cjs` and for files ending with `.js` when the nearest parent `package.json` file contains a top-level field `\"type\"` with a value not of `\"commonjs\"`.",
+              "Available as a part of the `worker_threads` module."
+            ]
+          },
           "oculus": "mirror",
           "opera": {
             "version_added": "10.6"
@@ -88,18 +77,11 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Takes entirely different options."
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Takes entirely different options."
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Takes entirely different options parameters."
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -318,6 +300,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "11.7.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -359,7 +344,9 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Supports the event, but only via Node `EventEmitter`."
             },
             "oculus": "mirror",
             "opera": {
@@ -411,18 +398,11 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node `EventEmitter`."
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node `EventEmitter`."
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Supports the event, but only via Node `EventEmitter`."
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -471,9 +451,19 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": false
-            },
+            "nodejs": [
+              {
+                "version_added": "14.5.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node `EventEmitter`."
+              },
+              {
+                "version_added": "12.19.0",
+                "version_removed": "13.0.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node `EventEmitter`."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -548,18 +538,14 @@
               "version_added": "10",
               "notes": "Internet Explorer does not support `Transferable` objects."
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": [
+                "Only accepts an array of transfer objects as the second parameter, not an options object with a `transfer` property.",
+                "Only supports transferring `ArrayBuffer` and `MessagePort` objects."
+              ]
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -648,14 +634,14 @@
             },
             "nodejs": [
               {
-                "version_added": "12.17.0",
+                "version_added": "12.5.0",
                 "partial_implementation": true,
-                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+                "notes": "Returns a `Promise`."
               },
               {
                 "version_added": "11.7.0",
                 "partial_implementation": true,
-                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+                "notes": "Takes an optional callback parameter to be executed when the worker has terminated."
               }
             ],
             "oculus": "mirror",

@@ -22,6 +22,22 @@
           "ie": {
             "version_added": "10"
           },
+          "nodejs": [
+            {
+              "version_added": "19.0.0"
+            },
+            {
+              "version_added": "18.2.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `perf_hooks` module."
+            },
+            {
+              "version_added": "16.17.0",
+              "version_removed": "17.0.0",
+              "partial_implementation": true,
+              "notes": "Available as a part of the `perf_hooks` module."
+            }
+          ],
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -60,6 +76,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "32"
@@ -106,6 +131,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "32"
@@ -150,6 +184,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "32"
@@ -192,6 +235,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -232,6 +278,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -270,6 +325,9 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": {
+              "version_added": "22.2.0"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -291,6 +349,9 @@
           "__compat": {
             "description": "`deliveryType=\"navigational-prefetch\"`",
             "spec_url": "https://wicg.github.io/nav-speculation/prefetch.html#ref-for-navigation-params-delivery-type",
+            "tags": [
+              "web-features:link-rel-prefetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "117"
@@ -302,6 +363,9 @@
               },
               "firefox_android": "mirror",
               "ie": {
+                "version_added": false
+              },
+              "nodejs": {
                 "version_added": false
               },
               "oculus": "mirror",
@@ -345,6 +409,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -385,6 +458,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -425,6 +507,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -465,6 +556,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -478,6 +578,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "finalResponseHeadersStart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart",
+          "spec_url": "https://w3c.github.io/resource-timing/#dom-performanceresourcetiming-finalresponseheadersstart",
+          "support": {
+            "chrome": {
+              "version_added": "133"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1811291"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -502,6 +638,9 @@
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -544,6 +683,16 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.6.0",
+                "notes": "Since v18.2.0, the value can be returned by `toJSON()`, but can not accessed via property getter."
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -584,6 +733,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -624,6 +782,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -664,6 +831,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -700,6 +876,9 @@
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -742,6 +921,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -782,6 +970,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -822,6 +1019,15 @@
             "ie": {
               "version_added": "10"
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -859,6 +1065,9 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "22.2.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -900,6 +1109,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -936,6 +1154,9 @@
             },
             "firefox_android": "mirror",
             "ie": {
+              "version_added": false
+            },
+            "nodejs": {
               "version_added": false
             },
             "oculus": "mirror",
@@ -1027,6 +1248,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1067,6 +1297,15 @@
             "ie": {
               "version_added": false
             },
+            "nodejs": [
+              {
+                "version_added": "18.2.0"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "17.0.0"
+              }
+            ],
             "oculus": "mirror",
             "opera": {
               "version_added": "32"

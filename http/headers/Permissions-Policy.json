@@ -84,6 +84,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/ambient-light-sensor",
             "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
+            "tags": [
+              "web-features:ambient-light"
+            ],
             "support": {
               "chrome": {
                 "version_added": "66",
@@ -126,6 +129,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/attribution-reporting",
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#permission-policy-integration",
+            "tags": [
+              "web-features:attribution-reporting"
+            ],
             "support": {
               "chrome": {
                 "version_added": "117"
@@ -268,6 +274,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/camera",
             "spec_url": "https://w3c.github.io/mediacapture-main/#permissions-policy-integration",
+            "tags": [
+              "web-features:media-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -345,6 +354,7 @@
         },
         "cross-origin-isolated": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/cross-origin-isolated",
             "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#cross-origin-isolated-feature",
             "support": {
               "chrome": {
@@ -462,6 +472,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/encrypted-media",
             "spec_url": "https://w3c.github.io/encrypted-media/#permissions-policy-integration",
+            "tags": [
+              "web-features:encrypted-media-extensions"
+            ],
             "support": {
               "chrome": {
                 "version_added": "64"
@@ -501,6 +514,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/fullscreen",
             "spec_url": "https://fullscreen.spec.whatwg.org/#permissions-policy-integration",
+            "tags": [
+              "web-features:fullscreen"
+            ],
             "support": {
               "chrome": {
                 "version_added": "62"
@@ -774,9 +790,19 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/magnetometer",
             "spec_url": "https://w3c.github.io/sensors/#permissions-policy",
+            "tags": [
+              "web-features:magnetometer"
+            ],
             "support": {
               "chrome": {
-                "version_added": "66"
+                "version_added": "66",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-generic-sensor-extra-classes",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -795,9 +821,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": false
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -811,6 +835,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Permissions-Policy/microphone",
             "spec_url": "https://w3c.github.io/mediacapture-main/#permissions-policy-integration",
+            "tags": [
+              "web-features:media-capture"
+            ],
             "support": {
               "chrome": {
                 "version_added": "64"

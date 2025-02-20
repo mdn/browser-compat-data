@@ -28,7 +28,7 @@ describe('test.check', () => {
 
   it('should not log error when tags are valid', () => {
     const data: CompatStatement = {
-      tags: ['web-features:tag1'],
+      tags: ['web-features:javascript'],
       support: {},
     };
 
@@ -61,15 +61,19 @@ describe('test.check', () => {
     assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
   });
 
-  it('should log error when tag name uses characters other than lowercase alphanumeric and hyphen', () => {
+  it('should log an error when an invalid web-feature ID is used', () => {
     const data: CompatStatement = {
-      tags: ['namespace1:tag$'],
+      tags: ['web-features:foo'],
       support: {},
     };
 
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
+    assert.ok(
+      logger.messages[0].message.includes(
+        'Non-registered web-features ID found:',
+      ),
+    );
   });
 });
