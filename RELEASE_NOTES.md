@@ -1,5 +1,23 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.41)
+
+February 21, 2025
+
+### Additions
+
+- `browsers.deno.releases.2.2` ([#25905](https://github.com/mdn/browser-compat-data/pull/25905))
+- `browsers.edge.releases.136` ([#25975](https://github.com/mdn/browser-compat-data/pull/25975))
+- `javascript.statements.export.arbitrary_module_namespace_identifier_names` ([#25731](https://github.com/mdn/browser-compat-data/pull/25731))
+- `javascript.statements.import.arbitrary_module_namespace_identifier_names` ([#25731](https://github.com/mdn/browser-compat-data/pull/25731))
+
+### Statistics
+
+- 8 contributors have changed 31 files with 755 additions and 203 deletions in 26 commits ([`v5.6.40...v5.6.41`](https://github.com/mdn/browser-compat-data/compare/v5.6.40...v5.6.41))
+- 16,935 total features
+- 1,130 total contributors
+- 5,107 total stargazers
+
 ## [v5.6.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.40)
 
 February 18, 2025
