@@ -195,8 +195,8 @@ export const createDataBundle = async (): Promise<CompatData> => {
   applyTransforms(bcd);
 
   return {
-    __meta: generateMeta(),
     ...bcd,
+    __meta: generateMeta(),
   };
 };
 

@@ -102,7 +102,9 @@ export const stringifyReleases = (
     }
 
     // We always need a carriage return unless we're squashing the format
-    if (indent) result += '\n';
+    if (indent) {
+      result += '\n';
+    }
   }
   return `*#*#{${indent ? '\n' : ''}${result}}#*#*`
     .replace(/"/g, '*"*')
@@ -118,7 +120,7 @@ export const stringifyReleases = (
  * @param value The value of the key
  * @returns The new value
  */
-export const orderProperties = (key: string, value: any): any => {
+export const orderProperties = (key: string, value: any, indent: any): any => {
   if (value instanceof Object) {
     // Order properties for data
     if ('__compat' in value) {
@@ -172,6 +174,7 @@ export const orderProperties = (key: string, value: any): any => {
 
         value.browsers[browser].releases = stringifyReleases(
           value.browsers[browser].releases,
+          indent,
         );
       }
     }
@@ -188,7 +191,7 @@ const stringifyAndOrderProperties = (rawdata: any, indent: any = 2): string => {
   if (rawdata instanceof Object) {
     rawdata = JSON.stringify(rawdata);
   }
-  const data = JSON.parse(rawdata, orderProperties);
+  const data = JSON.parse(rawdata, (k, v) => orderProperties(k, v, indent));
 
   if ('browsers' in data) {
     // Browser data needs to be stringified in a special way due to the release data
