@@ -82,6 +82,7 @@ const doOrder = <T>(value: T, order: string[]): T => {
  */
 export const stringifyReleases = (
   releases: Record<string, ReleaseStatement>,
+  indent: any,
 ): string => {
   const indentStep = '  '; // Constant with the indent step that sortStringify will use
 
@@ -90,7 +91,7 @@ export const stringifyReleases = (
   let result = '';
   for (let i = 0; i < sortedKeys.length; i++) {
     const k = sortedKeys[i];
-    const v = JSON.stringify(releases[k], null, 2).replace(/\n/g, '\n  ');
+    const v = JSON.stringify(releases[k], null, indent).replace(/\n/g, '\n  ');
 
     // Add it to the result
     result += `${indentStep}"${k}": ${v}`;
@@ -100,10 +101,12 @@ export const stringifyReleases = (
       result += ',';
     }
 
-    // We always need a carriage return
-    result += '\n';
+    // We always need a carriage return unless we're squashing the format
+    if (indent) result += '\n';
   }
-  return `*#*#{\n${result}}#*#*`; // Close the brace and return the string
+  return `*#*#{${indent ? '\n' : ''}${result}}#*#*`
+    .replace(/"/g, '*"*')
+    .replace(/\\n/g, '*\\n*'); // Close the brace and return the string
 };
 
 /**
@@ -154,23 +157,23 @@ export const orderProperties = (key: string, value: any): any => {
 
     // Order properties for browsers
     if ('browsers' in value) {
-      const browser = Object.keys(value.browsers)[0];
+      for (const browser in value.browsers) {
+        value.browsers[browser] = doOrder(
+          value.browsers[browser] as BrowserStatement,
+          propOrder.browsers.browser,
+        );
 
-      value.browsers[browser] = doOrder(
-        value.browsers[browser] as BrowserStatement,
-        propOrder.browsers.browser,
-      );
+        for (const r of Object.keys(value.browsers[browser].releases)) {
+          value.browsers[browser].releases[r] = doOrder(
+            value.browsers[browser].releases[r] as ReleaseStatement,
+            propOrder.browsers.release,
+          );
+        }
 
-      for (const r of Object.keys(value.browsers[browser].releases)) {
-        value.browsers[browser].releases[r] = doOrder(
-          value.browsers[browser].releases[r] as ReleaseStatement,
-          propOrder.browsers.release,
+        value.browsers[browser].releases = stringifyReleases(
+          value.browsers[browser].releases,
         );
       }
-
-      value.browsers[browser].releases = stringifyReleases(
-        value.browsers[browser].releases,
-      );
     }
   }
   return value;
@@ -181,7 +184,7 @@ export const orderProperties = (key: string, value: any): any => {
  * @param rawdata The object to stringify
  * @returns The stringified object
  */
-const stringifyAndOrderProperties = (rawdata: any): string => {
+const stringifyAndOrderProperties = (rawdata: any, indent: any = 2): string => {
   if (rawdata instanceof Object) {
     rawdata = JSON.stringify(rawdata);
   }
@@ -189,14 +192,14 @@ const stringifyAndOrderProperties = (rawdata: any): string => {
 
   if ('browsers' in data) {
     // Browser data needs to be stringified in a special way due to the release data
-    return JSON.stringify(data, null, 2)
-      .replace('"*#*#', '')
-      .replace('#*#*"', '')
-      .replace(/\\n/g, '\n      ')
-      .replace(/\\"/g, '"');
+    return JSON.stringify(data, null, indent)
+      .replace(/"\*#\*#/g, '')
+      .replace(/#\*#\*"/g, '')
+      .replace(/\*\\n\*/g, '\n')
+      .replace(/\*\\"\*/g, '"');
   }
 
-  return JSON.stringify(data, null, 2);
+  return JSON.stringify(data, null, indent);
 };
 
 export default stringifyAndOrderProperties;

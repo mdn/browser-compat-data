@@ -6,7 +6,6 @@ import { relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
-import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
@@ -16,6 +15,7 @@ import compileTS from '../generate-types.js';
 import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
 import bcd from '../../index.js';
+import stringifyAndOrderProperties from '../lib/stringify-and-order-properties.js';
 
 import mirrorSupport from './mirror.js';
 
@@ -195,8 +195,8 @@ export const createDataBundle = async (): Promise<CompatData> => {
   applyTransforms(bcd);
 
   return {
-    ...bcd,
     __meta: generateMeta(),
+    ...bcd,
   };
 };
 
@@ -208,7 +208,7 @@ export const createDataBundle = async (): Promise<CompatData> => {
 const writeData = async () => {
   const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
-  await fs.writeFile(dest, stringify(data));
+  await fs.writeFile(dest, stringifyAndOrderProperties(data, null));
   logWrite(dest, 'data');
 };
 
