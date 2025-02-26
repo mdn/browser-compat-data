@@ -1,5 +1,88 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.42)
+
+February 25, 2025
+
+### Removals
+
+- `webextensions.api.userScripts.onBeforeScript` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.register.cookieStoreId` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.RegisteredUserScript.unregister` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+
+### Additions
+
+- `api.MediaSession.setScreenshareActive` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `browsers.safari_ios.releases.18.4` ([#26013](https://github.com/mdn/browser-compat-data/pull/26013))
+- `browsers.safari.releases.18.4` ([#26013](https://github.com/mdn/browser-compat-data/pull/26013))
+- `browsers.webview_ios.releases.18.4` ([#26013](https://github.com/mdn/browser-compat-data/pull/26013))
+- `css.properties.font-width` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.condensed` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.expanded` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.extra-condensed` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.extra-expanded` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.normal` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.semi-condensed` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.semi-expanded` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.ultra-condensed` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.font-width.ultra-expanded` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace.auto` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace.ideograph-alpha` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace.ideograph-numeric` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace.no-autospace` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `css.properties.text-autospace.normal` ([#26039](https://github.com/mdn/browser-compat-data/pull/26039))
+- `javascript.builtins.Error.isError` ([#25978](https://github.com/mdn/browser-compat-data/pull/25978))
+- `webextensions.api.commands.openShortcutSettings` ([#25944](https://github.com/mdn/browser-compat-data/pull/25944))
+- `webextensions.api.runtime.onUserScriptConnect` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.runtime.onUserScriptMessage` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts_legacy` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts_legacy.onBeforeScript` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts_legacy.register` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts_legacy.register.cookieStoreId` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts_legacy.RegisteredUserScript` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts_legacy.RegisteredUserScript.unregister` ([#25857](https://github.com/mdn/browser-compat-data/pull/25857))
+- `webextensions.api.userScripts.configureWorld` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.ExecutionWorld` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.getScripts` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.getWorldConfigurations` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.RegisteredUserScript.worldId` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.resetWorldConfiguration` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.ScriptSource` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.unregister` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.update` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.UserScriptFilter` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.WorldProperties` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.api.userScripts.WorldProperties.worldId` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.manifest.optional_permissions.userScripts` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+- `webextensions.manifest.permissions.userScripts` ([#25913](https://github.com/mdn/browser-compat-data/pull/25913))
+
+### Statistics
+
+- 6 contributors have changed 121 files with 1,744 additions and 452 deletions in 39 commits ([`v5.6.41...v5.6.42`](https://github.com/mdn/browser-compat-data/compare/v5.6.41...v5.6.42))
+- 16,974 total features
+- 1,130 total contributors
+- 5,115 total stargazers
+
+## [v5.6.41](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.41)
+
+February 21, 2025
+
+### Additions
+
+- `browsers.deno.releases.2.2` ([#25905](https://github.com/mdn/browser-compat-data/pull/25905))
+- `browsers.edge.releases.136` ([#25975](https://github.com/mdn/browser-compat-data/pull/25975))
+- `javascript.statements.export.arbitrary_module_namespace_identifier_names` ([#25731](https://github.com/mdn/browser-compat-data/pull/25731))
+- `javascript.statements.import.arbitrary_module_namespace_identifier_names` ([#25731](https://github.com/mdn/browser-compat-data/pull/25731))
+
+### Statistics
+
+- 8 contributors have changed 31 files with 755 additions and 203 deletions in 26 commits ([`v5.6.40...v5.6.41`](https://github.com/mdn/browser-compat-data/compare/v5.6.40...v5.6.41))
+- 16,935 total features
+- 1,130 total contributors
+- 5,107 total stargazers
+
 ## [v5.6.40](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.40)
 
 February 18, 2025
