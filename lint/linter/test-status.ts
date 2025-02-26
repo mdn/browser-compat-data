@@ -38,7 +38,7 @@ export const checkExperimental = (data: CompatStatement): boolean => {
     const engineSupport = new Set();
 
     for (const browser of browserSupport) {
-      const currentRelease = Object.values(browsers[browser].releases).find(
+      const currentRelease = browsers[browser].releases.find(
         (r) => r.status === 'current',
       );
       const engine = currentRelease?.engine;
