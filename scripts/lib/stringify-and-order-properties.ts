@@ -21,7 +21,7 @@ const propOrder = {
       'pref_url',
       'accepts_flags',
       'accepts_webextensions',
-      'implements_webdriver_bidi',
+      'accepts_webdriver_bidi',
       'releases',
     ],
     release: [

@@ -38,7 +38,7 @@ const processData = (
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions) &&
         (!path.full?.startsWith('webdriver.bidi.') ||
-          browsers[b].implements_webdriver_bidi),
+          browsers[b].accepts_webdriver_bidi),
     );
     const requiredBrowsers = (
       Object.keys(browsers) as (keyof typeof browsers)[]
@@ -47,7 +47,7 @@ const processData = (
         browsers[b].type == 'desktop' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions) &&
         (!path.full?.startsWith('webdriver.bidi.') ||
-          browsers[b].implements_webdriver_bidi),
+          browsers[b].accepts_webdriver_bidi),
     );
 
     const undefEntries = definedBrowsers.filter(

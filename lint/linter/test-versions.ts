@@ -146,7 +146,7 @@ const checkVersions = (
     category === 'webextensions'
       ? browsers[b].accepts_webextensions
       : path.full?.startsWith('webdriver.bidi.')
-        ? browsers[b].implements_webdriver_bidi
+        ? browsers[b].accepts_webdriver_bidi
         : !!b,
   ) as BrowserName[];
 
