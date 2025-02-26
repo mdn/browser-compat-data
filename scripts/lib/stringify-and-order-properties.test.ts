@@ -33,16 +33,16 @@ describe('Order Properties', () => {
     const input = {
       browsers: {
         firefox: {
-          releases: {
-            '1.5': { version: '1.5', release_date: '2008-11-14' },
-            '1': { version: '1', release_date: '2008-09-02' },
-          },
+          releases: [
+            { version: '1.5', release_date: '2008-11-14' },
+            { version: '1', release_date: '2008-09-02' },
+          ],
         },
       },
     };
 
     const expected =
-      '{\n  "browsers": {\n    "firefox": {\n      "releases": {\n        "1": {\n          "release_date": "2008-09-02"\n        },\n        "1.5": {\n          "release_date": "2008-11-14"\n        }\n      }\n    }\n  }\n}';
+      '{\n  "browsers": {\n    "firefox": {\n      "releases": [\n        {\n          "version": "1",\n          "release_date": "2008-09-02"\n        },\n        {\n          "version": "1.5",\n          "release_date": "2008-11-14"\n        }\n      ]\n    }\n  }\n}';
 
     const result = stringifyAndOrderProperties(input);
     assert.deepEqual(result, expected);

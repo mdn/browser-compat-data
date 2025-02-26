@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 
 import stringify from '../lib/stringify-and-order-properties.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 import {
   createOrUpdateBrowserEntry,
@@ -104,7 +105,7 @@ export const updateOperaReleases = async (options) => {
   const data = JSON.parse(file.toString());
 
   const current = structuredClone(
-    data.browsers[browser].releases[release.version],
+    findBrowserRelease(data, browser, release.version),
   );
 
   if (isDesktop && !current) {

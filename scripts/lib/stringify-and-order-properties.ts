@@ -24,6 +24,7 @@ const propOrder = {
       'releases',
     ],
     release: [
+      'version',
       'release_date',
       'release_notes',
       'status',
@@ -70,40 +71,6 @@ const doOrder = <T>(value: T, order: string[]): T => {
     }, {}) as T;
   }
   return value;
-};
-
-/**
- * Return a stringified version of the releases list in a browser file, with a
- * prefix and suffix added, which will be removed after performing JSON
- * stringification. This is important because JavaScript wants to move object
- * entries with a floating point as the key to the very end of the list.
- * @param releases The release data
- * @returns The stringified releases
- */
-export const stringifyReleases = (
-  releases: Record<string, ReleaseStatement>,
-): string => {
-  const indentStep = '  '; // Constant with the indent step that sortStringify will use
-
-  const sortedKeys = Object.keys(releases).sort(compareVersions);
-
-  let result = '';
-  for (let i = 0; i < sortedKeys.length; i++) {
-    const k = sortedKeys[i];
-    const v = JSON.stringify(releases[k], null, 2).replace(/\n/g, '\n  ');
-
-    // Add it to the result
-    result += `${indentStep}"${k}": ${v}`;
-
-    // Check if this is the last entry or not: if not, add a comma
-    if (i != sortedKeys.length - 1) {
-      result += ',';
-    }
-
-    // We always need a carriage return
-    result += '\n';
-  }
-  return `*#*#{\n${result}}#*#*`; // Close the brace and return the string
 };
 
 /**
@@ -167,10 +134,6 @@ export const orderProperties = (key: string, value: any): any => {
           propOrder.browsers.release,
         );
       }
-
-      value.browsers[browser].releases = stringifyReleases(
-        value.browsers[browser].releases,
-      );
     }
   }
   return value;
@@ -188,12 +151,12 @@ const stringifyAndOrderProperties = (rawdata: any): string => {
   const data = JSON.parse(rawdata, orderProperties);
 
   if ('browsers' in data) {
-    // Browser data needs to be stringified in a special way due to the release data
-    return JSON.stringify(data, null, 2)
-      .replace('"*#*#', '')
-      .replace('#*#*"', '')
-      .replace(/\\n/g, '\n      ')
-      .replace(/\\"/g, '"');
+    for (const browserName of Object.keys(data.browsers)) {
+      const browser = data.browsers[browserName] as BrowserStatement;
+      browser.releases = browser.releases.sort(
+        ({ version: a }, { version: b }) => compareVersions(a, b),
+      );
+    }
   }
 
   return JSON.stringify(data, null, 2);

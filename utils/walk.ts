@@ -45,12 +45,12 @@ export function* browserReleaseWalk(
   data: DataType,
   path?: string,
 ): IterableIterator<BrowserReleaseWalkOutput> {
-  for (const [release, releaseData] of Object.entries(data.releases)) {
+  for (const release of data.releases) {
     yield {
-      path: joinPath(path, 'releases', release),
+      path: joinPath(path, 'releases', release.version),
       data,
       browser: data,
-      browserRelease: releaseData as ReleaseStatement,
+      browserRelease: release as ReleaseStatement,
     };
   }
 }

@@ -17,11 +17,11 @@ const errorTime = new Date(),
   warningTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 warningTime.setFullYear(warningTime.getFullYear() - 2);
-const release = Object.entries(browsers.chrome.releases).find((r) => {
-  if (r[1].release_date === undefined) {
+const release = browsers.chrome.releases.find((r) => {
+  if (r.release_date === undefined) {
     return false;
   }
-  const date = new Date(r[1].release_date);
+  const date = new Date(r.release_date);
   return errorTime < date && date < warningTime;
 });
 
@@ -100,7 +100,7 @@ describe('implementedAndRemoved', () => {
         chrome: [
           {
             version_added: '2',
-            version_removed: release[0],
+            version_removed: release.version,
           },
           {
             version_added: '1',
@@ -130,7 +130,7 @@ describe('implementedAndRemoved', () => {
       implementedAndRemoved({
         chrome: {
           version_added: '1',
-          version_removed: Object.keys(browsers.chrome.releases)[-1],
+          version_removed: browsers.chrome.releases.at(-1)?.version,
         },
       }),
       false,
@@ -140,7 +140,7 @@ describe('implementedAndRemoved', () => {
         chrome: [
           {
             version_added: '2',
-            version_removed: Object.keys(browsers.chrome.releases)[-1],
+            version_removed: browsers.chrome.releases.at(-1)?.version,
           },
           {
             version_added: '1',
@@ -161,7 +161,7 @@ describe('implementedAndRemoved', () => {
   it('rule 2 warning: returns "warning" for features which were implemented and removed some time ago', () => {
     // Make sure there is a suitable release
     assert.ok(release);
-    const version_removed = release[0];
+    const version_removed = release.version;
     assert.equal(
       implementedAndRemoved({
         chrome: {
@@ -260,7 +260,7 @@ describe('processData', () => {
     const logger = new Logger('', '');
     // Make sure there is a suitable release
     assert.ok(release);
-    const version_removed = release[0];
+    const version_removed = release.version;
     processData(logger, {
       support: {
         chrome: {

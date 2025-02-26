@@ -20,9 +20,9 @@ const processData = (
   logger: Logger,
 ): void => {
   for (const status of ['current', 'nightly']) {
-    const releasesForStatus = Object.entries(data.releases)
-      .filter(([, data]) => data.status == status)
-      .map(([version]) => version);
+    const releasesForStatus = data.releases
+      .filter((data) => data.status == status)
+      .map(({ version }) => version);
 
     if (releasesForStatus.length > 1) {
       logger.error(
@@ -56,12 +56,12 @@ const processData = (
       // Ignore Oculus Browser, because release dates for versions 5.0 to 15.1 are not publicly documented.
       continue;
     }
-    const releasesWithoutDate = Object.entries(data.releases)
+    const releasesWithoutDate = data.releases
       .filter(
-        ([, data]) =>
+        (data) =>
           data.status == status && typeof data.release_date === 'undefined',
       )
-      .map(([version]) => version);
+      .map(({ version }) => version);
 
     if (releasesWithoutDate.length > 0) {
       logger.error(

@@ -10,6 +10,7 @@ import {
   SupportStatement,
 } from '../../types/types.js';
 import { InternalSupportBlock } from '../../types/index.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 const { browsers } = bcd;
 
@@ -71,17 +72,24 @@ export const getMatchingBrowserVersion = (
     if (v) {
       return (range ? '≤' : '') + v;
     }
-    if (sourceVersion.replace('≤', '') in browserData.releases) {
+    if (
+      browserData.releases
+        .map(({ version }) => version)
+        .includes(sourceVersion.replace('≤', ''))
+    ) {
       return sourceVersion;
     }
     throw new Error(`Cannot find iOS version matching Safari ${sourceVersion}`);
   }
 
-  const releaseKeys = Object.keys(browserData.releases);
-  releaseKeys.sort(compareVersions);
+  const releaseVersions = browserData.releases.map((r) => r.version);
+  releaseVersions.sort(compareVersions);
 
-  const sourceRelease =
-    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
+  const sourceRelease = findBrowserRelease(
+    browsers,
+    browserData.upstream,
+    sourceVersion,
+  );
 
   if (!sourceRelease) {
     throw new Error(
@@ -91,8 +99,8 @@ export const getMatchingBrowserVersion = (
 
   let previousReleaseEngine;
 
-  for (const r of releaseKeys) {
-    const release = browserData.releases[r];
+  for (const v of releaseVersions) {
+    const release = browserData.releases.find((r) => r.version === v)!;
 
     // Add a range delimiter if there were previous releases of the downstream browser that used the same engine before this one (ex. after Edge 79)
     const rangeDelimiter =
@@ -112,7 +120,7 @@ export const getMatchingBrowserVersion = (
       compare(release.engine_version, sourceRelease.engine_version, '>=');
 
     if (isChromeWebKitToBlink || isMatchingVersion) {
-      return rangeDelimiter ? `≤${r}` : r;
+      return rangeDelimiter ? `≤${v}` : v;
     }
 
     previousReleaseEngine = release.engine;

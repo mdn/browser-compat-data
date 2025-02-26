@@ -4,7 +4,7 @@
 import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import { findBrowserRelease, Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -78,7 +78,7 @@ const isValidVersion = (
     if (version === 'preview') {
       return !!browsers[browser].preview_name;
     }
-    return Object.hasOwn(browsers[browser].releases, version.replace('≤', ''));
+    return !!findBrowserRelease(browsers, browser, version);
   } else if (
     realValuesRequired[category].includes(browser) &&
     version !== false
@@ -185,8 +185,7 @@ const checkVersions = (
         }
 
         if (typeof version === 'string' && version.startsWith('≤')) {
-          const releaseData =
-            browsers[browser].releases[version.replace('≤', '')];
+          const releaseData = findBrowserRelease(browsers, browser, version);
           if (
             !releaseData ||
             !releaseData.release_date ||

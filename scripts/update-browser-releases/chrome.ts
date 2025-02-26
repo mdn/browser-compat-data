@@ -6,6 +6,7 @@ import * as fs from 'node:fs';
 import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
@@ -130,7 +131,11 @@ export const updateChromiumReleases = async (options) => {
       }
 
       if (
-        chromeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+        findBrowserRelease(
+          chromeBCD,
+          options.bcdBrowserName,
+          data[value].version,
+        )
       ) {
         // The entry already exists
         result += updateBrowserEntry(
@@ -167,13 +172,17 @@ export const updateChromiumReleases = async (options) => {
     i++
   ) {
     if (!options.skippedReleases.includes(i)) {
-      if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
+      const release = findBrowserRelease(
+        chromeBCD,
+        options.bcdBrowserName,
+        i.toString(),
+      );
+      if (release) {
         result += updateBrowserEntry(
           chromeBCD,
           options.bcdBrowserName,
           i.toString(),
-          chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-            .release_date,
+          release.release_date,
           'retired',
           '',
           '',
@@ -193,13 +202,17 @@ export const updateChromiumReleases = async (options) => {
     const plannedVersion = (
       Number(data[options.nightlyBranch].version) + 1
     ).toString();
-    if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
+    const release = findBrowserRelease(
+      chromeBCD,
+      options.bcdBrowserName,
+      plannedVersion,
+    );
+    if (release) {
       result += updateBrowserEntry(
         chromeBCD,
         options.bcdBrowserName,
         plannedVersion,
-        chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
-          .release_date,
+        release.release_date,
         'planned',
         '',
         '',
