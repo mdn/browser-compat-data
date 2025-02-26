@@ -141,9 +141,7 @@ const checkVersions = (
   logger: Logger,
 ): void => {
   const browsersToCheck = Object.keys(browsers).filter((b) =>
-    category === 'webextensions'
-      ? browsers[b].accepts.includes('webextensions')
-      : !!b,
+    category === 'webextensions' ? browsers[b].accepts.webextensions : !!b,
   ) as BrowserName[];
 
   for (const browser of browsersToCheck) {
@@ -213,10 +211,7 @@ const checkVersions = (
         }
       }
 
-      if (
-        'flags' in statement &&
-        !browsers[browser].accepts?.includes('flags')
-      ) {
+      if ('flags' in statement && !browsers[browser].accepts.flags) {
         logger.error(
           chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
         );

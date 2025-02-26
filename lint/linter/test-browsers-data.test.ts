@@ -20,7 +20,9 @@ describe('test-browsers-data', () => {
     const data: BrowserStatement = {
       name: 'Node.js',
       type: 'server',
-      accepts: ['flags'],
+      accepts: {
+        flags: true,
+      },
       releases: {
         '20.6.0': {
           release_date: '2023-09-04',
@@ -42,7 +44,10 @@ describe('test-browsers-data', () => {
     const data: BrowserStatement = {
       name: 'Firefox',
       type: 'desktop',
-      accepts: ['flags', 'webextensions'],
+      accepts: {
+        flags: true,
+        webextensions: true,
+      },
       releases: {
         '1': { status: 'nightly' },
         '2': { status: 'nightly' },
@@ -57,7 +62,9 @@ describe('test-browsers-data', () => {
     const data: BrowserStatement = {
       name: 'Node.js',
       type: 'server',
-      accepts: ['flags'],
+      accepts: {
+        flags: true,
+      },
       releases: {
         '1': { status: 'nightly' },
         '2': { status: 'nightly' },
@@ -73,7 +80,7 @@ describe('test-browsers-data', () => {
       name: 'Safari iOS',
       type: 'mobile',
       upstream: browser,
-      accepts: [],
+      accepts: {},
       releases: {},
     };
 
@@ -87,7 +94,7 @@ describe('test-browsers-data', () => {
       name: 'Safari iOS',
       type: 'mobile',
       upstream: 'unknown' as any,
-      accepts: [],
+      accepts: {},
       releases: {},
     };
 
@@ -102,7 +109,10 @@ describe('test-browsers-data', () => {
       type: 'desktop',
       upstream: 'chrome',
       pref_url: 'opera://flags',
-      accepts: ['flags', 'webextensions'],
+      accepts: {
+        flags: true,
+        webextensions: true,
+      },
       releases: {
         '97': {
           status: 'retired',

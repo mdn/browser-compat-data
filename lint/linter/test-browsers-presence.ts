@@ -35,16 +35,14 @@ const processData = (
             ? ['server']
             : []),
         ].includes(browsers[b].type) &&
-        (category !== 'webextensions' ||
-          browsers[b].accepts.includes('webextensions')),
+        (category !== 'webextensions' || browsers[b].accepts.webextensions),
     );
     const requiredBrowsers = (
       Object.keys(browsers) as (keyof typeof browsers)[]
     ).filter(
       (b) =>
         browsers[b].type == 'desktop' &&
-        (category !== 'webextensions' ||
-          browsers[b].accepts.includes('webextensions')),
+        (category !== 'webextensions' || browsers[b].accepts.webextensions),
     );
 
     const undefEntries = definedBrowsers.filter(

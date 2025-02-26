@@ -47,7 +47,7 @@ The `upstream` string is an optional property which indicates the upstream brows
 
 ### `accepts`
 
-An optional array indicating which additional features the browser supports. Possible items are:
+An optional object indicating which additional features the browser supports. Possible properties are:
 
 - `flags` - if the browser supports flags.
 - `webextensions` - if the browser supports web extensions.

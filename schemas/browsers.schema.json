@@ -73,12 +73,9 @@
           "description": "URL of the page where feature flags can be changed (e.g. 'about:config' for Firefox or 'chrome://flags' for Chrome)."
         },
         "accepts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/accepts_value"
-          },
+          "$ref": "#/definitions/accepts_statement",
           "description": "The additional features the browser supports.",
-          "tsType": "AcceptsValue[]"
+          "tsType": "AcceptsStatement"
         },
         "releases": {
           "type": "object",
@@ -91,9 +88,19 @@
       "additionalProperties": false
     },
 
-    "accepts_value": {
-      "type": "string",
-      "enum": ["flags", "webextensions"]
+    "accepts_statement": {
+      "type": "object",
+      "properties": {
+        "flags": {
+          "type": "boolean",
+          "description": "Whether the browser supports user-toggleable flags that enable or disable features."
+        },
+        "webextensions": {
+          "type": "boolean",
+          "description": "Whether the browser supports extensions."
+        }
+      },
+      "additionalProperties": false
     },
 
     "release_statement": {

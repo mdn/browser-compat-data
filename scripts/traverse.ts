@@ -75,7 +75,7 @@ export function* iterateFeatures(
                   if (
                     !(
                       identifier.startsWith('webextensions.') &&
-                      bcd.browsers[browser].accepts?.includes('webextensions')
+                      bcd.browsers[browser].accepts.webextensions
                     )
                   ) {
                     continue;
