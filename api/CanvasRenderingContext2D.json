@@ -1239,11 +1239,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "4",
-              "partial_implementation": true,
-              "notes": "The `font-weight` can be set, but is not reflected back (see [bug 288486](https://webkit.org/b/288486))."
-            },
+            "safari": [
+              {
+                "version_added": "18.4"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "18.4",
+                "partial_implementation": true,
+                "notes": "The `font-weight` can be set, but is not reflected back (see [bug 288486](https://webkit.org/b/288486))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
