@@ -3,7 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import { Linter, Logger, LinterData, LinterPath } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -11,16 +11,17 @@ const { browsers } = bcd;
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
  * @param data The data to test
- * @param category The category the data belongs to.
+ * @param path The path of the data
  * @param logger The logger to output errors to.
  */
 const processData = (
   data: CompatStatement,
-  category: string,
+  path: LinterPath,
   logger: Logger,
 ): void => {
   if (data.support) {
     const support = data.support;
+    const { category } = path;
     const definedBrowsers = Object.keys(support);
 
     const displayBrowsers = (
@@ -36,7 +37,8 @@ const processData = (
             : []),
         ].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions) &&
-        (category !== 'webdriver' || browsers[b].accepts_webdriver),
+        (!path.full?.startsWith('webdriver.bidi.') ||
+          browsers[b].accepts_webdriver_bidi),
     );
     const requiredBrowsers = (
       Object.keys(browsers) as (keyof typeof browsers)[]
@@ -44,7 +46,8 @@ const processData = (
       (b) =>
         browsers[b].type == 'desktop' &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions) &&
-        (category !== 'webdriver' || browsers[b].accepts_webdriver),
+        (!path.full?.startsWith('webdriver.bidi.') ||
+          browsers[b].accepts_webdriver_bidi),
     );
 
     const undefEntries = definedBrowsers.filter(
@@ -93,9 +96,8 @@ export default {
    * @param root The data to test
    * @param root.data The data to test
    * @param root.path The path of the data
-   * @param root.path.category The category the data belongs to
    */
-  check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    processData(data, category, logger);
+  check: (logger: Logger, { data, path }: LinterData) => {
+    processData(data, path, logger);
   },
 } as Linter;
