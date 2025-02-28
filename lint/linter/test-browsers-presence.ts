@@ -41,7 +41,7 @@ const processData = (
       Object.keys(browsers) as (keyof typeof browsers)[]
     ).filter(
       (b) =>
-        browsers[b].type == 'desktop' &&
+        ['desktop', 'mobile'].includes(browsers[b].type) &&
         (category !== 'webextensions' || browsers[b].accepts_webextensions),
     );
 
