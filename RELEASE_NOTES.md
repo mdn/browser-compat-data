@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.6.43](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.43)
+
+February 28, 2025
+
+### Removals
+
+- `css.properties.font.font_stretch_support` ([#26060](https://github.com/mdn/browser-compat-data/pull/26060))
+- `javascript.builtins.Error.cause.displayed_in_console` ([#26001](https://github.com/mdn/browser-compat-data/pull/26001))
+
+### Additions
+
+- `css.properties.font.font-width_keyword_values` ([#26060](https://github.com/mdn/browser-compat-data/pull/26060))
+
+### Statistics
+
+- 4 contributors have changed 20 files with 117 additions and 86 deletions in 14 commits ([`v5.6.42...v5.6.43`](https://github.com/mdn/browser-compat-data/compare/v5.6.42...v5.6.43))
+- 16,973 total features
+- 1,130 total contributors
+- 5,119 total stargazers
+
 ## [v5.6.42](https://github.com/mdn/browser-compat-data/releases/tag/v5.6.42)
 
 February 25, 2025
