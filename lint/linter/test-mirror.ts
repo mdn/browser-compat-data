@@ -23,7 +23,7 @@ const checkMirroring = (
 ): void => {
   const browsersToCheck = Object.keys(browsers)
     .filter((b) =>
-      category === 'webextensions' ? browsers[b].accepts_webextensions : !!b,
+      category === 'webextensions' ? browsers[b].accepts.webextensions : !!b,
     )
     .filter((b) => browsers[b].upstream) as BrowserName[];
 
