@@ -100,7 +100,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
               // Supported since Chrome 57 on
               "version_added": "57",
             },
-            "chrome_android": "mirror", // Mirrors from Chrome Desktop, so "57"
+            "chrome_android": "mirror", // Mirrors from the upstream browser -- in this case, it is Chrome Desktop, so the data becomes "57"
             "edge": {
               // Supported since Edge 12, with a note about a difference in behavior
               "version_added": "12",
@@ -112,8 +112,8 @@ Here is an example of a `__compat` statement, with all of the properties and the
               "version_removed": "80",
             },
             "firefox_android": {
-              // Supported in Firefox Android, we just don't know what version it was added in
-              "version_added": true,
+              // Support is known to be in at least Firefox Android 50, but it could have been added earlier
+              "version_added": "≤50",
             },
             "ie": {
               // Supported since IE 10, but has a caveat that impacts compatibility
@@ -126,10 +126,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
               // Not supported at all in Opera
               "version_added": false,
             },
-            "opera_android": {
-              // We don't know if Opera Android supports this or not
-              "version_added": null,
-            },
+            "opera_android": "mirror",
             "safari": [
               // A support statement can be an array of multiple statements to better describe the compatibility story
               {
@@ -148,6 +145,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
+            // If a browser is not defined, it means we don't have support information for that browser (or for web extensions, the browser has no support at all)
           },
           "status": {
             // Standards track, deprecation and experimental status
@@ -295,14 +293,6 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-- Supported, but version unknown:
-
-```json
-{
-  "version_added": true
-}
-```
-
 - No support:
 
 ```json
@@ -311,24 +301,9 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-- Support unknown (default value, if browser omitted):
-
-```json
-{
-  "version_added": null
-}
-```
-
-Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
-
 #### `version_removed`
 
 Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
-
-Default values:
-
-- If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
-- If `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
 Examples:
 
@@ -340,17 +315,6 @@ Examples:
   "version_removed": "10"
 }
 ```
-
-- Removed in some version after 4:
-
-```json
-{
-  "version_added": "4",
-  "version_removed": true
-}
-```
-
-Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 #### `version_last`
 
@@ -436,7 +400,7 @@ Example for one flag required:
 
 ```json
 {
-  "version_added": true,
+  "version_added": "40",
   "flags": [
     {
       "type": "preference",
@@ -451,7 +415,7 @@ Example for two flags required:
 
 ```json
 {
-  "version_added": true,
+  "version_added": "40",
   "flags": [
     {
       "type": "preference",
