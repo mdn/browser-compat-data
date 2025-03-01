@@ -3,7 +3,13 @@
 
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData, LinterMessageLevel } from '../utils.js';
+import {
+  findBrowserRelease,
+  Linter,
+  Logger,
+  LinterData,
+  LinterMessageLevel,
+} from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 import {
   InternalSupportBlock,
@@ -85,8 +91,11 @@ export const implementedAndRemoved = (
         return false;
       }
 
-      const releaseDateData =
-        browsers[browser].releases[d.version_removed].release_date;
+      const releaseDateData = findBrowserRelease(
+        browsers,
+        browser,
+        d.version_removed,
+      )?.release_date;
 
       // No browser release date
       if (!releaseDateData) {

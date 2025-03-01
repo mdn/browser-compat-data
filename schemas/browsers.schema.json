@@ -81,10 +81,10 @@
           "description": "Whether the browser supports extensions."
         },
         "releases": {
-          "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/release_statement" },
+          "type": "array",
+          "items": { "$ref": "#/definitions/release_statement" },
           "description": "The known versions of this browser.",
-          "tsType": "{ [version: string]: ReleaseStatement };"
+          "tsType": "ReleaseStatement[]"
         }
       },
       "required": [
@@ -100,6 +100,10 @@
     "release_statement": {
       "type": "object",
       "properties": {
+        "version": {
+          "type": "string",
+          "description": "The version of this release."
+        },
         "release_date": {
           "type": "string",
           "format": "date",
@@ -126,7 +130,7 @@
           "description": "Version of the engine corresponding to the browser version."
         }
       },
-      "required": ["status"],
+      "required": ["version", "status"],
       "dependencies": {
         "engine": ["engine_version"]
       },
