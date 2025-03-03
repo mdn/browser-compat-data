@@ -20,7 +20,6 @@ const propOrder = {
       'preview_name',
       'pref_url',
       'accepts_flags',
-      'accepts_webdriver_bidi',
       'accepts_webextensions',
       'releases',
     ],
