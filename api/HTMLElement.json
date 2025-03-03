@@ -317,7 +317,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -331,10 +331,11 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -715,6 +716,9 @@
         "__compat": {
           "description": "`command` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event",
+          "tags": [
+            "web-features:invoker-commands"
+          ],
           "support": {
             "chrome": {
               "version_added": "preview",
@@ -827,7 +831,7 @@
                 "version_added": "≤79"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -1556,7 +1560,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "18.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1564,7 +1568,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1824,6 +1828,53 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "scripts_accept_TrustedScript": {
+          "__compat": {
+            "description": "Can be set with `TrustedScript` instances in `HTMLScriptElement`.",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-htmlscriptelement-innertext",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "inputMode": {
@@ -1831,7 +1882,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inputMode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inputmode",
           "tags": [
-            "web-features:contenteditable"
+            "web-features:inputmode"
           ],
           "support": {
             "chrome": {
@@ -2326,6 +2377,44 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "hint": {
+          "__compat": {
+            "description": "`hint` value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#attr-popover-hint",
+            "tags": [
+              "web-features:popover-hint"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "showPopover": {
@@ -2363,6 +2452,81 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "source": {
+          "__compat": {
+            "description": "`source` option",
+            "tags": [
+              "web-features:popover"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "implicit_anchor_reference": {
+            "__compat": {
+              "description": "Implicit anchor reference via `source`",
+              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
+              "tags": [
+                "web-features:anchor-positioning"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "133"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
@@ -2786,6 +2950,81 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          }
+        },
+        "source": {
+          "__compat": {
+            "description": "`source` option",
+            "tags": [
+              "web-features:popover"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "implicit_anchor_reference": {
+            "__compat": {
+              "description": "Implicit anchor reference via `source`",
+              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
+              "tags": [
+                "web-features:anchor-positioning"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "133"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }

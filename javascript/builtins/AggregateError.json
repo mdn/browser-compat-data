@@ -140,9 +140,13 @@
           "__compat": {
             "description": "`AggregateError` is serializable",
             "mdn_url": "https://developer.mozilla.org/docs/Glossary/Serializable_object",
+            "tags": [
+              "web-features:promise-any"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "98",
+                "notes": "`AggregateError` serializes to the `Error` type, without additional properties."
               },
               "chrome_android": "mirror",
               "deno": {
@@ -151,7 +155,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "103",
-                "notes": "Serialized properties: `name`, `message`, `cause`, `errors`."
+                "notes": "`AggregateError` serializes to the `AggregateError` type, with properties `name`, `message`, `cause`, and `errors`."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -164,7 +168,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "17"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -172,7 +176,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

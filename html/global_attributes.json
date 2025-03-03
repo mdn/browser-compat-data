@@ -136,7 +136,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -158,7 +158,7 @@
             "webview_android": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -364,7 +364,7 @@
                 "version_added": "≤79"
               },
               "firefox": {
-                "version_added": "preview"
+                "version_added": "136"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -749,6 +749,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode",
+          "tags": [
+            "web-features:inputmode"
+          ],
           "support": {
             "chrome": {
               "version_added": "66"
@@ -1020,6 +1023,44 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "hint": {
+          "__compat": {
+            "description": "`hint` value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#attr-popover-hint",
+            "tags": [
+              "web-features:popover-hint"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "slot": {
@@ -1238,6 +1279,9 @@
         "multi-line_titles": {
           "__compat": {
             "description": "Multi-line titles",
+            "tags": [
+              "web-features:title-attr"
+            ],
             "support": {
               "chrome": {
                 "version_added": "≤64"

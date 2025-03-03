@@ -4,7 +4,7 @@
 import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData, twoYearsAgo } from '../utils.js';
+import { Linter, Logger, LinterData } from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -16,6 +16,15 @@ import {
 } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
+
+const now = new Date();
+
+/* The latest date a range's release can correspond to */
+const rangeCutoffDate = new Date(
+  now.getFullYear() - 4,
+  now.getMonth(),
+  now.getDate(),
+);
 
 const browserTips: Record<string, string> = {
   nodejs:
@@ -181,10 +190,10 @@ const checkVersions = (
           if (
             !releaseData ||
             !releaseData.release_date ||
-            new Date(releaseData.release_date) > twoYearsAgo
+            new Date(releaseData.release_date) > rangeCutoffDate
           ) {
             logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released two years or earlier (on or before ${twoYearsAgo}). Ranged values are also not allowed for browser versions without a known release date.`,
+              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released on or before ${rangeCutoffDate.toDateString()}. (Ranged values are also not allowed for browser versions without a known release date.)`,
             );
           }
         }

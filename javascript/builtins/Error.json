@@ -228,6 +228,54 @@
             }
           }
         },
+        "captureStackTrace": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/captureStackTrace",
+            "support": {
+              "chrome": {
+                "version_added": "3"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.experimental.error_capture_stack_trace",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/1886820"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "cause": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/cause",
@@ -238,7 +286,8 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "93"
+                "version_added": "93",
+                "notes": "Before version 125, default console logging for `Error` objects does not print the cause."
               },
               "chrome_android": "mirror",
               "deno": {
@@ -259,7 +308,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "15",
+                "notes": "Default console logging for `Error` objects does not print the cause."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -270,46 +320,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          },
-          "displayed_in_console": {
-            "__compat": {
-              "description": "Cause is displayed in console",
-              "support": {
-                "chrome": {
-                  "version_added": "125"
-                },
-                "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.13"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "91"
-                },
-                "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
-                "nodejs": {
-                  "version_added": "16.9.0"
-                },
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": false,
-                "deprecated": false
-              }
             }
           }
         },
@@ -389,6 +399,52 @@
             "status": {
               "experimental": false,
               "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "isError": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/isError",
+            "spec_url": "https://tc39.es/proposal-is-error/#sec-error.iserror",
+            "tags": [
+              "web-features:is-error"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "134"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "18.4",
+                "partial_implementation": true,
+                "notes": "Returns `false` for `DOMException` instances."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -624,6 +680,46 @@
               "webview_android": {
                 "version_added": "≤37"
               },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "stackTraceLimit": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/stackTraceLimit",
+            "support": {
+              "chrome": {
+                "version_added": "3"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": {
+                "version_added": "16.17.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "11.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {

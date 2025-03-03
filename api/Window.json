@@ -194,6 +194,9 @@
           "description": "`appinstalled` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/appinstalled_event",
           "spec_url": "https://wicg.github.io/manifest-incubations/#dom-window-onappinstalled",
+          "tags": [
+            "web-features:beforeinstallprompt"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -238,6 +241,9 @@
           "description": "`beforeinstallprompt` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/beforeinstallprompt_event",
           "spec_url": "https://wicg.github.io/manifest-incubations/#onbeforeinstallprompt-attribute",
+          "tags": [
+            "web-features:beforeinstallprompt"
+          ],
           "support": {
             "chrome": [
               {
@@ -368,7 +374,8 @@
               "version_added": "3"
             },
             "safari_ios": {
-              "version_added": "1"
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/219102"
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -451,7 +458,9 @@
               "safari": {
                 "version_added": "9.1"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": false
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
@@ -993,7 +1002,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "136"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1003,8 +1012,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/231750"
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1012,7 +1020,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
