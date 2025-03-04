@@ -221,11 +221,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "25",
-              "partial_implementation": true,
-              "notes": "Does not work (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
-            },
+            "firefox": [
+              {
+                "version_added": "134"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "134",
+                "partial_implementation": true,
+                "notes": "Before Firefox 134, this set the target volume at the specified time, but it didn't ramp to it, causing this function to behave like `setValueAtTime()` (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
@@ -273,11 +279,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "25",
-              "partial_implementation": true,
-              "notes": "Does not work (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
-            },
+            "firefox": [
+              {
+                "version_added": "134"
+              },
+              {
+                "version_added": "25",
+                "version_removed": "134",
+                "partial_implementation": true,
+                "notes": "Before Firefox 134, this set the target volume at the specified time, but it didn't ramp to it, causing this function to behave like `setValueAtTime()` (see [bug 1171438](https://bugzil.la/1171438) and [bug 1567777](https://bugzil.la/1567777))."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
