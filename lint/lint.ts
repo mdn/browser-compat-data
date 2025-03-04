@@ -120,6 +120,7 @@ const main = async (
     'http',
     'svg',
     'javascript',
+    'manifests',
     'mathml',
     'webassembly',
     'webdriver',

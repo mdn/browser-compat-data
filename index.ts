@@ -20,6 +20,7 @@ export const dataFolders = [
   'html',
   'http',
   'javascript',
+  'manifests',
   'mathml',
   'svg',
   'webassembly',

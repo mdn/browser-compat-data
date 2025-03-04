@@ -115,6 +115,7 @@ if (esMain(import.meta)) {
       'http',
       'svg',
       'javascript',
+      'manifests',
       'mathml',
       'test',
       'webassembly',
