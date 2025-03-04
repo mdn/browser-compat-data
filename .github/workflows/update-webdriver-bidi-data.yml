@@ -40,7 +40,7 @@ jobs:
 
       - name: Update data
         run: |
-          curl "${{ secrets.WEBDRIVER_BIDI_UPDATE_URL }}" > webdriver/bidi.json
+          curl -L -o webdriver/bidi.json "${{ secrets.WEBDRIVER_BIDI_UPDATE_URL }}"
           git add webdriver/bidi.json
           npx lint-staged
 
