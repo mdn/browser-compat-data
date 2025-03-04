@@ -188,7 +188,10 @@ Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
 
 ### [`webdriver`](./webdriver)
 
-Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
+Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features, including:
+
+- `bidi` - WebDriver BiDi protocol
+- `classic` - WebDriver Classic protocol
 
 ### [`webextensions`](./webextensions)
 
