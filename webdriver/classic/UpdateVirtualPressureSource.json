@@ -1,18 +1,21 @@
 {
-  "svg": {
-    "elements": {
-      "discard": {
+  "webdriver": {
+    "classic": {
+      "UpdateVirtualPressureSource": {
         "__compat": {
-          "spec_url": "https://svgwg.org/specs/animations/#DiscardElement",
+          "spec_url": "https://w3c.github.io/compute-pressure/#update-virtual-pressure-source",
+          "tags": [
+            "web-features:virtual-pressure-sources"
+          ],
           "support": {
             "chrome": {
-              "version_added": "34",
-              "version_removed": "81"
+              "version_added": "129",
+              "notes": "To enable Chromium support, include `{\"goog:chromeOptions\": {\"w3c\": true}}` in the [capabilities](https://developer.mozilla.org/docs/Web/WebDriver/Capabilities)."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "137"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "ie": {
@@ -30,7 +33,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
