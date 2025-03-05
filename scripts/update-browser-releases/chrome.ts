@@ -111,10 +111,19 @@ export const updateChromiumReleases = async (options) => {
   for (const [key, value] of channels) {
     // Extract the useful data
     const versionData = versions[value];
+
     if (versionData) {
+      const version = versionData.version.toString();
+      const releaseDate = versionData.stable_date.substring(0, 10);
+
       data[value] = {};
-      data[value].version = versionData.version.toString();
-      data[value].releaseDate = versionData.stable_date.substring(0, 10); // Remove the time part;
+      data[value].version = version;
+      data[value].releaseDate = releaseDate; // Remove the time part;
+
+      if (key === 'current' && Date.now() < Date.parse(releaseDate)) {
+        console.debug(`Ignoring unreleased Chrome ${version} stable release`);
+        return;
+      }
 
       // Update the JSON in memory
       let releaseNotesURL;
