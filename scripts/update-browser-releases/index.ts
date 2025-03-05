@@ -243,7 +243,7 @@ const results = await Promise.all([
   ]),
 ]);
 
-const result = results.filter(Boolean).join('\n');
+const result = results.filter(Boolean).join('\n\n');
 
 if (result) {
   console.log(result);
