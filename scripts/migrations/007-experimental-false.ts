@@ -15,6 +15,7 @@ import {
   SimpleSupportStatement,
 } from '../../types/types.js';
 import { walk } from '../../utils/index.js';
+import { dataFoldersMinusBrowsers } from '../lib/data-folders.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
@@ -130,18 +131,6 @@ if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    );
+    load(...dataFoldersMinusBrowsers);
   }
 }
