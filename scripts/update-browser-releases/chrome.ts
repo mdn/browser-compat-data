@@ -7,7 +7,7 @@ import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
@@ -121,8 +121,10 @@ export const updateChromiumReleases = async (options) => {
       data[value].releaseDate = releaseDate; // Remove the time part;
 
       if (key === 'current' && Date.now() < Date.parse(releaseDate)) {
-        console.debug(`Ignoring unreleased Chrome ${version} stable release`);
-        return '';
+        return gfmNoteblock(
+          'NOTE',
+          `**${options.browserName}**: Ignoring current version ${version}, which is not yet released (stable date is ${releaseDate}).`,
+        );
       }
 
       // Update the JSON in memory
