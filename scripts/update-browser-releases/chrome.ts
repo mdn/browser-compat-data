@@ -122,7 +122,7 @@ export const updateChromiumReleases = async (options) => {
 
       if (key === 'current' && Date.now() < Date.parse(releaseDate)) {
         console.debug(`Ignoring unreleased Chrome ${version} stable release`);
-        return;
+        return '';
       }
 
       // Update the JSON in memory
