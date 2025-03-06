@@ -12,19 +12,8 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-// Once a category has been stripped of unsupported features, add it to this list
-const categoriesToCheck = [
-  'api',
-  // 'css',
-  'html',
-  'http',
-  'javascript',
-  'mathml',
-  'svg',
-  'webassembly',
-  'webdriver',
-  'webextensions',
-];
+// Once a category has been stripped of unsupported features, remove it from this list
+const ignoredCategories = ['css'];
 
 /**
  * Check if feature has never been implemented
@@ -145,7 +134,7 @@ export default {
    * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    if (categoriesToCheck.includes(category)) {
+    if (!ignoredCategories.includes(category)) {
       processData(logger, data);
     }
   },
