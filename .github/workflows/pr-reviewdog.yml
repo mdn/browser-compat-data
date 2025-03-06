@@ -48,6 +48,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: diff
+          path: result
 
       - name: Setup
         uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
@@ -58,7 +59,7 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat diff.patch | reviewdog \
+          cat result/diff.patch | reviewdog \
             -name="bcd-linter" \
             -f=diff \
             -f.diff.strip=1 \
