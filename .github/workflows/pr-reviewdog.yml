@@ -42,7 +42,7 @@ jobs:
           git config --global user.email "108879845+mdn-bot@users.noreply.github.com"
           git config --global user.name "mdn-bot"
           git add .
-          git commit -m "Code from PR head"
+          git commit -m "Code from PR head" --no-verify
 
       - run: npm run fix
         env:
