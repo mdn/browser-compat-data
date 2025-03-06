@@ -36,9 +36,7 @@ jobs:
           mv pr_head/"${dirs[@]}" .
           rm -r pr_head
 
-          # To avoid contents of PR getting into the diff that we are going to generate
-          # after running the linters, here we make a dummy commit.
-          # Note, this commit is not getting pushed.
+          # Avoids PR changes from getting into the diff.
           git config --global user.email "108879845+mdn-bot@users.noreply.github.com"
           git config --global user.name "mdn-bot"
           git add .
