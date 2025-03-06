@@ -11,15 +11,38 @@ jobs:
     permissions: {}
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Checkout BASE
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+          cache: npm
 
       - run: npm ci
+
+      - name: Checkout HEAD
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr_head
+
+      - name: Merge HEAD changes into BASE
+        run: |
+          dirs=(api browsers css docs html http javascript mathml schemas svg webassembly webdriver webextensions)
+          rm -r "${dirs[@]}" *.md
+          mv pr_head/*.md .
+          mv pr_head/"${dirs[@]}" .
+          rm -r pr_head
+
+          # To avoid contents of PR getting into the diff that we are going to generate
+          # after running the linters, here we make a dummy commit.
+          # Note, this commit is not getting pushed.
+          git config --global user.email "108879845+mdn-bot@users.noreply.github.com"
+          git config --global user.name "mdn-bot"
+          git add .
+          git commit -m "Code from PR head"
 
       - run: npm run fix
         env:
