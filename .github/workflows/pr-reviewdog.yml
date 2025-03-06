@@ -4,17 +4,16 @@ on:
   pull_request_target:
     branches: ["main"]
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
   fix:
     name: Fix
     runs-on: ubuntu-latest
+    permissions: {}
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - uses: actions/setup-node@v4
         with:
@@ -40,6 +39,7 @@ jobs:
     needs: fix
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
 
     steps:
