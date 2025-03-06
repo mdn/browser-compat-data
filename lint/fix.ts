@@ -11,6 +11,8 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
 
+import dataFolders from '../scripts/lib/data-folders.js';
+
 import fixBrowserOrder from './fixer/browser-order.js';
 import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
@@ -105,23 +107,9 @@ if (esMain(import.meta)) {
     })
     .choices('only', Object.keys(FIXES));
 
-  const {
-    files = [
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'manifests',
-      'mathml',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    ],
-    only,
-  } = argv as { files?: string[] } & LintOptions;
+  const { files = dataFolders, only } = argv as {
+    files?: string[];
+  } & LintOptions;
 
   await main(files, { only });
 }

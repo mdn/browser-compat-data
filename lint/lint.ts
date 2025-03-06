@@ -13,6 +13,7 @@ import chalk from 'chalk-template';
 
 import { BrowserName } from '../types/types.js';
 import { DataType } from '../types/index.js';
+import dataFolders from '../scripts/lib/data-folders.js';
 import extend from '../scripts/lib/extend.js';
 import pluralize from '../scripts/lib/pluralize.js';
 import { walk } from '../utils/index.js';
@@ -111,22 +112,7 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
  * @param files The file(s) and/or folder(s) to test. Leave undefined for everything.
  * @returns Whether there were any errors
  */
-const main = async (
-  files = [
-    'api',
-    'browsers',
-    'css',
-    'html',
-    'http',
-    'svg',
-    'javascript',
-    'manifests',
-    'mathml',
-    'webassembly',
-    'webdriver',
-    'webextensions',
-  ],
-) => {
+const main = async (files = dataFolders) => {
   let hasErrors = false;
 
   console.log(chalk`{cyan Loading and checking files...}`);

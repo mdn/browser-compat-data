@@ -7,7 +7,8 @@ import { hideBin } from 'yargs/helpers';
 
 import { BrowserName, Identifier } from '../types/types.js';
 import { InternalSupportStatement } from '../types/index.js';
-import bcd, { dataFolders } from '../index.js';
+import dataFolders from '../scripts/lib/data-folders.js';
+import bcd from '../index.js';
 
 interface StatusFilters {
   deprecated: boolean | undefined;
