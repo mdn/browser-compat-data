@@ -32,8 +32,9 @@ jobs:
         run: |
           dirs=(api browsers css docs html http javascript mathml schemas svg webassembly webdriver webextensions)
           rm -r "${dirs[@]}" *.md
-          mv pr_head/*.md .
-          mv pr_head/"${dirs[@]}" .
+          cd pr_head
+          mv "${dirs[@]}" *.md ..
+          cd ..
           rm -r pr_head
 
           # Avoids PR changes from getting into the diff.
