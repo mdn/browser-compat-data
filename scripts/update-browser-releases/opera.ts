@@ -65,7 +65,7 @@ const findRelease = (
  * @param message the message of the noteblock.
  * @returns the message as a GFM noteblock.
  */
-const gfmNoteblock = (type: 'INFO' | 'WARN', message: string) =>
+const gfmNoteblock = (type: 'NOTE' | 'WARN', message: string) =>
   `> [!${type}]\n${message
     .split('\n')
     .map((line) => `> ${line}`)
@@ -95,7 +95,7 @@ export const updateOperaReleases = async (options) => {
 
   if (!release) {
     return gfmNoteblock(
-      'INFO',
+      'NOTE',
       `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
     );
   }
