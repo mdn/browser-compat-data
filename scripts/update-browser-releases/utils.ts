@@ -183,3 +183,15 @@ export const getRSSItems = async (url): Promise<RSSItem[]> => {
 
   return Array.isArray(items) ? items : [items];
 };
+
+/**
+ * Converts a message into a GFM noteblock.
+ * @param type the type of the noteblock.
+ * @param message the message of the noteblock.
+ * @returns the message as a GFM noteblock.
+ */
+export const gfmNoteblock = (type: 'NOTE' | 'WARN', message: string) =>
+  `> [!${type}]\n${message
+    .split('\n')
+    .map((line) => `> ${line}`)
+    .join('\n')}`;
