@@ -1,5 +1,58 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.1)
+
+March 7, 2025
+
+### Removals
+
+- `api.MLOperand.MLNumber` ([#26138](https://github.com/mdn/browser-compat-data/pull/26138))
+- `css.properties.custom-property.env` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.safe-area-inset-bottom` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.safe-area-inset-left` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.safe-area-inset-right` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.safe-area-inset-top` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.titlebar-area-height` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.titlebar-area-width` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.titlebar-area-x` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.env.titlebar-area-y` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.properties.custom-property.var` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+
+### Additions
+
+- `api.FetchLaterResult` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `api.FetchLaterResult.activated` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `api.NavigateEvent.sourceElement` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `api.Window.fetchLater` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.interactivity` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.interactivity.auto` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.interactivity.inert` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.scroll-marker-group` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.scroll-marker-group.after` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.scroll-marker-group.before` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.properties.scroll-marker-group.none` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.selectors.scroll-marker` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.selectors.scroll-marker-group` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.selectors.target-current` ([#26135](https://github.com/mdn/browser-compat-data/pull/26135))
+- `css.types.env` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.safe-area-inset-bottom` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.safe-area-inset-left` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.safe-area-inset-right` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.safe-area-inset-top` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.titlebar-area-height` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.titlebar-area-width` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.titlebar-area-x` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.env.titlebar-area-y` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `css.types.var` ([#25645](https://github.com/mdn/browser-compat-data/pull/25645))
+- `javascript.builtins.Math.sumPrecise` ([#26118](https://github.com/mdn/browser-compat-data/pull/26118))
+
+### Statistics
+
+- 6 contributors have changed 67 files with 1,490 additions and 927 deletions in 19 commits ([`v5.7.0...v5.7.1`](https://github.com/mdn/browser-compat-data/compare/v5.7.0...v5.7.1))
+- 17,071 total features
+- 1,132 total contributors
+- 5,123 total stargazers
+
 ## [v5.7.0](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.0)
 
 March 4, 2025
