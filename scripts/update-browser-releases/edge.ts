@@ -6,6 +6,7 @@ import * as fs from 'node:fs';
 import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
@@ -280,7 +281,7 @@ export const updateEdgeReleases = async (options) => {
       }
 
       if (
-        edgeBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+        findBrowserRelease(edgeBCD, options.bcdBrowserName, data[value].version)
       ) {
         // The entry already exists
         result += updateBrowserEntry(
@@ -317,18 +318,19 @@ export const updateEdgeReleases = async (options) => {
     i++
   ) {
     if (!options.skippedReleases.includes(i)) {
-      if (edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
+      const release = findBrowserRelease(
+        edgeBCD,
+        options.bcdBrowserName,
+        i.toString(),
+      );
+      if (release) {
         result += updateBrowserEntry(
           edgeBCD,
           options.bcdBrowserName,
           i.toString(),
-          edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-            .release_date,
+          release.release_date,
           'retired',
-          updateReleaseNotesIfArchived(
-            edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-              .release_notes,
-          ),
+          updateReleaseNotesIfArchived(release.release_notes),
           '',
         );
       } else {
@@ -353,7 +355,7 @@ export const updateEdgeReleases = async (options) => {
     result += s;
   }
 
-  if (edgeBCD.browsers[options.bcdBrowserName].releases[planned]) {
+  if (findBrowserRelease(edgeBCD, options.bcdBrowserName, planned)) {
     result += updateBrowserEntry(
       edgeBCD,
       options.bcdBrowserName,
