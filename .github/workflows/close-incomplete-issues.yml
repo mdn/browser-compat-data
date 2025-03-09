@@ -1,34 +1,24 @@
 name: Close incomplete issue templates
-on:
-  issues:
-    types:
-      - opened
 
-permissions:
-  issues: write
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   close-issues-if-invalid:
     runs-on: ubuntu-latest
     steps:
-      - uses: queengooborg/invalid-issue-closer@d79a4ae7685cfab213be15f0e39fbd4533e3d822 # v1.5.4
-        id: spam-check
+      - name: Close issues with invalid content
+        uses: queengooborg/invalid-issue-closer@d79a4ae7685cfab213be15f0e39fbd4533e3d822
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "spam"
-          lock: "spam"
-          comment: |
-            This issue has been identified as spam and has been automatically closed and locked.  Do not use this repository for posting spam.
-          normalize-newlines: true
-          body-is-blank: true
-      - uses: queengooborg/invalid-issue-closer@d79a4ae7685cfab213be15f0e39fbd4533e3d822 # v1.5.4
-        if: steps.spam-check.outputs.was-closed == 'false'
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          labels: "invalid"
-          comment: |
+          labels: invalid
+          comment: >
             This issue was automatically closed because the title was left as the default, and a summary was not added.
-
-            If this is not a spam issue, please replace the `<SUMMARIZE THE PROBLEM>` part of the title with a short summary of the reported issue, and then post a follow-up comment.  A maintainer will review your issue and reopen it if needed.
+            Please replace the `<SUMMARIZE THE PROBLEM>` part of the title with a short summary of the reported issue, and then post a follow-up comment. A maintainer will review your issue and reopen it if needed.
           normalize-newlines: true
-          title-contains: "<SUMMARIZE THE PROBLEM>"
+          title-contains: <SUMMARIZE THE PROBLEM>
+          any: false
+          # Remove or set lock to a valid value if locking is needed
+          # lock: spam
