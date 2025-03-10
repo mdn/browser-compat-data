@@ -109,7 +109,8 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "notes": "Does not auto-generate a background service worker when combined with `scripts`."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -132,7 +133,10 @@
               },
               "firefox": {
                 "version_added": "48",
-                "notes": "Before Firefox 50, when the debugger is open, scripts are not always loaded in the order given in the array."
+                "notes": [
+                  "Before Firefox 50, when the debugger is open, scripts are not always loaded in the order given in the array.",
+                  "Does not auto-generate a background service worker when combined with `preferred_environment`."
+                ]
               },
               "firefox_android": "mirror",
               "opera": "mirror",
