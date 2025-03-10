@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.2)
+
+March 10, 2025
+
+### Additions
+
+- `api.HTMLElement.load_event` ([#26057](https://github.com/mdn/browser-compat-data/pull/26057))
+
+### Statistics
+
+- 6 contributors have changed 14 files with 184 additions and 29 deletions in 13 commits ([`v5.7.1...v5.7.2`](https://github.com/mdn/browser-compat-data/compare/v5.7.1...v5.7.2))
+- 17,072 total features
+- 1,132 total contributors
+- 5,125 total stargazers
+
 ## [v5.7.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.1)
 
 March 7, 2025
