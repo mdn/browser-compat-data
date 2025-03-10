@@ -5,7 +5,11 @@ import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { BrowserName, Identifier } from '../types/types.js';
+import {
+  BrowserName,
+  Identifier,
+  SimpleSupportStatement,
+} from '../types/types.js';
 import { InternalSupportStatement } from '../types/index.js';
 import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
@@ -68,7 +72,10 @@ export function* iterateFeatures(
               continue;
             }
             for (const browser of browsers) {
-              let browserData = comp[browser];
+              let browserData:
+                | SimpleSupportStatement
+                | SimpleSupportStatement[]
+                | undefined = comp[browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
