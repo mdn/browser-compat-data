@@ -22,16 +22,18 @@ describe('test-browsers-data', () => {
       type: 'server',
       accepts_flags: true,
       accepts_webextensions: false,
-      releases: {
-        '20.6.0': {
+      releases: [
+        {
+          version: '20.6.0',
           release_date: '2023-09-04',
           status: 'current',
         },
-        '21.2.0': {
+        {
+          version: '21.2.0',
           release_date: '2023-11-14',
           status: 'current',
         },
-      },
+      ],
     };
 
     test.check(logger, { data, path: { browser } });
@@ -45,10 +47,10 @@ describe('test-browsers-data', () => {
       type: 'desktop',
       accepts_flags: true,
       accepts_webextensions: true,
-      releases: {
-        '1': { status: 'nightly' },
-        '2': { status: 'nightly' },
-      },
+      releases: [
+        { version: '1', status: 'nightly' },
+        { version: '2', status: 'nightly' },
+      ],
     };
     test.check(logger, { data, path: { browser } });
     assert.equal(logger.messages.length, 1);
@@ -61,10 +63,10 @@ describe('test-browsers-data', () => {
       type: 'server',
       accepts_flags: true,
       accepts_webextensions: false,
-      releases: {
-        '1': { status: 'nightly' },
-        '2': { status: 'nightly' },
-      },
+      releases: [
+        { version: '1', status: 'nightly' },
+        { version: '2', status: 'nightly' },
+      ],
     };
     test.check(logger, { data, path: { browser } });
     assert.equal(logger.messages.length, 1);
@@ -78,7 +80,7 @@ describe('test-browsers-data', () => {
       upstream: browser,
       accepts_flags: false,
       accepts_webextensions: false,
-      releases: {},
+      releases: [],
     };
 
     test.check(logger, { data, path: { browser } });
@@ -93,7 +95,7 @@ describe('test-browsers-data', () => {
       upstream: 'unknown' as any,
       accepts_flags: false,
       accepts_webextensions: false,
-      releases: {},
+      releases: [],
     };
 
     test.check(logger, { data, path: { browser } });
@@ -109,18 +111,20 @@ describe('test-browsers-data', () => {
       pref_url: 'opera://flags',
       accepts_flags: true,
       accepts_webextensions: true,
-      releases: {
-        '97': {
+      releases: [
+        {
+          version: '97',
           status: 'retired',
           engine: 'Blink',
           engine_version: '111',
         },
-        '98': {
+        {
+          version: '98',
           status: 'current',
           engine: 'Blink',
           engine_version: '112',
         },
-      },
+      ],
     };
     test.check(logger, { data, path: { browser } });
     assert.equal(logger.messages.length, 2);
