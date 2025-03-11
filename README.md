@@ -148,7 +148,6 @@ Data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) features, inc
 
 - `elements` - Elements
 - `global_attributes` - Global attributes
-- `manifest` - Web App manifest keys
 
 ### [`http`](http)
 
@@ -168,6 +167,10 @@ Data for JavaScript language features, including:
 - `grammar` - Language grammar
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
+
+### [`manifests`](./manifests)
+
+- `webapp` - Web App manifest keys
 
 ### [`mathml`](./mathml)
 
