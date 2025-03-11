@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.2)
+
+March 11, 2025
+
+### Additions
+
+- `api.HTMLButtonElement.command.request-close` ([#26105](https://github.com/mdn/browser-compat-data/pull/26105))
+- `api.HTMLElement.load_event` ([#26057](https://github.com/mdn/browser-compat-data/pull/26057))
+- `css.properties.appearance.base` ([#26171](https://github.com/mdn/browser-compat-data/pull/26171))
+- `css.selectors.checkmark` ([#26171](https://github.com/mdn/browser-compat-data/pull/26171))
+- `css.selectors.picker` ([#26171](https://github.com/mdn/browser-compat-data/pull/26171))
+- `css.selectors.picker-icon` ([#26171](https://github.com/mdn/browser-compat-data/pull/26171))
+- `html.elements.selectedcontent` ([#26171](https://github.com/mdn/browser-compat-data/pull/26171))
+
+### Statistics
+
+- 9 contributors have changed 25 files with 478 additions and 89 deletions in 23 commits ([`v5.7.1...v5.7.2`](https://github.com/mdn/browser-compat-data/compare/v5.7.1...v5.7.2))
+- 17,078 total features
+- 1,132 total contributors
+- 5,126 total stargazers
+
 ## [v5.7.1](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.1)
 
 March 7, 2025
