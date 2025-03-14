@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.3)
+
+March 14, 2025
+
+### Additions
+
+- `api.SVGPathElement.getPathData` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+- `api.SVGPathElement.getPathSegmentAtLength` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+- `api.SVGPathElement.getPointAtLength` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+- `api.SVGPathElement.getTotalLength` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+- `api.SVGPathElement.pathLength` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+- `api.SVGPathElement.setPathData` ([#26214](https://github.com/mdn/browser-compat-data/pull/26214))
+
+### Statistics
+
+- 6 contributors have changed 40 files with 419 additions and 1,757 deletions in 13 commits ([`v5.7.2...v5.7.3`](https://github.com/mdn/browser-compat-data/compare/v5.7.2...v5.7.3))
+- 17,084 total features
+- 1,133 total contributors
+- 5,129 total stargazers
+
 ## [v5.7.2](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.2)
 
 March 11, 2025
