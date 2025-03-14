@@ -6,6 +6,7 @@ import * as fs from 'node:fs';
 import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
@@ -130,7 +131,7 @@ export const updateSafariReleases = async (options) => {
   releaseData.forEach((release) => {
     if (!options.skippedReleases.includes(release.version)) {
       if (
-        safariBCD.browsers[options.bcdBrowserName].releases[release.version]
+        findBrowserRelease(safariBCD, options.bcdBrowserName, release.version)
       ) {
         result += updateBrowserEntry(
           safariBCD,
