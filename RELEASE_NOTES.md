@@ -1,5 +1,47 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.4)
+
+March 18, 2025
+
+### Removals
+
+- `api.CookieChangeEvent.changed.domain_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.expires_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.name_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.partitioned_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.path_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.sameSite_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.secure_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.value_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.domain_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.expires_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.name_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.partitioned_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.path_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.sameSite_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.secure_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.value_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.domain_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.expires_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.name_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.partitioned_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.path_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.sameSite_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.secure_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.value_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+
+### Additions
+
+- `api.GPUSupportedFeatures.feature_subgroups` ([#26220](https://github.com/mdn/browser-compat-data/pull/26220))
+
+### Statistics
+
+- 7 contributors have changed 33 files with 388 additions and 1,045 deletions in 12 commits ([`v5.7.3...v5.7.4`](https://github.com/mdn/browser-compat-data/compare/v5.7.3...v5.7.4))
+- 17,061 total features
+- 1,133 total contributors
+- 5,160 total stargazers
+
 ## [v5.7.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.3)
 
 March 14, 2025
