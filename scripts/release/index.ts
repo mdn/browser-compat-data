@@ -7,18 +7,18 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryWriteTask } from 'tempy';
 
+import { exec, spawn } from '../../utils/index.js';
+
 import { getSemverBumpPulls } from './semver-pulls.js';
 import { getStats } from './stats.js';
 import { getChanges } from './changes.js';
 import { getNotes, addNotes } from './notes.js';
 import {
-  exec,
   requireGitHubCLI,
   requireWriteAccess,
   getLatestTag,
   getRefDate,
   keypress,
-  spawn,
   fetchMain,
 } from './utils.js';
 
