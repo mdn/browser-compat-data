@@ -88,8 +88,8 @@ const getPreviousVersion = (
   version: VersionValue,
 ): VersionValue => {
   if (typeof version === 'string' && !version.startsWith('≤')) {
-    const browserVersions = Object.keys(bcd.browsers[browser].releases).sort(
-      compareVersions,
+    const browserVersions = bcd.browsers[browser].releases.map(
+      ({ version }) => version,
     );
     const currentVersionIndex = browserVersions.indexOf(version);
     if (currentVersionIndex > 0) {

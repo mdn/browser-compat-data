@@ -4,6 +4,8 @@
 import chalk from 'chalk-template';
 import xml2js from 'xml2js';
 
+import { findBrowserRelease } from '../lib/browsers';
+
 const USER_AGENT =
   'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)';
 
@@ -36,7 +38,7 @@ export const newBrowserEntry = (
   releaseNotesURL,
   engineVersion,
 ) => {
-  const release = (json.browsers[browser].releases[version] = {});
+  const release = findBrowserRelease(json, browser, version) ?? { version };
   if (releaseDate) {
     release['release_date'] = releaseDate;
   }
@@ -71,7 +73,7 @@ export const updateBrowserEntry = (
   releaseNotesURL,
   engineVersion,
 ) => {
-  const entry = json.browsers[browser].releases[version];
+  const entry = findBrowserRelease(json, browser, version) ?? { version };
   let result = '';
   if (entry['status'] !== status) {
     result += chalk`{cyan \n- New status for {bold ${browser} ${version}}: {bold ${status}}, previously ${entry['status']}.}`;
@@ -116,7 +118,7 @@ export const createOrUpdateBrowserEntry = (
   releaseDate: string | undefined = undefined,
   releaseNotesURL: string | undefined = undefined,
 ) => {
-  if (json.browsers[browser].releases[version]) {
+  if (findBrowserRelease(json, browser, version)) {
     return updateBrowserEntry(
       json,
       browser,

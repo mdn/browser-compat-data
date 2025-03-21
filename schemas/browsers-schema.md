@@ -64,7 +64,9 @@ An optional string containing the name of the preview browser. For example, "Nig
 
 ### `releases`
 
-The `releases` object contains data regarding the browsers' releases, using the version number as the index for each entry within. A release object contains the following properties:
+The `releases` array contains data regarding the browsers' releases, ordered by version. A release object contains the following properties:
+
+- A mandatory `version` property indicating the version of the release.
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
 
@@ -111,11 +113,11 @@ This structure is exported for consumers of `@mdn/browser-compat-data`:
 
 ```js
 import bcd from '@mdn/browser-compat-data';
-bcd.browsers.firefox.releases['1.5'].status; // "retired"
+bcd.browsers.firefox.releases.find((r) => r.version === '1.5').status; // "retired"
 ```
 
 ```js
 const bcd = require('@mdn/browser-compat-data');
-bcd.browsers.firefox.releases['1.5'].status;
+bcd.browsers.firefox.releases.find((r) => r.version === '1.5').status;
 // "retired"
 ```

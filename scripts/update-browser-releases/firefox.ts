@@ -6,6 +6,7 @@ import * as fs from 'node:fs';
 import { compareVersions } from 'compare-versions';
 
 import stringify from '../lib/stringify-and-order-properties.js';
+import { findBrowserRelease } from '../lib/browsers.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
@@ -82,7 +83,11 @@ export const updateFirefoxReleases = async (options) => {
     }
 
     if (
-      firefoxBCD.browsers[options.bcdBrowserName].releases[data[value].version]
+      findBrowserRelease(
+        firefoxBCD,
+        options.bcdBrowserName,
+        data[value].version,
+      )
     ) {
       result += updateBrowserEntry(
         firefoxBCD,
@@ -194,7 +199,7 @@ export const updateFirefoxReleases = async (options) => {
   const trainInfo = await fetch(`${options.firefoxScheduleURL}${planned}`);
   const train = await trainInfo.json();
 
-  if (firefoxBCD.browsers[options.bcdBrowserName].releases[planned]) {
+  if (findBrowserRelease(firefoxBCD, options.bcdBrowserName, planned)) {
     result += updateBrowserEntry(
       firefoxBCD,
       options.bcdBrowserName,

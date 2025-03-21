@@ -6,7 +6,7 @@ import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
 import { DataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
+import { BrowserName, Browsers, ReleaseStatement } from '../types/types.js';
 
 export interface LintOptions {
   only?: string[];
@@ -268,3 +268,21 @@ export class Linters {
     }
   }
 }
+
+/**
+ * Finds a browser release.
+ * @param browsers the browser data.
+ * @param browser the name of the browser.
+ * @param version the version of the release.
+ * @returns the browser release if it exists, or undefined.
+ */
+export const findBrowserRelease = (
+  browsers: Browsers,
+  browser: string,
+  version: string,
+): ReleaseStatement | undefined => {
+  version = version.replace('≤', '');
+  return browsers[browser].releases.find(
+    (release) => release.version === version,
+  );
+};
