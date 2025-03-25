@@ -62,7 +62,7 @@ export const addNotes = async (
 
   // If we are doing a major version bump, move old changelog results to another file
   if (versionBump === 'major') {
-    const lastMajorVersion = lastVersion.split('.')[0];
+    const lastMajorVersion = lastVersion.split('.')[0].replace(/^v/, '');
     const olderVersionsHeader = '## Older Versions';
 
     const oldChangelog =
