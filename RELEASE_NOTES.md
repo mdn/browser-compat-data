@@ -4,83 +4,39 @@
 
 March 25, 2025
 
-### Notable changes
+### Breaking changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This major release introduces **three breaking changes** that may require updates from consumers of `@mdn/browser-compat-data`.
 
-### Removals
+#### 1. Removal of `null` and `true` version values ([#24174](https://github.com/mdn/browser-compat-data/pull/24174))
 
-- `html.manifest.background_color` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.description` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display_override` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display_override.tabbed` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display_override.window-controls-overlay` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display.browser` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display.fullscreen` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display.minimal-ui` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.display.standalone` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.file_handlers` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.icons` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.id` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.launch_handler` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.launch_handler.client_mode` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.name` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.note_taking` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.note_taking.new_note_url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.orientation` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.prefer_related_applications` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.protocol_handlers` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.protocol_handlers.protocol` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.protocol_handlers.url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.related_applications` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.scope` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.serviceworker` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.serviceworker.scope` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.serviceworker.src` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.serviceworker.use_cache` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.share_target` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.short_name` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.shortcuts` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.start_url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `html.manifest.theme_color` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
+Previously, the `version_added`, `version_removed` and `version_last` fields allowed `null` (indicating support is unknown) and `true` (indicating support added/removed in an unknown version).
 
-### Additions
+Now, these values have been **removed from the schema**. All existing instances have been replaced with explicit or ranged version numbers (e.g. “≤37“).
 
-- `manifests.webapp.background_color` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.description` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display_override` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display_override.tabbed` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display_override.window-controls-overlay` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display.browser` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display.fullscreen` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display.minimal-ui` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.display.standalone` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.file_handlers` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.icons` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.id` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.launch_handler` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.launch_handler.client_mode` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.name` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.note_taking` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.note_taking.new_note_url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.orientation` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.prefer_related_applications` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.protocol_handlers` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.protocol_handlers.protocol` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.protocol_handlers.url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.related_applications` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.scope` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.serviceworker` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.serviceworker.scope` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.serviceworker.src` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.serviceworker.use_cache` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.share_target` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.short_name` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.shortcuts` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.start_url` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
-- `manifests.webapp.theme_color` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
+**Impact**: Consumers handling `null` or `true` values may need to update their code.
+
+#### 2. Improved TypeScript definitions for array values ([#26172](https://github.com/mdn/browser-compat-data/pull/26172))
+
+Several fields, such as `notes`, accept either a single value or an array of at least two values.
+
+Previously, TypeScript definitions used `string | string[]`, requiring consumers to validate array values manually.
+
+Now, these types are more precisely defined as `string | [string, string, ...string[]]`, ensuring that **arrays contain at least two values** when used.
+
+**Impact**: Consumers validating array values may need to update their code.
+
+#### 3. New top-level `manifests` folder ([#26109](http://github.com/mdn/browser-compat-data/pull/26109))
+
+Previously, support data for the Web Application Manifest was placed under `html/manifest`, which inaccurately implied it was an HTML subfeature.
+
+Now, a new top-level `manifests` folder has been created to host the Web Application Manifest under `manifests/webapp` to better reflect its independence, and to support future manifest types like the Payment Method Manifest.
+
+**Impact**: Consumers referencing Web Application Manifest data may need to update their code.
+
+### Renamings
+
+- `html.manifest.*` to `manifest.webapp.*` ([#26109](https://github.com/mdn/browser-compat-data/pull/26109))
 
 ### Statistics
 
@@ -91,7 +47,7 @@ March 25, 2025
 
 ## Older Versions
 
-- [vv5.x](./release_notes/vv5.md)
+- [v5.x](./release_notes/v5.md)
 - [v4.x](./release_notes/v4.md)
 - [v3.x](./release_notes/v3.md)
 - [v2.x](./release_notes/v2.md)
