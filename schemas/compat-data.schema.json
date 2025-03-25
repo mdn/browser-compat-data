@@ -6,43 +6,28 @@
       "type": "object",
       "properties": {
         "version_added": {
-          "description": "A string (indicating which browser version added this feature), the value true (indicating support added in an unknown version), the value false (indicating the feature is not supported), or the value null (indicating support is unknown).",
+          "description": "A string (indicating which browser version added this feature), or the value false (indicating the feature is not supported).",
           "anyOf": [
             {
               "type": "string",
               "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
             },
             {
-              "type": "boolean",
-              "nullable": true
+              "const": false
             }
           ],
           "tsType": "VersionValue"
         },
         "version_removed": {
-          "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
-          "anyOf": [
-            {
-              "type": "string",
-              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
-            },
-            {
-              "const": true
-            }
-          ],
+          "description": "A string, indicating which browser version removed this feature.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "VersionValue"
         },
         "version_last": {
-          "description": "A string, indicating the last browser version that supported this feature, or the value true, indicating that the feature was removed in an unknown version. This is automatically generated.",
-          "anyOf": [
-            {
-              "type": "string",
-              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
-            },
-            {
-              "const": true
-            }
-          ],
+          "description": "A string, indicating the last browser version that supported this feature. This is automatically generated.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "VersionValue"
         },
         "prefix": {
