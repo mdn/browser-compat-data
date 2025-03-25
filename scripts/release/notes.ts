@@ -20,7 +20,7 @@ export const getNotes = (
   thisVersion: string,
   changes: Changes,
   stats: Stats,
-  versionBump: string,
+  versionBump: 'major' | 'minor' | 'patch',
 ): string =>
   [
     `## [${thisVersion}](https://github.com/mdn/browser-compat-data/releases/tag/${thisVersion})`,
