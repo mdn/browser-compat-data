@@ -1,5 +1,82 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.5)
+
+March 21, 2025
+
+### Removals
+
+- `api.CanMakePaymentEvent.methodData` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.modifiers` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.paymentRequestOrigin` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.topOrigin` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.PaymentInstruments` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.clear` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.delete` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.get` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.has` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.keys` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.set` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentManager.instruments` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentRequestEvent.instrumentKey` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `css.properties.appearance.base` ([#26221](https://github.com/mdn/browser-compat-data/pull/26221))
+
+### Additions
+
+- `api.GPUAdapter.requestDevice.undefined_limits` ([#26227](https://github.com/mdn/browser-compat-data/pull/26227))
+- `browsers.edge.releases.137` ([#26260](https://github.com/mdn/browser-compat-data/pull/26260))
+- `browsers.opera_android.releases.88` ([#26260](https://github.com/mdn/browser-compat-data/pull/26260))
+- `css.properties.appearance.base-select` ([#26221](https://github.com/mdn/browser-compat-data/pull/26221))
+
+### Statistics
+
+- 7 contributors have changed 28 files with 176 additions and 683 deletions in 15 commits ([`v5.7.4...v5.7.5`](https://github.com/mdn/browser-compat-data/compare/v5.7.4...v5.7.5))
+- 17,049 total features
+- 1,134 total contributors
+- 5,163 total stargazers
+
+## [v5.7.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.4)
+
+March 18, 2025
+
+### Removals
+
+- `api.CookieChangeEvent.changed.domain_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.expires_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.name_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.partitioned_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.path_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.sameSite_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.secure_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.changed.value_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.domain_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.expires_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.name_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.partitioned_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.path_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.sameSite_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.secure_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieChangeEvent.deleted.value_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.domain_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.expires_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.name_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.partitioned_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.path_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.sameSite_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.secure_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+- `api.CookieStore.getAll.value_return_property` ([#26152](https://github.com/mdn/browser-compat-data/pull/26152))
+
+### Additions
+
+- `api.GPUSupportedFeatures.feature_subgroups` ([#26220](https://github.com/mdn/browser-compat-data/pull/26220))
+
+### Statistics
+
+- 7 contributors have changed 33 files with 388 additions and 1,045 deletions in 12 commits ([`v5.7.3...v5.7.4`](https://github.com/mdn/browser-compat-data/compare/v5.7.3...v5.7.4))
+- 17,061 total features
+- 1,133 total contributors
+- 5,160 total stargazers
+
 ## [v5.7.3](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.3)
 
 March 14, 2025
