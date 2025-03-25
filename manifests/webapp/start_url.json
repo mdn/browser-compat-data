@@ -1,16 +1,17 @@
 {
-  "html": {
-    "manifest": {
-      "background_color": {
+  "manifests": {
+    "webapp": {
+      "start_url": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/Progressive_web_apps/Manifest/Reference/background_color",
-          "spec_url": "https://w3c.github.io/manifest/#background_color-member",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/Progressive_web_apps/Manifest/Reference/start_url",
+          "spec_url": "https://w3c.github.io/manifest/#start_url-member",
           "tags": [
             "web-features:manifest"
           ],
           "support": {
             "chrome": {
-              "version_added": "46"
+              "version_added": "39",
+              "notes": "`start_url` is required for a web app to be installable."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -27,9 +28,11 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "17"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "11.3"
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
