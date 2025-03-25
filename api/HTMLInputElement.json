@@ -3301,11 +3301,16 @@
             "safari": {
               "version_added": "11.1"
             },
-            "safari_ios": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/271705",
-              "notes": "The property can be set, but has no effect."
-            },
+            "safari_ios": [
+              {
+                "version_added": "18.4"
+              },
+              {
+                "version_added": "11.3",
+                "partial_implementation": true,
+                "notes": "The property can be set, but has no effect (see [bug 271705](https://webkit.org/b/271705))."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"

@@ -6,43 +6,28 @@
       "type": "object",
       "properties": {
         "version_added": {
-          "description": "A string (indicating which browser version added this feature), the value true (indicating support added in an unknown version), the value false (indicating the feature is not supported), or the value null (indicating support is unknown).",
+          "description": "A string (indicating which browser version added this feature), or the value false (indicating the feature is not supported).",
           "anyOf": [
             {
               "type": "string",
               "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
             },
             {
-              "type": "boolean",
-              "nullable": true
+              "const": false
             }
           ],
           "tsType": "VersionValue"
         },
         "version_removed": {
-          "description": "A string, indicating which browser version removed this feature, or the value true, indicating that the feature was removed in an unknown version.",
-          "anyOf": [
-            {
-              "type": "string",
-              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
-            },
-            {
-              "const": true
-            }
-          ],
+          "description": "A string, indicating which browser version removed this feature.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "VersionValue"
         },
         "version_last": {
-          "description": "A string, indicating the last browser version that supported this feature, or the value true, indicating that the feature was removed in an unknown version. This is automatically generated.",
-          "anyOf": [
-            {
-              "type": "string",
-              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
-            },
-            {
-              "const": true
-            }
-          ],
+          "description": "A string, indicating the last browser version that supported this feature. This is automatically generated.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "VersionValue"
         },
         "prefix": {
@@ -60,7 +45,7 @@
           "items": {
             "$ref": "#/definitions/flag_statement"
           },
-          "tsType": "FlagStatement[]"
+          "tsType": "[FlagStatement, ...FlagStatement[]]"
         },
         "impl_url": {
           "anyOf": [
@@ -76,7 +61,7 @@
             }
           ],
           "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
-          "tsType": "string | string[]",
+          "tsType": "string | [string, string, ...string[]]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
@@ -99,7 +84,7 @@
               }
             }
           ],
-          "tsType": "string | string[]"
+          "tsType": "string | [string, string, ...string[]]"
         }
       },
       "required": ["version_added"],
@@ -147,7 +132,7 @@
         },
         { "const": "mirror" }
       ],
-      "tsType": "SimpleSupportStatement | SimpleSupportStatement[]"
+      "tsType": "SimpleSupportStatement | [SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]"
     },
 
     "status_block": {
@@ -237,13 +222,13 @@
             }
           ],
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
-          "tsType": "string | string[]"
+          "tsType": "string | [string, string, ...string[]]"
         },
         "tags": {
           "description": "An optional array of strings allowing to assign tags to the feature.",
           "type": "array",
           "minItems": 1,
-          "tsType": "string[]"
+          "tsType": "[string, ...string[]]"
         },
         "source_file": {
           "type": "string",
