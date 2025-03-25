@@ -5,6 +5,7 @@ import stringify from '../lib/stringify-and-order-properties.js';
 import {
   createOrUpdateBrowserEntry,
   getRSSItems,
+  gfmNoteblock,
   RSSItem,
   updateBrowserEntry,
 } from './utils';
@@ -60,18 +61,6 @@ const findRelease = (
 };
 
 /**
- * Converts a message into a GFM noteblock.
- * @param type the type of the noteblock.
- * @param message the message of the noteblock.
- * @returns the message as a GFM noteblock.
- */
-const gfmNoteblock = (type: 'INFO' | 'WARN', message: string) =>
-  `> [!${type}]\n${message
-    .split('\n')
-    .map((line) => `> ${line}`)
-    .join('\n')}`;
-
-/**
  * Updates the JSON files listing the Opera browser releases.
  * @param options The list of options for this type of Safari.
  * @returns The log of what has been generated (empty if nothing)
@@ -95,7 +84,7 @@ export const updateOperaReleases = async (options) => {
 
   if (!release) {
     return gfmNoteblock(
-      'INFO',
+      'NOTE',
       `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
     );
   }

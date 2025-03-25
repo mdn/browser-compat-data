@@ -4,24 +4,44 @@ on:
   pull_request_target:
     branches: ["main"]
 
-permissions:
-  contents: read
-  pull-requests: write
-
 jobs:
   fix:
     name: Fix
     runs-on: ubuntu-latest
+    permissions: {}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout BASE
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: npm
 
       - run: npm ci
+
+      - name: Checkout HEAD
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr_head
+
+      - name: Merge HEAD changes into BASE
+        run: |
+          dirs=(api browsers css docs html http javascript mathml schemas svg webassembly webdriver webextensions)
+          rm -r "${dirs[@]}" *.md
+          cd pr_head
+          mv "${dirs[@]}" *.md ..
+          cd ..
+          rm -r pr_head
+
+          # Avoids PR changes from getting into the diff.
+          git config --global user.email "108879845+mdn-bot@users.noreply.github.com"
+          git config --global user.name "mdn-bot"
+          git add .
+          git commit -m "Code from PR head" --no-verify
 
       - run: npm run fix
         env:
@@ -40,6 +60,7 @@ jobs:
     needs: fix
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
 
     steps:
@@ -49,9 +70,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: diff
+          path: result
 
       - name: Setup
-        uses: reviewdog/action-setup@3f401fe1d58fe77e10d665ab713057375e39b887 # v1.3.0
+        uses: reviewdog/action-setup@e04ffabe3898a0af8d0fb1af00c188831c4b5893 # v1.3.2
         with:
           reviewdog_version: latest
 
@@ -59,7 +81,7 @@ jobs:
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat diff.patch | reviewdog \
+          cat result/diff.patch | reviewdog \
             -name="bcd-linter" \
             -f=diff \
             -f.diff.strip=1 \
