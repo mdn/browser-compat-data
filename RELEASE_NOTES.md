@@ -1,5 +1,40 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.5)
+
+March 21, 2025
+
+### Removals
+
+- `api.CanMakePaymentEvent.methodData` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.modifiers` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.paymentRequestOrigin` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.CanMakePaymentEvent.topOrigin` ([#26252](https://github.com/mdn/browser-compat-data/pull/26252))
+- `api.PaymentInstruments` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.clear` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.delete` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.get` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.has` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.keys` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentInstruments.set` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentManager.instruments` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `api.PaymentRequestEvent.instrumentKey` ([#26253](https://github.com/mdn/browser-compat-data/pull/26253))
+- `css.properties.appearance.base` ([#26221](https://github.com/mdn/browser-compat-data/pull/26221))
+
+### Additions
+
+- `api.GPUAdapter.requestDevice.undefined_limits` ([#26227](https://github.com/mdn/browser-compat-data/pull/26227))
+- `browsers.edge.releases.137` ([#26260](https://github.com/mdn/browser-compat-data/pull/26260))
+- `browsers.opera_android.releases.88` ([#26260](https://github.com/mdn/browser-compat-data/pull/26260))
+- `css.properties.appearance.base-select` ([#26221](https://github.com/mdn/browser-compat-data/pull/26221))
+
+### Statistics
+
+- 7 contributors have changed 28 files with 176 additions and 683 deletions in 15 commits ([`v5.7.4...v5.7.5`](https://github.com/mdn/browser-compat-data/compare/v5.7.4...v5.7.5))
+- 17,049 total features
+- 1,134 total contributors
+- 5,163 total stargazers
+
 ## [v5.7.4](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.4)
 
 March 18, 2025
