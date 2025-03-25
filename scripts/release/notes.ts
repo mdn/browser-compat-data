@@ -33,7 +33,9 @@ export const getNotes = (
     '',
     ...(versionBump !== 'patch'
       ? [
-          '### Notable changes',
+          versionBump === 'major'
+            ? '### Breaking changes'
+            : '### Notable changes',
           '',
           '<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->',
           '',
