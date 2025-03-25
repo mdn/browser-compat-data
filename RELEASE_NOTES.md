@@ -1,5 +1,35 @@
 # @mdn/browser-compat-data release notes
 
+## [v5.7.6](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.6)
+
+March 25, 2025
+
+### Additions
+
+- `api.Document.startViewTransition.callbackOptions_parameter` ([#26193](https://github.com/mdn/browser-compat-data/pull/26193))
+- `api.Document.startViewTransition.updateCallback_parameter` ([#26193](https://github.com/mdn/browser-compat-data/pull/26193))
+- `css.selectors.column` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.column.nested_scroll-marker` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.block-end` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.block-start` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.down` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.inline-end` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.inline-start` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.left` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.next` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.prev` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.right` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.star` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+- `css.selectors.scroll-button.up` ([#26270](https://github.com/mdn/browser-compat-data/pull/26270))
+
+### Statistics
+
+- 7 contributors have changed 10 files with 612 additions and 78 deletions in 14 commits ([`v5.7.5...v5.7.6`](https://github.com/mdn/browser-compat-data/compare/v5.7.5...v5.7.6))
+- 17,065 total features
+- 1,136 total contributors
+- 5,167 total stargazers
+
 ## [v5.7.5](https://github.com/mdn/browser-compat-data/releases/tag/v5.7.5)
 
 March 21, 2025
