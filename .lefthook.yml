@@ -31,9 +31,11 @@ pre-push:
 post-merge:
   only:
     - ref: main
+    - ref: lefthook
   piped: true
   jobs:
-    - run: npm install
+    - run: npm install --ignore-scripts
+    - run: npm run gentypes
 
 output:
   - summary
