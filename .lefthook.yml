@@ -8,6 +8,7 @@ pre-commit:
     - name: eslint
       glob: "*.{js,jsx,tsx}"
       run: npx eslint --fix --cache {staged_files}
+      stage_fixed: true
 
     - name: lint:fix
       glob: "*.json"
