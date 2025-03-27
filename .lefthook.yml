@@ -17,6 +17,7 @@ pre-commit:
         - browsers/*.json
         - schemas/*.json
       run: npm run lint:fix {staged_files}
+      stage_fixed: true
 
 pre-push:
   piped: true
