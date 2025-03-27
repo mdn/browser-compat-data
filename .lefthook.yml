@@ -24,7 +24,6 @@ pre-push:
       group:
         parallel: true
         jobs:
-          - run: npm run lint
           - run: npx eslint --cache
           - run: npx prettier --check .
           - run: npx tsc --noEmit
