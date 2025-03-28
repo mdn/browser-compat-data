@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.1)
+
+March 28, 2025
+
+### Additions
+
+- `html.elements.link.rel.compression-dictionary` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Accept-Encoding.br` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Accept-Encoding.dcb` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Accept-Encoding.dcz` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Accept-Encoding.zstd` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Available-Dictionary` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Content-Encoding.dcb` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Content-Encoding.dcz` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Dictionary-ID` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Link.compression-dictionary` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+- `http.headers.Use-As-Dictionary` ([#26257](https://github.com/mdn/browser-compat-data/pull/26257))
+
+### Statistics
+
+- 7 contributors have changed 22 files with 783 additions and 259 deletions in 11 commits ([`v6.0.0...v6.0.1`](https://github.com/mdn/browser-compat-data/compare/v6.0.0...v6.0.1))
+- 17,076 total features
+- 1,138 total contributors
+- 5,171 total stargazers
+
 ## [v6.0.0](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.0)
 
 March 25, 2025
