@@ -13,7 +13,7 @@ import { InternalSupportBlock } from '../../types/index.js';
 
 const { browsers } = bcd;
 
-type Notes = string | [string, string, ...string[]] | null;
+type Notes = string | string[] | null;
 
 /**
  */
@@ -204,11 +204,7 @@ export const bumpSupport = (
         return newData[0];
 
       default:
-        return newData as [
-          SimpleSupportStatement,
-          SimpleSupportStatement,
-          ...SimpleSupportStatement[],
-        ];
+        return newData;
     }
   }
 

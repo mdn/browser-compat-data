@@ -50,11 +50,7 @@ export const removeIrrelevantFlags = (
   if (result.length == 1) {
     return result[0];
   }
-  return result as [
-    SimpleSupportStatement,
-    SimpleSupportStatement,
-    ...SimpleSupportStatement[],
-  ];
+  return result;
 };
 
 /**

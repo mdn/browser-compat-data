@@ -45,7 +45,7 @@
           "items": {
             "$ref": "#/definitions/flag_statement"
           },
-          "tsType": "[FlagStatement, ...FlagStatement[]]"
+          "tsType": "FlagStatement[]"
         },
         "impl_url": {
           "anyOf": [
@@ -61,7 +61,7 @@
             }
           ],
           "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
-          "tsType": "string | [string, string, ...string[]]",
+          "tsType": "string | string[]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
@@ -84,7 +84,7 @@
               }
             }
           ],
-          "tsType": "string | [string, string, ...string[]]"
+          "tsType": "string | string[]"
         }
       },
       "required": ["version_added"],
@@ -132,7 +132,7 @@
         },
         { "const": "mirror" }
       ],
-      "tsType": "SimpleSupportStatement | [SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]"
+      "tsType": "SimpleSupportStatement | SimpleSupportStatement[]"
     },
 
     "status_block": {
@@ -222,13 +222,13 @@
             }
           ],
           "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
-          "tsType": "string | [string, string, ...string[]]"
+          "tsType": "string | string[]"
         },
         "tags": {
           "description": "An optional array of strings allowing to assign tags to the feature.",
           "type": "array",
           "minItems": 1,
-          "tsType": "[string, ...string[]]"
+          "tsType": "string[]"
         },
         "source_file": {
           "type": "string",
