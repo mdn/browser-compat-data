@@ -30,8 +30,10 @@ pre-push:
         jobs:
           - name: eslint
             run: npx eslint --cache
+
           - name: prettier
             run: npx prettier --check .
+
           - name: tsc
             run: npx tsc --noEmit
 
@@ -42,6 +44,7 @@ post-merge:
   jobs:
     - name: install
       run: npm install --ignore-scripts
+
     - name: gentypes
       run: npm run gentypes
 
