@@ -8,8 +8,8 @@ import betterAjvErrors from 'better-ajv-errors';
 
 import { Linter, Logger, LinterData } from '../utils.js';
 
-import compatDataSchema from './../../schemas/compat-data.schema.json' assert { type: 'json' };
-import browserDataSchema from './../../schemas/browsers.schema.json' assert { type: 'json' };
+import compatDataSchema from './../../schemas/compat-data.schema.json' with { type: 'json' };
+import browserDataSchema from './../../schemas/browsers.schema.json' with { type: 'json' };
 
 const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
