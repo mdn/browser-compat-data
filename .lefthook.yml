@@ -26,9 +26,12 @@ pre-push:
       group:
         parallel: true
         jobs:
-          - run: npx eslint --cache
-          - run: npx prettier --check .
-          - run: npx tsc --noEmit
+          - name: eslint
+            run: npx eslint --cache
+          - name: prettier
+            run: npx prettier --check .
+          - name: tsc
+            run: npx tsc --noEmit
 
 post-merge:
   only:
@@ -36,8 +39,10 @@ post-merge:
     - ref: lefthook
   piped: true
   jobs:
-    - run: npm install --ignore-scripts
-    - run: npm run gentypes
+    - name: install
+      run: npm install --ignore-scripts
+    - name: gentypes
+      run: npm run gentypes
 
 output:
   - summary
