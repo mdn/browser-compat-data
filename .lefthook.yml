@@ -1,0 +1,41 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: prettier
+      run: npx prettier --ignore-unknown --write --cache {staged_files}
+      stage_fixed: true
+
+    - name: eslint
+      glob: "*.{js,jsx,tsx}"
+      run: npx eslint --fix --cache {staged_files}
+
+    - name: lint:fix
+      glob: "*.json"
+      exclude:
+        - .vscode/*.json
+        - browsers/*.json
+        - schemas/*.json
+      run: npm run lint:fix {staged_files}
+
+pre-push:
+  piped: true
+  jobs:
+    - name: lint
+      group:
+        parallel: true
+        jobs:
+          - run: npm run lint
+          - run: npx eslint --cache
+          - run: npx prettier --check .
+          - run: npx tsc --noEmit
+
+post-merge:
+  only:
+    - ref: main
+  piped: true
+  jobs:
+    - run: npm install
+
+output:
+  - summary
+  - failure
