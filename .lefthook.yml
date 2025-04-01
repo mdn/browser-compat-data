@@ -36,7 +36,6 @@ pre-push:
 post-merge:
   only:
     - ref: main
-    - ref: lefthook
   piped: true
   jobs:
     - name: install
