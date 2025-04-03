@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.2)
+
+April 1, 2025
+
+### Additions
+
+- `api.AudioWorklet.port` ([#26371](https://github.com/mdn/browser-compat-data/pull/26371))
+- `browsers.chrome_android.releases.138` ([#26363](https://github.com/mdn/browser-compat-data/pull/26363))
+- `browsers.chrome.releases.138` ([#26363](https://github.com/mdn/browser-compat-data/pull/26363))
+- `browsers.webview_android.releases.138` ([#26363](https://github.com/mdn/browser-compat-data/pull/26363))
+- `css.selectors.after.nested_marker` ([#26240](https://github.com/mdn/browser-compat-data/pull/26240))
+- `css.selectors.before.nested_marker` ([#26240](https://github.com/mdn/browser-compat-data/pull/26240))
+
+### Statistics
+
+- 6 contributors have changed 328 files with 1,406 additions and 1,186 deletions in 52 commits ([`v6.0.1...v6.0.2`](https://github.com/mdn/browser-compat-data/compare/v6.0.1...v6.0.2))
+- 17,079 total features
+- 1,138 total contributors
+- 5,178 total stargazers
+
 ## [v6.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.1)
 
 March 28, 2025
