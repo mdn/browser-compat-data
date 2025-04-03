@@ -65,6 +65,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
 - Michael Smith (@sideshowbarker), W3C
+- Rachel Andrew (@rachelandrew), Google
 - Richard Bloor (@rebloor)
 - Will Bamberg (@wbamberg), Open Web Docs
 
@@ -177,7 +178,6 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 - Joe Medley (@jpmedley) (Peer)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
-- Rachel Andrew (@rachelandrew) (Peer)
 - Ryan Johnson (@escattone) (Peer)
 
 ## Credits
