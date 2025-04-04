@@ -1,9 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { exec, execSync } from 'node:child_process';
+import { execSync } from 'node:child_process';
 import fs from 'node:fs';
-import { promisify } from 'node:util';
 import path from 'node:path';
 
 import esMain from 'es-main';
@@ -11,16 +10,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryDirectoryTask } from 'tempy';
 
-/**
- * Executes a command asynchronously.
- * @param command The command to execute asynchronously.
- * @returns The output of the command.
- */
-const execAsync = async (command: string): Promise<string> => {
-  const result = await promisify(exec)(command, { encoding: 'utf-8' });
-
-  return result.stdout.trim();
-};
+import { execAsync } from '../utils/index.js';
 
 /**
  * Compare two references and print diff as Markdown or JSON
