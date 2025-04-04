@@ -1,5 +1,42 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.3)
+
+April 4, 2025
+
+### Removals
+
+- `css.properties.dynamic-range-limit.constrained-high` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `css.properties.dynamic-range-limit.high` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `http.headers.Link.compression-dictionary` ([#26375](https://github.com/mdn/browser-compat-data/pull/26375))
+- `http.headers.Link.expect` ([#26375](https://github.com/mdn/browser-compat-data/pull/26375))
+
+### Additions
+
+- `api.CaptureController.decreaseZoomLevel` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.forwardWheel` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.getSupportedZoomLevels` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.increaseZoomLevel` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.resetZoomLevel` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.zoomLevel` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.CaptureController.zoomlevelchange_event` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.GPUAdapterInfo.isFallbackAdapter` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `api.IdentityCredential.configURL` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `browsers.firefox_android.releases.140` ([#26384](https://github.com/mdn/browser-compat-data/pull/26384))
+- `browsers.firefox.releases.140` ([#26384](https://github.com/mdn/browser-compat-data/pull/26384))
+- `browsers.safari_ios.releases.18.5` ([#26384](https://github.com/mdn/browser-compat-data/pull/26384))
+- `browsers.safari.releases.18.5` ([#26384](https://github.com/mdn/browser-compat-data/pull/26384))
+- `browsers.webview_ios.releases.18.5` ([#26384](https://github.com/mdn/browser-compat-data/pull/26384))
+- `css.properties.dynamic-range-limit.constrained` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+- `css.properties.dynamic-range-limit.no-limit` ([#26412](https://github.com/mdn/browser-compat-data/pull/26412))
+
+### Statistics
+
+- 11 contributors have changed 66 files with 828 additions and 172 deletions in 24 commits ([`v6.0.2...v6.0.3`](https://github.com/mdn/browser-compat-data/compare/v6.0.2...v6.0.3))
+- 17,086 total features
+- 1,139 total contributors
+- 5,188 total stargazers
+
 ## [v6.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.2)
 
 April 1, 2025
