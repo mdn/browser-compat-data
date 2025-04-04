@@ -16,7 +16,15 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "138",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.details-content.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1901037"
             },
             "firefox_android": "mirror",
             "ie": {
