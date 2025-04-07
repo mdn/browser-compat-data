@@ -31,6 +31,11 @@ const specsExceptions = [
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
 
+  // This is being used to develop Error.captureStackTrace() standard
+  // Need to be checked after some time to see if integrated
+  // into a real spec
+  'https://github.com/tc39/proposal-error-capturestacktrace',
+  
   // Proposals for WebAssembly
   'https://github.com/WebAssembly/spec/blob/main/proposals',
   'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
