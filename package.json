@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "6.0.3",
+  "version": "6.0.4",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.ts",
   "type": "module",
@@ -97,10 +97,10 @@
   "scripts": {
     "prepare": "npm run gentypes && npm run build",
     "diff": "tsx scripts/diff.ts",
-    "unittest": "NODE_ENV=test c8 mocha index.test.ts --require tsx  --recursive \"{,!(node_modules)/**}/*.test.ts\"",
+    "unittest": "NODE_ENV=test c8 mocha index.test.ts --require tsx --recursive \"{,!(node_modules)/**}/*.test.ts\"",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
-    "format": "eslint . && prettier --check . && tsc --noEmit",
-    "format:fix": "eslint --quiet --fix . && prettier --write .",
+    "format": "eslint --cache . && prettier --check --cache . && tsc --noEmit",
+    "format:fix": "eslint --quiet --fix --cache . && prettier --write --cache .",
     "lint": "tsx lint/lint.ts",
     "lint:fix": "tsx lint/fix.ts",
     "fix": "npm run format:fix && npm run lint:fix",
