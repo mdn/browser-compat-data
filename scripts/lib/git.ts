@@ -37,13 +37,20 @@ const parseFields = (fields: string[]): Fields => ({
  * @param head The second git refs
  * @returns The diff statuses
  */
-const getGitDiffStatuses = (base: string, head: string): Fields[] =>
-  child_process
+const getGitDiffStatuses = (base: string, head: string): Fields[] => {
+  const stdout = child_process
     .execSync(`git diff --name-status ${base} ${head}`, { encoding: 'utf-8' })
-    .trim()
+    .trim();
+
+  if (!stdout) {
+    return [];
+  }
+
+  return stdout
     .split('\n')
     .map((line) => line.split('\t'))
     .map(parseFields);
+};
 
 /**
  * Get file contents from a specific commit and file path
