@@ -4,7 +4,7 @@ import { join, relative, resolve, sep } from 'node:path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { Identifier } from '../../types/types';
+import { Identifier } from '../types/types';
 
 const argv = yargs(hideBin(process.argv))
   .command('$0 [files..]', 'Split BCD JSON files', (yargs) => {
