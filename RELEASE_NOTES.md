@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.5)
+
+April 11, 2025
+
+### Additions
+
+- `html.elements.script.type.speculationrules.tag` ([#26485](https://github.com/mdn/browser-compat-data/pull/26485))
+- `http.headers.Sec-Speculation-Tags` ([#26485](https://github.com/mdn/browser-compat-data/pull/26485))
+
+### Statistics
+
+- 9 contributors have changed 28 files with 255 additions and 298 deletions in 18 commits ([`v6.0.4...v6.0.5`](https://github.com/mdn/browser-compat-data/compare/v6.0.4...v6.0.5))
+- 17,001 total features
+- 1,139 total contributors
+- 5,194 total stargazers
+
 ## [v6.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.4)
 
 April 8, 2025
