@@ -25,9 +25,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.4",
-              "partial_implementation": true,
-              "notes": "Safari does not adjust the color of glyphs (such as checkmarks) on form controls to maintain contrast. See [bug 244233](https://webkit.org/b/244233)."
+              "version_added": "15.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -71,6 +69,45 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "maintains_contrast": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-ui/#:~:text=must%20maintain%20contrast%20for%20legibility%20of%20the%20control",
+            "tags": [
+              "web-features:accent-color"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/343503163"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "92"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/244233"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
