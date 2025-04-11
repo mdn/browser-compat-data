@@ -1,0 +1,55 @@
+{
+  "api": {
+    "Element": {
+      "animationcancel_event": {
+        "__compat": {
+          "description": "`animationcancel` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/animationcancel_event",
+          "spec_url": "https://drafts.csswg.org/css-animations/#eventdef-globaleventhandlers-animationcancel",
+          "tags": [
+            "web-features:web-animations"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "83",
+              "partial_implementation": true,
+              "notes": "The `onanimationcancel` event handler property is not supported. To listen to this event, use `element.addEventListener('animationcancel', function() {});`. See [bug 41404325](https://crbug.com/41404325)."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "54"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": [
+              {
+                "version_added": "13.1"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "13.1",
+                "partial_implementation": true,
+                "notes": "Although the `onanimationcancel` event handler property is supported, the `animationcancel` event is never fired."
+              }
+            ],
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
