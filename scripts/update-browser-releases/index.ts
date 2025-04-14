@@ -220,27 +220,35 @@ const options = {
 };
 
 const results = await Promise.all([
-  ...(updateChrome && [
-    updateDesktop && updateChromiumReleases(options.chrome_desktop),
-    updateMobile && updateChromiumReleases(options.chrome_android),
-  ]),
+  ...(updateChrome
+    ? [
+        updateDesktop && updateChromiumReleases(options.chrome_desktop),
+        updateMobile && updateChromiumReleases(options.chrome_android),
+      ]
+    : []),
   updateWebview &&
     updateMobile &&
     updateChromiumReleases(options.webview_android),
   updateEdge && updateDesktop && updateEdgeReleases(options.edge_desktop),
-  ...(updateFirefox && [
-    updateDesktop && updateFirefoxReleases(options.firefox_desktop),
-    updateMobile && updateFirefoxReleases(options.firefox_android),
-  ]),
-  ...(updateOpera && [
-    updateDesktop && updateOperaReleases(options.opera_desktop),
-    updateMobile && updateOperaReleases(options.opera_android),
-  ]),
-  ...(updateSafari && [
-    updateDesktop && updateSafariReleases(options.safari_desktop),
-    updateMobile && updateSafariReleases(options.safari_ios),
-    updateMobile && updateSafariReleases(options.webview_ios),
-  ]),
+  ...(updateFirefox
+    ? [
+        updateDesktop && updateFirefoxReleases(options.firefox_desktop),
+        updateMobile && updateFirefoxReleases(options.firefox_android),
+      ]
+    : []),
+  ...(updateOpera
+    ? [
+        updateDesktop && updateOperaReleases(options.opera_desktop),
+        updateMobile && updateOperaReleases(options.opera_android),
+      ]
+    : []),
+  ...(updateSafari
+    ? [
+        updateDesktop && updateSafariReleases(options.safari_desktop),
+        updateMobile && updateSafariReleases(options.safari_ios),
+        updateMobile && updateSafariReleases(options.webview_ios),
+      ]
+    : []),
 ]);
 
 const result = results.filter(Boolean).join('\n\n');
