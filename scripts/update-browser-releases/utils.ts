@@ -46,7 +46,7 @@ export const newBrowserEntry = (
   release['status'] = status;
   release['engine'] = engine;
   if (engineVersion) {
-    release['engine_version'] = engineVersion;
+    release['engine_version'] = engineVersion.toString();
   }
   return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
@@ -88,7 +88,7 @@ export const updateBrowserEntry = (
 
   if (engineVersion && entry['engine_version'] != engineVersion) {
     result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
-    entry['engine_version'] = engineVersion;
+    entry['engine_version'] = engineVersion.toString();
   }
 
   return result;
