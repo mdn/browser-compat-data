@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.6)
+
+April 15, 2025
+
+### Renamings
+
+- `javascript.builtins.FinalizationRegistry.symbol_as_target` to `javascript.builtins.FinalizationRegistry.register.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `javascript.builtins.WeakRef.symbol_as_target` to `javascript.builtins.WeakRef.WeakRef.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+
+### Additions
+
+- `css.properties.accent-color.maintains_contrast` ([#26493](https://github.com/mdn/browser-compat-data/pull/26493))
+- `css.types.gradient.repeating-conic-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `css.types.gradient.repeating-linear-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `css.types.gradient.repeating-radial-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `javascript.builtins.FinalizationRegistry.unregister.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `webdriver.bidi.emulation` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
+- `webdriver.bidi.emulation.setGeolocationOverride` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
+
+### Statistics
+
+- 9 contributors have changed 188 files with 787 additions and 526 deletions in 20 commits ([`v6.0.5...v6.0.6`](https://github.com/mdn/browser-compat-data/compare/v6.0.5...v6.0.6))
+- 17,008 total features
+- 1,140 total contributors
+- 5,194 total stargazers
+
 ## [v6.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.5)
 
 April 11, 2025
