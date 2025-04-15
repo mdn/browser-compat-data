@@ -4,10 +4,10 @@
 
 April 15, 2025
 
-### Removals
+### Renamings
 
-- `javascript.builtins.FinalizationRegistry.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
-- `javascript.builtins.WeakRef.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `javascript.builtins.FinalizationRegistry.symbol_as_target` to `javascript.builtins.FinalizationRegistry.register.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `javascript.builtins.WeakRef.symbol_as_target` to `javascript.builtins.WeakRef.WeakRef.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
 
 ### Additions
 
@@ -15,9 +15,7 @@ April 15, 2025
 - `css.types.gradient.repeating-conic-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
 - `css.types.gradient.repeating-linear-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
 - `css.types.gradient.repeating-radial-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
-- `javascript.builtins.FinalizationRegistry.register.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
 - `javascript.builtins.FinalizationRegistry.unregister.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
-- `javascript.builtins.WeakRef.WeakRef.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
 - `webdriver.bidi.emulation` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
 - `webdriver.bidi.emulation.setGeolocationOverride` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
 
