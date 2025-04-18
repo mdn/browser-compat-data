@@ -138,6 +138,26 @@ describe('test-overlapping-statements', () => {
     assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
+  it('should ignore when partial support in stable and full support in preview overlap', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          {
+            version_added: 'preview',
+          },
+          {
+            version_added: '43',
+            partial_implementation: true,
+          },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 0);
+  });
+
   it('should ignore preview version without overlap', () => {
     const data: CompatStatement = {
       support: {

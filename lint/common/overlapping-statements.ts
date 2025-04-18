@@ -145,6 +145,13 @@ const statementsOverlap = (
       // No overlap.
       return false;
     }
+  } else if (
+    next.version_added === 'preview' &&
+    current.partial_implementation === true
+  ) {
+    // Stable has partial support.
+    // Preview has full support.
+    return false;
   }
 
   return true;
