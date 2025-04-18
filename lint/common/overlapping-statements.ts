@@ -4,12 +4,7 @@
 import chalk from 'chalk-template';
 import { compareVersions } from 'compare-versions';
 
-import {
-  Linter,
-  Logger,
-  LinterData,
-  createStatementGroupKey,
-} from '../utils.js';
+import { Logger, createStatementGroupKey } from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
@@ -58,7 +53,7 @@ const formatRange = (stmt: SimpleSupportStatement): string => {
  * Process data and check to make sure there aren't support statements whose version ranges overlap.
  * @param data The data to test
  * @param browser The name of the browser
- * @param options
+ * @param options The check options
  * @param options.logger The logger to output errors to
  * @param options.fix Whether the statements should be fixed (if possible)
  * @returns the data (with fixes, if specified)
@@ -86,13 +81,34 @@ export const checkOverlappingStatements = (
         continue;
       }
 
-      if (
-        fix &&
-        typeof current.version_removed === 'undefined' &&
-        next.version_added !== 'preview'
-      ) {
-        current.version_removed = next.version_added;
-      } else if (logger) {
+      let fixed = false;
+      if (fix) {
+        if (
+          typeof current.version_removed === 'undefined' &&
+          next.version_added !== 'preview'
+        ) {
+          current.version_removed = next.version_added;
+
+          if (
+            !current.partial_implementation &&
+            !next.partial_implementation &&
+            current.notes &&
+            next.notes
+          ) {
+            // Assume that the current notes also apply to the next statement.
+            next.notes = [
+              ...(Array.isArray(next.notes) ? next.notes : [next.notes]),
+              ...(Array.isArray(current.notes)
+                ? current.notes
+                : [current.notes]),
+            ] as [string, string, ...string[]];
+          }
+
+          fixed = true;
+        }
+      }
+
+      if (!fixed && logger) {
         logger.error(
           chalk`{bold ${browser}} statements overlap for {bold ${key}}: ` +
             `[${formatRange(next)}, ${formatRange(current)}]`,
