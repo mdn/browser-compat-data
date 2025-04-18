@@ -1,5 +1,218 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.6)
+
+April 15, 2025
+
+### Renamings
+
+- `javascript.builtins.FinalizationRegistry.symbol_as_target` to `javascript.builtins.FinalizationRegistry.register.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `javascript.builtins.WeakRef.symbol_as_target` to `javascript.builtins.WeakRef.WeakRef.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+
+### Additions
+
+- `css.properties.accent-color.maintains_contrast` ([#26493](https://github.com/mdn/browser-compat-data/pull/26493))
+- `css.types.gradient.repeating-conic-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `css.types.gradient.repeating-linear-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `css.types.gradient.repeating-radial-gradient.single_color_stop` ([#26508](https://github.com/mdn/browser-compat-data/pull/26508))
+- `javascript.builtins.FinalizationRegistry.unregister.symbol_as_target` ([#26509](https://github.com/mdn/browser-compat-data/pull/26509))
+- `webdriver.bidi.emulation` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
+- `webdriver.bidi.emulation.setGeolocationOverride` ([#26504](https://github.com/mdn/browser-compat-data/pull/26504))
+
+### Statistics
+
+- 9 contributors have changed 188 files with 787 additions and 526 deletions in 20 commits ([`v6.0.5...v6.0.6`](https://github.com/mdn/browser-compat-data/compare/v6.0.5...v6.0.6))
+- 17,008 total features
+- 1,140 total contributors
+- 5,194 total stargazers
+
+## [v6.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.5)
+
+April 11, 2025
+
+### Additions
+
+- `html.elements.script.type.speculationrules.tag` ([#26485](https://github.com/mdn/browser-compat-data/pull/26485))
+- `http.headers.Sec-Speculation-Tags` ([#26485](https://github.com/mdn/browser-compat-data/pull/26485))
+
+### Statistics
+
+- 9 contributors have changed 28 files with 255 additions and 298 deletions in 18 commits ([`v6.0.4...v6.0.5`](https://github.com/mdn/browser-compat-data/compare/v6.0.4...v6.0.5))
+- 17,001 total features
+- 1,139 total contributors
+- 5,194 total stargazers
+
+## [v6.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.4)
+
+April 8, 2025
+
+### Removals
+
+- `api.HTMLHeadElement.profile` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGCursorElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontFaceElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontFaceFormatElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontFaceNameElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontFaceSrcElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGFontFaceUriElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.dx` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.dy` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.format` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.glyphRef` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGGlyphRefElement.y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGHKernElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGMissingGlyphElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGTRefElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.SVGVKernElement` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `api.Window.showModalDialog` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `html.elements.head.profile` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `html.elements.pre.wrap` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor.href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor.systemLanguage` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor.x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor.xlink_href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.cursor.y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-format` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-format.string` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-name` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-name.name` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-src` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-uri` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face-uri.xlink_href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.accent-height` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.alphabetic` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.ascent` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.bbox` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.cap-height` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.descent` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-family` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-size` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-stretch` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-style` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-variant` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.font-weight` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.hanging` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.ideographic` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.mathematical` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.overline-position` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.overline-thickness` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.panose-1` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.slope` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.stemh` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.stemv` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.strikethrough-position` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.strikethrough-thickness` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.underline-position` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.underline-thickness` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.unicode-range` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.units-per-em` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.v-alphabetic` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.v-hanging` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.v-ideographic` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.v-mathematical` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.widths` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font-face.x-height` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.horiz-adv-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.horiz-origin-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.horiz-origin-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.vert-adv-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.vert-origin-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.font.vert-origin-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.arabic-form` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.d` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.glyph-name` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.horiz-adv-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.lang` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.orientation` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.unicode` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.vert-adv-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.vert-origin-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyph.vert-origin-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.dx` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.dy` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.format` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.glyphRef` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.xlink_href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.glyphRef.y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern.g1` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern.g2` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern.k` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern.u1` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.hkern.u2` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph.d` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph.horiz-adv-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph.vert-adv-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph.vert-origin-x` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.missing-glyph.vert-origin-y` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.tref` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.tref.fill` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.tref.fill.context-fill` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.tref.systemLanguage` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.tref.xlink_href` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern.g1` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern.g2` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern.k` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern.u1` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+- `svg.elements.vkern.u2` ([#26443](https://github.com/mdn/browser-compat-data/pull/26443))
+
+### Additions
+
+- `api.CustomElementRegistry.define.connectedMoveCallback_lifecycle_callback` ([#26444](https://github.com/mdn/browser-compat-data/pull/26444))
+- `api.EventTarget.when` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.catch` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.drop` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.every` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.filter` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.finally` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.find` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.first` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.flatMap` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.forEach` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.from_static` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.inspect` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.last` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.map` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.Observable` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.reduce` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.some` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.subscribe` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.switchMap` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.take` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.takeUntil` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Observable.toArray` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.active` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.addTeardown` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.complete` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.error` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.next` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `api.Subscriber.signal` ([#26391](https://github.com/mdn/browser-compat-data/pull/26391))
+- `browsers.nodejs.releases.20.4.0` ([#26414](https://github.com/mdn/browser-compat-data/pull/26414))
+- `http.headers.Permissions-Policy.deferred-fetch` ([#26437](https://github.com/mdn/browser-compat-data/pull/26437))
+- `http.headers.Permissions-Policy.deferred-fetch-minimal` ([#26437](https://github.com/mdn/browser-compat-data/pull/26437))
+
+### Statistics
+
+- 10 contributors have changed 82 files with 1,927 additions and 5,500 deletions in 47 commits ([`v6.0.3...v6.0.4`](https://github.com/mdn/browser-compat-data/compare/v6.0.3...v6.0.4))
+- 16,999 total features
+- 1,139 total contributors
+- 5,193 total stargazers
+
 ## [v6.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.3)
 
 April 4, 2025
