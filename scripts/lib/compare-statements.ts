@@ -75,10 +75,19 @@ const compareStatements = (
     typeof a.version_added == 'string' &&
     typeof b.version_added == 'string'
   ) {
-    return compareVersions(
-      b.version_added.replace('≤', ''),
-      a.version_added.replace('≤', ''),
-    );
+    switch ('preview') {
+      case a.version_added:
+        return -1;
+
+      case b.version_added:
+        return 1;
+
+      default:
+        return compareVersions(
+          b.version_added.replace('≤', ''),
+          a.version_added.replace('≤', ''),
+        );
+    }
   }
 
   return 0;
