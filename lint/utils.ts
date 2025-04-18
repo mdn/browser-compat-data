@@ -6,7 +6,7 @@ import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
 import { DataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
+import { BrowserName, SimpleSupportStatement } from '../types/types.js';
 
 export interface LintOptions {
   only?: string[];
@@ -268,3 +268,17 @@ export class Linters {
     }
   }
 }
+
+/**
+ * Returns the key for the group that this statement belongs to.
+ * @param support The support statement.
+ * @returns The key of the support statement group.
+ */
+export const createStatementGroupKey = (
+  support: SimpleSupportStatement,
+): string =>
+  support.prefix
+    ? `prefix: ${support.prefix}`
+    : support.alternative_name
+      ? `alt. name: ${support.alternative_name}`
+      : 'normal name';
