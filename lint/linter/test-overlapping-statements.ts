@@ -97,11 +97,8 @@ const processData = (
       }
 
       logger.error(
-        [
-          chalk`{bold ${browser}} has overlapping statements for {bold ${key}}:`,
-          `[${formatRange(current)}, ${formatRange(previous)}].`,
-          chalk`Please check which one is correct, and update the other statement accordingly.`,
-        ].join(' '),
+        chalk`{bold ${browser}} statements overlap for {bold ${key}}: ` +
+          `[${formatRange(current)}, ${formatRange(previous)}]`,
       );
     }
   }

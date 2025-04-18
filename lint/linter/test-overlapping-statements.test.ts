@@ -43,9 +43,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should log error when overlapping statements are not sorted', () => {
@@ -61,9 +59,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should log error when statements with same prefix overlap', () => {
@@ -79,9 +75,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should log error when statements with same alternative name overlap', () => {
@@ -101,9 +95,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should log error when there are two statements without version_added', () => {
@@ -123,9 +115,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should log error when there are two statements without version_added incl. preview', () => {
@@ -145,9 +135,7 @@ describe('test-overlapping-statements', () => {
     test.check(logger, { data });
 
     assert.equal(logger.messages.length, 1);
-    assert.ok(
-      logger.messages[0].message.includes('has overlapping statements'),
-    );
+    assert.ok(logger.messages[0].message.includes('statements overlap'));
   });
 
   it('should ignore preview version without overlap', () => {
