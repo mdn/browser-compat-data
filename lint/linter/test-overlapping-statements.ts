@@ -4,13 +4,38 @@
 import chalk from 'chalk-template';
 import { compareVersions } from 'compare-versions';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import {
+  Linter,
+  Logger,
+  LinterData,
+  createStatementGroupKey,
+} from '../utils.js';
 import {
   BrowserName,
   SimpleSupportStatement,
   SupportStatement,
 } from '../../types/types.js';
 import compareStatements from '../../scripts/lib/compare-statements.js';
+
+/**
+ * Groups statements by group key.
+ * @param data The support statements to group.
+ * @returns the statement groups
+ */
+const groupByStatementKey = (data: SimpleSupportStatement[]) => {
+  const groups = new Map<string, SimpleSupportStatement[]>();
+
+  for (const support of data) {
+    const key = createStatementGroupKey(support);
+    const group = groups.get(key);
+    if (group) {
+      group.push(support);
+    } else {
+      groups.set(key, [support]);
+    }
+  }
+  return groups;
+};
 
 /**
  * Formats a support statement as a simplified JSON-like version range.
@@ -45,44 +70,40 @@ const processData = (
     return;
   }
 
-  // For now, let's ignore prefixes, alternative names, flags, and preview versions.
-  const statements = data
-    .filter(
-      (d) =>
-        !(
-          d.prefix ||
-          d.alternative_name ||
-          d.flags ||
-          d.version_added === 'preview'
-        ),
-    )
-    .sort(compareStatements)
-    .reverse();
+  const groups = groupByStatementKey(data);
 
-  for (let i = 1; i < statements.length; i++) {
-    const previous = statements.at(i - 1) as SimpleSupportStatement;
-    const current = statements.at(i) as SimpleSupportStatement;
+  for (const [key, data] of groups.entries()) {
+    const statements = data.sort(compareStatements).reverse();
 
-    if (
-      typeof previous.version_removed !== 'string' ||
-      typeof current.version_added !== 'string'
-    ) {
-      // Ignore for now.
-      continue;
+    for (let i = 1; i < statements.length; i++) {
+      const previous = statements.at(i - 1) as SimpleSupportStatement;
+      const current = statements.at(i) as SimpleSupportStatement;
+
+      if (typeof previous.version_removed === 'string') {
+        // If previous has no removed version, we always have an overlap.
+
+        if (current.version_added === 'preview') {
+          // Feature got re-introduced.
+          continue;
+        }
+
+        if (
+          typeof current.version_added === 'string' &&
+          compareVersions(previous.version_removed, current.version_added) <= 0
+        ) {
+          // No overlap.
+          continue;
+        }
+      }
+
+      logger.error(
+        [
+          chalk`{bold ${browser}} has overlapping statements for {bold ${key}}:`,
+          `[${formatRange(current)}, ${formatRange(previous)}].`,
+          chalk`Please check which one is correct, and update the other statement accordingly.`,
+        ].join(' '),
+      );
     }
-
-    if (compareVersions(previous.version_removed, current.version_added) <= 0) {
-      // All good.
-      continue;
-    }
-
-    logger.error(
-      [
-        chalk`{bold ${browser}} has overlapping statements:`,
-        `[${formatRange(current)}, ${formatRange(previous)}].`,
-        chalk`Please check which one is correct, and update the other statement accordingly.`,
-      ].join(' '),
-    );
   }
 };
 

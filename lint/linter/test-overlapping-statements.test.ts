@@ -4,6 +4,7 @@
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
+import { CompatStatement } from '../../types/types.js';
 
 import test from './test-overlapping-statements.js';
 
@@ -15,7 +16,7 @@ describe('test-overlapping-statements', () => {
   });
 
   it('should skip processing when data is not an array', () => {
-    const data = {
+    const data: CompatStatement = {
       support: {
         chrome: {
           version_added: '1',
@@ -30,7 +31,7 @@ describe('test-overlapping-statements', () => {
   });
 
   it('should log error when statements overlap', () => {
-    const data = {
+    const data: CompatStatement = {
       support: {
         firefox: [
           { version_added: '2' },
@@ -48,7 +49,7 @@ describe('test-overlapping-statements', () => {
   });
 
   it('should log error when overlapping statements are not sorted', () => {
-    const data = {
+    const data: CompatStatement = {
       support: {
         firefox: [
           { version_added: '1', version_removed: '3' },
@@ -63,5 +64,109 @@ describe('test-overlapping-statements', () => {
     assert.ok(
       logger.messages[0].message.includes('has overlapping statements'),
     );
+  });
+
+  it('should log error when statements with same prefix overlap', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          { prefix: '-moz', version_added: '1', version_removed: '3' },
+          { prefix: '-moz', version_added: '2' },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
+      logger.messages[0].message.includes('has overlapping statements'),
+    );
+  });
+
+  it('should log error when statements with same alternative name overlap', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          {
+            alternative_name: 'MozObject',
+            version_added: '1',
+            version_removed: '3',
+          },
+          { alternative_name: 'MozObject', version_added: '2' },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
+      logger.messages[0].message.includes('has overlapping statements'),
+    );
+  });
+
+  it('should log error when there are two statements without version_added', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          {
+            version_added: '133',
+          },
+          {
+            version_added: '131',
+          },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
+      logger.messages[0].message.includes('has overlapping statements'),
+    );
+  });
+
+  it('should log error when there are two statements without version_added incl. preview', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          {
+            version_added: 'preview',
+          },
+          {
+            version_added: '131',
+          },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
+      logger.messages[0].message.includes('has overlapping statements'),
+    );
+  });
+
+  it('should ignore preview version without overlap', () => {
+    const data: CompatStatement = {
+      support: {
+        firefox: [
+          {
+            version_added: 'preview',
+          },
+          {
+            version_added: '131',
+            version_removed: '133',
+          },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 0);
   });
 });
