@@ -1,5 +1,33 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.7)
+
+April 18, 2025
+
+### Removals
+
+- `webextensions.api.pageAction.getUserSettings` ([#26540](https://github.com/mdn/browser-compat-data/pull/26540))
+- `webextensions.api.pageAction.getUserSettings.returns_userSettings_isOnToolbar_property` ([#26540](https://github.com/mdn/browser-compat-data/pull/26540))
+
+### Additions
+
+- `browsers.edge.releases.138` ([#26526](https://github.com/mdn/browser-compat-data/pull/26526))
+- `webextensions.api.browserAction.getUserSettings` ([#26540](https://github.com/mdn/browser-compat-data/pull/26540))
+- `webextensions.api.browserAction.getUserSettings.returns_userSettings_isOnToolbar_property` ([#26540](https://github.com/mdn/browser-compat-data/pull/26540))
+- `webextensions.api.tabs.group` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+- `webextensions.api.tabs.onUpdated.changeInfo.groupId` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+- `webextensions.api.tabs.onUpdated.filter.properties.groupId` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+- `webextensions.api.tabs.query.queryInfo.groupId` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+- `webextensions.api.tabs.Tab.groupId` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+- `webextensions.api.tabs.ungroup` ([#26520](https://github.com/mdn/browser-compat-data/pull/26520))
+
+### Statistics
+
+- 7 contributors have changed 248 files with 998 additions and 2,803 deletions in 12 commits ([`v6.0.6...v6.0.7`](https://github.com/mdn/browser-compat-data/compare/v6.0.6...v6.0.7))
+- 17,014 total features
+- 1,140 total contributors
+- 5,198 total stargazers
+
 ## [v6.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.6)
 
 April 15, 2025
