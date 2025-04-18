@@ -10,6 +10,7 @@ import {
   SimpleSupportStatement,
   SupportStatement,
 } from '../../types/types.js';
+import compareStatements from '../../scripts/lib/compare-statements.js';
 
 /**
  * Formats a support statement as a simplified JSON-like version range.
@@ -55,6 +56,7 @@ const processData = (
           d.version_added === 'preview'
         ),
     )
+    .sort(compareStatements)
     .reverse();
 
   for (let i = 1; i < statements.length; i++) {

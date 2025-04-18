@@ -46,4 +46,22 @@ describe('test-overlapping-statements', () => {
       logger.messages[0].message.includes('has overlapping statements'),
     );
   });
+
+  it('should log error when overlapping statements are not sorted', () => {
+    const data = {
+      support: {
+        firefox: [
+          { version_added: '1', version_removed: '3' },
+          { version_added: '2' },
+        ],
+      },
+    };
+
+    test.check(logger, { data });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(
+      logger.messages[0].message.includes('has overlapping statements'),
+    );
+  });
 });
