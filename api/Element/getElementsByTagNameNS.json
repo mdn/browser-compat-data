@@ -1,0 +1,61 @@
+{
+  "api": {
+    "Element": {
+      "getElementsByTagNameNS": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/getElementsByTagNameNS",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-getelementsbytagnamens",
+          "tags": [
+            "web-features:dom"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "1",
+              "notes": "Initially, this method was returning a `NodeList`; it was then changed to reflect the spec change."
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1",
+              "notes": [
+                "The behavior of `element.getElementsByTagNameNS` changed between Firefox 3.5 and Firefox 3.6. In Firefox 3.5 and before, this function would automatically case-fold any queries so that a search for \"foo\" would match \"Foo\" or \"foo\". In Firefox 3.6 and later this function is now case-sensitive so that a query for \"foo\" will only match \"foo\" and not \"Foo\". For more background on this, please see the [comment from Henri Sivonen about the change](https://bugzil.la/542185#c5). You can also look at the [relevant part of the standard, which states which parts of the API are case-sensitive and which parts aren't](https://developer.mozilla.org/docs/Case_Sensitivity_in_class_and_id_Names).",
+                "Before Firefox 19, this method was returning a `NodeList`; it was then changed to reflects the spec change."
+              ]
+            },
+            "firefox_android": {
+              "version_added": "4",
+              "notes": "Before Firefox 19, this method was returning a `NodeList`; it was then changed to reflects the spec change."
+            },
+            "ie": {
+              "version_added": "9"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "≤12.1",
+              "notes": "Initially, this method was returning a `NodeList`; it was then changed to reflect the spec change."
+            },
+            "opera_android": {
+              "version_added": "≤12.1",
+              "notes": "Initially, this method was returning a `NodeList`; it was then changed to reflect the spec change."
+            },
+            "safari": {
+              "version_added": "1",
+              "notes": "Initially, this method was returning a `NodeList`; it was then changed to reflect the spec change."
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      }
+    }
+  }
+}
