@@ -391,7 +391,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "`s` and `l` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `s` and `l` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                    "notes": "`s` and `l` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `s` and `l` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%). See [bug 330096624](https://crbug.com/330096624)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -556,7 +556,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "`w` and `b` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `w` and `b` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                    "notes": "`w` and `b` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `w` and `b` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%). See [bug 330096624](https://crbug.com/330096624)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -1085,9 +1085,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119"
-                },
+                "chrome": [
+                  {
+                    "version_added": "122"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`l` channel values incorrectly resolve to numbers between 0-100 rather than 0-1. As a result, channel value calculations require `l` values to be specified as percentage numbers without units (e.g. 20 for 0.2). See [bug 40940488](https://crbug.com/40940488)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
@@ -1199,9 +1206,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119"
-                },
+                "chrome": [
+                  {
+                    "version_added": "122"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`l` channel values incorrectly resolve to numbers between 0-100 rather than 0-1. As a result, channel value calculations require `l` values to be specified as percentage numbers without units (e.g. 20 for 0.2). See [bug 40940488](https://crbug.com/40940488)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
