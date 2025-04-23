@@ -12,7 +12,11 @@
             "chrome": {
               "version_added": "93"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "93",
+              "partial_implementation": true,
+              "notes": "Chrome for Android does not maintain minimum contrast for legibility of the control. See [bug 343503163](https://crbug.com/343503163)."
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "92"
@@ -25,7 +29,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.4"
+              "version_added": "15.4",
+              "partial_implementation": true,
+              "notes": "Safari does not maintain minimum contrast for legibility of the control. See [bug 244233](https://webkit.org/b/244233)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -61,48 +67,6 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "15.4"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
-        "maintains_contrast": {
-          "__compat": {
-            "description": "Maintains contrast",
-            "spec_url": "https://drafts.csswg.org/css-ui/#:~:text=must%20maintain%20contrast%20for%20legibility%20of%20the%20control",
-            "tags": [
-              "web-features:accent-color"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "93"
-              },
-              "chrome_android": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/343503163"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "92"
-              },
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/244233"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
