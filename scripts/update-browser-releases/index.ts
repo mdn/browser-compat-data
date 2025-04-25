@@ -178,7 +178,7 @@ const options = {
     skippedReleases: [],
     releaseFeedURL: 'https://blogs.opera.com/desktop/category/stable-2/feed/',
     titleVersionPattern: /^Opera (\d+)$/,
-    descriptionEngineVersionPattern: /Chromium (\d+)/,
+    descriptionEngineVersionPattern: /Chromium(?: to version)? (\d+)/,
   },
   opera_android: {
     browserName: 'Opera for Android',
