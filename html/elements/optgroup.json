@@ -65,10 +65,24 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "≤4"
+              "safari": [
+                {
+                  "version_added": "7",
+                  "impl_url": "https://trac.webkit.org/changeset/118772"
+                },
+                {
+                  "version_added": "≤6",
+                  "version_removed": "7",
+                  "partial_implementation": true,
+                  "notes": "The attribute is exposed, but has no effect."
+                }
+              ],
+              "safari_ios": {
+                "version_added": "≤11.3",
+                "impl_url": "https://webkit.org/b/227042",
+                "partial_implementation": true,
+                "notes": "The attribute is exposed, but has no effect."
               },
-              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
