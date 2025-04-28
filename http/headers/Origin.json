@@ -3,7 +3,7 @@
     "headers": {
       "Origin": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin",
           "spec_url": [
             "https://www.rfc-editor.org/rfc/rfc6454#section-7",
             "https://fetch.spec.whatwg.org/#origin-header"
@@ -16,16 +16,24 @@
               "version_added": "1"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12",
-              "notes": "Before Edge 79, this header was not sent with `POST` requests."
-            },
+            "edge": [
+              {
+                "version_added": "79"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "79",
+                "partial_implementation": true,
+                "notes": "Not sent with `POST` requests"
+              }
+            ],
             "firefox": [
               {
                 "version_added": "70"
               },
               {
                 "version_added": "1",
+                "version_removed": "70",
                 "partial_implementation": true,
                 "notes": "Not sent with `POST` requests, see [bug 446344](https://bugzil.la/446344)."
               }

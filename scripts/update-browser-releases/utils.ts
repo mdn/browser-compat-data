@@ -46,7 +46,7 @@ export const newBrowserEntry = (
   release['status'] = status;
   release['engine'] = engine;
   if (engineVersion) {
-    release['engine_version'] = engineVersion;
+    release['engine_version'] = engineVersion.toString();
   }
   return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
@@ -88,7 +88,7 @@ export const updateBrowserEntry = (
 
   if (engineVersion && entry['engine_version'] != engineVersion) {
     result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
-    entry['engine_version'] = engineVersion;
+    entry['engine_version'] = engineVersion.toString();
   }
 
   return result;
@@ -183,3 +183,15 @@ export const getRSSItems = async (url): Promise<RSSItem[]> => {
 
   return Array.isArray(items) ? items : [items];
 };
+
+/**
+ * Converts a message into a GFM noteblock.
+ * @param type the type of the noteblock.
+ * @param message the message of the noteblock.
+ * @returns the message as a GFM noteblock.
+ */
+export const gfmNoteblock = (type: 'NOTE' | 'WARN', message: string) =>
+  `> [!${type}]\n${message
+    .split('\n')
+    .map((line) => `> ${line}`)
+    .join('\n')}`;

@@ -35,6 +35,9 @@ jobs:
           git config user.name mdn-bot
 
       - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
         run: npm ci
 
       - name: Update tags
@@ -44,7 +47,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@dd2324fc52d5d43c699a5636bcf19fceaa70c284 # v7.0.7
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
           token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update web-features tags
