@@ -45,9 +45,9 @@
             "deprecated": false
           }
         },
-        "fallback": {
+        "fallback-value": {
           "__compat": {
-            "description": "&lt;fallback&gt;",
+            "description": "`&lt;fallback-value&gt;`",
             "tags": [
               "web-features:attr"
             ],
@@ -79,9 +79,9 @@
             }
           }
         },
-        "type-or-unit": {
+        "type_function": {
           "__compat": {
-            "description": "&lt;type-or-unit&gt;",
+            "description": "`type(&lt;syntax&gt;)` function",
             "tags": [
               "web-features:attr"
             ],
@@ -116,7 +116,7 @@
           },
           "angle": {
             "__compat": {
-              "description": "&lt;angle&gt;",
+              "description": "`&lt;angle&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -152,7 +152,7 @@
           },
           "color": {
             "__compat": {
-              "description": "&lt;color&gt;",
+              "description": "`&lt;color&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -186,9 +186,9 @@
               }
             }
           },
-          "frequency": {
+          "custom-ident": {
             "__compat": {
-              "description": "&lt;frequency&gt;",
+              "description": "`&lt;custom-ident&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -200,7 +200,79 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": false,
-                  "impl_url": "https://bugzil.la/1871821"
+                  "impl_url": "https://bugzil.la/435426"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "ident": {
+            "__compat": {
+              "description": "`&lt;ident&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1871815"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "image": {
+            "__compat": {
+              "description": "`&lt;image&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/435426"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -224,7 +296,7 @@
           },
           "integer": {
             "__compat": {
-              "description": "&lt;integer&gt;",
+              "description": "`&lt;integer&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -260,7 +332,7 @@
           },
           "length": {
             "__compat": {
-              "description": "&lt;length&gt;",
+              "description": "`&lt;length&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -294,9 +366,45 @@
               }
             }
           },
+          "length-percentage": {
+            "__compat": {
+              "description": "`&lt;length&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/435426"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "number": {
             "__compat": {
-              "description": "&lt;number&gt;",
+              "description": "`&lt;number&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -332,7 +440,7 @@
           },
           "percentage": {
             "__compat": {
-              "description": "&lt;percentage&gt;",
+              "description": "`&lt;percentage&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -366,9 +474,81 @@
               }
             }
           },
+          "resolution": {
+            "__compat": {
+              "description": "`&lt;resolution&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/435426"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "string": {
+            "__compat": {
+              "description": "`&lt;string&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/435426"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "time": {
             "__compat": {
-              "description": "&lt;time&gt;",
+              "description": "`&lt;time&gt;`",
               "tags": [
                 "web-features:attr"
               ],
@@ -402,9 +582,45 @@
               }
             }
           },
+          "transform-function": {
+            "__compat": {
+              "description": "`&lt;transform-function&gt;`",
+              "tags": [
+                "web-features:attr"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/435426"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/26609"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "url": {
             "__compat": {
-              "description": "&lt;url&gt;",
+              "description": "`&lt;url&gt;`",
               "tags": [
                 "web-features:attr"
               ],
