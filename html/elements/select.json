@@ -11,7 +11,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
+              "notes": "`border-radius` on `<select>` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -19,11 +19,11 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `&lt;option&gt;` element to the parent `&lt;select&gt;` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the `&lt;select&gt;` element is displayed as a drop-down list. The behavior is unchanged if the `&lt;select&gt;` is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching `&lt;option&gt;` elements for events, you should watch for change events on `&lt;select&gt;`. See [bug 1090602](https://bugzil.la/1090602) for details."
+              "notes": "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `<option>` element to the parent `<select>` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), when Firefox is in multi-process mode the `<select>` element is displayed as a drop-down list. The behavior is unchanged if the `<select>` is presented inline and it has either the multiple attribute defined or a size attribute set to more than 1. Rather than watching `<option>` elements for events, you should watch for change events on `<select>`. See [bug 1090602](https://bugzil.la/1090602) for details."
             },
             "firefox_android": {
               "version_added": "4",
-              "notes": "Firefox for Android, by default, sets a `background-image` gradient on all `&lt;select multiple&gt;` elements. This can be disabled using `background-image: none`."
+              "notes": "Firefox for Android, by default, sets a `background-image` gradient on all `<select multiple>` elements. This can be disabled using `background-image: none`."
             },
             "ie": {
               "version_added": "≤11"
@@ -37,7 +37,7 @@
             },
             "safari": {
               "version_added": "1",
-              "notes": "`border-radius` on `&lt;select&gt;` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
+              "notes": "`border-radius` on `<select>` elements is ignored unless `-webkit-appearance` is overridden to an appropriate value."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -182,7 +182,7 @@
         },
         "hr_in_select": {
           "__compat": {
-            "description": "`&lt;hr&gt;` in `&lt;select&gt;`",
+            "description": "`<hr>` in `<select>`",
             "tags": [
               "web-features:select"
             ],
@@ -191,8 +191,8 @@
                 "version_added": "119",
                 "partial_implementation": true,
                 "notes": [
-                  "Only exposes the `&lt;hr&gt;` visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
-                  "Does not expose the `&lt;hr&gt;` within the accessibility tree."
+                  "Only exposes the `<hr>` visually in the page when the menu is expanded (arrowing within the collapsed menu does not show them).",
+                  "Does not expose the `<hr>` within the accessibility tree."
                 ]
               },
               "chrome_android": {
@@ -202,7 +202,7 @@
               "firefox": {
                 "version_added": "122",
                 "partial_implementation": true,
-                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
+                "notes": "Does not expose the `<hr>` within the accessibility tree."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -214,12 +214,12 @@
               "safari": {
                 "version_added": "17",
                 "partial_implementation": true,
-                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
+                "notes": "Does not expose the `<hr>` within the accessibility tree."
               },
               "safari_ios": {
                 "version_added": "17.4",
                 "partial_implementation": true,
-                "notes": "Does not expose the `&lt;hr&gt;` within the accessibility tree."
+                "notes": "Does not expose the `<hr>` within the accessibility tree."
               },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
