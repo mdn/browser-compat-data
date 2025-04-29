@@ -41,10 +41,11 @@ jobs:
         run: npm ci
 
       - name: Update tags
+        id: update
         run: |
-          echo "RESULT<<EOF" >> $GITHUB_ENV
-          npm run tag-web-features .. >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "RESULT<<EOF" >> "$GITHUB_OUTPUT"
+          npm run tag-web-features .. >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
@@ -59,5 +60,5 @@ jobs:
           title: "Update web-features tags"
           body: |
             The output of the `tag-web-features` script is:
-            ${{ env.RESULT }}
+            ${{ steps.update.outputs.RESULT }}
           draft: false
