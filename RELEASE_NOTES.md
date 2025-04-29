@@ -1,5 +1,42 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.10)
+
+April 29, 2025
+
+### Additions
+
+- `browsers.chrome_android.releases.139` ([#26658](https://github.com/mdn/browser-compat-data/pull/26658))
+- `browsers.chrome.releases.139` ([#26658](https://github.com/mdn/browser-compat-data/pull/26658))
+- `browsers.firefox_android.releases.141` ([#26665](https://github.com/mdn/browser-compat-data/pull/26665))
+- `browsers.firefox.releases.141` ([#26665](https://github.com/mdn/browser-compat-data/pull/26665))
+- `browsers.opera_android.releases.89` ([#26665](https://github.com/mdn/browser-compat-data/pull/26665))
+- `browsers.webview_android.releases.139` ([#26658](https://github.com/mdn/browser-compat-data/pull/26658))
+
+### Statistics
+
+- 7 contributors have changed 22 files with 383 additions and 575 deletions in 23 commits ([`v6.0.9...v6.0.10`](https://github.com/mdn/browser-compat-data/compare/v6.0.9...v6.0.10))
+- 17,017 total features
+- 1,142 total contributors
+- 5,217 total stargazers
+
+## [v6.0.9](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.9)
+
+April 25, 2025
+
+### Additions
+
+- `api.AudioWorkletGlobalScope.port` ([#26615](https://github.com/mdn/browser-compat-data/pull/26615))
+- `browsers.opera.releases.119` ([#26614](https://github.com/mdn/browser-compat-data/pull/26614))
+- `browsers.opera.releases.120` ([#26614](https://github.com/mdn/browser-compat-data/pull/26614))
+
+### Statistics
+
+- 7 contributors have changed 40 files with 400 additions and 192 deletions in 18 commits ([`v6.0.8...v6.0.9`](https://github.com/mdn/browser-compat-data/compare/v6.0.8...v6.0.9))
+- 17,017 total features
+- 1,142 total contributors
+- 5,211 total stargazers
+
 ## [v6.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.8)
 
 April 22, 2025
