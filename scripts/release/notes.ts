@@ -20,7 +20,7 @@ export const getNotes = (
   thisVersion: string,
   changes: Changes,
   stats: Stats,
-  versionBump: string,
+  versionBump: 'major' | 'minor' | 'patch',
 ): string =>
   [
     `## [${thisVersion}](https://github.com/mdn/browser-compat-data/releases/tag/${thisVersion})`,
@@ -33,7 +33,9 @@ export const getNotes = (
     '',
     ...(versionBump !== 'patch'
       ? [
-          '### Notable changes',
+          versionBump === 'major'
+            ? '### Breaking changes'
+            : '### Notable changes',
           '',
           '<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->',
           '',
@@ -62,7 +64,7 @@ export const addNotes = async (
 
   // If we are doing a major version bump, move old changelog results to another file
   if (versionBump === 'major') {
-    const lastMajorVersion = lastVersion.split('.')[0];
+    const lastMajorVersion = lastVersion.split('.')[0].replace(/^v/, '');
     const olderVersionsHeader = '## Older Versions';
 
     const oldChangelog =

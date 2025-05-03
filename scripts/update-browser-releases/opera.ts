@@ -5,6 +5,7 @@ import stringify from '../lib/stringify-and-order-properties.js';
 import {
   createOrUpdateBrowserEntry,
   getRSSItems,
+  gfmNoteblock,
   RSSItem,
   updateBrowserEntry,
 } from './utils';
@@ -25,15 +26,14 @@ interface Release {
  * @param descriptionEngineVersionPattern the pattern to match the description and extract the engine version.
  * @returns the latest release, if found, otherwise null.
  */
-const findRelease = (
+const findRelease = async (
   items: RSSItem[],
   titleVersionPattern: RegExp,
   descriptionEngineVersionPattern: RegExp,
-): Release | null => {
+): Promise<Release | null> => {
   const item = items.find(
-    (item) =>
-      titleVersionPattern.test(item.title) &&
-      descriptionEngineVersionPattern.test(item.description),
+    (item) => titleVersionPattern.test(item.title) /* &&
+      descriptionEngineVersionPattern.test(item.description)*/,
   );
 
   if (!item) {
@@ -45,9 +45,10 @@ const findRelease = (
   )[1];
   const date = new Date(item.pubDate).toISOString().split('T')[0];
   const releaseNote = item.link;
-  const engineVersion = (
-    item.description.match(descriptionEngineVersionPattern) as RegExpMatchArray
-  )[1];
+  const engineVersion = await findEngineVersion(
+    item,
+    descriptionEngineVersionPattern,
+  );
 
   return {
     version,
@@ -60,16 +61,39 @@ const findRelease = (
 };
 
 /**
- * Converts a message into a GFM noteblock.
- * @param type the type of the noteblock.
- * @param message the message of the noteblock.
- * @returns the message as a GFM noteblock.
+ * Extracts the engine version from the item.
+ * @param item the RSS item.
+ * @param engineVersionPattern the pattern to match the description or content.
+ * @returns the engine version, found
+ * @throws {Error} if engine version cannot be found
  */
-const gfmNoteblock = (type: 'INFO' | 'WARN', message: string) =>
-  `> [!${type}]\n${message
-    .split('\n')
-    .map((line) => `> ${line}`)
-    .join('\n')}`;
+const findEngineVersion = async (
+  item: RSSItem,
+  engineVersionPattern: RegExp,
+): Promise<string> => {
+  const descriptionMatch = item.description.match(engineVersionPattern);
+
+  if (descriptionMatch) {
+    return descriptionMatch[1];
+  }
+
+  const res = await fetch(item.link);
+
+  if (!res.ok) {
+    throw Error(`Failed to fetch: ${item.link}`);
+  }
+
+  const html = await res.text();
+  const text = html.replaceAll(/<[^>]*>/g, '');
+
+  const contentMatch = text.match(engineVersionPattern);
+
+  if (contentMatch) {
+    return contentMatch[1];
+  }
+
+  throw Error(`Failed to find engine version here: ${item.link}`);
+};
 
 /**
  * Updates the JSON files listing the Opera browser releases.
@@ -85,9 +109,10 @@ export const updateOperaReleases = async (options) => {
 
   const items = await getRSSItems(options.releaseFeedURL);
 
-  const release = findRelease(
-    items.filter((item) =>
-      options.releaseFilterCreator?.includes(item['dc:creator'] ?? true),
+  const release = await findRelease(
+    items.filter(
+      (item) =>
+        options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
     ),
     options.titleVersionPattern,
     options.descriptionEngineVersionPattern,
@@ -95,7 +120,7 @@ export const updateOperaReleases = async (options) => {
 
   if (!release) {
     return gfmNoteblock(
-      'INFO',
+      'NOTE',
       `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
     );
   }

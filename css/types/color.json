@@ -3,7 +3,7 @@
     "types": {
       "color": {
         "__compat": {
-          "description": "`&lt;color&gt;`",
+          "description": "`<color>`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value",
           "spec_url": "https://drafts.csswg.org/css-color/#color-syntax",
           "tags": [
@@ -93,7 +93,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:color-function"
               ],
@@ -204,9 +204,7 @@
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
-              "webview_ios": {
-                "version_added": false
-              }
+              "webview_ios": "mirror"
             },
             "status": {
               "experimental": false,
@@ -218,7 +216,7 @@
         "currentcolor": {
           "__compat": {
             "description": "`currentcolor` keyword",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#currentcolor",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/color_value#currentcolor_keyword",
             "spec_url": "https://drafts.csswg.org/css-color/#currentcolor-color",
             "tags": [
               "web-features:currentcolor"
@@ -295,9 +293,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -345,7 +341,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:hsl"
               ],
@@ -395,7 +391,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "`s` and `l` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `s` and `l` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                    "notes": "`s` and `l` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `s` and `l` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%). See [bug 330096624](https://crbug.com/330096624)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -510,7 +506,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:hwb"
               ],
@@ -560,7 +556,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "`w` and `b` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `w` and `b` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%)."
+                    "notes": "`w` and `b` channel values incorrectly resolve to numbers between 0-1 rather than 0-100. As a result, channel value calculations require `w` and `b` values to be specified as decimal percentage equivalents (e.g. 0.2 for 20%). See [bug 330096624](https://crbug.com/330096624)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -638,7 +634,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:lab"
               ],
@@ -752,7 +748,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:lab"
               ],
@@ -876,7 +872,7 @@
         },
         "named-color": {
           "__compat": {
-            "description": "Named colors",
+            "description": "`<named-color>`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/named-color",
             "spec_url": "https://drafts.csswg.org/css-color/#named-colors",
             "tags": [
@@ -910,9 +906,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1048,7 +1042,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:oklab"
               ],
@@ -1091,9 +1085,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119"
-                },
+                "chrome": [
+                  {
+                    "version_added": "122"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`l` channel values incorrectly resolve to numbers between 0-100 rather than 0-1. As a result, channel value calculations require `l` values to be specified as percentage numbers without units (e.g. 20 for 0.2). See [bug 40940488](https://crbug.com/40940488)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
@@ -1162,7 +1163,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:oklab"
               ],
@@ -1205,9 +1206,16 @@
                 "web-features:relative-color"
               ],
               "support": {
-                "chrome": {
-                  "version_added": "119"
-                },
+                "chrome": [
+                  {
+                    "version_added": "122"
+                  },
+                  {
+                    "version_added": "119",
+                    "partial_implementation": true,
+                    "notes": "`l` channel values incorrectly resolve to numbers between 0-100 rather than 0-1. As a result, channel value calculations require `l` values to be specified as percentage numbers without units (e.g. 20 for 0.2). See [bug 40940488](https://crbug.com/40940488)."
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
@@ -1278,9 +1286,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1365,7 +1371,7 @@
           },
           "mixed_type_parameters": {
             "__compat": {
-              "description": "Mix `&lt;percentage&gt;` and `&lt;number&gt;` in parameters",
+              "description": "Mix `<percentage>` and `<number>` in parameters",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1415,7 +1421,7 @@
                   {
                     "version_added": "119",
                     "partial_implementation": true,
-                    "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 `&lt;number&gt;` value). See [bug 41490327](https://crbug.com/41490327)."
+                    "notes": "Channel values incorrectly resolve to numbers between 0-1 rather than 0-255. As a result, channel value calculations require values to be specified as decimal percentage equivalents (e.g. 0.3 for 30%, which would be equivalent to a 76.5 `<number>` value). See [bug 41490327](https://crbug.com/41490327)."
                   }
                 ],
                 "chrome_android": "mirror",
@@ -1437,7 +1443,7 @@
                   {
                     "version_added": "16.4",
                     "partial_implementation": true,
-                    "notes": "Implementation based on older spec version. As a result, channel value calculations do not work correctly, requiring values to be specified as percentages with units (e.g. 30%, which would be equivalent to a 76.5 `&lt;number&gt;` value). See [bug 267647](https://webkit.org/b/267647)."
+                    "notes": "Implementation based on older spec version. As a result, channel value calculations do not work correctly, requiring values to be specified as percentages with units (e.g. 30%, which would be equivalent to a 76.5 `<number>` value). See [bug 267647](https://webkit.org/b/267647)."
                   }
                 ],
                 "safari_ios": "mirror",
@@ -1525,9 +1531,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1580,7 +1584,7 @@
         },
         "system-color": {
           "__compat": {
-            "description": "System colors",
+            "description": "`<system-color>`",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/system-color",
             "spec_url": "https://drafts.csswg.org/css-color/#css-system-colors",
             "tags": [
@@ -1613,9 +1617,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {

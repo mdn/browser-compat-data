@@ -53,7 +53,10 @@
         },
         "a_elements": {
           "__compat": {
-            "description": "`&lt;a&gt;` element support",
+            "description": "`<a>` element support",
+            "tags": [
+              "web-features:user-action-pseudos"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -88,7 +91,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -96,6 +99,9 @@
         "all_elements": {
           "__compat": {
             "description": "All elements support",
+            "tags": [
+              "web-features:user-action-pseudos"
+            ],
             "support": {
               "chrome": {
                 "version_added": "1"
@@ -103,7 +109,7 @@
               "chrome_android": "mirror",
               "edge": {
                 "version_added": "12",
-                "notes": "In Edge, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the `:hover` state until the pointer is moved. See [bug 5381673](https://developer.microsoft.com/microsoft-edge/platform/issues/5381673/)."
+                "notes": "In Edge, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the `:hover` state until the pointer is moved."
               },
               "firefox": {
                 "version_added": "1"
@@ -113,7 +119,7 @@
                 "version_added": "7",
                 "notes": [
                   "In Internet Explorer 8 to Internet Explorer 11, hovering over an element and then scrolling up or down without moving the pointer will leave the element in the `:hover` state until the pointer is moved. See [bug 926665](https://connect.microsoft.com/IE/feedbackdetail/view/926665).",
-                  "In Internet Explorer 9 (and possibly earlier), if a [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table) has a parent with a non-`auto` [`width`](https://developer.mozilla.org/docs/Web/CSS/width), [`overflow-x`](https://developer.mozilla.org/docs/Web/CSS/overflow-x)`: auto;`, the [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table) has enough content to horizontally overflow its parent, and there are [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) styles set on elements within the table, then hovering over said elements will cause the [`&lt;table&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/table)'s height to increase. See [a live demo that triggers the bug](https://output.jsbin.com/diwiqe). One workaround for the bug is to set `min-height: 0%;` (the `%` unit must be specified, since unitless and `px` don't work) on the `&lt;table&gt;`'s parent element."
+                  "In Internet Explorer 9 (and possibly earlier), if a [`<table>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table) has a parent with a non-`auto` [`width`](https://developer.mozilla.org/docs/Web/CSS/width), [`overflow-x`](https://developer.mozilla.org/docs/Web/CSS/overflow-x)`: auto;`, the [`<table>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table) has enough content to horizontally overflow its parent, and there are [`:hover`](https://developer.mozilla.org/docs/Web/CSS/:hover) styles set on elements within the table, then hovering over said elements will cause the [`<table>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table)'s height to increase. See [a live demo that triggers the bug](https://output.jsbin.com/diwiqe). One workaround for the bug is to set `min-height: 0%;` (the `%` unit must be specified, since unitless and `px` don't work) on the `<table>`'s parent element."
                 ]
               },
               "oculus": "mirror",
@@ -135,7 +141,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }

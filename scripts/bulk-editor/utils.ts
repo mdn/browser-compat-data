@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import chalk from 'chalk-template';
 import { fdir } from 'fdir';
 
-import { dataFolders } from '../../index.js';
+import dataFolders from '../../scripts/lib/data-folders.js';
 import walk from '../../utils/walk.js';
 import stringifyAndOrderProperties from '../lib/stringify-and-order-properties.js';
 

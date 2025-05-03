@@ -9,19 +9,24 @@
             "web-features:print-color-adjust"
           ],
           "support": {
-            "chrome": {
-              "prefix": "-webkit-",
-              "version_added": "17",
-              "notes": [
-                "Chrome does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants.",
-                "Before version 26, if background images are clipped (for example, when using `background-image` sprites) and `-webkit-print-color-adjust` is set to `exact`, then backgrounds will appear distorted when printed. Solid backgrounds and background images that are not clipped (i.e., backgrounds that have narrower and shorter than the element to which they are applied) are printed correctly. See [bug 40219905](https://crbug.com/40219905)."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "136"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "17",
+                "notes": [
+                  "Chrome does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants.",
+                  "Before version 26, if background images are clipped (for example, when using `background-image` sprites) and `-webkit-print-color-adjust` is set to `exact`, then backgrounds will appear distorted when printed. Solid backgrounds and background images that are not clipped (i.e., backgrounds that have narrower and shorter than the element to which they are applied) are printed correctly. See [bug 40219905](https://crbug.com/40219905)."
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "prefix": "-webkit-",
               "version_added": "79",
-              "notes": "Edge does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants."
+              "notes": "Edge does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants."
             },
             "firefox": [
               {
@@ -40,12 +45,12 @@
             "opera": {
               "prefix": "-webkit-",
               "version_added": "15",
-              "notes": "Opera does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants."
+              "notes": "Opera does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants."
             },
             "opera_android": {
               "prefix": "-webkit-",
               "version_added": "15",
-              "notes": "Opera does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants."
+              "notes": "Opera does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants."
             },
             "safari": [
               {
@@ -54,7 +59,7 @@
               {
                 "prefix": "-webkit-",
                 "version_added": "6",
-                "notes": "Safari does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants."
+                "notes": "Safari does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants."
               }
             ],
             "safari_ios": "mirror",
@@ -62,14 +67,14 @@
               "prefix": "-webkit-",
               "version_added": "1.0",
               "notes": [
-                "Samsung Internet does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants.",
+                "Samsung Internet does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants.",
                 "In version 1, if background images are clipped (for example, when using `background-image` sprites) and `-webkit-print-color-adjust` is set to `exact`, then backgrounds will appear distorted when printed. Solid backgrounds and background images that are not clipped (i.e., backgrounds that have narrower and shorter than the element to which they are applied) are printed correctly. See [bug 40219905](https://crbug.com/40219905)."
               ]
             },
             "webview_android": {
               "prefix": "-webkit-",
               "version_added": "4.4",
-              "notes": "WebView does not print backgrounds of the [`&lt;body&gt;`](https://developer.mozilla.org/docs/Web/HTML/Element/body) element. If this property is set to `exact` for the `&lt;body&gt;` element, it will apply only to its descendants."
+              "notes": "WebView does not print backgrounds of the [`<body>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/body) element. If this property is set to `exact` for the `<body>` element, it will apply only to its descendants."
             },
             "webview_ios": "mirror"
           },
@@ -87,7 +92,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "136"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -124,7 +129,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "136"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
