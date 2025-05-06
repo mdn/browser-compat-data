@@ -1,5 +1,50 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.12](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.12)
+
+May 6, 2025
+
+### Additions
+
+- `api.CreateMonitor` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.CreateMonitor.downloadprogress_event` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.ImageData.pixelFormat` ([#26706](https://github.com/mdn/browser-compat-data/pull/26706))
+- `api.Summarizer` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.availability_static` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.create_static` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.destroy` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.expectedContextLanguages` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.expectedInputLanguages` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.format` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.inputQuota` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.length` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.measureInputUsage` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.outputLanguage` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.sharedContext` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.summarize` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.summarizeStreaming` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `api.Summarizer.type` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `css.properties.font-synthesis-style.oblique-only` ([#26704](https://github.com/mdn/browser-compat-data/pull/26704))
+- `css.properties.reading-flow.flex-flow` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.flex-visual` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.grid-columns` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.grid-order` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.grid-rows` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.normal` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-flow.source-order` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `css.properties.reading-order` ([#26705](https://github.com/mdn/browser-compat-data/pull/26705))
+- `http.headers.Permissions-Policy.summarizer` ([#26638](https://github.com/mdn/browser-compat-data/pull/26638))
+- `webassembly.jspi` ([#26706](https://github.com/mdn/browser-compat-data/pull/26706))
+- `webextensions.api.declarativeNetRequest.ResourceType.json` ([#26512](https://github.com/mdn/browser-compat-data/pull/26512))
+- `webextensions.api.webRequest.ResourceType.json` ([#26512](https://github.com/mdn/browser-compat-data/pull/26512))
+
+### Statistics
+
+- 11 contributors have changed 55 files with 1,599 additions and 689 deletions in 24 commits ([`v6.0.11...v6.0.12`](https://github.com/mdn/browser-compat-data/compare/v6.0.11...v6.0.12))
+- 17,048 total features
+- 1,146 total contributors
+- 5,227 total stargazers
+
 ## [v6.0.11](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.11)
 
 May 2, 2025
