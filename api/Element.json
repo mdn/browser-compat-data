@@ -894,7 +894,6 @@
       },
       "ariaActiveDescendantElement": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaActiveDescendantElement",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaactivedescendantelement",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1312,7 +1311,6 @@
       },
       "ariaControlsElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaControlsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariacontrolselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1388,7 +1386,6 @@
       },
       "ariaDescribedByElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaDescribedByElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariadescribedbyelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1464,7 +1461,6 @@
       },
       "ariaDetailsElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaDetailsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariadetailselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1540,7 +1536,6 @@
       },
       "ariaErrorMessageElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaErrorMessageElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaerrormessageelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1616,7 +1611,6 @@
       },
       "ariaFlowToElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaFlowToElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaflowtoelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -1844,7 +1838,6 @@
       },
       "ariaLabelledByElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaLabelledByElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-arialabelledbyelements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -2110,7 +2103,6 @@
       },
       "ariaOwnsElements": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaOwnsElements",
           "spec_url": "https://w3c.github.io/aria/#dom-ariamixin-ariaownselements",
           "tags": [
             "web-features:aria-attribute-reflection"
@@ -3886,7 +3878,7 @@
             },
             "firefox": {
               "version_added": "6",
-              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a `click` event for buttons other than the primary mouse button; previously, there were circumstances in which this would occur. One example: middle-clicking a link would send a `click` to the document's `<html>` element."
+              "notes": "Beginning in Firefox 68, Firefox no longer incorrectly sends a `click` event for buttons other than the primary mouse button; previously, there were circumstances in which this would occur. One example: middle-clicking a link would send a `click` to the document's `&lt;html&gt;` element."
             },
             "firefox_android": {
               "version_added": "6"
@@ -6443,7 +6435,7 @@
               "version_added": "4",
               "partial_implementation": true,
               "notes": [
-                "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a `<table>`, `<tbody>`, `<thead>`, or `<tr>` element.",
+                "Before Internet Explorer 10, throws an \"Invalid target element for this operation.\" error when called on a `&lt;table&gt;`, `&lt;tbody&gt;`, `&lt;thead&gt;`, or `&lt;tr&gt;` element.",
                 "Only supported for [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), not all `Element` objects, such as [`SVGElement`](https://developer.mozilla.org/docs/Web/API/SVGElement)."
               ]
             },
@@ -8652,7 +8644,7 @@
               {
                 "alternative_name": "mozRequestFullScreen",
                 "version_added": "9",
-                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a `<frame>` or `<object>` element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an `<iframe>` element with the `allowfullscreen` attribute can be displayed fullscreen."
+                "notes": "Before Firefox 44, Firefox incorrectly allowed elements inside a `&lt;frame&gt;` or `&lt;object&gt;` element to request, and to be granted, fullscreen. In Firefox 44 and onwards this has been fixed: only elements in the top-level document or in an `&lt;iframe&gt;` element with the `allowfullscreen` attribute can be displayed fullscreen."
               }
             ],
             "firefox_android": "mirror",
@@ -10293,7 +10285,8 @@
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-element-sethtml",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "notes": "Version 105 to 118 (inclusive) supported this method with a significantly different specification."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
