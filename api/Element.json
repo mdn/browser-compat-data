@@ -5935,7 +5935,14 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "114",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "enable-experimental-web-platform-features",
+                    "value_to_set": "enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
