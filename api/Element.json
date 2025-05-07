@@ -8863,7 +8863,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13",
               "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a proposed specification change](https://github.com/w3c/pointerlock/pull/49)."
