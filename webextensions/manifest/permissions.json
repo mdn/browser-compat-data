@@ -273,7 +273,11 @@
               "firefox": {
                 "version_added": "53"
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1638878",
+                "notes": "Until Firefox for Android 137, enabled access to the undefined and nonfunctional `contextualIdentities` API. From Firefox for Android 138 the `contextualIdentities` API is inaccessible and this permission does nothing."
+              },
               "opera": "mirror",
               "safari": {
                 "version_added": false
