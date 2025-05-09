@@ -23,6 +23,7 @@ import fixLinks from './fixer/links.js';
 import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
+import fixOverlap from './fixer/overlap.js';
 import { LintOptions } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
@@ -34,6 +35,7 @@ const FIXES = Object.freeze({
   mdn_urls: fixMDNURLs,
   status: fixStatus,
   mirror: fixMirror,
+  overlap: fixOverlap,
   browser_order: fixBrowserOrder,
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
