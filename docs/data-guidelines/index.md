@@ -160,6 +160,27 @@ Do not set `deprecated` to `true` for features that are merely old or unpopular,
 
 This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."
 
+## Behavioral subfeatures
+
+A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
+
+If a more specific guideline applies (such as [`secure_context_required`](./api.md#secure-context-required-secure_context_required)), follow that guideline instead of this one.
+
+Behavioral subfeatures are rare.
+Do not create a subfeature when the behavioral subfeature's `support` data would be the same, across all browsers, as the parent feature.
+For serious bugs affecting a single engine, consider using `partial_implementation` instead. <!-- TODO: link to partial_implementation guidelines, when available -->
+
+You may create a behavioral subfeature for the following types of browser behaviors:
+
+- A contextual support condition this is not readily feature detectable, such as a CSS layout context or the effect of [an IDL extended attribute](https://dontcallmedom.github.io/webidlpedia/extended-attributes.html).
+
+  For example, if support for a CSS property is conditioned on the layout context where that property is used, create a subfeature of the property to represent the behavior (as demonstrated by `css.properties.gap.flex_context` and `css.properties.gap.grid_context`).
+
+- Behavioral evolution that is not readily feature detectable, such as new properties of an options parameter or a change in a method's return type.
+
+  This type of behavioral subfeature often describes consequences of specification changes that appeared after the feature first shipped in one or more browsers.
+  Sometimes it may describe user interface changes that appeared after implementers learned more about the specification (such as [#25984](https://github.com/mdn/browser-compat-data/pull/25984)).
+
 ## Parameters and parameter object features
 
 Sometimes it's useful to represent support for specific parameters (also known as arguments) of a function or method, as a subfeature of the function itself. To record data about whether a specific parameter is supported by a function or method, use the following naming conventions:
