@@ -1,5 +1,55 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.14](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.14)
+
+May 13, 2025
+
+### Removals
+
+- `css.properties.accent-color.maintains_contrast` ([#26605](https://github.com/mdn/browser-compat-data/pull/26605))
+
+### Additions
+
+- `api.Document.parseHTML_static` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Element.setHTML` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.allowAttribute` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.allowElement` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.get` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.removeAttribute` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.removeElement` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.removeUnsafe` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.replaceElementWithChildren` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.Sanitizer` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.setComments` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `api.Sanitizer.setDataAttributes` ([#26659](https://github.com/mdn/browser-compat-data/pull/26659))
+- `browsers.nodejs.releases.24.0.0` ([#26735](https://github.com/mdn/browser-compat-data/pull/26735))
+- `css.at-rules.font-face.font-width` ([#26069](https://github.com/mdn/browser-compat-data/pull/26069))
+- `css.properties.align-content.normal` ([#26790](https://github.com/mdn/browser-compat-data/pull/26790))
+- `css.properties.column-gap.normal` ([#26790](https://github.com/mdn/browser-compat-data/pull/26790))
+- `css.properties.empty-cells.hide` ([#26791](https://github.com/mdn/browser-compat-data/pull/26791))
+- `css.properties.empty-cells.show` ([#26791](https://github.com/mdn/browser-compat-data/pull/26791))
+- `css.properties.font-kerning.auto` ([#26792](https://github.com/mdn/browser-compat-data/pull/26792))
+- `css.properties.font-kerning.none` ([#26792](https://github.com/mdn/browser-compat-data/pull/26792))
+- `css.properties.font-kerning.normal` ([#26792](https://github.com/mdn/browser-compat-data/pull/26792))
+- `css.properties.font-width.percentage` ([#26069](https://github.com/mdn/browser-compat-data/pull/26069))
+- `css.properties.gap.normal` ([#26790](https://github.com/mdn/browser-compat-data/pull/26790))
+- `css.properties.row-gap.normal` ([#26790](https://github.com/mdn/browser-compat-data/pull/26790))
+- `css.properties.table-layout.auto` ([#26788](https://github.com/mdn/browser-compat-data/pull/26788))
+- `css.properties.table-layout.fixed` ([#26788](https://github.com/mdn/browser-compat-data/pull/26788))
+- `css.properties.text-combine-upright.all` ([#26787](https://github.com/mdn/browser-compat-data/pull/26787))
+- `css.properties.text-combine-upright.none` ([#26787](https://github.com/mdn/browser-compat-data/pull/26787))
+- `css.properties.text-underline-position.auto` ([#26786](https://github.com/mdn/browser-compat-data/pull/26786))
+- `css.types.if` ([#26789](https://github.com/mdn/browser-compat-data/pull/26789))
+- `svg.global_attributes.font-width` ([#26069](https://github.com/mdn/browser-compat-data/pull/26069))
+
+### Statistics
+
+- 12 contributors have changed 35 files with 1,399 additions and 144 deletions in 23 commits ([`v6.0.13...v6.0.14`](https://github.com/mdn/browser-compat-data/compare/v6.0.13...v6.0.14))
+- 17,153 total features
+- 1,153 total contributors
+- 5,244 total stargazers
+
 ## [v6.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.13)
 
 May 9, 2025
