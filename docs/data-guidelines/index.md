@@ -52,6 +52,30 @@ Do not use `"preview"` for planned but not yet implemented support changes. In o
 
 This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
 
+## `"partial_implementation"` general usage guidelines
+
+You must set `"partial_implementation": true` when all of the following conditions are met:
+
+- The browser's support does not implement mandatory specified behavior.
+- The browser's support is inconsistent with at least one other browser.
+- The browser's support misleads or evades feature detection.
+
+Here are some example situations:
+
+- `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
+  This behavior is consistent and is a _de facto_ complete implementation.
+
+- `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
+  A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
+  Use a note or non-standard behavioral subfeature instead.
+
+- `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
+  See [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
+
+- `"partial_implementation": true`: One browser implements `ExampleInterface` but exposes it on the `Node` interface instead of the specified `Element` interface.
+  Other implementers use the correct parent interface.
+  This misleads feature detection (`"ExampleInterface" in Element.prototype` → false), so it's partially implemented.
+
 ## `"partial_implementation"` requires a note
 
 If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
