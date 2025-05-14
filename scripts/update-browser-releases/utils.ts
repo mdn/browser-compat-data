@@ -191,7 +191,7 @@ export const getRSSItems = async (url): Promise<RSSItem[]> => {
  * @returns the message as a GFM noteblock.
  */
 export const gfmNoteblock = (
-  type: 'NOTE' | 'WARN' | 'CAUTION',
+  type: 'NOTE' | 'WARNING' | 'CAUTION',
   message: string,
 ) =>
   `> [!${type}]\n${message

@@ -142,7 +142,7 @@ export const updateOperaReleases = async (options) => {
     }
 
     result += gfmNoteblock(
-      'WARN',
+      'WARNING',
       `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>). Using (previous engine version + 1) instead.`,
     );
     release.engineVersion = currentEngineVersion;
@@ -150,7 +150,7 @@ export const updateOperaReleases = async (options) => {
 
   if (isDesktop && !current) {
     return gfmNoteblock(
-      'WARN',
+      'WARNING',
       `Latest stable **${options.browserName}** release **${release.version}** not yet tracked.`,
     );
   }
@@ -204,7 +204,7 @@ export const updateOperaReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browserName}${result}`;
+    result = `### Updates for ${options.browserName}\n${result}`;
   }
 
   return result;
