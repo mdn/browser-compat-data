@@ -68,6 +68,7 @@ Here are some example situations:
 - `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
   A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
   Use a note or non-standard behavioral subfeature instead.
+  <!-- TODO: link to behavioral subfeature guidelines, when available -->
 
 - `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
   See [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
