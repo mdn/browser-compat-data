@@ -80,7 +80,7 @@ const findEngineVersion = async (
   const res = await fetch(item.link);
 
   if (!res.ok) {
-    throw Error(`Failed to fetch [this blog post](${item.link})`);
+    throw Error(`Failed to fetch: ${item.link}`);
   }
 
   const html = await res.text();
@@ -92,9 +92,7 @@ const findEngineVersion = async (
     return contentMatch[1];
   }
 
-  throw Error(
-    `Failed to find engine version [in this blog post](${item.link})!`,
-  );
+  throw Error(`Failed to find engine version here: ${item.link}`);
 };
 
 /**
@@ -111,94 +109,87 @@ export const updateOperaReleases = async (options) => {
 
   const items = await getRSSItems(options.releaseFeedURL);
 
-  try {
-    const release = await findRelease(
-      items.filter(
-        (item) =>
-          options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
-      ),
-      options.titleVersionPattern,
-      options.descriptionEngineVersionPattern,
+  const release = await findRelease(
+    items.filter(
+      (item) =>
+        options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
+    ),
+    options.titleVersionPattern,
+    options.descriptionEngineVersionPattern,
+  );
+
+  if (!release) {
+    return gfmNoteblock(
+      'NOTE',
+      `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
     );
+  }
 
-    if (!release) {
-      return gfmNoteblock(
-        'NOTE',
-        `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
-      );
-    }
+  const file = await fs.readFile(`${options.bcdFile}`, 'utf-8');
+  const data = JSON.parse(file.toString());
 
-    const file = await fs.readFile(`${options.bcdFile}`, 'utf-8');
-    const data = JSON.parse(file.toString());
+  const current = structuredClone(
+    data.browsers[browser].releases[release.version],
+  );
 
-    const current = structuredClone(
-      data.browsers[browser].releases[release.version],
+  if (isDesktop && !current) {
+    return gfmNoteblock(
+      'WARN',
+      `Latest stable **${options.browserName}** release **${release.version}** not yet tracked.`,
     );
+  }
 
-    if (isDesktop && !current) {
-      return gfmNoteblock(
-        'WARNING',
-        `Latest stable **${options.browserName}** release **${release.version}** not yet tracked.`,
-      );
-    }
+  result += createOrUpdateBrowserEntry(
+    data,
+    browser,
+    release.version,
+    release.channel,
+    release.engine,
+    release.engineVersion,
+    release.date,
+    release.releaseNote,
+  );
 
+  // Set previous release to "retired".
+  const previousVersion = String(Number(release.version) - 1);
+  result += updateBrowserEntry(
+    data,
+    browser,
+    previousVersion,
+    undefined,
+    'retired',
+    undefined,
+    undefined,
+  );
+
+  if (isDesktop) {
+    // 1. Set next release to "beta".
     result += createOrUpdateBrowserEntry(
       data,
       browser,
-      release.version,
-      release.channel,
+      String(Number(release.version) + 1),
+      'beta',
       release.engine,
-      release.engineVersion,
-      release.date,
-      release.releaseNote,
+      String(Number(release.engineVersion) + 1),
     );
 
-    // Set previous release to "retired".
-    const previousVersion = String(Number(release.version) - 1);
-    result += updateBrowserEntry(
+    // 2. Add another release as "nightly".
+    result += createOrUpdateBrowserEntry(
       data,
       browser,
-      previousVersion,
-      undefined,
-      'retired',
-      undefined,
-      undefined,
-    );
-
-    if (isDesktop) {
-      // 1. Set next release to "beta".
-      result += createOrUpdateBrowserEntry(
-        data,
-        browser,
-        String(Number(release.version) + 1),
-        'beta',
-        release.engine,
-        String(Number(release.engineVersion) + 1),
-      );
-
-      // 2. Add another release as "nightly".
-      result += createOrUpdateBrowserEntry(
-        data,
-        browser,
-        String(Number(release.version) + 2),
-        'nightly',
-        release.engine,
-        String(Number(release.engineVersion) + 2),
-      );
-    }
-
-    await fs.writeFile(`./${options.bcdFile}`, stringify(data) + '\n');
-
-    // Returns the log
-    if (result) {
-      result = `### Updates for ${options.browserName}${result}`;
-    }
-
-    return result;
-  } catch (e) {
-    return gfmNoteblock(
-      'CAUTION',
-      `**${options.browserName}**: Could not update releases.\n\n${e}`,
+      String(Number(release.version) + 2),
+      'nightly',
+      release.engine,
+      String(Number(release.engineVersion) + 2),
     );
   }
+
+  await fs.writeFile(`./${options.bcdFile}`, stringify(data) + '\n');
+
+  // Returns the log
+  if (result) {
+    result = `### Updates for ${options.browserName}${result}`;
+  }
+
+  return result;
 };
