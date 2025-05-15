@@ -73,9 +73,7 @@ Here are some example situations:
 - `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
   See [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
 
-- `"partial_implementation": true`: One browser implements `ExampleInterface` but exposes it on the `Node` interface instead of the specified `Element` interface.
-  Other implementers use the correct parent interface.
-  This misleads feature detection (`"ExampleInterface" in Element.prototype` → false), so it's partially implemented.
+- `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
 
 ## `"partial_implementation"` requires a note
 
