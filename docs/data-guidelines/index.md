@@ -172,14 +172,28 @@ For serious bugs affecting a single engine, consider using `partial_implementati
 
 You may create a behavioral subfeature for the following types of browser behaviors:
 
-- A contextual support condition this is not readily feature detectable, such as a CSS layout context or the effect of [an IDL extended attribute](https://dontcallmedom.github.io/webidlpedia/extended-attributes.html).
+- A contextual support condition this is not readily feature detectable.
+  This type of behavioral subfeature typical describes the applicability of a feature to specific context.
 
-  For example, if support for a CSS property is conditioned on the layout context where that property is used, create a subfeature of the property to represent the behavior (as demonstrated by `css.properties.gap.flex_context` and `css.properties.gap.grid_context`).
+- Behavioral evolution that is not readily feature detectable.
+  This type of behavioral subfeature typical describes consequences of specification changes that appeared after the feature first shipped in one or more browsers or user interface changes that appeared after implementers learned more about the specification.
 
-- Behavioral evolution that is not readily feature detectable, such as new properties of an options parameter or a change in a method's return type.
+Here are some example situations:
 
-  This type of behavioral subfeature often describes consequences of specification changes that appeared after the feature first shipped in one or more browsers.
-  Sometimes it may describe user interface changes that appeared after implementers learned more about the specification (such as [#25984](https://github.com/mdn/browser-compat-data/pull/25984)).
+- A CSS property may depend on the layout context.
+  The CSS property `gap` has different support histories in flex and grid layouts, so it has the behavioral subfeatures of `css.properties.gap.flex_context` and `css.properties.gap.grid_context`.
+  See [`css.properties.gap`](https://github.com/mdn/browser-compat-data/blob/main/css/properties/gap.json).
+
+- An API exposure may depend on an execution context.
+  The `setTimeout()` method has different support histories for worker support, so it has the behavioral subfeatures of `api.setTimeout.worker_support`.
+  See the guideline for [`worker_support`](./api.md#web-workers-worker_support) for further guidance.
+
+- An API's specified behavior may change after a feature ships in one or more browsers.
+  The `play()` method of the `HTMLMediaElement` interface originally consumed a callback instead of returning a promise, so it has the behavioral subfeature of `api.HTMLMediaElement.play.returns_promise`.
+  See the guideline for [`returns_promise`](./api.md#methods-returning-promises-returns_promise) for further guidance.
+
+- User interface behavior may evolve with better understanding of a specification.
+  The `inert` HTML attribute marks elements as non-interactive but this did not originally affect find-in-page search, so it has the behavioral subfeature of [`html.global_attributes.inert.ignores_find_in_page`](https://github.com/mdn/browser-compat-data/blob/behavioral-subfeature-guideline/html/global_attributes.json).
 
 ## Parameters and parameter object features
 
