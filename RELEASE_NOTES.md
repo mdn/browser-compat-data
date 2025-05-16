@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.15](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.15)
+
+May 16, 2025
+
+### Removals
+
+- `html.elements.textarea.spellcheck` ([#26764](https://github.com/mdn/browser-compat-data/pull/26764))
+
+### Additions
+
+- `browsers.edge.releases.139` ([#26805](https://github.com/mdn/browser-compat-data/pull/26805))
+- `browsers.opera.releases.121` ([#26802](https://github.com/mdn/browser-compat-data/pull/26802))
+- `javascript.builtins.Intl.Locale.getWeekInfo.returns_minimalDays_property` ([#26793](https://github.com/mdn/browser-compat-data/pull/26793))
+
+### Statistics
+
+- 6 contributors have changed 165 files with 1,182 additions and 179 deletions in 21 commits ([`v6.0.14...v6.0.15`](https://github.com/mdn/browser-compat-data/compare/v6.0.14...v6.0.15))
+- 17,153 total features
+- 1,154 total contributors
+- 5,248 total stargazers
+
 ## [v6.0.14](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.14)
 
 May 13, 2025
