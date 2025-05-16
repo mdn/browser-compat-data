@@ -60,6 +60,10 @@ You must set `"partial_implementation": true` when all of the following conditio
 - The browser's support is inconsistent with at least one other browser.
 - The browser's support misleads or evades feature detection.
 
+Setting `partial_implementation` stands alone.
+Unlike `"version_added": false`, `partial_implementation` does not dictate support data to descendant features.
+Likewise, a subfeature's `"version_added": false` does not imply `"version_added": false` or `"partial_implementation": true` for an ancestor feature.
+
 Here are some example situations:
 
 - `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
