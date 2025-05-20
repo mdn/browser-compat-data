@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.16](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.16)
+
+May 20, 2025
+
+### Removals
+
+- `http.headers.Permissions-Policy.document-domain` ([#26836](https://github.com/mdn/browser-compat-data/pull/26836))
+
+### Statistics
+
+- 6 contributors have changed 7 files with 41 additions and 88 deletions in 15 commits ([`v6.0.15...v6.0.16`](https://github.com/mdn/browser-compat-data/compare/v6.0.15...v6.0.16))
+- 17,152 total features
+- 1,154 total contributors
+- 5,249 total stargazers
+
 ## [v6.0.15](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.15)
 
 May 16, 2025
