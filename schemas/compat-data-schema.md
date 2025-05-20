@@ -90,7 +90,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
         // ↓↓↓↓↓↓
         "__compat": {
           "description": "`fake` event", // A friendly description of the feature
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fake_event", // The associated MDN article
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/", // The associated MDN article
           "spec_url": [
             // The spec URL(s) for the feature if applicable, may be one or many
             "https://example.com/a-fake-spec#fake-event",
