@@ -3,14 +3,21 @@ name: System file changes
 on:
   pull_request: # FIXME Change to pull_request_target before merging
     paths:
-      - ".github/**"
+      - "**"
+      - "!**.md"
+      - "!api/**.json"
+      - "!browsers/**.json"
+      - "!css/**.json"
+      - "!html/**.json"
+      - "!http/**.json"
+      - "!javascript/**.json"
+      - "!manifests/**.json"
+      - "!mathml/**.json"
+      - "!svg/**.json"
+      - "!webassembly/**.json"
+      - "!webdriver/**.json"
+      - "!webextensions/**.json"
       - "!.github/workflows/system-file-changes.yml"
-      - "lint/**"
-      - "scripts/**"
-      - "types/**"
-      - "*"
-      - "**.js"
-      - "**.ts"
 
 # No GITHUB_TOKEN permissions, as we don't use it.
 permissions: {}
