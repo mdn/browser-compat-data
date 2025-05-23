@@ -9,7 +9,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryDirectoryTask } from 'tempy';
 
-import { execAsync, spawn } from '../utils/index.js';
+import { spawn, spawnAsync } from '../utils/index.js';
 
 /**
  * Compare two references and print diff as Markdown or JSON
@@ -113,19 +113,28 @@ const getEnumerationFromGithub = async (ref: string): Promise<string[]> => {
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
-  const hash = await execAsync(`git rev-parse ${ref}`);
-  const workflowRun = await execAsync(
-    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
-  );
+  const hash = await spawnAsync('git', ['rev-parse', ref]);
+  const workflowRun = await spawnAsync('gh', [
+    'api',
+    `/repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1`,
+    '--jq',
+    '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first',
+  ]);
 
   if (!workflowRun) {
     throw Error('No workflow run found for commit.');
   }
 
   return await temporaryDirectoryTask(async (tempdir) => {
-    await execAsync(
-      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT} --dir ${tempdir}`,
-    );
+    await spawnAsync('gh', [
+      'run',
+      'download',
+      workflowRun,
+      '-n',
+      ENUMERATE_WORKFLOW_ARTIFACT,
+      '--dir',
+      tempdir,
+    ]);
     const file = path.join(tempdir, ENUMERATE_WORKFLOW_FILE);
 
     return JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
