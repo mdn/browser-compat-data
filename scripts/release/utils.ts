@@ -52,9 +52,10 @@ export const queryPRs = (queryArgs: any): any => {
     json: 'number',
     ...queryArgs,
   };
-  const args = Object.entries(searchDetails).map(
-    ([key, value]) => `--${key}='${value}'`,
-  );
+  const args = Object.entries(searchDetails).flatMap(([key, value]) => [
+    `--${key}`,
+    `${value}`,
+  ]);
 
   return JSON.parse(spawn('gh', ['pr', 'list', ...args]));
 };

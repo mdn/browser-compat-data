@@ -116,9 +116,9 @@ const getEnumerationFromGithub = async (ref: string): Promise<string[]> => {
   const hash = await spawnAsync('git', ['rev-parse', ref]);
   const workflowRun = await spawnAsync('gh', [
     'api',
-    `/repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1`,
+    `/repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?head_sha=${hash}&per_page=1`,
     '--jq',
-    '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first',
+    `[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first`,
   ]);
 
   if (!workflowRun) {
