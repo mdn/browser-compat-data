@@ -3,7 +3,9 @@
 
 import iterSupport from './iter-support.js';
 import query from './query.js';
+import spawn from './spawn.js';
+import spawnAsync from './spawn-async.js';
 import walk from './walk.js';
 import normalizePath from './normalize-path.js';
 
-export { iterSupport, normalizePath, query, walk };
+export { iterSupport, normalizePath, query, spawn, spawnAsync, walk };
