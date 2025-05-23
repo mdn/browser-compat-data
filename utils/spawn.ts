@@ -15,7 +15,11 @@ export default (
   args: readonly string[],
   opts?: Omit<SpawnSyncOptionsWithStringEncoding, 'encoding' | 'shell'>,
 ): string => {
-  const result = spawnSync(command, args, { encoding: 'utf8', ...opts });
+  const result = spawnSync(command, args, {
+    ...opts,
+    encoding: 'utf8',
+    shell: false,
+  });
 
   if (result.error) {
     throw result.error;
