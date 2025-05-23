@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 
 import yargs from 'yargs';
@@ -55,6 +55,15 @@ const createSubfeatureJSON = (
 };
 
 /**
+ * Checks if data contains compat data.
+ * @param data - The data to check for `__compat` entries.
+ * @returns TRUE, if the data contains any compat data.
+ */
+const hasCompatData = (data: any) =>
+  '__compat' in data ||
+  (typeof data === 'object' && Object.values(data).some(hasCompatData));
+
+/**
  * Writes a JSON file.
  * @param path - The path to the file.
  * @param data - The data to write as JSON.
@@ -64,7 +73,7 @@ const writeJSONFile = async (path: string, data: Identifier) =>
   writeFile(path, JSON.stringify(data, null, 2) + '\n');
 
 /**
- * Splits a BCD-style JSON file into separate files for each feature under the same namespace.
+ * Splits a BCD-style JSON file into separate files for each subfeature.
  * Each file will include only the `__compat` data of a given property.
  * Extracted entries are also removed from the original file.
  * @param file - The absolute or relative path to the source JSON file
@@ -77,7 +86,6 @@ const splitFile = async (file: string) => {
   const baseKeys = getBaseKeyFromPath(file);
   let current = data;
 
-  // Traverse the nested object using the base keys
   for (const key of baseKeys) {
     if (!(key in current)) {
       console.error(`❌ Error: Key "${key}" not found in structure.`);
@@ -86,10 +94,9 @@ const splitFile = async (file: string) => {
     current = current[key];
   }
 
-  // Prepare output path and full key for naming
   const dirPath = fullPath.replace(/\.json$/, '');
 
-  // Write __compat data for each subfeature, then remove them
+  // Write file for each subfeature, then remove subfeature from parent file.
   for (const [key, value] of Object.entries(current)) {
     if (key === '__compat') {
       continue;
@@ -102,14 +109,18 @@ const splitFile = async (file: string) => {
       await writeJSONFile(outFile, data);
       console.log(`✔ Created: ${relative(process.cwd(), outFile)}`);
 
-      // Remove the extracted key using Reflect to avoid dynamic delete
       Reflect.deleteProperty(current, key);
     }
   }
 
-  // Write the modified original file
-  await writeJSONFile(fullPath, data);
-  console.log(`✔ Updated: ${file}`);
+  // Check if current file still has any data.
+  if (hasCompatData(data)) {
+    await writeJSONFile(fullPath, data);
+    console.log(`✔ Updated: ${file}`);
+  } else {
+    await rm(fullPath);
+    console.log(`✔ Deleted: ${file}`);
+  }
 };
 
 await Promise.all(argv.files.map(splitFile));
