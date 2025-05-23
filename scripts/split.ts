@@ -47,9 +47,7 @@ const createSubfeatureJSON = (
     current = current[baseKey];
   }
 
-  current[key] = {
-    __compat: value.__compat,
-  };
+  current[key] = value;
 
   return data;
 };
