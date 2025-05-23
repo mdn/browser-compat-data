@@ -1,18 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { exec } from '../../utils/index.js';
+import { spawn } from '../../utils/index.js';
 
 /**
  * Check for GitHub CLI and exit the program if it's not existent
  */
 export const requireGitHubCLI = (): void => {
-  const command = 'gh auth status';
   try {
-    exec(command, { stdio: 'ignore' });
+    spawn('gh', ['auth', 'status'], { stdio: 'ignore' });
   } catch (err) {
     console.trace(err);
-    console.error(`Error: ${command} failed.`);
+    console.error('Error: gh failed.');
     console.error('The GitHub CLI is required.');
     console.error('See https://cli.github.com/ for installation instructions.');
     process.exit(1);
@@ -23,7 +22,7 @@ export const requireGitHubCLI = (): void => {
  * Check for repository write permissions
  */
 export const requireWriteAccess = () => {
-  const username = exec('gh api user -q .login');
+  const username = spawn('gh', ['api', 'user', '-q', '.login']);
   const authStats = githubAPI(`/collaborators/${username}/permission`);
 
   if (authStats.permission === 'read') {
@@ -40,7 +39,7 @@ export const requireWriteAccess = () => {
  * @returns The response from the API
  */
 export const githubAPI = (endpoint: string): any =>
-  JSON.parse(exec(`gh api /repos/mdn/browser-compat-data${endpoint}`));
+  JSON.parse(spawn('gh', ['api', `/repos/mdn/browser-compat-data${endpoint}`]));
 
 /**
  * Query pull requests
@@ -53,19 +52,18 @@ export const queryPRs = (queryArgs: any): any => {
     json: 'number',
     ...queryArgs,
   };
-  const args = Object.entries(searchDetails)
-    .map(([key, value]) => `--${key}='${value}'`)
-    .join(' ');
-  const command = `gh pr list ${args}`;
+  const args = Object.entries(searchDetails).map(
+    ([key, value]) => `--${key}='${value}'`,
+  );
 
-  return JSON.parse(exec(command));
+  return JSON.parse(spawn('gh', ['pr', 'list', ...args]));
 };
 
 /**
  * Ensures main is fetched.
  */
 export const fetchMain = (): void => {
-  exec('git fetch origin main');
+  spawn('git', ['fetch', 'origin', 'main']);
 };
 
 /**
@@ -73,7 +71,7 @@ export const fetchMain = (): void => {
  * @returns The latest Git tag
  */
 export const getLatestTag = (): string =>
-  exec('git describe --abbrev=0 --tags');
+  spawn('git', ['describe', '--abbrev=0', '--tags']);
 
 /**
  * Get the date of a specified ref
@@ -82,7 +80,7 @@ export const getLatestTag = (): string =>
  * @returns The ref date
  */
 export const getRefDate = (ref: string, querySafe = false): string => {
-  const rawDateString = exec(`git log -1 --format=%aI ${ref}`);
+  const rawDateString = spawn('git', ['log', '-1', '--format=%aI', ref]);
 
   if (querySafe) {
     return rawDateString.replaceAll('+', '%2B');
