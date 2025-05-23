@@ -88,7 +88,7 @@ const commitAndPR = async (
     }
   });
 
-  spawn('git', ['switch']);
+  spawn('git', ['switch', '-']);
   spawn('git', ['branch', '-d', branch]);
 };
 
