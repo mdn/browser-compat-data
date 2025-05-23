@@ -38,7 +38,7 @@ jobs:
 
       - name: Update data
         run: |
-          git rm -rf webdriver/bidi
+          rm -rf webdriver/bidi
           curl -L -o webdriver/bidi.json "${{ secrets.WEBDRIVER_BIDI_UPDATE_URL }}"
           npm run split -- webdriver/bidi.json
           git add webdriver/bidi
