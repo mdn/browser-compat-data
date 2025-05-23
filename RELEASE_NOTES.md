@@ -1,5 +1,38 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.17](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.17)
+
+May 23, 2025
+
+### Additions
+
+- `api.LanguageDetector` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.availability_static` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.create_static` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.destroy` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.detect` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.expectedInputLanguages` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.inputQuota` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.LanguageDetector.measureInputUsage` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.availability_static` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.create_static` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.destroy` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.inputQuota` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.measureInputUsage` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.sourceLanguage` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.targetLanguage` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.translate` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `api.Translator.translateStreaming` ([#26871](https://github.com/mdn/browser-compat-data/pull/26871))
+- `manifests.webapp.scope_extensions` ([#26890](https://github.com/mdn/browser-compat-data/pull/26890))
+
+### Statistics
+
+- 9 contributors have changed 43 files with 4,228 additions and 2,914 deletions in 22 commits ([`v6.0.16...v6.0.17`](https://github.com/mdn/browser-compat-data/compare/v6.0.16...v6.0.17))
+- 17,171 total features
+- 1,154 total contributors
+- 5,254 total stargazers
+
 ## [v6.0.16](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.16)
 
 May 20, 2025
