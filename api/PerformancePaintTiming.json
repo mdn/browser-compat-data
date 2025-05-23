@@ -46,9 +46,23 @@
             "web-features:paint-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "60"
-            },
+            "chrome": [
+              {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-blink-features",
+                    "value_to_set": "SoftNavigationHeuristicsExposeFPAndFCP"
+                  }
+                ],
+                "notes": "See [bug 40066208](https://crbug.com/40066208)."
+              },
+              {
+                "version_added": "60",
+                "version_removed": "116"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -85,9 +99,23 @@
             "web-features:paint-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "60"
-            },
+            "chrome": [
+              {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-blink-features",
+                    "value_to_set": "SoftNavigationHeuristicsExposeFPAndFCP"
+                  }
+                ],
+                "notes": "See [bug 40066208](https://crbug.com/40066208)."
+              },
+              {
+                "version_added": "60",
+                "version_removed": "116"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
