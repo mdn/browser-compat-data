@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.19](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.19)
+
+May 30, 2025
+
+### Additions
+
+- `api.CredentialsContainer.create.publicKey_option.extensions.prf` ([#26828](https://github.com/mdn/browser-compat-data/pull/26828))
+- `api.CredentialsContainer.get.publicKey_option.extensions.prf` ([#26828](https://github.com/mdn/browser-compat-data/pull/26828))
+- `api.VideoFrame.flip` ([#26937](https://github.com/mdn/browser-compat-data/pull/26937))
+- `api.VideoFrame.rotation` ([#26937](https://github.com/mdn/browser-compat-data/pull/26937))
+- `api.Viewport` ([#26937](https://github.com/mdn/browser-compat-data/pull/26937))
+- `api.Viewport.segments` ([#26937](https://github.com/mdn/browser-compat-data/pull/26937))
+- `api.Window.viewport` ([#26937](https://github.com/mdn/browser-compat-data/pull/26937))
+- `browsers.deno.releases.2.3.0` ([#26936](https://github.com/mdn/browser-compat-data/pull/26936))
+- `browsers.deno.releases.2.3.2` ([#26936](https://github.com/mdn/browser-compat-data/pull/26936))
+- `html.elements.h1.no_ua_styles_in_article_aside_nav_section` ([#26946](https://github.com/mdn/browser-compat-data/pull/26946))
+- `webextensions.api.tabGroups.onRemoved.removeInfo` ([#26872](https://github.com/mdn/browser-compat-data/pull/26872))
+
+### Statistics
+
+- 9 contributors have changed 39 files with 1,003 additions and 296 deletions in 22 commits ([`v6.0.18...v6.0.19`](https://github.com/mdn/browser-compat-data/compare/v6.0.18...v6.0.19))
+- 17,193 total features
+- 1,158 total contributors
+- 5,263 total stargazers
+
 ## [v6.0.18](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.18)
 
 May 27, 2025
