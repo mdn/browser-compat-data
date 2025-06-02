@@ -4,11 +4,23 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream",
         "spec_url": "https://w3c.github.io/webtransport/#webtransportreceivestream",
+        "tags": [
+          "web-features:webtransport"
+        ],
         "support": {
           "chrome": {
             "version_added": false
           },
           "chrome_android": "mirror",
+          "deno": {
+            "version_added": "2.2",
+            "flags": [
+              {
+                "type": "runtime_flag",
+                "name": "--unstable-net"
+              }
+            ]
+          },
           "edge": "mirror",
           "firefox": {
             "version_added": "114"
@@ -38,11 +50,23 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream/getStats",
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportreceivestream-getstats",
+          "tags": [
+            "web-features:webtransport"
+          ],
           "support": {
             "chrome": {
               "version_added": false
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.2",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-net"
+                }
+              ]
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "114"

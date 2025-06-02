@@ -457,6 +457,7 @@
               },
               {
                 "version_added": "90",
+                "version_removed": "112",
                 "partial_implementation": true,
                 "notes": "Implements an older version of the specification. The gradient starts from a line going vertically up from the center, like the equivalent CSS function."
               }
@@ -474,6 +475,7 @@
               },
               {
                 "version_added": "15",
+                "version_removed": "16.1",
                 "partial_implementation": true,
                 "notes": "Implements an older version of the specification. The gradient starts from a line going vertically up from the center, like the equivalent CSS function."
               }
@@ -524,9 +526,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -596,7 +596,8 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "1.5"
+              "version_added": "1.5",
+              "notes": "The repetition values `repeat-x` and `repeat-y` are not supported with `fill()`, only with `fillRect()`, see [bug 468358](https://bugzil.la/468358)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -842,7 +843,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "30"
+                "version_added": "50"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -861,9 +862,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1158,9 +1157,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1238,14 +1235,20 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "4"
-            },
+            "safari": [
+              {
+                "version_added": "18.4"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "18.4",
+                "partial_implementation": true,
+                "notes": "The `font-weight` can be set, but is not reflected back (see [bug 284115](https://webkit.org/b/284115))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1448,9 +1451,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1901,6 +1902,43 @@
           }
         }
       },
+      "lang": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-lang",
+          "tags": [
+            "web-features:canvas-2d"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "136"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "letterSpacing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing",
@@ -1925,7 +1963,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2195,9 +2233,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -2329,9 +2365,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -2795,9 +2829,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -3225,9 +3257,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -3271,9 +3301,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -3317,9 +3345,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -3479,7 +3505,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

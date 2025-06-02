@@ -5,12 +5,13 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import { fdir } from 'fdir';
 import { compileFromFile } from 'json-schema-to-typescript';
+
+import { spawn } from '../utils/index.js';
 
 import extend from './lib/extend.js';
 
@@ -34,6 +35,8 @@ const compatDataTypes = {
   http: 'Contains data for [HTTP](https://developer.mozilla.org/docs/Web/HTTP) headers, statuses, and methods.',
   javascript:
     'Contains data for [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.',
+  manifests:
+    'Contains data for various manifests, such as the [Web Application Manifest](https://developer.mozilla.org/docs/Web/Progressive_web_apps/manifest).',
   mathml:
     'Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.',
   svg: 'Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG) elements, attributes, and global attributes.',
@@ -167,7 +170,7 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
-  execSync('tsc --skipLibCheck ../types/types.d.ts', {
+  spawn('tsc', ['--skipLibCheck', '../types/types.d.ts'], {
     cwd: dirname,
     stdio: 'inherit',
   });

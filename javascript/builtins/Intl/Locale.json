@@ -636,6 +636,7 @@
           },
           "getWeekInfo": {
             "__compat": {
+              "description": "`getWeekInfo()` method",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getWeekInfo",
               "spec_url": "https://tc39.es/proposal-intl-locale-info/#sec-Intl.Locale.prototype.getWeekInfo",
               "tags": [
@@ -653,9 +654,16 @@
                   }
                 ],
                 "chrome_android": "mirror",
-                "deno": {
-                  "version_added": "1.19"
-                },
+                "deno": [
+                  {
+                    "version_added": "2.1"
+                  },
+                  {
+                    "alternative_name": "weekInfo",
+                    "version_added": "1.19",
+                    "notes": "Implemented as an accessor property."
+                  }
+                ],
                 "edge": "mirror",
                 "firefox": {
                   "version_added": false
@@ -692,6 +700,48 @@
                 "experimental": false,
                 "standard_track": true,
                 "deprecated": false
+              }
+            },
+            "returns_minimalDays_property": {
+              "__compat": {
+                "description": "`minimalDays` in returned object",
+                "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getWeekInfo#minimaldays",
+                "support": {
+                  "chrome": {
+                    "version_added": "99",
+                    "version_removed": "136"
+                  },
+                  "chrome_android": "mirror",
+                  "deno": {
+                    "version_added": "1.19"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "ie": {
+                    "version_added": false
+                  },
+                  "nodejs": {
+                    "version_added": "18.0.0"
+                  },
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "15.4"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": true
+                }
               }
             }
           },

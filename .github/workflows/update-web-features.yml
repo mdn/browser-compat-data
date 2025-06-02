@@ -1,0 +1,63 @@
+name: Update web-features tags
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 4 * * 1-5"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-web-features:
+    if: github.repository == 'mdn/browser-compat-data'
+    name: Update web-features-tags
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: "Setup git"
+        run: |
+          git config user.email 108879845+mdn-bot@users.noreply.github.com
+          git config user.name mdn-bot
+
+      - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
+        run: npm ci
+
+      - name: Update tags
+        id: update
+        run: |
+          echo "RESULT<<EOF" >> "$GITHUB_OUTPUT"
+          npm run tag-web-features .. >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        with:
+          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
+          commit-message: Update web-features tags
+          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
+          signoff: false
+          branch: web-features-tags
+          delete-branch: true
+          add-paths: "*.json"
+          title: "Update web-features tags"
+          body: |
+            The output of the `tag-web-features` script is:
+            ${{ steps.update.outputs.RESULT }}
+          draft: false

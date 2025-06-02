@@ -6,20 +6,11 @@ import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
 import { DataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
+import { BrowserName, SimpleSupportStatement } from '../types/types.js';
 
 export interface LintOptions {
   only?: string[];
 }
-
-const now = new Date();
-
-/* The date, exactly two years ago */
-export const twoYearsAgo = new Date(
-  now.getFullYear() - 2,
-  now.getMonth(),
-  now.getDate(),
-);
 
 const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
@@ -277,3 +268,31 @@ export class Linters {
     }
   }
 }
+
+/**
+ * Returns the key for the group that this statement belongs to.
+ * @param support The support statement.
+ * @returns The key of the support statement group.
+ */
+export const createStatementGroupKey = (
+  support: SimpleSupportStatement,
+): string => {
+  const parts: string[] = [];
+  if (support.prefix) {
+    parts.push(`prefix: ${support.prefix}`);
+  }
+
+  if (support.alternative_name) {
+    parts.push(`alt. name: ${support.alternative_name}`);
+  }
+
+  if (support.flags) {
+    parts.push(...support.flags.map((flag) => `${flag.type}: ${flag.name}`));
+  }
+
+  if (parts.length === 0) {
+    return 'normal name';
+  }
+
+  return parts.join(' / ');
+};

@@ -840,6 +840,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/filter",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-filter-dev",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -894,9 +897,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
+            "safari": [
+              {
+                "version_added": "18.4"
+              },
+              {
+                "version_added": "16.4",
+                "version_removed": "18.4",
+                "partial_implementation": true,
+                "notes": "The `font-weight` can be set, but is not reflected back (see [bug 284115](https://webkit.org/b/284115))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -913,6 +924,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontKerning",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fontkerning",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -948,6 +962,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontStretch",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fontstretch",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -983,6 +1000,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/fontVariantCaps",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-fontvariantcaps",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -1009,6 +1029,40 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "getContextAttributes": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-canvas-getcontextattributes",
+          "support": {
+            "chrome": {
+              "version_added": "134"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -1246,6 +1300,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/imageSmoothingQuality",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-imagesmoothingquality-dev",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "69"
@@ -1391,10 +1448,50 @@
           }
         }
       },
+      "lang": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-lang",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "136"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "letterSpacing": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/letterSpacing",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-letterspacing",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -1412,7 +1509,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2570,6 +2667,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/textRendering",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-textrendering",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -2681,6 +2781,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/wordSpacing",
           "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-context-2d-wordspacing",
+          "tags": [
+            "web-features:offscreen-canvas"
+          ],
           "support": {
             "chrome": {
               "version_added": "99"
@@ -2698,7 +2801,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -41,7 +41,7 @@
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "1"
           },
           "webview_ios": "mirror"
         },
@@ -152,9 +152,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "19",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -166,9 +174,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "3"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "3",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -210,14 +226,20 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "4"
-            },
+            "safari": [
+              {
+                "version_added": "7"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "7",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -344,7 +366,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -352,6 +374,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/alinkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-alinkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -368,9 +393,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -403,7 +436,7 @@
                 "version_added": "11"
               },
               {
-                "version_added": "1.2",
+                "version_added": "1",
                 "version_removed": "11",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
@@ -441,9 +474,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "24"
-            },
+            "firefox": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "24",
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -480,6 +521,12 @@
                 "version_removed": "11",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "2",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
             ],
             "safari_ios": [
@@ -494,17 +541,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "64"
-              },
-              {
-                "version_added": "≤37",
-                "version_removed": "64",
-                "partial_implementation": true,
-                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -526,9 +563,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -540,9 +585,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -607,9 +660,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -621,9 +682,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -667,7 +736,7 @@
           "status": {
             "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -675,6 +744,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/bgColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-bgcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -691,9 +763,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -801,7 +881,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/browsingTopics",
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": "126"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -849,9 +929,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "11"
@@ -1011,9 +1099,7 @@
               "version_added": "4"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1265,9 +1351,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -1295,9 +1389,17 @@
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
             ],
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1315,16 +1417,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/close",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-close-dev",
           "tags": [
-            "web-features:dom"
+            "web-features:document-write"
           ],
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "45"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "45",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -1333,9 +1435,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -1394,16 +1504,32 @@
             "web-features:dom"
           ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "8"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "8",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "19"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "19",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "6"
@@ -1415,9 +1541,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "3.1"
-            },
+            "safari": [
+              {
+                "version_added": "5.1"
+              },
+              {
+                "version_added": "3.1",
+                "version_removed": "5.1",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1501,10 +1635,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": "Before Firefox 68, `cookie` was available only on HTML documents; it is now available on all documents, such as XML and SVG."
-            },
+            "firefox": [
+              {
+                "version_added": "68"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "68",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -1516,9 +1657,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -2412,9 +2561,7 @@
                 "version_added": "3"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2513,17 +2660,36 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/designMode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-document-designmode-dev",
+          "tags": [
+            "web-features:dom"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "36",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -2535,9 +2701,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1.2"
-            },
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -2560,11 +2734,11 @@
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "36"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "36",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -2774,10 +2948,18 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": "From Firefox 62, if the domain cannot be identified, `domain` returns an empty string instead of `null`. See [bug 819475](https://bugzil.la/819475)."
-            },
+            "firefox": [
+              {
+                "version_added": "69",
+                "notes": "From Firefox 62, if the domain cannot be identified, `domain` returns an empty string instead of `null`. See [bug 819475](https://bugzil.la/819475)."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -2841,10 +3023,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37",
-              "notes": "Before WebView 66, this method returned `null` when the element was a child of a host node. See [bug 40537452](https://crbug.com/40537452)."
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -2919,11 +3098,11 @@
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "36"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "36",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -2932,9 +3111,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -3070,6 +3257,9 @@
       "execCommand": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/execCommand",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -3078,13 +3268,21 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1",
-              "notes": [
-                "From Firefox 82, nested calls are not supported (return `false`). See [bug 1634262](https://bugzil.la/1634262).",
-                "Before Firefox 89, manipulating the content of `&lt;input&gt;` and `&lt;textarea&gt;` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "69",
+                "notes": [
+                  "From Firefox 82, nested calls are not supported (return `false`). See [bug 1634262](https://bugzil.la/1634262).",
+                  "Before Firefox 89, manipulating the content of `<input>` and `<textarea>` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
+                ]
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -3113,6 +3311,9 @@
         "copy": {
           "__compat": {
             "description": "`copy` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -3149,6 +3350,9 @@
         "cut": {
           "__compat": {
             "description": "`cut` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": "42"
@@ -3185,6 +3389,9 @@
         "defaultParagraphSeparator": {
           "__compat": {
             "description": "`defaultParagraphSeparator` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -3222,6 +3429,9 @@
         "insertBrOnReturn": {
           "__compat": {
             "description": "`insertBrOnReturn` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
             "support": {
               "chrome": {
                 "version_added": false
@@ -3352,15 +3562,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -3471,7 +3673,10 @@
                 "version_added": "22"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -3554,6 +3759,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fgColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-fgcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -3570,9 +3778,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -3716,9 +3932,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -3730,9 +3954,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -3749,6 +3981,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/fragmentDirective",
           "spec_url": "https://wicg.github.io/scroll-to-text-fragment/#dom-document-fragmentdirective",
+          "tags": [
+            "web-features:scroll-to-text-fragment"
+          ],
           "support": {
             "chrome": {
               "version_added": "86"
@@ -3766,8 +4001,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/273466"
+              "version_added": "18.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3888,15 +4122,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "alternative_name": "webkitIsFullScreen",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4007,15 +4233,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4334,15 +4552,7 @@
               }
             ],
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "71"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": {
               "version_added": false
             }
@@ -4383,6 +4593,7 @@
               },
               {
                 "version_added": "13.1",
+                "version_removed": "14",
                 "partial_implementation": true,
                 "notes": "Implements an older version of the specification, see [bug 179536](https://webkit.org/b/179536)."
               }
@@ -4402,6 +4613,9 @@
       "getBoxQuads": {
         "__compat": {
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-geometryutils-getboxquads",
+          "tags": [
+            "web-features:getboxquads"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -4544,9 +4758,17 @@
               "version_added": "12",
               "notes": "Before Edge 79, this method returns an `HTMLCollection`, not a `NodeList`."
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "58"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "58",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "5",
@@ -4559,9 +4781,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -4677,9 +4907,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "57"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "57",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9"
@@ -4696,9 +4934,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -4717,7 +4953,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "2"
+              "version_added": "34"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -4733,14 +4969,20 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "4"
-            },
+            "safari": [
+              {
+                "version_added": "7"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "7",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -4872,9 +5114,7 @@
               "version_added": "125"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": false
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -4915,9 +5155,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "4"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "4",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9"
@@ -4936,9 +5184,7 @@
               "version_added": "4"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -4996,15 +5242,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "4.4.3"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -5029,9 +5267,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -5043,9 +5289,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5215,9 +5469,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5268,6 +5530,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/linkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-linkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -5284,9 +5549,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -5352,9 +5625,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -5366,9 +5647,17 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5410,9 +5699,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5420,6 +5717,44 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "moveBefore": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/moveBefore",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-parentnode-movebefore",
+          "tags": [
+            "web-features:move-before"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "133"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -5464,16 +5799,16 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/open",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-open-dev",
           "tags": [
-            "web-features:dom"
+            "web-features:document-write"
           ],
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "45"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "45",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -5482,9 +5817,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -5523,6 +5866,48 @@
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
             ],
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "parseHTML_static": {
+        "__compat": {
+          "description": "`parseHTML` static method",
+          "spec_url": "https://wicg.github.io/sanitizer-api/#dom-document-parsehtml",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "139",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.security.sanitizer.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5579,6 +5964,41 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_sanitizer_parameter": {
+          "__compat": {
+            "description": "`options.sanitizer` parameter",
+            "spec_url": "https://wicg.github.io/sanitizer-api/#dom-shadowroot-sethtmlunsafe",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -5678,11 +6098,11 @@
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "36"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "36",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -5691,9 +6111,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -5776,7 +6204,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -5825,7 +6256,10 @@
             "chrome": {
               "version_added": "37"
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -5885,7 +6319,10 @@
                 "version_removed": "38"
               }
             ],
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": false,
+              "impl_url": "https://crbug.com/40290045"
+            },
             "edge": {
               "version_added": "13"
             },
@@ -6080,6 +6517,9 @@
       "queryCommandEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandEnabled",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6090,12 +6530,22 @@
             },
             "firefox": [
               {
-                "version_added": "41"
+                "version_added": "69"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               },
               {
                 "version_added": "1",
                 "version_removed": "41",
-                "notes": "`queryCommandEnabled` with arguments `cut`, `copy` or `paste` would throw errors unless the script had special privileges."
+                "partial_implementation": true,
+                "notes": [
+                  "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects.",
+                  "`queryCommandEnabled` with arguments `cut`, `copy` or `paste` would throw errors unless the script had special privileges."
+                ]
               }
             ],
             "firefox_android": "mirror",
@@ -6126,6 +6576,9 @@
       },
       "queryCommandIndeterm": {
         "__compat": {
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6134,9 +6587,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -6162,6 +6623,9 @@
       "queryCommandState": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandState",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6170,9 +6634,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -6202,6 +6674,9 @@
       "queryCommandSupported": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/queryCommandSupported",
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6212,13 +6687,22 @@
             },
             "firefox": [
               {
-                "version_added": "41"
+                "version_added": "69"
+              },
+              {
+                "version_added": "41",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               },
               {
                 "version_added": "1",
                 "version_removed": "41",
                 "partial_implementation": true,
-                "notes": "The `\"paste\"` command is reported as supported when the paste feature is available even if the calling script has insufficient privileges to actually perform the action."
+                "notes": [
+                  "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects.",
+                  "The `\"paste\"` command is reported as supported when the paste feature is available even if the calling script has insufficient privileges to actually perform the action."
+                ]
               }
             ],
             "firefox_android": "mirror",
@@ -6249,6 +6733,9 @@
       },
       "queryCommandValue": {
         "__compat": {
+          "tags": [
+            "web-features:execcommand"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -6257,9 +6744,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -6311,6 +6806,7 @@
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
                 "partial_implementation": true,
                 "notes": "`querySelectorAll()` is supported, but only for CSS 2.1 selectors."
               }
@@ -6362,6 +6858,7 @@
               },
               {
                 "version_added": "8",
+                "version_removed": "9",
                 "partial_implementation": true,
                 "notes": "`querySelectorAll()` is supported, but only for CSS 2.1 selectors."
               }
@@ -6482,9 +6979,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -6591,9 +7086,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "70"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "70",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "11"
@@ -7439,16 +7942,32 @@
             "web-features:dom"
           ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "36"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "36",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "9"
-            },
+            "firefox": [
+              {
+                "version_added": "61"
+              },
+              {
+                "version_added": "9",
+                "version_removed": "61",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -7460,12 +7979,18 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "3"
-            },
-            "safari_ios": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "10.1"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "10.1",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
+            "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -7484,6 +8009,9 @@
           "spec_url": [
             "https://drafts.csswg.org/cssom-view/#eventdef-document-scroll",
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll"
+          ],
+          "tags": [
+            "web-features:scroll-elements"
           ],
           "support": {
             "chrome": {
@@ -7569,6 +8097,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/scrollingElement",
           "spec_url": "https://drafts.csswg.org/cssom-view/#dom-document-scrollingelement",
+          "tags": [
+            "web-features:scroll-elements"
+          ],
           "support": {
             "chrome": {
               "version_added": "44"
@@ -7789,9 +8320,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -7804,7 +8333,10 @@
       "startViewTransition": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/startViewTransition",
-          "spec_url": "https://drafts.csswg.org/css-view-transitions/#dom-document-startviewtransition",
+          "spec_url": [
+            "https://drafts.csswg.org/css-view-transitions-1/#dom-document-startviewtransition",
+            "https://drafts.csswg.org/css-view-transitions-2/#dom-document-startviewtransition"
+          ],
           "tags": [
             "web-features:view-transitions"
           ],
@@ -7837,6 +8369,84 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "callbackOptions_parameter": {
+          "__compat": {
+            "description": "`callbackOptions` parameter",
+            "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#dom-document-startviewtransition-callbackoptions-callbackoptions",
+            "tags": [
+              "web-features:view-transitions"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "125"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1860854"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "18.2"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "updateCallback_parameter": {
+          "__compat": {
+            "description": "`updateCallback` parameter",
+            "spec_url": "https://drafts.csswg.org/css-view-transitions-1/#dom-document-startviewtransition-updatecallback-updatecallback",
+            "tags": [
+              "web-features:view-transitions"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "111"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1823896"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "18"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -7985,9 +8595,23 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "4"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "4",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument) and `XMLDocument`, but not `SVGDocument` objects."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "3",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -8017,13 +8641,14 @@
                 "version_added": "62"
               },
               {
-                "version_added": "33",
+                "prefix": "webkit",
+                "version_added": "13",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "13",
+                "version_added": "33",
+                "version_removed": "62",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               }
@@ -8035,6 +8660,7 @@
               },
               {
                 "version_added": "12",
+                "version_removed": "18",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               }
@@ -8054,13 +8680,14 @@
                 "version_added": "49"
               },
               {
-                "version_added": "20",
+                "prefix": "webkit",
+                "version_added": "15",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "15",
+                "version_added": "20",
+                "version_removed": "49",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
@@ -8076,13 +8703,14 @@
                 "version_added": "46"
               },
               {
-                "version_added": "20",
+                "prefix": "webkit",
+                "version_added": "14",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
               {
-                "prefix": "webkit",
-                "version_added": "14",
+                "version_added": "20",
+                "version_removed": "46",
                 "partial_implementation": true,
                 "notes": "The `onvisibilitychange` event handler property is not supported."
               },
@@ -8099,11 +8727,13 @@
               },
               {
                 "version_added": "14",
+                "version_removed": "14.1",
                 "partial_implementation": true,
                 "notes": "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897)."
               },
               {
                 "version_added": "10.1",
+                "version_removed": "14",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897).",
@@ -8112,6 +8742,7 @@
               },
               {
                 "version_added": "7",
+                "version_removed": "10.1",
                 "partial_implementation": true,
                 "notes": [
                   "Doesn't fire the `visibilitychange` event when navigating away from a document, so also include code to check for the `pagehide` event (which does fire for that case in all current browsers). See [bug 116769](https://webkit.org/b/116769), [bug 151234](https://webkit.org/b/151234), [bug 151610](https://webkit.org/b/151610), and [bug 194897](https://webkit.org/b/194897).",
@@ -8122,22 +8753,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "62"
-              },
-              {
-                "version_added": "4.4.3",
-                "partial_implementation": true,
-                "notes": "The `onvisibilitychange` event handler property is not supported."
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37",
-                "partial_implementation": true,
-                "notes": "The `onvisibilitychange` event handler property is not supported."
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -8214,15 +8830,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "4.4.3"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -8236,6 +8844,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/vlinkColor",
           "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#dom-document-vlinkcolor",
+          "tags": [
+            "web-features:document-colors"
+          ],
           "support": {
             "chrome": [
               {
@@ -8252,9 +8863,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -8346,17 +8965,36 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/write",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-write-dev",
+          "tags": [
+            "web-features:document-write"
+          ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "45"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "45",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -8368,9 +9006,17 @@
             "opera_android": {
               "version_added": "10.1"
             },
-            "safari": {
-              "version_added": "1"
-            },
+            "safari": [
+              {
+                "version_added": "11"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "11",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -8381,20 +9027,72 @@
             "standard_track": true,
             "deprecated": true
           }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": [
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document-write-steps",
+              "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#:~:text=if%20value%20is%20a%20trustedhtml%20object"
+            ],
+            "tags": [
+              "web-features:document-write",
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": true
+            }
+          }
         }
       },
       "writeln": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/writeln",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln-dev",
+          "tags": [
+            "web-features:document-write"
+          ],
           "support": {
             "chrome": [
               {
-                "version_added": "64"
+                "version_added": "45"
               },
               {
                 "version_added": "1",
-                "version_removed": "64",
+                "version_removed": "45",
                 "partial_implementation": true,
                 "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
               }
@@ -8403,9 +9101,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "1"
-            },
+            "firefox": [
+              {
+                "version_added": "69"
+              },
+              {
+                "version_added": "1",
+                "version_removed": "69",
+                "partial_implementation": true,
+                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "4"
@@ -8453,6 +9159,52 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "accepts_TrustedHTML": {
+          "__compat": {
+            "description": "Accepts `TrustedHTML` instances",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln",
+            "tags": [
+              "web-features:document-write",
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "86"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

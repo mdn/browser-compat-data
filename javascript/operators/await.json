@@ -51,6 +51,9 @@
             "description": "Use at module top level",
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await#top_level_await",
             "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-async-function-definitions",
+            "tags": [
+              "web-features:top-level-await"
+            ],
             "support": {
               "chrome": {
                 "version_added": "89"
@@ -75,7 +78,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "15",
+                "partial_implementation": true,
+                "notes": "Doesn't support multiple modules simultaneously importing a module containing a top-level await (see [bug 242740](https://webkit.org/b/242740))."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

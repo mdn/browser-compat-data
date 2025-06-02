@@ -152,7 +152,7 @@
             "description": "`init.attributionReporting` parameter",
             "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-requestinit-attributionreporting",
             "tags": [
-              "web-features:fetch"
+              "web-features:attribution-reporting"
             ],
             "support": {
               "chrome": {
@@ -196,7 +196,7 @@
             "description": "`init.browsingTopics` parameter",
             "support": {
               "chrome": {
-                "version_added": "115"
+                "version_added": "126"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -231,13 +231,63 @@
             }
           }
         },
+        "init_duplex_parameter": {
+          "__compat": {
+            "description": "`init.duplex` parameter",
+            "spec_url": "https://fetch.spec.whatwg.org/#dom-requestinit-duplex",
+            "support": {
+              "chrome": {
+                "version_added": "105"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1792434"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "nodejs": [
+                {
+                  "version_added": "19.1.0"
+                },
+                {
+                  "version_added": "18.13.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/245671"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "init_keepalive_parameter": {
           "__compat": {
             "description": "`init.keepalive` parameter",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/keepalive",
             "spec_url": "https://fetch.spec.whatwg.org/#dom-requestinit-keepalive",
             "tags": [
-              "web-features:fetch-keepalive"
+              "web-features:fetch"
             ],
             "support": {
               "chrome": {
@@ -378,11 +428,15 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1387483"
               },
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
+              },
+              "nodejs": {
+                "version_added": "18.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -546,7 +600,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/body",
           "spec_url": "https://fetch.spec.whatwg.org/#ref-for-dom-body-body①",
           "tags": [
-            "web-features:fetch"
+            "web-features:fetch-request-streams"
           ],
           "support": {
             "chrome": {
@@ -963,6 +1017,9 @@
       "duplex": {
         "__compat": {
           "spec_url": "https://fetch.spec.whatwg.org/#dom-request-duplex",
+          "tags": [
+            "web-features:fetch"
+          ],
           "support": {
             "chrome": {
               "version_added": "131"
@@ -1045,6 +1102,7 @@
               },
               {
                 "version_added": "11.1",
+                "version_removed": "14.1",
                 "partial_implementation": true,
                 "notes": "The method exists but always rejects with `NotSupportedError`. See [bug 215671](https://webkit.org/b/215671)."
               }
@@ -1623,7 +1681,7 @@
         "__compat": {
           "spec_url": "https://wicg.github.io/private-network-access/#dom-request-targetaddressspace",
           "tags": [
-            "web-features:fetch"
+            "web-features:private-network-access"
           ],
           "support": {
             "chrome": {

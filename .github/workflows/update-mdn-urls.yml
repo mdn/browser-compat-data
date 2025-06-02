@@ -5,6 +5,10 @@ on:
     paths:
       - "package-lock.json"
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
   update-mdn-urls:
     if: github.repository == 'mdn/browser-compat-data' && github.event.pull_request.user.login == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/ddbeck/mdn-content-inventory-')
@@ -22,7 +26,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-          cache: npm
 
       - name: "Setup git"
         run: |
@@ -30,6 +33,9 @@ jobs:
           git config user.name mdn-bot
 
       - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
         run: npm ci
 
       - name: Update

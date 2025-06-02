@@ -3,12 +3,15 @@
     "MediaStreamTrackProcessor": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStreamTrackProcessor",
-        "spec_url": "https://w3c.github.io/mediacapture-transform/#track-processor-interface",
+        "spec_url": "https://w3c.github.io/mediacapture-transform/#mediastreamtrackprocessor",
+        "tags": [
+          "web-features:insertable-streams"
+        ],
         "support": {
           "chrome": {
             "version_added": "94",
             "partial_implementation": true,
-            "notes": "Chrome incorrectly exposes this interface only on the Window scope, rather than the DedicatedWorker scope as defined in the spec."
+            "notes": "Exposed on `Window` instead of `DedicatedWorker`."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -41,9 +44,14 @@
           "description": "`MediaStreamTrackProcessor()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStreamTrackProcessor/MediaStreamTrackProcessor",
           "spec_url": "https://w3c.github.io/mediacapture-transform/#dom-mediastreamtrackprocessor-mediastreamtrackprocessor",
+          "tags": [
+            "web-features:insertable-streams"
+          ],
           "support": {
             "chrome": {
-              "version_added": "94"
+              "version_added": "94",
+              "partial_implementation": true,
+              "notes": "Exposed on `Window` instead of `DedicatedWorker`."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -76,6 +84,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStreamTrackProcessor/readable",
           "spec_url": "https://w3c.github.io/mediacapture-transform/#dom-mediastreamtrackprocessor-readable",
+          "tags": [
+            "web-features:insertable-streams"
+          ],
           "support": {
             "chrome": {
               "version_added": "94"

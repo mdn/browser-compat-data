@@ -113,6 +113,42 @@
             }
           }
         },
+        "base-select": {
+          "__compat": {
+            "tags": [
+              "web-features:customizable-select"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "134"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "button": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-ui-4/#valdef-appearance-button",
@@ -289,6 +325,7 @@
                 },
                 {
                   "version_added": "1",
+                  "version_removed": "80",
                   "partial_implementation": true,
                   "notes": "See [bug 1481615](https://bugzil.la/1481615)."
                 }
@@ -376,8 +413,9 @@
                 },
                 {
                   "version_added": "1",
+                  "version_removed": "54",
                   "partial_implementation": true,
-                  "notes": "Doesn't work with `&lt;input type=\"checkbox\"&gt;` and `&lt;input type=\"radio\"&gt;`."
+                  "notes": "Doesn't work with `<input type=\"checkbox\">` and `<input type=\"radio\">`."
                 }
               ],
               "firefox_android": "mirror",

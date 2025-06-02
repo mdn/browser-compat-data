@@ -28,6 +28,7 @@
             },
             {
               "version_added": "18.2.0",
+              "version_removed": "19.0.0",
               "partial_implementation": true,
               "notes": "Available as a part of the `perf_hooks` module."
             },
@@ -349,6 +350,9 @@
           "__compat": {
             "description": "`deliveryType=\"navigational-prefetch\"`",
             "spec_url": "https://wicg.github.io/nav-speculation/prefetch.html#ref-for-navigation-params-delivery-type",
+            "tags": [
+              "web-features:link-rel-prefetch"
+            ],
             "support": {
               "chrome": {
                 "version_added": "117"
@@ -575,6 +579,42 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "finalResponseHeadersStart": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/finalResponseHeadersStart",
+          "spec_url": "https://w3c.github.io/resource-timing/#dom-performanceresourcetiming-finalresponseheadersstart",
+          "support": {
+            "chrome": {
+              "version_added": "133"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1811291"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

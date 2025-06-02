@@ -21,7 +21,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Firefox supports applying `max-width` to `table` elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table) undefined. Firefox supports applying `max-width` to `table` elements."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -30,7 +30,7 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "4",
-              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Opera supports applying `max-width` to `table` elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-width` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table) undefined. Opera supports applying `max-width` to `table` elements."
             },
             "opera_android": "mirror",
             "safari": {
@@ -154,6 +154,7 @@
         "fit-content_function": {
           "__compat": {
             "description": "`fit-content()`",
+            "spec_url": "https://drafts.csswg.org/css-sizing/#funcdef-width-fit-content",
             "tags": [
               "web-features:fit-content-function"
             ],
@@ -247,15 +248,7 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "46"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -374,10 +367,15 @@
               "web-features:stretch"
             ],
             "support": {
-              "chrome": {
-                "alternative_name": "-webkit-fill-available",
-                "version_added": "22"
-              },
+              "chrome": [
+                {
+                  "version_added": "138"
+                },
+                {
+                  "alternative_name": "-webkit-fill-available",
+                  "version_added": "22"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -391,7 +389,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "7"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -399,7 +398,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

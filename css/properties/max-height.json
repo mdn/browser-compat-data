@@ -13,7 +13,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "18"
+              "version_added": "1"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -21,7 +21,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "CSS 2.1 leaves the behavior of `max-height` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Firefox supports applying `max-height` to `table` elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-height` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/table) undefined. Firefox supports applying `max-height` to `table` elements."
             },
             "firefox_android": {
               "version_added": "4"
@@ -32,7 +32,7 @@
             "oculus": "mirror",
             "opera": {
               "version_added": "7",
-              "notes": "CSS 2.1 leaves the behavior of `max-height` with [`table`](https://developer.mozilla.org/docs/Web/HTML/Element/table) undefined. Opera supports applying `max-height` to `table` elements."
+              "notes": "CSS 2.1 leaves the behavior of `max-height` with [`table`](https://developer.mozilla.org/docs/Reference/Elements/table) undefined. Opera supports applying `max-height` to `table` elements."
             },
             "opera_android": "mirror",
             "safari": {
@@ -156,6 +156,7 @@
         "fit-content_function": {
           "__compat": {
             "description": "`fit-content()`",
+            "spec_url": "https://drafts.csswg.org/css-sizing/#funcdef-width-fit-content",
             "tags": [
               "web-features:fit-content-function"
             ],
@@ -348,10 +349,15 @@
               "web-features:stretch"
             ],
             "support": {
-              "chrome": {
-                "alternative_name": "-webkit-fill-available",
-                "version_added": "28"
-              },
+              "chrome": [
+                {
+                  "version_added": "138"
+                },
+                {
+                  "alternative_name": "-webkit-fill-available",
+                  "version_added": "28"
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -365,7 +371,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "alternative_name": "-webkit-fill-available",
+                "version_added": "9"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -373,7 +380,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

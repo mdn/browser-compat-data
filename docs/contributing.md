@@ -73,7 +73,7 @@ These resources are helpful for updating Chromium-based browsers, including Chro
 - [Chromium Bugs](https://bugs.chromium.org/p/chromium/issues/list): The bug tracker for the Chromium open source project.
 - [Chromium Code Search](https://source.chromium.org/chromium): Source code search for Chromium source code. Useful to find specific behavior changes that are hard to test in the browser.
 - [Chromium Dash](https://chromiumdash.appspot.com/): A dashboard for Chromium data. Useful to determine which Chromium version a commit was released in, and for release data.
-- [`not-webview-exposed.txt`](https://source.chromium.org/chromium/chromium/src/+/master:android_webview/tools/system_webview_shell/test/data/webexposed/not-webview-exposed.txt): A list of interfaces and interface members that are not exposed on WebView Android.
+- [`android_webview/…/global-interface-listing-expected.txt`](https://github.com/chromium/chromium/blob/main/android_webview/test/data/web_tests/virtual/stable/webexposed/global-interface-listing-expected.txt): A list of interfaces and interface members that are exposed on WebView Android.
 
 #### Firefox
 

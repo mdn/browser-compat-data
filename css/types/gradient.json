@@ -3,7 +3,7 @@
     "types": {
       "gradient": {
         "__compat": {
-          "description": "`&lt;gradient&gt;`",
+          "description": "`<gradient>`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/gradient",
           "spec_url": "https://drafts.csswg.org/css-images-4/#gradients",
           "tags": [
@@ -72,15 +72,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "≤37"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -176,23 +168,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -227,23 +205,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -253,6 +217,44 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -302,7 +304,7 @@
                   "version_added": "3.6",
                   "notes": [
                     "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
-                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                    "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   ]
                 }
               ],
@@ -319,13 +321,13 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "15",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 },
                 {
                   "prefix": "-o-",
                   "version_added": "11",
                   "version_removed": "15",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 }
               ],
               "opera_android": [
@@ -335,13 +337,13 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "14",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 },
                 {
                   "prefix": "-o-",
                   "version_added": "11",
                   "version_removed": "14",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 }
               ],
               "safari": [
@@ -353,21 +355,13 @@
                   "version_added": "5.1",
                   "notes": [
                     "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
-                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                    "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   ]
                 }
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "≤37"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -425,23 +419,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -476,23 +456,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -589,6 +555,44 @@
               }
             }
           },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "to": {
             "__compat": {
               "description": "`to` keyword",
@@ -650,6 +654,7 @@
                   },
                   {
                     "version_added": "46",
+                    "version_removed": "55",
                     "partial_implementation": true,
                     "notes": "Accepted only in `-webkit-linear-gradient()` and `-moz-linear-gradient()`, not `linear-gradient()`."
                   }
@@ -761,15 +766,7 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "≤37"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -870,23 +867,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -921,23 +904,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1033,6 +1002,44 @@
                 "deprecated": false
               }
             }
+          },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "repeating-conic-gradient": {
@@ -1085,23 +1092,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1136,23 +1129,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1162,6 +1141,44 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "16.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1212,7 +1229,7 @@
                   "version_added": "3.6",
                   "notes": [
                     "Since Firefox 42, the prefixed version of gradients can be disabled by setting `layout.css.prefixes.gradients` to `false`.",
-                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                    "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   ]
                 }
               ],
@@ -1229,13 +1246,13 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "15",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 },
                 {
                   "prefix": "-o-",
                   "version_added": "11",
                   "version_removed": "15",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 }
               ],
               "opera_android": [
@@ -1245,13 +1262,13 @@
                 {
                   "prefix": "-webkit-",
                   "version_added": "14",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 },
                 {
                   "prefix": "-o-",
                   "version_added": "11",
                   "version_removed": "14",
-                  "notes": "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                  "notes": "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                 }
               ],
               "safari": [
@@ -1263,21 +1280,13 @@
                   "version_added": "5.1",
                   "notes": [
                     "Safari 4 was supporting an experimental [`-webkit-gradient(linear,…)`](https://developer.apple.com/library/archive/documentation/InternetWeb/Conceptual/SafariVisualEffectsProgGuide/Gradients/Gradient.html) function. It is more limited than the later standard version: you cannot specify both a position and an angle like in `repeating-linear-gradient()`. This old outdated syntax is still supported for compatibility purposes.",
-                    "Considers `&lt;angle&gt;` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
+                    "Considers `<angle>` to start to the right, instead of the top. I.e. it considered an angle of `0deg` as a direction indicator pointing to the right."
                   ]
                 }
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "≤37"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1335,23 +1344,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1386,23 +1381,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1449,6 +1430,44 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1523,6 +1542,7 @@
                   },
                   {
                     "version_added": "46",
+                    "version_removed": "55",
                     "partial_implementation": true,
                     "notes": "Accepted only in `-webkit-repeating-linear-gradient()` and `-moz-repeating-linear-gradient()`, not `repeating-linear-gradient()`."
                   }
@@ -1648,15 +1668,7 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": [
-                {
-                  "version_added": "4.4"
-                },
-                {
-                  "prefix": "-webkit-",
-                  "version_added": "≤37"
-                }
-              ],
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1783,23 +1795,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1834,23 +1832,9 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127",
-                    "impl_url": "https://hg.mozilla.org/mozilla-central/rev/c2620aeeeb85"
-                  },
-                  {
-                    "version_added": "121",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "layout.css.gradient-color-interpolation-method.enabled",
-                        "value_to_set": "true"
-                      }
-                    ],
-                    "impl_url": "https://bugzil.la/1838740"
-                  }
-                ],
+                "firefox": {
+                  "version_added": "127"
+                },
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -1899,6 +1883,44 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "7"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "single_color_stop": {
+            "__compat": {
+              "description": "Single color stop and 0-1 positions",
+              "spec_url": "https://drafts.csswg.org/css-images-4/#color-stop-syntax",
+              "tags": [
+                "web-features:single-color-gradients"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "135"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",

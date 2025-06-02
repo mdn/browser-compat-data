@@ -103,6 +103,9 @@
                 "description": "Supports normative optional `ChainNumberFormat` behavior",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#return_value",
                 "spec_url": "https://tc39.es/ecma402/#sec-chainnumberformat",
+                "tags": [
+                  "web-features:intl"
+                ],
                 "support": {
                   "chrome": [
                     {
@@ -110,6 +113,7 @@
                     },
                     {
                       "version_added": "57",
+                      "version_removed": "91",
                       "partial_implementation": true,
                       "notes": "The fallback symbol property has description `IntlFallback`."
                     }
@@ -134,6 +138,7 @@
                     },
                     {
                       "version_added": "8.0.0",
+                      "version_removed": "16.0.0",
                       "partial_implementation": true,
                       "notes": "The fallback symbol property has description `IntlFallback`."
                     }
@@ -152,7 +157,7 @@
                 "status": {
                   "experimental": false,
                   "standard_track": true,
-                  "deprecated": true
+                  "deprecated": false
                 }
               }
             },
@@ -188,6 +193,7 @@
                     },
                     {
                       "version_added": "0.12.0",
+                      "version_removed": "13.0.0",
                       "partial_implementation": true,
                       "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the `NumberFormat` instance silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                     }
@@ -1231,6 +1237,7 @@
                       },
                       {
                         "version_added": "0.12.0",
+                        "version_removed": "13.0.0",
                         "partial_implementation": true,
                         "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the `NumberFormat` instance silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                       }
@@ -1358,7 +1365,7 @@
                   },
                   "chrome_android": "mirror",
                   "deno": {
-                    "version_added": false
+                    "version_added": "1.25"
                   },
                   "edge": "mirror",
                   "firefox": {
@@ -1607,6 +1614,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }

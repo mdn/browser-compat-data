@@ -40,20 +40,55 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org/"
-          cache: npm
+
       - run: npm ci
+
       - run: npm test
         env:
           FORCE_COLOR: 3
+
       - run: npm run build
+
       - run: npm publish build/ --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Add JSON as a release asset
         run: gh release upload ${GITHUB_REF#refs/*/} build/data.json
+
       # - name: Publish stats for all data (#3555)
       #   run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -
+
+      - name: Trigger BCD deployment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DISPATCH_PAT }}
+          script: |
+            const result = await github.rest.repos.createDispatchEvent({
+              owner: 'mdn',
+              repo: 'bcd-utils',
+              event_type: 'bcd_release',
+              client_payload: {}
+            })
+            console.log(result);
+
+      - name: Comment in release PR
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$JOB_STATUS" = "success" ]; then
+            BODY="Release was successfully published by [this run]($RUN_URL)."
+          else
+            BODY="@mdn/bcd-releasers Failed to publish release (see [this run]($RUN_URL)."
+          fi
+
+          PR_NUMBER=$(gh pr list --repo "$GITHUB_REPOSITORY" --state merged --search "$GITHUB_SHA" --json number --jq '.[0].number')
+
+          gh pr comment --repo "$GITHUB_REPOSITORY" "$PR_NUMBER" --body "$BODY"

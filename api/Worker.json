@@ -4,6 +4,9 @@
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker",
         "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dedicated-workers-and-the-worker-interface",
+        "tags": [
+          "web-features:dedicated-workers"
+        ],
         "support": {
           "chrome": {
             "version_added": "2"
@@ -22,26 +25,15 @@
           "ie": {
             "version_added": "10"
           },
-          "nodejs": [
-            {
-              "version_added": "12.17.0",
-              "partial_implementation": true,
-              "notes": [
-                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
-                "Worker script environment expects CommonJS modules or ECMAScript modules.",
-                "Must be imported from the `worker_threads` module."
-              ]
-            },
-            {
-              "version_added": "11.7.0",
-              "partial_implementation": true,
-              "notes": [
-                "Is a Node `EventEmitter` instead of DOM `EventTarget`.",
-                "Worker script environment expects CommonJS modules.",
-                "Must be imported from the `worker_threads` module."
-              ]
-            }
-          ],
+          "nodejs": {
+            "version_added": "11.7.0",
+            "partial_implementation": true,
+            "notes": [
+              "Inherits from a Node `EventEmitter` instead of DOM `EventTarget`.",
+              "Also supports CommonJS modules, enabled for files ending with `.cjs` and for files ending with `.js` when the nearest parent `package.json` file contains a top-level field `\"type\"` with a value not of `\"commonjs\"`.",
+              "Available as a part of the `worker_threads` module."
+            ]
+          },
           "oculus": "mirror",
           "opera": {
             "version_added": "10.6"
@@ -70,6 +62,9 @@
           "description": "`Worker()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/Worker",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-dev",
+          "tags": [
+            "web-features:dedicated-workers"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -88,18 +83,11 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Takes entirely different options."
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Takes entirely different options."
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Takes entirely different options parameters."
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -175,6 +163,9 @@
         "mime_checks": {
           "__compat": {
             "description": "Strict MIME type checks for worker scripts",
+            "tags": [
+              "web-features:dedicated-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": false,
@@ -216,6 +207,9 @@
         "options_name_parameter": {
           "__compat": {
             "description": "`options.name` parameter",
+            "tags": [
+              "web-features:dedicated-workers"
+            ],
             "support": {
               "chrome": {
                 "version_added": "70"
@@ -303,6 +297,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:dedicated-workers"
+          ],
           "support": {
             "chrome": {
               "version_added": "69",
@@ -317,6 +314,9 @@
             "firefox_android": "mirror",
             "ie": {
               "version_added": false
+            },
+            "nodejs": {
+              "version_added": "11.7.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -343,6 +343,9 @@
           "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/error_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#handler-abstractworker-onerror",
+          "tags": [
+            "web-features:dedicated-workers"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -359,7 +362,9 @@
               "version_added": "10"
             },
             "nodejs": {
-              "version_added": false
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Supports the event, but only via Node `EventEmitter`."
             },
             "oculus": "mirror",
             "opera": {
@@ -411,18 +416,11 @@
             "ie": {
               "version_added": "10"
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node `EventEmitter`."
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Supports the event, but only via Node `EventEmitter`."
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": "Supports the event, but only via Node `EventEmitter`."
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -452,6 +450,9 @@
           "description": "`messageerror` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/messageerror_event",
           "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-messageerror",
+          "tags": [
+            "web-features:messageerror"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -471,9 +472,19 @@
             "ie": {
               "version_added": false
             },
-            "nodejs": {
-              "version_added": false
-            },
+            "nodejs": [
+              {
+                "version_added": "14.5.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node `EventEmitter`."
+              },
+              {
+                "version_added": "12.19.0",
+                "version_removed": "13.0.0",
+                "partial_implementation": true,
+                "notes": "Supports the event, but only via Node `EventEmitter`."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -548,18 +559,14 @@
               "version_added": "10",
               "notes": "Internet Explorer does not support `Transferable` objects."
             },
-            "nodejs": [
-              {
-                "version_added": "12.17.0",
-                "partial_implementation": true,
-                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
-              },
-              {
-                "version_added": "11.7.0",
-                "partial_implementation": true,
-                "notes": "Supports `transferList` argument for transferring `ArrayBuffer` and `MessagePort` objects"
-              }
-            ],
+            "nodejs": {
+              "version_added": "11.7.0",
+              "partial_implementation": true,
+              "notes": [
+                "Only accepts an array of transfer objects as the second parameter, not an options object with a `transfer` property.",
+                "Only supports transferring `ArrayBuffer` and `MessagePort` objects."
+              ]
+            },
             "oculus": "mirror",
             "opera": {
               "version_added": "10.6"
@@ -628,6 +635,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Worker/terminate",
           "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-worker-terminate-dev",
+          "tags": [
+            "web-features:dedicated-workers"
+          ],
           "support": {
             "chrome": {
               "version_added": "2"
@@ -648,14 +658,15 @@
             },
             "nodejs": [
               {
-                "version_added": "12.17.0",
+                "version_added": "12.5.0",
                 "partial_implementation": true,
-                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+                "notes": "Returns a `Promise`."
               },
               {
                 "version_added": "11.7.0",
+                "version_removed": "12.5.0",
                 "partial_implementation": true,
-                "notes": "Also takes an optional callback to be executed when the worker has terminated."
+                "notes": "Takes an optional callback parameter to be executed when the worker has terminated."
               }
             ],
             "oculus": "mirror",

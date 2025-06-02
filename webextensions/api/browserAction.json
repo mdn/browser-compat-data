@@ -355,6 +355,48 @@
             }
           }
         },
+        "getUserSettings": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/getUserSettings",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "116"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          },
+          "returns_userSettings_isOnToolbar_property": {
+            "__compat": {
+              "description": "`userSettings.isOnToolbar` in returned object",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "116"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          }
+        },
         "isEnabled": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/browserAction/isEnabled",
@@ -514,16 +556,10 @@
               "edge": {
                 "version_added": "14"
               },
-              "firefox": [
-                {
-                  "version_added": "45"
-                },
-                {
-                  "version_added": "45",
-                  "version_removed": "58",
-                  "notes": "Tab-specific badge background color is not cleared when a new page is loaded."
-                }
-              ],
+              "firefox": {
+                "version_added": "45",
+                "notes": "Before Firefox 58, tab-specific badge background color is not cleared when a new page is loaded."
+              },
               "firefox_android": {
                 "version_added": "79"
               },
@@ -620,16 +656,10 @@
               "edge": {
                 "version_added": "14"
               },
-              "firefox": [
-                {
-                  "version_added": "45"
-                },
-                {
-                  "version_added": "45",
-                  "version_removed": "58",
-                  "notes": "Tab-specific badge text is not cleared when a new page is loaded."
-                }
-              ],
+              "firefox": {
+                "version_added": "45",
+                "notes": "Before Firefox 58, tab-specific badge text is not cleared when a new page is loaded."
+              },
               "firefox_android": {
                 "version_added": "79"
               },
@@ -725,16 +755,10 @@
                   "The `path` parameter is required."
                 ]
               },
-              "firefox": [
-                {
-                  "version_added": "45"
-                },
-                {
-                  "version_added": "45",
-                  "version_removed": "58",
-                  "notes": "Tab-specific icons are not cleared when a new page is loaded."
-                }
-              ],
+              "firefox": {
+                "version_added": "45",
+                "notes": "Before Firefox 58, tab-specific icons are not cleared when a new page is loaded."
+              },
               "firefox_android": {
                 "version_added": "79"
               },
@@ -828,26 +852,14 @@
               "edge": {
                 "version_added": "14"
               },
-              "firefox": [
-                {
-                  "version_added": "45"
-                },
-                {
-                  "version_added": "45",
-                  "version_removed": "58",
-                  "notes": "Tab-specific popups are not cleared when a new page is loaded."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "57"
-                },
-                {
-                  "version_added": "57",
-                  "version_removed": "58",
-                  "notes": "Tab-specific popups are not cleared when a new page is loaded."
-                }
-              ],
+              "firefox": {
+                "version_added": "45",
+                "notes": "Before Firefox 58, tab-specific popups are not cleared when a new page is loaded."
+              },
+              "firefox_android": {
+                "version_added": "57",
+                "notes": "Before Firefox Android 58, tab-specific popups are not cleared when a new page is loaded."
+              },
               "opera": "mirror",
               "safari": {
                 "version_added": "14"
@@ -912,26 +924,14 @@
               "edge": {
                 "version_added": "15"
               },
-              "firefox": [
-                {
-                  "version_added": "45"
-                },
-                {
-                  "version_added": "45",
-                  "version_removed": "58",
-                  "notes": "Tab-specific titles are not cleared when a new page is loaded."
-                }
-              ],
-              "firefox_android": [
-                {
-                  "version_added": "55"
-                },
-                {
-                  "version_added": "55",
-                  "version_removed": "58",
-                  "notes": "Tab-specific titles are not cleared when a new page is loaded."
-                }
-              ],
+              "firefox": {
+                "version_added": "45",
+                "notes": "Before Firefox 58, tab-specific titles are not cleared when a new page is loaded."
+              },
+              "firefox_android": {
+                "version_added": "55",
+                "notes": "Before Firefox Android 58, tab-specific titles are not cleared when a new page is loaded."
+              },
               "opera": "mirror",
               "safari": {
                 "version_added": "14"

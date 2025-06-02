@@ -3,6 +3,8 @@
 
 import * as fs from 'node:fs';
 
+import { compareVersions } from 'compare-versions';
+
 import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
@@ -160,6 +162,31 @@ export const updateFirefoxReleases = async (options) => {
   });
 
   //
+  // Avoid duplicate Nightly release.
+  //
+  const nightlyReleases = Object.entries(
+    firefoxBCD.browsers[options.bcdBrowserName].releases as Record<
+      string,
+      ReleaseStatement
+    >,
+  )
+    .filter(([, release]) => release.status === 'nightly')
+    .sort(([a], [b]) => compareVersions(a, b));
+
+  if (nightlyReleases.length > 1) {
+    const [nightlyVersion, nightlyRelease] = nightlyReleases.shift() as [
+      string,
+      ReleaseStatement,
+    ];
+    data[options.nightlyBranch].version = nightlyVersion;
+    data[options.nightlyBranch].releaseDate = nightlyRelease.release_date;
+
+    for (const [, release] of nightlyReleases) {
+      release.status = 'planned';
+    }
+  }
+
+  //
   // Add a planned version entry
   //
   const planned = String(Number(data[options.nightlyBranch].version) + 1);
@@ -198,7 +225,7 @@ export const updateFirefoxReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browserName}${result}`;
+    result = `### Updates for ${options.browserName}\n${result}`;
   }
   return result;
 };

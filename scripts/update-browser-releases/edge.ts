@@ -9,70 +9,6 @@ import stringify from '../lib/stringify-and-order-properties.js';
 
 import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
-//
-// Content of the two release note files
-//
-let releaseNotesText;
-let archivedReleaseNotesText;
-
-/**
- * initReleaseNoteFiles - Fetch both release notes file and store them
- * @returns Logs (error messages)
- */
-const initReleaseNoteFiles = async () => {
-  let result = '';
-
-  // Fetch the regular page1
-  const releaseNote = await fetch(
-    'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel',
-  );
-
-  // Check that it exists, if not exit.
-  if (releaseNote.status != 200) {
-    // File not found -> log a warning
-    result = chalk`{red \nRelease note files not found for Edge (${releaseNote.status}).`;
-  } else {
-    releaseNotesText = await releaseNote.text();
-  }
-
-  // Fetch the archived page
-  const archivedReleaseNotes = await fetch(
-    'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel',
-  );
-  if (archivedReleaseNotes.status != 200) {
-    // File not found -> log a warning
-    result += chalk`{red \nArchive release note files not found for Edge (${archivedReleaseNotes.status}).`;
-  } else {
-    archivedReleaseNotesText = await archivedReleaseNotes.text();
-  }
-
-  return result;
-};
-
-/**
- * updateReleaseNotesIfArchived - Return the new release notes URL to use
- * @param originalURL The URL that is currently used
- * @returns The new URL to use (eventually the same)
- */
-const updateReleaseNotesIfArchived = (originalURL) => {
-  const id = originalURL.split('#')[1];
-
-  // Test if the original URL still works
-  // If the files doesn't exist or the id not found in the archive
-  // Keep the original file
-  if (
-    !id ||
-    !releaseNotesText ||
-    releaseNotesText.indexOf(`<h2 id="${id}">`) != -1 ||
-    !archivedReleaseNotesText ||
-    archivedReleaseNotesText.indexOf(`<h2 id="${id}">`) == -1
-  ) {
-    return originalURL; // We keep the original URL
-  }
-  // Return the archived entry.
-  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel#${id}`;
-};
-
 /**
  * getFutureReleaseDate - Read the future release date
  * @param release The release number of the version
@@ -126,47 +62,24 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
  * @param status The status of the release
- * @param fullRelease The release of the release
- * @param date The date of the release
+ * @param version The major version of the release
  * @returns The URL of the release notes or the empty string if not found
- * Throws a string in case of error
+ * @throws a string in case of error
  */
-const getReleaseNotesURL = async (status, fullRelease, date) => {
-  // If the status isn't stable, do not give back any release notes.
-  if (status !== 'Stable') {
-    return '';
+const getReleaseNotesURL = async (status, version) => {
+  const url = `https://learn.microsoft.com/en-us/microsoft-edge/web-platform/release-notes/${version}`;
+
+  const releaseNote = await fetch(url);
+
+  if (releaseNote.status != 200) {
+    if (status !== 'Stable') {
+      return '';
+    }
+
+    throw chalk`{red \nFailed to fetch Edge ${version} release notes at ${url}!}`;
   }
 
-  // Calculate the URL
-  const releaseStr = fullRelease.replace(/\./g, '');
-  const month = [
-    'january',
-    'february',
-    'march',
-    'april',
-    'may',
-    'june',
-    'july',
-    'august',
-    'september',
-    'october',
-    'november',
-    'december',
-  ];
-  const dateObj = new Date(date);
-  const dateStr = `${
-    month[dateObj.getMonth()]
-  }-${dateObj.getDate()}-${dateObj.getFullYear()}`;
-
-  // Check if the id exists
-  if (
-    releaseNotesText.indexOf(`<h2 id="version-${releaseStr}-${dateStr}">`) == -1
-  ) {
-    // Section not found -> log a warning
-    throw chalk`{red \nSection not found in official release notes for Edge ${fullRelease}}`;
-  }
-
-  return `https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel#version-${releaseStr}-${dateStr}`;
+  return url;
 };
 
 /**
@@ -175,10 +88,7 @@ const getReleaseNotesURL = async (status, fullRelease, date) => {
  * @returns The log of what has been generated (empty if nothing)
  */
 export const updateEdgeReleases = async (options) => {
-  //
-  // Read the release note files
-  //
-  let result = await initReleaseNoteFiles();
+  let result = '';
 
   //
   // Get the JSON with the versions from edge releases
@@ -270,11 +180,7 @@ export const updateEdgeReleases = async (options) => {
       // Get the release notes
       let releaseNotesURL = '';
       try {
-        releaseNotesURL = await getReleaseNotesURL(
-          value,
-          data[value].fullVersion,
-          data[value].versionDate,
-        );
+        releaseNotesURL = await getReleaseNotesURL(value, data[value].version);
       } catch (s) {
         result += s;
       }
@@ -325,10 +231,7 @@ export const updateEdgeReleases = async (options) => {
           edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
             .release_date,
           'retired',
-          updateReleaseNotesIfArchived(
-            edgeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-              .release_notes,
-          ),
+          '',
           '',
         );
       } else {
@@ -384,7 +287,7 @@ export const updateEdgeReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browserName}${result}`;
+    result = `### Updates for ${options.browserName}\n${result}`;
   }
   return result;
 };

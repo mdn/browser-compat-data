@@ -3,7 +3,7 @@
     "elements": {
       "link": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/link",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/link",
           "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#the-link-element",
           "tags": [
             "web-features:link"
@@ -163,6 +163,7 @@
         },
         "crossorigin": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/crossorigin",
             "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-crossorigin",
             "tags": [
               "web-features:link"
@@ -692,7 +693,7 @@
         },
         "rel": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel",
             "spec_url": "https://html.spec.whatwg.org/multipage/links.html#linkTypes",
             "tags": [
               "web-features:link"
@@ -736,7 +737,7 @@
           "alternate_stylesheet": {
             "__compat": {
               "description": "rel=\"alternate stylesheet\"",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Alternative_style_sheets",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/alternate_stylesheet",
               "spec_url": [
                 "https://html.spec.whatwg.org/multipage/links.html#rel-alternate",
                 "https://html.spec.whatwg.org/multipage/links.html#the-link-is-an-alternative-stylesheet",
@@ -779,11 +780,54 @@
               }
             }
           },
+          "compression-dictionary": {
+            "__compat": {
+              "description": "rel=compression-dictionary",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel#compression-dictionary",
+              "spec_url": "https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-compression-dictionary#name-link-relation-registration",
+              "tags": [
+                "web-features:compression-dictionary-transport"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1918013"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
           "dns-prefetch": {
             "__compat": {
               "description": "rel=dns-prefetch",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/dns-prefetch",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/dns-prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch",
+              "tags": [
+                "web-features:link-rel-dns-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -792,9 +836,17 @@
                 "edge": {
                   "version_added": "≤79"
                 },
-                "firefox": {
-                  "version_added": "3"
-                },
+                "firefox": [
+                  {
+                    "version_added": "127"
+                  },
+                  {
+                    "version_added": "3",
+                    "version_removed": "127",
+                    "partial_implementation": true,
+                    "notes": "Only HTTP pages were supported."
+                  }
+                ],
                 "firefox_android": "mirror",
                 "ie": {
                   "version_added": false
@@ -821,6 +873,9 @@
             "__compat": {
               "description": "rel=expect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-expect",
+              "tags": [
+                "web-features:link-rel-expect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "124",
@@ -915,7 +970,7 @@
           "manifest": {
             "__compat": {
               "description": "rel=manifest",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/manifest",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/manifest",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-manifest",
               "tags": [
                 "web-features:manifest"
@@ -958,7 +1013,7 @@
           "modulepreload": {
             "__compat": {
               "description": "rel=modulepreload",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/modulepreload",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/modulepreload",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload",
               "tags": [
                 "web-features:modulepreload"
@@ -999,8 +1054,11 @@
           "preconnect": {
             "__compat": {
               "description": "rel=preconnect",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preconnect",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/preconnect",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect",
+              "tags": [
+                "web-features:link-rel-preconnect"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "46"
@@ -1038,8 +1096,11 @@
           "prefetch": {
             "__compat": {
               "description": "rel=prefetch",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/prefetch",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/prefetch",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch",
+              "tags": [
+                "web-features:link-rel-prefetch"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "8",
@@ -1088,8 +1149,11 @@
           "preload": {
             "__compat": {
               "description": "rel=preload",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/preload",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/preload",
               "spec_url": "https://html.spec.whatwg.org/multipage/links.html#link-type-preload",
+              "tags": [
+                "web-features:link-rel-preload"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "50"
@@ -1133,6 +1197,9 @@
             "as-fetch": {
               "__compat": {
                 "description": "`as=fetch`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1177,6 +1244,9 @@
             "as-font": {
               "__compat": {
                 "description": "`as=font`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1221,6 +1291,9 @@
             "as-image": {
               "__compat": {
                 "description": "`as=image`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1265,6 +1338,9 @@
             "as-script": {
               "__compat": {
                 "description": "`as=script`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1309,6 +1385,9 @@
             "as-style": {
               "__compat": {
                 "description": "`as=style`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1353,6 +1432,9 @@
             "as-track": {
               "__compat": {
                 "description": "`as=track`",
+                "tags": [
+                  "web-features:link-rel-preload"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "50"
@@ -1390,7 +1472,7 @@
           "prerender": {
             "__compat": {
               "description": "rel=prerender",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/rel/prerender",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/prerender",
               "support": {
                 "chrome": {
                   "version_added": "13"

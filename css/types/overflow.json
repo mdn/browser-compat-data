@@ -48,7 +48,7 @@
         "clip": {
           "__compat": {
             "tags": [
-              "web-features:overflow-shorthand"
+              "web-features:overflow-clip"
             ],
             "support": {
               "chrome": {
@@ -92,13 +92,32 @@
         },
         "overlay": {
           "__compat": {
+            "tags": [
+              "web-features:overflow-overlay"
+            ],
             "support": {
-              "chrome": {
-                "version_added": "15"
-              },
-              "chrome_android": {
-                "version_added": "100"
-              },
+              "chrome": [
+                {
+                  "version_added": "114"
+                },
+                {
+                  "version_added": "15",
+                  "version_removed": "114",
+                  "partial_implementation": true,
+                  "notes": "Before version 114, the `overlay` keyword caused non-standard behavior, allowing scrollbars to overlay content without taking up layout space. From version 114, the keyword aliases to the standard `auto` keyword. See [bug 40444262](https://crbug.com/40444262)."
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "114"
+                },
+                {
+                  "version_added": "100",
+                  "version_removed": "114",
+                  "partial_implementation": true,
+                  "notes": "Before version 114, the `overlay` keyword caused non-standard behavior, allowing scrollbars to overlay content without taking up layout space. From version 114, the keyword aliases to the standard `auto` keyword. See [bug 40444262](https://crbug.com/40444262)."
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": "112"
@@ -112,9 +131,17 @@
               "opera_android": {
                 "version_added": false
               },
-              "safari": {
-                "version_added": "≤13.1"
-              },
+              "safari": [
+                {
+                  "version_added": "12"
+                },
+                {
+                  "version_added": "4",
+                  "version_removed": "12",
+                  "partial_implementation": true,
+                  "notes": "Before version 12, the `overlay` keyword caused non-standard behavior, allowing scrollbars to overlay content without taking up layout space. From version 12, the keyword aliases to the standard `auto` keyword. See [bug 189811](https://webkit.org/b/189811)."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": {
                 "version_added": "4.0"

@@ -14,7 +14,14 @@
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": false,
+            "version_added": "135",
+            "flags": [
+              {
+                "type": "preference",
+                "name": "dom.security.trusted_types.enabled",
+                "value_to_set": "true"
+              }
+            ],
             "impl_url": "https://bugzil.la/1508286"
           },
           "firefox_android": "mirror",
@@ -25,8 +32,7 @@
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": false,
-            "impl_url": "https://webkit.org/b/266630"
+            "version_added": "preview"
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",

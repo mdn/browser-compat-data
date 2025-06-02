@@ -84,7 +84,8 @@
           "description": "`accessibility-events` permission",
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "62",
+              "version_removed": "131"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -109,15 +110,18 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       },
       "permission_ambient-light-sensor": {
         "__compat": {
           "description": "`ambient-light-sensor` permission",
+          "tags": [
+            "web-features:ambient-light"
+          ],
           "support": {
             "chrome": {
               "version_added": "62",
@@ -159,6 +163,9 @@
       "permission_background-sync": {
         "__compat": {
           "description": "`background-sync` permission",
+          "tags": [
+            "web-features:background-sync"
+          ],
           "support": {
             "chrome": {
               "version_added": "62"
@@ -196,6 +203,9 @@
       "permission_camera": {
         "__compat": {
           "description": "`camera` permission",
+          "tags": [
+            "web-features:media-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -350,6 +360,9 @@
       "permission_geolocation": {
         "__compat": {
           "description": "`geolocation` permission",
+          "tags": [
+            "web-features:geolocation"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -427,6 +440,9 @@
       "permission_local-fonts": {
         "__compat": {
           "description": "`local-fonts` permission",
+          "tags": [
+            "web-features:local-fonts"
+          ],
           "support": {
             "chrome": {
               "version_added": "103"
@@ -444,9 +460,7 @@
               "version_added": false
             },
             "oculus": "mirror",
-            "opera": {
-              "version_added": false
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -466,9 +480,19 @@
       "permission_magnetometer": {
         "__compat": {
           "description": "`magnetometer` permission",
+          "tags": [
+            "web-features:magnetometer"
+          ],
           "support": {
             "chrome": {
-              "version_added": "62"
+              "version_added": "62",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-generic-sensor-extra-classes",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -487,9 +511,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": false
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -502,6 +524,9 @@
       "permission_microphone": {
         "__compat": {
           "description": "`microphone` permission",
+          "tags": [
+            "web-features:media-capture"
+          ],
           "support": {
             "chrome": {
               "version_added": "64"
@@ -581,6 +606,9 @@
       "permission_notifications": {
         "__compat": {
           "description": "`notifications` permission",
+          "tags": [
+            "web-features:notifications"
+          ],
           "support": {
             "chrome": {
               "version_added": "43"
@@ -661,6 +689,9 @@
       "permission_persistent-storage": {
         "__compat": {
           "description": "`persistent-storage` permission",
+          "tags": [
+            "web-features:storage-manager"
+          ],
           "support": {
             "chrome": {
               "version_added": "71"
@@ -829,7 +860,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "113"
             },
             "chrome_android": {
               "version_added": "120"
@@ -945,6 +976,9 @@
       "request": {
         "__compat": {
           "spec_url": "https://wicg.github.io/permissions-request/#dom-permissions-request",
+          "tags": [
+            "web-features:permissions"
+          ],
           "support": {
             "chrome": {
               "version_added": "46",

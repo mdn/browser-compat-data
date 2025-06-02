@@ -105,7 +105,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/arguments/callee",
             "spec_url": "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-arguments-exotic-objects",
             "tags": [
-              "web-features:snapshot:ecmascript-1"
+              "web-features:snapshot:ecmascript-1",
+              "web-features:arguments-callee"
             ],
             "support": {
               "chrome": {
@@ -277,7 +278,7 @@
               "version_added": "22",
               "notes": [
                 "The initial implementation of arrow functions in Firefox made them automatically strict. This has been changed as of Firefox 24. The use of `'use strict';` is now required.",
-                "Before Firefox 39, a line terminator (`\\n`) was incorrectly allowed after arrow function arguments. This has been fixed to conform to the ES2015 specification and code like `() \\n =&gt; {}` will now throw a `SyntaxError` in this and later versions."
+                "Before Firefox 39, a line terminator (`\\n`) was incorrectly allowed after arrow function arguments. This has been fixed to conform to the ES2015 specification and code like `() \\n => {}` will now throw a `SyntaxError` in this and later versions."
               ]
             },
             "firefox_android": "mirror",

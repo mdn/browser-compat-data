@@ -25,6 +25,7 @@
             },
             {
               "version_added": "5",
+              "version_removed": "7",
               "partial_implementation": true,
               "notes": "Implemented via `ActiveXObject('Microsoft.XMLHTTP')`"
             }
@@ -42,7 +43,7 @@
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "3"
           },
           "webview_ios": "mirror"
         },
@@ -228,9 +229,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -244,6 +243,9 @@
         "__compat": {
           "description": "`Authorization` header removed from cross-origin redirects",
           "spec_url": "https://fetch.spec.whatwg.org/#http-redirect-fetch",
+          "tags": [
+            "web-features:xhr"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -316,9 +318,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -493,9 +493,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -673,6 +671,7 @@
               },
               {
                 "version_added": "5",
+                "version_removed": "11",
                 "partial_implementation": true,
                 "notes": "Implemented via `ActiveXObject`"
               }
@@ -739,9 +738,7 @@
               "version_added": "1"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1275,7 +1272,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 51, an error parsing the received data added a `&lt;parsererror&gt;` node to the top of the `Document` and then returned the `Document` in whatever state it happens to be in. This was inconsistent with the specification. Starting with Firefox 51, this scenario now correctly returns `null` as per the spec."
+              "notes": "Before Firefox 51, an error parsing the received data added a `<parsererror>` node to the top of the `Document` and then returned the `Document` in whatever state it happens to be in. This was inconsistent with the specification. Starting with Firefox 51, this scenario now correctly returns `null` as per the spec."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1295,9 +1292,7 @@
               "version_added": "1"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1353,7 +1348,6 @@
         "body_ArrayBuffer_type": {
           "__compat": {
             "description": "ArrayBuffer as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBuffer",
             "tags": [
               "web-features:xhr"
             ],
@@ -1384,9 +1378,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1399,7 +1391,6 @@
         "body_ArrayBufferView_type": {
           "__compat": {
             "description": "ArrayBufferView as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBufferView",
             "tags": [
               "web-features:xhr"
             ],
@@ -1443,7 +1434,6 @@
         "body_Blob_type": {
           "__compat": {
             "description": "Blob as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#Blob",
             "tags": [
               "web-features:xhr"
             ],
@@ -1487,7 +1477,6 @@
         "body_FormData_type": {
           "__compat": {
             "description": "FormData as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#FormData",
             "tags": [
               "web-features:xhr"
             ],
@@ -1518,9 +1507,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1533,7 +1520,6 @@
         "body_URLSearchParams_type": {
           "__compat": {
             "description": "URLSearchParams as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#URLSearchParams",
             "tags": [
               "web-features:xhr"
             ],
@@ -1583,6 +1569,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/setAttributionReporting",
           "spec_url": "https://wicg.github.io/attribution-reporting-api/#dom-xmlhttprequest-setattributionreporting",
+          "tags": [
+            "web-features:attribution-reporting"
+          ],
           "support": {
             "chrome": {
               "version_added": "125"
@@ -1966,9 +1955,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {

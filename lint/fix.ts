@@ -11,7 +11,10 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import chalk from 'chalk-template';
 
+import dataFolders from '../scripts/lib/data-folders.js';
+
 import fixBrowserOrder from './fixer/browser-order.js';
+import fixCommonErrors from './fixer/common-errors.js';
 import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
@@ -21,17 +24,20 @@ import fixLinks from './fixer/links.js';
 import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
+import fixOverlap from './fixer/overlap.js';
 import { LintOptions } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const FIXES = Object.freeze({
   descriptions: fixDescriptions,
+  common_errors: fixCommonErrors,
   flags: fixFlags,
   links: fixLinks,
   mdn_urls: fixMDNURLs,
   status: fixStatus,
   mirror: fixMirror,
+  overlap: fixOverlap,
   browser_order: fixBrowserOrder,
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
@@ -105,22 +111,9 @@ if (esMain(import.meta)) {
     })
     .choices('only', Object.keys(FIXES));
 
-  const {
-    files = [
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    ],
-    only,
-  } = argv as { files?: string[] } & LintOptions;
+  const { files = dataFolders, only } = argv as {
+    files?: string[];
+  } & LintOptions;
 
   await main(files, { only });
 }

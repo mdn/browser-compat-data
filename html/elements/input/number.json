@@ -5,21 +5,23 @@
         "type_number": {
           "__compat": {
             "description": "`type=\"number\"`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/input/number",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/number",
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number)",
             "tags": [
               "web-features:input-number"
             ],
             "support": {
               "chrome": {
-                "version_added": "7"
+                "version_added": "7",
+                "notes": "Prevents users from typing non-numeric content."
               },
               "chrome_android": "mirror",
               "edge": {
                 "version_added": "12"
               },
               "firefox": {
-                "version_added": "29"
+                "version_added": "29",
+                "notes": "Allows users to type non-numeric content, with the `value` reflecting an empty string."
               },
               "firefox_android": "mirror",
               "ie": {
@@ -29,7 +31,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "5.1"
+                "version_added": "5.1",
+                "notes": "Allows users to type non-numeric content, with the `value` reflecting an empty string."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
