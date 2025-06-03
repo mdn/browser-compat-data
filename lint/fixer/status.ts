@@ -1,11 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import { Identifier } from '../../types/types.js';
 import { checkExperimental } from '../linter/test-status.js';
-import { IS_WINDOWS } from '../utils.js';
 import walk from '../../utils/walk.js';
 
 /**
@@ -62,30 +59,21 @@ export const fixStatusValue = (value: Identifier): Identifier => {
 /**
  * Fix feature statuses throughout the BCD files
  * @param filename The name of the file to fix
+ * @param actual The current content of the file
+ * @returns expected content of the file
  */
-const fixStatusFromFile = (filename: string): void => {
+const fixStatusFromFile = (filename: string, actual: string): string => {
   if (filename.includes('/browsers/')) {
-    return;
+    return actual;
   }
 
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(
+  return JSON.stringify(
     JSON.parse(actual, (_key: string, value: Identifier) =>
       fixStatusValue(value),
     ),
     null,
     2,
   );
-
-  if (IS_WINDOWS) {
-    // prevent false positives from git.core.autocrlf on Windows
-    actual = actual.replace(/\r/g, '');
-    expected = expected.replace(/\r/g, '');
-  }
-
-  if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
-  }
 };
 
 export default fixStatusFromFile;
