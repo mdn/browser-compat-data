@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs, { readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { Stats } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -68,7 +68,7 @@ const load = async (
     let fsStats: Stats;
 
     try {
-      fsStats = await fs.stat(file);
+      fsStats = await stat(file);
     } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       continue;
@@ -94,7 +94,7 @@ const load = async (
         }
       }
     } else {
-      const subFiles = (await fs.readdir(file)).map((subfile) =>
+      const subFiles = (await readdir(file)).map((subfile) =>
         path.join(file, subfile),
       );
 
