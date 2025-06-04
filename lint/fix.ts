@@ -14,6 +14,7 @@ import chalk from 'chalk-template';
 import dataFolders from '../scripts/lib/data-folders.js';
 
 import fixBrowserOrder from './fixer/browser-order.js';
+import fixCommonErrors from './fixer/common-errors.js';
 import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
@@ -30,6 +31,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const FIXES = Object.freeze({
   descriptions: fixDescriptions,
+  common_errors: fixCommonErrors,
   flags: fixFlags,
   links: fixLinks,
   mdn_urls: fixMDNURLs,

@@ -25,7 +25,7 @@ jobs:
   block:
     # This makes sure it only runs on our origin repo
     # and makes an exception for Dependabot.
-    if: github.repository_owner == 'mdn' && github.event.pull_request.user.login != 'dependabot[bot]'
+    if: github.repository_owner == 'mdn' && github.event.pull_request.user.login != 'dependabot[bot]' && github.event.pull_request.user.login != 'mdn-bot'
     runs-on: ubuntu-latest
     steps:
       - name: Block if author/actor is not admin or BCD owner
