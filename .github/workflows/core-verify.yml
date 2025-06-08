@@ -1,16 +1,16 @@
 name: PR Needs Rebase
+
 on:
-  push:
   pull_request_target:
     types: [synchronize]
 
 permissions:
   contents: read
-  pull-requests: write # To add labels and comment on PRs
+  pull-requests: write  # To add label
 
 jobs:
   label-rebase-needed:
-    uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
+    uses: mdn/workflows/.github/workflows/label-pr.yml@main
     with:
       target-repo: "mdn/browser-compat-data"
     secrets:
