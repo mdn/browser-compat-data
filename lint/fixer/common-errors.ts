@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import { CompatStatement, SimpleSupportStatement } from '../../types/types.js';
 import { walk } from '../../utils/index.js';
 
@@ -11,7 +9,6 @@ import { walk } from '../../utils/index.js';
  *
  * - Replaces `browser: { version_added: "mirror" }` with `browser: "mirror"`
  * - Wraps `browser: false` with `browser: `{ version_added: false }`
- *
  * @param compat The compat statement to fix
  */
 export const fixCommonErrorsInCompatStatement = (
@@ -34,22 +31,21 @@ export const fixCommonErrorsInCompatStatement = (
 /**
  * Update compat data to 'mirror' if the statement matches mirroring
  * @param filename The name of the file to fix
+ * @param actual The current content of the file
+ * @returns expected content of the file
  */
-const fixCommonErrors = (filename: string): void => {
+const fixCommonErrors = (filename: string, actual: string): string => {
   if (filename.includes('/browsers/')) {
-    return;
+    return actual;
   }
 
-  const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
+
   for (const { compat } of walk(undefined, bcd)) {
     fixCommonErrorsInCompatStatement(compat);
   }
-  const expected = JSON.stringify(bcd, null, 2);
 
-  if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
-  }
+  return JSON.stringify(bcd, null, 2);
 };
 
 export default fixCommonErrors;
