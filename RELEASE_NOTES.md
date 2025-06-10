@@ -1,5 +1,23 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.22](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.22)
+
+June 10, 2025
+
+### Additions
+
+- `browsers.safari_ios.releases.26` ([#27029](https://github.com/mdn/browser-compat-data/pull/27029))
+- `browsers.safari.releases.26` ([#27029](https://github.com/mdn/browser-compat-data/pull/27029))
+- `browsers.webview_ios.releases.26` ([#27029](https://github.com/mdn/browser-compat-data/pull/27029))
+- `css.types.color.contrast-color` ([#27005](https://github.com/mdn/browser-compat-data/pull/27005))
+
+### Statistics
+
+- 9 contributors have changed 19 files with 213 additions and 167 deletions in 15 commits ([`v6.0.21...v6.0.22`](https://github.com/mdn/browser-compat-data/compare/v6.0.21...v6.0.22))
+- 17,198 total features
+- 1,159 total contributors
+- 5,282 total stargazers
+
 ## [v6.0.21](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.21)
 
 June 6, 2025
