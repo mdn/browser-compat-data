@@ -1,0 +1,64 @@
+name: System file changes
+
+on:
+  pull_request_target:
+    paths:
+      - "**"
+      - "!**.md"
+      - "!api/**.json"
+      - "!browsers/**.json"
+      - "!css/**.json"
+      - "!html/**.json"
+      - "!http/**.json"
+      - "!javascript/**.json"
+      - "!manifests/**.json"
+      - "!mathml/**.json"
+      - "!svg/**.json"
+      - "!webassembly/**.json"
+      - "!webdriver/**.json"
+      - "!webextensions/**.json"
+
+# No GITHUB_TOKEN permissions, as we don't use it.
+permissions: {}
+
+jobs:
+  block:
+    # This makes sure it only runs on our origin repo
+    # and makes an exception for Dependabot.
+    if: github.repository_owner == 'mdn' && github.event.pull_request.user.login != 'dependabot[bot]' && github.event.pull_request.user.login != 'mdn-bot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block if author/actor is not admin or BCD owner
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          is_admin_or_owner() {
+            local USER="$1"
+
+            local PERMISSION
+            PERMISSION=$(gh api "https://api.github.com/repos/${{ github.repository }}/collaborators/${USER}/permission" --jq .permission)
+
+            if [ "$PERMISSION" = "admin" ]; then
+              return 0
+            fi
+
+            local STATE
+            STATE=$(gh api "https://api.github.com/orgs/${{ github.repository_owner }}/teams/bcd-owners/memberships/${USER}" --jq .state)
+
+            if [ "$STATE" = "active" ]; then
+              return 0
+            fi
+
+            echo "User ($USER) is not an admin, and not a BCD owner; please ping someone for a review."
+            exit 1
+          }
+
+          # Check PR author.
+          AUTHOR="${{ github.event.pull_request.user.login }}"
+          is_admin_or_owner "$AUTHOR"
+
+          # Check actor.
+          ACTOR="${{ github.actor }}"
+          if [ "$ACTOR" != "$AUTHOR" ]; then
+            is_admin_or_owner "$ACTOR"
+          fi

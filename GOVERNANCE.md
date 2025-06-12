@@ -64,10 +64,15 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
+- Luca Greco (@rpl), Mozilla
 - Michael Smith (@sideshowbarker), W3C
 - Rachel Andrew (@rachelandrew), Google
-- Richard Bloor (@rebloor)
+- Richard Bloor (@rebloor), Mozilla
+- Rob Wu (@Rob--W), Mozilla
+- Simeon Vincent (@dotproto), Mozilla
+- Tomislav Jovanovic (@zombie), Mozilla
 - Will Bamberg (@wbamberg), Open Web Docs
+- William Durand (@willdurand), Mozilla
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 

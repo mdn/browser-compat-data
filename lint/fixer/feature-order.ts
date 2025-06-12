@@ -1,11 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import { Identifier } from '../../types/types.js';
 import compareFeatures from '../../scripts/lib/compare-features.js';
-import { IS_WINDOWS } from '../utils.js';
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -33,24 +30,15 @@ export const orderFeatures = (_: string, value: Identifier): Identifier => {
  * Perform a fix of feature order within all the data in a specified file.
  * The function will then automatically write any needed changes back into the file.
  * @param filename The filename to perform fix upon
+ * @param actual The current content of the file
+ * @returns expected content of the file
  */
-const fixFeatureOrder = (filename: string): void => {
+const fixFeatureOrder = (filename: string, actual: string): string => {
   if (filename.includes('/browsers/')) {
-    return;
+    return actual;
   }
 
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
-
-  if (IS_WINDOWS) {
-    // prevent false positives from git.core.autocrlf on Windows
-    actual = actual.replace(/\r/g, '');
-    expected = expected.replace(/\r/g, '');
-  }
-
-  if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
-  }
+  return JSON.stringify(JSON.parse(actual, orderFeatures), null, 2);
 };
 
 export default fixFeatureOrder;

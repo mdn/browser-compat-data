@@ -13,6 +13,7 @@ export { default as testMirror } from './test-mirror.js';
 export { default as testMultipleStatements } from './test-multiple-statements.js';
 export { default as testNotes } from './test-notes.js';
 export { default as testObsolete } from './test-obsolete.js';
+export { default as testOverlap } from './test-overlap.js';
 export { default as testPrefix } from './test-prefix.js';
 export { default as testSchema } from './test-schema.js';
 export { default as testSpecURLs } from './test-spec-urls.js';
