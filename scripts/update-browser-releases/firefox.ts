@@ -225,7 +225,7 @@ export const updateFirefoxReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browserName}${result}`;
+    result = `### Updates for ${options.browserName}\n${result}`;
   }
   return result;
 };

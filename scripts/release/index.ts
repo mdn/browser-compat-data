@@ -7,18 +7,18 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryWriteTask } from 'tempy';
 
+import { spawn } from '../../utils/index.js';
+
 import { getSemverBumpPulls } from './semver-pulls.js';
 import { getStats } from './stats.js';
 import { getChanges } from './changes.js';
 import { getNotes, addNotes } from './notes.js';
 import {
-  exec,
   requireGitHubCLI,
   requireWriteAccess,
   getLatestTag,
   getRefDate,
   keypress,
-  spawn,
   fetchMain,
 } from './utils.js';
 
@@ -57,20 +57,24 @@ const commitAndPR = async (
   }
 
   console.log(chalk`{blue Preparing ${branch} branch...}`);
-  exec(`
-    git stash
-    git switch -C ${branch} origin/main
-    git stash pop
-    git add package.json package-lock.json RELEASE_NOTES.md release_notes/
-  `);
+  spawn('git', ['stash']);
+  spawn('git', ['switch', '-C', branch, 'origin/main']);
+  spawn('git', ['stash', 'pop']);
+  spawn('git', [
+    'add',
+    'package.json',
+    'package-lock.json',
+    'RELEASE_NOTES.md',
+    'release_notes/',
+  ]);
 
   console.log(chalk`{blue Committing changes...}`);
   await temporaryWriteTask(message, (commitFile) =>
-    exec(`git commit --file ${commitFile}`),
+    spawn('git', ['commit', '--file', commitFile]),
   );
 
   console.log(chalk`{blue Pushing ${branch} branch...}`);
-  exec(`git push --force --set-upstream origin ${branch}`);
+  spawn('git', ['push', '--force', '--set-upstream', 'origin', branch]);
 
   console.log(chalk`{blue Creating/editing pull request...}`);
   await temporaryWriteTask(pr.body, (bodyFile) => {
@@ -84,10 +88,8 @@ const commitAndPR = async (
     }
   });
 
-  exec(`
-    git switch -
-    git branch -d ${branch}
-  `);
+  spawn('git', ['switch', '-']);
+  spawn('git', ['branch', '-d', branch]);
 };
 
 /**
@@ -124,9 +126,10 @@ const main = async ({ dryRun }: { dryRun: boolean }) => {
       : 'patch';
 
   // Perform version bump
-  exec(`npm version --no-git-tag-version ${versionBump}`);
+  spawn('npm', ['version', '--no-git-tag-version', versionBump]);
   const thisVersion =
-    'v' + JSON.parse(exec('npm version --json'))['@mdn/browser-compat-data'];
+    'v' +
+    JSON.parse(spawn('npm', ['version', '--json']))['@mdn/browser-compat-data'];
 
   console.log(
     chalk`{green Performed {bold ${versionBump}} bump from {bold ${lastVersion}} to {bold ${thisVersion}}}`,
