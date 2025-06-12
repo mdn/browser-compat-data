@@ -25,6 +25,12 @@ export const fixCommonErrorsInCompatStatement = (
     ) {
       compat.support[browser] = 'mirror';
     }
+    if (
+      browser == 'ie' &&
+      JSON.stringify(compat.support[browser]) === '{"version_added":false}'
+    ) {
+      Reflect.deleteProperty(compat.support, browser);
+    }
   }
 };
 
