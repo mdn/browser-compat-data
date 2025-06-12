@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs/promises';
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { Stats } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +14,7 @@ import chalk from 'chalk-template';
 import dataFolders from '../scripts/lib/data-folders.js';
 
 import fixBrowserOrder from './fixer/browser-order.js';
+import fixCommonErrors from './fixer/common-errors.js';
 import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
@@ -24,12 +25,16 @@ import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
-import { LintOptions } from './utils.js';
+import { IS_WINDOWS, LintOptions } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const FIXES = Object.freeze({
+const FIXES: Record<
+  string,
+  (filename: string, actual: string) => Promise<string> | string
+> = Object.freeze({
   descriptions: fixDescriptions,
+  common_errors: fixCommonErrors,
   flags: fixFlags,
   links: fixLinks,
   mdn_urls: fixMDNURLs,
@@ -63,7 +68,7 @@ const load = async (
     let fsStats: Stats;
 
     try {
-      fsStats = await fs.stat(file);
+      fsStats = await stat(file);
     } catch (e) {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       continue;
@@ -71,12 +76,25 @@ const load = async (
 
     if (fsStats.isFile()) {
       if (path.extname(file) === '.json' && !file.endsWith('.schema.json')) {
+        let initial = (await readFile(file, 'utf-8')).trim();
+        let expected = initial;
+
         for (const fix of fixes) {
-          await fix(file);
+          expected = await fix(file, expected);
+        }
+
+        if (IS_WINDOWS) {
+          // prevent false positives from git.core.autocrlf on Windows
+          initial = initial.replace(/\r/g, '');
+          expected = expected.replace(/\r/g, '');
+        }
+
+        if (initial !== expected) {
+          await writeFile(file, expected + '\n', 'utf-8');
         }
       }
     } else {
-      const subFiles = (await fs.readdir(file)).map((subfile) =>
+      const subFiles = (await readdir(file)).map((subfile) =>
         path.join(file, subfile),
       );
 

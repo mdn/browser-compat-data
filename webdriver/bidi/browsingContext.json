@@ -36,6 +36,7 @@
         },
         "activate": {
           "__compat": {
+            "description": "`browsingContext.activate` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-activate",
             "support": {
               "chrome": {
@@ -71,6 +72,7 @@
         },
         "captureScreenshot": {
           "__compat": {
+            "description": "`browsingContext.captureScreenshot` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-captureScreenshot",
             "support": {
               "chrome": {
@@ -114,6 +116,7 @@
         },
         "close": {
           "__compat": {
+            "description": "`browsingContext.close` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-close",
             "support": {
               "chrome": {
@@ -157,6 +160,7 @@
         },
         "contextCreated_event": {
           "__compat": {
+            "description": "`browsingContext.contextCreated` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextCreated",
             "support": {
               "chrome": {
@@ -194,6 +198,7 @@
         },
         "contextDestroyed_event": {
           "__compat": {
+            "description": "`browsingContext.contextDestroyed` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextDestroyed",
             "support": {
               "chrome": {
@@ -231,6 +236,7 @@
         },
         "create": {
           "__compat": {
+            "description": "`browsingContext.create` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-create",
             "support": {
               "chrome": {
@@ -238,11 +244,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "101",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1750547](https://bugzil.la/1750547))"
-              },
+              "firefox": [
+                {
+                  "version_added": "117"
+                },
+                {
+                  "version_added": "101",
+                  "version_removed": "117",
+                  "partial_implementation": true,
+                  "notes": "Basic support (see [bug 1750547](https://bugzil.la/1750547))"
+                }
+              ],
               "firefox_android": "mirror",
               "ie": {
                 "version_added": false
@@ -268,6 +280,7 @@
         },
         "domContentLoaded_event": {
           "__compat": {
+            "description": "`browsingContext.domContentLoaded` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-domContentLoaded",
             "support": {
               "chrome": {
@@ -303,6 +316,7 @@
         },
         "fragmentNavigated_event": {
           "__compat": {
+            "description": "`browsingContext.fragmentNavigated` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-fragmentNavigated",
             "support": {
               "chrome": {
@@ -338,6 +352,7 @@
         },
         "getTree": {
           "__compat": {
+            "description": "`browsingContext.getTree` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-getTree",
             "support": {
               "chrome": {
@@ -373,6 +388,7 @@
         },
         "handleUserPrompt": {
           "__compat": {
+            "description": "`browsingContext.handleUserPrompt` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-handleUserPrompt",
             "support": {
               "chrome": {
@@ -414,8 +430,49 @@
             }
           }
         },
+        "historyUpdated_event": {
+          "__compat": {
+            "description": "`browsingContext.historyUpdated` event",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-historyUpdated",
+            "support": {
+              "chrome": {
+                "version_added": "126",
+                "partial_implementation": true,
+                "notes": "Basic support"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "141",
+                "partial_implementation": true,
+                "notes": "Basic support (see [bug 1906050](https://bugzil.la/1906050))"
+              },
+              "firefox_android": "mirror",
+              "ie": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/287936"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "load_event": {
           "__compat": {
+            "description": "`browsingContext.load` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-load",
             "support": {
               "chrome": {
@@ -451,6 +508,7 @@
         },
         "locateNodes": {
           "__compat": {
+            "description": "`browsingContext.locateNodes` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-locateNodes",
             "support": {
               "chrome": {
@@ -488,6 +546,7 @@
         },
         "navigate": {
           "__compat": {
+            "description": "`browsingContext.navigate` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-navigate",
             "support": {
               "chrome": {
@@ -525,6 +584,7 @@
         },
         "navigationCommitted_event": {
           "__compat": {
+            "description": "`browsingContext.navigationCommitted` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationCommitted",
             "support": {
               "chrome": {
@@ -533,8 +593,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1945181"
+                "version_added": "140"
               },
               "firefox_android": "mirror",
               "ie": {
@@ -553,7 +612,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -561,6 +620,7 @@
         },
         "navigationFailed_event": {
           "__compat": {
+            "description": "`browsingContext.navigationFailed` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationFailed",
             "support": {
               "chrome": {
@@ -598,6 +658,7 @@
         },
         "navigationStarted_event": {
           "__compat": {
+            "description": "`browsingContext.navigationStarted` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationStarted",
             "support": {
               "chrome": {
@@ -633,6 +694,7 @@
         },
         "print": {
           "__compat": {
+            "description": "`browsingContext.print` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-print",
             "support": {
               "chrome": {
@@ -672,6 +734,7 @@
         },
         "reload": {
           "__compat": {
+            "description": "`browsingContext.reload` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-reload",
             "support": {
               "chrome": {
@@ -709,6 +772,7 @@
         },
         "setViewport": {
           "__compat": {
+            "description": "`browsingContext.setViewport` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-setViewport",
             "support": {
               "chrome": {
@@ -746,6 +810,7 @@
         },
         "traverseHistory": {
           "__compat": {
+            "description": "`browsingContext.traverseHistory` command",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-traverseHistory",
             "support": {
               "chrome": {
@@ -783,6 +848,7 @@
         },
         "userPromptClosed_event": {
           "__compat": {
+            "description": "`browsingContext.userPromptClosed` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-userPromptClosed",
             "support": {
               "chrome": {
@@ -820,6 +886,7 @@
         },
         "userPromptOpened_event": {
           "__compat": {
+            "description": "`browsingContext.userPromptOpened` event",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#webdriver-bidi-user-prompt-opened",
             "support": {
               "chrome": {
