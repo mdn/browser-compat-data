@@ -22,10 +22,10 @@ type ChangeStats = Pick<
 
 import chalk from 'chalk-template';
 
-import { walk } from '../../utils/index.js';
+import { spawn, walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
 
-import { exec, queryPRs, githubAPI } from './utils.js';
+import { queryPRs, githubAPI } from './utils.js';
 
 /**
  * Get stargazers for the repository
@@ -41,9 +41,11 @@ const stargazers = async (): Promise<number> => {
  * @returns The number of contributors that have contributed to the repository
  */
 const contributors = (): number => {
-  const data = exec(
-    'gh api /repos/mdn/browser-compat-data/contributors?anon=1 --paginate',
-  );
+  const data = spawn('gh', [
+    'api',
+    '/repos/mdn/browser-compat-data/contributors?anon=1',
+    '--paginate',
+  ]);
   return JSON.parse('[' + data.replace(/\]\[/g, '],[') + ']').flat(1).length;
 };
 
@@ -54,7 +56,7 @@ const contributors = (): number => {
  */
 const stats = (start: string): ChangeStats => {
   // Get just the diff stats summary
-  const diff = exec(`git diff --shortstat ${start}...origin/main`);
+  const diff = spawn('git', ['diff', '--shortstat', `${start}...origin/main`]);
   if (diff === '') {
     console.error(chalk`{red No changes for which to generate statistics.}`);
     process.exit(1);
@@ -73,7 +75,11 @@ const stats = (start: string): ChangeStats => {
   const { changed, insertions, deletions } = match.groups as any;
 
   // Get the number of commits
-  const commits = exec(`git rev-list --count ${start}...origin/main`);
+  const commits = spawn('git', [
+    'rev-list',
+    '--count',
+    `${start}...origin/main`,
+  ]);
 
   return {
     commits: Number(commits),
