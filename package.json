@@ -1,6 +1,6 @@
 {
   "name": "@mdn/browser-compat-data",
-  "version": "6.0.11",
+  "version": "6.0.22",
   "description": "Browser compatibility data provided by MDN Web Docs",
   "main": "index.ts",
   "type": "module",
@@ -57,7 +57,7 @@
     "ajv": "~8.17.1",
     "ajv-errors": "~3.0.0",
     "ajv-formats": "~3.0.1",
-    "better-ajv-errors": "~1.2.0",
+    "better-ajv-errors": "~2.0.2",
     "c8": "~10.1.1",
     "chalk": "~5.4.0",
     "chalk-template": "~1.1.0",
@@ -68,7 +68,7 @@
     "eslint": "~9.23.0",
     "eslint-import-resolver-typescript": "^4.2.0",
     "eslint-plugin-import": "~2.31.0",
-    "eslint-plugin-jsdoc": "~50.6.0",
+    "eslint-plugin-jsdoc": "~50.8.0",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-prefer-arrow-functions": "~3.6.2",
     "eslint-plugin-promise": "~7.2.1",
@@ -80,7 +80,7 @@
     "lefthook": "^1.11.7",
     "markdown-table": "^3.0.4",
     "marked": "^15.0.1",
-    "mocha": "~11.2.2",
+    "mocha": "~11.6.0",
     "open-cli": "~8.0.0",
     "ora": "~8.2.0",
     "prettier": "~3.5.0",
@@ -92,7 +92,7 @@
     "web-features": "^2.15.0",
     "web-specs": "^3.0.0",
     "xml2js": "^0.6.2",
-    "yargs": "~17.7.0"
+    "yargs": "~18.0.0"
   },
   "scripts": {
     "prepare": "npm run gentypes && npm run build",
@@ -114,6 +114,7 @@
     "traverse": "tsx scripts/traverse.ts",
     "update-browser-releases": "tsx scripts/update-browser-releases/index.ts",
     "bcd": "tsx scripts/bulk-editor/index.ts",
+    "split": "tsx scripts/split.ts",
     "tag-web-features": "tsx scripts/tag-web-features.ts"
   }
 }
