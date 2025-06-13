@@ -82,89 +82,6 @@
             "standard_track": true,
             "deprecated": false
           }
-        }
-      },
-      "toJSON": {
-        "__compat": {
-          "spec_url": "https://w3c.github.io/reporting/#dom-report-tojson",
-          "tags": [
-            "web-features:reporting"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "69"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "77",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.reporting.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "type": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Report/type",
-          "spec_url": "https://w3c.github.io/reporting/#dom-report-type",
-          "tags": [
-            "web-features:reporting"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "69"
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "65",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.reporting.enabled",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
         },
         "type_coep": {
           "__compat": {
@@ -207,7 +124,41 @@
               "deprecated": false
             }
           },
-          "body_destination": {
+          "blockedURL": {
+            "__compat": {
+              "description": "`blockedURL` in `coep` report body",
+              "tags": [
+                "web-features:reporting"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
+          "destination": {
             "__compat": {
               "description": "`destination` in `coep` report body",
               "tags": [
@@ -241,7 +192,49 @@
               }
             }
           },
-          "body_type": {
+          "disposition": {
+            "__compat": {
+              "description": "`disposition` in `coep` report body",
+              "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#embedder-policy-checks",
+              "tags": [
+                "web-features:reporting"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "69"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "79",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.reporting.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.4"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "type": {
             "__compat": {
               "description": "`type` in `coep` report body",
               "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#embedder-policy-checks",
@@ -251,7 +244,7 @@
               "support": {
                 "chrome": {
                   "version_added": "69",
-                  "notes": "Includes support for none-standard type `coep`"
+                  "notes": "Includes support for non-standard type `coep`"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -413,6 +406,89 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "toJSON": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/reporting/#dom-report-tojson",
+          "tags": [
+            "web-features:reporting"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "77",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.reporting.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "type": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Report/type",
+          "spec_url": "https://w3c.github.io/reporting/#dom-report-type",
+          "tags": [
+            "web-features:reporting"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "69"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "65",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.reporting.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "16.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
