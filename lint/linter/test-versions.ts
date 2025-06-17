@@ -21,7 +21,7 @@ const now = new Date();
 
 /* The latest date a range's release can correspond to */
 const rangeCutoffDate = new Date(
-  now.getFullYear() - 4,
+  now.getFullYear() - 5,
   now.getMonth(),
   now.getDate(),
 );
