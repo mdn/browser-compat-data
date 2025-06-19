@@ -360,10 +360,18 @@
                 "version_added": "8"
               },
               "edge": "mirror",
-              "firefox": {
-                "version_added": "55",
-                "notes": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
-              },
+              "firefox": [
+                {
+                  "version_added": "55",
+                  "partial_implementation": true,
+                  "notes": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
+                },
+                {
+                  "version_added": "140",
+                  "partial_implementation": true,
+                  "notes": "Extensions installed via policy can enable and disable other extensions."
+                }
+              ],
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
