@@ -8,17 +8,26 @@ import { fixCommonErrorsInCompatStatement } from './common-errors.js';
 const tests: { input: any; output?: any }[] = [
   // Replace unwrapped "false".
   {
-    input: false,
+    input: {
+      firefox_android: false,
+    },
     output: {
-      version_added: false,
+      firefox_android: { version_added: false },
     },
   },
   // Replace wrapped "mirror".
   {
     input: {
-      version_added: 'mirror',
+      firefox_android: { version_added: 'mirror' },
     },
-    output: 'mirror',
+    output: { firefox_android: 'mirror' },
+  },
+  // Remove unnnecessary IE statement.
+  {
+    input: {
+      ie: { version_added: false },
+    },
+    output: {},
   },
 ];
 
@@ -27,14 +36,10 @@ describe('fix -> common errors', () => {
   for (const test of tests) {
     it(`Test #${i}`, () => {
       const input = {
-        support: {
-          firefox_android: test.input,
-        },
+        support: test.input,
       };
       const output = {
-        support: {
-          firefox_android: test.output ?? test.input,
-        },
+        support: test.output ?? test.input,
       };
 
       fixCommonErrorsInCompatStatement(input);
