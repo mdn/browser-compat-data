@@ -6,7 +6,7 @@
           "spec_url": "https://w3c.github.io/webdriver-bidi/#module-webExtension",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -26,7 +26,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -37,7 +37,9 @@
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-webExtension-install",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "135",
+                "partial_implementation": true,
+                "notes": "Basic support"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -60,9 +62,42 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "extensionData_parameter": {
+            "__compat": {
+              "description": "`extensionData` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "135",
+                  "partial_implementation": true,
+                  "notes": "Basic support"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         },
@@ -72,7 +107,9 @@
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-webExtension-uninstall",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "135",
+                "partial_implementation": true,
+                "notes": "Basic support"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -93,9 +130,42 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "extension_parameter": {
+            "__compat": {
+              "description": "`extension` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "135",
+                  "partial_implementation": true,
+                  "notes": "Basic support"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         }
