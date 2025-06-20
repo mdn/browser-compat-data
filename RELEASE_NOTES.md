@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.25](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.25)
+
+June 20, 2025
+
+### Removals
+
+- `javascript.classes.static_class_fields` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+- `javascript.classes.static_initialization_blocks` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+
+### Additions
+
+- `browsers.opera_android.releases.90` ([#27097](https://github.com/mdn/browser-compat-data/pull/27097))
+- `http.headers.Content-Security-Policy.script-src.trusted-types-eval` ([#27113](https://github.com/mdn/browser-compat-data/pull/27113))
+- `javascript.classes.static.class_fields` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+- `javascript.classes.static.initialization_blocks` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+- `svg.elements.feImage.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
+- `svg.elements.image.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
+- `svg.elements.script.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
+
+### Statistics
+
+- 11 contributors have changed 32 files with 359 additions and 134 deletions in 23 commits ([`v6.0.24...v6.0.25`](https://github.com/mdn/browser-compat-data/compare/v6.0.24...v6.0.25))
+- 17,292 total features
+- 1,166 total contributors
+- 5,286 total stargazers
+
 ## [v6.0.24](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.24)
 
 June 17, 2025
