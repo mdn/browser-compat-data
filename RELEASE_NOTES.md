@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.26](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.26)
+
+June 24, 2025
+
+### Additions
+
+- `api.HTMLSelectedContentElement` ([#27104](https://github.com/mdn/browser-compat-data/pull/27104))
+- `browsers.chrome_android.releases.141` ([#27125](https://github.com/mdn/browser-compat-data/pull/27125))
+- `browsers.chrome.releases.141` ([#27125](https://github.com/mdn/browser-compat-data/pull/27125))
+- `browsers.firefox_android.releases.143` ([#27125](https://github.com/mdn/browser-compat-data/pull/27125))
+- `browsers.firefox.releases.143` ([#27125](https://github.com/mdn/browser-compat-data/pull/27125))
+- `browsers.webview_android.releases.141` ([#27125](https://github.com/mdn/browser-compat-data/pull/27125))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_calendar` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_collation` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_currency` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_numberingSystem` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_timeZone` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_timeZone.includes_UTC` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+- `javascript.builtins.Intl.supportedValuesOf.key_parameter_unit` ([#27056](https://github.com/mdn/browser-compat-data/pull/27056))
+
+### Statistics
+
+- 5 contributors have changed 65 files with 1,073 additions and 498 deletions in 12 commits ([`v6.0.25...v6.0.26`](https://github.com/mdn/browser-compat-data/compare/v6.0.25...v6.0.26))
+- 17,300 total features
+- 1,166 total contributors
+- 5,289 total stargazers
+
 ## [v6.0.25](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.25)
 
 June 20, 2025
