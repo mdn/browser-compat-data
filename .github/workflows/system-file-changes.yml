@@ -30,7 +30,7 @@ jobs:
     steps:
       - name: Block if author/actor is not admin or BCD owner
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.ORG_PAT }}
         run: |
           is_admin_or_owner() {
             local USER="$1"
