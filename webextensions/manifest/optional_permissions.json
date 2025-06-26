@@ -56,9 +56,11 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "14"
               },
-              "safari_ios": "mirror"
+              "safari_ios": {
+                "version_added": "15"
+              }
             }
           }
         },
@@ -735,6 +737,25 @@
             }
           }
         },
+        "tabGroups": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "89"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "139"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "tabHide": {
           "__compat": {
             "support": {
@@ -814,6 +835,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "16",
                   "partial_implementation": true,
                   "notes": "Grants a 10 MB storage quota, instead of the standard 5 MB."
                 }
@@ -824,10 +846,33 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "16",
                   "partial_implementation": true,
                   "notes": "Grants a 10 MB storage quota, instead of the standard 5 MB."
                 }
               ]
+            }
+          }
+        },
+        "userScripts": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136",
+                "notes": "Provided as an [optional-only permission](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/optional_permissions#optional-only_permissions)."
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
             }
           }
         },
@@ -868,7 +913,7 @@
                 "version_added": "14"
               },
               "safari_ios": {
-                "version_added": false
+                "version_added": "18"
               }
             }
           }

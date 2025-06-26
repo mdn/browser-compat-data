@@ -3,30 +3,17 @@
 
 import assert from 'node:assert/strict';
 
+import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
 
 import walk, { lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', () => {
   it('visits every top-level tree', () => {
-    const expectedPaths = [
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'javascript',
-      'mathml',
-      'svg',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    ];
-
     const steps = Array.from(lowLevelWalk(undefined, undefined, 1));
     const paths = steps.map((step) => step.path);
-    assert.equal(steps.length, expectedPaths.length);
-    assert.deepEqual(paths, expectedPaths);
+    assert.equal(steps.length, dataFolders.length);
+    assert.deepEqual(paths, dataFolders);
   });
   it('visits every point in the tree', () => {
     const paths = Array.from(lowLevelWalk()).map((step) => step.path);

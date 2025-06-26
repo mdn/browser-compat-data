@@ -30,6 +30,10 @@ const specsExceptions = [
   // if they have been integrated into a real spec
   'https://w3c.github.io/webrtc-extensions/',
 
+  // This is being used to develop Error.captureStackTrace() standard
+  // Need to be checked after some time to see if integrated into a real spec
+  'https://github.com/tc39/proposal-error-capturestacktrace',
+
   // Proposals for WebAssembly
   'https://github.com/WebAssembly/spec/blob/main/proposals',
   'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
@@ -41,6 +45,7 @@ const specsExceptions = [
   'https://github.com/WebAssembly/memory64/blob/main/proposals/memory64/Overview.md',
   'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
   'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
+  'https://github.com/WebAssembly/js-promise-integration',
 ];
 
 interface ValidSpecHosts {

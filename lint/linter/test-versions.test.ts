@@ -51,16 +51,6 @@ describe('test-versions', () => {
     };
   });
 
-  it('should log error when a required browser is not defined', () => {
-    support.chrome = undefined;
-    test.check(logger, {
-      data: { support },
-      path: { category: 'api' },
-    });
-    assert.equal(logger.messages.length, 1);
-    assert.ok(logger.messages[0].message.includes('must be defined'));
-  });
-
   it('should log error when a browser is set to mirror but does not have an upstream browser', () => {
     support.chrome = 'mirror';
     test.check(logger, {

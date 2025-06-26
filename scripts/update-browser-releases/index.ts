@@ -178,7 +178,7 @@ const options = {
     skippedReleases: [],
     releaseFeedURL: 'https://blogs.opera.com/desktop/category/stable-2/feed/',
     titleVersionPattern: /^Opera (\d+)$/,
-    descriptionEngineVersionPattern: /Chromium (\d+)/,
+    descriptionEngineVersionPattern: /Chromium(?:\s[^.\d]+)?\s(\d+)(?=[.])/,
   },
   opera_android: {
     browserName: 'Opera for Android',
@@ -219,62 +219,39 @@ const options = {
   },
 };
 
-let result = '';
+const results = await Promise.all([
+  ...(updateChrome
+    ? [
+        updateDesktop && updateChromiumReleases(options.chrome_desktop),
+        updateMobile && updateChromiumReleases(options.chrome_android),
+      ]
+    : []),
+  updateWebview &&
+    updateMobile &&
+    updateChromiumReleases(options.webview_android),
+  updateEdge && updateDesktop && updateEdgeReleases(options.edge_desktop),
+  ...(updateFirefox
+    ? [
+        updateDesktop && updateFirefoxReleases(options.firefox_desktop),
+        updateMobile && updateFirefoxReleases(options.firefox_android),
+      ]
+    : []),
+  ...(updateOpera
+    ? [
+        updateDesktop && updateOperaReleases(options.opera_desktop),
+        updateMobile && updateOperaReleases(options.opera_android),
+      ]
+    : []),
+  ...(updateSafari
+    ? [
+        updateDesktop && updateSafariReleases(options.safari_desktop),
+        updateMobile && updateSafariReleases(options.safari_ios),
+        updateMobile && updateSafariReleases(options.webview_ios),
+      ]
+    : []),
+]);
 
-if (updateChrome && updateDesktop) {
-  const add = await updateChromiumReleases(options.chrome_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateChrome && updateMobile) {
-  const add = await updateChromiumReleases(options.chrome_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateWebview && updateMobile) {
-  const add = await updateChromiumReleases(options.webview_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateEdge && updateDesktop) {
-  const add = await updateEdgeReleases(options.edge_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateFirefox && updateDesktop) {
-  const add = await updateFirefoxReleases(options.firefox_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateFirefox && updateMobile) {
-  const add = await updateFirefoxReleases(options.firefox_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateOpera && updateDesktop) {
-  const add = await updateOperaReleases(options.opera_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateOpera && updateMobile) {
-  const add = await updateOperaReleases(options.opera_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateDesktop) {
-  const add = await updateSafariReleases(options.safari_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateMobile) {
-  const add = await updateSafariReleases(options.safari_ios);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateMobile) {
-  const add = await updateSafariReleases(options.webview_ios);
-  result += (result && add ? '\n' : '') + add;
-}
+const result = results.filter(Boolean).join('\n\n');
 
 if (result) {
   console.log(result);

@@ -1,0 +1,91 @@
+name: PR Review Companion
+
+on:
+  pull_request_target:
+
+permissions:
+  # Post comment in pull request.
+  pull-requests: write
+
+concurrency:
+  group: pr-review-companion-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: flat-diff
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install
+        run: npm ci
+
+      - name: Diff (by change)
+        run: npm run diff:flat -- $PR_NUMBER
+        env:
+          FORCE_COLOR: 3
+
+      - name: Diff (by change, mirroring applied)
+        run: npm run diff:flat -- $PR_NUMBER --mirror
+        env:
+          FORCE_COLOR: 3
+
+      - name: Diff (by feature)
+        run: npm run diff:flat -- $PR_NUMBER --no-group
+        env:
+          FORCE_COLOR: 3
+
+      - name: Diff (by feature, mirroring applied)
+        run: npm run diff:flat -- $PR_NUMBER --no-group --mirror
+        env:
+          FORCE_COLOR: 3
+
+      - name: Determine job url
+        id: job
+        run: |
+          job_id=$(gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs --jq '.jobs[0].id')
+          echo "JOB_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${job_id}?pr=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Post message in PR
+        run: |
+          AUTHOR="github-actions"
+          MARKER="<!-- pr-review-companion -->"
+          BODY="${MARKER}
+
+          ${COMMENT}"
+
+          COMMENT_ID=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --comments --json comments \
+            --jq ".comments | sort_by(.createdAt) | map(select(.author.login == \"$AUTHOR\" and (.body | contains(\"$MARKER\")))) | .[0].id")
+          if [ -n "$COMMENT_ID" ]; then
+            gh api graphql -f query='
+                mutation($id:ID!, $body:String!) {
+                  updateIssueComment(input:{id:$id, body:$body}) {
+                    issueComment {
+                      id
+                    }
+                  }
+                }' -f id="$COMMENT_ID" -f body="$BODY"
+          else
+            gh pr comment "$PR_NUMBER" --repo "${{ github.repository }}" --body "$BODY"
+          fi
+        env:
+          COMMENT: |
+            _Tip_: Review these changes [grouped by change][1] (recommended for most PRs), or [grouped by feature][2] (for large PRs).
+
+            [1]: ${{ steps.job.outputs.JOB_URL }}#step:5:1
+            [2]: ${{ steps.job.outputs.JOB_URL }}#step:7:1
+          GITHUB_TOKEN: ${{ github.token }}

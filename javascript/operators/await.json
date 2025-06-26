@@ -23,9 +23,6 @@
               "version_added": "52"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "7.6.0"
             },
@@ -67,9 +64,6 @@
                 "version_added": "89"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "14.8.0",
                 "notes": "Not supported in CommonJS modules."
@@ -78,7 +72,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15"
+                "version_added": "15",
+                "partial_implementation": true,
+                "notes": "Doesn't support multiple modules simultaneously importing a module containing a top-level await (see [bug 242740](https://webkit.org/b/242740))."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

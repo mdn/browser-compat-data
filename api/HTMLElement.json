@@ -107,9 +107,6 @@
               "version_added": "8"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -148,9 +145,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -186,9 +180,6 @@
               "version_added": "93"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -226,9 +217,6 @@
               "impl_url": "https://bugzil.la/1278697"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -272,9 +260,6 @@
               "version_added": "111"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -320,9 +305,6 @@
               "version_added": "136"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -331,7 +313,8 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror"
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
           },
           "status": {
             "experimental": false,
@@ -424,17 +407,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "79"
-              },
-              {
-                "version_added": "≤37",
-                "version_removed": "79",
-                "partial_implementation": true,
-                "notes": "Supported for `HTMLButtonElement`, `HTMLInputElement`, `HTMLSelectElement`, and `HTMLTextAreaElement`."
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -463,9 +436,6 @@
               "version_added": "125"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -501,9 +471,6 @@
                 "version_added": "133"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -540,9 +507,6 @@
                 "version_added": "125"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -715,16 +679,13 @@
         "__compat": {
           "description": "`command` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/command_event",
+          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-command",
+          "tags": [
+            "web-features:invoker-commands"
+          ],
           "support": {
             "chrome": {
-              "version_added": "preview",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "enable-experimental-web-platform-features",
-                  "value_to_set": "enabled"
-                }
-              ]
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -739,21 +700,11 @@
               ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "InvokerAttributesEnabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -761,7 +712,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -824,15 +775,12 @@
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_added": "≤79"
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "136"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1385,9 +1333,6 @@
               "impl_url": "https://bugzil.la/1904161"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1424,9 +1369,6 @@
               "version_added": "94"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1449,7 +1391,10 @@
         "__compat": {
           "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/error_event",
-          "spec_url": "https://w3c.github.io/uievents/#event-type-error",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-error",
+            "https://html.spec.whatwg.org/multipage/indices.html#event-error"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1521,7 +1466,7 @@
             },
             "safari_ios": {
               "version_added": "1",
-              "notes": "If there's no hardware keyboard connected and the user has not yet interacted with the page, then calling `focus()` on an `&lt;input&gt;` element has no effect (for example, the element does not match the `:focus` selector)."
+              "notes": "If there's no hardware keyboard connected and the user has not yet interacted with the page, then calling `focus()` on an `<input>` element has no effect (for example, the element does not match the `:focus` selector)."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1549,14 +1494,11 @@
                 "version_added": "104"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "18.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1564,7 +1506,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1593,9 +1535,6 @@
               "firefox_android": {
                 "version_added": false,
                 "impl_url": "https://bugzil.la/1544660"
-              },
-              "ie": {
-                "version_added": false
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1681,9 +1620,6 @@
               "version_added": "125"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1719,9 +1655,6 @@
               "version_added": "112"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1757,9 +1690,6 @@
                 "version_added": "120"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1851,14 +1781,11 @@
                 ]
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1891,9 +1818,6 @@
             },
             "firefox_android": {
               "version_added": "79"
-            },
-            "ie": {
-              "version_added": false
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -2005,6 +1929,58 @@
           }
         }
       },
+      "load_event": {
+        "__compat": {
+          "description": "`load` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/load_event",
+          "spec_url": [
+            "https://w3c.github.io/uievents/#event-type-load",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload",
+            "https://html.spec.whatwg.org/multipage/indices.html#event-load"
+          ],
+          "tags": [
+            "web-features:dom"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "1"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "1.0"
+            },
+            "edge": {
+              "version_added": "12"
+            },
+            "firefox": {
+              "version_added": "1"
+            },
+            "firefox_android": "mirror",
+            "ie": {
+              "version_added": "5.5"
+            },
+            "oculus": "mirror",
+            "opera": {
+              "version_added": "8"
+            },
+            "opera_android": {
+              "version_added": "10.1"
+            },
+            "safari": {
+              "version_added": "1.3"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "nonce": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/nonce",
@@ -2022,9 +1998,6 @@
               "version_added": "75"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2036,7 +2009,7 @@
                 "version_added": "10",
                 "version_removed": "15.4",
                 "partial_implementation": true,
-                "notes": "The property is defined only for its useful elements: `&lt;link&gt;`, `&lt;script&gt;`, and `&lt;style&gt;`; it is undefined for all other elements."
+                "notes": "The property is defined only for its useful elements: `<link>`, `<script>`, and `<style>`; it is undefined for all other elements."
               }
             ],
             "safari_ios": "mirror",
@@ -2344,9 +2317,6 @@
               "version_added": "125"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2379,7 +2349,7 @@
             "description": "`hint` value",
             "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#attr-popover-hint",
             "tags": [
-              "web-features:popover"
+              "web-features:popover-hint"
             ],
             "support": {
               "chrome": {
@@ -2388,12 +2358,10 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1867743"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -2430,9 +2398,6 @@
               "version_added": "125"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2453,12 +2418,15 @@
         "source": {
           "__compat": {
             "description": "`source` option",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-showpopoveroptions-source",
             "tags": [
               "web-features:popover"
             ],
             "support": {
               "chrome": {
-                "version_added": "133"
+                "version_added": "133",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -2466,14 +2434,13 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2491,7 +2458,7 @@
               "description": "Implicit anchor reference via `source`",
               "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
               "tags": [
-                "web-features:popover"
+                "web-features:anchor-positioning"
               ],
               "support": {
                 "chrome": {
@@ -2503,9 +2470,6 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -2636,6 +2600,7 @@
               },
               {
                 "version_added": "12",
+                "version_removed": "18",
                 "partial_implementation": true,
                 "notes": "Returns incorrect value for elements without an explicit tabindex attribute. See [issue 4365703](https://developer.microsoft.com/microsoft-edge/platform/issues/4365703/) for details."
               }
@@ -2737,9 +2702,6 @@
               "version_added": "49"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2775,9 +2737,6 @@
                 "version_added": "49"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -2814,9 +2773,6 @@
                 "version_added": "133"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -2853,9 +2809,6 @@
                 "version_added": "125"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -2892,9 +2845,6 @@
               "version_added": "125"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2928,9 +2878,6 @@
                 "version_added": "125"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -2952,12 +2899,15 @@
         "source": {
           "__compat": {
             "description": "`source` option",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-showpopoveroptions-source",
             "tags": [
               "web-features:popover"
             ],
             "support": {
               "chrome": {
-                "version_added": "133"
+                "version_added": "133",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -2965,14 +2915,13 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "preview",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2990,7 +2939,7 @@
               "description": "Implicit anchor reference via `source`",
               "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
               "tags": [
-                "web-features:popover"
+                "web-features:anchor-positioning"
               ],
               "support": {
                 "chrome": {
@@ -3002,9 +2951,6 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -3042,9 +2988,6 @@
               "version_added": "111"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -3081,9 +3024,6 @@
               "impl_url": "https://bugzil.la/1730568"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -3121,9 +3061,6 @@
               "impl_url": "https://bugzil.la/1871621"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",

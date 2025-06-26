@@ -36,7 +36,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org/"
-          cache: npm
 
       - name: "Setup git"
         run: |
@@ -44,6 +43,9 @@ jobs:
           git config user.name mdn-bot
 
       - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
         run: npm ci
 
       - name: Release

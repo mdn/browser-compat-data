@@ -45,7 +45,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org/"
-          cache: npm
 
       - run: npm ci
 
@@ -77,3 +76,19 @@ jobs:
               client_payload: {}
             })
             console.log(result);
+
+      - name: Comment in release PR
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$JOB_STATUS" = "success" ]; then
+            BODY="Release was successfully published by [this run]($RUN_URL)."
+          else
+            BODY="@mdn/bcd-releasers Failed to publish release (see [this run]($RUN_URL)."
+          fi
+
+          PR_NUMBER=$(gh pr list --repo "$GITHUB_REPOSITORY" --state merged --search "$GITHUB_SHA" --json number --jq '.[0].number')
+
+          gh pr comment --repo "$GITHUB_REPOSITORY" "$PR_NUMBER" --body "$BODY"

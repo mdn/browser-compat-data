@@ -8,8 +8,12 @@ permissions:
   contents: read
   pull-requests: write # To add labels and comment on PRs
 
+concurrency:
+  group: pr-rebase-needed-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
-  idle:
+  label-rebase-needed:
     uses: mdn/workflows/.github/workflows/pr-rebase-needed.yml@main
     with:
       target-repo: "mdn/browser-compat-data"

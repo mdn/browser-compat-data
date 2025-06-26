@@ -62,7 +62,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror"
               }
@@ -146,9 +146,11 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             }
           },
@@ -572,7 +574,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/294455"
               },
               "safari_ios": "mirror"
             }
@@ -592,7 +595,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/294456"
               },
               "safari_ios": "mirror"
             }
@@ -926,7 +930,8 @@
                   "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": false,
+                    "impl_url": "https://webkit.org/b/294457"
                   },
                   "safari_ios": "mirror"
                 }
@@ -999,6 +1004,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "15.4",
                   "partial_implementation": true,
                   "notes": "Only fired in response to a message from an extension's containing app, not webpages and other extensions."
                 }
@@ -1011,6 +1017,7 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "15.4",
                   "partial_implementation": true,
                   "notes": "Only fired in response to a message from an extension's containing app, not webpages and other extensions."
                 }
@@ -1115,7 +1122,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/294458"
               },
               "safari_ios": "mirror"
             }
@@ -1136,7 +1144,8 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/294458"
               },
               "safari_ios": "mirror"
             }
@@ -1154,6 +1163,66 @@
                 "version_added": "51"
               },
               "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "onUserScriptConnect": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptConnect",
+            "support": {
+              "chrome": {
+                "version_added": "120",
+                "notes": [
+                  "Available for use with Manifest V3 only.",
+                  "Always available, even if the extension has no way of firing the event."
+                ]
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136",
+                "notes": [
+                  "Available for use with Manifest V3 only.",
+                  "Requires the [`userScripts` permission](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions)."
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "onUserScriptMessage": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onUserScriptMessage",
+            "support": {
+              "chrome": {
+                "version_added": "120",
+                "notes": [
+                  "Available for use with Manifest V3 only.",
+                  "Always available, even if the extension has no way of firing the event."
+                ]
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "136",
+                "notes": [
+                  "Available for use with Manifest V3 only.",
+                  "Requires the [`userScripts` permission](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/userScripts#permissions)."
+                ]
+              },
+              "firefox_android": {
+                "version_added": false
+              },
               "opera": "mirror",
               "safari": {
                 "version_added": false

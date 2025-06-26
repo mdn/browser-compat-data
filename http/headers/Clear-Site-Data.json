@@ -3,7 +3,7 @@
     "headers": {
       "Clear-Site-Data": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data",
           "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#header",
           "tags": [
             "web-features:clear-site-data"
@@ -20,9 +20,6 @@
               "version_added": "63"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -58,9 +55,6 @@
                 "version_added": "63"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -82,22 +76,30 @@
         "cache": {
           "__compat": {
             "description": "`&quot;cache&quot;`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#cache",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#cache",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-cache",
             "tags": [
               "web-features:clear-site-data"
             ],
             "support": {
-              "chrome": {
-                "version_added": "61"
-              },
+              "chrome": [
+                {
+                  "version_added": "65",
+                  "notes": "Setting this value may increase response duration (see [bug 40233601](https://crbug.com/40233601)."
+                },
+                {
+                  "version_added": "61",
+                  "version_removed": "63",
+                  "notes": "Setting this value may prevent a page from fully load (see [bug 41343050](https://crbug.com/41343050)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": {
                 "version_added": "≤79"
               },
               "firefox": [
                 {
-                  "version_added": "preview"
+                  "version_added": "138"
                 },
                 {
                   "version_added": "63",
@@ -106,9 +108,6 @@
                 }
               ],
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -130,7 +129,7 @@
         "clientHints": {
           "__compat": {
             "description": "`&quot;clientHints&quot;`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#clientHints",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#clienthints",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-clienthints",
             "tags": [
               "web-features:clear-site-data"
@@ -145,9 +144,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -169,7 +165,7 @@
         "cookies": {
           "__compat": {
             "description": "`&quot;cookies&quot;`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#cookies",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#cookies",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-cookies",
             "tags": [
               "web-features:clear-site-data"
@@ -186,9 +182,6 @@
                 "version_added": "63"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -210,7 +203,7 @@
         "executionContexts": {
           "__compat": {
             "description": "`&quot;executionContexts&quot;`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#executionContexts",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#executioncontexts",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-executioncontexts",
             "tags": [
               "web-features:clear-site-data"
@@ -228,9 +221,6 @@
                 "impl_url": "https://bugzil.la/1635189"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -250,10 +240,82 @@
             }
           }
         },
+        "prefetchCache": {
+          "__compat": {
+            "description": "`&quot;prefetchCache&quot;`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#prefetchcache",
+            "spec_url": "https://wicg.github.io/nav-speculation/prefetch.html#clear-site-data-patches",
+            "tags": [
+              "web-features:clear-site-data"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "138"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "prerenderCache": {
+          "__compat": {
+            "description": "`&quot;prerenderCache&quot;`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#prerendercache",
+            "spec_url": "https://wicg.github.io/nav-speculation/prefetch.html#clear-site-data-patches",
+            "tags": [
+              "web-features:clear-site-data"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "138"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "storage": {
           "__compat": {
             "description": "`&quot;storage&quot;`",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#storage",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-storage",
             "tags": [
               "web-features:clear-site-data"
@@ -270,9 +332,6 @@
                 "version_added": "63"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -294,7 +353,7 @@
         "wildcard": {
           "__compat": {
             "description": "`&quot;*&quot;` (wildcard)",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data#sect4",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Clear-Site-Data#sect",
             "spec_url": "https://w3c.github.io/webappsec-clear-site-data/#grammardef-",
             "tags": [
               "web-features:clear-site-data"
@@ -309,9 +368,6 @@
                 "version_added": "63"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",

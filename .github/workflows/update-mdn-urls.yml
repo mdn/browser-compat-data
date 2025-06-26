@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-          cache: npm
 
       - name: "Setup git"
         run: |
@@ -34,6 +33,9 @@ jobs:
           git config user.name mdn-bot
 
       - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
         run: npm ci
 
       - name: Update
