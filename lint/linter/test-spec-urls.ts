@@ -120,7 +120,7 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    if (specURL.includes('#')) {
+    if (specURL.includes('#') && !specURL.includes('#:~:text=')) {
       const hasSpec = validSpecURLsWithFragments.includes(specURL);
 
       const alternateSpecURLs = validSpecHosts.filter(
