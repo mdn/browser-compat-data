@@ -120,6 +120,10 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
+    if (specsExceptions.some((host) => specURL.startsWith(host))) {
+      continue;
+    }
+
     if (specURL.includes('#') && !specURL.includes('#:~:text=')) {
       const hasSpec = validSpecURLsWithFragments.includes(specURL);
 
@@ -143,8 +147,7 @@ const processData = (data: CompatStatement, logger: Logger): void => {
       }
     } else if (
       !validSpecHosts.some((host) => specURL.startsWith(host.url)) &&
-      !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl)) &&
-      !specsExceptions.some((host) => specURL.startsWith(host))
+      !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl))
     ) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
