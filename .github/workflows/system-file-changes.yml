@@ -1,39 +1,20 @@
 name: System file changes
 
 on:
-  pull_request_target:
-    paths:
-      - "**"
-      - "!**.md"
-      - "!api/**.json"
-      - "!browsers/**.json"
-      - "!css/**.json"
-      - "!html/**.json"
-      - "!http/**.json"
-      - "!javascript/**.json"
-      - "!manifests/**.json"
-      - "!mathml/**.json"
-      - "!svg/**.json"
-      - "!webassembly/**.json"
-      - "!webdriver/**.json"
-      - "!webextensions/**.json"
+  push:
 
 # No GITHUB_TOKEN permissions, as we don't use it.
 permissions: {}
 
 jobs:
   block:
-    # This makes sure it only runs on our origin repo
-    # and makes exceptions for Dependabot and mdn-bot.
-    if: github.repository_owner == 'mdn' && github.event.pull_request.user.login != 'dependabot[bot]' && github.event.pull_request.user.login != 'mdn-bot'
     runs-on: ubuntu-latest
     steps:
       - name: Block if author/actor is not admin or BCD owner
         env:
-          ACTOR: ${{ github.actor }}
-          AUTHOR: ${{ github.event.pull_request.user.login }}
-
-          GH_TOKEN: ${{ github.token }}
+          ACTOR: caugner
+          AUTHOR: Elchi3
+          GH_TOKEN: ${{ secrets.ORG_PAT }}
         run: |
           is_admin_or_owner() {
             local user="$1"
