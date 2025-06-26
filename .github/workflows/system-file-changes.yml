@@ -33,7 +33,7 @@ jobs:
           ACTOR: ${{ github.actor }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
 
-          GH_TOKEN: ${{ secrets.ORG_PAT }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           is_admin_or_owner() {
             local user="$1"
