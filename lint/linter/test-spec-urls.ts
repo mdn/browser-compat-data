@@ -12,8 +12,14 @@ import { CompatStatement } from '../../types/types.js';
  * When adding an exception here, provide a reason and indicate how the exception can be removed.
  */
 const specsExceptions = [
+  // Remove once https://github.com/w3c/fxtf-drafts/issues/599 is resolved
+  'https://drafts.fxtf.org/filter-effects/',
+
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
+
+  // Remove once SVG 2 Draft deployment is fixed (last updated 08 March 2023)
+  'https://svgwg.org/svg2-draft/styling.html#__svg__SVGStyleElement__disabled',
 
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
