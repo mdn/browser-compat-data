@@ -1,5 +1,23 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.27](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.27)
+
+June 27, 2025
+
+### Additions
+
+- `api.CredentialsContainer.create.publicKey_option.hints` ([#27147](https://github.com/mdn/browser-compat-data/pull/27147))
+- `api.CredentialsContainer.get.publicKey_option.hints` ([#27147](https://github.com/mdn/browser-compat-data/pull/27147))
+- `browsers.edge.releases.141` ([#27158](https://github.com/mdn/browser-compat-data/pull/27158))
+- `css.types.progress` ([#27152](https://github.com/mdn/browser-compat-data/pull/27152))
+
+### Statistics
+
+- 6 contributors have changed 23 files with 285 additions and 60 deletions in 24 commits ([`v6.0.26...v6.0.27`](https://github.com/mdn/browser-compat-data/compare/v6.0.26...v6.0.27))
+- 17,303 total features
+- 1,167 total contributors
+- 5,295 total stargazers
+
 ## [v6.0.26](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.26)
 
 June 24, 2025
