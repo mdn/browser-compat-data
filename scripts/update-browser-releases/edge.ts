@@ -7,7 +7,11 @@ import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import {
+  newBrowserEntry,
+  setBrowserReleaseStatus,
+  updateBrowserEntry,
+} from './utils.js';
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -245,42 +249,24 @@ export const updateEdgeReleases = async (options) => {
   //
   // Ensure that the release following stable is 'beta'
   //
-
-  const betaVersion = (data[options.releaseBranch].version + 1).toString();
-  const betaRelease =
-    edgeBCD.browsers[options.bcdBrowserName].releases[betaVersion];
-
-  if (betaRelease.status != 'beta') {
-    result += updateBrowserEntry(
-      edgeBCD,
-      options.bcdBrowserName,
-      betaVersion.toString(),
-      betaRelease.release_date,
-      'beta',
-      '',
-      '',
-    );
-  }
+  const betaVersion = data[options.releaseBranch].version + 1;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    betaVersion.toString(),
+    'beta',
+  );
 
   //
   // Ensure that the release following beta is 'nightly'
   //
-
-  const nightlyVersion = (data[options.releaseBranch].version + 2).toString();
-  const nightlyRelease =
-    edgeBCD.browsers[options.bcdBrowserName].releases[nightlyVersion];
-
-  if (nightlyRelease.status != 'nightly') {
-    result += updateBrowserEntry(
-      edgeBCD,
-      options.bcdBrowserName,
-      nightlyVersion.toString(),
-      nightlyRelease.release_date,
-      'nightly',
-      '',
-      '',
-    );
-  }
+  const nightlyVersion = data[options.releaseBranch].version + 2;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    nightlyVersion.toString(),
+    'nightly',
+  );
 
   //
   // Add a planned version entry
