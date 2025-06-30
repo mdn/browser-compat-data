@@ -18,7 +18,7 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /* The latest date a range's release can correspond to */
-const rangeCutoffDate = '2020-05-19';
+const rangeCutoffDate = '2020-01-01';
 
 const browserTips: Record<string, string> = {
   nodejs:
