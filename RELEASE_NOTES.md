@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.28](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.28)
+
+June 30, 2025
+
+### Removals
+
+- `http.headers.Link.blocking` ([#27145](https://github.com/mdn/browser-compat-data/pull/27145))
+
+### Statistics
+
+- 3 contributors have changed 2 files with 3 additions and 46 deletions in 2 commits ([`v6.0.27...v6.0.28`](https://github.com/mdn/browser-compat-data/compare/v6.0.27...v6.0.28))
+- 17,302 total features
+- 1,167 total contributors
+- 5,298 total stargazers
+
 ## [v6.0.27](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.27)
 
 June 27, 2025
