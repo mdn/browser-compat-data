@@ -126,7 +126,7 @@
                     "notes": "Vertical orientation available via the `writing-mode` property (see [Creating vertical controls](https://developer.mozilla.org/docs/Web/CSS/CSS_writing_modes/Vertical_controls))."
                   },
                   {
-                    "version_added": "≤72",
+                    "version_added": "23",
                     "version_removed": "120",
                     "impl_url": [
                       "https://bugzil.la/840820",
@@ -136,7 +136,22 @@
                     "notes": "Supported using the non-standard `orient=\"vertical\"` attribute."
                   }
                 ],
-                "firefox_android": "mirror",
+                "firefox_android": [
+                  {
+                    "version_added": "120",
+                    "notes": "Vertical orientation available via the `writing-mode` property (see [Creating vertical controls](https://developer.mozilla.org/docs/Web/CSS/CSS_writing_modes/Vertical_controls))."
+                  },
+                  {
+                    "version_added": "52",
+                    "version_removed": "120",
+                    "impl_url": [
+                      "https://bugzil.la/840820",
+                      "https://bugzil.la/981916"
+                    ],
+                    "partial_implementation": true,
+                    "notes": "Supported using the non-standard `orient=\"vertical\"` attribute."
+                  }
+                ],
                 "ie": {
                   "version_added": "10",
                   "notes": "Vertical orientation available by setting the `writing-mode: bt-lr` style on the `input` element."
