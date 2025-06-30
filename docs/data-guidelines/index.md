@@ -52,6 +52,33 @@ Do not use `"preview"` for planned but not yet implemented support changes. In o
 
 This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
 
+## `"partial_implementation"` general usage guidelines
+
+You must set `"partial_implementation": true` when all of the following conditions are met:
+
+- The browser's support does not implement mandatory specified behavior.
+- The browser's support is inconsistent with at least one other browser.
+- The browser's support causes confusing feature detection results.
+
+Setting `partial_implementation` stands alone.
+Unlike `"version_added": false`, `partial_implementation` does not dictate support data to descendant features.
+Likewise, a subfeature's `"version_added": false` does not imply `"version_added": false` or `"partial_implementation": true` for an ancestor feature.
+
+Here are some example situations:
+
+- `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
+  This behavior is consistent and is a _de facto_ complete implementation.
+
+- `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
+  A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
+  Use a note or non-standard behavioral subfeature instead.
+  <!-- TODO: link to behavioral subfeature guidelines, when available -->
+
+- `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
+  See [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
+
+- `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
+
 ## `"partial_implementation"` requires a note
 
 If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
