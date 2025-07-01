@@ -55,7 +55,7 @@ BCD's [owners](../../GOVERNANCE.md) may choose to adopt a new browser or engine.
 In addition to the hard requirement of machine-readable release information, we also need evidence of:
 
 - a compelling downstream-consumer story (e.g., MDN or caniuse express an interest in showing the data to developers or someone is planning to do something with the data that might plausibly grow BCD's reach beyond those sites)
-- a compelling data-automation story (e.g., using [mdn-bcd-collector](https://mdn-bcd-collector.gooborg.com/) to generate data updates)
+- a compelling data-automation story (e.g., using [mdn-bcd-collector](https://github.com/openwebdocs/mdn-bcd-collector) to generate data updates)
 - reviewer capacity (e.g., two or more volunteers with the interest and ability to review data change relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
 - documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
 
