@@ -1,5 +1,72 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.28](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.28)
+
+July 1, 2025
+
+### Renamings
+
+- `api.HTMLElement.showPopover.source` to `api.HTMLElement.showPopover.options_source_parameter` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+- `api.HTMLElement.showPopover.source.implicit_anchor_reference` to `api.HTMLElement.showPopover.options_source_parameter.implicit_anchor_reference` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+- `api.HTMLElement.togglePopover.source` to `api.HTMLElement.togglePopover.options_source_parameter` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+- `api.HTMLElement.togglePopover.source.implicit_anchor_reference` to `api.HTMLElement.togglePopover.options_source_parameter.implicit_anchor_reference` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+
+### Removals
+
+- `http.headers.Link.blocking` ([#27145](https://github.com/mdn/browser-compat-data/pull/27145))
+
+### Additions
+
+- `api.CSSFunctionDeclarations` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionDeclarations.style` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionDescriptors` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionDescriptors.result` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionRule` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionRule.getParameters` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionRule.name` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.CSSFunctionRule.returnType` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.HTMLElement.togglePopover.force_parameter` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+- `api.HTMLElement.togglePopover.options_force_parameter` ([#27157](https://github.com/mdn/browser-compat-data/pull/27157))
+- `api.IdentityCredentialError` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.IdentityCredentialError.IdentityCredentialError` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.IdentityCredentialError.url` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.PaymentRequest.securePaymentConfirmationAvailability_static` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.SpeechRecognition.available_static` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.SpeechRecognition.install_static` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.SpeechRecognition.processLocally` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.WGSLLanguageFeatures.extension_pointer_composite_access` ([#27146](https://github.com/mdn/browser-compat-data/pull/27146))
+- `api.XRDepthInformation.projectionMatrix` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.XRDepthInformation.transform` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.XRSession.depthActive` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.XRSession.depthType` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.XRSession.pauseDepthSensing` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `api.XRSession.resumeDepthSensing` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-block-end-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-block-start-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-bottom-left-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-bottom-right-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-bottom-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-end-end-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-end-start-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-inline-end-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-inline-start-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-left-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-right-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-start-end-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-start-start-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-top-left-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-top-right-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `css.properties.corner-top-shape` ([#27202](https://github.com/mdn/browser-compat-data/pull/27202))
+- `html.elements.input.type_range.labeled_values` ([#27159](https://github.com/mdn/browser-compat-data/pull/27159))
+
+### Statistics
+
+- 12 contributors have changed 85 files with 2,648 additions and 764 deletions in 17 commits ([`v6.0.27...v6.0.28`](https://github.com/mdn/browser-compat-data/compare/v6.0.27...v6.0.28))
+- 17,344 total features
+- 1,168 total contributors
+- 5,297 total stargazers
+
 ## [v6.0.27](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.27)
 
 June 27, 2025
@@ -49,17 +116,15 @@ June 24, 2025
 
 June 20, 2025
 
-### Removals
+### Renamings
 
-- `javascript.classes.static_class_fields` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
-- `javascript.classes.static_initialization_blocks` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+- `javascript.classes.static_class_fields` to `javascript.classes.static.class_fields` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
+- `javascript.classes.static_initialization_blocks` to `javascript.classes.static.initialization_blocks` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
 
 ### Additions
 
 - `browsers.opera_android.releases.90` ([#27097](https://github.com/mdn/browser-compat-data/pull/27097))
 - `http.headers.Content-Security-Policy.script-src.trusted-types-eval` ([#27113](https://github.com/mdn/browser-compat-data/pull/27113))
-- `javascript.classes.static.class_fields` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
-- `javascript.classes.static.initialization_blocks` ([#27055](https://github.com/mdn/browser-compat-data/pull/27055))
 - `svg.elements.feImage.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
 - `svg.elements.image.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
 - `svg.elements.script.fetchpriority` ([#27090](https://github.com/mdn/browser-compat-data/pull/27090))
