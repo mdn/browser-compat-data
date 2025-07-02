@@ -3,7 +3,7 @@
     "ImageData": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData",
-        "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#imagedata",
+        "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedata",
         "tags": [
           "web-features:canvas-2d"
         ],
@@ -37,9 +37,7 @@
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
-          "webview_android": {
-            "version_added": "≤37"
-          },
+          "webview_android": "mirror",
           "webview_ios": "mirror"
         },
         "status": {
@@ -52,7 +50,10 @@
         "__compat": {
           "description": "`ImageData()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData/ImageData",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagedata-dev",
+          "spec_url": [
+            "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata",
+            "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-with-data"
+          ],
           "tags": [
             "web-features:canvas-2d"
           ],
@@ -71,9 +72,6 @@
               "version_added": "29"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -90,11 +88,75 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "settings_parameter": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "92"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15.2"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "colorSpace_option": {
+            "__compat": {
+              "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-predefinedcolorspace-srgb",
+              "support": {
+                "chrome": {
+                  "version_added": "92"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "15.2"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
         }
       },
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:canvas-2d"
+          ],
           "support": {
             "chrome": {
               "version_added": "36"
@@ -110,9 +172,6 @@
               "version_added": "25"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -134,7 +193,7 @@
       "colorSpace": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData/colorSpace",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagedata-colorspace",
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-colorspace",
           "tags": [
             "web-features:canvas-2d"
           ],
@@ -151,9 +210,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -175,7 +231,7 @@
       "data": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData/data",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagedata-data-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-data",
           "tags": [
             "web-features:canvas-2d"
           ],
@@ -209,9 +265,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -224,7 +278,7 @@
       "height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData/height",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagedata-height-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-height",
           "tags": [
             "web-features:canvas-2d"
           ],
@@ -258,9 +312,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -270,10 +322,41 @@
           }
         }
       },
+      "pixelFormat": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-pixelformat",
+          "support": {
+            "chrome": {
+              "version_added": "137"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "width": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ImageData/width",
-          "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagedata-width-dev",
+          "spec_url": "https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#dom-imagedata-width",
           "tags": [
             "web-features:canvas-2d"
           ],
@@ -307,9 +390,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {

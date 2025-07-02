@@ -66,6 +66,11 @@ const main = async () => {
     return node;
   };
 
+  /**
+   * '{"removed":["foo"],"added":["bar"]}' => ['api.foo', 'api.bar']
+   */
+  const changes: Record<string, string[]> = {};
+
   for (const fp of bcdJsons) {
     const src = await fs.readFile(fp, { encoding: 'utf-8' });
     const data = JSON.parse(src);
@@ -83,7 +88,9 @@ const main = async () => {
         continue;
       }
 
-      /* eslint-disable-next-line no-constant-condition */
+      const added: string[] = [];
+      const removed: string[] = [];
+
       while (true) {
         const index = compat.tags?.findIndex(
           (t) =>
@@ -96,11 +103,18 @@ const main = async () => {
 
         // Remove any other feature tags (besides snapshots)
         // Compat keys in multiple web-features features creates ambiguity for some consumers, see https://github.com/web-platform-dx/web-features/issues/1173
-        console.info(`Removing tag ${compat.tags[index]} from ${key}`);
+        const tag = compat.tags[index];
+        if (!process.env.GITHUB_ACTIONS) {
+          console.info(`Removing tag ${tag} from ${key}`);
+        }
+        removed.push(tag);
         compat.tags.pop(index);
       }
 
-      console.info(`Adding tag ${tag} to ${key}`);
+      if (!process.env.GITHUB_ACTIONS) {
+        console.info(`Adding tag ${tag} to ${key}`);
+      }
+      added.push(tag);
 
       if (compat.tags) {
         compat.tags.push(tag);
@@ -108,6 +122,10 @@ const main = async () => {
         compat.tags = [tag];
       }
       updated = true;
+
+      const change = JSON.stringify({ removed, added });
+      changes[change] ??= [];
+      changes[change].push(key);
     }
     if (updated) {
       await fs.writeFile(fp, stringifyAndOrderProperties(data) + '\n', {
@@ -118,6 +136,26 @@ const main = async () => {
 
   for (const [key, feature] of bcdToFeature) {
     console.warn('Not migrated:', feature, key);
+  }
+
+  if (process.env.GITHUB_ACTIONS) {
+    console.log(
+      '```patch' +
+        '\n' +
+        Object.entries(changes)
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([json, keys]) => [JSON.parse(json), keys])
+          .map(([{ removed, added }, keys]) =>
+            keys
+              .map((key) => `# ${key}`)
+              .concat(removed.map((tag) => `- ${tag}`))
+              .concat(added.map((tag) => `+ ${tag}`))
+              .join('\n'),
+          )
+          .join('\n\n') +
+        '\n' +
+        '```',
+    );
   }
 };
 

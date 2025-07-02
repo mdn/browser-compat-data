@@ -18,11 +18,18 @@ describe('test-browsers-presence', () => {
     data = {
       support: {
         chrome: { version_added: '1' },
+        chrome_android: 'mirror',
         firefox: { version_added: '1.5' },
+        firefox_android: 'mirror',
         edge: { version_added: '12' },
         ie: { version_added: '6' },
         opera: { version_added: '7' },
+        opera_android: 'mirror',
         safari: { version_added: '1.2' },
+        safari_ios: 'mirror',
+        samsunginternet_android: 'mirror',
+        webview_android: 'mirror',
+        webview_ios: 'mirror',
       },
     };
     category = 'api';

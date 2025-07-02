@@ -2,6 +2,28 @@
   "webextensions": {
     "api": {
       "cookies": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies",
+          "support": {
+            "chrome": {
+              "version_added": "6"
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "45"
+            },
+            "firefox_android": {
+              "version_added": "48"
+            },
+            "opera": "mirror",
+            "safari": {
+              "version_added": "14"
+            },
+            "safari_ios": {
+              "version_added": "15"
+            }
+          }
+        },
         "Cookie": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/cookies/Cookie",
@@ -222,6 +244,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": "`HttpOnly` cookies are not retrieved."
                 }
@@ -232,6 +255,7 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": "`HttpOnly` cookies are not retrieved."
                 }
@@ -305,6 +329,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": [
                     "Only the cookies in the default cookie store are retrieved.",
@@ -318,6 +343,7 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": [
                     "Only the cookies in the default cookie store are retrieved.",
@@ -388,6 +414,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": "Always returns the same default cookie store with ID 0."
                 }
@@ -398,6 +425,7 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": "Always returns the same default cookie store with ID 0."
                 }
@@ -619,7 +647,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "140"
                 },
                 "firefox_android": "mirror",
                 "opera": {
@@ -662,6 +690,7 @@
                 },
                 {
                   "version_added": "14",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": [
                     "Only sets cookies in the default cookie store.",
@@ -675,6 +704,7 @@
                 },
                 {
                   "version_added": "15",
+                  "version_removed": "18",
                   "partial_implementation": true,
                   "notes": [
                     "Only sets cookies in the default cookie store.",
@@ -730,7 +760,8 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "63"
+                  "version_added": "63",
+                  "notes": "Until Firefox 139, defaults to `no_restriction`. From Firefox 140, defaults to `unspecified`. "
                 },
                 "firefox_android": "mirror",
                 "opera": {

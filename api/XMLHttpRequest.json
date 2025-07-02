@@ -25,6 +25,7 @@
             },
             {
               "version_added": "5",
+              "version_removed": "7",
               "partial_implementation": true,
               "notes": "Implemented via `ActiveXObject('Microsoft.XMLHTTP')`"
             }
@@ -42,7 +43,7 @@
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
           "webview_android": {
-            "version_added": "≤37"
+            "version_added": "3"
           },
           "webview_ios": "mirror"
         },
@@ -228,9 +229,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -260,9 +259,6 @@
               "version_added": "111"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -319,9 +315,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -391,9 +385,6 @@
                 "version_added": "64"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -496,9 +487,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -676,6 +665,7 @@
               },
               {
                 "version_added": "5",
+                "version_removed": "11",
                 "partial_implementation": true,
                 "notes": "Implemented via `ActiveXObject`"
               }
@@ -742,9 +732,7 @@
               "version_added": "1"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1183,9 +1171,6 @@
               "firefox_android": {
                 "version_added": "50"
               },
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": [
                 {
@@ -1240,9 +1225,6 @@
               "version_added": "32"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1278,7 +1260,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 51, an error parsing the received data added a `&lt;parsererror&gt;` node to the top of the `Document` and then returned the `Document` in whatever state it happens to be in. This was inconsistent with the specification. Starting with Firefox 51, this scenario now correctly returns `null` as per the spec."
+              "notes": "Before Firefox 51, an error parsing the received data added a `<parsererror>` node to the top of the `Document` and then returned the `Document` in whatever state it happens to be in. This was inconsistent with the specification. Starting with Firefox 51, this scenario now correctly returns `null` as per the spec."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1298,9 +1280,7 @@
               "version_added": "1"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1356,7 +1336,6 @@
         "body_ArrayBuffer_type": {
           "__compat": {
             "description": "ArrayBuffer as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBuffer",
             "tags": [
               "web-features:xhr"
             ],
@@ -1387,9 +1366,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1402,7 +1379,6 @@
         "body_ArrayBufferView_type": {
           "__compat": {
             "description": "ArrayBufferView as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#ArrayBufferView",
             "tags": [
               "web-features:xhr"
             ],
@@ -1446,7 +1422,6 @@
         "body_Blob_type": {
           "__compat": {
             "description": "Blob as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#Blob",
             "tags": [
               "web-features:xhr"
             ],
@@ -1490,7 +1465,6 @@
         "body_FormData_type": {
           "__compat": {
             "description": "FormData as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#FormData",
             "tags": [
               "web-features:xhr"
             ],
@@ -1521,9 +1495,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1536,7 +1508,6 @@
         "body_URLSearchParams_type": {
           "__compat": {
             "description": "URLSearchParams as parameter to send()",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/XMLHttpRequest/send#URLSearchParams",
             "tags": [
               "web-features:xhr"
             ],
@@ -1552,9 +1523,6 @@
                 "version_added": "44"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1599,9 +1567,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1633,9 +1598,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1972,9 +1934,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {

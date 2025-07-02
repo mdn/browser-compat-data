@@ -8,6 +8,11 @@ Read how this project is [governed](./GOVERNANCE.md).
 
 Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
+Are you interested in contributing to this project? Check out the [Contributing to browser-compat-data](./docs/contributing.md) documentation.
+
+> [!TIP]
+> Looking for something? Consult the [alphabetical index](./docs/index.md) of the project documentation.
+
 ## Installation and Import
 
 ### NodeJS
@@ -148,7 +153,6 @@ Data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) features, inc
 
 - `elements` - Elements
 - `global_attributes` - Global attributes
-- `manifest` - Web App manifest keys
 
 ### [`http`](http)
 
@@ -169,6 +173,10 @@ Data for JavaScript language features, including:
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
 
+### [`manifests`](./manifests)
+
+- `webapp` - Web App manifest keys
+
 ### [`mathml`](./mathml)
 
 Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features, including:
@@ -188,7 +196,10 @@ Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
 
 ### [`webdriver`](./webdriver)
 
-Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
+Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features, including:
+
+- `bidi` - WebDriver BiDi protocol
+- `classic` - WebDriver Classic protocol
 
 ### [`webextensions`](./webextensions)
 

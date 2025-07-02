@@ -86,20 +86,17 @@
               {
                 "version_added": "64",
                 "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
+                "notes": "Only on macOS and Windows."
               },
               {
                 "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
+                "version_removed": "64",
+                "notes": "Only on Windows."
               }
             ],
             "firefox_android": {
               "version_added": "55",
               "version_removed": "98"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -144,9 +141,6 @@
               "firefox_android": {
                 "version_added": false
               },
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -182,9 +176,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -352,9 +343,6 @@
               "impl_url": "https://bugzil.la/1921506"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -394,9 +382,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -448,9 +433,6 @@
               "impl_url": "https://bugzil.la/674737"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -490,9 +472,6 @@
               "notes": "Since Firefox 64, this property returns a fixed timestamp as a privacy measure - `20181001000000`."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -527,9 +506,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -556,11 +532,17 @@
             "web-features:share"
           ],
           "support": {
-            "chrome": {
-              "version_added": "89",
-              "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
-            },
+            "chrome": [
+              {
+                "version_added": "128"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "128",
+                "partial_implementation": true,
+                "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
+              }
+            ],
             "chrome_android": {
               "version_added": "75"
             },
@@ -587,9 +569,6 @@
             },
             "firefox_android": {
               "version_added": "96"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -635,9 +614,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -684,9 +660,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -723,7 +696,11 @@
           "support": {
             "chrome": {
               "version_added": "81",
-              "notes": "Windows and macOS only. Linux offers no universal badging API on the operating system level."
+              "notes": [
+                "Windows and macOS since Chrome 81.",
+                "ChromeOS since Chrome 91.",
+                "Linux offers no universal badging API on the operating system level."
+              ]
             },
             "chrome_android": {
               "version_added": "81"
@@ -733,9 +710,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -779,9 +753,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -817,9 +788,6 @@
               "version_added": "63"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -863,9 +831,6 @@
             "firefox_android": {
               "version_added": "14",
               "version_removed": "99"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -913,9 +878,6 @@
               "impl_url": "https://bugzil.la/1756767"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1020,9 +982,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1060,9 +1019,6 @@
               "version_added": "60"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1093,7 +1049,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": "128"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1101,9 +1057,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1138,9 +1091,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1176,9 +1126,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1217,9 +1164,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1334,9 +1278,7 @@
               "version_added": "≤3"
             },
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1361,9 +1303,6 @@
                 "version_added": "55"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -1400,9 +1339,6 @@
               "version_added": "112"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1442,9 +1378,6 @@
               "version_removed": "52"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1481,9 +1414,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -1535,9 +1465,6 @@
             "firefox_android": {
               "version_added": "32"
             },
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1549,15 +1476,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "37"
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -1589,9 +1508,6 @@
                 "version_added": "91"
               },
               "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
                 "version_added": false
               },
               "nodejs": {
@@ -1640,6 +1556,7 @@
               },
               {
                 "version_added": "80",
+                "version_removed": "84",
                 "partial_implementation": true,
                 "notes": "Supports checking of Android app installation."
               }
@@ -1649,9 +1566,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -1690,9 +1604,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1742,9 +1653,6 @@
             "firefox_android": {
               "prefix": "moz",
               "version_added": "24"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -1834,20 +1742,17 @@
               {
                 "version_added": "64",
                 "version_removed": "98",
-                "notes": "macOS support was enabled in Firefox 64."
+                "notes": "Only on macOS and Windows."
               },
               {
                 "version_added": "55",
-                "version_removed": "98",
-                "notes": "Windows support was enabled in Firefox 55."
+                "version_removed": "64",
+                "notes": "Only on Windows."
               }
             ],
             "firefox_android": {
               "version_added": "55",
               "version_removed": "98"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -1892,9 +1797,6 @@
               "notes": "Opt-in to GPC using the Website Privacy Preference setting (`about:preferences#privacy`) checkbox 'Tell websites not to sell or share my data', or by setting the preference `privacy.globalprivacycontrol.enabled` to `true`."
             },
             "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
               "version_added": false
             },
             "nodejs": {
@@ -1950,14 +1852,11 @@
             ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Currently supported on Windows only."
             },
             "firefox_android": {
-              "version_added": false
-            },
-            "ie": {
               "version_added": false
             },
             "nodejs": {
@@ -1967,7 +1866,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "26"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1975,7 +1874,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2006,9 +1905,6 @@
               "version_added": "48"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "21.0.0"
             },
@@ -2057,9 +1953,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2103,9 +1996,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2184,9 +2074,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2222,9 +2109,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2371,9 +2255,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -2409,9 +2290,6 @@
               "version_added": "96"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2444,12 +2322,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "138"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2467,7 +2342,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2486,9 +2361,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2578,9 +2450,6 @@
               "version_added": "63"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2625,9 +2494,6 @@
               "version_added": "36"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2664,9 +2530,6 @@
                 "version_added": "69"
               },
               "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
                 "version_added": false
               },
               "nodejs": {
@@ -2714,9 +2577,6 @@
               "version_added": "82"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2863,9 +2723,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -2934,7 +2791,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": {
-              "version_added": "≤37",
+              "version_added": "4.4",
               "partial_implementation": true,
               "notes": "Can incorrectly return true, see [bug 41369933](https://crbug.com/41369933)."
             },
@@ -2962,9 +2819,6 @@
               "notes": "The preference `\"general.oscpu.override\"` can be used to set a value to be returned instead of the true CPU description. The preference setting is ignored for calls made by privileged code, which continue to get the actual CPU description."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3003,9 +2857,6 @@
               "version_added": "99"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3044,9 +2895,6 @@
               "version_added": "46"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3235,9 +3083,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3321,9 +3166,6 @@
               "version_added": "1"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3359,9 +3201,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -3403,9 +3242,6 @@
               "version_added": "2"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -3450,9 +3286,6 @@
               "firefox_android": {
                 "version_added": false
               },
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3492,9 +3325,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3531,9 +3361,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3570,9 +3397,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3609,9 +3433,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3648,9 +3469,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3687,9 +3505,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3727,9 +3542,6 @@
                 "version_added": "98"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3767,9 +3579,6 @@
                 "version_added": "98"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3809,9 +3618,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3848,9 +3654,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3890,9 +3693,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3929,9 +3729,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3968,9 +3765,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4010,9 +3804,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4054,9 +3845,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4096,9 +3884,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4138,9 +3923,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4182,9 +3964,6 @@
                 "version_added": "90"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4224,9 +4003,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4268,9 +4044,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4312,9 +4085,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4356,9 +4126,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4396,9 +4163,6 @@
                 "version_added": "98"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4438,9 +4202,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4480,9 +4241,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4524,9 +4282,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4563,9 +4318,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4605,9 +4357,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4647,9 +4396,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4691,9 +4437,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4735,9 +4478,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4779,9 +4519,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4821,9 +4558,6 @@
                 "version_added": "2"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -4874,9 +4608,6 @@
               ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -4930,9 +4661,6 @@
             "firefox_android": {
               "version_added": false
             },
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -4972,9 +4700,6 @@
               "firefox_android": {
                 "version_added": false
               },
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -5010,9 +4735,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -5045,9 +4767,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5094,9 +4813,6 @@
               "version_added": "31"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5140,9 +4856,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5187,9 +4900,6 @@
               "notes": "In Firefox private windows, the `serviceWorker` object is `undefined`. See [bug 1320796](https://bugzil.la/1320796)."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5223,7 +4933,11 @@
           "support": {
             "chrome": {
               "version_added": "81",
-              "notes": "Windows and macOS only. Linux offers no universal badging API on the operating system level."
+              "notes": [
+                "Windows and macOS since Chrome 81.",
+                "ChromeOS since Chrome 91.",
+                "Linux offers no universal badging API on the operating system level."
+              ]
             },
             "chrome_android": {
               "version_added": false
@@ -5233,9 +4947,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5280,11 +4991,17 @@
             "web-features:share"
           ],
           "support": {
-            "chrome": {
-              "version_added": "89",
-              "partial_implementation": true,
-              "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
-            },
+            "chrome": [
+              {
+                "version_added": "128"
+              },
+              {
+                "version_added": "89",
+                "version_removed": "128",
+                "partial_implementation": true,
+                "notes": "Only supported on ChromeOS and Windows, see [bug 40542648](https://crbug.com/40542648) and [bug 40729163](https://crbug.com/40729163)."
+              }
+            ],
             "chrome_android": {
               "version_added": "61"
             },
@@ -5311,9 +5028,6 @@
             },
             "firefox_android": {
               "version_added": "79"
-            },
-            "ie": {
-              "version_added": false
             },
             "nodejs": {
               "version_added": false
@@ -5361,9 +5075,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -5412,9 +5123,6 @@
               "firefox_android": {
                 "version_added": false
               },
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -5458,9 +5166,6 @@
               "version_added": "57"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5499,9 +5204,6 @@
               "impl_url": "https://bugzil.la/1594740"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5587,9 +5289,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5632,9 +5331,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -5670,9 +5366,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5714,9 +5407,6 @@
               "version_added": "120"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5808,9 +5498,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -5850,9 +5537,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -5933,9 +5617,6 @@
               "version_added": "1"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -6014,9 +5695,6 @@
                 "version_removed": "16"
               }
             ],
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -6068,9 +5746,6 @@
               "impl_url": "https://bugzil.la/1730568"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -6110,9 +5785,6 @@
               "version_added": "126"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -6122,11 +5794,17 @@
             "safari": {
               "version_added": "16.4"
             },
-            "safari_ios": {
-              "version_added": "16.4",
-              "partial_implementation": true,
-              "notes": "Does not work in standalone Home Screen Web Apps. See [bug 254545](https://webkit.org/b/254545#c32)."
-            },
+            "safari_ios": [
+              {
+                "version_added": "18.4"
+              },
+              {
+                "version_added": "16.4",
+                "version_removed": "18.4",
+                "partial_implementation": true,
+                "notes": "Does not work in standalone Home Screen Web Apps. See [bug 254545](https://webkit.org/b/254545#c32)."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -6200,9 +5878,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },
@@ -6242,9 +5917,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": false
             },

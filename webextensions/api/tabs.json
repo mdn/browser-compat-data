@@ -580,6 +580,30 @@
           }
         },
         "Tab": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
+            "support": {
+              "chrome": {
+                "version_added": "5"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "45"
+              },
+              "firefox_android": {
+                "version_added": "54"
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          },
           "active": {
             "__compat": {
               "support": {
@@ -665,7 +689,8 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/265970"
                 },
                 "safari_ios": "mirror"
               }
@@ -708,7 +733,8 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/265970"
                 },
                 "safari_ios": "mirror"
               }
@@ -728,6 +754,28 @@
                 },
                 "firefox_android": {
                   "version_added": false
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "groupId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "88"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "138"
+                },
+                "firefox_android": {
+                  "version_added": false,
+                  "notes": "Always -1 as tab groups are not supported in Firefox for Android"
                 },
                 "opera": "mirror",
                 "safari": {
@@ -1338,6 +1386,7 @@
                   },
                   {
                     "version_added": "45",
+                    "version_removed": "110",
                     "partial_implementation": true,
                     "notes": "Returns 1, regardless of the default zoom factor setting."
                   }
@@ -1475,7 +1524,7 @@
               },
               "firefox": {
                 "version_added": "47",
-                "notes": "In Firefox 125 and earlier, only available with the `&lt;all_urls&gt;` permission. From Firefox 126, available with either the `&lt;all_urls&gt;` or `activeTab` permissions."
+                "notes": "In Firefox 125 and earlier, only available with the `<all_urls>` permission. From Firefox 126, available with either the `<all_urls>` or `activeTab` permissions."
               },
               "firefox_android": {
                 "version_added": "54"
@@ -1485,14 +1534,14 @@
                 "version_added": "14",
                 "notes": [
                   "The default file format is 'jpeg'.",
-                  "`&lt;all_urls&gt;` permission is optional."
+                  "`<all_urls>` permission is optional."
                 ]
               },
               "safari_ios": {
                 "version_added": "15",
                 "notes": [
                   "The default file format is 'jpeg'.",
-                  "`&lt;all_urls&gt;` permission is optional."
+                  "`<all_urls>` permission is optional."
                 ]
               }
             }
@@ -1522,6 +1571,31 @@
             }
           },
           "connectInfo": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "41"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "54"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14",
+                  "partial_implementation": true,
+                  "notes": "`name` is supported, but `frameId` is not."
+                },
+                "safari_ios": {
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "`name` is supported, but `frameId` is not."
+                }
+              }
+            },
             "frameId": {
               "__compat": {
                 "support": {
@@ -1636,7 +1710,8 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/265970"
                 },
                 "safari_ios": "mirror"
               }
@@ -1896,7 +1971,8 @@
               },
               "opera": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/265970"
               },
               "safari_ios": "mirror"
             }
@@ -2051,7 +2127,7 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror"
               }
@@ -2269,6 +2345,28 @@
             }
           }
         },
+        "group": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/group",
+            "support": {
+              "chrome": {
+                "version_added": "88"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "138"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "hide": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/hide",
@@ -2428,7 +2526,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror"
               }
@@ -2802,6 +2900,29 @@
             }
           },
           "changeInfo": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "4"
+                },
+                "edge": {
+                  "version_added": "14"
+                },
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "54"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
             "audible": {
               "__compat": {
                 "support": {
@@ -2842,7 +2963,8 @@
                   },
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": false,
+                    "impl_url": "https://webkit.org/b/265970"
                   },
                   "safari_ios": "mirror"
                 }
@@ -2895,6 +3017,27 @@
                 }
               }
             },
+            "groupId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "88"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "138"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
             "mutedInfo": {
               "__compat": {
                 "support": {
@@ -2935,9 +3078,11 @@
                   "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "14"
                   },
-                  "safari_ios": "mirror"
+                  "safari_ios": {
+                    "version_added": "15"
+                  }
                 }
               }
             },
@@ -3069,6 +3214,46 @@
               }
             },
             "properties": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "61"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              },
+              "groupId": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": false
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": "138"
+                    },
+                    "firefox_android": {
+                      "version_added": false
+                    },
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": false
+                    },
+                    "safari_ios": "mirror"
+                  }
+                }
+              },
               "isArticle": {
                 "__compat": {
                   "support": {
@@ -3300,7 +3485,8 @@
                   },
                   "opera": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": false,
+                    "impl_url": "https://webkit.org/b/265970"
                   },
                   "safari_ios": "mirror"
                 }
@@ -3373,6 +3559,28 @@
                   "firefox_android": {
                     "version_added": "57",
                     "version_removed": "79"
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false,
+                    "impl_url": "https://webkit.org/b/265970"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "groupId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "88"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "138"
+                  },
+                  "firefox_android": {
+                    "version_added": false
                   },
                   "opera": "mirror",
                   "safari": {
@@ -3807,6 +4015,27 @@
             }
           },
           "options": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "41"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "45"
+                },
+                "firefox_android": {
+                  "version_added": "54"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
             "frameId": {
               "__compat": {
                 "support": {
@@ -3942,6 +4171,28 @@
             }
           }
         },
+        "ungroup": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/ungroup",
+            "support": {
+              "chrome": {
+                "version_added": "88"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "138"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "update": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/update",
@@ -4009,7 +4260,8 @@
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/265970"
                 },
                 "safari_ios": "mirror"
               }

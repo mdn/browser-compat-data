@@ -175,20 +175,19 @@
                   "version_added": "1.0"
                 },
                 "chrome": {
-                  "version_added": "57"
+                  "version_added": "≤15"
                 },
                 "chrome_android": "mirror",
                 "deno": {
                   "version_added": "1.0"
                 },
-                "edge": "mirror",
+                "edge": {
+                  "version_added": "≤15"
+                },
                 "firefox": {
-                  "version_added": "54"
+                  "version_added": "≤4"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "8.0.0"
                 },
@@ -196,7 +195,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": "12"
+                  "version_added": "≤10.1"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1188,7 +1187,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getYear",
             "spec_url": "https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-date.prototype.getyear",
             "tags": [
-              "web-features:snapshot:ecmascript-1"
+              "web-features:snapshot:ecmascript-1",
+              "web-features:date-get-year-set-year"
             ],
             "support": {
               "bun": {
@@ -1383,9 +1383,7 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": {
-                  "version_added": "≤37"
-                },
+                "webview_android": "mirror",
                 "webview_ios": "mirror"
               },
               "status": {
@@ -2211,7 +2209,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/setYear",
             "spec_url": "https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-date.prototype.setyear",
             "tags": [
-              "web-features:snapshot:ecmascript-1"
+              "web-features:snapshot:ecmascript-1",
+              "web-features:date-get-year-set-year"
             ],
             "support": {
               "bun": {
@@ -2318,7 +2317,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString",
             "spec_url": "https://tc39.es/ecma262/multipage/additional-ecmascript-features-for-web-browsers.html#sec-date.prototype.togmtstring",
             "tags": [
-              "web-features:snapshot:ecmascript-1"
+              "web-features:snapshot:ecmascript-1",
+              "web-features:date-to-gmt-string"
             ],
             "support": {
               "bun": {
@@ -2410,9 +2410,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2466,9 +2464,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -2557,9 +2553,6 @@
                 "firefox_android": {
                   "version_added": "56"
                 },
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "0.12.0"
                 },
@@ -2621,6 +2614,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -2770,9 +2764,6 @@
                 "firefox_android": {
                   "version_added": "56"
                 },
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "0.12.0"
                 },
@@ -2834,6 +2825,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -2983,9 +2975,6 @@
                 "firefox_android": {
                   "version_added": "56"
                 },
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "0.12.0"
                 },
@@ -3047,6 +3036,7 @@
                   },
                   {
                     "version_added": "0.12.0",
+                    "version_removed": "13.0.0",
                     "partial_implementation": true,
                     "notes": "Before version 13.0.0, only the locale data for `en-US` is available by default. When other locales are specified, the function silently falls back to `en-US`. To make full ICU (locale) data available before version 13, see [Node.js documentation on the `--with-intl` option](https://nodejs.org/docs/latest/api/intl.html#intl_options_for_building_node_js) and how to provide the data."
                   }
@@ -3195,20 +3185,9 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "javascript.options.experimental.temporal",
-                    "value_to_set": "true"
-                  }
-                ],
-                "impl_url": "https://bugzil.la/1912511"
+                "version_added": "139"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -3420,9 +3399,6 @@
                 "version_added": "44"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "6.0.0"
               },

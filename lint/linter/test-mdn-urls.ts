@@ -76,18 +76,18 @@ export const processData = (
     const mdnURL = new URL(data.mdn_url);
     const redirectURL = '/en-US' + mdnURL.pathname;
     const slug = mdnURL.pathname.replace('/docs/', '');
+    const hash = mdnURL.hash;
 
-    /* Replace redirects with the new URL */
     if (redirectURL in redirects) {
+      // Replace redirects with the new URL.
       issues.push({
         ruleName: 'mdn_url_redirect',
         path,
         actual: data.mdn_url,
         expected: mdnURL.origin + redirects[redirectURL]?.replace('/en-US', ''),
       });
-
-      /* Check if casing is wrong */
     } else if (
+      // Check if casing is wrong.
       // slugs.values().some(v => v === slug) when https://tc39.es/proposal-iterator-helpers is available
       !Array.from(slugs.values()).includes(slug) &&
       Array.from(slugs.keys()).includes(slug.toLowerCase())
@@ -96,18 +96,17 @@ export const processData = (
         ruleName: 'mdn_url_casing',
         path,
         actual: data.mdn_url,
-        expected: `https://developer.mozilla.org/docs/${slugs.get(slug.toLowerCase())}`,
+        expected: `https://developer.mozilla.org/docs/${slugs.get(slug.toLowerCase())}${hash}`,
       });
-
-      /* Delete non-existing MDN pages */
     } else if (!Array.from(slugs.values()).includes(slug)) {
+      // Delete non-existing MDN pages.
       issues.push({
         ruleName: 'mdn_url_404',
         path,
         actual: data.mdn_url,
         expected: '',
       });
-    } else if (slugByPath.has(path) && !data.mdn_url?.includes('#')) {
+    } else if (slugByPath.has(path) && !hash) {
       // Overwrite url, unless it has a fragment.
       const expected = `https://developer.mozilla.org/docs/${slugByPath.get(path)}`;
       if (expected != data.mdn_url) {
@@ -118,6 +117,14 @@ export const processData = (
           expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
         });
       }
+    } else if (hash !== hash.toLowerCase()) {
+      // Enforce lower-case fragment.
+      issues.push({
+        ruleName: 'mdn_url_casing_hash',
+        path,
+        actual: data.mdn_url,
+        expected: `https://developer.mozilla.org/docs/${slug}${hash.toLowerCase()}`,
+      });
     }
   } else if (slugByPath.has(path)) {
     issues.push({

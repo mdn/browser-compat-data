@@ -63,9 +63,6 @@
                 "version_added": "69"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": {
                 "version_added": "62"
@@ -324,12 +321,11 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "124",
+                "partial_implementation": true,
+                "notes": "Only accepts values for `white-space-collapse` and `text-wrap-mode`, not `white-space-trim`."
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -342,7 +338,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -390,7 +386,7 @@
         },
         "textarea_support": {
           "__compat": {
-            "description": "Support on `&lt;textarea&gt;`",
+            "description": "Support on `<textarea>`",
             "tags": [
               "web-features:white-space"
             ],
