@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 import chalk from 'chalk-template';
-import specData from 'web-specs' with { type: 'json' };
 
 import { Linter, Logger, LinterData } from '../utils.js';
 import { CompatStatement } from '../../types/types.js';
@@ -13,8 +12,14 @@ import { CompatStatement } from '../../types/types.js';
  * When adding an exception here, provide a reason and indicate how the exception can be removed.
  */
 const specsExceptions = [
+  // Remove once https://github.com/w3c/fxtf-drafts/issues/599 is resolved
+  'https://drafts.fxtf.org/filter-effects/',
+
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
+
+  // Remove once SVG 2 Draft deployment is fixed (last updated 08 March 2023)
+  'https://svgwg.org/svg2-draft/styling.html#__svg__SVGStyleElement__disabled',
 
   // Exception for April Fools' joke for "418 I'm a teapot"
   'https://www.rfc-editor.org/rfc/rfc2324',
@@ -49,19 +54,60 @@ const specsExceptions = [
   'https://github.com/WebAssembly/js-promise-integration',
 ];
 
-const allowedSpecURLs = [
-  ...(specData
-    .filter((spec) => spec.standing == 'good')
-    .map((spec) => [
-      spec.url,
-      spec.nightly?.url,
-      ...(spec.nightly ? spec.nightly.alternateUrls : []),
-      spec.series.nightlyUrl,
-    ])
-    .flat()
-    .filter((url) => !!url) as string[]),
-  ...specsExceptions,
-];
+interface ValidSpecHosts {
+  url: string;
+  alternateUrl: string;
+}
+
+const validSpecHosts: ValidSpecHosts[] = [];
+
+/**
+ * Get valid specification URLs from webref ids
+ * @returns array of valid spec urls (including fragment id)
+ */
+const getValidSpecURLs = async (): Promise<string[]> => {
+  const indexFile = await fetch(
+    'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
+  );
+  const index = JSON.parse(await indexFile.text());
+  const specDefinitions: string[] = [];
+
+  index.results.forEach((spec) => {
+    if (spec.standing === 'good') {
+      if (spec.shortname === 'webnn') {
+        validSpecHosts.push({
+          url: spec.series.releaseUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      } else {
+        validSpecHosts.push({
+          url: spec.series.nightlyUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      }
+      if (spec.dfns) {
+        specDefinitions.push(spec.dfns);
+      }
+    }
+  });
+
+  const specURLsWithFragments: string[] = [];
+  const responses = await Promise.all(
+    specDefinitions.map(async (dfn) => {
+      const res = await fetch(
+        `https://raw.githubusercontent.com/w3c/webref/main/ed/${dfn}`,
+      );
+      const { dfns } = await res.json();
+      return dfns.flatMap((entry) =>
+        [entry.href, entry.heading?.href].filter(Boolean),
+      );
+    }),
+  );
+  specURLsWithFragments.push(...responses.flat());
+  return specURLsWithFragments;
+};
+
+const validSpecURLsWithFragments = await getValidSpecURLs();
 
 /**
  * Process the data for spec URL errors
@@ -78,7 +124,35 @@ const processData = (data: CompatStatement, logger: Logger): void => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
+    if (specsExceptions.some((host) => specURL.startsWith(host))) {
+      continue;
+    }
+
+    if (specURL.includes('#') && !specURL.includes('#:~:text=')) {
+      const hasSpec = validSpecURLsWithFragments.includes(specURL);
+
+      const alternateSpecURLs = validSpecHosts.filter(
+        (spec) => spec.url === specURL.split('#')[0],
+      );
+
+      const hasAlternateSpec = alternateSpecURLs.some((altSpecURL) => {
+        const specToLookup =
+          altSpecURL.alternateUrl + '#' + specURL.split('#')[1];
+        if (validSpecURLsWithFragments.includes(specToLookup)) {
+          return true;
+        }
+        return false;
+      });
+
+      if (!hasSpec && !hasAlternateSpec) {
+        logger.error(
+          chalk`Invalid specification fragment found: {bold ${specURL}}.`,
+        );
+      }
+    } else if (
+      !validSpecHosts.some((host) => specURL.startsWith(host.url)) &&
+      !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl))
+    ) {
       logger.error(
         chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
          - there is a more current specification URL
