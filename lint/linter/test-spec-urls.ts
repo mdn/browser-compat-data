@@ -70,7 +70,7 @@ const getValidSpecURLs = async (): Promise<string[]> => {
     'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
   );
   const index = JSON.parse(await indexFile.text());
-  const specIDs: string[] = [];
+  const specDefinitions: string[] = [];
 
   index.results.forEach((spec) => {
     if (spec.standing === 'good') {
@@ -85,27 +85,25 @@ const getValidSpecURLs = async (): Promise<string[]> => {
           alternateUrl: spec.nightly?.url,
         });
       }
-      if (spec.ids) {
-        specIDs.push(spec.ids);
+      if (spec.dfns) {
+        specDefinitions.push(spec.dfns);
       }
     }
   });
 
   const specURLsWithFragments: string[] = [];
-  await Promise.all(
-    specIDs.map(async (id) => {
-      const idFile = await fetch(
-        `https://raw.githubusercontent.com/w3c/webref/main/ed/${id}`,
+  const responses = await Promise.all(
+    specDefinitions.map(async (dfn) => {
+      const res = await fetch(
+        `https://raw.githubusercontent.com/w3c/webref/main/ed/${dfn}`,
       );
-      const idResponse = JSON.parse(await idFile.text());
-      specURLsWithFragments.push(
-        ...idResponse.ids.map((id) => {
-          const url = new URL(id);
-          return url.origin + url.pathname + decodeURIComponent(url.hash);
-        }),
+      const { dfns } = await res.json();
+      return dfns.flatMap((entry) =>
+        [entry.href, entry.heading?.href].filter(Boolean),
       );
     }),
   );
+  specURLsWithFragments.push(...responses.flat());
   return specURLsWithFragments;
 };
 
