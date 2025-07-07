@@ -70,7 +70,7 @@ const getValidSpecURLs = async (): Promise<string[]> => {
     'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
   );
   const index = JSON.parse(await indexFile.text());
-  const specDefinitions: string[] = [];
+  const webrefFiles: string[] = [];
 
   index.results.forEach((spec) => {
     if (spec.standing === 'good') {
@@ -86,23 +86,31 @@ const getValidSpecURLs = async (): Promise<string[]> => {
         });
       }
       if (spec.dfns) {
-        specDefinitions.push(spec.dfns);
+        webrefFiles.push(spec.dfns);
+      }
+      if (spec.headings) {
+        webrefFiles.push(spec.headings);
       }
     }
   });
 
   const specURLsWithFragments: string[] = [];
+
   const responses = await Promise.all(
-    specDefinitions.map(async (dfn) => {
+    webrefFiles.map(async (file) => {
       const res = await fetch(
-        `https://raw.githubusercontent.com/w3c/webref/main/ed/${dfn}`,
+        `https://raw.githubusercontent.com/w3c/webref/main/ed/${file}`,
       );
-      const { dfns } = await res.json();
-      return dfns.flatMap((entry) =>
-        [entry.href, entry.heading?.href].filter(Boolean),
-      );
+      const type = file.match(/^([^/]+)\//)?.[1] ?? 'dfns';
+      const json = await res.json();
+      const dfns = json[type];
+      return dfns.map((entry) => {
+        const url = new URL(entry.href);
+        return url.origin + url.pathname + decodeURIComponent(url.hash);
+      });
     }),
   );
+
   specURLsWithFragments.push(...responses.flat());
   return specURLsWithFragments;
 };
