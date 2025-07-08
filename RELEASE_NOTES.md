@@ -4,21 +4,18 @@
 
 July 8, 2025
 
-### Removals
+### Renamings
 
-- `api.Document.write.accepts_TrustedHTML` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.Document.writeln.accepts_TrustedHTML` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.Element.innerHTML.accepts_TrustedHTML` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.ShadowRoot.innerHTML.accepts_TrustedHTML` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `webextensions.api.tabGroups.TAB_GROUP_ID_NONEs` ([#27259](https://github.com/mdn/browser-compat-data/pull/27259))
+- `api.Document.write.accepts_TrustedHTML` to `api.Document.write.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
+- `api.Document.writeln.accepts_TrustedHTML` to `api.Document.writeln.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
+- `api.Element.innerHTML.accepts_TrustedHTML` to `api.Element.innerHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
+- `api.ShadowRoot.innerHTML.accepts_TrustedHTML` to `api.ShadowRoot.innerHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
+- `webextensions.api.tabGroups.TAB_GROUP_ID_NONEs` to `webextensions.api.tabGroups.TAB_GROUP_ID_NONE` ([#27259](https://github.com/mdn/browser-compat-data/pull/27259))
 
 ### Additions
 
 - `api.Document.parseHTMLUnsafe_static.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.Document.write.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.Document.writeln.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.DOMParser.parseFromString.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.Element.innerHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.Element.insertAdjacentHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.Element.outerHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.Element.setHTMLUnsafe.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
@@ -26,7 +23,6 @@ July 8, 2025
 - `api.MediaStreamTrack.getSettings.return_object_property_screenPixelRatio` ([#27238](https://github.com/mdn/browser-compat-data/pull/27238))
 - `api.Permissions.permission_captured-surface-control` ([#27245](https://github.com/mdn/browser-compat-data/pull/27245))
 - `api.Range.createContextualFragment.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
-- `api.ShadowRoot.innerHTML.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.ShadowRoot.setHTMLUnsafe.enforces_trusted_types` ([#27114](https://github.com/mdn/browser-compat-data/pull/27114))
 - `api.VideoDecoder.configure.flip_option` ([#27249](https://github.com/mdn/browser-compat-data/pull/27249))
 - `api.VideoDecoder.configure.rotation_option` ([#27249](https://github.com/mdn/browser-compat-data/pull/27249))
@@ -36,7 +32,6 @@ July 8, 2025
 - `api.VideoFrame.VideoFrame.rotation_option` ([#27249](https://github.com/mdn/browser-compat-data/pull/27249))
 - `html.elements.input.type_color.accepts_css_colors` ([#27260](https://github.com/mdn/browser-compat-data/pull/27260))
 - `http.headers.Permissions-Policy.captured-surface-control` ([#27245](https://github.com/mdn/browser-compat-data/pull/27245))
-- `webextensions.api.tabGroups.TAB_GROUP_ID_NONE` ([#27259](https://github.com/mdn/browser-compat-data/pull/27259))
 
 ### Statistics
 
