@@ -34,30 +34,25 @@ There are a few guidelines for naming `web-features` groups:
 
 - Prefer identifiers known to be in widespread use by web developers.
   Favor describing things as they are most-widely known, even if it's not the most technically correct option.
-
   - 👍 Recommended: `web-features:javascript`
   - 👎 Not recommended: `web-features:ecmascript`
 
 - Avoid prefixing identifiers that mark a feature as specific to a technology, such as `css-` or `js-`.
   Features can and do cross such boundaries.
-
   - 👍 Recommended: `web-features:container-queries`
   - 👎 Not recommended: `web-features:css-container-queries`
 
 - Avoid frequently-used abbreviations and nouns in identifiers, such as `api` or `web`.
-
   - 👍 Recommended: `web-features:navigation`
   - 👎 Not recommended: `web-features:navigation-api`
 
 - Prefer common, descriptive noun phrases over abbreviations, metonymy, and syntax.
-
   - 👍 Recommended: `web-features:offscreen-canvas`
   - 👎 Not recommended: `web-features:offscreencanvas` (as in `OffscreenCanvas`)
   - 👍 Recommended: `web-features:grid`
   - 👎 Not recommended: `web-features:display-grid` (as in `display: grid`)
 
 - Prefer shorter identifiers to longer identifiers, as long as they're unique and unambiguous.
-
   - 👍 Recommended: `web-features:has`
   - 👎 Not recommended: `web-features:has-pseudo-class`
 

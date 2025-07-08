@@ -36,7 +36,6 @@ Make sure the issue is connected to other relevant information.
 
 - **Link to related issues.** Search for other issues with the same dotted path to a feature (or a parent feature) or using similar keywords.
 - **If the issue is a duplicate, close it.** Follow these steps:
-
   1. Copy any new information into the original issue.
   2. Comment to thank the reporter and link to the original issue.
   3. Label the issue [_duplicate_](https://github.com/mdn/browser-compat-data/labels/duplicate).
@@ -62,7 +61,6 @@ Most reporters won't do these things on their own, but these are important steps
 After we've collected all of the required information, make a plan for what to do next.
 
 - **Comment suggesting next steps**, such as:
-
   - Finding or writing a minimal test case.
   - Running tests in BrowserStack or Sauce Labs.
   - Updating the data files with a pull request.

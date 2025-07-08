@@ -7,7 +7,11 @@ import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import {
+  newBrowserEntry,
+  setBrowserReleaseStatus,
+  updateBrowserEntry,
+} from './utils.js';
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -243,9 +247,31 @@ export const updateEdgeReleases = async (options) => {
   }
 
   //
+  // Ensure that the release following stable is 'beta'
+  //
+  const betaVersion = data[options.releaseBranch].version + 1;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    betaVersion.toString(),
+    'beta',
+  );
+
+  //
+  // Ensure that the release following beta is 'nightly'
+  //
+  const nightlyVersion = data[options.releaseBranch].version + 2;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    nightlyVersion.toString(),
+    'nightly',
+  );
+
+  //
   // Add a planned version entry
   //
-  const planned = (data[options.nightlyBranch].version + 1).toString();
+  const planned = (data[options.releaseBranch].version + 3).toString();
   let releaseDate;
   try {
     releaseDate = await getFutureReleaseDate(

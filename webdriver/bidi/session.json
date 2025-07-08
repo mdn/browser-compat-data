@@ -42,9 +42,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "116",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1829336](https://bugzil.la/1829336))"
+                "version_added": "116"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -79,7 +77,10 @@
               "firefox": {
                 "version_added": "92",
                 "partial_implementation": true,
-                "notes": "Basic support (see [bug 1719290](https://bugzil.la/1719290))"
+                "notes": [
+                  "Before Firefox 116, capability matching was not supported.",
+                  "Multiple session creation is not supported ([bug 1862018](https://bugzil.la/1862018))."
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -98,6 +99,38 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "capabilities_parameter": {
+            "__compat": {
+              "description": "`capabilities` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionnewparameters-capabilities",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "92"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -144,17 +177,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "136"
-                },
-                {
-                  "version_added": "93",
-                  "version_removed": "136",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1719292](https://bugzil.la/1719292))"
-                }
-              ],
+              "firefox": {
+                "version_added": "93"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -173,6 +198,102 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "93"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "events_parameter": {
+            "__compat": {
+              "description": "`events` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-events",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "93"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "137"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "unsubscribe": {
@@ -185,17 +306,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "136"
-                },
-                {
-                  "version_added": "93",
-                  "version_removed": "136",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1730469](https://bugzil.la/1730469))"
-                }
-              ],
+              "firefox": {
+                "version_added": "93"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -213,6 +326,101 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionunsubscribebyattributesrequest-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "93"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "events_parameter": {
+            "__compat": {
+              "description": "`events` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionunsubscribebyattributesrequest-events",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "93"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "subscriptions_parameter": {
+            "__compat": {
+              "description": "`subscriptions` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "136"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
             }
           }
         }

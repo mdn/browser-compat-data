@@ -291,7 +291,6 @@ Below this is a list of the files that changed followed by the actual diffs show
 There is an absolute gold mine of useful information on this page, including:
 
 - first release with
-
   - : This section provides a list of the first build of Firefox that includes the change for each of the major platforms (macOS, Linux (32-bit and 64-bit), and Windows (32-bit and 64-bit). The changeset number of the last changes that went into the build, the version number of Firefox that build was part of, the Firefox build number, and a link to the complete set of source files for that release.
 
     Having the versions broken down by platform is useful because it can help you in situations where a feature is added to Windows before it reaches the Mac, or if it only applies to one platform at all.
@@ -354,7 +353,6 @@ releases/Apple/Safari-16.4-macOS-13.3
 - [WebKit feature status catalog](https://webkit.org/status/)
 - [Safari Technology Preview release notes and history](https://developer.apple.com/safari/technology-preview/release-notes/) (Each Safari tech preview release has notes here)
 - [Browse WebKit source](https://github.com/WebKit/WebKit)
-
   - [By Safari build number](https://github.com/WebKit/WebKit/tags) (Git tags)
   - [By WebKit build number](https://github.com/WebKit/WebKit/branches) (Git branches)
   - [Safari version history](https://en.wikipedia.org/wiki/Safari_version_history) (list of Safari versions with feature summaries and the corresponding WebKit build number for each -- mirrored from BCD)

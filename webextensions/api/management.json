@@ -360,10 +360,22 @@
                 "version_added": "8"
               },
               "edge": "mirror",
-              "firefox": {
-                "version_added": "55",
-                "notes": "Only extensions whose 'type' is 'theme' can be enabled and disabled."
-              },
+              "firefox": [
+                {
+                  "version_added": "140",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Any extension can enable and disable themes.",
+                    "Extensions installed via policies can enable and disable any extension."
+                  ]
+                },
+                {
+                  "version_added": "55",
+                  "version_removed": "140",
+                  "partial_implementation": true,
+                  "notes": "Extensions can only enable and disable themes."
+                }
+              ],
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
