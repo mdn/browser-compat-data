@@ -106,10 +106,12 @@ const getValidSpecURLs = async (): Promise<string[]> => {
       const dfns = json[type];
       return dfns
         .map((entry) => [entry].concat(entry.links ?? []))
-        .flatMap(links => links.map(link => {
-          const url = new URL(link.href ?? link);
-          return url.origin + url.pathname + decodeURIComponent(url.hash);
-        }));
+        .flatMap((links) =>
+          links.map((link) => {
+            const url = new URL(link.href ?? link);
+            return url.origin + url.pathname + decodeURIComponent(url.hash);
+          }),
+        );
     }),
   );
 
