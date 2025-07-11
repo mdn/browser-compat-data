@@ -5,12 +5,13 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
 import { fdir } from 'fdir';
 import { compileFromFile } from 'json-schema-to-typescript';
+
+import { spawn } from '../utils/index.js';
 
 import extend from './lib/extend.js';
 
@@ -169,7 +170,7 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
-  execSync('tsc --skipLibCheck ../types/types.d.ts', {
+  spawn('tsc', ['--skipLibCheck', '../types/types.d.ts'], {
     cwd: dirname,
     stdio: 'inherit',
   });

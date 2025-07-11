@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-          cache: npm
 
       - name: Install
         run: npm ci
@@ -54,9 +53,10 @@ jobs:
           FORCE_COLOR: 3
 
       - name: Determine job url
+        id: job
         run: |
           job_id=$(gh api repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs --jq '.jobs[0].id')
-          echo "JOB_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${job_id}?pr=$PR_NUMBER" >> $GITHUB_ENV
+          echo "JOB_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${job_id}?pr=$PR_NUMBER" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
@@ -86,6 +86,6 @@ jobs:
           COMMENT: |
             _Tip_: Review these changes [grouped by change][1] (recommended for most PRs), or [grouped by feature][2] (for large PRs).
 
-            [1]: ${{ env.JOB_URL }}#step:5:1
-            [2]: ${{ env.JOB_URL }}#step:7:1
+            [1]: ${{ steps.job.outputs.JOB_URL }}#step:5:1
+            [2]: ${{ steps.job.outputs.JOB_URL }}#step:7:1
           GITHUB_TOKEN: ${{ github.token }}

@@ -1,0 +1,65 @@
+name: System file changes
+
+on:
+  pull_request_target:
+    paths:
+      - "**"
+      - "!**.md"
+      - "!api/**.json"
+      - "!browsers/**.json"
+      - "!css/**.json"
+      - "!html/**.json"
+      - "!http/**.json"
+      - "!javascript/**.json"
+      - "!manifests/**.json"
+      - "!mathml/**.json"
+      - "!svg/**.json"
+      - "!webassembly/**.json"
+      - "!webdriver/**.json"
+      - "!webextensions/**.json"
+
+# No GITHUB_TOKEN permissions, as we don't use it.
+permissions: {}
+
+jobs:
+  block:
+    # This makes sure it only runs on our origin repo
+    # and makes exceptions for Dependabot and mdn-bot.
+    if: github.repository_owner == 'mdn' && github.event.pull_request.user.login != 'dependabot[bot]' && github.event.pull_request.user.login != 'mdn-bot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Block if author/actor is not admin or BCD owner
+        env:
+          ACTOR: ${{ github.actor }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          GH_TOKEN: ${{ secrets.ORG_PAT }}
+        run: |
+          is_admin_or_owner() {
+            local user="$1"
+            echo "Checking user: $user"
+
+            local perm
+            perm=$(gh api "repos/mdn/browser-compat-data/collaborators/$user/permission" --jq .permission 2> /dev/null || true)
+
+            if [ "$perm" = "admin" ]; then
+              return 0
+            fi
+
+            local state
+            state=$(gh api "orgs/mdn/teams/bcd-owners/memberships/$user" --jq .state 2> /dev/null || true)
+
+            if [ "$state" = "active" ]; then
+              return 0
+            fi
+
+            echo "User ($user) is not an admin, and not a BCD owner; please ping someone for a review."
+            exit 1
+          }
+
+          # Check PR author.
+          is_admin_or_owner "$AUTHOR"
+
+          # Check actor.
+          if [ "$ACTOR" != "$AUTHOR" ]; then
+            is_admin_or_owner "$ACTOR"
+          fi
