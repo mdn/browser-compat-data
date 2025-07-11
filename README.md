@@ -259,6 +259,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [web-features](https://www.npmjs.com/package/web-features) - NPM package that publishes web feature groups with Baseline statuses based on BCD data.
 - [web-features-explorer](https://web-platform-dx.github.io/web-features-explorer/) - Website that visualizes web features by Baseline status and month.
 - [`webhint.io`](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Tool that uses BCD to checks CSS and HTML for unsupported features (see [`@hint/utils-compat-data` package](https://github.com/webhintio/hint/tree/main/packages/utils-compat-data)).
+- [can-i-use-embed](https://github.com/K0IN/can-i-use-embed) - Create beautiful svg that you can embed in your website / readme to show which browsers are supported
 
 ## Acknowledgments
 
