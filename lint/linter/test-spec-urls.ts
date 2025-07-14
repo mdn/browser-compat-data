@@ -94,8 +94,6 @@ const getValidSpecURLs = async (): Promise<string[]> => {
     }
   });
 
-  const specURLsWithFragments: string[] = [];
-
   const responses = await Promise.all(
     webrefFiles.map(async (file) => {
       const res = await fetch(
@@ -105,12 +103,13 @@ const getValidSpecURLs = async (): Promise<string[]> => {
       const json = await res.json();
       const dfns = json[type];
       return dfns
-        .map((entry) => [entry]
-          .concat(entry.links ?? [])
-          .concat((entry.alternateIds ?? []).map(altId => {
-            const url = new URL(entry.href);
-            return url.origin + url.pathname + '#' + altId;
-          }))
+        .map((entry) =>
+          [entry].concat(entry.links ?? []).concat(
+            (entry.alternateIds ?? []).map((altId) => {
+              const url = new URL(entry.href);
+              return url.origin + url.pathname + '#' + altId;
+            }),
+          ),
         )
         .flatMap((links) =>
           links.map((link) => {
@@ -120,9 +119,7 @@ const getValidSpecURLs = async (): Promise<string[]> => {
         );
     }),
   );
-
-  specURLsWithFragments.push(...responses.flat());
-  return specURLsWithFragments;
+  return responses.flat();
 };
 
 const validSpecURLsWithFragments = await getValidSpecURLs();
