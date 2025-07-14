@@ -105,7 +105,13 @@ const getValidSpecURLs = async (): Promise<string[]> => {
       const json = await res.json();
       const dfns = json[type];
       return dfns
-        .map((entry) => [entry].concat(entry.links ?? []))
+        .map((entry) => [entry]
+          .concat(entry.links ?? [])
+          .concat((entry.alternateIds ?? []).map(altId => {
+            const url = new URL(entry.href);
+            return url.origin + url.pathname + '#' + altId;
+          }))
+        )
         .flatMap((links) =>
           links.map((link) => {
             const url = new URL(link.href ?? link);
