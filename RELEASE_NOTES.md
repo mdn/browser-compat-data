@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.32](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.32)
+
+July 15, 2025
+
+### Additions
+
+- `api.BaseAudioContext.state.interrupted` ([#27304](https://github.com/mdn/browser-compat-data/pull/27304))
+- `api.Request.destination.speculationrules` ([#27296](https://github.com/mdn/browser-compat-data/pull/27296))
+
+### Statistics
+
+- 9 contributors have changed 18 files with 237 additions and 101 deletions in 16 commits ([`v6.0.31...v6.0.32`](https://github.com/mdn/browser-compat-data/compare/v6.0.31...v6.0.32))
+- 17,626 total features
+- 1,173 total contributors
+- 5,314 total stargazers
+
 ## [v6.0.31](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.31)
 
 July 11, 2025
