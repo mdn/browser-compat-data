@@ -644,14 +644,6 @@ if (esMain(import.meta)) {
     options.base = 'origin/main';
   }
 
-  if (
-    options.head === 'HEAD' &&
-    spawn('git', ['branch', '--show-current']) === 'flat-diff'
-  ) {
-    // Workaround: Compare first positional parameter against origin/main.
-    [options.base, options.head] = [options.head, 'origin/main'];
-  }
-
   const remote =
     spawn('git', ['remote', '-v'])
       .split('\n')
