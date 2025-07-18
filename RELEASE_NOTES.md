@@ -4,30 +4,23 @@
 
 July 18, 2025
 
-### Removals
+### Renamings
 
-- `api.CredentialsContainer.get.identity_option.loginHint` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
-- `api.HTMLElement.innerText.scripts_accept_TrustedScript` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.HTMLScriptElement.src.accepts_TrustedScriptURL` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.HTMLScriptElement.text.accepts_TrustedScript` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.Node.textContent.scripts_accept_TrustedScript` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.setInterval.code_param_accepts_trustedScript` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.setTimeout.code_param_accepts_trustedScript` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.CredentialsContainer.get.identity_option.loginHint` to `api.CredentialsContainer.get.identity_option.providers_option_loginHint` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.HTMLElement.innerText.scripts_accept_TrustedScript` to `api.HTMLElement.innerText.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.HTMLScriptElement.src.accepts_TrustedScriptURL` to `api.HTMLScriptElement.src.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.HTMLScriptElement.text.accepts_TrustedScript` to `api.HTMLScriptElement.text.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.Node.textContent.scripts_accept_TrustedScript` to `api.Node.textContent.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.setInterval.code_param_accepts_trustedScript` to `api.setInterval.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.setTimeout.code_param_accepts_trustedScript` to `api.setTimeout.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
 
 ### Additions
 
 - `api.CredentialsContainer.get.identity_option.mode_option` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
 - `api.CredentialsContainer.get.identity_option.providers_multiple` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
 - `api.CredentialsContainer.get.identity_option.providers_option_fields` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
-- `api.CredentialsContainer.get.identity_option.providers_option_loginHint` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
 - `api.CredentialsContainer.get.identity_option.providers_option_params` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
 - `api.HighlightRegistry.highlightsFromPoint` ([#27310](https://github.com/mdn/browser-compat-data/pull/27310))
-- `api.HTMLElement.innerText.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.HTMLScriptElement.src.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.HTMLScriptElement.text.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.Node.textContent.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.setInterval.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
-- `api.setTimeout.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
 - `webdriver.bidi.browser.createUserContext.unhandledPromptBehavior_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
 - `webdriver.bidi.browsingContext.downloadEnd_event` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
 - `webdriver.bidi.browsingContext.downloadEnd_event.context_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
