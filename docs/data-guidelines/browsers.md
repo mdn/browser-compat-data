@@ -50,14 +50,16 @@ To add a new Node.js release:
 
 ## Addition of browsers
 
-BCD's [owners](../../GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we need evidence of (in decreasing order of importance):
+BCD's [owners](../../GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we require machine-readable release information, including version numbers, release dates, links to release notes or changelogs, and (if applicable) underlying engine version numbers.
 
-- a compelling downstream-consumer story (e.g., MDN or caniuse express an interest, or someone is planning to do something with the data that might plausibly grow BCD's reach)
-- reviewers (e.g., two or more people with interest and ability to test data relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
-- a release process allowing BCD to publish stable release information in a `browsers/` file (containing release notes with version numbers and dates)
+In addition to the hard requirement of machine-readable release information, we also need evidence of:
+
+- a compelling downstream-consumer story (e.g., MDN or caniuse express an interest in showing the data to developers or someone is planning to do something with the data that might plausibly grow BCD's reach beyond those sites)
+- a compelling data-automation story (e.g., using [mdn-bcd-collector](https://github.com/openwebdocs/mdn-bcd-collector) to generate data updates)
+- reviewer capacity (e.g., two or more volunteers with the interest and ability to review data changes relating to new and existing releases, or at least one reviewer acting on behalf of the vendor)
 - documentation (e.g., how to get and test a feature in that browser, links to resources that might help with it, etc.)
 
-This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238) and adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244).
+This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data/issues/7238), adopted in [#7244](https://github.com/mdn/browser-compat-data/pull/7244), and revised in [#27213](https://github.com/mdn/browser-compat-data/pull/27213).
 
 ## Removal of browsers
 
