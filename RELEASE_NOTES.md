@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.34](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.34)
+
+July 22, 2025
+
+### Additions
+
+- `api.CredentialsContainer.get.identity_option.providers_option_domainHint` ([#27333](https://github.com/mdn/browser-compat-data/pull/27333))
+- `javascript.builtins.Intl.Locale.variants` ([#27361](https://github.com/mdn/browser-compat-data/pull/27361))
+
+### Statistics
+
+- 7 contributors have changed 66 files with 460 additions and 381 deletions in 9 commits ([`v6.0.33...v6.0.34`](https://github.com/mdn/browser-compat-data/compare/v6.0.33...v6.0.34))
+- 17,663 total features
+- 1,176 total contributors
+- 5,325 total stargazers
+
 ## [v6.0.33](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.33)
 
 July 18, 2025
