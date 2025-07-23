@@ -18,7 +18,7 @@
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 89, manipulating the content of `&lt;input&gt;` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
+              "notes": "Before Firefox 89, manipulating the content of `<input>` elements using `Document.execCommand()` commands requires workarounds (see [bug 1220696](https://bugzil.la/1220696))."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -133,10 +133,9 @@
         },
         "alpha": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input#alpha",
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-alpha",
             "tags": [
-              "web-features:input"
+              "web-features:input-color"
             ],
             "support": {
               "chrome": {
@@ -150,14 +149,11 @@
                 "impl_url": "https://bugzil.la/1919718"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "18.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -277,9 +273,6 @@
               "firefox_android": {
                 "version_added": "79"
               },
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -346,29 +339,27 @@
         },
         "colorspace": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input#colorspace",
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-colorspace",
             "tags": [
-              "web-features:input"
+              "web-features:input-color"
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/368059226"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1919718"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "18.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -399,9 +390,6 @@
                 "version_added": "116"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": {
                 "version_added": "≤12.1"
@@ -943,9 +931,6 @@
                 "version_added": "51"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -978,9 +963,6 @@
                 "version_removed": "119"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1194,9 +1176,6 @@
                 "version_added": "125"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1230,9 +1209,6 @@
                   "version_added": false
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -1269,9 +1245,6 @@
                 "version_added": "125"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1567,6 +1540,7 @@
                 },
                 {
                   "version_added": "131",
+                  "version_removed": "132",
                   "partial_implementation": true,
                   "notes": [
                     "In Chrome for Android 131, choosing a directory crashes the browser (see [bug 376834374](https://crbug.com/376834374)).",
@@ -1581,10 +1555,7 @@
                 "version_added": "50"
               },
               "firefox_android": {
-                "version_added": false
-              },
-              "ie": {
-                "version_added": false
+                "version_added": "141"
               },
               "oculus": "mirror",
               "opera": "mirror",

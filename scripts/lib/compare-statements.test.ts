@@ -108,6 +108,22 @@ const tests: { input: Identifier; output: Identifier }[] = [
       },
     },
   },
+  {
+    input: {
+      __compat: {
+        support: {
+          chrome: [{ version_added: '10' }, { version_added: 'preview' }],
+        },
+      },
+    },
+    output: {
+      __compat: {
+        support: {
+          chrome: [{ version_added: 'preview' }, { version_added: '10' }],
+        },
+      },
+    },
+  },
 ] as any;
 
 /**

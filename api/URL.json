@@ -38,6 +38,7 @@
             },
             {
               "version_added": "6.13.0",
+              "version_removed": "10.0.0",
               "partial_implementation": true,
               "notes": "Available as a part of the `url` module."
             }
@@ -98,9 +99,6 @@
               "notes": "Before version 122, `host`, `hostname`, and `port` were not parsed for unknown protocols/schemes."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -113,6 +111,7 @@
               },
               {
                 "version_added": "6",
+                "version_removed": "14.1",
                 "partial_implementation": true,
                 "notes": "Before Safari 14.1, calling the `URL` constructor with a base URL whose value is `undefined` caused Safari to throw a `TypeError`, see [bug 216841](https://webkit.org/b/216841)."
               }
@@ -150,9 +149,6 @@
               "version_added": "115"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": [
               {
                 "version_added": "19.9.0"
@@ -251,9 +247,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -297,9 +290,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -343,9 +333,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -389,9 +376,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -431,20 +415,11 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": [
-              {
-                "version_added": "26"
-              },
-              {
-                "version_added": "26",
-                "version_removed": "49",
-                "notes": "Results for `URL` using the `blob` scheme incorrectly returned `null`."
-              }
-            ],
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
+            "firefox": {
+              "version_added": "26",
+              "notes": "Before Firefox 49, Results for `URL` using the `blob` scheme incorrectly returned `null`."
             },
+            "firefox_android": "mirror",
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -489,9 +464,6 @@
               "version_added": "126"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "22.1.0"
             },
@@ -535,9 +507,6 @@
               "version_added": "26"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -584,9 +553,6 @@
               "notes": "Before Firefox 53, `pathname` and `search` returned wrong values for custom protocols. Given `protocol:host/x?a=true&amp;b=false`, `pathname` would return \"/x?a=true&amp;b=false\" and `search` would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See [bug 1310483](https://bugzil.la/1310483)."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -630,9 +596,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -676,9 +639,6 @@
               "version_added": "22"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -771,9 +731,6 @@
               "notes": "Before Firefox 53, `pathname` and `search` returned wrong values for custom protocols. Given `protocol:host/x?a=true&amp;b=false`, `pathname` would return \"/x?a=true&amp;b=false\" and `search` would return \"\", rather than \"/x\" and \"?a=true&amp;b=false\" respectively. See [bug 1310483](https://bugzil.la/1310483)."
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -817,9 +774,6 @@
               "version_added": "29"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": [
               {
                 "version_added": "7.3.0"
@@ -875,9 +829,6 @@
               "version_added": "54"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": [
               {
                 "version_added": "7.7.0"
@@ -927,9 +878,6 @@
               "version_added": "54"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },
@@ -975,9 +923,6 @@
               "version_added": "26"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.13.0"
             },

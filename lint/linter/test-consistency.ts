@@ -143,12 +143,19 @@ export class ConsistencyChecker {
       ) as BrowserName[];
 
       browsers.forEach((browser) => {
-        inconsistentSubfeaturesByBrowser[browser] =
-          inconsistentSubfeaturesByBrowser[browser] || [];
+        const feature_value = this.getVersionAdded(
+          data.__compat?.support,
+          browser,
+        );
         const subfeature_value = this.getVersionAdded(
           query(subfeature, data).__compat.support,
           browser,
         );
+        if (feature_value === subfeature_value) {
+          return;
+        }
+        inconsistentSubfeaturesByBrowser[browser] =
+          inconsistentSubfeaturesByBrowser[browser] || [];
         inconsistentSubfeaturesByBrowser[browser]?.push([
           subfeature,
           subfeature_value,

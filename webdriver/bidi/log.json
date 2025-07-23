@@ -1,0 +1,331 @@
+{
+  "webdriver": {
+    "bidi": {
+      "log": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webdriver-bidi/#module-log",
+          "support": {
+            "chrome": {
+              "version_added": "126"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "94"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "entryAdded_event": {
+          "__compat": {
+            "description": "`log.entryAdded` event",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#event-log-entryAdded",
+            "support": {
+              "chrome": {
+                "version_added": "126"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "94"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "args_parameter": {
+            "__compat": {
+              "description": "`args` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logconsolelogentry-args",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94",
+                  "partial_implementation": true,
+                  "notes": "Basic support"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "level_parameter": {
+            "__compat": {
+              "description": "`level` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logbaselogentry-level",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "method_parameter": {
+            "__compat": {
+              "description": "`method` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logconsolelogentry-method",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "source_parameter": {
+            "__compat": {
+              "description": "`source` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logbaselogentry-source",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "104",
+                  "partial_implementation": true,
+                  "notes": "When produced by sandboxed code, the realm reference is incorrect. It returns the window’s realm instead."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "stackTrace_parameter": {
+            "__compat": {
+              "description": "`stackTrace` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logbaselogentry-stacktrace",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "97",
+                  "partial_implementation": true,
+                  "notes": "The `stackTrace` value is missing when the log entry originates from asynchronous code, or is produced via the Console API."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "text_parameter": {
+            "__compat": {
+              "description": "`text` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logbaselogentry-text",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "timestamp_parameter": {
+            "__compat": {
+              "description": "`timestamp` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-logbaselogentry-timestamp",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "type_parameter": {
+            "__compat": {
+              "description": "`type` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-loggenericlogentry-type",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "94"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
