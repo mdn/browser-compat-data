@@ -475,7 +475,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -897,7 +897,7 @@
           "description": "`drag` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/drag_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondrag",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-drag"
           ],
           "tags": [
@@ -945,7 +945,7 @@
           "description": "`dragend` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dragend_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondragend",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-dragend"
           ],
           "tags": [
@@ -993,7 +993,7 @@
           "description": "`dragenter` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dragenter_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondragenter",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragenter",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-dragenter"
           ],
           "tags": [
@@ -1128,7 +1128,7 @@
           "description": "`dragleave` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dragleave_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondragleave",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-dragleave"
           ],
           "tags": [
@@ -1176,7 +1176,7 @@
           "description": "`dragover` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dragover_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondragover",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragover",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-dragover"
           ],
           "tags": [
@@ -1224,7 +1224,7 @@
           "description": "`dragstart` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/dragstart_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondragstart",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-dragstart"
           ],
           "tags": [
@@ -1272,7 +1272,7 @@
           "description": "`drop` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/drop_event",
           "spec_url": [
-            "https://html.spec.whatwg.org/multipage/indices.html#ix-handler-ondrop",
+            "https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrop",
             "https://html.spec.whatwg.org/multipage/dnd.html#event-dnd-drop"
           ],
           "tags": [
@@ -1755,9 +1755,9 @@
             "deprecated": false
           }
         },
-        "scripts_accept_TrustedScript": {
+        "enforces_trusted_types": {
           "__compat": {
-            "description": "Can be set with `TrustedScript` instances in `HTMLScriptElement`.",
+            "description": "Requires `TrustedScript` instance in `HTMLScriptElement` when trusted types are enforced.",
             "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-htmlscriptelement-innertext",
             "tags": [
               "web-features:trusted-types"
@@ -2415,9 +2415,9 @@
             "deprecated": false
           }
         },
-        "source": {
+        "options_source_parameter": {
           "__compat": {
-            "description": "`source` option",
+            "description": "`options.source` parameter",
             "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-showpopoveroptions-source",
             "tags": [
               "web-features:popover"
@@ -2431,7 +2431,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "141"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -2448,7 +2448,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -2467,7 +2467,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "141"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2482,7 +2482,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2777,7 +2777,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -2862,6 +2862,150 @@
             "deprecated": false
           }
         },
+        "force_parameter": {
+          "__compat": {
+            "description": "`force` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-togglepopoveroptions-force",
+            "tags": [
+              "web-features:popover"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "116"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "141"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_force_parameter": {
+          "__compat": {
+            "description": "`options.force` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-togglepopoveroptions-force",
+            "tags": [
+              "web-features:popover"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "130"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "141"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "18.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_source_parameter": {
+          "__compat": {
+            "description": "`options.source` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-showpopoveroptions-source",
+            "tags": [
+              "web-features:popover"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "133",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "141"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview",
+                "partial_implementation": true,
+                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "implicit_anchor_reference": {
+            "__compat": {
+              "description": "Implicit anchor reference via `source`",
+              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
+              "tags": [
+                "web-features:anchor-positioning"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "133"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "141"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
         "returns_boolean": {
           "__compat": {
             "description": "Returns `true` or `false`",
@@ -2893,80 +3037,6 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
-            }
-          }
-        },
-        "source": {
-          "__compat": {
-            "description": "`source` option",
-            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-showpopoveroptions-source",
-            "tags": [
-              "web-features:popover"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "133",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "preview",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
-          },
-          "implicit_anchor_reference": {
-            "__compat": {
-              "description": "Implicit anchor reference via `source`",
-              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
-              "tags": [
-                "web-features:anchor-positioning"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": "133"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": false
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
-              },
-              "status": {
-                "experimental": true,
-                "standard_track": true,
-                "deprecated": false
-              }
             }
           }
         }
