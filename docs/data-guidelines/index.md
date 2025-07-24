@@ -38,7 +38,7 @@ This versioning scheme came at [Apple's request, in #2006](https://github.com/md
 
 ### Bun versioning
 
-Since Bun upgrades the WebKit version in every patch release, which may include new features, BCD tracks patch releases for Bun.
+Since Bun upgrades the WebKit version also in patch releases, which may include new features, BCD tracks patch releases for Bun.
 
 ### Choosing `"preview"` values
 
