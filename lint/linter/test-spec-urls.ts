@@ -12,24 +12,20 @@ import { CompatStatement } from '../../types/types.js';
  * When adding an exception here, provide a reason and indicate how the exception can be removed.
  */
 const specsExceptions = [
+  // Remove once SVG specs are more compatible with reffy
+  // See https://github.com/mdn/browser-compat-data/pull/23958#issuecomment-3108406135
+  'https://svgwg.org/',
+  'https://www.w3.org/TR/SVG11/',
+
   // Remove once https://github.com/w3c/fxtf-drafts/issues/599 is resolved
   'https://drafts.fxtf.org/filter-effects/',
 
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
 
-  // Remove once SVG 2 Draft deployment is fixed (last updated 08 March 2023)
-  'https://svgwg.org/svg2-draft/styling.html#__svg__SVGStyleElement__disabled',
-
-  // Exception for April Fools' joke for "418 I'm a teapot"
-  'https://www.rfc-editor.org/rfc/rfc2324',
-
   // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
-
-  // Remove once tc39/ecma262#3221 is merged
-  'https://github.com/tc39/proposal-regexp-modifiers',
 
   // See https://github.com/w3c/browser-specs/issues/305
   // Features with this URL need to be checked after some time
