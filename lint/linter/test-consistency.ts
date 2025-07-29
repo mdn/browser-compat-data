@@ -22,10 +22,7 @@ import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 import bcd from '../../index.js';
 
-type ErrorType =
-  | 'unsupported'
-  | 'support_unknown'
-  | 'subfeature_earlier_implementation';
+type ErrorType = 'unsupported' | 'subfeature_earlier_implementation';
 
 interface ConsistencyError {
   path: string[];
@@ -436,8 +433,6 @@ export default {
         let errorMessage = '';
         if (type == 'unsupported') {
           errorMessage += chalk`No support in {bold ${browser}}, but support is declared in the following sub-feature(s):`;
-        } else if (type == 'support_unknown') {
-          errorMessage += chalk`Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):`;
         } else if (type == 'subfeature_earlier_implementation') {
           errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parentValue}}) than the following sub-feature(s):`;
         }
