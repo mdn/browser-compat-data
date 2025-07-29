@@ -19,8 +19,8 @@ import { getRefDate } from './release/utils.js';
 
 interface VersionStatsEntry {
   all: number;
+  exact: number;
   range: number;
-  real: number;
 }
 
 type VersionStats = Record<string, VersionStatsEntry>;
@@ -65,7 +65,7 @@ const checkSupport = (
 };
 
 /**
- * Iterate through all of the browsers and count the number of true, null, real, and ranged values for each browser
+ * Iterate through all of the browsers and count the number of exact ranged values for each browser
  * @param data The data to process and count stats for
  * @param browsers The browsers to test
  * @param stats The stats object to update
@@ -83,8 +83,8 @@ const processData = (
         stats[browser].range++;
         stats.total.range++;
       } else {
-        stats[browser].real++;
-        stats.total.real++;
+        stats[browser].exact++;
+        stats.total.exact++;
       }
     });
   }
@@ -138,10 +138,10 @@ const getStats = (
         ] as BrowserName[]);
 
   const stats: VersionStats = {
-    total: { all: 0, range: 0, real: 0 },
+    total: { all: 0, range: 0, exact: 0 },
   };
   browsers.forEach((browser) => {
-    stats[browser] = { all: 0, range: 0, real: 0 };
+    stats[browser] = { all: 0, range: 0, exact: 0 };
   });
 
   if (folder) {
@@ -215,12 +215,12 @@ const printStats = (
     }}: \n`,
   );
 
-  const header = ['browser', 'real', 'ranged'];
+  const header = ['browser', 'exact', 'ranged'];
   const align = ['l', 'r', 'r'];
   const rows = Object.keys(stats).map((entry) =>
     [
       entry,
-      getStat(stats[entry], 'real', counts),
+      getStat(stats[entry], 'exact', counts),
       getStat(stats[entry], 'range', counts),
     ].map(String),
   );
@@ -233,7 +233,7 @@ const printStats = (
 if (esMain(import.meta)) {
   const { argv }: { argv } = yargs(hideBin(process.argv)).command(
     '$0 [folder]',
-    'Print a markdown-formatted table displaying the statistics of real, ranged, true, and null values for each browser',
+    'Print a markdown-formatted table displaying the statistics of exact and values for each browser',
     (yargs) => {
       yargs
         .positional('folder', {
