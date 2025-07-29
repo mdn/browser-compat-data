@@ -1,5 +1,114 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.35](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.35)
+
+July 26, 2025
+
+### Additions
+
+- `api.RTCStatsReport.type_inbound-rtp.estimatedPlayoutTimestamp` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.framesAssembledFromMultiplePackets` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.freezeCount` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.pauseCount` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalAssemblyTime` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalFreezesDuration` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalPausesDuration` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.ToggleEvent.source` ([#27405](https://github.com/mdn/browser-compat-data/pull/27405))
+- `browsers.firefox_android.releases.144` ([#27374](https://github.com/mdn/browser-compat-data/pull/27374))
+- `browsers.firefox.releases.144` ([#27374](https://github.com/mdn/browser-compat-data/pull/27374))
+- `css.at-rules.media.horizontal-viewport-segments` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.at-rules.media.vertical-viewport-segments` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.properties.background-repeat-x` ([#27368](https://github.com/mdn/browser-compat-data/pull/27368))
+- `css.properties.background-repeat-y` ([#27368](https://github.com/mdn/browser-compat-data/pull/27368))
+- `css.types.env.viewport-segment-bottom` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-height` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-left` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-right` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-top` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-width` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+
+### Statistics
+
+- 7 contributors have changed 115 files with 1,976 additions and 660 deletions in 22 commits ([`v6.0.34...v6.0.35`](https://github.com/mdn/browser-compat-data/compare/v6.0.34...v6.0.35))
+- 17,681 total features
+- 1,177 total contributors
+- 5,331 total stargazers
+
+## [v6.0.34](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.34)
+
+July 22, 2025
+
+### Additions
+
+- `api.CredentialsContainer.get.identity_option.providers_option_domainHint` ([#27333](https://github.com/mdn/browser-compat-data/pull/27333))
+- `javascript.builtins.Intl.Locale.variants` ([#27361](https://github.com/mdn/browser-compat-data/pull/27361))
+
+### Statistics
+
+- 7 contributors have changed 66 files with 460 additions and 381 deletions in 9 commits ([`v6.0.33...v6.0.34`](https://github.com/mdn/browser-compat-data/compare/v6.0.33...v6.0.34))
+- 17,663 total features
+- 1,176 total contributors
+- 5,325 total stargazers
+
+## [v6.0.33](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.33)
+
+July 18, 2025
+
+### Renamings
+
+- `api.CredentialsContainer.get.identity_option.loginHint` to `api.CredentialsContainer.get.identity_option.providers_option_loginHint` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.HTMLElement.innerText.scripts_accept_TrustedScript` to `api.HTMLElement.innerText.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.HTMLScriptElement.src.accepts_TrustedScriptURL` to `api.HTMLScriptElement.src.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.HTMLScriptElement.text.accepts_TrustedScript` to `api.HTMLScriptElement.text.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.Node.textContent.scripts_accept_TrustedScript` to `api.Node.textContent.enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.setInterval.code_param_accepts_trustedScript` to `api.setInterval.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+- `api.setTimeout.code_param_accepts_trustedScript` to `api.setTimeout.code_param_enforces_trusted_types` ([#27308](https://github.com/mdn/browser-compat-data/pull/27308))
+
+### Additions
+
+- `api.CredentialsContainer.get.identity_option.mode_option` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.CredentialsContainer.get.identity_option.providers_multiple` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.CredentialsContainer.get.identity_option.providers_option_fields` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.CredentialsContainer.get.identity_option.providers_option_params` ([#27312](https://github.com/mdn/browser-compat-data/pull/27312))
+- `api.HighlightRegistry.highlightsFromPoint` ([#27310](https://github.com/mdn/browser-compat-data/pull/27310))
+- `webdriver.bidi.browser.createUserContext.unhandledPromptBehavior_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.context_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.filepath_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.navigation_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.status_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.timestamp_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.browsingContext.downloadEnd_event.url_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setLocaleOverride` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setLocaleOverride.contexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setLocaleOverride.locale_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setLocaleOverride.userContexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setScreenOrientationOverride` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setScreenOrientationOverride.contexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setScreenOrientationOverride.screenOrientation_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.emulation.setScreenOrientationOverride.userContexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.addDataCollector` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.addDataCollector.collectorType_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.addDataCollector.contexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.addDataCollector.dataTypes_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.addDataCollector.userContexts_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.disownData.collector_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.disownData.dataType_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.disownData.request_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.getData.collector_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.getData.dataType_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.getData.disown_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.getData.request_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.removeDataCollector` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+- `webdriver.bidi.network.removeDataCollector.collector_parameter` ([#27295](https://github.com/mdn/browser-compat-data/pull/27295))
+
+### Statistics
+
+- 9 contributors have changed 56 files with 1,295 additions and 369 deletions in 14 commits ([`v6.0.32...v6.0.33`](https://github.com/mdn/browser-compat-data/compare/v6.0.32...v6.0.33))
+- 17,661 total features
+- 1,174 total contributors
+- 5,319 total stargazers
+
 ## [v6.0.32](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.32)
 
 July 15, 2025
