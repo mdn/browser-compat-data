@@ -239,6 +239,11 @@ export const bumpSupport = (
       destination,
       sourceData.version_removed,
     );
+
+    // Ensure that version_removed is not present if it's not applicable
+    if (newData.version_removed === false) {
+      delete newData.version_removed;
+    }
   }
 
   if (newData.version_added === newData.version_removed) {
