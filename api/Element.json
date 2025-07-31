@@ -10179,9 +10179,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "17.4"
-            },
+            "safari": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "17.4",
+                "version_removed": "26",
+                "partial_implementation": true,
+                "notes": "Won't work when HTML contains web components ([bug 296420](https://webkit.org/b/296420).)"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
