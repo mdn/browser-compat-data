@@ -200,6 +200,9 @@
         "bitmaprenderer_context": {
           "__compat": {
             "description": "`bitmaprenderer` context",
+            "tags": [
+              "web-features:imagebitmaprenderingcontext"
+            ],
             "support": {
               "chrome": {
                 "version_added": "66"
@@ -231,6 +234,9 @@
             "__compat": {
               "description": "`options.alpha` parameter",
               "spec_url": "https://html.spec.whatwg.org/multipage/canvas.html#dom-imagebitmaprenderingcontextsettings-alpha",
+              "tags": [
+                "web-features:imagebitmaprenderingcontext"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "66"
@@ -746,9 +752,9 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
+                "version_added": "141",
                 "partial_implementation": true,
-                "notes": "Currently supported on Linux and Windows only."
+                "notes": "Currently supported on Windows only, in all contexts except for service workers."
               },
               "firefox_android": {
                 "version_added": false

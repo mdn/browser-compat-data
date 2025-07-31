@@ -1,5 +1,50 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.36](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.36)
+
+July 28, 2025
+
+### Statistics
+
+- 3 contributors have changed 4 files with 111 additions and 27 deletions in 2 commits ([`v6.0.35...v6.0.36`](https://github.com/mdn/browser-compat-data/compare/v6.0.35...v6.0.36))
+- 17,681 total features
+- 1,177 total contributors
+- 5,334 total stargazers
+
+## [v6.0.35](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.35)
+
+July 26, 2025
+
+### Additions
+
+- `api.RTCStatsReport.type_inbound-rtp.estimatedPlayoutTimestamp` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.framesAssembledFromMultiplePackets` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.freezeCount` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.pauseCount` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalAssemblyTime` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalFreezesDuration` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.RTCStatsReport.type_inbound-rtp.totalPausesDuration` ([#27358](https://github.com/mdn/browser-compat-data/pull/27358))
+- `api.ToggleEvent.source` ([#27405](https://github.com/mdn/browser-compat-data/pull/27405))
+- `browsers.firefox_android.releases.144` ([#27374](https://github.com/mdn/browser-compat-data/pull/27374))
+- `browsers.firefox.releases.144` ([#27374](https://github.com/mdn/browser-compat-data/pull/27374))
+- `css.at-rules.media.horizontal-viewport-segments` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.at-rules.media.vertical-viewport-segments` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.properties.background-repeat-x` ([#27368](https://github.com/mdn/browser-compat-data/pull/27368))
+- `css.properties.background-repeat-y` ([#27368](https://github.com/mdn/browser-compat-data/pull/27368))
+- `css.types.env.viewport-segment-bottom` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-height` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-left` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-right` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-top` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+- `css.types.env.viewport-segment-width` ([#27387](https://github.com/mdn/browser-compat-data/pull/27387))
+
+### Statistics
+
+- 7 contributors have changed 115 files with 1,976 additions and 660 deletions in 22 commits ([`v6.0.34...v6.0.35`](https://github.com/mdn/browser-compat-data/compare/v6.0.34...v6.0.35))
+- 17,681 total features
+- 1,177 total contributors
+- 5,331 total stargazers
+
 ## [v6.0.34](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.34)
 
 July 22, 2025
