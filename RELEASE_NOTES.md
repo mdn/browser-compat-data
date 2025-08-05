@@ -1,5 +1,48 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.0.37](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.37)
+
+August 2, 2025
+
+### Removals
+
+- `css.properties.-moz-image-region` ([#27467](https://github.com/mdn/browser-compat-data/pull/27467))
+- `css.selectors.-moz-focus-inner` ([#27467](https://github.com/mdn/browser-compat-data/pull/27467))
+
+### Additions
+
+- `api.Animation.commitStyles.endpoint_inclusive_commitStyles` ([#27421](https://github.com/mdn/browser-compat-data/pull/27421))
+- `javascript.builtins.AsyncDisposableStack.@@asyncDispose` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.builtins.AsyncIterator.@@asyncDispose` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.builtins.DisposableStack.@@dispose` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.builtins.Iterator.@@dispose` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.builtins.SuppressedError.error` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.builtins.SuppressedError.suppressed` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `javascript.statements.await_using` ([#27386](https://github.com/mdn/browser-compat-data/pull/27386))
+- `webextensions.api.storage.local.getKeys` ([#27442](https://github.com/mdn/browser-compat-data/pull/27442))
+- `webextensions.api.storage.managed.getKeys` ([#27442](https://github.com/mdn/browser-compat-data/pull/27442))
+- `webextensions.api.storage.session.getKeys` ([#27442](https://github.com/mdn/browser-compat-data/pull/27442))
+- `webextensions.api.storage.StorageArea.getKeys` ([#27442](https://github.com/mdn/browser-compat-data/pull/27442))
+- `webextensions.api.storage.sync.getKeys` ([#27442](https://github.com/mdn/browser-compat-data/pull/27442))
+
+### Statistics
+
+- 10 contributors have changed 34 files with 657 additions and 174 deletions in 22 commits ([`v6.0.36...v6.0.37`](https://github.com/mdn/browser-compat-data/compare/v6.0.36...v6.0.37))
+- 17,692 total features
+- 1,178 total contributors
+- 5,342 total stargazers
+
+## [v6.0.36](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.36)
+
+July 28, 2025
+
+### Statistics
+
+- 3 contributors have changed 4 files with 111 additions and 27 deletions in 2 commits ([`v6.0.35...v6.0.36`](https://github.com/mdn/browser-compat-data/compare/v6.0.35...v6.0.36))
+- 17,681 total features
+- 1,177 total contributors
+- 5,334 total stargazers
+
 ## [v6.0.35](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.35)
 
 July 26, 2025
