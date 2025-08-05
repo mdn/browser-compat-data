@@ -309,7 +309,7 @@ export const createManifest = (): any => {
       },
       './types': {
         types: './types.d.ts',
-        default: './build/types.d.ts',
+        default: './types.d.ts',
       },
     },
     types: 'require.d.ts',
