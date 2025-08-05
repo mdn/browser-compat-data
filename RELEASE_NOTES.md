@@ -1,8 +1,12 @@
 # @mdn/browser-compat-data release notes
 
-## [v6.0.38](https://github.com/mdn/browser-compat-data/releases/tag/v6.0.38)
+## [v6.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.0)
 
 August 5, 2025
+
+### Notable changes
+
+A `types` export has been added, which fixes compilation for TypeScript users using `nodenext` module resolution.
 
 ### Removals
 
