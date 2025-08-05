@@ -307,6 +307,10 @@ export const createManifest = (): any => {
         types: './import.d.mts',
         default: './legacynode.mjs',
       },
+      './types': {
+        types: './types.d.ts',
+        default: './build/types.d.ts',
+      },
     },
     types: 'require.d.ts',
   };
