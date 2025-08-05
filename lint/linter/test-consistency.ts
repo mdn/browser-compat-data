@@ -247,8 +247,7 @@ export class ConsistencyChecker {
       compatData,
       (data) =>
         data.version_added === false ||
-        (typeof data.version_removed !== 'undefined' &&
-          data.version_removed !== false),
+        typeof data.version_removed !== 'undefined',
     );
   }
 
