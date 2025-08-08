@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.1)
+
+August 8, 2025
+
+### Additions
+
+- `api.Element.scrollIntoView.options_container_parameter` ([#27463](https://github.com/mdn/browser-compat-data/pull/27463))
+- `browsers.edge.releases.142` ([#27531](https://github.com/mdn/browser-compat-data/pull/27531))
+- `css.selectors.heading` ([#27504](https://github.com/mdn/browser-compat-data/pull/27504))
+- `css.selectors.headingfunction` ([#27504](https://github.com/mdn/browser-compat-data/pull/27504))
+- `css.types.corner-shape-value` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.bevel` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.notch` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.round` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.scoop` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.square` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.squircle` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.superellipse` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.superellipse` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+
+### Statistics
+
+- 8 contributors have changed 18 files with 523 additions and 94 deletions in 18 commits ([`v6.1.0...v6.1.1`](https://github.com/mdn/browser-compat-data/compare/v6.1.0...v6.1.1))
+- 17,747 total features
+- 1,180 total contributors
+- 5,347 total stargazers
+
 ## [v6.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.0)
 
 August 5, 2025
