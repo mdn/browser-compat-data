@@ -8,21 +8,14 @@ import { ConsistencyChecker } from './test-consistency.js';
 const check = new ConsistencyChecker();
 
 describe('ConsistencyChecker.getVersionAdded()', () => {
-  it('returns null for non-real values', () => {
-    assert.equal(
-      check.getVersionAdded({ chrome: { version_added: null } }, 'chrome'),
-      null,
-    );
-  });
-
-  it('returns null for "preview" values', () => {
+  it('returns false for "preview" values', () => {
     assert.equal(
       check.getVersionAdded({ chrome: { version_added: 'preview' } }, 'chrome'),
-      null,
+      false,
     );
   });
 
-  it('returns the value for real and ranged values', () => {
+  it('returns the value for exact and ranged values', () => {
     assert.equal(
       check.getVersionAdded({ chrome: { version_added: '12' } }, 'chrome'),
       '12',
@@ -33,7 +26,7 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
     );
   });
 
-  it('returns the earliest real value for an array support statement', () => {
+  it('returns the earliest exact value for an array support statement', () => {
     assert.equal(
       check.getVersionAdded(
         { chrome: [{ version_added: '≤11' }, { version_added: '101' }] },
@@ -51,19 +44,19 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
         },
         'chrome',
       ),
-      null,
+      false,
     );
     assert.equal(
       check.getVersionAdded(
         {
           chrome: [
-            { version_added: true },
+            { version_added: '20' },
             { version_added: '≤11', flags: [] },
           ],
         },
         'chrome',
       ),
-      null,
+      '20',
     );
     assert.equal(
       check.getVersionAdded(

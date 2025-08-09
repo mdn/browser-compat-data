@@ -20,11 +20,9 @@ import {
 } from '../../types/index.js';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
+import bcd from '../../index.js';
 
-type ErrorType =
-  | 'unsupported'
-  | 'support_unknown'
-  | 'subfeature_earlier_implementation';
+type ErrorType = 'unsupported' | 'subfeature_earlier_implementation';
 
 interface ConsistencyError {
   path: string[];
@@ -180,53 +178,6 @@ export class ConsistencyChecker {
       }
     });
 
-    // Test whether sub-features are supported when basic support is not implemented
-    // For all unsupported browsers (basic support == false), sub-features should be set to false
-    const supportUnknownInParent = this.extractSupportUnknownBrowsers(
-      data.__compat,
-    );
-    inconsistentSubfeaturesByBrowser = {};
-
-    for (const subfeature of subfeatures) {
-      const supportUnknownInChild = this.extractSupportNotTrueBrowsers(
-        query(subfeature, data).__compat,
-      );
-
-      const browsers = supportUnknownInParent.filter(
-        (x) => !supportUnknownInChild.includes(x),
-      ) as BrowserName[];
-
-      for (const browser of browsers) {
-        inconsistentSubfeaturesByBrowser[browser] =
-          inconsistentSubfeaturesByBrowser[browser] || [];
-        const subfeature_value = this.getVersionAdded(
-          query(subfeature, data).__compat.support,
-          browser,
-        );
-        inconsistentSubfeaturesByBrowser[browser]?.push([
-          subfeature,
-          subfeature_value,
-        ]);
-      }
-    }
-
-    // Add errors
-    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
-      const subfeatures =
-        inconsistentSubfeaturesByBrowser[browser as BrowserName];
-      if (subfeatures) {
-        errors.push({
-          type: 'support_unknown',
-          browser: browser as BrowserName,
-          parentValue: this.getVersionAdded(
-            data?.__compat?.support,
-            browser as BrowserName,
-          ),
-          subfeatures,
-        });
-      }
-    });
-
     // Test whether sub-features are supported at an earlier version than basic support
     const supportInParent = this.extractSupportedBrowsersWithVersion(
       data.__compat,
@@ -296,38 +247,10 @@ export class ConsistencyChecker {
       compatData,
       (data) =>
         data.version_added === false ||
-        (typeof data.version_removed !== 'undefined' &&
-          data.version_removed !== false),
+        typeof data.version_removed !== 'undefined',
     );
   }
 
-  /**
-   * Get all of the browsers with unknown support in a feature
-   * @param compatData The compat data to process
-   * @returns The list of browsers with unknown support
-   */
-  extractSupportUnknownBrowsers(compatData?: CompatStatement): BrowserName[] {
-    return this.extractBrowsers(
-      compatData,
-      (data) => data.version_added === null,
-    );
-  }
-
-  /**
-   * Get all of the browsers with either unknown or no support in a feature
-   * @param compatData The compat data to process
-   * @returns The list of browsers with non-truthy (false or null) support
-   */
-  extractSupportNotTrueBrowsers(compatData?: CompatStatement): BrowserName[] {
-    return this.extractBrowsers(
-      compatData,
-      (data) =>
-        data.version_added === false ||
-        data.version_added === null ||
-        (typeof data.version_removed !== 'undefined' &&
-          data.version_removed !== false),
-    );
-  }
   /**
    * Get all of the browsers with a version number in a feature.
    * @param compatData The compat data to process
@@ -353,12 +276,12 @@ export class ConsistencyChecker {
     browser: BrowserName,
   ): VersionValue {
     if (!supportBlock) {
-      return null;
+      return false;
     }
 
     const supportStatement = supportBlock[browser];
     if (!supportStatement) {
-      return null;
+      return false;
     }
 
     if (supportStatement === 'mirror') {
@@ -369,16 +292,15 @@ export class ConsistencyChecker {
     }
 
     /**
-     * A convenience function to squash non-real values and previews into null
+     * A convenience function to squash preview and flag support into `false`
      * @param statement The statement to use
-     * @returns The version number or 'null'
+     * @returns The version number or `false`
      */
     const resolveVersionAddedValue = (
       statement: SimpleSupportStatement,
     ): VersionValue =>
-      [true, false, 'preview', null].includes(statement?.version_added) ||
-      statement.flags
-        ? null
+      statement?.version_added == 'preview' || statement.flags
+        ? false
         : statement?.version_added;
 
     // Handle simple support statements
@@ -387,35 +309,27 @@ export class ConsistencyChecker {
     }
 
     // Handle array support statements
-    let selectedValue: string | boolean | null = null;
+    let selectedValue: string | false = false;
     for (const statement of supportStatement) {
       const resolvedValue = resolveVersionAddedValue(statement);
 
-      if (resolvedValue === null) {
+      if (resolvedValue === false) {
         // We're not going to get a more specific version, so bail out now
         continue;
       }
 
-      if (selectedValue !== null) {
-        if (
-          typeof resolvedValue === 'string' &&
-          typeof selectedValue === 'string'
-        ) {
-          // Earlier value takes precedence
-          const resolvedIsEarlier = compare(
-            resolvedValue.replace('≤', ''),
-            selectedValue.replace('≤', ''),
-            '<',
-          );
-          if (resolvedIsEarlier) {
-            selectedValue = resolvedValue;
-          }
-        } else if (typeof resolvedValue === 'string') {
-          // If selectedValue is bool/null but resolvedValue is string
+      if (
+        typeof resolvedValue === 'string' &&
+        typeof selectedValue === 'string'
+      ) {
+        // Earlier value takes precedence
+        const resolvedIsEarlier = compare(
+          resolvedValue.replace('≤', ''),
+          selectedValue.replace('≤', ''),
+          '<',
+        );
+        if (resolvedIsEarlier) {
           selectedValue = resolvedValue;
-        } else {
-          // If neither are version numbers, assign to the truthiest value
-          selectedValue = selectedValue || resolvedValue;
         }
       } else {
         selectedValue = resolvedValue;
@@ -479,21 +393,23 @@ export class ConsistencyChecker {
       return [];
     }
 
-    return (Object.keys(compatData.support) as BrowserName[]).filter(
-      (browser) => {
-        let browserData: InternalSupportStatement = compatData.support[browser];
-        if ((browserData as InternalSupportStatement) === 'mirror') {
-          browserData = mirrorSupport(browser, compatData.support);
-        }
+    return (Object.keys(bcd.browsers) as BrowserName[]).filter((browser) => {
+      if (!(browser in compatData.support)) {
+        return callback({ version_added: false });
+      }
 
-        if (Array.isArray(browserData)) {
-          return browserData.every(callback);
-        } else if (typeof browserData === 'object') {
-          return callback(browserData);
-        }
-        return false;
-      },
-    );
+      let browserData: InternalSupportStatement = compatData.support[browser];
+      if ((browserData as InternalSupportStatement) === 'mirror') {
+        browserData = mirrorSupport(browser, compatData.support);
+      }
+
+      if (Array.isArray(browserData)) {
+        return browserData.every(callback);
+      } else if (typeof browserData === 'object') {
+        return callback(browserData);
+      }
+      return false;
+    });
   }
 }
 
@@ -516,8 +432,6 @@ export default {
         let errorMessage = '';
         if (type == 'unsupported') {
           errorMessage += chalk`No support in {bold ${browser}}, but support is declared in the following sub-feature(s):`;
-        } else if (type == 'support_unknown') {
-          errorMessage += chalk`Unknown support in parent for {bold ${browser}}, but support is declared in the following sub-feature(s):`;
         } else if (type == 'subfeature_earlier_implementation') {
           errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parentValue}}) than the following sub-feature(s):`;
         }
