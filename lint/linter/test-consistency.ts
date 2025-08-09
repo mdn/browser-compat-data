@@ -20,6 +20,7 @@ import {
 } from '../../types/index.js';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
+import bcd from '../../index.js';
 
 type ErrorType =
   | 'unsupported'
@@ -479,21 +480,23 @@ export class ConsistencyChecker {
       return [];
     }
 
-    return (Object.keys(compatData.support) as BrowserName[]).filter(
-      (browser) => {
-        let browserData: InternalSupportStatement = compatData.support[browser];
-        if ((browserData as InternalSupportStatement) === 'mirror') {
-          browserData = mirrorSupport(browser, compatData.support);
-        }
+    return (Object.keys(bcd.browsers) as BrowserName[]).filter((browser) => {
+      if (!(browser in compatData.support)) {
+        return callback({ version_added: false });
+      }
 
-        if (Array.isArray(browserData)) {
-          return browserData.every(callback);
-        } else if (typeof browserData === 'object') {
-          return callback(browserData);
-        }
-        return false;
-      },
-    );
+      let browserData: InternalSupportStatement = compatData.support[browser];
+      if ((browserData as InternalSupportStatement) === 'mirror') {
+        browserData = mirrorSupport(browser, compatData.support);
+      }
+
+      if (Array.isArray(browserData)) {
+        return browserData.every(callback);
+      } else if (typeof browserData === 'object') {
+        return callback(browserData);
+      }
+      return false;
+    });
   }
 }
 
