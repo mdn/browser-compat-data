@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { spawn } from '../../utils';
+import { spawn } from '../../utils/index.js';
 
 interface Fields {
   value: string;

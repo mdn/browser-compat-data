@@ -5,17 +5,18 @@ import { compare, validate } from 'compare-versions';
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import {
+import bcd from '../../index.js';
+const { browsers } = bcd;
+
+import type {
   BrowserName,
   SimpleSupportStatement,
   VersionValue,
-} from '../../types/types.js';
-import {
+} from '../../types/types.d.ts';
+import type {
   InternalSupportBlock,
   InternalSupportStatement,
-} from '../../types/index';
-import bcd from '../../index.js';
-const { browsers } = bcd;
+} from '../../types/index.d.ts';
 
 /* The latest date a range's release can correspond to */
 const rangeCutoffDate = '2020-05-19';

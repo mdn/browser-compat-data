@@ -4,11 +4,12 @@
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
-import { BrowserName } from '../../types/types.js';
-import { InternalSupportBlock } from '../../types/index';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
+
+import type { BrowserName } from '../../types/types.d.ts';
+import type { InternalSupportBlock } from '../../types/index.d.ts';
 
 /**
  * Check the data to ensure all statements that should use `mirror` do

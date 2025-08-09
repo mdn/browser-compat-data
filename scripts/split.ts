@@ -4,7 +4,7 @@ import { join, relative, resolve, sep } from 'node:path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { Identifier } from '../types/types';
+import type { Identifier } from '../types/types.d.ts';
 
 const argv = yargs(hideBin(process.argv))
   .command('$0 [files..]', 'Split BCD JSON files', (yargs) => {
@@ -99,7 +99,7 @@ const splitFile = async (file: string) => {
     if (key === '__compat') {
       continue;
     }
-    if (typeof value === 'object' && '__compat' in value) {
+    if (typeof value === 'object' && value !== null && '__compat' in value) {
       const data = createSubfeatureJSON(baseKeys, key, value);
 
       await mkdir(dirPath, { recursive: true });
