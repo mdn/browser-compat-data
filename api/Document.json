@@ -5860,7 +5860,7 @@
                 "version_added": "17.4",
                 "version_removed": "26",
                 "partial_implementation": true,
-                "notes": "Won't work when parsed HTML contains web components ([bug 296420](https://webkit.org/b/296420).)"
+                "notes": "If there are custom elements in a declarative shadow root in the parsed HTML, then the elements' constructors and `connectedCallback()` methods are not called ([bug 296420](https://webkit.org/b/296420))."
               }
             ],
             "safari_ios": "mirror",
