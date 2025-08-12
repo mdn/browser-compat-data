@@ -1,5 +1,58 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.2)
+
+August 12, 2025
+
+### Additions
+
+- `css.properties.caret-animation` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.caret-animation.auto` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.caret-animation.manual` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.scroll-target-group` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.scroll-target-group.auto` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.scroll-target-group.none` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.view-transition-group` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.view-transition-group.contain` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.view-transition-group.nearest` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `css.properties.view-transition-group.normal` ([#27525](https://github.com/mdn/browser-compat-data/pull/27525))
+- `webdriver.bidi.network.addDataCollector.maxEncodedDataSize_parameter` ([#27516](https://github.com/mdn/browser-compat-data/pull/27516))
+- `webextensions.api.browserAction.onUserSettingsChanged` ([#27355](https://github.com/mdn/browser-compat-data/pull/27355))
+
+### Statistics
+
+- 4 contributors have changed 26 files with 516 additions and 94 deletions in 12 commits ([`v6.1.1...v6.1.2`](https://github.com/mdn/browser-compat-data/compare/v6.1.1...v6.1.2))
+- 17,759 total features
+- 1,180 total contributors
+- 5,352 total stargazers
+
+## [v6.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.1)
+
+August 8, 2025
+
+### Additions
+
+- `api.Element.scrollIntoView.options_container_parameter` ([#27463](https://github.com/mdn/browser-compat-data/pull/27463))
+- `browsers.edge.releases.142` ([#27531](https://github.com/mdn/browser-compat-data/pull/27531))
+- `css.selectors.heading` ([#27504](https://github.com/mdn/browser-compat-data/pull/27504))
+- `css.selectors.headingfunction` ([#27504](https://github.com/mdn/browser-compat-data/pull/27504))
+- `css.types.corner-shape-value` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.bevel` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.notch` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.round` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.scoop` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.square` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.squircle` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.corner-shape-value.superellipse` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+- `css.types.superellipse` ([#27505](https://github.com/mdn/browser-compat-data/pull/27505))
+
+### Statistics
+
+- 8 contributors have changed 18 files with 523 additions and 94 deletions in 18 commits ([`v6.1.0...v6.1.1`](https://github.com/mdn/browser-compat-data/compare/v6.1.0...v6.1.1))
+- 17,747 total features
+- 1,180 total contributors
+- 5,347 total stargazers
+
 ## [v6.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.0)
 
 August 5, 2025
