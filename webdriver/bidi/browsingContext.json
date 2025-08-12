@@ -634,9 +634,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "121",
-                "partial_implementation": true,
-                "notes": "Subscribing to this event does not emit events for all already open browsing contexts."
+                "version_added": "121"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -668,7 +666,9 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "121"
+                  "version_added": "121",
+                  "partial_implementation": true,
+                  "notes": "Firefox emits multiple events when removing a browsingContext with iframes. According to the spec only a single event should be emitted, containing the whole tree of removed contexts."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
