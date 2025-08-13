@@ -9366,6 +9366,40 @@
             "deprecated": false
           }
         },
+        "options_container_parameter": {
+          "__compat": {
+            "description": "`options.container` parameter",
+            "tags": [
+              "web-features:scroll-into-view"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "options_parameter": {
           "__compat": {
             "description": "`options` parameter",
@@ -10123,6 +10157,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setHTML",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-element-sethtml",
+          "tags": [
+            "web-features:sanitizer"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
@@ -10179,9 +10216,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "17.4"
-            },
+            "safari": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "17.4",
+                "version_removed": "26",
+                "partial_implementation": true,
+                "notes": "If there are custom elements in a declarative shadow root in the parsed HTML, then the elements' constructors and `connectedCallback()` methods are not called ([bug 296420](https://webkit.org/b/296420))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

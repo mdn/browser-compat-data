@@ -41,7 +41,8 @@ const matchingSafariVersions = new Map([
  * Convert a version number to the matching version of the target browser
  * @param targetBrowser The browser to mirror to
  * @param sourceVersion The version from the source browser
- * @returns The matching browser version
+ * @returns The matching browser version, or `false` if no match is found
+ * @throws An error when the downstream browser has no upstream
  */
 export const getMatchingBrowserVersion = (
   targetBrowser: BrowserName,
@@ -239,6 +240,11 @@ export const bumpSupport = (
       destination,
       sourceData.version_removed,
     );
+
+    // Ensure that version_removed is not present if it's not applicable, such as when the upstream browser removed the feature in a newer release than a matching downstream browser
+    if (newData.version_removed === false) {
+      delete newData.version_removed;
+    }
   }
 
   if (newData.version_added === newData.version_removed) {
