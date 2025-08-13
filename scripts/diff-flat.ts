@@ -640,7 +640,7 @@ if (esMain(import.meta)) {
   const options = argv as any;
 
   if (/^\d+$/.test(options.base)) {
-    options.head = `pull/${options.base}/head`;
+    options.head = `pull/${options.base}/merge`;
     options.base = 'origin/main';
   }
 
