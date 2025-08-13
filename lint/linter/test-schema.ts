@@ -14,11 +14,9 @@ import browserDataSchema from './../../schemas/browsers.schema.json' with { type
 const ajv = new Ajv({ allErrors: true });
 // We use 'fast' because as a side effect that makes the "uri" format more lax.
 // By default the "uri" format rejects ① and similar in URLs.
-// XXX Cast to "any" mitigates a TypeScript issue relating to NodeNext module resolution
-(ajvFormats as any)(ajv, { mode: 'fast' });
+ajvFormats.default(ajv, { mode: 'fast' });
 // Allow for custom error messages to provide better directions for contributors
-// XXX Cast to "any" mitigates a TypeScript issue relating to NodeNext module resolution
-(ajvErrors as any)(ajv);
+ajvErrors.default(ajv);
 
 // Define keywords for schema->TS converter
 ajv.addKeyword('tsEnumNames');
