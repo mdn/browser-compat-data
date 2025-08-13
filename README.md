@@ -96,7 +96,7 @@ const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
 
 You can obtain the raw compatibility data for `@mdn/browser-compat-data` using a CDN and loading the `data.json` file included in releases.
 
-```py
+```
 https://unpkg.com/@mdn/browser-compat-data/data.json
 ```
 
