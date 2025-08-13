@@ -113,6 +113,12 @@ const support = bcd.css.properties.background.__compat;
 const support = bcd['api']['Document']['body']['__compat'];
 ```
 
+### TypeScript Support
+
+BCD comes out of the box with TypeScript type definitions. Simply import the package as normal, and type definitions will automatically be applied to the data.
+
+Type definitions are automatically generated from the [JSON schema](./schemas/compat-data.schema.json).
+
 ## Package contents
 
 The `@mdn/browser-compat-data` package contains a tree of objects, with support and browser data objects at their leaves. There are over 15,000 features in the dataset; this documentation highlights significant portions, but many others exist at various levels of the tree.
