@@ -1678,9 +1678,22 @@
             "web-features:private-network-access"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124"
-            },
+            "chrome": [
+              {
+                "version_added": "138",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#local-network-access-check",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "124",
+                "version_removed": "138"
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": false
