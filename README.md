@@ -115,9 +115,7 @@ const support = bcd['api']['Document']['body']['__compat'];
 
 ### TypeScript Support
 
-BCD comes out of the box with TypeScript type definitions. Simply import the package as normal, and type definitions will automatically be applied to the data.
-
-Type definitions are automatically generated from the [JSON schema](./schemas/compat-data.schema.json).
+BCD exports TypeScript type definitions. Type definitions are automatically generated from the [schema definitions](https://github.com/mdn/browser-compat-data/blob/main/schemas).
 
 ## Package contents
 
