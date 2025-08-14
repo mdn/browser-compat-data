@@ -26,7 +26,7 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
     );
   });
 
-  it('returns the earliest exact value for an array support statement', () => {
+  it('returns the earliest value for an array support statement', () => {
     assert.equal(
       check.getVersionAdded(
         { chrome: [{ version_added: '≤11' }, { version_added: '101' }] },
