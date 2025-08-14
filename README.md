@@ -183,6 +183,14 @@ Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features,
 
 - `elements` - Elements
 
+### [`media`](./media)
+
+Data for [Media format](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats) features, including:
+
+- `formats/image` - Image formats
+
+An image format is considered supported if it displays correctly when used in an `<img>` element's `src` attribute, or as a CSS `background-image`.
+
 ### [`svg`](./svg)
 
 Data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) features, including:
