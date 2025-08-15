@@ -1,5 +1,37 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.3)
+
+August 15, 2025
+
+### Additions
+
+- `api.DigitalCredential.toJSON` ([#27526](https://github.com/mdn/browser-compat-data/pull/27526))
+- `api.DigitalCredential.userAgentAllowsProtocol_static` ([#27526](https://github.com/mdn/browser-compat-data/pull/27526))
+- `css.at-rules.function` ([#27557](https://github.com/mdn/browser-compat-data/pull/27557))
+- `css.at-rules.function.result` ([#27557](https://github.com/mdn/browser-compat-data/pull/27557))
+- `css.types.dashed-function` ([#27557](https://github.com/mdn/browser-compat-data/pull/27557))
+- `css.types.type` ([#27557](https://github.com/mdn/browser-compat-data/pull/27557))
+- `http.headers.Integrity-Policy-Report-Only.blocked-destinations_script` ([#27587](https://github.com/mdn/browser-compat-data/pull/27587))
+- `http.headers.Integrity-Policy-Report-Only.blocked-destinations_style` ([#27587](https://github.com/mdn/browser-compat-data/pull/27587))
+- `http.headers.Integrity-Policy.blocked-destinations_script` ([#27587](https://github.com/mdn/browser-compat-data/pull/27587))
+- `http.headers.Integrity-Policy.blocked-destinations_style` ([#27587](https://github.com/mdn/browser-compat-data/pull/27587))
+- `webdriver.bidi.emulation.setScriptingEnabled` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.emulation.setScriptingEnabled.contexts_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.emulation.setScriptingEnabled.enabled_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.emulation.setScriptingEnabled.userContexts_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.network.setExtraHeaders` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.network.setExtraHeaders.contexts_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.network.setExtraHeaders.headers_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+- `webdriver.bidi.network.setExtraHeaders.userContexts_parameter` ([#27581](https://github.com/mdn/browser-compat-data/pull/27581))
+
+### Statistics
+
+- 11 contributors have changed 34 files with 1,236 additions and 506 deletions in 31 commits ([`v6.1.2...v6.1.3`](https://github.com/mdn/browser-compat-data/compare/v6.1.2...v6.1.3))
+- 17,777 total features
+- 1,183 total contributors
+- 5,352 total stargazers
+
 ## [v6.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.2)
 
 August 12, 2025
