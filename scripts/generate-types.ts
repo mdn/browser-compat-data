@@ -165,7 +165,7 @@ const compile = async (
   const ts = [
     header,
     await generateBrowserNames(),
-    'export type VersionValue = string | boolean | null;',
+    'export type VersionValue = string | false | null;',
     transformTS(browserTS, compatTS),
     generateCompatDataTypes(),
   ].join('\n\n');
