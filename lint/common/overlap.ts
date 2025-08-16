@@ -87,6 +87,7 @@ export const checkOverlap = (
       if (fix) {
         if (
           typeof current.version_removed === 'undefined' &&
+          next.version_added !== false &&
           next.version_added !== 'preview'
         ) {
           current.version_removed = next.version_added;
