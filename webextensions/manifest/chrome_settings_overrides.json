@@ -97,7 +97,7 @@
               "support": {
                 "chrome": {
                   "version_added": "35",
-                  "notes": "`encoding` field required when `prepopulated_id` is unset for `search_provider` to be valid."
+                  "notes": "`encoding` is required when `prepopulated_id` isn't set "
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -121,7 +121,7 @@
               "support": {
                 "chrome": {
                   "version_added": "35",
-                  "notes": "`favicon_url` field required for `search_provider` to be valid. Expects a HTTP or HTTPS url in manifest V3."
+                  "notes": "`favicon_url`is required when `prepopulated_id` isn't set. Expects a HTTP or HTTPS URL in Manifest V3."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -228,8 +228,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "35",
-                  "notes": "`is_default` field required for `search_provider` to be valid."
+                  "version_added": "35"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -253,7 +252,8 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "35"
+                  "version_added": "35".
+                  "notes": "`keyword`is required when `prepopulated_id` isn't set."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -276,7 +276,8 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "35"
+                  "version_added": "35".
+                  "notes": "`name`is required when `prepopulated_id` isn't set."
                 },
                 "edge": "mirror",
                 "firefox": {
