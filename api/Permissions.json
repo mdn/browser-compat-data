@@ -223,6 +223,40 @@
           }
         }
       },
+      "permission_captured-surface-control": {
+        "__compat": {
+          "description": "`captured-surface-control` permission",
+          "spec_url": "https://w3c.github.io/mediacapture-surface-control/#dfn-captured-surface-control",
+          "support": {
+            "chrome": {
+              "version_added": "136"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "permission_clipboard-read": {
         "__compat": {
           "description": "`clipboard-read` permission",
@@ -723,9 +757,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "126"
-            },
+            "firefox": [
+              {
+                "version_added": "126"
+              },
+              {
+                "version_added": "122",
+                "version_removed": "126",
+                "partial_implementation": true,
+                "notes": "The value is recognized, but has no effect."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
