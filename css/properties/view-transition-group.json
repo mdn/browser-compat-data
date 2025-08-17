@@ -1,20 +1,19 @@
 {
-  "http": {
-    "headers": {
-      "Integrity-Policy": {
+  "css": {
+    "properties": {
+      "view-transition-group": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Integrity-Policy",
-          "spec_url": "https://w3c.github.io/webappsec-subresource-integrity/#integrity-policy-section",
+          "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#view-transition-group-prop",
           "support": {
             "chrome": {
-              "version_added": "138"
+              "version_added": "140"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
-              "version_added": "preview",
-              "partial_implementation": true,
-              "notes": "Reporting `endpoints` are ignored (violations are logged to console)."
+              "version_added": false
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -34,18 +33,18 @@
             "deprecated": false
           }
         },
-        "blocked-destinations_script": {
+        "contain": {
           "__compat": {
-            "description": "`script` in `blocked-destinations`",
-            "spec_url": "https://w3c.github.io/webappsec-subresource-integrity/#blocked-destinations",
             "support": {
               "chrome": {
-                "version_added": "138"
+                "version_added": "140"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": {
+                "version_added": false
+              },
               "firefox": {
-                "version_added": "preview"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -66,25 +65,50 @@
             }
           }
         },
-        "blocked-destinations_style": {
+        "nearest": {
           "__compat": {
-            "description": "`style` in `blocked-destinations`",
-            "spec_url": "https://w3c.github.io/webappsec-subresource-integrity/#blocked-destinations",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "140"
               },
               "chrome_android": "mirror",
-              "edge": "mirror",
+              "edge": {
+                "version_added": false
+              },
               "firefox": {
-                "version_added": "142",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "security.integrity_policy.stylesheet.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "normal": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": false
+              },
+              "firefox": {
+                "version_added": false
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
