@@ -17,9 +17,6 @@
             "version_added": "84"
           },
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": false
-          },
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
@@ -46,18 +43,29 @@
             "web-features:paint-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "60"
-            },
+            "chrome": [
+              {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-blink-features",
+                    "value_to_set": "SoftNavigationHeuristicsExposeFPAndFCP"
+                  }
+                ],
+                "notes": "See [bug 40066208](https://crbug.com/40066208)."
+              },
+              {
+                "version_added": "60",
+                "version_removed": "116"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "84"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -85,18 +93,29 @@
             "web-features:paint-timing"
           ],
           "support": {
-            "chrome": {
-              "version_added": "60"
-            },
+            "chrome": [
+              {
+                "version_added": "116",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--enable-blink-features",
+                    "value_to_set": "SoftNavigationHeuristicsExposeFPAndFCP"
+                  }
+                ],
+                "notes": "See [bug 40066208](https://crbug.com/40066208)."
+              },
+              {
+                "version_added": "60",
+                "version_removed": "116"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -110,6 +129,99 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "paintTime": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/paint-timing/#dom-painttimingmixin-painttime",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "140"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "presentationTime": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/paint-timing/#dom-painttimingmixin-presentationtime",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "140"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "toJSON": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/paint-timing/#dom-performancepainttiming-tojson",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "140"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

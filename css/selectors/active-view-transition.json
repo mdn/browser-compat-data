@@ -4,6 +4,7 @@
       "active-view-transition": {
         "__compat": {
           "description": "`:active-view-transition`",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:active-view-transition",
           "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#the-active-view-transition-pseudo",
           "tags": [
             "web-features:active-view-transition"
@@ -15,13 +16,22 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "141",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.viewTransitions.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",

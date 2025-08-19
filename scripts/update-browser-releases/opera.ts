@@ -8,7 +8,7 @@ import {
   gfmNoteblock,
   RSSItem,
   updateBrowserEntry,
-} from './utils';
+} from './utils.js';
 
 interface Release {
   version: string;
@@ -92,7 +92,7 @@ const findEngineVersion = async (
     return contentMatch[1];
   }
 
-  throw Error(`Failed to find engine version here: ${item.link}`);
+  return '';
 };
 
 /**
@@ -132,9 +132,25 @@ export const updateOperaReleases = async (options) => {
     data.browsers[browser].releases[release.version],
   );
 
+  if (!release.engineVersion) {
+    const currentEngineVersion = current.engine_version;
+    if (!currentEngineVersion) {
+      return gfmNoteblock(
+        'CAUTION',
+        `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>).`,
+      );
+    }
+
+    result += gfmNoteblock(
+      'WARNING',
+      `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>). Using (previous engine version + 1) instead.`,
+    );
+    release.engineVersion = currentEngineVersion;
+  }
+
   if (isDesktop && !current) {
     return gfmNoteblock(
-      'WARN',
+      'WARNING',
       `Latest stable **${options.browserName}** release **${release.version}** not yet tracked.`,
     );
   }
@@ -188,7 +204,7 @@ export const updateOperaReleases = async (options) => {
 
   // Returns the log
   if (result) {
-    result = `### Updates for ${options.browserName}${result}`;
+    result = `### Updates for ${options.browserName}\n${result}`;
   }
 
   return result;

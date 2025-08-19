@@ -1,28 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
-import { IS_WINDOWS } from '../utils.js';
 import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-properties.js';
 
 /**
  * Fix issues with the property order throughout the BCD files
  * @param filename The name of the file to fix
+ * @param actual The current content of the file
+ * @returns expected content of the file
  */
-const fixPropertyOrder = (filename: string): void => {
-  let actual = fs.readFileSync(filename, 'utf-8').trim();
-  let expected = stringifyAndOrderProperties(actual);
+const fixPropertyOrder = (filename: string, actual: string): string => {
+  const expected = stringifyAndOrderProperties(actual);
 
-  if (IS_WINDOWS) {
-    // prevent false positives from git.core.autocrlf on Windows
-    actual = actual.replace(/\r/g, '');
-    expected = expected.replace(/\r/g, '');
-  }
-
-  if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
-  }
+  return expected;
 };
 
 export default fixPropertyOrder;
