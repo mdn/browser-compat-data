@@ -1,0 +1,711 @@
+{
+  "webdriver": {
+    "bidi": {
+      "emulation": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webdriver-bidi/#module-emulation",
+          "support": {
+            "chrome": {
+              "version_added": "137"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "139"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        },
+        "setGeolocationOverride": {
+          "__compat": {
+            "description": "`emulation.setGeolocationOverride` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setGeolocationOverride",
+            "support": {
+              "chrome": {
+                "version_added": "137"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "139"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/291197"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetgeolocationoverrideparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "137"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "139"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "coordinates_parameter": {
+            "__compat": {
+              "description": "`coordinates` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetgeolocationoverrideparameters-coordinates",
+              "support": {
+                "chrome": {
+                  "version_added": "137"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "139"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "error_parameter": {
+            "__compat": {
+              "description": "`error` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetgeolocationoverrideparameters-error",
+              "support": {
+                "chrome": {
+                  "version_added": "137"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetgeolocationoverrideparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "137"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "139"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setLocaleOverride": {
+          "__compat": {
+            "description": "`emulation.setLocaleOverride` command",
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "142",
+                "partial_implementation": true,
+                "notes": "Both \"navigator.languages\" and the HTTP \"Accept-Language\" request header are not set yet."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "142"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
+          "locale_parameter": {
+            "__compat": {
+              "description": "`locale` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "142"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "142"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setScreenOrientationOverride": {
+          "__compat": {
+            "description": "`emulation.setScreenOrientationOverride` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setScreenOrientationOverride",
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1974165"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscreenorientationoverrideparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "screenOrientation_parameter": {
+            "__compat": {
+              "description": "`screenOrientation` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscreenorientationoverrideparameters-screenorientation",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscreenorientationoverrideparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setScriptingEnabled": {
+          "__compat": {
+            "description": "`emulation.setScriptingEnabled` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setScriptingEnabled",
+            "support": {
+              "chrome": {
+                "version_added": "141"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1982563"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscriptingenabledparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "enabled_parameter": {
+            "__compat": {
+              "description": "`enabled` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscriptingenabledparameters-enabled",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetscriptingenabledparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setTimezoneOverride": {
+          "__compat": {
+            "description": "`emulation.setTimezoneOverride` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setTimezoneOverride",
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1938046"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsettimezoneoverrideparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "timezone_parameter": {
+            "__compat": {
+              "description": "`timezone` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsettimezoneoverrideparameters-timezone",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsettimezoneoverrideparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

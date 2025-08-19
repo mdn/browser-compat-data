@@ -8,6 +8,11 @@ Read how this project is [governed](./GOVERNANCE.md).
 
 Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
+Are you interested in contributing to this project? Check out the [Contributing to browser-compat-data](./docs/contributing.md) documentation.
+
+> [!TIP]
+> Looking for something? Consult the [alphabetical index](./docs/index.md) of the project documentation.
+
 ## Installation and Import
 
 ### NodeJS
@@ -91,7 +96,7 @@ const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
 
 You can obtain the raw compatibility data for `@mdn/browser-compat-data` using a CDN and loading the `data.json` file included in releases.
 
-```py
+```
 https://unpkg.com/@mdn/browser-compat-data/data.json
 ```
 
@@ -107,6 +112,10 @@ const support = bcd.css.properties.background.__compat;
 // You may use any syntax to obtain dictionary items
 const support = bcd['api']['Document']['body']['__compat'];
 ```
+
+### TypeScript Support
+
+BCD exports TypeScript type definitions. Type definitions are automatically generated from the [schema definitions](https://github.com/mdn/browser-compat-data/blob/main/schemas).
 
 ## Package contents
 

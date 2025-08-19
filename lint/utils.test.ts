@@ -3,7 +3,13 @@
 
 import assert from 'node:assert/strict';
 
-import { escapeInvisibles, jsonDiff } from './utils.js';
+import { SimpleSupportStatement } from '../types/types.js';
+
+import {
+  createStatementGroupKey,
+  escapeInvisibles,
+  jsonDiff,
+} from './utils.js';
 
 describe('utils', () => {
   it('`escapeInvisibles()` works correctly', () => {
@@ -71,5 +77,46 @@ describe('utils', () => {
       ),
       null,
     );
+  });
+
+  it('createStatementGroupKey() works correctly', () => {
+    const tests: Record<string, SimpleSupportStatement> = {
+      'normal name': {
+        version_added: '1',
+      },
+      'alt. name: foobar': {
+        version_added: '2',
+        alternative_name: 'foobar',
+      },
+      'prefix: -moz-': {
+        version_added: '3',
+        prefix: '-moz-',
+      },
+      'preference: #service-worker-payment-apps': {
+        version_added: '4',
+        flags: [
+          {
+            type: 'preference',
+            name: '#service-worker-payment-apps',
+            value_to_set: 'Enabled',
+          },
+        ],
+      },
+      'alt. name: foobar / preference: #service-worker-payment-apps': {
+        version_added: '4',
+        alternative_name: 'foobar',
+        flags: [
+          {
+            type: 'preference',
+            name: '#service-worker-payment-apps',
+            value_to_set: 'Enabled',
+          },
+        ],
+      },
+    };
+
+    for (const [expected, input] of Object.entries(tests)) {
+      assert.equal(createStatementGroupKey(input), expected);
+    }
   });
 });

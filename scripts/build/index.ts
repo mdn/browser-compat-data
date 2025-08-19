@@ -172,6 +172,24 @@ export const transformMD = (feature: WalkOutput): void => {
 };
 
 /**
+ * Adds missing IE statements.
+ * @param {WalkOutput} feature The BCD to perform note conversion on
+ * @returns {void}
+ */
+const addIE = (feature: WalkOutput): void => {
+  if (
+    feature.path.startsWith('webextensions.') &&
+    !bcd.browsers.ie.accepts_webextensions
+  ) {
+    return;
+  }
+  const browsers = Object.keys(feature.compat.support);
+  if (browsers.includes('edge') && !browsers.includes('ie')) {
+    feature.compat.support['ie'] = { version_added: false };
+  }
+};
+
+/**
  * Applies transforms to the given data.
  * @param data - The data to apply transforms to.
  */
@@ -182,6 +200,7 @@ export const applyTransforms = (data): void => {
     applyMirroring(feature);
     addVersionLast(feature);
     transformMD(feature);
+    addIE(feature);
   }
 };
 
@@ -287,6 +306,10 @@ export const createManifest = (): any => {
       './forLegacyNode': {
         types: './import.d.mts',
         default: './legacynode.mjs',
+      },
+      './types': {
+        types: './types.d.ts',
+        default: './types.d.ts',
       },
     },
     types: 'require.d.ts',

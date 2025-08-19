@@ -20,6 +20,7 @@ import {
 } from '../../types/index.js';
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
+import bcd from '../../index.js';
 
 type ErrorType =
   | 'unsupported'
@@ -143,12 +144,19 @@ export class ConsistencyChecker {
       ) as BrowserName[];
 
       browsers.forEach((browser) => {
-        inconsistentSubfeaturesByBrowser[browser] =
-          inconsistentSubfeaturesByBrowser[browser] || [];
+        const feature_value = this.getVersionAdded(
+          data.__compat?.support,
+          browser,
+        );
         const subfeature_value = this.getVersionAdded(
           query(subfeature, data).__compat.support,
           browser,
         );
+        if (feature_value === subfeature_value) {
+          return;
+        }
+        inconsistentSubfeaturesByBrowser[browser] =
+          inconsistentSubfeaturesByBrowser[browser] || [];
         inconsistentSubfeaturesByBrowser[browser]?.push([
           subfeature,
           subfeature_value,
@@ -472,21 +480,23 @@ export class ConsistencyChecker {
       return [];
     }
 
-    return (Object.keys(compatData.support) as BrowserName[]).filter(
-      (browser) => {
-        let browserData: InternalSupportStatement = compatData.support[browser];
-        if ((browserData as InternalSupportStatement) === 'mirror') {
-          browserData = mirrorSupport(browser, compatData.support);
-        }
+    return (Object.keys(bcd.browsers) as BrowserName[]).filter((browser) => {
+      if (!(browser in compatData.support)) {
+        return callback({ version_added: false });
+      }
 
-        if (Array.isArray(browserData)) {
-          return browserData.every(callback);
-        } else if (typeof browserData === 'object') {
-          return callback(browserData);
-        }
-        return false;
-      },
-    );
+      let browserData: InternalSupportStatement = compatData.support[browser];
+      if ((browserData as InternalSupportStatement) === 'mirror') {
+        browserData = mirrorSupport(browser, compatData.support);
+      }
+
+      if (Array.isArray(browserData)) {
+        return browserData.every(callback);
+      } else if (typeof browserData === 'object') {
+        return callback(browserData);
+      }
+      return false;
+    });
   }
 }
 

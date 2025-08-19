@@ -15,13 +15,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1823896"
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -39,6 +35,52 @@
             "deprecated": false
           }
         },
+        "match-element": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#auto-vt-name",
+            "tags": [
+              "web-features:view-transitions"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "137"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "142",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.viewTransitions.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "none": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-view-transitions/#valdef-view-transition-name-none",
@@ -52,12 +94,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
