@@ -54,11 +54,19 @@ This guideline was adopted to protect the quality of stable data in the face of 
 
 ## `"partial_implementation"` general usage guidelines
 
+**This guideline was added in August 2025.
+Feedback on this guideline is welcome.
+If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).**
+
 You must set `"partial_implementation": true` when all of the following conditions are met:
 
 - The browser's support does not implement mandatory specified behavior.
 - The browser's support is inconsistent with at least one other browser.
 - The browser's support causes confusing feature detection results.
+- The browser's support has a demonstrable negative impact on web developers.
+
+This list only covers cases where `"partial_implementation": true` is required.
+`"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
 
 Setting `partial_implementation` stands alone.
 Unlike `"version_added": false`, `partial_implementation` does not dictate support data to descendant features.
@@ -74,8 +82,12 @@ Here are some example situations:
   Use a note or non-standard behavioral subfeature instead.
   <!-- TODO: link to behavioral subfeature guidelines, when available -->
 
+- `"partial_implementation": false`: An implementing browser fails a web platform test against a corner case.
+  No web developers have reported the bug and it's unlikely that there are real-world applications that would attempt to use the corner case.
+  Use a note instead.
+
 - `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
-  See [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
+  See also: [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
 
 - `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
 
