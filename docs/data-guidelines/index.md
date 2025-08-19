@@ -165,7 +165,11 @@ This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-da
 A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
 Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
 
-If a more specific guideline applies (such as [`secure_context_required`](./api.md#secure-context-required-secure_context_required)), follow that guideline instead of this one.
+If a more specific guideline applies, follow that guideline instead of this one. See:
+
+- [`returns_promise`](./api.md#methods-returning-promises-returns_promise)
+- [`secure_context_required`](./api.md#secure-context-required-secure_context_required)
+- [`worker_support`](./api.md#web-workers-worker_support)
 
 Behavioral subfeatures are rare.
 Do not create a subfeature when the behavioral subfeature's `support` data would be the same, across all browsers, as the parent feature.
