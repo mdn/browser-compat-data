@@ -162,6 +162,10 @@ This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-da
 
 ## Behavioral subfeatures
 
+**This guideline was added in August 2025.
+Feedback on this guideline is welcome.
+If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).**
+
 A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
 Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
 
