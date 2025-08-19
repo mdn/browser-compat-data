@@ -14,7 +14,17 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.text-autospace.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "partial_implementation": true,
+              "notes": "Support is currently only to parse the property and value and has no effect on the output",
+              "impl_url": "https://bugzil.la/1980104"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
