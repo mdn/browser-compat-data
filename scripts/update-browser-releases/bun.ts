@@ -50,10 +50,8 @@ const extractVersion = (r: GitHubRelease): string | undefined => {
 };
 
 /**
- * Updates the JSON file listing Bun releases.
- * Relies on GitHub releases for stable versions; ignores drafts/prereleases.
- * @param options Options including `browserName`, `bcdFile`, and `bcdBrowserName`.
- * @returns A markdown changelog string, or an empty string if no changes.
+ * Fetches all Bun GitHub releases across pages.
+ * @returns A list of GitHub release objects.
  */
 const fetchAllReleases = async (): Promise<GitHubRelease[]> => {
   const all: GitHubRelease[] = [];
@@ -77,9 +75,9 @@ const fetchAllReleases = async (): Promise<GitHubRelease[]> => {
   return all;
 };
 
-// Resolve asset suffix for current platform/arch
 /**
- *
+ * Resolves the Bun release asset suffix for the current platform/arch.
+ * @returns The asset suffix like "darwin-aarch64" or "linux-x64".
  */
 const resolveAssetSuffix = () => {
   const plat = process.platform === 'darwin' ? 'darwin' : process.platform;
@@ -88,8 +86,9 @@ const resolveAssetSuffix = () => {
 };
 
 /**
- *
- * @param dir
+ * Recursively searches for the Bun binary within an extracted directory.
+ * @param dir The directory to search within.
+ * @returns The path to the Bun binary, or null if not found.
  */
 const findBunBinaryPath = async (dir: string): Promise<string | null> => {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -108,8 +107,10 @@ const findBunBinaryPath = async (dir: string): Promise<string | null> => {
 };
 
 /**
- *
- * @param version
+ * Downloads and extracts a specific Bun version for the current platform.
+ * Uses a local cache and reuses artifacts when available.
+ * @param version The Bun version to download, for example "1.2.21".
+ * @returns The absolute path to the extracted Bun binary, or null on failure.
  */
 const downloadAndExtractBun = async (
   version: string,
@@ -330,16 +331,6 @@ export const updateBunReleases = async (options) => {
         undefined,
         undefined,
       );
-    }
-  }
-
-  // Ensure schema dependency: if engine is present, engine_version must be present.
-  // Clean any existing entries that have engine without engine_version.
-  for (const [ver, rel] of Object.entries(
-    data.browsers[browser].releases ?? {},
-  ) as [string, any][]) {
-    if (rel.engine && !rel.engine_version) {
-      delete rel.engine;
     }
   }
 
