@@ -201,9 +201,16 @@ const getBunInfoForVersion = async (
 /**
  * Updates the Bun releases.
  * @param options - The options.
+ * @param options.bcdBrowserName - The name of the browser in the BCD file.
+ * @param options.bcdFile - The path to the BCD file.
+ * @param options.browserName - The name of the browser.
  * @returns The result.
  */
-export const updateBunReleases = async (options) => {
+export const updateBunReleases = async (options: {
+  bcdBrowserName: string;
+  bcdFile: string;
+  browserName: string;
+}) => {
   const browser = options.bcdBrowserName ?? 'bun';
 
   let fileText: string;
