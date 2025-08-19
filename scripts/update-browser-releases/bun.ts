@@ -4,10 +4,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import chalk from 'chalk-template';
 import { compareVersions } from 'compare-versions';
 
 import { spawn } from '../../utils/index.js';
-import chalk from 'chalk-template';
 import stringify from '../lib/stringify-and-order-properties.js';
 
 import {
