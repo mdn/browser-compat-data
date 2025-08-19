@@ -8,6 +8,7 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 ---
 
+- **Behavioral subfeatures** - [Data guideline: Behavioral subfeatures](./data-guidelines/index.md#behavioral-subfeatures)
 - **Browser addition/removal** – [Data guidelines for browser data](./data-guidelines/browsers.md#addition-of-browsers)
 - **Browser data** – [Data guidelines for browser data](./data-guidelines/browsers.md)
 - **Browser versions** – [Matching web features to browser release version numbers](./matching-browser-releases/index.md#matching-web-features-to-browser-release-version-numbers)
