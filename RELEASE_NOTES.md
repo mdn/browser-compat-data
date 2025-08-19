@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.4)
+
+August 19, 2025
+
+### Additions
+
+- `api.QuotaExceededError` ([#27613](https://github.com/mdn/browser-compat-data/pull/27613))
+- `api.QuotaExceededError.quota` ([#27613](https://github.com/mdn/browser-compat-data/pull/27613))
+- `api.QuotaExceededError.QuotaExceededError` ([#27613](https://github.com/mdn/browser-compat-data/pull/27613))
+- `api.QuotaExceededError.requested` ([#27613](https://github.com/mdn/browser-compat-data/pull/27613))
+- `browsers.firefox_android.releases.145` ([#27607](https://github.com/mdn/browser-compat-data/pull/27607))
+- `browsers.firefox.releases.145` ([#27607](https://github.com/mdn/browser-compat-data/pull/27607))
+- `browsers.opera_android.releases.91` ([#27607](https://github.com/mdn/browser-compat-data/pull/27607))
+- `html.elements.input.type_date.disables_invalid_values_in_picker_ui` ([#27450](https://github.com/mdn/browser-compat-data/pull/27450))
+
+### Statistics
+
+- 5 contributors have changed 15 files with 348 additions and 127 deletions in 10 commits ([`v6.1.3...v6.1.4`](https://github.com/mdn/browser-compat-data/compare/v6.1.3...v6.1.4))
+- 17,782 total features
+- 1,185 total contributors
+- 5,353 total stargazers
+
 ## [v6.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.3)
 
 August 15, 2025
