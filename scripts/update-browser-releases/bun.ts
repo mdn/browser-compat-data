@@ -206,7 +206,6 @@ const getBunInfoForVersion = async (
 export const updateBunReleases = async (options) => {
   const browser = options.bcdBrowserName ?? 'bun';
 
-  // Load existing Bun browser data
   let fileText: string;
   try {
     fileText = await fs.readFile(`${options.bcdFile}`, 'utf-8');
@@ -237,7 +236,6 @@ export const updateBunReleases = async (options) => {
     url?: string;
   }
 
-  // Build stable releases in a single clear pass; keep earliest date per version.
   const byVersion = new Map<string, Stable>();
   for (const r of releases) {
     if (r.draft || r.prerelease) {
@@ -299,7 +297,6 @@ export const updateBunReleases = async (options) => {
       rel.url,
     );
 
-    // Ensure engine is set to WebKit (update existing entries too)
     const entry = data.browsers[browser].releases[rel.version];
 
     if (entry) {
@@ -318,7 +315,6 @@ export const updateBunReleases = async (options) => {
     }
   }
 
-  // Ensure any existing non-latest entries are retired
   const existing = Object.keys(data.browsers[browser].releases ?? {});
   for (const v of existing) {
     if (v !== latest.version) {
