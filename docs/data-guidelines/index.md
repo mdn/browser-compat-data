@@ -163,6 +163,7 @@ This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-da
 ## Behavioral subfeatures
 
 A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
+Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
 
 If a more specific guideline applies (such as [`secure_context_required`](./api.md#secure-context-required-secure_context_required)), follow that guideline instead of this one.
 
