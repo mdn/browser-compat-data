@@ -7,6 +7,7 @@ import path from 'node:path';
 import { compareVersions } from 'compare-versions';
 
 import { spawn } from '../../utils/index.js';
+import chalk from 'chalk-template';
 import stringify from '../lib/stringify-and-order-properties.js';
 
 import {
@@ -123,10 +124,12 @@ const downloadAndExtractBun = async (
   const extractDir = path.join(cacheRoot, 'extracted');
 
   await fs.mkdir(extractDir, { recursive: true });
+  console.log(chalk`{gray Bun v${version}: preparing cache at ${cacheRoot}}`);
 
   try {
     await fs.access(zipPath);
   } catch {
+    console.log(chalk`{gray Bun v${version}: downloading ${url}}`);
     const res = await fetch(url);
     if (!res.ok) {
       return null;
@@ -137,8 +140,14 @@ const downloadAndExtractBun = async (
   }
 
   try {
+    console.log(
+      chalk`{gray Bun v${version}: extracting archive to ${extractDir}}`,
+    );
     spawn('unzip', ['-o', zipPath, '-d', extractDir]);
-  } catch {
+  } catch (e) {
+    console.warn(
+      chalk`{yellow Bun v${version}: failed to extract (${String(e)})}`,
+    );
     return null;
   }
 
@@ -146,6 +155,7 @@ const downloadAndExtractBun = async (
   if (!bin) {
     return null;
   }
+  console.log(chalk`{gray Bun v${version}: found binary at ${bin}}`);
   try {
     await fs.chmod(bin, 0o755);
   } catch {}
@@ -160,6 +170,9 @@ const downloadAndExtractBun = async (
 const getBunInfoForVersion = async (
   version: string,
 ): Promise<{ webkitRev?: string; bunRevision?: string }> => {
+  console.log(
+    chalk`{gray Bun v${version}: resolving engine_version and revision...}`,
+  );
   const bin = await downloadAndExtractBun(version);
   if (!bin) {
     return {};
@@ -175,6 +188,9 @@ const getBunInfoForVersion = async (
     try {
       bunRevision = spawn(bin, ['--revision']).trim();
     } catch {}
+    console.log(
+      chalk`{gray Bun v${version}: webkit=${webkitRev ?? 'unknown'} bun-revision=${bunRevision || 'unknown'}}`,
+    );
     return { webkitRev, bunRevision };
   } catch {
     return {};
@@ -276,7 +292,7 @@ export const updateBunReleases = async (options) => {
       browser,
       rel.version,
       status,
-      'WebKit',
+      undefined,
       undefined,
       rel.date,
       rel.url,
@@ -286,12 +302,16 @@ export const updateBunReleases = async (options) => {
     const entry = data.browsers[browser].releases[rel.version];
 
     if (entry) {
-      entry.engine = 'WebKit';
-      // Only resolve engine_version for the current release to avoid heavy downloads/timeouts
-      if (rel.version === latest.version && !entry.engine_version) {
+      const shouldResolve = rel.version === latest.version;
+      if (shouldResolve && !entry.engine_version) {
         const { webkitRev } = await getBunInfoForVersion(rel.version);
         if (webkitRev) {
+          entry.engine = 'WebKit';
           entry.engine_version = webkitRev;
+        } else {
+          console.log(
+            chalk`{gray Bun v${rel.version}: no engine info in process.versions; leaving engine unset}`,
+          );
         }
       }
     }
@@ -310,6 +330,16 @@ export const updateBunReleases = async (options) => {
         undefined,
         undefined,
       );
+    }
+  }
+
+  // Ensure schema dependency: if engine is present, engine_version must be present.
+  // Clean any existing entries that have engine without engine_version.
+  for (const [ver, rel] of Object.entries(
+    data.browsers[browser].releases ?? {},
+  ) as [string, any][]) {
+    if (rel.engine && !rel.engine_version) {
+      delete rel.engine;
     }
   }
 
