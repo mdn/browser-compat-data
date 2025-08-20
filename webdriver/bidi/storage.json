@@ -14,9 +14,6 @@
               "version_added": "124"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -44,21 +41,10 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "126"
-                },
-                {
-                  "version_added": "124",
-                  "version_removed": "126",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1854573](https://bugzil.la/1854573))"
-                }
-              ],
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
+              "firefox": {
+                "version_added": "125"
               },
+              "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -76,6 +62,70 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "filter_parameter": {
+            "__compat": {
+              "description": "`filter` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagedeletecookiesparameters-filter",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "125"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "partition_parameter": {
+            "__compat": {
+              "description": "`partition` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagedeletecookiesparameters-partition",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "125"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "getCookies": {
@@ -88,21 +138,10 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "126"
-                },
-                {
-                  "version_added": "124",
-                  "version_removed": "126",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1854572](https://bugzil.la/1854572))"
-                }
-              ],
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
+              "firefox": {
+                "version_added": "124"
               },
+              "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -120,6 +159,78 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "filter_parameter": {
+            "__compat": {
+              "description": "`filter` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagegetcookiesparameters-filter",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "124"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "partition_parameter": {
+            "__compat": {
+              "description": "`partition` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagegetcookiesparameters-partition",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "125"
+                  },
+                  {
+                    "version_added": "124",
+                    "version_removed": "125",
+                    "partial_implementation": true,
+                    "notes": "Before Firefox 125, the `userContext` field was not supported."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "setCookie": {
@@ -132,21 +243,10 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "126"
-                },
-                {
-                  "version_added": "124",
-                  "version_removed": "126",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1854574](https://bugzil.la/1854574))"
-                }
-              ],
-              "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
+              "firefox": {
+                "version_added": "124"
               },
+              "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -163,6 +263,78 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "cookie_parameter": {
+            "__compat": {
+              "description": "`cookie` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagesetcookieparameters-cookie",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "124"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "partition_parameter": {
+            "__compat": {
+              "description": "`partition` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-storagesetcookieparameters-partition",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "125"
+                  },
+                  {
+                    "version_added": "124",
+                    "version_removed": "125",
+                    "partial_implementation": true,
+                    "notes": "Before Firefox 125, the `userContext` field was not supported."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }

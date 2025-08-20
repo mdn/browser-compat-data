@@ -30,9 +30,6 @@
             "version_added": "45"
           },
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": false
-          },
           "nodejs": {
             "version_added": "6.0.0"
           },
@@ -83,9 +80,6 @@
               "version_added": "45"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.0.0"
             },
@@ -137,9 +131,6 @@
               "version_added": "45"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.0.0"
             },
@@ -164,7 +155,7 @@
       "private_class_fields": {
         "__compat": {
           "description": "Private class fields",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_elements",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#prod-PrivateIdentifier",
           "tags": [
             "web-features:class-syntax"
@@ -182,9 +173,6 @@
               "version_added": "90"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "12.0.0"
             },
@@ -209,7 +197,7 @@
       "private_class_fields_in": {
         "__compat": {
           "description": "Private class fields 'in'",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_elements",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#prod-00OK517S",
           "tags": [
             "web-features:class-syntax"
@@ -227,9 +215,6 @@
               "version_added": "90"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.4.0"
             },
@@ -254,7 +239,7 @@
       "private_class_methods": {
         "__compat": {
           "description": "Private class methods",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_properties",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Private_elements",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#prod-PrivateIdentifier",
           "tags": [
             "web-features:class-syntax"
@@ -272,9 +257,6 @@
               "version_added": "90"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "14.6.0"
             },
@@ -317,9 +299,6 @@
               "version_added": "69"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "12.0.0"
             },
@@ -357,6 +336,7 @@
       },
       "static": {
         "__compat": {
+          "description": "`static` keyword",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/static",
           "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-class-definitions",
           "tags": [
@@ -385,9 +365,6 @@
               "version_added": "45"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "6.0.0"
             },
@@ -407,95 +384,89 @@
             "standard_track": true,
             "deprecated": false
           }
-        }
-      },
-      "static_class_fields": {
-        "__compat": {
-          "description": "Static class fields",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Public_class_fields",
-          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FieldDefinition",
-          "tags": [
-            "web-features:class-syntax"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "72"
+        },
+        "class_fields": {
+          "__compat": {
+            "description": "Static class fields",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Public_class_fields",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FieldDefinition",
+            "tags": [
+              "web-features:class-syntax"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "72"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.0"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "75"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "12.0.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "14.1"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.0"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "75"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "12.0.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "14.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
-        }
-      },
-      "static_initialization_blocks": {
-        "__compat": {
-          "description": "Class static initialization blocks",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks",
-          "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-ClassStaticBlock",
-          "tags": [
-            "web-features:class-syntax"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "94"
+        },
+        "initialization_blocks": {
+          "__compat": {
+            "description": "Static initialization blocks",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-ClassStaticBlock",
+            "tags": [
+              "web-features:class-syntax"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "94"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.14"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "93"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "16.11.0"
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "1.14"
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "93"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
-            "nodejs": {
-              "version_added": "16.11.0"
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "16.4"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       }

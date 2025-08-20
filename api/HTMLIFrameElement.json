@@ -60,9 +60,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -140,9 +137,6 @@
               "version_added": "74"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -187,9 +181,6 @@
               }
             ],
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -233,9 +224,6 @@
               "version_removed": "83"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -269,9 +257,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -399,9 +384,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -423,7 +405,7 @@
       "csp": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/csp",
-          "spec_url": "https://w3c.github.io/webappsec-cspee/#ref-for-dom-htmliframeelement-csp",
+          "spec_url": "https://w3c.github.io/webappsec-cspee/#dom-htmliframeelement-csp",
           "tags": [
             "web-features:csp"
           ],
@@ -437,9 +419,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -478,9 +457,6 @@
               ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -650,9 +626,6 @@
               "version_added": "121"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": "60"
@@ -858,9 +831,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -903,9 +873,6 @@
               "version_added": "50"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -940,9 +907,6 @@
                 "version_removed": "92"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -978,9 +942,6 @@
                 "version_removed": "92"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1016,9 +977,6 @@
                 "version_removed": "92"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1126,7 +1084,7 @@
       },
       "sharedStorageWritable": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/shared-storage/#ref-for-dom-htmlsharedstoragewritableelementutils-sharedstoragewritable",
+          "spec_url": "https://wicg.github.io/shared-storage/#html-attr",
           "tags": [
             "web-features:shared-storage"
           ],
@@ -1140,9 +1098,6 @@
               "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1224,9 +1179,6 @@
               "version_added": "25"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1242,6 +1194,48 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

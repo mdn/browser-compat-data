@@ -6,7 +6,7 @@
           "spec_url": "https://w3c.github.io/webdriver-bidi/#module-webExtension",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "135"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -14,9 +14,6 @@
               "version_added": "137"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -29,7 +26,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -40,19 +37,16 @@
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-webExtension-install",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "135",
+                "partial_implementation": true,
+                "notes": "Only the `\"path\"` type is supported, not the `\"archivePath\"` and `\"base64\"` types."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "137",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1934549](https://bugzil.la/1934549))"
+                "version_added": "137"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -66,9 +60,43 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "extensionData_parameter": {
+            "__compat": {
+              "description": "`extensionData` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-webextensioninstallparameters-extensiondata",
+              "support": {
+                "chrome": {
+                  "version_added": "135",
+                  "partial_implementation": true,
+                  "notes": "Only the `\"path\"` type is supported, not the `\"archivePath\"` and `\"base64\"` types."
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "137"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -78,7 +106,9 @@
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-webExtension-uninstall",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "135",
+                "partial_implementation": true,
+                "notes": "Basic support"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -86,9 +116,6 @@
                 "version_added": "137"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -102,9 +129,43 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "extension_parameter": {
+            "__compat": {
+              "description": "`extension` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-webextensionuninstallparameters-extension",
+              "support": {
+                "chrome": {
+                  "version_added": "135",
+                  "partial_implementation": true,
+                  "notes": "Basic support"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "137"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }

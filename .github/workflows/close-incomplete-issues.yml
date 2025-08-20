@@ -11,8 +11,8 @@ jobs:
   close-issues-if-invalid:
     runs-on: ubuntu-latest
     steps:
-      - uses: queengooborg/invalid-issue-closer@d79a4ae7685cfab213be15f0e39fbd4533e3d822 # v1.5.4
-        id: spam-check
+      - uses: queengooborg/invalid-issue-closer@43bf1ddff3e83d208b77a3e364f7b5e22f6a9657 # v1.6.0
+        id: blank-body-check
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "spam"
@@ -21,7 +21,19 @@ jobs:
             This issue has been identified as spam and has been automatically closed and locked.  Do not use this repository for posting spam.
           normalize-newlines: true
           body-is-blank: true
-      - uses: queengooborg/invalid-issue-closer@d79a4ae7685cfab213be15f0e39fbd4533e3d822 # v1.5.4
+      - uses: queengooborg/invalid-issue-closer@43bf1ddff3e83d208b77a3e364f7b5e22f6a9657 # v1.6.0
+        if: steps.blank-body-check.outputs.was-closed == 'false'
+        id: spam-check
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels: "spam"
+          comment: |
+            This issue has been identified as spam and has been automatically closed.  Do not use this repository for posting spam.
+
+            If you believe this issue was incorrectly classified as spam, please comment below.  A maintainer will review, and reopen if necessary.
+          normalize-newlines: true
+          is-spammy: true
+      - uses: queengooborg/invalid-issue-closer@43bf1ddff3e83d208b77a3e364f7b5e22f6a9657 # v1.6.0
         if: steps.spam-check.outputs.was-closed == 'false'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
