@@ -57,15 +57,68 @@ const fetchVersions = async (): Promise<BunVersionsResponse> => {
 };
 
 /**
+ * Fetches WebKit version from the Version.xcconfig file at a specific commit.
+ * @param commitHash - The WebKit commit hash.
+ * @returns The WebKit version in x.y.z format, or undefined if fetch fails.
+ */
+const fetchWebKitVersion = async (
+  commitHash: string,
+): Promise<string | undefined> => {
+  try {
+    const url = `https://api.github.com/repos/oven-sh/WebKit/contents/Configurations/Version.xcconfig?ref=${commitHash}`;
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent':
+          'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)',
+        Accept: 'application/vnd.github.v3.raw',
+      },
+    });
+
+    if (!res.ok) {
+      console.warn(
+        chalk`{yellow Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash}: HTTP ${res.status}}`,
+      );
+      return undefined;
+    }
+
+    const content = await res.text();
+
+    const majorMatch = content.match(/MAJOR_VERSION\s*=\s*(\d+)/);
+    const minorMatch = content.match(/MINOR_VERSION\s*=\s*(\d+)/);
+    const tinyMatch = content.match(/TINY_VERSION\s*=\s*(\d+)/);
+
+    if (majorMatch && minorMatch && tinyMatch) {
+      const version = `${majorMatch[1]}.${minorMatch[1]}.${tinyMatch[1]}`;
+      return version;
+    }
+
+    console.warn(
+      chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
+    );
+    return undefined;
+  } catch (error) {
+    console.warn(
+      chalk`{yellow Warning: Error fetching WebKit version for commit ${commitHash}: ${error}}`,
+    );
+    return undefined;
+  }
+};
+
+/**
  * Gets Bun version info from the versions data.
  * @param versionInfo - The version info object from the API.
  * @returns An object containing webkitRev and bunRevision, if available.
  */
-const getBunInfoFromVersionData = (
+const getBunInfoFromVersionData = async (
   versionInfo: BunVersionInfo,
-): { webkitRev?: string; bunRevision?: string } => {
-  const webkitRev = versionInfo.versions?.webkit;
+): Promise<{ webkitRev?: string; bunRevision?: string }> => {
+  const webkitCommitHash = versionInfo.versions?.webkit;
   const bunRevision = versionInfo.revision;
+  let webkitRev: string | undefined;
+
+  if (webkitCommitHash) {
+    webkitRev = await fetchWebKitVersion(webkitCommitHash);
+  }
 
   if (webkitRev || bunRevision) {
     console.log(
@@ -176,7 +229,7 @@ export const updateBunReleases = async (options: {
     const entry = data.browsers[browser].releases[rel.version];
 
     if (entry) {
-      const { webkitRev } = getBunInfoFromVersionData(rel.info);
+      const { webkitRev } = await getBunInfoFromVersionData(rel.info);
 
       if (webkitRev) {
         entry.engine = 'WebKit';
