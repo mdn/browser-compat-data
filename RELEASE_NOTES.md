@@ -6,7 +6,19 @@ August 22, 2025
 
 ### Breaking changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This release introduces **one breaking change** that may require you to take action.
+
+#### 1. Sync TypeScript definitions for versions with schema ([#27428](https://github.com/mdn/browser-compat-data/pull/27428))
+
+Previously, TypeScript definitions for version fields were inconsistent with the schema.
+
+Now, definitions are aligned with the schema:
+
+- `VersionValue` is now `string | false` (previously `string | boolean | null`).
+- `version_added` is still `VersionValue` (without `true` or `null`).
+- `version_removed` and `version_last` are now string (previously `VersionValue`).
+
+**Impact**: You may need to update your code handling these fields.
 
 ### Statistics
 
