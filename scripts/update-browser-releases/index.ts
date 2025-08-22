@@ -229,7 +229,7 @@ const options = {
     browserName: 'Bun',
     bcdFile: './browsers/bun.json',
     bcdBrowserName: 'bun',
-  },
+  } as const,
 };
 
 const results = await Promise.all([
