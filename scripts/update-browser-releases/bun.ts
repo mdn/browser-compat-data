@@ -38,7 +38,6 @@ interface BunVersionsResponse {
 
 const VERSIONS_API = 'https://bun.com/versions.json';
 
-// Cache for WebKit versions to avoid repeated API calls
 const webkitVersionCache = new Map<string, string | undefined>();
 
 /**
