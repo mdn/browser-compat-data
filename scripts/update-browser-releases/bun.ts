@@ -79,11 +79,8 @@ const fetchAllReleases = async (): Promise<GitHubRelease[]> => {
  * Resolves the Bun release asset suffix for the current platform/arch.
  * @returns The asset suffix like "darwin-aarch64" or "linux-x64".
  */
-const resolveAssetSuffix = () => {
-  const plat = process.platform === 'darwin' ? 'darwin' : process.platform;
-  const cpu = process.arch === 'arm64' ? 'aarch64' : process.arch;
-  return `${plat}-${cpu}`;
-};
+const resolveAssetSuffix = () =>
+  `${process.platform}-${process.arch === 'arm64' ? 'aarch64' : process.arch}` as const;
 
 /**
  * Recursively searches for the Bun binary within an extracted directory.
@@ -120,9 +117,15 @@ const downloadAndExtractBun = async (
   const asset = `bun-${suffix}.zip`;
   const url = `${base}/${asset}`;
 
-  const cacheRoot = path.join(process.cwd(), '.cache', 'bun-updater', version);
+  const cacheRoot = path.join(
+    process.cwd(),
+    'node_modules',
+    '.cache',
+    'bun-releases',
+    version,
+  );
   const zipPath = path.join(cacheRoot, asset);
-  const extractDir = path.join(cacheRoot, 'extracted');
+  const extractDir = path.join(cacheRoot, suffix);
 
   await fs.mkdir(extractDir, { recursive: true });
   console.log(chalk`{gray Bun v${version}: preparing cache at ${cacheRoot}}`);
