@@ -38,6 +38,9 @@ interface BunVersionsResponse {
 
 const VERSIONS_API = 'https://bun.com/versions.json';
 
+// Cache for WebKit versions to avoid repeated API calls
+const webkitVersionCache = new Map<string, string | undefined>();
+
 /**
  * Fetches Bun version information from the versions.json endpoint.
  * @returns The versions response object.
@@ -73,6 +76,57 @@ const fetchWebKitVersion = async (
         Accept: 'application/vnd.github.v3.raw',
       },
     });
+
+    if (res.status === 403 || res.status === 429) {
+      const retryAfter = res.headers.get('Retry-After');
+      const rateLimitReset = res.headers.get('X-RateLimit-Reset');
+
+      let waitTime = 60; // Default wait time in seconds
+
+      if (retryAfter) {
+        waitTime = parseInt(retryAfter, 10);
+      } else if (rateLimitReset) {
+        const resetTime = parseInt(rateLimitReset, 10) * 1000;
+        waitTime = Math.max(1, Math.ceil((resetTime - Date.now()) / 1000));
+      }
+
+      console.log(
+        chalk`{yellow Rate limited for commit ${commitHash}. Waiting ${waitTime} seconds...}`,
+      );
+
+      await new Promise((resolve) => setTimeout(resolve, waitTime * 1000));
+
+      const retryRes = await fetch(url, {
+        headers: {
+          'User-Agent':
+            'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)',
+          Accept: 'application/vnd.github.v3.raw',
+        },
+      });
+
+      if (!retryRes.ok) {
+        console.warn(
+          chalk`{yellow Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash} after retry: HTTP ${retryRes.status}}`,
+        );
+        return undefined;
+      }
+
+      const content = await retryRes.text();
+
+      const majorMatch = content.match(/MAJOR_VERSION\s*=\s*(\d+)/);
+      const minorMatch = content.match(/MINOR_VERSION\s*=\s*(\d+)/);
+      const tinyMatch = content.match(/TINY_VERSION\s*=\s*(\d+)/);
+
+      if (majorMatch && minorMatch && tinyMatch) {
+        const version = `${majorMatch[1]}.${minorMatch[1]}.${tinyMatch[1]}`;
+        return version;
+      }
+
+      console.warn(
+        chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
+      );
+      return undefined;
+    }
 
     if (!res.ok) {
       console.warn(
