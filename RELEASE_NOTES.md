@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v6.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.5)
+
+August 22, 2025
+
+### Additions
+
+- `webextensions.api.userScripts.execute` ([#26992](https://github.com/mdn/browser-compat-data/pull/26992))
+
+### Statistics
+
+- 9 contributors have changed 14 files with 89 additions and 43 deletions in 15 commits ([`v6.1.4...v6.1.5`](https://github.com/mdn/browser-compat-data/compare/v6.1.4...v6.1.5))
+- 17,783 total features
+- 1,186 total contributors
+- 5,364 total stargazers
+
 ## [v6.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v6.1.4)
 
 August 19, 2025
