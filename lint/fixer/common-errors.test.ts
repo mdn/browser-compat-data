@@ -29,6 +29,24 @@ const tests: { input: any; output?: any }[] = [
     },
     output: {},
   },
+  // Convert version `Number` to `String`.
+  {
+    input: {
+      firefox: { version_added: 42 },
+    },
+    output: {
+      firefox: { version_added: '42' },
+    },
+  },
+  // Convert version `Number` to `String`.
+  {
+    input: {
+      safari: { version_added: 18.6 },
+    },
+    output: {
+      safari: { version_added: '18.6' },
+    },
+  },
 ];
 
 describe('fix -> common errors', () => {

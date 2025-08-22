@@ -9,6 +9,8 @@ import { walk } from '../../utils/index.js';
  *
  * - Replaces `browser: { version_added: "mirror" }` with `browser: "mirror"`
  * - Wraps `browser: false` with `browser: `{ version_added: false }`
+ * - Removes `{ version_added: false }` for IE.
+ * - Converts versions of type `Number` to `String`
  * @param compat The compat statement to fix
  */
 export const fixCommonErrorsInCompatStatement = (
@@ -30,6 +32,21 @@ export const fixCommonErrorsInCompatStatement = (
       JSON.stringify(compat.support[browser]) === '{"version_added":false}'
     ) {
       Reflect.deleteProperty(compat.support, browser);
+    }
+
+    const stmts = Array.isArray(compat.support[browser])
+      ? compat.support[browser]
+      : [compat.support[browser]];
+    for (const stmt of stmts) {
+      if (typeof stmt !== 'object') {
+        continue;
+      }
+
+      for (const field of ['version_added', 'version_removed']) {
+        if (typeof stmt[field] == 'number') {
+          stmt[field] = String(stmt[field]);
+        }
+      }
     }
   }
 };
