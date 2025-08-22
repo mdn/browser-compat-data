@@ -67,21 +67,32 @@ const fetchVersions = async (): Promise<BunVersionsResponse> => {
 const fetchWebKitVersion = async (
   commitHash: string,
 ): Promise<string | undefined> => {
+  if (webkitVersionCache.has(commitHash)) {
+    return webkitVersionCache.get(commitHash);
+  }
+
   try {
     const url = `https://api.github.com/repos/oven-sh/WebKit/contents/Configurations/Version.xcconfig?ref=${commitHash}`;
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent':
-          'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)',
-        Accept: 'application/vnd.github.v3.raw',
-      },
-    });
+
+    const headers: Record<string, string> = {
+      'User-Agent':
+        'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)',
+      Accept: 'application/vnd.github.v3.raw',
+    };
+
+    const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+    if (githubToken) {
+      headers['Authorization'] = `token ${githubToken}`;
+      console.log(chalk`{gray Using GitHub token for API requests}`);
+    }
+
+    const res = await fetch(url, { headers });
 
     if (res.status === 403 || res.status === 429) {
       const retryAfter = res.headers.get('Retry-After');
       const rateLimitReset = res.headers.get('X-RateLimit-Reset');
 
-      let waitTime = 60; // Default wait time in seconds
+      let waitTime = 60;
 
       if (retryAfter) {
         waitTime = parseInt(retryAfter, 10);
@@ -96,13 +107,7 @@ const fetchWebKitVersion = async (
 
       await new Promise((resolve) => setTimeout(resolve, waitTime * 1000));
 
-      const retryRes = await fetch(url, {
-        headers: {
-          'User-Agent':
-            'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)',
-          Accept: 'application/vnd.github.v3.raw',
-        },
-      });
+      const retryRes = await fetch(url, { headers });
 
       if (!retryRes.ok) {
         console.warn(
@@ -119,12 +124,14 @@ const fetchWebKitVersion = async (
 
       if (majorMatch && minorMatch && tinyMatch) {
         const version = `${majorMatch[1]}.${minorMatch[1]}.${tinyMatch[1]}`;
+        webkitVersionCache.set(commitHash, version);
         return version;
       }
 
       console.warn(
         chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
       );
+      webkitVersionCache.set(commitHash, undefined);
       return undefined;
     }
 
@@ -143,17 +150,20 @@ const fetchWebKitVersion = async (
 
     if (majorMatch && minorMatch && tinyMatch) {
       const version = `${majorMatch[1]}.${minorMatch[1]}.${tinyMatch[1]}`;
+      webkitVersionCache.set(commitHash, version);
       return version;
     }
 
     console.warn(
       chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
     );
+    webkitVersionCache.set(commitHash, undefined);
     return undefined;
   } catch (error) {
     console.warn(
       chalk`{yellow Warning: Error fetching WebKit version for commit ${commitHash}: ${error}}`,
     );
+    webkitVersionCache.set(commitHash, undefined);
     return undefined;
   }
 };
