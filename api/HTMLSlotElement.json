@@ -42,9 +42,18 @@
             "web-features:slot-assign"
           ],
           "support": {
-            "chrome": {
-              "version_added": "86"
-            },
+            "chrome": [
+              {
+                "version_added": "92",
+                "notes": "Before Chrome 95, the method accepted any `Node` instead of just `Element` and `Text`."
+              },
+              {
+                "version_added": "86",
+                "version_removed": "92",
+                "partial_implementation": true,
+                "notes": "Accepted `sequence<Node>` instead of `(Element or Text)...`."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
