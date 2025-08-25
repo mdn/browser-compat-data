@@ -204,7 +204,10 @@
               "firefox": {
                 "version_added": "142",
                 "partial_implementation": true,
-                "notes": "Both \"navigator.languages\" and the HTTP \"Accept-Language\" request header are not set yet."
+                "notes": [
+                  "Before Firefox 144 the locale override was shared with all the other browsing contexts living in the same web content process.",
+                  "Both `navigator.languages`, and the HTTP `Accept-Language` request header are not set yet."
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
