@@ -68,9 +68,6 @@ You must set `"partial_implementation": true` when all of the following conditio
 This list only covers cases where `"partial_implementation": true` is required.
 `"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
 
-Setting `partial_implementation` stands alone.
-Unlike `"version_added": false`, `partial_implementation` does not dictate support data to descendant features.
-Likewise, a subfeature's `"version_added": false` does not imply `"version_added": false` or `"partial_implementation": true` for an ancestor feature.
 
 Here are some example situations:
 
