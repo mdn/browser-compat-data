@@ -6,7 +6,7 @@ August 26, 2025
 
 ### Notable changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This release adds the [Bun](https://bun.sh/) runtime ([#23440](https://github.com/mdn/browser-compat-data/pull/23440)).
 
 ### Additions
 
