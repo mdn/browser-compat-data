@@ -55,7 +55,7 @@ This guideline was adopted to protect the quality of stable data in the face of 
 ## `"partial_implementation"` general usage guidelines
 
 > ![NOTE]
-> This guideline was added in August 2025, and feedback is welcome.
+> This guideline was added in August 2025 and feedback is welcome.
 > If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
 
 You must set `"partial_implementation": true` when all of the following conditions are met:
@@ -67,7 +67,6 @@ You must set `"partial_implementation": true` when all of the following conditio
 
 This list only covers cases where `"partial_implementation": true` is required.
 `"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
-
 
 Here are some example situations:
 
@@ -96,7 +95,7 @@ This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-dat
 
 ## Non-functional defined names imply `"partial_implementation"`
 
-If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
+If a browser recognizes an API name, but the API doesn’t have any discernible behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
 
 For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
 
