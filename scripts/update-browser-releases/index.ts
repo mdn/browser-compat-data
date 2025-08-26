@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 import yargs from 'yargs';
 
+import { updateBunReleases } from './bun.js';
 import { updateChromiumReleases } from './chrome.js';
 import { updateEdgeReleases } from './edge.js';
 import { updateFirefoxReleases } from './firefox.js';
@@ -40,6 +41,11 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Engine selection:',
   })
+  .option('bun', {
+    describe: 'Update Bun',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
   .option('all', {
     describe: 'Update all browsers (default)',
     type: 'boolean',
@@ -72,7 +78,8 @@ const updateAllBrowsers =
     argv['firefox'] ||
     argv['edge'] ||
     argv['opera'] ||
-    argv['safari']
+    argv['safari'] ||
+    argv['bun']
   );
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
@@ -80,6 +87,7 @@ const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateOpera = argv['opera'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
+const updateBun = argv['bun'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
@@ -217,6 +225,11 @@ const options = {
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
   },
+  bun: {
+    browserName: 'Bun',
+    bcdFile: './browsers/bun.json',
+    bcdBrowserName: 'bun',
+  } as const,
 };
 
 const results = await Promise.all([
@@ -249,6 +262,7 @@ const results = await Promise.all([
         updateMobile && updateSafariReleases(options.webview_ios),
       ]
     : []),
+  updateBun && updateBunReleases(options.bun),
 ]);
 
 const result = results.filter(Boolean).join('\n\n');
