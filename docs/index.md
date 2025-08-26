@@ -68,7 +68,10 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 ---
 
-- **Partial implementation** – [Data guidelines: "partial_implementation" requires a note](./data-guidelines/index.md#partial_implementation-requires-a-note)
+- **Partial implementation**
+  - [Data guidelines: `"partial_implementation"` general usage guidelines](./data-guidelines/index.md#partial_implementation-general-usage-guidelines)
+  - [Data guidelines: "partial_implementation" requires a note](./data-guidelines/index.md#partial_implementation-requires-a-note)
+
 - **Permissions API** – [Data guidelines for API features](./data-guidelines/api.md#permissions-api-permissions-permissionname_permission)
 - **Preview support** – [Data guidelines: Choosing "preview" values](./data-guidelines/index.md#choosing-preview-values)
 - **Promises** – [Data guidelines for API features](./data-guidelines/api.md#methods-returning-promises-returns_promise)

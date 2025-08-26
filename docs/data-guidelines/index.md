@@ -52,6 +52,43 @@ Do not use `"preview"` for planned but not yet implemented support changes. In o
 
 This guideline was adopted to protect the quality of stable data in the face of schedule uncertainty. To learn more about the adoption of `"preview"` values, see [#12344](https://github.com/mdn/browser-compat-data/issues/12344) and [#10334](https://github.com/mdn/browser-compat-data/pull/10334).
 
+## `"partial_implementation"` general usage guidelines
+
+> ![NOTE]
+> This guideline was added in August 2025 and feedback is welcome.
+> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
+
+You must set `"partial_implementation": true` when all of the following conditions are met:
+
+- The browser's support does not implement mandatory specified behavior.
+- The browser's support is inconsistent with at least one other browser.
+- The browser's support causes confusing feature detection results.
+- The browser's support has a demonstrable negative impact on web developers.
+
+This list only covers cases where `"partial_implementation": true` is required.
+`"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
+
+Here are some example situations:
+
+- `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
+  This behavior is consistent and is a _de facto_ complete implementation.
+
+- `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
+  A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
+  Use a note or non-standard behavioral subfeature instead.
+  <!-- TODO: link to behavioral subfeature guidelines, when available -->
+
+- `"partial_implementation": false`: An implementing browser fails a web platform test against a corner case.
+  No web developers have reported the bug and it's unlikely that there are real-world applications that would attempt to use the corner case.
+  Use a note instead.
+
+- `"partial_implementation": true`: `CSS.supports()` returns `true` for a property name and value, but the value has no behavior.
+  See also: [Non-functional defined names imply `"partial_implementation"`](#non-functional-defined-names-imply-partial_implementation).
+
+- `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
+
+This guideline was proposed and adopted in [#26780](https://github.com/mdn/browser-compat-data/pull/26780).
+
 ## `"partial_implementation"` requires a note
 
 If you set `"partial_implementation": true`, then write a note describing how the implementation is incomplete.
@@ -60,7 +97,7 @@ This guideline was proposed in [#7332](https://github.com/mdn/browser-compat-dat
 
 ## Non-functional defined names imply `"partial_implementation"`
 
-If a browser recognizes an API name, but the API doesn’t have any discernable behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
+If a browser recognizes an API name, but the API doesn’t have any discernible behavior, use `"partial_implementation": true` instead of `"version_added": false`, as if the feature has non-standard support, rather than no support.
 
 For example, suppose there is some specification for a Web API `NewFeature.method()`. Running `typeof NewFeature.method` in some browser returns `function` (not `undefined`), but the method, when called, returns `null` instead of an expected value. For that feature, set `"partial_implementation": true` and write a note describing the feature’s misbehavior.
 
