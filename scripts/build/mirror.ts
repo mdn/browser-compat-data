@@ -236,13 +236,15 @@ export const bumpSupport = (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(
+    const versionRemoved = getMatchingBrowserVersion(
       destination,
       sourceData.version_removed,
     );
 
-    // Ensure that version_removed is not present if it's not applicable, such as when the upstream browser removed the feature in a newer release than a matching downstream browser
-    if (newData.version_removed === false) {
+    if (typeof versionRemoved === 'string') {
+      newData.version_removed = versionRemoved;
+    } else {
+      // Ensure that version_removed is not present if it's not applicable, such as when the upstream browser removed the feature in a newer release than a matching downstream browser
       delete newData.version_removed;
     }
   }

@@ -24,5 +24,5 @@ export default (
     }
   }
 
-  return [{ version_added: null }];
+  return [{ version_added: false }];
 };
