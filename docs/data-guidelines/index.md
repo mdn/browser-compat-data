@@ -197,6 +197,52 @@ Do not set `deprecated` to `true` for features that are merely old or unpopular,
 
 This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."
 
+## Behavioral subfeatures
+
+> ![NOTE]
+> This guideline was added in August 2025 and feedback is welcome.
+> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
+
+A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
+Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
+
+If a more specific guideline applies, follow that guideline instead of this one. See:
+
+- [`returns_promise`](./api.md#methods-returning-promises-returns_promise)
+- [`secure_context_required`](./api.md#secure-context-required-secure_context_required)
+- [`worker_support`](./api.md#web-workers-worker_support)
+
+Behavioral subfeatures are rare.
+Do not create a subfeature when the behavioral subfeature's `support` data would be the same, across all browsers, as the parent feature.
+For serious bugs affecting a single engine, consider using `partial_implementation` instead. <!-- TODO: link to partial_implementation guidelines, when available -->
+
+You may create a behavioral subfeature for the following types of browser behaviors:
+
+- A contextual support condition that is not readily feature detectable.
+  This type of behavioral subfeature typically describes the applicability of a feature to specific context.
+
+- Behavioral evolution that is not readily feature detectable.
+  This type of behavioral subfeature typically describes consequences of specification changes that appeared after the feature first shipped in one or more browsers or user interface changes that appeared after implementers learned more about the specification.
+
+Here are some example situations:
+
+- A CSS property may depend on the layout context.
+  The CSS property `gap` has different support histories in flex and grid layouts, so it has the behavioral subfeatures of `css.properties.gap.flex_context` and `css.properties.gap.grid_context`.
+  See [`css.properties.gap`](https://github.com/mdn/browser-compat-data/blob/main/css/properties/gap.json).
+
+- An API exposure may depend on an execution context.
+  The `setTimeout()` method has different support histories for worker support, so it has the behavioral subfeatures of `api.setTimeout.worker_support`.
+  See the guideline for [`worker_support`](./api.md#web-workers-worker_support) for further guidance.
+
+- An API's specified behavior may change after a feature ships in one or more browsers.
+  The `play()` method of the `HTMLMediaElement` interface originally consumed a callback instead of returning a promise, so it has the behavioral subfeature of `api.HTMLMediaElement.play.returns_promise`.
+  See the guideline for [`returns_promise`](./api.md#methods-returning-promises-returns_promise) for further guidance.
+
+- User interface behavior may evolve with better understanding of a specification.
+  The `inert` HTML attribute marks elements as non-interactive but this did not originally affect find-in-page search, so it has the behavioral subfeature of [`html.global_attributes.inert.ignores_find_in_page`](https://github.com/mdn/browser-compat-data/blob/behavioral-subfeature-guideline/html/global_attributes.json).
+
+This guideline was proposed and adopted in [#26781](https://github.com/mdn/browser-compat-data/pull/26781).
+
 ## Parameters and parameter object features
 
 Sometimes it's useful to represent support for specific parameters (also known as arguments) of a function or method, as a subfeature of the function itself. To record data about whether a specific parameter is supported by a function or method, use the following naming conventions:
