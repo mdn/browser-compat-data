@@ -1141,11 +1141,18 @@
             "web-features:keyboard-events"
           ],
           "support": {
-            "chrome": {
-              "version_added": "32",
-              "partial_implementation": true,
-              "notes": "On Windows and Linux, if multiple keys are held down, a `keydown` event for the most recently pressed key will trigger with `repeat` incorrectly set to `false`. See [bug 40940886](https://crbug.com/40940886)."
-            },
+            "chrome": [
+              {
+                "version_added": "137",
+                "notes": "Before Chrome 139, on Linux under X11, if multiple keys are held down, a `keydown` event for the most recently pressed key will trigger with `repeat` incorrectly set to `false`. See [bug 40940886](https://crbug.com/40940886)."
+              },
+              {
+                "version_added": "32",
+                "version_removed": "137",
+                "partial_implementation": true,
+                "notes": "On Windows and Linux, if multiple keys are held down, a `keydown` event for the most recently pressed key will trigger with `repeat` incorrectly set to `false`. See [bug 40940886](https://crbug.com/40940886)."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": {
               "version_added": "12"

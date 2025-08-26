@@ -195,6 +195,7 @@ The `__compat` object consists of the following:
 
 The currently accepted browser identifiers should be declared in alphabetical order:
 
+- `bun`, Bun JavaScript runtime built on WebKit
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
 - `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
