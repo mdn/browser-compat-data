@@ -182,10 +182,10 @@ For serious bugs affecting a single engine, consider using `partial_implementati
 You may create a behavioral subfeature for the following types of browser behaviors:
 
 - A contextual support condition that is not readily feature detectable.
-  This type of behavioral subfeature typical describes the applicability of a feature to specific context.
+  This type of behavioral subfeature typically describes the applicability of a feature to specific context.
 
 - Behavioral evolution that is not readily feature detectable.
-  This type of behavioral subfeature typical describes consequences of specification changes that appeared after the feature first shipped in one or more browsers or user interface changes that appeared after implementers learned more about the specification.
+  This type of behavioral subfeature typically describes consequences of specification changes that appeared after the feature first shipped in one or more browsers or user interface changes that appeared after implementers learned more about the specification.
 
 Here are some example situations:
 
