@@ -640,7 +640,7 @@ if (esMain(import.meta)) {
   const options = argv as any;
 
   if (/^\d+$/.test(options.base)) {
-    options.head = `pull/${options.base}/head`;
+    options.head = `pull/${options.base}/merge`;
     options.base = 'origin/main';
   }
 
@@ -686,6 +686,13 @@ if (esMain(import.meta)) {
       const remoteRef = `gh pr view ${ref} --json headRefOid -q '.headRefOid'`;
       gitFetch(remoteRef);
       return remoteRef;
+    } else if (/^[0-9a-f]{40}$/.test(ref)) {
+      try {
+        gitRevParse(ref);
+      } catch {
+        gitFetch(ref);
+      }
+      return ref;
     }
 
     return gitRevParse(ref);
