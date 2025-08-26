@@ -204,6 +204,8 @@ Here are some example situations:
 - User interface behavior may evolve with better understanding of a specification.
   The `inert` HTML attribute marks elements as non-interactive but this did not originally affect find-in-page search, so it has the behavioral subfeature of [`html.global_attributes.inert.ignores_find_in_page`](https://github.com/mdn/browser-compat-data/blob/behavioral-subfeature-guideline/html/global_attributes.json).
 
+This guideline was proposed and adopted in [#26781](https://github.com/mdn/browser-compat-data/pull/26781).
+
 ## Parameters and parameter object features
 
 Sometimes it's useful to represent support for specific parameters (also known as arguments) of a function or method, as a subfeature of the function itself. To record data about whether a specific parameter is supported by a function or method, use the following naming conventions:
