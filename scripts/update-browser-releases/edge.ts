@@ -47,7 +47,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   );
   const result = text.match(regexp);
   if (!result) {
-    throw chalk`{yellow \nRelease date not found for Edge ${release}.}`;
+    throw chalk`{yellow \nNo entry found for Edge ${release} on [this page](<${releaseScheduleURL}>).}`;
   }
   const releaseDateText = result[1];
 
