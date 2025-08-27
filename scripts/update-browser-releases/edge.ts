@@ -22,15 +22,27 @@ import {
  */
 const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   // Fetch the MD of the release schedule
-  const scheduleMD = await fetch(releaseScheduleURL);
-  const text = await scheduleMD.text();
+  const scheduleHTML = await fetch(releaseScheduleURL);
+  const text = await scheduleHTML.text();
   if (!text) {
     throw chalk`{red \nRelease file not found.}`;
   }
-  // Find the line
-  //const regexp = new RegExp(`| ${release} |\\w*|\\w*| ?Week of (\\w*) ?|\\w*|`, 'i');
+  /**
+   * Find the table row:
+   *
+   * Example:
+   * ```html
+   * <tr>
+   * <td style="text-align: left;">142</td>                   <-- Version
+   * <td style="text-align: left;">Target release</td>
+   * <td style="text-align: left;">Week of 9-Oct-2025</td>
+   * <td style="text-align: left;">Week of 30-Oct-2025</td>   <-- Stable Channel
+   * <td style="text-align: left;">Week of 30-Oct-2025</td>
+   * </tr>
+   * ```
+   */
   const regexp = new RegExp(
-    `\\| ${release} \\|.*\\|.*\\| ?Week of (.*) ?\\|.*\\|`,
+    `<td[^>]*>${release}</td>\\s*<td[^>]*>.*</td>\\s*<td[^>]*>.*</td>\\s*<td[^>]*>?Week of (.*)</td>`,
     'i',
   );
   const result = text.match(regexp);
