@@ -184,7 +184,7 @@ const getBunInfoFromVersionData = async (
   }
 
   if (webkitRev || bunRevision) {
-    console.log(
+    console.debug(
       chalk`{gray Bun: webkit=${webkitRev ?? 'unknown'} bun-revision=${bunRevision || 'unknown'}}`,
     );
   }

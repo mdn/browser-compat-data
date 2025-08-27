@@ -238,9 +238,7 @@ const options = {
 };
 
 if (!debug) {
-  /**
-   * No-op.
-   */
+  /** No-op. */
   console.debug = () => {
     /* No-op. */
   };
