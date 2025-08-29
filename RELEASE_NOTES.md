@@ -4,10 +4,6 @@
 
 August 29, 2025
 
-### Removals
-
-- `webdriver.bidi.session.new.capability_matching` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
-
 ### Additions
 
 - `browsers.bun.releases.1.2.21` ([#27682](https://github.com/mdn/browser-compat-data/pull/27682))
@@ -23,7 +19,6 @@ August 29, 2025
 - `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.confirm` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
 - `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.prompt` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
 - `webdriver.bidi.session.new.capabilities_parameter.capability_matching` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
-- `webdriver.bidi.session.new.capability_matching` ([#27673](https://github.com/mdn/browser-compat-data/pull/27673))
 
 ### Statistics
 
