@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.1)
+
+August 29, 2025
+
+### Additions
+
+- `browsers.bun.releases.1.2.21` ([#27682](https://github.com/mdn/browser-compat-data/pull/27682))
+- `browsers.opera.releases.123` ([#27707](https://github.com/mdn/browser-compat-data/pull/27707))
+- `webdriver.bidi.browser.setClientWindowState` ([#27673](https://github.com/mdn/browser-compat-data/pull/27673))
+- `webdriver.bidi.browser.setClientWindowState.clientWindow_parameter` ([#27673](https://github.com/mdn/browser-compat-data/pull/27673))
+- `webdriver.bidi.browsingContext.userPromptClosed_event.type_parameter.alert` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptClosed_event.type_parameter.beforeunload` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptClosed_event.type_parameter.confirm` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptClosed_event.type_parameter.prompt` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.alert` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.beforeunload` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.confirm` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.browsingContext.userPromptOpened_event.type_parameter.prompt` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+- `webdriver.bidi.session.new.capabilities_parameter.capability_matching` ([#27688](https://github.com/mdn/browser-compat-data/pull/27688))
+
+### Statistics
+
+- 10 contributors have changed 41 files with 851 additions and 314 deletions in 21 commits ([`v7.1.0...v7.1.1`](https://github.com/mdn/browser-compat-data/compare/v7.1.0...v7.1.1))
+- 17,799 total features
+- 1,192 total contributors
+- 5,369 total stargazers
+
 ## [v7.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.0)
 
 August 26, 2025
