@@ -156,7 +156,7 @@ const options = {
     edgeupdatesURL:
       'https://edgeupdates.microsoft.com/api/products?view=enterprise',
     releaseScheduleURL:
-      'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
+      'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule',
   },
   firefox_desktop: {
     browserName: 'Firefox for Desktop',

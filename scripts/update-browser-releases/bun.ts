@@ -16,24 +16,25 @@ import {
 
 import type { CompatData } from '../../types/types.js';
 
-type BunVersionInfo = {
-  status: 'current' | 'retired';
-  release_date: string;
-  release_notes: string;
-} & (
-  | {
-      versions?: never;
-      revision?: never;
-    }
-  | {
-      versions: Record<(string & {}) | 'webkit', string>;
-      revision: string;
-    }
-);
-
 interface BunVersionsResponse {
   $note: string;
-  releases: Record<string, BunVersionInfo>;
+  releases: Record<
+    string,
+    {
+      status: 'current' | 'retired';
+      release_date: string;
+      release_notes: string;
+    } & (
+      | {
+          versions?: never;
+          revision?: never;
+        }
+      | {
+          versions: Record<(string & {}) | 'webkit', string>;
+          revision: string;
+        }
+    )
+  >;
 }
 
 const VERSIONS_API = 'https://bun.com/versions.json';
@@ -44,7 +45,7 @@ const webkitVersionCache = new Map<string, string | undefined>();
  * Fetches Bun version information from the versions.json endpoint.
  * @returns The versions response object.
  */
-const fetchVersions = async (): Promise<BunVersionsResponse> => {
+const fetchVersions = async () => {
   const res = await fetch(VERSIONS_API, {
     headers: {
       'User-Agent':
@@ -82,7 +83,6 @@ const fetchWebKitVersion = async (
     const githubToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
     if (githubToken) {
       headers['Authorization'] = `token ${githubToken}`;
-      console.log(chalk`{gray Using GitHub token for API requests}`);
     }
 
     const res = await fetch(url, { headers });
@@ -173,7 +173,7 @@ const fetchWebKitVersion = async (
  * @returns An object containing webkitRev and bunRevision, if available.
  */
 const getBunInfoFromVersionData = async (
-  versionInfo: BunVersionInfo,
+  versionInfo: BunVersionsResponse['releases'][string],
 ): Promise<{ webkitRev?: string; bunRevision?: string }> => {
   const webkitCommitHash = versionInfo.versions?.webkit;
   const bunRevision = versionInfo.revision;
@@ -181,12 +181,6 @@ const getBunInfoFromVersionData = async (
 
   if (webkitCommitHash) {
     webkitRev = await fetchWebKitVersion(webkitCommitHash);
-  }
-
-  if (webkitRev || bunRevision) {
-    console.debug(
-      chalk`{gray Bun: webkit=${webkitRev ?? 'unknown'} bun-revision=${bunRevision || 'unknown'}}`,
-    );
   }
 
   return { webkitRev, bunRevision };
@@ -231,14 +225,10 @@ export const updateBunReleases = async (options: {
     );
   }
 
-  interface Stable {
+  const stableReleases: (BunVersionsResponse['releases'][string] & {
     version: string;
-    date?: string;
-    url?: string;
-    info: BunVersionInfo;
-  }
+  })[] = [];
 
-  const stableReleases: Stable[] = [];
   let latestVersion: string | null = null;
 
   for (const [version, info] of Object.entries(versionsData.releases)) {
@@ -249,9 +239,7 @@ export const updateBunReleases = async (options: {
 
     stableReleases.push({
       version,
-      date: info.release_date,
-      url: info.release_notes,
-      info,
+      ...info,
     });
 
     if (info.status === 'current') {
@@ -285,14 +273,14 @@ export const updateBunReleases = async (options: {
       status,
       undefined,
       undefined,
-      rel.date,
-      rel.url,
+      rel.release_date,
+      rel.release_notes,
     );
 
     const entry = data.browsers[browser].releases[rel.version];
 
     if (entry) {
-      const { webkitRev } = await getBunInfoFromVersionData(rel.info);
+      const { webkitRev } = await getBunInfoFromVersionData(rel);
 
       if (webkitRev) {
         entry.engine = 'WebKit';
