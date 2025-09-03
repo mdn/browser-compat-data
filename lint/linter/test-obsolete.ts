@@ -75,7 +75,8 @@ export const implementedAndRemoved = (
       }
 
       const releaseDateData =
-        browsers[browser].releases[d.version_removed].release_date;
+        browsers[browser].releases[d.version_removed.replace('≤', '')]
+          .release_date;
 
       // No browser release date
       if (!releaseDateData) {

@@ -25,6 +25,11 @@
           "ie": {
             "version_added": "4"
           },
+          "nodejs": {
+            "version_added": "0.10.0",
+            "partial_implementation": true,
+            "notes": "The `Window` interface is not implemented, but some methods, and properties are available in the global scope."
+          },
           "oculus": "mirror",
           "opera": {
             "version_added": "3"
@@ -1017,7 +1022,7 @@
       "cookieStore": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/cookieStore",
-          "spec_url": "https://wicg.github.io/cookie-store/#dom-window-cookiestore",
+          "spec_url": "https://cookiestore.spec.whatwg.org/#dom-window-cookiestore",
           "tags": [
             "web-features:cookie-store"
           ],
@@ -1134,7 +1139,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/devicemotion_event",
           "spec_url": [
             "https://w3c.github.io/deviceorientation/#devicemotion",
-            "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondevicemotion"
+            "https://w3c.github.io/deviceorientation/#dom-window-ondevicemotion"
           ],
           "tags": [
             "web-features:device-orientation-events"
@@ -1183,7 +1188,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/deviceorientation_event",
           "spec_url": [
             "https://w3c.github.io/deviceorientation/#deviceorientation",
-            "https://w3c.github.io/deviceorientation/#ref-for-dom-window-ondeviceorientation"
+            "https://w3c.github.io/deviceorientation/#dom-window-ondeviceorientation"
           ],
           "tags": [
             "web-features:device-orientation-events"
@@ -1649,6 +1654,8 @@
       },
       "fetchLater": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/fetchLater",
+          "spec_url": "https://fetch.spec.whatwg.org/#deferred-fetch",
           "tags": [
             "web-features:fetchlater"
           ],

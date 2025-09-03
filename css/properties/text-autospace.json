@@ -9,12 +9,22 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "140"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.text-autospace.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1869577",
+              "partial_implementation": true,
+              "notes": "The property parses, but has no effect."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -29,7 +39,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -144,7 +154,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "140"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -164,7 +174,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -178,7 +188,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "140"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -198,7 +208,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

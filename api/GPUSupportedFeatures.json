@@ -3,7 +3,7 @@
     "GPUSupportedFeatures": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/GPUSupportedFeatures",
-        "spec_url": "https://gpuweb.github.io/gpuweb/#gpu-supportedfeatures",
+        "spec_url": "https://gpuweb.github.io/gpuweb/#gpusupportedfeatures",
         "tags": [
           "web-features:webgpu"
         ],
@@ -34,7 +34,7 @@
           "firefox": {
             "version_added": "141",
             "partial_implementation": true,
-            "notes": "Currently supported on Windows only."
+            "notes": "Currently supported on Windows only, in all contexts except for service workers."
           },
           "firefox_android": {
             "version_added": false
@@ -88,7 +88,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -184,6 +184,49 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "feature_core-features-and-limits": {
+        "__compat": {
+          "description": "`core-features-and-limits` feature",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#core-features-and-limits",
+          "tags": [
+            "web-features:webgpu"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "139",
+              "notes": "Currently available on all adapters and enabled automatically on all devices even if not requested."
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -733,7 +776,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -788,7 +831,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -843,7 +886,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -898,7 +941,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -953,7 +996,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -1009,7 +1052,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Currently supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false

@@ -16,22 +16,17 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "138",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.details-content.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "impl_url": "https://bugzil.la/1901037"
+              "version_added": "143"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "18.4"
+              "version_added": "18.4",
+              "impl_url": "https://webkit.org/b/283446",
+              "partial_implementation": true,
+              "notes": "Does not support chaining pseudo-elements after `::details-content`."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

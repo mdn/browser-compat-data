@@ -2666,7 +2666,7 @@
       "attachShadow": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/attachShadow",
-          "spec_url": "https://dom.spec.whatwg.org/#ref-for-dom-element-attachshadow①",
+          "spec_url": "https://dom.spec.whatwg.org/#dom-element-attachshadow",
           "tags": [
             "web-features:shadow-dom"
           ],
@@ -6015,9 +6015,9 @@
             "deprecated": false
           }
         },
-        "accepts_TrustedHTML": {
+        "enforces_trusted_types": {
           "__compat": {
-            "description": "Can be set with a `TrustedHTML` instance",
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
             "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
             "tags": [
               "web-features:trusted-types"
@@ -6266,6 +6266,48 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -7264,6 +7306,48 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "escapes_lt_gt_in_attributes": {
@@ -8660,7 +8744,7 @@
             "chrome": [
               {
                 "version_added": "37",
-                "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a proposed specification change](https://github.com/w3c/pointerlock/pull/49)."
+                "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a specification change](https://github.com/w3c/pointerlock/commit/0e99fcf3daa23269bf2b019f5269a154088d2347)."
               },
               {
                 "prefix": "webkit",
@@ -8674,7 +8758,7 @@
             },
             "edge": {
               "version_added": "13",
-              "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a proposed specification change](https://github.com/w3c/pointerlock/pull/49)."
+              "notes": "From version 92, returns a promise instead of `undefined`. The behavior reflects [a specification change](https://github.com/w3c/pointerlock/commit/0e99fcf3daa23269bf2b019f5269a154088d2347)."
             },
             "firefox": [
               {
@@ -8691,7 +8775,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "10.1"
+              "version_added": "10.1",
+              "notes": "From version 18.4, returns a promise instead of `undefined`. The behavior reflects [a specification change](https://github.com/w3c/pointerlock/commit/0e99fcf3daa23269bf2b019f5269a154088d2347)."
             },
             "safari_ios": {
               "version_added": false
@@ -8699,7 +8784,7 @@
             "samsunginternet_android": [
               {
                 "version_added": "3.0",
-                "notes": "From version 16, returns a promise instead of `undefined`. The behavior reflects [a proposed specification change](https://github.com/w3c/pointerlock/pull/49)."
+                "notes": "From version 16, returns a promise instead of `undefined`. The behavior reflects [a specification change](https://github.com/w3c/pointerlock/commit/0e99fcf3daa23269bf2b019f5269a154088d2347)."
               },
               {
                 "prefix": "webkit",
@@ -8739,15 +8824,17 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
+                "version_added": "18.4"
+              },
+              "safari_ios": {
                 "version_added": false
               },
-              "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -9277,6 +9364,40 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_container_parameter": {
+          "__compat": {
+            "description": "`options.container` parameter",
+            "tags": [
+              "web-features:scroll-into-view"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "options_parameter": {
@@ -10036,6 +10157,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setHTML",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-element-sethtml",
+          "tags": [
+            "web-features:sanitizer"
+          ],
           "support": {
             "chrome": {
               "version_added": false,
@@ -10092,9 +10216,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "17.4"
-            },
+            "safari": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "17.4",
+                "version_removed": "26",
+                "partial_implementation": true,
+                "notes": "If there are custom elements in a declarative shadow root in the parsed HTML, then the elements' constructors and `connectedCallback()` methods are not called ([bug 296420](https://webkit.org/b/296420))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -10104,6 +10236,48 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "124"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "options_sanitizer_parameter": {

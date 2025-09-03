@@ -78,7 +78,7 @@ A Peer who shows an above-average level of contribution to the project, particul
 
 ### Owners
 
-The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
+The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://developer.mozilla.org/en-US/about#our_team), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
 The [Owner group](#list-of-current-owners) has final authority over this project including:
 

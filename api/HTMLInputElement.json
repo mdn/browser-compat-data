@@ -131,6 +131,7 @@
       },
       "alpha": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alpha",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-alpha",
           "tags": [
             "web-features:input-color"
@@ -425,18 +426,21 @@
       },
       "colorSpace": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-colorspace",
           "tags": [
             "web-features:input-color"
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/368059226"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1919718"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -3175,9 +3179,17 @@
             "firefox": {
               "version_added": "50"
             },
-            "firefox_android": {
-              "version_added": "141"
-            },
+            "firefox_android": [
+              {
+                "version_added": "142"
+              },
+              {
+                "version_added": "141",
+                "version_removed": "142",
+                "partial_implementation": true,
+                "notes": "`File` entries returned for a selected directory have an empty string for `webkitRelativePath` ([bug 1973726](https://bugzil.la/1973726))."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",

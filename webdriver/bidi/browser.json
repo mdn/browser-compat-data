@@ -41,17 +41,10 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "129"
-                },
-                {
-                  "version_added": "117",
-                  "version_removed": "129",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1829332](https://bugzil.la/1829332))"
-                }
-              ],
+              "firefox": {
+                "version_added": "117",
+                "notes": "Before Firefox 129, `beforeunload` prompts could not be skipped."
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -102,6 +95,103 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "acceptInsecureCerts_parameter": {
+            "__compat": {
+              "description": "`acceptInsecureCerts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsercreateusercontextparameters-acceptinsecurecerts",
+              "support": {
+                "chrome": {
+                  "version_added": "138"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "140"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "proxy_parameter": {
+            "__compat": {
+              "description": "`proxy` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsercreateusercontextparameters-proxy",
+              "support": {
+                "chrome": {
+                  "version_added": "138"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "141",
+                  "notes": "Only supports `direct` and `manual` proxy configurations, not `autodetect`, `pac`, and `system`."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "unhandledPromptBehavior_parameter": {
+            "__compat": {
+              "description": "`unhandledPromptBehavior` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsercreateusercontextparameters-unhandledpromptbehavior",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -183,17 +273,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "129"
-                },
-                {
-                  "version_added": "124",
-                  "version_removed": "129",
-                  "partial_implementation": true,
-                  "notes": "Basic support (see [bug 1870840](https://bugzil.la/1870840))"
-                }
-              ],
+              "firefox": {
+                "version_added": "124"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -211,6 +293,108 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserremoveusercontextparameters-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "124"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setClientWindowState": {
+          "__compat": {
+            "description": "`browser.setClientWindowState` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-setClientWindowState",
+            "support": {
+              "chrome": {
+                "version_added": "126",
+                "partial_implementation": true,
+                "notes": "Basic support"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1855027"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/288109"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "clientWindow_parameter": {
+            "__compat": {
+              "description": "`clientWindow` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsersetclientwindowstateparameters-clientwindow",
+              "support": {
+                "chrome": {
+                  "version_added": "126",
+                  "partial_implementation": true,
+                  "notes": "Basic support"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }

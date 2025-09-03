@@ -281,6 +281,41 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "mutable": {
+          "__compat": {
+            "description": "Array value is mutable",
+            "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
+            "tags": [
+              "web-features:constructed-stylesheets"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "99"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "adoptNode": {
@@ -2634,9 +2669,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/designMode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-document-designmode-dev",
-          "tags": [
-            "web-features:dom"
-          ],
           "support": {
             "chrome": [
               {
@@ -3572,7 +3604,7 @@
       "exitPictureInPicture": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/exitPictureInPicture",
-          "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-document-exitpictureinpicture",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#dom-document-exitpictureinpicture",
           "tags": [
             "web-features:picture-in-picture"
           ],
@@ -5785,6 +5817,9 @@
           "description": "`parseHTML` static method",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/parseHTML_static",
           "spec_url": "https://wicg.github.io/sanitizer-api/#dom-document-parsehtml",
+          "tags": [
+            "web-features:sanitizer"
+          ],
           "support": {
             "chrome": {
               "version_added": false
@@ -5849,9 +5884,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "17.4"
-            },
+            "safari": [
+              {
+                "version_added": "26"
+              },
+              {
+                "version_added": "17.4",
+                "version_removed": "26",
+                "partial_implementation": true,
+                "notes": "If there are custom elements in a declarative shadow root in the parsed HTML, then the elements' constructors and `connectedCallback()` methods are not called ([bug 296420](https://webkit.org/b/296420))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -5861,6 +5904,48 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
+            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
+            "tags": [
+              "web-features:trusted-types"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "124"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "options_sanitizer_parameter": {
@@ -5899,7 +5984,7 @@
       "pictureInPictureElement": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureElement",
-          "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-documentorshadowroot-pictureinpictureelement①⑤",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#dom-documentorshadowroot-pictureinpictureelement",
           "tags": [
             "web-features:picture-in-picture"
           ],
@@ -5939,7 +6024,7 @@
       "pictureInPictureEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/pictureInPictureEnabled",
-          "spec_url": "https://w3c.github.io/picture-in-picture/#ref-for-dom-document-pictureinpictureenabled",
+          "spec_url": "https://w3c.github.io/picture-in-picture/#dom-document-pictureinpictureenabled",
           "tags": [
             "web-features:picture-in-picture"
           ],
@@ -8141,10 +8226,21 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1823896"
-            },
+            "firefox": [
+              {
+                "version_added": "preview"
+              },
+              {
+                "version_added": "140",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.viewTransitions.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
@@ -8212,10 +8308,21 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1823896"
-              },
+              "firefox": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "140",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "dom.viewTransitions.enabled",
+                      "value_to_set": "true"
+                    }
+                  ]
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -8805,9 +8912,9 @@
             "deprecated": true
           }
         },
-        "accepts_TrustedHTML": {
+        "enforces_trusted_types": {
           "__compat": {
-            "description": "Accepts `TrustedHTML` instances",
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
             "spec_url": [
               "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document-write-steps",
               "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#:~:text=if%20value%20is%20a%20trustedhtml%20object"
@@ -8935,9 +9042,9 @@
             "deprecated": true
           }
         },
-        "accepts_TrustedHTML": {
+        "enforces_trusted_types": {
           "__compat": {
-            "description": "Accepts `TrustedHTML` instances",
+            "description": "Requires `TrustedHTML` instance when trusted types are enforced",
             "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-document-writeln",
             "tags": [
               "web-features:document-write",
