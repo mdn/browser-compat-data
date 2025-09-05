@@ -35,6 +35,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
+          package-manager-cache: false
           registry-url: "https://registry.npmjs.org/"
 
       - name: "Setup git"
