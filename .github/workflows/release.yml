@@ -65,7 +65,7 @@ jobs:
       #   run: npm run --silent stats | gh issue comment https://github.com/mdn/browser-compat-data/issues/3555 --body-file -
 
       - name: Trigger BCD deployment
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.DISPATCH_PAT }}
           script: |
