@@ -1,36 +1,25 @@
 {
   "api": {
-    "ClipboardEvent": {
+    "IDBRecord": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardEvent",
-        "spec_url": "https://w3c.github.io/clipboard-apis/#clipboard-event-interfaces",
-        "tags": [
-          "web-features:clipboard-events"
-        ],
+        "spec_url": "https://w3c.github.io/IndexedDB/#record-interface",
         "support": {
           "chrome": {
-            "version_added": "41"
+            "version_added": "141"
           },
           "chrome_android": "mirror",
           "edge": {
-            "version_added": "12"
+            "version_added": false
           },
           "firefox": {
-            "version_added": "22",
-            "notes": [
-              "When pasting multiple files, only returns the first file. See [bug 1954680](https://bugzil.la/1954680).",
-              "Before Firefox 140, when pasting multiple files, and the first file was not acceptable, returned no file. See [bug 1961170](https://bugzil.la/1961170)."
-            ]
+            "version_added": false
           },
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": "4"
-          },
           "oculus": "mirror",
           "opera": "mirror",
           "opera_android": "mirror",
           "safari": {
-            "version_added": "10.1"
+            "version_added": false
           },
           "safari_ios": "mirror",
           "samsunginternet_android": "mirror",
@@ -38,36 +27,31 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "ClipboardEvent": {
+      "key": {
         "__compat": {
-          "description": "`ClipboardEvent()` constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardEvent/ClipboardEvent",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#dom-clipboardevent-clipboardevent",
-          "tags": [
-            "web-features:clipboard-events"
-          ],
+          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbrecord-key",
           "support": {
             "chrome": {
-              "version_added": "58"
+              "version_added": "141"
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "17"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "10.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -75,39 +59,32 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
         }
       },
-      "clipboardData": {
+      "primaryKey": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ClipboardEvent/clipboardData",
-          "spec_url": "https://w3c.github.io/clipboard-apis/#clipboardevent-clipboarddata",
-          "tags": [
-            "web-features:clipboard-events"
-          ],
+          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbrecord-primarykey",
           "support": {
             "chrome": {
-              "version_added": "41"
+              "version_added": "141"
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "12"
+              "version_added": false
             },
             "firefox": {
-              "version_added": "22"
+              "version_added": false
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": "5"
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "10.1"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -115,7 +92,40 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "value": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/IndexedDB/#dom-idbrecord-value",
+          "support": {
+            "chrome": {
+              "version_added": "141"
+            },
+            "chrome_android": "mirror",
+            "edge": {
+              "version_added": false
+            },
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

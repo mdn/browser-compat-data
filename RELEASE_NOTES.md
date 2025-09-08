@@ -1,5 +1,63 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.3)
+
+September 5, 2025
+
+### Removals
+
+- `http.headers.Set-Cookie.cookie_prefixes` ([#27724](https://github.com/mdn/browser-compat-data/pull/27724))
+
+### Additions
+
+- `api.IDBIndex.getAllRecords` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `api.IDBObjectStore.getAllRecords` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `api.IDBRecord` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `api.IDBRecord.key` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `api.IDBRecord.primaryKey` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `api.IDBRecord.value` ([#27757](https://github.com/mdn/browser-compat-data/pull/27757))
+- `css.selectors.nesting.at-scope` ([#27723](https://github.com/mdn/browser-compat-data/pull/27723))
+- `http.headers.Set-Cookie.host_secure_prefixes` ([#27724](https://github.com/mdn/browser-compat-data/pull/27724))
+- `http.headers.Set-Cookie.http_host-http_prefixes` ([#27724](https://github.com/mdn/browser-compat-data/pull/27724))
+- `webextensions.api.contentScripts.register.cssOrigin` ([#27716](https://github.com/mdn/browser-compat-data/pull/27716))
+- `webextensions.api.scripting.RegisteredContentScript.cssOrigin` ([#27716](https://github.com/mdn/browser-compat-data/pull/27716))
+- `webextensions.api.types.BrowserSetting.clear` ([#27737](https://github.com/mdn/browser-compat-data/pull/27737))
+- `webextensions.api.types.BrowserSetting.get` ([#27737](https://github.com/mdn/browser-compat-data/pull/27737))
+- `webextensions.api.types.BrowserSetting.set` ([#27737](https://github.com/mdn/browser-compat-data/pull/27737))
+
+### Statistics
+
+- 8 contributors have changed 34 files with 559 additions and 160 deletions in 19 commits ([`v7.1.2...v7.1.3`](https://github.com/mdn/browser-compat-data/compare/v7.1.2...v7.1.3))
+- 17,816 total features
+- 1,195 total contributors
+- 5,384 total stargazers
+
+## [v7.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.2)
+
+September 3, 2025
+
+### Removals
+
+- `api.CredentialsContainer.get.identity_option.error_api` ([#27735](https://github.com/mdn/browser-compat-data/pull/27735))
+
+### Additions
+
+- `api.GPUSupportedFeatures.feature_texture-compression-astc-sliced-3d` ([#27709](https://github.com/mdn/browser-compat-data/pull/27709))
+- `api.GPUSupportedFeatures.feature_texture-compression-bc-sliced-3d` ([#27709](https://github.com/mdn/browser-compat-data/pull/27709))
+- `api.IdentityCredentialError.error` ([#27736](https://github.com/mdn/browser-compat-data/pull/27736))
+- `browsers.chrome_android.releases.143` ([#27731](https://github.com/mdn/browser-compat-data/pull/27731))
+- `browsers.chrome.releases.143` ([#27731](https://github.com/mdn/browser-compat-data/pull/27731))
+- `browsers.webview_android.releases.143` ([#27731](https://github.com/mdn/browser-compat-data/pull/27731))
+- `webextensions.api.browserSettings.verticalTabs` ([#27657](https://github.com/mdn/browser-compat-data/pull/27657))
+- `webextensions.api.tabs.onUpdated.filter.cookieStoreId` ([#27643](https://github.com/mdn/browser-compat-data/pull/27643))
+
+### Statistics
+
+- 10 contributors have changed 24 files with 225 additions and 69 deletions in 20 commits ([`v7.1.1...v7.1.2`](https://github.com/mdn/browser-compat-data/compare/v7.1.1...v7.1.2))
+- 17,803 total features
+- 1,194 total contributors
+- 5,379 total stargazers
+
 ## [v7.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.1)
 
 August 29, 2025
