@@ -66,7 +66,7 @@ This decision was proposed in [#7238](https://github.com/mdn/browser-compat-data
 To maintain data quality, BCD's [owners](../../GOVERNANCE.md) may choose to remove a browser or engine from the project. To remove a browser from BCD, we need habitual (six months or more) evidence of (in decreasing order of importance):
 
 - negative/neutral downstream-consumer interest in the browser's data (e.g., MDN and caniuse don't object to removal)
-- poor data coverage with negative trends (e.g., our data for the browser covers only a few features, with limited/flat growth in more data being added for it, or few features with real version numbers rather than just `null` or `true`, etc.)
+- poor data coverage with negative trends (e.g., data for the browser covers only a few features, with limited/flat growth in more data being added for it)
 - infrequent community or vendor involvement in issues or PRs relating to the browser
 - infrequent new PRs relating to the browser (e.g., weeks or months go by without PRs touching the browser's data)
 
