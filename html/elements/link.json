@@ -1386,9 +1386,17 @@
               "description": "rel=prerender",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/prerender",
               "support": {
-                "chrome": {
-                  "version_added": "13"
-                },
+                "chrome": [
+                  {
+                    "version_added": "63",
+                    "partial_implementation": true,
+                    "notes": "Does not trigger prerendering. Triggers NoState Prefetch instead. See [blog post](https://developer.chrome.com/blog/nostate-prefetch)."
+                  },
+                  {
+                    "version_added": "13",
+                    "version_removed": "62"
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {

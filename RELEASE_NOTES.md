@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.4)
+
+September 9, 2025
+
+### Removals
+
+- `api.FederatedCredential.iconURL` ([#27733](https://github.com/mdn/browser-compat-data/pull/27733))
+- `api.FederatedCredential.name` ([#27733](https://github.com/mdn/browser-compat-data/pull/27733))
+
+### Additions
+
+- `browsers.edge.releases.143` ([#27775](https://github.com/mdn/browser-compat-data/pull/27775))
+- `css.properties.text-autospace.insert` ([#27726](https://github.com/mdn/browser-compat-data/pull/27726))
+- `css.properties.text-autospace.punctuation` ([#27726](https://github.com/mdn/browser-compat-data/pull/27726))
+- `css.properties.text-autospace.replace` ([#27726](https://github.com/mdn/browser-compat-data/pull/27726))
+
+### Statistics
+
+- 8 contributors have changed 35 files with 400 additions and 293 deletions in 23 commits ([`v7.1.3...v7.1.4`](https://github.com/mdn/browser-compat-data/compare/v7.1.3...v7.1.4))
+- 17,817 total features
+- 1,195 total contributors
+- 5,388 total stargazers
+
 ## [v7.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.3)
 
 September 5, 2025
