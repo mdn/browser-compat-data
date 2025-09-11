@@ -281,6 +281,41 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "mutable": {
+          "__compat": {
+            "description": "Array value is mutable",
+            "spec_url": "https://drafts.csswg.org/cssom/#dom-documentorshadowroot-adoptedstylesheets",
+            "tags": [
+              "web-features:constructed-stylesheets"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "99"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "101"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "adoptNode": {
@@ -690,6 +725,42 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": true
+          }
+        }
+      },
+      "ariaNotify": {
+        "__compat": {
+          "description": "`ariaNotify() method`",
+          "support": {
+            "chrome": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": [
+                "Fully supported on Windows only.",
+                "Method exposed on macOS, but notifications are not reliably spoken."
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
           }
         }
       },
@@ -2638,9 +2709,6 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/designMode",
           "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-document-designmode-dev",
-          "tags": [
-            "web-features:dom"
-          ],
           "support": {
             "chrome": [
               {
@@ -6368,7 +6436,6 @@
       "prerendering": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/prerendering",
-          "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#dom-document-prerendering",
           "tags": [
             "web-features:speculation-rules"
           ],
@@ -6395,7 +6462,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -8245,21 +8312,10 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "preview"
-                },
-                {
-                  "version_added": "140",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "dom.viewTransitions.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1860854"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
