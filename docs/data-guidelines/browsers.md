@@ -25,7 +25,7 @@ To add a new browser release:
 4. Set the `status` of the previous browser release to `"retired"`
    - If you are adding a beta browser release, skip this step
 
-You should only add releases with major and minor semver bump. See [Choosing a version number](./index.md#choosing-a-version-number) for more details.
+You should only add releases with major and minor semver bump. See [Choosing a version number](./README.md#choosing-a-version-number) for more details.
 
 ### Node.js
 
