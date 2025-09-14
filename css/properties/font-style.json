@@ -132,7 +132,9 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "62"
+                "version_added": "62",
+                "partial_implementation": true,
+                "notes": "Angles from 14 to 90 have the same effect as `font-style: oblique` (with a slant of 14 degrees). Angles from -90 to 13 have the same effect as `font-style: normal` (without a slant). In some cases (e.g. with vertical `writing-mode`), a negative angle produces a slant. See [bug 425388876](https://crbug.com/425388876)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -140,14 +142,13 @@
                 "version_added": "61"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "11.1"
+                "version_added": "11.1",
+                "partial_implementation": true,
+                "notes": "Angles from 14 to 90 have the same effect as `font-style: oblique` (with a slant of 14 degrees). Angles from -90 to 13 have the same effect as `font-style: normal` (without a slant). In some cases (e.g. with vertical `writing-mode`), a negative angle produces a slant. See [bug 425388876](https://crbug.com/425388876)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

@@ -67,7 +67,6 @@ An optional string containing the name of the preview browser. For example, "Nig
 The `releases` object contains data regarding the browsers' releases, using the version number as the index for each entry within. A release object contains the following properties:
 
 - A mandatory `status` property indicating where in the lifetime cycle this release is in. It's an enum accepting these values:
-
   - `retired`: This release is no longer supported (EOL). For NodeJS and Deno, every minor/patch release aside from the latest within the major release is considered "retired".
   - `current`: This release is the official latest release.
   - `exclusive`: This is an exclusive release (for example on a flagship device), not generally available.
@@ -90,8 +89,10 @@ The following table indicates initial versions for browsers in BCD. These are th
 
 | Browser          | Initial version | Notes                                                                                                                                                                    |
 | ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Bun              | 1.0.0           |                                                                                                                                                                          |
 | Chrome           | 1               |                                                                                                                                                                          |
 | Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
+| Deno             | 1.0             |                                                                                                                                                                          |
 | Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
 | Firefox          | 1               |                                                                                                                                                                          |
 | Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |

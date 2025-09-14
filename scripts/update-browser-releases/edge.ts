@@ -7,7 +7,11 @@ import chalk from 'chalk-template';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import {
+  newBrowserEntry,
+  setBrowserReleaseStatus,
+  updateBrowserEntry,
+} from './utils.js';
 
 /**
  * getFutureReleaseDate - Read the future release date
@@ -18,20 +22,32 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
  */
 const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   // Fetch the MD of the release schedule
-  const scheduleMD = await fetch(releaseScheduleURL);
-  const text = await scheduleMD.text();
+  const scheduleHTML = await fetch(releaseScheduleURL);
+  const text = await scheduleHTML.text();
   if (!text) {
     throw chalk`{red \nRelease file not found.}`;
   }
-  // Find the line
-  //const regexp = new RegExp(`| ${release} |\\w*|\\w*| ?Week of (\\w*) ?|\\w*|`, 'i');
+  /**
+   * Find the table row:
+   *
+   * Example:
+   * ```html
+   * <tr>
+   * <td style="text-align: left;">142</td>                   <-- Version
+   * <td style="text-align: left;">Target release</td>
+   * <td style="text-align: left;">Week of 9-Oct-2025</td>
+   * <td style="text-align: left;">Week of 30-Oct-2025</td>   <-- Stable Channel
+   * <td style="text-align: left;">Week of 30-Oct-2025</td>
+   * </tr>
+   * ```
+   */
   const regexp = new RegExp(
-    `\\| ${release} \\|.*\\|.*\\| ?Week of (.*) ?\\|.*\\|`,
+    `<td[^>]*>${release}</td>\\s*<td[^>]*>.*</td>\\s*<td[^>]*>.*</td>\\s*<td[^>]*>?Week of (.*)</td>`,
     'i',
   );
   const result = text.match(regexp);
   if (!result) {
-    throw chalk`{yellow \nRelease date not found for Edge ${release}.}`;
+    throw chalk`{yellow \nNo entry found for Edge ${release} on [this page](<${releaseScheduleURL}>).}`;
   }
   const releaseDateText = result[1];
 
@@ -243,9 +259,31 @@ export const updateEdgeReleases = async (options) => {
   }
 
   //
+  // Ensure that the release following stable is 'beta'
+  //
+  const betaVersion = data[options.releaseBranch].version + 1;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    betaVersion.toString(),
+    'beta',
+  );
+
+  //
+  // Ensure that the release following beta is 'nightly'
+  //
+  const nightlyVersion = data[options.releaseBranch].version + 2;
+  result += setBrowserReleaseStatus(
+    edgeBCD,
+    options.bcdBrowserName,
+    nightlyVersion.toString(),
+    'nightly',
+  );
+
+  //
   // Add a planned version entry
   //
-  const planned = (data[options.nightlyBranch].version + 1).toString();
+  const planned = (data[options.releaseBranch].version + 3).toString();
   let releaseDate;
   try {
     releaseDate = await getFutureReleaseDate(
