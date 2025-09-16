@@ -16,7 +16,8 @@ import { BrowserName, CompatData, VersionValue } from '../../types/types.js';
 import compileTS from '../generate-types.js';
 import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
 import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
-import { createAjv, walk } from '../../utils/index.js';
+import { createAjv } from '../lib/ajv.js';
+import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
 import bcd from '../../index.js';
 
