@@ -3,7 +3,7 @@
 
 import betterAjvErrors from 'better-ajv-errors';
 
-import { createAjv } from '../../utils/index.js';
+import { createAjv } from '../../scripts/lib/ajv.js';
 import { Linter, Logger, LinterData } from '../utils.js';
 
 import compatDataSchema from './../../schemas/compat-data.schema.json' with { type: 'json' };
