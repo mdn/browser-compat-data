@@ -364,11 +364,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "99",
-                "partial_implementation": true,
-                "notes": "Subscribing to this event does not emit events for all already open browsing contexts."
-              },
+              "firefox": [
+                {
+                  "version_added": "143"
+                },
+                {
+                  "version_added": "99",
+                  "version_removed": "143",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 143, subscribing to this event does not emit events for all already open browsing contexts."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",

@@ -510,9 +510,9 @@
             }
           }
         },
-        "cookie_prefixes": {
+        "host_secure_prefixes": {
           "__compat": {
-            "description": "Cookie prefixes",
+            "description": "Cookie prefixes: `__Host-` and `__Secure-`",
             "tags": [
               "web-features:cookies"
             ],
@@ -539,6 +539,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "http_host-http_prefixes": {
+          "__compat": {
+            "description": "Cookie prefixes: `__Http-` and `__Host-Http-`",
+            "tags": [
+              "web-features:cookies"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
