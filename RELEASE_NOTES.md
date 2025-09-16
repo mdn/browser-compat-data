@@ -1,5 +1,35 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.6)
+
+September 16, 2025
+
+### Removals
+
+- `api.Fence.setReportEventDataForAutomaticBeacons.start_commit_eventType` ([#27831](https://github.com/mdn/browser-compat-data/pull/27831))
+- `api.Permissions.permission_compute-pressure` ([#27794](https://github.com/mdn/browser-compat-data/pull/27794))
+
+### Additions
+
+- `api.FederatedCredential.iconURL` ([#27813](https://github.com/mdn/browser-compat-data/pull/27813))
+- `api.FederatedCredential.name` ([#27813](https://github.com/mdn/browser-compat-data/pull/27813))
+- `api.IDBDatabase.abort_event` ([#27167](https://github.com/mdn/browser-compat-data/pull/27167))
+- `api.Notification.navigate` ([#27812](https://github.com/mdn/browser-compat-data/pull/27812))
+- `api.Performance.interactionCount` ([#27902](https://github.com/mdn/browser-compat-data/pull/27902))
+- `browsers.bun.releases.1.2.22` ([#27893](https://github.com/mdn/browser-compat-data/pull/27893))
+- `browsers.deno.releases.2.2.10` ([#27845](https://github.com/mdn/browser-compat-data/pull/27845))
+- `javascript.builtins.Map.getOrInsert` ([#27902](https://github.com/mdn/browser-compat-data/pull/27902))
+- `javascript.builtins.Map.getOrInsertComputed` ([#27902](https://github.com/mdn/browser-compat-data/pull/27902))
+- `javascript.builtins.WeakMap.getOrInsert` ([#27902](https://github.com/mdn/browser-compat-data/pull/27902))
+- `javascript.builtins.WeakMap.getOrInsertComputed` ([#27902](https://github.com/mdn/browser-compat-data/pull/27902))
+
+### Statistics
+
+- 8 contributors have changed 52 files with 599 additions and 611 deletions in 26 commits ([`v7.1.5...v7.1.6`](https://github.com/mdn/browser-compat-data/compare/v7.1.5...v7.1.6))
+- 17,826 total features
+- 1,196 total contributors
+- 5,399 total stargazers
+
 ## [v7.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.5)
 
 September 12, 2025
