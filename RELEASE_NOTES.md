@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.5)
+
+September 12, 2025
+
+### Removals
+
+- `http.headers.Supports-Loading-Mode.fenced-frames` ([#27811](https://github.com/mdn/browser-compat-data/pull/27811))
+
+### Additions
+
+- `api.Document.ariaNotify` ([#27819](https://github.com/mdn/browser-compat-data/pull/27819))
+- `api.Element.ariaNotify` ([#27819](https://github.com/mdn/browser-compat-data/pull/27819))
+- `browsers.opera.releases.124` ([#27837](https://github.com/mdn/browser-compat-data/pull/27837))
+- `http.headers.Supports-Loading-Mode.fenced-frame` ([#27811](https://github.com/mdn/browser-compat-data/pull/27811))
+
+### Statistics
+
+- 8 contributors have changed 50 files with 515 additions and 87 deletions in 19 commits ([`v7.1.4...v7.1.5`](https://github.com/mdn/browser-compat-data/compare/v7.1.4...v7.1.5))
+- 17,819 total features
+- 1,196 total contributors
+- 5,392 total stargazers
+
 ## [v7.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.4)
 
 September 9, 2025
