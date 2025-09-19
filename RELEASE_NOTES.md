@@ -4,19 +4,20 @@
 
 September 19, 2025
 
+### Renamings
+
+- `api.HTMLElement.innerText.enforces_trusted_types` to `api.HTMLScriptElement.innerText.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+- `api.Node.textContent.enforces_trusted_types` to `api.HTMLScriptElement.textContent.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+
 ### Removals
 
-- `api.HTMLElement.innerText.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
-- `api.Node.textContent.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
 - `api.SpeechRecognitionEvent.emma` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
 - `api.SpeechRecognitionEvent.interpretation` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
 
 ### Additions
 
 - `api.HTMLScriptElement.innerText` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
-- `api.HTMLScriptElement.innerText.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
 - `api.HTMLScriptElement.textContent` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
-- `api.HTMLScriptElement.textContent.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
 - `api.ServiceWorkerContainer.register.enforces_trusted_types` ([#27836](https://github.com/mdn/browser-compat-data/pull/27836))
 - `api.SpeechRecognition.phrases` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
 - `api.SpeechRecognition.start.audioTrack` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
